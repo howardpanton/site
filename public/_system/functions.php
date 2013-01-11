@@ -13,7 +13,7 @@
    * 
    * @throws Exception $e If the template file is not found.
    */
-  function t($file, $v = array(), $prefix='/var/www/public/templates/')
+  function t($file, $v = array(), $prefix='/var/www/public/_templates')
   {   
     ob_start();
     
