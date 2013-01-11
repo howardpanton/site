@@ -11,11 +11,11 @@
  <!-- CSS - These are your main CSS files. All base styles can be found in the base.css and any additional styles 
  or overwrites should be used in the layout.css. We have now added support for SCSS. Using CodeKit or a similar preprocessor will help you write and rewrite the SCSS files.  
 ================================================= -->
- <link rel="stylesheet" href="http://beta.arts.ac.uk/assets/css/style.css"> <!-- Compressed and compiled from base.scss -->
+ <link rel="stylesheet" href="http://beta.pagodabox.com/assets/css/style.css"> <!-- Compressed and compiled from base.scss -->
  
  <!-- Browser Specific Javascript
 ================================================= -->
- <script src="http://beta.arts.ac.uk/assets/js/vendor/modernizr.js"></script>
+ <script src="http://beta.pagodabox.com/assets/js/vendor/modernizr.js"></script>
 
  <!--[if (lt IE 9) & (!IEMobile)]>
  <script src="js/vendor/selectivizr-min.js"></script>
@@ -26,7 +26,7 @@
 
  <!-- Favicon and apple-touch-icon.png in the img folder. Include the ones you need.
  ================================================== -->
- <link rel="shortcut icon" href="http://beta.arts.ac.uk/assets/img/startup/favicon.ico">
+ <link rel="shortcut icon" href="http://beta.pagodabox.com/assets/img/startup/favicon.ico">
  
  <!-- Font Smoothing FF/Windows
  ================================================== -->
