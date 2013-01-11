@@ -1,6 +1,6 @@
 <?php
  echo dirname(__FILE__);
-    require_once '/var/www/public/_system';
+    require_once '/var/www/public/_system/Templater.php';
 
     /*Here we setup the most simple usage of the template*/
 
