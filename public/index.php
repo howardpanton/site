@@ -1,10 +1,10 @@
 <?php
 
-    require_once '/Users/howard/Dropbox/htdocs/beta/system/Templater.php';
+    require_once '/var/www/public/system/Templater.php';
 
     /*Here we setup the most simple usage of the template*/
 
-    $page = new Templater("/Users/howard/Dropbox/htdocs/beta/templates/main.tpl.php");    // Loading the template file
+    $page = new Templater("/var/www/public/templates/main.tpl.php");    // Loading the template file
     /*Setting variables using the 2 methods*/
     $page->title = "Home Page";
     /* Load the current directory into an array*/

@@ -1,6 +1,6 @@
 <?php
 
-  include_once('/Users/howard/Dropbox/htdocs/beta/system/functions.php'); 
+  include_once('/var/www/public//system/functions.php'); 
 ?>
 <!DOCTYPE html>
 <!-- 
