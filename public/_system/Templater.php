@@ -1,5 +1,5 @@
 <?php
-
+ echo dirname(__FILE__);
     /*
      * @file
      * The theme class that is used to implement the theme
