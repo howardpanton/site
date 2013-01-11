@@ -1,6 +1,6 @@
 <?php
 
-  include_once('/var/www/public//system/functions.php'); 
+  include_once('system/functions.php'); 
 ?>
 <!DOCTYPE html>
 <!-- 
