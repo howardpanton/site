@@ -1,6 +1,6 @@
 <?php
-
-  include_once('/var/www/public/_system/functions.php'); 
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+  include_once("/$root/_system/functions.php"); 
 ?>
 <!DOCTYPE html>
 <!-- 

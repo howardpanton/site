@@ -15,8 +15,10 @@
    * 
    * @throws Exception $e If the template file is not found.
    */
-  function t($file, $v = array(), $prefix= "/$root/_templates/")
+  function t($file, $v = array())
   {   
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]) . '/_templates/';
+    $prefix = $root;
     ob_start();
     
     if(file_exists($prefix.$file.'.tpl.php'))
