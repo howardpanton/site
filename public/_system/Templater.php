@@ -1,5 +1,5 @@
 <?php
- echo dirname(__FILE__);
+ //echo dirname(__FILE__);
     /*
      * @file
      * The theme class that is used to implement the theme
@@ -72,7 +72,7 @@
     
     function m() {
       $dir    = '.';
-      $weeds = array('.', '..', 'index.php', 'assets'); 
+      $weeds = array('.', '..', 'index.php', 'assets', '_system', '_templates'); 
       $files1 = array_diff(scandir($dir), $weeds);
       $files2 = scandir($dir, 1);
       $m = $files1;
