@@ -1,5 +1,5 @@
 <?php
-
+ echo dirname(__FILE__);
     require_once 'system/Templater.php';
 
     /*Here we setup the most simple usage of the template*/
