@@ -1,6 +1,6 @@
 <?php
 
-    require_once '/Users/howard/Dropbox/htdocs/beta/system/Templater.php';
+    require_once '/Users/howard/Dropbox/htdocs/beta/_system/Templater.php';
 
     /*Here we setup the most simple usage of the template*/
 

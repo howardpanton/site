@@ -1,17 +1,18 @@
 <?php
 
-    require_once '/Users/howard/Dropbox/htdocs/beta/system/Templater.php';
+		$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+    require_once "/$root/_system/Templater.php";
 
     /*Here we setup the most simple usage of the template*/
 
-    $page = new Templater("/Users/howard/Dropbox/htdocs/beta/templates/main.tpl.php");    // Loading the template file
+    $page = new Templater("/$root/_templates/main.tpl.php");    // Loading the template file
     /*Setting variables using the 2 methods*/
     $page->title = "Home Page";
     /* Load the current directory into an array*/
 		$files1 = m();
 		/* Load the array into an object to be used by the tempalte file*/
 		$page->menu = $files1;
-
     /* Load the body text into a variable*/
     $body = <<<BODY
  	  <section class="row">
