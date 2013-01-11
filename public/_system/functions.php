@@ -2,6 +2,8 @@
   /* If true, doesn't throw an exception when short tags are disabled. Simply modify the default function value
    * to $suppress_shorttag_error=TRUE if you don't want to use short tags. */
   $shorttag_suppress_errors=FALSE;
+
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
   
   /**
    * Templating function. See example.php for usage.
@@ -13,7 +15,7 @@
    * 
    * @throws Exception $e If the template file is not found.
    */
-  function t($file, $v = array(), $prefix='/var/www/public/_templates/')
+  function t($file, $v = array(), $prefix= "/$root/_templates/")
   {   
     ob_start();
     
