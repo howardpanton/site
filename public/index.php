@@ -1,10 +1,10 @@
 <?php
  echo dirname(__FILE__);
-    require_once 'system/Templater.php';
+    require_once '/var/www/system/Templater.php';
 
     /*Here we setup the most simple usage of the template*/
 
-    $page = new Templater("templates/main.tpl.php");    // Loading the template file
+    $page = new Templater("/var/www/templates/main.tpl.php");    // Loading the template file
     /*Setting variables using the 2 methods*/
     $page->title = "Home Page";
     /* Load the current directory into an array*/
