@@ -1,0 +1,149 @@
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+
+// University Colors
+$university-slate-blue: #222222;
+$university-slate-light: #222(lighten);
+$university-slate-blue-light: #417C86;
+$university-grey:#d1d7da;
+$university-slate-grey:#bcb6af;
+
+// New Branding Colors
+
+$university-brand-grey: rgb(81, 81, 81);
+
+$university-purple: rgb(121,37,117);
+
+// Central Saint martins
+
+$central-saint-martins-red: #EF4135;
+$central-saint-martins-red-light:#ffcccc ;
+
+// Chelsea College
+
+$chelsea-college-orange: #ff7800;
+$chelsea-college-orange-light:#fce3d0 ;
+
+//Camberwell College
+
+$camberwell-college-blue:#3771d3 ;
+$camberwell-college-blue-light:#ceddf4 ;
+
+// London College of Fashion
+
+$fashion-college-purple:#c51b8a ;
+$fashion-college-purple-light:#efcae4 ;
+
+// London College of Commuications
+
+$london-college-communications-green:#4fad26 ;
+$london-college-communications-green-light:#daedd1 ;
+
+// Wimbledon College
+
+$wimbledon-college-gold:#ce8e00 ;
+$wimbledon-college-gold-light:#eadec5 ;
+
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Grays
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #666;
+$grayLight:             #999;
+$grayLighter:           #C9C9C9;
+$grayLightTint:					#E9E9E9;
+$white:                 #fff;
+
+// Accent colors
+$blue:                  #049cdb;
+$blueDark:              #0064cd;
+$green:                 #46a546;
+$red:                   #9d261d;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+
+// Typography
+$baseFontSize:          14px;
+$subBaseFontSize:				$baseFontSize - 2;
+$superBaseFontSize:			$baseFontSize + 2;
+$baseFontFamily:        'Helvetica Neue', Helvetica, Arial, sans-serif;
+$baseLineHeight:        20px;
+$textColor:             $gray;
+
+// Links
+$linkColor:             $black;
+$linkColorHover:        darken($linkColor, 15%);
+
+// Buttons
+$primaryButtonBackground:    $grayDark;
+$primaryButtonBackgroundHighlight:     spin($primaryButtonBackground, 20%);
+
+
+// VARIABLES
+// ---------
+$hrColor: 							#E5E5E5;
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+$zindexDropdown:        1000;
+$zindexPopover:         1010;
+$zindexTooltip:         1020;
+$zindexFixedNavbar:     1030;
+$zindexModalBackdrop:   1040;
+$zindexModal:           1050;
+
+// Input placeholder text color
+$placeholderText:        $university-slate-blue;
+
+// Navbar
+$navbarHeight:                    40px;
+$navbarBackground:                $university-slate-blue;
+$navbarBackgroundHighlight:       lighten($university-slate-blue, 10%);
+
+$navbarText:                      $white;
+$navbarLinkColor:                 $white;
+$navbarLinkColorHover:            $white;
+
+// Form states and alerts
+$warningText:             #c09853;
+$warningBackground:       #fcf8e3;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
+
+$errorText:               #b94a48;
+$errorBackground:         #f2dede;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
+
+$successText:             #468847;
+$successBackground:       #dff0d8;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%);
+
+$infoText:                #3a87ad;
+$infoBackground:          #d9edf7;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+$gridColumns:             30;
+$gridColumnWidth:         60px;
+$gridGutterWidth:         20px;
+$gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
+
+// Fluid grid
+$fluidGridColumnWidth:    6.382978723%;
+$fluidGridGutterWidth:    2.127659574%;

@@ -1,4 +1,28 @@
-.breadcrumbs  li {
-float: left;
-padding-right: 10px;
+/* Breadcrumbs */
+
+#breadcrumb-trail {
+		font-size: $subBaseFontSize;
+    border-top: 1px solid $gray;
+    clear: both;
+    float: left;
+    margin-bottom:25px;
+    display:block;
+      ul {
+      border-bottom: 1px solid $gray;
+      float: left;
+      list-style:none;
+      margin-left:0px;
+        li {
+        float: left;
+        margin: 2px 0 1px;
+          a {
+          margin: 0 9px 1px 0;
+          padding: 0 2px 0 0;
+          text-decoration: none;
+          }
+      }
+      li:last-child  {
+          font-weight: bold;
+      }
+    }
 }

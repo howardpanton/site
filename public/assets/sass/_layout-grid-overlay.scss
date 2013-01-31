@@ -1,0 +1,32 @@
+$grid-background-column-color : rgba(100, 100, 225, 0.25) ;
+//$grid-background-baseline-height :2em;
+@import "grid-generator";
+
+
+#grid {
+   @include grid-background;
+    background-position: 10px top;
+    height: 100%;
+    left: 50%;
+    margin: 0 auto 0 -480px;
+    position: fixed;
+    top: 0;
+    width: 960px;
+}
+
+#toggle-grid {
+    -moz-transition-duration: 0.25s;
+    -moz-transition-property: all;
+    background: image-url('toggle-grid.png') no-repeat scroll right 50% transparent;
+    color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.25;
+    padding-right: 22px;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 13px;
+}

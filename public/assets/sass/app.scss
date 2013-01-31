@@ -1,0 +1,429 @@
+/*!
+ * Application styleassets v2.2.1
+ * Last Updated November 20th 2012 15:50pm, Matt Wisbey
+ * Added prospective students page
+ * Ported to SASS by Howard Panton, Projeckt13.com.
+ */
+
+
+@import "grid-generator";
+@import "variables.scss"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.scss";
+
+// Project Styles
+//-----------------------------------------
+
+$main-width :950px;
+//$slider-height:540px;
+$text-indent: -999em;
+$display-block:block;
+$display-none:none;
+$siteLoc: localhost;
+ 
+h1.section-heading, div.section-description, .indent-text {
+	position: absolute;
+  text-indent: $text-indent;
+}
+
+body {
+  position: relative; 
+  outline: medium none;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+ul {
+  list-style: square outside none;
+}
+
+img.margin-right-twenty {
+  margin-right:20px;
+}
+
+div.margin-bottom-thirty-two {
+  margin-bottom:32px;
+}
+
+a.external-link {
+    background: image-url('external-link.png') center right no-repeat;
+    padding-right: 13px;
+}
+
+.featured-text-18px {
+    font-size: 18px;
+    line-height: 24px;
+    color:#000;
+}
+
+
+.container {
+   //@include column-grid-background;
+}
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; padding:0px;}
+
+
+
+//currently active item
+.currentbranch0 {
+	display: block;
+}
+
+#ual-header  {
+		margin-top: 9px;
+		padding-bottom:10px;
+		.logo {
+		  a {
+		      display: block;
+		      height: 153px;
+		      text-indent: -9999px; /* - concerned about this for SEO reasons */ 
+		      width: 184px;
+		  }
+		  a[href^="http://www.arts.ac.uk"]  {
+		      background:image-url('http://www.arts.ac.uk/media/artsacukstyleassets/component-library/images/ual.gif', false) no-repeat;
+		  }
+		  a[href^="http://www.camberwell.arts.ac.uk"]  {
+		      background:image-url('http://www.camberwell.arts.ac.uk/media/artsacukstyleassets/styleassets/images/blue.gif', false) no-repeat;
+		  }
+		  a[href^="http://www.chelsea.arts.ac.uk"]  {
+		      background:image-url('http://www.chelsea.arts.ac.uk/media/artsacukstyleassets/styleassets/images/orange.gif', false) no-repeat;
+		  }
+		  a[href^="http://www.wimbledon.arts.ac.uk"]  {
+		      background:image-url('http://www.wimbledon.arts.ac.uk/media/artsacukstyleassets/styleassets/images/gold.gif', false) no-repeat;
+		  }
+		  a[href^="http://www.csm.arts.ac.uk"]  {
+		      background:image-url('http://www.csm.arts.ac.uk/media/artsacukstyleassets/styleassets/images/red.gif', false) no-repeat;
+		  }
+		  a[href^="http://www.fashion.arts.ac.uk"]  {
+		      background:image-url('http://www.fashion.arts.ac.uk/media/artsacukstyleassets/styleassets/images/purple.gif', false) no-repeat;
+		  }
+		}
+
+		nav {
+		  li {
+				border-bottom: 1px solid $grayLighter;
+				line-height: $baseLineHeight - 4;
+				font-size: $subBaseFontSize;
+				color: $black;
+		  }
+		  a {
+				color: $black;
+				display: block;
+				padding: 1px 0;
+		  	&.active {
+		    	background:$university-slate-light;
+		  	}
+				&:hover {
+		      background-color:$university-slate-light;
+		      text-decoration: none; 
+		    }
+		  }
+		  .sub-section {
+		    border-top:1px solid $university-slate-blue;
+		  }
+		}
+		
+		.search-wrapper {
+      display: block;
+      float: right;
+      width: 170px;
+      position:relative;
+		}
+
+    input#search-box {
+    	width:124px;
+    }
+
+    a#ual-give {
+      width:110px;
+      line-height:12px;
+    }
+}
+
+// University menu tint 
+.ual .currentbranch0, #nav-main a:hover {
+	background-color: $grayLightTint !important;
+}
+
+// College menu tints
+.purple header nav {
+	a.active, a:hover, .currentbranch0 a {
+		background-color:$fashion-college-purple-light;
+	}	
+}
+
+.blue header nav {
+	a.active, a:hover, .currentbranch0 a {
+	  background-color:$camberwell-college-blue-light;
+	}
+}
+
+.red header nav {
+	a.active, a:hover, .currentbranch0 a {
+	  background-color:$central-saint-martins-red-light;
+	}
+}
+
+.green header nav {
+	a.active, a:hover, .currentbranch0 a {
+	  background-color:$london-college-communications-green-light;
+	}
+}
+
+.gold header nav {
+	a.active, a:hover, .currentbranch0 a {
+	  background-color:$wimbledon-college-gold-light
+	}
+}
+
+.orange header nav {
+	a.active, a:hover, .currentbranch0 a {
+	  background-color:$chelsea-college-orange-light;
+	}
+}
+
+// Search box
+.btn.primary-slate.search {
+   position: absolute;
+   right: 0px;
+   top: 0px;
+}
+
+#ual-header form {
+   margin:0px;
+}
+
+
+.image-box {
+  float:left;
+  margin-right:20px;
+}
+
+.box-container {
+    border-top: 1px solid $university-slate-light;
+    overflow: hidden;
+    padding-top: 5px;
+
+}
+
+.list-container {
+    border-bottom: 1px solid  $university-slate-light;
+    overflow: hidden;
+    padding-top: 5px;
+
+}
+
+/* H1 Main page title*/
+h1.MainTitle {
+  // margin-bottom:24px;
+  margin-bottom:40px;
+}
+
+h2.number {
+  font-size:80px;
+  line-height:53px;
+  font-weight:bold;
+  border-bottom:5px solid $black;
+  padding-bottom:16px;
+  margin-bottom:8px;
+}
+
+
+
+.tab-section {
+
+  ul:last-child    {
+        border-bottom: 0px;
+    }
+}
+
+#related-links {
+
+   h4 {
+    border-bottom: 1px solid #3B5A6F;
+    color: #3B5A6F;
+    margin: 0 0 0 0.25em;
+    padding: 0 0 0.1em;
+  }
+
+  .side-panel {
+    margin: 0;
+    padding: 5px;
+
+    li {
+    margin-bottom: 4px;
+    font-size: 1em;
+    list-style:none;
+    }
+  }  
+}
+
+
+/* FOOTER CONTENT */
+
+#footer {
+
+  margin-top:40px;
+
+  section.footer-links {
+      border-top: 1px solid rgb(204,204,204);
+
+    ul {
+      margin-left:0px;
+      padding-top: 10px;
+      margin-bottom:40px;
+      padding-left: 0px;
+
+      li {
+        list-style: none;
+        float:left;
+        display:inline;
+        margin-right:5px;
+
+          a {
+            font-size: 0.75em; 
+            display:block;
+            display:block;
+            margin-right:5px;
+          }
+
+          span {
+            margin-left:5px;
+          }
+
+      }
+
+    }
+    .copyright {
+      float: right;
+      font-size:  0.75em;
+      margin-top: 10px;
+      text-align: right; 
+ 
+    }
+  }
+
+}
+
+#accordion {
+  margin-bottom:50px;
+
+ .ui-accordion-header {
+    background:  $university-slate-light;
+    line-height: 30px;
+    padding: 0 9px;
+
+    &.ui-state-active {
+          background:  $university-slate-blue;
+
+          &:hover {
+            background:   $university-slate-blue;
+            color:$white;
+          }
+
+              a {
+      color:$white;
+    }
+
+    }
+
+}
+}
+
+
+@mixin footer-social-links {
+  text-indent:$text-indent;
+  height:16px;
+  width:16px;
+}
+
+// Output footer links
+@each $social in facebook, twitter, linkedin, youtube,flickr {
+  section.footer-links ul li.#{$social} a {
+    background: image-url("http://www.arts.ac.uk/css/media-icons/#{$social}.png", false) no-repeat;
+     @include footer-social-links;
+  }
+}
+
+// Actual tabs (as links)
+
+.nav-tabs {
+    border-bottom: 1px solid $university-grey;
+}
+
+.nav-tabs > li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left:15px;
+  padding-right:15px;
+  margin-right:3px;
+  border: 1px solid $university-grey;
+  @include border-radius(0);
+  &:hover {
+    border-color: $grayLighter $grayLighter #ddd;
+  }
+}
+
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: $university-slate-blue;
+    border-color: #DDDDDD #DDDDDD transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff;
+    cursor: default;
+}
+
+
+.tabbable {
+  .title-heading {
+    color: $university-slate-blue;
+    font-family: $baseFontFamily;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+   .section-heading {
+    color: $university-slate-blue;
+    font-family: $baseFontFamily;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  ul.section-divider {
+    margin-left:0px;
+    border-bottom: 1px solid $university-grey;
+    padding-bottom: 23px;
+  }
+
+  ul > li {
+    //color: $grayDark;
+    font-family: $baseFontFamily;
+    font-size: 12px;
+    list-style:none;
+    margin-left:0px;
+  }
+}
+
+aside {
+
+  ul {
+    margin-left:0px;
+
+    li {
+      list-style:none;
+    }
+  }
+
+}
+
+.research-thumbnails-p > p {
+  color:$gray;
+}
+
+.slides-half-width {
+  width:460px;
+  display:block;
+  height:460px;
+}

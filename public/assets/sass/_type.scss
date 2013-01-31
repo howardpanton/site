@@ -1,0 +1,293 @@
+// Typography.less
+// Headings, body text, lists, code, and more for a versatile and durable typography system
+// ----------------------------------------------------------------------------------------
+
+
+// BODY TEXT
+// ---------
+
+p {
+  margin: 0 0 $baseLineHeight;
+  small {
+    font-size: $baseFontSize - 2;
+  }
+  &.intro {
+  @include sans-serif-font;
+  font-size: $baseFontSize + 2;
+  line-height: $baseLineHeight * 1.5;
+  }
+}
+
+.lead {
+  margin-bottom: $baseLineHeight;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: $baseLineHeight * 1.5;
+}
+
+// HEADINGS
+// --------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  color:  $black;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+  }
+  .beta & {
+    color:  $university-slate-blue;
+    font-family: $baseFontFamily;
+  }
+}
+h1 {
+  font-size: 30px;
+  // line-height: $baseLineHeight * 2;
+  line-height: $baseLineHeight + 5;
+  small {
+    font-size: 18px;
+  }
+}
+h2 {
+  font-size: 17.4px;
+  line-height: $baseLineHeight * 2;
+  small {
+    font-size: 18px;
+  }
+}
+h3 {
+  line-height: $baseLineHeight * 1.2;
+  font-size: 15.6px;
+  small {
+    font-size: 14px;
+  }
+}
+h4, h5, h6 {
+  line-height: $baseLineHeight;
+}
+h4 {
+  font-size: 14.4px;
+  small {
+    font-size: 13px;
+  }
+}
+h5 {
+  font-size: 13.2px;
+}
+h6 {
+  font-size: 12px;
+}
+
+// Page header
+.page-header {
+  padding-bottom: $baseLineHeight - 1;
+  margin: $baseLineHeight 0;
+  border-bottom: 1px solid $grayLighter;
+}
+.page-header h1 {
+  line-height: 1;
+}
+
+/* Typography */
+// h1,h2,h3,h4,h5,h6 {
+//   color: $university-slate-blue;
+//   font-weight: bold;
+//   line-height: 1.5;
+//   small {
+//     color: #777777; }
+//   a {
+//     font-weight: inherit; } }
+
+//  h1 {
+//     font-size: 30px;
+//    margin-bottom: 12px; 
+//    font-weight:400;}
+
+// h2 {
+//   @include font-size(17.4);
+//   margin-bottom: 9px;
+//     font-weight:400; }
+
+// h3 {
+//      font-size: 1.3em;
+//  // margin-bottom: 0.5em;
+//       font-weight:400; }
+
+// h4 {
+//   @include font-size(14.4);
+//   margin-bottom: 3px;
+//   font-weight:400;  }
+
+// h5 {
+//   @include font-size(13.2);
+//   margin-bottom: 3px;
+//     font-weight:400; }
+
+// h6 {
+//   @include font-size(12);
+//       font-weight:400; }
+
+
+
+// LISTS
+// -----
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 $baseLineHeight / 2 25px;
+
+  .beta & {
+      margin: 0 0 $baseLineHeight / 2 15px;
+  }
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+li {
+  line-height: $baseLineHeight;
+}
+ul.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Description Lists
+dl {
+  margin-bottom: $baseLineHeight;
+}
+dt,
+dd {
+  line-height: $baseLineHeight;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: $baseLineHeight / 2;
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: $baseLineHeight 0;
+  border: 0;
+  border-top: 1px solid $hrColor;
+  border-bottom: 1px solid $white;
+}
+
+// Emphasis
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+.muted {
+  color: $grayLight;
+}
+
+// Abbreviations and acronyms
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+
+// Blockquotes
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 $baseLineHeight;
+  border-left: 5px solid $grayLighter;
+  p {
+    margin-bottom: 0;
+    @include shorthand-font(16px,300,$baseLineHeight * 1.25);
+  }
+  small {
+    display: block;
+    line-height: $baseLineHeight;
+    color: $grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+
+  // Float right with text-align: right
+  &.pull-right {
+    float: right;
+    padding-left: 0;
+    padding-right: 15px;
+    border-left: 0;
+    border-right: 5px solid $grayLighter;
+    p,
+    small {
+      text-align: right;
+    }
+  }
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before, 
+blockquote:after {
+  content: "";
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: $baseLineHeight;
+  line-height: $baseLineHeight;
+  font-style: normal;
+}
+
+// Text treatments
+small {
+  font-size: 100%;
+}
+cite {
+  font-style: normal;
+}
+
+p.leading-text {
+  font-size:24px;
+  line-height:29px;
+  padding:32px  0px 40px 0px;
+}
+
+figcaption {
+  font-size:12px;
+  line-height:16px;
+  padding: 24px 0px 40px 0px;
+}
+
+.landing-page-intro h1 {
+	margin-bottom: 0.5em;
+}
+
+.standfirst { // could introduce mixins here
+	font-size: $superBaseFontSize;
+	line-height: 22px;
+} 
+
+.sub-size {
+	font-size: $subBaseFontSize;
+}
+
+.italic {
+	font-style: italic;
+}

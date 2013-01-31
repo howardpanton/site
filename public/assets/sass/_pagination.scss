@@ -1,0 +1,131 @@
+// PAGINATION
+// ----------
+
+.pagination {
+  height: $baseLineHeight * 2;
+  //margin: $baseLineHeight 0;
+ }
+.pagination ul {
+  display: inline-block;
+  @include ie7-inline-block;
+  margin-left: 0;
+  margin-bottom: 0;
+  // @include border-radius(3px);
+  // @include box-shadow(0 1px 2px rgba(0,0,0,.05));
+}
+.pagination li {
+    display: inline;
+  }
+.pagination a {
+  float: left;
+  padding: 0 10px;
+  line-height: ($baseLineHeight * 2) - 10;
+  text-decoration: none;
+  
+  .borderradius & {
+      @include border-radius(3px);
+  }
+  // border: 1px solid #ddd;
+  border-left-width: 0;
+  background-color:rgb(220,220,220);
+  margin-right:8px;
+  color: $black;
+}
+.pagination a:hover,
+.pagination .active a {
+  background-color: $university-slate-blue;
+  color:$white;
+}
+.pagination .active a {
+  color: $white;
+  cursor: default;
+}
+.pagination .disabled a,
+.pagination .disabled a:hover {
+  color: $grayLight;
+  background-color: transparent;
+  cursor: default;
+}
+.pagination li:first-child a {
+  // border-left-width: 1px;
+  // @include border-radius(3px 0 0 3px);
+    background-color: $white;
+    color: $university-slate-blue;
+}
+.pagination li:last-child a {
+  // @include border-radius(0 3px 3px 0);
+    background-color: $white;
+    color: $university-slate-blue;
+}
+
+// Centered
+.pagination-centered {
+  text-align: center;
+}
+.pagination-right {
+  text-align: right;
+}
+
+.holder {
+  margin-bottom:24px;
+}
+.holder a {
+  float: left;
+  padding: 0 8px;
+  line-height: ($baseLineHeight * 2) - 16;
+  text-decoration: none;
+  
+  .borderradius & {
+      @include border-radius(3px);
+  }
+  // border: 1px solid #ddd;
+  border-left-width: 0;
+  background-color:rgb(220,220,220);
+  margin-right:8px;
+  color: $black;
+}
+
+.jp-current {
+  background-color: $university-slate-blue;
+  color:$white;
+}
+
+.holder a.jp-current,a.jp-current:hover,.holder a.jp-disabled,a.jp-disabled:hover {
+    cursor:default;
+    background:none;
+}
+
+.holder a.jp-current {
+    color:$white;
+    font-weight:bold;
+    background:$university-slate-blue;
+}
+.holder a:hover {
+    background:$university-slate-blue;
+    color:#fff;
+}
+.holder a.jp-previous {
+    margin-right:15px;
+      background:none;
+      color:$university-slate-blue;
+}
+.holder a.jp-next {
+    margin-left:15px;
+    background:none;
+    color:$university-slate-blue;
+}
+
+a.jp-first, a.jp-last {
+    background:none;
+    color:$university-slate-blue;
+}
+a.jp-current:hover {
+    font-weight:bold;
+}
+.holder a.jp-disabled,a.jp-disabled:hover {
+    color:#bbb;
+}
+
+.holder span {
+    margin: 0 5px;
+}
