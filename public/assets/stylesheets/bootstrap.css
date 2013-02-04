@@ -1,0 +1,439 @@
+/*
+ * Beta Bootstrap Sass v2.0
+ * Last Updated MONTH 00 2013 00:00am, NAME
+ * DESCRIPTION OF CHANGE - Added change to supporting us page for buttons
+ * Ported to SASS by NAME, UAL.
+ */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/_gridoverlay.scss */
+#vertical-grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('http://artslondon.github.com/bootstrap/img/gridoverlay/grid-vert.png?1359672489');
+  display: none;
+  padding: 10px;
+}
+
+/* line 34, ../sass/_gridoverlay.scss */
+#turn-off-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100px;
+  padding: 5px;
+  background: red;
+  z-index: 9999px;
+}
+
+/* line 1, ../sass/_demo.scss */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 8, ../sass/_demo.scss */
+header,
+footer {
+  clear: both;
+}
+
+/* line 12, ../sass/_demo.scss */
+footer {
+  background: #e9e9e9;
+}
+
+/* line 16, ../sass/_demo.scss */
+.container {
+  width: 100%;
+}
+
+/* line 21, ../sass/_demo.scss */
+.demo_menu {
+  background: black;
+  line-height: 24px;
+}
+/* line 24, ../sass/_demo.scss */
+.demo_menu li {
+  display: inline;
+}
+/* line 26, ../sass/_demo.scss */
+.demo_menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 34, ../sass/_demo.scss */
+.gridoverlay {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+/* line 39, ../sass/_demo.scss */
+.gridoverlayoff {
+  position: absolute;
+  top: 6px;
+  right: 48px;
+  font-size: 10px;
+  font-weight: bold;
+}
+/* line 45, ../sass/_demo.scss */
+.gridoverlayoff a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 53, ../sass/_demo.scss */
+.feature_content {
+  width: 100%;
+  clear: both;
+}
+
+/* line 65, ../sass/_demo.scss */
+.news_feed,
+.events_feed,
+.related_content {
+  clear: left;
+}
+
+/* line 71, ../sass/_demo.scss */
+.span1 {
+  width: 3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 48px;
+}
+
+/* line 72, ../sass/_demo.scss */
+.span2 {
+  width: 7.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 120px;
+}
+
+/* line 73, ../sass/_demo.scss */
+.span3 {
+  width: 12em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 192px;
+}
+
+/* line 74, ../sass/_demo.scss */
+.span4 {
+  width: 16.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 264px;
+}
+
+/* line 75, ../sass/_demo.scss */
+.span5 {
+  width: 21em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 336px;
+}
+
+/* line 76, ../sass/_demo.scss */
+.span6 {
+  width: 25.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 408px;
+}
+
+/* line 77, ../sass/_demo.scss */
+.span7 {
+  width: 30em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 480px;
+}
+
+/* line 78, ../sass/_demo.scss */
+.span8 {
+  width: 34.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 552px;
+}
+
+/* line 79, ../sass/_demo.scss */
+.span9 {
+  width: 39em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 624px;
+}
+
+/* line 80, ../sass/_demo.scss */
+.span10 {
+  width: 43.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+  background: black;
+  color: white;
+  height: 696px;
+}
+
+/* line 83, ../sass/_demo.scss */
+.offset1 {
+  margin-left: 72px;
+}
+
+/* line 84, ../sass/_demo.scss */
+.offset2 {
+  margin-left: 144px;
+}
+
+/* line 85, ../sass/_demo.scss */
+.offset3 {
+  margin-left: 216px;
+}
+
+/* line 86, ../sass/_demo.scss */
+.offset4 {
+  margin-left: 288px;
+}
+
+/* line 87, ../sass/_demo.scss */
+.offset5 {
+  margin-left: 360px;
+}
+
+/* line 88, ../sass/_demo.scss */
+.offset6 {
+  margin-left: 432px;
+}
+
+/* line 89, ../sass/_demo.scss */
+.offset7 {
+  margin-left: 504px;
+}
+
+/* line 90, ../sass/_demo.scss */
+.offset8 {
+  margin-left: 576px;
+}
+
+/* line 91, ../sass/_demo.scss */
+.offset9 {
+  margin-left: 648px;
+}
+
+/* line 92, ../sass/_demo.scss */
+.offset10 {
+  margin-left: 720px;
+}
+
+/* line 93, ../sass/_demo.scss */
+.offset11 {
+  margin-left: 792px;
+}
+
+/* line 94, ../sass/_demo.scss */
+.offset12 {
+  margin-left: 864px;
+}
+
+/* line 95, ../sass/_demo.scss */
+.offset13 {
+  margin-left: 936px;
+}
+
+/* line 96, ../sass/_demo.scss */
+.offset14 {
+  margin-left: 1008px;
+}
+
+/* line 97, ../sass/_demo.scss */
+.offset15 {
+  margin-left: 1080px;
+}
+
+/* line 98, ../sass/_demo.scss */
+.offset16 {
+  margin-left: 1152px;
+}
+
+/* line 101, ../sass/_demo.scss */
+.red {
+  background: #9d261d;
+}
+
+/* line 104, ../sass/_demo.scss */
+.purple {
+  background: #7a43b6;
+}
+
+/* line 107, ../sass/_demo.scss */
+.green {
+  background: #46a546;
+}
+
+/* line 110, ../sass/_demo.scss */
+.orange {
+  background: #f89406;
+}
+
+/* line 113, ../sass/_demo.scss */
+.grey {
+  background: #666666;
+}
