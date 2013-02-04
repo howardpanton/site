@@ -26,6 +26,7 @@
  
  
 <?php  print t('head');  ?>
+<?php ?>
         
 <body>
   <!--[if lt IE 7]>
