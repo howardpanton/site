@@ -3,13 +3,6 @@
   include_once("/$root/_system/functions.php"); 
 ?>
 <!DOCTYPE html>
-<!-- 
-Wirefy by Chris Da Sie
-Version: 2.0.8
-URL: https://getwirefy.com
-Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
--->
-
 <!-- HTML5 Mobile Boilerplate -->
 <!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--><html class="no-js" lang="en"><!--<![endif]-->
@@ -27,6 +20,9 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
  <title><?php print @$this->title; ?></title>
  <meta name="description" content="">
  <meta name="author" content="">
+
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
  
  
 <?php  print t('head');  ?>
@@ -43,9 +39,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
   
   <!-- This is the header information. You can add things like logos and navigation here. -->
     <header role="banner" class="row">
-    <div class="logo five columns">
-      <h1><img src="http://placehold.it/250x100&text=[Introduction Logo]"></h1>
-    </div>
+
   <!-- Navigation. This navigation uses the three line approach for small viewports. Check documentation for other examples -->
     <div class="menu-button">Menu</div>
     <a href="#main" class="skip">Skip navigation</a>

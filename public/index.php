@@ -17,92 +17,90 @@
     /* Load the body text into a variable*/
     $body = <<<BODY
 <div class="container">
-            <header>
-                <p>HEADER</p>
-            </header>
+      <h1>[UAL_Homepage]</h1>
 
-            <div class="page_nav fl">
-                <p>PAGE NAV</p>
-            </div>
-
-        <div class="content">
-            <p>MAIN CONTENT</p>
-            
-            <div class="box1 fl">
-                <p>box1</p>
-            </div>
-
-            <div class="box6 fl">
-                <p>box6</p>
-            </div>
-
-            <div class="box6 fl">
-                <p>box6</p>
-            </div>
-
-            <div class="box6 fl">
-                <p>box6</p>
-            </div>
-
-            <div class="box6 fl">
-                <p>box6</p>
-            </div>
-
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-
-            <div class="box5 fl">
-                <p>box5</p>
-            </div>
-
-            <div class="box5 fl">
-                <p>box5</p>
-            </div>
-
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-
-            <div class="box3 fl">
-                <p>box3</p>
-            </div>
-
-            <div class="box3 fl">
-                <p>box3</p>
-            </div>
-
-            <div class="box2 fl">
-                <p>box2</p>
-            </div>
-
-            <div class="clear">
-                <p>RELATED CONTENT</p>
-            </div>
-
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
-            <div class="box4 fl">
-                <p>box4</p>
-            </div>
+    <div class="feature_content">
+        <div class="span8">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span1">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span1">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span1">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span1">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span4">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span4">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span4">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span2">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span4">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>
+        <div class="span4">
+            <h2>Title</h2>
+                <p>Subtitle</p>
+        </div>  
+    </div>
 
 
         </div>

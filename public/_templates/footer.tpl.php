@@ -4,7 +4,7 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/helper.js"></script>
+
   
   
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

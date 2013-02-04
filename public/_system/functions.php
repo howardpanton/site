@@ -4,6 +4,25 @@
   $shorttag_suppress_errors=FALSE;
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+  $root2 = dirname(__FILE__);
+
+
+
+  // /Users/howard/Dropbox/htdocs/codeIgniter/public
+
+  switch (dirname(__FILE__)) {
+    case '/Users/howard/Dropbox/htdocs/beta/public':
+      define('ENVIRONMENT', 'development');
+      break;
+    
+    default:
+      define('ENVIRONMENT', 'production');
+      break;
+  }
+
+
+
   
   /**
    * Templating function. See example.php for usage.
