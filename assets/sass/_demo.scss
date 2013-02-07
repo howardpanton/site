@@ -1,0 +1,68 @@
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	-webkit-font-smoothing: antialiased;
+	// @include column-grid-background();
+	margin: 12px 12px 0px 12px;
+
+}
+// DEMO MENU
+.demo_menu {
+	background: $black;
+	line-height: $gridGutterWidth;
+	li {
+		display: inline;
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+// GRID OVERLAY
+.gridoverlay {
+	position: absolute;
+	top: 2px;
+	right: 2px; 
+}
+
+
+.gridoverlayoff {
+	position: absolute;
+	top: 6px;
+	right: 48px;
+	font-size: 10px;
+	font-weight: bold;
+	a {
+		text-decoration: none;
+		color: $white;
+	}
+}
+
+.fl-right {
+  float:right;
+}
+
+
+// TEMPLATE 1
+.feature_content {
+	width: 100%;
+	clear: both;
+}
+
+// TEMPLATE 2 & TEMPLATE 3
+.main_content {
+	// padding-left: 216px;
+}
+
+.news_feed,
+.events_feed,
+.related_content {
+	// padding-left: 216px;
+	clear: left;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+

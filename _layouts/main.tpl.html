@@ -18,7 +18,7 @@
  <meta name="author" content="">
 
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
  
  
    {% include _head.tpl.html %}
@@ -32,27 +32,31 @@
   <!-- Begin adding your site or application content here -->
 
   <!-- Add your site or application content here -->
-  <div class="container clearfix">
+  <div class="container">
   
   <!-- This is the header information. You can add things like logos and navigation here. -->
-    <header role="banner" class="row">
+  <div class="banner row">
+  
+    <!-- Add site logo to banner -->
+    {% include components/HF02v1.Logo.Default.html %}
 
-  <!-- Navigation. This navigation uses the three line approach for small viewports. Check documentation for other examples -->
-    <div class="menu-button">Menu</div>
-    <a href="#main" class="skip">Skip navigation</a>
-    <nav role="navigation" id="nav" class="toggle eight columns">
-      <ul>
+    <!-- Navigation. This navigation uses the three line approach for small viewports. Check documentation for other examples -->
+   <div class="span12 fl-right">
+      {% include components/HF04v1.SearchBar.Default.html %}
+      {% include components/HF05v1.PersisentLinks.Default.html %}
+   </div>
+      {% include components/HF01v1.MainMenu.Default.html %}
 
-      </ul> 
-      </nav>
+
+
   <!-- End Of Navigation -->
-    </header>
+  </div>
   <!-- End Of Header -->
 
   <!-- The Main content area can be used to create lots of different block areas. 
   As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
   of content is not design, it's decoration." -->
-  
+  <div class="clearfix"></div>
   
   <div class="breadcrumbs">
     <span><!-- Breadcrumbs: -->
@@ -72,7 +76,7 @@
             {% endif %}
           </span>
   </div>   
-  <div role="main" class="content clearfix">
+  <div class="content">
 
 
             {{content}}

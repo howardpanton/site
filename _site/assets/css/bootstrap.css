@@ -1,0 +1,764 @@
+/*
+ * Beta Bootstrap Sass v2.0
+ * Last Updated February 7th 2013  15:55, Howard Panton
+ * Description of change - Added change to framework
+ * Ported to SASS by UAL Web Team.
+ * Web Developement Manager : Howard Panton
+ * Web Developer : Matt Wisbey
+ * Web Developer : Alastair Mucklow
+ * Wed Designer : George Tsolpakis
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+#vertical-grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('http://artslondon.github.com/beta/assets/gridoverlay/grid-vert.png?1360233035');
+  display: none;
+  padding: 10px;
+}
+
+#turn-off-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100px;
+  padding: 5px;
+  background: red;
+  z-index: 9999px;
+}
+
+.span1 {
+  width: 3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span2 {
+  width: 7.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span3 {
+  width: 12em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span4 {
+  width: 16.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span5 {
+  width: 21em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span6 {
+  width: 25.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span7 {
+  width: 30em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span8 {
+  width: 34.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span9 {
+  width: 39em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span10 {
+  width: 43.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span11 {
+  width: 48em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span12 {
+  width: 52.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span13 {
+  width: 57em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span14 {
+  width: 61.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span15 {
+  width: 66em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span16 {
+  width: 70.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span17 {
+  width: 75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span18 {
+  width: 79.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span19 {
+  width: 84em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span20 {
+  width: 88.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span21 {
+  width: 93em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span22 {
+  width: 97.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span23 {
+  width: 102em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span24 {
+  width: 106.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span25 {
+  width: 111em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span26 {
+  width: 115.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span27 {
+  width: 120em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span28 {
+  width: 124.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span29 {
+  width: 129em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span30 {
+  width: 133.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span31 {
+  width: 138em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span32 {
+  width: 142.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span33 {
+  width: 147em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span34 {
+  width: 151.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span35 {
+  width: 156em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.span36 {
+  width: 160.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.offset1 {
+  margin-left: 72px;
+}
+
+.offset2 {
+  margin-left: 144px;
+}
+
+.offset3 {
+  margin-left: 216px;
+}
+
+.offset4 {
+  margin-left: 288px;
+}
+
+.offset5 {
+  margin-left: 360px;
+}
+
+.offset6 {
+  margin-left: 432px;
+}
+
+.offset7 {
+  margin-left: 504px;
+}
+
+.offset8 {
+  margin-left: 576px;
+}
+
+.offset9 {
+  margin-left: 648px;
+}
+
+.offset10 {
+  margin-left: 720px;
+}
+
+.offset11 {
+  margin-left: 792px;
+}
+
+.offset12 {
+  margin-left: 864px;
+}
+
+.offset13 {
+  margin-left: 936px;
+}
+
+.offset14 {
+  margin-left: 1008px;
+}
+
+.offset15 {
+  margin-left: 1080px;
+}
+
+.offset16 {
+  margin-left: 1152px;
+}
+
+header,
+footer {
+  clear: both;
+}
+
+footer {
+  background: #e9e9e9;
+}
+
+.container, .row {
+  width: 100%;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 12px 12px 0px 12px;
+}
+
+.demo_menu {
+  background: black;
+  line-height: 24px;
+}
+.demo_menu li {
+  display: inline;
+}
+.demo_menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.gridoverlay {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.gridoverlayoff {
+  position: absolute;
+  top: 6px;
+  right: 48px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.gridoverlayoff a {
+  text-decoration: none;
+  color: white;
+}
+
+.fl-right {
+  float: right;
+}
+
+.feature_content {
+  width: 100%;
+  clear: both;
+}
+
+.news_feed,
+.events_feed,
+.related_content {
+  clear: left;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+.block-hide {
+  position: absolute;
+  left: -2500px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* This component is used to add logos to the main banner
+/*<div class="HF02v1-Logo span4">
+/*    <a href="{{site.url}}" hreflang="en-GB"> 
+/*      <abbr title="University of the Arts London"> 
+/*        <img src="{{site.url}}assets/img/ual-logo.png" height="72" alt="UAL"> 
+/*      </abbr> 
+/*    </a>
+/*</div>
+*/
+.HF02v1-Logo {
+  height: 72px;
+}
+
+.HF05v1-PersistentLinks {
+  overflow: hidden;
+  float: right;
+  width: 600px;
+  margin-right: 24px;
+}
+.HF05v1-PersistentLinks ul {
+  float: right;
+}
+.HF05v1-PersistentLinks li {
+  display: inline;
+  line-height: 30px;
+}
+.HF05v1-PersistentLinks li a {
+  text-decoration: none;
+  color: black;
+}
+.HF05v1-PersistentLinks li + li:before {
+  content: " | ";
+  padding: 0 10px;
+}
+
+.HF04v1-SearchBar-Default {
+  width: 186px;
+  float: right;
+  display: block;
+  height: 24px;
+}
+
+.HF01v1-MainMenu {
+  overflow: hidden;
+  float: right;
+  width: 840px;
+  margin-right: 24px;
+}
+.HF01v1-MainMenu ul {
+  float: right;
+}
+.HF01v1-MainMenu li {
+  display: inline;
+  line-height: 30px;
+}
+.HF01v1-MainMenu li a {
+  text-decoration: none;
+  color: black;
+}
+.HF01v1-MainMenu li + li:before {
+  content: " | ";
+  padding: 0 10px;
+}
