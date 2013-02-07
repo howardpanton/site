@@ -3,10 +3,10 @@
 
 # Set this to the root of your project when deployed:
 http_path = "http://artslondon.github.com/beta/"
-css_dir = "public/assets/css"
-sass_dir = "public/assets/sass"
-javascripts_dir = "public/assets/js"
-images_dir = "public/assets/img/"
+css_dir = "assets/css"
+sass_dir = "assets/sass"
+javascripts_dir = "assets/js"
+images_dir = "assets/img/"
 
 # on_sprite_saved do |filename|
  
@@ -32,7 +32,7 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://artslondon.github.com/beta/public/assets/"
+http_images_path = "http://artslondon.github.com/beta/assets/"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
 
