@@ -17,12 +17,9 @@
  <meta name="description" content="">
  <meta name="author" content="">
 
-
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
- 
- 
-   {% include _head.tpl.html %}
 
+  {% include _head.tpl.html %}
         
 <body>
   <!--[if lt IE 7]>
@@ -32,72 +29,60 @@
   <!-- Begin adding your site or application content here -->
 
   <!-- Add your site or application content here -->
-  <div class="container">
+  <div id="container">
   
-  <!-- This is the header information. You can add things like logos and navigation here. -->
-  <div class="banner row">
-  
-    <!-- Add site logo to banner -->
-    {% include components/HF02v1.Logo.Default.html %}
+    <!-- This is the header information. You can add things like logos and navigation here. -->
+    
+    <!-- Header -->
+    <header class="row">
 
-    <!-- Navigation. This navigation uses the three line approach for small viewports. Check documentation for other examples -->
-   <div class="span12 fl-right">
+      <!-- Add site logo to header -->
+      {% include components/HF02v1.Logo.Default.html %}
+
+      <!-- Navigation. This navigation uses the three line approach for small viewports. Check documentation for other examples -->
       {% include components/HF04v1.SearchBar.Default.html %}
       {% include components/HF05v1.PersisentLinks.Default.html %}
-   </div>
       {% include components/HF01v1.MainMenu.Default.html %}
+      <!-- End Of Navigation -->
 
+    </header> <!-- End Of Header -->
 
+    <!-- The Main content area can be used to create lots of different block areas. 
+    As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
+    of content is not design, it's decoration." -->
+    <div class="clearfix"></div>
+    
+      <div class="breadcrumbs">
+        <span><!-- Breadcrumbs: -->
+          {% capture url_parts %}{{ page.url | replace:'/'," " }}{% endcapture %}
+          {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
+          {% assign previous="" %}
+          {% if num_parts == "0" or num_parts == "-1" %}
+            <a href="{{site.url}}">home</a> &nbsp;
+          {% else %}
+            <a href="{{site.url}}">home</a> &#187;
+          {% for unused in site.breadcrumb_list limit:num_parts %}
+          {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
+          {% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
+            <a href="{{previous}}">{{ first_word }}</a> {% unless forloop.last %}&#187;{% endunless %}
+          {% capture url_parts %}{{ url_parts |remove_first:first_word }}{% endcapture %}
+          {% endfor %}
+          {% endif %}
+        </span>
+      </div>  
 
-  <!-- End Of Navigation -->
-  </div>
-  <!-- End Of Header -->
+    <!-- Content will go here --> 
+    <div class="content">
 
-  <!-- The Main content area can be used to create lots of different block areas. 
-  As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
-  of content is not design, it's decoration." -->
-  <div class="clearfix"></div>
-  
-  <div class="breadcrumbs">
-    <span><!-- Breadcrumbs: -->
-            {% capture url_parts %}{{ page.url | replace:'/'," " }}{% endcapture %}
-            {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
-            {% assign previous="" %}
-            {% if num_parts == "0" or num_parts == "-1" %}
-              <a href="/">home</a> &nbsp;
-            {% else %}
-              <a href="/">home</a> &#187;
-              {% for unused in site.breadcrumb_list limit:num_parts %}
-                {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
-                {% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
-                <a href="{{previous}}">{{ first_word }}</a> {% unless forloop.last %}&#187;{% endunless %}
-                {% capture url_parts %}{{ url_parts |remove_first:first_word }}{% endcapture %}
-              {% endfor %}
-            {% endif %}
-          </span>
-  </div>   
-  <div class="content">
+      {{content}}
 
-
-            {{content}}
-  
-  </div>
-  
-  <!-- Footer -->
-    <hr>      
-      <footer role="contentinfo" class="row">
-    <p class="eleven columns">&copy; Copyright Sidebar Template Wirefy.</p>
-    <div class="five columns">
-      <ul class="link-list">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-        <li><a href="#">Link 5</a></li>
-        </ul>
     </div>
-      </footer><!-- End Of Footer -->
+    
+    <!-- Footer -->
+    <footer class="row">
+      <p>FOOTER</p>
+    </footer> <!-- End Of Footer -->
  
-  </div><!-- End Of Container -->
+  </div> <!-- End Of Container -->
 
    {% include _footer.tpl.html %}
