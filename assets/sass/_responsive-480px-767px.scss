@@ -1,16 +1,67 @@
 //
-// Responsive: Tablet to desktop
+// Responsive: Tablet to desktop 8 COLUMNS
 // --------------------------------------------------
 
 
 @media (min-width: 480px) and (max-width: 767px) {
 
+  $gridGutterWidth: 3.913%; // The gutter-width of your grid in pixels
+$gridColumnWidth: 9.076%;
+
 	#container {
 		background: #000;
-	}
+    //padding-right: 10px;
+    width:460px;
+    // padding-left: 10px;
+    // padding-right: 10px;
+  }
 
 	.span8 { 
-		width: 100%; 
+		width: 100% ; 
+    background: pink;
+
+    img {
+      width:100%;
+    }
+
 	}
+
+  .span6 {
+    width: $gridColumnWidth * 6; 
+    background: blue;
+        margin-right: $gridGutterWidth;
+            img {
+      width:100%;
+    }
+  }
+
+  .span4 {
+    width: $gridColumnWidth * 4;  
+    background: green;
+        margin-right: $gridGutterWidth;
+            img {
+      width:100%;
+    }
+  }
+
+  .span2 {
+    width: $gridColumnWidth * 2; 
+    background: yellow;
+        margin-right: $gridGutterWidth;
+            img {
+      width:100%;
+    }
+  }
+
+  .span1 {
+    width: $gridColumnWidth ; 
+    background: orange;
+        margin-right: $gridGutterWidth;
+            img {
+      width:100%;
+    }
+  }
+
+
 
 }
