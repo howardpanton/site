@@ -151,10 +151,20 @@
   -moz-background-clip:padding-box !important;
   -webkit-background-clip:padding-box !important;
   background-clip:padding-box !important; 
-  margin-right: $gridGutterWidth;
-  margin-bottom: $gridGutterWidth;
+  margin: 10px;
   float: left;
+}
 
+@mixin fullwidth($percentage:100%) {
+  width: ($percentage);
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  -moz-background-clip:padding-box !important;
+  -webkit-background-clip:padding-box !important;
+  background-clip:padding-box !important; 
+  margin: 10px;
+  float: left;
 }
 
 @mixin offset($gridColumnWidth, $gridGutterWidth, $columnOffset: 1) {
