@@ -60,6 +60,15 @@
 ================================================= -->
  <script src="http://artslondon.github.com/beta/assets/js/libs/modernizr.js"></script>
 
+<!-- JS - Add or remove any of the scripts to suit the functionality you wish to display. 
+================================================== -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+<script src="http://artslondon.github.com/beta/assets/js/plugins.js"></script>
+<script src="http://artslondon.github.com/beta/assets/js/jquery.showcase.js"></script>
+<script src="http://artslondon.github.com/beta/assets/js/jquery.elastislide.js"></script>
+
+
  <!--[if (lt IE 9) & (!IEMobile)]>
  <script src="http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js"></script>
  <![endif]-->
@@ -75,6 +84,50 @@
  ================================================== -->
  <meta http-equiv="cleartype" content="on">
 
+ <script type="text/javascript">
+
+$(document).ready(function()
+{
+	$("#showcase").awShowcase(
+	{
+		content_height:			300,
+		fit_to_parent:			true,
+		auto:					false,
+		interval:				3000,
+		continuous:				false,
+		loading:				true,
+		tooltip_width:			200,
+		tooltip_icon_width:		32,
+		tooltip_icon_height:	32,
+		tooltip_offsetx:		18,
+		tooltip_offsety:		0,
+		arrows:					true,
+		buttons:				false,
+		btn_numbers:			true,
+		keybord_keys:			true,
+		mousetrace:				false, /* Trace x and y coordinates for the mouse */
+		pauseonover:			true,
+		stoponclick:			true,
+		transition:				'hslide', /* hslide/vslide/fade */
+		transition_speed:		500,
+		transition_delay:		300,
+		show_caption:			'onhover', /* onload/onhover/show */
+		thumbnails:				true,
+		thumbnails_position:	'outside-last', /* outside-last/outside-first/inside-last/inside-first */
+		thumbnails_direction:	'horizontal', /* vertical/horizontal */
+		thumbnails_slidex:		0, /* 0 = auto / 1 = slide one thumbnail / 2 = slide two thumbnails / etc. */
+		dynamic_height:			false, /* For dynamic height to work in webkit you need to set the width and height of images in the source. Usually works to only set the dimension of the first slide in the showcase. */
+		speed_change:			false, /* Set to true to prevent users from swithing more then one slide at once. */
+		viewline:				true /* If set to true content_width, thumbnails, transition and dynamic_height will be disabled. As for dynamic height you need to set the width and height of images in the source. It's OK with only the width. */
+
+	});
+});
+
+</script>
+
+
+
+
 </head>
         
 <body>
@@ -85,15 +138,15 @@
   <!-- Begin adding your site or application content here -->
 
   <!-- Add your site or application content here -->
-  <div id="container">
+  <div class="container">
   
     <!-- This is the header information. You can add things like logos and navigation here. -->
     
     <!-- Header -->
-    <header class="row">
+    <header>
 
       <!-- Add site logo to header -->
-      <div class="HF02v1-Logo span4">
+      <div class="span3 HF02v1-Logo">
     <a href="http://artslondon.github.com/beta/" hreflang="en-GB"> 
       <abbr title="University of the Arts London"> 
         <img src="http://artslondon.github.com/beta/assets/img/ual-logo.png" height="72" alt="UAL"> 
@@ -168,33 +221,210 @@
       </div>  
 
     <!-- Content will go here --> 
-    <div class="content">
 
-      <div class="row">
+      <div class="row"> <!-- START ROW -->
 
-    <h1>Wimbledon College of Art</h1>
+	<div class="span3">
+		<nav class="mobileHide">
+			<ul>
+                <li><a href="" title="">Page link one</a></li>
+                <li><a href="" title="">Page link two</a></li>
+                <li><a href="" title="">Page link three</a></li>
+                <li><a href="" title="">Page link four</a></li>
+                <li><a href="" title="">Page link five</a></li>
+                <li><a href="" title="">Page link six</a></li>
+                <li><a href="" title="">Page link one</a></li>
+                <li><a href="" title="">Page link two</a></li>
+                <li><a href="" title="">Page link three</a></li>
+                <li><a href="" title="">Page link one</a></li>
+                <li><a href="" title="">Page link two</a></li>
+                <li><a href="" title="">Page link three</a></li>
+                <li><a href="" title="">Page link one</a></li>
+                <li><a href="" title="">Page link two</a></li>
+                <li><a href="" title="">Page link three</a></li>
+			</ul>
+		</nav>
+	</div>
 
-    <div class="span8">
-        <img src="http://placehold.it/620/ccc/222&text=wimbledon+college+of+art.">
-    </div>
-</div>
+	<div class="content"> <!-- START CONTENT -->
+	    <h1>Wimbledon College of Art</h1>
 
-    </div>
+	    <div class="spanAll">
+			<div id="showcase" class="showcase">
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<!-- Put the slide content in a div with the class .showcase-content. -->
+					<div class="showcase-content">
+						<!-- If the slide contains multiple elements you should wrap them in a div with the class .showcase-content-wrapper. -->
+						<div class="showcase-content-wrapper">
+							<!-- As for dynamic height you need to set the width and height of images in the source for viewline to work. -->
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/01.jpg" alt="01" width="700px" height="470px" />
+							<p class="static-caption">This is a static caption for this image. Everything is possible.</p>
+						</div>
+					</div>
+					<!-- Put the thumbnail content in a div with the class .showcase-thumbnail -->
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/01.jpg" alt="01" width="140px" />
+						<!-- The div below with the class .showcase-thumbnail-cover is used for the thumbnails active state. -->
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+				</div>
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<div class="showcase-content">
+						<div class="showcase-content-wrapper">
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/02.jpg" alt="02" width="700px" height="470px" />
+							<p class="static-caption">This is also a static caption for this image.</p>
+						</div>
+					</div>
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/02.jpg" alt="01" width="140px" />
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+					<!-- Put the tooltips in a div with the class .showcase-tooltips. -->
+					<div class="showcase-tooltips">
+						<!-- Each anchor in .showcase-tooltips represents a tooltip. The coords attribute represents the position of the tooltip. -->
+						<a href="http://www.awkward.se" coords="634,130">
+							<!-- The content of the anchor-tag is displayed in the tooltip. -->
+							This is a tooltip that displays the anchor html in a nice way.
+						</a>
+						<a href="http://www.awkward.se" coords="200,440">
+							This is a tooltip that displays the anchor html in a nice way.
+						</a>
+						<a href="http://www.awkward.se" coords="600,440">
+							This is a tooltip that displays the anchor html in a nice way.
+						</a>
+						<a href="http://www.awkward.se" coords="356, 172">
+							<!-- You can add multiple elements to the anchor-tag which are display in the tooltip. -->
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/glasses.png" />
+							<span style="display: block; font-weight: bold; padding: 3px 0 3px 0; text-align: center;">
+								White Glasses: 500$
+							</span>
+						</a>
+					</div>
+				</div>
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<div class="showcase-content">
+						<div class="showcase-content-wrapper">
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/03.jpg" alt="03" width="700px" height="470px" />
+							<p class="static-caption">Yep, this is also a static caption for this image.</p>
+						</div>
+					</div>
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/03.jpg" alt="01" width="140px" />
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+				</div>
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<div class="showcase-content">
+						<div class="showcase-content-wrapper">
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/04.jpg" alt="04" width="579px" />
+						</div>
+					</div>
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/04.jpg" alt="04" width="140px" />
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+				</div>
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<div class="showcase-content">
+						<div class="showcase-content-wrapper">
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/07.jpg" alt="07" width="700px" height="470px" />
+						</div>
+					</div>
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/07.jpg" alt="07" width="140px" />
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+				</div>
+				<!-- Each child div in #showcase represents a slide -->
+				<div class="showcase-slide">
+					<div class="showcase-content">
+						<div class="showcase-content-wrapper">
+							<img src="http://artslondon.github.com/beta/assets/img/showcase/05.jpg" alt="05" width="700px" />
+						</div>
+					</div>
+					<div class="showcase-thumbnail">
+						<img src="http://artslondon.github.com/beta/assets/img/showcase/05.jpg" alt="05" width="140px" />
+						<div class="showcase-thumbnail-cover"></div>
+					</div>
+				</div>
+			</div>
+	    </div>
+
+	    <div class="span2">
+	        <img src="http://placehold.it/140/ccc/222&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span4">
+	        <img src="http://placehold.it/300/222/ccc&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span4">
+	        <img src="http://placehold.it/300/222/ccc&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span2">
+	        <img src="http://placehold.it/140/ccc/222&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span2">
+	        <img src="http://placehold.it/140/ccc/222&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span4">
+	        <img src="http://placehold.it/300/222/ccc&text=wimbledon+college+of+art.">
+	    </div>
+	    <div class="span4">
+	        <img src="http://placehold.it/300/222/ccc&text=wimbledon+college+of+art.">
+	    </div>
+
+        <div class="nestedRow">
+		    <div class="spanAll events">
+		    	<p>events</p>
+				<ul id="carousel" class="elastislide-list">
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/1.jpg" alt="image01" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/2.jpg" alt="image02" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/3.jpg" alt="image03" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/4.jpg" alt="image04" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/5.jpg" alt="image05" /></a></li>
+<!-- 					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/6.jpg" alt="image06" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/7.jpg" alt="image07" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/8.jpg" alt="image08" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/9.jpg" alt="image09" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/10.jpg" alt="image10" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/11.jpg" alt="image11" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/12.jpg" alt="image12" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/13.jpg" alt="image13" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/14.jpg" alt="image14" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/15.jpg" alt="image15" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/16.jpg" alt="image16" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/17.jpg" alt="image17" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/18.jpg" alt="image18" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/19.jpg" alt="image19" /></a></li>
+					<li><a href="#"><img src="http://artslondon.github.com/beta/assets/img/elastislide/small/20.jpg" alt="image20" /></a></li>
+ -->				</ul>
+		    </div>
+		</div>
+
+        <div class="nestedRow">
+		    <div class="spanAll news">
+		    	<p>news</p>
+		    </div>
+		</div>
+
+
+	</div> <!-- END CONTENT -->
+
+</div> <!-- END ROW -->
+
     
     <!-- Footer -->
-    <footer class="row">
+    <footer>
       <p>FOOTER</p>
     </footer> <!-- End Of Footer -->
  
   </div> <!-- End Of Container -->
 
-     <!-- JS - Add or remove any of the scripts to suit the functionality you wish to display. 
-  ================================================== -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-  <script src="http://artslondon.github.com/beta/assets/js/plugins.js"></script>
-  <script src="http://artslondon.github.com/beta/assets/js/script.js"></script>
-
+   
   
   
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -205,6 +435,11 @@
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
+  <script type="text/javascript">
+	
+	$( '#carousel' ).elastislide();
+	
+</script>
 
 </body>
 </html>

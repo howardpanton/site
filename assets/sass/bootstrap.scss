@@ -12,18 +12,22 @@
 // CSS Reset
 @import "compass/reset";
 
+
 // Core variables and mixins
 @import "variables.scss"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.scss";
 
 // Grid system and page structure
-@import "gridoverlay";
-@import "grid";
-@import "demo";
-@import "block"; // Persistent Links Component
+@import "_gs.scss"; // grid system
+
+// Components
 @import "HF02v1.Logo"; // Logo component
 @import "HF05v1.PersistentLinks"; // Persistent Links Component
 @import "HF04v1.SearchBar.Default"; // Search from
 @import "HF01v1.MainMenu.Default"; // Main navigation 
 
 
+
+@import "_showcase.scss";
+@import "_showcase_6.scss";
+@import "_elastislide.scss";
