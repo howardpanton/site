@@ -1,0 +1,59 @@
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  // Fixed grid
+  @include grid-core($gridColumnWidth768, $gridGutterWidth768);
+
+  // Fluid grid
+  @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+
+  // Input grid
+  @include grid-input($gridColumnWidth768, $gridGutterWidth768);
+
+  // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
+
+
+  // 
+  .h1 {
+    height: 42px; // 1
+  }
+  .h2 {
+    height: 104px; // 2
+  }
+  .h3 {
+    height: 166px; // 3
+  }
+  .h4 {
+    height: 228px; // 4
+  }
+  .h5 {
+    height: 290px; // 5
+  }
+  .h6 {
+    height: 352px; // 6
+  }
+  .h7 {
+    height: 414px; // 7
+  }
+  .h8 {
+    height: 476px; // 8
+  }
+  .h9 {
+    height: 538px; // 9
+  }
+  .h10 {
+    height: 600px; // 10
+  }
+  .h11 {
+    height: 662px; // 11
+  }
+  .h12 {
+    height: 724px; // 12
+  }
+
+}

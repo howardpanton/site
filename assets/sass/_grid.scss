@@ -1,60 +1,25 @@
+//
+// Grid system
+// --------------------------------------------------
 
-#container { width: 100%; }
-.row { clear: both; }
 
-// SPAN COLUMNS OPTIONS
-.spanAll	{ @include fullwidth(98.8%); }
-.span1    	{ @include width(1); }
-.span2    	{ @include width(2); }
-.span3    	{ @include width(3); }
-.span4    	{ @include width(4); }
-.span5    	{ @include width(5); }
-.span6    	{ @include width(6); }
-.span7    	{ @include width(7); }
-.span8    	{ @include width(8); }
-.span9    	{ @include width(9); }
-.span10   	{ @include width(10); }
-.span11   	{ @include width(11); }
-.span12   	{ @include width(12); }
-.span13   	{ @include width(13); }
-.span14   	{ @include width(14); }
-.span15   	{ @include width(15); }
-.span16   	{ @include width(16); }
-.span17   	{ @include width(17); }
-.span18   	{ @include width(18); }
-.span19   	{ @include width(19); }
-.span20   	{ @include width(20); }
-.span21   	{ @include width(21); }
-.span22   	{ @include width(22); }
-.span23   	{ @include width(23); }
-.span24   	{ @include width(24); }
-.span25   	{ @include width(25); }
-.span26   	{ @include width(26); }
-.span27   	{ @include width(27); }
-.span28   	{ @include width(28); }
-.span29   	{ @include width(29); }
-.span30   	{ @include width(30); }
-.span31   	{ @include width(31); }
-.span32   	{ @include width(32); }
-.span33   	{ @include width(33); }
-.span34   	{ @include width(34); }
-.span35   	{ @include width(35); }
-.span36   	{ @include width(36); }
+// Fixed (940px)
+@include grid-core($gridColumnWidth, $gridGutterWidth);
 
-// OFFSET COLUMN OPTIONS
-.offset1  	{ @include offset($gridColumnWidth, $gridGutterWidth, 1); }
-.offset2    { @include offset($gridColumnWidth, $gridGutterWidth, 2); }
-.offset3    { @include offset($gridColumnWidth, $gridGutterWidth, 3); }
-.offset4    { @include offset($gridColumnWidth, $gridGutterWidth, 4); }
-.offset5    { @include offset($gridColumnWidth, $gridGutterWidth, 5); }
-.offset6    { @include offset($gridColumnWidth, $gridGutterWidth, 6); }
-.offset7    { @include offset($gridColumnWidth, $gridGutterWidth, 7); }
-.offset8    { @include offset($gridColumnWidth, $gridGutterWidth, 8); }
-.offset9    { @include offset($gridColumnWidth, $gridGutterWidth, 9); }
-.offset10   { @include offset($gridColumnWidth, $gridGutterWidth, 10); }
-.offset11   { @include offset($gridColumnWidth, $gridGutterWidth, 11); }
-.offset12   { @include offset($gridColumnWidth, $gridGutterWidth, 12); }
-.offset13   { @include offset($gridColumnWidth, $gridGutterWidth, 13); }
-.offset14   { @include offset($gridColumnWidth, $gridGutterWidth, 14); }
-.offset15   { @include offset($gridColumnWidth, $gridGutterWidth, 15); }
-.offset16   { @include offset($gridColumnWidth, $gridGutterWidth, 16); }
+// Fluid (940px)
+@include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
+
+// Reset utility classes due to specificity
+[class*="span"].hide,
+.row-fluid [class*="span"].hide {
+  display: none;
+}
+
+[class*="span"].pull-right,
+.row-fluid [class*="span"].pull-right {
+  float: right;
+}
+
+.row {
+	margin-bottom: 20px;
+}
