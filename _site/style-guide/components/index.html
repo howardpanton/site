@@ -153,34 +153,159 @@ or overwrites should be used in the layout.css. We have now added support for SC
 	</div>
 </div>
 
+<!-- javascript settings for mosaic sliding boxes and captions -->
+<script type="text/javascript">  
+	
+	jQuery(function($){
+		
+		$('.circle').mosaic({
+			opacity		:	0.8			//Opacity for overlay (0-1)
+		});
+		
+		$('.fade').mosaic();
+		
+		$('.bar').mosaic({
+			animation	:	'slide'		//fade or slide
+		});
+		
+		$('.bar2').mosaic({
+			animation	:	'slide'		//fade or slide
+		});
+		
+		$('.bar3').mosaic({
+			animation	:	'slide',	//fade or slide
+			anchor_y	:	'top'		//Vertical anchor position
+		});
+		
+		$('.cover').mosaic({
+			animation	:	'slide',	//fade or slide
+			hover_x		:	'100%'		//Horizontal position on hover
+		});
+		
+		$('.cover2').mosaic({
+			animation	:	'slide',	//fade or slide
+			anchor_y	:	'top',		//Vertical anchor position
+			hover_y		:	'80px'		//Vertical position on hover
+		});
+		
+		$('.cover3').mosaic({
+			animation	:	'slide',	//fade or slide
+			hover_x		:	'100%',		//Horizontal position on hover
+			hover_y		:	'100%'		//Vertical position on hover
+		});
+    
+    });
+    
+</script>
+
 <div class="row">
 	<div class="span12">
 		<h2>Images</h2>
-			<p>An image that spans the full width of the container can be no bigger then <b>940px</b> in width and <b>460px</b> in height.</p>
-	</div>
-	<div class="span12">
-		<img src="http://placehold.it/940x460">
+			<h3>Image with overlay</h3>
 	</div>
 </div>
 
 <div class="row">
-	<div class="span2">
-		<img src="http://placehold.it/140">
-	</div>
-	<div class="span3">
-		<img src="http://placehold.it/220">
-	</div>
-	<div class="span4">
-		<img src="http://placehold.it/300">
+	<div class="span6">
+		<!--Circle-->	
+		<div class="mosaic-block circle">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" class="mosaic-overlay">&nbsp;</a>
+			<div class="mosaic-backdrop"><img src="http://dxcpw8yg8uhxn.cloudfront.net/213cabaafc1282a9444765d51be47e8escreen.jpg"/></div>
+		</div>
+	</div>	
+	<div class="span6">
+		<!--Fade-->
+		<div class="mosaic-block fade">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-overlay">
+				<div class="details">
+					<h4>Mighty Social Icons</h4>
+					<p>By Build Internet</p>
+				</div>
+			</a>
+			<div class="mosaic-backdrop"><img src="http://dxcpw8yg8uhxn.cloudfront.net/042061457330527986d09ec3b9ff0f96screen.jpg"/></div>
+		</div>	
 	</div>
 </div>
 
+<div class="row">
+	<div class="span6">
+		<!--Bar-->
+		<div class="mosaic-block bar">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-overlay">
+				<div class="details">
+					<h4>Natalie Fox</h4>
+					<p>FdA Hair and Make-up for Fashion</p>
+				</div>
+			</a>
+			<div class="mosaic-backdrop"><img src="http://dxcpw8yg8uhxn.cloudfront.net/923d3a045e7e7f30771b7f37db5b3777screen.jpg"/></div>
+		</div>
+	</div>
+	<div class="span6">
+		<!--Bar 2-->
+		<div class="mosaic-block bar2">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-overlay">
+				<div class="details">
+					<h4>Natalie Fox</h4>
+					<p>— FdA Hair and Make-up for Fashion</p>
+				</div>
+			</a>
+			<div class="mosaic-backdrop"><img src="http://dxcpw8yg8uhxn.cloudfront.net/c25e269747b571d8a9ce3a0efa8b7241screen.jpg"/></div>
+		</div>
+	</div>
+</div>
 
+<div class="row">
+	<div class="span6">
+		<!--Bar 3-->
+		<div class="mosaic-block bar3">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-overlay">
+				<div class="details">
+					<p>Natalie is a Make-up artist I have worked with on countless times now, for all the right reasons. In the profession of make-up artistry Natalie has by far produced the best work for myself as a photographer, always delivering the exact results I ask for.</p>
+				</div>
+			</a>
+			<a href="http://www.nonsensesociety.com/2010/12/i-am-not-human-portraits/" target="_blank" class="mosaic-backdrop"><img src="http://dxcpw8yg8uhxn.cloudfront.net/4a1b5aae8ff8f3aa923b1e9408950ea6screen.jpg"/></a>
+		</div>
+	</div>
+	<div class="span6">
+		<!--Cover-->
+		<div class="mosaic-block cover">
+			<div class="mosaic-overlay"><img src="http://dxcpw8yg8uhxn.cloudfront.net/5d34283b49abe6e9b25715e137582d48screen.jpg"/></div>
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>About</h4>
+					<p>She is very punctual, to a professional standard and very friendly. Natalie has a keen eye for detail in both make up and hair styling and with her I have produced some very professional images. I would definitely recommend Natalie to any photographer in the professional field as for her enthusiasm is paying off.</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
 
-
-
-
-
+<div class="row">
+	<div class="span6">
+		<!--Cover 2-->
+		<div class="mosaic-block cover2">
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-overlay"><img src="http://dxcpw8yg8uhxn.cloudfront.net/8e3ec2a1b09868d82f64e59ff2dd0967screen.jpg"/></a>
+			<a href="http://artslondon.github.com/beta/style-guide/components/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>London College of Fashion</h4>
+					<p>FdA Hair and Make-up for Fashion</p>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="span6">
+		<!--Cover 3-->
+		<div class="mosaic-block cover3">
+			<div class="mosaic-overlay"><img src="http://dxcpw8yg8uhxn.cloudfront.net/4bd52883af675458af9b3ea66197a725screen.jpg"/></div>
+			<a href="http://officeal.com/offices/one-mighty-roar/" target="_blank" class="mosaic-backdrop">
+				<div class="details">
+					<h4>Natalie</h4>
+					<p>Natalie has very good organisational skills prior to shoot: having discussions about what is expected in the shoot; from concept to clothing which I favour from a Make up artist. Natalie overall is a very professional worker I enjoy shooting with every time we meet and I’ll definitely be using her for future shoots for a long time.</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
 
 
 
@@ -203,6 +328,9 @@ or overwrites should be used in the layout.css. We have now added support for SC
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-tooltip.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-transition.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-typeahead.js"></script>
+
+    <!-- Plugins -->
+    <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.mosaic-sliding-boxes-captions.js"></script>
 
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
     mathiasbynens.be/notes/async-analytics-snippet -->
