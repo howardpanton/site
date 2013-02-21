@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- HTML5 Mobile Boilerplate -->
+<!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<!-- Basic Page Needs
+================================================= -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>UAL Bootstrap Component Library and Style Guide</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<head>
+
+<!-- Mobile Specific Metas
+================================================= -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0"> -->
+
+<!-- CSS - These are your main CSS files. All base styles can be found in the base.css and any additional styles 
+or overwrites should be used in the layout.css. We have now added support for SCSS. Using CodeKit or a similar preprocessor will help you write and rewrite the SCSS files.  
+================================================= -->
+<link rel="stylesheet" href="http://artslondon.github.com/beta/assets/css/bootstrap.css"> <!-- Compressed and compiled from base.scss -->
+<link rel="stylesheet" href="http://artslondon.github.com/beta/assets/css/bootstrap-responsive.css"> <!-- Compressed and compiled from base.scss -->
+
+<!-- Browser Specific CSS
+================================================= -->
+
+<!--[if IE]>
+	<link href="http://artslondon.github.com/beta/assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<!-- Le HTML5 shim, for IE6-8 Support of HTML elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.0.3.css" type="text/css" />
+<![endif]-->
+
+
+<!-- Browser Specific Javascript
+================================================= -->
+<script src="http://artslondon.github.com/beta/assets/js/libs/modernizr.js"></script>
+
+<!-- JS - Add or remove any of the scripts to suit the functionality you wish to display. 
+================================================== -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+<script src="http://artslondon.github.com/beta/assets/js/plugins.js"></script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+	<script src="http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js"></script>
+<![endif]-->
+
+<!-- Prevents links from opening in mobile Safari -->
+<!-- <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script> -->
+
+<!-- Favicon and apple-touch-icon.png in the img folder. Include the ones you need.
+================================================== -->
+<link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/startup/favicon.ico">
+
+<!-- Font Smoothing FF/Windows
+================================================== -->
+<meta http-equiv="cleartype" content="on">
+
+</head>
+
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Begin adding your site or application content here -->
+
+<!-- Container --> <div class="container">
+
+  <!-- This is the header information. You can add things like logos and navigation here. -->
+
+  <!-- Header --> <!-- End of Header -->
+
+  <!-- The Main content area can be used to create lots of different block areas. 
+  As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
+  of content is not design, it's decoration." -->
+  <div class="clearfix"></div>
+
+  <!-- Breadcrumb --> <!-- End of Breadcrumb -->
+  <!-- Content --> <!-- 
+<div class="row">
+	<ul class="nav nav-pills">
+		<li class="active"><a href="components/" title="">Home</a></li>
+		<li><a href="#" title="">Spare</a></li>
+		<li><a href="#" title="">Spare</a></li>
+	</ul>	
+</div>
+ -->
+<div class="row">
+	<div class="span12">
+		<h1>Components</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+	    <ul class="nav nav-tabs">
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Content<b class="caret"></b></a>
+			    <ul class="dropdown-menu">
+			    	<li><a href="" title="">Standard</a></li>
+			    	<li><a href="" title="">Accordion</a></li>
+			    	<li><a href="" title="">Tabs</a></li>
+			    	<li><a href="" title="">Hyperlinks</a></li>
+			    </ul>
+		    </li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Images<b class="caret"></b></a>
+			    <ul class="dropdown-menu">
+			    	<li><a href="" title="">Image with title</a></li>
+			    	<li><a href="" title="">Image with text</a></li>
+			    	<li><a href="" title="">Image with title and text</a></li>
+			    	<li><a href="" title="">Image with text overlay</a></li>
+			    </ul>
+		    </li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Video<b class="caret"></b></a>
+			    <ul class="dropdown-menu">
+			    	<li><a href="" title="">Video with title</a></li>
+			    	<li><a href="" title="">Video with text</a></li>
+			    	<li><a href="" title="">Video with title and text</a></li>
+			    </ul>
+		    </li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Galleries<b class="caret"></b></a>
+			    <ul class="dropdown-menu">
+			    	<li><a href="" title="">Image accordion</a></li>
+			    	<li><a href="" title="">Image carousel</a></li>
+			    	<li><a href="" title="">Image carousel with caption</a></li>
+			    	<li><a href="" title="">Image slider</a></li>
+			    	<li><a href="" title="">Image slider with caption</a></li>
+			    </ul>
+		    </li>
+	    </ul>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<h2>Images</h2>
+			<p>An image that spans the full width of the container can be no bigger then <b>940px</b> in width and <b>460px</b> in height.</p>
+	</div>
+	<div class="span12">
+		<img src="http://placehold.it/940x460">
+	</div>
+</div>
+
+<div class="row">
+	<div class="span2">
+		<img src="http://placehold.it/140">
+	</div>
+	<div class="span3">
+		<img src="http://placehold.it/220">
+	</div>
+	<div class="span4">
+		<img src="http://placehold.it/300">
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- End of Content --> 
+  <!-- Footer --> <!-- End of Footer -->
+
+</div> <!-- End Of Container -->
+
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-affix.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-alert.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-button.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-carousel.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-collapse.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-modal.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-popover.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-scrollspy.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-tab.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-tooltip.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-transition.js"></script>
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-typeahead.js"></script>
+
+    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+    mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+</body>
+</html>
