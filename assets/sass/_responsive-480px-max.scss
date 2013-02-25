@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 
   // Padding to set content in a bit
   body {
@@ -60,7 +60,7 @@
   // Make all grid-sized elements block level again
   [class*="span"],
   .uneditable-input[class*="span"], // Makes uneditable inputs full-width when using grid sizing
-  // .row-fluid [class*="span"] 
+  .row-fluid [class*="span"] 
   {
     float: none;
     display: block;
@@ -70,14 +70,18 @@
     margin-bottom: 20px;
   }
   .span12,
-  .span9,
-  .row-fluid .span12, .row-fluid .span9 {
+  .row-fluid .span12 {
     width: 100%;
     @include box-sizing(border-box);
-    margin: 0;
   }
   .row-fluid [class*="offset"]:first-child {
     margin-left: 0;
+  }
+  .span1 {
+    img {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
   }
 
   // FORM FIELDS

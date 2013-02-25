@@ -20,9 +20,17 @@
 // </div>
 
 .HF04v1-SearchBar-Default {
-    float: right;
-    display: block;
-    label {
-    	display: none;
-    }
+	overflow:hidden;
+  
+	ul {
+		float: right;
+		li {
+			display: inline;
+		}
+	}
+	
+	li + li:before {
+		content: " ";
+		padding: 0 5px;
+	}
 }

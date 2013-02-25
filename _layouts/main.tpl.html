@@ -33,22 +33,28 @@
 
 <!-- Container --> <div class="container">
 
-  <!-- This is the header information. You can add things like logos and navigation here. -->
+<!-- This is the header information. You can add things like logos and navigation here. -->
 
-  <!-- Header --> {% include _header.html %} <!-- End of Header -->
+<header>
+<!-- Header --> {% include _header.html %} <!-- End of Header -->
+</header>
 
-  <!-- The Main content area can be used to create lots of different block areas. 
-  As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
-  of content is not design, it's decoration." -->
-  <div class="clearfix"></div>
+<!-- The Main content area can be used to create lots of different block areas. 
+As Jeffery Zeldman once said, "Content precedes design. Design in the absence 
+of content is not design, it's decoration." -->
+<div class="clearfix"></div>
 
-  <!-- Breadcrumb --> {% include components/HF03v1.Breadcrumb.html %} <!-- End of Breadcrumb -->
-  <!-- Content --> {{content}} <!-- End of Content --> 
-  <!-- Footer --> {% include _footer.tpl.html %} <!-- End of Footer -->
+<!-- Breadcrumb --> {% include components/HF03v1.Breadcrumb.html %} <!-- End of Breadcrumb -->
+
+<!-- Content --> {{content}} <!-- End of Content --> 
+
+<footer>
+<!-- Footer --> {% include _footer.tpl.html %} <!-- End of Footer -->
+</footer>
 
 </div> <!-- End Of Container -->
 
-{% include _html.footer.tpl.html %}
+{% include _html.footer.tpl.html %}	
 
 </body>
 </html>
