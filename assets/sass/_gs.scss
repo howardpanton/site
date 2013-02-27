@@ -1,0 +1,151 @@
+/*
+
+978 Grid System CSS Framework
+http://978.gs
+
+Copyright (c) 2011 Brothers Roloff
+http://www.brothersroloff.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+*/
+
+header, footer {
+  @include clearfix;
+}
+
+.nestedRow {
+  @include clearfix;
+}
+
+.content {
+  margin-left: 240px;
+}
+
+// default variables
+$layoutwidth  : 2560  !default;
+$columns      : 32    !default;
+$gridwidth    : 60    !default;
+$gutter       : 20    !default;
+$printlayout  : true !default;
+
+$mobile-320 : 320px;
+$mobile-480 : 480px;
+$mobile-640 : 640px;
+$tablet-800 : 800px;
+$desktop-960 : 960px;
+$desktop-1120: 1120px;
+$desktop-1280: 1280px;
+$desktop-1440: 1440px;
+$desktop-1600: 1600px;
+$desktop-1760: 1760px;
+$desktop-1920: 1920px;
+$desktop-2080: 2080px;
+$desktop-2240: 2240px;
+$desktop-2400: 2400px;
+
+
+@function calcGrid($n) {
+  @return ( $gridwidth * $n ) + ( $gutter * ($n - 1) ) + px;
+}
+
+// grid mixin
+@mixin grid($n,$first:false) {
+  float: left;
+  width: calcGrid($n);
+  @if $first == true {
+    margin-left: 0;
+  } @else {
+    margin-left: $gutter+px;
+  }
+}
+
+// print layout styles
+@mixin printColums {
+  .span {
+    float: left; 
+    margin: 10px;
+    // margin-left: $gutter+px;
+    // &:first-child { margin-left: 0; }
+    background: #f0f;
+  }
+  @while $columns > 0 {
+    .span#{$columns} { @extend .span }
+    .span#{$columns} { width: calcGrid($columns); }
+    $columns: $columns - 1;
+  }
+}
+
+.spanAll {
+  width: 100%;
+  background: #00f;
+  height: 300px;
+  margin: 10px;
+}
+
+.events, .news {
+  height: 220px;
+}
+
+// base mixins
+@mixin layout($containerWidth) {
+  width: $containerWidth;
+}
+
+@mixin row {
+  height: 1%;
+  @include clearfix;
+}
+
+@mixin row-end {
+  clear: both; font: 1px/1px sans-serif; height: 1px; overflow: hidden;
+}
+
+// print the css
+.container { 
+  margin: 0px auto;
+
+  @media only screen and (min-width: 0px) and (max-width: 800px) {
+    .content {
+      margin-left: 0;
+    }
+    .mobileHide {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 320px) { @include layout($mobile-320); }
+  @media only screen and (min-width: 480px) { @include layout($mobile-480); }
+  @media only screen and (min-width: 640px) { @include layout($mobile-640); }
+  @media only screen and (min-width: 800px) { @include layout($tablet-800); }
+  @media only screen and (min-width: 960px) { @include layout($desktop-960); }
+  @media only screen and (min-width: 1120px) { @include layout($desktop-1120); }
+  @media only screen and (min-width: 1280px) { @include layout($desktop-1280); }
+  @media only screen and (min-width: 1440px) { @include layout($desktop-1440); }
+  @media only screen and (min-width: 1600px) { @include layout($desktop-1600); }
+  @media only screen and (min-width: 1760px) { @include layout($desktop-1760); }
+  @media only screen and (min-width: 1920px) { @include layout($desktop-1920); }
+  @media only screen and (min-width: 2080px) { @include layout($desktop-2080); }
+  @media only screen and (min-width: 2240px) { @include layout($desktop-2240); }
+  @media only screen and (min-width: 2400px) { @include layout($desktop-2400); }
+
+}
+.row { @include row; }
+.row-end { @include row-end; }
+@if $printlayout == true { @include printColums; }
