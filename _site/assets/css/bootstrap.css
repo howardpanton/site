@@ -3766,15 +3766,6 @@ input[type="submit"].btn.btn-mini {
 }
 
 /*** End Animation Styles ***/
-/* This component is used to add logos to the main banner
-/*<div class="HF02v1-Logo span4">
-/*    <a href="{{site.url}}" hreflang="en-GB"> 
-/*      <abbr title="University of the Arts London"> 
-/*        <img src="{{site.url}}assets/img/ual-logo.png" height="72" alt="UAL"> 
-/*      </abbr> 
-/*    </a>
-/*</div>
-*/
 .HF02v1-Logo {
   height: 72px;
 }
@@ -3784,6 +3775,7 @@ input[type="submit"].btn.btn-mini {
 }
 .HF04v1-SearchBar-Default ul {
   float: right;
+  text-align: right;
 }
 .HF04v1-SearchBar-Default ul li {
   display: inline;
@@ -3798,6 +3790,7 @@ input[type="submit"].btn.btn-mini {
 }
 .HF05v1-PersistentLinks ul {
   float: right;
+  text-align: right;
 }
 .HF05v1-PersistentLinks ul li {
   display: inline;
@@ -3812,6 +3805,7 @@ input[type="submit"].btn.btn-mini {
 }
 .HF01v1-MainMenu ul {
   float: right;
+  text-align: right;
 }
 .HF01v1-MainMenu ul li {
   display: inline;
@@ -3821,8 +3815,15 @@ input[type="submit"].btn.btn-mini {
   padding: 0 5px;
 }
 
-.SM01v1.Submenu.Default {
+.SM01v1-Submenu-Default {
   overflow: hidden;
+}
+.SM01v1-Submenu-Default ul {
+  margin: 0;
+  padding: 0;
+}
+.SM01v1-Submenu-Default ul li {
+  list-style-type: none;
 }
 
 .nav {
@@ -5970,4 +5971,10 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.fixed {
+  width: 250px;
+  float: left;
+  margin: 0 20px 20px 0;
 }
