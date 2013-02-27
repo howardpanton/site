@@ -3787,7 +3787,7 @@ input[type="submit"].btn.btn-mini {
   display: inline;
 }
 .HF04v1-SearchBar-Default li + li:before {
-  content: " ";
+  content: " . ";
   padding: 0 5px;
 }
 
@@ -3802,7 +3802,7 @@ input[type="submit"].btn.btn-mini {
   display: inline;
 }
 .HF05v1-PersistentLinks li + li:before {
-  content: " ";
+  content: " . ";
   padding: 0 5px;
 }
 
@@ -3817,7 +3817,7 @@ input[type="submit"].btn.btn-mini {
   display: inline;
 }
 .HF01v1-MainMenu li + li:before {
-  content: " ";
+  content: " . ";
   padding: 0 5px;
 }
 
@@ -5983,4 +5983,38 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   width: 250px;
   float: left;
   margin: 0 20px 20px 0;
+}
+
+.span {
+  background: #000;
+  height: 100px;
+  color: #fff;
+}
+.span .span {
+  background: #404040;
+}
+.span .span .span {
+  background: #404040;
+}
+.span .span .span .span {
+  background: #606060;
+}
+.span .span .span .span .span {
+  background: #808080;
+}
+
+.rowbg {
+  background: #ff0;
+  height: auto;
+}
+.rowbg .rowbg {
+  background: #0f0;
+  margin-bottom: 20px;
+}
+.rowbg .rowbg .rowbg {
+  background: #00f;
+  margin-bottom: 20px;
+}
+.rowbg .rowbg .rowbg .rowbg {
+  background: #ff0;
 }
