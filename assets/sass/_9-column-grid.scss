@@ -13,13 +13,12 @@ $width: cols !default;
 
 @for $i from 1 through 9 {
   .#{$width}#{$i}
-    { @include span-columns($i,9);
-    background: blue; }
+    { @include span-columns($i,9); }
 }
 
 .fluid-container { 
 	@include container; 
-	background: green; 
+	// background: green; 
 	padding: 0; 
 	margin: 0; 
 }
