@@ -3,10 +3,8 @@
 // --------------------------------------------------
 
 
-// Fixed (940px)
+// Fixed (1060px)
 @include grid-core($gridColumnWidth, $gridGutterWidth);
-
-// Fluid (940px)
 @include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
 
 // Reset utility classes due to specificity
@@ -20,12 +18,3 @@
   float: right;
 }
 
-.row-fluid {
-	margin-bottom: 20px;
-	.row-fluid {
-		margin-bottom: 0px;
-		.row-fluid {
-			margin-bottom: 0px;
-		}
-	}
-}
