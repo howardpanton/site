@@ -70,9 +70,11 @@
     margin-bottom: 20px;
   }
   .span12,
-  .row-fluid .span12 {
+  .full,
+  .row-fluid .span12, .row-fluid .full {
     width: 100%;
     @include box-sizing(border-box);
+    margin: 0;
   }
   .row-fluid [class*="offset"]:first-child {
     margin-left: 0;
@@ -83,6 +85,21 @@
       margin-right: 20px;
     }
   }
+  
+  // 9 column grid
+  .fluid-row {
+    margin-bottom: -10px;
+  }
+  .fluid-row [class*="cols"] 
+  {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    @include box-sizing(border-box);
+    margin-bottom: 20px;
+  }
+
 
   // FORM FIELDS
   // -----------
@@ -198,15 +215,5 @@
   .carousel-caption {
     position: static;
   }
-
-
-//////////
-
-  .fixed {
-    width: 150px;
-    float: left;
-    margin: 0 10px 10px 0;
-  }
-
 
 }
