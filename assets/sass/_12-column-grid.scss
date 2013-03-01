@@ -1,0 +1,44 @@
+// 9 column grid
+@import "susy";
+
+// Variables fo grid
+$total-columns: 	12;
+$column-width: 		60px;
+$gutter-width: 		20px;
+
+// Create 12 columns
+$width: cols !default;
+
+@for $i from 1 through 12 {
+  .#{$width}#{$i}
+    { @include span-columns($i,$total-columns); 
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;	}
+}
+
+// Create offsets for columns
+$pushwidth: push !default;
+
+@for $i from 1 through 12 {
+  .#{$pushwidth}#{$i}
+    { @include push($i); }
+}
+
+// Rows
+.fluid-row {
+	@include clearfix;
+	margin-bottom: $gutter-width;
+}
+.header-row { // fluid row with no margin bottom
+	@include clearfix;
+	margin-bottom: 0;
+}
+
+// Use for last item in row
+.omega {
+	@include omega();
+}

@@ -69,9 +69,9 @@
     @include box-sizing(border-box);
     margin-bottom: 20px;
   }
-  .span12,
+  .span16,
   .full,
-  .row-fluid .span12, .row-fluid .full {
+  .row-fluid .span16, .row-fluid .full {
     width: 100%;
     @include box-sizing(border-box);
     margin: 0;
@@ -79,14 +79,8 @@
   .row-fluid [class*="offset"]:first-child {
     margin-left: 0;
   }
-  .span1 {
-    img {
-      margin-bottom: 0;
-      margin-right: 20px;
-    }
-  }
-  
-  // 9 column grid
+
+  // 12 column SUSY grid 
   .fluid-row {
     margin-bottom: -10px;
   }

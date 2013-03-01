@@ -95,15 +95,15 @@ or overwrites should be used in the layout.css. We have now added support for SC
 <!-- Header --> <!-- HEADER -->
 <div class="container">
     <div class="row-fluid">
-        <div class="span3">
+        <div class="span4">
             <!-- Add site logo to header -->
             <img src="http://artslondon.github.com/beta/assets/img/ual-logo.png" height="72" width="184" alt="">
         </div>
-        <div class="span9">
-            <div class="row-fluid">
-                <div class="span12">                  
-                    <!-- Add search form to header -->
-                    <nav class="HF04v1-SearchBar-Default">
+        <div class="span12">
+            <div class="header-row">
+                <div class="cols12">
+                <!-- Add search form to header -->
+                <nav class="HF04v1-SearchBar-Default">
     <ul>
         <li><a href="http://artslondon.github.com/beta/the-grid.html" title="The Grid">The Grid</a></li>
         <li><a href="http://artslondon.github.com/beta/course-info.html" title="Course">Course</a></li>
@@ -134,10 +134,10 @@ or overwrites should be used in the layout.css. We have now added support for SC
 </div> -->
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="span12">                  
-                    <!-- Add persistant links to header -->
-                    <nav class="HF05v1-PersistentLinks">
+            <div class="header-row">
+                <div class="cols12">
+                <!-- Add persistant links to header -->
+                <nav class="HF05v1-PersistentLinks">
     <ul>
 <!--
         <li><a href="http://artslondon.github.com/beta/" title="UAL Home">Home</a></li>
@@ -159,10 +159,10 @@ or overwrites should be used in the layout.css. We have now added support for SC
 
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="span12">                  
-                    <!-- Add main navigation to the header -->
-                    <nav class="HF01v1-MainMenu">
+            <div class="header-row">
+                <div class="cols12">
+                <!-- Add main navigation to the header -->
+                <nav class="HF01v1-MainMenu">
     <ul>
 <!--         
         <li><a href="http://artslondon.github.com/beta/colleges/" title="Visit Colleges">Colleges</a></li>
@@ -280,7 +280,9 @@ of content is not design, it's decoration." -->
 <!-- Footer --> <!-- FOOTER -->
 <div class="container">
     <div class="row-fluid">
-	    <p>Footer</p> 
+    	<div class="span16">
+		    <p>Footer</p> 		
+    	</div>
 	</div>	
 </div>
 <!-- FOOTER --> <!-- End of Footer -->
@@ -288,6 +290,7 @@ of content is not design, it's decoration." -->
 
 <!-- </div> End Of Container -->
 
+    <!-- Bootstrap -->
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-affix.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-alert.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-button.js"></script>
@@ -295,12 +298,15 @@ of content is not design, it's decoration." -->
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-collapse.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-dropdown.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-modal.js"></script>
-    <!--<script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-popover.js"></script>-->
+    <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-popover.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-scrollspy.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-tab.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-tooltip.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-transition.js"></script>
     <script src="http://artslondon.github.com/beta/assets/js/bootstrap/bootstrap-typeahead.js"></script>
+
+    <!-- Libs -->
+    <script src="http://artslondon.github.com/beta/assets/js/libs/response.min.js.js"></script> <!-- Respond.min.js -->
 
     <!-- Plugins -->
     <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.mosaic-sliding-boxes-captions.js"></script>
