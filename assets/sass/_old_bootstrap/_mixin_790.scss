@@ -1,0 +1,32 @@
+@import "susy";
+
+$total-columns  : 9;             // a 12-column grid
+$column-width   : 70px;            // each column is 4em wide
+$gutter-width   :20px;            // 1em gutters between columns
+
+
+// nav spans 3 columns of total 12.
+.test-1 { 
+  @include span-columns(3,9); 
+  background: red;
+}
+
+.test-2 { 
+  @include span-columns(3,9); 
+  background: blue;
+}
+
+.test-3 { 
+  @include span-columns(3,9); 
+  background: green;
+  margin-right:0;
+}
+.test-5 { 
+  @include span-columns(5,9); 
+  background: green;
+}
+.test-4 { 
+  @include span-columns(4,9); 
+  background: green;
+  margin-right:0;
+}
