@@ -1,17 +1,33 @@
-    <!-- Bootstrap -->
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-affix.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-alert.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-button.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-carousel.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-collapse.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-dropdown.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-modal.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-popover.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-scrollspy.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-tab.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-tooltip.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-transition.js"></script>
-    <script src="{{ site.url }}assets/js/bootstrap/bootstrap-typeahead.js"></script>
+
+<!-- Included JS Files -->
+  <!-- Included JS Files (Uncompressed) -->
+
+  <script src="{{ site.url }}assets/js/vendor/zepto.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.cookie.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.alerts.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.clearing.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.dropdown.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.forms.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.joyride.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.magellan.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.orbit.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.placeholder.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.reveal.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.section.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.tooltips.js"></script>
+  <script src="{{ site.url }}assets/js/foundation/foundation.topbar.js"></script>
+  <!-- Application Javascript, safe to override -->
+
+  <script src="js/foundation/index.js"></script>
+  <script>
+    $(document).foundation().foundation('joyride', 'start');
+  </script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#featured').orbit({ fluid: '2x1' });
+    });
+  </script>
 
     <!-- Libs -->
     <script src="{{ site.url }}assets/js/libs/response.min.js.js"></script> <!-- Respond.min.js -->
