@@ -93,17 +93,16 @@ or overwrites should be used in the layout.css. We have now added support for SC
 
 <header>
 <!-- Header --> <!-- HEADER -->
-<div class="container">
-    <div class="row-fluid">
-        <div class="span4">
-            <!-- Add site logo to header -->
-            <img src="http://artslondon.github.com/beta/assets/img/ual-logo.png" height="72" width="184" alt="">
-        </div>
-        <div class="span12">
-            <div class="header-row">
-                <div class="cols12">
-                <!-- Add search form to header -->
-                <nav class="HF04v1-SearchBar-Default">
+<div class="row">
+    <div class="large-3 columns">
+        <!-- Add site logo to header -->
+        <img src="http://artslondon.github.com/beta/assets/img/ual-logo.png" height="72" width="184" alt="">
+    </div>
+    <div class="large-9 columns">
+        <div class="row">
+            <div class="large-12 columns">
+            <!-- Add search form to header -->
+            <nav class="HF04v1-SearchBar-Default">
     <ul>
         <li><a href="http://artslondon.github.com/beta/the-grid.html" title="The Grid">The Grid</a></li>
         <li><a href="http://artslondon.github.com/beta/course-info.html" title="Course">Course</a></li>
@@ -132,12 +131,12 @@ or overwrites should be used in the layout.css. We have now added support for SC
         </div>
     </form>
 </div> -->
-                </div>
             </div>
-            <div class="header-row">
-                <div class="cols12">
-                <!-- Add persistant links to header -->
-                <nav class="HF05v1-PersistentLinks">
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+            <!-- Add persistant links to header -->
+            <nav class="HF05v1-PersistentLinks">
     <ul>
 <!--
         <li><a href="http://artslondon.github.com/beta/" title="UAL Home">Home</a></li>
@@ -157,12 +156,12 @@ or overwrites should be used in the layout.css. We have now added support for SC
 		<li><a href="#" title="Visit Wimbledon's website">Wimbledon</a></li>
     </ul>
 
-                </div>
             </div>
-            <div class="header-row">
-                <div class="cols12">
-                <!-- Add main navigation to the header -->
-                <nav class="HF01v1-MainMenu">
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+            <!-- Add main navigation to the header -->
+            <nav class="HF01v1-MainMenu">
     <ul>
 <!--         
         <li><a href="http://artslondon.github.com/beta/colleges/" title="Visit Colleges">Colleges</a></li>
@@ -220,10 +219,9 @@ or overwrites should be used in the layout.css. We have now added support for SC
         </div>
     </div>
 </div> -->       
-                </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 <!-- HEADER --> <!-- End of Header -->
 </header>
@@ -233,7 +231,21 @@ As Jeffery Zeldman once said, "Content precedes design. Design in the absence
 of content is not design, it's decoration." -->
 <div class="clearfix"></div>
 
-<!-- Breadcrumb --> Included file 'components/HF03v1.breadcrumb.html' not found in _includes directory <!-- End of Breadcrumb -->
+<!-- Breadcrumb --> <div class="row">
+  <div class="large-12 columns">
+    <div class="breadcrumbs">
+      <span><!-- Breadcrumbs: -->
+        
+        
+        
+        
+      <a href="http://artslondon.github.com/beta/">home</a> &nbsp;
+        
+      </span>
+    </div>  
+  </div>
+</div>
+ <!-- End of Breadcrumb -->
 
 <!-- Content --> <div class="row-fluid">
 	<div class="span12">
@@ -301,15 +313,14 @@ of content is not design, it's decoration." -->
 </div> <!-- End of Content --> 
 
 <footer>
-<!-- Footer --> <!-- FOOTER -->
-<div class="container">
-    <div class="row-fluid">
-    	<div class="span16">
-		    <p>Footer</p> 		
-    	</div>
-	</div>	
+<!-- Footer --> <!-- Footer -->
+<hr>
+<div class="row">
+	<div class="large-12 columns">
+	    <p>Footer</p> 		
+	</div>
 </div>
-<!-- FOOTER --> <!-- End of Footer -->
+<!-- End Footer --> <!-- End of Footer -->
 </footer>
 
 <!-- </div> End Of Container -->
