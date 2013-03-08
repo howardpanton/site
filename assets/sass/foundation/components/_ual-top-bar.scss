@@ -70,6 +70,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
   ul {
     margin-bottom: 0;
     list-style: none;
+    text-transform: $topbar-menu-link-transform;
   }
 
   .row { max-width: none; }
@@ -87,11 +88,11 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
   .name {
     height: $topbar-height;
     margin: 0;
-    font-size: $em-base;
+    // font-size: $em-base;
 
     h1 {
       line-height: $topbar-height;
-      font-size: $topbar-title-font-size;
+      // font-size: $topbar-title-font-size;
       margin: 0;
       a {
         font-weight: $topbar-title-weight;
@@ -112,7 +113,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     a {
       color: $topbar-link-color;
       text-transform: $topbar-menu-link-transform;
-      font-size: $topbar-menu-link-font-size;
+      // font-size: $topbar-menu-link-font-size;
       font-weight: $topbar-menu-link-weight;
       position: relative;
       display: block;
@@ -193,8 +194,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     display: block;
     background: $topbar-dropdown-bg;
     // font-size: $em-base;
-    font-size: 14px;
-    margin: 0;
+    margin:0 0 0 10px;
   }
 
   .divider {
@@ -220,7 +220,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
 
       &.button {
         background: $primary-color;
-        font-size: $topbar-link-font-size;
+        // font-size: $topbar-link-font-size;
         &:hover {
           background: darken($primary-color, 10%);
         }
@@ -259,12 +259,12 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
 
     & > a {
       &:after {
-        @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), $default-float);
-        margin-#{$default-opposite}: $topbar-height / 3;
-        margin-top: -($topbar-dropdown-toggle-size / 2) - 2;
-        position: absolute;
-        top: 50%;
-        right: 0;
+        // @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), $default-float);
+        // margin-#{$default-opposite}: $topbar-height / 3;
+        // margin-top: -($topbar-dropdown-toggle-size / 2) - 2;
+        // position: absolute;
+        // top: 50%;
+        // right: 0;
       }
     }
 
@@ -282,6 +282,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     top: 0;
     visibility: hidden;
     z-index: 99;
+    margin-left: 0;
 
     li { width: 100%;
       a {
@@ -304,7 +305,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
       text-transform: uppercase;
       color: $dropdown-label-color;
       font-weight: bold;
-      font-size: emCalc(10px);
+      // font-size: emCalc(10px);
     }
   }
 }
@@ -328,7 +329,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     input,
     .button {
       line-height: 2em;
-      font-size: emCalc(14px);
+      // font-size: emCalc(14px);
       height: 2em;
       padding: 0 10px;
       position: relative;
@@ -366,11 +367,11 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
 
     .has-dropdown {
       & > a {
-        padding-#{$default-opposite}: $topbar-dropdown-toggle-size * 7 !important;
+        // padding-#{$default-opposite}: $topbar-dropdown-toggle-size * 7 !important;
 
         &:after {
-          @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
-          margin-top: -($topbar-dropdown-toggle-size / 2);
+          // @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
+          // margin-top: -($topbar-dropdown-toggle-size / 2);
         }
       }
 
@@ -395,7 +396,6 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
           }
         }
       }
-
     }
 
     .dropdown {
@@ -427,8 +427,9 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     & > ul > .divider {
       border-bottom: none;
       border-top: none;
-      border-right: solid 1px lighten($topbar-bg, 10%);
-      border-left: solid 1px darken($topbar-bg, 10%);
+      // border-right: solid 1px lighten($topbar-bg, 10%);
+      // border-left: solid 1px darken($topbar-bg, 10%);
+      border-left: solid 1px #5e5e5e;
       clear: none;
       height: $topbar-height;
       width: 0px;
