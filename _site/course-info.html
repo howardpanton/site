@@ -55,7 +55,7 @@ or overwrites should be used in the layout.css. We have now added support for SC
 
 <!-- Browser Specific Javascript
 ================================================= -->
-<script src="http://artslondon.github.com/beta/assets/js/libs/modernizr.js"></script>
+<script src="http://artslondon.github.com/beta/assets/js/libs/modernizr-2.6.1.min.js"></script>
 
 <!-- JS - Add or remove any of the scripts to suit the functionality you wish to display. 
 ================================================== -->
@@ -624,9 +624,7 @@ of content is not design, it's decoration." -->
 <!-- </div> End Of Container -->
 
 
-<!-- Included JS Files -->
   <!-- Included JS Files (Uncompressed) -->
-
   <script src="http://artslondon.github.com/beta/assets/js/vendor/zepto.js"></script>
   <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.js"></script>
   <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.cookie.js"></script>
@@ -642,32 +640,38 @@ of content is not design, it's decoration." -->
   <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.section.js"></script>
   <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.tooltips.js"></script>
   <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.topbar.js"></script>
-  <!-- Application Javascript, safe to override -->
 
+
+  <!-- Application Javascript, safe to override -->
   <script src="js/foundation/index.js"></script>
   <script>
     $(document).foundation().foundation('joyride', 'start');
   </script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#featured').orbit({ fluid: '2x1' });
+
+  <!-- Libs -->
+  <script src="http://artslondon.github.com/beta/assets/js/libs/response.min.js.js"></script> <!-- Respond.min.js -->
+
+  <!-- Plugins -->
+  <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.waypoints.js"></script>
+  <script>
+    var showSearch = $('.top-bar-section').find('.right');
+    $('#navbar').waypoint(function() {
+      showSearch.show();
+    });
+    $('#navbar-offset').waypoint(function() {
+      showSearch.hide();
     });
   </script>
 
-    <!-- Libs -->
-    <script src="http://artslondon.github.com/beta/assets/js/libs/response.min.js.js"></script> <!-- Respond.min.js -->
 
-    <!-- Plugins -->
-    <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.mosaic-sliding-boxes-captions.js"></script>
-
-    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-    mathiasbynens.be/notes/async-analytics-snippet -->
-    <script>
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>	
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+  mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>	
 
 </body>
 </html>
