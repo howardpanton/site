@@ -1,0 +1,30 @@
+//
+// Nav Bar Variables
+//
+
+#topMenu {
+	.divider {
+		border-bottom: solid 1px lighten($topbar-dropdown-bg, 10%);
+		border-top: solid 1px darken($topbar-dropdown-bg, 10%);
+		clear: both;
+		height: 1px;
+		width: 100%;
+	}
+
+ 	ul li {
+	    & > a {
+			display: block;
+			width: 100%;
+			color: $topbar-dropdown-link-color;
+			padding: 12px 0 12px 0;
+			padding-#{$default-float}: $topbar-height / 3;
+			font-size: $topbar-link-font-size;
+			font-weight: $topbar-link-weight;
+			background: $topbar-dropdown-bg;
+			text-transform: $topbar-menu-link-transform;
+			&:hover { 
+				background: darken($topbar-dropdown-bg, 3%); 
+			}
+		}
+	}
+}
