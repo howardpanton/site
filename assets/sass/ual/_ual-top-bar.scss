@@ -311,17 +311,18 @@
     ul {
       width: auto;
       height: auto !important;
-      display: inline;
-
+      display: table; 
+      width: 100%;
       li {
-        float: $default-float;
+        display: table-cell; 
+        text-align: center;
         .js-generated { display: none; }
       }
     }
 
     li {
       a:not(.button) {
-        padding: 0 $topbar-height / 3 + 6.7;
+        padding: 0 $topbar-height / 3;
         line-height: $topbar-height;
         background: $topbar-bg;
         &:hover { background: darken($topbar-dropdown-bg, 30%); }
@@ -368,6 +369,8 @@
       background: transparent;
 
       li {
+        float: $default-float;
+        text-align: left;
         a {
           line-height: 1;
           white-space: nowrap;

@@ -1357,7 +1357,7 @@ blockquote p {
 @media print {
   * {
     background: transparent !important;
-    color: #000 !important;
+    color: black !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
@@ -1384,7 +1384,7 @@ blockquote p {
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid;
   }
 
@@ -2741,7 +2741,7 @@ form.custom .custom.disabled {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px #000;
+  border: solid 4px black;
   border-top: none;
   border-bottom: none;
 }
@@ -2751,7 +2751,7 @@ form.custom .custom.disabled {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent #000;
+  border-color: transparent transparent transparent black;
 }
 .orbit-container:hover .orbit-timer > span {
   display: block;
@@ -2783,21 +2783,21 @@ form.custom .custom.disabled {
   left: 0;
 }
 .orbit-container .orbit-prev > span {
-  border-color: transparent #fff transparent transparent;
+  border-color: transparent white transparent transparent;
 }
 .orbit-container .orbit-prev:hover > span {
-  border-color: transparent #ccc transparent transparent;
+  border-color: transparent #cccccc transparent transparent;
 }
 .orbit-container .orbit-next {
   right: 0;
 }
 .orbit-container .orbit-next > span {
-  border-color: transparent transparent transparent #fff;
+  border-color: transparent transparent transparent white;
   left: 50%;
   margin-left: -8px;
 }
 .orbit-container .orbit-next:hover > span {
-  border-color: transparent transparent transparent #ccc;
+  border-color: transparent transparent transparent #cccccc;
 }
 
 .orbit-bullets {
@@ -2813,7 +2813,7 @@ form.custom .custom.disabled {
   background: #fff;
   float: left;
   margin-right: 6px;
-  border: solid 2px #000;
+  border: solid 2px black;
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
@@ -2949,10 +2949,10 @@ form.custom .custom.disabled {
   text-decoration: none;
   font-size: 30px;
   font-weight: normal;
-  line-height: .5 !important;
+  line-height: 0.5 !important;
 }
 .joyride-close-tip:hover, .joyride-close-tip:focus {
-  color: #eee !important;
+  color: #eeeeee !important;
 }
 
 .joyride-modal-bg {
@@ -4065,6 +4065,9 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
+body footer {
+  background: black;
+}
 
 a:focus {
   outline: none;
@@ -4518,16 +4521,18 @@ select {
   .top-bar-section ul {
     width: auto;
     height: auto !important;
-    display: inline;
+    display: table;
+    width: 100%;
   }
   .top-bar-section ul li {
-    float: left;
+    display: table-cell;
+    text-align: center;
   }
   .top-bar-section ul li .js-generated {
     display: none;
   }
   .top-bar-section li a:not(.button) {
-    padding: 0 21.7px;
+    padding: 0 15px;
     line-height: 45px;
     background: #111111;
   }
@@ -4553,6 +4558,10 @@ select {
     left: 0;
     top: auto;
     background: transparent;
+  }
+  .top-bar-section .dropdown li {
+    float: left;
+    text-align: left;
   }
   .top-bar-section .dropdown li a {
     line-height: 1;
@@ -4618,6 +4627,98 @@ select {
   border-top-color: #e6e6e6;
 }
 
+.HF01v1-search-links {
+  font-size: 0.75em;
+}
+.HF01v1-search-links ul {
+  float: right;
+}
+.HF01v1-search-links ul li {
+  list-style-type: none;
+  display: inline-block;
+  letter-spacing: 0.0875em;
+  background: black;
+  padding: 6px 10px 6px 10px;
+}
+.HF01v1-search-links ul li:last-child {
+  margin-left: -2px;
+}
+.HF01v1-search-links a {
+  color: white;
+  padding: 6px 10px 6px 10px;
+}
+.HF01v1-search-links .course {
+  background-image: url("http://artslondon.github.com/beta.arts/assets/img/icons/course-icon.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 30px;
+}
+.HF01v1-search-links .search {
+  background-image: url("http://artslondon.github.com/beta.arts/assets/img/icons/search-icon.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 30px;
+}
+
+.HF01v1-persistant-links {
+  margin: 60px auto;
+  float: right;
+  font-size: 12px;
+  /* Clearfix */
+  /* IE7 */
+  /* Example One */
+}
+.HF01v1-persistant-links .group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+.HF01v1-persistant-links *:first-child + html .group {
+  zoom: 1;
+}
+.HF01v1-persistant-links #colleges {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+.HF01v1-persistant-links #colleges li {
+  display: inline-block;
+  margin-left: 10px;
+}
+.HF01v1-persistant-links #colleges a {
+  color: #080808;
+  padding: 6px 0px 4px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.HF01v1-persistant-links #colleges a:hover {
+  color: #080808;
+}
+.HF01v1-persistant-links #magic-line {
+  position: absolute;
+  bottom: -2px;
+  left: 100px;
+  width: 100px;
+  height: 1px;
+  background: black;
+}
+.HF01v1-persistant-links .current_page_item a {
+  color: #080808 !important;
+}
+.HF01v1-persistant-links .ie6 #colleges li, .HF01v1-persistant-links .ie7 #colleges li {
+  display: inline;
+}
+.HF01v1-persistant-links .ie6 #magic-line {
+  bottom: -3px;
+}
+
+@media all and (max-width: 900px) {
+  .HF01v1-persistant-links {
+    display: none;
+  }
+}
 .reveal-modal-bg {
   position: fixed;
   height: 100%;
@@ -4697,12 +4798,6 @@ select {
     display: none;
   }
 }
-footer {
-  background: black;
-  color: white;
-  padding-top: 50px;
-}
-
 #topMenu .divider {
   border-bottom: solid 1px #4d4d4d;
   border-top: solid 1px #1a1a1a;
@@ -4723,4 +4818,9 @@ footer {
 }
 #topMenu ul li > a:hover {
   background: #2b2b2b;
+}
+
+.footer {
+  background: #333333;
+  color: white;
 }

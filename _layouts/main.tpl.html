@@ -23,10 +23,10 @@
         <!-- Add your site or application content here -->
         {{content}}
 
-<!--         <footer>
- -->            {% include _global_footer.html %}
-<!--         </footer>
- -->
+        <footer>
+            {% include _global_footer.html %}
+        </footer>
+
         <!-- Included JS Files (Uncompressed) -->
         <script src="{{ site.url }}assets/js/vendor/zepto.js"></script>
         <script src="{{ site.url }}assets/js/foundation/foundation.js"></script>
@@ -60,15 +60,15 @@
         <script src='{{ site.url }}assets/js/plugins/jquery.magicline.js'></script> <!-- magic line under college links -->
         <script src="{{ site.url }}assets/js/plugins/jquery.waypoints.js"></script> <!-- hide and show course and site search when scrolling -->
         <script>
-            var search = $('.top-bar-section').find('.right');
-                search.hide();
+            // var search = $('.top-bar-section').find('.right');
+            //     search.hide();
 
-            $('#navbar').waypoint(function() {
-                search.show();
-            });
-            $('#navbar').waypoint(function() {
-                search.hide();
-            }, { offset: '25%' });
+            // $('#navbar').waypoint(function() {
+            //     search.show();
+            // });
+            // $('#navbar').waypoint(function() {
+            //     search.hide();
+            // }, { offset: '25%' });
             // }, { offset: '100' });
         </script>
 

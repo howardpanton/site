@@ -39,25 +39,35 @@
   "foundation/components/tooltips",
   "foundation/components/dropdown";
 
-// 
-// "foundation/components/global",
-// "foundation/components/top-bar",
-// "foundation/components/side-nav",
-// "foundation/components/reveal",
+// "foundation/components/global"
+// "foundation/components/top-bar"
+// "foundation/components/side-nav"
+// "foundation/components/reveal"
 
 
-// UAL Components
+
+// UAL Global, Variables and Mixins
 @import
   "ual/variables",
-  "ual/ual-global",
+  "ual/ual-global";
+
+// Header, Footers and Side
+@import 
   "ual/ual-logo",
   "ual/HF01v1-search-links",
   "ual/HF01v1-persistant-links",
   "ual/ual-top-bar",
   "ual/ual-side-nav",
-  "ual/_ual-reveal.scss",
-  "ual/footer-[collegename]",
-  "ual/HF01v1-footer-links";
+  "ual/ual-footer";
+
+// 
+@import 
+  "ual/HF01v1-search-links",
+  "ual/HF01v1-persistant-links";
+
+// UAL Components
+@import 
+  "ual/_ual-reveal.scss";
 
 // UAL Offcanvas Components
 @import 
