@@ -1,0 +1,67 @@
+
+// Persistant college links
+
+.HF01v1-persistant-links {
+	margin: 60px auto;
+	float: right; 
+	font-size: 12px;
+
+	/* Clearfix */
+	.group:after { 
+		visibility: hidden; 
+		display: block; 
+		content: ""; 
+		clear: both; 
+		height: 0; 
+	}
+	*:first-child+html .group { 
+		zoom: 1; 
+	} /* IE7 */
+
+	/* Example One */
+	#colleges { 
+		// margin: 0 auto; 
+		list-style: none; 
+		position: relative; 
+		width: 100%; 
+		// width: 960px; 
+		li { 
+			display: inline-block;	
+			margin-left: 10px;
+		}
+		a { 
+			color: #080808; 
+			// float: left;
+			padding: 6px 0px 4px 20px;
+			text-decoration: none;
+			text-transform: uppercase;
+			&:hover {
+				color: #080808; 
+			}
+		}
+	}
+	
+	#magic-line { 
+		position: absolute;
+		bottom: -2px; 
+		left: 100px; 
+		width: 100px; 
+		height: 1px; 
+		background: $black;
+	}
+	.current_page_item a { 
+		color: #080808 !important; 
+	}
+	.ie6 #colleges li, .ie7 #colleges li { 
+		display: inline; 
+	}
+	.ie6 #magic-line {
+		bottom: -3px;
+	}
+}
+
+@media all and (max-width: 900px) {
+	.HF01v1-persistant-links {
+		display: none;
+	}
+}
