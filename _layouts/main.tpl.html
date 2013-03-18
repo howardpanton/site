@@ -11,7 +11,7 @@
 
 {% include _head.html %}
 
-    <body id="page" class="off-canvas slide-nav">
+    <body id="page top" class="off-canvas">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -43,7 +43,7 @@
         <script src="{{ site.url }}assets/js/foundation/foundation.section.js"></script>
         <script src="{{ site.url }}assets/js/foundation/foundation.tooltips.js"></script>
         <script src="{{ site.url }}assets/js/foundation/foundation.topbar.js"></script>
-        <script src="{{ site.url }}assets/js/foundation/foundation.topbar.js"></script>
+        <script src="{{ site.url }}assets/js/foundation/foundation.mega-drop.js"></script>
         
         <!-- Application Javascript, safe to override -->
         <script src="{{ site.url }}assets/js/foundation/index.js"></script>
@@ -56,7 +56,15 @@
         
         <!-- Plugins -->
         <script src="{{ site.url }}assets/js/plugins/jquery.offcanvas.js"></script> <!-- global nav sliding in from top and side nav sliding in from left -->
+        <script src='{{ site.url }}assets/js/plugins/jquery.magicline.js'></script> <!-- magic line under college links -->       
         <script src='{{ site.url }}assets/js/plugins/jquery.color-RGBa-patch.js'></script> <!-- magic line under college links -->       
+        <script src="{{ site.url }}assets/js/plugins/jquery.smoothscroll.js"></script>
+        <script>
+            $(function() {
+                $('html').smoothScroll(500);
+            });
+        </script>
+
         <script src="{{ site.url }}assets/js/plugins/jquery.waypoints.js"></script> <!-- hide and show course and site search when scrolling -->
         <script>
             // var search = $('.top-bar-section').find('.right');
@@ -69,6 +77,18 @@
             //     search.hide();
             // }, { offset: '25%' });
             // }, { offset: '100' });
+        </script>
+        
+        <script>
+            // Course Finder
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("#course-finder").hide();
+                });
+                $("#show").click(function(){
+                    $("#course-finder").show();
+                });
+            });
         </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
