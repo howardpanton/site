@@ -1,0 +1,100 @@
+// SET UP YOUR VARIABLES IN THIS FILE
+
+
+// Colours
+// ------------------------------------------------------------
+
+// Define your main colour palette
+
+$background   : #ffffff;
+$primary			: #000000;
+$secondary		: #6CCED9;	
+$tertiary			: #929292;
+
+
+$ual-primary : #000000;   // Black
+$ual-secondary : #929292; // Light Grey
+
+$camberwell-primary : #5ac882;   // Light Green
+$camberwell-secondary : #8cd2f0; // Light blue
+
+$csm-primary : #ff0c00;   // bright red
+$csm-secondary : #0062ff; // bright blue
+
+$chelsea-primary : #e08c94;   // Light Green
+$chelsea-secondary : #2ea1aa; // Light blue
+$chelsea-turqouise-green : #4eb5b7;   // Light Green
+$chelsea-light-green : #5ac882; // Light blue
+
+$lcc-primary-yellow : #ffff00;   // Light Green
+$lcc-secondary-pink : #e5006d; // Light blue
+$lcc-green : #28e598;   // Light Green
+$lcc-light-blue : #61bee5; // Light blue
+
+$wimbledon-primary-grey : #434951;   // Light Green
+$wimbledon-secondary-green : #49adad; // Light blue
+$wimbledon-light-green : #89c690;   // Light Green
+$wimbledon-red : #e05448; // Light blue
+$wimbledon-pink : #cf91a7; // Light blue
+
+// Assign colours to variable roles
+$base-color							  : $primary;
+$body-color               : lighten($primary, 10%);
+$heading-color						: $secondary;
+$secondary-heading-color	: $tertiary;
+
+
+
+// Links
+$action								       : $primary;
+$action-respond						   : $secondary;
+$secondary-action					   : $action-respond;
+$secondary-action-respond			: $action;
+
+
+
+// Alerts, errors and UI interface
+$alert 								: red;
+$success 							: green;
+
+
+
+
+// Fonts, measure, leading and typefaces
+// ------------------------------------------------------------
+
+
+// Fonts size and line height defaults for our calculations
+
+$base-font-size						: 16px; 				// Sets the browser default size. Shouldn't need to change this.
+$base-line-height					: 6px;					// Baseline grid. Set to a sensible, small size.
+$round-to-nearest-half-line			: false;  				// Round the line height to the nearest half line height. Off by default 
+$font-family : "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+@function emify($target, $context) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+// Make px to ems using base-font-size 
+// echo as: font-size: em-font(#px);
+
+@function em-font($target, $context: $base-font-size) {
+   @return emify($target, $context);
+}
+
+
+// Make px to ems using base-line-height 
+// echo as: font-size: em-base(#px);
+
+@function em-base($target, $context: $base-line-height) {
+   @return emify($target, $context);
+}
+
+
+@function em($target, $context: $base-font-size) {
+    @return ($target / $context) * 1em;
+}

@@ -1,0 +1,60 @@
+html {
+	font-size: 100%;
+
+ }
+
+
+
+@include establish-baseline ;
+
+body { 
+	color: $base-color;
+	background: $background ;
+	font-family: $font-family;
+
+}
+
+a {
+
+	color:#000;
+	border-bottom: 1px  solid;
+
+	line-height: 24px;
+	text-decoration:none;
+	font-weight:bold;
+	//@include force-wrap;					// force text links to wrap
+	&:hover, &:focus, &:active {
+
+	color: #929292;
+
+	}
+}
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+
+
+section 				{ @extend .clearfix; }
+//h1 						{ font-weight: 600; }
+ol 						{ @include ordered-inside }
+ul 						{ @include unordered-inside }
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+     
+        .cf { zoom: 1; }
+        .cf:before,
+        .cf:after { content: ""; display: table; }
+        .cf:after { clear: both; }
+
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix 		{ @include pie-clearfix; }
+

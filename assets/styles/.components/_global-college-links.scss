@@ -1,0 +1,50 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// As a rule of thumb, don't nest further than 3 levels deep
+// -------------------------------------------------------------
+
+// This is a good example!
+// .styleguide-format {
+//   border: 1px solid #0f0;
+//   color: #000;
+//   background: rgba(0,0,0,0.5);
+// }
+
+// ::Global College Link styles 
+	// ::Media queries 
+
+
+.global-college-links {
+	@include gs-span(d, 9,16);
+	@include leader(6);
+
+
+		ul {
+			list-style : none;
+			float: right;
+			margin-bottom: 0;
+
+
+
+		li {
+			float:left;
+			margin-right: 1em;
+
+			a {
+				font-size: 13px;
+				border-bottom: none;
+				font-weight: normal;
+				@include gs-media(t, min-max) {
+					font-size:12px;
+				}
+
+
+			}
+		}
+		li:last-child {
+			margin-right: 0;
+		}
+	}
+}
+

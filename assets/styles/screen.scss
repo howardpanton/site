@@ -1,0 +1,85 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// -------------------------------------------------------------
+// As a rule of thumb, don't nest further than 3 levels deep
+// -------------------------------------------------------------
+
+// This is a good example!
+// .styleguide-format {
+//   border: 1px solid #0f0;
+//   color: #000;
+//   background: rgba(0,0,0,0.5);
+// }
+
+
+// ::Imports pre-render
+	//:: Reset
+	//:: Settings
+	//:: Mixins
+// ::Clearfix extends
+// ::Base styles
+
+// ::Layout styles 
+// ::Media queries 
+// ::State styles
+// ::Debugs  
+
+
+// ::Imports pre-render. Must be after reset 
+// ------------------------------------------------------------
+
+
+@import ".globals/settings";
+@import ".globals/mixins";
+@import ".plugins/rem";
+@import ".plugins/reset";
+@import ".globals/gridset";
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+
+@import ".globals/global"; 
+
+// Import base typography into the cascade (if required)
+@import ".shared/typography"; 		
+
+// Import form styles into the cascade (if required)
+@import ".shared/forms";			
+
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+
+@import ".shared/layouts";	
+
+@import ".components/grid-boxes";
+
+@import ".shared/states";		
+
+@import ".components/university-logos";	
+
+@import ".components/main-menu";
+
+@import ".components/search-form";	
+
+@import ".components/search-buttons";
+
+@import ".components/global-college-links";	
+
+@import ".shared/colors"; 
+
+@import ".plugins/debug";	
+
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+
+// If using gridset or another pre-defined grid, these should match up to the same breakpoints
+
+// Below examples use a mobile-first approach
+
+@import ".components/mobile-menu";	
+
+@import ".globals/media-queries";	
+
