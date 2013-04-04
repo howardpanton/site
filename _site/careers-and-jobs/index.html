@@ -1,434 +1,134 @@
 <!DOCTYPE html>
-<!-- HTML5 Mobile Boilerplate -->
-<!--[if IEMobile 7]>                    <html class="no-js iem7"><![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]>   <!--><html class="no-js" lang="en"><!--<![endif]-->
 
-<!-- HTML5 Boilerplate -->
-<!--[if lt IE 7]>                       <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]>            <html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]>            <html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!-->                  <html class="no-js" lang="en"><!--<![endif]-->
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+  <!--> <html lang="en"> <!--
+<![endif]-->
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Careers and jobs</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html>
+  <head>
+    <title>University of Arts London Beta</title>
+    <meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+<meta content='on' http-equiv='cleartype'>
+<meta content='grid test' name='description'>
+<meta content='Howard panton' name='author'>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- For all browsers -->
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset.css'>
+<link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/screen.css'>
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src='http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js'></script>
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset-ie-lte8.css'>
+    <![endif]-->
+    <!-- JavaScript -->
+    <script src='http://artslondon.github.com/beta/assets/js/libs/modernizr-2.6.2-min.js'></script>
+    <script src='http://artslondon.github.com/beta/assets/js/libs/detectizr.min.js'></script>
+    <link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/favicon.ico">
+<link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/favicon.png">
+<!-- <link rel="apple-touch-icon-precomposed" href="http://artslondon.github.com/beta/assets/img/l/apple-touch-icon-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://artslondon.github.com/beta/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+    <!--iOS -->
+<!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    <!-- Startup images -->
+<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+<!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="http://artslondon.github.com/beta/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+<!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="http://artslondon.github.com/beta/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+    <!-- Windows 8 / RT -->
+<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+<meta content='#000' name='msapplication-TileColor'>
 
-        <link href="http://artslondon.github.com/beta/assets/css/normalize.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
-        <link href="http://artslondon.github.com/beta/assets/css/ual-bootstrap.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
-        <link href="http://artslondon.github.com/beta/assets/css/ual-offcanvas.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
+    <script>
+      Modernizr.Detectizr.detect({detectScreen:false});
+    </script>
+  </head>
 
-        <!-- Browser Specific CSS
-        ================================================= -->
-        <!--[if IE]>
-            <link href="http://artslondon.github.com/beta/assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-        <![endif]-->
+<body class='style'>
 
-        <!-- Le HTML5 shim, for IE6-8 Support of HTML elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        <!--[if lte IE 6]>
-            <link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.0.3.css" type="text/css" />
-        <![endif]-->
-
-        <script src="http://artslondon.github.com/beta/assets/js/vendor/custom.modernizr.js"></script>
-
-        <!-- JS - Add or remove any of the scripts to suit the functionality you wish to display. 
-        ================================================== -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
-        <script src="http://artslondon.github.com/beta/assets/js/plugins.js"></script>
-
-        <!--[if (lt IE 9) & (!IEMobile)]>
-            <script src="http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js"></script>
-        <![endif]-->
-
-        <!-- Prevents links from opening in mobile Safari -->
-        <!-- <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script> -->
-
-        <!-- Favicon and apple-touch-icon.png in the img folder. Include the ones you need.
-        ================================================== -->
-        <link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/startup/favicon.ico">
-
-        <!-- Font Smoothing FF/Windows
-        ================================================== -->
-        <meta http-equiv="cleartype" content="on">
-    </head>
-
-    <body id="page" class="off-canvas slide-nav">
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <header>
-            <div class="row">
-	<nav id="topMenu" role="navigation">
-		<ul id="nav" class="nav-bar">
-			<li><a href="">Colleges</a></li>
-            <li class="divider"></li>
-			<li><a href="">Studying at UAL</a></li>
-            <li class="divider"></li>
-			<li><a href="">Student Job &amp; Careers</a></li>
-            <li class="divider"></li>
-			<li><a href="">Alumni &amp; Friends</a></li>
-            <li class="divider"></li>
-			<li><a href="">Research</a></li>
-            <li class="divider"></li>
-			<li><a href="">Business &amp; Innovation</a></li>
-            <li class="divider"></li>
-			<li><a href="">About UAL</a></li>
-		</ul>
-	</nav>
-</div>
-
-<div id="courseSearch" class="reveal-modal">
-	<h3>Coursefinder</h3>
-		<a class="close-reveal-modal">&#215;</a>
-</div>
-<div id="siteSearch" class="reveal-modal">
-	<h3>Search</h3>
-		<a class="close-reveal-modal">&#215;</a>
-</div>
-
-<!-- Buttons for UAL global navigation on mobile -->
-<p class="show-for-small">
-    <a class='menu-button tiny button' id="menuButton" href="#menu">Global</a>
-</p>
-
-
-<div class="row">
-    <div class="large-12 columns">
-        <nav class="HF01v1-search-links">
-            <ul>
-                <li><a href="" class="course" data-reveal-id="courseSearch">Courses</a></li>
-                <li><a href="" class="search" data-reveal-id="siteSearch">Search</a></li>
-            </ul>
-        </nav>
+<header class='cf' id='header'>
+  <div class='search-buttons'>
+    <div class='primary-buttons is-hidden-mobile'>
+      <button class='course'>Courses</button>
+      <button class='search'>Search</button>
     </div>
-</div>
+  </div>
+  <div class='banner'>
+    <div class='menu-toggle d-hide t-hide'>
+      <img alt='' src='http://artslondon.github.com/beta/assets/img/menu-toggle.png'>
+    </div>
+    <div class='logo'>
+      <img alt='' class='d-hide t-hide' src='http://artslondon.github.com/beta/assets/img/ual-logo-small.png'>
+      <img alt='' class='m-hide' src='http://artslondon.github.com/beta/assets/img/lcc-logo.png'>
+      <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+      <noscript>
+        <img alt='London College of Communications Logo' src='http://artslondon.github.com/beta/assets/img/lcc-logo.png'>
+      </noscript>
+    </div>
+    <nav class='global-college-links m-hide'>
+      <ul>
+        <li>
+          <a href=''>UAL</a>
+        </li>
+        <li>
+          <a href=''>CAMBERWELL</a>
+        </li>
+        <li>
+          <a href=''>CHELSEA</a>
+        </li>
+        <li>
+          <a href=''>LCC</a>
+        </li>
+        <li>
+          <a href=''>LCF</a>
+        </li>
+        <li>
+          <a href=''>WIMBLEDON</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 <div class="row">
-	<div class="large-3 columns logo">
-		<!-- add logo -->
-		<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="295px" height="93.771px" viewBox="0 -0.144 295 93.771" enable-background="new 0 -0.144 295 93.771" xml:space="preserve"
-	>
-<g>
-	<g>
-		<g>
-			<path fill="#999999" d="M164.604,72.158h0.041v1.338h2.725V59.092h-2.865v5.248h-0.041c-0.645-1.031-1.854-1.557-3.085-1.557
-				c-3.067,0-4.617,2.6-4.617,5.404c0,2.885,1.53,5.588,4.677,5.588C162.768,73.775,163.938,73.293,164.604,72.158z M162.143,71.615
-				c-1.771,0-2.521-1.713-2.521-3.348c0-1.713,0.651-3.326,2.521-3.326c1.854,0,2.461,1.613,2.461,3.307
-				C164.604,69.961,164.04,71.615,162.143,71.615z M259.107,73.775c2.359,0,4.072-1.049,4.883-3.514h-2.522
-				c-0.182,0.65-1.11,1.354-2.258,1.354c-1.594,0-2.479-0.824-2.562-2.643h7.522c0.199-3.205-1.515-6.189-5.063-6.189
-				c-3.166,0-5.323,2.379-5.323,5.504C253.783,71.515,255.82,73.775,259.107,73.775z M259.027,64.941
-				c1.393,0,2.019,0.77,2.279,2.221h-4.66C256.688,66.355,257.212,64.941,259.027,64.941z M228.966,59.092H226.1v14.404h2.866
-				V59.092z M131.736,59.092h-2.862v14.404h2.862V59.092z M246.389,73.189c1.248,0,2.496-0.523,3.123-1.613h0.041v1.373
-				c0.021,1.49-0.707,2.578-2.298,2.578c-1.01,0-1.876-0.361-2.14-1.43h-2.846c0.143,2.383,2.543,3.346,4.6,3.346
-				c4.801,0,5.406-2.902,5.406-4.619v-9.76h-2.724v1.393h-0.04c-0.686-1.211-1.736-1.674-3.105-1.674
-				c-2.924,0-4.479,2.463-4.479,5.164C241.928,70.808,243.262,73.189,246.389,73.189z M247.111,64.941
-				c1.855,0,2.44,1.514,2.44,3.207c0,1.492-0.807,2.883-2.44,2.883c-1.756,0-2.319-1.633-2.319-3.127
-				C244.792,66.355,245.498,64.941,247.111,64.941z M167.285,82.633c-3.27,0-5.389,2.18-5.389,5.508
-				c0,3.307,2.119,5.486,5.389,5.486c3.287,0,5.402-2.18,5.402-5.486C172.688,84.812,170.572,82.633,167.285,82.633z
-				 M167.285,91.469c-1.936,0-2.523-1.676-2.523-3.328c0-1.676,0.588-3.35,2.523-3.35c1.957,0,2.542,1.674,2.542,3.35
-				C169.827,89.795,169.242,91.469,167.285,91.469z M143.997,68.287c0-3.328-2.119-5.504-5.405-5.504
-				c-3.267,0-5.383,2.176-5.383,5.504c0,3.311,2.116,5.488,5.383,5.488C141.878,73.775,143.997,71.595,143.997,68.287z
-				 M138.592,71.615c-1.935,0-2.52-1.672-2.52-3.328c0-1.676,0.585-3.346,2.52-3.346c1.956,0,2.542,1.67,2.542,3.346
-				C141.134,69.943,140.548,71.615,138.592,71.615z M202.67,73.775c2.742,0,4.659-1.512,5.021-4.275h-2.762
-				c-0.183,1.268-0.947,2.115-2.277,2.115c-1.797,0-2.381-1.793-2.381-3.285c0-1.533,0.604-3.389,2.439-3.389
-				c1.188,0,1.939,0.625,2.114,1.795h2.808c-0.182-2.664-2.443-3.953-4.898-3.953c-3.393,0-5.324,2.4-5.324,5.648
-				C197.409,71.552,199.525,73.775,202.67,73.775z M133.048,82.633c-3.267,0-5.386,2.18-5.386,5.508
-				c0,3.307,2.119,5.486,5.386,5.486c3.287,0,5.405-2.18,5.405-5.486C138.453,84.812,136.335,82.633,133.048,82.633z
-				 M133.048,91.469c-1.938,0-2.524-1.676-2.524-3.328c0-1.676,0.587-3.35,2.524-3.35c1.957,0,2.54,1.674,2.54,3.35
-				C135.588,89.795,135.005,91.469,133.048,91.469z M155.811,91.469c-1.793,0-2.375-1.795-2.375-3.291
-				c0-1.531,0.604-3.387,2.436-3.387c1.193,0,1.938,0.625,2.122,1.795h2.801c-0.183-2.662-2.44-3.953-4.899-3.953
-				c-3.389,0-5.324,2.398-5.324,5.645c0,3.129,2.117,5.35,5.264,5.35c2.744,0,4.66-1.512,5.023-4.277h-2.766
-				C157.913,90.621,157.145,91.469,155.811,91.469z M152.465,67.601v5.895h2.866v-6.418c0-2.582-0.769-4.295-3.813-4.295
-				c-1.209,0-2.459,0.564-3.188,1.734h-0.058v-1.451h-2.725v10.432h2.866v-5.473c0-2.115,0.665-2.98,2.214-2.98
-				C151.96,65.043,152.465,65.888,152.465,67.601z M140.606,82.111v0.805h-1.711v1.916h1.711v8.51h2.863v-8.51h1.977v-1.916h-1.977
-				v-0.623c0-0.867,0.324-1.191,1.091-1.191c0.362,0,0.706,0.021,1.05,0.061v-2.139c-0.484-0.02-1.009-0.078-1.512-0.078
-				C141.758,78.943,140.606,80.275,140.606,82.111z M259.354,85.597c0-2.502-2.5-2.965-4.578-2.965
-				c-2.338,0-4.739,0.811-4.901,3.492h2.862c0.101-1.133,0.807-1.576,1.896-1.576c1.008,0,1.855,0.182,1.855,1.412
-				c0,1.17-1.635,1.109-3.387,1.371c-1.775,0.24-3.552,0.809-3.552,3.168c0,2.135,1.571,3.127,3.552,3.127
-				c1.267,0,2.599-0.346,3.506-1.291c0.022,0.338,0.101,0.684,0.203,1.006h2.904c-0.262-0.424-0.363-1.371-0.363-2.32v-5.424
-				H259.354z M256.489,89.308c0,0.627-0.082,2.402-2.32,2.402c-0.929,0-1.755-0.264-1.755-1.336c0-1.047,0.809-1.35,1.691-1.529
-				c0.892-0.16,1.898-0.182,2.383-0.605L256.489,89.308L256.489,89.308z M264.956,79.789h-2.865v3.127h-1.733v1.916h1.733v6.152
-				c0,2.076,1.533,2.479,3.289,2.479c0.565,0,1.19-0.018,1.671-0.1v-2.236c-0.304,0.057-0.585,0.076-0.885,0.076
-				c-0.967,0-1.21-0.242-1.21-1.209v-5.162h2.095v-1.916h-2.095V79.789z M243.581,91.469c-1.796,0-2.378-1.795-2.378-3.291
-				c0-1.531,0.605-3.387,2.441-3.387c1.188,0,1.935,0.625,2.113,1.795h2.805c-0.179-2.662-2.438-3.953-4.899-3.953
-				c-3.388,0-5.322,2.398-5.322,5.645c0,3.129,2.115,5.35,5.263,5.35c2.746,0,4.657-1.512,5.021-4.277h-2.763
-				C245.68,90.621,244.917,91.469,243.581,91.469z M233.784,81.301h2.86v-2.357h-2.86V81.301z M268.264,93.342h2.862V82.916h-2.862
-				V93.342z M278.205,82.633c-3.268,0-5.387,2.18-5.387,5.508c0,3.307,2.119,5.486,5.387,5.486c3.285,0,5.402-2.18,5.402-5.486
-				C283.607,84.812,281.49,82.633,278.205,82.633z M278.205,91.469c-1.938,0-2.523-1.676-2.523-3.328c0-1.676,0.586-3.35,2.523-3.35
-				c1.953,0,2.539,1.674,2.539,3.35C280.744,89.795,280.158,91.469,278.205,91.469z M179.686,68.287
-				c0-3.328-2.113-5.504-5.402-5.504c-3.27,0-5.387,2.176-5.387,5.504c0,3.311,2.117,5.488,5.387,5.488
-				C177.57,73.775,179.686,71.595,179.686,68.287z M174.282,71.615c-1.938,0-2.522-1.672-2.522-3.328
-				c0-1.676,0.586-3.346,2.522-3.346c1.954,0,2.538,1.67,2.538,3.346C176.82,69.943,176.236,71.615,174.282,71.615z M268.264,81.301
-				h2.862v-2.357h-2.862V81.301z M233.784,93.342h2.86V82.916h-2.86V93.342z M291.188,82.633c-1.207,0-2.461,0.566-3.187,1.732
-				h-0.058v-1.451h-2.729v10.428h2.865v-5.463c0-2.119,0.668-2.986,2.222-2.986c1.328,0,1.83,0.85,1.83,2.562v5.887H295v-6.414
-				C295,84.349,294.232,82.633,291.188,82.633z M204.449,82.633c-1.455,0-2.547,0.828-3.146,1.732
-				c-0.564-1.248-1.736-1.732-3.045-1.732c-1.352,0-2.439,0.627-3.188,1.695h-0.041v-1.414h-2.704v10.428h2.866v-6.049
-				c0-2.039,1.371-2.4,1.935-2.4c1.815,0,1.733,1.391,1.733,2.604v5.846h2.863v-5.807c0-1.311,0.303-2.643,1.914-2.643
-				c1.639,0,1.756,1.148,1.756,2.541v5.908h2.864v-6.977C208.258,83.664,206.664,82.633,204.449,82.633z M187.205,62.783
-				c-1.208,0-2.46,0.564-3.188,1.732h-0.058v-1.451h-2.726v10.432h2.861v-5.471c0-2.117,0.67-2.982,2.223-2.982
-				c1.328,0,1.836,0.846,1.836,2.561v5.895h2.861V67.08C191.018,64.496,190.253,62.783,187.205,62.783z M186.423,82.633
-				c-1.454,0-2.544,0.828-3.147,1.732c-0.564-1.248-1.733-1.732-3.045-1.732c-1.353,0-2.438,0.627-3.186,1.695h-0.044v-1.414h-2.704
-				v10.428h2.865v-6.049c0-2.039,1.373-2.4,1.938-2.4c1.813,0,1.732,1.391,1.732,2.604v5.846h2.866v-5.807
-				c0-1.311,0.3-2.643,1.917-2.643c1.63,0,1.755,1.148,1.755,2.541v5.908h2.864v-6.977
-				C190.234,83.664,188.639,82.633,186.423,82.633z M219.529,68.287c0-3.328-2.116-5.504-5.406-5.504
-				c-3.266,0-5.383,2.176-5.383,5.504c0,3.311,2.117,5.488,5.383,5.488C217.413,73.775,219.529,71.595,219.529,68.287z
-				 M211.602,68.287c0-1.676,0.588-3.346,2.521-3.346c1.954,0,2.541,1.67,2.541,3.346c0,1.656-0.587,3.328-2.541,3.328
-				C212.188,71.615,211.602,69.943,211.602,68.287z M224.005,59.092h-2.864v14.404h2.864V59.092z M227.954,82.633
-				c-1.211,0-2.459,0.566-3.185,1.732h-0.062v-1.451h-2.723v10.428h2.865v-5.463c0-2.119,0.664-2.986,2.219-2.986
-				c1.33,0,1.834,0.85,1.834,2.562v5.887h2.865v-6.414C231.77,84.349,231.003,82.633,227.954,82.633z M217.188,88.385
-				c0,2.115-0.664,2.98-2.217,2.98c-1.33,0-1.837-0.85-1.837-2.561v-5.891h-2.866v6.412c0,2.584,0.771,4.299,3.814,4.299
-				c1.212,0,2.461-0.566,3.188-1.736h0.06v1.451h2.726V82.916h-2.865v5.469H217.188z M240.62,70.261h-2.522
-				c-0.181,0.65-1.106,1.354-2.259,1.354c-1.59,0-2.479-0.824-2.56-2.643h7.521c0.202-3.205-1.512-6.189-5.062-6.189
-				c-3.162,0-5.324,2.379-5.324,5.504c0,3.229,2.035,5.488,5.324,5.488C238.098,73.775,239.814,72.726,240.62,70.261z
-				 M235.659,64.941c1.391,0,2.017,0.77,2.276,2.221h-4.656C233.316,66.355,233.848,64.941,235.659,64.941z"/>
-		</g>
-	</g>
-	<g>
-		<g>
-			<path d="M132.6,14.531c1.209,0,2.46-0.562,3.188-1.731h0.061v1.451h2.722V3.828h-2.865V9.29c0,2.116-0.664,2.984-2.215,2.984
-				c-1.332,0-1.835-0.849-1.835-2.562V3.828h-2.864v6.408C128.79,12.817,129.557,14.531,132.6,14.531z M143.77,8.788
-				c0-2.118,0.666-2.985,2.218-2.985c1.331,0,1.836,0.85,1.836,2.562v5.884h2.859v-6.41c0-2.583-0.763-4.296-3.811-4.296
-				c-1.208,0-2.457,0.564-3.186,1.734h-0.059V3.828h-2.723v10.421h2.863V8.788H143.77z M155.911,3.828h-2.866v10.421h2.866V3.828z
-				 M155.911-0.143h-2.866v2.356h2.866V-0.143z M163.792,14.249l3.522-10.421h-2.842l-2.195,7.113h-0.037l-2.201-7.113h-3.005
-				l3.567,10.421H163.792z M172.924,14.531c2.358,0,4.071-1.047,4.877-3.507h-2.519c-0.185,0.646-1.107,1.354-2.259,1.354
-				c-1.592,0-2.481-0.831-2.562-2.644h7.52c0.203-3.206-1.51-6.189-5.058-6.189c-3.164,0-5.323,2.379-5.323,5.506
-				C167.602,12.276,169.635,14.531,172.924,14.531z M172.84,5.699c1.393,0,2.02,0.769,2.275,2.222h-4.653
-				C170.503,7.113,171.029,5.699,172.84,5.699z M182.197,9.55c0-1.831,0.726-3.343,2.822-3.343c0.344,0,0.766,0.041,1.023,0.099
-				v-2.66c-0.178-0.058-0.421-0.102-0.623-0.102c-1.391,0-2.804,0.911-3.324,2.22h-0.041V3.828h-2.722v10.421h2.862V9.55H182.197z
-				 M192.762,7.982c-1.633-0.387-3.248-0.526-3.248-1.555c0-0.846,0.947-0.969,1.598-0.969c1.022,0,1.871,0.305,1.951,1.413h2.724
-				c-0.224-2.56-2.318-3.328-4.597-3.328c-2.24,0-4.539,0.688-4.539,3.35c0,1.833,1.656,2.417,3.31,2.781
-				c2.056,0.442,3.246,0.745,3.246,1.61c0,1.009-1.051,1.332-1.875,1.332c-1.13,0-2.176-0.505-2.198-1.753h-2.724
-				c0.125,2.758,2.481,3.667,4.899,3.667c2.383,0,4.756-0.885,4.756-3.625C196.062,8.971,194.434,8.365,192.762,7.982z M200.3-0.143
-				h-2.858v2.356h2.858V-0.143z M200.3,3.828h-2.858v10.421h2.858V3.828z M208.227,14.271v-2.238
-				c-0.306,0.061-0.584,0.08-0.889,0.08c-0.967,0-1.212-0.243-1.212-1.207V5.741h2.101V3.828h-2.101V0.705h-2.86v3.124h-1.736v1.913
-				h1.736v6.148c0,2.078,1.529,2.481,3.285,2.481C207.111,14.372,207.738,14.349,208.227,14.271z M211.471,15.562
-				c-0.563,0.021-1.128-0.063-1.676-0.103v2.358c0.586,0.061,1.174,0.1,1.758,0.1c1.975,0,2.961-0.686,3.584-2.355l4.357-11.732
-				h-2.965l-2.277,7.134h-0.041l-2.355-7.134h-3.065l3.67,9.774C212.779,14.431,212.459,15.459,211.471,15.562z M133.389,34.384
-				c3.285,0,5.401-2.18,5.401-5.483c0-3.328-2.116-5.506-5.401-5.506c-3.267,0-5.384,2.178-5.384,5.506
-				C128.005,32.205,130.122,34.384,133.389,34.384z M133.389,25.552c1.954,0,2.538,1.675,2.538,3.349
-				c0,1.649-0.584,3.325-2.538,3.325c-1.935,0-2.52-1.675-2.52-3.325C130.869,27.227,131.454,25.552,133.389,25.552z M140.95,34.101
-				h2.863v-8.509h1.972v-1.914h-1.972v-0.625c0-0.867,0.32-1.19,1.085-1.19c0.363,0,0.706,0.021,1.05,0.063v-2.14
-				c-0.485-0.02-1.009-0.08-1.512-0.08c-2.338,0-3.486,1.331-3.486,3.165v0.806h-1.714v1.914h1.714V34.101L140.95,34.101z
-				 M157.561,31.882c-0.304,0.061-0.584,0.079-0.887,0.079c-0.969,0-1.21-0.238-1.21-1.207v-5.163h2.097v-1.914h-2.097v-3.122
-				h-2.862v3.122h-1.731v1.914h1.731v6.148c0,2.076,1.533,2.479,3.285,2.479c0.564,0,1.189-0.02,1.674-0.1V31.882z M168.891,34.101
-				v-6.41c0-2.581-0.767-4.296-3.812-4.296c-1.063,0-2.317,0.564-3.043,1.734h-0.062v-5.422h-2.86v14.394h2.86v-5.463
-				c0-2.117,0.664-2.984,2.217-2.984c1.33,0,1.838,0.849,1.838,2.56v5.889L168.891,34.101L168.891,34.101z M175.443,23.395
-				c-3.166,0-5.322,2.379-5.322,5.506c0,3.225,2.036,5.483,5.322,5.483c2.356,0,4.072-1.05,4.875-3.509H177.8
-				c-0.18,0.645-1.108,1.351-2.256,1.351c-1.594,0-2.479-0.826-2.562-2.64h7.52C180.702,26.38,178.991,23.395,175.443,23.395z
-				 M172.982,27.771c0.041-0.804,0.564-2.218,2.379-2.218c1.394,0,2.019,0.769,2.279,2.218H172.982z M195.322,26.361
-				c0-2.499-2.498-2.966-4.579-2.966c-2.339,0-4.738,0.81-4.897,3.486h2.862c0.103-1.127,0.81-1.568,1.897-1.568
-				c1.008,0,1.85,0.182,1.85,1.412c0,1.17-1.63,1.109-3.382,1.369c-1.776,0.241-3.55,0.808-3.55,3.166
-				c0,2.136,1.572,3.125,3.55,3.125c1.271,0,2.6-0.345,3.505-1.29c0.021,0.341,0.102,0.683,0.203,1.007h2.9
-				c-0.262-0.424-0.359-1.371-0.359-2.319V26.361z M192.455,30.069c0,0.624-0.078,2.397-2.316,2.397
-				c-0.927,0-1.754-0.262-1.754-1.331c0-1.047,0.809-1.348,1.694-1.532c0.887-0.161,1.897-0.183,2.376-0.604V30.069L192.455,30.069z
-				 M199.637,25.613h-0.039v-1.935h-2.723v10.423h2.865v-4.697c0-1.838,0.72-3.346,2.816-3.346c0.346,0,0.769,0.04,1.03,0.101v-2.66
-				c-0.183-0.062-0.425-0.104-0.626-0.104C201.57,23.395,200.159,24.304,199.637,25.613z M208.828,20.556h-2.863v3.122h-1.732v1.914
-				h1.732v6.148c0,2.076,1.535,2.479,3.289,2.479c0.564,0,1.188-0.02,1.672-0.1v-2.238c-0.304,0.061-0.583,0.079-0.89,0.079
-				c-0.966,0-1.208-0.238-1.208-1.207v-5.163h2.098v-1.914h-2.098V20.556z M217.84,27.834c-1.632-0.386-3.244-0.527-3.244-1.554
-				c0-0.85,0.947-0.968,1.594-0.968c1.026,0,1.871,0.3,1.953,1.412h2.723c-0.223-2.56-2.317-3.33-4.596-3.33
-				c-2.237,0-4.537,0.688-4.537,3.351c0,1.831,1.656,2.416,3.308,2.781c2.053,0.44,3.245,0.745,3.245,1.609
-				c0,1.01-1.051,1.331-1.874,1.331c-1.129,0-2.177-0.505-2.195-1.755h-2.721c0.118,2.764,2.479,3.672,4.897,3.672
-				c2.377,0,4.754-0.892,4.754-3.629C221.146,28.815,219.514,28.212,217.84,27.834z M128.872,53.64h2.863V39.251h-2.863V53.64z
-				 M138.586,42.939c-3.265,0-5.379,2.174-5.379,5.5c0,3.307,2.114,5.484,5.379,5.484c3.289,0,5.405-2.178,5.405-5.484
-				C143.991,45.113,141.875,42.939,138.586,42.939z M138.586,51.763c-1.931,0-2.516-1.672-2.516-3.324
-				c0-1.671,0.585-3.344,2.516-3.344c1.957,0,2.541,1.673,2.541,3.344C141.127,50.092,140.543,51.763,138.586,51.763z
-				 M151.512,42.939c-1.21,0-2.457,0.564-3.187,1.733h-0.06v-1.454h-2.721v10.42h2.861v-5.459c0-2.12,0.664-2.987,2.217-2.987
-				c1.332,0,1.836,0.85,1.836,2.563v5.885h2.864V47.23C155.324,44.652,154.555,42.939,151.512,42.939z M164.494,44.49h-0.041
-				c-0.645-1.026-1.854-1.551-3.081-1.551c-3.067,0-4.618,2.6-4.618,5.401c0,2.881,1.531,5.584,4.68,5.584
-				c1.328,0,2.498-0.484,3.162-1.613h0.041v1.328h2.719V39.251h-2.86L164.494,44.49L164.494,44.49z M162.137,51.763
-				c-1.773,0-2.521-1.711-2.521-3.346c0-1.712,0.646-3.324,2.521-3.324c1.855,0,2.459,1.611,2.459,3.306
-				C164.596,50.111,164.032,51.763,162.137,51.763z M174.275,42.939c-3.269,0-5.385,2.174-5.385,5.5
-				c0,3.307,2.116,5.484,5.385,5.484c3.283,0,5.397-2.178,5.397-5.484C179.674,45.113,177.561,42.939,174.275,42.939z
-				 M174.275,51.763c-1.939,0-2.522-1.672-2.522-3.324c0-1.671,0.583-3.344,2.522-3.344c1.951,0,2.535,1.673,2.535,3.344
-				C176.812,50.092,176.227,51.763,174.275,51.763z M187.193,42.939c-1.207,0-2.457,0.564-3.182,1.733h-0.062v-1.454h-2.723v10.42
-				h2.863v-5.459c0-2.12,0.667-2.987,2.221-2.987c1.332,0,1.832,0.85,1.832,2.563v5.885h2.862V47.23
-				C191.006,44.652,190.241,42.939,187.193,42.939z M23.927,36.472c0,7.327-2.303,10.328-7.673,10.328
-				c-4.604,0-6.346-2.928-6.346-8.86V17.571H0v22.186c0,8.929,2.65,14.855,13.185,14.855c4.187,0,8.514-1.949,11.02-6h0.214v5.025
-				h9.415V17.571h-9.906v18.901H23.927z M73.171,26.849c0-8.653-8.648-10.253-15.833-10.253c-8.093,0-16.392,2.789-16.951,12.067
-				h9.906c0.348-3.906,2.791-5.442,6.56-5.442c3.485,0,6.415,0.629,6.415,4.884c0,4.047-5.651,3.837-11.721,4.743
-				C45.41,33.686,39.272,35.639,39.272,43.8c0,7.395,5.439,10.813,12.275,10.813c4.396,0,9.001-1.186,12.139-4.461
-				c0.072,1.188,0.349,2.371,0.697,3.488h10.046c-0.906-1.467-1.258-4.746-1.258-8.024V26.849z M63.268,39.682
-				c0,2.164-0.28,8.304-8.021,8.304c-3.208,0-6.068-0.907-6.068-4.605c0-3.625,2.789-4.674,5.857-5.3
-				c3.071-0.557,6.558-0.627,8.232-2.095V39.682z M80.775,53.638h9.905V3.831h-9.905V53.638z M101.633,28.94h10.95V18.196h-10.95
-				V28.94z M101.633,53.638h10.95V42.895h-10.95V53.638z"/>
-		</g>
-	</g>
-</g>
-</svg>
-
-	</div>
-	<div class="large-9 columns">
-        <div class="row">
-            <div class="large-12 columns">
-                <nav class="HF01v1-persistant-links">
-                    <ul class="group" id="colleges">
-                        <li class="current_page_item"><a href="#">UAL</a></li>
-                        <li><a href="">Camberwell</a></li>
-                        <li><a href="">CSM</a></li>
-                        <li><a href="">Chelsea</a></li>
-                        <li><a href="">LCC</a></li>
-                        <li><a href="">LCF</a></li>
-                        <li><a href="">Wimbledon</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-	</div>
-</div>
-
-<div id="navbar" class="contain-to-grid sticky">
-    <nav class="top-bar">
-        <ul class="title-area">  
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
-        </ul>
-
-    <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Colleges</a>
-                <ul class="dropdown">
-                    <li><a href="">Camberwell College of Arts</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Central Saint Martins College of Arts and Design</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Chelsea College of Art and Design</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">London College of Communication</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">London College of Fashion</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Wimbledon College of Art</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Studying at UAL</a>
-                <ul class="dropdown">
-                    <li><a href="">Why UAL</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Open days</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Fees and funding</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Student support</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Applying and enrolling</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">International</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Library</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Learning and teaching</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Accommodation</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Student union</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Facilities</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Widening participation</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Student Jobs &amp; Careers</a>
-                <ul class="dropdown">
-                    <li><a href="">SPARE</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Alumni &amp; Friends</a>
-                <ul class="dropdown">
-                    <li><a href="">Alumni Benefits</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Inspiring Alumni</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Give and Support</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Register your details</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Stay Connected</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Research</a>
-                <ul class="dropdown">
-                    <li><a href="">Research Environment</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Research Degrees</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Research Staff</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li><a href="">Business &amp; Innovation</a></li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">About UAL</a>
-                <ul class="dropdown">
-                    <li><a href="">News</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Events Calendar</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Our History</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Invest in the Future</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Press Office</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Charitable Status</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Governance and Policy</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Administrative</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Staff Directory</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Contact UAL</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-        </ul>
-
-        <!-- Right Nav Section -->
-        <ul class="right">
-            <li class="hide-for-small"></li>
-            <li><a href="" data-reveal-id="courseSearch"><img src="http://artslondon.github.com/beta.arts/assets/img/icons/course-icon.jpg" alt="Course Finder"></a></li>
-            <li class="divider"></li>
-            <li><a href="" data-reveal-id="siteSearch"><img src="http://artslondon.github.com/beta.arts/assets/img/icons/search-icon.jpg" alt="Site Search"></a></li>
-            <li class="divider"></li>
-        </ul>
-    </section>
-    </nav>  
-</div>
-
-<!-- Buttons for side bar navigation on mobile -->
-<p class="show-for-small">
-    <a class='sidebar-button tiny button' id="sidebarButton" href="#sidebar">Side</a>
-</p>
-
-        </header>
-
-        <!-- Add your site or application content here -->
-        <div class="row">
 
     <h1>Careers and jobs</h1>
 
@@ -437,66 +137,88 @@
     </div>
 </div>
 
-<!--         <footer>
- -->            <div class="row">
-	<div class="large-12 columns">
-<!-- 		<p>Footer</p>
- -->	</div>
+<footer class='footer cf'>
+<div class='footer-links'>
+  <ul class='primary-links'>
+    <li>
+      <a href=''>SHOWTIME</a>
+    </li>
+    <li>
+      <a href=''>MY.ARTS</a>
+    </li>
+    <li>
+      <a href=''>UAL EDIT</a>
+    </li>
+    <li>
+      <a href=''>FLICKR</a>
+    </li>
+    <li>
+      <a href=''>FACEBOOK</a>
+    </li>
+    <li>
+      <a href=''>TWITTER</a>
+    </li>
+    <li>
+      <a href=''>YOUTUBE</a>
+    </li>
+  </ul>
+  <span>
+    <a>SITEMAP</a>
+  </span>
+  <ul class='secondary-links'>
+    <li>
+      <a href=''>Freedom of Information</a>
+    </li>
+    <li>
+      <a href=''>Accessibility</a>
+    </li>
+    <li>
+      <a href=''>Privacy Policy</a>
+    </li>
+    <li>
+      <a href=''>Cookies</a>
+    </li>
+    <li>
+      <a href=''>Disclaimer</a>
+    </li>
+    <li>
+      <a href=''>Charitable Status</a>
+    </li>
+    <li>
+      <a href=''>Donate</a>
+    </li>
+    <li>
+      <a href=''>Contact</a>
+    </li>
+  </ul>
+</div>
+<div class='copyright'>
+  <p>&copy; 2012 University of the Arts London All Rights Reserved</p>
 </div>
 
-<!--         </footer>
- -->
-        <!-- Included JS Files (Uncompressed) -->
-        <script src="http://artslondon.github.com/beta/assets/js/vendor/zepto.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.cookie.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.alerts.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.clearing.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.dropdown.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.forms.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.joyride.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.magellan.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.orbit.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.placeholder.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.reveal.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.section.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.tooltips.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.topbar.js"></script>
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/foundation.topbar.js"></script>
-        
-        <!-- Application Javascript, safe to override -->
-        <script src="http://artslondon.github.com/beta/assets/js/foundation/index.js"></script>
-        <script>
-            $(document).foundation().foundation('joyride', 'start');
-        </script>
+      </footer>
+    </div>
 
-        <!-- Libs -->
-        <script src="http://artslondon.github.com/beta/assets/js/libs/response.min.js"></script> <!-- Respond.min.js -->
-        
-        <!-- Plugins -->
-        <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.offcanvas.js"></script> <!-- global nav sliding in from top and side nav sliding in from left -->
-        <script src='http://artslondon.github.com/beta/assets/js/plugins/jquery.color-RGBa-patch.js'></script> <!-- magic line under college links -->       
-        <script src='http://artslondon.github.com/beta/assets/js/plugins/jquery.magicline.js'></script> <!-- magic line under college links -->
-        <script src="http://artslondon.github.com/beta/assets/js/plugins/jquery.waypoints.js"></script> <!-- hide and show course and site search when scrolling -->
-        <script>
-            var search = $('.top-bar-section').find('.right');
-                search.hide();
 
-            $('#navbar').waypoint(function() {
-                search.show();
-            });
-            $('#navbar').waypoint(function() {
-                search.hide();
-            }, { offset: '25%' });
-            // }, { offset: '100' });
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+  </body>
+  <!-- Gridset overlay script - toggles grid overlay on and off - You can remove this if you want. -->
+  <script src='http://artslondon.github.com/beta/assets/js/gridset-overlay.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
+  <script>
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='http://artslondon.github.com/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+  <!-- /%script{:type => "text/javascript", :src  => "http://artslondon.github.com/beta/assets/js/libs/jquery.jpanelmenu.min.js"} -->
+  <script src='http://artslondon.github.com/beta/assets/js/hashgrid.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/script.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  <script>
+    $(document).ready(function() {
+      $(".fancy_title").lettering();
+    });
+  </script>
 </html>

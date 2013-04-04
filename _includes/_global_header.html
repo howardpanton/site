@@ -1,197 +1,43 @@
-<div class="row">
-	<nav id="topMenu" role="navigation">
-		<ul id="nav" class="nav-bar">
-			<li><a href="">Colleges</a></li>
-            <li class="divider"></li>
-			<li><a href="">Studying at UAL</a></li>
-            <li class="divider"></li>
-			<li><a href="">Student Job &amp; Careers</a></li>
-            <li class="divider"></li>
-			<li><a href="">Alumni &amp; Friends</a></li>
-            <li class="divider"></li>
-			<li><a href="">Research</a></li>
-            <li class="divider"></li>
-			<li><a href="">Business &amp; Innovation</a></li>
-            <li class="divider"></li>
-			<li><a href="">About UAL</a></li>
-		</ul>
-	</nav>
-</div>
-
-{% include search/_course_search.html %}
-{% include search/_search.html %}
-
-<!-- Buttons for UAL global navigation on mobile -->
-<p class="show-for-small">
-    <a class='menu-button tiny button' id="menuButton" href="#menu">Global</a>
-</p>
-
-
-<div class="row">
-    <div class="large-12 columns">
-        <nav class="HF01v1-search-links">
-            <ul>
-                <li><a href="" class="course" data-reveal-id="courseSearch">Courses</a></li>
-                <li><a href="" class="search" data-reveal-id="siteSearch">Search</a></li>
-            </ul>
-        </nav>
+<header class='cf' id='header'>
+  <div class='search-buttons'>
+    <div class='primary-buttons is-hidden-mobile'>
+      <button class='course'>Courses</button>
+      <button class='search'>Search</button>
     </div>
-</div>
-
-<div class="row">
-	<div class="large-3 columns logo">
-		<!-- add logo -->
-		{% include logos/lcc.logo.html %}
-	</div>
-	<div class="large-9 columns">
-        <div class="row">
-            <div class="large-12 columns">
-                <nav class="HF01v1-persistant-links">
-                    <ul class="group" id="colleges">
-                        <li class="current_page_item"><a href="#">UAL</a></li>
-                        <li><a href="">Camberwell</a></li>
-                        <li><a href="">CSM</a></li>
-                        <li><a href="">Chelsea</a></li>
-                        <li><a href="">LCC</a></li>
-                        <li><a href="">LCF</a></li>
-                        <li><a href="">Wimbledon</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-	</div>
-</div>
-
-<div id="navbar" class="contain-to-grid sticky">
-    <nav class="top-bar">
-        <ul class="title-area">  
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
-        </ul>
-
-    <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Colleges</a>
-                <ul class="dropdown">
-                    <li><a href="">Camberwell College of Arts</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Central Saint Martins College of Arts and Design</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Chelsea College of Art and Design</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">London College of Communication</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">London College of Fashion</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Wimbledon College of Art</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Studying at UAL</a>
-                <ul class="dropdown">
-                    <li><a href="">Why UAL</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Open days</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Fees and funding</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Student support</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Applying and enrolling</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">International</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Library</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Learning and teaching</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Accommodation</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Student union</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Facilities</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Widening participation</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Student Jobs &amp; Careers</a>
-                <ul class="dropdown">
-                    <li><a href="">SPARE</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Alumni &amp; Friends</a>
-                <ul class="dropdown">
-                    <li><a href="">Alumni Benefits</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Inspiring Alumni</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Give and Support</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Register your details</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Stay Connected</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">Research</a>
-                <ul class="dropdown">
-                    <li><a href="">Research Environment</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Research Degrees</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Research Staff</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li><a href="">Business &amp; Innovation</a></li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="">About UAL</a>
-                <ul class="dropdown">
-                    <li><a href="">News</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Events Calendar</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Our History</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Invest in the Future</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Press Office</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Charitable Status</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Governance and Policy</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Administrative</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Staff Directory</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Contact UAL</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-        </ul>
-
-        <!-- Right Nav Section -->
-        <ul class="right">
-            <li class="hide-for-small"></li>
-            <li><a href="" data-reveal-id="courseSearch"><img src="http://artslondon.github.com/beta.arts/assets/img/icons/course-icon.jpg" alt="Course Finder"></a></li>
-            <li class="divider"></li>
-            <li><a href="" data-reveal-id="siteSearch"><img src="http://artslondon.github.com/beta.arts/assets/img/icons/search-icon.jpg" alt="Site Search"></a></li>
-            <li class="divider"></li>
-        </ul>
-    </section>
-    </nav>  
-</div>
-
-<!-- Buttons for side bar navigation on mobile -->
-<p class="show-for-small">
-    <a class='sidebar-button tiny button' id="sidebarButton" href="#sidebar">Side</a>
-</p>
+  </div>
+  <div class='banner'>
+    <div class='menu-toggle d-hide t-hide'>
+      <img alt='' src='{{ site.url }}assets/img/menu-toggle.png'>
+    </div>
+    <div class='logo'>
+      <img alt='' class='d-hide t-hide' src='{{ site.url }}assets/img/ual-logo-small.png'>
+      <img alt='' class='m-hide' src='{{ site.url }}assets/img/lcc-logo.png'>
+      <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+      <noscript>
+        <img alt='London College of Communications Logo' src='{{ site.url }}assets/img/lcc-logo.png'>
+      </noscript>
+    </div>
+    <nav class='global-college-links m-hide'>
+      <ul>
+        <li>
+          <a href=''>UAL</a>
+        </li>
+        <li>
+          <a href=''>CAMBERWELL</a>
+        </li>
+        <li>
+          <a href=''>CHELSEA</a>
+        </li>
+        <li>
+          <a href=''>LCC</a>
+        </li>
+        <li>
+          <a href=''>LCF</a>
+        </li>
+        <li>
+          <a href=''>WIMBLEDON</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

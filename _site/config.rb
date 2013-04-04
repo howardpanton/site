@@ -1,12 +1,12 @@
 # Require any additional compass plugins here.
 #require 'ruby-growl'
-require 'susy'
-require 'zurb-foundation'
+#require 'susy'
+#require 'zurb-foundation'
 
 # Set this to the root of your project when deployed:
-http_path = "http://artslondon.github.com/beta/"
-css_dir = "assets/css"
-sass_dir = "assets/sass"
+http_path = "http://localhost/ual-grid/"
+css_dir = "assets/styles"
+sass_dir = "assets/styles"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
@@ -36,7 +36,7 @@ output_style = :expanded
 
 http_images_path = "http://artslondon.github.com/beta/assets/"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = false
+line_comments = true
 
 
 # If you prefer the indented syntax, you might want to regenerate this
