@@ -4,34 +4,107 @@ class-home: active
 title: London College of Fashion
 ---
 
-<div class="row">
-    <div class="large-12 columns">
-        <!-- carousel module required here -->
-        <!-- Basic orbit markup -->
-		<ul data-orbit>
-		  <li>
-		    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi1.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		  <li>
-		    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi2.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		  <li>
-		    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi3.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		</ul>
-    </div>
-</div>
+<div class="content-wrapper lcf clearfix">
 
-<div class="row">
+	<section id="feature-carousel" class="row buffer-max centered">
+	    <div class="d-all">
+	        <!-- carousel module required here -->
+			<ul data-orbit data-options="timer_speed:2500; bullets:false;">
+			  <li>
+			    <img src="{{ site.url }}/assets/img/lcf/lcf-slide-1.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">A home<br>at the end<br>of the earth</h2></div>
+			  </li>
+			  <li>
+			    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi2.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">MA Shows Season</h2></div>
+			  </li>
+			  <li>
+			    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi3.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">Graduate School<br>Apply Now</h2></div>
+			  </li>
+			</ul>
+	    </div>
+	</section><!-- #feature-carousel -->
 
-	<div class="sidebar columns">
+	<div class="row buffer-max">
+		<nav class="d1-d4 sidebar">
+			<ul class="is-uppercase">
+				<li><a href="#">About LCF</a></li>
+				<li><a href="#">Courses</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Events</a></li>
+				<li><a href="#">Life at LCF</a></li>
+				<li><a href="#">LCF People</a></li>
+				<li><a href="#">LCF Channel</a></li>
+				<li><a href="#">LCF Research</a></li>
+				<li><a href="#">Enterprise and Careers</a></li>
+			</ul>		
+		</nav>	
+
+		<section id="better-lives" class="d5-d16">
+			<header class="section-title">
+				<h2 class="h5 bordered">Better Lives</h2>
+			</header>
+			<div class="d5-d10">
+				<img src="{{ site.url }}/assets/img/lcf/lcf-better-lives.jpg">
+				<div class="image-caption"><span>Cat Patterson — LCF Loves you</span><br><em><a href="#">BA (Hons) Fashion: Styling & Photography</a></em></div>
+			</div>
+			<div class="d11-d15">
+				<p class="standfirst">Using fashion to drive change, build a sustainable future and improve the way we live.</p>
+				<p>Better Lives is a term we use here at London College of Fashion to describe the work we do which uses fashion, as a discipline, to drive change, build a sustainable future and improve the way we live.</p>
+			</div>
+		</section>		
 	</div>
 
+	<section id="showcase" class="row buffer-max relative centered dark-bg">
+		<div class="d-all">
+			<h2>Showcase</h2>
+			<img src="{{ site.url }}/assets/img/lcf/lcf-showcase.jpg">
+			<div class="box-text aligncenter">
+				<header class="section-title">
+					<h3 class="bordered">Film Series</h3>
+				</header>
+				<p>LCF Men is a series of seven short films produced by London College of Fashion to mark the launch of London Collections: Men, the kick-start to the menswear calendar. Released throughout January 2013, the films feature a selection of Britain’s most stylish men, including Olympic gymnast Louis Smith and musician Mr. Hudson. Watch all of the LCF Men films.</p>
+			</div>
+		</div>	
+	</section>
 
-</div>
+	<section id="whats-on" class="row buffer-max centered">
+		<div class="">
+			<img src="{{ site.url }}/assets/img/lcf/lcf-gallery.jpg">
+		</div>
+	</section>
+
+	<section id="whats-on" class="row buffer-max centered">
+		<header class="section-title">
+			<h2 class="h5 bordered">What's On</h2>
+		</header>
+		<div class="">
+			<img src="{{ site.url }}/assets/img/lcf/lcf-whats-on.jpg">
+		</div>
+	</section>	
+
+	<div class="row buffer-plus">
+		<div class="d1-d8">
+            <h3>News Title</h3>
+            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
+        </div>
+		<div class="d9-d16">
+            <img src="{{ site.url }}/assets/img/lcf/lcf-news-1.jpg">
+        </div>
+	</div><!-- .row -->
+
+	<div class="row buffer-plus">
+		<div class="d1-d8">
+            <h3>News Title</h3>
+            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
+        </div>
+		<div class="d9-d16">
+            <img src="{{ site.url }}/assets/img/lcf/lcf-news-2.jpg">
+        </div>
+	</div><!-- .row -->
+
+</div><!-- .content-wrapper -->
 
 <div class="footer lcf">
     {% include footers/_lcf_footer.html %}
