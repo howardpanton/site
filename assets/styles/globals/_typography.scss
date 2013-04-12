@@ -1,0 +1,171 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+
+// SET-UP CORE FONT SIZING AND RHYTHM
+
+
+// Default Sizing and spacing
+// ------------------------------------------------------------
+
+// You'll often get better results here if you work in numbers the divide into the baseline.
+// IE, if you have a baseline of 6px, multiples or divisions of often provide best results in ems 
+
+h1 { 
+	@include adjust-font-size-to(56px); 
+	margin: 0 0 rhythm(3, 56px) 0;  						// 3 lines below, based on font size
+} 
+			
+h2 { 
+	@include adjust-font-size-to(44px); 
+	margin: rhythm(4, 44px) 0 rhythm(2, 44px) 0;  			// 4 lines above / 2 lines below, based on font size 
+}
+
+h3 { 
+	@include adjust-font-size-to(34px); 
+	margin: rhythm(4, 34px) 0 rhythm(2, 34px) 0;  			// 4 lines above / 2 lines below, based on font size 
+} 
+
+h4 { 
+	@include adjust-font-size-to(22px); 
+	margin: 0 0 rhythm(1, 22px) 0;  						// 1 lines below, based on font size 
+} 
+
+h5 { 
+	@include adjust-font-size-to(22px); 
+	margin: 0 0 rhythm(1, 22px) 0;  						// 1 lines below, based on font size 
+} 
+
+h6 { 
+	@include adjust-font-size-to(18px); 
+	margin: 0 0 rhythm(1, 18px) 0;  						// 1 lines below, based on font size 
+} 	
+
+p, pre, label { 
+	@include adjust-font-size-to(16px); 
+	margin: 0 0 rhythm(2, 16px) 0;							// 2 lines below, based on font size
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:bold;
+}
+
+
+// Header styles
+
+.h10 {
+	@include adjust-font-size-to(114px); 
+	margin: 0 0 rhythm(3, 114px) 0; 
+}
+
+.h9 {
+	@include adjust-font-size-to(102px); 
+	margin: 0 0 rhythm(2, 102px) 0; 
+}
+
+.h8 {
+	@include adjust-font-size-to(90px); 
+	margin: 0 0 rhythm(2, 90px) 0; 
+}
+
+.h7 {
+	@include adjust-font-size-to(78px); 
+	margin: 0 0 rhythm(2, 78px) 0; 
+}
+
+.h6 {
+	@include adjust-font-size-to(66px); 
+	margin: 0 0 rhythm(2, 66px) 0; 
+}
+
+.h5 {
+	@include adjust-font-size-to(56px); 
+	margin: 0 0 rhythm(2, 56px) 0; 
+}
+
+.h4 {
+	@include adjust-font-size-to(44px); 
+	margin: 0 0 rhythm(2, 44px) 0; 
+}
+
+.h3 {
+	@include adjust-font-size-to(34px); 
+	margin: 0 0 rhythm(2, 34px) 0; 
+}
+
+.h2 {
+	@include adjust-font-size-to(22px); 
+	margin: 0 0 rhythm(1, 22px) 0; 
+}
+
+.h1 {
+	@include adjust-font-size-to(18px); 
+	margin: 0 0 rhythm(1, 18px) 0; 
+}
+
+
+p.intro {
+	@include adjust-font-size-to(22px); 
+	margin: 0 0 rhythm(4, 22px) 0;		
+}
+
+p.small{
+	@include adjust-font-size-to(14px); 
+	margin: 0 0 rhythm(4, 14px) 0;		
+}
+
+p {
+	@include adjust-font-size-to(16px); 
+	margin: 0 0 rhythm(4, 16px) 0;		
+}
+
+small {
+	@include adjust-font-size-to(13px);
+		margin: 0 0 rhythm(3, 13px) 0;	
+}
+
+ol, ul {
+	@include adjust-font-size-to(16px);
+	margin: 0 0 rhythm(4, 16px) 0;							// 4 lines below, based on font size
+}
+
+li {
+	line-height: auto;
+}
+
+// Core typography
+// ------------------------------------------------------------
+
+ul 			{ @include unordered; } 						// Include unordered list from mixins by default
+ol 			{ @include ordered;	}							// Include ordered list from mixins by default
+strong, b 	{ font-weight: 600; }
+em, i, q 	{ font-style: italic; }
+
+blockquote {
+	padding-left: em-font(16px);
+	border-left: em-font(5px) solid grey;
+	line-height: normal;
+	margin: 0;
+	p {
+		font-style: italic;
+		margin: 0;
+		color: $body-color;
+		@include adjust-font-size-to(20px); 
+		margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
+	}
+}
+
+@include gs-media(t, min-max) {
+
+		h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
+			@include adjust-font-size-to(44px); 
+	margin: 0 0 rhythm(2, 34px) 0;  
+	}
+}
+
+@include gs-media(m, min-max) {
+	h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
+			@include adjust-font-size-to(34px); 
+	margin: 0 0 rhythm(2, 27px) 0;  
+	}
+}

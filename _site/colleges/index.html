@@ -1,27 +1,4 @@
 <!DOCTYPE html>
-
-<!-- Hammer reload -->
-  <script>
-    setInterval(function(){
-      try {
-        if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-        ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-        ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-        ws.onmessage = function(){
-          var links = document.getElementsByTagName('link'); 
-            for (var i = 0; i < links.length;i++) { 
-            var link = links[i]; 
-            if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-              href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-              link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-            }
-          }
-        }
-      }catch(e){}
-    }, 1000)
-  </script>
-<!-- /Hammer reload -->
-      
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]>
   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
@@ -47,8 +24,8 @@
     <meta content='Howard panton' name='author'>
 
     <!-- For all browsers -->
-    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset.css'>
-    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/screen.css'>
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/css/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/css/screen.css'>
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src='http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js'></script>
     <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset-ie-lte8.css'>
@@ -422,8 +399,6 @@
 
 
 
-  <!-- Gridset overlay script - toggles grid overlay on and off - You can remove this if you want. -->
-  <script src='http://artslondon.github.com/beta/assets/js/gridset-overlay.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
   <script>
     if (typeof jQuery == 'undefined') {
@@ -431,14 +406,19 @@
     }
   </script>
   <!-- /%script{:type => "text/javascript", :src  => "http://artslondon.github.com/beta/assets/js/libs/jquery.jpanelmenu.min.js"} -->
-  <script src='http://artslondon.github.com/beta/assets/js/hashgrid.js' type='text/javascript'></script>
-  <script src='http://artslondon.github.com/beta/assets/js/script.js' type='text/javascript'></script>
+  <!-- Development scripts, not for production -->
+  <script src='http://artslondon.github.com/beta/assets/js/gridset-overlay.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- Plugins -->
   <script src='http://artslondon.github.com/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/foundation/foundation.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/foundation/foundation.orbit.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/script.js' type='text/javascript'></script>
+
   <script>
     $(document).foundation();
   </script>

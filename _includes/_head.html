@@ -1,27 +1,4 @@
 <!DOCTYPE html>
-
-<!-- Hammer reload -->
-  <script>
-    setInterval(function(){
-      try {
-        if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-        ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-        ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-        ws.onmessage = function(){
-          var links = document.getElementsByTagName('link'); 
-            for (var i = 0; i < links.length;i++) { 
-            var link = links[i]; 
-            if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-              href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-              link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-            }
-          }
-        }
-      }catch(e){}
-    }, 1000)
-  </script>
-<!-- /Hammer reload -->
-      
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]>
   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
@@ -47,8 +24,8 @@
     <meta content='Howard panton' name='author'>
 
     <!-- For all browsers -->
-    <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset.css'>
-    <link rel='stylesheet' href='{{ site.url }}assets/styles/screen.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/gridset.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/screen.css'>
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
     <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset-ie-lte8.css'>

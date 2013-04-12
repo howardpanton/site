@@ -5,7 +5,7 @@
 
 # Set this to the root of your project when deployed:
 http_path = "http://localhost/ual-grid/"
-css_dir = "assets/styles"
+css_dir = "assets/css"
 sass_dir = "assets/styles"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
