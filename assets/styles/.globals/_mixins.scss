@@ -29,6 +29,14 @@
   }
 
 
+@mixin radius($radius:$global-radius) {
+  @if $radius {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+  }
+}
+
+
 @mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
   @if $vertical-radius {
     // Webkit doesn't understand the official shorthand syntax for specifying
@@ -54,12 +62,9 @@
 }
 
 
-
 @mixin box-sizing($bs) {
   $bs: unquote($bs);
   @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official); }
-
-
 
 
 // List styles

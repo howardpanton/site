@@ -1,27 +1,4 @@
 <!DOCTYPE html>
-
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]>
   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
@@ -40,15 +17,15 @@
   <head>
     <title>University of Arts London Beta</title>
     <meta charset='utf-8'>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
-<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
-<meta content='on' http-equiv='cleartype'>
-<meta content='grid test' name='description'>
-<meta content='Howard panton' name='author'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='grid test' name='description'>
+    <meta content='Howard panton' name='author'>
 
     <!-- For all browsers -->
-    <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset.css'>
-<link rel='stylesheet' href='{{ site.url }}assets/styles/screen.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/gridset.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/screen.css'>
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
     <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset-ie-lte8.css'>
@@ -57,25 +34,25 @@
     <script src='{{ site.url }}assets/js/libs/modernizr-2.6.2-min.js'></script>
     <script src='{{ site.url }}assets/js/libs/detectizr.min.js'></script>
     <link rel="shortcut icon" href="{{ site.url }}assets/img/favicon.ico">
-<link rel="shortcut icon" href="{{ site.url }}assets/img/favicon.png">
-<!-- <link rel="apple-touch-icon-precomposed" href="{{ site.url }}assets/img/l/apple-touch-icon-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
-    <!--iOS -->
-<!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
-<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
-<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
-<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
-    <!-- Startup images -->
-<!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
-<!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
-<!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
-<!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="{{ site.url }}assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
-<!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="{{ site.url }}assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+    <link rel="shortcut icon" href="{{ site.url }}assets/img/favicon.png">
+    <!-- <link rel="apple-touch-icon-precomposed" href="{{ site.url }}assets/img/l/apple-touch-icon-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+        <!--iOS -->
+    <!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+    <!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+        <!-- Startup images -->
+    <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+    <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+    <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+    <!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="{{ site.url }}assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+    <!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="{{ site.url }}assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
     <!-- Windows 8 / RT -->
-<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
-<meta content='#000' name='msapplication-TileColor'>
+    <meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+    <meta content='#000' name='msapplication-TileColor'>
 
     <script>
       Modernizr.Detectizr.detect({detectScreen:false});

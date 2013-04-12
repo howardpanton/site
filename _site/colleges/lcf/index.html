@@ -1,27 +1,4 @@
 <!DOCTYPE html>
-
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]>
   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
@@ -40,15 +17,15 @@
   <head>
     <title>University of Arts London Beta</title>
     <meta charset='utf-8'>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
-<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
-<meta content='on' http-equiv='cleartype'>
-<meta content='grid test' name='description'>
-<meta content='Howard panton' name='author'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='grid test' name='description'>
+    <meta content='Howard panton' name='author'>
 
     <!-- For all browsers -->
-    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset.css'>
-<link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/screen.css'>
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/css/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/css/screen.css'>
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src='http://artslondon.github.com/beta/assets/js/libs/selectivizr-min.js'></script>
     <link rel='stylesheet' href='http://artslondon.github.com/beta/assets/styles/gridset-ie-lte8.css'>
@@ -57,25 +34,25 @@
     <script src='http://artslondon.github.com/beta/assets/js/libs/modernizr-2.6.2-min.js'></script>
     <script src='http://artslondon.github.com/beta/assets/js/libs/detectizr.min.js'></script>
     <link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/favicon.ico">
-<link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/favicon.png">
-<!-- <link rel="apple-touch-icon-precomposed" href="http://artslondon.github.com/beta/assets/img/l/apple-touch-icon-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://artslondon.github.com/beta/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
-<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
-    <!--iOS -->
-<!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
-<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
-<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
-<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
-    <!-- Startup images -->
-<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
-<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
-<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
-<!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="http://artslondon.github.com/beta/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
-<!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="http://artslondon.github.com/beta/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+    <link rel="shortcut icon" href="http://artslondon.github.com/beta/assets/img/favicon.png">
+    <!-- <link rel="apple-touch-icon-precomposed" href="http://artslondon.github.com/beta/assets/img/l/apple-touch-icon-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://artslondon.github.com/beta/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://artslondon.github.com/beta/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+        <!--iOS -->
+    <!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+    <!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+        <!-- Startup images -->
+    <!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+    <!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+    <!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.com/beta/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+    <!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="http://artslondon.github.com/beta/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+    <!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="http://artslondon.github.com/beta/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
     <!-- Windows 8 / RT -->
-<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
-<meta content='#000' name='msapplication-TileColor'>
+    <meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+    <meta content='#000' name='msapplication-TileColor'>
 
     <script>
       Modernizr.Detectizr.detect({detectScreen:false});
@@ -130,34 +107,307 @@
 
 
 
-<div class="row">
-    <div class="large-12 columns">
-        <!-- carousel module required here -->
-        <!-- Basic orbit markup -->
-		<ul data-orbit>
-		  <li>
-		    <img src="http://artslondon.github.com/beta//assets/img/lcf/ChrystelLivolsi1.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		  <li>
-		    <img src="http://artslondon.github.com/beta//assets/img/lcf/ChrystelLivolsi2.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		  <li>
-		    <img src="http://artslondon.github.com/beta//assets/img/lcf/ChrystelLivolsi3.jpg" />
-		    <div class="orbit-caption">...</div>
-		  </li>
-		</ul>
+<div class='main-menu cf is-hidden-mobile' role='navigation'>
+  <form action='/' class='search-mobile d-hide t-hide'>
+    <div class='search'>
+      <input class='input-medium' placeholder='Search Site' type='text'>
     </div>
+    <div class='search'>
+      <input class='input-medium' placeholder='Find Courses' type='text'>
+    </div>
+  </form>
+  <nav class='top-bar'>
+    <ul class='dropdown group'>
+      <li>
+        <a href='#' title=''>
+          Colleges
+        </a>
+        <span class='d-hide t-hide'>+</span>
+        <ul class='sub_menu is-removed-mobile'>
+          <li>
+            <a href='' title=''>Camberwell College of Arts</a>
+          </li>
+          <li>
+            <a href='' title=''>Central Saint Martins College of Arts and Design</a>
+          </li>
+          <li>
+            <a href='' title=''>Chelsea College of Art and Design</a>
+          </li>
+          <li>
+            <a href='' title=''>London College of Communication</a>
+          </li>
+          <li>
+            <a href='' title=''>London College of Fashion</a>
+          </li>
+          <li>
+            <a href='' title=''>Wimbledon College of Art</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          Studying at UAL
+        </a>
+        <!-- /%span.d-hide.t-hide x -->
+        <ul class='sub_menu m-hide is-removed-mobile'>
+          <li>
+            <a href='' title=''>Why UAL</a>
+          </li>
+          <li>
+            <a href='' title=''>Open days</a>
+          </li>
+          <li>
+            <a href='' title=''>Fees and funding</a>
+          </li>
+          <li>
+            <a href='' title=''>Student support</a>
+          </li>
+          <li>
+            <a href='' title=''>Applying and enrolling</a>
+          </li>
+          <li>
+            <a href='' title=''>International</a>
+          </li>
+          <li>
+            <a href='' title=''>Library</a>
+          </li>
+          <li>
+            <a href='' title=''>Learning and teaching</a>
+          </li>
+          <li>
+            <a href='' title=''>Accommodation</a>
+          </li>
+          <li>
+            <a href='' title=''>Student union</a>
+          </li>
+          <li>
+            <a href='' title=''>Facilities</a>
+          </li>
+          <li>
+            <a href='' title=''>Widening participation</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          Student Jobs &amp; Careers
+        </a>
+        <!-- /%span.d-hide.t-hide x -->
+        <ul class='sub_menu m-hide'>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          Alumni &amp; Friends
+        </a>
+        <!-- /%span.d-hide.t-hide x -->
+        <ul class='sub_menu m-hide'>
+          <li>
+            <a href='' title=''>Alumni Benefits</a>
+          </li>
+          <li>
+            <a href='' title=''>Inspiring Alumni</a>
+          </li>
+          <li>
+            <a href='' title=''>Give and Support</a>
+          </li>
+          <li>
+            <a href='' title=''>Register your details</a>
+          </li>
+          <li>
+            <a href='' title=''>Stay Connected</a>
+          </li>
+          <li>
+            <a href='' title=''>Contact Us</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          Research
+        </a>
+        <!-- /%span.d-hide.t-hide x -->
+        <ul class='sub_menu m-hide'>
+          <li>
+            <a href='' title=''>Research Environment</a>
+          </li>
+          <li>
+            <a href='' title=''>Research Degrees</a>
+          </li>
+          <li>
+            <a href='' title=''>Research Staff</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          Business &amp; Innovation
+        </a>
+        <!-- /%span.d-hide.t-hide x -->
+        <ul class='sub_menu m-hide'>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+          <li>
+            <a href='' title=''>sublink</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' title=''>
+          About UAL
+        </a>
+        <span class='d-hide t-hide'>+</span>
+        <ul class='sub_menu is-removed-mobile last'>
+          <li>
+            <a href='' title=''>News</a>
+          </li>
+          <li>
+            <a href='' title=''>Events Calendar</a>
+          </li>
+          <li>
+            <a href='' title=''>Our History</a>
+          </li>
+          <li>
+            <a href='' title=''>Invest in the Future</a>
+          </li>
+          <li>
+            <a href='' title=''>Press Office</a>
+          </li>
+          <li>
+            <a href='' title=''>Charitable Status</a>
+          </li>
+          <li>
+            <a href='' title=''>Governance and Policy</a>
+          </li>
+          <li>
+            <a href='' title=''>Administrative</a>
+          </li>
+          <li>
+            <a href='' title=''>Staff Directory</a>
+          </li>
+          <li>
+            <a href='' title=''>Contact UAL</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </div>
 
-<div class="row">
+<div class="content-wrapper lcf clearfix">
 
-	<div class="sidebar columns">
+	<section id="feature-carousel" class="row buffer-max centered">
+	    <div class="d-all">
+	        <!-- carousel module required here -->
+			<ul data-orbit data-options="timer_speed:2500; bullets:false;">
+			  <li>
+			    <img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-slide-1.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">A home<br>at the end<br>of the earth</h2></div>
+			  </li>
+			  <li>
+			    <img src="http://artslondon.github.com/beta//assets/img/lcf/ChrystelLivolsi2.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">MA Shows Season</h2></div>
+			  </li>
+			  <li>
+			    <img src="http://artslondon.github.com/beta//assets/img/lcf/ChrystelLivolsi3.jpg" />
+			    <div class="orbit-caption"><h2 class="h5">Graduate School<br>Apply Now</h2></div>
+			  </li>
+			</ul>
+	    </div>
+	</section><!-- #feature-carousel -->
+
+	<div class="row buffer-max">
+		<nav class="d1-d4 sidebar">
+			<ul class="is-uppercase">
+				<li><a href="#">About LCF</a></li>
+				<li><a href="#">Courses</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Events</a></li>
+				<li><a href="#">Life at LCF</a></li>
+				<li><a href="#">LCF People</a></li>
+				<li><a href="#">LCF Channel</a></li>
+				<li><a href="#">LCF Research</a></li>
+				<li><a href="#">Enterprise and Careers</a></li>
+			</ul>		
+		</nav>	
+
+		<section id="better-lives" class="d5-d16">
+			<header class="section-title">
+				<h2 class="h5 bordered">Better Lives</h2>
+			</header>
+			<div class="d5-d10">
+				<img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-better-lives.jpg">
+				<div class="image-caption"><span>Cat Patterson — LCF Loves you</span><br><em><a href="#">BA (Hons) Fashion: Styling & Photography</a></em></div>
+			</div>
+			<div class="d11-d15">
+				<p class="standfirst">Using fashion to drive change, build a sustainable future and improve the way we live.</p>
+				<p>Better Lives is a term we use here at London College of Fashion to describe the work we do which uses fashion, as a discipline, to drive change, build a sustainable future and improve the way we live.</p>
+			</div>
+		</section>		
 	</div>
 
+	<section id="showcase" class="row buffer-max relative centered dark-bg">
+		<div class="d-all">
+			<h2>Showcase</h2>
+			<img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-showcase.jpg">
+			<div class="box-text aligncenter">
+				<header class="section-title">
+					<h3 class="bordered">Film Series</h3>
+				</header>
+				<p>LCF Men is a series of seven short films produced by London College of Fashion to mark the launch of London Collections: Men, the kick-start to the menswear calendar. Released throughout January 2013, the films feature a selection of Britain’s most stylish men, including Olympic gymnast Louis Smith and musician Mr. Hudson. Watch all of the LCF Men films.</p>
+			</div>
+		</div>	
+	</section>
 
-</div>
+	<section id="whats-on" class="row buffer-max centered">
+		<div class="">
+			<img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-gallery.jpg">
+		</div>
+	</section>
+
+	<section id="whats-on" class="row buffer-max centered">
+		<header class="section-title">
+			<h2 class="h5 bordered">What's On</h2>
+		</header>
+		<div class="">
+			<img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-whats-on.jpg">
+		</div>
+	</section>	
+
+	<div class="row buffer-plus">
+		<div class="d1-d8">
+            <h3>News Title</h3>
+            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
+        </div>
+		<div class="d9-d16">
+            <img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-news-1.jpg">
+        </div>
+	</div><!-- .row -->
+
+	<div class="row buffer-plus">
+		<div class="d1-d8">
+            <h3>News Title</h3>
+            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
+        </div>
+		<div class="d9-d16">
+            <img src="http://artslondon.github.com/beta//assets/img/lcf/lcf-news-2.jpg">
+        </div>
+	</div><!-- .row -->
+
+</div><!-- .content-wrapper -->
 
 <div class="footer lcf">
     <div class="row">
@@ -231,9 +481,7 @@
     </div>
 
 
-  </body>
-  <!-- Gridset overlay script - toggles grid overlay on and off - You can remove this if you want. -->
-  <script src='http://artslondon.github.com/beta/assets/js/gridset-overlay.js' type='text/javascript'></script>
+
   <script src='http://artslondon.github.com/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
   <script>
     if (typeof jQuery == 'undefined') {
@@ -241,16 +489,22 @@
     }
   </script>
   <!-- /%script{:type => "text/javascript", :src  => "http://artslondon.github.com/beta/assets/js/libs/jquery.jpanelmenu.min.js"} -->
-  <script src='http://artslondon.github.com/beta/assets/js/hashgrid.js' type='text/javascript'></script>
-  <script src='http://artslondon.github.com/beta/assets/js/script.js' type='text/javascript'></script>
+  <!-- Development scripts, not for production -->
+  <script src='http://artslondon.github.com/beta/assets/js/gridset-overlay.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- Plugins -->
   <script src='http://artslondon.github.com/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
   <script src='http://artslondon.github.com/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/foundation/foundation.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/foundation/foundation.orbit.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.com/beta/assets/js/script.js' type='text/javascript'></script>
+
   <script>
-    $(document).ready(function() {
-      $(".fancy_title").lettering();
-    });
+    $(document).foundation();
   </script>
 
+  </body>
 </html>

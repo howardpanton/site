@@ -1,16 +1,15 @@
+/* 
+University of the Arts London
+CSS stylesheet
+Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
+*/
+
 // Table of Contents
 
 // See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
 // -------------------------------------------------------------
 // As a rule of thumb, don't nest further than 3 levels deep
 // -------------------------------------------------------------
-
-// This is a good example!
-// .styleguide-format {
-//   border: 1px solid #0f0;
-//   color: #000;
-//   background: rgba(0,0,0,0.5);
-// }
 
 
 // ::Imports pre-render
@@ -29,57 +28,65 @@
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
+@import "plugins/normalize";
+@import "globals/variables";
+@import "globals/mixins";
 
-@import ".globals/settings";
-@import ".globals/mixins";
-@import ".plugins/rem";
-@import ".plugins/reset";
-@import ".globals/gridset";
 
-/* ::Base styles Almost exclusively single element selectors */
+/* ::Grid styles */
 /* ------------------------------------------------------------ */
 
-@import ".globals/global"; 
-
-// Import base typography into the cascade (if required)
-@import ".shared/typography"; 		
-
-// Import form styles into the cascade (if required)
-@import ".shared/forms";			
+@import "globals/gridset";
 
 
-/* ::Layout styles - Layouts hold one or more modules together. */
+/* ::Global styles */
 /* ------------------------------------------------------------ */
 
-@import ".shared/layouts";	
+@import "globals/typography"; 		
+@import "plugins/rem";
 
-@import ".components/grid-boxes";
+@import "globals/forms";			
 
-@import ".shared/states";		
+@import "globals/university-logos";	
 
-@import ".components/university-logos";	
 
-@import ".components/main-menu";
+/* ::Components */
+/* ------------------------------------------------------------ */
 
-@import ".components/search-form";	
+// Components for navigation
+@import "components/nav-main-menu";
+@import "components/nav-global-college-links";	
+@import "components/nav-mobile-menu";	
 
-@import ".components/search-buttons";
+// Components for search
+@import "components/search-form";	
+@import "components/search-buttons";
 
-@import ".components/global-college-links";	
+// Layout components
+@import "components/grid-boxes";
 
-@import ".shared/colors"; 
+// JS-based components
+@import "plugins/foundation/orbit";
 
-@import ".plugins/debug";	
+
+
+/* ::Custom styling - our home-made add-ons */
+/* ------------------------------------------------------------ */
+
+@import "custom/global"; 
+@import "custom/layouts";	
+@import "custom/colors"; 
+@import "custom/lcf";
 
 
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 
-// If using gridset or another pre-defined grid, these should match up to the same breakpoints
+//@import "globals/media-queries";
 
-// Below examples use a mobile-first approach
 
-@import ".components/mobile-menu";	
 
-@import ".globals/media-queries";	
 
+// Ordered last to override when necessary
+@import "globals/debug";
+@import "globals/utilities";		

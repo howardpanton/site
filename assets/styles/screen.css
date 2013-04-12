@@ -174,29 +174,28 @@ body {
 /* line 17, .globals/_global.scss */
 a {
   color: #000;
-  border-bottom: 1px solid;
+  border-bottom: 1px  solid;
   line-height: 24px;
   text-decoration: none;
-  font-weight: bold;
 }
-/* line 26, .globals/_global.scss */
+/* line 23, .globals/_global.scss */
 a:hover, a:focus, a:active {
   color: #929292;
 }
 
-/* line 34, .globals/_global.scss */
-.max-width {
+/* line 31, .globals/_global.scss */
+.content-wrapper img, #header .banner img, .top-bar img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 39, .globals/_global.scss */
+/* line 34, .globals/_global.scss */
 ol {
   list-style-position: inside;
   list-style-type: decimal;
 }
 
-/* line 40, .globals/_global.scss */
+/* line 35, .globals/_global.scss */
 ul {
   list-style-position: inside;
   list-style-type: disc;
@@ -204,31 +203,31 @@ ul {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 48, .globals/_global.scss */
-.clearfix, section, #header, #header .banner, .footer, .footer .copyright, .main-menu {
+/* line 43, .globals/_global.scss */
+.clearfix, #header, #header .banner, .footer, .footer .copyright, .main-menu {
   overflow: hidden;
   *zoom: 1;
   clear: left;
 }
 
-/* line 51, .globals/_global.scss */
+/* line 46, .globals/_global.scss */
 .cf {
   zoom: 1;
 }
 
-/* line 52, .globals/_global.scss */
+/* line 48, .globals/_global.scss */
 .cf:before,
 .cf:after {
   content: "";
   display: table;
 }
 
-/* line 54, .globals/_global.scss */
+/* line 49, .globals/_global.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 59, .globals/_global.scss */
+/* line 54, .globals/_global.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -536,7 +535,7 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 19, .shared/_forms.scss */
+/* line 20, .shared/_forms.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -548,7 +547,7 @@ textarea {
   vertical-align: top;
 }
 
-/* line 29, .shared/_forms.scss */
+/* line 42, .shared/_forms.scss */
 textarea,
 input[type="text"],
 input[type="password"],
@@ -572,7 +571,7 @@ input[type="tel"] {
   transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 
-/* line 52, .shared/_forms.scss */
+/* line 53, .shared/_forms.scss */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -582,7 +581,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* line 61, .shared/_forms.scss */
+/* line 67, .shared/_forms.scss */
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -593,14 +592,14 @@ input[type="checkbox"] {
   width: auto;
 }
 
-/* line 71, .shared/_forms.scss */
+/* line 72, .shared/_forms.scss */
 select,
 input[type="file"] {
   *margin-top: 4px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 }
 
-/* line 76, .shared/_forms.scss */
+/* line 79, .shared/_forms.scss */
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -613,7 +612,7 @@ input[type="checkbox"]:focus {
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
 /* line 17, .shared/_layouts.scss */
-.wrapper, #header .banner, .top-bar {
+.content-wrapper, #header .banner, .top-bar {
   width: 92.5%;
   max-width: 1260px;
   margin: 0 auto;
@@ -934,7 +933,7 @@ header.title h1 {
     display: none;
   }
 }
-/* line 39, .shared/_states.scss */
+/* line 40, .shared/_states.scss */
 .group:before,
 .group:after {
   content: "";
@@ -1319,6 +1318,297 @@ ul.last {
   margin-right: 0;
 }
 
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+/* line 6, .plugins/_debug.scss */
+#grid {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5 !important;
+}
+
+/* line 14, .plugins/_debug.scss */
+#grid div.horiz {
+  height: 6px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, .globals/_utilities.scss */
+.relative {
+  position: relative;
+}
+
+/* line 8, .globals/_utilities.scss */
+.affix {
+  position: fixed;
+}
+
+/* line 13, .globals/_utilities.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 16, .globals/_utilities.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 19, .globals/_utilities.scss */
+.full-width {
+  float: left;
+  width: 100%;
+}
+
+/* line 25, .globals/_utilities.scss */
+.centered {
+  text-align: center;
+}
+
+/* line 28, .globals/_utilities.scss */
+.alignright {
+  text-align: right;
+}
+
+/* line 31, .globals/_utilities.scss */
+.alignleft {
+  text-align: left;
+}
+
+/* line 34, .globals/_utilities.scss */
+.aligncenter {
+  margin: 0 auto;
+}
+
+/* line 39, .globals/_utilities.scss */
+.add-top {
+  margin-top: 20px;
+}
+
+/* line 42, .globals/_utilities.scss */
+.add-bottom {
+  margin-bottom: 20px;
+}
+
+/* line 47, .globals/_utilities.scss */
+.hide {
+  display: none;
+}
+
+/* line 50, .globals/_utilities.scss */
+.show {
+  display: block;
+}
+
+/* line 55, .globals/_utilities.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 60, .globals/_utilities.scss */
+.no-bullet {
+  list-style: none;
+}
+
+/* ::Components */
+/* ------------------------------------------------------------ */
+/* line 31, .plugins/foundation/_orbit.scss */
+.orbit-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: whitesmoke;
+}
+/* line 37, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slides-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 43, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slides-container img {
+  display: block;
+}
+/* line 45, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slides-container > * {
+  position: relative;
+  float: left;
+  height: 100%;
+}
+/* line 50, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: emCalc(14px);
+}
+/* line 60, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slides-container > * .orbit-caption * {
+  color: white;
+}
+/* line 65, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slide-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+}
+/* line 70, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-slide-number span {
+  font-weight: 700;
+}
+/* line 73, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 6px;
+  width: 100px;
+}
+/* line 79, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-timer .orbit-progress {
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+  width: 0%;
+}
+/* line 87, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-timer > span {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 11px;
+  height: 14px;
+  border: solid 4px #000;
+  border-top: none;
+  border-bottom: none;
+}
+/* line 100, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-timer.paused > span {
+  right: -6px;
+  top: 9px;
+  width: 11px;
+  height: 14px;
+  border: solid 8px;
+  border-color: transparent transparent transparent #000;
+}
+/* line 111, .plugins/foundation/_orbit.scss */
+.orbit-container:hover .orbit-timer > span {
+  display: block;
+}
+/* line 115, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-prev,
+.orbit-container .orbit-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
+  height: 60px;
+  line-height: 50px;
+  color: white;
+  text-indent: -9999px !important;
+}
+/* line 127, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-prev > span,
+.orbit-container .orbit-next > span {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 16px;
+}
+/* line 137, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-prev {
+  left: 0;
+}
+/* line 138, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-prev > span {
+  border-color: transparent #fff transparent transparent;
+}
+/* line 139, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-prev:hover > span {
+  border-color: transparent #ccc transparent transparent;
+}
+/* line 141, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-next {
+  right: 0;
+}
+/* line 142, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-next > span {
+  border-color: transparent transparent transparent #fff;
+  left: 50%;
+  margin-left: -8px;
+}
+/* line 147, .plugins/foundation/_orbit.scss */
+.orbit-container .orbit-next:hover > span {
+  border-color: transparent transparent transparent #ccc;
+}
+
+/* line 151, .plugins/foundation/_orbit.scss */
+.orbit-bullets {
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+  position: relative;
+  top: 10px;
+}
+/* line 157, .plugins/foundation/_orbit.scss */
+.orbit-bullets li {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  float: left;
+  margin-right: 6px;
+  border: solid 2px #000;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+}
+/* line 167, .plugins/foundation/_orbit.scss */
+.orbit-bullets li.active {
+  background: #000;
+}
+/* line 171, .plugins/foundation/_orbit.scss */
+.orbit-bullets li:last-child {
+  margin-right: 0;
+}
+
+/* line 178, .plugins/foundation/_orbit.scss */
+.touch .orbit-container .orbit-prev,
+.touch .orbit-container .orbit-next {
+  display: none;
+}
+/* line 181, .plugins/foundation/_orbit.scss */
+.touch .orbit-bullets {
+  display: none;
+}
+
+@media only screen and (min-width: emCalc(768px)) {
+  /* line 190, .plugins/foundation/_orbit.scss */
+  .touch .orbit-container .orbit-prev,
+  .touch .orbit-container .orbit-next {
+    display: inherit;
+  }
+  /* line 193, .plugins/foundation/_orbit.scss */
+  .touch .orbit-bullets {
+    display: block;
+  }
+}
+/* ::Variants */
+/* ------------------------------------------------------------ */
 /* line 2, .shared/_colors.scss */
 .swatch-list {
   margin-left: 0px;
@@ -1396,23 +1686,83 @@ ul.last {
   background: #5ac882;
 }
 
-/* ::Debugs and #grid by Jon Gibbins */
-/* ----------------------------------------------------------- */
-/* line 6, .plugins/_debug.scss */
-#grid {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5 !important;
+/* line 8, .shared/_lcf.scss */
+.buffer {
+  margin-bottom: 30px;
 }
 
-/* line 14, .plugins/_debug.scss */
-#grid div.horiz {
-  height: 6px;
-  border-bottom: 1px solid #ddd;
-  margin: 0;
-  padding: 0;
+/* line 11, .shared/_lcf.scss */
+.buffer-plus {
+  margin-bottom: 54px;
+}
+
+/* line 14, .shared/_lcf.scss */
+.buffer-max {
+  margin-bottom: 102px;
+}
+
+/* line 20, .shared/_lcf.scss */
+.lcf h1, .lcf h2, .lcf h3, .lcf h4, .lcf h5, .lcf h6 {
+  text-transform: uppercase;
+}
+
+/* line 25, .shared/_lcf.scss */
+.bordered {
+  border-bottom: 1px solid #000;
+}
+
+/* line 29, .shared/_lcf.scss */
+.dark-bg {
+  background-color: #000;
+  color: #fff;
+}
+/* line 32, .shared/_lcf.scss */
+.dark-bg .bordered {
+  border-bottom-color: #fff;
+}
+
+/* line 38, .shared/_lcf.scss */
+.section-title {
+  margin-bottom: 20px;
+}
+/* line 40, .shared/_lcf.scss */
+.section-title h2, .section-title h3 {
+  display: inline;
+}
+
+/* line 45, .shared/_lcf.scss */
+section .standfirst {
+  text-decoration: underline;
+}
+
+/* line 51, .shared/_lcf.scss */
+#feature-carousel .orbit-caption {
+  position: absolute;
+  top: 30%;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: emCalc(14px);
+}
+/* line 59, .shared/_lcf.scss */
+#feature-carousel h2 {
+  color: #000;
+}
+
+/* line 73, .shared/_lcf.scss */
+#showcase h2 {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+/* line 78, .shared/_lcf.scss */
+#showcase .box-text {
+  width: 65%;
+}
+
+/* line 85, .shared/_lcf.scss */
+.sidebar {
+  margin-top: 80px;
 }
 
 /* ::Media queries */
