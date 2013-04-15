@@ -75,8 +75,8 @@
 					width:100%;
 					text-align: left;
 					border: none;
-					border-top: solid 2px #666;
-					border-bottom: solid 2px #000;
+					border-top: 1px solid rgba(255, 255, 255, 0.0976562);
+					border-bottom: 1px solid rgba(0, 0, 0, 0.347656);
 					position: relative;
 					padding:0px;
 				}
@@ -89,7 +89,7 @@
 
 				a {
 					@include gs-media(m, min-max) {
-						border-right: solid 2px #666;
+						border-right: 1px solid rgba(255, 255, 255, 0.0976562);
 					}
 				}
 			}
@@ -103,12 +103,11 @@
 
 				a {
 					@include gs-media(m, min-max) {
-						border-right: solid 2px #666;
+						//border-right: solid 2px #666;
+						border-right: 1px solid rgba(255, 255, 255, 0.0976562);
 					}
 				}
 			}
-
-
 
 			a {
 				text-align: center;
@@ -128,23 +127,28 @@
 					@include padding-trailer(2);
 					color:#ccc;
 					float:left;
-					width: 70%;
+					width: 80%;
 					text-indent: 12px;
 				}
 			}
 
-			span {
+			div.span {
 					@include gs-media(m, min-max) {
-					color:#ffffff;
-					font-size: 2em;
-					text-indent:24px;
-					font-weight:normal;
-					width: 30%;
+					width: 20%;
 					display:block;
 					float:left;
-					top:14px;
-					right:0px;
+					height:48px;
 					position:relative;
+					border-left: 1px solid rgba(0, 0, 0, 0.347656);
+
+					span {
+						color:#ffffff;
+						font-size: 2em;
+						position: absolute;
+						top:10px;
+						font-weight:normal;
+						left:24px;
+					}
 
 				}
 	 		 	&:hover {
@@ -193,10 +197,11 @@ li {
 		border-bottom: none;
 		display: block;
 		border-right: none;
+					border-top: 1px solid rgba(255, 255, 255, 0.1);
+			border-bottom: 1px solid rgba(51, 51, 51, 0.0976562);
 		&:first-child {
 			@include gs-media(m, min-max) {
 			border-left:none;
-			border-bottom: none;
 			}
 		}
 

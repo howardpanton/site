@@ -28,9 +28,9 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
-@import "plugins/normalize";
 @import "globals/variables";
 @import "globals/mixins";
+@import "plugins/reset";
 
 
 /* ::Grid styles */
@@ -55,7 +55,8 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Components for navigation
 @import "components/nav-main-menu";
-@import "components/nav-global-college-links";	
+@import "components/nav-global-college-links";
+@import "components/secondary-menu";  
 @import "components/nav-mobile-menu";	
 
 // Components for search
@@ -64,6 +65,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Layout components
 @import "components/grid-boxes";
+@import "components/_ual-flexslider";
 
 // JS-based components
 @import "plugins/foundation/orbit";

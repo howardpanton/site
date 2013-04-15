@@ -1,5 +1,5 @@
 
-//	Make loging safe for all browsers
+//  Make loging safe for all browsers
 window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};
 
 
@@ -11,77 +11,77 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 
 
 (function($) 
-{	
-	/***********************************************/
-	//	CONSTANTS
-	//	Use upper case variable names to declare
-	//	constants such as configuration paths, scoped to this
-	//	closure and available to all methods.
-	//	Separate words with underscores.
-	/***********************************************/
-	
-	var CONSTANT_NAME = 'A constant, available to all methods of this closure.';
-	
+{ 
+  /***********************************************/
+  //  CONSTANTS
+  //  Use upper case variable names to declare
+  //  constants such as configuration paths, scoped to this
+  //  closure and available to all methods.
+  //  Separate words with underscores.
+  /***********************************************/
+  
+  var CONSTANT_NAME = 'A constant, available to all methods of this closure.';
+  
 
-	/***********************************************/
-	//	VARS
-	//	Use lower case variable names to declare
-	//	variables that are scoped to this
-	//	closure and available to all methods.
-	//	Use camel case to separate words.
-	/***********************************************/
-	
-	var instanceVariable = 'An instance variable, available to all methods of this closure.';	
-	
-	
-	/***********************************************/
-	//	INIT
-	//	This function will be called upon load, so call
-	//	any initialastion functions here. 
-	/***********************************************/
-	
-	this.init = function()
-	{	
-		getData();	
-	}();
+  /***********************************************/
+  //  VARS
+  //  Use lower case variable names to declare
+  //  variables that are scoped to this
+  //  closure and available to all methods.
+  //  Use camel case to separate words.
+  /***********************************************/
+  
+  var instanceVariable = 'An instance variable, available to all methods of this closure.'; 
+  
+  
+  /***********************************************/
+  //  INIT
+  //  This function will be called upon load, so call
+  //  any initialastion functions here. 
+  /***********************************************/
+  
+  this.init = function()
+  { 
+    getData();  
+  }();
 
 
-	/***********************************************/
-	//	EXAMPLE METHODS
-	/***********************************************/	
-	
-	// get some data
-	function getData()
-	{
-		// define a local variable
-		var localVariable = 'A local variable, scoped to this method.';
-		console.log(localVariable);
+  /***********************************************/
+  //  EXAMPLE METHODS
+  /***********************************************/ 
+  
+  // get some data
+  function getData()
+  {
+    // define a local variable
+    var localVariable = 'A local variable, scoped to this method.';
+    console.log(localVariable);
 
-		// access some instance variables
-		console.log(CONSTANT_NAME);
-		console.log(instanceVariable);
+    // access some instance variables
+    console.log(CONSTANT_NAME);
+    console.log(instanceVariable);
 
-		// call a method - maybe an ajax call?
-		onData('onData: I was called from on getData.');
-	}
-	
-	// on data return
-	function onData(data)
-	{  		
-		// log out some data
-		console.log(data);
-		
-		// get the body with jQuery, do something with it.
-		$('body').each(function (){
-			log(this);
-		})
-	}
-	
-		
+    // call a method - maybe an ajax call?
+    onData('onData: I was called from on getData.');
+  }
+  
+  // on data return
+  function onData(data)
+  {     
+    // log out some data
+    console.log(data);
+    
+    // get the body with jQuery, do something with it.
+    $('body').each(function (){
+      log(this);
+    })
+  }
+  
+    
 })(jQuery);
 
 
-	function checkWindowSize() {
+  function checkWindowSize() {
     var width = $(window).width(),
     new_class = width > 850 ? 'gDesktop' :
                 width > 600 ? 'gTablet' :
@@ -93,11 +93,21 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 
 function menuToggle() {
 $('.menu-toggle').toggle(function() {
- $('.main-menu').removeClass('is-hidden-mobile').addClass('.bounceInDown');
+ $('.main-menu').slideDown(1000, 'swing', function() {
+    // Animation complete.
+  });
+
+ //$('.main-menu').transition({ y: '40px' });
+ //$('.main-menu').removeClass('is-hidden-mobile').addClass('.bounceInDown');
 
 }, function() {
 
- $('.main-menu').addClass('is-hidden-mobile');
+  $('.main-menu').slideUp(1000, 'swing', function() {
+    $(this).removeAttr("style");
+  });
+
+
+ //$('.main-menu').addClass('is-hidden-mobile');
 });
 
 }
@@ -111,7 +121,7 @@ $('.menu-toggle').toggle(function() {
 
 // jPM.on();
 
-$('.top-bar span').toggle(function() {
+$('.top-bar .span').toggle(function() {
 var t = $(this).next('ul');
 t.css('visibility', 'visible');
 t.removeClass('is-removed-mobile');
@@ -141,14 +151,14 @@ $(function(){
     };
     
     function doOpen() {
-    		if ($(window).width() > 850) {
+        if ($(window).width() > 850) {
         $(this).addClass("hover");
         $('ul:first',this).css('visibility', 'visible');
         }
     }
  
     function doClose() {
-    		if ($(window).width() > 850) {
+        if ($(window).width() > 850) {
         $(this).removeClass("hover");
         $('ul:first',this).css('visibility', 'hidden');
         }
@@ -179,10 +189,41 @@ $(window).resize(function () {
       //alert('Resize...');
       //
       checkWindowSize();
+       $('.main-menu').removeAttr("style");
     }, 500, "some unique string");
 });
 
-checkWindowSize();
+
+menuS = $('nav.secondary').html();
+
+b = $('.secondary-menu-mobile');
+
+b.prepend(menuS);
+
+c = b.find('ul li:first-child');
+
+d = c.nextAll();
+
+d.hide();
+
+e = $('.secondary-menu-mobile span a');
+
+e.toggle(function() {
+ d.show();
+
+ //$('.main-menu').transition({ y: '40px' });
+ //$('.main-menu').removeClass('is-hidden-mobile').addClass('.bounceInDown');
+
+}, function() {
+
+d.hide();
+
+
+ //$('.main-menu').addClass('is-hidden-mobile');
+});
+
+console.log(c);
+//checkWindowSize();
 //dropMenu();
 menuToggle();
 
