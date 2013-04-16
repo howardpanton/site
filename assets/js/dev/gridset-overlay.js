@@ -22,6 +22,26 @@ gs = {
 						
 						gs.prevent(e);
 						break;
+
+					case 85:
+  				
+						var gw = document.getElementById('gridsetoverlaywrap');
+									
+						if (!gw) gs.show();
+						else gs.remove(gw);
+										
+						gs.prevent(e);
+						break;
+				 
+					case 220:
+									
+						var gw = document.getElementById('gridsetoverlaywrap');
+									
+						if (!gw) gs.show();
+						else gs.remove(gw);
+										
+						gs.prevent(e);
+						break;
 						
 				}
 				
