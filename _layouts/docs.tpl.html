@@ -1,13 +1,16 @@
-{% include _head.html %}
+{% include docs/_docs_head.html %}
  
-  <body class='style'>
+<body class="style">
 
   {% include docs/_docs_header.html %}
 
   {% include docs/_docs_navigation.html %}
 
+  <div class="content-wrapper">
 
-  {{ content }}
+    {{ content }}
+
+  </div><!-- .content-wrapper -->
 
   <script src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
   <script>
@@ -17,12 +20,10 @@
   </script>
 
   <!-- Development scripts, not for production -->
-
+  <script src='{{ site.url }}assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/dev/hashgrid.js' type='text/javascript'></script>
+  
   <!-- Plugins -->
-
-  <script>
-    $(document).foundation();
-  </script>
 
   </body>
 </html>

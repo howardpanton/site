@@ -521,7 +521,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -609,7 +609,7 @@ input[type="checkbox"]:focus {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -629,7 +629,7 @@ input[type="checkbox"]:focus {
 }
 /* line 84, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid white;
+  border-left: 1px solid #ffffff;
 }
 @media only screen and (max-width: 599px) {
   /* line 84, ../styles/components/_nav-main-menu.scss */
@@ -1146,7 +1146,7 @@ ul.last {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px black;
+  border: solid 4px #000;
   border-top: none;
   border-bottom: none;
 }
@@ -1157,7 +1157,7 @@ ul.last {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent black;
+  border-color: transparent transparent transparent #000;
 }
 /* line 111, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -1194,11 +1194,11 @@ ul.last {
 }
 /* line 138, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container .orbit-prev > span {
-  border-color: transparent white transparent transparent;
+  border-color: transparent #fff transparent transparent;
 }
 /* line 139, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container .orbit-prev:hover > span {
-  border-color: transparent #cccccc transparent transparent;
+  border-color: transparent #ccc transparent transparent;
 }
 /* line 141, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container .orbit-next {
@@ -1206,13 +1206,13 @@ ul.last {
 }
 /* line 142, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container .orbit-next > span {
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent #fff;
   left: 50%;
   margin-left: -8px;
 }
 /* line 147, ../styles/plugins/foundation/_orbit.scss */
 .orbit-container .orbit-next:hover > span {
-  border-color: transparent transparent transparent #cccccc;
+  border-color: transparent transparent transparent #ccc;
 }
 
 /* line 151, ../styles/plugins/foundation/_orbit.scss */
@@ -1230,7 +1230,7 @@ ul.last {
   background: #fff;
   float: left;
   margin-right: 6px;
-  border: solid 2px black;
+  border: solid 2px #000;
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
@@ -1287,7 +1287,7 @@ body {
 /* line 10, ../styles/custom/_global.scss */
 a {
   color: #000;
-  border-bottom: 1px solid;
+  border-bottom: 1px  solid;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1296,19 +1296,24 @@ a:hover, a:focus, a:active {
   color: #929292;
 }
 
-/* line 24, ../styles/custom/_global.scss */
+/* line 23, ../styles/custom/_global.scss */
+.box {
+  background-color: #000;
+}
+
+/* line 28, ../styles/custom/_global.scss */
 .content-wrapper img, .top-bar img, #header .banner img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 27, ../styles/custom/_global.scss */
+/* line 31, ../styles/custom/_global.scss */
 ol {
   list-style-position: inside;
   list-style-type: decimal;
 }
 
-/* line 28, ../styles/custom/_global.scss */
+/* line 32, ../styles/custom/_global.scss */
 ul {
   list-style-position: inside;
   list-style-type: disc;
@@ -1316,31 +1321,31 @@ ul {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 36, ../styles/custom/_global.scss */
+/* line 40, ../styles/custom/_global.scss */
 .clearfix, .main-menu, #header, #header .banner, .footer, .footer .copyright {
   overflow: hidden;
   *zoom: 1;
   clear: left;
 }
 
-/* line 39, ../styles/custom/_global.scss */
+/* line 43, ../styles/custom/_global.scss */
 .cf {
   zoom: 1;
 }
 
-/* line 41, ../styles/custom/_global.scss */
+/* line 45, ../styles/custom/_global.scss */
 .cf:before,
 .cf:after {
   content: "";
   display: table;
 }
 
-/* line 42, ../styles/custom/_global.scss */
+/* line 46, ../styles/custom/_global.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 47, ../styles/custom/_global.scss */
+/* line 51, ../styles/custom/_global.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -1363,7 +1368,7 @@ ul {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
   /* line 24, ../styles/custom/_layouts.scss */
@@ -1460,7 +1465,7 @@ ul {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
 }
 /* line 105, ../styles/custom/_layouts.scss */
 .footer .copyright p {
@@ -1692,7 +1697,7 @@ header.title h1 {
 
 /* line 25, ../styles/custom/_lcf.scss */
 .bordered {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
 }
 
 /* line 29, ../styles/custom/_lcf.scss */
@@ -1765,7 +1770,7 @@ section .standfirst {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }
