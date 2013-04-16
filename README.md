@@ -4,7 +4,10 @@ beta
 UAL beta website
 
 This is the repo for the new [www.arts.ac.uk](www.arts.ac.uk) website.
-The site is built using [Zurb Foundation 4.0](http://foundation.zurb.com/).
+The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundation 4.0](http://foundation.zurb.com/), plus a pick-and-mix of extra components.
+
+Authors
+------------
 
 
 Github setup

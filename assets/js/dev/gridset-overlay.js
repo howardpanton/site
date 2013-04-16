@@ -23,7 +23,7 @@ gs = {
 						gs.prevent(e);
 						break;
 
-					case 85:
+					case 75: // cmd-K works
   				
 						var gw = document.getElementById('gridsetoverlaywrap');
 									
