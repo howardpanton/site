@@ -5,7 +5,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 */
 
 // Table of Contents
-
+//
 // See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
 // -------------------------------------------------------------
 // As a rule of thumb, don't nest further than 3 levels deep
@@ -13,9 +13,9 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 
 // ::Imports pre-render
-	//:: Reset
-	//:: Settings
-	//:: Mixins
+  //:: Reset
+  //:: Settings
+  //:: Mixins
 // ::Clearfix extends
 // ::Base styles
 
@@ -50,21 +50,12 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Required for emCalc and other Foundation bits
 
-@import "globals/typography"; 		
+@import "globals/typography";     
 @import "plugins/rem";
-@import "globals/forms";			
-@import "globals/university-logos";	
-@import "globals/layout";	
+@import "globals/forms";      
+@import "globals/university-logos"; 
+@import "globals/layout"; 
 @import "globals/colors";
-
-
-
-/* ::Global styling - our home-made add-ons */
-/* ------------------------------------------------------------ */
-
-@import "custom/global"; 
-@import "custom/layouts";	
-@import "custom/colors"; 
 
 
 /* ::Components */
@@ -93,11 +84,12 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "foundation/components/orbit";
 
 
-/* ::Custom styling - our home-made add-ons */
+
+/* ::Custom styling - local add-ons */
 /* ------------------------------------------------------------ */
 
-
 @import "custom/lcf";
+
 
 /* ::Media queries */
 /* ------------------------------------------------------------ */
@@ -109,4 +101,4 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Ordered last to override when necessary
 @import "globals/debug";
-@import "globals/utilities";		
+@import "globals/utilities";    
