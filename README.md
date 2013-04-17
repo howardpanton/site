@@ -50,14 +50,14 @@ You should see:
 
 **Set a new remote**
 
-`git remote add wisbey https://github.com/wisbey/beta.git`
+`git remote add source https://github.com/username/beta.git`
 
 `git remote -v`
 
 -- origin	https://github.com/artslondon/beta.git (fetch)  
 -- origin	https://github.com/artslondon/beta.git (push)  
--- wisbey	https://github.com/wisbey/beta.git (fetch)  
--- wisbey	https://github.com/wisbey/beta.git (push)  
+-- source	https://github.com/username/beta.git (fetch)  
+-- source	https://github.com/username/beta.git (push)  
 
 
 Fork & pull process
