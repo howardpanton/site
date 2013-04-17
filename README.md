@@ -4,7 +4,10 @@ beta
 UAL beta website
 
 This is the repo for the new [www.arts.ac.uk](www.arts.ac.uk) website.
-The site is built using [Zurb Foundation 4.0](http://foundation.zurb.com/).
+The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundation 4.0](http://foundation.zurb.com/), plus a pick-and-mix of extra components.
+
+Authors
+------------
 
 
 Github setup
@@ -47,14 +50,14 @@ You should see:
 
 **Set a new remote**
 
-`git remote add wisbey https://github.com/wisbey/beta.git`
+`git remote add source https://github.com/username/beta.git`
 
 `git remote -v`
 
 -- origin	https://github.com/artslondon/beta.git (fetch)  
 -- origin	https://github.com/artslondon/beta.git (push)  
--- wisbey	https://github.com/wisbey/beta.git (fetch)  
--- wisbey	https://github.com/wisbey/beta.git (push)  
+-- source	https://github.com/username/beta.git (fetch)  
+-- source	https://github.com/username/beta.git (push)  
 
 
 Fork & pull process

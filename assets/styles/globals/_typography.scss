@@ -1,5 +1,5 @@
-@import "../globals/variables";
-@import "../globals/mixins";
+@import "variables";
+@import "mixins";
 
 
 // SET-UP CORE FONT SIZING AND RHYTHM
@@ -145,13 +145,13 @@ li {
 // default blockquote styling
 blockquote {
 	font-style: italic;
-	padding-left: 22px;  // maybe use emify to set size???
+	padding-left: emCalc(22px);  
 	border-left: 1px solid $light-gray;
 }
 
 // blockquote with wider border on left side
 blockquote.bquote-wider-border {
-	padding-left: 12px; // maybe use emify to set size???
+	padding-left: emCalc(12px); 
 	border-left: 1px solid $light-gray;
 }
 

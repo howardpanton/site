@@ -4,7 +4,7 @@
 #require 'zurb-foundation'
 
 # Set this to the root of your project when deployed:
-http_path = "http://localhost/ual-grid/"
+http_path = "http://artslondon.github.io/beta/"
 css_dir = "assets/css"
 sass_dir = "assets/styles"
 javascripts_dir = "assets/js"
@@ -34,7 +34,7 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://artslondon.github.com/beta/assets/"
+http_images_path = "http://artslondon.github.io/beta/assets/img"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = true
 

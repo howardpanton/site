@@ -5,7 +5,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 */
 
 // Table of Contents
-
+//
 // See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
 // -------------------------------------------------------------
 // As a rule of thumb, don't nest further than 3 levels deep
@@ -13,9 +13,9 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 
 // ::Imports pre-render
-	//:: Reset
-	//:: Settings
-	//:: Mixins
+  //:: Reset
+  //:: Settings
+  //:: Mixins
 // ::Clearfix extends
 // ::Base styles
 
@@ -25,12 +25,18 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::Debugs  
 
 
+// ::Zurb foundation - installed via the gem 
+// ------------------------------------------------------------
+
+//@import "foundation/foundation-global";
+
+
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
 @import "globals/variables";
 @import "globals/mixins";
-@import "plugins/reset";
+@import "plugins/normalize";
 
 
 /* ::Grid styles */
@@ -42,12 +48,14 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
-@import "globals/typography"; 		
+// Required for emCalc and other Foundation bits
+
+@import "globals/typography";     
 @import "plugins/rem";
-
-@import "globals/forms";			
-
-@import "globals/university-logos";	
+@import "globals/forms";      
+@import "globals/university-logos"; 
+@import "globals/layout"; 
+@import "globals/colors";
 
 
 /* ::Components */
@@ -57,27 +65,29 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "components/nav-main-menu";
 @import "components/nav-global-college-links";
 @import "components/secondary-menu";  
-@import "components/nav-mobile-menu";	
+@import "components/nav-mobile-menu"; 
+
+// Buttons & button groups
+@import "custom/buttons";
+@import "custom/button-groups"; 
 
 // Components for search
-@import "components/search-form";	
+@import "components/search-form"; 
 @import "components/search-buttons";
 
 // Layout components
 @import "components/grid-boxes";
-@import "components/_ual-flexslider";
+@import "foundation/components/tables";
+@import "components/ual-flexslider";
 
 // JS-based components
-@import "plugins/foundation/orbit";
+@import "foundation/components/orbit";
 
 
 
-/* ::Custom styling - our home-made add-ons */
+/* ::Custom styling - local add-ons */
 /* ------------------------------------------------------------ */
 
-@import "custom/global"; 
-@import "custom/layouts";	
-@import "custom/colors"; 
 @import "custom/lcf";
 
 
@@ -91,4 +101,4 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Ordered last to override when necessary
 @import "globals/debug";
-@import "globals/utilities";		
+@import "globals/utilities";    

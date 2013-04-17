@@ -54,6 +54,7 @@
 			float:none;
 			display:block;
 			overflow: hidden;
+			padding-left:0px;
 		}
 
 
@@ -164,18 +165,16 @@
 }
 
 
-
-
-
 .sub_menu {
-width: auto; 
-visibility: hidden; 
-position: absolute; 
-top: 100%; 
-left: 0px; 
-background:black; 
-display: block; 
-z-index:10;
+	width: auto; 
+	visibility: hidden; 
+	position: absolute; 
+	top: 100%; 
+	left: 0px; 
+	background:black; 
+	display: block; 
+	z-index:10;
+	padding-left:0px;
 
 	@include gs-media(m, min-max) {
 		width: auto;
@@ -192,13 +191,18 @@ li {
 	float: left;
 	width:100%;
 	display:block;
+			&:first-child {
+				border-left:none;
+			}
+
 	@include gs-media(m, min-max) {
 		width: 100%;
 		border-bottom: none;
 		display: block;
 		border-right: none;
-					border-top: 1px solid rgba(255, 255, 255, 0.1);
-			border-bottom: 1px solid rgba(51, 51, 51, 0.0976562);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid rgba(51, 51, 51, 0.0976562);
+		
 		&:first-child {
 			@include gs-media(m, min-max) {
 			border-left:none;
