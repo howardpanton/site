@@ -50,55 +50,57 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight:bold;
 }
 
-// Header styles
-.h10 {
+
+// Display Header styles 
+
+.heading-x10 {
 	@include adjust-font-size-to(114px); 
-	margin: 0 0 rhythm(3, 114px) 0; 
+	margin: 0 0 rhythm(5, 114px) 0; 
 }
 
-.h9 {
+.heading-x9 {
 	@include adjust-font-size-to(102px); 
-	margin: 0 0 rhythm(2, 102px) 0; 
+	margin: 0 0 rhythm(5, 102px) 0; 
 }
 
-.h8 {
+.heading-x8 {
 	@include adjust-font-size-to(90px); 
-	margin: 0 0 rhythm(2, 90px) 0; 
+	margin: 0 0 rhythm(5, 90px) 0; 
 }
 
-.h7 {
+.heading-x7 {
 	@include adjust-font-size-to(78px); 
-	margin: 0 0 rhythm(2, 78px) 0; 
+	margin: 0 0 rhythm(5, 78px) 0; 
 }
 
-.h6 {
+.heading-x6 {
 	@include adjust-font-size-to(66px); 
-	margin: 0 0 rhythm(2, 66px) 0; 
+	margin: 0 0 rhythm(5, 66px) 0; 
 }
 
-.h5 {
+.heading-x5 {
 	@include adjust-font-size-to(56px); 
-	margin: 0 0 rhythm(2, 56px) 0; 
+	margin: 0 0 rhythm(5, 56px) 0; 
 }
 
-.h4 {
+.heading-x4 {
 	@include adjust-font-size-to(44px); 
-	margin: 0 0 rhythm(2, 44px) 0; 
+	margin: 0 0 rhythm(4, 44px) 0; 
 }
 
-.h3 {
+.heading-x3 {
 	@include adjust-font-size-to(34px); 
-	margin: 0 0 rhythm(2, 34px) 0; 
+	margin: 0 0 rhythm(3, 34px) 0; 
 }
 
-.h2 {
+.heading-x2 {
 	@include adjust-font-size-to(22px); 
-	margin: 0 0 rhythm(1, 22px) 0; 
+	margin: 0 0 rhythm(2, 22px) 0; 
 }
 
-.h1 {
+.heading-x1 {
 	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(1, 18px) 0; 
+	margin: 0 0 rhythm(2, 18px) 0; 
 }
 
 
@@ -109,17 +111,22 @@ p.intro {
 
 p.small{
 	@include adjust-font-size-to(14px); 
-	margin: 0 0 rhythm(4, 14px) 0;		
+	margin: 0 0 rhythm(2, 14px) 0;		
+}
+
+p.smallest{
+	@include adjust-font-size-to(13px); 
+	margin: 0 0 rhythm(2, 13px) 0;		
 }
 
 p {
 	@include adjust-font-size-to(16px); 
-	margin: 0 0 rhythm(4, 16px) 0;		
+	margin: 0 0 rhythm(2, 16px) 0;		
 }
 
 small {
-	@include adjust-font-size-to(13px);
-		margin: 0 0 rhythm(3, 13px) 0;	
+	@include adjust-font-size-to(14px);
+		margin: 0 0 rhythm(2, 14px) 0;	
 }
 
 ol, ul {
@@ -131,6 +138,25 @@ li {
 	line-height: auto;
 }
 
+
+// Blockquotes
+// -----------------------------------------------------------
+
+// default blockquote styling
+blockquote {
+	font-style: italic;
+	padding-left: emCalc(22px);  
+	border-left: 1px solid $light-gray;
+}
+
+// blockquote with wider border on left side
+blockquote.bquote-wider-border {
+	padding-left: emCalc(12px); 
+	border-left: 1px solid $light-gray;
+}
+
+
+
 // Core typography
 // ------------------------------------------------------------
 
@@ -141,7 +167,7 @@ em, i, q 	{ font-style: italic; }
 
 blockquote {
 	padding-left: em-font(16px);
-	border-left: em-font(5px) solid grey;
+	border-left: em-font(5px) solid gray;
 	line-height: normal;
 	margin: 0;
 	p {
@@ -167,3 +193,6 @@ blockquote {
 	margin: 0 0 rhythm(2, 27px) 0;  
 	}
 }
+
+
+
