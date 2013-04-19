@@ -32,11 +32,15 @@ $buffer-max: 102px;
     .bordered {
         border-bottom-color: #fff; 
     }
+    a {
+        color: #fff;
+    }
 }
 
 // TYPOGRAPHICAL
 .section-title {
     margin-bottom: 20px; // leader shit?
+    padding-left: 54px;
     h2, h3 {
         display: inline; // so that borders run as far as the text but no further
     }
@@ -46,9 +50,19 @@ section .standfirst {
     text-decoration: underline;
 }
 
+.image-caption {
+    color: $ual-secondary;
+    font-family: $alt-font-family;
+    padding-top: 4px;
+    a {
+       color: $ual-secondary; 
+    }
+}
+
 // FEATURE CAROUSEL
 #feature-carousel {
-    .orbit-caption {
+    overflow: hidden; // for flexslider controls
+    /*.orbit-caption {
         position: absolute;
         top: 30%;
         background-color: transparent;
@@ -58,7 +72,7 @@ section .standfirst {
     }
     h2 {
         color: #000;
-    }
+    }*/
 }
 
 // BETTER LIVES

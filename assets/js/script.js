@@ -213,7 +213,7 @@ console.log(c);
 menuToggle();
 
 // NIVO SLIDER
-if ($('#slider').length > 0) {
+if ($('.nivoSlider').length > 0) {
     $(window).load(function() {
       $('.nivoSlider').nivoSlider({
         manualAdvance: true,
@@ -222,3 +222,11 @@ if ($('#slider').length > 0) {
     });
 }
 
+// FLEX SLIDER
+if ($('.flexslider').length > 0) {
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      slideshow: false
+    });
+  });
+}
