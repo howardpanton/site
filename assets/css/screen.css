@@ -318,7 +318,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -864,7 +864,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -926,7 +926,7 @@ body {
 /* line 30, ../styles/globals/_layout.scss */
 a {
   color: #000;
-  border-bottom: 1px solid;
+  border-bottom: 1px  solid;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1021,7 +1021,7 @@ ul {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
   /* line 114, ../styles/globals/_layout.scss */
@@ -1067,11 +1067,6 @@ ul {
 }
 /* line 154, ../styles/globals/_layout.scss */
 .footer > div {
-  clear: both;
-  display: block;
-  float: left;
-  margin-left: 0;
-  width: 100%;
   padding-top: 1.5em;
   margin-left: 12px;
 }
@@ -1119,7 +1114,7 @@ ul {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
 }
 /* line 195, ../styles/globals/_layout.scss */
 .footer .copyright p {
@@ -1400,7 +1395,7 @@ header.title h1 {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -1420,7 +1415,7 @@ header.title h1 {
 }
 /* line 85, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid white;
+  border-left: 1px solid #ffffff;
 }
 @media only screen and (max-width: 599px) {
   /* line 85, ../styles/components/_nav-main-menu.scss */
@@ -2322,7 +2317,7 @@ button.button.large {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px black;
+  border: solid 4px #000;
   border-top: none;
   border-bottom: none;
 }
@@ -2333,7 +2328,7 @@ button.button.large {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent black;
+  border-color: transparent transparent transparent #000;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -2627,7 +2622,7 @@ table tfoot tr td {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px black;
+  border: solid 4px #000;
   border-top: none;
   border-bottom: none;
 }
@@ -2638,7 +2633,7 @@ table tfoot tr td {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent black;
+  border-color: transparent transparent transparent #000;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -2788,7 +2783,7 @@ table tfoot tr td {
   width: 100%;
   height: auto;
   overflow: hidden;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
 }
 
 /* line 25, ../styles/plugins/_nivo-slider.scss */
@@ -2884,118 +2879,37 @@ table tfoot tr td {
 /* Direction nav styles (e.g. Next & Prev) */
 /* line 100, ../styles/plugins/_nivo-slider.scss */
 .nivo-directionNav a {
-  display: none;
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  cursor: pointer;
 }
 
-/* line 107, ../styles/plugins/_nivo-slider.scss */
+/* line 106, ../styles/plugins/_nivo-slider.scss */
 .nivo-prevNav {
-  display: none;
+  left: 0px;
 }
 
-/* line 111, ../styles/plugins/_nivo-slider.scss */
+/* line 109, ../styles/plugins/_nivo-slider.scss */
 .nivo-nextNav {
-  display: none;
+  right: 0px;
 }
 
 /* Control nav styles (e.g. 1,2,3...) */
-/* line 116, ../styles/plugins/_nivo-slider.scss */
+/* line 113, ../styles/plugins/_nivo-slider.scss */
 .nivo-controlNav {
-  display: none;
+  text-align: center;
+  padding: 15px 0;
 }
 
-/*
-Skin Name: Nivo Slider Default Theme
-Skin URI: http://nivo.dev7studios.com
-Description: The default skin for the Nivo Slider.
-Version: 1.3
-Author: Gilbert Pellegrom
-Author URI: http://dev7studios.com
-Supports Thumbs: true
-*/
-/* line 138, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivoSlider {
-  position: relative;
-  background: white url(http://artslondon.github.io/beta/assets/img/nivo-slider/loading.gif) no-repeat 50% 50%;
+/* line 117, ../styles/plugins/_nivo-slider.scss */
+.nivo-controlNav a {
+  cursor: pointer;
 }
 
-/* line 146, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivoSlider img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: none;
-}
-
-/* line 152, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivoSlider a {
-  border: 0;
-  display: block;
-}
-
-/* line 157, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav {
-  display: none;
-}
-
-/* line 162, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav a {
-  display: none;
-}
-
-/* line 172, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav a.active {
-  background-position: 0 -22px;
-}
-
-/* line 176, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-directionNav a {
-  display: none;
-}
-
-/* line 190, ../styles/plugins/_nivo-slider.scss */
-.theme-default:hover .nivo-directionNav a {
-  opacity: 1;
-}
-
-/* line 191, ../styles/plugins/_nivo-slider.scss */
-.theme-default a.nivo-nextNav {
-  background-position: -30px 0;
-  right: 15px;
-}
-
-/* line 195, ../styles/plugins/_nivo-slider.scss */
-.theme-default a.nivo-prevNav {
-  left: 15px;
-}
-
-/* line 202, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-caption a {
-  color: #fff;
-}
-
-/* line 206, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-caption a:hover {
-  color: #fff;
-}
-
-/* line 210, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav.nivo-thumbs-enabled {
-  width: 100%;
-}
-
-/* line 213, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
-  width: auto;
-  height: auto;
-  background: none;
-  margin-bottom: 5px;
-}
-
-/* line 219, ../styles/plugins/_nivo-slider.scss */
-.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
-  display: block;
-  width: 120px;
-  height: auto;
+/* line 120, ../styles/plugins/_nivo-slider.scss */
+.nivo-controlNav a.active {
+  font-weight: bold;
 }
 
 /* ::Custom styling - local add-ons */
@@ -3022,7 +2936,7 @@ Supports Thumbs: true
 
 /* line 25, ../styles/custom/_lcf.scss */
 .bordered {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
 }
 
 /* line 29, ../styles/custom/_lcf.scss */
@@ -3095,7 +3009,7 @@ section .standfirst {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }
