@@ -77,18 +77,21 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Layout components
 @import "components/grid-boxes";
-@import "foundation/components/tables";
+
+// Foundation components
+@import "plugins/foundation/components/_orbit.scss";
+@import "plugins/foundation/components/_tables.scss";
+
+// Other
 @import "components/ual-flexslider";
-
-// JS-based components
-@import "foundation/components/orbit";
-
+@import "plugins/nivo-slider";
 
 
 /* ::Custom styling - local add-ons */
 /* ------------------------------------------------------------ */
 
 @import "custom/lcf";
+@import "custom/csm";
 
 
 /* ::Media queries */
