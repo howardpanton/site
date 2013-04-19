@@ -45,10 +45,17 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/gridset";
 
 
+/* :: include global zurb sass file */
+/* ------------------------------------------------------------ */
+@import "plugins/foundation/components/_global";
+//@import "foundation/foundation-global", "foundation/components/global", "foundation/components/dropdown";
+
+
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
 // Required for emCalc and other Foundation bits
+
 
 @import "globals/typography";     
 @import "plugins/rem";
@@ -56,6 +63,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/university-logos"; 
 @import "globals/layout"; 
 @import "globals/colors";
+
 
 
 /* ::Components */
@@ -82,7 +90,8 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // JS-based components
 @import "plugins/foundation/components/orbit";
-
+@import "plugins/foundation/components/dropdown-buttons";
+@import "plugins/foundation/components/dropdown";
 
 
 /* ::Custom styling - local add-ons */

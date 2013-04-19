@@ -33,8 +33,21 @@ title: University of the Arts London - Website Style Guide
 	    <td><code>button small</code></td>
 	    <td>Standard button with smaller text</td>
 	  </tr>
+
+	  <tr>
+	  	<td colspan="3">
+	  		<pre>
+				<button type="button" class="button bold">Single Button</button>
+				<button type="button" class="button">Single Button</button>
+				<button type="button" class="button small">Single Button</button>
+			</pre>
+		</td>
+	   </tr>
 	</tbody>
 </table>
+	
+		<pre class="prettyprint">&lt;button type=&quot;button&quot; class=&quot;button bold&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button small&quot;&gt;Single Button&lt;/button&gt;
+	</pre>
 
 <h2>Button groups</h2>
 
@@ -58,6 +71,17 @@ title: University of the Arts London - Website Style Guide
 	    <td><code>button-group</code></td>
 	    <td>Button group with bold buttons</td>
 	  </tr>
+	   <tr>
+	  	<td colspan="3">
+	  		<pre class="prettyprint">
+				<ul class="button-group">
+				  <li><a href="#" class="button bold">Button 1</a></li>
+				  <li><a href="#" class="button bold">Button 2</a></li>
+				  <li><a href="#" class="button bold">Button 3</a></li>
+				</ul>
+			</pre>
+		</td>
+	   </tr>
 	  <tr>
 	    <td>
 	    	<ul class="button-group">
@@ -70,6 +94,13 @@ title: University of the Arts London - Website Style Guide
 	    <td>Standard button group</td>
 	  </tr>
 	  <tr>
+	  	<td colspan="3">
+	  		
+				<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+			</pre>
+		</td>
+	   </tr>
+	  <tr>
 	    <td>
 	    	<ul class="button-group">
 			  <li><a href="#" class="button small">Button 1</a></li>
@@ -80,5 +111,42 @@ title: University of the Arts London - Website Style Guide
 	    <td><code>button-group</code></td>
 	    <td>Button group with smaller text</td>
 	  </tr>
+	  <tr>
+	  	<td colspan="3">
+		
+			<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+		</pre>
+
+		</td>
+	   </tr>
 	</tbody>
+
 </table>
+
+
+<h2>Dropdowns</h2>
+	
+	<h4>Default dropdown</h4>
+	<a href="#" class="dropdown button" data-dropdown="drop1">Has Dropdown</a>
+	<!-- <a href="#" class="button dropdown-btn " data-dropdown="drop1">Has Dropdown</a> -->
+	<ul id="drop1" class="f-dropdown" data-dropdown-content>
+			<li><a href="#">This is a link</a></li>
+		  <li><a href="#">This is another</a></li>
+		  <li><a href="#">Yet another</a></li>
+	</ul>
+	
+
+
+
+	<h4>Dropdown with no bottom border on list elements</h4>
+	<a href="#" class="button dropdown-btn-no-border " data-dropdown="drop1">Has Dropdown</a>
+
+	<ul id="drop1" class="f-dropdown" data-dropdown-content>
+			<li><a href="#">This is a link</a></li>
+		  <li><a href="#">This is another</a></li>
+		  <li><a href="#">Yet another</a></li>
+	</ul>
+
+<pre class="prettyprint">
+	<pre class="prettyprint">&lt;a href=&quot;#&quot; class=&quot;button dropdown-btn&quot; data-dropdown=&quot;drop1&quot;&gt;Has Dropdown&lt;/a&gt; &lt;ul id=&quot;drop1&quot; class=&quot;f-dropdown&quot; data-dropdown-content&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is another&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yet another&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;a href=&quot;#&quot; class=&quot;button dropdown-btn-no-border&quot; data-dropdown=&quot;drop1&quot;&gt;Has Dropdown&lt;/a&gt; &lt;ul id=&quot;drop1&quot; class=&quot;f-dropdown&quot; data-dropdown-content&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is a test link&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is another&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yet another&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+</pre>
