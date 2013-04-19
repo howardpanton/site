@@ -1,34 +1,27 @@
 ---
 layout: main.tpl
-class-home: active
+class-home: lcf
 title: London College of Fashion
 ---
 
-<div class="content-wrapper lcf clearfix">
+<div id="feature-carousel" class="row buffer-max centered">
+    <div class="d-all">
+        <div id="slider" class="nivoSlider">
+	    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-2013.jpg" />
+	    
+			<img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi2.jpg" />
+		    
+		    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi3.jpg" />
+		</div>
 
-	<section id="feature-carousel" class="row buffer-max centered">
-	    <div class="d-all">
-	        <!-- carousel module required here -->
-			<ul data-orbit data-options="timer_speed:2500; bullets:false;">
-			  <li>
-			    <img src="{{ site.url }}/assets/img/lcf/lcf-slide-1.jpg" />
-			    <div class="orbit-caption"><h2 class="h5">A home<br>at the end<br>of the earth</h2></div>
-			  </li>
-			  <li>
-			    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi2.jpg" />
-			    <div class="orbit-caption"><h2 class="h5">MA Shows Season</h2></div>
-			  </li>
-			  <li>
-			    <img src="{{ site.url }}/assets/img/lcf/ChrystelLivolsi3.jpg" />
-			    <div class="orbit-caption"><h2 class="h5">Graduate School<br>Apply Now</h2></div>
-			  </li>
-			</ul>
-	    </div>
-	</section><!-- #feature-carousel -->
+    </div>
+</div><!-- #feature-carousel -->
+
+<div class="content-wrapper lcf clearfix">
 
 	<div class="row buffer-max">
 		<nav class="d1-d4 sidebar">
-			<ul class="is-uppercase">
+			<ul class="is-uppercase no-bullet">
 				<li><a href="#">About LCF</a></li>
 				<li><a href="#">Courses</a></li>
 				<li><a href="#">News</a></li>
@@ -105,7 +98,3 @@ title: London College of Fashion
 	</div><!-- .row -->
 
 </div><!-- .content-wrapper -->
-
-<div class="footer lcf">
-    {% include footers/_lcf_footer.html %}
-</div>

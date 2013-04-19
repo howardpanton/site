@@ -212,3 +212,13 @@ console.log(c);
 //dropMenu();
 menuToggle();
 
+// NIVO SLIDER
+if ($('#slider').length > 0) {
+    $(window).load(function() {
+      $('.nivoSlider').nivoSlider({
+        manualAdvance: true,
+        effect: 'fade'
+      });
+    });
+}
+

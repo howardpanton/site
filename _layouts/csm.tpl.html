@@ -1,14 +1,8 @@
 {% include _head.html %}
 
-<body class='style {{ class-home }}'>
-
-{% include _global_header.html %}
-
-{% include _global_navigation.html %}
+<body class='style'>
 
 {{ content }}
-
-{% include _global_footer.html %}
 
 
   <script src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
@@ -42,12 +36,10 @@
     $(window).load(function() {
       $('#slider, #sliderl1, #sliderl2, #sliderr1, #sliderr2, #sliderr3').nivoSlider();
       // setTimeout(function(){
-      //   $('#slider1').nivoSlider({ pauseTime:5000, pauseOnHover:false });
+      //   $('#sliderr3').nivoSlider({ pauseTime:5000, pauseOnHover:false });
       // }, 1000);
     });
   </script>
-
-  
 
   </body>
 </html>
