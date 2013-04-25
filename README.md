@@ -47,14 +47,14 @@ You should see:
 
 **Set a new remote**
 
-`git remote add wisbey https://github.com/wisbey/beta.git`
+`git remote add wisbey https://github.com/yourusername/beta.git`
 
 `git remote -v`
 
 -- origin	https://github.com/artslondon/beta.git (fetch)  
 -- origin	https://github.com/artslondon/beta.git (push)  
--- wisbey	https://github.com/wisbey/beta.git (fetch)  
--- wisbey	https://github.com/wisbey/beta.git (push)  
+-- wisbey	https://github.com/yourusername/beta.git (fetch)  
+-- wisbey	https://github.com/yourusername/beta.git (push)  
 
 
 Fork & pull process
@@ -75,6 +75,6 @@ Make sure you're on the gh-pages branch:
 
 Make changes, commit them, then push changes to your own remote:
 
-`git push wisbey gh-pages`
+`git push myremote gh-pages`
 
 Now you can make a pull request via github.com.
