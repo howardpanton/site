@@ -2880,205 +2880,6 @@ table tfoot tr td {
     display: block;
   }
 }
-<<<<<<< HEAD
-/* Dropdown Button */
-/* line 107, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button {
-  position: relative;
-  padding-right: 3.1875em;
-}
-/* line 45, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-  top: 50%;
-}
-/* line 80, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
-  border-width: 0.5625em;
-  right: 1.5em;
-  margin-top: -0.25em;
-}
-/* line 99, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
-  border-color: white transparent transparent transparent;
-}
-/* line 108, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny {
-  padding-right: 2.1875em;
-}
-/* line 60, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny:before {
-  border-width: 0.4375em;
-  right: 0.875em;
-  margin-top: -0.15625em;
-}
-/* line 99, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny:before {
-  border-color: white transparent transparent transparent;
-}
-/* line 109, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small {
-  padding-right: 2.8125em;
-}
-/* line 70, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small:before {
-  border-width: 0.5625em;
-  right: 1.125em;
-  margin-top: -0.21875em;
-}
-/* line 99, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small:before {
-  border-color: white transparent transparent transparent;
-}
-/* line 110, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large {
-  padding-right: 4em;
-}
-/* line 90, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large:before {
-  border-width: 0.625em;
-  right: 1.75em;
-  margin-top: -0.3125em;
-}
-/* line 99, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large:before {
-  border-color: white transparent transparent transparent;
-}
-/* line 111, ../styles/plugins/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.secondary:before {
-  border-color: #333333 transparent transparent transparent;
-}
-
-@media only screen and (max-width: 767px) {
-  /* line 126, ../styles/plugins/foundation/components/_dropdown.scss */
-  .f-dropdown {
-    max-width: 100%;
-    left: 0;
-  }
-}
-/* Foundation Dropdowns */
-/* line 133, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown {
-  position: absolute;
-  top: -9999px;
-  list-style: none;
-  padding: 1.25em;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  background: white;
-  border: solid 1px #cccccc;
-  font-size: 16px;
-  z-index: 99;
-  margin-top: 2px;
-  max-width: 200px;
-}
-/* line 48, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown *:first-child {
-  margin-top: 0;
-}
-/* line 49, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown *:last-child {
-  margin-bottom: 0;
-}
-/* line 74, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: solid 6px;
-  border-color: transparent transparent white transparent;
-  position: absolute;
-  top: -12px;
-  left: 10px;
-  z-index: 99;
-}
-/* line 81, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: solid 7px;
-  border-color: transparent transparent #cccccc transparent;
-  position: absolute;
-  top: -14px;
-  left: 9px;
-  z-index: 98;
-}
-/* line 89, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.right:before {
-  left: auto;
-  right: 10px;
-}
-/* line 93, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.right:after {
-  left: auto;
-  right: 9px;
-}
-/* line 137, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown li {
-  font-size: 0.875em;
-  cursor: pointer;
-  line-height: 1.125em;
-  margin: 0;
-}
-/* line 113, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown li:hover, .f-dropdown li:focus {
-  background: #eeeeee;
-}
-/* line 115, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown li a {
-  display: block;
-  padding: 0.3125em 0.625em;
-  color: #555555;
-}
-/* line 140, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.content {
-  position: absolute;
-  top: -9999px;
-  list-style: none;
-  padding: 1.25em;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  background: white;
-  border: solid 1px #cccccc;
-  font-size: 16px;
-  z-index: 99;
-  max-width: 200px;
-}
-/* line 48, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.content *:first-child {
-  margin-top: 0;
-}
-/* line 49, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.content *:last-child {
-  margin-bottom: 0;
-}
-/* line 143, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.tiny {
-  max-width: 200px;
-}
-/* line 144, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.small {
-  max-width: 300px;
-}
-/* line 145, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.medium {
-  max-width: 500px;
-}
-/* line 146, ../styles/plugins/foundation/components/_dropdown.scss */
-.f-dropdown.large {
-  max-width: 800px;
-=======
 /* line 2, ../styles/components/_ual-flexslider.scss */
 .ual-feature-box {
   margin-top: 36px;
@@ -3245,7 +3046,6 @@ table tfoot tr td {
 /* line 119, ../styles/plugins/_nivo-slider.scss */
 .nivo-controlNav a.active {
   font-weight: bold;
->>>>>>> fa0bd5b2b10d4d99c0ed2d8b313fd79b02bf7270
 }
 
 /*
@@ -3415,7 +3215,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: .3!important;
+  opacity: 0.3 !important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -3529,57 +3329,57 @@ html[xmlns] .slides {
   margin-bottom: 102px;
 }
 
-/* line 20, ../styles/custom/_lcf.scss */
+/* line 19, ../styles/custom/_lcf.scss */
 .lcf h1, .lcf h2, .lcf h3, .lcf h4, .lcf h5, .lcf h6 {
   text-transform: uppercase;
 }
 
-/* line 25, ../styles/custom/_lcf.scss */
+/* line 24, ../styles/custom/_lcf.scss */
 .bordered {
   border-bottom: 1px solid #000;
 }
 
-/* line 29, ../styles/custom/_lcf.scss */
+/* line 28, ../styles/custom/_lcf.scss */
 .dark-bg {
   background-color: #000;
   color: #fff;
 }
-/* line 32, ../styles/custom/_lcf.scss */
+/* line 31, ../styles/custom/_lcf.scss */
 .dark-bg .bordered {
   border-bottom-color: #fff;
 }
-/* line 35, ../styles/custom/_lcf.scss */
+/* line 34, ../styles/custom/_lcf.scss */
 .dark-bg a {
   color: #fff;
 }
 
-/* line 41, ../styles/custom/_lcf.scss */
+/* line 40, ../styles/custom/_lcf.scss */
 .section-title {
   margin-bottom: 20px;
   padding-left: 54px;
 }
-/* line 44, ../styles/custom/_lcf.scss */
+/* line 43, ../styles/custom/_lcf.scss */
 .section-title h2, .section-title h3 {
   display: inline;
 }
 
-/* line 49, ../styles/custom/_lcf.scss */
+/* line 48, ../styles/custom/_lcf.scss */
 section .standfirst {
   text-decoration: underline;
 }
 
-/* line 53, ../styles/custom/_lcf.scss */
+/* line 52, ../styles/custom/_lcf.scss */
 .image-caption {
   color: #929292;
   font-family: Times, serif;
   padding-top: 4px;
 }
-/* line 57, ../styles/custom/_lcf.scss */
+/* line 56, ../styles/custom/_lcf.scss */
 .image-caption a {
   color: #929292;
 }
 
-/* line 63, ../styles/custom/_lcf.scss */
+/* line 62, ../styles/custom/_lcf.scss */
 #feature-carousel {
   overflow: hidden;
   /*.orbit-caption {
@@ -3595,18 +3395,18 @@ section .standfirst {
   }*/
 }
 
-/* line 87, ../styles/custom/_lcf.scss */
+/* line 86, ../styles/custom/_lcf.scss */
 #showcase h2 {
   position: absolute;
   top: 40%;
   width: 100%;
 }
-/* line 92, ../styles/custom/_lcf.scss */
+/* line 91, ../styles/custom/_lcf.scss */
 #showcase .box-text {
   width: 65%;
 }
 
-/* line 99, ../styles/custom/_lcf.scss */
+/* line 98, ../styles/custom/_lcf.scss */
 .sidebar {
   margin-top: 80px;
 }
