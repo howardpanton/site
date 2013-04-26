@@ -133,9 +133,9 @@ $(function(){
 
     var config = {    
          sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)    
-         interval: 200,  // number = milliseconds for onMouseOver polling interval    
+         interval: 50,  // number = milliseconds for onMouseOver polling interval    
          over: doOpen,   // function = onMouseOver callback (REQUIRED)    
-         timeout: 200,   // number = milliseconds delay before onMouseOut    
+         timeout: 50,   // number = milliseconds delay before onMouseOut    
          out: doClose    // function = onMouseOut callback (REQUIRED)    
     };
     
@@ -211,14 +211,3 @@ console.log(c);
 //checkWindowSize();
 //dropMenu();
 menuToggle();
-
-// NIVO SLIDER
-if ($('.nivoSlider').length > 0) {
-    $(window).load(function() {
-      $('.nivoSlider').nivoSlider({
-        manualAdvance: true,
-        effect: 'fade'
-      });
-    });
-}
-
