@@ -222,11 +222,3 @@ if ($('.nivoSlider').length > 0) {
     });
 }
 
-// FLEX SLIDER
-if ($('.flexslider').length > 0) {
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      slideshow: false
-    });
-  });
-}
