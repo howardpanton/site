@@ -138,6 +138,18 @@ li {
 	line-height: auto;
 }
 
+// Horizontal rules - could create a sweet mixin for this?
+hr {
+  border: $hr-border-style $hr-border-color;
+  border-width: $hr-border-width 0 0;
+  clear: both;
+  height: 0;
+  @include margin-leader(5);
+  @include margin-trailer(5);
+  margin-left: 0;
+  margin-right: 0;
+}
+
 
 // Blockquotes
 // -----------------------------------------------------------
