@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 University of the Arts London
 CSS stylesheet
@@ -1050,7 +1051,7 @@ body {
 /* line 30, ../styles/globals/_layout.scss */
 a {
   color: #000;
-  border-bottom: 1px  solid;
+  border-bottom: 1px solid;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1076,12 +1077,12 @@ a:hover, a:focus, a:active {
 .clearfix, #header, #header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 223, ../styles/globals/_mixins.scss */
+/* line 253, ../styles/globals/_mixins.scss */
 .clearfix:before, #header:before, #header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, #header:after, #header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 224, ../styles/globals/_mixins.scss */
+/* line 254, ../styles/globals/_mixins.scss */
 .clearfix:after, #header:after, #header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }
@@ -1399,7 +1400,7 @@ header.title h1 {
 
 /* line 37, ../styles/globals/_colors.scss */
 .camberwell-secondary-bg {
-  background: #8cd2f0;
+  background: #4a97dd;
 }
 
 /* line 41, ../styles/globals/_colors.scss */
@@ -2108,7 +2109,7 @@ button.button.large {
     -moz-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
   }
-  /* line 180, ../styles/globals/_mixins.scss */
+  /* line 210, ../styles/globals/_mixins.scss */
   .button:active {
     -webkit-box-shadow: 0 rgba(0, 0, 0, 0.2) inset;
     box-shadow: 0 rgba(0, 0, 0, 0.2) inset;
@@ -2147,12 +2148,12 @@ button.button.large {
   margin: 0;
   *zoom: 1;
 }
-/* line 223, ../styles/globals/_mixins.scss */
+/* line 253, ../styles/globals/_mixins.scss */
 .button-group:before, .button-group:after {
   content: " ";
   display: table;
 }
-/* line 224, ../styles/globals/_mixins.scss */
+/* line 254, ../styles/globals/_mixins.scss */
 .button-group:after {
   clear: both;
 }
@@ -2246,12 +2247,12 @@ button.button.large {
 .button-bar {
   *zoom: 1;
 }
-/* line 223, ../styles/globals/_mixins.scss */
+/* line 253, ../styles/globals/_mixins.scss */
 .button-bar:before, .button-bar:after {
   content: " ";
   display: table;
 }
-/* line 224, ../styles/globals/_mixins.scss */
+/* line 254, ../styles/globals/_mixins.scss */
 .button-bar:after {
   clear: both;
 }
@@ -3312,7 +3313,7 @@ html[xmlns] .slides {
     right: 0;
   }
 }
-/* ::Custom styling - local add-ons */
+/* ::Custom styling - local add-ons & college-level styles */
 /* ------------------------------------------------------------ */
 /* line 8, ../styles/custom/_lcf.scss */
 .buffer {
@@ -3411,6 +3412,1352 @@ section .standfirst {
   margin-top: 80px;
 }
 
+/* line 13, ../styles/custom/_camberwell.scss */
+.slabtexted .slabtext {
+  display: -moz-inline-box;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* line 19, ../styles/custom/_camberwell.scss */
+.slabtextinactive .slabtext {
+  display: inline;
+  white-space: normal;
+  font-size: 1em !important;
+  letter-spacing: inherit !important;
+  word-spacing: inherit !important;
+  *letter-spacing: 0 !important;
+  *word-spacing: 0 !important;
+}
+
+/* line 29, ../styles/custom/_camberwell.scss */
+.slabtextdone .slabtext {
+  display: block;
+}
+
+/* line 46, ../styles/custom/_camberwell.scss */
+.camberwell .global-college-links ul li a {
+  color: black;
+}
+/* line 51, ../styles/custom/_camberwell.scss */
+.camberwell ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 56, ../styles/custom/_camberwell.scss */
+.camberwell h1, .camberwell h2, .camberwell h3, .camberwell h4, .camberwell h5 {
+  font-family: "Brandon Text", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+/* line 64, ../styles/custom/_camberwell.scss */
+.camberwell .cw-hide {
+  display: none !important;
+}
+/* line 68, ../styles/custom/_camberwell.scss */
+.camberwell .cw-heading {
+  padding-top: 0.375em;
+  border-top: solid 12px #4a97dd;
+  color: #5ac882;
+  font-size: 2.25em;
+  line-height: 1.16667em;
+  width: 100%;
+}
+/* line 77, ../styles/custom/_camberwell.scss */
+.camberwell .cw-heading a {
+  border-bottom: none;
+}
+/* line 85, ../styles/custom/_camberwell.scss */
+.camberwell .cw-small-heading {
+  font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5ac882;
+}
+/* line 96, ../styles/custom/_camberwell.scss */
+.camberwell .cw-courses-heading {
+  font-size: 4.875em;
+  line-height: 1.07692em;
+  color: #1f405d;
+}
+/* line 102, ../styles/custom/_camberwell.scss */
+.camberwell .cw-course-title {
+  padding-top: 0.375em;
+  margin-bottom: 1.5em;
+  border-top: solid 12px #4a97dd;
+  color: #1f405d;
+  font-size: 2.625em;
+  line-height: 1.14286em;
+  width: 100%;
+}
+/* line 112, ../styles/custom/_camberwell.scss */
+.camberwell .cw-course-title a {
+  border-bottom: none;
+}
+/* line 120, ../styles/custom/_camberwell.scss */
+.camberwell .cw-course-list {
+  color: #1f405d;
+  font-size: 1.8125em;
+  line-height: 1.24138em;
+}
+/* line 129, ../styles/custom/_camberwell.scss */
+.camberwell a {
+  color: #5ac882;
+  text-decoration: none;
+  border-bottom: solid 1px #f2f2f2;
+}
+/* line 136, ../styles/custom/_camberwell.scss */
+.camberwell a.with-arrow:after {
+  content: "&rarr;";
+  color: #4a97dd;
+}
+/* line 145, ../styles/custom/_camberwell.scss */
+.camberwell .header-box {
+  margin-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 48.91355%;
+  background-color: #4a97dd;
+  max-height: 100%;
+  height: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+@media only screen and (max-width: 599px) {
+  /* line 145, ../styles/custom/_camberwell.scss */
+  .camberwell .header-box {
+    display: none;
+  }
+}
+/* line 164, ../styles/custom/_camberwell.scss */
+.camberwell .box-header {
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  float: none;
+  font-size: 4.125em;
+  line-height: 1.09091em;
+}
+/* line 175, ../styles/custom/_camberwell.scss */
+.camberwell .top-slider {
+  display: block;
+  float: left;
+  margin-left: 45.03425%;
+  margin-right: -100%;
+  width: 54.91366%;
+  padding-left: 2.5%;
+  margin-top: 1.5em;
+}
+/* line 183, ../styles/custom/_camberwell.scss */
+.camberwell .top-slider img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 599px) {
+  /* line 175, ../styles/custom/_camberwell.scss */
+  .camberwell .top-slider {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+}
+/* line 195, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar {
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 23.39636%;
+  margin-top: 2.625em;
+  clear: left;
+}
+/* line 202, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar h2 {
+  padding: 5px;
+  margin-top: 0.375em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  background: #4a97dd;
+  /* The Fallback */
+  background: rgba(74, 151, 221, 0.2);
+  color: black;
+  border-bottom: none;
+  text-indent: 10px;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+}
+/* line 216, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar ul {
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  list-style-type: none;
+}
+/* line 221, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar ul li {
+  padding-top: 0.375em;
+  border-bottom: solid 1px #dbdbdb;
+  text-indent: 10px;
+  padding: 5px;
+}
+/* line 234, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar ul li:nth-of-type(1) {
+  padding-top: 1.5em;
+}
+/* line 238, ../styles/custom/_camberwell.scss */
+.camberwell .sidebar ul li a {
+  font-weight: normal;
+  color: black;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  border-bottom: none;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 195, ../styles/custom/_camberwell.scss */
+  .camberwell .sidebar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 195, ../styles/custom/_camberwell.scss */
+  .camberwell .sidebar {
+    display: none;
+  }
+}
+/* line 262, ../styles/custom/_camberwell.scss */
+.camberwell .course-info-container {
+  display: block;
+  float: left;
+  margin-left: 25.89636%;
+  margin-right: -100%;
+  width: 74.05155%;
+  margin-top: 3em;
+  margin-bottom: 5.625em;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 262, ../styles/custom/_camberwell.scss */
+  .camberwell .course-info-container {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 262, ../styles/custom/_camberwell.scss */
+  .camberwell .course-info-container {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 278, ../styles/custom/_camberwell.scss */
+.camberwell .course-info-container .cw-heading {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+/* line 282, ../styles/custom/_camberwell.scss */
+.camberwell .course-info-container .intro-text {
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 48.31199%;
+  padding-top: 0;
+}
+/* line 289, ../styles/custom/_camberwell.scss */
+.camberwell .course-info-container img {
+  display: block;
+  float: left;
+  margin-left: 51.68801%;
+  margin-right: -100%;
+  width: 48.31199%;
+}
+/* line 295, ../styles/custom/_camberwell.scss */
+.camberwell .lower1-container {
+  clear: left;
+}
+/* line 298, ../styles/custom/_camberwell.scss */
+.camberwell .lower1-container a {
+  border-bottom: none;
+}
+/* line 303, ../styles/custom/_camberwell.scss */
+.camberwell .cw-experience {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 36.15496%;
+}
+/* line 308, ../styles/custom/_camberwell.scss */
+.camberwell .cw-experience h2 {
+  margin-bottom: 3em;
+}
+/* line 312, ../styles/custom/_camberwell.scss */
+.camberwell .cw-experience ul {
+  list-style-type: none;
+}
+/* line 314, ../styles/custom/_camberwell.scss */
+.camberwell .cw-experience ul li {
+  float: none;
+}
+/* line 316, ../styles/custom/_camberwell.scss */
+.camberwell .cw-experience ul li img {
+  margin-bottom: 1.5em;
+  border-bottom: none;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 303, ../styles/custom/_camberwell.scss */
+  .camberwell .cw-experience {
+    display: block;
+    float: left;
+    margin-left: 26.32865%;
+    margin-right: -100%;
+    width: 47.72534%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 303, ../styles/custom/_camberwell.scss */
+  .camberwell .cw-experience {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 338, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 45.03425%;
+  margin-right: -100%;
+  width: 29.39648%;
+}
+/* line 343, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles h2 {
+  margin-bottom: 3em;
+}
+/* line 346, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles ul {
+  list-style-type: none;
+  float: none;
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 34.89735%;
+}
+/* line 352, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles ul li img {
+  margin-bottom: 1.5em;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 346, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles ul {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 45.80935%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 346, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles ul {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 47.96152%;
+  }
+}
+/* line 367, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles ul:nth-child(2) {
+  list-style-type: none;
+  display: block;
+  float: left;
+  margin-left: 43.40177%;
+  margin-right: -100%;
+  width: 34.89735%;
+}
+/* line 371, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles ul:nth-child(2) li {
+  float: none;
+}
+/* line 373, ../styles/custom/_camberwell.scss */
+.camberwell .student-profiles ul:nth-child(2) li img {
+  margin-bottom: 1.5em;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 367, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles ul:nth-child(2) {
+    display: block;
+    float: left;
+    margin-left: 54.19065%;
+    margin-right: -100%;
+    width: 45.80935%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 367, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles ul:nth-child(2) {
+    display: block;
+    float: left;
+    margin-left: 51.71152%;
+    margin-right: -100%;
+    width: 48.13223%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 338, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles {
+    display: block;
+    float: left;
+    margin-left: 26.32865%;
+    margin-right: -100%;
+    width: 47.72534%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 338, ../styles/custom/_camberwell.scss */
+  .camberwell .student-profiles {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 402, ../styles/custom/_camberwell.scss */
+.camberwell .alumni {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 76.93073%;
+  margin-right: -100%;
+  width: 23.01718%;
+}
+/* line 408, ../styles/custom/_camberwell.scss */
+.camberwell .alumni h2 {
+  margin-bottom: 3em;
+}
+/* line 412, ../styles/custom/_camberwell.scss */
+.camberwell .alumni ul {
+  list-style-type: none;
+  float: none;
+}
+/* line 416, ../styles/custom/_camberwell.scss */
+.camberwell .alumni ul li img {
+  margin-bottom: 1.5em;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 402, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni {
+    display: block;
+    float: left;
+    margin-left: 26.32865%;
+    margin-right: -100%;
+    width: 47.72534%;
+  }
+  /* line 425, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni ul li {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 45.80935%;
+  }
+  /* line 429, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni ul li:nth-child(even) {
+    display: block;
+    float: left;
+    margin-left: 54.19065%;
+    margin-right: -100%;
+    width: 45.80935%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 402, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+  /* line 438, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni ul li {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 47.96152%;
+  }
+  /* line 442, ../styles/custom/_camberwell.scss */
+  .camberwell .alumni ul li:nth-child(even) {
+    display: block;
+    float: left;
+    margin-left: 51.71152%;
+    margin-right: -100%;
+    width: 48.13223%;
+  }
+}
+/* line 451, ../styles/custom/_camberwell.scss */
+.camberwell .lower2-container {
+  clear: left;
+}
+/* line 454, ../styles/custom/_camberwell.scss */
+.camberwell .courses-by-sub-header {
+  display: block;
+  float: left;
+  margin-left: 6.75848%;
+  margin-right: -100%;
+  width: 61.29296%;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 454, ../styles/custom/_camberwell.scss */
+  .camberwell .courses-by-sub-header {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 86.98533%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 454, ../styles/custom/_camberwell.scss */
+  .camberwell .courses-by-sub-header {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 470, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container {
+  clear: left;
+  *zoom: 1;
+  padding-top: 1.5em;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container:before, .camberwell .lower3-container:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container:after {
+  clear: both;
+}
+/* line 478, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 {
+  display: block;
+  float: left;
+  margin-left: 25.89636%;
+  margin-right: -100%;
+  width: 29.39648%;
+  list-style-type: none;
+}
+/* line 482, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li {
+  clear: left;
+  list-style-type: none;
+  margin-bottom: 2.625em;
+}
+/* line 488, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li img {
+  margin-bottom: 2.625em;
+  clear: left;
+}
+/* line 494, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li a div {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container ul.col1 li a div:before, .camberwell .lower3-container ul.col1 li a div:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container ul.col1 li a div:after {
+  clear: both;
+}
+/* line 500, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li a div div {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  right: 5%;
+  bottom: 17%;
+  background: #4a97dd;
+  /* The Fallback */
+  background: rgba(74, 151, 221, 0.4);
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in 300ms ease-out;
+  -moz-transition: all 0.2s ease-in 300ms ease-out;
+  transition: all 0.2s ease-in 300ms ease-out;
+}
+/* line 511, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li a div div h3 {
+  width: 100%;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+/* line 521, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col1 li a:hover div div {
+  opacity: 1;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 478, ../styles/custom/_camberwell.scss */
+  .camberwell .lower3-container ul.col1 {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 34.79401%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 478, ../styles/custom/_camberwell.scss */
+  .camberwell .lower3-container ul.col1 {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 540, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 {
+  display: block;
+  float: left;
+  margin-left: 64.17214%;
+  margin-right: -100%;
+  width: 29.39648%;
+  list-style-type: none;
+}
+/* line 544, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li {
+  clear: left;
+  list-style-type: none;
+  margin-bottom: 2.625em;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+/* line 552, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li img {
+  clear: left;
+  margin-bottom: 2.625em;
+}
+/* line 557, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li a div {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container ul.col2 li a div:before, .camberwell .lower3-container ul.col2 li a div:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.camberwell .lower3-container ul.col2 li a div:after {
+  clear: both;
+}
+/* line 563, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li a div div {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  right: 5%;
+  bottom: 17%;
+  background: #4a97dd;
+  /* The Fallback */
+  background: rgba(74, 151, 221, 0.4);
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in 300ms ease-out;
+  -moz-transition: all 0.2s ease-in 300ms ease-out;
+  transition: all 0.2s ease-in 300ms ease-out;
+}
+/* line 574, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li a div div h3 {
+  width: 100%;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+/* line 584, ../styles/custom/_camberwell.scss */
+.camberwell .lower3-container ul.col2 li a:hover div div {
+  opacity: 1;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 540, ../styles/custom/_camberwell.scss */
+  .camberwell .lower3-container ul.col2 {
+    display: block;
+    float: left;
+    margin-left: 52.19132%;
+    margin-right: -100%;
+    width: 34.79401%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 540, ../styles/custom/_camberwell.scss */
+  .camberwell .lower3-container ul.col2 {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 599, ../styles/custom/_camberwell.scss */
+.camberwell .news {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 25.89636%;
+  margin-right: -100%;
+  width: 29.39648%;
+}
+/* line 603, ../styles/custom/_camberwell.scss */
+.camberwell .news ul {
+  list-style-type: none;
+}
+/* line 607, ../styles/custom/_camberwell.scss */
+.camberwell .news ul li img {
+  margin-bottom: 1.5em;
+}
+/* line 609, ../styles/custom/_camberwell.scss */
+.camberwell .news ul li a {
+  border-bottom: none;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 599, ../styles/custom/_camberwell.scss */
+  .camberwell .news {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 34.79401%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 599, ../styles/custom/_camberwell.scss */
+  .camberwell .news {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+  /* line 637, ../styles/custom/_camberwell.scss */
+  .camberwell .news h3 {
+    color: #5ac882;
+  }
+}
+/* line 646, ../styles/custom/_camberwell.scss */
+.camberwell .events {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 64.17214%;
+  margin-right: -100%;
+  width: 29.39648%;
+}
+/* line 650, ../styles/custom/_camberwell.scss */
+.camberwell .events ul {
+  list-style-type: none;
+}
+/* line 653, ../styles/custom/_camberwell.scss */
+.camberwell .events ul li img {
+  margin-bottom: 1.5em;
+}
+/* line 655, ../styles/custom/_camberwell.scss */
+.camberwell .events ul li a {
+  border-bottom: none;
+}
+/* line 657, ../styles/custom/_camberwell.scss */
+.camberwell .events ul li h3 {
+  font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5ac882;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 646, ../styles/custom/_camberwell.scss */
+  .camberwell .events {
+    display: block;
+    float: left;
+    margin-left: 52.19132%;
+    margin-right: -100%;
+    width: 34.79401%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 646, ../styles/custom/_camberwell.scss */
+  .camberwell .events {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 679, ../styles/custom/_camberwell.scss */
+.camberwell .related-content {
+  margin-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 6.75848%;
+  margin-right: -100%;
+  width: 86.81015%;
+  *zoom: 1;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.camberwell .related-content:before, .camberwell .related-content:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.camberwell .related-content:after {
+  clear: both;
+}
+/* line 684, ../styles/custom/_camberwell.scss */
+.camberwell .related-content h2.cw-heading {
+  margin-bottom: 3em;
+}
+/* line 694, ../styles/custom/_camberwell.scss */
+.camberwell .rc-1 {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 26.51439%;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 694, ../styles/custom/_camberwell.scss */
+  .camberwell .rc-1 {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 694, ../styles/custom/_camberwell.scss */
+  .camberwell .rc-1 {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    float: none;
+  }
+}
+/* line 710, ../styles/custom/_camberwell.scss */
+.camberwell .rc-2 {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 36.7428%;
+  margin-right: -100%;
+  width: 26.51439%;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 710, ../styles/custom/_camberwell.scss */
+  .camberwell .rc-2 {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 710, ../styles/custom/_camberwell.scss */
+  .camberwell .rc-2 {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    float: none;
+  }
+}
+/* line 725, ../styles/custom/_camberwell.scss */
+.camberwell .rc-3 {
+  padding-top: 1.5em;
+  display: block;
+  float: left;
+  margin-left: 73.48561%;
+  margin-right: -100%;
+  width: 26.51439%;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 733, ../styles/custom/_camberwell.scss */
+  .camberwell h2.cw-heading {
+    margin-bottom: 0.375em;
+  }
+  /* line 735, ../styles/custom/_camberwell.scss */
+  .camberwell .rc1, .camberwell .rc-2, .camberwell .rc-3 {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 743, ../styles/custom/_camberwell.scss */
+  .camberwell h2.cw-heading {
+    margin-bottom: 0.375em;
+  }
+  /* line 745, ../styles/custom/_camberwell.scss */
+  .camberwell .rc1, .camberwell .rc-2, .camberwell .rc-3 {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    float: none;
+  }
+}
+
+/* line 753, ../styles/custom/_camberwell.scss */
+.cw-footer {
+  width: 100%;
+  background-color: #333333;
+  color: white;
+}
+/* line 760, ../styles/custom/_camberwell.scss */
+.cw-footer a {
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+}
+/* line 766, ../styles/custom/_camberwell.scss */
+.cw-footer h3 {
+  padding-top: 0.375em;
+  border-top: solid 12px white;
+  color: white;
+  font-size: 2.25em;
+  line-height: 1.16667em;
+  width: 100%;
+}
+/* line 773, ../styles/custom/_camberwell.scss */
+.cw-footer h3 a {
+  border-bottom: solid 1px #f2f2f2;
+}
+/* line 777, ../styles/custom/_camberwell.scss */
+.cw-footer .contact-us {
+  display: block;
+  float: left;
+  margin-left: 0%;
+  margin-right: -100%;
+  width: 23.39636%;
+}
+/* line 782, ../styles/custom/_camberwell.scss */
+.cw-footer .contact-us ul {
+  list-style-type: none;
+  width: 100%;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 777, ../styles/custom/_camberwell.scss */
+  .cw-footer .contact-us {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 777, ../styles/custom/_camberwell.scss */
+  .cw-footer .contact-us {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 798, ../styles/custom/_camberwell.scss */
+.cw-footer .get-prospectus {
+  display: block;
+  float: left;
+  margin-left: 32.27566%;
+  margin-right: -100%;
+  width: 29.39648%;
+}
+/* line 801, ../styles/custom/_camberwell.scss */
+.cw-footer .get-prospectus ul {
+  list-style-type: none;
+}
+/* line 806, ../styles/custom/_camberwell.scss */
+.cw-footer .socials {
+  display: block;
+  float: left;
+  margin-left: 70.55144%;
+  margin-right: -100%;
+  width: 29.39648%;
+}
+/* line 808, ../styles/custom/_camberwell.scss */
+.cw-footer .socials ul {
+  list-style-type: none;
+}
+/* line 810, ../styles/custom/_camberwell.scss */
+.cw-footer .socials ul li {
+  display: inline-block;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 753, ../styles/custom/_camberwell.scss */
+  .cw-footer {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 753, ../styles/custom/_camberwell.scss */
+  .cw-footer {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* line 826, ../styles/custom/_camberwell.scss */
+.open-days-container {
+  *zoom: 1;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  width: 100%;
+  min-height: 465px;
+  height: auto;
+  float: left;
+  background-color: #f2f2f2;
+  position: relative;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.open-days-container:before, .open-days-container:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.open-days-container:after {
+  clear: both;
+}
+/* line 850, ../styles/custom/_camberwell.scss */
+.open-days-container .c-wrap {
+  max-width: 800px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 850, ../styles/custom/_camberwell.scss */
+  .open-days-container .c-wrap {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 850, ../styles/custom/_camberwell.scss */
+  .open-days-container .c-wrap {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 871, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #5ac882;
+  /* The Fallback */
+  background: rgba(90, 200, 130, 0.8);
+  position: absolute;
+  left: 0;
+  max-width: 400px;
+  max-height: 400px;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  padding-top: 120px;
+  color: white;
+  box-sizing: border-box;
+}
+/* line 898, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout h2 {
+  font-size: 2.25em;
+  line-height: 1.16667em;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 0.75em;
+}
+/* line 906, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout a {
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  font-weight: normal;
+  text-decoration: none;
+  border-bottom: none;
+  color: white;
+}
+/* line 914, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout a:after {
+  content: "→";
+  color: white;
+}
+/* line 919, ../styles/custom/_camberwell.scss */
+.border-radius .open-days-container .circle-callout {
+  background: url("../../img/camberwell/green-circle-bg.png") no-repeat;
+  background-position: center;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 871, ../styles/custom/_camberwell.scss */
+  .open-days-container .circle-callout {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1 !important;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 871, ../styles/custom/_camberwell.scss */
+  .open-days-container .circle-callout {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1 !important;
+  }
+}
+/* line 945, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout2 {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #4a97dd;
+  /* The Fallback */
+  background: rgba(74, 151, 221, 0.8);
+  position: absolute;
+  right: 0;
+  max-width: 400px;
+  max-height: 400px;
+  height: 400px;
+  width: 400px;
+  padding-top: 120px;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+}
+/* line 968, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout2 h2 {
+  font-size: 2.25em;
+  line-height: 1.16667em;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 0.75em;
+}
+/* line 976, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout2 a {
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  font-weight: normal;
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+}
+/* line 984, ../styles/custom/_camberwell.scss */
+.open-days-container .circle-callout2 a:after {
+  content: "→";
+  color: white;
+}
+/* line 989, ../styles/custom/_camberwell.scss */
+.border-radius .open-days-container .circle-callout2 {
+  background: url "../../img/camberwell/blue-circle-bg.png" no-repeat;
+  background-position: center;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 945, ../styles/custom/_camberwell.scss */
+  .open-days-container .circle-callout2 {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
+    opacity: 1 !important;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 945, ../styles/custom/_camberwell.scss */
+  .open-days-container .circle-callout2 {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
+    opacity: 1 !important;
+  }
+}
+
+/* line 1022, ../styles/custom/_camberwell.scss */
+.slider-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  *zoom: 1;
+}
+/* line 253, ../styles/globals/_mixins.scss */
+.slider-container:before, .slider-container:after {
+  content: " ";
+  display: table;
+}
+/* line 254, ../styles/globals/_mixins.scss */
+.slider-container:after {
+  clear: both;
+}
+
+/* line 1032, ../styles/custom/_camberwell.scss */
+.flex-direction-nav {
+  z-index: 3;
+}
+/* line 1035, ../styles/custom/_camberwell.scss */
+.flex-direction-nav .flex-next, .flex-direction-nav .flex-prev {
+  border-bottom: none;
+}
+
+/* line 25, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown {
+  /* Size and position */
+  position: relative;
+  /* Enable absolute positioning for children and pseudo elements */
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  /* Styles */
+  background: black;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+/* line 41, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -3px;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: grey transparent;
+}
+
+/* line 54, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown .dropdown {
+  /* Size & position */
+  position: absolute;
+  top: 100%;
+  left: -5px;
+  right: 0px;
+  /* Styles */
+  background: #282828;
+  transition: all 0.3s ease-out;
+  list-style: none;
+  /* Hiding */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 71, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown .dropdown li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: all 0.3s ease-out;
+}
+
+/* line 92, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown .dropdown li i {
+  margin-right: 5px;
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* Hover state */
+/* line 100, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown .dropdown li:hover a {
+  color: grey;
+}
+
+/* line 108, ../styles/custom/_dropdown.scss */
+.wrapper-dropdown.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* No CSS3 support (support for legacy browsers) */
+/* line 117, ../styles/custom/_dropdown.scss */
+.no-opacity .wrapper-dropdown .dropdown,
+.no-pointerevents .wrapper-dropdown .dropdown {
+  display: none;
+  opacity: 1;
+  /* If opacity support but no pointer-events support */
+  pointer-events: auto;
+  /* If pointer-events support but no pointer-events support */
+}
+
+/* line 124, ../styles/custom/_dropdown.scss */
+.no-opacity .wrapper-dropdown.active .dropdown,
+.no-pointerevents .wrapper-dropdown.active .dropdown {
+  display: block;
+}
+
+/*** Dropdown menu skin (without border) ***/
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 /* ::Debugs and #grid by Jon Gibbins */
@@ -3514,12 +4861,12 @@ section .standfirst {
 .clearfix, #header, #header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 223, ../styles/globals/_mixins.scss */
+/* line 253, ../styles/globals/_mixins.scss */
 .clearfix:before, #header:before, #header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, #header:after, #header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 224, ../styles/globals/_mixins.scss */
+/* line 254, ../styles/globals/_mixins.scss */
 .clearfix:after, #header:after, #header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }

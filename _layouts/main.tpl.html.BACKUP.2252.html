@@ -1,0 +1,118 @@
+{% include _head.html %}
+
+<body class='style {{ page.college }}'>
+
+{% include _global_header.html %}
+
+{% include _global_navigation.html %}
+
+{{ content }}
+
+{% include _global_footer.html %}
+
+<<<<<<< Updated upstream
+  <script src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
+=======
+
+  
+<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+<meta content='#000' name='msapplication-TileColor'>
+
+    <script>
+      Modernizr.Detectizr.detect({detectScreen:false});
+    </script>
+  </head>
+d
+  <!-- Gridset overlay script - toggles grid overlay on and off - You can remove this if you want. -->
+  <script src='../../../assets/js/gridset-overlay.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
+>>>>>>> Stashed changes
+  <script>
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='../../../assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+  <!-- /%script{:type => "text/javascript", :src  => "../../../assets/js/libs/jquery.jpanelmenu.min.js"} -->
+  <script src='../../../assets/js/libs/jquery.flexslider-min.js'></script>
+  <script src='../../../assets/js/hashgrid.js' type='text/javascript'></script>
+  <script src='../../../assets/js/script.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/jquery.cycle2.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/jquery.slabtext.min.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/skrollr.min.js' type='text/javascript'></script>
+  <script src='../../../assets/js/libs/skrollr-stylesheets.min.js' type='text/javascript'></script>
+  <script>
+    $(document).ready(function() {
+      $(".fancy_title").lettering();
+      // Function to slabtext the cw-heading classes
+      // $(".cw-heading").slabText(); 
+    
+      // use fitText for headings to make them responsive
+      $(".fit-this").fitText();
+    
+      // initialize the skrollr to handle the animation on scroll
+      skrollr.init();
+    
+    
+    
+    });
+  </script>
+  <script>
+<<<<<<< Updated upstream
+    $(document).foundation();
+  </script>
+
+  {% if page.college == "lcf" %}
+    {% include _lcf_scripts.html %}
+  <!--
+  {% elsif page.college == "camberwell" %}
+    {% include _camberwell_footer.html %}
+  {% else %}
+    {% include _global_footer.html %}
+  -->
+  {% endif %}
+
+  </body>
+=======
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        animation: "slide",             
+        easing: "swing",              
+        direction: "horizontal",  
+        pauseOnHover: true,       
+        useCSS: true,
+        controlNav: false,
+        controlsContainer: ".slider-container",
+        slideshowSpeed: 4000,           
+        animationSpeed: 400, 
+        start: function(slider) {
+          //console.log(slider); 
+          // $(".header-box").height(slider.h);
+          // make sure that the height of the blue box with the college name matches the height of the slider
+          $("#cw-header-box").height($("#cw-slider-right").height());
+        },
+        after: function(slider) {
+          //console.log(slider.h); 
+          //$(".header-box").height(slider.h);
+          // make sure that the height of the blue box with the college name matches the height of the slider
+          $("#cw-header-box").height($("#cw-slider-right").height());
+        }
+      });
+    
+    
+      // make sure that both sides of the top slider are the same height
+      // by setting the height of the left side to equal the height of the right slider
+      
+      
+      
+    });
+    // when the screen resizes, set the correct height for the left header box (same size as right slider)
+    $(window).resize(function() {
+      $("#cw-header-box").height($("#cw-slider-right").height());
+    });
+  </script>
+>>>>>>> Stashed changes
+</html>

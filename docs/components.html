@@ -34,19 +34,14 @@ title: University of the Arts London - Website Style Guide
 	    <td>Standard button with smaller text</td>
 	  </tr>
 
-	  <tr>
+	  <!-- <tr>
 	  	<td colspan="3">
-	  		<pre>
-				<button type="button" class="button bold">Single Button</button>
-				<button type="button" class="button">Single Button</button>
-				<button type="button" class="button small">Single Button</button>
-			</pre>
+	  		<pre>&lt;button type=&quot;button&quot; class=&quot;button bold&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button small&quot;&gt;Single Button&lt;/button&gt;</pre>
 		</td>
-	   </tr>
+	   </tr> -->
 	</tbody>
 </table>
-	
-		<pre class="prettyprint">&lt;button type=&quot;button&quot; class=&quot;button bold&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button small&quot;&gt;Single Button&lt;/button&gt;
+	<pre class="prettyprint">&lt;button type=&quot;button&quot; class=&quot;button bold&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;Single Button&lt;/button&gt; &lt;button type=&quot;button&quot; class=&quot;button small&quot;&gt;Single Button&lt;/button&gt;
 	</pre>
 
 <h2>Button groups</h2>
@@ -73,13 +68,7 @@ title: University of the Arts London - Website Style Guide
 	  </tr>
 	   <tr>
 	  	<td colspan="3">
-	  		<pre class="prettyprint">
-				<ul class="button-group">
-				  <li><a href="#" class="button bold">Button 1</a></li>
-				  <li><a href="#" class="button bold">Button 2</a></li>
-				  <li><a href="#" class="button bold">Button 3</a></li>
-				</ul>
-			</pre>
+	  		
 		</td>
 	   </tr>
 	  <tr>
@@ -94,13 +83,6 @@ title: University of the Arts London - Website Style Guide
 	    <td>Standard button group</td>
 	  </tr>
 	  <tr>
-	  	<td colspan="3">
-	  		
-				<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
-			</pre>
-		</td>
-	   </tr>
-	  <tr>
 	    <td>
 	    	<ul class="button-group">
 			  <li><a href="#" class="button small">Button 1</a></li>
@@ -114,7 +96,13 @@ title: University of the Arts London - Website Style Guide
 	  <tr>
 	  	<td colspan="3">
 		
-			<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+		<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button bold&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button bold&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button bold&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+		</pre>
+
+		<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+		</pre>
+
+		<pre class="prettyprint">&lt;ul class=&quot;button-group&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button small&quot;&gt;Button 3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
 		</pre>
 
 		</td>
@@ -127,13 +115,17 @@ title: University of the Arts London - Website Style Guide
 <h2>Dropdowns</h2>
 	
 	<h4>Default dropdown</h4>
-	<a href="#" class="dropdown button" data-dropdown="drop1">Has Dropdown</a>
-	<!-- <a href="#" class="button dropdown-btn " data-dropdown="drop1">Has Dropdown</a> -->
-	<ul id="drop1" class="f-dropdown" data-dropdown-content>
-			<li><a href="#">This is a link</a></li>
-		  <li><a href="#">This is another</a></li>
-		  <li><a href="#">Yet another</a></li>
-	</ul>
+	
+
+	<div id="dropdown1" class="wrapper-dropdown">drop menu
+    <ul class="dropdown">
+        <li><a href="#">List Item1</a></li>
+        <li><a href="#">List Item2</a></li>
+        <li><a href="#">List Item3</a></li>
+    </ul>
+	</div>
+
+
 	
 
 
