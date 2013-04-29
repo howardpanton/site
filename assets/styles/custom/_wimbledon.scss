@@ -1,8 +1,130 @@
 //  Wimbledon College Styles
-//  Prototype styles by Pete
+//  Version 1 Prototype styles by Pete Richardson
 
 
 
 
-// Wimbledon - for quick reference during DEV
+// 	Wimbledon Colors - for quick reference during DEV
+// ------------------------------------------------------
+
+// $ccw-yellow : 	rgb(237, 206, 24); // yellow
+// $ccw-green : 	rgb(88, 191, 88); // light green
+// $ccw-salmon : 	rgb(250, 117, 110); // salmon pink
+// $ccw-blue : 	rgb(74, 151, 221); // light blue
+// $ccw-grey : 	rgb(67, 151, 221); // dark grey
+
+
+// Global color names as defined in style guide - for quick reference during DEV
+// ------------------------------------------------------
+
+// $ual-black   : 		$ual-primary;  		// full black
+// $soft-black  : 		#282828;   			// softer black
+// $aaa-gray : 		$ual-secondary;   	// AAA gray
+// $light-gray  : 		#c8c8c8;   			// light grey 
+// $bg-gray : 			#eeeeee;   			// lighter grey for bg
+
+
+
+// Wimbledon size and buffer Variables
+
+$space-before-content: 4; // 4 baselines 
+
+$space-after-sub-headings: 5; // green type headings (open days, life after wimbledon etc) 
+
+$slider-font-size : 102.666666667px;
+
+
+// Temp Reset styles   TO DO: use proper global reset in beta again?;
+
+// remove and reset padding and margins for lists
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+
+
+// Wimbledon Header styling
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Brandon Text", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+
+	
+// Wimbledon Top Slider Styling
+
+// left side slider-block in desktop view (hidden in mobile for now)
+.slider-box {
+	@include leader($space-before-content);
+	@include gs-span(d, 1, 8);
+	background-color: $ccw-yellow;
+	max-height: 100%;
+	height: auto;
+
+    @include display(flex);
+    @include align-items(center);
+
+	// typographical header inside the slider-block
+	.type-header {
+		text-align: center;
+		display: block;
+		color: white;
+		width:100%;
+		margin: 0 auto;
+		float: none;
+		@include adjust-font-size-to(102.666667px);
+
+	}
+
+	@include gs-media(m,min-max) { display: none; }
+
+}
+
+// main Wimbledon image slider
+.top-slider {
+		// @include clearfix;
+		@include gs-span(d, 8, 16);
+		padding-left:2.5%;
+		// @include gs-span(t, all);
+		// @include gs-span(m, all);
+		@include leader($space-before-content);
+		
+		img { 
+		 	width: 100%;
+		 	height: auto;
+		}	
+		
+		@include gs-media(m,min-max) {
+			@include gs-span(d, all);
+			padding-left: 0;
+	    }
+
+	}
+
+.header-with-top-border {
+
+	@include heading-with-top-border ();
+
+}
+
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
