@@ -43,7 +43,10 @@ a {
 }
 
 // Max width, for images etc... in RWD
-.content-wrapper img { max-width: 100%; height: auto; }
+.content-wrapper img { 
+	max-width: 100%; 
+	height: auto; 
+}
 
 
 /* ::Clearfixs and extends. Use which suits best */
@@ -52,17 +55,28 @@ a {
 // CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
 
 // Use clearfix if you need general clearfixing
-.clearfix 			{ @include clearfix; }
+.clearfix 			{ 
+	@include clearfix; 
+}
 
-        .cf { zoom: 1; }
-        .cf:before,
-        .cf:after { content: ""; display: table; }
-        .cf:after { clear: both; }
+.cf { 
+	zoom: 1; 
+}
+.cf:before,
+.cf:after { 
+	content: ""; 
+	display: table; 
+}
+.cf:after { 
+	clear: both; 
+}
 
 
 
 // Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
-.pie-clearfix 		{ @include pie-clearfix; }
+.pie-clearfix 		{ 
+	@include pie-clearfix; 
+}
 
 
 // Functions for px to em conversions
@@ -138,7 +152,6 @@ a {
 			@include gs-span(d, all);
 		}
 	}
-
 }
 
 .footer {
@@ -146,12 +159,9 @@ a {
 		background: black;
 		clear: both;
 
-		> .footer-links {
-			
-			@include gs-span(d, all);
-			
-		> div {
+		.footer-links {			
 			@include padding-leader(4);
+			@include gs-span(d, all);
 			margin-left:12px;
 			max-width:1280px;
 			margin: 0 auto;
@@ -163,7 +173,6 @@ a {
 				margin-bottom:0;
 			}
 
-		}
 
 		li {
 				@include nobullet;
@@ -178,7 +187,7 @@ a {
 			}
 		}
 
-
+}
 		.primary-links {
 			@include gs-span(d, 1, 10);
 			@include padding-trailer(2);
@@ -187,6 +196,7 @@ a {
 		.secondary-links {
 			@include gs-span(d, 1, 12);
 			@include padding-trailer(3);
+			clear:left;
 		}
 
 		.copyright {
@@ -198,6 +208,8 @@ a {
 			float:none;
 
 			p {
+				@include padding-leader(3);
+				margin-right:24px;
 				color:#fff;
 				font-size:12px;
 				margin-left:12px;
