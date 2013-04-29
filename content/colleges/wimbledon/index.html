@@ -1,15 +1,32 @@
 ---
 layout: main.tpl
-class-home: active
+college: wimbledon
 title: Wimbledon College of Art
 ---
 
-<div class="row">
-    <div class="large-12 columns">
-        <h1>Wimbledon College of Art</h1>
-    </div>
-</div>
+
+<div class="wrapper">
+  
+  <div class='slider-container'>
+        
+      <div class='slider-box' id='wi-slider-box'>
+        <h2 class='type-header fit-this'>Wimbledon</h2>
+      </div>
+        
+      <div class='top-slider flexslider' id='wi-slider-right'>
+        <ul class='slides'>
+          <li><img src='{{ site.url }}assets/img/wimbledon/wimbledon-slider.png'></li>
+          <li><img src='{{ site.url }}assets/img/wimbledon/wimbledon-slider2.png'></li>
+        </ul>
+      </div>
+
+  </div>
+
+
+  
+</div> <!-- end div.wrapper -->
+
 
 <div class="footer csm">
-    {% include footers/_wimbledon_footer.html %}
+  {% include footers/_wimbledon_footer.html %}
 </div>
