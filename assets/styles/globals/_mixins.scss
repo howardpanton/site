@@ -247,6 +247,25 @@ height:100%;
   }
 }
 
+// This mixin sets up the styling for typography headers with a solid overline above the type  (used throughout the UAL website)
+// Default colors are set, but these can be overridden by passing in your own colors or size for the header font, top-border, border-height, 
+// and padding between the top-border and the heading text.
+
+// Notes: the default width is 100% but this can be also be overridden
+//        the padding top should be specified by the number of baselines you want of padding to be added
+
+// Default Styles:  black border at the top, border-height of 1 baseline (6px) and 1 baseline of padding at the top, 36px font-size, 100% width 
+@mixin heading-with-top-border ( $border-color: black, $border-height: 6px, $padding-top: 1, $font-size: 36px, $text-color: black, $width: 100%) { 
+  
+  @include padding-leader($padding-top); // add top padding  
+  border-top: solid $border-height $border-color; // set top border 
+  color: $text-color;
+  @include adjust-font-size-to($font-size); 
+  width: $width;
+}
+
+
+
 // We use this to do clear floats
 @mixin clearfix() {
   *zoom:1;
