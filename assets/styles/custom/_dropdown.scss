@@ -1,0 +1,393 @@
+//
+// Dropdown Variables UAL default styles 
+//
+
+
+
+/*** ESSENTIAL STYLES for dropdown menu ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** Dropdown menu skin (default UAL style with border) ***/
+.sf-menu {
+	float: left;
+	margin-bottom: 1em;
+}
+.sf-menu ul {
+	box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+	min-width: 12em; /* allow long menu items to determine submenu width */
+	*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+	border-left: 1px solid #fff;
+	border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+	border-top: 1px solid rgba(255,255,255,.5);
+	padding: .75em 1em;
+	text-decoration: none;
+	zoom: 1; /* IE7 */
+}
+.sf-menu a {
+	color: #13a;
+}
+.sf-menu li {
+	// background: #BDD2FF;
+	background: $ual-black;
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
+	transition: background .2s;
+}
+.sf-menu ul li {
+	background: $bg-gray;
+}
+.sf-menu ul ul li {
+	background: $bg-gray;
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+	background: $aaa-gray;
+	/* only transition out, not in */
+	-webkit-transition: none;
+	transition: none;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+	padding-right: 2.5em;
+	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 1em;
+	margin-top: -3px;
+	height: 0;
+	width: 0;
+	/* order of following 3 rules important for fallbacks to work */
+	border: 5px solid transparent;
+	border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-top-color: rgba(255,255,255,.5);
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: white; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+	margin-top: -5px;
+	margin-right: -3px;
+	border-color: transparent;
+	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(255,255,255,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: white;
+}
+
+
+
+/*** Dropdown menu skin (without border) ***/
+// .sf-menu {
+// 	float: left;
+// 	margin-bottom: 1em;
+// }
+// .sf-menu ul {
+// 	box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+// 	min-width: 12em; /* allow long menu items to determine submenu width */
+// 	*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+// }
+// .sf-menu a {
+// 	border-left: 1px solid #fff;
+// 	border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+// 	border-top: 1px solid rgba(255,255,255,.5);
+// 	padding: .75em 1em;
+// 	text-decoration: none;
+// 	zoom: 1; /* IE7 */
+// }
+// .sf-menu a {
+// 	color: #13a;
+// }
+// .sf-menu li {
+// 	background: #BDD2FF;
+// 	white-space: nowrap; /* no need for Supersubs plugin */
+// 	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+// 	-webkit-transition: background .2s;
+// 	transition: background .2s;
+// }
+// .sf-menu ul li {
+// 	background: #AABDE6;
+// }
+// .sf-menu ul ul li {
+// 	background: #9AAEDB;
+// }
+// .sf-menu li:hover,
+// .sf-menu li.sfHover {
+// 	background: #CFDEFF;
+// 	/* only transition out, not in */
+// 	-webkit-transition: none;
+// 	transition: none;
+// }
+
+// /*** arrows (for all except IE7) **/
+// .sf-arrows .sf-with-ul {
+// 	padding-right: 2.5em;
+// 	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+// }
+// /* styling for both css and generated arrows */
+// .sf-arrows .sf-with-ul:after {
+// 	content: '';
+// 	position: absolute;
+// 	top: 50%;
+// 	right: 1em;
+// 	margin-top: -3px;
+// 	height: 0;
+// 	width: 0;
+// 	/* order of following 3 rules important for fallbacks to work */
+// 	border: 5px solid transparent;
+// 	border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+// 	border-top-color: rgba(255,255,255,.5);
+// }
+// .sf-arrows > li > .sf-with-ul:focus:after,
+// .sf-arrows > li:hover > .sf-with-ul:after,
+// .sf-arrows > .sfHover > .sf-with-ul:after {
+// 	border-top-color: white; /* IE8 fallback colour */
+// }
+// /* styling for right-facing arrows */
+// .sf-arrows ul .sf-with-ul:after {
+// 	margin-top: -5px;
+// 	margin-right: -3px;
+// 	border-color: transparent;
+// 	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+// 	border-left-color: rgba(255,255,255,.5);
+// }
+// .sf-arrows ul li > .sf-with-ul:focus:after,
+// .sf-arrows ul li:hover > .sf-with-ul:after,
+// .sf-arrows ul .sfHover > .sf-with-ul:after {
+// 	border-left-color: white;
+// }
+
+
+
+
+
+
+
+
+// // overriding Foundation zurb based dropdowns
+// // We use these to controls height and width styles.
+// $f-dropdown-max-width:            200px !default;
+// $f-dropdown-height:               auto !default;
+// $f-dropdown-max-height:           none !default;
+// $f-dropdown-margin-top:           2px !default;
+
+// // We use this to control the background color
+// $f-dropdown-bg:                   $bg-gray !default;
+
+// // We use this to set the border styles for dropdowns.
+// $f-dropdown-border-style:         solid !default;
+// $f-dropdown-border-width:         1px !default;
+// $f-dropdown-border-color:         #fff !default;
+
+// // We use these to style the triangle pip.
+// $f-dropdown-triangle-size:        6px !default;
+// $f-dropdown-triangle-color:       #fff !default;
+// $f-dropdown-triangle-side-offset: 10px !default;
+
+// // We use these to control styles for the list elements.
+// $f-dropdown-list-style:           none !default;
+// $f-dropdown-font-color:           $ual-black!default;
+// $f-dropdown-font-size:            emCalc(16px) !default;
+// $f-dropdown-list-padding:         emCalc(12px) emCalc(12px) !default;
+// $f-dropdown-line-height:          emCalc(18px) !default;
+// $f-dropdown-list-hover-bg:        #eeeeee !default;
+// $dropdown-mobile-default-float:            0 !default;
+
+// // We use this to control the styles for when the dropdown has custom content.
+// $f-dropdown-content-padding:      emCalc(20px) !default;
+
+// //
+// // Dropdown Mixins
+// //
+
+// // NOTE: Make default max-width change between list and content types. Can add more width with classes, maybe .small, .medium, .large, etc.;
+
+// // We use this to style the dropdown container element.
+// @mixin dropdown-container($content:list, $triangle:true, $max-width:$f-dropdown-max-width) {
+//   position: absolute;
+//   top: -9999px;
+//   list-style: $f-dropdown-list-style;
+
+//   *:first-child { margin-top: 0; }
+//   *:last-child { margin-bottom: 0; }
+
+//   @if $content == list {
+//     width: 100%;
+//     max-height: $f-dropdown-max-height;
+//     height: $f-dropdown-height;
+//     background: $f-dropdown-bg;
+//     color: #ffffff;
+//     border-bottom: $f-dropdown-border-style $f-dropdown-border-width $f-dropdown-border-color;
+//     font-size: $em-base;
+//     z-index: 99;
+//   }
+
+//   @else if $content == content {
+//     padding: $f-dropdown-content-padding;
+//     width: 100%;
+//     height: $f-dropdown-height;
+//     max-height: $f-dropdown-max-height;
+//     background: $f-dropdown-bg;
+//     border: $f-dropdown-border-style $f-dropdown-border-width $f-dropdown-border-color;
+//     font-size: $em-base;
+//     z-index: 99;
+//   }
+  
+//   @else if $content == no-border {
+//     padding: $f-dropdown-content-padding;
+//     width: 100%;
+//     height: $f-dropdown-height;
+//     max-height: $f-dropdown-max-height;
+//     background: $f-dropdown-bg;
+//     border: $f-dropdown-border-style $f-dropdown-border-width $f-dropdown-border-color;
+//     font-size: $em-base;
+//     z-index: 99;
+//   }
+//   @if $triangle {
+//     margin-top: $f-dropdown-margin-top;
+
+//     &:before {
+//       @include css-triangle($f-dropdown-triangle-size, $f-dropdown-triangle-color, bottom);
+//       position: absolute;
+//       top: -($f-dropdown-triangle-size * 2);
+//       #{$default-float}: $f-dropdown-triangle-side-offset;
+//       z-index: 99;
+//     }
+//     &:after {
+//       @include css-triangle($f-dropdown-triangle-size + 1, $f-dropdown-border-color, bottom);
+//       position: absolute;
+//       top: -(($f-dropdown-triangle-size + 1) * 2);
+//       #{$default-float}: $f-dropdown-triangle-side-offset - 1;
+//       z-index: 98;
+//     }
+
+//     &.right:before {
+//       left: auto;
+//       right: $f-dropdown-triangle-side-offset;
+//     }
+//     &.right:after {
+//       left: auto;
+//       right: $f-dropdown-triangle-side-offset - 1;
+//     }
+//   }
+
+//   @if $max-width { max-width: $max-width; }
+//   @else { max-width: $f-dropdown-max-width; }
+
+// }
+
+// // We use this to style the list elements or content inside the dropdown.
+// @mixin dropdown-style {
+//   font-size: $f-dropdown-font-size;
+//   cursor: pointer;
+//   font-weight: bold;
+//   line-height: $f-dropdown-line-height;
+//   margin: 0;
+
+//   &:hover,
+//   &:focus { background: $f-dropdown-list-hover-bg; }
+
+//   a {
+//     display: block;
+//     padding: $f-dropdown-list-padding;
+//     color: $f-dropdown-font-color;
+//   }
+// }
+
+
+// @if $include-html-nav-classes != false {
+
+//   @media only screen and (max-width: 767px) {
+//     .f-dropdown {
+//       max-width: 100%;
+//       #{$default-float}: $dropdown-mobile-default-float;
+//     }
+//   }
+
+//   /* Foundation Dropdowns */
+//   .f-dropdown {
+//     @include dropdown-container(content);
+//     // max-width: none;
+
+//     li { @include dropdown-style; 
+
+//     }
+
+//     // You can also put custom content in these dropdowns
+//     &.content { @include dropdown-container(content, $triangle:false); }
+
+//     // Sizes
+//     &.tiny    { max-width: 200px; }
+//     &.small   { max-width: 300px; }
+//     &.medium  { max-width: 500px; }
+//     &.large   { max-width: 800px; }
+//   }
+
+// }
+
+
+
+// // classes for default UAL dropdown button styles
+
+// .dropdown-btn {
+//     @extend .button;
+//     @include dropdown-container();
+    
+//     li { @include dropdown-style; }
+    
+// }
+
+// .dropdown-btn-no-border {
+//     @extend .button;
+//     @include dropdown-container();
+    
+//     li { @include dropdown-style; }
+
+// }
+
+
+

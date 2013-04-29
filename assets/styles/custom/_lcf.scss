@@ -1,27 +1,66 @@
 // AL STYLES FOR LCF
 
-$buffer: 30px;
-$buffer-plus: 54px;
-$buffer-max: 102px;
+// LCF Variables
 
-// UTILITIES
+
+
+// Baseline classes
 .buffer {
-    margin-bottom: $buffer;
+    @include margin-trailer(5);
 }
 .buffer-plus {
-    margin-bottom: $buffer-plus;
+    @include margin-trailer(9);
 }
 .buffer-max {
-    margin-bottom: $buffer-max;
+    @include margin-trailer(18);
+}
+.buffer-top {
+    @include margin-leader(5);
+}
+.buffer-top-plus {
+    @include margin-leader(9);
+}
+.buffer-top-max {
+    @include margin-leader(18);
 }
 
-
+// Type
 .lcf {
     h1,h2,h3,h4,h5,h6 {
         text-transform: uppercase;
     }
 }
 
+.section-title {
+    h2, h3 {
+        display: inline-block; // so that borders run as far as the text but no further
+    }
+}
+
+figcaption {
+    padding: 0 10px;
+    color: $ual-secondary;
+    font-family: $alt-font-family;
+    padding-top: 4px;
+    a {
+       color: $ual-secondary; 
+    }
+}
+
+.standfirst {
+    font-size: 18px; // whoa are we using ems?
+    @include margin-trailer(9);
+}
+
+.two-columns {
+   -moz-column-count: 2;
+   -moz-column-gap: 20px; // best way to do gutter width?
+   -webkit-column-count: 2;
+   -webkit-column-gap: 20px;
+}
+
+
+// Modular classes
 .bordered {
     border-bottom: 1px solid #000;
 }
@@ -32,41 +71,23 @@ $buffer-max: 102px;
     .bordered {
         border-bottom-color: #fff; 
     }
-}
-
-// TYPOGRAPHICAL
-.section-title {
-    margin-bottom: 20px; // leader shit?
-    h2, h3 {
-        display: inline; // so that borders run as far as the text but no further
+    a {
+        color: #fff;
     }
 }
 
-section .standfirst {
-    text-decoration: underline;
-}
+
+
+
+
 
 // FEATURE CAROUSEL
 #feature-carousel {
-    .orbit-caption {
-        position: absolute;
-        top: 30%;
-        background-color: transparent;
-        width: 100%;
-        padding: 10px 14px;
-        font-size: emCalc(14px);
-    }
-    h2 {
-        color: #000;
-    }
+    overflow: hidden; // for flexslider controls
 }
 
-// BETTER LIVES
-#better-lives {
-    h3 {
-        
-    }
-}
+
+
 
 // SHOWCASE
 #showcase {
@@ -84,6 +105,18 @@ section .standfirst {
 // SIDEBAR
 .sidebar {
     margin-top: 80px;
+}
+
+
+// GRADUATE SCHOOL
+.graduate-school {
+    header hr {
+        width: 248px;
+        margin-top: 0;
+    }
+    h1 {
+        font-family: $alt-font-family;
+    }
 }
 
 

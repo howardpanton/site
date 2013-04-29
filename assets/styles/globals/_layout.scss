@@ -20,7 +20,6 @@ body {
 	color: $base-color;
 	background: $background ;
 	font-family: $font-family;
-
 }
 
 * {
@@ -36,7 +35,6 @@ a {
 	&:hover, &:focus, &:active {
 
 	color: #929292;
-
 	}
 }
 
@@ -47,9 +45,6 @@ a {
 // Max width, for images etc... in RWD
 .content-wrapper img { max-width: 100%; height: auto; }
 
-//h1 						{ font-weight: 600; }
-ol 						{ @include ordered-inside }
-ul 						{ @include unordered-inside }
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
@@ -102,6 +97,12 @@ ul 						{ @include unordered-inside }
 	width: 92.5%;
 	max-width: 1280px;
 	margin: 0 auto;
+	clear: both;
+}
+
+.feature-wrapper {
+	width: 100%;
+	max-width: 100%;
 }
 
 
@@ -146,7 +147,10 @@ ul 						{ @include unordered-inside }
 		clear: both;
 
 		> .footer-links {
+			
 			@include gs-span(d, all);
+			
+		> div {
 			@include padding-leader(4);
 			margin-left:12px;
 			max-width:1280px;

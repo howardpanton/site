@@ -1,0 +1,32 @@
+  <script>
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+  });
+  });
+  
+  $(window).resize(function() {
+    var originalFontSize = 12;
+    var sectionWidth = $(window).width();
+    console.log("width" + sectionWidth);
+    var maxFontSize = 36;
+    var minFontSize = 20;
+    
+    $('.bricks #responsive_headline').each(function(){
+      var spanWidth = $(this).width();
+      console.log("span" +  spanWidth);
+      console.log("size" + sectionWidth/spanWidth * 16);
+      var newFontSize = (spanWidth/originalFontSize) - originalFontSize ;
+      if (newFontSize > maxFontSize) {
+        newFontSize = maxFontSize;
+      }
+      if (newFontSize < minFontSize) {
+        newFontSize = minFontSize;
+      }
+      console.log(newFontSize);
+      $(this).css({"font-size" : newFontSize});
+
+    });
+  });
+  </script>
