@@ -835,7 +835,19 @@ li {
   line-height: auto;
 }
 
-/* line 146, ../styles/globals/_typography.scss */
+/* line 142, ../styles/globals/_typography.scss */
+hr {
+  border: solid black;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin-top: 1.875em;
+  margin-bottom: 1.875em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 158, ../styles/globals/_typography.scss */
 blockquote {
   font-style: italic;
   padding-left: 1.375em;
@@ -844,7 +856,7 @@ blockquote {
   font-weight: normal;
 }
 
-/* line 155, ../styles/globals/_typography.scss */
+/* line 167, ../styles/globals/_typography.scss */
 blockquote.bquote-wider-border {
   padding-left: 0.75em;
   border-left: 1px solid #c8c8c8;
@@ -852,36 +864,36 @@ blockquote.bquote-wider-border {
   font-weight: normal;
 }
 
-/* line 167, ../styles/globals/_typography.scss */
+/* line 179, ../styles/globals/_typography.scss */
 ul {
   list-style-position: outside;
   list-style-type: disc;
 }
 
-/* line 168, ../styles/globals/_typography.scss */
+/* line 180, ../styles/globals/_typography.scss */
 ol {
   list-style-position: outside;
   list-style-type: decimal;
 }
 
-/* line 169, ../styles/globals/_typography.scss */
+/* line 181, ../styles/globals/_typography.scss */
 strong, b {
   font-weight: 600;
 }
 
-/* line 170, ../styles/globals/_typography.scss */
+/* line 182, ../styles/globals/_typography.scss */
 em, i, q {
   font-style: italic;
 }
 
-/* line 172, ../styles/globals/_typography.scss */
+/* line 184, ../styles/globals/_typography.scss */
 blockquote {
   padding-left: 1em;
   border-left: 0.3125em solid gray;
   line-height: normal;
   margin: 0;
 }
-/* line 177, ../styles/globals/_typography.scss */
+/* line 189, ../styles/globals/_typography.scss */
 blockquote p {
   font-style: italic;
   margin: 0;
@@ -892,7 +904,7 @@ blockquote p {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 188, ../styles/globals/_typography.scss */
+  /* line 200, ../styles/globals/_typography.scss */
   h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
     font-size: 2.75em;
     line-height: 1.09091em;
@@ -900,7 +912,7 @@ blockquote p {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 195, ../styles/globals/_typography.scss */
+  /* line 207, ../styles/globals/_typography.scss */
   h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
     font-size: 2.125em;
     line-height: 1.23529em;
@@ -1041,31 +1053,31 @@ body {
   font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-/* line 26, ../styles/globals/_layout.scss */
+/* line 25, ../styles/globals/_layout.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 30, ../styles/globals/_layout.scss */
+/* line 29, ../styles/globals/_layout.scss */
 a {
   color: #000;
   border-bottom: 1px solid;
   line-height: 24px;
   text-decoration: none;
 }
-/* line 36, ../styles/globals/_layout.scss */
+/* line 35, ../styles/globals/_layout.scss */
 a:hover, a:focus, a:active {
   color: #929292;
 }
 
-/* line 43, ../styles/globals/_layout.scss */
+/* line 41, ../styles/globals/_layout.scss */
 .box {
   background-color: #000;
 }
 
-/* line 48, ../styles/globals/_layout.scss */
+/* line 46, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -1073,7 +1085,7 @@ a:hover, a:focus, a:active {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 57, ../styles/globals/_layout.scss */
+/* line 55, ../styles/globals/_layout.scss */
 .clearfix, #header, #header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
@@ -1087,24 +1099,24 @@ a:hover, a:focus, a:active {
   clear: both;
 }
 
-/* line 59, ../styles/globals/_layout.scss */
+/* line 57, ../styles/globals/_layout.scss */
 .cf {
   zoom: 1;
 }
 
-/* line 61, ../styles/globals/_layout.scss */
+/* line 59, ../styles/globals/_layout.scss */
 .cf:before,
 .cf:after {
   content: "";
   display: table;
 }
 
-/* line 62, ../styles/globals/_layout.scss */
+/* line 60, ../styles/globals/_layout.scss */
 .cf:after {
   clear: both;
 }
 
-/* line 67, ../styles/globals/_layout.scss */
+/* line 65, ../styles/globals/_layout.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -1115,7 +1127,7 @@ a:hover, a:focus, a:active {
   clear: both;
 }
 
-/* line 98, ../styles/globals/_layout.scss */
+/* line 96, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .wrapper, #header .banner {
   width: 92.5%;
   max-width: 1280px;
@@ -1123,13 +1135,13 @@ a:hover, a:focus, a:active {
   clear: both;
 }
 
-/* line 105, ../styles/globals/_layout.scss */
+/* line 103, ../styles/globals/_layout.scss */
 .feature-wrapper {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 111, ../styles/globals/_layout.scss */
+/* line 109, ../styles/globals/_layout.scss */
 #header {
   background: white;
   width: 100%;
@@ -1137,18 +1149,18 @@ a:hover, a:focus, a:active {
   border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
-  /* line 111, ../styles/globals/_layout.scss */
+  /* line 109, ../styles/globals/_layout.scss */
   #header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 123, ../styles/globals/_layout.scss */
+/* line 121, ../styles/globals/_layout.scss */
 #header .banner {
   position: relative;
 }
 @media only screen and (max-width: 599px) {
-  /* line 123, ../styles/globals/_layout.scss */
+  /* line 121, ../styles/globals/_layout.scss */
   #header .banner {
     clear: both;
     display: block;
@@ -1163,7 +1175,7 @@ a:hover, a:focus, a:active {
     padding-bottom: 0.75em;
   }
 }
-/* line 139, ../styles/globals/_layout.scss */
+/* line 137, ../styles/globals/_layout.scss */
 #header .banner .header {
   clear: both;
   display: block;
@@ -1172,29 +1184,29 @@ a:hover, a:focus, a:active {
   width: 100%;
 }
 
-/* line 146, ../styles/globals/_layout.scss */
+/* line 144, ../styles/globals/_layout.scss */
 .footer {
   width: 100%;
   background: black;
   clear: both;
 }
-/* line 151, ../styles/globals/_layout.scss */
+/* line 149, ../styles/globals/_layout.scss */
 .footer > div {
   padding-top: 1.5em;
   margin-left: 12px;
 }
-/* line 156, ../styles/globals/_layout.scss */
+/* line 154, ../styles/globals/_layout.scss */
 .footer > div ul {
   clear: left;
   margin-bottom: 0;
 }
-/* line 163, ../styles/globals/_layout.scss */
+/* line 161, ../styles/globals/_layout.scss */
 .footer li {
   list-style-type: none;
   float: left;
   display: inline;
 }
-/* line 167, ../styles/globals/_layout.scss */
+/* line 165, ../styles/globals/_layout.scss */
 .footer li a {
   color: #fff;
   margin-right: 24px;
@@ -1202,7 +1214,7 @@ a:hover, a:focus, a:active {
   text-decoration: none;
   border-bottom: none;
 }
-/* line 177, ../styles/globals/_layout.scss */
+/* line 175, ../styles/globals/_layout.scss */
 .footer .primary-links {
   display: block;
   float: left;
@@ -1211,7 +1223,7 @@ a:hover, a:focus, a:active {
   width: 61.67214%;
   padding-bottom: 0.75em;
 }
-/* line 182, ../styles/globals/_layout.scss */
+/* line 180, ../styles/globals/_layout.scss */
 .footer .secondary-links {
   display: block;
   float: left;
@@ -1220,7 +1232,7 @@ a:hover, a:focus, a:active {
   width: 74.43073%;
   padding-bottom: 1.125em;
 }
-/* line 187, ../styles/globals/_layout.scss */
+/* line 185, ../styles/globals/_layout.scss */
 .footer .copyright {
   clear: both;
   display: block;
@@ -1229,13 +1241,13 @@ a:hover, a:focus, a:active {
   width: 100%;
   border-top: 1px solid #fff;
 }
-/* line 192, ../styles/globals/_layout.scss */
+/* line 190, ../styles/globals/_layout.scss */
 .footer .copyright p {
   color: #fff;
   font-size: 12px;
   margin-left: 12px;
 }
-/* line 199, ../styles/globals/_layout.scss */
+/* line 197, ../styles/globals/_layout.scss */
 .footer span {
   display: block;
   float: left;
@@ -1243,7 +1255,7 @@ a:hover, a:focus, a:active {
   margin-right: -100%;
   width: 10.25859%;
 }
-/* line 201, ../styles/globals/_layout.scss */
+/* line 199, ../styles/globals/_layout.scss */
 .footer span a {
   float: right;
   color: #fff;
@@ -1253,7 +1265,7 @@ a:hover, a:focus, a:active {
   border-bottom: none;
 }
 
-/* line 212, ../styles/globals/_layout.scss */
+/* line 210, ../styles/globals/_layout.scss */
 header.title {
   clear: both;
   display: block;
@@ -1261,13 +1273,13 @@ header.title {
   margin-left: 0;
   width: 100%;
 }
-/* line 215, ../styles/globals/_layout.scss */
+/* line 213, ../styles/globals/_layout.scss */
 header.title h1 {
   margin-top: 1.875em;
   margin-bottom: 1.875em;
 }
 
-/* line 221, ../styles/globals/_layout.scss */
+/* line 219, ../styles/globals/_layout.scss */
 .row {
   clear: both;
   display: block;
@@ -1277,7 +1289,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 225, ../styles/globals/_layout.scss */
+  /* line 223, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1287,7 +1299,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 225, ../styles/globals/_layout.scss */
+  /* line 223, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1298,7 +1310,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 236, ../styles/globals/_layout.scss */
+  /* line 234, ../styles/globals/_layout.scss */
   .paragraph {
     display: block;
     float: left;
@@ -1308,7 +1320,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 236, ../styles/globals/_layout.scss */
+  /* line 234, ../styles/globals/_layout.scss */
   .paragraph {
     clear: both;
     display: block;
@@ -1319,7 +1331,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 246, ../styles/globals/_layout.scss */
+  /* line 244, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1329,7 +1341,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 246, ../styles/globals/_layout.scss */
+  /* line 244, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1340,7 +1352,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 257, ../styles/globals/_layout.scss */
+  /* line 255, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     display: block;
     float: left;
@@ -1350,7 +1362,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 257, ../styles/globals/_layout.scss */
+  /* line 255, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     clear: both;
     display: block;
@@ -3317,99 +3329,118 @@ html[xmlns] .slides {
 /* ------------------------------------------------------------ */
 /* line 8, ../styles/custom/_lcf.scss */
 .buffer {
-  margin-bottom: 30px;
+  margin-bottom: 1.875em;
 }
 
 /* line 11, ../styles/custom/_lcf.scss */
 .buffer-plus {
-  margin-bottom: 54px;
+  margin-bottom: 3.375em;
 }
 
 /* line 14, ../styles/custom/_lcf.scss */
 .buffer-max {
-  margin-bottom: 102px;
+  margin-bottom: 6.75em;
 }
 
-/* line 19, ../styles/custom/_lcf.scss */
+/* line 17, ../styles/custom/_lcf.scss */
+.buffer-top {
+  margin-top: 1.875em;
+}
+
+/* line 20, ../styles/custom/_lcf.scss */
+.buffer-top-plus {
+  margin-top: 3.375em;
+}
+
+/* line 23, ../styles/custom/_lcf.scss */
+.buffer-top-max {
+  margin-top: 6.75em;
+}
+
+/* line 29, ../styles/custom/_lcf.scss */
 .lcf h1, .lcf h2, .lcf h3, .lcf h4, .lcf h5, .lcf h6 {
   text-transform: uppercase;
 }
 
-/* line 24, ../styles/custom/_lcf.scss */
-.bordered {
-  border-bottom: 1px solid #000;
-}
-
-/* line 28, ../styles/custom/_lcf.scss */
-.dark-bg {
-  background-color: #000;
-  color: #fff;
-}
-/* line 31, ../styles/custom/_lcf.scss */
-.dark-bg .bordered {
-  border-bottom-color: #fff;
-}
-/* line 34, ../styles/custom/_lcf.scss */
-.dark-bg a {
-  color: #fff;
+/* line 35, ../styles/custom/_lcf.scss */
+.section-title h2, .section-title h3 {
+  display: inline-block;
 }
 
 /* line 40, ../styles/custom/_lcf.scss */
-.section-title {
-  margin-bottom: 20px;
-  padding-left: 54px;
-}
-/* line 43, ../styles/custom/_lcf.scss */
-.section-title h2, .section-title h3 {
-  display: inline;
-}
-
-/* line 48, ../styles/custom/_lcf.scss */
-section .standfirst {
-  text-decoration: underline;
-}
-
-/* line 52, ../styles/custom/_lcf.scss */
-.image-caption {
+figcaption {
+  padding: 0 10px;
   color: #929292;
   font-family: Times, serif;
   padding-top: 4px;
 }
-/* line 56, ../styles/custom/_lcf.scss */
-.image-caption a {
+/* line 45, ../styles/custom/_lcf.scss */
+figcaption a {
   color: #929292;
 }
 
-/* line 62, ../styles/custom/_lcf.scss */
-#feature-carousel {
-  overflow: hidden;
-  /*.orbit-caption {
-      position: absolute;
-      top: 30%;
-      background-color: transparent;
-      width: 100%;
-      padding: 10px 14px;
-      font-size: emCalc(14px);
-  }
-  h2 {
-      color: #000;
-  }*/
+/* line 50, ../styles/custom/_lcf.scss */
+.standfirst {
+  font-size: 18px;
+  margin-bottom: 3.375em;
 }
 
-/* line 86, ../styles/custom/_lcf.scss */
+/* line 55, ../styles/custom/_lcf.scss */
+.two-columns {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+}
+
+/* line 64, ../styles/custom/_lcf.scss */
+.bordered {
+  border-bottom: 1px solid #000;
+}
+
+/* line 68, ../styles/custom/_lcf.scss */
+.dark-bg {
+  background-color: #000;
+  color: #fff;
+}
+/* line 71, ../styles/custom/_lcf.scss */
+.dark-bg .bordered {
+  border-bottom-color: #fff;
+}
+/* line 74, ../styles/custom/_lcf.scss */
+.dark-bg a {
+  color: #fff;
+}
+
+/* line 85, ../styles/custom/_lcf.scss */
+#feature-carousel {
+  overflow: hidden;
+}
+
+/* line 94, ../styles/custom/_lcf.scss */
 #showcase h2 {
   position: absolute;
   top: 40%;
   width: 100%;
 }
-/* line 91, ../styles/custom/_lcf.scss */
+/* line 99, ../styles/custom/_lcf.scss */
 #showcase .box-text {
   width: 65%;
 }
 
-/* line 98, ../styles/custom/_lcf.scss */
+/* line 106, ../styles/custom/_lcf.scss */
 .sidebar {
   margin-top: 80px;
+}
+
+/* line 113, ../styles/custom/_lcf.scss */
+.graduate-school header hr {
+  width: 248px;
+  margin-top: 0;
+}
+/* line 117, ../styles/custom/_lcf.scss */
+.graduate-school h1 {
+  font-family: Times, serif;
 }
 
 /* line 13, ../styles/custom/_camberwell.scss */
@@ -4822,42 +4853,43 @@ section .standfirst {
 
 /* line 34, ../styles/globals/_utilities.scss */
 .aligncenter {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* line 39, ../styles/globals/_utilities.scss */
+/* line 40, ../styles/globals/_utilities.scss */
 .add-top {
   margin-top: 20px;
 }
 
-/* line 42, ../styles/globals/_utilities.scss */
+/* line 43, ../styles/globals/_utilities.scss */
 .add-bottom {
   margin-bottom: 20px;
 }
 
-/* line 47, ../styles/globals/_utilities.scss */
+/* line 48, ../styles/globals/_utilities.scss */
 .hide {
   display: none;
 }
 
-/* line 50, ../styles/globals/_utilities.scss */
+/* line 51, ../styles/globals/_utilities.scss */
 .show {
   display: block;
 }
 
-/* line 55, ../styles/globals/_utilities.scss */
+/* line 56, ../styles/globals/_utilities.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 60, ../styles/globals/_utilities.scss */
+/* line 61, ../styles/globals/_utilities.scss */
 .no-bullet {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 67, ../styles/globals/_utilities.scss */
+/* line 68, ../styles/globals/_utilities.scss */
 .clearfix, #header, #header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
@@ -4873,58 +4905,58 @@ section .standfirst {
 
 /* ::State styles */
 /* ------------------------------------------------------------ */
-/* line 79, ../styles/globals/_utilities.scss */
+/* line 80, ../styles/globals/_utilities.scss */
 .is-hidden {
   display: none;
 }
 
-/* line 83, ../styles/globals/_utilities.scss */
+/* line 84, ../styles/globals/_utilities.scss */
 .is-shown, .is-block {
   display: block;
 }
 
-/* line 87, ../styles/globals/_utilities.scss */
+/* line 88, ../styles/globals/_utilities.scss */
 .is-uppercase {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* line 92, ../styles/globals/_utilities.scss */
+/* line 93, ../styles/globals/_utilities.scss */
 .is-lowercase {
   text-transform: lowercase;
 }
 
-/* line 96, ../styles/globals/_utilities.scss */
+/* line 97, ../styles/globals/_utilities.scss */
 .ajust-margin-top {
   margin-top: 0px;
 }
 
 @media only screen and (max-width: 599px) {
-  /* line 102, ../styles/globals/_utilities.scss */
+  /* line 103, ../styles/globals/_utilities.scss */
   .is-removed-mobile {
     visibility: visible;
     height: 0px;
     overflow: hidden;
   }
 
-  /* line 108, ../styles/globals/_utilities.scss */
+  /* line 109, ../styles/globals/_utilities.scss */
   .is-hidden-mobile {
     display: none;
   }
 }
-/* line 115, ../styles/globals/_utilities.scss */
+/* line 116, ../styles/globals/_utilities.scss */
 .group:before,
 .group:after {
   content: "";
   display: table;
 }
 
-/* line 119, ../styles/globals/_utilities.scss */
+/* line 120, ../styles/globals/_utilities.scss */
 .group:after {
   clear: both;
 }
 
-/* line 122, ../styles/globals/_utilities.scss */
+/* line 123, ../styles/globals/_utilities.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */

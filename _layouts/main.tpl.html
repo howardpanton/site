@@ -1,6 +1,6 @@
 {% include _head.html %}
 
-<body class='style {{ page.college }}'>
+<body class='style {{ page.college }} {{ page.section }}'>
 
 {% include _global_header.html %}
 
@@ -29,25 +29,34 @@
         document.write(unescape("%3Cscript src='../../../assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
     }
   </script>
-  <!-- /%script{:type => "text/javascript", :src  => "../../../assets/js/libs/jquery.jpanelmenu.min.js"} -->
-  <script src='../../../assets/js/libs/jquery.flexslider-min.js'></script>
-  <script src='../../../assets/js/hashgrid.js' type='text/javascript'></script>
-  <script src='../../../assets/js/script.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/responsive.text.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/picturefill.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/hoverintent.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/jquery.cycle2.js' type='text/javascript'></script>
-  <script src='../../../assets/js/libs/jquery.slabtext.min.js' type='text/javascript'></script>
+
+  <!-- /%script{:type => "text/javascript", :src  => "{{ site.url }}assets/js/libs/jquery.jpanelmenu.min.js"} -->
+  
+  <!-- Development scripts, not for production -->
+  <script src='{{ site.url }}assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- Libs -->
+  <script src='{{ site.url }}assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/libs/jquery.flexslider-min.js' type='text/javascript'></script>
+
+  <!-- Foundation -->
+  <script src='{{ site.url }}assets/js/foundation/foundation.js' type='text/javascript'></script>
+  
+  <script src='{{ site.url }}assets/js/script.js' type='text/javascript'></script>
+
   <script>
+    $(document).foundation();
+  </script>
+    <script>
     $(document).ready(function() {
       $(".fancy_title").lettering();
       // use fitText for headings to make them responsive
       $(".fit-this").fitText();
     });
-  </script>
-  <script>
-    $(document).foundation();
   </script>
 
   {% if page.college == "lcf" %}
