@@ -7,6 +7,7 @@
 http_path = "http://artslondon.github.io/beta/"
 css_dir = "assets/css"
 sass_dir = "assets/styles"
+fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
