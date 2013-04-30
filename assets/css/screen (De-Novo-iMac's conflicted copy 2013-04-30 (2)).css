@@ -319,7 +319,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -1001,7 +1001,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1147,7 +1147,7 @@ a:hover, a:focus, a:active {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid #000000;
+  border-top: 6px solid black;
 }
 @media only screen and (max-width: 599px) {
   /* line 124, ../styles/globals/_layout.scss */
@@ -1249,7 +1249,7 @@ a:hover, a:focus, a:active {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid #fff;
+  border-top: 1px solid white;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
@@ -1561,7 +1561,7 @@ header.title h1 {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid white;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -1581,7 +1581,7 @@ header.title h1 {
 }
 /* line 86, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid white;
 }
 @media only screen and (max-width: 599px) {
   /* line 86, ../styles/components/_nav-main-menu.scss */
@@ -2483,7 +2483,7 @@ button.button.large {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px #000;
+  border: solid 4px black;
   border-top: none;
   border-bottom: none;
 }
@@ -2494,7 +2494,7 @@ button.button.large {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent #000;
+  border-color: transparent transparent transparent black;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -2884,7 +2884,7 @@ table tfoot tr td {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px #000;
+  border: solid 4px black;
   border-top: none;
   border-bottom: none;
 }
@@ -2895,7 +2895,7 @@ table tfoot tr td {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent #000;
+  border-color: transparent transparent transparent black;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -3403,7 +3403,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -9999px;
   opacity: 0;
-  -webkit-transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
 }
 
 /* line 53, ../styles/plugins/_flexslider.scss */
@@ -3436,7 +3436,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: 0.3 !important;
+  opacity: .3!important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -3603,7 +3603,7 @@ figcaption a {
 
 /* line 64, ../styles/custom/_lcf.scss */
 .bordered {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid black;
 }
 
 /* line 68, ../styles/custom/_lcf.scss */
@@ -5058,76 +5058,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* line 189, ../styles/custom/_wimbledon.scss */
-.promo-col1 {
-  display: block;
-  float: left;
-  margin-left: 25.89636%;
-  margin-right: -100%;
-  width: 29.39648%;
-}
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 189, ../styles/custom/_wimbledon.scss */
-  .promo-col1 {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 48.19132%;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 189, ../styles/custom/_wimbledon.scss */
-  .promo-col1 {
-    clear: both;
-    display: block;
-    float: left;
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-/* line 197, ../styles/custom/_wimbledon.scss */
-.promo-col2 {
-  display: block;
-  float: left;
-  margin-left: 64.17214%;
-  margin-right: -100%;
-  width: 29.39648%;
-}
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 197, ../styles/custom/_wimbledon.scss */
-  .promo-col2 {
-    display: block;
-    float: left;
-    margin-left: 52.19132%;
-    margin-right: -100%;
-    width: 47.72534%;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 197, ../styles/custom/_wimbledon.scss */
-  .promo-col2 {
-    clear: both;
-    display: block;
-    float: left;
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-/* line 209, ../styles/custom/_wimbledon.scss */
+/* line 193, ../styles/custom/_wimbledon.scss */
 .promo-module header h2 {
   margin-top: 1.875em;
   padding-top: 1.875em;
-  border-top: solid 12px #434951;
+  border-top: solid 12px black;
   color: #58bf58;
   font-size: 3.5em;
   line-height: 1.07143em;
   width: 100%;
+  text-decoration: underline;
 }
 
-/* line 220, ../styles/custom/_wimbledon.scss */
+/* line 203, ../styles/custom/_wimbledon.scss */
 .header-with-top-border {
   padding-top: 0.375em;
   border-top: solid 6px black;
@@ -5244,7 +5187,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   margin: 0;
   padding: 0;
 }
