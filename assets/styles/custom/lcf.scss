@@ -51,13 +51,12 @@ figcaption {
     @include margin-trailer(9);
 }
 
-.two-columns {
+.csscolumns .two-columns {
    -moz-column-count: 2;
    -moz-column-gap: 20px; // best way to do gutter width?
    -webkit-column-count: 2;
    -webkit-column-gap: 20px;
 }
-
 
 // Modular classes
 .bordered {
@@ -74,9 +73,6 @@ figcaption {
         color: #fff;
     }
 }
-
-
-
 
 
 
@@ -106,6 +102,24 @@ figcaption {
     margin-top: 80px;
 }
 
+// FOOTER
+footer {
+    &.zone-footer {
+        border-bottom: 1px dotted $mid-gray;
+    }
+    .flex-block {
+        .middle {
+            border-left: 1px dotted $mid-gray;
+            border-right: 1px dotted $mid-gray;
+        }
+        .inner {
+            padding: 40px;
+        }
+    }
+}
+ 
+
+
 
 // GRADUATE SCHOOL
 .graduate-school {
@@ -115,6 +129,22 @@ figcaption {
     }
     h1 {
         font-family: $alt-font-family;
+    }
+    section {
+        @include clearfix();
+    }
+}
+
+.cluster {
+
+    ul {
+
+        li {
+            border-bottom: 1px solid $light-gray;
+        } 
+        a {
+            border: 0;
+        }
     }
 }
 
