@@ -156,24 +156,20 @@ a {
 }
 
 .footer {
-		width:100%;
-		background: black;
-		clear: both;
-
-		.footer-links {			
-			@include padding-leader(4);
-			@include gs-span(d, all);
-			margin-left:12px;
-			max-width:1280px;
-			margin: 0 auto;
-			float:none;
+	background: $ual-black;
+	.footer-links {			
+		@include padding-leader(4);
+		@include gs-span(d, all);
+		margin-left:12px;
+		max-width:1280px;
+		margin: 0 auto;
+		float:none;
 
 
-			ul {
-				clear:left;
-				margin-bottom:0;
-			}
-
+		ul {
+			clear:left;
+			margin-bottom:0;
+		}
 
 		li {
 				@include nobullet;
@@ -187,8 +183,9 @@ a {
 				border-bottom:none;
 			}
 		}
+	}
 
-}
+
 		.primary-links {
 			@include gs-span(d, 1, 10);
 			@include padding-trailer(2);
