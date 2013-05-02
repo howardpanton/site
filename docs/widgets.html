@@ -17,12 +17,39 @@ title: UAL Style Guide - Widgets
 
 <h3> lightbox (using fresco)</h3>
 
+<div id="fresco-lightbox" class='demonstrations'>
+
+
+
+</div>
+
+
+<h3> lightbox demo content</h3>
+
+<div id="fresco-lightbox" class='demonstrations'>
+
+<ul>
+	<li><a href="#"><img src="{{ site.url }}assets/img/" /></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+</ul>
+
+
+</div>
 
 
 
 <script type="text/javascript">
 	window.onload=function(){
+		
+		// load in showtime images for the fancybox gallery example
 		fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery');
+
+		// load in showtime images for fresco example
+		//fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
 	};
 </script>
 
