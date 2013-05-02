@@ -8,17 +8,17 @@
 
 {{ content }}
 
+{% if page.college == "lcf" %}
+  {% include _lcf_footer.html %}
+{% endif %}
+
 {% include _global_footer.html %}
 
   <script src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
 
-
-
-
   <script>
     Modernizr.Detectizr.detect({detectScreen:false});
   </script>
-  </head>
 
   <!-- Gridset overlay script - toggles grid overlay on and off - You can remove this if you want. -->
   <script src='../../../assets/js/gridset-overlay.js' type='text/javascript'></script>
