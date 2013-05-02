@@ -4,7 +4,7 @@ title: UAL Style Guide - Widgets
 ---
 
 <header class='title'>
-	<h1 class='leader'>Widgets</h1>
+  <h1 class='leader'>Widgets</h1>
 </header>
 
 <h2>Image Galleries</h2>
@@ -28,13 +28,37 @@ title: UAL Style Guide - Widgets
 
 <div id="fresco-lightbox" class='demonstrations'>
 
-<ul>
-	<li><a href="#"><img src="{{ site.url }}assets/img/" /></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
+<ul class="no-bullet display-inline">
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+    </a>
+  </li>
 </ul>
 
 
@@ -43,13 +67,13 @@ title: UAL Style Guide - Widgets
 
 
 <script type="text/javascript">
-	window.onload=function(){
-		
-		// load in showtime images for the fancybox gallery example
-		fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery');
+  window.onload=function(){
+    
+    // load in showtime images for the fancybox gallery example
+    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery');
 
-		// load in showtime images for fresco example
-		//fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
-	};
+    // load in showtime images for fresco example
+    //fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
+  };
 </script>
 
