@@ -7,24 +7,165 @@ title: UAL Style Guide - Widgets
   <h1 class='leader'>Widgets</h1>
 </header>
 
-<h2>Image Galleries</h2>
 
-<h3>sample showtime feed with lightbox (using fancyBox)</h3>
-
-<div id="showtime-lightbox-gallery" class=" fancybox ual-fancybox-gallery"> </div>
+<h3>sample showtime feed</h3>
+<p> loads the latest 3 images uploaded to Showtime for CSM, LCF & wimbledon, and sorts them by date. (links to screen size images) </p>
+<div id="showtime-lightbox-gallery" class=""> Loading images from showtime, Please wait..... </div>
 
 <hr/>
 
-<h3> lightbox (using fresco)</h3>
+<h2>Image Galleries</h2>
+
+
+
+<h3> lightbox (using magnific)</h3>
+<p> more info on usage here &rarr; <a href="http://dimsemenov.com/plugins/magnific-popup/"> magnific popup </a> </p>
+
+<div id="magnific-lightbox" class='magnific-demo'>
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+   
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+</div>
+
+<hr/>
+
+<h3> lightbox (using fancyBox)</h3>
+<p> more info on usage here &rarr; <a href="http://fancyapps.com/fancybox/#instructions"> fancyBox instructions </a> </p>
+<div id="fancybox-lightbox" class='demonstrations'>
+  <ul class="no-bullet display-inline">
+    <li>
+      <a class="fancybox no-underline " rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+    </li>
+  </ul>
+</div>
+
+<hr/>
+
+<h3> fresco lightbox example</h3>
+<p> more info on usage here &rarr; <a href="http://www.frescojs.com/documentation/usage"> fresco lightbox instructions </a> </p>
 
 <div id="fresco-lightbox" class='demonstrations'>
 
-
+  <ul class="no-bullet display-inline">
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+    </li>
+  </ul>
 
 </div>
 
+<!-- <div id="fresco-lightbox" class='demonstrations'>
 
-<h3> lightbox demo content</h3>
+<ul class="no-bullet display-inline">
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+      <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+    </a>
+  </li>
+</ul>
+
+</div> -->
+
+<!-- <h3> magnific lightbox demo ( mixed content )</h3>
 
 <div id="fresco-lightbox" class='demonstrations'>
 
@@ -62,7 +203,7 @@ title: UAL Style Guide - Widgets
 </ul>
 
 
-</div>
+</div> -->
 
 
 
@@ -70,7 +211,7 @@ title: UAL Style Guide - Widgets
   window.onload=function(){
     
     // load in showtime images for the fancybox gallery example
-    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery');
+    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery') ;
 
     // load in showtime images for fresco example
     //fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
