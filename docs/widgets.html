@@ -1,13 +1,28 @@
 ---
 layout: docs.tpl
-title: University of the Arts London - Website Style Guide
+title: UAL Style Guide - Widgets
 ---
 
 <header class='title'>
-	<h1 class='leader'>
-	  <span>University of Arts London</span>
-	</h1>
-	<h2>
-	  Website Style Guide
-	</h2>
+	<h1 class='leader'>Widgets</h1>
 </header>
+
+<h2>Image Galleries</h2>
+
+<h3>sample showtime feed with lightbox (using fancyBox)</h3>
+
+<div id="showtime-lightbox-gallery" class=" fancybox ual-fancybox-gallery"> </div>
+
+<hr/>
+
+<h3> lightbox (using fresco)</h3>
+
+
+
+
+<script type="text/javascript">
+	window.onload=function(){
+		fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery');
+	};
+</script>
+
