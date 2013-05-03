@@ -25,6 +25,9 @@
 
  <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
   
+  <!-- load in script for responsive thumbnail gallery -->
+  <script src='{{ site.url }}assets/js/libs/responsivethumbnailgallery.js'></script>
+
   <!-- load in fancyBox for lightboxes -->
   <script src='{{ site.url }}assets/js/libs/jquery.fancybox.pack.js'></script>
 
@@ -82,6 +85,17 @@
           }
         }
       });
+
+      var thumbsgallery = new $.ThumbnailGallery($('#thumbnail-gallery1'), {
+            thumbImages: '{{ site.url }}assets/img/placeholder-content/thumbs/',
+            smallImages: '{{ site.url }}assets/img/placeholder-content/gallery-imgs/',
+            largeImages: '{{ site.url }}assets/img/placeholder-content/gallery-imgs/hi-res/',
+            count: 7,
+            thumbImageType: 'jpg',
+            imageType: 'jpg',
+            breakpoint: 600,
+            shadowStrength: 1
+        });
     });
   </script>
 
