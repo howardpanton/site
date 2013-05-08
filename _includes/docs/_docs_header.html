@@ -1,11 +1,18 @@
-<header class='cf' id='header'>
+<header class='cf region header'>
     <div class='banner'>
         <div class='menu-toggle d-hide t-hide'>
             <img alt='' src='{{ site.url }}assets/img/menu-toggle.png'>
         </div>
-        <div class='logo'>
-            <img alt='' class='d-hide t-hide' src='{{ site.url }}assets/img/ual-logo-small.png'>
-            <img alt='' class='m-hide' src='{{ site.url }}assets/img/logos/ual-logo.png'>
-        </div>
+          <h2 class="heading-x3">
+           <a href="{{site.url}}docs/">ual: style guide</a>
+          </h2>
     </div>
 </header>
+<nav class="breadcrumb content-wrapper">
+    <ul>
+        <li><a href="{{site.url}}docs/">Docs home</a></li>
+          {% if page.breadcrumb  %}
+        <li><a href="{{site.url}}docs/{{page.breadcrumb-link}}">{{page.breadcrumb}}</a></li>
+          {% endif %}
+    </ul>
+</nav>

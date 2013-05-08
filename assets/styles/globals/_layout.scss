@@ -38,8 +38,12 @@ a {
 	}
 }
 
-.box {
-	background-color: #000;
+.region {
+	position: relative;
+	float: left;
+	@include gs-media(m, min-max) {
+		margin-top:12px;
+	}
 }
 
 // Max width, for images etc... in RWD
@@ -107,6 +111,10 @@ a {
     @return ($target / $context) * 1em;
 }
 
+ol, ul {
+	padding-left:em(20px);
+}
+
 .content-wrapper, .wrapper {
 	width: 92.5%;
 	max-width: 1280px;
@@ -121,7 +129,7 @@ a {
 }
 
 
-#header {
+.header {
 	background: $background;
 	width:100%;
 	@extend .clearfix;
@@ -241,6 +249,7 @@ header.title {
 }
 .row {
 	@include gs-span(d, all);
+	clear:both;
 }
 
 .typography {
@@ -289,8 +298,46 @@ header.title {
 // Google Prettycode overide for margin
 // 
 pre.prettyprint {
-        width: 95%;
+        width: 100%;
         margin: 0 ;
         padding: 1em;
         white-space: pre-wrap;
 }
+
+pre.prettyprint, code.prettyprint {
+background-color: #000;
+}
+
+pre .pun, code .pun {
+color: yellow;
+}
+pre .atn, code .atn {
+color: violet;
+}
+
+pre .pln, code .pln {
+color: white;
+}
+
+.swatch-list {
+	margin-left:0px;
+	@include leader(2);
+	@include trailer(12);
+
+	li {
+		list-style:none;
+		width: 128px;
+		height: 128px;
+		margin-right: 30px;
+		display:inline;
+		float:left;
+		position:relative;
+		margin-bottom: 50px;
+
+	span {
+		position: absolute;
+		bottom: -30px;
+		}
+	}
+}
+

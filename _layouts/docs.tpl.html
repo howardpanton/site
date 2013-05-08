@@ -1,12 +1,10 @@
 {% include docs/_docs_head.html %}
  
-<body class="style">
+<body class='style {{ page.class-home }}'>
 
   {% include docs/_docs_header.html %}
 
-  {% include docs/_docs_navigation.html %}
-
-  <div class="content-wrapper">
+  <div class="content-wrapper cf">
 
     {{ content }}
 
@@ -46,7 +44,7 @@
   <script src='{{ site.url }}assets/js/script.js' type='text/javascript'></script>
 
   <!-- load in javascript to handle the dropdowns -->
-  <script src='{{ site.url }}assets/js/ual-dropdowns.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/libs/ual-dropdowns.js' type='text/javascript'></script>
 
 
 
@@ -63,9 +61,18 @@
 
   <!-- google prettify script -->
   <script src='{{ site.url }}assets/js/libs/google-code-prettify/prettify.js' type='text/javascript'></script>
+  <script src="{{ site.url }}assets/js/libs/holder.js"></script>
+  <script src='{{ site.url }}assets/js/dev/debug.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/dev/debug.rwd.js' type='text/javascript'></script>
   <script>
    // make code pretty
-    window.prettyPrint && prettyPrint()
+    window.prettyPrint && prettyPrint();
+    /* ---- Global Page Setup ---- */
+function trace(msg) {
+  if (typeof console != 'undefined' && typeof console.log == 'function') {
+    console.log(msg);
+  }
+}
 
   </script> 
   </body>
