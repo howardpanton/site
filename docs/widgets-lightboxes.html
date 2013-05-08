@@ -1,0 +1,110 @@
+---
+layout: docs.tpl
+title: University of the Arts London - Website Style Guide
+class-home: docs
+breadcrumb: Widgets > Lightboxes
+breadcrumb-link: widgets-lightboxes.html
+---
+
+<div class="docs-content">
+  
+  <div class="row">  
+    <div class="d1-d12">  
+      <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 8, 2013</strong></p>
+        <h2 class="heading-x3 soft-black">Widgets: Lightboxes</h2>
+      <hr>
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <div class="d1-d12"> 
+      
+      <h3> Lightbox Example 1 (using magnific)</h3>
+      <p> More info on usage here &rarr; <a href="http://dimsemenov.com/plugins/magnific-popup/"> magnific popup </a> </p>
+
+      <div id="magnific-lightbox" class='magnific-demo'>
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+            </a>
+         
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+            </a>
+
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+            </a>
+
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+            </a>
+
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+            </a>
+
+            <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+            </a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="row"> 
+    <h6>HTML code: </h6>
+    <div class="d1-d12">        
+      <pre data-type="HTML" class="prettyprint">
+        <code>
+        &lt;div id=&quot;magnific-lightbox&quot; class='magnific-demo'&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
+        </code>
+      </pre>
+    </div>
+  </div>  
+  
+  <div class="row">
+    <h6>Javascript: </h6>
+    <p> should be placed at the end of the page before the &lt;/body&gt; tag </p>
+    <div class="d1-d12"> 
+      <pre data-type="Javascript" class="prettyprint">
+        <code>
+        
+        if ($('.magnific-demo').length > 0) {
+          // initialise the magnific lightbox
+          $('.magnific-demo').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+              titleSrc: function(item) {
+                return item.el.attr('title') + '<small>by Author Name Here</small>';
+              }
+            }
+          });
+
+        };
+
+
+
+
+        </code>
+      </pre>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript">
+  window.onload=function(){
+    // load in showtime images
+    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-feed');
+  }
+</script>

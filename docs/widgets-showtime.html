@@ -1,0 +1,65 @@
+---
+layout: docs.tpl
+title: University of the Arts London - Website Style Guide
+class-home: docs
+breadcrumb: Widgets: Showtime Feed
+breadcrumb-link: widgets-showtime.html
+---
+
+<div class="docs-content">
+  
+  <div class="row">  
+    <div class="d1-d12">  
+      <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 8, 2013</strong></p>
+      <h2 class="heading-x3 soft-black">Widgets: Showtime Feed test for update</h2>
+      <hr>
+    </div>
+  </div>
+  
+
+  <div class="row">
+      <h5> Example: Latest 3 showtime images from CSM, LCF &amp; Wimbledon, sorted by date</h5>
+      <p>  Requires JS file: <strong>ual-get-showtime.js</strong> to be loaded into the page and then initialized using the code below.</p>
+      <div id="showtime-feed" class="d-all"><img src="{{ site.url }}assets/img/loader.gif" alt="loading..."/></div>
+  </div>
+  
+  <div class="row"> 
+    <h6>HTML code: </h6>
+    <div class="d1-d12">        
+      <pre data-type="HTML" class="prettyprint">
+        <code>
+        &lt;div id=&quot;showtime-feed&quot; &gt;
+          &lt;img src=&quot;http://artslondon.github.io/beta/assets/img/loader.gif&quot; alt=&quot;loading...&quot;/&gt;
+        &lt;/div&gt;
+        </code>
+      </pre>
+    </div>
+  </div>  
+  
+  <div class="row">
+    <h6>Javascript: </h6>    
+    
+    <div class="d1-d12"> 
+     
+
+      <pre data-type="Javascript" class="prettyprint">
+        <code>
+        &lt;script&gt; 
+        window.onload=function(){ 
+          // load in showtime images 
+          fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-feed'); 
+        } 
+        &lt;/script&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript">
+  window.onload=function(){
+    // load in showtime images
+    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-feed');
+  }
+</script>
