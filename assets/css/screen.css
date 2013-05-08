@@ -318,7 +318,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -472,6 +472,31 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* line 50, sprite/ui-icons/*.png */
+.ui-icons-sprite, .ui-icons-expandable-closed, .ui-icons-expandable-open, .ui-expandable .ui-widget-header .ui-icon.icon-closed, .ui-expandable .ui-widget-header .ui-icon.icon-open {
+  background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-expandable-closed {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-expandable-open {
+  background-position: 0 -16px;
+}
+
+/* line 10, ../styles/globals/_sprites.scss */
+.ui-expandable .ui-widget-header .ui-icon.icon-closed {
+  background-position: 0 0;
+}
+
+/* line 14, ../styles/globals/_sprites.scss */
+.ui-expandable .ui-widget-header .ui-icon.icon-open {
+  background-position: 0 0;
 }
 
 /* ::Grid styles */
@@ -1000,7 +1025,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1146,7 +1171,7 @@ a:hover, a:focus, a:active {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
   /* line 124, ../styles/globals/_layout.scss */
@@ -1246,7 +1271,7 @@ a:hover, a:focus, a:active {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
@@ -1566,7 +1591,7 @@ pre.prettyprint {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -1586,7 +1611,7 @@ pre.prettyprint {
 }
 /* line 86, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid white;
+  border-left: 1px solid #ffffff;
 }
 @media only screen and (max-width: 599px) {
   /* line 86, ../styles/components/_nav-main-menu.scss */
@@ -2488,7 +2513,7 @@ button.button.large {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px black;
+  border: solid 4px #000;
   border-top: none;
   border-bottom: none;
 }
@@ -2499,7 +2524,7 @@ button.button.large {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent black;
+  border-color: transparent transparent transparent #000;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -2889,7 +2914,7 @@ table tfoot tr td {
   right: 0px;
   width: 11px;
   height: 14px;
-  border: solid 4px black;
+  border: solid 4px #000;
   border-top: none;
   border-bottom: none;
 }
@@ -2900,7 +2925,7 @@ table tfoot tr td {
   width: 11px;
   height: 14px;
   border: solid 8px;
-  border-color: transparent transparent transparent black;
+  border-color: transparent transparent transparent #000;
 }
 /* line 113, ../styles/plugins/foundation/components/_orbit.scss */
 .orbit-container:hover .orbit-timer > span {
@@ -3259,7 +3284,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -9999px;
   opacity: 0;
-  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
 }
 
 /* line 53, ../styles/plugins/_flexslider.scss */
@@ -3292,7 +3317,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: .3!important;
+  opacity: 0.3 !important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -3498,7 +3523,7 @@ html[xmlns] .slides {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }

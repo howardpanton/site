@@ -16,11 +16,100 @@ title: UAL Style Guide - Widgets
 
 <section>
   <h2>Image Gallery Examples</h2>
-  <p> example 1 using responsivethumbnailgallery.js. More info at &rarr; <a href="https://github.com/johnpolacek/ResponsiveThumbnailGallery">ResponsiveThumbnailGallery github page </a> </p>
+  
+  <h3> Flexslider Gallery w/thumbnail controlnav pattern <h3>
+  <!-- Temp inline styles need to be sorted out -->
+  <div class="flexslider2">
+    <ul class="slides">
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}assets/img/placeholder-content/thumbs/thumb7.jpg">
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+    </ul>
+  </div>
+  
 
-  <div id="thumbnail-gallery1">
+  <h3> Flexslider Gallery w/ with Carousel Slider as Navigation </h3>
+  <!-- Temp inline styles need to be sorted out -->
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+    </ul>
+  </div>
+  <div id="carousel" class="flexslider">
+    <ul class="slides">
+     
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+      <!-- items mirrored twice, total of 7 images -->
+    </ul>
+  </div>
+
+  <h3> ResponsiveThumbnailGallery Gallery Example </h3>
+  <p> example 1 using responsivethumbnailgallery.js. More info at &rarr; <a href="https://github.com/johnpolacek/ResponsiveThumbnailGallery">ResponsiveThumbnailGallery github page </a> </p>
+  
+  <!-- temporary inline styling needs to be moved to proper style file -->
+  <div id="thumbnail-gallery1" style="max-width:600px"> 
     loading thumbnail gallery.... please wait
   </div>
+
 </section> <!-- End of Image Gallery section -->
 
 <section>
@@ -147,8 +236,35 @@ title: UAL Style Guide - Widgets
     // load in showtime images for the fancybox gallery example
     fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery') ;
 
+    // initialise flexslider on the widgets page
+    
+    $('.flexslider2').flexslider({
+      animation: "fade",
+      controlNav: "thumbnails"
+    });
+
+    // The slider being synced must be initialized first
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 210,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+     
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+
     // load in showtime images for fresco example
     //fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
   };
+
 </script>
 

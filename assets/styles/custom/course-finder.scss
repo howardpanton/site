@@ -1,0 +1,93 @@
+// Import global variables and mixins
+@import "globals/variables";
+@import "globals/mixins";
+
+// color names as defined in style guide 
+// $ual-black   : 	$ual-primary;  		// full black
+// $soft-black  : 	#282828;   			// softer black
+// $aaa-gray 	: 	$ual-secondary;   	// AAA gray
+// $light-gray  : 	#c8c8c8;   			// light grey 
+// $mid-gray 	: 	#666666;			// mid gray for LCF footer
+// $bg-gray 	: 	#eeeeee;   			// lighter grey for bg
+
+
+
+// Spacing Variables used with vertical rhythm mixins 
+// for standardizing spacing and keeping to the B A S E L I N E 
+$vertical-spacer1 : 4; // 4 baselines
+
+$vertical-spacer2 : 7; // 7 baselines
+
+$v-space-before-content : 28;  
+
+$v-space-after-content : 34; // 34 baselines
+
+
+.search-results-wrap {
+	@include clearfix();
+	background-color: $bg-gray;
+}
+
+
+nav.filter-results{
+	@include margin-leader(28);
+
+}
+
+.search-results {
+	@include margin-leader(14);
+
+	h1 {
+		@include adjust-font-size-to (50px);
+		@include margin-trailer (7);
+	}
+
+}
+
+.search-results-list > li {
+	list-style: none;
+}
+
+.course-search-form {
+	// border-width: 1px;
+	// border-style: solid;
+	// border-color: rgb(168, 168, 168);
+}
+
+
+// styling the text-input field for searching courses
+.course-finder-input {
+	width: 100%;
+	height: 70px;
+	border: none;
+	padding-left: 12px;
+	// border-width: 1px;
+	// border-style: solid;
+	// border-color: rgb(168, 168, 168);
+	@include adjust-font-size-to (16px);
+	@include margin-trailer (4);
+}
+
+.search-button {
+	height: 70px;
+	width: 70px;
+	background-color: black;
+}
+
+
+.search-result-module{
+	background-color: white;
+	width: 100%;
+	min-height: 150px;
+	height: auto;
+	padding: 24px;
+	@include margin-trailer (4);
+}
+
+// main course title in search results list
+.course-details > h3 {
+	color: black;
+	font-weight: bold;
+	@include adjust-font-size-to (16px);
+
+}
