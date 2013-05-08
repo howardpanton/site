@@ -12,7 +12,6 @@
 <!--[if gt IE 8]>
 	<!--> <html lang="en"> <!--
 <![endif]-->
-
 <html>
 	<head>
 		<title>University of Arts London Beta</title>
@@ -26,7 +25,25 @@
 		<!-- For all browsers -->
 		<link rel='stylesheet' href='{{ site.url }}assets/css/gridset.css'>
 		<link rel='stylesheet' href='{{ site.url }}assets/css/screen.css'>
-		<link rel="stylesheet" href="{{ site.url }}assets/css/flexslider.css" type="text/css">
+	
+      <!-- Zone-specific -->
+    {% if page.college == "lcf" %}
+        <link rel='stylesheet' href='{{ site.url }}assets/css/custom/lcf.css'>
+    {% elsif page.college == "ual" %}
+        
+    {% elsif page.college == "ccw" %}
+        
+    {% elsif page.college == "camberwell" %}
+        <link rel='stylesheet' href='{{ site.url }}assets/css/custom/camberwell.css'>    
+    {% endif %}
+
+    <!-- Temporarily add styles for course finder page -->
+    {% if page.content-type == "course-finder-results" %}
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/course-finder.css'>
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/components/ui.expandable.css'>
+        
+    {% endif %}
+
 		<!--[if (lt IE 9) & (!IEMobile)]>
 		// selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
 		<script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
@@ -59,6 +76,7 @@
 		<!-- Windows 8 / RT -->
 		<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
 		<meta content='#000' name='msapplication-TileColor'>
+
 
 		<script>
 			Modernizr.Detectizr.detect({detectScreen:false});
