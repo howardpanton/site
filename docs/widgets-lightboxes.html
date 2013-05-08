@@ -11,11 +11,11 @@ breadcrumb-link: widgets-lightboxes.html
   <div class="row">  
     <div class="d1-d12">  
       <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 8, 2013</strong></p>
-        <h2 class="heading-x3 soft-black">Widgets: Lightboxes</h2>
+        <h2 class="heading-x3 soft-black">Widgets: Lightboxes test</h2>
       <hr>
     </div>
   </div>
-  
+  test
 
   <div class="row">
     <div class="d1-d12"> 
@@ -65,7 +65,7 @@ breadcrumb-link: widgets-lightboxes.html
   
   <div class="row">
     <h6>Javascript: </h6>
-    <p> should be placed at the end of the page before the &lt;/body&gt; tag </p>
+    <p> Should be placed near the end of the page before the &lt;/body&gt; tag</p>
     <div class="d1-d12"> 
       <pre data-type="Javascript" class="prettyprint">
         <code>
@@ -92,13 +92,71 @@ breadcrumb-link: widgets-lightboxes.html
 
         };
 
-
-
-
         </code>
       </pre>
     </div>
   </div>
+  
+  <div class="row">
+    <h3>Lightbox Example 2 (using Fresco Lightbox)</h3>
+    <p>more info on usage here &rarr; <a href="http://www.frescojs.com/documentation/usage"> fresco lightbox instructions.</a> </p>
+    <div class="d1-d12"> 
+      <div id="fresco-lightbox" class='demonstrations'>
+
+        <ul class="no-bullet display-inline">
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+            </a>
+          </li>
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+            </a>
+          </li>
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+            </a>
+          </li>
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+            </a>
+          </li>
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+            </a>
+          </li>
+          <li>
+            <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+              <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row"> 
+    <h6>HTML code: </h6>
+    <div class="d1-d12">        
+      <pre data-type="HTML" class="prettyprint">
+        <code>
+        &lt;div id=&quot;fresco-lightbox&quot; class='demonstrations'&gt; &lt;ul &gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
+        </code>
+      </pre>
+    </div>
+  </div>  
+  
+  <div class="row">
+    <h6>Javascript: </h6>
+    <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above. </p>
+  </div>
+
+
 
 
 
