@@ -68,7 +68,7 @@ var hashgrid = function(set) {
 	var options = {
 			id: 'grid',             // id for the grid container
 			modifierKey: null,      // optional 'ctrl', 'alt' or 'shift'
-			showGridKey: 'g',       // key to show the grid
+			showGridKey: 'h',       // key to show the grid
 			holdGridKey: 'h',       // key to hold the grid in place
 			foregroundKey: 'f',     // key to toggle foreground/background
 			jumpGridsKey: 'j',      // key to cycle through the grid classes

@@ -24,15 +24,15 @@
     <meta content='University of Arts London, Web Team' name='author'>
 
     <!-- For all browsers -->
-    <link rel='stylesheet' href='{{ site.url }}assets/css/gridset.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/grid/gridset.css'>
+    <link rel='stylesheet' href='{{ site.url }}assets/css/grid-feature/gridset.css'>
     <link rel='stylesheet' href='{{ site.url }}assets/css/screen.css'>
-    <link rel="stylesheet" href="{{ site.url }}assets/css/flexslider.css" type="text/css">
 
     <!-- Zone-specific -->
     {% if page.college == "lcf" %}
     <link rel='stylesheet' href='{{ site.url }}assets/css/custom/lcf.css'>
     {% elsif page.college == "ual" %}
-        
+    <link rel='stylesheet' href='{{ site.url }}assets/css/custom/ual.css'>
     {% elsif page.college == "ccw" %}
         
     {% elsif page.college == "camberwell" %}
