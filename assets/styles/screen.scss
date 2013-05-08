@@ -11,7 +11,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // As a rule of thumb, don't nest further than 3 levels deep
 // -------------------------------------------------------------
 
-
 // ::Imports pre-render
   //:: Reset
   //:: Settings
@@ -24,30 +23,25 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::State styles
 // ::Debugs  
 
-
 // ::Zurb foundation - installed via the gem 
 // ------------------------------------------------------------
 
 //@import "foundation/foundation-global";
 
 
-
-
-
-
-
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
 @import "globals/variables";
+
 // Mixins also references various Compass plugins e.g. vertical rhythm
 @import "globals/mixins";
 @import "plugins/normalize";
 @import "globals/sprites";
 
-/* ::Grid styles */
-/* ------------------------------------------------------------ */
 
+/* ::Grid styles - using CSS files css/grid and css/grid-feature */
+/* ------------------------------------------------------------ */
 @import "globals/gridset";
 
 
@@ -56,12 +50,10 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "plugins/foundation/components/_global";
 //@import "foundation/foundation-global", "foundation/components/global", "foundation/components/dropdown";
 
-
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
 // Required for emCalc and other Foundation bits
-
 
 @import "globals/typography";     
 @import "plugins/rem";
@@ -69,8 +61,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/university-logos"; 
 @import "globals/layout"; 
 @import "globals/colors";
-
-
 
 /* ::Components */
 /* ------------------------------------------------------------ */
@@ -93,38 +83,24 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "components/grid-boxes";
 
 // Foundation components
-@import "plugins/foundation/components/_orbit.scss";
-@import "plugins/foundation/components/_tables.scss";
-@import "plugins/foundation/components/tables";
-@import "components/ual-flexslider";
-
-// JS-based components
-@import "plugins/foundation/components/orbit";
-// @import "plugins/foundation/components/dropdown-buttons";
-// @import "plugins/foundation/components/dropdown";
-
 
 @import "components/ual-flexslider";
 //@import "plugins/nivo-slider";
+
 @import "plugins/flexslider";
+@import "plugins/mosaic";
 
 
 /* ::Custom styling - local add-ons & college-level styles */
 /* ------------------------------------------------------------ */
 
-
-
 // styles for dropdown lists
 @import "custom/dropdown";
-
 
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 
 //@import "globals/media-queries";
-
-
-
 
 // Ordered last to override when necessary
 @import "globals/debug";

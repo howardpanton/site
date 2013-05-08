@@ -63,20 +63,22 @@
    // make code pretty
     window.prettyPrint && prettyPrint();
     /* ---- Global Page Setup ---- */
-function trace(msg) {
-  if (typeof console != 'undefined' && typeof console.log == 'function') {
-    console.log(msg);
-  }
-}
+// function trace(msg) {
+//   if (typeof console != 'undefined' && typeof console.log == 'function') {
+//     console.log(msg);
+//   }
+// }
 
   </script> 
   
   <script type='text/javascript'>
     $(document).ready(function() {
       
+ if ($('#fancybox-lightbox').length > 0){
       //initialise the fancyBox for lightbox output of gallery
       $("#fancybox-lightbox").fancybox(); 
-
+};
+ if ($('.magnific-demo').length > 0) {
       // initialise the magnific lightbox
       $('.magnific-demo').magnificPopup({
         delegate: 'a',
@@ -96,6 +98,8 @@ function trace(msg) {
         }
       });
 
+};
+ if ($('#thumbnail-gallery1').length > 0) {
       // Initialize responsivethumbnailgallery.js 
       var thumbsgallery = new $.ThumbnailGallery($('#thumbnail-gallery1'), {
             thumbImages: '{{ site.url }}assets/img/placeholder-content/thumbs/',
@@ -107,7 +111,7 @@ function trace(msg) {
             breakpoint: 600,
             shadowStrength: 1
         });
-
+};
     });
   </script>
 
