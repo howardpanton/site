@@ -474,6 +474,31 @@ table {
   border-spacing: 0;
 }
 
+/* line 50, sprite/ui-icons/*.png */
+.ui-icons-sprite, .ui-icons-expandable-closed, .ui-icons-expandable-open, .ui-expandable .ui-widget-header .ui-icon.icon-closed, .ui-expandable .ui-widget-header .ui-icon.icon-open {
+  background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-expandable-closed {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-expandable-open {
+  background-position: 0 -16px;
+}
+
+/* line 10, ../styles/globals/_sprites.scss */
+.ui-expandable .ui-widget-header .ui-icon.icon-closed {
+  background-position: 0 0;
+}
+
+/* line 14, ../styles/globals/_sprites.scss */
+.ui-expandable .ui-widget-header .ui-icon.icon-open {
+  background-position: 0 0;
+}
+
 /* ::Grid styles */
 /* ------------------------------------------------------------ */
 /* :: include global zurb sass file */
@@ -1062,7 +1087,7 @@ body {
 /* line 29, ../styles/globals/_layout.scss */
 a {
   color: #000;
-  border-bottom: 1px  solid;
+  border-bottom: 1px solid;
   line-height: 24px;
   text-decoration: none;
 }
@@ -3126,155 +3151,6 @@ table tfoot tr td {
 }
 
 /*
- * jQuery Nivo Slider v3.2
- * http://nivo.dev7studios.com
- *
- * Copyright 2012, Dev7studios
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
-/* line 10, ../styles/plugins/_nivo-slider.scss */
-.slider-wrapper {
-  width: 100%;
-  margin: 0;
-}
-
-/* The Nivo Slider styles */
-/* line 18, ../styles/plugins/_nivo-slider.scss */
-.nivoSlider {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-/* line 24, ../styles/plugins/_nivo-slider.scss */
-.nivoSlider img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  max-width: none;
-}
-
-/* line 30, ../styles/plugins/_nivo-slider.scss */
-.nivo-main-image {
-  display: block !important;
-  position: relative !important;
-  width: 100% !important;
-}
-
-/* If an image is wrapped in a link */
-/* line 37, ../styles/plugins/_nivo-slider.scss */
-.nivoSlider a.nivo-imageLink {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  z-index: 6;
-  display: none;
-  background: white;
-  filter: alpha(opacity=0);
-  opacity: 0;
-}
-
-/* The slices and boxes in the Slider */
-/* line 53, ../styles/plugins/_nivo-slider.scss */
-.nivo-slice {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  height: 100%;
-  top: 0;
-}
-
-/* line 60, ../styles/plugins/_nivo-slider.scss */
-.nivo-box {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  overflow: hidden;
-}
-
-/* line 66, ../styles/plugins/_nivo-slider.scss */
-.nivo-box img {
-  display: block;
-}
-
-/* Caption styles */
-/* line 69, ../styles/plugins/_nivo-slider.scss */
-.nivo-caption {
-  position: absolute;
-  left: 0px;
-  top: 0;
-  width: 100%;
-  z-index: 8;
-  overflow: hidden;
-  display: none;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-
-/* line 88, ../styles/plugins/_nivo-slider.scss */
-.nivo-caption p {
-  padding: 5px;
-  margin: 0;
-}
-
-/* line 92, ../styles/plugins/_nivo-slider.scss */
-.nivo-caption a {
-  display: inline !important;
-}
-
-/* line 95, ../styles/plugins/_nivo-slider.scss */
-.nivo-html-caption {
-  display: none;
-}
-
-/* Direction nav styles (e.g. Next & Prev) */
-/* line 99, ../styles/plugins/_nivo-slider.scss */
-.nivo-directionNav a {
-  position: absolute;
-  top: 45%;
-  z-index: 9;
-  cursor: pointer;
-}
-
-/* line 105, ../styles/plugins/_nivo-slider.scss */
-.nivo-prevNav {
-  left: 0px;
-}
-
-/* line 108, ../styles/plugins/_nivo-slider.scss */
-.nivo-nextNav {
-  right: 0px;
-}
-
-/* Control nav styles (e.g. 1,2,3...) */
-/* line 112, ../styles/plugins/_nivo-slider.scss */
-.nivo-controlNav {
-  text-align: center;
-  padding: 15px 0;
-}
-
-/* line 116, ../styles/plugins/_nivo-slider.scss */
-.nivo-controlNav a {
-  cursor: pointer;
-}
-
-/* line 119, ../styles/plugins/_nivo-slider.scss */
-.nivo-controlNav a.active {
-  font-weight: bold;
-}
-
-/*
  * jQuery FlexSlider v2.0
  * http://www.woothemes.com/flexslider/
  *
@@ -3709,29 +3585,49 @@ html[xmlns] .slides {
   margin-bottom: 20px;
 }
 
-/* line 48, ../styles/globals/_utilities.scss */
+/* line 49, ../styles/globals/_utilities.scss */
+.no-border {
+  border: none;
+}
+
+/* line 56, ../styles/globals/_utilities.scss */
+.no-underline {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* line 63, ../styles/globals/_utilities.scss */
 .hide {
   display: none;
 }
 
-/* line 51, ../styles/globals/_utilities.scss */
+/* line 66, ../styles/globals/_utilities.scss */
 .show {
   display: block;
 }
 
-/* line 56, ../styles/globals/_utilities.scss */
+/* line 71, ../styles/globals/_utilities.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 61, ../styles/globals/_utilities.scss */
+/* line 76, ../styles/globals/_utilities.scss */
 .no-bullet {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 68, ../styles/globals/_utilities.scss */
+/* line 83, ../styles/globals/_utilities.scss */
+.display-inline {
+  display: inline-block;
+}
+/* line 86, ../styles/globals/_utilities.scss */
+.display-inline li {
+  display: inline-block;
+}
+
+/* line 94, ../styles/globals/_utilities.scss */
 .clearfix, #header, #header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
@@ -3747,58 +3643,58 @@ html[xmlns] .slides {
 
 /* ::State styles */
 /* ------------------------------------------------------------ */
-/* line 80, ../styles/globals/_utilities.scss */
+/* line 109, ../styles/globals/_utilities.scss */
 .is-hidden {
   display: none;
 }
 
-/* line 84, ../styles/globals/_utilities.scss */
+/* line 113, ../styles/globals/_utilities.scss */
 .is-shown, .is-block {
   display: block;
 }
 
-/* line 88, ../styles/globals/_utilities.scss */
+/* line 117, ../styles/globals/_utilities.scss */
 .is-uppercase {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* line 93, ../styles/globals/_utilities.scss */
+/* line 122, ../styles/globals/_utilities.scss */
 .is-lowercase {
   text-transform: lowercase;
 }
 
-/* line 97, ../styles/globals/_utilities.scss */
+/* line 126, ../styles/globals/_utilities.scss */
 .ajust-margin-top {
   margin-top: 0px;
 }
 
 @media only screen and (max-width: 599px) {
-  /* line 103, ../styles/globals/_utilities.scss */
+  /* line 132, ../styles/globals/_utilities.scss */
   .is-removed-mobile {
     visibility: visible;
     height: 0px;
     overflow: hidden;
   }
 
-  /* line 109, ../styles/globals/_utilities.scss */
+  /* line 138, ../styles/globals/_utilities.scss */
   .is-hidden-mobile {
     display: none;
   }
 }
-/* line 116, ../styles/globals/_utilities.scss */
+/* line 145, ../styles/globals/_utilities.scss */
 .group:before,
 .group:after {
   content: "";
   display: table;
 }
 
-/* line 120, ../styles/globals/_utilities.scss */
+/* line 149, ../styles/globals/_utilities.scss */
 .group:after {
   clear: both;
 }
 
-/* line 123, ../styles/globals/_utilities.scss */
+/* line 152, ../styles/globals/_utilities.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
