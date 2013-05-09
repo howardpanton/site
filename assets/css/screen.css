@@ -318,7 +318,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -479,12 +479,12 @@ table {
   background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-closed {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-open {
   background-position: 0 -16px;
 }
@@ -1025,9 +1025,53 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+
+/* Tables */
+/* line 78, ../styles/plugins/foundation/components/_tables.scss */
+table {
+  background: white;
+  margin-bottom: 1.25em;
+  border: solid 1px transparent;
+}
+/* line 41, ../styles/plugins/foundation/components/_tables.scss */
+table thead,
+table tfoot {
+  background: whitesmoke;
+  font-weight: bold;
+}
+/* line 47, ../styles/plugins/foundation/components/_tables.scss */
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td {
+  padding: 0.5em 0.625em 0.625em;
+  font-size: 0.875em;
+  color: #222222;
+  text-align: left;
+}
+/* line 58, ../styles/plugins/foundation/components/_tables.scss */
+table tr th,
+table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: 0.875em;
+  color: #222222;
+}
+/* line 66, ../styles/plugins/foundation/components/_tables.scss */
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: white;
+}
+/* line 73, ../styles/plugins/foundation/components/_tables.scss */
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+  display: table-cell;
+  line-height: 1.125em;
 }
 
 /* line 1, ../styles/globals/_university-logos.scss */
@@ -1091,7 +1135,7 @@ body {
 /* line 29, ../styles/globals/_layout.scss */
 a {
   color: #000;
-  border-bottom: 1px solid;
+  border-bottom: 1px  solid;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1182,26 +1226,31 @@ ol, ul {
   max-width: 100%;
 }
 
-/* line 132, ../styles/globals/_layout.scss */
+/* line 131, ../styles/globals/_layout.scss */
+.course-data-wrapper {
+  max-width: 960px;
+}
+
+/* line 136, ../styles/globals/_layout.scss */
 .header {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
-  /* line 132, ../styles/globals/_layout.scss */
+  /* line 136, ../styles/globals/_layout.scss */
   .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 144, ../styles/globals/_layout.scss */
+/* line 148, ../styles/globals/_layout.scss */
 .header .banner {
   position: relative;
 }
 @media only screen and (max-width: 599px) {
-  /* line 144, ../styles/globals/_layout.scss */
+  /* line 148, ../styles/globals/_layout.scss */
   .header .banner {
     clear: both;
     display: block;
@@ -1216,7 +1265,7 @@ ol, ul {
     padding-bottom: 0.75em;
   }
 }
-/* line 160, ../styles/globals/_layout.scss */
+/* line 164, ../styles/globals/_layout.scss */
 .header .banner .header {
   clear: both;
   display: block;
@@ -1225,11 +1274,11 @@ ol, ul {
   width: 100%;
 }
 
-/* line 166, ../styles/globals/_layout.scss */
+/* line 170, ../styles/globals/_layout.scss */
 .footer {
   background: black;
 }
-/* line 168, ../styles/globals/_layout.scss */
+/* line 172, ../styles/globals/_layout.scss */
 .footer .footer-links {
   padding-top: 1.5em;
   clear: both;
@@ -1242,18 +1291,18 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 177, ../styles/globals/_layout.scss */
+/* line 181, ../styles/globals/_layout.scss */
 .footer .footer-links ul {
   clear: left;
   margin-bottom: 0;
 }
-/* line 182, ../styles/globals/_layout.scss */
+/* line 186, ../styles/globals/_layout.scss */
 .footer .footer-links li {
   list-style-type: none;
   float: left;
   display: inline;
 }
-/* line 186, ../styles/globals/_layout.scss */
+/* line 190, ../styles/globals/_layout.scss */
 .footer .footer-links li a {
   color: #fff;
   margin-right: 24px;
@@ -1261,7 +1310,7 @@ ol, ul {
   text-decoration: none;
   border-bottom: none;
 }
-/* line 197, ../styles/globals/_layout.scss */
+/* line 201, ../styles/globals/_layout.scss */
 .footer .primary-links {
   display: block;
   float: left;
@@ -1270,7 +1319,7 @@ ol, ul {
   width: 61.67214%;
   padding-bottom: 0.75em;
 }
-/* line 202, ../styles/globals/_layout.scss */
+/* line 206, ../styles/globals/_layout.scss */
 .footer .secondary-links {
   display: block;
   float: left;
@@ -1280,19 +1329,19 @@ ol, ul {
   padding-bottom: 1.125em;
   clear: left;
 }
-/* line 208, ../styles/globals/_layout.scss */
+/* line 212, ../styles/globals/_layout.scss */
 .footer .copyright {
   clear: both;
   display: block;
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
 }
-/* line 216, ../styles/globals/_layout.scss */
+/* line 220, ../styles/globals/_layout.scss */
 .footer .copyright p {
   padding-top: 1.125em;
   margin-right: 24px;
@@ -1300,7 +1349,7 @@ ol, ul {
   font-size: 12px;
   margin-left: 12px;
 }
-/* line 225, ../styles/globals/_layout.scss */
+/* line 229, ../styles/globals/_layout.scss */
 .footer span {
   display: block;
   float: left;
@@ -1308,7 +1357,7 @@ ol, ul {
   margin-right: -100%;
   width: 10.25859%;
 }
-/* line 227, ../styles/globals/_layout.scss */
+/* line 231, ../styles/globals/_layout.scss */
 .footer span a {
   float: right;
   color: #fff;
@@ -1318,7 +1367,7 @@ ol, ul {
   border-bottom: none;
 }
 
-/* line 238, ../styles/globals/_layout.scss */
+/* line 242, ../styles/globals/_layout.scss */
 header.title {
   clear: both;
   display: block;
@@ -1326,13 +1375,13 @@ header.title {
   margin-left: 0;
   width: 100%;
 }
-/* line 241, ../styles/globals/_layout.scss */
+/* line 245, ../styles/globals/_layout.scss */
 header.title h1 {
   margin-top: 1.875em;
   margin-bottom: 1.875em;
 }
 
-/* line 247, ../styles/globals/_layout.scss */
+/* line 251, ../styles/globals/_layout.scss */
 .row {
   clear: both;
   display: block;
@@ -1343,7 +1392,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 252, ../styles/globals/_layout.scss */
+  /* line 256, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1353,7 +1402,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 252, ../styles/globals/_layout.scss */
+  /* line 256, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1364,7 +1413,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 263, ../styles/globals/_layout.scss */
+  /* line 267, ../styles/globals/_layout.scss */
   .paragraph {
     display: block;
     float: left;
@@ -1374,7 +1423,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 263, ../styles/globals/_layout.scss */
+  /* line 267, ../styles/globals/_layout.scss */
   .paragraph {
     clear: both;
     display: block;
@@ -1385,7 +1434,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 273, ../styles/globals/_layout.scss */
+  /* line 277, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1395,7 +1444,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 273, ../styles/globals/_layout.scss */
+  /* line 277, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1406,7 +1455,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 284, ../styles/globals/_layout.scss */
+  /* line 288, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     display: block;
     float: left;
@@ -1416,7 +1465,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 284, ../styles/globals/_layout.scss */
+  /* line 288, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     clear: both;
     display: block;
@@ -1426,7 +1475,7 @@ header.title h1 {
   }
 }
 
-/* line 297, ../styles/globals/_layout.scss */
+/* line 301, ../styles/globals/_layout.scss */
 pre.prettyprint {
   width: 100%;
   margin: 0;
@@ -1434,33 +1483,33 @@ pre.prettyprint {
   white-space: pre-wrap;
 }
 
-/* line 304, ../styles/globals/_layout.scss */
+/* line 308, ../styles/globals/_layout.scss */
 pre.prettyprint, code.prettyprint {
   background-color: #000;
 }
 
-/* line 308, ../styles/globals/_layout.scss */
+/* line 312, ../styles/globals/_layout.scss */
 pre .pun, code .pun {
   color: yellow;
 }
 
-/* line 311, ../styles/globals/_layout.scss */
+/* line 315, ../styles/globals/_layout.scss */
 pre .atn, code .atn {
   color: violet;
 }
 
-/* line 315, ../styles/globals/_layout.scss */
+/* line 319, ../styles/globals/_layout.scss */
 pre .pln, code .pln {
   color: white;
 }
 
-/* line 319, ../styles/globals/_layout.scss */
+/* line 323, ../styles/globals/_layout.scss */
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
   margin-bottom: 4.5em;
 }
-/* line 324, ../styles/globals/_layout.scss */
+/* line 328, ../styles/globals/_layout.scss */
 .swatch-list li {
   list-style: none;
   width: 128px;
@@ -1471,103 +1520,163 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 334, ../styles/globals/_layout.scss */
+/* line 338, ../styles/globals/_layout.scss */
 .swatch-list li span {
   position: absolute;
   bottom: -30px;
 }
 
-/* line 2, ../styles/globals/_colors.scss */
+/* line 346, ../styles/globals/_layout.scss */
+.buffer {
+  margin-bottom: 1.875em;
+}
+
+/* line 349, ../styles/globals/_layout.scss */
+.buffer-plus {
+  margin-bottom: 3.375em;
+}
+
+/* line 352, ../styles/globals/_layout.scss */
+.buffer-max {
+  margin-bottom: 6.75em;
+}
+
+/* line 355, ../styles/globals/_layout.scss */
+.buffer-top {
+  margin-top: 1.875em;
+}
+
+/* line 358, ../styles/globals/_layout.scss */
+.buffer-top-plus {
+  margin-top: 3.375em;
+}
+
+/* line 361, ../styles/globals/_layout.scss */
+.buffer-top-max {
+  margin-top: 6.75em;
+}
+
+/* line 367, ../styles/globals/_layout.scss */
+.course-data #accordion-container {
+  padding-top: 1.875em;
+}
+/* line 370, ../styles/globals/_layout.scss */
+.course-data .accordion-header {
+  padding: 20px;
+}
+/* line 373, ../styles/globals/_layout.scss */
+.course-data .accordion-content {
+  padding: 0 20px;
+}
+/* line 376, ../styles/globals/_layout.scss */
+.course-data table {
+  width: 100%;
+}
+/* line 379, ../styles/globals/_layout.scss */
+.course-data tr.bordered {
+  /*border-bottom: 1px dotted $bg-gray;
+  -moz-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  -webkit-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;*/
+  background: url("../img/dashline_border_img.png") bottom left repeat-x;
+}
+
+/* line 1, ../styles/globals/_colors.scss */
+.white-bg {
+  background: white;
+}
+
+/* line 5, ../styles/globals/_colors.scss */
 .ual-primary-black-bg {
   background: black;
 }
 
-/* line 6, ../styles/globals/_colors.scss */
+/* line 9, ../styles/globals/_colors.scss */
 .ual-secondary-grey-bg {
   background: #929292;
 }
 
-/* line 11, ../styles/globals/_colors.scss */
+/* line 14, ../styles/globals/_colors.scss */
 .camberwell-primary-bg {
   background: #5ac882;
 }
 
-/* line 15, ../styles/globals/_colors.scss */
+/* line 18, ../styles/globals/_colors.scss */
 .camberwell-secondary-bg {
   background: #4a97dd;
 }
 
-/* line 19, ../styles/globals/_colors.scss */
+/* line 22, ../styles/globals/_colors.scss */
 .csm-primary-bg {
   background: #ff0c00;
 }
 
-/* line 23, ../styles/globals/_colors.scss */
+/* line 26, ../styles/globals/_colors.scss */
 .csm-secondary-bg {
   background: #0062ff;
 }
 
-/* line 27, ../styles/globals/_colors.scss */
+/* line 30, ../styles/globals/_colors.scss */
 .chelsea-primary-bg {
   background: #e08c94;
 }
 
-/* line 31, ../styles/globals/_colors.scss */
+/* line 34, ../styles/globals/_colors.scss */
 .chelsea-secondary-bg {
   background: #2ea1aa;
 }
 
-/* line 35, ../styles/globals/_colors.scss */
+/* line 38, ../styles/globals/_colors.scss */
 .chelsea-turqouise-green-bg {
   background: #4eb5b7;
 }
 
-/* line 39, ../styles/globals/_colors.scss */
+/* line 42, ../styles/globals/_colors.scss */
 .chelsea-light-green-bg {
   background: #5ac882;
 }
 
-/* line 45, ../styles/globals/_colors.scss */
+/* line 47, ../styles/globals/_colors.scss */
 .ual-black {
   color: black;
 }
 
-/* line 49, ../styles/globals/_colors.scss */
+/* line 51, ../styles/globals/_colors.scss */
 .soft-black {
   color: #282828;
 }
 
-/* line 53, ../styles/globals/_colors.scss */
+/* line 55, ../styles/globals/_colors.scss */
 .aaa-gray {
   color: #929292;
 }
 
-/* line 57, ../styles/globals/_colors.scss */
+/* line 59, ../styles/globals/_colors.scss */
 .light-gray {
   color: #c8c8c8;
 }
 
-/* line 62, ../styles/globals/_colors.scss */
+/* line 64, ../styles/globals/_colors.scss */
 .ual-black-bg {
   background: black;
 }
 
-/* line 66, ../styles/globals/_colors.scss */
+/* line 68, ../styles/globals/_colors.scss */
 .soft-black-bg {
   background: #282828;
 }
 
-/* line 70, ../styles/globals/_colors.scss */
+/* line 72, ../styles/globals/_colors.scss */
 .aaa-gray-bg {
   background: #929292;
 }
 
-/* line 74, ../styles/globals/_colors.scss */
+/* line 76, ../styles/globals/_colors.scss */
 .light-gray-bg {
   background: #c8c8c8;
 }
 
-/* line 78, ../styles/globals/_colors.scss */
+/* line 80, ../styles/globals/_colors.scss */
 .bg-gray-bg {
   background: #eeeeee;
 }
@@ -1578,39 +1687,23 @@ pre .pln, code .pln {
 .accordion-header {
   margin: 0;
   padding: 15px 0;
-  border-bottom: 1px solid #cccccc;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
 }
 
-/* line 27, ../styles/components/_vallenato.scss */
+/* line 28, ../styles/components/_vallenato.scss */
 .active-header {
-  background: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
-  background-repeat: no-repeat;
-  background-position: right 50%;
+  background-image: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
 }
 
-/* line 37, ../styles/components/_vallenato.scss */
-.active-header:hover {
-  background: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
-  background-repeat: no-repeat;
-  background-position: right 50%;
-}
-
-/* line 44, ../styles/components/_vallenato.scss */
+/* line 34, ../styles/components/_vallenato.scss */
 .inactive-header {
-  background: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
-  background-repeat: no-repeat;
-  background-position: right 50%;
+  background-image: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
+  border-bottom: 2px solid #eeeeee;
 }
 
-/* line 51, ../styles/components/_vallenato.scss */
-.inactive-header:hover {
-  background: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
-  background-repeat: no-repeat;
-  background-position: right 50%;
-}
-
-/* line 58, ../styles/components/_vallenato.scss */
+/* line 41, ../styles/components/_vallenato.scss */
 .accordion-content {
   display: none;
 }
@@ -1669,7 +1762,7 @@ pre .pln, code .pln {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -1689,7 +1782,7 @@ pre .pln, code .pln {
 }
 /* line 87, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid white;
+  border-left: 1px solid #ffffff;
 }
 @media only screen and (max-width: 599px) {
   /* line 87, ../styles/components/_nav-main-menu.scss */
@@ -2729,7 +2822,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -9999px;
   opacity: 0;
-  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
 }
 
 /* line 53, ../styles/plugins/_flexslider.scss */
@@ -2762,7 +2855,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: .3!important;
+  opacity: 0.3 !important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -2885,7 +2978,7 @@ html[xmlns] .slides {
   height: 250px;
   margin: 10px;
   background: #111111 url(http://artslondon.github.io/beta/assets/img/mosaic/progress.gif) no-repeat center center;
-  border: 1px solid white;
+  border: 1px solid #fff;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -3067,7 +3160,7 @@ html[xmlns] .slides {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }
