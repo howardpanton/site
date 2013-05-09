@@ -9,8 +9,37 @@
 /* ------------------------------------------------------------ */
 
 @import "globals/gridset";
+@import "globals/layout";
 
 .docs {
+
+  .accordion {
+   div {
+
+      border-bottom: 0; 
+      &:last-of-type {
+      }
+   }
+
+         a {
+        display: block;
+
+      }
+
+  div {
+     border-top: 0; 
+     &:last-of-type {
+       border-top: 1px solid white;
+       position: relative;
+       top: -1px;
+     }
+  }
+}
+
+
+
+
+
 
 .breadcrumb {
   @include padding-leader(3);
