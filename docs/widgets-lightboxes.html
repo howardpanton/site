@@ -2,8 +2,8 @@
 layout: docs.tpl
 title: University of the Arts London - Website Style Guide
 class-home: docs
-breadcrumb: Widgets > Lightboxes
-breadcrumb-link: widgets-lightboxes.html
+breadcrumb: Widgets Lightboxes
+breadcrumb-link: "widgets-lightboxes.html"
 ---
 
 <div class="docs-content">
@@ -15,15 +15,15 @@ breadcrumb-link: widgets-lightboxes.html
       <hr>
     </div>
   </div>
-  test
 
   <div class="row">
     <div class="d1-d12"> 
       
       <h3> Lightbox Example 1 (using magnific)</h3>
       <p> More info on usage here &rarr; <a href="http://dimsemenov.com/plugins/magnific-popup/"> magnific popup </a> </p>
+      <p> This lightbox <strong>requires magnific-lightbox.js</strong> to be loaded on the page. (currently in assets/js/libs/)</p>
 
-      <div id="magnific-lightbox" class='magnific-demo'>
+      <div id="magnific-lightbox" class='magnific-lightbox'>
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
             </a>
@@ -55,11 +55,34 @@ breadcrumb-link: widgets-lightboxes.html
   <div class="row"> 
     <h6>HTML code: </h6>
     <div class="d1-d12">        
-      <pre data-type="HTML" class="prettyprint">
-        <code>
-        &lt;div id=&quot;magnific-lightbox&quot; class='magnific-demo'&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-        </code>
-      </pre>
+     
+      <script src="https://gist.github.com/denovo/5546727.js"></script>
+
+         <!--  <pre data-type="HTML" class="prettyprint">
+            <code>
+      &lt;div id=&quot;magnific-lightbox&quot; class='magnific-demo'&gt; 
+        &lt;a href=&quot;{{ site.url }}img4.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb4.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+        &lt;a href=&quot;{{ site.url }}img5.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb5.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+        &lt;a href=&quot;{{ site.url }}img2.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb2.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+        &lt;a href=&quot;{{ site.url }}img3.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb3.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+        &lt;a href=&quot;{{ site.url }}img1.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb1.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+        &lt;a href=&quot;{{ site.url }}img6.jpg&quot; title=&quot;Example Artwork Title&quot;&gt; 
+          &lt;img src=&quot;{{ site.url }}thumb6.jpg&quot; /&gt; 
+        &lt;/a&gt; 
+      &lt;/div&gt;
+            </code>
+          </pre> -->
+
     </div>
   </div>  
   
@@ -67,33 +90,35 @@ breadcrumb-link: widgets-lightboxes.html
     <h6>Javascript: </h6>
     <p> Should be placed near the end of the page before the &lt;/body&gt; tag</p>
     <div class="d1-d12"> 
-      <pre data-type="Javascript" class="prettyprint">
+     
+      <script src="https://gist.github.com/denovo/5546773.js"></script>
+
+
+
+     <!--  <pre data-type="Javascript" class="prettyprint">
         <code>
-        
-        if ($('.magnific-demo').length > 0) {
-          // initialise the magnific lightbox
-          $('.magnific-demo').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            tLoading: 'Loading image #%curr%...',
-            mainClass: 'mfp-img-mobile',
-            gallery: {
-              enabled: true,
-              navigateByImgClick: true,
-              preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-              titleSrc: function(item) {
-                return item.el.attr('title') + '<small>by Author Name Here</small>';
-              }
-            }
-          });
-
-        };
-
+  if ($('.magnific-lightbox').length > 0) {
+    // initialise the magnific lightbox
+    $('.magnific-lightbox').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      },
+      image: {
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+        titleSrc: function(item) {
+          return item.el.attr('title') + '<small>by Author Name Here</small>';
+        }
+      }
+    });
+  };
         </code>
-      </pre>
+      </pre> -->
     </div>
   </div>
   
@@ -143,26 +168,84 @@ breadcrumb-link: widgets-lightboxes.html
   <div class="row"> 
     <h6>HTML code: </h6>
     <div class="d1-d12">        
-      <pre data-type="HTML" class="prettyprint">
-        <code>
-        &lt;div id=&quot;fresco-lightbox&quot; class='demonstrations'&gt; &lt;ul &gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a data-fresco-group=&quot;fresco-group1&quot; href=&quot;{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg&quot;&gt; &lt;img src=&quot;{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg&quot; /&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
-        </code>
-      </pre>
+      <script src="https://gist.github.com/denovo/5546461.js"></script>
     </div>
   </div>  
   
   <div class="row">
-    <h6>Javascript: </h6>
-    <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above. </p>
+     <div class="d1-d12">   
+      <h6>Javascript: </h6>
+      <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above.</p>
+     <div>
   </div>
 
 
+  <div class="row">
+    <div class="d1-d12"> 
+        <h3> lightbox (using fancyBox)</h3>
+        <p> more info on usage here &rarr; <a href="http://fancyapps.com/fancybox/#instructions"> fancyBox homepage </a> </p>
+        
+        <div id="fancybox-lightbox" class='demonstrations'>
+          <ul class="no-bullet display-inline">
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg">
+                <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="d1-d12"> 
+      <script src="https://gist.github.com/denovo/5546449.js"></script>
+    </div>
+  </div>
 
+  
+  <div class="row">
+     <div class="d1-d12">   
+      <h6>Javascript: </h6>
+      <p> Requires <strong>jquery.fancybox.js</strong> which must be loaded into the page you want to display the lightbox in. 
+      Initialise using the code below.</p>
+      <script src="https://gist.github.com/denovo/5546813.js"></script>
+
+     <div>
+  </div>
+
+
+  
 
 
 <script type="text/javascript">
   window.onload=function(){
-    // load in showtime images
-    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-feed');
+   
   }
 </script>

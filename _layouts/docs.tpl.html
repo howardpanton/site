@@ -27,7 +27,7 @@
   <script src='{{ site.url }}assets/js/libs/responsivethumbnailgallery.js'></script>
 
   <!-- load in fancyBox for lightboxes -->
-  <script src='{{ site.url }}assets/js/libs/jquery.fancybox.pack.js'></script>
+  <script src='{{ site.url }}assets/js/libs/jquery.fancybox.js'></script>
 
   <!-- load in fresco (another lightbox option) -->
   <script src='{{ site.url }}assets/js/libs/fresco.js'></script>
@@ -78,12 +78,12 @@
     $(document).ready(function() {
       
  if ($('#fancybox-lightbox').length > 0){
-      //initialise the fancyBox for lightbox output of gallery
-      $("#fancybox-lightbox").fancybox(); 
+      //initialise fancyBox to display images in a lightbox
+      $(".fancybox").fancybox(); 
 };
- if ($('.magnific-demo').length > 0) {
+ if ($('.magnific-lightbox').length > 0) {
       // initialise the magnific lightbox
-      $('.magnific-demo').magnificPopup({
+      $('.magnific-lightbox').magnificPopup({
         delegate: 'a',
         type: 'image',
         tLoading: 'Loading image #%curr%...',
@@ -95,10 +95,9 @@
         },
         image: {
           tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-          titleSrc: function(item) {
-            return item.el.attr('title') + '<small>by Author Name Here</small>';
+          
           }
-        }
+        
       });
 
 };
