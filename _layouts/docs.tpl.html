@@ -75,6 +75,22 @@
 //   }
 // }
 
+    
+  var allPanels = $('.accordion > div.panel').hide();
+    
+
+
+$('.show-code').toggle(
+ function(){
+     allPanels.removeAttr("style").show("slide", { direction: "top" }, 1000);
+}
+,
+function(){
+    allPanels.removeAttr("style").hide();
+}
+);
+
+
   </script> 
 
   <script>
@@ -93,6 +109,7 @@
         captions: true
       });
     });
+
   </script>
   
   <script type='text/javascript'>
