@@ -1,3 +1,7 @@
+
+@import "globals/variables";
+@import "globals/mixins";
+
 #feature {
 	margin-top: 1px;
 
@@ -179,13 +183,69 @@
     padding-top: 50%;
 }
 
-.course-search {
-	background: #000;
-	color: #fff;
-	input {
-		background: yellow;
+
+
+///////// ///////// ///////// ///////// ///////// ///////// \
+	
+
+.heading {
+	margin: 0;
+	padding: 0;
+	@include margin-leader(16);
+	@include trailer(8);
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.event-heading {
+	margin: 0;
+	padding: 0;
+	@include padding-leader(2);
+	@include padding-trailer(2);
+	@include trailer(2);
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+// .leader16xbl {
+// 	@include margin-leader(16);
+// }
+// .leader8xbl {
+// 	@include margin-leader(8);
+// }
+.trailer4xbl {
+	@include margin-trailer(4);
+}
+
+.college-links {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
 	}
-	button {
-		
+}
+
+
+// PANELS 
+
+.panel {
+	width: 100%;
+	height: auto;
+	float: left;
+	position: relative; 
+}
+
+.gray {
+	background-color: #f2f2f2;
+}
+
+.black {
+	background-color: #000;
+	color: #fff;
+	a {
+		color: #fff;
+		&:hover {
+			border-bottom: 2px solid #fff;
+		}
 	}
 }

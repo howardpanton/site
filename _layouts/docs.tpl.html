@@ -41,6 +41,9 @@
   <!-- load in vallenato A simple accordion -->
   <script src='{{ site.url }}assets/js/components/vallenato.js'></script> 
 
+  <!-- load in bxSlider The Responsive jQuery Content Slider -->
+  <script src='{{ site.url }}assets/js/components/jquery.bxslider.js'></script> 
+
   <script src='{{ site.url }}assets/js/foundation/foundation.js' type='text/javascript'></script>
   <!-- <script src="{{ site.url }}assets/js/foundation/foundation.dropdown.js"></script>
   <script src="{{ site.url }}assets/js/foundation/foundation.joyride.js"></script>
@@ -91,9 +94,22 @@ function(){
   </script> 
 
   <script>
-   if ($('#carousel').length > 0) {
-    $( '#carousel' ).elastislide();
-    };
+    $(document).ready(function(){
+      $('.slider1').bxSlider({
+        slideWidth: 200,
+        minSlides: 2,
+        maxSlides: 3,
+        slideMargin: 10,
+        moveSlides: 1
+      });
+
+      $('.bxslider').bxSlider({
+        mode: 'fade',
+        slideWidth: 600,
+        captions: true
+      });
+    });
+
   </script>
   
   <script type='text/javascript'>
