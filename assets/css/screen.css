@@ -318,7 +318,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -479,12 +479,12 @@ table {
   background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-closed {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-open {
   background-position: 0 -16px;
 }
@@ -1025,7 +1025,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1187,7 +1187,7 @@ ol, ul {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
   /* line 132, ../styles/globals/_layout.scss */
@@ -1227,7 +1227,7 @@ ol, ul {
 
 /* line 166, ../styles/globals/_layout.scss */
 .footer {
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   background: black;
 }
 /* line 169, ../styles/globals/_layout.scss */
@@ -1288,7 +1288,7 @@ ol, ul {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
@@ -1459,7 +1459,7 @@ pre .pln, code .pln {
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
-  margin-bottom: 4.5em;
+  margin-top: 0.75em;
 }
 /* line 325, ../styles/globals/_layout.scss */
 .swatch-list li {
@@ -1478,99 +1478,206 @@ pre .pln, code .pln {
   bottom: -30px;
 }
 
-/* line 2, ../styles/globals/_colors.scss */
-.ual-primary-black-bg {
-  background: black;
+/* line 342, ../styles/globals/_layout.scss */
+.color-tabs-list {
+  margin-top: 0.75em;
+  margin-top: 3em;
+}
+/* line 346, ../styles/globals/_layout.scss */
+.color-tabs-list li {
+  list-style: none;
+  list-style-image: none;
+  width: 100%;
+  height: 128px;
+  border-left: solid 128px;
+  padding: 0 0.8em;
+  display: block;
+  float: left;
+  position: relative;
+  margin-bottom: 50px;
+}
+/* line 358, ../styles/globals/_layout.scss */
+.color-tabs-list li h5 {
+  color: #282828;
+}
+/* line 360, ../styles/globals/_layout.scss */
+.color-tabs-list li p {
+  color: #666666;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  margin: 0 0 0.85714em 0;
+}
+/* line 365, ../styles/globals/_layout.scss */
+.color-tabs-list li .ual-black {
+  border-color: black;
+}
+/* line 368, ../styles/globals/_layout.scss */
+.color-tabs-list li .soft-black {
+  border-color: #282828;
+}
+/* line 371, ../styles/globals/_layout.scss */
+.color-tabs-list li .dark-gray {
+  border-color: #333333;
+}
+/* line 374, ../styles/globals/_layout.scss */
+.color-tabs-list li .aaa-gray {
+  border-color: #929292;
+}
+/* line 377, ../styles/globals/_layout.scss */
+.color-tabs-list li .light-gray {
+  border-color: #c8c8c8;
+}
+/* line 380, ../styles/globals/_layout.scss */
+.color-tabs-list li .mid-gray {
+  border-color: #666666;
+}
+/* line 383, ../styles/globals/_layout.scss */
+.color-tabs-list li .college-logo-gray {
+  border-color: #999999;
+}
+/* line 386, ../styles/globals/_layout.scss */
+.color-tabs-list li .ual-white {
+  border-color: white;
+}
+/* line 389, ../styles/globals/_layout.scss */
+.color-tabs-list li .ccw-yellow {
+  border-color: #edce18;
+}
+/* line 392, ../styles/globals/_layout.scss */
+.color-tabs-list li .ccw-green {
+  border-color: #58bf58;
+}
+/* line 395, ../styles/globals/_layout.scss */
+.color-tabs-list li .ccw-salmon {
+  border-color: #fa756e;
+}
+/* line 398, ../styles/globals/_layout.scss */
+.color-tabs-list li .ccw-blue {
+  border-color: #4a97dd;
+}
+/* line 401, ../styles/globals/_layout.scss */
+.color-tabs-list li .ccw-gray {
+  border-color: #434951;
 }
 
-/* line 6, ../styles/globals/_colors.scss */
-.ual-secondary-grey-bg {
-  background: #929292;
-}
-
-/* line 11, ../styles/globals/_colors.scss */
-.camberwell-primary-bg {
-  background: #5ac882;
-}
-
-/* line 15, ../styles/globals/_colors.scss */
-.camberwell-secondary-bg {
-  background: #4a97dd;
-}
-
-/* line 19, ../styles/globals/_colors.scss */
-.csm-primary-bg {
-  background: #ff0c00;
-}
-
-/* line 23, ../styles/globals/_colors.scss */
-.csm-secondary-bg {
-  background: #0062ff;
-}
-
-/* line 27, ../styles/globals/_colors.scss */
-.chelsea-primary-bg {
-  background: #e08c94;
-}
-
-/* line 31, ../styles/globals/_colors.scss */
-.chelsea-secondary-bg {
-  background: #2ea1aa;
-}
-
-/* line 35, ../styles/globals/_colors.scss */
-.chelsea-turqouise-green-bg {
-  background: #4eb5b7;
-}
-
-/* line 39, ../styles/globals/_colors.scss */
-.chelsea-light-green-bg {
-  background: #5ac882;
-}
-
-/* line 45, ../styles/globals/_colors.scss */
+/* line 5, ../styles/globals/_colors.scss */
 .ual-black {
   color: black;
 }
 
-/* line 49, ../styles/globals/_colors.scss */
+/* line 9, ../styles/globals/_colors.scss */
+.ual-white {
+  color: white;
+}
+
+/* line 13, ../styles/globals/_colors.scss */
 .soft-black {
   color: #282828;
 }
 
-/* line 53, ../styles/globals/_colors.scss */
+/* line 17, ../styles/globals/_colors.scss */
+.dark-gray {
+  color: #333333;
+}
+
+/* line 21, ../styles/globals/_colors.scss */
 .aaa-gray {
   color: #929292;
 }
 
-/* line 57, ../styles/globals/_colors.scss */
+/* line 25, ../styles/globals/_colors.scss */
+.college-logo-gray {
+  color: #999999;
+}
+
+/* line 29, ../styles/globals/_colors.scss */
 .light-gray {
   color: #c8c8c8;
 }
 
-/* line 62, ../styles/globals/_colors.scss */
+/* line 35, ../styles/globals/_colors.scss */
 .ual-black-bg {
   background: black;
 }
 
-/* line 66, ../styles/globals/_colors.scss */
+/* line 39, ../styles/globals/_colors.scss */
 .soft-black-bg {
   background: #282828;
 }
 
-/* line 70, ../styles/globals/_colors.scss */
+/* line 43, ../styles/globals/_colors.scss */
+.dark-gray-bg {
+  background: #333333;
+}
+
+/* line 47, ../styles/globals/_colors.scss */
 .aaa-gray-bg {
   background: #929292;
 }
 
-/* line 74, ../styles/globals/_colors.scss */
+/* line 51, ../styles/globals/_colors.scss */
 .light-gray-bg {
   background: #c8c8c8;
 }
 
-/* line 78, ../styles/globals/_colors.scss */
+/* line 55, ../styles/globals/_colors.scss */
 .bg-gray-bg {
   background: #eeeeee;
+}
+
+/* line 59, ../styles/globals/_colors.scss */
+.ual-white-bg {
+  background: white;
+}
+
+/* line 63, ../styles/globals/_colors.scss */
+.ual-primary-black-bg {
+  background: black;
+}
+
+/* line 67, ../styles/globals/_colors.scss */
+.ual-secondary-grey-bg {
+  background: #929292;
+}
+
+/* line 74, ../styles/globals/_colors.scss */
+.camberwell-primary-bg {
+  background: #5ac882;
+}
+
+/* line 78, ../styles/globals/_colors.scss */
+.camberwell-secondary-bg {
+  background: #4a97dd;
+}
+
+/* line 82, ../styles/globals/_colors.scss */
+.csm-primary-bg {
+  background: #ff0c00;
+}
+
+/* line 86, ../styles/globals/_colors.scss */
+.csm-secondary-bg {
+  background: #0062ff;
+}
+
+/* line 90, ../styles/globals/_colors.scss */
+.chelsea-primary-bg {
+  background: #e08c94;
+}
+
+/* line 94, ../styles/globals/_colors.scss */
+.chelsea-secondary-bg {
+  background: #2ea1aa;
+}
+
+/* line 98, ../styles/globals/_colors.scss */
+.chelsea-turqouise-green-bg {
+  background: #4eb5b7;
+}
+
+/* line 102, ../styles/globals/_colors.scss */
+.chelsea-light-green-bg {
+  background: #5ac882;
 }
 
 /* ::Components */
@@ -1647,10 +1754,10 @@ pre .pln, code .pln {
 ===================================*/
 /* line 32, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-viewport {
-  -moz-box-shadow: 0 0 5px #cccccc;
-  -webkit-box-shadow: 0 0 5px #cccccc;
-  box-shadow: 0 0 5px #cccccc;
-  border: solid white 5px;
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: solid #fff 5px;
   left: -5px;
   background: #fff;
 }
@@ -1814,7 +1921,7 @@ pre .pln, code .pln {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666\9;
+  background: #666666 \9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%;
 }
@@ -1882,7 +1989,7 @@ pre .pln, code .pln {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid white;
+  border-right: 1px solid #ffffff;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -1902,7 +2009,7 @@ pre .pln, code .pln {
 }
 /* line 87, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid white;
+  border-left: 1px solid #ffffff;
 }
 @media only screen and (max-width: 599px) {
   /* line 87, ../styles/components/_nav-main-menu.scss */
@@ -2942,7 +3049,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -9999px;
   opacity: 0;
-  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
 }
 
 /* line 53, ../styles/plugins/_flexslider.scss */
@@ -2975,7 +3082,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: .3!important;
+  opacity: 0.3 !important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -3098,7 +3205,7 @@ html[xmlns] .slides {
   height: 250px;
   margin: 10px;
   background: #111111 url(http://artslondon.github.io/beta/assets/img/mosaic/progress.gif) no-repeat center center;
-  border: 1px solid white;
+  border: 1px solid #fff;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -3280,7 +3387,7 @@ html[xmlns] .slides {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }
@@ -3343,69 +3450,74 @@ html[xmlns] .slides {
 }
 
 /* line 47, ../styles/globals/_utilities.scss */
+.with-border {
+  border: 1px solid;
+}
+
+/* line 52, ../styles/globals/_utilities.scss */
 .rhythm-3 {
   padding-top: 1.125em;
   padding-bottom: 1.125em;
 }
 
-/* line 52, ../styles/globals/_utilities.scss */
+/* line 57, ../styles/globals/_utilities.scss */
 .rhythm-margin-top {
   margin-top: 1.125em;
 }
 
-/* line 57, ../styles/globals/_utilities.scss */
+/* line 62, ../styles/globals/_utilities.scss */
 .add-top {
   margin-top: 20px;
 }
 
-/* line 60, ../styles/globals/_utilities.scss */
+/* line 65, ../styles/globals/_utilities.scss */
 .add-bottom {
   margin-bottom: 20px;
 }
 
-/* line 66, ../styles/globals/_utilities.scss */
+/* line 71, ../styles/globals/_utilities.scss */
 .no-border {
   border: none;
 }
 
-/* line 73, ../styles/globals/_utilities.scss */
+/* line 77, ../styles/globals/_utilities.scss */
 .no-underline {
   text-decoration: none;
   border-bottom: none;
 }
 
-/* line 80, ../styles/globals/_utilities.scss */
+/* line 84, ../styles/globals/_utilities.scss */
 .hide {
   display: none;
 }
 
-/* line 83, ../styles/globals/_utilities.scss */
+/* line 87, ../styles/globals/_utilities.scss */
 .show {
   display: block;
 }
 
-/* line 88, ../styles/globals/_utilities.scss */
+/* line 92, ../styles/globals/_utilities.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 93, ../styles/globals/_utilities.scss */
+/* line 97, ../styles/globals/_utilities.scss */
 .no-bullet {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 100, ../styles/globals/_utilities.scss */
+/* line 104, ../styles/globals/_utilities.scss */
 .display-inline {
   display: inline-block;
 }
-/* line 103, ../styles/globals/_utilities.scss */
+/* line 107, ../styles/globals/_utilities.scss */
 .display-inline li {
   display: inline-block;
 }
 
-/* line 111, ../styles/globals/_utilities.scss */
+/* line 115, ../styles/globals/_utilities.scss */
 .clearfix, .header, .header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
@@ -3421,58 +3533,58 @@ html[xmlns] .slides {
 
 /* ::State styles */
 /* ------------------------------------------------------------ */
-/* line 126, ../styles/globals/_utilities.scss */
+/* line 130, ../styles/globals/_utilities.scss */
 .is-hidden {
   display: none;
 }
 
-/* line 130, ../styles/globals/_utilities.scss */
+/* line 134, ../styles/globals/_utilities.scss */
 .is-shown, .is-block {
   display: block;
 }
 
-/* line 134, ../styles/globals/_utilities.scss */
+/* line 138, ../styles/globals/_utilities.scss */
 .is-uppercase {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* line 139, ../styles/globals/_utilities.scss */
+/* line 143, ../styles/globals/_utilities.scss */
 .is-lowercase {
   text-transform: lowercase;
 }
 
-/* line 143, ../styles/globals/_utilities.scss */
+/* line 147, ../styles/globals/_utilities.scss */
 .ajust-margin-top {
   margin-top: 0px;
 }
 
 @media only screen and (max-width: 599px) {
-  /* line 149, ../styles/globals/_utilities.scss */
+  /* line 153, ../styles/globals/_utilities.scss */
   .is-removed-mobile {
     visibility: visible;
     height: 0px;
     overflow: hidden;
   }
 
-  /* line 155, ../styles/globals/_utilities.scss */
+  /* line 159, ../styles/globals/_utilities.scss */
   .is-hidden-mobile {
     display: none;
   }
 }
-/* line 162, ../styles/globals/_utilities.scss */
+/* line 166, ../styles/globals/_utilities.scss */
 .group:before,
 .group:after {
   content: "";
   display: table;
 }
 
-/* line 166, ../styles/globals/_utilities.scss */
+/* line 170, ../styles/globals/_utilities.scss */
 .group:after {
   clear: both;
 }
 
-/* line 169, ../styles/globals/_utilities.scss */
+/* line 173, ../styles/globals/_utilities.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
