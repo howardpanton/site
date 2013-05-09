@@ -27,23 +27,18 @@ breadcrumb-link: "widgets-lightboxes.html"
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb4.jpg" />
             </a>
-         
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img5.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb5.jpg" />
             </a>
-
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img2.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb2.jpg" />
             </a>
-
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img3.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb3.jpg" />
             </a>
-
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img1.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb1.jpg" />
             </a>
-
             <a class="no-underline" href="{{ site.url }}assets/img/placeholder-content/gallery-imgs/img6.jpg" title="Example Artwork Title">
               <img src="{{ site.url }}assets/img/placeholder-content/thumbs/thumb6.jpg" />
             </a>
@@ -53,10 +48,22 @@ breadcrumb-link: "widgets-lightboxes.html"
   </div>
   
   <div class="row"> 
-    <h6>HTML code: </h6>
-    <div class="d1-d12">        
-     
-      <script src="https://gist.github.com/denovo/5546727.js"></script>
+
+    <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code for Magnific lightbox</a></h3>
+        <div class="panel">
+          <h6>HTML code: </h6>
+          <script src="https://gist.github.com/denovo/5546727.js"></script>
+          
+          <h6>Javascript: </h6>
+          <p> Should be placed near the end of the page before the &lt;/body&gt; tag</p>
+          <script src="https://gist.github.com/denovo/5546773.js"></script>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
          <!--  <pre data-type="HTML" class="prettyprint">
             <code>
@@ -83,16 +90,8 @@ breadcrumb-link: "widgets-lightboxes.html"
             </code>
           </pre> -->
 
-    </div>
-  </div>  
-  
-  <div class="row">
-    <h6>Javascript: </h6>
-    <p> Should be placed near the end of the page before the &lt;/body&gt; tag</p>
-    <div class="d1-d12"> 
      
-      <script src="https://gist.github.com/denovo/5546773.js"></script>
-
+      
 
 
      <!--  <pre data-type="Javascript" class="prettyprint">
@@ -119,8 +118,7 @@ breadcrumb-link: "widgets-lightboxes.html"
   };
         </code>
       </pre> -->
-    </div>
-  </div>
+    
   
   <div class="row">
     <h3>Lightbox Example 2 (using Fresco Lightbox)</h3>
@@ -166,22 +164,31 @@ breadcrumb-link: "widgets-lightboxes.html"
   </div>
 
   <div class="row"> 
-    <h6>HTML code: </h6>
-    <div class="d1-d12">        
-      <script src="https://gist.github.com/denovo/5546461.js"></script>
+    <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code block for Fresco lightbox</a></h3>
+        <div class="panel">
+          <h6>HTML code: </h6>   
+          <script src="https://gist.github.com/denovo/5546461.js"></script>
+
+          <h6>Javascript: </h6>
+          <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above.</p>
+        </div>
+    </div>
+
     </div>
   </div>  
   
+  <!-- 
   <div class="row">
-     <div class="d1-d12">   
-      <h6>Javascript: </h6>
-      <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above.</p>
+     <div class="d1-d12 rhythm-margin-top">   
+      
      <div>
-  </div>
+  </div> -->
 
 
   <div class="row">
-    <div class="d1-d12"> 
+    <div class="d1-d12 rhythm-margin-top"> 
         <h3> lightbox (using fancyBox)</h3>
         <p> more info on usage here &rarr; <a href="http://fancyapps.com/fancybox/#instructions"> fancyBox homepage </a> </p>
         
@@ -223,22 +230,20 @@ breadcrumb-link: "widgets-lightboxes.html"
   </div>
   
   
-  <div class="row">
-    <div class="d1-d12"> 
-      <script src="https://gist.github.com/denovo/5546449.js"></script>
-    </div>
+  <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code block for Fancybox lightbox</a></h3>
+        <div class="panel">
+          <h6 class="rhythm-margin-top">HTML </h6>
+          <script src="https://gist.github.com/denovo/5546449.js"></script>
+          <h6 class="rhythm-margin-top">Javascript: </h6>
+          <p> Requires <strong>jquery.fancybox.js</strong> which must be loaded into the page you want to display the lightbox in. 
+          Initialise using the code below.</p>
+          <script src="https://gist.github.com/denovo/5546813.js"></script>
+        </div>
+      </div>
   </div>
 
-  
-  <div class="row">
-     <div class="d1-d12">   
-      <h6>Javascript: </h6>
-      <p> Requires <strong>jquery.fancybox.js</strong> which must be loaded into the page you want to display the lightbox in. 
-      Initialise using the code below.</p>
-      <script src="https://gist.github.com/denovo/5546813.js"></script>
-
-     <div>
-  </div>
 
 
   
