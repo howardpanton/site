@@ -40,9 +40,12 @@ function injectResultsIntoHTML (targetElement) {
   for (var cnt = 1; cnt < window.combo_array.length; cnt++) {
     var cnt_entry = window.combo_array[cnt];
 
+
+    // TO DO - need to remove fresco data- tags if we decide not to use the fresco lightbox, 
+    // or make alternative function that can utilise fresco or just return the images without the data- tags
     if (typeof(cnt_entry) !== undefined && cnt_entry){
       newHTML += "<a href='" + cnt_entry.largeImg + "' rel='group1' data-fresco-group='frescoexample' data-fresco-caption='"+ cnt_entry.fullName +"' title='" + cnt_entry.fullName + "'> <img src='" + cnt_entry.thumb + "' alt='" + cnt_entry.fullName + "'/> </a>";
-      console.log ('** item was uploaded on: ' + cnt_entry.updated +' ** ');
+      //console.log ('** item was uploaded on: ' + cnt_entry.updated +' ** ');
 
     } else {
       console.log('We caught an undefined object');
