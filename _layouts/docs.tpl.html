@@ -41,6 +41,9 @@
   <!-- load in vallenato A simple accordion -->
   <script src='{{ site.url }}assets/js/components/vallenato.js'></script> 
 
+  <!-- load in bxSlider The Responsive jQuery Content Slider -->
+  <script src='{{ site.url }}assets/js/components/jquery.bxslider.js'></script> 
+
   <script src='{{ site.url }}assets/js/foundation/foundation.js' type='text/javascript'></script>
   <!-- <script src="{{ site.url }}assets/js/foundation/foundation.dropdown.js"></script>
   <script src="{{ site.url }}assets/js/foundation/foundation.joyride.js"></script>
@@ -54,9 +57,9 @@
   <script src='{{ site.url }}assets/js/foundation/foundation.orbit.js' type='text/javascript'></script>
   <script src='{{ site.url }}assets/js/script.js' type='text/javascript'></script>
 
-  <!-- load in javascript to handle the dropdowns -->
+  <!-- load in javascript to handle the dropdowns 
+  <script src='{{ site.url }}assets/js/libs/ual-dropdowns.js' type='text/javascript'></script> -->
 
-  <script src='{{ site.url }}assets/js/libs/ual-dropdowns.js' type='text/javascript'></script>
   <!-- google prettify script -->
   <script src='{{ site.url }}assets/js/libs/google-code-prettify/prettify.js' type='text/javascript'></script>
   <script src="{{ site.url }}assets/js/libs/holder.js"></script>
@@ -72,22 +75,53 @@
 //   }
 // }
 
+    
+  var allPanels = $('.accordion > div.panel').hide();
+    
+
+
+$('.show-code').toggle(
+ function(){
+     allPanels.removeAttr("style").show("slide", { direction: "top" }, 1000);
+}
+,
+function(){
+    allPanels.removeAttr("style").hide();
+}
+);
+
+
   </script> 
 
   <script>
-    $( '#carousel' ).elastislide();
+    $(document).ready(function(){
+      $('.slider1').bxSlider({
+        slideWidth: 200,
+        minSlides: 2,
+        maxSlides: 3,
+        slideMargin: 10,
+        moveSlides: 1
+      });
+
+      $('.bxslider').bxSlider({
+        mode: 'fade',
+        slideWidth: 600,
+        captions: true
+      });
+    });
+
   </script>
   
   <script type='text/javascript'>
     $(document).ready(function() {
       
  if ($('#fancybox-lightbox').length > 0){
-      //initialise the fancyBox for lightbox output of gallery
-      $("#fancybox-lightbox").fancybox(); 
+      //initialise fancyBox to display images in a lightbox
+      $(".fancybox").fancybox(); 
 };
- if ($('.magnific-demo').length > 0) {
+ if ($('.magnific-lightbox').length > 0) {
       // initialise the magnific lightbox
-      $('.magnific-demo').magnificPopup({
+      $('.magnific-lightbox').magnificPopup({
         delegate: 'a',
         type: 'image',
         tLoading: 'Loading image #%curr%...',
@@ -99,10 +133,9 @@
         },
         image: {
           tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-          titleSrc: function(item) {
-            return item.el.attr('title') + '<small>by Author Name Here</small>';
+          
           }
-        }
+        
       });
 
 };
