@@ -12,18 +12,18 @@
 // IE, if you have a baseline of 6px, multiples or divisions of often provide best results in ems 
 
 h1 { 
-	@include adjust-font-size-to(56px); 
-	margin: 0 0 rhythm(3, 56px) 0;  						// 3 lines below, based on font size
+	@include adjust-font-size-to(34px, 6); 
+	margin: 0 0 rhythm(4, 34px) 0;  						// 3 lines below, based on font size
 } 
 			
 h2 { 
-	@include adjust-font-size-to(44px); 
-	margin: rhythm(4, 44px) 0 rhythm(2, 44px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	@include adjust-font-size-to(32px); 
+	margin: rhythm(3, 32px) 0 rhythm(3, 32px) 0;  			// 4 lines above / 2 lines below, based on font size 
 }
 
 h3 { 
-	@include adjust-font-size-to(34px); 
-	margin: rhythm(4, 34px) 0 rhythm(2, 34px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	@include adjust-font-size-to(24px); 
+	margin: rhythm(2, 24px) 0 rhythm(2, 24px) 0;  			// 4 lines above / 2 lines below, based on font size 
 } 
 
 h4 { 
