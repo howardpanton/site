@@ -322,7 +322,7 @@ color: white;
 .swatch-list {
 	margin-left:0px;
 	@include leader(2);
-	@include trailer(12);
+	@include leader(2);
 
 	li {
 		list-style:none;
@@ -339,6 +339,61 @@ color: white;
 		bottom: -30px;
 		}
 	}
+}
+
+.color-tabs-list {
+	@include leader(2);
+	@include leader(8);
+
+	li {
+		list-style:none;
+		list-style-image: none;
+		width: 100%;
+		min-height: 128px;
+		border-left: solid 128px;		
+		padding: 0 0.8em;
+		display: block;
+		float:left;
+		position:relative;
+		margin-bottom: 50px;
+		//border-bottom: solid 1px $light-gray;
+		
+		> div {
+			display: block;
+			float:left;
+			padding: 0 4em 0 0;
+		}
+
+		
+		h5 { color: $soft-black; }
+		
+		p {
+			color: $mid-gray;
+			@include adjust-font-size-to(14px); 
+			margin: 0 0 rhythm(2, 14px) 0;
+		}
+
+	}
+
+	.ual-black { border-color: $ual-black; }
+	.soft-black { border-color: $soft-black; }
+	.dark-gray { border-color: $dark-gray; }
+	.aaa-gray { border-color: $aaa-gray; }
+	.light-gray { border-color: $light-gray; }
+	.mid-gray { border-color: $mid-gray; }
+	.college-logo-gray { border-color: $college-logo-gray; }
+	.ual-white { border-color: $ual-white; }
+	.ccw-yellow { border-color: $ccw-yellow; }
+	.ccw-green { border-color: $ccw-green; }
+	.ccw-salmon { border-color: $ccw-salmon; }
+	.ccw-blue { border-color: $ccw-blue; }
+	.ccw-gray { border-color: $ccw-grey; }
+	.csm-primary { border-color: $csm-primary; }
+	.csm-secondary { border-color: $csm-secondary; }
+	.lcc-primary-yellow { border-color: $lcc-primary-yellow; }
+	.lcc-secondary-pink { border-color: $lcc-secondary-pink; }
+	.lcc-green { border-color: $lcc-green; }
+	.lcc-light-blue { border-color: $lcc-light-blue; }
 }
 
 // Box-out

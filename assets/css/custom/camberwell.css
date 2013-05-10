@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 2, ../../styles/plugins/_animation.scss */
 .animated.hinge {
   -webkit-animation-duration: 2s;
@@ -313,7 +314,7 @@ figure {
  */
 /* line 253, ../../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -469,10 +470,47 @@ table {
   border-spacing: 0;
 }
 
-/* line 400, ../../styles/plugins/_normalize.scss */
-ul, li {
-  padding: 0;
+/* line 411, ../../styles/plugins/_normalize.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* line 418, ../../styles/plugins/_normalize.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 421, ../../styles/plugins/_normalize.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 425, ../../styles/plugins/_normalize.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 429, ../../styles/plugins/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* line 50, sprite/ui-icons/*.png */
@@ -480,12 +518,12 @@ ul, li {
   background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
 }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-closed {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-open {
   background-position: 0 -16px;
 }
@@ -1047,12 +1085,12 @@ ul, li {
   *zoom: 1;
   padding-top: 1.5em;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container:before, .camberwell .lower3-container:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container:after {
   clear: both;
 }
@@ -1083,12 +1121,12 @@ ul, li {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container ul.col1 li a div:before, .camberwell .lower3-container ul.col1 li a div:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container ul.col1 li a div:after {
   clear: both;
 }
@@ -1170,12 +1208,12 @@ ul, li {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container ul.col2 li a div:before, .camberwell .lower3-container ul.col2 li a div:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .camberwell .lower3-container ul.col2 li a div:after {
   clear: both;
 }
@@ -1330,12 +1368,12 @@ ul, li {
   width: 86.81015%;
   *zoom: 1;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .camberwell .related-content:before, .camberwell .related-content:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .camberwell .related-content:after {
   clear: both;
 }
@@ -1564,12 +1602,12 @@ ul, li {
   background-color: #f2f2f2;
   position: relative;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .open-days-container:before, .open-days-container:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .open-days-container:after {
   clear: both;
 }
@@ -1738,12 +1776,12 @@ ul, li {
   height: 100%;
   *zoom: 1;
 }
-/* line 281, ../../styles/globals/_mixins.scss */
+/* line 280, ../../styles/globals/_mixins.scss */
 .slider-container:before, .slider-container:after {
   content: " ";
   display: table;
 }
-/* line 282, ../../styles/globals/_mixins.scss */
+/* line 281, ../../styles/globals/_mixins.scss */
 .slider-container:after {
   clear: both;
 }
