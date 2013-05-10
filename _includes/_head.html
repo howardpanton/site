@@ -36,7 +36,12 @@
         
     {% elsif page.college == "camberwell" %}
         <link rel='stylesheet' href='{{ site.url }}assets/css/custom/camberwell.css'>    
+
+   	{% elsif page.college == "chelsea" %}
+   		<link rel='stylesheet' href='{{ site.url }}assets/css/custom/chelsea.css'> 
     {% endif %}
+
+
 
     <!-- Temporarily add styles for course finder page -->
     {% if page.content-type == "course-finder-results" %}

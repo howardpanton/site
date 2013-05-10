@@ -1,0 +1,66 @@
+// Import global variables and mixins
+@import "globals/variables";
+@import "globals/mixins";
+
+
+
+
+
+
+// sidebar
+.chelsea {
+    
+    // type
+    h1, h2, h3, h4, h5 {
+        font-family: "Brandon Text", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    .sidebar {
+
+        @include background-opacity($ccw-salmon, $opacity: 0.3);
+        @include padding-leader(2);
+        @include padding-trailer(2);
+        
+        li {
+            @include padding-leader(1);
+            @include padding-trailer(1);
+            text-indent: 12px; // need spec
+            border-bottom: 1px solid $ual-white;
+        }
+
+        li:last-of-type{ 
+            border-bottom: 0;
+        }
+    }
+    .border-top {
+         border-top: 6px solid $ual-black;
+    }
+
+}
+
+.artist-portrait {
+    margin-right: 20px;
+
+}
+
+.image-with-caption-right {
+
+    blockquote {
+        border-left: none;
+        border-bottom: 1px solid $light-gray;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+.wide-span-quote {
+    @include adjust-font-size-to(34px); 
+    @include margin-leader(12);
+    @include margin-trailer(12);
+    font-style: normal;
+    font-weight: bold;
+    border: none;
+}
+
+
