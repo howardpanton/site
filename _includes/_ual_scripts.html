@@ -1,6 +1,5 @@
+<script>
 
-
-  <script>
   $(window).resize(function() {
     var originalFontSize = 12;
     var sectionWidth = $(window).width();
@@ -8,7 +7,7 @@
     var maxFontSize = 36;
     var minFontSize = 20;
     
-    $('.bricks #responsive_headline').each(function(){
+   $('.bricks #responsive_headline').each(function(){
       var spanWidth = $(this).width();
       console.log("span" +  spanWidth);
       console.log("size" + sectionWidth/spanWidth * 16);
@@ -24,4 +23,22 @@
 
     });
   });
-  </script>
+
+  if ($('.flexslider').length > 0) {
+
+    var _this = $('.flexslider');
+    var _itemWidth = (_this.data('item-width') > 0) ? _this.data('item-width') : "500";
+
+      $(window).load(function() {
+         $('.flexslider').flexslider({
+            slideshow: false,
+            animation: "slide",
+            controlNav: false,
+            itemWidth: _itemWidth,
+            itemMargin: 20
+         });
+       
+      });
+   }
+
+</script>
