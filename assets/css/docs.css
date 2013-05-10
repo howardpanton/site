@@ -612,20 +612,43 @@ pre .pln, code .pln {
 /* line 154, ../styles/docs.scss */
 ul.blocks {
   padding-left: 0;
+  overflow: hidden;
 }
-/* line 156, ../styles/docs.scss */
+/* line 157, ../styles/docs.scss */
 ul.blocks li {
   list-style: none;
 }
-/* line 160, ../styles/docs.scss */
+/* line 161, ../styles/docs.scss */
 ul.blocks .three-up {
   float: left;
   width: 33.33%;
   padding-right: 1.5em;
 }
 @media only screen and (max-width: 599px) {
-  /* line 160, ../styles/docs.scss */
+  /* line 161, ../styles/docs.scss */
   ul.blocks .three-up {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 169, ../styles/docs.scss */
+ul.blocks .five-up {
+  float: left;
+  width: 20%;
+  padding-right: 1.5em;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 169, ../styles/docs.scss */
+  ul.blocks .five-up {
+    width: 33%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 169, ../styles/docs.scss */
+  ul.blocks .five-up {
     clear: both;
     display: block;
     float: left;
