@@ -194,25 +194,28 @@
 	@include margin-leader(16);
 	@include trailer(8);
 	border-top: 1px solid #000;
-	border-bottom: 1px solid #f2f2f2;
+	border-bottom: 1px solid #ccc;
 }
 
-.event-heading {
+.sub-heading {
 	margin: 0;
 	padding: 0;
 	@include padding-leader(2);
 	@include padding-trailer(2);
 	@include trailer(2);
 	border-top: 1px solid #000;
-	border-bottom: 1px solid #f2f2f2;
+	border-bottom: 1px solid #ccc;
 }
 
 // .leader16xbl {
 // 	@include margin-leader(16);
 // }
-// .leader8xbl {
-// 	@include margin-leader(8);
-// }
+.leader4xbl {
+	@include margin-leader(4);
+}
+.leader8xbl {
+	@include margin-leader(8);
+}
 .trailer4xbl {
 	@include margin-trailer(4);
 }
@@ -236,10 +239,14 @@
 }
 
 .gray {
+	@include margin-leader(16);
+	@include padding-leader(8);
+	@include padding-trailer(8);
 	background-color: #f2f2f2;
 }
 
 .black {
+	@include padding-trailer(8);
 	background-color: #000;
 	color: #fff;
 	a {
@@ -247,5 +254,15 @@
 		&:hover {
 			border-bottom: 2px solid #fff;
 		}
+	}
+	.sub-heading {
+		margin: 0;
+		padding: 0;
+		@include margin-leader(4);
+		@include padding-leader(2);
+		@include padding-trailer(2);
+		@include trailer(4);
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
 	}
 }

@@ -318,7 +318,7 @@ figure {
  */
 /* line 253, ../styles/plugins/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -479,12 +479,12 @@ table {
   background: url('http://artslondon.github.io/beta/assets/img/sprite/ui-icons-s169e55c59f.png') no-repeat;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-closed {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-expandable-open {
   background-position: 0 -16px;
 }
@@ -1025,53 +1025,9 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
-
-/* Tables */
-/* line 78, ../styles/plugins/foundation/components/_tables.scss */
-table {
-  background: white;
-  margin-bottom: 1.25em;
-  border: solid 1px transparent;
-}
-/* line 41, ../styles/plugins/foundation/components/_tables.scss */
-table thead,
-table tfoot {
-  background: whitesmoke;
-  font-weight: bold;
-}
-/* line 47, ../styles/plugins/foundation/components/_tables.scss */
-table thead tr th,
-table thead tr td,
-table tfoot tr th,
-table tfoot tr td {
-  padding: 0.5em 0.625em 0.625em;
-  font-size: 0.875em;
-  color: #222222;
-  text-align: left;
-}
-/* line 58, ../styles/plugins/foundation/components/_tables.scss */
-table tr th,
-table tr td {
-  padding: 0.5625em 0.625em;
-  font-size: 0.875em;
-  color: #222222;
-}
-/* line 66, ../styles/plugins/foundation/components/_tables.scss */
-table tr.even, table tr.alt, table tr:nth-of-type(even) {
-  background: white;
-}
-/* line 73, ../styles/plugins/foundation/components/_tables.scss */
-table thead tr th,
-table tfoot tr th,
-table tbody tr td,
-table tr td,
-table tfoot tr td {
-  display: table-cell;
-  line-height: 1.125em;
 }
 
 /* line 1, ../styles/globals/_university-logos.scss */
@@ -1135,27 +1091,28 @@ body {
 /* line 29, ../styles/globals/_layout.scss */
 a {
   color: #000;
+  border-bottom: 1px solid;
   line-height: 24px;
   text-decoration: none;
 }
-/* line 34, ../styles/globals/_layout.scss */
+/* line 35, ../styles/globals/_layout.scss */
 a:hover, a:focus, a:active {
   color: #929292;
 }
 
-/* line 39, ../styles/globals/_layout.scss */
+/* line 41, ../styles/globals/_layout.scss */
 .region {
   position: relative;
   float: left;
 }
 @media only screen and (max-width: 599px) {
-  /* line 39, ../styles/globals/_layout.scss */
+  /* line 41, ../styles/globals/_layout.scss */
   .region {
     margin-top: 12px;
   }
 }
 
-/* line 48, ../styles/globals/_layout.scss */
+/* line 50, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -1163,40 +1120,38 @@ a:hover, a:focus, a:active {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 60, ../styles/globals/_layout.scss */
+/* line 62, ../styles/globals/_layout.scss */
 .clearfix, .header, .header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 272, ../styles/globals/_mixins.scss */
 .clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 273, ../styles/globals/_mixins.scss */
 .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }
 
-/* line 64, ../styles/globals/_layout.scss */
-.cf, .panel, .row {
+/* line 66, ../styles/globals/_layout.scss */
+.cf {
   zoom: 1;
 }
 
-/* line 68, ../styles/globals/_layout.scss */
-.cf:before, .panel:before, .row:before,
-.cf:after,
-.panel:after,
-.row:after {
+/* line 70, ../styles/globals/_layout.scss */
+.cf:before,
+.cf:after {
   content: "";
   display: table;
 }
 
-/* line 72, ../styles/globals/_layout.scss */
-.cf:after, .panel:after, .row:after {
+/* line 74, ../styles/globals/_layout.scss */
+.cf:after {
   clear: both;
 }
 
-/* line 83, ../styles/globals/_layout.scss */
+/* line 81, ../styles/globals/_layout.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -1207,12 +1162,12 @@ a:hover, a:focus, a:active {
   clear: both;
 }
 
-/* line 116, ../styles/globals/_layout.scss */
+/* line 114, ../styles/globals/_layout.scss */
 ol, ul {
   padding-left: 1.25em;
 }
 
-/* line 120, ../styles/globals/_layout.scss */
+/* line 118, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .wrapper, .header .banner {
   width: 92.5%;
   max-width: 1256px;
@@ -1221,37 +1176,32 @@ ol, ul {
   min-width: 320px;
 }
 
-/* line 128, ../styles/globals/_layout.scss */
+/* line 126, ../styles/globals/_layout.scss */
 .feature-wrapper {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 133, ../styles/globals/_layout.scss */
-.course-data-wrapper {
-  max-width: 960px;
-}
-
-/* line 138, ../styles/globals/_layout.scss */
+/* line 132, ../styles/globals/_layout.scss */
 .header {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid #000000;
+  border-top: 6px solid black;
 }
 @media only screen and (max-width: 599px) {
-  /* line 138, ../styles/globals/_layout.scss */
+  /* line 132, ../styles/globals/_layout.scss */
   .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 150, ../styles/globals/_layout.scss */
+/* line 144, ../styles/globals/_layout.scss */
 .header .banner {
   position: relative;
 }
 @media only screen and (max-width: 599px) {
-  /* line 150, ../styles/globals/_layout.scss */
+  /* line 144, ../styles/globals/_layout.scss */
   .header .banner {
     clear: both;
     display: block;
@@ -1266,7 +1216,7 @@ ol, ul {
     padding-bottom: 0.75em;
   }
 }
-/* line 166, ../styles/globals/_layout.scss */
+/* line 160, ../styles/globals/_layout.scss */
 .header .banner .header {
   clear: both;
   display: block;
@@ -1275,12 +1225,12 @@ ol, ul {
   width: 100%;
 }
 
-/* line 172, ../styles/globals/_layout.scss */
+/* line 166, ../styles/globals/_layout.scss */
 .footer {
-  border-top: 1px solid #fff;
+  border-top: 1px solid white;
   background: black;
 }
-/* line 175, ../styles/globals/_layout.scss */
+/* line 169, ../styles/globals/_layout.scss */
 .footer .footer-links {
   padding-top: 1.5em;
   clear: both;
@@ -1293,18 +1243,18 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 184, ../styles/globals/_layout.scss */
+/* line 178, ../styles/globals/_layout.scss */
 .footer .footer-links ul {
   clear: left;
   margin-bottom: 0;
 }
-/* line 189, ../styles/globals/_layout.scss */
+/* line 183, ../styles/globals/_layout.scss */
 .footer .footer-links li {
   list-style-type: none;
   float: left;
   display: inline;
 }
-/* line 193, ../styles/globals/_layout.scss */
+/* line 187, ../styles/globals/_layout.scss */
 .footer .footer-links li a {
   color: #fff;
   margin-right: 24px;
@@ -1312,7 +1262,7 @@ ol, ul {
   text-decoration: none;
   border-bottom: none;
 }
-/* line 204, ../styles/globals/_layout.scss */
+/* line 198, ../styles/globals/_layout.scss */
 .footer .primary-links {
   display: block;
   float: left;
@@ -1321,7 +1271,7 @@ ol, ul {
   width: 61.67214%;
   padding-bottom: 0.75em;
 }
-/* line 209, ../styles/globals/_layout.scss */
+/* line 203, ../styles/globals/_layout.scss */
 .footer .secondary-links {
   display: block;
   float: left;
@@ -1331,19 +1281,19 @@ ol, ul {
   padding-bottom: 1.125em;
   clear: left;
 }
-/* line 215, ../styles/globals/_layout.scss */
+/* line 209, ../styles/globals/_layout.scss */
 .footer .copyright {
   clear: both;
   display: block;
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid #fff;
+  border-top: 1px solid white;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
 }
-/* line 223, ../styles/globals/_layout.scss */
+/* line 217, ../styles/globals/_layout.scss */
 .footer .copyright p {
   padding-top: 1.125em;
   margin-right: 24px;
@@ -1351,7 +1301,7 @@ ol, ul {
   font-size: 12px;
   margin-left: 12px;
 }
-/* line 232, ../styles/globals/_layout.scss */
+/* line 226, ../styles/globals/_layout.scss */
 .footer span {
   display: block;
   float: left;
@@ -1359,7 +1309,7 @@ ol, ul {
   margin-right: -100%;
   width: 10.25859%;
 }
-/* line 234, ../styles/globals/_layout.scss */
+/* line 228, ../styles/globals/_layout.scss */
 .footer span a {
   float: right;
   color: #fff;
@@ -1369,7 +1319,7 @@ ol, ul {
   border-bottom: none;
 }
 
-/* line 245, ../styles/globals/_layout.scss */
+/* line 239, ../styles/globals/_layout.scss */
 header.title {
   clear: both;
   display: block;
@@ -1377,23 +1327,24 @@ header.title {
   margin-left: 0;
   width: 100%;
 }
-/* line 248, ../styles/globals/_layout.scss */
+/* line 242, ../styles/globals/_layout.scss */
 header.title h1 {
   margin-top: 1.875em;
   margin-bottom: 1.875em;
 }
 
-/* line 255, ../styles/globals/_layout.scss */
+/* line 248, ../styles/globals/_layout.scss */
 .row {
   clear: both;
   display: block;
   float: left;
   margin-left: 0;
   width: 100%;
+  clear: both;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 259, ../styles/globals/_layout.scss */
+  /* line 253, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1403,7 +1354,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 259, ../styles/globals/_layout.scss */
+  /* line 253, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1414,7 +1365,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 270, ../styles/globals/_layout.scss */
+  /* line 264, ../styles/globals/_layout.scss */
   .paragraph {
     display: block;
     float: left;
@@ -1424,7 +1375,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 270, ../styles/globals/_layout.scss */
+  /* line 264, ../styles/globals/_layout.scss */
   .paragraph {
     clear: both;
     display: block;
@@ -1435,7 +1386,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 280, ../styles/globals/_layout.scss */
+  /* line 274, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1445,7 +1396,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 280, ../styles/globals/_layout.scss */
+  /* line 274, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1456,7 +1407,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 291, ../styles/globals/_layout.scss */
+  /* line 285, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     display: block;
     float: left;
@@ -1466,7 +1417,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 291, ../styles/globals/_layout.scss */
+  /* line 285, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     clear: both;
     display: block;
@@ -1476,7 +1427,7 @@ header.title h1 {
   }
 }
 
-/* line 304, ../styles/globals/_layout.scss */
+/* line 298, ../styles/globals/_layout.scss */
 pre.prettyprint {
   width: 100%;
   margin: 0;
@@ -1484,33 +1435,33 @@ pre.prettyprint {
   white-space: pre-wrap;
 }
 
-/* line 311, ../styles/globals/_layout.scss */
+/* line 305, ../styles/globals/_layout.scss */
 pre.prettyprint, code.prettyprint {
   background-color: #000;
 }
 
-/* line 315, ../styles/globals/_layout.scss */
+/* line 309, ../styles/globals/_layout.scss */
 pre .pun, code .pun {
   color: yellow;
 }
 
-/* line 318, ../styles/globals/_layout.scss */
+/* line 312, ../styles/globals/_layout.scss */
 pre .atn, code .atn {
   color: violet;
 }
 
-/* line 322, ../styles/globals/_layout.scss */
+/* line 316, ../styles/globals/_layout.scss */
 pre .pln, code .pln {
   color: white;
 }
 
-/* line 326, ../styles/globals/_layout.scss */
+/* line 320, ../styles/globals/_layout.scss */
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
   margin-bottom: 4.5em;
 }
-/* line 331, ../styles/globals/_layout.scss */
+/* line 325, ../styles/globals/_layout.scss */
 .swatch-list li {
   list-style: none;
   width: 128px;
@@ -1521,214 +1472,103 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 341, ../styles/globals/_layout.scss */
+/* line 335, ../styles/globals/_layout.scss */
 .swatch-list li span {
   position: absolute;
   bottom: -30px;
 }
 
-/* line 349, ../styles/globals/_layout.scss */
-.box-out {
-  min-height: 20px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-  background: #eeeeee;
-}
-
-/* line 357, ../styles/globals/_layout.scss */
-.buffer {
-  margin-bottom: 1.875em;
-}
-
-/* line 360, ../styles/globals/_layout.scss */
-.buffer-plus {
-  margin-bottom: 3.375em;
-}
-
-/* line 363, ../styles/globals/_layout.scss */
-.buffer-max {
-  margin-bottom: 6.75em;
-}
-
-/* line 366, ../styles/globals/_layout.scss */
-.buffer-top {
-  margin-top: 1.875em;
-}
-
-/* line 369, ../styles/globals/_layout.scss */
-.buffer-top-plus {
-  margin-top: 3.375em;
-}
-
-/* line 372, ../styles/globals/_layout.scss */
-.buffer-top-max {
-  margin-top: 6.75em;
-}
-
-/* line 378, ../styles/globals/_layout.scss */
-.single-course .border-top {
-  border-width: 6px;
-}
-
-/* line 384, ../styles/globals/_layout.scss */
-#course-carousel li {
-  margin-right: 20px;
-}
-/* line 387, ../styles/globals/_layout.scss */
-#course-carousel .flex-caption {
-  border-bottom: 1px solid #666666;
-}
-
-/* line 396, ../styles/globals/_layout.scss */
-.course-data .accordion-header {
-  padding: 20px;
-}
-/* line 399, ../styles/globals/_layout.scss */
-.course-data .accordion-content {
-  padding: 0 20px;
-}
-/* line 402, ../styles/globals/_layout.scss */
-.course-data table {
-  width: 100%;
-}
-/* line 405, ../styles/globals/_layout.scss */
-.course-data tr.bordered {
-  background: url("../img/dashline_border_img.png") bottom left repeat-x;
-}
-
-/* line 411, ../styles/globals/_layout.scss */
-.border-dot {
-  border-bottom: 1px dotted #eeeeee;
-  -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-  -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-  border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-}
-
-/* line 4, ../styles/globals/_media.scss */
-.media-block a {
-  border: none;
-}
-/* line 8, ../styles/globals/_media.scss */
-.media-block figcaption {
-  padding: 0 0px;
-  color: #929292;
-  font-family: Helvetica;
-  font-size: 0.8em;
-  padding-top: 4px;
-}
-/* line 17, ../styles/globals/_media.scss */
-.media-block.float-left figure {
-  float: left;
-  padding-right: 1.5em;
-}
-
-/* line 26, ../styles/globals/_media.scss */
-.heading-bottom h2.media-heading-top {
-  display: none;
-}
-
-/* line 33, ../styles/globals/_media.scss */
-.heading-top h2.media-heading-bottom {
-  display: none;
-}
-
-/* line 1, ../styles/globals/_colors.scss */
-.white-bg {
-  background: white;
-}
-
-/* line 5, ../styles/globals/_colors.scss */
+/* line 2, ../styles/globals/_colors.scss */
 .ual-primary-black-bg {
   background: black;
 }
 
-/* line 9, ../styles/globals/_colors.scss */
+/* line 6, ../styles/globals/_colors.scss */
 .ual-secondary-grey-bg {
   background: #929292;
 }
 
-/* line 14, ../styles/globals/_colors.scss */
+/* line 11, ../styles/globals/_colors.scss */
 .camberwell-primary-bg {
   background: #5ac882;
 }
 
-/* line 18, ../styles/globals/_colors.scss */
+/* line 15, ../styles/globals/_colors.scss */
 .camberwell-secondary-bg {
   background: #4a97dd;
 }
 
-/* line 22, ../styles/globals/_colors.scss */
+/* line 19, ../styles/globals/_colors.scss */
 .csm-primary-bg {
   background: #ff0c00;
 }
 
-/* line 26, ../styles/globals/_colors.scss */
+/* line 23, ../styles/globals/_colors.scss */
 .csm-secondary-bg {
   background: #0062ff;
 }
 
-/* line 30, ../styles/globals/_colors.scss */
+/* line 27, ../styles/globals/_colors.scss */
 .chelsea-primary-bg {
   background: #e08c94;
 }
 
-/* line 34, ../styles/globals/_colors.scss */
+/* line 31, ../styles/globals/_colors.scss */
 .chelsea-secondary-bg {
   background: #2ea1aa;
 }
 
-/* line 38, ../styles/globals/_colors.scss */
+/* line 35, ../styles/globals/_colors.scss */
 .chelsea-turqouise-green-bg {
   background: #4eb5b7;
 }
 
-/* line 42, ../styles/globals/_colors.scss */
+/* line 39, ../styles/globals/_colors.scss */
 .chelsea-light-green-bg {
   background: #5ac882;
 }
 
-/* line 47, ../styles/globals/_colors.scss */
+/* line 45, ../styles/globals/_colors.scss */
 .ual-black {
   color: black;
 }
 
-/* line 51, ../styles/globals/_colors.scss */
+/* line 49, ../styles/globals/_colors.scss */
 .soft-black {
   color: #282828;
 }
 
-/* line 55, ../styles/globals/_colors.scss */
+/* line 53, ../styles/globals/_colors.scss */
 .aaa-gray {
   color: #929292;
 }
 
-/* line 59, ../styles/globals/_colors.scss */
+/* line 57, ../styles/globals/_colors.scss */
 .light-gray {
   color: #c8c8c8;
 }
 
-/* line 64, ../styles/globals/_colors.scss */
+/* line 62, ../styles/globals/_colors.scss */
 .ual-black-bg {
   background: black;
-  color: #ffffff;
 }
 
-/* line 69, ../styles/globals/_colors.scss */
+/* line 66, ../styles/globals/_colors.scss */
 .soft-black-bg {
   background: #282828;
 }
 
-/* line 73, ../styles/globals/_colors.scss */
+/* line 70, ../styles/globals/_colors.scss */
 .aaa-gray-bg {
   background: #929292;
 }
 
-/* line 77, ../styles/globals/_colors.scss */
+/* line 74, ../styles/globals/_colors.scss */
 .light-gray-bg {
   background: #c8c8c8;
 }
 
-/* line 81, ../styles/globals/_colors.scss */
+/* line 78, ../styles/globals/_colors.scss */
 .bg-gray-bg {
   background: #eeeeee;
 }
@@ -1739,23 +1579,39 @@ pre .pln, code .pln {
 .accordion-header {
   margin: 0;
   padding: 15px 0;
+  border-bottom: 1px solid #cccccc;
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: 98% 50%;
 }
 
-/* line 28, ../styles/components/_vallenato.scss */
+/* line 27, ../styles/components/_vallenato.scss */
 .active-header {
-  background-image: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
+  background: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
+  background-repeat: no-repeat;
+  background-position: right 50%;
 }
 
-/* line 34, ../styles/components/_vallenato.scss */
+/* line 37, ../styles/components/_vallenato.scss */
+.active-header:hover {
+  background: url(http://artslondon.github.io/beta/assets/img/accordion/active-header.png);
+  background-repeat: no-repeat;
+  background-position: right 50%;
+}
+
+/* line 44, ../styles/components/_vallenato.scss */
 .inactive-header {
-  background-image: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
-  border-bottom: 2px solid #eeeeee;
+  background: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
+  background-repeat: no-repeat;
+  background-position: right 50%;
 }
 
-/* line 41, ../styles/components/_vallenato.scss */
+/* line 51, ../styles/components/_vallenato.scss */
+.inactive-header:hover {
+  background: url(http://artslondon.github.io/beta/assets/img/accordion/inactive-header.png);
+  background-repeat: no-repeat;
+  background-position: right 50%;
+}
+
+/* line 58, ../styles/components/_vallenato.scss */
 .accordion-content {
   display: none;
 }
@@ -1791,15 +1647,11 @@ pre .pln, code .pln {
 ===================================*/
 /* line 32, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-viewport {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
-  border: solid #fff 5px;
-  left: -5px;
   background: #fff;
+  margin-top: 1px;
 }
 
-/* line 42, ../styles/components/_bxslider.scss */
+/* line 43, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -1808,7 +1660,7 @@ pre .pln, code .pln {
 }
 
 /* LOADER */
-/* line 50, ../styles/components/_bxslider.scss */
+/* line 51, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-loading {
   min-height: 50px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
@@ -1821,7 +1673,7 @@ pre .pln, code .pln {
 }
 
 /* PAGER */
-/* line 63, ../styles/components/_bxslider.scss */
+/* line 64, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager {
   text-align: center;
   font-size: .85em;
@@ -1831,7 +1683,7 @@ pre .pln, code .pln {
   padding-top: 20px;
 }
 
-/* line 73, ../styles/components/_bxslider.scss */
+/* line 74, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
@@ -1839,7 +1691,7 @@ pre .pln, code .pln {
   *display: inline;
 }
 
-/* line 79, ../styles/components/_bxslider.scss */
+/* line 80, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
   text-indent: -9999px;
@@ -1853,36 +1705,36 @@ pre .pln, code .pln {
   border-radius: 5px;
 }
 
-/* line 93, ../styles/components/_bxslider.scss */
+/* line 94, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #000;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
-/* line 99, ../styles/components/_bxslider.scss */
+/* line 100, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-prev {
   left: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
 }
 
-/* line 104, ../styles/components/_bxslider.scss */
+/* line 105, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-next {
   right: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
 }
 
-/* line 109, ../styles/components/_bxslider.scss */
+/* line 110, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-prev:hover {
   background-position: 0 0;
 }
 
-/* line 113, ../styles/components/_bxslider.scss */
+/* line 114, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-next:hover {
   background-position: -43px 0;
 }
 
-/* line 117, ../styles/components/_bxslider.scss */
+/* line 118, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
@@ -1894,18 +1746,18 @@ pre .pln, code .pln {
   z-index: 9999;
 }
 
-/* line 128, ../styles/components/_bxslider.scss */
+/* line 129, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
 }
 
 /* AUTO CONTROLS (START / STOP) */
-/* line 134, ../styles/components/_bxslider.scss */
+/* line 135, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto {
   text-align: center;
 }
 
-/* line 138, ../styles/components/_bxslider.scss */
+/* line 139, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start {
   display: block;
   text-indent: -9999px;
@@ -1916,13 +1768,13 @@ pre .pln, code .pln {
   margin: 0 3px;
 }
 
-/* line 149, ../styles/components/_bxslider.scss */
+/* line 150, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
   background-position: -86px 0;
 }
 
-/* line 153, ../styles/components/_bxslider.scss */
+/* line 154, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop {
   display: block;
   text-indent: -9999px;
@@ -1933,37 +1785,37 @@ pre .pln, code .pln {
   margin: 0 3px;
 }
 
-/* line 164, ../styles/components/_bxslider.scss */
+/* line 165, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
   background-position: -86px -33px;
 }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-/* line 170, ../styles/components/_bxslider.scss */
+/* line 171, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   text-align: left;
   width: 80%;
 }
 
-/* line 175, ../styles/components/_bxslider.scss */
+/* line 176, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
   right: 0;
   width: 35px;
 }
 
 /* IMAGE CAPTIONS */
-/* line 182, ../styles/components/_bxslider.scss */
+/* line 183, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666666 \9;
+  background: #666\9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%;
 }
 
-/* line 191, ../styles/components/_bxslider.scss */
+/* line 192, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption span {
   color: #fff;
   font-family: Arial;
@@ -2026,7 +1878,7 @@ pre .pln, code .pln {
   display: table-cell;
   position: relative;
   text-align: center;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid white;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
@@ -2046,7 +1898,7 @@ pre .pln, code .pln {
 }
 /* line 87, ../styles/components/_nav-main-menu.scss */
 .dropdown li:first-child {
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid white;
 }
 @media only screen and (max-width: 599px) {
   /* line 87, ../styles/components/_nav-main-menu.scss */
@@ -2641,12 +2493,12 @@ button.button.large {
   margin: 0;
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 272, ../styles/globals/_mixins.scss */
 .button-group:before, .button-group:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 273, ../styles/globals/_mixins.scss */
 .button-group:after {
   clear: both;
 }
@@ -2740,12 +2592,12 @@ button.button.large {
 .button-bar {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 272, ../styles/globals/_mixins.scss */
 .button-bar:before, .button-bar:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 273, ../styles/globals/_mixins.scss */
 .button-bar:after {
   clear: both;
 }
@@ -3086,7 +2938,7 @@ html[xmlns] .slides {
   cursor: pointer;
   text-indent: -9999px;
   opacity: 0;
-  -webkit-transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
 }
 
 /* line 53, ../styles/plugins/_flexslider.scss */
@@ -3119,7 +2971,7 @@ html[xmlns] .slides {
 
 /* line 58, ../styles/plugins/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
-  opacity: 0.3 !important;
+  opacity: .3!important;
   filter: alpha(opacity=30);
   cursor: default;
 }
@@ -3217,12 +3069,12 @@ html[xmlns] .slides {
   }
 }
 /*
-	Mosaic - Sliding Boxes and Captions jQuery Plugin
-	Version 1.0.1
-	www.buildinternet.com/project/mosaic
-	
-	By Sam Dunn / One Mighty Roar (www.onemightyroar.com)
-	Released under MIT License / GPL License
+  Mosaic - Sliding Boxes and Captions jQuery Plugin
+  Version 1.0.1
+  www.buildinternet.com/project/mosaic
+  
+  By Sam Dunn / One Mighty Roar (www.onemightyroar.com)
+  Released under MIT License / GPL License
 */
 /* line 10, ../styles/plugins/_mosaic.scss */
 * {
@@ -3242,7 +3094,7 @@ html[xmlns] .slides {
   height: 250px;
   margin: 10px;
   background: #111111 url(http://artslondon.github.io/beta/assets/img/mosaic/progress.gif) no-repeat center center;
-  border: 1px solid #fff;
+  border: 1px solid white;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -3424,7 +3276,7 @@ html[xmlns] .slides {
 /* line 14, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 6px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   margin: 0;
   padding: 0;
 }
@@ -3553,12 +3405,12 @@ html[xmlns] .slides {
 .clearfix, .header, .header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 272, ../styles/globals/_mixins.scss */
 .clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 273, ../styles/globals/_mixins.scss */
 .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }
