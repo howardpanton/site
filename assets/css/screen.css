@@ -1488,7 +1488,7 @@ pre .pln, code .pln {
   list-style: none;
   list-style-image: none;
   width: 100%;
-  height: 128px;
+  min-height: 128px;
   border-left: solid 128px;
   padding: 0 0.8em;
   display: block;
@@ -1496,68 +1496,98 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 358, ../styles/globals/_layout.scss */
+/* line 359, ../styles/globals/_layout.scss */
+.color-tabs-list li > div {
+  display: block;
+  float: left;
+  padding: 0 4em 0 0;
+}
+/* line 366, ../styles/globals/_layout.scss */
 .color-tabs-list li h5 {
   color: #282828;
 }
-/* line 360, ../styles/globals/_layout.scss */
+/* line 368, ../styles/globals/_layout.scss */
 .color-tabs-list li p {
   color: #666666;
   font-size: 0.875em;
   line-height: 1.28571em;
   margin: 0 0 0.85714em 0;
 }
-/* line 365, ../styles/globals/_layout.scss */
-.color-tabs-list li .ual-black {
+/* line 376, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-black {
   border-color: black;
 }
-/* line 368, ../styles/globals/_layout.scss */
-.color-tabs-list li .soft-black {
+/* line 377, ../styles/globals/_layout.scss */
+.color-tabs-list .soft-black {
   border-color: #282828;
 }
-/* line 371, ../styles/globals/_layout.scss */
-.color-tabs-list li .dark-gray {
+/* line 378, ../styles/globals/_layout.scss */
+.color-tabs-list .dark-gray {
   border-color: #333333;
 }
-/* line 374, ../styles/globals/_layout.scss */
-.color-tabs-list li .aaa-gray {
-  border-color: #929292;
-}
-/* line 377, ../styles/globals/_layout.scss */
-.color-tabs-list li .light-gray {
-  border-color: #c8c8c8;
+/* line 379, ../styles/globals/_layout.scss */
+.color-tabs-list .aaa-gray {
+  border-color: #757575;
 }
 /* line 380, ../styles/globals/_layout.scss */
-.color-tabs-list li .mid-gray {
+.color-tabs-list .light-gray {
+  border-color: #c8c8c8;
+}
+/* line 381, ../styles/globals/_layout.scss */
+.color-tabs-list .mid-gray {
   border-color: #666666;
 }
-/* line 383, ../styles/globals/_layout.scss */
-.color-tabs-list li .college-logo-gray {
+/* line 382, ../styles/globals/_layout.scss */
+.color-tabs-list .college-logo-gray {
   border-color: #999999;
 }
-/* line 386, ../styles/globals/_layout.scss */
-.color-tabs-list li .ual-white {
+/* line 383, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-white {
   border-color: white;
 }
-/* line 389, ../styles/globals/_layout.scss */
-.color-tabs-list li .ccw-yellow {
+/* line 384, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-yellow {
   border-color: #edce18;
 }
-/* line 392, ../styles/globals/_layout.scss */
-.color-tabs-list li .ccw-green {
+/* line 385, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-green {
   border-color: #58bf58;
 }
-/* line 395, ../styles/globals/_layout.scss */
-.color-tabs-list li .ccw-salmon {
+/* line 386, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-salmon {
   border-color: #fa756e;
 }
-/* line 398, ../styles/globals/_layout.scss */
-.color-tabs-list li .ccw-blue {
+/* line 387, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-blue {
   border-color: #4a97dd;
 }
-/* line 401, ../styles/globals/_layout.scss */
-.color-tabs-list li .ccw-gray {
+/* line 388, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-gray {
   border-color: #434951;
+}
+/* line 389, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-primary {
+  border-color: #ff0c00;
+}
+/* line 390, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-secondary {
+  border-color: #0062ff;
+}
+/* line 391, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-primary-yellow {
+  border-color: yellow;
+}
+/* line 392, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-secondary-pink {
+  border-color: #e5006d;
+}
+/* line 393, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-green {
+  border-color: #28e598;
+}
+/* line 394, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-light-blue {
+  border-color: #61bee5;
 }
 
 /* line 5, ../styles/globals/_colors.scss */
@@ -1582,7 +1612,7 @@ pre .pln, code .pln {
 
 /* line 21, ../styles/globals/_colors.scss */
 .aaa-gray {
-  color: #929292;
+  color: #757575;
 }
 
 /* line 25, ../styles/globals/_colors.scss */
@@ -1612,7 +1642,7 @@ pre .pln, code .pln {
 
 /* line 47, ../styles/globals/_colors.scss */
 .aaa-gray-bg {
-  background: #929292;
+  background: #757575;
 }
 
 /* line 51, ../styles/globals/_colors.scss */
@@ -1754,15 +1784,11 @@ pre .pln, code .pln {
 ===================================*/
 /* line 32, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-viewport {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
-  border: solid #fff 5px;
-  left: -5px;
   background: #fff;
+  margin-top: 1px;
 }
 
-/* line 42, ../styles/components/_bxslider.scss */
+/* line 43, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -1771,7 +1797,7 @@ pre .pln, code .pln {
 }
 
 /* LOADER */
-/* line 50, ../styles/components/_bxslider.scss */
+/* line 51, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-loading {
   min-height: 50px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
@@ -1784,7 +1810,7 @@ pre .pln, code .pln {
 }
 
 /* PAGER */
-/* line 63, ../styles/components/_bxslider.scss */
+/* line 64, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager {
   text-align: center;
   font-size: .85em;
@@ -1794,7 +1820,7 @@ pre .pln, code .pln {
   padding-top: 20px;
 }
 
-/* line 73, ../styles/components/_bxslider.scss */
+/* line 74, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
@@ -1802,7 +1828,7 @@ pre .pln, code .pln {
   *display: inline;
 }
 
-/* line 79, ../styles/components/_bxslider.scss */
+/* line 80, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
   text-indent: -9999px;
@@ -1816,36 +1842,36 @@ pre .pln, code .pln {
   border-radius: 5px;
 }
 
-/* line 93, ../styles/components/_bxslider.scss */
+/* line 94, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #000;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
-/* line 99, ../styles/components/_bxslider.scss */
+/* line 100, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-prev {
   left: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
 }
 
-/* line 104, ../styles/components/_bxslider.scss */
+/* line 105, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-next {
   right: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
 }
 
-/* line 109, ../styles/components/_bxslider.scss */
+/* line 110, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-prev:hover {
   background-position: 0 0;
 }
 
-/* line 113, ../styles/components/_bxslider.scss */
+/* line 114, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-next:hover {
   background-position: -43px 0;
 }
 
-/* line 117, ../styles/components/_bxslider.scss */
+/* line 118, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
@@ -1857,18 +1883,18 @@ pre .pln, code .pln {
   z-index: 9999;
 }
 
-/* line 128, ../styles/components/_bxslider.scss */
+/* line 129, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
 }
 
 /* AUTO CONTROLS (START / STOP) */
-/* line 134, ../styles/components/_bxslider.scss */
+/* line 135, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto {
   text-align: center;
 }
 
-/* line 138, ../styles/components/_bxslider.scss */
+/* line 139, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start {
   display: block;
   text-indent: -9999px;
@@ -1879,13 +1905,13 @@ pre .pln, code .pln {
   margin: 0 3px;
 }
 
-/* line 149, ../styles/components/_bxslider.scss */
+/* line 150, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
   background-position: -86px 0;
 }
 
-/* line 153, ../styles/components/_bxslider.scss */
+/* line 154, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop {
   display: block;
   text-indent: -9999px;
@@ -1896,27 +1922,27 @@ pre .pln, code .pln {
   margin: 0 3px;
 }
 
-/* line 164, ../styles/components/_bxslider.scss */
+/* line 165, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
   background-position: -86px -33px;
 }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-/* line 170, ../styles/components/_bxslider.scss */
+/* line 171, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   text-align: left;
   width: 80%;
 }
 
-/* line 175, ../styles/components/_bxslider.scss */
+/* line 176, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
   right: 0;
   width: 35px;
 }
 
 /* IMAGE CAPTIONS */
-/* line 182, ../styles/components/_bxslider.scss */
+/* line 183, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption {
   position: absolute;
   bottom: 0;
@@ -1926,7 +1952,7 @@ pre .pln, code .pln {
   width: 100%;
 }
 
-/* line 191, ../styles/components/_bxslider.scss */
+/* line 192, ../styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption span {
   color: #fff;
   font-family: Arial;

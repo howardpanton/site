@@ -10,14 +10,318 @@ breadcrumb-link: colours.html
 <div class="docs-content">
 	<div class="row">  
     <div class="d1-d12">  
-      <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 9nd, 2013</strong></p>
+      <p class="updated rhythm-3 border-bottom">Last Updated: <strong>May 9nd, 2013</strong></p>
       <h2 class="heading-x3 soft-black">Global Color Codes and Classnames</h2>
       <hr>
     </div>
   </div>
 
 	<div class="row">  
-	    <div class="d1-d12">  
+		<div class="d1-d14">
+
+			<h2>Global UAL colors</h2>
+			
+			<ul class="color-tabs-list">
+				<li class="ual-black">
+					<div>
+						<h5>ual-black</h5>
+						<p>SASS: $ual-black</p>
+						<p>HEX:  #000000</p>
+						<p>RGB:  (0,0,0)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Text sizes above 16px.</p>
+					</div>
+				</li>
+				<li class="soft-black">
+					<div>
+						<h5>soft-black</h5>
+						<p>SASS: $soft-black</p>
+						<p>HEX:  #282828</p>
+						<p>RGB:  (40,40,40)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Body text 16px and below.</p>
+					</div>
+				</li>
+				<li class="dark-gray">
+					<div>
+						<h5>dark-gray</h5>
+						<p>SASS: $dark-gray</p>
+						<p>HEX:  #333333</p>
+						<p>RGB:  (51,51,51)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Visual elements on black only.</p>
+						<p>Not for use with overlayed text.</p>
+					</div>
+
+				</li>
+				<li class="aaa-gray">
+					<div>
+						<h5>aaa-gray</h5>
+						<p>SASS: $aaa-gray</p>
+						<p>HEX:  #757575</p>
+						<p>RGB:  (117,117,117)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Passes AA rating for bold text at 14px</p>
+						<p>and AAA rating for regular text at 18px &amp; up on both ual white and ual black. </p>
+					</div>
+				</li>
+				<li class="college-logo-gray">
+					<div>
+						<h5>college-logo-gray</h5>
+						<p>SASS: $college-logo-gray</p>
+						<p>HEX:  #999999</p>
+						<p>RGB:  (153,153,153)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>College logo lockup text only.
+						Passes AAA rating on ual black.<br/>
+						<p>Passes AA rating for bold text at 14px and 18px and up on ual white.</p>
+					</div>
+				</li>
+				<li class="light-gray">
+					<div>
+						<h5>light-gray</h5>
+						<p>SASS: $light-gray</p>
+						<p>HEX:  #c8c8c8</p>
+						<p>RGB:  (200,200,200)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Visual elements on white only.</p>
+						<p>Not for use with overlayed text.</p>
+					</div>
+				</li>
+				<li class="ual-white">
+					<div>
+						<h5>ual-white</h5>
+						<p>SASS: $ual-white</p>
+						<p>HEX:  #FFFFFF</p>
+						<p>RGB:  (255,255,255)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Text on ‘ual black’ or ‘ual AAA gray’.</p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	
+	<hr/>
+
+	<h2>College Specific Color Palletes</h2>
+	<p> These are used in addition to the global default colours on the college pages</p>
+	<hr/>
+	<div class="row">  
+		<div class="d1-d12">
+
+			<h3>CSM</h3>
+			
+			<ul class="color-tabs-list">
+				<li class="csm-primary">
+					<div>
+						<h5>csm primary</h5>
+						<p>SASS: $csm-primary</p>
+						<p>HEX:  #ff0c00</p>
+						<p>RGB:  (255,12,0)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				
+				<li class="csm-secondary">
+					<div>
+						<h5>csm secondary</h5>
+						<p>SASS: $csm-secondary</p>
+						<p>HEX:  #0062ff</p>
+						<p>RGB:  (0,98,255)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+
+			</ul>
+
+			
+		</div>
+	</div>
+
+	<hr/>
+
+	<div class="row">  
+		<div class="d1-d12">
+
+			<h3>LCC</h3>
+			
+			<ul class="color-tabs-list">
+				<li class="lcc-primary-yellow">
+					<div>
+						<h5>lcc primary yellow</h5>
+						<p>SASS: $lcc-primary-yellow</p>
+						<p>HEX:  #ffff00</p>
+						<p>RGB:  (255, 255, 0)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="lcc-secondary-pink">
+					<div>
+						<h5>lcc secondary pink</h5>
+						<p>SASS: $lcc-secondary-pink</p>
+						<p>HEX:  #e5006d</p>
+						<p>RGB:  (229, 0, 109)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="lcc-green">
+					<div>
+						<h5>lcc green</h5>
+						<p>SASS: $lcc-green</p>
+						<p>HEX:  #28e598</p>
+						<p>RGB:  (0,0,0)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="lcc-light-blue">
+					<div>
+						<h5>lcc light blue</h5>
+						<p>SASS: $lcc-light-blue</p>
+						<p>HEX:  #61bee5</p>
+						<p>RGB:  (97, 190, 229)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+			</ul>
+
+			
+		</div>
+	</div>
+
+	<hr/>
+
+	<div class="row">  
+		<div class="d1-d12">
+
+			<h3>LCF</h3>
+			
+			<ul class="color-tabs-list">
+				<li class="mid-gray">
+					<div>
+						<h5>mid-gray</h5>
+						<p>SASS: $mid-gray</p>
+						<p>HEX:  #666666</p>
+						<p>RGB:  (102,102,102)</p>
+					</div>
+					<div>
+						<h5>notes:</h5>
+						<p>Mid gray for LCF footer</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	
+	<div class="row">  
+		<div class="d1-d12">
+
+			<h3>Chelsea, Camberwell, Wimbledon</h3>
+			<ul class="color-tabs-list">
+				<li class="ccw-yellow">
+					<div>
+						<h5>ccw-yellow</h5>
+						<p>SASS: $ccw-yellow</p>
+						<p>HEX:  #EDCE18</p>
+						<p>RGB:  (237, 206, 24)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+			
+				<li class="ccw-green">
+					<div>
+						<h5>ccw-green</h5>
+						<p>SASS: $ccw-green</p>
+						<p>HEX:  #282828</p>
+						<p>RGB:  (88, 191, 88)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="ccw-salmon">
+					<div>
+						<h5>ccw-salmon</h5>
+						<p>SASS: $ccw-salmon</p>
+						<p>HEX:  #FA756E</p>
+						<p>RGB:  (250, 117, 110)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="ccw-blue">
+					<div>
+						<h5>ccw-blue</h5>
+						<p>SASS: $ccw-blue</p>
+						<p>HEX:  #4A97DD</p>
+						<p>RGB:  (74, 151, 221)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+				<li class="ccw-gray">
+					<div>
+						<h5>ccw-gray</h5>
+						<p>SASS: $light-gray</p>
+						<p>HEX:  #434951</p>
+						<p>RGB:  (67, 73, 81)</p>
+					</div>
+					<!-- <div>
+						<h5>notes:</h5>
+						<p></p>
+					</div> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<hr/>
+	
+	<!-- <h2>UAL Site Wide Color Overview</h2>
+	<div class="row">  
+	    <div class="d1-d10">  
 			<ul class="row swatch-list">
 				<h4>UAL base colors</h4>
 				<li class="ual-black-bg">
@@ -29,7 +333,6 @@ breadcrumb-link: colours.html
 				<li class="dark-gray-bg">
 					<span>Dark Gray</span>
 				</li>
-
 				<li class="aaa-gray-bg">
 					<span>AAA gray</span>
 				</li>
@@ -40,335 +343,47 @@ breadcrumb-link: colours.html
 					<span>Background Gray</span>
 				</li>
 			</ul>
-		</div>
-	</div>
+	
 
-	<div class="row">  
-		<div class="d1-d12">
+			<hr/>
 
-			<h2>Global color names</h2>
-			
-			<ul class="color-tabs-list">
-				<li class="ual-black">
-					<h5>ual-black</h5>
-					<p>SASS: $ual-black</p>
-					<p>HEX:  #000000</p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="soft-black">
-					<h5>soft-black</h5>
-					<p>SASS: $soft-black</p>
-					<p>HEX:  #282828</p>
-					<p>RGB:  (40,40,40)</p>
-				</li>
-				<li class="dark-gray">
-					<h5>dark-gray</h5>
-					<p>SASS: $dark-gray</p>
-					<p>HEX:  #333333</p>
-					<p>RGB:  (51,51,51)</p>
-				</li>
-				<li class="aaa-gray">
-					<h5>aaa-gray</h5>
-					<p>SASS: $aaa-gray</p>
-					<p>HEX:  </p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="light-gray">
-					<h5>light-gray</h5>
-					<p>SASS: $light-gray</p>
-					<p>HEX:  #c8c8c8</p>
-					<p>RGB:  (200,200,200)</p>
-				</li>
-				<li class="mid-gray">
-					<h5>mid-gray</h5>
-					<p>SASS: $mid-gray</p>
-					<p>HEX:  #666666</p>
-					<p>RGB:  (102,102,102)</p>
-				</li>
-				<li class="college-logo-gray">
-					<h5>college-logo-gray</h5>
-					<p>SASS: $college-logo-gray</p>
-					<p>HEX:  #999999</p>
-					<p>RGB:  (153,153,153)</p>
-				</li>
-				<li class="ual-white with-border">
-					<h5>ual-white</h5>
-					<p>SASS: $ual-white</p>
-					<p>HEX:  #FFFFFF</p>
-					<p>RGB:  (255,255,255)</p>
-				</li>
+			<ul class='row swatch-list'>
+			        <h4>Colour swatches</h4>
+			        <li class='ual-primary-black-bg'>
+			          <span>Ual</span>
+			        </li>
+			        <li class='ual-secondary-grey-bg'>
+			          <span>Ual</span>
+			        </li>
+			        <li class='camberwell-primary-bg'>
+			          <span>Camberwell</span>
+			        </li>
+			        <li class='camberwell-secondary-bg'>
+			          <span>Camberwell</span>
+			        </li>
+			        <li class='csm-primary-bg'>
+			          <span>Csm</span>
+			        </li>
+			        <li class='csm-secondary-bg'>
+			          <span>Csm</span>
+			        </li>
+			        <li class='chelsea-primary-bg'>
+			          <span>Chelsea</span>
+			        </li>
+			        <li class='chelsea-secondary-bg'>
+			          <span>Chelsea</span>
+			        </li>
+			        <li class='chelsea-turqouise-green-bg'>
+			          <span>Chelsea</span>
+			        </li>
+			        <li class='chelsea-light-green-bg'>
+			          <span>Chelsea</span>
+			        </li>
 			</ul>
 
 		</div>
-	</div>
-	
-	<hr/>
-
-	<h2>College Specific Colors</h2>
-	
-	<div class="row">  
-		<div class="d1-d12">
-
-			<h3>LCC</h3>
-			
-			<ul class="color-tabs-list">
-				<li class="ual-black">
-					<h5>ual-black</h5>
-					<p>SASS: $ual-black</p>
-					<p>HEX:  #000000</p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="soft-black">
-					<h5>soft-black</h5>
-					<p>SASS: $soft-black</p>
-					<p>HEX:  #282828</p>
-					<p>RGB:  (40,40,40)</p>
-				</li>
-				<li class="dark-gray">
-					<h5>dark-gray</h5>
-					<p>SASS: $dark-gray</p>
-					<p>HEX:  #333333</p>
-					<p>RGB:  (51,51,51)</p>
-				</li>
-				<li class="aaa-gray">
-					<h5>aaa-gray</h5>
-					<p>SASS: $aaa-gray</p>
-					<p>HEX:  </p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="light-gray">
-					<h5>light-gray</h5>
-					<p>SASS: $light-gray</p>
-					<p>HEX:  #c8c8c8</p>
-					<p>RGB:  (200,200,200)</p>
-				</li>
-				<li class="mid-gray">
-					<h5>mid-gray</h5>
-					<p>SASS: $mid-gray</p>
-					<p>HEX:  #666666</p>
-					<p>RGB:  (102,102,102)</p>
-				</li>
-				<li class="college-logo-gray">
-					<h5>college-logo-gray</h5>
-					<p>SASS: $college-logo-gray</p>
-					<p>HEX:  #999999</p>
-					<p>RGB:  (153,153,153)</p>
-				</li>
-				<li class="ual-white with-border">
-					<h5>ual-white</h5>
-					<p>SASS: $ual-white</p>
-					<p>HEX:  #FFFFFF</p>
-					<p>RGB:  (255,255,255)</p>
-				</li>
-			</ul>
-
-		</div>
-	</div>
-
-
-	<div class="row">  
-		<div class="d1-d12">
-
-			<h3>LCF</h3>
-			
-			<ul class="color-tabs-list">
-				<li class="ual-black">
-					<h5>ual-black</h5>
-					<p>SASS: $ual-black</p>
-					<p>HEX:  #000000</p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="soft-black">
-					<h5>soft-black</h5>
-					<p>SASS: $soft-black</p>
-					<p>HEX:  #282828</p>
-					<p>RGB:  (40,40,40)</p>
-				</li>
-				<li class="dark-gray">
-					<h5>dark-gray</h5>
-					<p>SASS: $dark-gray</p>
-					<p>HEX:  #333333</p>
-					<p>RGB:  (51,51,51)</p>
-				</li>
-				<li class="aaa-gray">
-					<h5>aaa-gray</h5>
-					<p>SASS: $aaa-gray</p>
-					<p>HEX:  </p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="light-gray">
-					<h5>light-gray</h5>
-					<p>SASS: $light-gray</p>
-					<p>HEX:  #c8c8c8</p>
-					<p>RGB:  (200,200,200)</p>
-				</li>
-				<li class="mid-gray">
-					<h5>mid-gray</h5>
-					<p>SASS: $mid-gray</p>
-					<p>HEX:  #666666</p>
-					<p>RGB:  (102,102,102)</p>
-				</li>
-				<li class="college-logo-gray">
-					<h5>college-logo-gray</h5>
-					<p>SASS: $college-logo-gray</p>
-					<p>HEX:  #999999</p>
-					<p>RGB:  (153,153,153)</p>
-				</li>
-				<li class="ual-white with-border">
-					<h5>ual-white</h5>
-					<p>SASS: $ual-white</p>
-					<p>HEX:  #FFFFFF</p>
-					<p>RGB:  (255,255,255)</p>
-				</li>
-			</ul>
-
-		</div>
-	</div>
+	</div> -->
 
 	
-	<div class="row">  
-		<div class="d1-d12">
-
-			<h3>CCW</h3>
-			
-			<ul class="color-tabs-list">
-				<li class="ccw-yellow">
-					<h5>ccw-yellow</h5>
-					<p>SASS: $ual-black</p>
-					<p>HEX:  #000000</p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="ccw-green">
-					<h5>ccw-green</h5>
-					<p>SASS: $soft-black</p>
-					<p>HEX:  #282828</p>
-					<p>RGB:  (40,40,40)</p>
-				</li>
-				<li class="ccw-salmon">
-					<h5>ccw-salmon</h5>
-					<p>SASS: $dark-gray</p>
-					<p>HEX:  #333333</p>
-					<p>RGB:  (51,51,51)</p>
-				</li>
-				<li class="ccw-blue">
-					<h5>ccw-blue</h5>
-					<p>SASS: $aaa-gray</p>
-					<p>HEX:  </p>
-					<p>RGB:  (0,0,0)</p>
-				</li>
-				<li class="ccw-gray">
-					<h5>ccw-gray</h5>
-					<p>SASS: $light-gray</p>
-					<p>HEX:  #c8c8c8</p>
-					<p>RGB:  (200,200,200)</p>
-				</li>
-			</ul>
-
-		</div>
-	</div>
-	
-
-	
-
-
-	<table>
-		<thead>
-		  <tr>
-		    <th>Example</th>
-		    <th>Properties & Usage</th>
-		  </tr>
-		</thead>
-		<tr>
-			<td><span class="ual-black">UAL Black</span></td>
-			<td>color: 000000 (used with text more than 16px)</td>
-		</tr>
-		<tr>
-			<td><span class="soft-black">Soft Black</span></td>
-			<td>color: 282828 (used with text less than or equal to 16px)</td>
-		</tr>
-		<tr>
-			<td><span class="dark-gray">Dark Gray</span></td>
-			<td>color: 333333 (51/51/51)</br>
-				Visual elements on black only.</br>
-				Not for use with overlayed text.
-				</td>
-		</tr>
-		<tr>
-			<td><span class="aaa-gray">AAA gray</span></td>
-			<td>color: 929292 (used with white background only. passes AA rating for text 14px and AAA rating for text 18px and up)</td>
-		</tr>
-		<tr>
-			<td><span class="light-gray-bg">Light Gray</span></td>
-			<td>color: C8C8C8 (used for visual elements only. not for use with overlayed text)</td>
-		</tr>
-		<tr>
-			<td class="bg-gray-bg"><span class="ual-black">Background Gray</span></td>
-			<td>color: EEEEEE (must be used with text set in ual black/000000 to pass AAA rating for text colour contrast)</td>
-		</tr>
-
-	<ul class="row swatch-list">
-		
-		<li>
-			<span class="ual-black">UAL Black</span>
-		</li>
-		<li>
-			<span class="soft-black">Soft Black</span>
-		</li>
-		<li>
-			<span class="aaa-gray">AAA gray</span>
-		</li>
-
-		<li>
-			<span class="light-gray-bg">Light Gray</span>
-		</li>
-		<li class="bg-gray-bg">
-			<span class="ual-black">Background Gray</span>
-		</li>
-	</ul>
-	</table>
-	<!-- <pre class="prettyprint">
-	&lt;ul&gt; &lt;h4&gt;Global type color examples&lt;/h4&gt; &lt;li&gt; &lt;span class=&quot;ual-black&quot;&gt;UAL Black&lt;/span&gt; &lt;/li&gt; &lt;li&gt; &lt;span class=&quot;soft-black&quot;&gt;Soft Black&lt;/span&gt; &lt;/li&gt; &lt;li&gt; &lt;span class=&quot;aaa-gray&quot;&gt;AAA gray&lt;/span&gt; &lt;/li&gt; &lt;li&gt; &lt;span class=&quot;light-gray-bg&quot;&gt;Light Gray&lt;/span&gt; &lt;/li&gt; &lt;li class=&quot;bg-gray-bg&quot;&gt; &lt;span class=&quot;ual-black&quot;&gt;Background Gray&lt;/span&gt; &lt;/li&gt; &lt;/ul&gt;
-	</pre> -->
-
-
-	<ul class='row swatch-list'>
-	        <h4>Colour swatches</h4>
-	        <li class='ual-primary-black-bg'>
-	          <span>Ual</span>
-	        </li>
-	        <li class='ual-secondary-grey-bg'>
-	          <span>Ual</span>
-	        </li>
-	        <li class='camberwell-primary-bg'>
-	          <span>Camberwell</span>
-	        </li>
-	        <li class='camberwell-secondary-bg'>
-	          <span>Camberwell</span>
-	        </li>
-	        <li class='csm-primary-bg'>
-	          <span>Csm</span>
-	        </li>
-	        <li class='csm-secondary-bg'>
-	          <span>Csm</span>
-	        </li>
-	        <li class='chelsea-primary-bg'>
-	          <span>Chelsea</span>
-	        </li>
-	        <li class='chelsea-secondary-bg'>
-	          <span>Chelsea</span>
-	        </li>
-	        <li class='chelsea-turqouise-green-bg'>
-	          <span>Chelsea</span>
-	        </li>
-	        <li class='chelsea-light-green-bg'>
-	          <span>Chelsea</span>
-	        </li>
-	</ul>
-
-	
-
-	<!-- <pre class="prettyprint">
-		&lt;ul class='row swatch-list'&gt; &lt;h4&gt;Colour swatches&lt;/h4&gt; &lt;li class='ual-primary-black-bg'&gt; &lt;span&gt;Ual&lt;/span&gt; &lt;/li&gt; &lt;li class='ual-secondary-grey-bg'&gt; &lt;span&gt;Ual&lt;/span&gt; &lt;/li&gt; &lt;li class='camberwell-primary-bg'&gt; &lt;span&gt;Camberwell&lt;/span&gt; &lt;/li&gt; &lt;li class='camberwell-secondary-bg'&gt; &lt;span&gt;Camberwell&lt;/span&gt; &lt;/li&gt; &lt;li class='csm-primary-bg'&gt; &lt;span&gt;Csm&lt;/span&gt; &lt;/li&gt; &lt;li class='csm-secondary-bg'&gt; &lt;span&gt;Csm&lt;/span&gt; &lt;/li&gt; &lt;li class='chelsea-primary-bg'&gt; &lt;span&gt;Chelsea&lt;/span&gt; &lt;/li&gt; &lt;li class='chelsea-secondary-bg'&gt; &lt;span&gt;Chelsea&lt;/span&gt; &lt;/li&gt; &lt;li class='chelsea-turqouise-green-bg'&gt; &lt;span&gt;Chelsea&lt;/span&gt; &lt;/li&gt; &lt;li class='chelsea-light-green-bg'&gt; &lt;span&gt;Chelsea&lt;/span&gt; &lt;/li&gt; &lt;/ul&gt;
-	</pre> -->
 </div>
 
