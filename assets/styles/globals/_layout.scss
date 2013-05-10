@@ -28,13 +28,11 @@ body {
 
 a {
 	color:#000;
-	border-bottom: 1px  solid;
 	line-height: 24px;
 	text-decoration:none;
 	//@include force-wrap;					// force text links to wrap
 	&:hover, &:focus, &:active {
-
-	color: #929292;
+		color: #929292;
 	}
 }
 
@@ -73,6 +71,10 @@ a {
 }
 .cf:after { 
 	clear: both; 
+}
+
+.panel, .row {
+  @extend .cf;
 }
 
 
@@ -249,9 +251,9 @@ header.title {
 	
 			}
 }
+
 .row {
 	@include gs-span(d, all);
-	clear:both;
 }
 
 .typography {
@@ -343,6 +345,14 @@ color: white;
 	}
 }
 
+// Box-out
+.box-out {
+	min-height: 20px;
+  	padding: 10px 20px;
+  	margin-bottom: 20px;
+  	background: $bg-gray;
+}
+
 // Baseline classes
 .buffer {
     @include margin-trailer(5);
@@ -364,9 +374,24 @@ color: white;
 }
 
 // Course styles
+.single-course {
+	.border-top {
+		border-width: 6px;
+	}
+}
+
+#course-carousel {
+	li {
+		margin-right: 20px;
+	}
+	.flex-caption {
+		border-bottom: 1px solid $mid-gray;
+	}
+}
+
 .course-data {
 	#accordion-container {
-		@include padding-leader(5);
+		//@include padding-leader(5);
 	}
 	.accordion-header {
 		padding: 20px;
@@ -378,11 +403,12 @@ color: white;
 		width: 100%;
 	}
 	tr.bordered {
-		/*border-bottom: 1px dotted $bg-gray;
-		-moz-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-		-webkit-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-		border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;*/
 		background: url("../img/dashline_border_img.png") bottom left repeat-x;
 	}
+}
+
+// Border Image
+.border-dot {
+	@include border-image-dot();
 }
 
