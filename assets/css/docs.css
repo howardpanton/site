@@ -93,28 +93,27 @@ body {
 /* line 29, ../styles/globals/_layout.scss */
 a {
   color: #000;
-  border-bottom: 1px solid;
   line-height: 24px;
   text-decoration: none;
 }
-/* line 35, ../styles/globals/_layout.scss */
+/* line 34, ../styles/globals/_layout.scss */
 a:hover, a:focus, a:active {
   color: #929292;
 }
 
-/* line 41, ../styles/globals/_layout.scss */
+/* line 39, ../styles/globals/_layout.scss */
 .region {
   position: relative;
   float: left;
 }
 @media only screen and (max-width: 599px) {
-  /* line 41, ../styles/globals/_layout.scss */
+  /* line 39, ../styles/globals/_layout.scss */
   .region {
     margin-top: 12px;
   }
 }
 
-/* line 50, ../styles/globals/_layout.scss */
+/* line 48, ../styles/globals/_layout.scss */
 .content-wrapper img {
   max-width: 100%;
   height: auto;
@@ -122,39 +121,40 @@ a:hover, a:focus, a:active {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 62, ../styles/globals/_layout.scss */
+/* line 60, ../styles/globals/_layout.scss */
 .clearfix, .header, .header .banner, .footer .copyright, .docs .header, .docs .header .banner {
   *zoom: 1;
 }
-/* line 272, ../styles/globals/_mixins.scss */
+/* line 280, ../styles/globals/_mixins.scss */
 .clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .docs .header:before, .docs .header .banner:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
   content: " ";
   display: table;
 }
-/* line 273, ../styles/globals/_mixins.scss */
+/* line 281, ../styles/globals/_mixins.scss */
 .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
   clear: both;
 }
 
-/* line 66, ../styles/globals/_layout.scss */
-.cf, .panel {
+/* line 64, ../styles/globals/_layout.scss */
+.cf, .panel, .row {
   zoom: 1;
 }
 
-/* line 70, ../styles/globals/_layout.scss */
-.cf:before, .panel:before,
+/* line 68, ../styles/globals/_layout.scss */
+.cf:before, .panel:before, .row:before,
 .cf:after,
-.panel:after {
+.panel:after,
+.row:after {
   content: "";
   display: table;
 }
 
-/* line 74, ../styles/globals/_layout.scss */
-.cf:after, .panel:after {
+/* line 72, ../styles/globals/_layout.scss */
+.cf:after, .panel:after, .row:after {
   clear: both;
 }
 
-/* line 81, ../styles/globals/_layout.scss */
+/* line 83, ../styles/globals/_layout.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -165,12 +165,12 @@ a:hover, a:focus, a:active {
   clear: both;
 }
 
-/* line 114, ../styles/globals/_layout.scss */
+/* line 116, ../styles/globals/_layout.scss */
 ol, ul {
   padding-left: 1.25em;
 }
 
-/* line 118, ../styles/globals/_layout.scss */
+/* line 120, ../styles/globals/_layout.scss */
 .content-wrapper, .wrapper, .header .banner, .docs .header .banner {
   width: 92.5%;
   max-width: 1256px;
@@ -179,13 +179,18 @@ ol, ul {
   min-width: 320px;
 }
 
-/* line 126, ../styles/globals/_layout.scss */
+/* line 128, ../styles/globals/_layout.scss */
 .feature-wrapper {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 132, ../styles/globals/_layout.scss */
+/* line 133, ../styles/globals/_layout.scss */
+.course-data-wrapper {
+  max-width: 960px;
+}
+
+/* line 138, ../styles/globals/_layout.scss */
 .header {
   background: white;
   width: 100%;
@@ -193,18 +198,18 @@ ol, ul {
   border-top: 6px solid black;
 }
 @media only screen and (max-width: 599px) {
-  /* line 132, ../styles/globals/_layout.scss */
+  /* line 138, ../styles/globals/_layout.scss */
   .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 144, ../styles/globals/_layout.scss */
+/* line 150, ../styles/globals/_layout.scss */
 .header .banner {
   position: relative;
 }
 @media only screen and (max-width: 599px) {
-  /* line 144, ../styles/globals/_layout.scss */
+  /* line 150, ../styles/globals/_layout.scss */
   .header .banner {
     clear: both;
     display: block;
@@ -219,7 +224,7 @@ ol, ul {
     padding-bottom: 0.75em;
   }
 }
-/* line 160, ../styles/globals/_layout.scss */
+/* line 166, ../styles/globals/_layout.scss */
 .header .banner .header {
   clear: both;
   display: block;
@@ -228,12 +233,12 @@ ol, ul {
   width: 100%;
 }
 
-/* line 166, ../styles/globals/_layout.scss */
+/* line 172, ../styles/globals/_layout.scss */
 .footer {
   border-top: 1px solid white;
   background: black;
 }
-/* line 169, ../styles/globals/_layout.scss */
+/* line 175, ../styles/globals/_layout.scss */
 .footer .footer-links {
   padding-top: 1.5em;
   clear: both;
@@ -246,18 +251,18 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 178, ../styles/globals/_layout.scss */
+/* line 184, ../styles/globals/_layout.scss */
 .footer .footer-links ul {
   clear: left;
   margin-bottom: 0;
 }
-/* line 183, ../styles/globals/_layout.scss */
+/* line 189, ../styles/globals/_layout.scss */
 .footer .footer-links li {
   list-style-type: none;
   float: left;
   display: inline;
 }
-/* line 187, ../styles/globals/_layout.scss */
+/* line 193, ../styles/globals/_layout.scss */
 .footer .footer-links li a {
   color: #fff;
   margin-right: 24px;
@@ -265,7 +270,7 @@ ol, ul {
   text-decoration: none;
   border-bottom: none;
 }
-/* line 198, ../styles/globals/_layout.scss */
+/* line 204, ../styles/globals/_layout.scss */
 .footer .primary-links {
   display: block;
   float: left;
@@ -274,7 +279,7 @@ ol, ul {
   width: 61.67214%;
   padding-bottom: 0.75em;
 }
-/* line 203, ../styles/globals/_layout.scss */
+/* line 209, ../styles/globals/_layout.scss */
 .footer .secondary-links {
   display: block;
   float: left;
@@ -284,7 +289,7 @@ ol, ul {
   padding-bottom: 1.125em;
   clear: left;
 }
-/* line 209, ../styles/globals/_layout.scss */
+/* line 215, ../styles/globals/_layout.scss */
 .footer .copyright {
   clear: both;
   display: block;
@@ -296,7 +301,7 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 217, ../styles/globals/_layout.scss */
+/* line 223, ../styles/globals/_layout.scss */
 .footer .copyright p {
   padding-top: 1.125em;
   margin-right: 24px;
@@ -304,7 +309,7 @@ ol, ul {
   font-size: 12px;
   margin-left: 12px;
 }
-/* line 226, ../styles/globals/_layout.scss */
+/* line 232, ../styles/globals/_layout.scss */
 .footer span {
   display: block;
   float: left;
@@ -312,7 +317,7 @@ ol, ul {
   margin-right: -100%;
   width: 10.25859%;
 }
-/* line 228, ../styles/globals/_layout.scss */
+/* line 234, ../styles/globals/_layout.scss */
 .footer span a {
   float: right;
   color: #fff;
@@ -322,7 +327,7 @@ ol, ul {
   border-bottom: none;
 }
 
-/* line 239, ../styles/globals/_layout.scss */
+/* line 245, ../styles/globals/_layout.scss */
 header.title {
   clear: both;
   display: block;
@@ -330,24 +335,23 @@ header.title {
   margin-left: 0;
   width: 100%;
 }
-/* line 242, ../styles/globals/_layout.scss */
+/* line 248, ../styles/globals/_layout.scss */
 header.title h1 {
   margin-top: 1.875em;
   margin-bottom: 1.875em;
 }
 
-/* line 248, ../styles/globals/_layout.scss */
+/* line 255, ../styles/globals/_layout.scss */
 .row {
   clear: both;
   display: block;
   float: left;
   margin-left: 0;
   width: 100%;
-  clear: both;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 253, ../styles/globals/_layout.scss */
+  /* line 259, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -357,7 +361,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 253, ../styles/globals/_layout.scss */
+  /* line 259, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -368,7 +372,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 264, ../styles/globals/_layout.scss */
+  /* line 270, ../styles/globals/_layout.scss */
   .paragraph {
     display: block;
     float: left;
@@ -378,7 +382,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 264, ../styles/globals/_layout.scss */
+  /* line 270, ../styles/globals/_layout.scss */
   .paragraph {
     clear: both;
     display: block;
@@ -389,7 +393,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 274, ../styles/globals/_layout.scss */
+  /* line 280, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -399,7 +403,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 274, ../styles/globals/_layout.scss */
+  /* line 280, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -410,7 +414,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 285, ../styles/globals/_layout.scss */
+  /* line 291, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     display: block;
     float: left;
@@ -420,7 +424,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 285, ../styles/globals/_layout.scss */
+  /* line 291, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     clear: both;
     display: block;
@@ -430,7 +434,7 @@ header.title h1 {
   }
 }
 
-/* line 298, ../styles/globals/_layout.scss */
+/* line 304, ../styles/globals/_layout.scss */
 pre.prettyprint {
   width: 100%;
   margin: 0;
@@ -438,33 +442,33 @@ pre.prettyprint {
   white-space: pre-wrap;
 }
 
-/* line 305, ../styles/globals/_layout.scss */
+/* line 311, ../styles/globals/_layout.scss */
 pre.prettyprint, code.prettyprint {
   background-color: #000;
 }
 
-/* line 309, ../styles/globals/_layout.scss */
+/* line 315, ../styles/globals/_layout.scss */
 pre .pun, code .pun {
   color: yellow;
 }
 
-/* line 312, ../styles/globals/_layout.scss */
+/* line 318, ../styles/globals/_layout.scss */
 pre .atn, code .atn {
   color: violet;
 }
 
-/* line 316, ../styles/globals/_layout.scss */
+/* line 322, ../styles/globals/_layout.scss */
 pre .pln, code .pln {
   color: white;
 }
 
-/* line 320, ../styles/globals/_layout.scss */
+/* line 326, ../styles/globals/_layout.scss */
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
-  margin-bottom: 4.5em;
+  margin-top: 0.75em;
 }
-/* line 325, ../styles/globals/_layout.scss */
+/* line 331, ../styles/globals/_layout.scss */
 .swatch-list li {
   list-style: none;
   width: 128px;
@@ -475,71 +479,260 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 335, ../styles/globals/_layout.scss */
+/* line 341, ../styles/globals/_layout.scss */
 .swatch-list li span {
   position: absolute;
   bottom: -30px;
 }
 
-/* line 21, ../styles/docs.scss */
+/* line 348, ../styles/globals/_layout.scss */
+.color-tabs-list {
+  margin-top: 0.75em;
+  margin-top: 3em;
+}
+/* line 352, ../styles/globals/_layout.scss */
+.color-tabs-list li {
+  list-style: none;
+  list-style-image: none;
+  width: 100%;
+  min-height: 128px;
+  border-left: solid 128px;
+  padding: 0 0.8em;
+  display: block;
+  float: left;
+  position: relative;
+  margin-bottom: 50px;
+}
+/* line 365, ../styles/globals/_layout.scss */
+.color-tabs-list li > div {
+  display: block;
+  float: left;
+  padding: 0 4em 0 0;
+}
+/* line 372, ../styles/globals/_layout.scss */
+.color-tabs-list li h5 {
+  color: #282828;
+}
+/* line 374, ../styles/globals/_layout.scss */
+.color-tabs-list li p {
+  color: #666666;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  margin: 0 0 0.85714em 0;
+}
+/* line 382, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-black {
+  border-color: black;
+}
+/* line 383, ../styles/globals/_layout.scss */
+.color-tabs-list .soft-black {
+  border-color: #282828;
+}
+/* line 384, ../styles/globals/_layout.scss */
+.color-tabs-list .dark-gray {
+  border-color: #333333;
+}
+/* line 385, ../styles/globals/_layout.scss */
+.color-tabs-list .aaa-gray {
+  border-color: #757575;
+}
+/* line 386, ../styles/globals/_layout.scss */
+.color-tabs-list .light-gray {
+  border-color: #c8c8c8;
+}
+/* line 387, ../styles/globals/_layout.scss */
+.color-tabs-list .mid-gray {
+  border-color: #666666;
+}
+/* line 388, ../styles/globals/_layout.scss */
+.color-tabs-list .college-logo-gray {
+  border-color: #999999;
+}
+/* line 389, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-white {
+  border-color: white;
+}
+/* line 390, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-yellow {
+  border-color: #edce18;
+}
+/* line 391, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-green {
+  border-color: #58bf58;
+}
+/* line 392, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-salmon {
+  border-color: #fa756e;
+}
+/* line 393, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-blue {
+  border-color: #4a97dd;
+}
+/* line 394, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-gray {
+  border-color: #434951;
+}
+/* line 395, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-primary {
+  border-color: #ff0c00;
+}
+/* line 396, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-secondary {
+  border-color: #0062ff;
+}
+/* line 397, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-primary-yellow {
+  border-color: yellow;
+}
+/* line 398, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-secondary-pink {
+  border-color: #e5006d;
+}
+/* line 399, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-green {
+  border-color: #28e598;
+}
+/* line 400, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-light-blue {
+  border-color: #61bee5;
+}
+
+/* line 404, ../styles/globals/_layout.scss */
+.box-out {
+  min-height: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background: #eeeeee;
+}
+
+/* line 412, ../styles/globals/_layout.scss */
+.buffer {
+  margin-bottom: 1.875em;
+}
+
+/* line 415, ../styles/globals/_layout.scss */
+.buffer-plus {
+  margin-bottom: 3.375em;
+}
+
+/* line 418, ../styles/globals/_layout.scss */
+.buffer-max {
+  margin-bottom: 6.75em;
+}
+
+/* line 421, ../styles/globals/_layout.scss */
+.buffer-top {
+  margin-top: 1.875em;
+}
+
+/* line 424, ../styles/globals/_layout.scss */
+.buffer-top-plus {
+  margin-top: 3.375em;
+}
+
+/* line 427, ../styles/globals/_layout.scss */
+.buffer-top-max {
+  margin-top: 6.75em;
+}
+
+/* line 433, ../styles/globals/_layout.scss */
+.single-course .border-top {
+  border-width: 6px;
+}
+
+/* line 439, ../styles/globals/_layout.scss */
+#course-carousel li {
+  margin-right: 20px;
+}
+/* line 442, ../styles/globals/_layout.scss */
+#course-carousel .flex-caption {
+  border-bottom: 1px solid #666666;
+}
+
+/* line 451, ../styles/globals/_layout.scss */
+.course-data .accordion-header {
+  padding: 20px;
+}
+/* line 454, ../styles/globals/_layout.scss */
+.course-data .accordion-content {
+  padding: 0 20px;
+}
+/* line 457, ../styles/globals/_layout.scss */
+.course-data table {
+  width: 100%;
+}
+/* line 460, ../styles/globals/_layout.scss */
+.course-data tr.bordered {
+  background: url("../img/dashline_border_img.png") bottom left repeat-x;
+}
+
+/* line 466, ../styles/globals/_layout.scss */
+.border-dot {
+  border-bottom: 1px dotted #eeeeee;
+  -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+}
+
+/* line 19, ../styles/docs.scss */
 .docs .accordion div {
   border-bottom: 0;
 }
-/* line 28, ../styles/docs.scss */
+/* line 26, ../styles/docs.scss */
 .docs .accordion a {
   display: block;
 }
-/* line 33, ../styles/docs.scss */
+/* line 31, ../styles/docs.scss */
 .docs .accordion div {
   border-top: 0;
 }
-/* line 35, ../styles/docs.scss */
+/* line 33, ../styles/docs.scss */
 .docs .accordion div:last-of-type {
   border-top: 1px solid white;
   position: relative;
   top: -1px;
 }
-/* line 48, ../styles/docs.scss */
+/* line 46, ../styles/docs.scss */
 .docs .breadcrumb {
   padding-top: 1.125em;
 }
-/* line 50, ../styles/docs.scss */
+/* line 48, ../styles/docs.scss */
 .docs .breadcrumb ul {
   padding-left: 0;
 }
-/* line 52, ../styles/docs.scss */
+/* line 50, ../styles/docs.scss */
 .docs .breadcrumb ul li {
   list-style: none;
   display: inline;
   float: left;
   margin-right: 1em;
 }
-/* line 62, ../styles/docs.scss */
+/* line 60, ../styles/docs.scss */
 .docs .header {
   background: black;
   width: 100%;
   padding-top: 0em;
   border-top: 6px solid black;
 }
-/* line 70, ../styles/docs.scss */
+/* line 68, ../styles/docs.scss */
 .docs .header h2 a {
   color: white;
   border: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 62, ../styles/docs.scss */
+  /* line 60, ../styles/docs.scss */
   .docs .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 83, ../styles/docs.scss */
+/* line 81, ../styles/docs.scss */
 .docs .header .banner {
   position: relative;
   padding-top: 0.75em;
 }
 @media only screen and (max-width: 599px) {
-  /* line 83, ../styles/docs.scss */
+  /* line 81, ../styles/docs.scss */
   .docs .header .banner {
     clear: both;
     display: block;
@@ -553,7 +746,7 @@ pre .pln, code .pln {
     padding-bottom: 0.375em;
   }
 }
-/* line 100, ../styles/docs.scss */
+/* line 98, ../styles/docs.scss */
 .docs .header .banner .header {
   clear: both;
   display: block;
@@ -562,7 +755,7 @@ pre .pln, code .pln {
   width: 100%;
 }
 
-/* line 107, ../styles/docs.scss */
+/* line 105, ../styles/docs.scss */
 .docs-content {
   clear: both;
   display: block;
@@ -571,7 +764,7 @@ pre .pln, code .pln {
   width: 100%;
 }
 @media only screen and (max-width: 599px) {
-  /* line 107, ../styles/docs.scss */
+  /* line 105, ../styles/docs.scss */
   .docs-content {
     clear: both;
     display: block;
@@ -581,51 +774,23 @@ pre .pln, code .pln {
   }
 }
 
-/* line 117, ../styles/docs.scss */
-.media-block a {
-  border: none;
-}
-/* line 121, ../styles/docs.scss */
-.media-block figcaption {
-  padding: 0 0px;
-  color: #929292;
-  font-family: Helvetica;
-  font-size: 0.8em;
-  padding-top: 4px;
-}
-/* line 130, ../styles/docs.scss */
-.media-block.float-left figure {
-  float: left;
-  padding-right: 1.5em;
-}
-
-/* line 139, ../styles/docs.scss */
-.heading-bottom h2.media-heading-top {
-  display: none;
-}
-
-/* line 146, ../styles/docs.scss */
-.heading-top h2.media-heading-bottom {
-  display: none;
-}
-
-/* line 154, ../styles/docs.scss */
+/* line 116, ../styles/docs.scss */
 ul.blocks {
   padding-left: 0;
   overflow: hidden;
 }
-/* line 157, ../styles/docs.scss */
+/* line 119, ../styles/docs.scss */
 ul.blocks li {
   list-style: none;
 }
-/* line 161, ../styles/docs.scss */
+/* line 123, ../styles/docs.scss */
 ul.blocks .three-up {
   float: left;
   width: 33.33%;
   padding-right: 1.5em;
 }
 @media only screen and (max-width: 599px) {
-  /* line 161, ../styles/docs.scss */
+  /* line 123, ../styles/docs.scss */
   ul.blocks .three-up {
     clear: both;
     display: block;
@@ -634,20 +799,20 @@ ul.blocks .three-up {
     width: 100%;
   }
 }
-/* line 169, ../styles/docs.scss */
+/* line 131, ../styles/docs.scss */
 ul.blocks .five-up {
   float: left;
   width: 20%;
   padding-right: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 169, ../styles/docs.scss */
+  /* line 131, ../styles/docs.scss */
   ul.blocks .five-up {
     width: 33%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 169, ../styles/docs.scss */
+  /* line 131, ../styles/docs.scss */
   ul.blocks .five-up {
     clear: both;
     display: block;

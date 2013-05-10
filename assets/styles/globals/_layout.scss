@@ -28,13 +28,11 @@ body {
 
 a {
 	color:#000;
-	border-bottom: 1px  solid;
 	line-height: 24px;
 	text-decoration:none;
 	//@include force-wrap;					// force text links to wrap
 	&:hover, &:focus, &:active {
-
-	color: #929292;
+		color: #929292;
 	}
 }
 
@@ -59,7 +57,7 @@ a {
 // CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
 
 // Use clearfix if you need general clearfixing
-.clearfix 			{ 
+.clearfix { 
 	@include clearfix; 
 }
 
@@ -73,6 +71,10 @@ a {
 }
 .cf:after { 
 	clear: both; 
+}
+
+.panel, .row {
+  @extend .cf;
 }
 
 
@@ -126,6 +128,10 @@ ol, ul {
 .feature-wrapper {
 	width: 100%;
 	max-width: 100%;
+}
+
+.course-data-wrapper {
+	max-width: 960px;
 }
 
 
@@ -245,9 +251,9 @@ header.title {
 	
 			}
 }
+
 .row {
 	@include gs-span(d, all);
-	clear:both;
 }
 
 .typography {
@@ -320,7 +326,7 @@ color: white;
 .swatch-list {
 	margin-left:0px;
 	@include leader(2);
-	@include trailer(12);
+	@include leader(2);
 
 	li {
 		list-style:none;
@@ -337,5 +343,127 @@ color: white;
 		bottom: -30px;
 		}
 	}
+}
+
+.color-tabs-list {
+	@include leader(2);
+	@include leader(8);
+
+	li {
+		list-style:none;
+		list-style-image: none;
+		width: 100%;
+		min-height: 128px;
+		border-left: solid 128px;		
+		padding: 0 0.8em;
+		display: block;
+		float:left;
+		position:relative;
+		margin-bottom: 50px;
+		//border-bottom: solid 1px $light-gray;
+		
+		> div {
+			display: block;
+			float:left;
+			padding: 0 4em 0 0;
+		}
+
+		
+		h5 { color: $soft-black; }
+		
+		p {
+			color: $mid-gray;
+			@include adjust-font-size-to(14px); 
+			margin: 0 0 rhythm(2, 14px) 0;
+		}
+
+	}
+
+	.ual-black { border-color: $ual-black; }
+	.soft-black { border-color: $soft-black; }
+	.dark-gray { border-color: $dark-gray; }
+	.aaa-gray { border-color: $aaa-gray; }
+	.light-gray { border-color: $light-gray; }
+	.mid-gray { border-color: $mid-gray; }
+	.college-logo-gray { border-color: $college-logo-gray; }
+	.ual-white { border-color: $ual-white; }
+	.ccw-yellow { border-color: $ccw-yellow; }
+	.ccw-green { border-color: $ccw-green; }
+	.ccw-salmon { border-color: $ccw-salmon; }
+	.ccw-blue { border-color: $ccw-blue; }
+	.ccw-gray { border-color: $ccw-grey; }
+	.csm-primary { border-color: $csm-primary; }
+	.csm-secondary { border-color: $csm-secondary; }
+	.lcc-primary-yellow { border-color: $lcc-primary-yellow; }
+	.lcc-secondary-pink { border-color: $lcc-secondary-pink; }
+	.lcc-green { border-color: $lcc-green; }
+	.lcc-light-blue { border-color: $lcc-light-blue; }
+}
+
+// Box-out
+.box-out {
+	min-height: 20px;
+  	padding: 10px 20px;
+  	margin-bottom: 20px;
+  	background: $bg-gray;
+}
+
+// Baseline classes
+.buffer {
+    @include margin-trailer(5);
+}
+.buffer-plus {
+    @include margin-trailer(9);
+}
+.buffer-max {
+    @include margin-trailer(18);
+}
+.buffer-top {
+    @include margin-leader(5);
+}
+.buffer-top-plus {
+    @include margin-leader(9);
+}
+.buffer-top-max {
+    @include margin-leader(18);
+}
+
+// Course styles
+.single-course {
+	.border-top {
+		border-width: 6px;
+	}
+}
+
+#course-carousel {
+	li {
+		margin-right: 20px;
+	}
+	.flex-caption {
+		border-bottom: 1px solid $mid-gray;
+	}
+}
+
+.course-data {
+	#accordion-container {
+		//@include padding-leader(5);
+	}
+	.accordion-header {
+		padding: 20px;
+	}
+	.accordion-content {
+		padding: 0 20px;
+	}
+	table {
+		width: 100%;
+	}
+	tr.bordered {
+		background: url("../img/dashline_border_img.png") bottom left repeat-x;
+	}
+}
+
+// Border Image
+.border-dot {
+	@include border-image-dot();
 }
 
