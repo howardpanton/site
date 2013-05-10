@@ -255,13 +255,21 @@ height:100%;
 //        the padding top should be specified by the number of baselines you want of padding to be added
 
 // Default Styles:  black border at the top, border-height of 1 baseline (6px) and 1 baseline of padding at the top, 36px font-size, 100% width 
-@mixin heading-with-top-border ( $border-color: black, $border-height: 6px, $padding-top: 1, $font-size: 36px, $text-color: black, $width: 100%) { 
+@mixin with-border-top ( $border-color: black, $border-height: 6px, $padding-top: 1, $font-size: 36px, $text-color: black, $width: 100%) { 
   
   @include padding-leader($padding-top); // add top padding  
   border-top: solid $border-height $border-color; // set top border 
   color: $text-color;
   @include adjust-font-size-to($font-size); 
   width: $width;
+}
+
+// AM mixin for dotted border-image
+@mixin border-image-dot ( $border-thickness: 1px, $border-color: $bg-gray ) {
+  border-bottom: $border-thickness dotted $border-color;
+  -moz-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  -webkit-border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
 
 
