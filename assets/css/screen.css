@@ -474,47 +474,10 @@ table {
   border-spacing: 0;
 }
 
-/* line 411, ../styles/plugins/_normalize.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
+/* line 399, ../styles/plugins/_normalize.scss */
+ul, li {
   padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-
-/* line 418, ../styles/plugins/_normalize.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 421, ../styles/plugins/_normalize.scss */
-blockquote, q {
-  quotes: none;
-}
-
-/* line 425, ../styles/plugins/_normalize.scss */
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-/* line 429, ../styles/plugins/_normalize.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  margin: 0;
 }
 
 /* line 50, sprite/ui-icons/*.png */
@@ -735,7 +698,7 @@ select {
 h1 {
   font-size: 2.125em;
   line-height: 1.05882em;
-  margin: 0 0 0.70588em 0;
+  margin: 0.70588em 0 0.70588em 0;
 }
 
 /* line 19, ../styles/globals/_typography.scss */
@@ -863,32 +826,25 @@ p.smallest {
 }
 
 /* line 111, ../styles/globals/_typography.scss */
-p {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 0.75em 0;
-}
-
-/* line 116, ../styles/globals/_typography.scss */
 small {
   font-size: 0.875em;
   line-height: 1.28571em;
   margin: 0 0 0.85714em 0;
 }
 
-/* line 121, ../styles/globals/_typography.scss */
+/* line 116, ../styles/globals/_typography.scss */
 ol, ul {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0 0 1.5em 0;
 }
 
-/* line 126, ../styles/globals/_typography.scss */
+/* line 121, ../styles/globals/_typography.scss */
 li {
   line-height: auto;
 }
 
-/* line 131, ../styles/globals/_typography.scss */
+/* line 126, ../styles/globals/_typography.scss */
 hr {
   border: solid black;
   border-width: 1px 0 0;
@@ -900,7 +856,7 @@ hr {
   margin-right: 0;
 }
 
-/* line 147, ../styles/globals/_typography.scss */
+/* line 142, ../styles/globals/_typography.scss */
 blockquote {
   font-style: italic;
   padding-left: 1.4375em;
@@ -909,7 +865,7 @@ blockquote {
   font-weight: normal;
 }
 
-/* line 155, ../styles/globals/_typography.scss */
+/* line 150, ../styles/globals/_typography.scss */
 cite, cite a {
   color: #757575;
   font-style: normal;
@@ -920,36 +876,36 @@ cite, cite a {
   padding-bottom: none;
 }
 
-/* line 165, ../styles/globals/_typography.scss */
+/* line 160, ../styles/globals/_typography.scss */
 .bquote-wider-border {
   padding-left: 0.75em;
   border-left: 12px solid #c8c8c8;
 }
 
-/* line 174, ../styles/globals/_typography.scss */
+/* line 169, ../styles/globals/_typography.scss */
 ul {
   list-style-position: outside;
   list-style-type: disc;
 }
 
-/* line 175, ../styles/globals/_typography.scss */
+/* line 170, ../styles/globals/_typography.scss */
 ol {
   list-style-position: outside;
   list-style-type: decimal;
 }
 
-/* line 202, ../styles/globals/_typography.scss */
+/* line 197, ../styles/globals/_typography.scss */
 strong, b {
   font-weight: 600;
 }
 
-/* line 203, ../styles/globals/_typography.scss */
+/* line 198, ../styles/globals/_typography.scss */
 em, i, q {
   font-style: italic;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 221, ../styles/globals/_typography.scss */
+  /* line 216, ../styles/globals/_typography.scss */
   h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
     font-size: 2.75em;
     line-height: 1.09091em;
@@ -957,7 +913,7 @@ em, i, q {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 228, ../styles/globals/_typography.scss */
+  /* line 223, ../styles/globals/_typography.scss */
   h1, h2, h3, h4, h5, h6, .h12, .h11, .h10, .h9, .h8, .h7, .h6, .h5, .h4, .h3, .h2, .h1 {
     font-size: 2.125em;
     line-height: 1.23529em;
@@ -1153,10 +1109,9 @@ body {
   box-sizing: border-box;
 }
 
-/* line 29, ../styles/globals/_layout.scss */
+/* line 30, ../styles/globals/_layout.scss */
 a {
-  color: #000;
-  line-height: 24px;
+  color: black;
   text-decoration: none;
 }
 /* line 34, ../styles/globals/_layout.scss */
@@ -1188,12 +1143,12 @@ a:hover, a:focus, a:active {
 .clearfix, .header, .header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 281, ../styles/globals/_mixins.scss */
 .clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 282, ../styles/globals/_mixins.scss */
 .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }
@@ -1229,11 +1184,6 @@ a:hover, a:focus, a:active {
 }
 
 /* line 116, ../styles/globals/_layout.scss */
-ol, ul {
-  padding-left: 1.25em;
-}
-
-/* line 120, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .wrapper, .header .banner {
   width: 92.5%;
   max-width: 1256px;
@@ -1242,18 +1192,18 @@ ol, ul {
   min-width: 320px;
 }
 
-/* line 128, ../styles/globals/_layout.scss */
+/* line 124, ../styles/globals/_layout.scss */
 .feature-wrapper {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 133, ../styles/globals/_layout.scss */
+/* line 129, ../styles/globals/_layout.scss */
 .course-data-wrapper {
   max-width: 960px;
 }
 
-/* line 138, ../styles/globals/_layout.scss */
+/* line 134, ../styles/globals/_layout.scss */
 .header {
   background: white;
   width: 100%;
@@ -1261,18 +1211,18 @@ ol, ul {
   border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
-  /* line 138, ../styles/globals/_layout.scss */
+  /* line 134, ../styles/globals/_layout.scss */
   .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
-/* line 150, ../styles/globals/_layout.scss */
+/* line 146, ../styles/globals/_layout.scss */
 .header .banner {
   position: relative;
 }
 @media only screen and (max-width: 599px) {
-  /* line 150, ../styles/globals/_layout.scss */
+  /* line 146, ../styles/globals/_layout.scss */
   .header .banner {
     clear: both;
     display: block;
@@ -1287,7 +1237,7 @@ ol, ul {
     padding-bottom: 0.75em;
   }
 }
-/* line 166, ../styles/globals/_layout.scss */
+/* line 162, ../styles/globals/_layout.scss */
 .header .banner .header {
   clear: both;
   display: block;
@@ -1296,12 +1246,12 @@ ol, ul {
   width: 100%;
 }
 
-/* line 172, ../styles/globals/_layout.scss */
+/* line 168, ../styles/globals/_layout.scss */
 .footer {
   border-top: 1px solid #fff;
   background: black;
 }
-/* line 175, ../styles/globals/_layout.scss */
+/* line 171, ../styles/globals/_layout.scss */
 .footer .footer-links {
   padding-top: 1.5em;
   clear: both;
@@ -1314,18 +1264,18 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 184, ../styles/globals/_layout.scss */
+/* line 180, ../styles/globals/_layout.scss */
 .footer .footer-links ul {
   clear: left;
   margin-bottom: 0;
 }
-/* line 189, ../styles/globals/_layout.scss */
+/* line 185, ../styles/globals/_layout.scss */
 .footer .footer-links li {
   list-style-type: none;
   float: left;
   display: inline;
 }
-/* line 193, ../styles/globals/_layout.scss */
+/* line 189, ../styles/globals/_layout.scss */
 .footer .footer-links li a {
   color: #fff;
   margin-right: 24px;
@@ -1333,7 +1283,7 @@ ol, ul {
   text-decoration: none;
   border-bottom: none;
 }
-/* line 204, ../styles/globals/_layout.scss */
+/* line 200, ../styles/globals/_layout.scss */
 .footer .primary-links {
   display: block;
   float: left;
@@ -1342,7 +1292,7 @@ ol, ul {
   width: 61.67214%;
   padding-bottom: 0.75em;
 }
-/* line 209, ../styles/globals/_layout.scss */
+/* line 205, ../styles/globals/_layout.scss */
 .footer .secondary-links {
   display: block;
   float: left;
@@ -1352,7 +1302,7 @@ ol, ul {
   padding-bottom: 1.125em;
   clear: left;
 }
-/* line 215, ../styles/globals/_layout.scss */
+/* line 211, ../styles/globals/_layout.scss */
 .footer .copyright {
   clear: both;
   display: block;
@@ -1364,7 +1314,7 @@ ol, ul {
   margin: 0 auto;
   float: none;
 }
-/* line 223, ../styles/globals/_layout.scss */
+/* line 219, ../styles/globals/_layout.scss */
 .footer .copyright p {
   padding-top: 1.125em;
   margin-right: 24px;
@@ -1372,7 +1322,7 @@ ol, ul {
   font-size: 12px;
   margin-left: 12px;
 }
-/* line 232, ../styles/globals/_layout.scss */
+/* line 228, ../styles/globals/_layout.scss */
 .footer span {
   display: block;
   float: left;
@@ -1380,7 +1330,7 @@ ol, ul {
   margin-right: -100%;
   width: 10.25859%;
 }
-/* line 234, ../styles/globals/_layout.scss */
+/* line 230, ../styles/globals/_layout.scss */
 .footer span a {
   float: right;
   color: #fff;
@@ -1390,7 +1340,7 @@ ol, ul {
   border-bottom: none;
 }
 
-/* line 245, ../styles/globals/_layout.scss */
+/* line 241, ../styles/globals/_layout.scss */
 header.title {
   clear: both;
   display: block;
@@ -1398,13 +1348,13 @@ header.title {
   margin-left: 0;
   width: 100%;
 }
-/* line 248, ../styles/globals/_layout.scss */
+/* line 244, ../styles/globals/_layout.scss */
 header.title h1 {
   margin-top: 1.875em;
   margin-bottom: 1.875em;
 }
 
-/* line 255, ../styles/globals/_layout.scss */
+/* line 251, ../styles/globals/_layout.scss */
 .row {
   clear: both;
   display: block;
@@ -1414,7 +1364,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 259, ../styles/globals/_layout.scss */
+  /* line 255, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1424,7 +1374,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 259, ../styles/globals/_layout.scss */
+  /* line 255, ../styles/globals/_layout.scss */
   .typography {
     clear: both;
     display: block;
@@ -1435,7 +1385,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 270, ../styles/globals/_layout.scss */
+  /* line 266, ../styles/globals/_layout.scss */
   .paragraph {
     display: block;
     float: left;
@@ -1445,7 +1395,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 270, ../styles/globals/_layout.scss */
+  /* line 266, ../styles/globals/_layout.scss */
   .paragraph {
     clear: both;
     display: block;
@@ -1456,7 +1406,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 280, ../styles/globals/_layout.scss */
+  /* line 276, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1466,7 +1416,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 280, ../styles/globals/_layout.scss */
+  /* line 276, ../styles/globals/_layout.scss */
   .half[data-float*=right] {
     display: block;
     float: left;
@@ -1477,7 +1427,7 @@ header.title h1 {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 291, ../styles/globals/_layout.scss */
+  /* line 287, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     display: block;
     float: left;
@@ -1487,7 +1437,7 @@ header.title h1 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 291, ../styles/globals/_layout.scss */
+  /* line 287, ../styles/globals/_layout.scss */
   .half[data-float*=left] {
     clear: both;
     display: block;
@@ -1497,7 +1447,7 @@ header.title h1 {
   }
 }
 
-/* line 304, ../styles/globals/_layout.scss */
+/* line 300, ../styles/globals/_layout.scss */
 pre.prettyprint {
   width: 100%;
   margin: 0;
@@ -1505,33 +1455,33 @@ pre.prettyprint {
   white-space: pre-wrap;
 }
 
-/* line 311, ../styles/globals/_layout.scss */
+/* line 307, ../styles/globals/_layout.scss */
 pre.prettyprint, code.prettyprint {
   background-color: #000;
 }
 
-/* line 315, ../styles/globals/_layout.scss */
+/* line 311, ../styles/globals/_layout.scss */
 pre .pun, code .pun {
   color: yellow;
 }
 
-/* line 318, ../styles/globals/_layout.scss */
+/* line 314, ../styles/globals/_layout.scss */
 pre .atn, code .atn {
   color: violet;
 }
 
-/* line 322, ../styles/globals/_layout.scss */
+/* line 318, ../styles/globals/_layout.scss */
 pre .pln, code .pln {
   color: white;
 }
 
-/* line 326, ../styles/globals/_layout.scss */
+/* line 322, ../styles/globals/_layout.scss */
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
   margin-top: 0.75em;
 }
-/* line 331, ../styles/globals/_layout.scss */
+/* line 327, ../styles/globals/_layout.scss */
 .swatch-list li {
   list-style: none;
   width: 128px;
@@ -1542,18 +1492,18 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 341, ../styles/globals/_layout.scss */
+/* line 337, ../styles/globals/_layout.scss */
 .swatch-list li span {
   position: absolute;
   bottom: -30px;
 }
 
-/* line 348, ../styles/globals/_layout.scss */
+/* line 344, ../styles/globals/_layout.scss */
 .color-tabs-list {
   margin-top: 0.75em;
   margin-top: 3em;
 }
-/* line 352, ../styles/globals/_layout.scss */
+/* line 348, ../styles/globals/_layout.scss */
 .color-tabs-list li {
   list-style: none;
   list-style-image: none;
@@ -1566,101 +1516,101 @@ pre .pln, code .pln {
   position: relative;
   margin-bottom: 50px;
 }
-/* line 365, ../styles/globals/_layout.scss */
+/* line 361, ../styles/globals/_layout.scss */
 .color-tabs-list li > div {
   display: block;
   float: left;
   padding: 0 4em 0 0;
 }
-/* line 372, ../styles/globals/_layout.scss */
+/* line 368, ../styles/globals/_layout.scss */
 .color-tabs-list li h5 {
   color: #282828;
 }
-/* line 374, ../styles/globals/_layout.scss */
+/* line 370, ../styles/globals/_layout.scss */
 .color-tabs-list li p {
   color: #666666;
   font-size: 0.875em;
   line-height: 1.28571em;
   margin: 0 0 0.85714em 0;
 }
-/* line 382, ../styles/globals/_layout.scss */
+/* line 378, ../styles/globals/_layout.scss */
 .color-tabs-list .ual-black {
   border-color: black;
 }
-/* line 383, ../styles/globals/_layout.scss */
+/* line 379, ../styles/globals/_layout.scss */
 .color-tabs-list .soft-black {
   border-color: #282828;
 }
-/* line 384, ../styles/globals/_layout.scss */
+/* line 380, ../styles/globals/_layout.scss */
 .color-tabs-list .dark-gray {
   border-color: #333333;
 }
-/* line 385, ../styles/globals/_layout.scss */
+/* line 381, ../styles/globals/_layout.scss */
 .color-tabs-list .aaa-gray {
   border-color: #757575;
 }
-/* line 386, ../styles/globals/_layout.scss */
+/* line 382, ../styles/globals/_layout.scss */
 .color-tabs-list .light-gray {
   border-color: #c8c8c8;
 }
-/* line 387, ../styles/globals/_layout.scss */
+/* line 383, ../styles/globals/_layout.scss */
 .color-tabs-list .mid-gray {
   border-color: #666666;
 }
-/* line 388, ../styles/globals/_layout.scss */
+/* line 384, ../styles/globals/_layout.scss */
 .color-tabs-list .college-logo-gray {
   border-color: #999999;
 }
-/* line 389, ../styles/globals/_layout.scss */
+/* line 385, ../styles/globals/_layout.scss */
 .color-tabs-list .ual-white {
   border-color: white;
 }
-/* line 390, ../styles/globals/_layout.scss */
+/* line 386, ../styles/globals/_layout.scss */
 .color-tabs-list .ccw-yellow {
   border-color: #edce18;
 }
-/* line 391, ../styles/globals/_layout.scss */
+/* line 387, ../styles/globals/_layout.scss */
 .color-tabs-list .ccw-green {
   border-color: #58bf58;
 }
-/* line 392, ../styles/globals/_layout.scss */
+/* line 388, ../styles/globals/_layout.scss */
 .color-tabs-list .ccw-salmon {
   border-color: #fa756e;
 }
-/* line 393, ../styles/globals/_layout.scss */
+/* line 389, ../styles/globals/_layout.scss */
 .color-tabs-list .ccw-blue {
   border-color: #4a97dd;
 }
-/* line 394, ../styles/globals/_layout.scss */
+/* line 390, ../styles/globals/_layout.scss */
 .color-tabs-list .ccw-gray {
   border-color: #434951;
 }
-/* line 395, ../styles/globals/_layout.scss */
+/* line 391, ../styles/globals/_layout.scss */
 .color-tabs-list .csm-primary {
   border-color: #ff0c00;
 }
-/* line 396, ../styles/globals/_layout.scss */
+/* line 392, ../styles/globals/_layout.scss */
 .color-tabs-list .csm-secondary {
   border-color: #0062ff;
 }
-/* line 397, ../styles/globals/_layout.scss */
+/* line 393, ../styles/globals/_layout.scss */
 .color-tabs-list .lcc-primary-yellow {
   border-color: yellow;
 }
-/* line 398, ../styles/globals/_layout.scss */
+/* line 394, ../styles/globals/_layout.scss */
 .color-tabs-list .lcc-secondary-pink {
   border-color: #e5006d;
 }
-/* line 399, ../styles/globals/_layout.scss */
+/* line 395, ../styles/globals/_layout.scss */
 .color-tabs-list .lcc-green {
   border-color: #28e598;
 }
-/* line 400, ../styles/globals/_layout.scss */
+/* line 396, ../styles/globals/_layout.scss */
 .color-tabs-list .lcc-light-blue {
   border-color: #61bee5;
 }
 
-/* line 404, ../styles/globals/_layout.scss */
+/* line 400, ../styles/globals/_layout.scss */
 .box-out {
   min-height: 20px;
   padding: 10px 20px;
@@ -1668,80 +1618,149 @@ pre .pln, code .pln {
   background: #eeeeee;
 }
 
-/* line 412, ../styles/globals/_layout.scss */
+/* line 409, ../styles/globals/_layout.scss */
 .buffer {
   margin-bottom: 1.875em;
 }
 
-/* line 415, ../styles/globals/_layout.scss */
+/* line 412, ../styles/globals/_layout.scss */
 .buffer-plus {
   margin-bottom: 3.375em;
 }
 
-/* line 418, ../styles/globals/_layout.scss */
+/* line 415, ../styles/globals/_layout.scss */
 .buffer-max {
   margin-bottom: 6.75em;
 }
 
-/* line 421, ../styles/globals/_layout.scss */
+/* line 418, ../styles/globals/_layout.scss */
 .buffer-top {
   margin-top: 1.875em;
 }
 
-/* line 424, ../styles/globals/_layout.scss */
+/* line 421, ../styles/globals/_layout.scss */
 .buffer-top-plus {
   margin-top: 3.375em;
 }
 
-/* line 427, ../styles/globals/_layout.scss */
+/* line 424, ../styles/globals/_layout.scss */
 .buffer-top-max {
   margin-top: 6.75em;
 }
 
-/* line 433, ../styles/globals/_layout.scss */
+/* line 430, ../styles/globals/_layout.scss */
 .single-course .border-top {
   border-width: 6px;
 }
 
-/* line 439, ../styles/globals/_layout.scss */
-#course-carousel li {
-  margin-right: 20px;
+/* line 436, ../styles/globals/_layout.scss */
+#course-news .media-block {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  border-width: 0 0 1px 0;
+  border-bottom: 1px dotted #eeeeee;
+  -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 442, ../styles/globals/_layout.scss */
-#course-carousel .flex-caption {
-  border-bottom: 1px solid #666666;
+/* line 440, ../styles/globals/_layout.scss */
+#course-news .media-block:last-of-type {
+  border: 0 none;
 }
 
-/* line 451, ../styles/globals/_layout.scss */
+/* line 447, ../styles/globals/_layout.scss */
+#course-carousel li {
+  margin-right: 1px;
+}
+/* line 450, ../styles/globals/_layout.scss */
+#course-carousel iframe {
+  display: block;
+}
+/* line 453, ../styles/globals/_layout.scss */
+#course-carousel .flex-caption {
+  border-bottom: 1px solid #c8c8c8;
+}
+
+/* line 459, ../styles/globals/_layout.scss */
+#course-gallery .media-block {
+  margin-bottom: 1.5em;
+}
+
+/* line 468, ../styles/globals/_layout.scss */
 .course-data .accordion-header {
   padding: 20px;
 }
-/* line 454, ../styles/globals/_layout.scss */
-.course-data .accordion-content {
-  padding: 0 20px;
+/* line 471, ../styles/globals/_layout.scss */
+.course-data .padbox {
+  padding-left: 20px;
+  padding-right: 20px;
 }
-/* line 457, ../styles/globals/_layout.scss */
+/* line 475, ../styles/globals/_layout.scss */
 .course-data table {
   width: 100%;
+  text-align: left;
 }
-/* line 460, ../styles/globals/_layout.scss */
+/* line 478, ../styles/globals/_layout.scss */
+.course-data table p {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+/* line 483, ../styles/globals/_layout.scss */
 .course-data tr.bordered {
   background: url("../img/dashline_border_img.png") bottom left repeat-x;
 }
+/* line 486, ../styles/globals/_layout.scss */
+.course-data th, .course-data td {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+/* line 490, ../styles/globals/_layout.scss */
+.course-data th {
+  padding-left: 20px;
+  width: 30%;
+}
 
-/* line 466, ../styles/globals/_layout.scss */
+/* line 499, ../styles/globals/_layout.scss */
 .border-dot {
+  border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
 
-/* line 4, ../styles/globals/_media.scss */
-.media-block a {
-  border: none;
+/* line 3, ../styles/globals/_blocks.scss */
+ul.blocks li {
+  list-style: none;
 }
-/* line 8, ../styles/globals/_media.scss */
+
+/* line 10, ../styles/globals/_blocks.scss */
+.four-up li {
+  width: 22.46798%;
+  clear: none;
+  float: left;
+  margin-left: 0;
+  margin-right: 3.37603%;
+}
+/* line 13, ../styles/globals/_blocks.scss */
+.four-up li:nth-of-type(4) {
+  margin-right: 0;
+}
+
+/* line 21, ../styles/globals/_blocks.scss */
+.three-up li {
+  width: 31.08265%;
+  clear: none;
+  float: left;
+  margin-left: 0;
+  margin-right: 3.37603%;
+}
+/* line 24, ../styles/globals/_blocks.scss */
+.three-up li:nth-of-type(3) {
+  margin-right: 0;
+}
+
+/* line 5, ../styles/globals/_media.scss */
 .media-block figcaption {
   padding: 0 0px;
   color: #929292;
@@ -1749,18 +1768,18 @@ pre .pln, code .pln {
   font-size: 0.8em;
   padding-top: 4px;
 }
-/* line 17, ../styles/globals/_media.scss */
+/* line 14, ../styles/globals/_media.scss */
 .media-block.float-left figure {
   float: left;
   padding-right: 1.5em;
 }
 
-/* line 26, ../styles/globals/_media.scss */
+/* line 23, ../styles/globals/_media.scss */
 .heading-bottom h2.media-heading-top {
   display: none;
 }
 
-/* line 33, ../styles/globals/_media.scss */
+/* line 30, ../styles/globals/_media.scss */
 .heading-top h2.media-heading-bottom {
   display: none;
 }
@@ -2819,12 +2838,12 @@ button.button.large {
   margin: 0;
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 281, ../styles/globals/_mixins.scss */
 .button-group:before, .button-group:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 282, ../styles/globals/_mixins.scss */
 .button-group:after {
   clear: both;
 }
@@ -2918,12 +2937,12 @@ button.button.large {
 .button-bar {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 281, ../styles/globals/_mixins.scss */
 .button-bar:before, .button-bar:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 282, ../styles/globals/_mixins.scss */
 .button-bar:after {
   clear: both;
 }
@@ -3831,12 +3850,12 @@ html[xmlns] .slides {
 .clearfix, .header, .header .banner, .footer .copyright, .main-menu {
   *zoom: 1;
 }
-/* line 280, ../styles/globals/_mixins.scss */
+/* line 281, ../styles/globals/_mixins.scss */
 .clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .main-menu:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   content: " ";
   display: table;
 }
-/* line 281, ../styles/globals/_mixins.scss */
+/* line 282, ../styles/globals/_mixins.scss */
 .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .main-menu:after {
   clear: both;
 }

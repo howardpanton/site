@@ -26,13 +26,13 @@ body {
 	@include box-sizing;
 }
 
+// Basic anchor treatment - do not add borders or line-height globally!
 a {
-	color:#000;
-	line-height: 24px;
+	color: $primary;
 	text-decoration:none;
 	//@include force-wrap;					// force text links to wrap
 	&:hover, &:focus, &:active {
-		color: #929292;
+		color: $tertiary;
 	}
 }
 
@@ -111,10 +111,6 @@ a {
 
 @function em($target, $context: $base-font-size) {
     @return ($target / $context) * 1em;
-}
-
-ol, ul {
-	padding-left:em(20px);
 }
 
 .content-wrapper, .wrapper {
@@ -404,6 +400,7 @@ color: white;
 .box-out {
 	min-height: 20px;
   	padding: 10px 20px;
+  	//@include gs-pad(d, padfull);
   	margin-bottom: 20px;
   	background: $bg-gray;
 }
@@ -435,12 +432,32 @@ color: white;
 	}
 }
 
+#course-news {
+	.media-block {
+   		@include padding-leader(4);
+   		@include padding-trailer(4);
+   		@include border-image-dot();
+		&:last-of-type {
+			border: 0 none;
+		}
+   	}
+}
+
 #course-carousel {
 	li {
-		margin-right: 20px;
+		margin-right: 1px;
+	}
+	iframe {
+		display: block; // enforce the height with video elements
 	}
 	.flex-caption {
-		border-bottom: 1px solid $mid-gray;
+		border-bottom: 1px solid $light-gray;
+	}
+}
+
+#course-gallery {
+	.media-block {
+		@include margin-trailer(4);
 	}
 }
 
@@ -451,15 +468,31 @@ color: white;
 	.accordion-header {
 		padding: 20px;
 	}
-	.accordion-content {
-		padding: 0 20px;
+	.padbox {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	table {
 		width: 100%;
+		text-align: left;
+		p {
+			line-height: 1em;
+			margin-bottom: 0;
+		}
 	}
 	tr.bordered {
 		background: url("../img/dashline_border_img.png") bottom left repeat-x;
 	}
+	th, td {
+		@include padding-leader(2);
+		@include padding-trailer(2);
+	}
+	th {
+		padding-left: 20px;
+		width: 30%;
+		//@include gs-span(d, 3,6);
+	}
+	
 }
 
 // Border Image
