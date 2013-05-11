@@ -12,7 +12,7 @@ breadcrumb-link: typography.html
             <p class="updated rhythm-3  border-bottom">
                 Last Updated:
                 <strong>
-                    May 3rd, 2013
+                    May 10th, 2013
                 </strong>
             </p>
             <h1 class="heading-x3 soft-black">
@@ -60,18 +60,25 @@ breadcrumb-link: typography.html
 	<hr>
 	<h2 id="paragraphs">Paragraphs</h2>
 	<p>All paragraphs are wrapped in <code>p</code> tags. Additionally, <code>p</code> elements can be wrapped with a <code>blockquote</code> element <em>if the <code>p</code> element is indeed a quote</em>. Historically, <code>blockquote</code> has been used purely to force indents, but this is now achieved using CSS. Reserve <code>blockquote</code> for quotes. Here's an example of correct usage:</p>
-
+	
+	<h6>default blockquote</h6>
 	<blockquote cite="http://lipsum.com/feed/html">
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras euismod fringilla arcu. Integer posuere. Aliquam ipsum. Donec eget massa ac orci tempus euismod. Donec quis neque nec neque consequat sollicitudin. Donec commodo tempor nulla. Suspendisse venenatis. Ut ut leo. Nunc placerat urna at libero. Nunc suscipit lacus.</p>
 		<p><cite><a href="http://lipsum.com/feed/html">lipsum.com</a></cite></p>
 	</blockquote>	
+	<br/>
+	<br/>
+	<h6>blockquote with wider left border</h6>
+	<p> to use, add <code>class="bquote-wider-border"</code> to the blockquote </p>
+	<blockquote class="bquote-wider-border" cite="http://lipsum.com/feed/html">
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras euismod fringilla arcu. Integer posuere. Aliquam ipsum. Donec eget massa ac orci tempus euismod. Donec quis neque nec neque consequat sollicitudin. Donec commodo tempor nulla. Suspendisse venenatis. Ut ut leo. Nunc placerat urna at libero. Nunc suscipit lacus.</p>
+		<cite><a href="http://lipsum.com/feed/html">lipsum.com</a></cite>
+	</blockquote>	
 
-	<p>Additionally, you might wish to cite the source, as in the above example. (The correct method involves the <code>cite</code> attribute directly applied to the <code>blockquote</code> element, but since no browser makes any use of that information whatsoever, it's useful to also specify the standalone <code>cite</code> element.)</p>
+	<p>Additionally, you might wish to cite the source, as in the above examples. (The correct method involves the <code>cite</code> attribute directly applied to the <code>blockquote</code> element, but since no browser makes any use of that information whatsoever, it's useful to also specify the standalone <code>cite</code> element.)</p>
 
-
-	
 	<hr>
-<h3>Ordered list</h3>
+	<h3>Ordered list</h3>
 			<p>The <code>ol</code> element denotes an ordered list, and various numbering schemes are available through the CSS (including 1,2,3&#8230; a,b,c&#8230; i,ii,iii&#8230; and so on). Each item requires a surrounding <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code> tag, to denote individual items within the list (as you may have guessed, <code>li</code> stands for list item).</p>
 			<div class="example">
 				<ol>

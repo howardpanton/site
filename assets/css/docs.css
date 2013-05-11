@@ -121,16 +121,16 @@ a:hover, a:focus, a:active {
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 /* line 60, ../styles/globals/_layout.scss */
-.clearfix, .header, .header .banner, .footer .copyright, .docs .header {
+.clearfix, .header, .header .banner, .footer .copyright, .docs .header, .docs .header .banner {
   *zoom: 1;
 }
 /* line 281, ../styles/globals/_mixins.scss */
-.clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after {
+.clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .docs .header:before, .docs .header .banner:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
   content: " ";
   display: table;
 }
 /* line 282, ../styles/globals/_mixins.scss */
-.clearfix:after, .header:after, .header .banner:after, .footer .copyright:after {
+.clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
   clear: both;
 }
 
@@ -165,7 +165,7 @@ a:hover, a:focus, a:active {
 }
 
 /* line 116, ../styles/globals/_layout.scss */
-.content-wrapper, .wrapper, .header .banner {
+.content-wrapper, .wrapper, .header .banner, .docs .header .banner {
   width: 92.5%;
   max-width: 1256px;
   margin: 0 auto;
@@ -460,7 +460,7 @@ pre .pln, code .pln {
 .swatch-list {
   margin-left: 0px;
   margin-top: 0.75em;
-  margin-bottom: 4.5em;
+  margin-top: 0.75em;
 }
 /* line 327, ../styles/globals/_layout.scss */
 .swatch-list li {
@@ -479,7 +479,119 @@ pre .pln, code .pln {
   bottom: -30px;
 }
 
-/* line 345, ../styles/globals/_layout.scss */
+/* line 344, ../styles/globals/_layout.scss */
+.color-tabs-list {
+  margin-top: 0.75em;
+  margin-top: 3em;
+}
+/* line 348, ../styles/globals/_layout.scss */
+.color-tabs-list li {
+  list-style: none;
+  list-style-image: none;
+  width: 100%;
+  min-height: 128px;
+  border-left: solid 128px;
+  padding: 0 0.8em;
+  display: block;
+  float: left;
+  position: relative;
+  margin-bottom: 50px;
+}
+/* line 361, ../styles/globals/_layout.scss */
+.color-tabs-list li > div {
+  display: block;
+  float: left;
+  padding: 0 4em 0 0;
+}
+/* line 368, ../styles/globals/_layout.scss */
+.color-tabs-list li h5 {
+  color: #282828;
+}
+/* line 370, ../styles/globals/_layout.scss */
+.color-tabs-list li p {
+  color: #666666;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  margin: 0 0 0.85714em 0;
+}
+/* line 378, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-black {
+  border-color: black;
+}
+/* line 379, ../styles/globals/_layout.scss */
+.color-tabs-list .soft-black {
+  border-color: #282828;
+}
+/* line 380, ../styles/globals/_layout.scss */
+.color-tabs-list .dark-gray {
+  border-color: #333333;
+}
+/* line 381, ../styles/globals/_layout.scss */
+.color-tabs-list .aaa-gray {
+  border-color: #757575;
+}
+/* line 382, ../styles/globals/_layout.scss */
+.color-tabs-list .light-gray {
+  border-color: #c8c8c8;
+}
+/* line 383, ../styles/globals/_layout.scss */
+.color-tabs-list .mid-gray {
+  border-color: #666666;
+}
+/* line 384, ../styles/globals/_layout.scss */
+.color-tabs-list .college-logo-gray {
+  border-color: #999999;
+}
+/* line 385, ../styles/globals/_layout.scss */
+.color-tabs-list .ual-white {
+  border-color: white;
+}
+/* line 386, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-yellow {
+  border-color: #edce18;
+}
+/* line 387, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-green {
+  border-color: #58bf58;
+}
+/* line 388, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-salmon {
+  border-color: #fa756e;
+}
+/* line 389, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-blue {
+  border-color: #4a97dd;
+}
+/* line 390, ../styles/globals/_layout.scss */
+.color-tabs-list .ccw-gray {
+  border-color: #434951;
+}
+/* line 391, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-primary {
+  border-color: #ff0c00;
+}
+/* line 392, ../styles/globals/_layout.scss */
+.color-tabs-list .csm-secondary {
+  border-color: #0062ff;
+}
+/* line 393, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-primary-yellow {
+  border-color: yellow;
+}
+/* line 394, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-secondary-pink {
+  border-color: #e5006d;
+}
+/* line 395, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-green {
+  border-color: #28e598;
+}
+/* line 396, ../styles/globals/_layout.scss */
+.color-tabs-list .lcc-light-blue {
+  border-color: #61bee5;
+}
+
+/* line 400, ../styles/globals/_layout.scss */
 .box-out {
   min-height: 20px;
   padding: 10px 20px;
@@ -487,42 +599,42 @@ pre .pln, code .pln {
   background: #eeeeee;
 }
 
-/* line 354, ../styles/globals/_layout.scss */
+/* line 409, ../styles/globals/_layout.scss */
 .buffer {
   margin-bottom: 1.875em;
 }
 
-/* line 357, ../styles/globals/_layout.scss */
+/* line 412, ../styles/globals/_layout.scss */
 .buffer-plus {
   margin-bottom: 3.375em;
 }
 
-/* line 360, ../styles/globals/_layout.scss */
+/* line 415, ../styles/globals/_layout.scss */
 .buffer-max {
   margin-bottom: 6.75em;
 }
 
-/* line 363, ../styles/globals/_layout.scss */
+/* line 418, ../styles/globals/_layout.scss */
 .buffer-top {
   margin-top: 1.875em;
 }
 
-/* line 366, ../styles/globals/_layout.scss */
+/* line 421, ../styles/globals/_layout.scss */
 .buffer-top-plus {
   margin-top: 3.375em;
 }
 
-/* line 369, ../styles/globals/_layout.scss */
+/* line 424, ../styles/globals/_layout.scss */
 .buffer-top-max {
   margin-top: 6.75em;
 }
 
-/* line 375, ../styles/globals/_layout.scss */
+/* line 430, ../styles/globals/_layout.scss */
 .single-course .border-top {
   border-width: 6px;
 }
 
-/* line 381, ../styles/globals/_layout.scss */
+/* line 436, ../styles/globals/_layout.scss */
 #course-news .media-block {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -532,64 +644,64 @@ pre .pln, code .pln {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 385, ../styles/globals/_layout.scss */
+/* line 440, ../styles/globals/_layout.scss */
 #course-news .media-block:last-of-type {
   border: 0 none;
 }
 
-/* line 392, ../styles/globals/_layout.scss */
+/* line 447, ../styles/globals/_layout.scss */
 #course-carousel li {
   margin-right: 1px;
 }
-/* line 395, ../styles/globals/_layout.scss */
+/* line 450, ../styles/globals/_layout.scss */
 #course-carousel iframe {
   display: block;
 }
-/* line 398, ../styles/globals/_layout.scss */
+/* line 453, ../styles/globals/_layout.scss */
 #course-carousel .flex-caption {
   border-bottom: 1px solid #c8c8c8;
 }
 
-/* line 404, ../styles/globals/_layout.scss */
+/* line 459, ../styles/globals/_layout.scss */
 #course-gallery .media-block {
   margin-bottom: 1.5em;
 }
 
-/* line 413, ../styles/globals/_layout.scss */
+/* line 468, ../styles/globals/_layout.scss */
 .course-data .accordion-header {
   padding: 20px;
 }
-/* line 416, ../styles/globals/_layout.scss */
+/* line 471, ../styles/globals/_layout.scss */
 .course-data .padbox {
   padding-left: 20px;
   padding-right: 20px;
 }
-/* line 420, ../styles/globals/_layout.scss */
+/* line 475, ../styles/globals/_layout.scss */
 .course-data table {
   width: 100%;
   text-align: left;
 }
-/* line 423, ../styles/globals/_layout.scss */
+/* line 478, ../styles/globals/_layout.scss */
 .course-data table p {
   line-height: 1em;
   margin-bottom: 0;
 }
-/* line 428, ../styles/globals/_layout.scss */
+/* line 483, ../styles/globals/_layout.scss */
 .course-data tr.bordered {
   background: url("../img/dashline_border_img.png") bottom left repeat-x;
 }
-/* line 431, ../styles/globals/_layout.scss */
+/* line 486, ../styles/globals/_layout.scss */
 .course-data th, .course-data td {
   padding-top: 0.75em;
   padding-bottom: 0.75em;
 }
-/* line 435, ../styles/globals/_layout.scss */
+/* line 490, ../styles/globals/_layout.scss */
 .course-data th {
   padding-left: 20px;
   width: 30%;
 }
 
-/* line 444, ../styles/globals/_layout.scss */
+/* line 499, ../styles/globals/_layout.scss */
 .border-dot {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;

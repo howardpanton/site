@@ -49,6 +49,7 @@
 }
 
 
+
 .rhythm-3 {
   @include padding-leader(3);
   @include padding-trailer(3);
@@ -58,6 +59,18 @@
   @include margin-leader(3);
 }
 
+.rhythm-margin-bottom {
+  @include margin-trailer(4);
+}
+
+.margin-bottom-x4 {
+  @include margin-trailer(4);
+}
+
+.margin-bottom-x8 {
+  @include margin-trailer(8);
+}
+
 // Quick margins
 .add-top {
   margin-top: 20px;
@@ -65,6 +78,30 @@
 .add-bottom {
   margin-bottom: 20px;
 }
+
+
+// classes remove margins
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
 
 // no borders
 
@@ -110,6 +147,33 @@
 }
 
 
+
+// Padding
+
+.no-pad { padding: 0; }
+
+.no-pad-top { padding-top: 0; }
+
+.no-pad-bottom { padding-bottom: 0; }
+
+.no-pad-left { padding-left: 0; }
+
+.no-pad-right { padding-right: 0; }
+
+
+// apply top padding with ryhthm 
+
+.pad-top-1x { @include padding-leader(1); }
+
+.pad-top-2x { @include padding-leader(2); }
+
+.pad-top-3x { @include padding-leader(3); }
+
+.pad-top-4x { @include padding-leader(4); }
+
+.pad-top-5x { @include padding-leader(5); }
+
+.pad-top-6x { @include padding-leader(6); }
 
 // Clearing floats
 .clearfix {
