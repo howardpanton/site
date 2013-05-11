@@ -36,7 +36,12 @@
         
     {% elsif page.college == "camberwell" %}
         <link rel='stylesheet' href='{{ site.url }}assets/css/custom/camberwell.css'>    
+
+   	{% elsif page.college == "chelsea" %}
+   		<link rel='stylesheet' href='{{ site.url }}assets/css/custom/chelsea.css'> 
     {% endif %}
+
+
 
     <!-- Temporarily add styles for course finder page -->
     {% if page.content-type == "course-finder-results" %}
@@ -44,6 +49,8 @@
         <link rel='stylesheet' href='{{ site.url }}/assets/css/components/ui.expandable.css'>
         
     {% endif %}
+
+    <link rel='stylesheet' href='{{ site.url }}assets/css/debug.css'>
 
 		<!--[if (lt IE 9) & (!IEMobile)]>
 		// selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //

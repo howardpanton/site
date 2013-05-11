@@ -1,0 +1,31 @@
+// Blocks
+ul.blocks {
+   li {
+      list-style:none;
+   }
+}
+
+// Four blocks in a row
+.four-up {
+   li {
+      width: gs-width(d, 3, 5, (3,14), true);
+      @include gs-float(d, left, (3,14));
+      &:nth-of-type(4) {
+         margin-right: 0;
+      }
+   }
+}
+   
+// Three blocks in a row
+.three-up {
+   li {
+      width: gs-width(d, 3, 6, (3,14), true); // 290px
+      @include gs-float(d, left, (3,14));
+      &:nth-of-type(3) {
+         margin-right: 0;
+      }
+   }
+}
+
+
+// need browser fall-back using max-width?

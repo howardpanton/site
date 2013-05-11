@@ -13,7 +13,7 @@
 
 h1 { 
 	@include adjust-font-size-to(34px, 6); 
-	margin: 0 0 rhythm(4, 34px) 0;  						// 3 lines below, based on font size
+	margin: rhythm(4, 34px) 0 rhythm(4, 34px) 0;  						// 3 lines below, based on font size
 } 
 			
 h2 { 
@@ -51,23 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-// Display Header styles 
-
-.heading-x10 {
-	@include adjust-font-size-to(114px); 
-	margin: 0 0 rhythm(5, 114px) 0; 
-}
-
-.heading-x9 {
-	@include adjust-font-size-to(102px); 
-	margin: 0 0 rhythm(5, 102px) 0; 
-}
-
-.heading-x8 {
-	@include adjust-font-size-to(90px); 
-	margin: 0 0 rhythm(5, 90px) 0; 
-}
-
+// Display Header styles  
 .heading-x7 {
 	@include adjust-font-size-to(78px); 
 	margin: 0 0 rhythm(5, 78px) 0; 
@@ -104,6 +88,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.title-x5 {
+	@include adjust-font-size-to(56px);
+	margin: 0 0 rhythm(5, 56px);
+}
+
 p.intro {
 	@include adjust-font-size-to(22px); 
 	margin: 0 0 rhythm(4, 22px) 0;		
@@ -117,11 +106,6 @@ p.small{
 p.smallest{
 	@include adjust-font-size-to(13px); 
 	margin: 0 0 rhythm(2, 13px) 0;		
-}
-
-p {
-	@include adjust-font-size-to(16px); 
-	margin: 0 0 rhythm(2, 16px) 0;		
 }
 
 small {
@@ -154,46 +138,78 @@ hr {
 // Blockquotes
 // -----------------------------------------------------------
 
-// default blockquote styling
+
 blockquote {
 	font-style: italic;
-	padding-left: emCalc(22px);  
+	padding-left: em-font(23px);  
 	border-left: 1px solid $light-gray;
-	line-height: emCalc(24px);
+	line-height: em-font(24px);
 	font-weight: normal;
 }
 
-// blockquote with wider border on left side
-blockquote.bquote-wider-border {
-	padding-left: emCalc(12px); 
-	border-left: 1px solid $light-gray;
-	line-height: emCalc(24px);
-	font-weight: normal;
+cite, cite a {
+	color: $aaa-gray;
+	font-style: normal;
+	@include adjust-font-size-to(14px); 
+	line-height: em-font(18px);
+	margin-bottom: none;
+	padding-bottom: none;
 }
+
+// blockquote with wider border on left side
+.bquote-wider-border {
+	padding-left: emCalc(12px); 
+	border-left: 12px solid $light-gray;
+	
+}
+
+
+// Lists
+// -----------------------------------------------------------
+ul 			{ @include unordered; } 	// Include unordered list from mixins by default
+ol 			{ @include ordered; }		// Include ordered list from mixins by default
+
+
+
+// .content-wrapper ul {
+// 	list-style-type: none;
+// 	li { 
+// 	    padding-left: 0; 
+// 		margin-left: 0;
+// 	    // text-indent: em-font(24px);
+// 	}
+// 	li:before {
+//     content: "■ ";
+//     color: $ual-black;
+// 	}
+// }
+
+// .content-wrapper ol{
+
+// }
 
 
 
 // Core typography
 // ------------------------------------------------------------
 
-ul 			{ @include unordered; } 						// Include unordered list from mixins by default
-ol 			{ @include ordered;	}							// Include ordered list from mixins by default
+
 strong, b 	{ font-weight: 600; }
 em, i, q 	{ font-style: italic; }
 
-blockquote {
-	padding-left: em-font(16px);
-	border-left: em-font(5px) solid gray;
-	line-height: normal;
-	margin: 0;
-	p {
-		font-style: italic;
-		margin: 0;
-		color: $body-color;
-		@include adjust-font-size-to(20px); 
-		margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
-	}
-}
+// blockquote {
+// 	padding-left: em-font(16px);
+// 	border-left: em-font(5px) solid gray;
+// 	line-height: normal;
+// 	margin: 0;
+// 	p {
+// 		font-style: italic;
+// 		margin: 0;
+// 		color: $body-color;
+// 		@include adjust-font-size-to(20px); 
+// 		margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
+// 	}
+// }
 
 @include gs-media(t, min-max) {
 
