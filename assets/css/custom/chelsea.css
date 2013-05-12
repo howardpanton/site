@@ -64,48 +64,65 @@
 }
 
 /* line 14, ../../styles/custom/chelsea.scss */
-.chelsea h1, .chelsea h2, .chelsea h3, .chelsea h4, .chelsea h5 {
+.chelsea .brandon-font {
   font-family: "Brandon Text", Helvetica, Arial, sans-serif;
-  font-weight: bold;
 }
 /* line 19, ../../styles/custom/chelsea.scss */
+.chelsea h1, .chelsea h2, .chelsea h3, .chelsea h4, .chelsea h5 {
+  font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+/* line 24, ../../styles/custom/chelsea.scss */
 .chelsea .sidebar {
   background: #fa756e;
   /* The Fallback */
   background: rgba(250, 117, 110, 0.3);
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-/* line 25, ../../styles/custom/chelsea.scss */
+/* line 32, ../../styles/custom/chelsea.scss */
 .chelsea .sidebar li {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
-  text-indent: 12px;
+  padding-left: 12px;
   border-bottom: 1px solid white;
 }
-/* line 32, ../../styles/custom/chelsea.scss */
+/* line 39, ../../styles/custom/chelsea.scss */
 .chelsea .sidebar li:last-of-type {
   border-bottom: 0;
 }
-/* line 36, ../../styles/custom/chelsea.scss */
+/* line 44, ../../styles/custom/chelsea.scss */
 .chelsea .border-top {
   border-top: 6px solid black;
 }
 
-/* line 42, ../../styles/custom/chelsea.scss */
+/* line 51, ../../styles/custom/chelsea.scss */
+.large-li-numbers {
+  counter-reset: list-counter;
+}
+/* line 54, ../../styles/custom/chelsea.scss */
+.large-li-numbers li:before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  font-size: 2.125em;
+  line-height: 1.23529em;
+  font-weight: bold;
+}
+
+/* line 62, ../../styles/custom/chelsea.scss */
 .artist-portrait {
   margin-right: 20px;
 }
 
-/* line 49, ../../styles/custom/chelsea.scss */
-.image-with-caption-right blockquote {
+/* line 69, ../../styles/custom/chelsea.scss */
+.image-with-caption-right figcaption {
   border-left: none;
   border-bottom: 1px solid #c8c8c8;
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 57, ../../styles/custom/chelsea.scss */
+/* line 77, ../../styles/custom/chelsea.scss */
 .wide-span-quote {
   font-size: 2.125em;
   line-height: 1.23529em;
