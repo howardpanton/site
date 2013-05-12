@@ -10,9 +10,14 @@
 // sidebar
 .chelsea {
     
+    // Custom CCW font
+    .brandon-font {
+         font-family: $ccw-brandon-font;
+    }
+
     // type
     h1, h2, h3, h4, h5 {
-        font-family: "Brandon Text", Helvetica, Arial, sans-serif;
+        font-family: $font-family;
         font-weight: bold;
     }
 
@@ -21,16 +26,19 @@
         @include background-opacity($ccw-salmon, $opacity: 0.3);
         //@include padding-leader(2);
         //@include padding-trailer(2);
+        padding-top: 0;
+        padding-bottom: 0;
         
         li {
             @include padding-leader(1);
             @include padding-trailer(1);
-            text-indent: 12px; // need spec
+            padding-left: 12px; // need spec
             border-bottom: 1px solid $ual-white;
         }
-
+        
         li:last-of-type{ 
             border-bottom: 0;
+           
         }
     }
     .border-top {
@@ -39,14 +47,26 @@
 
 }
 
+// style ol list with larger numbers for the list counter
+.large-li-numbers {
+    counter-reset: list-counter;
+    
+    li:before {
+        content: counter(list-counter);
+        counter-increment: list-counter;
+        @include adjust-font-size-to(34px);
+        font-weight: bold;
+    }
+}
+
 .artist-portrait {
     margin-right: 20px;
 
 }
 
 .image-with-caption-right {
-
-    blockquote {
+    // need to work out how to align this to the bottom of it's container ?
+    figcaption {
         border-left: none;
         border-bottom: 1px solid $light-gray;
         margin-left: 0;

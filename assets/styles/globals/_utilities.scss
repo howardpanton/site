@@ -5,8 +5,29 @@
 .relative {
   position: relative;
 }
+
+.absolute {
+  position: absolute;
+}
+
 .affix {
   position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
 
 // Quick floats
@@ -43,7 +64,6 @@
 .border-bottom {
   border-bottom: 1px solid;
 }
-
 .with-border {
   border: 1px solid;
 }
@@ -161,6 +181,7 @@
 .no-pad-right { padding-right: 0; }
 
 
+
 // apply top padding with ryhthm 
 
 .pad-top-1x { @include padding-leader(1); }
@@ -174,6 +195,20 @@
 .pad-top-5x { @include padding-leader(5); }
 
 .pad-top-6x { @include padding-leader(6); }
+
+
+.pad-bottom-1x { @include padding-trailer(1); }
+
+.pad-bottom-2x { @include padding-trailer(2); }
+
+.pad-bottom-3x { @include padding-trailer(3); }
+
+.pad-bottom-4x { @include padding-trailer(4); }
+
+.pad-bottom-5x { @include padding-trailer(5); }
+
+.pad-bottom-6x { @include padding-trailer(6); }
+
 
 // Clearing floats
 .clearfix {
