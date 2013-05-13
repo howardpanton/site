@@ -27,7 +27,7 @@
     <link rel='stylesheet' href='{{ site.url }}assets/css/grid-feature/gridset.css'>
     <link rel='stylesheet' href='{{ site.url }}assets/css/screen.css'>
 
-      <!-- Zone-specific -->
+	<!-- Zone-specific -->
     {% if page.college == "lcf" %}
         <link rel='stylesheet' href='{{ site.url }}assets/css/custom/lcf.css'>
     {% elsif page.college == "ual" %}
@@ -39,6 +39,9 @@
 
    	{% elsif page.college == "chelsea" %}
    		<link rel='stylesheet' href='{{ site.url }}assets/css/custom/chelsea.css'> 
+
+   	{% elsif page.college == "csm" %}
+   		<link rel='stylesheet' href='{{ site.url }}assets/css/custom/csm.css'> 
     {% endif %}
 
 

@@ -1,0 +1,113 @@
+/* line 2, ../../styles/plugins/_animation.scss */
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeInDown {
+  /* line 3, ../../styles/plugins/_animation.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+
+  /* line 6, ../../styles/plugins/_animation.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInDown {
+  /* line 13, ../../styles/plugins/_animation.scss */
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px);
+  }
+
+  /* line 18, ../../styles/plugins/_animation.scss */
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes fadeInDown {
+  /* line 25, ../../styles/plugins/_animation.scss */
+  0% {
+    opacity: 0;
+    -ms-transform: translateY(-20px);
+  }
+
+  /* line 30, ../../styles/plugins/_animation.scss */
+  100% {
+    opacity: 1;
+    -ms-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  /* line 37, ../../styles/plugins/_animation.scss */
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  /* line 42, ../../styles/plugins/_animation.scss */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* line 5, ../../styles/custom/csm.scss */
+.remove-margin-bottom {
+  margin-bottom: -4px;
+}
+
+/* line 9, ../../styles/custom/csm.scss */
+.image {
+  position: relative;
+  width: 100%;
+  /* for IE 6 */
+}
+/* line 12, ../../styles/custom/csm.scss */
+.image p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10%;
+  margin-left: -50%;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+/* line 22, ../../styles/custom/csm.scss */
+.image a {
+  color: #D10000;
+}
+/* line 24, ../../styles/custom/csm.scss */
+.image a:hover {
+  background: #D10000;
+  color: #fff;
+}
+/* line 29, ../../styles/custom/csm.scss */
+.image .hidelink {
+  background: #D10000;
+}
+/* line 32, ../../styles/custom/csm.scss */
+.image .rotate {
+  /* Safari */
+  -webkit-transform: rotate(90deg);
+  /* Firefox */
+  -moz-transform: rotate(90deg);
+  /* IE */
+  -ms-transform: rotate(90deg);
+  /* Opera */
+  -o-transform: rotate(90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
