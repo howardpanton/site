@@ -183,7 +183,7 @@ $(window).resize(function () {
 });
 
 
-menuS = $('nav.secondary').html();
+menuS = $('nav.sidebar').html();
 
 b = $('.secondary-menu-mobile');
 
