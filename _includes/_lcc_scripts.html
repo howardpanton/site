@@ -1,0 +1,36 @@
+
+  <script src='{{ site.url }}assets/js/components/jquery.bxslider.js'></script> 
+
+  <script>
+    $(document).ready(function(){
+      $('.slider1').bxSlider({
+        slideWidth: 600,
+        minSlides: 1,
+        maxSlides: 6,
+        slideMargin: 1,
+        moveSlides: 1
+      });
+    });
+
+  if ($('.flexslider').length > 0) {
+
+    var _this = $('.flexslider');
+    var _itemWidth = (_this.data('item-width') > 0) ? _this.data('item-width') : "500";
+
+      $(window).load(function() {
+         $('.flexslider').flexslider({
+            slideshow: false,
+            animation: "slide",
+            controlNav: false,
+            itemWidth: _itemWidth,
+            itemMargin: 1
+         });
+       
+      });
+   }
+
+
+ 
+
+
+</script>
