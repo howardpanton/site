@@ -87,10 +87,81 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 rhythm(2, 18px) 0; 
 }
 
+// Title styles
+
+//base title class
+.title {
+	font-weight: bold;
+	color: $ual-black;
+}
+
+.title-x8 {
+	@extend .title;
+	@include adjust-font-size-to(90px);
+	line-height: rhythm(15, 90px);
+	margin: 0 0 rhythm(5, 90px);
+}
 
 .title-x5 {
+	@extend .title;
 	@include adjust-font-size-to(56px);
+	line-height: rhythm(10, 56px);
 	margin: 0 0 rhythm(5, 56px);
+}
+
+.title-x3 {
+	@extend .title;
+	@include adjust-font-size-to(34px);
+	line-height: rhythm(6, 34px);
+	margin: 0 0 rhythm(3, 34px);
+}
+
+.title-x2 {
+	@extend .title;
+	@include adjust-font-size-to(22px);
+	line-height: rhythm(4, 22px);
+	margin: 0 0 rhythm(2, 22px);
+}
+
+.title-x1 {
+	@extend .title;
+	@include adjust-font-size-to(18px);
+	line-height: rhythm(4, 18px);
+	margin: 0 0 rhythm(2, 18px);
+}
+
+// paragraph styles
+
+.para-x5 {
+	@include adjust-font-size-to(56px);
+	line-height: rhythm(10, 56px);
+	margin: 0 0 rhythm(10, 56px);
+}
+
+.para-x3 {
+	@include adjust-font-size-to(34px);
+	line-height: rhythm(6, 34px);
+	margin: 0 0 rhythm(3, 34px);
+	font-weight: bold;
+}
+
+.para-x2 {
+	@include adjust-font-size-to(22px);
+	line-height: rhythm(5, 22px);
+	margin: 0 0 rhythm(2, 22px);
+}
+
+.para-x1 {
+	@include adjust-font-size-to(18px);
+	line-height: rhythm(5, 18px);
+	margin: 0 0 rhythm(2, 18px);
+}
+
+// default UAL paragraph
+p {
+	@include adjust-font-size-to(16px);
+	line-height: rhythm(4, 16px);
+	margin: 0 0 rhythm(2, 16px);
 }
 
 p.intro {
@@ -100,11 +171,13 @@ p.intro {
 
 p.small{
 	@include adjust-font-size-to(14px); 
+	line-height: rhythm(2, 14px);
 	margin: 0 0 rhythm(2, 14px) 0;		
 }
 
 p.smallest{
 	@include adjust-font-size-to(13px); 
+	line-height: rhythm(4, 13px);
 	margin: 0 0 rhythm(2, 13px) 0;		
 }
 
