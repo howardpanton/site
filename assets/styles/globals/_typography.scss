@@ -231,10 +231,16 @@ hr {
 
 blockquote {
 	font-style: italic;
+	@include adjust-font-size-to(34px);
 	padding-left: em-font(23px);  
 	border-left: 1px solid $light-gray;
-	line-height: em-font(24px);
+	line-height: em-font(34px);
 	font-weight: normal;
+	@include margin-trailer(4);
+	@include gs-media(m, min-max) {
+		@include adjust-font-size-to(22px);
+	}
+	
 }
 
 cite, cite a {
