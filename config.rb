@@ -11,6 +11,8 @@ fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
+
+
 # on_sprite_saved do |filename|
  
 #   unless filename.match(/^transparent/)
@@ -46,3 +48,4 @@ line_comments = true
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
+sass_options = {:debug_info => true}

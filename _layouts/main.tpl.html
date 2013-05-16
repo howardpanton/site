@@ -11,9 +11,12 @@
   {% if page.college == "lcf" %}
     {% include _lcf_footer.html %}
   {% endif %}
+
   {% if page.college == "camberwell" %}
     {% include _camberwell_footer.html %}
   {% endif %}
+
+
     {% include _global_footer.html %}
 
   <script src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
@@ -56,8 +59,9 @@
 
   <script src='{{ site.url }}assets/js/libs/jquery.fittext.js' type='text/javascript'></script>
   <script src='{{ site.url }}assets/js/libs/jquery.flexslider.js' type='text/javascript'></script>
-  <!--<script src='{{ site.url }}assets/js/dev/debug.js' type='text/javascript'></script>
-  <script src='{{ site.url }}assets/js/dev/debug.rwd.js' type='text/javascript'></script>-->
+<script src='{{ site.url }}assets/js/dev/debug.js' type='text/javascript'></script>
+
+  <script src='{{ site.url }}assets/js/dev/debug.rwd.js' type='text/javascript'></script>
 
   <!-- Foundation -->
   <script src='{{ site.url }}assets/js/foundation/foundation.js' type='text/javascript'></script>
@@ -70,6 +74,11 @@
     {% include _lcf_scripts.html %}
   {% elsif page.college == "ual" %}
     {% include _ual_scripts.html %}
+  {% elsif page.college == "lcc" %}
+    {% include _lcc_scripts.html %}
+  {% elsif page.college == "csm" %}
+    {% include _csm_scripts.html %}
+
   {% elsif page.college == "ccw" %}
     {% include _ccw_scripts.html %}
   {% elsif page.college == "camberwell" %}
