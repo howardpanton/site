@@ -1,7 +1,7 @@
 // Import global variables and mixins
 @import "globals/variables";
 @import "globals/mixins";
-
+@import "globals/gridset";
 
 
 
@@ -46,17 +46,27 @@
 
 }
 
+
+
+
 // style ol list with larger numbers for the list counter
 .large-li-numbers {
     counter-reset: list-counter;
-    
+    list-style-type: none;
     li:before {
         content: counter(list-counter);
         counter-increment: list-counter;
         @include adjust-font-size-to(34px);
         font-weight: bold;
+        left: -34px;
     }
 }
+
+// moved to it's own component scss file (_author-mini-profile-box)
+// .author-mini-profile-box {
+//     @extend .box-out;
+//     @extend .margin-bottom-x4;
+// }
 
 .artist-portrait {
     margin-right: 20px;
@@ -64,22 +74,46 @@
 }
 
 .image-with-caption-right {
+    
+    figure {
+        // display: table;
+    }
+
     // need to work out how to align this to the bottom of it's container ?
     figcaption {
         border-left: none;
         border-bottom: 1px solid $light-gray;
         margin-left: 0;
         padding-left: 0;
+        @include adjust-font-size-to(14px);
+        line-height: rhythm(4, 18px);
+        font-style: italic;
+        bottom: 0;
+        right: 0;
     }
 }
 
 .wide-span-quote {
     @include adjust-font-size-to(34px); 
-    @include margin-leader(12);
-    @include margin-trailer(12);
+    @include margin-leader(10);
+    @include margin-trailer(10);
     font-style: normal;
     font-weight: bold;
     border: none;
+
+    @include gs-media(t, min-max) {
+        padding-left: 0;   
+        @include margin-leader(2);
+        @include margin-trailer(2);
+    }
+
+    @include gs-media(m,min-max) {
+         padding-left: 0;
+         @include margin-leader(2);
+         @include margin-trailer(2);
+    }
+
+
 }
 
 
