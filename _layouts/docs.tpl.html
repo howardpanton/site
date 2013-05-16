@@ -40,6 +40,7 @@
 
   <!-- load in vallenato A simple accordion -->
   <script src='{{ site.url }}assets/js/components/vallenato.js'></script> 
+  <script src='{{ site.url }}assets/js/components/jquery.accordion.js'></script>  
 
   <!-- load in bxSlider The Responsive jQuery Content Slider -->
   <script src='{{ site.url }}assets/js/components/jquery.bxslider.js'></script> 
@@ -93,6 +94,7 @@ function(){
 
   </script> 
 
+
   <script>
     $(document).ready(function(){
       $('.slider1').bxSlider({
@@ -112,14 +114,13 @@ function(){
 
   </script>
 
+  <script>
+    $(function() {
+      $('#st-accordion').accordion();
+    });
+  </script>
   <!-- Place in the <head>, after the three links -->
-<script type="text/javascript" charset="utf-8">
- if ($('.flexslider').length > 0) {
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-};
-</script>
+
   
   <script type='text/javascript'>
     $(document).ready(function() {
