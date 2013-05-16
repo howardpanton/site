@@ -156,9 +156,6 @@ a {
 			@include padding-leader(1);
 			@include padding-trailer(2);
 		}
-
-
-		
 		.header {
 			@include gs-span(d, all);
 		}
@@ -212,13 +209,13 @@ a {
 			@extend .clearfix;
 			@include gs-span(d, all);
 			border-top: 1px solid #fff;
-						max-width:1280px;
+						max-width: 1280px;
 			margin: 0 auto;
 			float:none;
 
 			p {
 				@include padding-leader(3);
-				margin-right:24px;
+				margin-right: 24px;
 				color:#fff;
 				font-size:12px;
 				margin-left:12px;
@@ -399,7 +396,8 @@ color: white;
 // Box-out
 .box-out {
 	min-height: 20px;
-  	padding: 10px 20px;
+  	//padding: 10px 20px;
+  	padding: 24px; //  updated after decisions from meeting 15th May
   	//@include gs-pad(d, padfull);
   	margin-bottom: 20px;
   	background: $bg-gray;
