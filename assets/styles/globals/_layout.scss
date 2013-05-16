@@ -398,8 +398,15 @@ color: white;
   	//padding: 10px 20px;
   	padding: 24px; //  updated after decisions from meeting 15th May
   	//@include gs-pad(d, padfull);
-  	margin-bottom: 20px;
   	background: $bg-gray;
+}
+
+// Cross-bullets
+ul.cross-bullet {
+	@extend .no-bullet;
+	li:before {
+  		content: '+ ';
+	}
 }
 
 // Baseline classes
@@ -430,11 +437,11 @@ color: white;
 }
 
 .sidebar {
-@include gs-span(d, 1,4);
+	@include gs-span(d, 1,4);
 }
 
 .main-content {
-@include gs-span(d, 5,12);
+	@include gs-span(d, 5,12);
 }
 
 
@@ -442,6 +449,7 @@ color: white;
 	.media-block {
    		@include padding-leader(4);
    		@include padding-trailer(4);
+		@include margin-trailer(1);
    		@include border-image-dot();
 		&:last-of-type {
 			border: 0 none;
