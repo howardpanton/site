@@ -481,9 +481,12 @@ ul.cross-bullet {
 		width: 100%;
 		text-align: left;
 		p {
-			line-height: 1em;
+			//line-height: 1em;
 			margin-bottom: 0;
 		}
+	}
+	td {
+		
 	}
 	tr.bordered {
 		background: url("../img/dashline_border_img.png") bottom left repeat-x;
@@ -491,14 +494,31 @@ ul.cross-bullet {
 	th, td {
 		@include padding-leader(2);
 		@include padding-trailer(2);
+		padding-left: 20px;
 	}
 	th {
-		padding-left: 20px;
 		width: 30%;
-		//@include gs-span(d, 3,6);
+		vertical-align: top;
+	}
+	tr, td {
+		@include gs-media(m,min-max) {
+        	display: block;
+       	} 
+	}
+	th {
+		@include gs-media(m,min-max) {
+        	padding-bottom: 0;
+       	} 
 	}
 	
+	
 }
+
+
+
+
+
+
 
 // Border Image
 .border-dot {
