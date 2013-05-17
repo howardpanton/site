@@ -266,3 +266,39 @@
 		border-bottom: 1px solid #fff;
 	}
 }
+
+
+
+// temporary styles for content test prototype 16th May
+.content-test {
+	
+	.medium-22{
+		@include adjust-font-size-to(22px); 
+		font-weight: normal;
+	}
+
+	.light-16-gray-AAA {
+		@include adjust-font-size-to(16px);
+		font-weight: 300;
+		color: $aaa-gray;
+	}
+	
+	.border-bottom-dotted{
+		border-bottom: 1px dotted $light-gray;
+	}
+
+	.sidebar {
+
+		a{
+			@extend .border-bottom-dotted;
+			line-height: 34px;
+			font-weight: 300;
+		}
+		
+	}
+
+	
+
+
+
+}
