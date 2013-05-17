@@ -137,11 +137,15 @@ button::-moz-focus-inner {
   color: white;
   font-style: normal;
   font-size: 28px;
-  font-family: Arial, Baskerville, monospace; }
-  .mfp-close:hover, .mfp-close:focus {
-    opacity: 1; }
-  .mfp-close:active {
-    top: 1px; }
+  font-family: Arial, Baskerville, monospace;
+  &:hover, &:focus {
+    opacity: 1; 
+    background: none;
+  }
+  &:active {
+    top: 1px; 
+  }
+}
 
 .mfp-close-btn-in .mfp-close {
   color: #333333; }
