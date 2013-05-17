@@ -10,10 +10,8 @@ title: Course page
 		<nav class="buffer-top sidebar m-hide t-hide" role='navigation'>
 			<ul class="no-bullet">
 				<li><a href="#">About LCF</a>
-                    <div class='span d-hide t-hide'><span><a href='#'>+</a></span>
-          </div>
-
-        </li>
+                    <div class='span d-hide t-hide'><span><a href='#'>+</a></span></div>
+        		</li>
 				<li><a href="#">Courses</a></li>
 				<li><a href="#">News</a></li>
 				<li><a href="#">Events</a></li>
@@ -24,57 +22,60 @@ title: Course page
 				<li><a href="#">LCF Business</a></li>
 			</ul>		
 		</nav>	
-		<div class="d5-d12 buffer-top">
-			<nav>
-				<h4>Select another Undergraduate course</h4>
-			</nav>
-			<div class="buffer">
+		<div role="main" class="main-column d5-d16">
+			<div class="d5-d12 buffer-top">
+				<nav>
+					<h4>Select another Undergraduate course</h4>
+				</nav>
+			</div>
+			<header class="d-all">
 				<h1>BA (Hons) Fashion Design Technology: Womenswear</h1>
+			</header>
+			<div class="d5-d12 super-teaser buffer">
 				<p>Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
-
+			</div>
+			<div class="d5-d12 buffer-plus">	
 				<div class="box-out bg-gray-bg">
 					<h3>Critical time-sensitive</h3>
-					<p><a href="#">We're running to the quad! We're streaking!</a></p>
+					<p><a href="#">We're running to the quad!</a></p>
 				</div>
 			</div>
-		</div>	
-		<div id="course-carousel" class="d5-d16 border-top">
-			
-        	<div class="slider" data-slider-item-width="640" data-slider-video="true">
-			    <div class="slide">
-			    	<h4>Slide title</h4>
-			    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-1.jpg" />
-	    			<p class="flex-caption">Caption</p>
-			    </div>
-			    <div class="slide">
-			    	<h4>Video title</h4>
-					<iframe width="640" height="360" src="http://www.youtube.com/embed/YEfa5XzJY10" frameborder="0" allowfullscreen></iframe>
-					<p class="flex-caption">Caption</p>
-			    </div>
-			    <div class="slide">
-			    	<h4>Slide title</h4>
-		    		<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-2.jpg" />
-		    		<p class="flex-caption">Caption</p>
-			    </div>
-			    <div class="slide">
-			    	<h4>Slide title</h4>				    	
-	    			<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-3.jpg" />
-	    			<p class="flex-caption">Caption</p>
-			    </div>
+			<div id="course-carousel" class="d-all buffer-plus">
+	        	<div class="slider" data-slider-item-width="640" data-slider-video="true">
+				    <div class="slide">
+				    	<h4>Slide title</h4>
+				    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-1.jpg" />
+		    			<p class="slide-caption">Caption</p>
+				    </div>
+				    <div class="slide">
+				    	<h4>Video title</h4>
+						<iframe width="640" height="360" src="http://www.youtube.com/embed/YEfa5XzJY10" frameborder="0" allowfullscreen></iframe>
+						<p class="slide-caption">Caption</p>
+				    </div>
+				    <div class="slide">
+				    	<h4>Slide title</h4>
+			    		<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-2.jpg" />
+			    		<p class="slide-caption">Caption</p>
+				    </div>
+				    <div class="slide">
+				    	<h4>Slide title</h4>				    	
+		    			<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-3.jpg" />
+		    			<p class="slide-caption">Caption</p>
+				    </div>
+				</div>
+			</div><!-- #course-carousel -->
+			<div class="d5-d12 buffer-plus">
+				<div class="box-out ual-black-bg">
+					<h3>Reasons to apply</h3>
+					<ul class="cross-bullet">
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						<li>Curabitur in commodo tortor.</li>
+						<li>Donec consequat, lacus vel consectetur semper, quam enim vehicula velit, ac bibendum risus turpis a enim.</li>
+						<li>Morbi pulvinar, lectus nec lacinia ultrices, ipsum enim scelerisque elit, id sagittis massa dui eget nunc.</li>
+					</ul>
+				</div>	
 			</div>
-		
-		</div><!-- #course-carousel -->
-		<div class="d5-d12 buffer">
-			<div class="box-out ual-black-bg">
-				<h3>Reasons to apply</h3>
-				<ul class="cross-bullet">
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					<li>Curabitur in commodo tortor.</li>
-					<li>Donec consequat, lacus vel consectetur semper, quam enim vehicula velit, ac bibendum risus turpis a enim.</li>
-					<li>Morbi pulvinar, lectus nec lacinia ultrices, ipsum enim scelerisque elit, id sagittis massa dui eget nunc.</li>
-				</ul>
-			</div>	
-		</div>
+		</div><!-- .main-column -->	
 	</div><!-- .content-wrapper -->
 </div><!-- .row -->
 
@@ -139,7 +140,7 @@ title: Course page
 
 <section id="course-news" class="row">
 	<div class="content-wrapper">
-		<div class="d5-d14 clearfix buffer-top-plus border-top">
+		<div class="d5-d14 clearfix buffer-top">
 			<h2>News and Events Feed</h2>
 	      <div class="row media-block heading-bottom border-dot">
 	         <figure class="d5-d8">
@@ -149,8 +150,8 @@ title: Course page
 	         </figure>
 	         <div class="media-body d9-d14">
 	         	<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-	         	<p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-	         	<p class="media-meta">meta</p>
+	         	<p>16 July 2013</p>
+	         	<p class="media-meta"><a href="#">View information</a></p>
 	      	</div>
 			</div><!-- .media-block -->
 	      <div class="row media-block heading-bottom border-dot">
@@ -161,8 +162,8 @@ title: Course page
 	         </figure>
 	         <div class="media-body d9-d14">
 	         	<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-	         	<p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-	         	<p class="media-meta">meta</p>
+	         	<p>16 July 2013</p>
+	         	<p class="media-meta"><a href="#">View information</a></p>
 	      	</div>
 			</div><!-- .media-block -->
 	      <div class="row media-block heading-bottom border-dot">
@@ -173,8 +174,8 @@ title: Course page
 	         </figure>
 	         <div class="media-body d9-d14">
 	         	<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-	         	<p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-	         	<p class="media-meta">meta</p>
+	         	<p>16 July 2013</p>
+	         	<p class="media-meta"><a href="#">View information</a></p>
 	      	</div>
 			</div><!-- .media-block -->
 	</div><!-- .content-wrapper -->
@@ -182,7 +183,7 @@ title: Course page
 
 <section id="course-people" class="row bg-gray-bg">
 	<div class="content-wrapper">
-		<div class="d3-d14 clearfix buffer-top-plus buffer-plus border-top">
+		<div class="d3-d14 clearfix buffer-top buffer-plus">
 			<h2>Staff, Students and Alumni</h2> 
 			<ul class="blocks four-up">
             <li>
@@ -246,7 +247,7 @@ title: Course page
 
 <section id="course-gallery" class="row soft-black-bg">
 	<div class="content-wrapper">
-		<div class="d3-d14 clearfix buffer-top-plus buffer border-top">
+		<div class="d3-d14 clearfix buffer-top buffer">
 			<h2>Course Gallery</h2> 
 			<ul class="blocks three-up">
             <li>
@@ -292,7 +293,7 @@ title: Course page
 
 <section id="course-meta" class="row">
 	<div class="content-wrapper">
-		<div class="d4-d9 buffer-top-plus buffer-plus border-top">
+		<div class="d4-d9 buffer-top buffer-plus">
 			<h2>Course Downloads</h2> 
 			<ul>
 				<li class="download"><a href="#">Foundation application form (PDF - 273KB)</a></li>
@@ -309,10 +310,9 @@ title: Course page
 	</div><!-- .content-wrapper -->
 </section><!-- .row -->
 
-
 <section id="related-links" class="row bg-gray-bg">
 	<div class="content-wrapper">
-		<div class="d3-d14 clearfix buffer-top-plus buffer-plus border-top">
+		<div class="d3-d14 clearfix buffer-top buffer-plus">
 			<h2>Related Links</h2> 
 			<ul class="blocks three-up">
             <li>
@@ -343,6 +343,6 @@ title: Course page
                 </div>
             </li>
         </ul>
-		</div>
-	</div><!-- .content-wrapper -->
+	</div>
+</div><!-- .content-wrapper -->
 </section><!-- .row -->
