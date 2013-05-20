@@ -130,27 +130,15 @@ function(){
   <script>
     $(document).ready(function(){
       
-      // 100% feature slider
-      $('.full-width-feature-slider').bxSlider({
-        pagerType: 'short'
-      });
+  $('.slider1').bxSlider({
+    slideWidth: 200,
+    minSlides: 2,
+    maxSlides: 3,
+    slideMargin: 10
+  });
 
 
 
-
-      $('.slider1').bxSlider({
-        slideWidth: 200,
-        minSlides: 2,
-        maxSlides: 3,
-        slideMargin: 10,
-        moveSlides: 1
-      });
-
-      $('.bxslider').bxSlider({
-        mode: 'fade',
-        slideWidth: 600,
-        captions: true
-      });
 
       if ($('#vid-player').length > 0) {
         jwplayer('vid-player').setup({
