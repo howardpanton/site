@@ -23,18 +23,21 @@ breadcrumb-link: video.html
     </div>
 
     <div class="row">
-        <div class="d1-d12 block region">
+        <div class="d1-d12 t-all m-all block region">
 			
 				<h2> JW Video Player </h2>
 				
 				<div class="video-wrapper">
-					<div class="video-component intrinsicRatio ratio16to9" id="vid-player">loading video.. <img src="{{ site.url }}assets/img/loader.gif" alt="loading..."/></div>
+					<div class="video-component" id="vid-player" >loading video.. <img src="{{ site.url }}assets/img/loader.gif" alt="loading..."/></div>
 				</div>
 
 				<h3> content underneath </h3>
 				
+                <h3> example of second video on page with max width: 450px</h3>
 				
-
+                <div class="video-wrapper">
+                    <div class="video-component intrinsicRatio ratio16to9" id="vid-player" data-video-max-width="450px">loading video.. <img src="{{ site.url }}assets/img/loader.gif" alt="loading..."/></div>
+                </div>
 		</div>
 		
     </div>
