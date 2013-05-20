@@ -137,6 +137,27 @@ function(){
         moveSlides: 1
       });
 
+      // detect slider component
+      if ($('.slider').length > 0) {
+
+        var _this = $('.slider');
+
+        // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
+        var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
+
+        _this.bxSlider({
+          slideWidth: _itemWidth,
+          minSlides: 1,
+          maxSlides: 1,
+          slideMargin: _itemMargin,
+          moveSlides: 1,
+          pager: true,
+          video: true // set video to true even if slider has no video (can't do any harm?)
+        });
+      }
+
+
       $('.bxslider').bxSlider({
         mode: 'fade',
         slideWidth: 600,
