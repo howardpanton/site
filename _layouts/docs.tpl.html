@@ -45,6 +45,9 @@
   <!-- load in JW Video Player -->
   <script src='{{ site.url }}assets/js/libs/jwplayer/jwplayer.js'></script>
 
+  <!-- load FlowPlayer -->
+  <script type="text/javascript" src="{{ site.url }}assets/js/libs/flowplayer/flowplayer.min.js"></script> 
+  
   <!-- load in FitVids for repsonsive videos -->
   <script src='{{ site.url }}assets/js/libs/jquery.fitvids.js'></script>
 
@@ -185,10 +188,10 @@ function(){
           'volume': '70',
           'quality': 'true'
         });
-        $('#vid-player_logo').hide();
-
+        $('#vid-player_logo').hide(); // hide the JW player logo
+        $('#vid-player').fitVids(); // use fitVids to make video responsive
       };
-      $('#vid-player').fitVids();
+     
       
     });
 
