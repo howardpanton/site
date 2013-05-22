@@ -132,14 +132,6 @@ function(){
 
   <script>
     $(document).ready(function(){
-      
-      // 100% feature slider
-      $('.full-width-feature-slider').bxSlider({
-        pagerType: 'short'
-      });
-
-
-
 
       $('.slider1').bxSlider({
         slideWidth: 200,
@@ -168,13 +160,6 @@ function(){
           video: true // set video to true even if slider has no video (can't do any harm?)
         });
       }
-
-
-      $('.bxslider').bxSlider({
-        mode: 'fade',
-        slideWidth: 600,
-        captions: true
-      });
 
       if ($('#vid-player').length > 0) {
         jwplayer('vid-player').setup({
