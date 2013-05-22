@@ -13,7 +13,6 @@
   <!--> <html lang="en"> <!--
 <![endif]-->
 
-<html>
   <head>
     <title>University of Arts London Style Guide</title>
     <meta charset='utf-8'>
@@ -55,10 +54,15 @@
     
     <!-- load stylsheet for dropdowns styling
      <link href='{{ site.url }}assets/.css' rel="stylesheet"> -->
-
     <!--[if (lt IE 9) & (!IEMobile)]>
-    <script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
-    <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset-ie-lte8.css'>
+        <script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
+        <script src="{{ site.url }}assets/js/libs/html5shiv.js"></script>
+        <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset-ie-lte8.css'>
+    <![endif]-->
+        <!--[if gt IE 8]>
+        <script src='{{ site.url }}assets/js/libs/selectivizr-min.js'></script>
+        <script src="{{ site.url }}assets/js/libs/html5shiv.js"></script>
+        <link rel='stylesheet' href='{{ site.url }}assets/styles/gridset-ie-9.css'>
     <![endif]-->
 
     <link rel='stylesheet' href='{{ site.url }}assets/css/debug.css'>
