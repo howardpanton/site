@@ -41,9 +41,8 @@ template: true
 	.removetline {border-top: none;}
 	.sectionend {border-bottom: 1px solid #e1e1e1;}
 	.red {color: red;}
-	.video-wrap { overflow: hidden }
-	.video-neg-margin { top:-30px; }
-	.download-link { 
+	
+	/*.download-link { 
 		color: #282828; 
 		font-size: 16px; 
 		font-weight: bold; 
@@ -51,11 +50,11 @@ template: true
 		border:  1px dotted #c8c8c8;
 		text-align: center;
 		margin-bottom: 6px;
-		/*-webkit-transition: border 450ms ease;
+		-webkit-transition: border 450ms ease;
 		-moz-transition: border 450ms ease;
 		-o-transition: border 450ms ease;
 		-ms-transition: border 450ms ease;
-		transition: border 450ms ease;*/
+		transition: border 450ms ease;
 		cursor: pointer;
 		-moz-box-sizing:    border-box;
 		-webkit-box-sizing: border-box;
@@ -69,7 +68,7 @@ template: true
 	.download-link:hover {
 		border:  4px solid #c8c8c8;
 		padding: 9px 0 9px 0;
-	}
+	}*/
  	
  
 </style>
@@ -146,7 +145,7 @@ template: true
 
 	<div class="row ">
 		<div class="d5-d12">
-			<h2>Doctoral Programmes x</h2>
+			<h2>Doctoral Programmes</h2>
 		</div>
 	</div>  <!-- /.row -->
 	<div class="row margin-bottom-x8">
@@ -158,7 +157,6 @@ template: true
 				<h5>Research Degrees Open Evening Welcome from Professor Helen Thomas</h5>
 				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum.</p>
 			</figcaption>
-			
 		</figure>
 	</div>  <!-- /.row -->
 
@@ -210,13 +208,14 @@ template: true
 
 		<div class="d5-d12">
 			
-			<p>The UAL Research Degrees Handbook and Regulations for 2012-13 can be downloaded below in PDF format, along with the RNUAL (Research Network University of the Arts London) Guide and the Handbook for Research Degrees by Published Work. </p>
+			<p>The UAL Research Degrees Handbook and Regulations for 2012-13 can be downloaded below in PDF format, along with the RNUAL (Research Network University of the Arts London) Guide and the Handbook for Research Degrees by Published Work.</p>
 			
-			<ul>
-				<a href="#"><li class="download-link"><img src="{{ site.url }}assets/svg/download.svg" alt=""> Research Degrees Handbook 2012-13 <span>PDF 90KB</span></li></a>
-				<a href="#"><li class="download-link"><img src="{{ site.url }}assets/svg/download.svg" alt=""> RNUAL 2012-13 <span>PDF 290KB</span></li></a>
-				<a href="#"><li class="download-link"><img src="{{ site.url }}assets/svg/download.svg" alt=""> Research Degrees by Published Work Handbook <span>PDF 190KB</span></li></a>
+			<ul class="download-link-list">
+				<a href="#"><li><!-- <img src="{{ site.url }}assets/svg/download.svg" alt="">  -->Research Degrees Handbook 2012-13 <span>PDF 90KB</span></li></a>
+				<a href="#"><li><!-- <img src="{{ site.url }}assets/svg/download.svg" alt=""> --> RNUAL 2012-13 <span>PDF 290KB</span></li></a>
+				<a href="#"><li><!-- <img src="{{ site.url }}assets/svg/download.svg" alt=""> --> Research Degrees by Published Work Handbook <span>PDF 190KB</span></li></a>
 			</ul>
+
 		</div> 
 		<div class="d13-d16 addlinetop">
 			<p class="margin-top-2x aaa-gray size6">All publications adhere to RNIB and dyslexia guidelines.</p>

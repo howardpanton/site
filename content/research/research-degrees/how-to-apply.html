@@ -7,7 +7,10 @@ template: true
 <style>
 	p, ul {font-weight: lighter;}
 	p {font-size: 18px; padding-right: 20px;}
-	p.intro {font-size: 22px; font-weight: normal;}
+	p.intro {font-size: 22px; font-weight: 300; color: black;}
+
+	p a {border-bottom: 1px dotted #c8c8c8;  }
+	p a:hover {border-bottom: 0;  }
 	ul {list-style: none;}
 	section {overflow: hidden;float: left;display: block;margin-bottom: 144px;}
 	article {border-bottom: 1px dotted #c8c8c8;}
@@ -16,9 +19,9 @@ template: true
 	aside {}
 	h1 {padding-top: 48px;}
  
-	.nav { margin-top: 16px;}
+	.nav { margin-top: 0px;}
 	.nav li { padding: 8px 0 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
-	.nav li:first-child { border-top: 1px dotted #c8c8c8; }
+	.nav li:first-child { /*border-top: 1px dotted #c8c8c8;*/ padding-top: 0;  }
  
 	.indentedliststart li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
  
@@ -26,6 +29,27 @@ template: true
 	.indentedlist li:first-child  { border-top: 1px dotted #c8c8c8;}
 	.indentedlist li:last-child  { border-bottom: none;}
  
+	.aside-box {
+		padding: 12px 18px; 
+		background-color: #ebebeb; 
+		line-height: 24px; 
+		display: block; 
+		font-weight: 300;
+	}
+	
+	.aside-box:hover {
+		background-color: black;
+		color: #FFFFFF;
+	}
+
+	.aside-related-info p{
+		padding-top: 12px;
+		font-size: 16px;
+		font-weight: normal;
+		color: #282828;
+		line-height: 24px;
+	}
+
 	.size1{font-size: 56px; font-weight: 400;}
 	.size2{font-size: 34px; font-weight: 400;}
 	.size3{font-size: 22px; font-weight: 400; padding-top: 6px;}
@@ -39,6 +63,8 @@ template: true
 	.removetline {border-top: none;}
 	.sectionend {border-bottom: 1px solid #e1e1e1;}
 	.red {color: red;}
+
+	
  
 </style>
 
@@ -48,25 +74,81 @@ template: true
 			<h1>How To Apply</h1>
 		</div>
 	</div>
-	<div class="row rhythm-3">
+	<div class="row rhythm-3 margin-bottom-x4">
 		<nav class="d1-d4">
-			<ul>
-				<li><a href="how-to-apply.html">How To Apply</a></li>
-				<li><a href="research-student-projects.html">Research Student Projects</a></li>
-				<li><a href="completed-research-students.html">Completed Research Students</a></li>
-				<!-- <li><a href="#">Spare</a></li>
-				<li><a href="#">Spare</a></li>
-				<li><a href="#">Spare</a></li> -->
+			<ul class="nav">
+				<li><a href="mphil-phd.html">MPhil/PhD</a></li>
+				<li><a href="duration-registration.html">Duration & Registration</a></li>
+				<li><a href="entry-requirements.html">Entry Requirements</a></li>
+				<li><a href="completed-research-students.html">Selection & Offers</a></li>
+				<li><a href="completed-research-students.html">MPhil/PhD By Publication</a></li>
+				<li><a href="completed-research-students.html">Transfer From Another Institution</a></li>
+				
+
 			</ul>
 		</nav>
 	   	
-	   	<div class="d5-d16">
-			<img src="http://placehold.it/1280x800&text=Some Content Here" alt="Slider">
+	   	<div class="d5-d12 addlinebottom">
+			<p class="intro margin-top-x2">The deadline for applications for a place on the research degree programme in 2013/14 academic year and for research degree funding has now passed and the pages in this section are for reference only. Details on the application process for 2014/15 will be published on this page in October 2013.</p>
+		
+			<p>We recommend that you use the website to explore the many different research areas in which the University of the Arts London specialises prior to making your application and consider each college and its specialisms carefully.</p>
+				
+			<p>It is recommended that applicants use the <a href="#">staff research profile pages</a> to identify and contact potential supervisors from the University’s world class researchers. The Academic Research Contacts at each College can also provide valuable advice and feedback on proposals:</p>
+		</div>
+		
+		<div class="d13-d16">
+			<a href="mailto:researchdegrees@arts.ac.uk" class="aside-box">Contact the Research Student Section for any questions about your application</a>
 		</div>
 	</div>  <!-- /.row -->
 
+	<div class="row margin-bottom-x4">
+		<div class="d5-d12 addlinebottom">
+			<h2>College Contacts</h2>
+			<h3 class="size4">CCW Graduate School (Camberwell, Chelsea and Wimbledon)</h3>
+			<p><a href="mailto:m.quinn@chelsea.arts.ac.uk">Dr Malcolm Quinn</a></p> 
+			<h3 class="size4">Central Saint Martins College of Arts &amp; Design</h3> 
+			<p><a href="mailto:j.swinson@csm.arts.ac.uk">James Swinson</a></p> 
+			<h3 class="size4">London College of Communication</h3> 
+			<p><a href="mailto:d.cherry@arts.ac.uk">Professor Deborah Cherry </a> </p>
+			<h3 class="size4">London College of Fashion</h3> 
+			<p><a href="mailto:a.kent@fashion.arts.ac.uk">Anthony Kent</a> </p>
+		</div>
+	</div>  <!-- /.row -->
 	
+	<div class="row">
+		<div class="d5-d16">
+			<h2>Applying</h2>
+		</div>
+	</div>  <!-- /.row -->
+	
+	<div class="row">
+		<div class="d5-d12">
+			<ol class="large-li-numbers">
+				<li>
+					<p>Once you are ready to apply, please download the application form and follow the guidance for applying.</p>
+					<ul class="download-link-list">
+						<a href="#"><li><!-- <img src="{{ site.url }}assets/svg/download.svg" alt="">  -->Application Form 2013-14 <span>PDF 90KB</span></li></a>
+						<a href="#"><li><!-- <img src="{{ site.url }}assets/svg/download.svg" alt=""> --> Application Stages <span>PDF 290KB</span></li></a>
+					</ul>
+					<p> </p> 
+				</li>
+				<li>
+					<p>Email completed application forms to: <a href="mailto:researchdegrees@arts.ac.uk">researchdegrees@arts.ac.uk</a>.</p>
+				</li> 
+				<li>
+					<p>You will receive a reply email from this address confirming receipt of your application within 5 working days.</p>
+					<p>If you do not receive this confirmation within this time, please contact this office using the above email address without re-attaching your application or call this office on +44 (0)207 514 8187.</p>
+					<p>Please also ensure that the email containing your application form and supporting documents do not exceed a total combined size of 7MB, as otherwise it will not be delivered.</p>
+				</li> 
+			</ol>
+		</div>
 
+		<div class="d14-d16 addlinetop no-margin-top aside-related-info">
+			<p>Get further information on the studentship funding available for the 2013/14 academic year from <a href="#">Research Degree Funding Opportunities</a></p>
+		</div>
+	</div>  <!-- /.row -->
+	
+ 
 	<div class="row rhythm-3">
 	    <div class="d5-d14">
 	      <h2>Related Links</h2>
@@ -104,6 +186,8 @@ template: true
 	      </ul>
 	    </div>
 	  </div> <!-- /.row -->
+
+
 		
 	
 	

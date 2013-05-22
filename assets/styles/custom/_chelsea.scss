@@ -47,26 +47,21 @@
 }
 
 
-
+// ol list style moved to typography.scss
 
 // style ol list with larger numbers for the list counter
-.large-li-numbers {
-    counter-reset: list-counter;
-    list-style-type: none;
-    li:before {
-        content: counter(list-counter);
-        counter-increment: list-counter;
-        @include adjust-font-size-to(34px);
-        font-weight: bold;
-        left: -34px;
-    }
-}
-
-// moved to it's own component scss file (_author-mini-profile-box)
-// .author-mini-profile-box {
-//     @extend .box-out;
-//     @extend .margin-bottom-x4;
+// ol.large-li-numbers {
+//     counter-reset: list-counter;
+//     list-style-type: none;
+//     li:before {
+//         content: counter(list-counter);
+//         counter-increment: list-counter;
+//         @include adjust-font-size-to(34px);
+//         font-weight: bold;
+//         left: -34px;
+//     }
 // }
+
 
 .artist-portrait {
     margin-right: 20px;

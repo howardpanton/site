@@ -7,7 +7,10 @@ template: true
 <style>
 	p, ul {font-weight: lighter;}
 	p {font-size: 18px; padding-right: 20px;}
-	p.intro {font-size: 22px; font-weight: normal;}
+	p.intro {font-size: 22px; font-weight: 300; color: black;}
+
+	p a {border-bottom: 1px dotted #c8c8c8;  }
+	p a:hover {border-bottom: 0;  }
 	ul {list-style: none;}
 	section {overflow: hidden;float: left;display: block;margin-bottom: 144px;}
 	article {border-bottom: 1px dotted #c8c8c8;}
@@ -16,9 +19,9 @@ template: true
 	aside {}
 	h1 {padding-top: 48px;}
  
-	.nav { margin-top: 16px;}
+	.nav { margin-top: 0px;}
 	.nav li { padding: 8px 0 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
-	.nav li:first-child { border-top: 1px dotted #c8c8c8; }
+	.nav li:first-child { /*border-top: 1px dotted #c8c8c8;*/ padding-top: 0;  }
  
 	.indentedliststart li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
  
@@ -26,6 +29,27 @@ template: true
 	.indentedlist li:first-child  { border-top: 1px dotted #c8c8c8;}
 	.indentedlist li:last-child  { border-bottom: none;}
  
+	.aside-box {
+		padding: 12px 18px; 
+		background-color: #ebebeb; 
+		line-height: 24px; 
+		display: block; 
+		font-weight: 300;
+	}
+	
+	.aside-box:hover {
+		background-color: black;
+		color: #FFFFFF;
+	}
+
+	.aside-related-info p{
+		padding-top: 12px;
+		font-size: 16px;
+		font-weight: normal;
+		color: #282828;
+		line-height: 24px;
+	}
+
 	.size1{font-size: 56px; font-weight: 400;}
 	.size2{font-size: 34px; font-weight: 400;}
 	.size3{font-size: 22px; font-weight: 400; padding-top: 6px;}
@@ -39,6 +63,8 @@ template: true
 	.removetline {border-top: none;}
 	.sectionend {border-bottom: 1px solid #e1e1e1;}
 	.red {color: red;}
+
+	
 </style>
 
 <div class="content-wrapper">
@@ -50,12 +76,14 @@ template: true
 	<div class="row rhythm-3">
 		<nav class="d1-d4">
 			<ul class="nav">
-				<li><a href="how-to-apply.html">How To Apply</a></li>
-				<li><a href="research-student-projects.html">Research Student Projects</a></li>
-				<li><a href="completed-research-students.html">Completed Research Students</a></li>
-				<!-- <li><a href="#">Spare</a></li>
-				<li><a href="#">Spare</a></li>
-				<li><a href="#">Spare</a></li> -->
+				<li><a href="art-and-design-history.html">Art &amp; Design History</a></li>
+				<li><a href="art-theory-cultural-studies.html">Art Theory &amp; Cultural Studies</a></li>
+				<li><a href="communications-graphics-photography.html">Commmunications, Graphics &amp; Photography</a></li>
+				<li><a href="design.html">Design</a></li>
+				<li><a href="fashion-and-textiles.html">Fashion &amp; Textiles</a></li>
+				<li><a href="film-and-moving-image.html">Film &amp; Moving Image</a></li>
+				<li><a href="fine-art.html">Fine Art</a></li>
+				<li><a href="performing-arts-and-theatre.html">Performing Arts &amp; Theatre</a></li>
 			</ul>
 		</nav>
 	   	

@@ -276,6 +276,31 @@ ul 			{ @include unordered; } 	// Include unordered list from mixins by default
 ol 			{ @include ordered; }		// Include ordered list from mixins by default
 
 
+// style ol list with large numbers for the list counter
+ol.large-li-numbers {
+    counter-reset: list-counter;
+    list-style-type: none;
+	
+	> li { 
+
+		margin-bottom: 24px;
+		// text-indent:34px;
+	}
+    
+    > li:before {
+        content: counter(list-counter);
+        counter-increment: list-counter;
+        @include adjust-font-size-to(34px);
+        font-weight: bold;
+        line-height: 30px;
+        
+        margin-bottom: 0;
+        padding-bottom: 0;
+		
+		// @include gs-span(d, 5, 6, (5, 12));
+        // margin-left: -34px;
+    }
+}
 
 // .content-wrapper ul {
 // 	list-style-type: none;
