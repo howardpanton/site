@@ -1,0 +1,263 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// As a rule of thumb, don't nest further than 3 levels deep
+// -------------------------------------------------------------
+
+// This is a good example!
+// .styleguide-format {
+//   border: 1px solid #0f0;
+//   color: #000;
+//   background: rgba(0,0,0,0.5);
+// }
+
+// ::Layout styles 
+	// ::Media queries 
+
+
+.main-menu {
+		@extend .clearfix;
+		width:100%;
+		background:black;
+		overflow: visible;
+		height: 36px;
+
+		@include gs-media(m, min-max) {
+		width: 100%;
+		background: #2a2a2a;
+		overflow: visible;
+		height: auto;
+		// @include animated;
+		// @include fadeInDown;
+		}
+}
+
+.top-bar {
+		@extend .content-wrapper;
+
+		@include gs-media(m, min-max) {
+			width:100%;
+			overflow:hidden;
+		}
+}
+
+.dropdown {
+
+		width:100%;
+		list-style : none;
+		float: right;
+		margin-bottom: 0;
+		display:inline;
+		position: relative;
+		padding-left:0px;
+		@include gs-media(m, min-max) {
+			margin: 0 auto;
+			float:none;
+			display:block;
+			overflow: hidden;
+			padding-left:0px;
+		}
+
+
+		li {
+			width: 13%;
+			float: none;
+			padding-left: 0;
+			padding-right: 0;
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			border-right: 1px solid #ffffff;
+			@include padding-leader(1);
+			@include padding-trailer(1);
+
+				@include gs-media(m, min-max) {
+					float: left;
+					display: block;
+					width:100%;
+					text-align: left;
+					border: none;
+					// border-top: 1px solid rgba(255, 255, 255, 0.0976562);
+					border-top: 1px solid rgba(102, 102, 102, 0.0976562);
+					border-bottom: 1px solid rgba(0, 0, 0, 0.347656);
+					position: relative;
+					padding:0px;
+				}
+
+			&:first-child {
+				border-left: 1px solid #ffffff;
+				@include gs-media(m, min-max) {
+					border-left: none;
+			}
+
+				a {
+					@include gs-media(m, min-max) {
+						// border-right: 1px solid rgba(255, 255, 255, 0.0976562);
+						border-right: 1px solid rgba(102, 102, 102, 0.0976562);
+					}
+				}
+			}
+
+			&:last-child {
+			margin-right: 0;
+
+			@include gs-media(m, min-max) {
+				border-bottom: none;
+			}
+
+				a {
+					@include gs-media(m, min-max) {
+						//border-right: solid 2px #666;
+						// border-right: 1px solid rgba(255, 255, 255, 0.0976562);
+						border-right: 1px solid rgba(102, 102, 102, 0.0976562);
+					}
+				}
+			}
+
+			a {
+				text-align: center;
+				//display: block;
+				color:white;
+				//padding-left: 0.375em;
+				//padding-right:0.375em;
+				font-weight: normal;
+				font-size: 13px;
+				border-bottom:none;
+				white-space: nowrap;
+				@include gs-media(m, min-max) {
+					text-align: left;
+					font-size: em(16px);
+					padding: 0px;
+					@include padding-leader(2);
+					@include padding-trailer(2);
+					color:#ccc;
+					float:left;
+					width: 80%;
+					text-indent: 12px;
+				}
+			}
+
+			div.span {
+					@include gs-media(m, min-max) {
+					width: 20%;
+					display:block;
+					float:left;
+					height:48px;
+					position:relative;
+					border-left: 1px solid rgba(0, 0, 0, 0.347656);
+
+					span {
+						color:#ffffff;
+						font-size: 2em;
+						position: absolute;
+						top:10px;
+						font-weight:normal;
+						left:24px;
+					}
+
+				}
+	 		 	&:hover {
+	 		 		@include gs-media(m, min-max) {
+
+					}
+				}
+ 				}
+
+
+		}
+
+}
+
+
+.sub_menu {
+	width: auto; 
+	visibility: hidden; 
+	position: absolute; 
+	top: 100%; 
+	left: 0px; 
+	background:black; 
+	display: block; 
+	z-index:10;
+	padding-left:0px;
+
+	@include gs-media(m, min-max) {
+		width: auto;
+		position: relative;
+		top: 100%;
+		left: 1px;
+		background: black;
+		display: block;
+		z-index: 10;
+		margin-bottom: 0px;
+	}
+
+li {
+	float: left;
+	width:100%;
+	display:block;
+			&:first-child {
+				border-left:none;
+			}
+
+	@include gs-media(m, min-max) {
+		width: 100%;
+		border-bottom: none;
+		display: block;
+		border-right: none;
+		// border-top: 1px solid rgba(255, 255, 255, 0.1);
+		border-top: 1px solid rgba(102, 102, 102, 0.1);
+		border-bottom: 1px solid rgba(51, 51, 51, 0.0976562);
+		
+		&:first-child {
+			@include gs-media(m, min-max) {
+			border-left:none;
+			}
+		}
+
+		a {
+					color:white;
+			@include gs-media(m, min-max) {
+			 	text-align: left;
+				width: 100%;
+				float:left;
+				border-right:none;
+				background:#414141;
+				padding:0px;
+				@include padding-leader(2);
+				@include padding-trailer(2);
+				text-indent:12px;
+		 		}
+
+		 		 	&:hover {
+		 		 		@include gs-media(m, min-max) {
+						background:#666666;
+						}
+					}
+		 }
+
+	}
+
+	a {
+		display: inline-block;
+		white-space: nowrap;
+		color:white; 
+		text-align:left;
+		@include gs-media(m, min-max) {
+			white-space: normal;
+		}
+	}
+	color:white; text-align:left;
+}
+}
+
+ul.last{
+left:-35px;
+@include gs-media(m, min-max) {
+	left:0;
+}
+}
+
+.is-removed-mobile a {
+	color:white;
+}
+

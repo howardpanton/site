@@ -1,0 +1,301 @@
+// UTILITY CLASSES
+// ---------------
+
+// Positioning
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.affix {
+  position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.full-width {
+  float: left;
+  width: 100%;
+}
+
+// Centering text and center-aligning elements
+.centered {
+  text-align: center;
+}
+.alignright {
+	text-align: right;
+}
+.alignleft {
+	text-align: left;
+}
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Borders
+.border-top {
+  border-top: 1px solid ;
+}
+.border-bottom {
+  border-bottom: 1px solid;
+}
+.with-border {
+  border: 1px solid;
+}
+
+
+.rhythm-2 {
+  @include padding-leader(2);
+  @include padding-trailer(2);
+}
+
+.rhythm-3 {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+}
+
+.rhythm-6 {
+  @include padding-leader(6);
+  @include padding-trailer(6);
+}
+
+.rhythm-8 {
+  @include padding-leader(8);
+  @include padding-trailer(8);
+}
+
+.margin-top-x8 {
+  @include margin-leader(8);
+}
+
+.rhythm-margin-top {
+  @include margin-leader(3);
+}
+
+.rhythm-margin-bottom {
+  @include margin-trailer(4);
+}
+
+.rhythm-margin-top {
+  @include margin-leader(4);
+}
+
+.margin-bottom-x4 {
+  @include margin-trailer(4);
+}
+
+.margin-bottom-x8 {
+  @include margin-trailer(8);
+}
+
+// Quick margins
+.add-top {
+  margin-top: 20px;
+}
+.add-bottom {
+  margin-bottom: 20px;
+}
+
+
+// classes remove margins
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+
+// no borders
+
+.no-border {
+  border: none;
+}
+
+
+// no underline (removes styling for both text underline and border bottom)
+.no-underline {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// Formatting
+.no-bullet {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.no-bullet li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+// display inline - 
+.display-inline {
+  display: inline-block;
+  
+  li {
+    display: inline-block;
+  }
+}
+
+
+
+// Padding
+
+.no-pad { padding: 0; }
+
+.no-pad-top { padding-top: 0; }
+
+.no-pad-bottom { padding-bottom: 0; }
+
+.no-pad-left { padding-left: 0; }
+
+.no-pad-right { padding-right: 0; }
+
+
+
+// apply top padding with ryhthm 
+
+.pad-top-1x { @include padding-leader(1); }
+
+.pad-top-2x { @include padding-leader(2); }
+
+.pad-top-3x { @include padding-leader(3); }
+
+.pad-top-4x { @include padding-leader(4); }
+
+.pad-top-5x { @include padding-leader(5); }
+
+.pad-top-6x { @include padding-leader(6); }
+
+
+.pad-bottom-1x { @include padding-trailer(1); }
+
+.pad-bottom-2x { @include padding-trailer(2); }
+
+.pad-bottom-3x { @include padding-trailer(3); }
+
+.pad-bottom-4x { @include padding-trailer(4); }
+
+.pad-bottom-5x { @include padding-trailer(5); }
+
+.pad-bottom-6x { @include padding-trailer(6); }
+
+
+// Clearing floats
+.clearfix {
+    @include clearfix;
+}
+
+// Accessible yet invisible text
+.hide-text {
+  //@include hide-text();
+}
+
+
+
+
+/* ::State styles */
+/* ------------------------------------------------------------ */
+
+.is-hidden {
+  display: none;
+}
+
+.is-shown, .is-block {
+  display: block;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.ajust-margin-top {
+  margin-top:0px;
+}
+
+@include gs-media(m, min-max) {
+
+  .is-removed-mobile {
+    visibility: visible;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  .is-hidden-mobile {
+    display:none;
+  }
+
+}
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}

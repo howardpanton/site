@@ -1,14 +1,17 @@
 # Require any additional compass plugins here.
 #require 'ruby-growl'
-require 'susy'
-require 'zurb-foundation'
+#require 'susy'
+#require 'zurb-foundation'
 
 # Set this to the root of your project when deployed:
-http_path = "http://artslondon.github.com/beta/"
+http_path = "http://artslondon.github.io/beta/"
 css_dir = "assets/css"
-sass_dir = "assets/sass"
+sass_dir = "assets/styles"
+fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
+
+
 
 # on_sprite_saved do |filename|
  
@@ -34,9 +37,9 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://artslondon.github.com/beta/assets/"
+http_images_path = "http://artslondon.github.io/beta/assets/img"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = false
+line_comments = true
 
 
 # If you prefer the indented syntax, you might want to regenerate this
@@ -45,3 +48,4 @@ line_comments = false
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
+sass_options = {:debug_info => true}

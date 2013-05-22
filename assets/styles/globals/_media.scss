@@ -1,0 +1,41 @@
+// Needs to be placed in its own Media scss
+
+.media-block {
+  
+  figcaption {
+  padding: 0 0px;
+  @include adjust-font-size-to(14px); // from 15th May meeting
+  color: #929292;
+  font-family: Helvetica;
+  font-size:0.8em;
+  padding-top: 4px;
+
+}
+
+  &.float-left {
+    figure {
+      float:left;
+      padding-right:emCalc(24px);
+    }
+  }
+    &.float-right{
+    figure {
+      float:right;
+      padding-left:emCalc(24px);
+    }
+  }
+}
+
+  .heading-bottom {
+
+    h2.media-heading-top {
+      display:none;
+    }
+  }
+
+    .heading-top {
+
+    h2.media-heading-bottom {
+      display:none;
+    }
+  }
