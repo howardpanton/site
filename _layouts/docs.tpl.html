@@ -106,30 +106,6 @@ function(){
 
   
 
-<!--
-//   <script type="text/javascript">
-//     jwplayer('vid-player').setup({
-//         'file': '{{ site.url }}assets/video/lcf-sample-video.mp4',
-//         'flashplayer': '{{ site.url }}assets/js/libs/jwplayer/jwplayer.flash.swf',       
-//         'width': '100%',
-//         'height': '100%',
-//         'image': '{{ site.url }}assets/video/hero-image/lcf-video.jpg',
-//         'playlist.position': 'bottom',
-//         'playlist.size': '120',
-//         'backcolor': '000000',
-//         'frontcolor': 'ffffff',
-//         'lightcolor': 'ffcc00',
-//         'autostart' :  'false',
-//         'shuffle': 'false',
-//         'repeat': 'list',
-//         'stretching': 'exactfit',
-//         'volume': '90',
-//         'quality': 'true',
-//         'bufferlength': '2',
-//         'plugins': 'like-1'
-//     });
-// </script> -->
-
   <script>
     $(document).ready(function(){
 
@@ -163,7 +139,7 @@ function(){
 
       if ($('#vid-player').length > 0) {
         jwplayer('vid-player').setup({
-          'file': '{{ site.url }}assets/video/lcf-sample-video.mp4',
+          'file': 'https://s3.amazonaws.com/ual-beta/lcf-sample-video.mp4',
           'flashplayer': '{{ site.url }}assets/js/libs/jwplayer/jwplayer.flash.swf',       
           'width': '100%',
           'image': '{{ site.url }}assets/video/hero-image/lcf-video.jpg',

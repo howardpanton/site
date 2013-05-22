@@ -205,7 +205,7 @@ small {
 
 ol, ul {
 	@include adjust-font-size-to(16px);
-	margin: 0 0 rhythm(4, 16px) 0;							// 4 lines below, based on font size
+	margin: 0 0 rhythm(4, 16px) 0; // 4 lines below, based on font size
 }
 
 li {
@@ -272,8 +272,8 @@ blockquote.wide-span-quote {
 
 // Lists
 // -----------------------------------------------------------
-ul 			{ @include unordered; } 	// Include unordered list from mixins by default
-ol 			{ @include ordered; }		// Include ordered list from mixins by default
+ul 			{ @include unordered-inside; } 	// Include unordered list from mixins by default
+ol 			{ @include ordered-inside; }		// Include ordered list from mixins by default
 
 
 
