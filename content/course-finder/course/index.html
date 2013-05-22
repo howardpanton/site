@@ -26,7 +26,12 @@ template: true
 		<div role="main" class="main-column d5-d16">
 			<div class="d5-d12 buffer-top">
 				<nav>
-					<h4>Select another Undergraduate course</h4>
+					<h4><a href="#" data-dropdown="sibling-nav" class="button dropdown">Select another Undergraduate course</a></h4>
+					<ul id="sibling-nav" class="f-dropdown">
+						<li><a href="#">This is a link</a></li>
+						<li><a href="#">This is another</a></li>
+						<li><a href="#">Yet another</a></li>
+					</ul>
 				</nav>
 			</div>
 			<header class="d-all">
@@ -35,8 +40,8 @@ template: true
 			<div class="d5-d12 super-teaser buffer">
 				<p>Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
 			</div>
-			<div class="d5-d12 buffer-plus">	
-				<div class="box-out bg-gray-bg">
+			<div class="d5-d12 buffer">	
+				<div class="box-out bg-gray-bg buffer">
 					<h3>Critical time-sensitive</h3>
 					<p><a href="#">We're running to the quad!</a></p>
 				</div>
@@ -46,7 +51,7 @@ template: true
 				    <div class="slide">
 				    	<h4>Slide title</h4>
 				    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-1.jpg" />
-		    			<p class="slide-caption">Caption</p>
+		    			<p class="slide-caption">Caption <a href="#">with link</a></p>
 				    </div>
 				    <div class="slide">
 				    	<h4>Video title</h4>
@@ -66,7 +71,7 @@ template: true
 				</div>
 			</div><!-- #course-carousel -->
 			<div class="d5-d12 buffer-plus">
-				<div class="box-out ual-black-bg">
+				<div class="box-out ual-black-bg buffer">
 					<h3>Reasons to apply</h3>
 					<ul class="cross-bullet">
 						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -110,11 +115,23 @@ template: true
             			</tbody>
           			</table>
 				</div> 
-				<h2 class="accordion-header">Structure and Content</h2> 
+				<h2 class="accordion-header">Content and Structure</h2> 
 				<div class="accordion-content"> 
 					<div class="padbox">
 				  		<p>Suspendisse dictum sollicitudin ipsum id tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam iaculis iaculis ultricies. Sed sodales dui in dolor placerat eget sagittis ligula lobortis. Ut in egestas sapien. Fusce auctor mollis dignissim. Nullam bibendum imperdiet sodales. Nulla facilisi. Aenean quis enim et sem sagittis aliquam. Etiam est arcu, auctor sit amet porttitor malesuada, auctor et diam.</p> 
 				  	</div>
+				</div> 
+				<h2 class="accordion-header">Staff</h2> 
+				<div class="accordion-content"> 
+					<div class="padbox">
+						<ul>
+							<li><a href="#">Staff member 1</a></li>
+							<li><a href="#">Staff member 2</a></li>
+							<li><a href="#">Staff member 3</a></li>
+							<li><a href="#">Staff member 4</a></li>
+							<li><a href="#">Staff member 5</a></li>
+						</ul>	
+					</div> 
 				</div> 
 				<h2 class="accordion-header">Careers</h2> 
 				<div class="accordion-content"> 
@@ -134,18 +151,6 @@ template: true
 						<p>Vestibulum lobortis dui eget enim vehicula vitae sollicitudin justo euismod. Sed dignissim magna non lorem condimentum placerat at quis ipsum. Donec convallis elit quis massa viverra faucibus. Mauris at velit velit. Morbi ultricies tellus sit amet quam porta ac faucibus nulla tempus. Phasellus eu erat nibh, ac aliquet ipsum. Cras ut nisl augue. Duis neque odio, sagittis a aliquet et, rhoncus nec neque. Donec ac libero purus, vitae rutrum orci. Mauris dictum faucibus metus at suscipit. Curabitur ipsum nibh, fermentum vel adipiscing a, iaculis id est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porta dui sit amet velit commodo eu sollicitudin nibh varius. Duis quis erat diam.</p>
 					</div> 
 				</div> 
-				<h2 class="accordion-header">Staff</h2> 
-				<div class="accordion-content"> 
-					<div class="padbox">
-						<ul>
-							<li><a href="#">Staff member 1</a></li>
-							<li><a href="#">Staff member 2</a></li>
-							<li><a href="#">Staff member 3</a></li>
-							<li><a href="#">Staff member 4</a></li>
-							<li><a href="#">Staff member 5</a></li>
-						</ul>	
-					</div> 
-				</div> 
 			</div>
 		</div><!-- .course-data -->
 	</div><!-- .content-wrapper -->
@@ -154,7 +159,7 @@ template: true
 <section id="course-news" class="row">
 	<div class="content-wrapper">
 		<div class="d5-d14 clearfix buffer-top">
-			<h2>News and Events Feed</h2>
+			<h2>A Feed With Images</h2>
 			<div class="row media-block heading-bottom border-dot">
 				<figure class="d5-d8">
 				<a href="#" title="Link title">
