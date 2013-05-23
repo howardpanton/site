@@ -24,31 +24,25 @@
 
     {% include _global_footer.html %}
 {% endif %}
-  <script src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
   <script>
     Modernizr.Detectizr.detect({detectScreen:false});
   </script>
-  </head>
 
   <script>
     if (typeof jQuery == 'undefined') {
-        document.write(unescape("%3Cscript src='../../../assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='{{ site.url }}assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
     }
   </script>
+
   <!-- load in jQuery Mobile 
   <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
   
-  <script>
-    Modernizr.Detectizr.detect({detectScreen:false});
-  </script>
 
   <!-- /%script{:type => "text/javascript", :src  => "{{ site.url }}/assets/js/libs/jquery.jpanelmenu.min.js"} -->
   
   <!-- Development scripts, not for production -->
   <script src='{{ site.url }}/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
-
-  <!-- Libs -->
 
   <!-- Add Media Queries support for IE 6-8 -->
   <script src='{{ site.url }}/assets/js/libs/respond.min.js' type='text/javascript'></script>
@@ -69,7 +63,9 @@
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
 
   <!-- Foundation -->
-  <script src='{{ site.url }}/assets/js/foundation/foundation.js' type='text/javascript'></script>
+
+  <script src='{{ site.url }}assets/js/foundation/zepto.min.js' type='text/javascript'></script>
+  <script src='{{ site.url }}assets/js/foundation/foundation.min.js' type='text/javascript'></script>
   
   <!-- Scripts -->
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
