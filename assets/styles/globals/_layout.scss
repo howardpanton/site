@@ -383,15 +383,6 @@ color: white;
 }
 
 
-// Box-out
-.box-out {
-	min-height: 20px;
-  	//padding: 10px 20px;
-  	padding: 24px; //  updated after decisions from meeting 15th May
-  	//@include gs-pad(d, padfull);
-  	background: $bg-gray;
-}
-
 // Cross-bullets
 ul.cross-bullet {
 	@include nobullet;
@@ -402,7 +393,7 @@ ul.cross-bullet {
 
 // Baseline classes
 .buffer {
-    @include margin-trailer(5);
+    @include margin-trailer(4);
 }
 .buffer-plus {
     @include margin-trailer(9);
@@ -458,6 +449,9 @@ ul.cross-bullet {
 	.slide-caption {
 		border-bottom: 1px solid $light-gray;
 		margin-bottom: 0;
+	}
+	.bx-controls-direction a {
+		top: 0;
 	}
 }
 
