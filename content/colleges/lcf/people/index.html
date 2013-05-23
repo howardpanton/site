@@ -1,25 +1,15 @@
 ---
 layout: main.tpl
 college: lcf
-section: graduate-school
-title: LCF - People
+section: people
+title: London College of Fashion
 template: true
 ---
 
 <div class="content-wrapper buffer-top-plus clearfix">
 	<div class="row buffer-max">
 		<nav class="d1-d4 sidebar">
-			<ul class="no-bullet">
-				<li><a href="#">About LCF</a></li>
-				<li><a href="#">Courses</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">Events</a></li>
-				<li><a href="#">Life at LCF</a></li>
-				<li><a href="#">LCF People</a></li>
-				<li><a href="#">LCF Channel</a></li>
-				<li><a href="#">LCF Research</a></li>
-				<li><a href="#">LCF Business</a></li>
-			</ul>		
+			{% include _lcf_navigation.html %}		
 		</nav>	
 
 		<div role="main" class="d5-d16">
@@ -114,6 +104,110 @@ template: true
 			<section class="buffer-max"><!-- this will have a title and rollover effects -->
 				<figure class="buffer"><img src="{{ site.url }}/assets/img/lcf/lcf-gs-5.jpg"></figure>
 			</section>
+=======
+				<hr class="aligncenter">
+			</header>
+			<div class="video-wrapper clearfix buffer-max">
+				<iframe width="853" height="480" src="http://www.youtube.com/embed/Q0xTFhGCFww" frameborder="0" allowfullscreen></iframe>
+				<p class="caption">Jimmy Choo interview - <a href="#">read more</a></p>
+			</div>
+			<section class="row buffer-max">
+				<header class="section-title buffer centered">
+					<h1 class="heading-x3">Our staff</h1>
+					<hr class="aligncenter">
+				</header>
+				<ul class="blocks two-up">
+			  		<li>
+			          <div class="media-block region centered heading-bottom">
+			            <figure>
+			              <a href="#" title="Link title">
+			                <img src="{{ site.url }}assets/img/lcf/lcf-people1.jpg" alt="Image Alt">
+			              </a>
+			              <figcaption>Curabitur blandit tempus porttitor, Odio. Original by <a href="#">Lorem Ipsum</a></figcaption>
+			            </figure>
+			            <div class="media-body">
+			              <h3 class="media-heading-bottom">Sue Dray, MA Fashion Artefact</h3>
+			              <p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+			              <p class="media-meta">View full interview</p>
+			            </div>
+			          </div>
+			        </li>        
+			        <li>
+			          <div class="media-block region centered heading-bottom">
+			            <figure>
+			              <a href="#" title="Link title">
+			                <img src="{{ site.url }}assets/img/lcf/lcf-people2.jpg" alt="Image Alt">
+			              </a>
+			              <figcaption>Curabitur blandit tempus porttitor, Odio. Original by <a href="#">Lorem Ipsum</a></figcaption>
+			            </figure>
+			            <div class="media-body">
+			              <h3 class="media-heading-bottom">Dai Rees, MA Fashion Design Technology: Menswear</h3>
+			              <p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+			              <p class="media-meta">View full interview</p>
+			            </div>
+			          </div>
+			        </li>
+			    </ul>
+			</section>
+			<section class="row buffer-max">
+				<header class="section-title buffer centered">
+					<h1 class="heading-x3">Our students</h1>
+					<hr class="aligncenter">
+				</header>
+				<ul class="blocks two-up">
+			        <li>
+			          <div class="media-block region centered heading-bottom">
+			            <figure>
+			              <a href="#" title="Link title">
+			                <img src="{{ site.url }}assets/img/lcf/lcf-people1.jpg" alt="Image Alt">
+			              </a>
+			              <figcaption>Curabitur blandit tempus porttitor, Odio. Original by <a href="#">Lorem Ipsum</a></figcaption>
+			            </figure>
+			            <div class="media-body">
+			              <h3 class="media-heading-bottom">Sue Dray, MA Fashion Artefact</h3>
+			              <p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+			              <p class="media-meta">View full interview</p>
+			            </div>
+			          </div>
+			        </li>        
+			        <li>
+			          <div class="media-block region centered heading-bottom">
+			            <figure>
+			              <a href="#" title="Link title">
+			                <img src="{{ site.url }}assets/img/lcf/lcf-people2.jpg" alt="Image Alt">
+			              </a>
+			              <figcaption>Curabitur blandit tempus porttitor, Odio. Original by <a href="#">Lorem Ipsum</a></figcaption>
+			            </figure>
+			            <div class="media-body">
+			              <h3 class="media-heading-bottom">Dai Rees, MA Fashion Design Technology: Menswear</h3>
+			              <p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+			              <p class="media-meta">View full interview</p>
+			            </div>
+			          </div>
+			        </li>
+				</ul>
+			</section>
+			<section class="row buffer-max">
+				<header class="section-title buffer centered">
+					<h1 class="heading-x3">Our researchers</h1>
+					<hr class="aligncenter">
+				</header>
+				<div class="row bg-gray-bg">
+
+					<div class="d5-d10">
+						<div class="box-out border-right">
+							<p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+						</div>
+					</div>
+					<div class="d11-d16">
+						<div class="box-out">
+							<p>Curabitur blandit tempus porttitor. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
+						</div>
+					</div>
+
+				</div>
+
+>>>>>>> 0acce02c44ff6e2c1e3bc697e57207b29d5ee662
 		</div>		
 	</div><!-- .row -->
 </div><!-- .content-wrapper -->

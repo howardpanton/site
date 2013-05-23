@@ -45,5 +45,17 @@ ul.blocks {
    }
 }
 
-
+// Two blocks in a row
+.two-up {
+   li {
+      width: gs-width(d, 5, 10, (5,16), true); // 290px
+      @include gs-float(d, left, (5,16));
+      &:nth-of-type(2) {
+         margin-right: 0;
+      }
+      @include gs-media(m,min-max) {
+         @include gs-span(d, all);
+      }
+   }
+}
 // need browser fall-back using max-width?

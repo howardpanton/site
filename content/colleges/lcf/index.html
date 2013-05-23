@@ -7,7 +7,7 @@ template: true
 
 <div id="feature-carousel" class="row buffer-max centered">
     <div class="d-all">
-    	<div class="slider">
+    	<div class="slider" data-pager="true">
 		    <div class="slide">
     			<img src="{{ site.url }}/assets/img/lcf/lcf-banner-2013.jpg" />
 		    </div>
@@ -24,6 +24,7 @@ template: true
 <div class="content-wrapper lcf clearfix">
 	<div class="row buffer-max">
 		<nav class="d1-d5 sidebar">
+<<<<<<< HEAD
 			<ul class="no-bullet">
 				<li><a href="#">About LCF</a></li>
 				<li><a href="#">Courses</a></li>
@@ -35,6 +36,9 @@ template: true
 				<li><a href="#">LCF Research</a></li>
 				<li><a href="#">LCF Business</a></li>
 			</ul>		
+=======
+			{% include _lcf_navigation.html %}
+>>>>>>> 0acce02c44ff6e2c1e3bc697e57207b29d5ee662
 		</nav>	
 
 		<section id="better-lives" class="d6-d16">
@@ -54,7 +58,7 @@ template: true
 
 	<section id="showcase" class="row buffer-max relative centered">
 		<div class="d3-d14 dark-bg">
-			<div class="slider" data-slider-item-margin="0" >
+			<div class="slider" data-slider-item-margin="0" data-pager="true">
 				<div class="slide">
 	    			<img class="buffer" src="{{ site.url }}/assets/img/lcf/lcf-showcase1.jpg" />
 	    			<div class="box-text aligncenter">

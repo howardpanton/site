@@ -8,6 +8,10 @@
     h1,h2,h3,h4,h5,h6 {
         text-transform: uppercase;
     }
+    header hr {
+        width: 248px;
+        margin-top: 0;
+    }
 }
 
 .section-title {
@@ -16,7 +20,7 @@
     }
 }
 
-figcaption {
+figcaption, .video-wrapper .caption {
     padding: 0 10px;
     color: $ual-secondary;
     font-family: $alt-font-family;
@@ -52,8 +56,6 @@ figcaption {
 #feature-carousel {
     overflow: hidden; // for flexslider controls
 }
-
-
 
 
 // SHOWCASE
@@ -96,15 +98,8 @@ footer {
 
 // GRADUATE SCHOOL
 .graduate-school {
-    header hr {
-        width: 248px;
-        margin-top: 0;
-    }
     h1 {
         font-family: $alt-font-family;
-    }
-    section {
-        @include clearfix();
     }
 }
 
