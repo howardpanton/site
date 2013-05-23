@@ -1,3 +1,16 @@
+<ul>
+    {% for page in site.pages %}
+    {% if page.layout != nil %}
+    {% if page.navigation == 'docs' %}
+            <li>
+            <a href="{{ site.url }}/{{ page.url | remove: 'index.html' }}"> {{ page.breadcrumb }}</a>
+            </li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</ul>
+
+
 <div class='new-main-menu' role='navigation' style="width:100%; display:block; overflow:hidden;  background:black;">
 <div class="top-bar">        
     <ul style="display:table; height:100%; width: 100%; margin:0; padding:0; background:black; ">
@@ -28,7 +41,7 @@
 <div class="row dark-gray-bg">    
 <div class="submenu dark-gray-bg " style = "overflow:hidden;">
         <div data-menu="college" class="row region test pad-bottom-6x" style = "overflow:hidden;">
-        <h2 class=" rhythm-2"  ><a style="color:white; font-weight:normal" href="#">Colleges</a></h2>
+        <h2 class=" rhythm-2"  ><a style="color:white; font-weight:normal" href="{{ site.url }}/content/colleges/">Colleges</a></h2>
             <ul class="d1-d4 region" >
             <li style="list-style:none;  width:100%; display:block; float:left; border-bottom:dotted 1px white;">
                  <a style=" display:block; padding-bottom:12px; color:white; font-size:16px;" href='' title=''>Camberwell College of Arts</a>
