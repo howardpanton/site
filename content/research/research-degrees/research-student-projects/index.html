@@ -6,7 +6,7 @@ template: true
 ---
 <style>
 	p, ul {font-weight: lighter;}
-	p {font-size: 18px; padding-right: 20px;}
+	p {font-size: 18px; }
 	p.intro {font-size: 22px; font-weight: 300; color: black;}
 
 	p a {border-bottom: 1px dotted #c8c8c8;  }
@@ -50,7 +50,7 @@ template: true
 		line-height: 24px;
 	}
 	
-	.a-z-nav{
+	/*.a-z-nav{
 		padding: 12px;
 		font-weight: 400;
 	}
@@ -76,21 +76,27 @@ template: true
 	}
 
 
-	.a-z-index-list li{
-		extend .clear-left;
-	}
+	.a-z-index-list > li{
+		clear: left;
+	}*/
 
+	/*.a-z-index-list > li > ul{
+		padding-bottom: 48px;
+		margin-bottom: 24px;
+		border-bottom: 1px dotted #c8c8c8;
+	}*/
 
-	.index-list-item h3{
+	/*.a-z-index-list-item h3{
 		font-size: 18px;
 		font-weight: 300;
 		font-color: black;
 	}
 
-	.index-list-item p{
+	.a-z-index-list-item p{
 		font-size: 14px;
 		font-weight: 300;
-	}
+	}*/
+
 	.size1{font-size: 56px; font-weight: 400;}
 	.size2{font-size: 34px; font-weight: 400;}
 	.size3{font-size: 22px; font-weight: 400; padding-top: 6px;}
@@ -133,32 +139,32 @@ template: true
 		   	<div class="addlinebottom">
 				<nav class="box-out a-z-nav bg-gray-bg margin-bottom-x4">
 					<ul class="display-inline">
-						<li ><a href="#index-a">A</a></li>
-						<li><a href="#index-b">B</a></li>
-						<li><a href="#index-c">C</a></li>
-						<li><a href="#index-d">D</a></li>
-						<li><a href="#index-e">E</a></li>
-						<li><a href="#index-f">F</a></li>
-						<li><a href="#index-g">G</a></li>
-						<li><a href="#index-h">H</a></li>
-						<li><a href="#index-i">I</a></li>
-						<li><a href="#index-j">J</a></li>
-						<li><a href="#index-k">K</a></li>
-						<li><a href="#index-l">L</a></li>
-						<li><a href="#index-m">M</a></li>
-						<li><a href="#index-n">N</a></li>
-						<li><a href="#index-o">O</a></li>
-						<li><a href="#index-p">P</a></li>
-						<li><a href="#index-q">Q</a></li>
-						<li><a href="#index-r">R</a></li>
-						<li><a href="#index-s">S</a></li>
-						<li><a href="#index-t">T</a></li>
-						<li><a href="#index-u">U</a></li>
-						<li><a href="#index-v">V</a></li>
-						<li><a href="#index-w">W</a></li>
-						<li><a href="#index-x">X</a></li>
-						<li><a href="#index-y">Y</a></li>
-						<li><a href="#index-z">Z</a></li>
+						<a href="#index-a"><li>A</li></a>
+						<a href="#index-b"><li>B</li></a>
+						<a href="#index-c"><li>C</li></a>
+						<a href="#index-d"><li>D</li></a>
+						<a href="#index-e"><li>E</li></a>
+						<a href="#index-f"><li>F</li></a>
+						<a href="#index-g"><li>G</li></a>
+						<a href="#index-h"><li>H</li></a>
+						<a href="#index-i"><li>I</li></a>
+						<a href="#index-j"><li>J</li></a>
+						<a href="#index-k"><li>K</li></a>
+						<a href="#index-l"><li>L</li></a>
+						<a href="#index-m"><li>M</li></a>
+						<a href="#index-n"><li>N</li></a>
+						<a href="#index-o"><li>O</li></a>
+						<a href="#index-p"><li>P</li></a>
+						<a href="#index-q"><li>Q</li></a>
+						<a href="#index-r"><li>R</li></a>
+						<a href="#index-s"><li>S</li></a>
+						<a href="#index-t"><li>T</li></a>
+						<a href="#index-u"><li>U</li></a>
+						<a href="#index-v"><li>V</li></a>
+						<a href="#index-w"><li>W</li></a>
+						<a href="#index-x"><li>X</li></a>
+						<a href="#index-y"><li>Y</li></a>
+						<a href="#index-z"><li>Z</li></a>
 					</ul>
 				</nav>
 			</div>
@@ -166,52 +172,52 @@ template: true
 		   <!-- Start A-Z list of Research Student Projects  -->
 			<ol class="a-z-index-list">
 				<li> <!-- start A -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d14 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
 						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.</p>
 						     </div>
 					    </li>
 					</ul>
@@ -221,28 +227,28 @@ template: true
 				
 				
 				<li> <!-- start B -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 						     </div>
 					    </li>
 
@@ -252,52 +258,52 @@ template: true
 				
 				
 				<li> <!-- start C -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
+						     	  <h3><a href="#">Title Here with some text</a></h3>
+						     	  <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis.</p>
+						     </div>
+					    </li>
+
+					    <li class="d5-d13 a-z-index-list-item">
+						    <div class="d5-d6">
+						     	  <figure>
+				         			<img src="http://placehold.it/296x294" alt="Image Alt">
+				        		  </figure>
+						    </div>
+							<div class="d7-d13 ">
+						     	  <h3><a href="#">Title Here with some text</a></h3>
+						     	  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue.</p>
+						     </div>
+					    </li>
+
+					    <li class="d5-d13 a-z-index-list-item">
+						    <div class="d5-d6">
+						     	  <figure>
+				         			<img src="http://placehold.it/296x294" alt="Image Alt">
+				        		  </figure>
+						    </div>
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
 						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-						     </div>
-					    </li>
-
-					    <li class="d5-d13 index-list-item">
-						    <div class="d5-d6">
-						     	  <figure>
-				         			<img src="http://placehold.it/296x294" alt="Image Alt">
-				        		  </figure>
-						    </div>
-							<div class="d7-d14 ">
-						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-						     </div>
-					    </li>
-
-					    <li class="d5-d13 index-list-item">
-						    <div class="d5-d6">
-						     	  <figure>
-				         			<img src="http://placehold.it/296x294" alt="Image Alt">
-				        		  </figure>
-						    </div>
-							<div class="d7-d14 ">
-						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod.</p>
 						     </div>
 					    </li>
 					</ul>
@@ -306,16 +312,16 @@ template: true
 				
 				
 				<li> <!-- start D -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 						     </div>
 					    </li>
 
@@ -325,351 +331,116 @@ template: true
 
 				
 				<li> <!-- start E -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 						     </div>
 					    </li>
 					</ul>
 				</li> <!-- end E -->
 				
 				<li> <!-- start F -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor.</p>
 						     </div>
 					    </li>
 					</ul>
 				</li> <!-- end F -->
 
 				<li> <!-- start G -->
-					<ul class="no-bullet ">
-						<li class="d5-d13 index-list-item">
+					<ul >
+						<li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 						     </div>
 					    </li>
 
-					    <li class="d5-d13 index-list-item">
+					    <li class="d5-d13 a-z-index-list-item">
 						    <div class="d5-d6">
 						     	  <figure>
 				         			<img src="http://placehold.it/296x294" alt="Image Alt">
 				        		  </figure>
 						    </div>
-							<div class="d7-d14 ">
+							<div class="d7-d13 ">
 						     	  <h3><a href="#">Title Here with some text</a></h3>
-						     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						     	  <p>Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 						     </div>
 					    </li>
 
 					</ul>
 				</li> <!-- end G -->
 			</ol>
+			<!-- End A-Z list of Research Student Projects  -->
 
-
-
-			<div class="d16">
-				<h2 class="a-z-side-index">A</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		    
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-			
-		</div> <!-- d5-d16 -->
-	</div> <!-- /.row -->
-	<!-- End index list A -->
-
-	<!-- Start index B -->
-	<div class="row pad-bottom-8x">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">B</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index B -->
-
-	<!-- Start index C -->
-	<div class="row pad-bottom-8x">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">C</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index C -->
-
-	<!-- Start index D -->
-	<div class="row pad-bottom-8x ">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">D</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index D -->
-
-	<!-- Start index E -->
-	<div class="row pad-bottom-8x ">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">E</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index E -->
-
-	<!-- Start index F -->
-	<div class="row pad-bottom-8x ">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">F</h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index F -->
-
-	<!-- Start index G  -->
-	<div class="row pad-bottom-8x ">
-		<div class="d5-d16 addlinebottom">
-			 <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			     </div>
-		    </div>
-		    <div class="d16">
-				<h2 class="a-z-side-index">G </h2>
-			</div>
-		    <div class="d5-d13 index-list-item">
-			    <div class="d5-d6">
-			     	  <figure>
-	         			<img src="http://placehold.it/296x294" alt="Image Alt">
-	        		  </figure>
-			    </div>
-				<div class="d7-d14 ">
-			     	  <h3>Title Here with some text</h3>
-			     	  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			     </div>
-		    </div>
-		</div>
-	</div>
-	<!-- End Index G -->
-	
 	
 	
 
