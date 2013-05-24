@@ -89,10 +89,6 @@
   @include padding-trailer(8);
 }
 
-.margin-top-x8 {
-  @include margin-leader(8);
-}
-
 .rhythm-margin-top {
   @include margin-leader(3);
 }
@@ -111,6 +107,14 @@
 
 .margin-bottom-x8 {
   @include margin-trailer(8);
+}
+
+.margin-bottom-x12 {
+  @include margin-trailer(12);
+}
+
+.margin-bottom-x16 {
+  @include margin-trailer(16);
 }
 
 // Quick margins
@@ -244,11 +248,63 @@
 
 .pad-bottom-6x { @include padding-trailer(6); }
 
+.pad-bottom-7x { @include padding-trailer(7); }
+
+.pad-bottom-8x { @include padding-trailer(8); }
+
+
+// apply margin with ryhthm 
+
+.margin-top-1x { @include margin-leader(1); }
+
+.margin-top-2x { @include margin-leader(2); }
+
+.margin-top-3x { @include margin-leader(3); }
+
+.margin-top-4x { @include margin-leader(4); }
+
+.margin-top-5x { @include margin-leader(5); }
+
+.margin-top-6x { @include margin-leader(6); }
+
+
+.margin-bottom-1x { @include margin-trailer(1); }
+
+.margin-bottom-2x { @include margin-trailer(2); }
+
+.margin-bottom-3x { @include margin-trailer(3); }
+
+.margin-bottom-4x { @include margin-trailer(4); }
+
+.margin-bottom-5x { @include margin-trailer(5); }
+
+.margin-bottom-6x { @include margin-trailer(6); }
+
+.margin-bottom-7x { @include margin-trailer(7); }
+
+.margin-bottom-8x { @include margin-trailer(8); }
+
+.margin-bottom-9x { @include margin-trailer(9); }
+
+.margin-bottom-10x { @include margin-trailer(10); }
+
+.margin-bottom-11x { @include margin-trailer(11); }
+
+.margin-bottom-12x { @include margin-trailer(12); }
 
 // Clearing floats
 .clearfix {
     @include clearfix;
 }
+
+.clear-left { clear: left; }
+
+.clear-right { clear: right; }
+
+.clear-all, .clear-both { clear: both; }  
+
+
+
 
 // Accessible yet invisible text
 .hide-text {
