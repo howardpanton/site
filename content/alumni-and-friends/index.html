@@ -5,145 +5,289 @@ title: Alumni and friends
 template: true
 ---
 
+
+<style>
+	p, ul {font-weight: lighter;}
+	p {font-size: 16px; }
+	p.intro {font-size: 22px; font-weight: 300; color: black;}
+	p a {border-bottom: 1px dotted #c8c8c8;  }
+	p a:hover {border-bottom: 0;  }
+	ul {list-style: none;}
+	article {border-bottom: 1px dotted #c8c8c8;}
+	article section { display: block; clear: left;}
+	figure {}
+	figcaption {font-size:14px; margin: 12px 0; color: #757575;}
+	aside {}
+	h1 {padding-top: 48px;}
+ 
+	.nav { margin-top: 0px;}
+	.nav li { padding: 8px 0 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
+	.nav li:first-child { /*border-top: 1px dotted #c8c8c8;*/ padding-top: 0;  }
+ 
+	.indentedliststart li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
+ 
+	.indentedlist li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
+	.indentedlist li:first-child  { border-top: 1px dotted #c8c8c8;}
+	.indentedlist li:last-child  { border-bottom: none;}
+ 
+	.aside-box {
+		padding: 12px 18px; 
+		background-color: #ebebeb; 
+		line-height: 24px; 
+		display: block; 
+		font-weight: 300;
+	}
+	
+	.aside-box:hover {
+		background-color: black;
+		color: #FFFFFF;
+	}
+
+	.aside-related-info p {
+		padding-top: 12px;
+		font-size: 16px;
+		font-weight: normal;
+		color: #282828;
+		line-height: 24px;
+	}
+	
+	.size1{font-size: 56px; font-weight: 400;}
+	.size2{font-size: 34px; font-weight: 400;}
+	.size3{font-size: 22px; font-weight: 400; padding-top: 6px;}
+	.size4{font-size: 18px; font-weight: bold; margin-bottom: 6px;}
+	.size5{font-size: 16px; font-weight: 400;}
+	.size6{font-size: 14px; font-weight: 400;}
+	.addlinetop {border-top: 1px dotted #c8c8c8;}
+	.addlinebottom {border-bottom: 1px dotted #c8c8c8;}
+	.addpaddingtop {padding-top: 48px;}
+	.removebline {border-bottom: none;}
+	.removetline {border-top: none;}
+	.sectionend {border-bottom: 1px solid #e1e1e1;}
+	.red {color: red;}
+
+	.country-list {
+		display: inline-block;
+	}
+	.country-list > li{
+		clear: left;
+		width:100%;
+	}
+	
+	.country-list > li ul > li{
+		width:200px;
+	}
+
+	.country-list > li ul a{
+		display: inline-block;
+		width:200px;
+	}
+
+	.country-name {
+		font-size: 18px;
+		float: left;
+	}
+
+
+	/* ====== media-block-image-left ====== */
+
+	.media-block-image-left {/*margin:10px;*/}
+	.media-block-image-left, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+	.media-block-image-left .img {float:left; margin-right: 10px;}
+	.media-block-image-left .img img{display:block;}
+	.media-block-image-left .imgExt{float:right; margin-left: 10px;}
+
+</style>
+
 <div class="content-wrapper">
 	<div class="row rhythm-3">
-		<div class="d5-d16">
+		<heading class="d5-d16">
 			<h1>Alumni &amp; Friends</h1>
-		</div>
+		</heading>
 	</div>
 	<div class="row rhythm-3">
-		<div class="d1-d4">
-			<ul>
-				<li><a href="get-involved.html">Get Involved</a></li>
-				<li><a href="inspiring-alumni.html">Inspiring Alumni</a></li>
-				<li><a href="support-and-donate.html">Support and Donate</a></li>
-				<li><a href="alumni-benefits.html">Alumni Benefits</a></li>
-				<li><a href="news-and-events.html">News and Events</a></li>
+		<nav class="d1-d4">
+			<ul class="nav">
+				<a href="get-involved/index.html"><li>Get Involved</a></li>
+				<a href="inspiring-alumni/index.html"><li>Inspiring Alumni</a></li>
+				<a href="support-and-donate/index.html"><li>Support and Donate</a></li>
+				<a href="alumni-benefits/index.html"><li>Alumni Benefits</a></li>
+				<a href="news-and-events/index.html"><li>News and Events</a></li>
 			</ul>
-		</div>
-	   	<!-- Callouts at the top of the page -->
-	   	<div class="d5-d7">
-			<div class="box-out"><a href="#">Join Library</a></div>
-	    </div>
+		</nav>
+	   	
+	   	<section class="d5-d16" id="featured-image-slider">
+			<img src="http://placehold.it/1280x800&text=Rotating+Media+Slider" alt="Slider">
+		</section>
+
 		
-		<div class="d8-d10">
-			<div class="box-out"><a href="#">Copy of Degree</a></div>
-	    </div>
-
-	    <div class="d11-d13">
-			<div class="box-out"><a href="#">Update Details</a></div>
-	    </div>
-
-	    <div class="d14-d16">
-			<div class="box-out"><a href="#">Support our Creative Futures</a></div>
-	    </div>
+	   	
 	</div>  <!-- /.row -->
 
 	<div class="row rhythm-3">
 		<div class="d5-d16">
-			<img src="http://placehold.it/1280x800&text=Rotating+Media+Slider" alt="Slider">
+			<h2><a href="#">Support our Creative Futures</a></h2>
+			
+			<div class="d5-d12">
+				<img src="http://placehold.it/800x600&text=Image+Here" alt="Slider" class="margin-bottom-4x">
+				<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+
+				<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor.</p>
+			</div>
+			
+			<div class="d14-d16">
+				<aside class="no-margin-bottom">	
+					<nav>
+						<ul class="nav no-margin-bottom">
+							<li class="removetline"><a href="#">Update Details</a></li>
+							<li><a href="#">Join Library</a></li>
+							<li><a href="#">Copy of Degree</a></li>
+						</ul>
+					</nav>
+				</aside>
+			</div>		
+
 		</div>
-	</div>  <!-- /.row -->
-
-	<div class="row rhythm-3">
-		
-	 	<div class="d5-d10">
-			<h5><a href="#">News Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div> 
 	
-		<div class="d11-d16">
-			<h5><a href="#">Event Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div>
+	</div>  <!-- /.row -->
+
+	
+	<section class="row rhythm-3">
+		<div class="d5-d16">
+			<h2> News</h2>
+		</div>
+		
+		<div class="d5-d12">
+			
+			<div class="media-block-image-left attribution ">
+		
+				  <a href="#" class="img">
+				    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+				  </a>
+		
+				  <div class="bd">
+				    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+				    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  </div>
+		
+				</div>
+		
+				<div class="media-block-image-left attribution ">
+		
+				  <a href="#" class="img">
+				    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+				  </a>
+		
+				  <div class="bd">
+				    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+				    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  </div>
+		
+				</div>
+		
+				<div class="media-block-image-left attribution ">
+		
+				  <a href="#" class="img">
+				    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+				  </a>
+		
+				  <div class="bd">
+				    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+				    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  </div>
+		
+				</div>
+		
+		</div>
+
+		<div class="d14-d16">
+			<aside class="no-margin-bottom">	
+				<nav>
+					<ul class="nav no-margin-bottom">
+						<li class="removetline"><a href="#">Scholarships</a></li>
+						<li><a href="#">Enterprise</a></li>
+						<li><a href="#">Spare Link</a></li>
+						<li><a href="#">Spare Link</a></li>
+						<li><a href="#">Spare Link</a></li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+	</section>  <!-- /.row -->
+
+		<section class="row rhythm-3">
+			<div class="d5-d16">
+				<h2>Events</h2>
+			</div>
+			<div class="d5-d12">
+					
+					<div class="media-block-image-left attribution ">
+				
+						  <a href="#" class="img">
+						    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+						  </a>
+				
+						  <div class="bd">
+						    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+						  </div>
+				
+						</div>
+				
+						<div class="media-block-image-left attribution ">
+				
+						  <a href="#" class="img">
+						    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+						  </a>
+				
+						  <div class="bd">
+						    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+						  </div>
+				
+						</div>
+				
+						<div class="media-block-image-left attribution ">
+				
+						  <a href="#" class="img">
+						    <img src="http://placehold.it/200x200&text=Image" alt="Image" />
+						  </a>
+				
+						  <div class="bd">
+						    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+						    <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+						  </div>
+				
+						</div>
+				
+				</div>
+
+				<div class="d14-d16">
+					<aside class="no-margin-bottom">	
+						<nav>
+							<ul class="nav no-margin-bottom">
+								<li class="removetline"><a href="#">Spare Link</a></li>
+								<li><a href="#">Spare Link</a></li>
+								<li><a href="#">Spare Link</a></li>
+								<li><a href="#">Spare Link</a></li>
+								<li><a href="#">Spare Link</a></li>
+							</ul>
+						</nav>
+					</aside>
+				</div>
+
+		</section>
+
+
+	 	
 	</div>  <!-- /.row -->
 
 	<div class="row rhythm-3">
 		
-		<div class="d5-d10">
-			<h5><a href="#">News Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div> 
 		
-		<div class="d11-d16">
-			<h5><a href="#">Event Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div>
-	</div>  <!-- /.row -->
-
-	<div class="row rhythm-3">
-	    <div class="d5-d10">
-			<h5><a href="#">News Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div>
-
-	    <div class="d11-d16">
-			<h5><a href="#">Event Title Here</a></h5>
-			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p> <a href="#">&rarr; Read More</a>
-	    </div> 
 	</div>  <!-- /.row -->
 
 
-	<div class="row rhythm-3">
-	    <div class="d5-d14">
-	      <h2>Related Links</h2>
-	      <ul class="blocks three-up">
-	        <li>
-	            <div class="media-block region heading-bottom">
-	              <figure>
-	                <a href="#" title="Link title">
-	                <img src="http://placehold.it/290x290" alt="Image Alt">
-	              </a>
-	              </figure>
-	              <h5><a href="#">Scholarships</a></h5>
-	           </div>
-	        </li>
-	        <li>
-	            <div class="media-block region heading-bottom">
-	              <figure>
-	                <a href="#" title="Link title">
-	                <img src="http://placehold.it/290x290" alt="Image Alt">
-	              </a>
-	              </figure>
-	               <h5><a href="#">Enterprise</a></h5>
-	           </div>
-	        </li>            
-	        <li>
-	            <div class="media-block region heading-bottom">
-	              <figure>
-	                <a href="#" title="Link title">
-	                <img src="http://placehold.it/290x290" alt="Image Alt">
-	              </a>
-	              </figure>
-	               <h5><a href="#">Spare Link</a></h5>
-	            </div>
-	        </li>
-	      </ul>
-	    </div>
-	  </div> <!-- /.row -->
-		
-	<div class="row rhythm-3">
-	    <div class="d5-d14">
-	    <h2>Social Media Links</h2>
-	    </div>
-
-		<!-- Social links -->
-	   	<div class="d5-d7">
-			<div><a href="#">Socials Link</a></div>
-	    </div>
-		
-		<div class="d8-d10">
-			<div ><a href="#">Socials Link</a></div>
-	    </div>
-
-	    <div class="d11-d13">
-			<div ><a href="#">Socials Link</a></div>
-	    </div>
-
-	    <div class="d14-d16">
-			<div><a href="#">Socials Link</a></div>
-	    </div>
-	</div><!-- /.row -->
+	
 	
 
 </div> <!-- content-wrapper -->
