@@ -6,166 +6,81 @@ template: true
 ---
 
 <style>
+p, ul {font-weight: lighter;}
+p {font-size: 18px; }
+p.intro {font-size: 22px; font-weight: normal;}
+ul {list-style: none;}
+section {overflow: hidden;float: left;display: block;margin-bottom: 144px;}
+article {border-bottom: 1px dotted #c8c8c8;}
+figure {}
+/*figcaption {font-size:14px; margin: 12px 0; color: #757575;}*/
+aside li { font-size: 14px;}
+h1 {padding-top: 48px;}
 
-p,ul {
-font-weight:lighter;
-}
+.nav { margin-top: 16px;}
+.nav li { padding: 8px 0 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
+.nav li:first-child { border-top: 1px dotted #c8c8c8; }
 
-p {
-font-size:18px;
-padding-right:20px;
-}
+.indentedliststart li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
 
-p.intro {
-font-size:22px;
-font-weight:400;
-}
+.indentedlist li { padding: 6px 0; border-bottom: 1px dotted #c8c8c8; color: #757575; font-size: 16px; }
+.indentedlist li:first-child  { border-top: 1px dotted #c8c8c8;}
+.indentedlist li:last-child  { border-bottom: none;}
 
-ul {
-list-style:none;
-}
+.size1{font-size: 56px; font-weight: 400;}
+.size2{font-size: 34px; font-weight: 400;}
+.size3{font-size: 22px; font-weight: 400; padding-top: 6px;}
+.size4{font-size: 18px; font-weight: bold; margin-bottom: 6px; margin-top: 32px;}
+.size5{font-size: 16px; font-weight: 400; line-height: 24px;}
+.size6{font-size: 14px; font-weight: 400;}
+.addlinetop {border-top: 1px dotted #c8c8c8;}
+.addlinebottom {border-bottom: 1px dotted #c8c8c8;}
+.addpaddingtop {padding-top: 48px;}
+.removebline {border-bottom: none;}
+.removetline {border-top: none;}
+.sectionend {border-bottom: 1px solid #e1e1e1;}
+.red {color: red;}
+.boxout {background: #eee;}
+.boxout p {font-size: 16px;}
+.leftline {border-left: 1px dotted #fff; padding-left: 24px;}
+.rightline {border-right: 1px dotted #fff; padding-left: 24px;}
 
-section {
-display:block;
-float:left;
-margin-bottom:144px;
-overflow:hidden;
-}
-
-aside li {
-font-size:14px;
-}
-
-.nav {
-margin-top:16px;
-}
-
-.nav li {
-border-bottom:1px dotted #c8c8c8;
-color:#757575;
-font-size:16px;
-padding:8px 0 6px;
-}
-
-.size1 {
-font-size:56px;
-font-weight:400;
-}
-
-.size2 {
-font-size:34px;
-font-weight:400;
-}
-
-.size3 {
-font-size:22px;
-font-weight:400;
-padding-top:6px;
-}
-
-.size4 {
-font-size:18px;
-font-weight:400;
-margin-bottom:6px;
-margin-top:32px;
-}
-
-.size5 {
-font-size:16px;
-font-weight:400;
-line-height:24px;
-}
-
-.size6 {
-font-size:14px;
-font-weight:400;
-}
-
-.removetline {
-border-top:none;
-}
-
-.sectionend {
-border-bottom:1px solid #e1e1e1;
-}
-
-.red {
-color:red;
-}
-
-.boxout {
-background:#eee;
-}
-
-.boxout p {
-font-size:16px;
-}
-
-.leftline {
-border-left:1px dotted #fff;
-padding-left:24px;
-}
-
-.rightline {
-border-right:1px dotted #fff;
-padding-left:24px;
-}
 
 li.related-link a {
-background:#ebebeb;
-color:#000;
-display:block;
+background: #ebebeb;
+display: block;
+color: #000;
 }
 
 .related-link a:hover {
-background:#000;
-color:#fff;
+background: #000;
+color: #fff;
 }
 
 li.related-link span.related-link {
--moz-transition:all ease .2s;
--o-transition:all ease .2s;
--webkit-transition:all ease .2s;
-display:block;
-min-height:150px;
-transition:all ease .2s;
-padding:12px 12px 12px 18px;
+display: block;
+padding: 12px 12px 12px 18px;
+min-height: 150px;
+-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
+	transition: all ease 0.2s;
 }
 
-li.related-link:hover {
--moz-filter:grayscale(100%);
--moz-transition:all ease .2s;
--ms-filter:grayscale(100%);
--o-filter:grayscale(100%);
--o-transition:all ease .2s;
--webkit-filter:grayscale(100%);
--webkit-transition:all ease .2s;
-filter:grayscale(100%);
-transition:all ease .2s;
+li.related-link:hover { filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+
+-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
+	transition: all ease 0.2s;
+
 }
 
-article,.addlinebottom {
-border-bottom:1px dotted #c8c8c8;
-}
 
-h1,.addpaddingtop {
-padding-top:48px;
-}
-
-.nav li:first-child,.indentedlist li:first-child,.addlinetop {
-border-top:1px dotted #c8c8c8;
-}
-
-.indentedliststart li,.indentedlist li {
-border-bottom:1px dotted #c8c8c8;
-color:#757575;
-font-size:16px;
-padding:6px 0;
-}
-
-.indentedlist li:last-child,.removebline {
-border-bottom:none;
-}
 
 </style>
 
@@ -196,17 +111,22 @@ border-bottom:none;
 
 
 
-<div class"row">
-<div class="slider" style="overflow:hidden;"  data-slider-item-margin="1" data-slider-video="false" class="d5-d16">
+			<div class="d5-d16">		
+				<div class="d5-d12">
+					<div class="slider" data-slider-item-width="310" data-slider-item-margin="0" data-slider-video="false">
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_01.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_02.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_03.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_04.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_01.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_02.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_03.jpg"></div>
+						<div class="slide"><img src="{{ site.url }}/assets/img/homepage/cta_04.jpg"></div>
+					</div> 
+				</div>
+			</div>
 
-<div class="slide" ><span class="d5-d16 bx-wrap" ><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4 >This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
 
-<div class="slide" ><span class="d5-d16 bx-wrap" ><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4 >This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
-
-<div class="slide" ><span class="d5-d16 bx-wrap"><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4 >This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
-
-</div>
-</div>
 
 
 
