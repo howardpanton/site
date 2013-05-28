@@ -82,12 +82,20 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+
+
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
 	background: #000;
 }
+
+.bx-pager.bx-default-pager {
+display: none;
+}
+
+
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
@@ -189,3 +197,38 @@
 	font-size: .85em;
 	padding: 10px;
 }
+
+
+
+/** bx slider with side caption
+===================================*/
+
+.bx-wrap {
+background: $ual-black;
+color:$ual-white;
+overflow: hidden;
+font-weight: lighter;
+font-size:16px;
+}
+
+.bx-wrap p {
+
+	font-size:16px;
+}
+
+
+.bx-pager.bx-default-pager {
+display: none;
+}
+
+.bx-wrap .bx-aside { padding:24px 24px 18px 0px; margin-right:-1px;  }
+
+// <div class="slider"  data-slider-item-margin="1" data-slider-video="false" class="d5-d16">
+  
+//   <div class="slide" ><span class="d5-d16" style="background:#000;  display:block; color:#fff; "><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4>This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
+
+//   <div class="slide" ><span class="d5-d16" style="background:#000;  display:block; color:#fff; "><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4>This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
+
+//    <div class="slide" ><span class="d5-d16" style="background:#000;  display:block; color:#fff; "><img src="http://placekitten.com/600/300" class="d5-d12"><span class="d13-d16 bx-aside" style="padding-left:0px;"><h4>This is a title</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></span></span></div>
+// </div>
+
