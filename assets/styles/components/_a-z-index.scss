@@ -1,0 +1,125 @@
+// A-Z list index styles
+
+// see an example of the a-z index list on this page > http://artslondon.github.io/beta/content/research/research-degrees/research-student-projects/index.html 
+// TO DO: create docs page for this if we make it into a component
+
+
+
+// these might move to global underline utility classes or create a mixin for the dotted border?
+.addlinetop { border-top: 1px dotted $light-gray; }
+.addlinebottom { border-bottom: 1px dotted $light-gray; }
+
+
+
+.a-z-nav { 
+    padding: 6px;
+    padding-bottom: 4px; // hacked to line it up on baseline
+    border-top: 2px solid $bg-gray; // hacked to line it up on baseline
+    margin-top: -2px;
+    font-weight: 400;
+    
+    ul{
+      margin-bottom: 0;
+      padding-left: 18px;
+      a { 
+        display: inline-block; 
+        padding: 0 18px 0 0;
+        // margin-left: 18px;
+        line-height: 24px;
+      }
+      // a:first-of-type{
+      //   padding-left: 18px;
+      // }
+      li {
+      }
+    }
+}
+
+
+// .a-z-side-index {
+//   text-align: center;
+//   font-size: 34px;
+//   font-weight: 300;
+// }
+
+
+
+
+
+// style index list with large alphabet letters for the list counter
+.a-z-index-list {
+  // list-style-type: upper-alpha;
+  counter-reset: list-counter;
+  list-style-type: none; 
+  @include margin-trailer(4);
+  
+  > li {
+    @include clearfix;
+    // @include padding-trailer(4);
+    // @include margin-trailer(0);
+    padding-bottom: 22px; // hacked to align to baseline
+    margin-bottom: 0;
+    border-bottom: 1px dotted $light-gray;
+    clear: left;
+    
+    &:before{
+      content: counter(list-counter, upper-alpha);
+      counter-increment: list-counter;
+      margin-bottom: -34px;  // this feels like a magic number - maybe should set it to font size variable??
+      padding-bottom: 0;
+      @include adjust-font-size-to(34px);
+      // @include margin-leader(2);
+      margin-top: 6px; // hacked to align to baseline
+      @include gs-span(d, 16, 16, (5, 16));
+      // font-weight: 300;
+      font-weight: 300;
+      line-height: 30px;
+      text-align: center;
+      // @include margin-trailer(2);
+      
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+
+    }
+
+  }
+}
+
+
+.a-z-index-list 
+
+.a-z-index-list > ul {
+  list-style: none;
+
+}
+
+
+.a-z-index-list-item {
+  @include margin-trailer(4); 
+  @include clearfix;
+  clear: left;
+  margin-bottom: 22px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 300;
+    font-color: black;
+    margin-top: 0;
+
+    a {
+      border-bottom: 1px dotted $light-gray; // maybe this should be applied from a mixin eventually
+      &:hover{
+        border-bottom: 0;
+      }
+    } 
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+}
