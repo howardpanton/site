@@ -53,10 +53,10 @@
 // and also a value for opacity. 
 // The mixin will convert to rgba color for the background with the opacity applied
 
-// @mixin background-opacity($color, $opacity: 0.3) {
-//     background: $color; /* The Fallback */
-//     background: rgba($color, $opacity);
-// }
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
 
 // A mixin to create a visual circle using border radius of half the size of the element
 // which will make it appear as a circle
