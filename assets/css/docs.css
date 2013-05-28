@@ -65,12 +65,12 @@
 
 /* ::Grid styles */
 /* ------------------------------------------------------------ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/plugins\/compass\/_vertical_rhythm\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000361}}
 * html {
   font-size: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/plugins\/compass\/_vertical_rhythm\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000364}}
 html {
   font-size: 16px;
   line-height: 0.375em;
@@ -121,16 +121,16 @@ a:hover, a:focus, a:active {
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\0000360}}
-.clearfix, .header, .header .banner, .footer .copyright, .docs .header, .docs .header .banner {
+.clearfix, .header, .header .banner, .footer .copyright, .docs .header {
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003281}}
-.clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .docs .header:before, .docs .header .banner:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
+.clearfix:before, .header:before, .header .banner:before, .footer .copyright:before, .clearfix:after, .header:after, .header .banner:after, .footer .copyright:after {
   content: " ";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
-.clearfix:after, .header:after, .header .banner:after, .footer .copyright:after, .docs .header:after, .docs .header .banner:after {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003283}}
+.clearfix:after, .header:after, .header .banner:after, .footer .copyright:after {
   clear: both;
 }
 
@@ -139,7 +139,7 @@ a:hover, a:focus, a:active {
   zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\0000367}}
 .cf:before, .panel:before, .row:before,
 .cf:after,
 .panel:after,
@@ -157,7 +157,7 @@ a:hover, a:focus, a:active {
 .pie-clearfix {
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/plugins\/compass\/_clearfix\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
 .pie-clearfix:after {
   content: "";
   display: table;
@@ -165,7 +165,7 @@ a:hover, a:focus, a:active {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\00003116}}
-.content-wrapper, .wrapper, .header .banner, .docs .header .banner, .docs-content, .submenu {
+.content-wrapper, .wrapper, .header .banner, .docs-content, .submenu {
   width: 92.5%;
   max-width: 1256px;
   margin: 0 auto;
@@ -188,7 +188,7 @@ a:hover, a:focus, a:active {
   background: white;
   width: 100%;
   padding-top: 2.25em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 @media only screen and (max-width: 599px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\00003133}}
@@ -228,7 +228,7 @@ a:hover, a:focus, a:active {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\00003164}}
 .footer {
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   background: black;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_layout\.scss}line{font-family:\00003167}}
@@ -284,7 +284,7 @@ a:hover, a:focus, a:active {
   float: left;
   margin-left: 0;
   width: 100%;
-  border-top: 1px solid white;
+  border-top: 1px solid #fff;
   max-width: 1280px;
   margin: 0 auto;
   float: none;
@@ -789,10 +789,14 @@ ul.cross-bullet li:before {
   background: black;
   width: 100%;
   padding-top: 0em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000377}}
-.docs .header h2 a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000376}}
+.docs .header h1, .docs .header h2, .docs .header h3, .docs .header h4, .docs .header h5, .docs .header h6, .docs .header p {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000378}}
+.docs .header h1 a, .docs .header h2 a, .docs .header h3 a, .docs .header h4 a, .docs .header h5 a, .docs .header h6 a, .docs .header p a {
   color: white;
   border: none;
 }
@@ -803,13 +807,13 @@ ul.cross-bullet li:before {
     border-top: 0px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000391}}
 .docs .header .banner {
   position: relative;
   padding-top: 0.75em;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\0000391}}
   .docs .header .banner {
     clear: both;
     display: block;
@@ -823,7 +827,7 @@ ul.cross-bullet li:before {
     padding-bottom: 0.375em;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\00003108}}
 .docs .header .banner .header {
   clear: both;
   display: block;
@@ -832,7 +836,7 @@ ul.cross-bullet li:before {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/docs\.scss}line{font-family:\00003115}}
 a span.title {
   height: 1px;
   width: 1px;

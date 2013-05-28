@@ -11,45 +11,121 @@
 //   background: rgba(0,0,0,0.5);
 // }
 
-// ::Layout styles 
-	// ::Media queries 
+.new-main-menu {
 
+  width:100%; 
+  display:block; 
+  overflow:hidden;  
+  background:black;
 
-// .new-main-menu {
-// 		width:100%;
-// 		background:black;
-// 		height: 40px;
-// 		display:block;
+  ul {
+    display:table; 
+    height:100%; 
+    width: 100%; 
+    margin:0; 
+    padding:0; 
+    background:black;
+     @include gs-media(t, min-max) {
 
-// 		ul {
-// 			width:100%;
-// 			display:block;
-// 			margin:0;
-// 			padding:0;
+display:block;
+     }
 
-// 			li {
-// 				list-style:none;
-// 				float:left;
-// 				display:inline;
-
-// 				a {
-// 					color:white;
-// 					padding-left:24px;
-// 					padding-right:24px;
-// 					font-size:14px;
-// 				}
-// 			}
-// 		}
-// }
-
-.new-main-menu li:hover {
-background:#444444;
+  }
 }
 
-.new-main-menu li.menu-active {
-background:#333333;
-}
+
+
 
 .top-bar {
 		@extend .content-wrapper;
+        li {
+      list-style:none; 
+      padding-top:8px; 
+      padding-bottom:8px; 
+      width:auto; 
+      text-align: center; 
+      display:table-cell;
+
+      @include gs-media(t, min-max) {
+display:block;
+float:left;
+width:100%;
+text-align:left;
+      }
+
+      a {
+        padding-top:4px; 
+        padding-bottom:4px; 
+        color:white !important;  
+        @include gs-media(t, min-max) {
+        padding-left:1em; 
+        padding-right:1em; 
+    }
+            @include gs-media(dm) {
+        padding-left:1.5em; 
+        padding-right:1.5em; 
+    }
+        font-size:14px;
+      }
+    }
+
+     li:hover {
+        background:#444444;
+      }
+
+      li.menu-active {
+        background:#333333;
+      }
+}
+
+.submenu {
+  overflow:hidden;
+  @extend .dark-gray-bg;
+
+  > div {
+    @extend .row;
+    @extend .pad-bottom-6x;
+    overflow:hidden;
+  }
+
+  h2 {
+      a {
+        font-weight:normal;
+        color:white; 
+      }
+  }
+
+  li {
+    list-style:none;  
+    width:100%; 
+    display:block; 
+    float:left; 
+    border-bottom:dotted 1px white;
+  }
+
+  li > a {
+     display:block; 
+     padding-bottom:6px; 
+     color:white; 
+     font-size:16px;
+  }
+
+  .subnav-1 {
+      @include gs-span(d, 1,4);
+  }
+  .subnav-2 {
+      @include gs-span(d, 5,8);
+  }
+  .subnav-3 {
+      @include gs-span(d, 9,12);
+  }
+    .feature {
+      @include gs-span(d, 9,16);
+      color:white; 
+      font-size:22px;
+  }
+
+  .feature-image {
+          @include gs-span(d, 13,16);
+  }
 }

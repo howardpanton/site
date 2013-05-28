@@ -1,7 +1,8 @@
 @import "variables";
-@import "../plugins/compass/clearfix";
-@import "../plugins/compass/vertical_rhythm";
-@import "../plugins/compass/css3/box-shadow";
+@import "compass";
+// @import "../plugins/compass/clearfix";
+// @import "../plugins/compass/vertical_rhythm";
+// @import "../plugins/compass/css3/box-shadow";
 @import "../plugins/animation";
 
 
@@ -29,22 +30,22 @@
   }
 
 
-@mixin radius($radius:$global-radius) {
-  @if $radius {
-    -webkit-border-radius: $radius;
-    border-radius: $radius;
-  }
-}
+// @mixin radius($radius:$global-radius) {
+//   @if $radius {
+//     -webkit-border-radius: $radius;
+//     border-radius: $radius;
+//   }
+// }
 
 
-@mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
-  @if $vertical-radius {
-    // Webkit doesn't understand the official shorthand syntax for specifying
-    // a vertical radius unless so in case there's several we only take the first.
-    @include experimental(border-radius, first-value-of($radius) first-value-of($vertical-radius), not -moz, -webkit, not -o, not -ms, not -khtml, not official);
-    @include experimental("border-radius", $radius unquote("/") $vertical-radius, -moz, not -webkit, not -o, not -ms, -khtml, official); }
-  @else {
-    @include experimental(border-radius, $radius); } }
+// @mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
+//   @if $vertical-radius {
+//     // Webkit doesn't understand the official shorthand syntax for specifying
+//     // a vertical radius unless so in case there's several we only take the first.
+//     @include experimental(border-radius, first-value-of($radius) first-value-of($vertical-radius), not -moz, -webkit, not -o, not -ms, not -khtml, not official);
+//     @include experimental("border-radius", $radius unquote("/") $vertical-radius, -moz, not -webkit, not -o, not -ms, -khtml, official); }
+//   @else {
+//     @include experimental(border-radius, $radius); } }
 
 
 
@@ -52,10 +53,10 @@
 // and also a value for opacity. 
 // The mixin will convert to rgba color for the background with the opacity applied
 
-@mixin background-opacity($color, $opacity: 0.3) {
-    background: $color; /* The Fallback */
-    background: rgba($color, $opacity);
-}
+// @mixin background-opacity($color, $opacity: 0.3) {
+//     background: $color; /* The Fallback */
+//     background: rgba($color, $opacity);
+// }
 
 // A mixin to create a visual circle using border radius of half the size of the element
 // which will make it appear as a circle
@@ -137,21 +138,21 @@ height:100%;
 
 // Get advanced with type if needed for ligatures etc...
 
-@mixin advancedtype {
-	//font-variant-ligatures: contextual;  				// Set the default for ligatures
-	//-moz-font-feature-settings: "liga=1,dlig=1";    	// Ligature settings for mozilla
-	font-kerning: normal; 								// Set the default for kerning
-	//-webkit-font-smoothing: antialiased; 				// Improve (or in some cases royally screw with) safari's legibility somewhat
-	//font-synthesis: none; 							// Don't allow the font to create sythetic bold/italic
-	//text-rendering: optimizeLegibility; 				// Improve kerning pairs. Webkit gets funny with this sometimes
-}
+// @mixin advancedtype {
+// 	//font-variant-ligatures: contextual;  				// Set the default for ligatures
+// 	//-moz-font-feature-settings: "liga=1,dlig=1";    	// Ligature settings for mozilla
+// 	font-kerning: normal; 								// Set the default for kerning
+// 	//-webkit-font-smoothing: antialiased; 				// Improve (or in some cases royally screw with) safari's legibility somewhat
+// 	//font-synthesis: none; 							// Don't allow the font to create sythetic bold/italic
+// 	//text-rendering: optimizeLegibility; 				// Improve kerning pairs. Webkit gets funny with this sometimes
+// }
 
 
-@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
-  @if not $relative-font-sizing and $from-size != $base-font-size {
-    @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to"; }
-  font-size: $font-unit * $to-size / $from-size;
-  @include adjust-leading-to($lines, if($relative-font-sizing, $to-size, $base-font-size)); }
+// @mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+//   @if not $relative-font-sizing and $from-size != $base-font-size {
+//     @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to"; }
+//   font-size: $font-unit * $to-size / $from-size;
+//   @include adjust-leading-to($lines, if($relative-font-sizing, $to-size, $base-font-size)); }
 
 // Retina images. 
 // Use with care - http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss

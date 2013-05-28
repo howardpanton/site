@@ -218,33 +218,13 @@ $(".submenu").find("[data-menu='college']").each(function() {
 
 //console.log(menus);
 
-
-enquire.register("screen and (min-width: 1000px)", {
-
-  // REQUIRED
-  // Triggered when the media query transitions
-  // from *unmatched* to *matched*
-  match : function() {
-    var f = $('.submenu > div');
-    f.hide();
-    console.log('test');
-  },
-  
-  // OPTIONAL   
-  // Triggered when the media query transitions 
-  // from a *matched* to *unmatched*                        
-  unmatch : function() {},    
-                                
-  // OPTIONAL
-  // Triggered once immediately upon registration of handler
-  setup : function() {},      
-                                
-  // OPTIONAL
-  // Defaults to false
-  // If true, defers execution of the setup function
-  // until the first media query is matched (still just once)
-  deferSetup : true           
+enquire.register("min-width: 960px", function() {
+  // put Chris' code here to convert your menu to a dropdown
+  var f = $('.submenu > div');
+  console.log("test");
+f.hide();
 });
+
 
 $('.new-main-menu li a').click(function(event) {
    event.preventDefault();
