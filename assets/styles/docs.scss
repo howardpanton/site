@@ -42,15 +42,25 @@
 
 
 // Docs page intro section styling
-
 p.docs-intro {
   font-weight: 300;
   @include adjust-font-size-to(34px); 
-  background-color: green;
 
 }
 
+.docs-intro-nav {
+  
+  li a {
+    font-weight: 300;
+    color: white;
+    border-bottom: 1px dotted white;
+    margin-right: 12px;
+    &:hover {
+      color: $aaa-gray;
+    }
+  }
 
+}
 
 
 .breadcrumb {
@@ -80,7 +90,7 @@ p.docs-intro {
     background: black;
     width:100%;
     @extend .clearfix;
-   @include padding-leader(0);
+    @include padding-leader(0);
     border-top: 6px solid #000000;
 
       h2 {
