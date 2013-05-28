@@ -23,6 +23,12 @@
 
  <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
   
+
+
+
+  <!-- Unveil script for lazy loading images -->
+   <script src='{{ site.url }}/assets/js/libs/jquery.unveil.min.js'></script>
+
   <!-- load in script for responsive thumbnail gallery -->
   <script src='{{ site.url }}/assets/js/libs/responsivethumbnailgallery.js'></script>
 
@@ -154,6 +160,10 @@ function(){
       };
      
       
+      // Lazy Loading images
+      $("img").unveil();
+
+
 
       // script to transition smoothly for in-page links
       if ($('.smooth-scroll').length > 0) {
