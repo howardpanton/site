@@ -1,74 +1,98 @@
 // MODULES
 
+
+
+
 .sidebar {
 	@include gs-span(d,1,4);
 }
 .content {
 	@include gs-span(d,5,12);
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(m,min-max) {
+		@include gs-span(m,1,4);
+	}
 }
 .aside {
 	@include gs-span(d,13,16);
 }
 
-// 	@include gs-span(d,5,12);
+.date-box {
+	float: left;
+	width: 48px;
+	height: 68px;
+	margin: 0 14px 0 0;
+	.day {
+		width: 100%;
+		float: left;
+		background: black;
+		color: white;
+		padding: 10px 0px 0px 0px;
+		font-size: 24px;
+		height: 44px;
+		text-align: center;
+		line-height: 28px;
+	}
+	.month {
+		width: 100%;
+		float: left;
+		background: #e8e8e8;
+		color: black;
+		font-size: 12px;
+		height: 20px;
+		text-align: center;
+	}
+}
 
-// // basic container
-// .basic-container {
-// 	h2 {
-// 	}
-// 	p {
+.intro-mods {
+	li {
+		list-style: none;
+		clear: both;
+	}
+}
 
-// 	}
-// }
+.image-with-text {
+	li {
+		list-style: none;
+		clear: both;
+		img {
+			width: gs-width(d, 5, 6, (5,12), true);
+      		@include gs-float(d, left, (5,12));
+		}
+		p {
+		}
+	}
+}
 
-// // text with date
-// .text-with-date {
-// 	@include gs-span(d,5,12);
-// 	h2 {
-// 	}
-// 	h3 {
-// 		font-size: 22px;
-// 		font-weight: 300;
-// 	}	
-// 	p {
-// 	}	
-// }
+.image-with-date {
+	position: relative;
+	.date-box {
+		position: absolute;
+		top: 0;
+	}
+}
 
-// // introduction module
-// .intro-module {
-// 	@include gs-span(d,5,12);
-// 	h2 {
-// 	}
-// 	h3 {
-// 		font-size: 22px;
-// 		font-weight: 300;
-// 	}	
-// 	p {
-// 	}	
-// }
 
-// // intro leading article module
-// .intro-leading-article {
-// 	@include gs-span(d,5,12);
-// 	h2 {
-// 	}
-// 	h3 {
-// 		font-size: 22px;
-// 		font-weight: 400;
-// 	}	
-// 	p {
 
-// 	}	
-// 	.leader {
-// 		font-size: 22px;
-// 		font-weight: 300;
-// 	}
-// }
-
-// // galleries
-// .single-image-slider-with-caption {
-// 	@include gs-span(d,5,12);
-// 	.caption {
-		
-// 	}
-// }
+.size-1 {
+	font-size: 22px;
+	font-weight: 400;
+}
+.size-2 {
+	font-size: 22px;
+	font-weight: 400;
+}
+.size-3 {
+	font-size: 22px;
+	font-weight: 300;
+}
+.size-4 {
+	font-size: 22px;
+	font-weight: 400;
+}
+.size-5 {
+	font-size: 22px;
+	font-weight: 400;
+}
