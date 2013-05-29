@@ -296,14 +296,19 @@ $('.new-main-menu li a').click(function(event) {
 
 // .register("screen and (max-width:60em)", function() {
        
-      // mobile view menu - show/hide sub-menus
+      //
+      // mobile view menu
+      //
+
+      // show/hide sub-menus
       $('.submenu span').click(function(event) { 
       event.preventDefault();
      
       var _clicked = $(this);
       var m = $('.sub-inner-menu:visible');
         
-      // if not already open - show the menu
+      // if not already open, but another menu is already expanded,
+      // hide the sub menu that is already open first and then show the menu you just clicked
       if (m.length == 1 && !_clicked.hasClass('active')) {
         m.parent().find('h2 span').removeClass('active');
         m.hide().removeAttr("style");
@@ -312,19 +317,21 @@ $('.new-main-menu li a').click(function(event) {
         h.slideDown('fast', 'linear', function() {});
 
       
-      // if 
-      } else if ($(this).hasClass("active")) {    
-        var h = $(this).parent().next('.sub-inner-menu');
+      // if already open, then close the sub menu
+      } else if ($(this).hasClass("active")) { 
+
+        var _menu_to_close = $(this);  
+        var h = _menu_to_close.parent().next('.sub-inner-menu');
         h.slideUp('fast', 'linear', function() {
           h.removeAttr("style");
-          $(this).removeClass('active'); });
+          _menu_to_close.removeClass('active'); });
+
       
-      // if sub menu not already visible
+      // if sub menu not already visible, then show the menu
       } else {
         $(this).addClass('active');
         var h = $(this).parent().next('.sub-inner-menu');
         h.slideDown('fast', 'linear', function() {});
-
       };
     });      
 // });
@@ -356,7 +363,8 @@ $(window).resize(function () {
     $('a.menu').click(function(event) { 
       var t = $('#new-menu');
       if ($(this).hasClass("active")) {
-        t.slideUp('fast', 'linear', function() { $(this).removeClass('active'); });
+        var _menu_to_toggle = $(this);
+        t.slideUp('fast', 'linear', function() { _menu_to_toggle.removeClass('active'); });
         t.removeAttr('style');
       } else {
 
