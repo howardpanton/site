@@ -4,17 +4,20 @@ title: University of the Arts London - Website Style Guide
 class-home: docs
 ---
 
+
+
+
 <!-- Intro Block -->
 <section id="intro-block" class="region feature-wrapper dark-gray-bg">
   <div class="content-wrapper">
-    <h1 class="ual-white heading-x6 margin-top-6x ">ual: website style guide</h1>
+    <h1 class="ual-white title-x8 margin-top-6x">ual: web style guide</h1>
 
     <p class="docs-intro ual-white margin-bottom-8x">Some super-awesome summary text for the new style guide front page. The UAL website is built using the following technologies: Gridsetapp for, SASS, JQuery, etc etc etc. More notes here about the main technologies used and maybe a link to more details.</p>
    
     <nav class="docs-intro-nav no-bullet display-inline">
       <ul>
-       <li><a href="" class="smooth-scroll">GitHub Project</a></li>
-       <li><a href="" class="smooth-scroll">Code Examples</a></li>
+       <li><a href="http://github.com/artslondon/beta" class="smooth-scroll">GitHub Project</a></li>
+       <li><a href="index.html" class="smooth-scroll">Code Examples</a></li>
        <li><a href="" class="smooth-scroll">College Pages</a></li>
        <li><a href="" class="smooth-scroll">Color Variables</a></li>
       </ul>
@@ -24,56 +27,106 @@ class-home: docs
 
 
 <!-- Socials Block -->
-<section id="intro-block" class="region feature-wrapper light-gray-bg ">
+<section id="intro-block" class="region feature-wrapper bg-gray-bg pad-top-8x pad-bottom-6x">
   <div class="content-wrapper">
-    <p>links to fork on git follow on twitter etc here</p> 
+    <nav class="git-twitter-btns-list no-bullet display-inline ">
+      <ul >
+       <li >
+          <iframe src="http://ghbtns.com/github-btn.html?user=artslondon&type=follow"
+  allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></li>
+       <li>
+          <iframe src="http://ghbtns.com/github-btn.html?user=artslondon&repo=beta&type=fork&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+      </li>
+      <li>
+          <a href="https://twitter.com/artslondondev" class="twitter-follow-button" data-show-count="false">Follow @artslondondev</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      
+      </ul>
+    </nav>
+    
   </div>
 </section>
 
 
 <!-- section links Block -->
 <section id="section-links-block" class="region feature-wrapper ual-white-bg">
-  <div class="content-wrapper">
-    <nav>
-      <ul class="no-bullet display-inline">
-         <li><a href="#vision-block" class="smooth-scroll">Vision &amp; Strategy</a></li>
-         <li><a href="#tools-block" class="smooth-scroll">Tools</a></li>
-         <li><a href="#features-block" class="smooth-scroll">Features</a></li>
-         <li><a href="#future-dev-block" class="smooth-scroll">Future Development</a></li>
-       </ul> 
+  
+    <nav class="content-wrapper docs-section-links-nav clearfix">
+      <ul class="blocks four-up ">
+          <li>
+            <div class="media-block region heading-top clearfix equalize ">
+              <a href="#vision-block" class="smooth-scroll">
+                <h2 class="section-link">Vision &amp; Strategy</h2>
+              </a>
+              <p>This is <strong>how</strong> we created a sustainable, responsive, mobile-first system and how we tamed this beast of a project.</p>
+            </div>
+          </li>        
+          <li>
+            <div class="media-block region heading-top clearfix equalize">
+              <a href="#tools-block" class="smooth-scroll">
+                <h2 class="section-link ">Methods &amp; Tools</h2>
+              </a>
+              <p>This is <strong>how</strong> we created a sustainable, responsive, mobile-first system and how we tamed this beast of a project.</p>
+            </div>
+          </li>        
+          <li >
+            <div class="media-block region heading-top clearfix equalize">
+              <a href="#features-block" class="smooth-scroll">
+                <h2 class="section-link ">Current Features</h2>
+              </a>
+              <p>This is <strong>what</strong> we did and what we came out with. This is what we did and what we came out with.</p>
+            </div>
+          </li>       
+          <li>
+            <div class="media-block region heading-top clearfix equalize">    
+              <a href="#future-dev-block" class="smooth-scroll"><h2 class="section-link ">Future Development</h2></a>
+              <p>This is <strong>what</strong> we’ll be doing <strong>next</strong>, how we’ll be doing it and <strong>why</strong> we’ll do it. Harder, better, faster, stronger.</p>
+
+            </div>
+          </li>
+        </ul>
     </nav>
-  </div>
-</section>
+</section> <!-- end docs links Block -->
   
 <hr class="rhythm-6">
 
 <!-- Vision block -->
 <section id="vision-block" class="region feature-wrapper ual-white-bg">
-  <h2>Vision</h2>
-  <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+  <div class="content-wrapper">
+    <h2>Vision</h2>
+    <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+  </div>
 </section> <!-- end Vision block -->
 
 <hr class="rhythm-6">
 
 <!-- Tools block -->
 <section id="tools-block" class="region feature-wrapper ual-white-bg">
-   <h2>Tools</h2>
-  <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+   <div class="content-wrapper">
+    <h2>Tools</h2>
+     <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+   </div>
 </section>
 
 <hr class="rhythm-6">
 
 <!-- features block -->
 <section id="features-block" class="region feature-wrapper ual-white-bg">
-   <h2>Features</h2>
-  <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+    <div class="content-wrapper">
+      <h2>Features</h2>
+      <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+    </div>
 </section>
 
 <hr class="rhythm-6">
 
 <!-- Future Development block -->
 <section id="future-dev-block" class="region feature-wrapper ual-white-bg">
-   <h2>Further Development</h2>
-  <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+   <div class="content-wrapper">
+     <h2>Further Development</h2>
+      <img src="http://placehold.it/1280x800&text=Content+Here" alt="">
+  </div>
 </section>
   

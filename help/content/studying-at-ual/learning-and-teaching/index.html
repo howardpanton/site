@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+	<!--> <html lang="en"> <!--
+<![endif]-->
+  <head>
+    <title>University of Arts London Beta</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='grid test' name='description'>
+    <meta content='University of Arts London, Web Team' name='author'>
+
+    <!-- For all browsers -->
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/grid/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/grid-feature/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/screen.css'>
+
+	<!-- Zone-specific -->
+    
+
+
+
+    <!-- Temporarily add styles for course finder page -->
+    
+
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/debug.css'>
+
+		<!--[if (lt IE 9) & (!IEMobile)]>
+		// selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
+		<script src='http://artslondon.github.io/beta/assets/js/libs/selectivizr-min.js'></script>
+		<script src="http://artslondon.github.io/beta/assets/js/libs/html5shiv.js"></script>
+		<link rel='stylesheet' href='http://artslondon.github.io/beta/assets/styles/gridset-ie-lte8.css'>
+		<![endif]-->
+		<!-- JavaScript -->
+		<!--Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser -->
+		<script src='http://artslondon.github.io/beta/assets/js/libs/modernizr-2.6.2-min.js'></script>
+		<!-- Detectizr is a Modernizr extension to detect devices -->
+		<script src='http://artslondon.github.io/beta/assets/js/libs/detectizr.min.js'></script>
+		<link rel="shortcut icon" href="http://artslondon.github.io/beta/assets/img/favicon.ico">
+		<link rel="shortcut icon" href="http://artslondon.github.io/beta/assets/img/favicon.png">
+		<!-- <link rel="apple-touch-icon-precomposed" href="http://artslondon.github.io/beta/assets/img/l/apple-touch-icon-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://artslondon.github.io/beta/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://artslondon.github.io/beta/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://artslondon.github.io/beta/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+				<!--iOS -->
+		<!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+		<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+		<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+				<!-- Startup images -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+		<!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="http://artslondon.github.io/beta/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+		<!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="http://artslondon.github.io/beta/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+		<!-- Windows 8 / RT -->
+		<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+		<meta content='#000' name='msapplication-TileColor'>
+
+
+		<script>
+			Modernizr.Detectizr.detect({detectScreen:false});
+		</script>
+	</head>
+
+
+  <body class='style  '>
+
+
+
+  <header class='cf header'>
+    <div class='search-buttons'>
+        <div class='primary-buttons is-hidden-mobile'>
+            <button class='course'>
+                Courses
+            </button>
+            <button class='search'>
+                Search
+            </button>
+        </div>
+    </div>
+    <div class='banner'>
+        <div class='menu-toggle d-hide t-hide'>
+            <img alt='' src='http://artslondon.github.io/beta/assets/img/menu-toggle.png'>
+        </div>
+        <div class='logo'>
+            <img alt='' class='d-hide t-hide' src='http://artslondon.github.io/beta/assets/img/ual-logo-small.png'>
+            <img alt='' class='m-hide' src='http://artslondon.github.io/beta/assets/img/logos/ual-logo.png'>
+        </div>
+        <nav class='global-college-links m-hide' role='navigation'>
+            <ul>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/index.html">ual</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/camberwell/">camberwell</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/chelsea/">chelsea</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/lcc/">lcc</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/lcf/">lcf</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/wimbledon/">wimbledon</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <div class='main-menu cf is-hidden-mobile' role='navigation'>
+    <form action='/' class='search-mobile d-hide t-hide'>
+        <div class='search'>
+            <input class='input-medium' placeholder='Search Site' type='text'>
+        </div>
+        <div class='search'>
+            <input class='input-medium' placeholder='Find Courses' type='text'>
+        </div>
+    </form>
+    <nav class='top-bar'>
+        <ul class='dropdown group'>
+            <li>
+                <a href='#' title=''>Colleges</a>
+                <div class='span d-hide t-hide'>
+                    <span> + </span>
+                </div>
+                <ul class='sub_menu is-removed-mobile'>
+                    <li>
+                        <a href='' title=''>Camberwell College of Arts</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Central Saint Martins College of Arts and Design</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Chelsea College of Art and Design</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>London College of Communication</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>London College of Fashion</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Wimbledon College of Art</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Studying at UAL</a>
+                <ul class='sub_menu m-hide is-removed-mobile'>
+                    <li>
+                        <a href='' title=''>Why UAL</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Open days</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Fees and funding</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Student support</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Applying and enrolling</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>International</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Library</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Learning and teaching</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Accommodation</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Student union</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Facilities</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Widening participation</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Student Jobs &amp; Careers</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Alumni &amp; Friends</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>Alumni Benefits</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Inspiring Alumni</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Give and Support</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Register your details</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Stay Connected</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Contact Us</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='http://artslondon.github.io/beta/content/research/' title=''>Research</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-environment/' title=''>Research Environment</a>
+                    </li>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-degrees/' title=''>Research Degrees</a>
+                    </li>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-staff/' title=''>Research Staff</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Business &amp; Innovation</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>About UAL</a>
+                <div class='span d-hide t-hide'>
+                    <span> + </span>
+                </div>
+                <ul class='sub_menu is-removed-mobile last'>
+                    <li>
+                        <a href='' title=''>News</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Events Calendar</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Our History</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Invest in the Future</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Press Office</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Charitable Status</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Governance and Policy</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Administrative</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Staff Directory</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Contact UAL</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<nav class='secondary-menu-mobile d-hide t-hide'></nav>
+
+
+
+    <div class="content-wrapper">
+	<div class="row rhythm-3">
+		<div class="d5-d16">
+			<h1>Learning and Teaching</h1>
+		</div>
+	</div>
+	<div class="row rhythm-3">
+		<div class="d1-d4">
+			<ul>
+				<li><a href="why-ual.html">Why UAL</a></li>
+				<li><a href="">Open Days</a></li>
+				<li><a href="fees-and-funding.html">Fees &amp; Funding</a></li>
+				<li><a href="student-support.html">Student Support</a></li>
+				<li><a href="applying-and-enrolling.html">Applying &amp; Enrolling</a></li>
+				<li><a href="international.html">International</a></li>
+				<li><a href="library.html">Library</a></li>
+				<li><a href="learning-and-teaching.html">Learning &amp; Teaching</a></li>
+				<li><a href="accommodation.html">Accommodation</a></li>
+				<li><a href="student-union.html">Student Union</a></li>
+				<li><a href="facilities.html">Facilities</a></li>
+				<li><a href="widening-participation.html">Widening Participation</a></li>
+			</ul>
+		</div>
+		<div class="d5-d10">
+			<h2>Fees</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non tristique erat. Nam at scelerisque arcu. Quisque ut nisl nisi, ut condimentum turpis. Curabitur ultricies porttitor diam, eget consectetur nisi ornare sed. Nam eleifend neque vel augue suscipit luctus quis ut quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi.</p>
+				<p>In vehicula vulputate massa, quis mattis tellus mollis ut. Maecenas mauris nisl, tempus in porttitor a, euismod faucibus purus. Sed sit amet quam a lectus porttitor blandit sed ut metus. Ut luctus interdum sapien vel dictum. Quisque lectus lacus, lobortis nec malesuada a, feugiat vel turpis. Donec sed orci nec massa adipiscing commodo.</p>
+		</div>
+		<div class="d11-d16">
+			<h2>Funding</h2>
+				<p>Phasellus eu odio et tellus aliquam blandit. Vivamus eu nisl eros.</p>
+				<p>Praesent sit amet nulla nec mauris tincidunt auctor non ut eros. Proin non ipsum a mauris posuere scelerisque elementum id nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur placerat, libero nec rutrum scelerisque, massa quam luctus metus, eget fringilla nulla lacus sit amet nibh. Mauris et dolor quis est tristique elementum.</p>
+				<p>Sed congue magna in est consequat laoreet. Quisque semper pulvinar condimentum. Fusce in lacus tortor, ut pulvinar diam. Vivamus gravida, dolor nec accumsan porta, purus neque imperdiet quam, consectetur sollicitudin velit lectus nec leo. Suspendisse vel mauris felis.</p>
+		</div>
+	</div>
+	<div class="row rhythm-3">
+		<div class="d5-d8">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+		<div class="d9-d12">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+		<div class="d13-d16">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+	</div>
+	<div class="row rhythm-3">
+		<div class="d5-d8">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+		<div class="d9-d12">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+		<div class="d13-d16">
+			<img src="http://placehold.it/1000x500" alt="">
+				<p>Quisque luctus tincidunt porttitor. Donec urna magna, lobortis sit amet auctor eu, dapibus ut nibh.</p>
+				<p><a href="">Nullam tempus &rarr;</a></p>
+		</div>
+	</div>
+
+</div>
+
+  
+
+  
+
+
+
+    <footer class='footer row cf'>
+<div class='footer-links'>
+  <ul class='primary-links'>
+    <li>
+      <a href=''>SHOWTIME</a>
+    </li>
+    <li>
+      <a href=''>MY.ARTS</a>
+    </li>
+    <li>
+      <a href=''>UAL EDIT</a>
+    </li>
+    <li>
+      <a href=''>FLICKR</a>
+    </li>
+    <li>
+      <a href=''>FACEBOOK</a>
+    </li>
+    <li>
+      <a href=''>TWITTER</a>
+    </li>
+    <li>
+      <a href=''>YOUTUBE</a>
+    </li>
+  </ul>
+  <span>
+    <a>SITEMAP</a>
+  </span>
+  <ul class='secondary-links'>
+    <li>
+      <a href=''>Freedom of Information</a>
+    </li>
+    <li>
+      <a href=''>Accessibility</a>
+    </li>
+    <li>
+      <a href=''>Privacy Policy</a>
+    </li>
+    <li>
+      <a href=''>Cookies</a>
+    </li>
+    <li>
+      <a href=''>Disclaimer</a>
+    </li>
+    <li>
+      <a href=''>Charitable Status</a>
+    </li>
+    <li>
+      <a href=''>Donate</a>
+    </li>
+    <li>
+      <a href=''>Contact</a>
+    </li>
+  </ul>
+</div>
+<div class='copyright'>
+  <p>&copy; 2012 University of the Arts London All Rights Reserved</p>
+</div>
+</footer>
+
+  <script>
+    Modernizr.Detectizr.detect({detectScreen:false});
+  </script>
+
+  <script>
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='http://artslondon.github.io/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+
+  <!-- load in jQuery Mobile 
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
+  
+
+  <!-- /%script{:type => "text/javascript", :src  => "http://artslondon.github.io/beta/assets/js/libs/jquery.jpanelmenu.min.js"} -->
+  
+  <!-- Development scripts, not for production -->
+  <script src='http://artslondon.github.io/beta/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- Add Media Queries support for IE 6-8 -->
+  <script src='http://artslondon.github.io/beta/assets/js/libs/respond.min.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.fitvids.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.expandable.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/components/vallenato.js'></script> 
+  <script src='http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.js'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js'></script> 
+
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/dev/debug.js' type='text/javascript'></script>
+
+  <script src='http://artslondon.github.io/beta/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
+
+  <!-- Foundation -->
+
+  <script src='http://artslondon.github.io/beta/assets/js/foundation/zepto.min.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/foundation/foundation.min.js' type='text/javascript'></script>
+  
+  <!-- Scripts -->
+  <script src='http://artslondon.github.io/beta/assets/js/script.js' type='text/javascript'></script>
+
+
+  
+
+  
+  
+  
+
+  </body>
+
+
+</html>

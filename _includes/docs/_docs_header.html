@@ -1,15 +1,53 @@
 <header class='cf region header'>
+  
+  <!-- Slide-in menu toggle -->
+  <div id="slide-menu-toggle-btn">
+    <a href="#" class="slide-in-menu-trigger menu-toggle-link">Menu<img src="{{ site.url }}/assets/img/icons/icon-menu.png" alt="menu"></a>
+  </div>
+
   <div class='banner'>
         <div class='menu-toggle d-hide t-hide'>
             <img alt='' src='{{ site.url }}/assets/img/menu-toggle.png'>
         </div>
+    
+
     <div class="d1-d8">          
-      <h1>
-          <a href="{{site.url}}docs/">ual: style guide</a>
-      </h1>
+      <!-- <a class="nav-btn" id="nav-open-btn" href="#slide-in-nav">Book Navigation</a> -->
+      <h2>
+         <!--  <a href="{{site.url}}docs/">ual: style guide</a> -->
+         <a href="{{site.url}}docs/">ual: style guide</a>
+      </h2>
     </div>
   </div>
+  
+<!-- slide in navigation (hidden on page load)  -->
+
+<nav id="slide-in-nav" role="navigation">
+      <div class="block">
+          <ul>
+              <li>
+                  <a href="#">Home</a>
+              </li>
+              <li>
+                  <a href="#">Get Started</a>
+              </li>
+              <li>
+                  <a href="#">Scaffolding</a>
+              </li>
+              <li>
+                  <a href="#">Base CSS</a>
+              </li>
+              <li>
+                  <a href="components.html">Components</a>
+              </li>
+          </ul>
+          <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+      </div>
+</nav> 
+
+
 </header>
+
 
 
 <!-- May 26 - temporarily disabled breadcrumbs while working on new docs styling  -->

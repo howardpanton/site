@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+	<!--> <html lang="en"> <!--
+<![endif]-->
+  <head>
+    <title>University of Arts London Beta</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='grid test' name='description'>
+    <meta content='University of Arts London, Web Team' name='author'>
+
+    <!-- For all browsers -->
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/grid/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/grid-feature/gridset.css'>
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/screen.css'>
+
+	<!-- Zone-specific -->
+    
+        <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/custom/camberwell.css'>    
+
+   	
+
+
+
+    <!-- Temporarily add styles for course finder page -->
+    
+
+    <link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/debug.css'>
+
+		<!--[if (lt IE 9) & (!IEMobile)]>
+		// selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
+		<script src='http://artslondon.github.io/beta/assets/js/libs/selectivizr-min.js'></script>
+		<script src="http://artslondon.github.io/beta/assets/js/libs/html5shiv.js"></script>
+		<link rel='stylesheet' href='http://artslondon.github.io/beta/assets/styles/gridset-ie-lte8.css'>
+		<![endif]-->
+		<!-- JavaScript -->
+		<!--Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser -->
+		<script src='http://artslondon.github.io/beta/assets/js/libs/modernizr-2.6.2-min.js'></script>
+		<!-- Detectizr is a Modernizr extension to detect devices -->
+		<script src='http://artslondon.github.io/beta/assets/js/libs/detectizr.min.js'></script>
+		<link rel="shortcut icon" href="http://artslondon.github.io/beta/assets/img/favicon.ico">
+		<link rel="shortcut icon" href="http://artslondon.github.io/beta/assets/img/favicon.png">
+		<!-- <link rel="apple-touch-icon-precomposed" href="http://artslondon.github.io/beta/assets/img/l/apple-touch-icon-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://artslondon.github.io/beta/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://artslondon.github.io/beta/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://artslondon.github.io/beta/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+				<!--iOS -->
+		<!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+		<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+		<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+				<!-- Startup images -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+		<!-- <link rel="apple-touch-startup-image" href="http://artslondon.github.io/beta/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+		<!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="http://artslondon.github.io/beta/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+		<!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="http://artslondon.github.io/beta/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+		<!-- Windows 8 / RT -->
+		<meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+		<meta content='#000' name='msapplication-TileColor'>
+
+
+		<script>
+			Modernizr.Detectizr.detect({detectScreen:false});
+		</script>
+	</head>
+
+
+  <body class='style camberwell '>
+
+
+
+  <header class='cf header'>
+    <div class='search-buttons'>
+        <div class='primary-buttons is-hidden-mobile'>
+            <button class='course'>
+                Courses
+            </button>
+            <button class='search'>
+                Search
+            </button>
+        </div>
+    </div>
+    <div class='banner'>
+        <div class='menu-toggle d-hide t-hide'>
+            <img alt='' src='http://artslondon.github.io/beta/assets/img/menu-toggle.png'>
+        </div>
+        <div class='logo'>
+            <img alt='' class='d-hide t-hide' src='http://artslondon.github.io/beta/assets/img/ual-logo-small.png'>
+            <img alt='' class='m-hide' src='http://artslondon.github.io/beta/assets/img/logos/ual-logo.png'>
+        </div>
+        <nav class='global-college-links m-hide' role='navigation'>
+            <ul>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/index.html">ual</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/camberwell/">camberwell</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/chelsea/">chelsea</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/lcc/">lcc</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/lcf/">lcf</a>
+                </li>
+                <li>
+                    <a href="http://artslondon.github.io/betacontent/colleges/wimbledon/">wimbledon</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <div class='main-menu cf is-hidden-mobile' role='navigation'>
+    <form action='/' class='search-mobile d-hide t-hide'>
+        <div class='search'>
+            <input class='input-medium' placeholder='Search Site' type='text'>
+        </div>
+        <div class='search'>
+            <input class='input-medium' placeholder='Find Courses' type='text'>
+        </div>
+    </form>
+    <nav class='top-bar'>
+        <ul class='dropdown group'>
+            <li>
+                <a href='#' title=''>Colleges</a>
+                <div class='span d-hide t-hide'>
+                    <span> + </span>
+                </div>
+                <ul class='sub_menu is-removed-mobile'>
+                    <li>
+                        <a href='' title=''>Camberwell College of Arts</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Central Saint Martins College of Arts and Design</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Chelsea College of Art and Design</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>London College of Communication</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>London College of Fashion</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Wimbledon College of Art</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Studying at UAL</a>
+                <ul class='sub_menu m-hide is-removed-mobile'>
+                    <li>
+                        <a href='' title=''>Why UAL</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Open days</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Fees and funding</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Student support</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Applying and enrolling</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>International</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Library</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Learning and teaching</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Accommodation</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Student union</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Facilities</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Widening participation</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Student Jobs &amp; Careers</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Alumni &amp; Friends</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>Alumni Benefits</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Inspiring Alumni</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Give and Support</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Register your details</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Stay Connected</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Contact Us</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='http://artslondon.github.io/beta/content/research/' title=''>Research</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-environment/' title=''>Research Environment</a>
+                    </li>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-degrees/' title=''>Research Degrees</a>
+                    </li>
+                    <li>
+                        <a href='http://artslondon.github.io/beta/content/research/research-staff/' title=''>Research Staff</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>Business &amp; Innovation</a>
+                <ul class='sub_menu m-hide'>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>sublink</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#' title=''>About UAL</a>
+                <div class='span d-hide t-hide'>
+                    <span> + </span>
+                </div>
+                <ul class='sub_menu is-removed-mobile last'>
+                    <li>
+                        <a href='' title=''>News</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Events Calendar</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Our History</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Invest in the Future</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Press Office</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Charitable Status</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Governance and Policy</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Administrative</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Staff Directory</a>
+                    </li>
+                    <li>
+                        <a href='' title=''>Contact UAL</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<nav class='secondary-menu-mobile d-hide t-hide'></nav>
+
+
+
+        <div class='wrapper'>
+      <!-- .top-slider.cycle-slideshow.cf{"data-cycle-fx" => "scrollHorz", "data-cycle-pause-on-hover" => "true", "data-cycle-speed" => "200"} -->
+      <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/slider-img1.png"}/ -->
+      <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/slider-img2.png"}/ -->
+      <div class='slider-container'>
+        <div class='header-box' id='cw-header-box'>
+          <h2 class='box-header'>Camberwell</h2>
+        </div>
+        <div class='top-slider flexslider' id='cw-slider-right'>
+          <ul class='slides'>
+            <li>
+              <img src='http://artslondon.github.io/beta/assets/img/camberwell/slider-right1.png'>
+            </li>
+            <li>
+              <img src='http://artslondon.github.io/beta/assets/img/camberwell/slider-right2.png'>
+            </li>
+            <!-- %li -->
+            <!-- %img{:src => "slide3.jpg"}/ -->
+          </ul>
+        </div>
+      </div>
+      <div class='sidebar cf'>
+        <ul>
+          <h2>Camberwell</h2>
+          <li>
+            <a>About</a>
+          </li>
+          <li>
+            <a>Courses</a>
+          </li>
+          <li>
+            <a>Blog</a>
+          </li>
+          <li>
+            <a>Camberwell Events</a>
+          </li>
+          <li>
+            <a>Camberwell Experience</a>
+          </li>
+          <li>
+            <a>Camberwell People</a>
+          </li>
+          <li>
+            <a>Camberwell Research</a>
+          </li>
+          <li>
+            <a>Camberwell Business &amp; Enterprise</a>
+          </li>
+        </ul>
+      </div>
+      <div class='course-info-container cf'>
+        <h2 class='cw-heading'>Camberwell College of Arts is one of the world's foremost art and design institutions</h2>
+        <div class='intro-text'>
+          <p>Camberwell College of Arts is one of the world's foremost art and design institutions and we've welcomed students to South London for over a century, many of whom have stayed on in the area making it the place for artists to live and work.</p>
+          <p>In that time we've carved out a name for high quality teaching by leading practitioners - teaching that has put artists and designers on the road to international prominence and many others on the path to fulfilment in their chosen practice.</p>
+        </div>
+        <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder1.png'>
+        <!-- .ci-row1.cf -->
+        <!-- %ul -->
+        <!-- %li.block1 -->
+        <!-- %h1.cw-heading.fit-this -->
+        <!-- %a Find Out More about our Undergraduate courses -->
+        <!-- %li.block2 -->
+        <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/course-info-thumb.jpg"}/ -->
+        <!-- %li.block3 -->
+        <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/course-info-thumb.jpg"}/ -->
+        <!-- .ci-row2.cf -->
+        <!-- %li.block4 -->
+        <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/course-info-thumb.jpg"}/ -->
+        <!-- %li.block5 -->
+        <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/course-info-thumb.jpg"}/ -->
+        <!-- %li.block6 -->
+        <!-- %img{:src => "http://artslondon.github.io/beta/assets/img/camberwell/course-info-thumb.jpg"}/ -->
+        <!-- commented and saved in case using anchors as reletive reference for the animations -->
+        <!-- "data-anchor-target" => ".open-days-container", -->
+      </div>
+    </div>
+    <div class='open-days-container cf'>
+      <!-- .circle-callout{ "data--600-bottom" => "left:15%;", "data-center-center" => "left:0%;"} -->
+      <div class='c-wrap'>
+        <!-- .circle-callout{ "data-anchor-target" => ".open-days-container", "data-1400" => "left:0; opacity:1", "data-100-bottom" => "left:-400px; opacity: 0"} -->
+        <div class='circle-callout' data-100-top='left:-400px; opacity: 0' data-1400='left:20px; opacity:1' data-anchor-target='.open-days-container'>
+          <h2>Come &amp; Visit Camberwell</h2>
+          <a>Book a place at one of our Open Days</a>
+        </div>
+        <!-- .circle-callout2{ "data--600-bottom" => "right:15%;", "data-center-center" => "right:0%;"} -->
+        <!-- .circle-callout2{ "data--600-bottom" => "right:10%;", "data-center-center" => "right:0%;"} -->
+        <!-- .circle-callout2{ "data-anchor-target" => ".open-days-container", "data-1400" => "right:0; opacity:1", "data-100-bottom" => "right:-400px; opacity: 0;"} -->
+        <div class='circle-callout2' data-100-top='right:-400px; opacity: 0;' data-1400='right:20px; opacity:1' data-anchor-target='.open-days-container'>
+          <h2>Explore the Local Area</h2>
+          <a>See our full map of all things Camberwell</a>
+        </div>
+      </div>
+    </div>
+    <div class='wrapper camberwell'>
+      <div class='lower1-container cf'>
+        <div class='cw-experience'>
+          <h2 class='cw-heading'>
+            <a>Camberwell Experience</a>
+          </h2>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder1.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder1.png'>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class='student-profiles'>
+          <h2 class='cw-heading'>
+            <a>Student Profiles</a>
+          </h2>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-student-profiles.png'>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class='alumni'>
+          <h2 class='cw-heading'>
+            <a>Alumni</a>
+          </h2>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-alumni.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-alumni.png'>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placeholder-alumni.png'>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='lower2-container cf'>
+        <div class='news'>
+          <h2 class='cw-heading'>
+            <a>News</a>
+          </h2>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-news-placeholder.png'>
+              </a>
+              <h3 class='cw-small-heading'>Book launch – ‘I used to be a design student’</h3>
+              <p>‘I used to be a design student’ is a new publication by Camberwell BA Graphic Design alumni Frank Phillipin and Billy Kiosoglou – Brighten the Corners.</p>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-news-placeholder.png'>
+              </a>
+              <h3 class='cw-small-heading'>Stuart Middleton wins MOSTYN Open</h3>
+              <p>Camberwell BA Painting alumnus Stuart Middleton has been announced as the winner of the MOSTYN Open. The £10,000 prize was awarded for his work ‘Jump!’.</p>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-news-placeholder.png'>
+              </a>
+              <h3 class='cw-small-heading'>This is Studio and Bill Porter for Greenpeace</h3>
+              <p>Camberwell alumni commissioned by Greenpeace to create an animation based on their investigation into the British fishing industry.</p>
+            </li>
+          </ul>
+        </div>
+        <div class='events'>
+          <h2 class='cw-heading'>
+            <a>Events</a>
+          </h2>
+          <ul>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-news-placeholder.png'>
+              </a>
+              <h3 class='cw-small-heading'>Provisional Information</h3>
+              <p>Dates:  ­%strong  5 February - 8 March 2013 Opening event:  ­%strong 5 February 2013, 17.30 - 20.00 Venue:  ­%strong Camberwell Space, Camberwell College of Arts, 45 - 65 Peckham Road, London SE5 8UF</p>
+              <p>Provisional Information is an exhibition that considers ideas around material change, incompleteness, reworking,   contradiction, and restlessness, and what such notions might mean for an artist, their work, and a viewer.</p>
+            </li>
+            <li>
+              <a>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-news-placeholder.png'>
+              </a>
+              <h3 class='cw-small-heading'>Another Event Info</h3>
+              <p>Dates:  ­%strong 5 February - 8 March 2013 Opening event:  ­%strong 5 February 2013, 17.30 - 20.00 Venue:  ­%strong Camberwell Space, Camberwell College of Arts, 45 - 65 Peckham Road, London SE5 8UF</p>
+              <p>Provisional Information is an exhibition that considers ideas around material change, incompleteness, reworking, contradiction, and restlessness, and what such notions might mean for an artist, their work, and a viewer.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='courses-by-sub-header'>
+        <h2 class='cw-courses-heading'>Courses by subject</h2>
+      </div>
+      <div class='lower3-container cf'>
+        <ul class='col1'>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Foundation Diploma in Art and Design</h3>
+            </a>
+            <p>The Foundation Diploma in Art and Design is designed to enable you to learn through discovery and exploration; this is primarily achieved through your engagement with projects, lectures and study visits.</p>
+          </li>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Fine Art - Undergraduate</h3>
+              <div>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/placehold-course1.png'>
+                <div>
+                  <h3>Caption or further links here</h3>
+                </div>
+              </div>
+            </a>
+            <ul>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Drawing</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Painting</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Photography</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Sculpture</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Fine Art - Graduate School</h3>
+              <div>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/placehold-course2.png'>
+                <div>
+                  <h3>Caption or further links here</h3>
+                </div>
+              </div>
+              <ul>
+                <li>
+                  <a class='cw-course-list' href='#'>MA Book Arts (Visual Arts)</a>
+                </li>
+                <li>
+                  <a class='cw-course-list' href='#'>MA Fine Art Digital (Visual Arts)</a>
+                </li>
+                <li>
+                  <a class='cw-course-list' href='#'>MA Printmaking (Visual Arts)</a>
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Preparing to Teach in the Lifelong Learning Sector</h3>
+            </a>
+            <p>Many artists support their practice by facilitating workshops in the community and many more would like to work in community settings, but do not have the necessary skills and knowledge required.</p>
+          </li>
+        </ul>
+        <ul class='col2'>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Design - Undergraduate</h3>
+              <div>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/placehold-course3.png'>
+                <div>
+                  <h3>Caption or further links here</h3>
+                </div>
+              </div>
+            </a>
+            <ul>
+              <li>
+                <a class='cw-course-list' href='#'>FdA Graphic Design</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>FdA Illustration</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Graphic Design</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) Illustration</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>BA (Hons) 3D Design</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>Design - Graduate School</h3>
+              <div>
+                <img src='http://artslondon.github.io/beta/assets/img/camberwell/placehold-course4.png'>
+                <div>
+                  <h3>Caption or further links here</h3>
+                </div>
+              </div>
+            </a>
+            <ul>
+              <li>
+                <a class='cw-course-list' href='#'>MA Designer Maker (Visual Arts)</a>
+              </li>
+              <li>
+                <a class='cw-course-list' href='#'>MA Illustration (Visual Arts)</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#'>
+              <h3 class='cw-course-title'>MA Conservation</h3>
+            </a>
+            <p>The course will feature specialist taught elements for the 2 pathway’s with specialist pathway projects running alongside a common taught lecture programme and key workshops. This will allow for both the degree of specialisation required in this subject at postgraduate level and a fruitful interaction between the students with opportunities for peer learning and an expanded critical discourse.</p>
+          </li>
+        </ul>
+      </div>
+      <div class='related-content cf'>
+        <h2 class='cw-heading'>
+          <a>Related Content</a>
+        </h2>
+        <ul>
+          <li class='rc-1'>
+            <a>
+              <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placehold-related.png'>
+              <h3>Related Content</h3>
+            </a>
+            <p>Painting prize was alumnus Stuart Middleton has been announced as the winner of the MOSTYN Open the £10,000 prize announced.</p>
+          </li>
+          <li class='rc-2'>
+            <a>
+              <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placehold-related.png'>
+              <h3>Related Content</h3>
+            </a>
+            <p>Painting prize was alumnus Stuart Middleton has been announced as the winner of the MOSTYN Open the £10,000 prize announced.</p>
+          </li>
+          <li class='rc-3'>
+            <a>
+              <img src='http://artslondon.github.io/beta/assets/img/camberwell/cw-placehold-related.png'>
+              <h3>Related Content</h3>
+            </a>
+            <p>Painting prize was alumnus Stuart Middleton has been announced as the winner of the MOSTYN Open the £10,000 prize announced.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='cw-footer cf cw-hide'>
+      <div class='wrapper cf'>
+        <div class='contact-us'>
+          <h3>Contact us</h3>
+          <ul>
+            <li class='address'>
+              <a href='#'>
+                <div class='icon-map-marker'>Camberwell College of Arts<br/>45 - 65 Peckham Road<br/>London SE5 8UF</div>
+              </a>
+            </li>
+            <li class='tel'>
+              <a href='#'>
+                <div class='icon-phone'>+44 (0)20 7514 9641</div>
+              </a>
+            </li>
+            <li class='email'>
+              <a href='#'>
+                <div class='icon-envelope-alt'>info@camberwell.arts.ac.uk</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class='get-prospectus'>
+          <h3>Get a Prospectus</h3>
+          <span>The Camberwell, Chelsea and Wimbledon (CCW) 2013-14 prospectus</span>
+          <a href='#'>
+            <div class='icon-download-alt'>Download the PDF (25.7MB)</div>
+          </a>
+          <a href='#'>
+            <div class='icon-book'>Request a hard copy</div>
+          </a>
+        </div>
+        <div class='socials'>
+          <h3>Follow us</h3>
+          <ul>
+            <li>
+              <a href='#'>
+                <div class='btn icon-email social'></div>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <div class='btn icon-twitter twitter'></div>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <div class='btn icon-facebook facebook'></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  
+
+  
+    Included file '_camberwell_footer.html' not found in _includes directory
+  
+
+
+
+    <footer class='footer row cf'>
+<div class='footer-links'>
+  <ul class='primary-links'>
+    <li>
+      <a href=''>SHOWTIME</a>
+    </li>
+    <li>
+      <a href=''>MY.ARTS</a>
+    </li>
+    <li>
+      <a href=''>UAL EDIT</a>
+    </li>
+    <li>
+      <a href=''>FLICKR</a>
+    </li>
+    <li>
+      <a href=''>FACEBOOK</a>
+    </li>
+    <li>
+      <a href=''>TWITTER</a>
+    </li>
+    <li>
+      <a href=''>YOUTUBE</a>
+    </li>
+  </ul>
+  <span>
+    <a>SITEMAP</a>
+  </span>
+  <ul class='secondary-links'>
+    <li>
+      <a href=''>Freedom of Information</a>
+    </li>
+    <li>
+      <a href=''>Accessibility</a>
+    </li>
+    <li>
+      <a href=''>Privacy Policy</a>
+    </li>
+    <li>
+      <a href=''>Cookies</a>
+    </li>
+    <li>
+      <a href=''>Disclaimer</a>
+    </li>
+    <li>
+      <a href=''>Charitable Status</a>
+    </li>
+    <li>
+      <a href=''>Donate</a>
+    </li>
+    <li>
+      <a href=''>Contact</a>
+    </li>
+  </ul>
+</div>
+<div class='copyright'>
+  <p>&copy; 2012 University of the Arts London All Rights Reserved</p>
+</div>
+</footer>
+
+  <script>
+    Modernizr.Detectizr.detect({detectScreen:false});
+  </script>
+
+  <script>
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='http://artslondon.github.io/beta/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+
+  <!-- load in jQuery Mobile 
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
+  
+
+  <!-- /%script{:type => "text/javascript", :src  => "http://artslondon.github.io/beta/assets/js/libs/jquery.jpanelmenu.min.js"} -->
+  
+  <!-- Development scripts, not for production -->
+  <script src='http://artslondon.github.io/beta/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- Add Media Queries support for IE 6-8 -->
+  <script src='http://artslondon.github.io/beta/assets/js/libs/respond.min.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.fitvids.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.expandable.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/components/vallenato.js'></script> 
+  <script src='http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.js'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js'></script> 
+
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/dev/debug.js' type='text/javascript'></script>
+
+  <script src='http://artslondon.github.io/beta/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
+
+  <!-- Foundation -->
+
+  <script src='http://artslondon.github.io/beta/assets/js/foundation/zepto.min.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/foundation/foundation.min.js' type='text/javascript'></script>
+  
+  <!-- Scripts -->
+  <script src='http://artslondon.github.io/beta/assets/js/script.js' type='text/javascript'></script>
+
+
+  
+    
+  <!-- Libs -->
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/responsive.text.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/picturefill.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/hoverintent.js' type='text/javascript'></script>
+  <!-- <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.nivo.slider.js' type='text/javascript'></script> -->
+  <script src='http://artslondon.github.io/beta/assets/js/libs/jquery.flexslider-min.js' type='text/javascript'></script>
+
+  <!-- Foundation -->
+  <script src='http://artslondon.github.io/beta/assets/js/foundation/foundation.js' type='text/javascript'></script>
+
+  <!-- load skrollr to handle the movement of the open days circle callouts -->
+  <script src='http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js' type='text/javascript'></script>
+  <script src='http://artslondon.github.io/beta/assets/js/libs/skrollr-stylesheets.min.js' type='text/javascript'></script>
+
+  <!-- load main script.js file -->
+  <script src='http://artslondon.github.io/beta/assets/js/script.js' type='text/javascript'></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".fancy_title").lettering();
+      // Function to slabtext the cw-heading classes
+      // $(".cw-heading").slabText(); 
+    
+      // use fitText for headings to make them responsive
+      $(".fit-this").fitText();
+    
+      // initialize the skrollr to handle the animation on scroll
+      skrollr.init();
+    });
+  </script>
+
+
+<script>
+   
+   // FLEX SLIDER 
+   $(window).load(function() {
+      $('.flexslider').flexslider({
+        animation: "slide",             
+        easing: "swing",              
+        direction: "horizontal",  
+        pauseOnHover: true,       
+        useCSS: true,
+        controlNav: false,
+        controlsContainer: ".slider-container",
+        slideshowSpeed: 4000,           
+        animationSpeed: 400, 
+        start: function(slider) {
+          //console.log(slider); 
+          // $(".header-box").height(slider.h);
+          // make sure that the height of the blue box with the college name matches the height of the slider
+          $("#cw-header-box").height($("#cw-slider-right").height());
+        },
+        after: function(slider) {
+          //console.log(slider.h); 
+          //$(".header-box").height(slider.h);
+          // make sure that the height of the blue box with the college name matches the height of the slider
+          $("#cw-header-box").height($("#cw-slider-right").height());
+        }
+      });
+      // make sure that both sides of the top slider are the same height
+      // by setting the height of the left side to equal the height of the right slide  
+    });
+    // when the screen resizes, set the correct height for the left header box (same size as right slider)
+    $(window).resize(function() {
+      $("#cw-header-box").height($("#cw-slider-right").height());
+    });
+</script>
+
+  
+  
+  
+
+  </body>
+
+
+</html>

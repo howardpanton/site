@@ -1,0 +1,85 @@
+/* line 1, ../../styles/components/carousel.scss */
+#wrapper {
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  border-radius: 100px;
+  width: 800px;
+  height: 127px;
+  padding: 10px;
+  margin: -75px 0 0 -410px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+/* line 13, ../../styles/components/carousel.scss */
+.caroufredsel_wrapper {
+  border-radius: 90px;
+}
+
+/* line 16, ../../styles/components/carousel.scss */
+#carousel img {
+  width: 201px;
+  height: 127px;
+  margin: 0 5px;
+  float: left;
+}
+
+/* line 22, ../../styles/components/carousel.scss */
+#prev, #next {
+  background: transparent url(img/carousel_control.png) no-repeat 0 0;
+  text-indent: -999px;
+  display: block;
+  overflow: hidden;
+  width: 15px;
+  height: 21px;
+  position: absolute;
+  top: 65px;
+}
+
+/* line 32, ../../styles/components/carousel.scss */
+#prev {
+  background-position: 0 0;
+  left: 30px;
+}
+
+/* line 36, ../../styles/components/carousel.scss */
+#prev:hover {
+  left: 29px;
+}
+
+/* line 39, ../../styles/components/carousel.scss */
+#next {
+  background-position: -18px 0;
+  right: 30px;
+}
+
+/* line 43, ../../styles/components/carousel.scss */
+#next:hover {
+  right: 29px;
+}
+
+/* line 46, ../../styles/components/carousel.scss */
+#pager {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* line 51, ../../styles/components/carousel.scss */
+#pager a {
+  background: transparent url(img/carousel_control.png) no-repeat -2px -32px;
+  text-decoration: none;
+  text-indent: -999px;
+  display: inline-block;
+  overflow: hidden;
+  width: 8px;
+  height: 8px;
+  margin: 0 5px 0 0;
+}
+
+/* line 61, ../../styles/components/carousel.scss */
+#pager a.selected {
+  background: transparent url(img/carousel_control.png) no-repeat -12px -32px;
+  text-decoration: underline;
+}
