@@ -112,14 +112,6 @@ function(){
   <script>
     $(document).ready(function(){
 
-      $('.slider1').bxSlider({
-        slideWidth: 200,
-        minSlides: 2,
-        maxSlides: 3,
-        slideMargin: 10,
-        moveSlides: 1
-      });
-
       // detect slider component
       if ($('.slider').length > 0) {
 
@@ -135,7 +127,7 @@ function(){
           maxSlides: 1,
           slideMargin: _itemMargin,
           moveSlides: 1,
-          pager: true,
+          pagerType: 'short',
           video: true // set video to true even if slider has no video (can't do any harm?)
         });
       }
