@@ -1,4 +1,4 @@
-<!-- <ul>
+<!--<ul>
     {% for page in site.pages %}
     {% if page.layout != nil %}
     {% if page.navigation == 'docs' %}
@@ -8,11 +8,12 @@
     {% endif %}
     {% endif %}
     {% endfor %}
-</ul> -->
+</ul> 
+-->
 
 <div class='new-main-menu' role='navigation'>
   <div class="top-bar">        
-      <ul>
+      <ul class="m-hide t-hide">
           <li>
               <a data-item="college" href='#' title=''>Colleges</a>
               <div class="d-hide menu">
@@ -58,13 +59,15 @@
         </ul>
   </div>
 </div>
-<div class="row dark-gray-bg">    
+<div id ="new-menu" class="row dark-gray-bg">    
+<div class="content-wrapper">
   <div class="submenu">
     <div data-menu="college" class="region">
-      <h2 class="rhythm-2">
-        <a href="{{ site.url }}/content/colleges/">Colleges</a>
+      <h2 >
+        <a href="{{ site.url }}/content/colleges/">Colleges</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span>
       </h2>
-      <ul class="subnav-1 region">
+<div class="sub-inner-menu">      
+  <ul class="subnav-1 region">
         <li>
             <a href='{{ site.url }}/content/colleges/camberwell/' title='Visit Camberwell College of Arts'>Camberwell College of Arts</a>
         </li>
@@ -85,17 +88,17 @@
         <li>
              <a href='{{ site.url }}/content/colleges/' title='Visit Wimbledon College of Art'>Wimbledon College of Art</a>
         </li>
-      </ul>
-      <div class="feature region">
+      </ul></div>
+      <div class="region m-hide t-hide feature ">
           <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. </p>
       </div>
   </div>
             <!-- studying -->
   <div data-menu="study" class="row region">
-    <h2 class=" rhythm-2"  >
-      <a href="#">Student at UAL</a>
+    <h2  >
+      <a href="#">Student at UAL</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span>
     </h2>
-      <ul class="subnav-1 region" >
+<div class="sub-inner-menu">      <ul class="subnav-1 region" >
         <li>
             <a href='' title=''>Why UAL</a>
         </li>
@@ -136,8 +139,8 @@
         <li>
             <a href='' title=''>Widening participation</a>
         </li>
-        </ul>
-      <div class="feature-image region" >
+        </ul></div>
+      <div class="feature-image m-hide t-hide region" >
             <a href="#" title="Link title">
           <figure>
             <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt"></figure>
@@ -147,13 +150,13 @@
 
         <!-- careers -->
     <div data-menu="careers" class="row region">
-        <h2><a href="#">Student Jobs &amp; Careers</a></h2>
-            <ul class="subnav-1 region" >
+        <h2><a href="#">Student Jobs &amp; Careers</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span></h2>
+<div class="sub-inner-menu">              <ul class="subnav-1 region" >
             <li>
                  <a href='' title=''>Opportunities</a>
                 </li>
                 <li>
-                     <ahref='' title=''>Events</a>
+                  <a href='' title=''>Events</a>
                 </li>
                 <li >
                      <a href='' title=''>Finding Work</a>
@@ -168,14 +171,15 @@
                      <a href='' title=''>About SEE</a>
                 </li>
 
-            </ul>
-            <div class="feature region" >
+            </ul></div>
+            <div class="feature m-hide t-hide region" >
                 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
     <!-- alumni -->
     <div data-menu="alumni" class="row region">
-        <h2><a href="#">Alumni &amp; Friends</a></h2>
+        <h2><a href="#">Alumni &amp; Friends</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span></h2>
+            <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
                     <li>
                         <a href='' title=''>Alumni Benefits</a>
@@ -198,14 +202,15 @@
                         <a href='' title=''>Contact Us</a>
                     </li>
 
-            </ul>
-            <div class="feature region" >
+            </ul></div>
+            <div class="feature m-hide t-hide region" >
                 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
             <!-- Research -->
     <div data-menu="research" class="row region">
-        <h2><a href="#">Research</a></h2>
+        <h2><a href="#">Research</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span></h2>
+        <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
                     <li>
                         <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
@@ -217,15 +222,16 @@
                         <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
                     </li>
                   </ul>
-      
-            <div class="feature region" >
+      </div>
+            <div class="feature m-hide t-hide region" >
                 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
                     <!-- Business -->
     <div data-menu="business" class="row region">
-        <h2><a href="#">Business &amp; Innovation</a></h2>
-            <ul class="subnav-1 region" >
+        <h2><a href="#">Business &amp; Innovation</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span></h2>
+           <div class="sub-inner-menu">  
+             <ul class="subnav-1 region" >
                     <li>
                         <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
                     </li>
@@ -236,14 +242,15 @@
                         <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
                     </li>
                   </ul>
-      
-            <div class="feature region" >
+      </div>
+            <div class="feature m-hide t-hide region" >
                 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
                             <!-- About UAL -->
     <div data-menu="about" class="row region">
-        <h2><a href="#">About UAL</a></h2>
+        <h2><a href="#">About UAL</a><span class="d-hide" style="float:right; color:white; font-weight:normal; font-size:30px; border-left:1px solid #444444; padding-left: 12px;">+</span></h2>
+        <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
           <li>
                         <a href='' title=''>News</a>
@@ -281,8 +288,8 @@
                         <a href='' title=''>Contact UAL</a>
                     </li>
                   </ul>
-      
-            <div class="feature-image" >
+      </div>
+            <div class="feature-image m-hide t-hide" >
                <a href="#" title="Link title">
           <figure>
             <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt"></figure>
@@ -290,4 +297,6 @@
             </div>
         </div>
     </div>
+      
+</div>
     </div>
