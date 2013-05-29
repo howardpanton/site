@@ -24,7 +24,7 @@ template: true
 			</ul>		
 		</nav>	
 		<div role="main" class="main-column d5-d16">
-			<div class="d5-d12 buffer-top">
+			<!--<div class="d5-d12 buffer-top">
 				<nav>
 					<h4><a href="#" data-dropdown="sibling-nav" class="button dropdown">Select another Undergraduate course</a></h4>
 					<ul id="sibling-nav" class="f-dropdown">
@@ -33,44 +33,44 @@ template: true
 						<li><a href="#">Yet another</a></li>
 					</ul>
 				</nav>
-			</div>
+			</div>-->
 			<header class="d-all">
 				<h1>BA (Hons) Fashion Design Technology: Womenswear</h1>
 			</header>
-			<div class="d5-d12 super-teaser buffer">
+			<div class="d-all super-teaser buffer">
 				<p>Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
 			</div>
-			<div class="d5-d12 buffer">	
+			<div class="d-all buffer">	
 				<div class="box-out bg-gray-bg buffer">
 					<h3>Critical time-sensitive</h3>
 					<p><a href="#">We're running to the quad!</a></p>
 				</div>
 			</div>
 			<div id="course-carousel" class="d-all buffer-plus">
-	        	<div class="slider" data-slider-item-width="640" data-slider-item-margin="1" data-slider-video="true">
+	        	<div class="slider" data-slider-item-width="960" data-slider-video="true">
 				    <div class="slide">
 				    	<h4>Slide title</h4>
-				    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-1.jpg" />
+				    	<img src="{{ site.url }}/assets/img/lcf/lcf-banner-960-1.jpg" />
 		    			<p class="slide-caption">Caption <a href="#">with link</a></p>
 				    </div>
 				    <div class="slide">
 				    	<h4>Video title</h4>
-						<iframe width="640" height="360" src="http://www.youtube.com/embed/YEfa5XzJY10" frameborder="0" allowfullscreen></iframe>
+						<iframe width="960" height="540" src="http://www.youtube.com/embed/YEfa5XzJY10" frameborder="0" allowfullscreen></iframe>
 						<p class="slide-caption">Caption</p>
 				    </div>
 				    <div class="slide">
 				    	<h4>Slide title</h4>
-			    		<img src="{{ site.url }}//assets/img/lcf/lcf-banner-640-2.jpg" />
+			    		<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-2.jpg" />
 			    		<p class="slide-caption">Caption</p>
 				    </div>
 				    <div class="slide">
 				    	<h4>Slide title</h4>				    	
-		    			<img src="{{ site.url }}//assets/img/lcf/lcf-banner-640-3.jpg" />
+		    			<img src="{{ site.url }}/assets/img/lcf/lcf-banner-640-3.jpg" />
 		    			<p class="slide-caption">Caption</p>
 				    </div>
 				</div>
 			</div><!-- #course-carousel -->
-			<div class="d5-d12 buffer-plus">
+			<div class="d-all buffer-plus">
 				<div class="box-out ual-black-bg buffer">
 					<h3>Reasons to apply</h3>
 					<ul class="cross-bullet">
@@ -87,7 +87,7 @@ template: true
 
 <div class="row bg-gray-bg">
 	<div class="content-wrapper">
-		<div class="course-data d3-d14 buffer-top-plus buffer-plus">
+		<div class="course-data d5-d16 buffer-top-plus buffer-plus">
 			<!-- start accordion -->
 			<div id="accordion-container" class="white-bg"> 
 				<h2 class="accordion-header">Facts</h2> 
@@ -158,58 +158,61 @@ template: true
 
 <section id="course-news" class="row">
 	<div class="content-wrapper">
-		<div class="d5-d14 clearfix buffer-top">
+		<div class="d5-d16 clearfix buffer-top">
 			<h2>A Feed With Images</h2>
-			<div class="row media-block heading-bottom border-dot">
-				<figure class="d5-d8">
-				<a href="#" title="Link title">
-				   <img src="http://placehold.it/380x304" alt="Image Alt">
-				</a>
-				</figure>
-				<div class="media-body d9-d14">
-					<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-					<p>16 July 2013</p>
-					<p class="media-meta"><a href="#">View information</a></p>
-				</div>
-			</div><!-- .media-block -->
-			<div class="row media-block heading-bottom border-dot">
-				<figure class="d5-d8">
-				<a href="#" title="Link title">
-				   <img src="http://placehold.it/380x304" alt="Image Alt">
-				</a>
-				</figure>
-				<div class="media-body d9-d14">
-					<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-					<p>16 July 2013</p>
-					<p class="media-meta"><a href="#">View information</a></p>
-				</div>
-			</div><!-- .media-block -->
-			<div class="row media-block heading-bottom border-dot">
-				<figure class="d5-d8">
-				<a href="#" title="Link title">
-				   <img src="http://placehold.it/380x304" alt="Image Alt">
-				</a>
-				</figure>
-				<div class="media-body d9-d14">
-					<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
-					<p>16 July 2013</p>
-					<p class="media-meta"><a href="#">View information</a></p>
-				</div>
-			</div><!-- .media-block -->
+			<ul>
+				<li class="row media-block border-dot">
+					<figure class="d5-d8">
+					<a href="#" title="Link title">
+					   <img src="http://placehold.it/380x304" alt="Image Alt">
+					</a>
+					</figure>
+					<div class="media-body d9-d16">
+						<h4><a href="#">LCC Undergraduate Summer Open Day</a></h4>
+						<p>16 July 2013</p>
+						<p class="media-meta"><a href="#">View information</a></p>
+					</div>
+				</li><!-- .media-block -->
+				<li class="row media-block heading-bottom border-dot">
+					<figure class="d5-d8">
+					<a href="#" title="Link title">
+					   <img src="http://placehold.it/380x304" alt="Image Alt">
+					</a>
+					</figure>
+					<div class="media-body d9-d16">
+						<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
+						<p>16 July 2013</p>
+						<p class="media-meta"><a href="#">View information</a></p>
+					</div>
+				</li><!-- .media-block -->
+				<li class="row media-block heading-bottom border-dot">
+					<figure class="d5-d8">
+					<a href="#" title="Link title">
+					   <img src="http://placehold.it/380x304" alt="Image Alt">
+					</a>
+					</figure>
+					<div class="media-body d9-d16">
+						<h4 class="media-heading-bottom"><a href="#">LCC Undergraduate Summer Open Day</a></h4>
+						<p>16 July 2013</p>
+						<p class="media-meta"><a href="#">View information</a></p>
+					</div>
+				</li><!-- .media-block -->
+			</ul>
+		</div>
 	</div><!-- .content-wrapper -->
 </section><!-- .row -->
 
 <section id="course-people" class="row bg-gray-bg">
 	<div class="content-wrapper">
-		<div class="d3-d14 clearfix buffer-top buffer-plus">
+		<div class="d5-d16 clearfix buffer-top buffer-plus">
 			<h2>Staff, Students and Alumni</h2> 
 			<ul class="blocks four-up">
             <li>
                 <div class="media-block region heading-bottom">
                   <figure>
                   	<a href="#" title="Link title">
-          					<img src="http://placehold.it/210x210" alt="Image Alt">
-          				</a>
+          				<img src="http://placehold.it/210x210" alt="Image Alt">
+          			</a>
                   </figure>
                   <div class="media-body">
                         <h4 class="media-heading-bottom">Course tutor: Valerie Mace</h4>
@@ -265,7 +268,7 @@ template: true
 
 <section id="course-gallery" class="row soft-black-bg">
 	<div class="content-wrapper">
-		<div class="d3-d14 clearfix buffer-top buffer">
+		<div class="d5-d16 clearfix buffer-top buffer">
 			<h2>Course Gallery</h2>
 			<ul class="blocks three-up lightbox">
             <li>
@@ -311,7 +314,7 @@ template: true
 
 <section id="course-meta" class="row">
 	<div class="content-wrapper">
-		<div class="d4-d9 buffer-top buffer-plus">
+		<div class="d5-d10 buffer-top buffer-plus">
 			<h2>Course Downloads</h2> 
 			<ul>
 				<li class="download"><a href="#">Foundation application form (PDF - 273KB)</a></li>
@@ -319,7 +322,7 @@ template: true
 				<li class="download"><a href="#">Foundation application form (PDF - 273KB)</a></li>
 			</ul>
 		</div>
-		<div class="d10-d14 buffer-top-plus">
+		<div class="d11-d14 buffer-top-plus">
 			<!-- navigation object : KIS Widget -->
 
 			<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="http://stg.unistats.eduserv.org.uk/Widget.aspx?i=10007162&amp;c=10167&amp;o=vertical" scrolling="no" style="overflow: hidden; border: 0px none transparent; width: 200px; height: 470px;"></iframe>
@@ -328,7 +331,7 @@ template: true
 	</div><!-- .content-wrapper -->
 </section><!-- .row -->
 
-<section id="related-links" class="row bg-gray-bg">
+<!--<section id="related-links" class="row bg-gray-bg">
 	<div class="content-wrapper">
 		<div class="d3-d14 clearfix buffer-top buffer-plus">
 			<h2>Related Links</h2> 
@@ -362,5 +365,5 @@ template: true
             </li>
         </ul>
 	</div>
-</div><!-- .content-wrapper -->
-</section><!-- .row -->
+</div>
+</section>-->
