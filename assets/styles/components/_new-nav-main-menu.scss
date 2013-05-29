@@ -55,7 +55,7 @@ display:block;
 
 .top-bar {
 		@extend .content-wrapper;
-        li {
+    li {
       list-style:none; 
       padding-top:8px; 
       padding-bottom:8px; 
@@ -64,16 +64,17 @@ display:block;
       display:table-cell;
 
       @include gs-media(t, min-max) {
-display:block;
-float:left;
-width:100%;
-text-align:left;
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
       }
-            @include gs-media(m, min-max) {
-display:block;
-float:left;
-width:100%;
-text-align:left;
+      
+      @include gs-media(m, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
       }
 
       a {
@@ -83,26 +84,26 @@ text-align:left;
         @include gs-media(t, min-max) {
         padding-left:1em; 
         padding-right:1em; 
-    }
+      }
             @include gs-media(m, min-max) {
         padding-left:1em; 
         padding-right:1em; 
-    }
+      }
             @include gs-media(dm) {
         padding-left:1.5em; 
         padding-right:1.5em; 
-    }
+      }
         font-size:14px;
       }
     }
 
-     li:hover {
+    li:hover {
         background:#444444;
-      }
+    }
 
-      li.menu-active {
+    li.menu-active {
         background:#333333;
-      }
+    }
 }
 
 @include gs-media(d) {
@@ -129,7 +130,7 @@ text-align:left;
 
 .submenu {
   @include gs-media(d) {
-      @include gs-span(d, all);
+  @include gs-span(d, all);
     }
   // overflow:hidden;
   @extend .dark-gray-bg;
@@ -176,11 +177,12 @@ text-align:left;
       margin-top:0px;
       border-bottom: 1px solid #444;
     }
-        @include gs-media(m, min-max) {
+    @include gs-media(m, min-max) {
       margin-bottom:0;
       margin-top:0px;
       border-bottom: 1px solid #444;
     }
+  
   }
 
   li {
@@ -189,11 +191,11 @@ text-align:left;
     display:block; 
     float:left; 
     border-bottom:dotted 1px white;
-        @include gs-media(t, min-max) {
+    @include gs-media(t, min-max) {
       line-height:42px;
       border-bottom:none;
     }
-            @include gs-media(m, min-max) {
+    @include gs-media(m, min-max) {
       line-height:42px;
       border-bottom:none;
     }
@@ -209,7 +211,7 @@ text-align:left;
 
   .subnav-1 {
     @include gs-media(d) {
-      @include gs-span(d, 1,4);
+    @include gs-span(d, 1,4);
     }
     @include gs-media(t, min-max) {
       width:100%;

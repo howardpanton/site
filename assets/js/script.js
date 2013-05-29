@@ -231,23 +231,27 @@ var waitForFinalEvent = (function () {
 //   // from *unmatched* to *matched*
 //   match : function() {
 
-    $('.new-main-menu li a').click(function(event) {
-   event.preventDefault();
 
-var _clicked = $(this);
-var j = $('.submenu > div.menu-active:visible');
-var y = _clicked.parent();
+  //desktop view menu - handle click event for main menu links in desktop view
+$('.new-main-menu li a').click(function(event) {
+  event.preventDefault();
 
- if (j.length == 1 && y.hasClass("menu-active")) {
+  var _clicked = $(this);
+  var j = $('.submenu > div.menu-active:visible');
+  var y = _clicked.parent();
 
- // console.log(j.length + "length");
+  if (j.length == 1 && y.hasClass("menu-active")) {
+
+  // console.log(j.length + "length");
   var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
-  y.removeClass('menu-active');
-  j.slideUp('slow', 'swing', function() {});
-  j.removeAttr('style');
+  
+  j.slideUp('slow', 'swing', function() { y.removeClass('menu-active');  j.removeAttr('style'); });
+ 
   // alert('one');
  
+
+  // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
 } else if (!_clicked.parent().hasClass('menu-active') && j.length == 1 ) {
   //alert("it doesnt");
   var r = j.attr('data-menu');
@@ -260,12 +264,11 @@ var y = _clicked.parent();
   g.addClass('menu-active');
   g.fadeIn();
 
-
+  // desktop view menu - if no menu item already open then do this:
 } else {
-_clicked.parent('li').addClass('menu-active');
-var t = _clicked.attr('data-item');
+  _clicked.parent('li').addClass('menu-active');
+  var t = _clicked.attr('data-item');
   var g = $('div').find("[data-menu='"+ t +"']");
-
   g.addClass('menu-active');
   g.slideDown('slow', 'swing', function() {});
 
@@ -292,11 +295,15 @@ var t = _clicked.attr('data-item');
   // })
 
 // .register("screen and (max-width:60em)", function() {
-        $('.submenu span').click(function(event) { 
+       
+      // mobile view menu - show/hide sub-menus
+      $('.submenu span').click(function(event) { 
       event.preventDefault();
+     
       var _clicked = $(this);
       var m = $('.sub-inner-menu:visible');
         
+      // if not already open - show the menu
       if (m.length == 1 && !_clicked.hasClass('active')) {
         m.parent().find('h2 span').removeClass('active');
         m.hide().removeAttr("style");
@@ -304,15 +311,16 @@ var t = _clicked.attr('data-item');
         var h = $(this).parent().next('.sub-inner-menu');
         h.slideDown('fast', 'linear', function() {});
 
-      } else if ($(this).hasClass("active")) {
-        
-        $(this).removeClass('active');
+      
+      // if 
+      } else if ($(this).hasClass("active")) {    
         var h = $(this).parent().next('.sub-inner-menu');
-        h.slideUp('fast', 'linear', function() {});
-                h.removeAttr("style");
-
+        h.slideUp('fast', 'linear', function() {
+          h.removeAttr("style");
+          $(this).removeClass('active'); });
+      
+      // if sub menu not already visible
       } else {
-
         $(this).addClass('active');
         var h = $(this).parent().next('.sub-inner-menu');
         h.slideDown('fast', 'linear', function() {});
@@ -344,12 +352,11 @@ $(window).resize(function () {
     }, 500, "some unique string");
 });
 
-
+    // mobile view - toggle menu show hide the menu
     $('a.menu').click(function(event) { 
       var t = $('#new-menu');
       if ($(this).hasClass("active")) {
-        $(this).removeClass('active');
-        t.slideUp();
+        t.slideUp('fast', 'linear', function() { $(this).removeClass('active'); });
         t.removeAttr('style');
       } else {
 
