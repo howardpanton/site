@@ -167,7 +167,7 @@
 .hide {
   display: none;
 }
-.show {
+.show, .block {
   display: block;
 }
 
@@ -197,6 +197,14 @@
   }
 }
 
+// image desaturate
+
+a.img:hover { filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+}
 
 
 // Padding
@@ -355,3 +363,21 @@
 .group {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
+
+
+
+/* Media on panel */
+/* ------------------------------------------------------------ */
+
+
+.media-on-panel {
+
+span {
+
+margin:-5px 0px 12px 0px;
+
+}
+
+}
+
+

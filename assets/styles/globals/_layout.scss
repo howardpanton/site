@@ -23,7 +23,7 @@ body {
 }
 
 * {
-	@include box-sizing;
+ @include box-sizing(border-box);
 }
 
 // Basic anchor treatment - do not add borders or line-height globally!
@@ -113,7 +113,7 @@ a {
     @return ($target / $context) * 1em;
 }
 
-.content-wrapper, .wrapper, .docs-content, .submenu {
+.content-wrapper, .wrapper, .docs-content {
 	width: 92.5%;
 	max-width: 1256px;
 	margin: 0 auto;

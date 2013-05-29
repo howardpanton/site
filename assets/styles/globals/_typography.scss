@@ -10,99 +10,107 @@
 
 // You'll often get better results here if you work in numbers the divide into the baseline.
 // IE, if you have a baseline of 6px, multiples or divisions of often provide best results in ems 
+@include establish-baseline(16px);
+
+
+h1, h2, h3, h4, h5, h6 {
+font-weight:bold;
+}
+
 
 h1 { 
-	@include adjust-font-size-to(56px); 
-	margin: 0 0 rhythm(4, 56px) 0; // 3 lines below, based on font size
+	font-size:emCalc(54px);
+	@include adjust-leading-to(9, 54px);
+	margin: 0 0 rhythm(6, 54px) 0; 			// 4 lines above / 2 lines below, based on font size 
 	
-
 	@include gs-media(m, min-max) {
-		@include adjust-font-size-to(34px); // max size for mobile
+		//@include adjust-font-size-to(34px); // max size for mobile
 		margin: 0 0 rhythm(4, 34px) 0;
 	}
 
 } 
 			
 h2 { 
-	@include adjust-font-size-to(34px); 
-	margin: rhythm(3, 34px) 0 rhythm(3, 34px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	//@include adjust-font-size-to(34px); 
+// 
+  font-size:emCalc(36px);
+	@include adjust-leading-to(7, 36px);
+	margin: rhythm(2, 36px) 0 rhythm(6, 36px) 0;  			// 4 lines above / 2 lines below, based on font size 
 	
-	@include gs-media(m, min-max) {
-		@include adjust-font-size-to(22px); // max size for mobile
-		margin: 0 0 rhythm(3, 22px) 0;
-	}
+	// @include gs-media(m, min-max) {
+	// 	@include adjust-font-size-to(22px); // max size for mobile
+	// 	margin: 0 0 rhythm(3, 22px) 0;
+	// }
 }
 
 h3 { 
-	@include adjust-font-size-to(22px); 
-	margin: rhythm(2, 22px) 0 rhythm(2, 22px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-size:emCalc(24px);
+	@include adjust-leading-to(6, 24px);
+	margin: rhythm(2, 24px) 0 rhythm(6, 24px) 0;  			// 4 lines above / 2 lines below, based on font size 
 	
 	@include gs-media(m, min-max) {
 		@include adjust-font-size-to(18px); // max size for mobile
-		margin: rhythm(2, 18px) 0 rhythm(2, 18px) 0;
+		margin: rhythm(2, 18px) 0 rhythm(6, 18px) 0;
 	}
 } 
 
 h4 { 
-	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(1, 18px) 0;  						// 1 lines below, based on font size 
+	font-size:emCalc(18px);
+	@include adjust-leading-to(5, 18px);
+	margin: rhythm(2, 18px) 0 rhythm(6, 18px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-weight:normal;
 } 
 
-h5 { 
-	@include adjust-font-size-to(22px); 
-	margin: 0 0 rhythm(1, 22px) 0;  						// 1 lines below, based on font size 
+h5, h6 { 
+	font-size:emCalc(16px);
+	@include adjust-leading-to(4, 16px);
+	margin: rhythm(2, 16px) 0 rhythm(6, 16px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-weight:normal;
 } 
 
-h6 { 
-	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(1, 18px) 0;  						// 1 lines below, based on font size 
-} 	
 
 p, pre, label { 
-	@include adjust-font-size-to(16px); 
-	margin: 0 0 rhythm(2, 16px) 0;							// 2 lines below, based on font size
-}
+	font-size:emCalc(16px);
+	@include adjust-leading-to(4, 16px);
+		font-weight:normal;
+	margin: rhythm(2, 16px) 0 rhythm(6, 16px) 0;  			// 4 lines above / 2 lines below, based on font size 
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight:bold;
 }
+// // Display Header styles  
+// .heading-x7 {
+// 	@include adjust-font-size-to(78px); 
+// 	margin: 0 0 rhythm(5, 78px) 0; 
+// }
 
+// .heading-x6 {
+// 	@include adjust-font-size-to(66px); 
+// 	margin: 0 0 rhythm(5, 66px) 0; 
+// }
 
-// Display Header styles  
-.heading-x7 {
-	@include adjust-font-size-to(78px); 
-	margin: 0 0 rhythm(5, 78px) 0; 
-}
+// .heading-x5 {
+// 	@include adjust-font-size-to(56px); 
+// 	margin: 0 0 rhythm(5, 56px) 0; 
+// }
 
-.heading-x6 {
-	@include adjust-font-size-to(66px); 
-	margin: 0 0 rhythm(5, 66px) 0; 
-}
+// .heading-x4 {
+// 	@include adjust-font-size-to(44px); 
+// 	margin: 0 0 rhythm(4, 44px) 0; 
+// }
 
-.heading-x5 {
-	@include adjust-font-size-to(56px); 
-	margin: 0 0 rhythm(5, 56px) 0; 
-}
+// .heading-x3 {
+// 	@include adjust-font-size-to(34px, 6); 
+// 	margin: 0 0 rhythm(3, 34px) 0; 
+// }
 
-.heading-x4 {
-	@include adjust-font-size-to(44px); 
-	margin: 0 0 rhythm(4, 44px) 0; 
-}
+// .heading-x2 {
+// 	@include adjust-font-size-to(22px, 6); 
+// 	margin: 0 0 rhythm(2, 22px) 0; 
+// }
 
-.heading-x3 {
-	@include adjust-font-size-to(34px, 6); 
-	margin: 0 0 rhythm(3, 34px) 0; 
-}
-
-.heading-x2 {
-	@include adjust-font-size-to(22px, 6); 
-	margin: 0 0 rhythm(2, 22px) 0; 
-}
-
-.heading-x1 {
-	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(2, 18px) 0; 
-}
+// .heading-x1 {
+// 	@include adjust-font-size-to(18px); 
+// 	margin: 0 0 rhythm(2, 18px) 0; 
+// }
 
 // Title styles
 
@@ -274,7 +282,7 @@ blockquote.wide-span-quote {
 // Lists
 // -----------------------------------------------------------
 ul 			{ @include unordered-inside; } 	// Include unordered list from mixins by default
-ol 			{ @include ordered-inside; }		// Include ordered list from mixins by default
+//ol 			{ @include ordered-inside; }		// Include ordered list from mixins by default
 
 
 // style ol list with large numbers for the list counter
