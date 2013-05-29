@@ -191,80 +191,47 @@ var waitForFinalEvent = (function () {
   };
 })();
 
-$(window).resize(function () {
-    waitForFinalEvent(function(){
-      //alert('Resize...');
-      //
-      checkWindowSize();
-       $('.main-menu').removeAttr("style");
-    }, 500, "some unique string");
-});
+
+// menuS = $('nav.sidebar').html();
+
+// b = $('.secondary-menu-mobile');
+
+// b.prepend(menuS);
+
+// c = b.find('ul li:first-child');
+
+// d = c.nextAll();
+
+// d.hide();
+
+// e = $('.secondary-menu-mobile span a');
+
+// e.toggle(function() {
+//  d.show();
+
+// }, function() {
+
+// d.hide();
 
 
-menuS = $('nav.sidebar').html();
+// });
 
-b = $('.secondary-menu-mobile');
-
-b.prepend(menuS);
-
-c = b.find('ul li:first-child');
-
-d = c.nextAll();
-
-d.hide();
-
-e = $('.secondary-menu-mobile span a');
-
-e.toggle(function() {
- d.show();
-
-}, function() {
-
-d.hide();
-
-
-});
-
-// Nav test
-// 
-// 
-$(".submenu").find("[data-menu='college']").each(function() {
-  $(this).find('li').addClass( "foo" );
-});
 
 //menus = $('.submenu').each().find('li');
 
 //console.log(menus);
 
 
-enquire.register("screen and (min-width: 1000px)", {
+// enquire
 
-  // REQUIRED
-  // Triggered when the media query transitions
-  // from *unmatched* to *matched*
-  match : function() {
-    var f = $('.submenu > div');
-    f.hide();
-    console.log('test');
-  },
-  
-  // OPTIONAL   
-  // Triggered when the media query transitions 
-  // from a *matched* to *unmatched*                        
-  unmatch : function() {},    
-                                
-  // OPTIONAL
-  // Triggered once immediately upon registration of handler
-  setup : function() {},      
-                                
-  // OPTIONAL
-  // Defaults to false
-  // If true, defers execution of the setup function
-  // until the first media query is matched (still just once)
-  deferSetup : true           
-});
+// .register("screen and (min-width: 1000px)", {
 
-$('.new-main-menu li a').click(function(event) {
+//   // REQUIRED
+//   // Triggered when the media query transitions
+//   // from *unmatched* to *matched*
+//   match : function() {
+
+    $('.new-main-menu li a').click(function(event) {
    event.preventDefault();
 
 var _clicked = $(this);
@@ -276,8 +243,10 @@ var y = _clicked.parent();
  // console.log(j.length + "length");
   var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
-  l.parent().removeClass('menu-active');
+  y.removeClass('menu-active');
   j.slideUp('slow', 'swing', function() {});
+  j.removeAttr('style');
+  // alert('one');
  
 } else if (!_clicked.parent().hasClass('menu-active') && j.length == 1 ) {
   //alert("it doesnt");
@@ -302,11 +271,94 @@ var t = _clicked.attr('data-item');
 
 };
 
+});
+  // },
+  
+  // // OPTIONAL   
+  // // Triggered when the media query transitions 
+  // // from a *matched* to *unmatched*                        
+  // unmatch : function() {},    
+                                
+  // // OPTIONAL
+  // // Triggered once immediately upon registration of handler
+  // setup : function() {},      
+                                
+  // // OPTIONAL
+  // // Defaults to false
+  // // If true, defers execution of the setup function
+  // // until the first media query is matched (still just once)
+  // deferSetup : true    
 
+  // })
 
+// .register("screen and (max-width:60em)", function() {
+        $('.submenu span').click(function(event) { 
+      event.preventDefault();
+      var _clicked = $(this);
+      var m = $('.sub-inner-menu:visible');
+        
+      if (m.length == 1 && !_clicked.hasClass('active')) {
+        m.parent().find('h2 span').removeClass('active');
+        m.hide().removeAttr("style");
+        $(this).addClass('active');
+        var h = $(this).parent().next('.sub-inner-menu');
+        h.slideDown('fast', 'linear', function() {});
+
+      } else if ($(this).hasClass("active")) {
+        
+        $(this).removeClass('active');
+        var h = $(this).parent().next('.sub-inner-menu');
+        h.slideUp('fast', 'linear', function() {});
+                h.removeAttr("style");
+
+      } else {
+
+        $(this).addClass('active');
+        var h = $(this).parent().next('.sub-inner-menu');
+        h.slideDown('fast', 'linear', function() {});
+
+      };
+    });      
+// });
+
+var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) {
+      uniqueId = "Don't call this twice without a uniqueId";
+    }
+    if (timers[uniqueId]) {
+      clearTimeout (timers[uniqueId]);
+    }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
+
+$(window).resize(function () {
+    waitForFinalEvent(function(){
+      //alert('Resize...');
+      //
+      checkWindowSize();
+       $('.sub-inner-menu').removeAttr("style");
+       $('.submenu > div').removeAttr("style").removeClass('menu-active');
+    }, 500, "some unique string");
 });
 
 
+    $('a.menu').click(function(event) { 
+      var t = $('#new-menu');
+      if ($(this).hasClass("active")) {
+        $(this).removeClass('active');
+        t.slideUp();
+        t.removeAttr('style');
+      } else {
+
+      $(this).addClass('active');
+        t.slideDown();
+      };
+
+      });
+    
 
 
 
