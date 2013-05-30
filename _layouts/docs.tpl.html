@@ -1,9 +1,33 @@
 {% include docs/_docs_head.html %}
+
+<!-- temporary styles for before meeting - move to proper sass file this week -->
+<style>
+
+#jPanelMenu-menu {  
+  /*background-color: $ual-black;*/
+  }
+
+#jPanelMenu-menu ul {
+    margin-top: 86px;
+    width: 100%;
+  }
+
+#jPanelMenu-menu ul li {
+  padding:6px;
+  border-bottom: 1px dotted #444;
+}
+
+.jPanelMenu-panel {
+  /*background-color: $ual-black;*/
+}
+
+</style>
+
  
 <body class='style {{ page.class-home }}'>
 
   {% include docs/_docs_header.html %}
-
+  
 <!--   <div class="content-wrapper cf">
  -->
     {{ content }}
@@ -23,6 +47,12 @@
 
  <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
   
+
+
+
+  <!-- Unveil script for lazy loading images -->
+   <script src='{{ site.url }}/assets/js/libs/jquery.unveil.min.js'></script>
+
   <!-- load in script for responsive thumbnail gallery -->
   <script src='{{ site.url }}/assets/js/libs/responsivethumbnailgallery.js'></script>
 
@@ -149,6 +179,10 @@ function(){
       };
      
       
+      // Lazy Loading images
+      $("img").unveil();
+
+
 
       // script to transition smoothly for in-page links
       if ($('.smooth-scroll').length > 0) {
@@ -158,6 +192,36 @@ function(){
         });
         }
     });
+
+    
+    if ($('#slide-in-nav').length > 0) {
+     
+      // hide the slide-in-nav list at the start
+      $('#slide-in-nav').hide();
+     
+      // slide in navigation (using jPanelMenu)
+      var jPM = $.jPanelMenu({
+        menu: '#slide-in-nav',
+        trigger: '.slide-in-menu-trigger',
+        direction: 'right',
+        openEasing: 'linear',
+        closeEasing: 'linear',
+        afterOpen: function () { 
+          $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
+          $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+           },
+        afterClose: function () { 
+          $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
+          $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+           },
+        duration: 200
+      
+      });
+
+      // turn on the slide in menu (fingers crossed!)
+      jPM.on();
+
+    }
 
   </script>
 
@@ -172,6 +236,16 @@ function(){
   <script type='text/javascript'>
     $(document).ready(function() {
       
+
+    // $('.equalize').css('height', highest($('p')));
+    
+    // $(window).on('resize', function() {
+    //     $('.equalize').css('height', highest($('p')));
+    // });
+
+
+
+
  if ($('#fancybox-lightbox').length > 0){
       //initialise fancyBox to display images in a lightbox
       $(".fancybox").fancybox(); 
@@ -194,7 +268,6 @@ function(){
           }
         
       });
-
 };
  if ($('#thumbnail-gallery1').length > 0) {
       // Initialize responsivethumbnailgallery.js 

@@ -14,6 +14,10 @@
 
 
 .docs {
+  a {
+  transition: all 0.2s linear;   // make link transitions smoother
+  }
+
 
   .accordion {
    div {
@@ -38,16 +42,18 @@
   }
 
 
+
+
 }
 
+section {
+    min-height: 600px;
+  }
 
 // Docs page intro section styling
-
 p.docs-intro {
   font-weight: 300;
   @include adjust-font-size-to(34px); 
-  background-color: green;
-
 }
 
 
@@ -112,8 +118,6 @@ p.docs-intro {
         @include padding-trailer(1);
       }
 
-
-      
       .header {
         @include gs-span(d, all);
       }
@@ -129,10 +133,6 @@ a span.title {
   top: -10px;
 }
 
-
-a {
-  transition: all 0.2s linear;   // make link transitions smoother
-}
 
 // .docs-content {
 //   @include gs-span(d, all);
