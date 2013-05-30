@@ -298,7 +298,7 @@ $prefix-for-microsoft: true !default;
 $prefix-for-opera:     true !default;
 $prefix-for-spec:      true !default; // required for keyframe mixin
 
-@mixin prefixer ($property, $value, $prefixes) {
+@mixin prefixer ($property, $value, $prefixes: webkit moz ms o) {
   @each $prefix in $prefixes {
     @if $prefix == webkit {
       @if $prefix-for-webkit {

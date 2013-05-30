@@ -1,15 +1,63 @@
 <header class='cf region header'>
+  
+  <!-- Slide-in menu toggle -->
+  <a href="#" class="slide-in-menu-trigger menu-toggle-link">
+  <div id="slide-menu-toggle-btn">
+    <p>Menu</p>
+    <img src="{{ site.url }}/assets/img/icons/icon-menu.png" alt="menu" style="position: absolute;
+    right: 0px;
+    top: -4px;
+    height: 50%;
+    width: 50%">
+  </div>
+  </a>
+
   <div class='banner'>
         <div class='menu-toggle d-hide t-hide'>
             <img alt='' src='{{ site.url }}/assets/img/menu-toggle.png'>
         </div>
+    
     <div class="d1-d8">          
-      <h1>
-          <a href="{{site.url}}docs/">ual: style guide</a>
-      </h1>
+      <!-- <a class="nav-btn" id="nav-open-btn" href="#slide-in-nav">Book Navigation</a> -->
+      <h2>
+         <!--  <a href="{{site.url}}docs/">ual: style guide</a> -->
+         <a href="{{site.url}}docs/">ual: style guide</a>
+      </h2>
     </div>
   </div>
+  
+<!-- slide in navigation (hidden on page load)  -->
+
+<nav id="slide-in-nav" role="navigation">
+      <div class="block">
+          <ul style="font-weight:lighter; padding: 24px">
+              <li>
+                  <a href="#" class="ual-white">Home</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Get Started</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Scaffolding</a>
+              </li>
+
+              <li>
+                  <a href="tools-block" class="ual-white smooth-scroll">Tools</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Base CSS</a>
+              </li>
+              <li>
+                  <a href="components.html" class="ual-white">Components</a>
+              </li>
+          </ul>
+          <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+      </div>
+</nav> 
+
+
 </header>
+
 
 
 <!-- May 26 - temporarily disabled breadcrumbs while working on new docs styling  -->

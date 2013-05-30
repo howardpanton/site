@@ -36,22 +36,96 @@
        top: -1px;
      }
   }
-
+  
+  a {
+    transition: all 0.2s linear;   // make link transitions smoother
+  }
+  
 
 }
 
 
 // Docs page intro section styling
-
-p.docs-intro {
-  font-weight: 300;
-  @include adjust-font-size-to(34px); 
-  background-color: green;
+p.docs-intro{
+  font-weight: lighter;
+  @include adjust-font-size-to(42px); 
 
 }
 
 
 
+
+
+.docs-intro-nav {
+  
+  li a {
+    font-weight: 300;
+    color: white;
+    border-bottom: 1px dotted white;
+    margin-right: 12px;
+    // make link transitions smoother
+    transition: all 0.25s;
+    @include prefixer ('transition', 'all 0.25s'); 
+    
+    // transition: all 0.25s;
+    // -webkit-transition: all 0.25s;
+    // -khtml-transition: all 0.25s;
+    // -moz-transition: all 0.25s;
+    // -o-transition: all 0.25s;
+    margin-bottom: 12px;
+    &:hover {
+      color: $aaa-gray;
+    }
+  }
+
+}
+
+
+
+
+.git-twitter-btns-list {
+  height: 30px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  ul {
+    margin-bottom: 0;
+
+    li {
+        margin-right: 12px;
+    }
+  }
+}
+
+
+.docs-section-links-nav {
+   li a {
+    font-weight: 300;
+    margin-right: 12px;
+    // make link transitions smoother
+    transition: all 0.25s;
+    @include prefixer ('transition', 'all 0.25s'); 
+    
+    margin-bottom: 12px;
+
+    .section-link {
+      @include adjust-font-size-to(36px); 
+      line-height: 42px;
+      font-weight: lighter;
+      border-bottom: 1px dotted $aaa-gray;
+    }
+  }
+
+  p {
+     @include adjust-font-size-to(16px); 
+     line-height: 24px;
+     font-weight: lighter;
+     color: $soft-black;
+     @include margin-trailer(10);
+
+  }
+  
+}
 
 .breadcrumb {
   @include padding-leader(3);
@@ -80,7 +154,7 @@ p.docs-intro {
     background:black;
     width:100%;
     @extend .clearfix;
-   @include padding-leader(0);
+    @include padding-leader(0);
     border-top: 6px solid #000000;
 
       h1, h2, h3, h4, h5, h6, p {
@@ -129,6 +203,114 @@ a span.title {
   overflow: hidden;
   top: -10px;
 }
+
+
+.menu-toggle-link {
+    color: white;
+}
+
+//
+// Jpanel Menu Styling //
+//
+
+
+// menu toggle button
+#slide-menu-toggle-btn {
+  position: absolute;
+  top:35px;
+  right: 40px;
+  height: 60px;
+  width: 80px;
+  z-index: 999999;
+}
+
+// slide in navigation list id
+#slide-in-nav {
+  display: none; // hide at start
+  background-color: black;
+  > ul li {
+    width: 100%;
+    border-bottom: 1px dotted $bg-gray;
+  } 
+
+  > ul li a {
+    color: white;
+  }
+  
+}
+
+
+
+
+// styles for the slide in panel and menu
+
+#jPanelMenu-menu {
+  
+  background-color: $ual-black;
+  
+
+}
+.jPanelMenu-panel {
+
+  background-color: $ual-black;
+}
+
+
+
+
+/// PREVIOUS SLIDE-in NAV STYLING
+
+// slide in nav styling
+
+// #slide-in-nav {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     padding-top: 5.25em;
+// }
+
+// #slide-in-nav:not(:target) {
+//   z-index: 1;
+//   height: 0;
+// }
+
+// #slide-in-nav:target .close-btn {
+//   display: block;
+// }
+// #slide-in-nav .close-btn {
+//   position: absolute;
+//   top: -3.75em;
+//   left: 1.875em;
+// }
+// #slide-in-nav .block {
+//   position: relative;
+//   padding: 0;
+// }
+// #slide-in-nav li {
+//   position: relative;
+//   border-top: 1px solid rgba(255, 255, 255, 0.1);
+// }
+// #slide-in-nav li:last-child {
+//   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+// }
+// #slide-in-nav li.is-active:after {
+//   z-index: 50;
+//   display: block;
+//   content: "";
+//   position: absolute;
+//   top: 50%;
+//   right: -0.03125em;
+//   margin-top: -0.625em;
+//   border-top: 0.625em transparent solid;
+//   border-bottom: 0.625em transparent solid;
+//   border-right: 0.625em white solid;
+// }
+
+// #slide-in-nav li a {
+//   padding: 0.85714em 2.14286em;
+//   color: white;
+// }
+
 
 // .docs-content {
 //   @include gs-span(d, all);

@@ -23,6 +23,12 @@
 
  <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
   
+
+
+
+  <!-- Unveil script for lazy loading images -->
+   <script src='{{ site.url }}/assets/js/libs/jquery.unveil.min.js'></script>
+
   <!-- load in script for responsive thumbnail gallery -->
   <script src='{{ site.url }}/assets/js/libs/responsivethumbnailgallery.js'></script>
 
@@ -149,6 +155,10 @@ function(){
       };
      
       
+      // Lazy Loading images
+      $("img").unveil();
+
+
 
       // script to transition smoothly for in-page links
       if ($('.smooth-scroll').length > 0) {
@@ -158,6 +168,28 @@ function(){
         });
         }
     });
+
+    
+    if ($('#slide-in-nav').length > 0) {
+     
+      // hide the slide-in-nav list at the start
+      $('#slide-in-nav').hide();
+     
+      // slide in navigation (using jPanelMenu)
+      var jPM = $.jPanelMenu({
+        menu: '#slide-in-nav',
+        trigger: '.slide-in-menu-trigger',
+        direction: 'right',
+        openEasing: 'linear',
+        closeEasing: 'linear',
+        duration: 200
+      
+      });
+
+      // turn on the slide in menu (fingers crossed!)
+      jPM.on();
+
+    }
 
   </script>
 
@@ -172,6 +204,16 @@ function(){
   <script type='text/javascript'>
     $(document).ready(function() {
       
+
+    // $('.equalize').css('height', highest($('p')));
+    
+    // $(window).on('resize', function() {
+    //     $('.equalize').css('height', highest($('p')));
+    // });
+
+
+
+
  if ($('#fancybox-lightbox').length > 0){
       //initialise fancyBox to display images in a lightbox
       $(".fancybox").fancybox(); 
@@ -194,7 +236,6 @@ function(){
           }
         
       });
-
 };
  if ($('#thumbnail-gallery1').length > 0) {
       // Initialize responsivethumbnailgallery.js 
