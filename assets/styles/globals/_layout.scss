@@ -16,6 +16,12 @@
 
 @include establish-baseline ;
 
+// always show scrollbar to prevent jumps when content is expanded
+
+html {
+    overflow-y: scroll;
+}
+
 body { 
 	color: $base-color;
 	background: $background ;

@@ -50,7 +50,13 @@
   }
 }
 
-
+// menu button that is diplayed in tablet and mobile view to toggle menu on/off
+#main-menu-btn{
+  // width: 80px;
+  // height: 40px;
+  margin-left:12px;
+  margin-right: 120px;
+}
 
 
 .top-bar {
@@ -129,13 +135,22 @@
 }
 
 .submenu {
+  
   @include gs-media(d) {
   @include gs-span(d, all);
     }
+  
+  @include gs-media(t, min-max) {
+    padding: 6px;  
+  }
+
+  @include gs-media(m, min-max) {
+    padding: 6px;  
+  }
   // overflow:hidden;
   @extend .dark-gray;
-
-
+  
+  
   > div {
     @extend .row;
     overflow:hidden;
@@ -143,12 +158,12 @@
       @include padding-trailer(6);
     }
     @include gs-media(t, min-max) {
-      @extend .ual-black;
+      
       padding-bottom:0;
       margin-bottom:0;
     }
       @include gs-media(m, min-max) {
-      @extend .ual-black;
+      
       padding-bottom:0;
       margin-bottom:0;
 
@@ -162,7 +177,7 @@
         color:white; 
         @include gs-media(t, min-max) {
         font-size:16px;
-        // padding-left: 18px;
+        padding-left: 12px;
         margin-bottom:0;
         }
         @include gs-media(m, min-max) {
@@ -212,6 +227,11 @@
      color: white; 
      font-weight: lighter;
      font-size: 16px;
+     padding-left: 12px;
+  }
+  
+  .sub-inner-menu {
+     background-color: $soft-black;
   }
 
   .subnav-1 {

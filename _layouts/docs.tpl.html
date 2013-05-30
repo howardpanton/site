@@ -1,9 +1,33 @@
 {% include docs/_docs_head.html %}
+
+<!-- temporary styles for before meeting - move to proper sass file this week -->
+<style>
+
+#jPanelMenu-menu {  
+  /*background-color: $ual-black;*/
+  }
+
+#jPanelMenu-menu ul {
+    margin-top: 86px;
+    width: 100%;
+  }
+
+#jPanelMenu-menu ul li {
+  padding:6px;
+  border-bottom: 1px dotted #444;
+}
+
+.jPanelMenu-panel {
+  /*background-color: $ual-black;*/
+}
+
+</style>
+
  
 <body class='style {{ page.class-home }}'>
 
   {% include docs/_docs_header.html %}
-
+  
 <!--   <div class="content-wrapper cf">
  -->
     {{ content }}
@@ -182,6 +206,14 @@ function(){
         direction: 'right',
         openEasing: 'linear',
         closeEasing: 'linear',
+        afterOpen: function () { 
+          $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
+          $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+           },
+        afterClose: function () { 
+          $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
+          $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+           },
         duration: 200
       
       });
