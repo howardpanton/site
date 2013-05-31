@@ -16,6 +16,7 @@
     #new-menu {
       width:50%;
       float:right;
+      margin-right: 3.75%;
     }
  }
   @include gs-media(m, min-max) {
@@ -52,17 +53,23 @@
 
 // menu button that is diplayed in tablet and mobile view to toggle menu on/off
 #main-menu-btn{
+  // @extend .ui-icons-transparent-menu-button-black;
   // width: 80px;
   // height: 40px;
-  background: #f0f0f0;
+  background-color: #f0f0f0;
   color: #444;
   border: none;
   padding: 10px;
   padding-top: 14px;
   margin-left:12px;
+  // padding-left: 24px;
+  // background-size: 50%;
   // margin-right: 120px;
 }
 
+#menu-icon-indicator {
+  font-weight: lighter;
+}
 
 .top-bar {
 		@extend .content-wrapper;
