@@ -1,0 +1,13 @@
+// in page left hand navigation
+.sidebar {
+	font-size: emCalc(16px);
+	@include gs-media (d,min-max) {
+		@include gs-span(d,1,4);
+		font-size: emCalc(14px);
+	}
+	ul {
+		li {
+			padding: rhythm(2, 16px) 0;
+		}
+	}
+}
