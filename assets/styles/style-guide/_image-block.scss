@@ -1,5 +1,4 @@
 // image block
-
 .image-block {
 	@include gray-dotted-border-bottom;
 
@@ -57,4 +56,63 @@
 	}
 }
 
+// image block with introduction
+.image-block-with-intro {
+	@include gray-dotted-border-bottom;
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,12);
+	}
+}
+
+// image block with leading introduction
+.image-block-with-leading-intro {
+	
+	@include gray-dotted-border-bottom;
+
+	@include gs-media(m,min-max) {
+		ul {
+			li {
+				min-height: 80px;
+			}
+			figure {
+				@include gs-span(m,1,1);
+			}
+			.text {
+				@include gs-span(m,2,4);
+			}
+		}
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+		ul {
+			li {
+				width: gs-width(t, 2, 4, (2,7), true);
+				@include gs-float(t, left, (2,7));
+			}
+			li:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,12);
+		ul {
+			figure {
+				width: gs-width(d, 5, 8, (5,12), true);
+				@include gs-float(d, left, (5,12));
+			}
+			.text {
+				width: gs-width(d, 9, 12, (5,12), true);
+				@include gs-float(d, left, (5,12));
+				margin-right: 0;
+			}
+		}
+	}
+}
 

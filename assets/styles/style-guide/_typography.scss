@@ -4,6 +4,11 @@
 body {
 	font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-weight: lighter;
+	
+	font-size: emCalc(16px);
+	@media screen and (min-width: 75em) {
+		font-size: emCalc(18px) ; // 18  
+	}
 }
 
 a {
@@ -81,13 +86,11 @@ h5, h6 {
 }
 
 p, ol, ul { 
-	font-size: emCalc(16px);
 	@include adjust-leading-to(4, 16px); 
-	padding: rhythm(3, 16px) 0 rhythm(2, 16px) 0; 	  
+	padding: rhythm(1, 16px) 0 rhythm(2, 16px) 0; 	  
 	@media screen and (min-width: 75em) {
-		font-size: emCalc(18px); // 18  
-		@include adjust-leading-to(4, 18px); 
-		padding: rhythm(3, 18px) 0 rhythm(2, 18px) 0; 	
+		@include adjust-leading-to(5, 18px); 
+		padding: rhythm(1, 18px) 0 rhythm(2, 18px) 0; 	
 	}
 }
 
@@ -137,26 +140,19 @@ ol.large-li-numbers {
   	}
 }
 
-p {
-	// color: $soft-black;
-	padding: rhythm(1, 16px) 0 rhythm(1, 16px) 0; 	
-	
-	@media screen and (min-width: 75em) {
-		padding: rhythm(1, 18px) 0 rhythm(1, 18px) 0; 	
+figure {
+	position: relative;
+	a {
+		@include no-border;
+		&:hover {
+			@include no-border;
+		}
 	}
 }
 
-aside {
-	// font-size: emCalc(14px);
-	// @media screen and (min-width: 75em) {
-	// 	font-size: emCalc(16px);
-	// }
+.title {
+	font-weight: 500;
 }
-
-
-
-
-
 
 
 
