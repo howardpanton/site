@@ -60,12 +60,6 @@
 .image-block-with-intro {
 	@include gray-dotted-border-bottom;
 
-	figure {
-		padding-bottom: rhythm(3,16px);
-		a {
-			@include no-border;
-		}
-	}
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 	}
@@ -77,30 +71,18 @@
 // image block with leading introduction
 .image-block-with-leading-intro {
 	
-	figure {
-		a {
-			@include no-border;
-		}
-	}
-
-	.title {
-		font-weight: 500;
-	}	
-
-		@include gray-dotted-border-bottom;
-
+	@include gray-dotted-border-bottom;
 
 	@include gs-media(m,min-max) {
-		@include gs-span(m,all);
 		ul {
+			li {
+				min-height: 80px;
+			}
 			figure {
-				width: gs-width(m, 1, 2, (1,4), true);
-				@include gs-float(m, left, (1,4));
+				@include gs-span(m,1,1);
 			}
 			.text {
-				width: gs-width(m, 3, 4, (1,4), true);
-				@include gs-float(m, left, (1,4));
-				margin-right: 0;
+				@include gs-span(m,2,4);
 			}
 		}
 	}
@@ -122,11 +104,11 @@
 		@include gs-span(d,5,12);
 		ul {
 			figure {
-				width: gs-width(d, 5, 7, (5,12), true);
+				width: gs-width(d, 5, 8, (5,12), true);
 				@include gs-float(d, left, (5,12));
 			}
 			.text {
-				width: gs-width(d, 8, 12, (5,12), true);
+				width: gs-width(d, 9, 12, (5,12), true);
 				@include gs-float(d, left, (5,12));
 				margin-right: 0;
 			}
