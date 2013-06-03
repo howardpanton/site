@@ -1,0 +1,60 @@
+// image block
+
+.image-block {
+	@include gray-dotted-border-bottom;
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,12);
+	}
+
+	figure {
+		figcaption {
+			font-size: emCalc(14px);
+		}
+	}
+}
+
+// image block with aside 
+.image-block-aside {
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	.title {
+		@include gs-media(d,min-max) {
+			@include gs-span(d,5,12);
+		}
+	}
+	.image {
+
+		aside {
+			@include gray-dotted-border-bottom;
+
+			@include gs-media(d,min-max) {
+				@include gs-span(d,13,16);
+				font-size: emCalc(14px);
+				border: none;
+
+			}
+			@media screen and (min-width: 75em) {
+				font-size: emCalc(16px); 
+			}
+		}
+		figure {
+
+			@include gs-media(d,min-max) {
+				@include gs-span(d,5,12);
+				border-bottom: 1px dotted $light-gray;
+				padding-bottom: rhythm(7, 16px);
+				margin-bottom: rhythm(6, 16px);
+			}
+			figcaption {
+				font-size: emCalc(14px);
+			}
+		}	
+	}
+}
+
+
