@@ -1,9 +1,16 @@
 // image lists with text
 .image-list-with-text {
+	@include gray-dotted-border-bottom;
+	ul {
+		padding-top: 0;
+	}
 	figure {
 		a {
-			border: none;
+			@include no-border;
 		}
+	}
+	.title {
+		font-weight: 500;
 	}
 
 	@include gs-media(t,min-max) {
@@ -11,8 +18,7 @@
 		figure {
 			width: gs-width(t, 2, 3, (2,7), true);
 			@include gs-float(t, left, (2,7));
-			padding-top: rhythm(1,16px);
-
+			padding-top: rhythm(2,16px);
 		}
 		.text {
 			width: gs-width(t, 4, 7, (2,7), true);
@@ -27,11 +33,11 @@
 		figure {
 			width: gs-width(d, 5, 8, (5,16), true);
 			@include gs-float(d, left, (5,16));
-			padding-top: rhythm(1,16px);
+			padding-top: rhythm(2,16px);
 
 		}
 		.text {
-			width: gs-width(d, 9, 14, (5,16), true);
+			width: gs-width(d, 9, 16, (5,16), true);
 			@include gs-float(d, left, (5,16));
 			margin-right: 0;
 			padding-bottom: rhythm(4,16px);	
