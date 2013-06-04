@@ -1995,8 +1995,9 @@ nav.main-nav a:hover {
   outline: none;
   border-bottom: none;
   margin-left: 1em;
+  padding-right: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000327}}
 .accordion ul li > a span {
   background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
   text-indent: -9000px;
@@ -2007,7 +2008,7 @@ nav.main-nav a:hover {
   right: 12px;
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000341}}
 .accordion ul .st-open > a span {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -2015,27 +2016,266 @@ nav.main-nav a:hover {
   transition: all 0.4s ease-in-out;
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\0000348}}
 .accordion ul .st-content {
   padding: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\000033}}
   .accordion {
-    clear: both;
     display: block;
     float: left;
-    margin-left: 0;
-    width: 100%;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
   }
 }
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_accordion\.scss}line{font-family:\000033}}
   .accordion {
-    clear: both;
     display: block;
     float: left;
-    margin-left: 0;
-    width: 100%;
+    margin-left: 25.89636%;
+    margin-right: -100%;
+    width: 48.53437%;
   }
+}
+
+/**
+ * BxSlider v4.0 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2012
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+/** RESET AND LAYOUT
+===================================*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000317}}
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  *zoom: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000324}}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+/** THEME
+===================================*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000337}}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+
+/* LOADER */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000345}}
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000358}}
+.with-pager {
+  padding-bottom: 60px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000362}}
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000372}}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000378}}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000392}}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003100}}
+.bx-wrapper .bx-prev {
+  right: 35px;
+  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003105}}
+.bx-wrapper .bx-next {
+  right: 0px;
+  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -35px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003110}}
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 -36px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003114}}
+.bx-wrapper .bx-next:hover {
+  background-position: -35px -36px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003118}}
+.bx-wrapper .bx-counter {
+  background-color: black;
+  color: white;
+  width: 100px;
+  position: absolute;
+  height: 35px;
+  right: 72px;
+  bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003128}}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  bottom: 0;
+  outline: 0;
+  width: 35px;
+  height: 35px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003138}}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003144}}
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003148}}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) -86px -11px no-repeat;
+  margin: 0 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003159}}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: -86px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003163}}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) -86px -44px no-repeat;
+  margin: 0 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003174}}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003180}}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003185}}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003192}}
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666\9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003201}}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+
+/** bx slider with side caption
+===================================*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003214}}
+.bx-wrap {
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003222}}
+.bx-wrap p {
+  font-size: 16px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mattwisbey\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003227}}
+.bx-wrap .bx-aside {
+  padding: 24px 24px 18px 0px;
+  margin-right: -1px;
 }

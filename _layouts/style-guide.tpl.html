@@ -57,16 +57,30 @@
   <script src='{{ site.url }}/assets/js/dev/debug.js'></script>
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js'></script>
 
+  <!-- accordion -->
   <script src='{{ site.url }}/assets/js/style-guide/jquery.accordion.js'></script>
   <script src='{{ site.url }}/assets/js/style-guide/jquery.easing.1.3.js'></script>
+
+  <!-- bxslider -->
+  <script src='{{ site.url }}/assets/js/style-guide/jquery.bxslider.min.js'></script>
 
   <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
 
 
   <script type="text/javascript">
+
+    // accordion
     $(function() {
       $('#st-accordion').accordion();
     });
+
+    // bxslider
+    $('.bxslider').bxSlider({
+      mode: 'fade',
+      captions: true,
+      pagerType: 'short'
+    });
+
   </script>
 
 
