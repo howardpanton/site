@@ -71,19 +71,19 @@
 
   {% if page.college == "lcf" %}
     {% include _ual_scripts.html %}
-  {% elsif page.college == "ual" %}
+  {% else if page.college == "ual" %}
     {% include _ual_scripts.html %}
-  {% elsif page.college == "lcc" %}
+  {% else if page.college == "lcc" %}
     {% include _lcc_scripts.html %}
-  {% elsif page.college == "csm" %}
+  {% else if page.college == "csm" %}
     {% include _csm_scripts.html %}
-  {% elsif page.college == "ccw" %}
+  {% else if page.college == "ccw" %}
     {% include _ccw_scripts.html %}
-  {% elsif page.college == "camberwell" %}
+  {% else if page.college == "camberwell" %}
     {% include _ual_scripts.html %}
-  {% elsif page.college == "chelsea" %}
+  {% else if page.college == "chelsea" %}
     {% include _chelsea_scripts.html %}
-  {% elsif page.college == "wimbledon" %}
+  {% else if page.college == "wimbledon" %}
     {% include _wimbledon_scripts.html %}
   {% else %}
 
