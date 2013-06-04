@@ -1,0 +1,61 @@
+/* Flexible Slide-to-top Accordion Style*/
+
+.accordion {
+
+	.st-accordion {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	ul {
+	  li:first-child {
+	  	border-top: none;
+	  }		
+	  li {
+	    overflow: hidden;
+	    background: $ual-white;
+	    margin-bottom: 1px;
+	    > a {
+				font-size: emCalc(24px);
+				display: block;
+				position: relative;
+				@include adjust-leading-to(8, 24px); 
+				outline:none;
+				border-bottom: none;
+				margin-left: rhythm(4, 24px);
+				span {
+					background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
+					text-indent:-9000px;
+					width: 24px;
+					height: 24px;
+					position: absolute;
+					top: 12px;
+					right: 12px;
+					opacity:1;
+				} 
+			}
+		}
+		.st-open > a{
+		}
+		.st-open > a span{
+			-webkit-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+	    transform:rotate(45deg);
+			transition: all 0.4s ease-in-out;				
+			opacity:1;
+		}
+		.st-content{
+	    padding: rhythm(4, 16px);
+		}
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,all);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,all);
+	}
+}
+
+
+
