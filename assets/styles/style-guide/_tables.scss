@@ -1,11 +1,26 @@
 // standard table
 .table {
 	@include gray-dotted-border-bottom;
-	
+
+
 	table {
+		@include adjust-leading-to(4, 16px); 
+
 		width: 100%;
+
+		caption {
+			font-size: emCalc(24px);
+			padding-bottom: rhythm(4, 24px); 
+		}
+
+		tr:nth-child(odd) {
+			background: $bg-gray;
+		}
+		tr:nth-child(even) {
+			background: $ual-white;
+		}
 		th, td {
-			padding: rhythm(4, 16px) rhythm(4, 16px) rhythm(4, 16px) 0; 
+			padding: rhythm(2, 16px); 
 
 		}
 		th {
@@ -19,6 +34,6 @@
 		@include gs-span(t,2,7);
 	}
 	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+		@include gs-span(d,5,16);
 	}
 }
