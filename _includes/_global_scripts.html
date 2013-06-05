@@ -22,5 +22,19 @@
     });
   });
 
+$(document).ready(function(){
+  $(".expanded-content").hide();
+  $("#hide").click(function(){
+    // $(".expanded-content").hide();
+    $(".expanded-content").slideUp("fast");
+    $("#show").show();
+  });
+  $("#show").click(function(){
+    // $(".expanded-content").show();
+    $(".expanded-content").slideDown("fast");
+    $("#show").hide();
+  });
+});
+
 
 </script>
