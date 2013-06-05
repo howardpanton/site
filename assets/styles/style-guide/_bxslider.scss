@@ -14,9 +14,27 @@
 /** RESET AND LAYOUT
 ===================================*/
 
+.slider-8 {
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,12);
+	}
+}
+
+.slider-12 {
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,16);
+	}
+}
+
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 60px;
 	padding: 0;
 	*zoom: 1;
 }
@@ -30,7 +48,12 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	//margin-top: 1px; - NO, WHY?
+	// -moz-box-shadow: 0 0 5px #ccc;
+	// -webkit-box-shadow: 0 0 5px #ccc;
+	// box-shadow: 0 0 5px #ccc;
+	// border: solid #fff 5px;
+	// left: -5px;
+	// background: #fff;
 }
 
 .bx-wrapper .bx-pager,
@@ -54,10 +77,6 @@
 }
 
 /* PAGER */
-
-.with-pager { // make space for the pager
-	padding-bottom: 60px;
-}
 
 .bx-wrapper .bx-pager {
 	text-align: center;
@@ -93,46 +112,36 @@
 	background: #000;
 }
 
-
-
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	right: 35px;
-	background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 0;
+	left: 10px;
+	background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
-	right: 0px;
-	background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -35px 0;
+	right: 10px;
+	background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
-	background-position: 0 -36px;
+	background-position: 0 0;
 }
 
 .bx-wrapper .bx-next:hover {
-	background-position: -35px -36px;
-}
-
-.bx-wrapper .bx-counter {
-	background-color: $primary;
-	color: $ual-white;
-	width: 100px;
-	position: absolute;
-	height: 35px;
-	right: 72px;
-	bottom: 0;
+	background-position: -43px 0;
 }
 
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;
-	bottom: 0;
+	top: 50%;
+	margin-top: -16px;
 	outline: 0;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+	height: 32px;
 	text-indent: -9999px;
 	z-index: 9999;
+	border-bottom: none;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {
@@ -205,24 +214,3 @@
 	font-size: .85em;
 	padding: 10px;
 }
-
-
-
-/** bx slider with side caption
-===================================*/
-
-.bx-wrap {
-	background: $ual-black;
-	color:$ual-white;
-	overflow: hidden;
-	font-weight: lighter;
-	font-size:16px;
-}
-
-.bx-wrap p {
-	font-size:16px;
-}
-
-
-.bx-wrap .bx-aside { padding:24px 24px 18px 0px; margin-right:-1px;  }
-

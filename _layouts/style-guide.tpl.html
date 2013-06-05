@@ -63,26 +63,17 @@
 
   <!-- bxslider -->
   <script src='{{ site.url }}/assets/js/style-guide/jquery.bxslider.min.js'></script>
+  <script src='{{ site.url }}/assets/js/style-guide/jquery.fitvids.js'></script>
 
   <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
 
+  {% if page.scripts == "ual" %}
+    {% include _global_scripts.html %}
+  {% else if page.scripts == "lcf" %}
+    {% include _global_scripts.html %}
+  {% else %}
 
-  <script type="text/javascript">
-
-    // accordion
-    $(function() {
-      $('#st-accordion').accordion();
-    });
-
-    // bxslider
-    $('.bxslider').bxSlider({
-      mode: 'fade',
-      captions: true,
-      pagerType: 'short'
-    });
-
-  </script>
-
+  {% endif %}
 
   </body>
 </html>
