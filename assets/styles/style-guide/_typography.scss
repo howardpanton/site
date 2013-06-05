@@ -157,6 +157,36 @@ figure {
 	}
 }
 
+table {
+	@include adjust-leading-to(4, 16px); 
+
+	width: 100%;
+
+	caption {
+		font-size: emCalc(24px);
+		padding-bottom: rhythm(4, 24px); 
+	}
+
+	tr:nth-child(odd) {
+		background: $bg-gray;
+	}
+	tr:nth-child(even) {
+		background: $ual-white;
+	}
+	th, td {
+		padding: rhythm(2, 16px); 
+
+	}
+	th {
+
+	}
+	td {
+
+	}
+}
+
+
+
 .title {
 	font-weight: 500;
 }
