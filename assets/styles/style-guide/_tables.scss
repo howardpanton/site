@@ -1,0 +1,24 @@
+// standard table
+.table {
+	@include gray-dotted-border-bottom;
+	
+	table {
+		width: 100%;
+		th, td {
+			padding: rhythm(4, 16px) rhythm(4, 16px) rhythm(4, 16px) 0; 
+
+		}
+		th {
+
+		}
+		td {
+
+		}
+	}
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d,5,12);
+	}
+}
