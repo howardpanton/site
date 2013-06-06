@@ -16,7 +16,7 @@
     #new-menu {
       width:50%;
       float:right;
-      margin-right: 3.75%;
+      // margin-right: 3.75%;
     }
  }
   @include gs-media(m, min-max) {
@@ -25,6 +25,34 @@
       float:left;
     }
  }
+
+.main-nav-wrapper {
+
+  width: 92.5%;
+  max-width: 1256px;
+  margin: 0 auto;
+
+  @include gs-media(t, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      // padding-left: 12px;
+      // padding-right: 12px;
+      
+  }
+  
+  @include gs-media(m, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      // padding-left: 12px;
+      // padding-right: 12px;
+  }
+
+}
+
 .new-main-menu {
 
   width:100%; 
@@ -41,6 +69,33 @@
     background: black;
     
     @include gs-media(t, min-max) {
+      display:block;
+    }
+    
+    @include gs-media(m, min-max) {
+      display:block;
+    }
+
+  }
+}
+
+.new-main-menu-v2 {
+
+  width:100%; 
+  display:block; 
+  overflow:hidden;  
+  background:black;
+
+  ul {
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    margin: 0; 
+    margin-left: -0.5em;
+    padding: 0; 
+    background: black;
+    
+    @include gs-media(t, min-max) {
     display:block;
      }
     
@@ -52,19 +107,43 @@
 }
 
 // menu button that is diplayed in tablet and mobile view to toggle menu on/off
-#main-menu-btn{
+// #main-menu-btn{
+//   // @extend .ui-icons-transparent-menu-button-black;
+//   // width: 80px;
+//   // height: 40px;
+//   background-color: #f0f0f0;
+//   color: #444; 
+//   border: none;
+//   padding: 10px;
+//   padding-top: 14px;
+//   margin-left:12px;
+//   font-size: 14px;
+//   font-weight: lighter;
+// }
+
+// menu button that is diplayed in tablet and mobile view to toggle menu on/off
+.menu-button-toggle {
   // @extend .ui-icons-transparent-menu-button-black;
   // width: 80px;
   // height: 40px;
   background-color: #f0f0f0;
-  color: #444;
+  color: #444; 
   border: none;
   padding: 10px;
   padding-top: 14px;
   margin-left:12px;
-  // padding-left: 24px;
-  // background-size: 50%;
-  // margin-right: 120px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.menu-button-toggle-v2{
+  color: white; 
+  border: none;
+  padding: 10px;
+  padding-top: 14px;
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 #menu-icon-indicator {
@@ -98,20 +177,24 @@
       a {
         padding-top:4px; 
         padding-bottom:4px; 
-        color:white !important;  
-        @include gs-media(t, min-max) {
-        padding-left:1em; 
-        padding-right:1em; 
-      }
-            @include gs-media(m, min-max) {
-        padding-left:1em; 
-        padding-right:1em; 
-      }
-            @include gs-media(dm) {
-        padding-left:1.5em; 
-        padding-right:1.5em; 
-      }
+        color:white !important; 
         font-size:14px;
+        
+        @include gs-media(t, min-max) {
+          padding-left:1em; 
+          padding-right:1em; 
+        }
+
+        @include gs-media(m, min-max) {
+          padding-left:1em; 
+          padding-right:1em; 
+        }
+        
+        @include gs-media(dm) {
+          padding-left:1.5em; 
+          padding-right:1.5em; 
+        }
+        
       }
     }
 
@@ -122,6 +205,90 @@
     li.menu-active {
         background:#333333;
     }
+}
+
+.top-bar-v2{
+    @extend .content-wrapper;
+    li {
+      list-style:none; 
+      
+      width:auto; 
+      // text-align: center; 
+      // display: table-cell;
+      float: left;
+      font-weight: lighter;
+
+
+      // float the last three items to the right of the menu bar (menu, search, and course-finder buttons)
+      &:last-child, &:nth-last-child(2), &:nth-last-child(3) {
+        float: right;
+
+      }
+
+      &:hover { background:#444444; }
+      
+      &.menu-active { background:#333333; }
+
+
+      
+      @include gs-media(t, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
+      }
+      
+      @include gs-media(m, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
+      }
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%; 
+        color:white !important;  
+        font-size:13px;
+        // padding-top:12px; 
+        // padding-bottom:12px; 
+        padding: 12px 1em;
+        // padding-left: 1em; 
+        // padding-right: 1em; 
+      
+        @include gs-media(t, min-max) {
+          padding-left: 0.75em; 
+          padding-right: 0.75em; 
+        }
+
+        @include gs-media(m, min-max) {
+          padding-left: 0.75em; 
+          padding-right: 0.75em; 
+        }
+
+        @include gs-media(dm) {
+          padding-left: 0.5em; 
+          padding-right: 0.5em; 
+        } 
+        
+      }
+    
+    }
+
+}
+
+// styles applied to the plus / minus icon on menu
+.menu-open-closed-icon{
+  float:right; 
+  color:white; 
+  font-weight:normal; 
+  width: 36px; 
+  height: 36px; 
+  margin-top: 6px; 
+  font-size:30px; 
+  border-left:1px dotted #444444; 
+  padding-left: 12px;
 }
 
 @include gs-media(d) {
@@ -145,6 +312,65 @@
     display:none;
   }
 }
+
+.ual-banner-menu {
+  @include clearfix();
+  // @include padding-leader(1);
+  
+  @include gs-media(t, min-max) {
+    height: 48px;
+    padding-left: 6px;
+    // padding-right: 6px;  // removed to enable the menu button to sit flush with the right side of the browser chrome
+    background-color: black;
+    // @include padding-trailer(1);
+  }
+
+  @include gs-media(m, min-max) {
+    height: 48px;
+    padding-left: 6px;
+    // padding-right: 6px;  // removed to enable the menu button to sit flush with the right side of the browser chrome
+    background-color: black;
+    // @include padding-trailer(1);
+  }
+  
+}
+
+#mob-tab-menu {
+
+  float: right;
+  height: 48px;
+  margin-bottom: 0;
+
+  li {
+    //@include padding-leader(1);
+    list-style: none;
+    display: inline-block;
+    height: 48px;
+    border-right: 1px solid #444;
+    float: left;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+
+  .menu-active{
+    background: #333333;
+  }
+
+  
+  
+}
+
+.ual-logo-tab-mobile { padding-top: 6px; }
+
+.ual-logo-tab-mobile { }
+
 
 .submenu {
   
@@ -191,10 +417,12 @@
         font-size:16px;
         padding-left: 12px;
         margin-bottom:0;
+        font-weight: 300;
         }
         @include gs-media(m, min-max) {
         font-size:16px;
         margin-bottom:0;
+        font-weight: 300;
         }
       }
     span {
@@ -221,7 +449,7 @@
     width:100%; 
     display:block; 
     float:left; 
-    border-bottom: dotted 1px white;
+    border-bottom: dotted 1px #444;
     @include gs-media(t, min-max) {
       line-height:42px;
       border-bottom:none;
