@@ -224,7 +224,7 @@ var initMobMenu = 1;
 
 function checkMobileNavMenuState() {
 
-  // if already open, then slide up and hide
+  // if menu already open, then slide up and hide
   if ( $('#main-menu-btn').hasClass('active') || ( initMobMenu == 1)  ) {
 
     $('#new-menu').slideUp('fast', 'linear', function() { 

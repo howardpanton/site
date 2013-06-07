@@ -69,6 +69,28 @@
 }
 
 
+// no borders
+
+.no-border, .no-borders {
+  border: 0;
+}
+
+.no-border-top {
+  border-top: 0;
+}
+.no-border-bottom {
+  border-bottom: 0;
+}
+.no-border-right {
+  border-right: 0;
+}
+.no-border-left {
+ border-left: 0;
+}
+
+
+
+
 .rhythm-2 {
   @include padding-leader(2);
   @include padding-trailer(2);
@@ -148,12 +170,6 @@
   margin-left: 0;
 }
 
-
-// no borders
-
-.no-border {
-  border: none;
-}
 
 
 // no underline (removes styling for both text underline and border bottom)
