@@ -69,6 +69,48 @@
 }
 
 
+// no borders
+
+.no-border, .no-borders {
+  border: 0;
+
+  &:hover {
+    border: none;
+  }
+}
+
+.no-border-top {
+  border-top: 0;
+  
+  &:hover {
+    border: none;
+  }
+}
+.no-border-bottom {
+  border-bottom: 0;
+  
+  &:hover {
+    border: none;
+  }
+}
+.no-border-right {
+  border-right: 0;
+
+  &:hover {
+    border: none;
+  }
+}
+.no-border-left {
+  border-left: 0;
+  
+  &:hover {
+    border: none;
+  }
+}
+
+
+
+
 .rhythm-2 {
   @include padding-leader(2);
   @include padding-trailer(2);
@@ -146,16 +188,6 @@
 
 .no-margin-left {
   margin-left: 0;
-}
-
-
-// no borders
-
-.no-border {
-  border: none;
-  &:hover {
-    border: none;
-  }
 }
 
 
