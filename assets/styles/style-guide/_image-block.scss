@@ -54,6 +54,48 @@
 			}
 		}	
 	}
+
+	
+}
+
+
+// image block with text & aside 
+.image-block-text-and-aside {
+	
+	@extend .image-block-aside;
+	
+	.image {
+
+		figure {
+			border-bottom: 0;
+
+			@include gs-media(d,min-max) {
+				padding-bottom: 0;
+			}
+		}
+		
+		
+		figcaption {
+			font-size: emCalc(14px);
+		}
+
+	}
+
+	.text { 
+		@include gs-span(d,5,12);
+		@include gray-dotted-border-bottom;
+		clear: left; 
+		@include gs-media(d,min-max) {
+			padding-bottom: rhythm(7, 16px);
+			margin-bottom: rhythm(6, 16px); 
+		}
+	}
+
+	
+	
+
+	
+	
 }
 
 // image block with introduction
