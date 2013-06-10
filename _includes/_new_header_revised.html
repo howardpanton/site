@@ -12,8 +12,8 @@
 </ul>  -->
 
 
-<div id="mega-menu-nav-links" class='new-main-menu' role='navigation'>
-  <div class="top-bar">        
+<div id="mega-menu-nav-links" class='new-main-menu-v2' role='navigation'>
+  <div class="top-bar-v2">        
       <ul class="m-hide t-hide">
           <li>
               <a data-item="college" href='#' title=''>Colleges</a>
@@ -57,15 +57,42 @@
                   
               </div>
             </li>
+            <li><a href="#" id="main-menu-btn" class="d-hide menu menu-button-toggle">
+              <span id="menu-icon-indicator" class="ual-white">≡</span> Menu</a></li>
+            <li> <a data-item="course-finder" href="#" class="course-v2">Course Finder</a></li>
+            <li class="search-buttons-separator"><a data-item="search" href="#" class="search-v2"></a></li>
         </ul>
   </div>
 </div>
+
+<div id="mobile-course-finder" class="d-hide hide cf clear-both pad-top-4x full-width dark-gray-bg">
+  <div class="wrapper">
+    <form>
+      <input class="course-finder-txt-input pull-left" type="text" required value="search courses">
+    </form>
+    <div class="pull-right"> 
+    <a class="button no-border" >Go</a>
+   </div>
+  </div>
+</div>
+
+<div id="mobile-search" class="d-hide hide cf clear-both pad-top-4x full-width dark-gray-bg">
+  <div class="wrapper">
+    <form>
+      <input class="site-search-input pull-left" type="text" required value="mobile search">
+    </form>
+    <div class="pull-right"> 
+    <a class="button no-border" >Go</a>
+   </div>
+  </div>
+</div>
+
 <div id ="new-menu" class="row dark-gray-bg">    
  <div id="desktop-menu-wrap" class="content-wrapper"> 
   <div class="submenu">
     <div data-menu="college" class="region">
-      <h2 >
-        <a href="{{ site.url }}/content/colleges/">Colleges</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span>
+      <h2>
+        <a href="{{ site.url }}/content/colleges/">Colleges</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span>
       </h2>
 <div class="sub-inner-menu">      
   <ul class="subnav-1 region">
@@ -97,7 +124,7 @@
             <!-- studying -->
   <div data-menu="study" class="row region">
     <h2  >
-      <a href="#">Student at UAL</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span>
+      <a href="#">Student at UAL</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span>
     </h2>
 <div class="sub-inner-menu">      
   <ul class="subnav-1 region" >
@@ -144,17 +171,19 @@
         </li>
         </ul></div>
       <div class="feature-image m-hide t-hide region" >
-            <a href="#" title="Link title">
+          <a href="#" title="Link title">
           <figure>
-            <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt"></figure>
-        </a>
-            </div>
+            <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
+          </figure>
+          </a>
+      </div>
         </div>
 
         <!-- careers -->
     <div data-menu="careers" class="row region">
-        <h2><a href="#">Student Jobs &amp; Careers</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span></h2>
-<div class="sub-inner-menu">              <ul class="subnav-1 region" >
+        <h2><a href="#">Student Jobs &amp; Careers</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span></h2>
+    <div class="sub-inner-menu">              
+        <ul class="subnav-1 region" >
             <li>
                  <a href='' title=''>Opportunities</a>
                 </li>
@@ -174,14 +203,15 @@
                      <a href='' title=''>About SEE</a>
                 </li>
 
-            </ul></div>
+            </ul>
+          </div>
             <div class="feature m-hide t-hide region" >
                 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
     <!-- alumni -->
     <div data-menu="alumni" class="row region">
-        <h2><a href="#">Alumni &amp; Friends</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span></h2>
+        <h2><a href="#">Alumni &amp; Friends</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span></h2>
             <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
                     <li>
@@ -212,7 +242,7 @@
         </div>
             <!-- Research -->
     <div data-menu="research" class="row region">
-        <h2><a href="#">Research</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span></h2>
+        <h2><a href="#">Research</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon">&nbsp;</span></h2>
         <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
                     <li>
@@ -232,7 +262,7 @@
         </div>
                     <!-- Business -->
     <div data-menu="business" class="row region">
-        <h2><a href="#">Business &amp; Innovation</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span></h2>
+        <h2><a href="#">Business &amp; Innovation</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon">&nbsp;</span></h2>
            <div class="sub-inner-menu">  
              <ul class="subnav-1 region" >
                     <li>
@@ -252,7 +282,7 @@
         </div>
                             <!-- About UAL -->
     <div data-menu="about" class="row region">
-        <h2><a href="#">About UAL</a><span class="d-hide ui-icons-transparent-plus" style="float:right; color:white; font-weight:normal; width: 36px; height: 36px; margin-top: 6px; font-size:30px; border-left:1px dotted #444444; padding-left: 12px;">&nbsp;</span></h2>
+        <h2><a href="#">About UAL</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon">&nbsp;</span></h2>
         <div class="sub-inner-menu">  
             <ul class="subnav-1 region" >
           <li>
@@ -299,7 +329,52 @@
         </a>
             </div>
         </div>
-    </div>
+
+        
+
+        <div data-menu="search" class="row region m-hide t-hide">
+          <div class="pad-top-8x full-width">
+            <form>
+              <input class="site-search-input pull-left" type="text" required value="Enter your search here">
+            </form>
+            <div class="pull-right"> 
+            <a class="button no-border" >Go</a>
+           </div>
+          </div>
+        </div>
+
+        <div data-menu="course-finder" class="row region m-hide t-hide">
+          <div class="pad-top-8x full-width">
+            <form>
+              <input class="course-finder-txt-input pull-left" type="text" required value="Search for a course here">
+            </form>
+            <div class="pull-right"> 
+            <a class="button no-border" >Go</a>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+</div>
+        
+        
+
       
  </div>  <!-- end content wrapper -->
     </div>
+
+
+  <div class="row">
+    
+    <ul class="breadcrumbs">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">How To Apply</a></li>
+      <li><a href="#">Tuition Fees &amp; Funding</a></li>
+      <li><a href="#">Funding Opportunities</a></li>
+    </ul>  
+
+  </div> <!-- end .row -->
+

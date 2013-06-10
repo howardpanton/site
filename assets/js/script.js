@@ -217,9 +217,236 @@ var waitForFinalEvent = (function () {
 // });
 
 
-//menus = $('.submenu').each().find('li');
+var _active_btn;
 
-//console.log(menus);
+// monitor mobile menu, it's initially opened at start,  we use this variable to allow the menu to be hidden if other mobile nav buttons are clicked
+var initMobMenu = 1;
+
+function checkMobileNavMenuState() {
+
+  // if menu already open, then slide up and hide
+  if ( $('#main-menu-btn').hasClass('active') || ( initMobMenu == 1)  ) {
+
+    $('#new-menu').slideUp('fast', 'linear', function() { 
+        $('#main-menu-btn').removeClass('active'); 
+        $('submenu').css({'padding-top': '0', 'margin-top': '24px'});
+        $('#menu-icon-indicator').html('≡');
+        $('#main-menu-btn').css({'background-color': '#000', 'color': 'white'});
+        $('#new-menu').find('#desktop-menu-wrap').addClass('content-wrapper');
+        $('#new-menu').removeAttr('style');
+        $('#new-menu').hide();
+        initMobMenu = 0; // update menu tracker 
+      }
+    );
+  };
+
+} // end toggleMobileNavMenuState()
+
+
+
+
+// ---------------------------------------
+//   mobile / tablet view button handlers
+// ---------------------------------------
+
+////////////////
+// Course Finder Button click script
+////////////////
+
+$('#mob-tab-menu a.course-v2').click(function(event) {
+  
+  var _clicked = $(this);
+
+  // get number of active menu items
+  _active_btn = $('#mob-tab-menu li.menu-active:visible');
+  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+  
+
+
+  // Close Course Finder panel
+  // - if course finder already active, then close
+  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
+    
+    $('#mobile-course-finder').slideUp('fast', 'linear', function() {
+      _clicked.parent('li').removeClass('menu-active');
+      $('#mobile-course-finder').removeClass('show').addClass('hide');
+    });
+
+    
+    
+  // Show Course Finder panel
+  // - a button different to the course finder is already open,
+  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
+    
+    checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+    // hide search
+    var _closeme = $('#mob-tab-menu').find('li.menu-active');
+    _closeme.removeClass("menu-active");
+    $('#mobile-search').removeClass('show').addClass('hide');
+    $('#mobile-search').css({'display':'none'});
+
+    _clicked.parent('li').addClass("menu-active");
+    $('#mobile-course-finder').removeClass('hide').addClass('show');
+    $('#mobile-course-finder').css({'display':'block'});
+    $('#mobile-course-finder').find('input').focus();
+  }
+
+  
+  // Show Course Finder panel
+  // - if course finder not active, and NO other buttons are active, 
+  else {
+    _clicked.parent('li').addClass("menu-active");
+    $('#mobile-course-finder').removeClass('hide').addClass('show');
+    $('#mobile-course-finder').css({'display':'block'});
+    $('#mobile-course-finder').find('input').focus();
+  };
+
+
+}); // end mobile view course finder button click handler 
+
+
+
+
+
+
+
+
+/////////////////
+// Search Button click script
+////////////////
+
+$('#mob-tab-menu a.search-v2').click(function(event) {
+  
+  var _clicked = $(this);
+  // get number of active menu items
+  _active_btn = $('#mob-tab-menu li.menu-active:visible');
+
+  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+  
+
+
+
+  // Close Search panel
+  // -if search already active, then close
+
+  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
+    $('#mobile-search').slideUp('fast', 'linear', function() {
+      $('#mobile-search').removeClass('show').addClass('hide');
+      _clicked.parent('li').removeClass('menu-active');
+    });
+
+
+  // Open Search Panel
+  // - if another mobile menu panel is open
+  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
+    
+    // hide course finder
+    $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
+    $('#mobile-course-finder').removeClass('show').addClass('hide');
+    $('#mobile-course-finder').css({'display':'none'});
+    
+    // show search
+    _clicked.parent('li').addClass("menu-active");
+    $('#mobile-search').removeClass('hide').addClass('show');
+    $('#mobile-search').css({'display':'block'});
+    $('#mobile-search').find('input').focus();
+  }
+
+  // Open Search Panel
+  // - if search not active and no other buttons are active 
+  else {
+    _clicked.parent('li').addClass("menu-active");
+    $('#mobile-search').removeClass('hide').addClass('show');
+    $('#mobile-search').css({'display':'block'});
+    $('#mobile-search').find('input').focus();
+    // $('#mobile-search').slideDown('fast', 'linear', function() {});
+  };
+
+}); // end mobile tablet search button click handler
+
+
+
+///////////////
+// mobile - main page navigation menu - button click handler 
+///////////////
+
+$('a.menu').click(function(event) { 
+  
+  var t = $('#new-menu');
+  var _clicked = $(this);
+
+  // if menu already open, then close
+  if (_clicked.hasClass("active")) {
+    var _menu_to_toggle = $(this);
+
+    t.slideUp('fast', 'linear', function() { 
+      _menu_to_toggle.removeClass('active'); 
+      $('submenu').css({'padding-top': '0', 'margin-top': '24px'});
+      $('#menu-icon-indicator').html('≡');
+      _menu_to_toggle.css({'background-color': '#000', 'color': 'white'});
+      t.find('#desktop-menu-wrap').addClass('content-wrapper');
+      t.removeAttr('style');
+      t.hide();
+    });
+    
+    
+  } // - if any other menu is open, close first, then show the mobile pages menu
+  else if ( $('#mobile-course-finder').hasClass('show') || $('#mobile-search').hasClass('show')   ) {
+      
+      
+      
+      // clear up menu background highlighting (switch off the background color for any other menus open)
+      $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
+
+
+      // if course finder is open, close it
+      if ( $('#mobile-course-finder').hasClass('show') ) {
+          console.log("course finder is already open");
+          $('#mobile-course-finder').removeClass('show').addClass('hide');
+          $('#mobile-course-finder').css({'display':'none'});
+
+      };
+
+
+      // if search is open, close it
+      if ( $('#mobile-search').hasClass('show') ) {
+          console.log("search is already open");
+           $('#mobile-search').removeClass('show').addClass('hide');
+          $('#mobile-search').css({'display':'none'});
+
+      };
+
+
+
+
+
+
+      t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+
+      // show the pages menu  (update button highlight first)
+    
+      $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
+      $('#menu-icon-indicator').html('x'); 
+      
+      // slide the menu down
+      t.slideDown('fast', 'linear', function() { 
+        $('submenu').css({'margin-top': '0'});
+      });
+  }
+
+  else {
+
+    t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+    $('#mob-tab-menu li.menu-active').removeClass("menu-active");
+    $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
+    $('#menu-icon-indicator').html('x');
+    $('submenu').css({'margin-top': '0'});
+    t.slideDown('fast', 'linear', function() {  });
+  };
+
+});
+
+
 
 
 // enquire
@@ -232,8 +459,12 @@ var waitForFinalEvent = (function () {
 //   match : function() {
 
 
-  //desktop view menu - handle click event for main menu links in desktop view
-$('.new-main-menu li a').click(function(event) {
+//////////////////////
+//desktop view menu - handle click event for main menu links in desktop view
+//////////////////////
+
+
+$('#mega-menu-nav-links li a').click(function(event) {
   event.preventDefault();
 
   var _clicked = $(this);
@@ -244,12 +475,11 @@ $('.new-main-menu li a').click(function(event) {
 
   // console.log(j.length + "length");
   var r = j.attr('data-menu');
-  var l = $('li').find("[data-item='"+ r +"']");
-  
+  var l = $('li').find("[data-item='"+ r +"']"); 
   j.slideUp('slow', 'swing', function() { y.removeClass('menu-active');  j.removeAttr('style'); });
- 
+
   // alert('one');
- 
+
 
   // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
 } else if (!_clicked.parent().hasClass('menu-active') && j.length == 1 ) {
@@ -264,14 +494,27 @@ $('.new-main-menu li a').click(function(event) {
   g.addClass('menu-active');
   g.fadeIn();
 
+  // if search or course finder clicked - give the input focus
+  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
+    console.log("course finder or search clicked");
+    g.find('input').focus();
+  } 
+
   // desktop view menu - if no menu item already open then do this:
 } else {
   _clicked.parent('li').addClass('menu-active');
   var t = _clicked.attr('data-item');
+  var r = j.attr('data-menu');
   var g = $('div').find("[data-menu='"+ t +"']");
   g.addClass('menu-active');
+
   g.slideDown('slow', 'swing', function() {});
 
+  // if search or course finder clicked - give the input focus
+  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
+    console.log("course finder or search clicked");
+    g.find('input').focus();
+  } 
 };
 
 });
@@ -310,8 +553,6 @@ $('.new-main-menu li a').click(function(event) {
       // if not already open, but another menu is already expanded,
       // hide the sub menu that is already open first and then show the menu you just clicked
       if (m.length == 1 && !_clicked.hasClass('active')) {
-
-
         m.parent().find('h2 span').removeClass('active');
         m.parent().find('h2 span').removeClass('ui-icons-transparent-close');
         m.parent().find('h2 span').addClass('ui-icons-transparent-plus');
@@ -334,7 +575,6 @@ $('.new-main-menu li a').click(function(event) {
           _menu_to_close.removeClass('ui-icons-transparent-close');
           _menu_to_close.addClass('ui-icons-transparent-plus');});
 
-      
       // if sub menu not already visible, then show the menu
       } else {
         $(this).addClass('active');
@@ -368,37 +608,17 @@ $(window).resize(function () {
     }, 500, "some unique string");
 });
 
-    // mobile view - toggle menu show hide the menu
-    $('a.menu').click(function(event) { 
 
-      var t = $('#new-menu');
 
-      if ($(this).hasClass("active")) {
-        var _menu_to_toggle = $(this);
-        t.slideUp('fast', 'linear', function() { 
-          _menu_to_toggle.removeClass('active'); 
-          $('submenu').css({'padding-top': '0', 'margin-top': '24px'});
-          $('#menu-icon-indicator').html('≡');
-          _menu_to_toggle.css({'background-color': '#f0f0f0', 'color': 'black'});
-          
-          t.find('#desktop-menu-wrap').addClass('content-wrapper');
-          t.removeAttr('style');
 
-          t.hide();
-        });
-        
-        
-      } else {
 
-        t.find('#desktop-menu-wrap').removeClass('content-wrapper');
-        $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
-        $('#menu-icon-indicator').html('x');
-        $('submenu').css({'padding-top': '24px', 'margin-top': '0'});
-        t.slideDown('fast', 'linear', function() {  });
-      };
 
-      });
+
+
+
     
+   
+
 
 
 
