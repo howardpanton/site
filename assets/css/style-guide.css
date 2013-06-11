@@ -1123,13 +1123,13 @@ table th, table td {
 nav.main-nav {
   font-size: 0.875em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\000034}}
 nav.main-nav ul {
   margin: 0;
   padding: 0;
   padding: 0.9em 0 0.85714em 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\000039}}
 nav.main-nav li {
   margin: 0;
   padding: 0;
@@ -1137,16 +1137,16 @@ nav.main-nav li {
   display: inline-block;
   padding-right: 1.28571em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000316}}
 nav.main-nav li:first-child {
   padding-left: 1.28571em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000319}}
 nav.main-nav a {
   color: white;
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\0000322}}
 nav.main-nav a:hover {
   border-bottom: none;
 }
@@ -2112,6 +2112,13 @@ a.course-v2 {
   }
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_text-block\.scss}line{font-family:\0000359}}
+.text-block ul li, .text-block-aside ul li {
+  list-style-type: none;
+  background: url("http://artslondon.github.io/beta/assets/img/new/ul-bullet.png") no-repeat top left;
+  padding: 0.375em 0 0.375em 1.5em;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\000032}}
 .image-block {
   border-bottom: 1px dotted #c8c8c8;
@@ -2145,7 +2152,7 @@ a.course-v2 {
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000320}}
-  .image-block-aside {
+  .image-block-aside, .image-block-text-and-aside {
     display: block;
     float: left;
     margin-left: 13.39732%;
@@ -2155,7 +2162,7 @@ a.course-v2 {
 }
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000324}}
-  .image-block-aside .heading {
+  .image-block-aside .heading, .image-block-text-and-aside .heading {
     display: block;
     float: left;
     margin-left: 25.89636%;
@@ -2164,14 +2171,14 @@ a.course-v2 {
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000331}}
-.image-block-aside .image aside {
+.image-block-aside .image aside, .image-block-text-and-aside .image aside {
   border-bottom: 1px dotted #c8c8c8;
   padding-bottom: 2.625em;
   margin-bottom: 2.25em;
 }
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000331}}
-  .image-block-aside .image aside {
+  .image-block-aside .image aside, .image-block-text-and-aside .image aside {
     display: block;
     float: left;
     margin-left: 76.93073%;
@@ -2183,13 +2190,13 @@ a.course-v2 {
 }
 @media screen and (min-width: 75em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000331}}
-  .image-block-aside .image aside {
+  .image-block-aside .image aside, .image-block-text-and-aside .image aside {
     font-size: 1em;
   }
 }
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000344}}
-  .image-block-aside .image figure {
+  .image-block-aside .image figure, .image-block-text-and-aside .image figure {
     display: block;
     float: left;
     margin-left: 25.89636%;
@@ -2201,18 +2208,52 @@ a.course-v2 {
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000352}}
-.image-block-aside .image figure figcaption {
+.image-block-aside .image figure figcaption, .image-block-text-and-aside .image figure figcaption {
   font-size: 0.875em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000369}}
+.image-block-text-and-aside .image figure {
+  border-bottom: 0;
+}
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000369}}
+  .image-block-text-and-aside .image figure {
+    padding-bottom: 0;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000378}}
+.image-block-text-and-aside .image figcaption {
+  font-size: 0.875em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000384}}
+.image-block-text-and-aside .text {
+  display: block;
+  float: left;
+  margin-left: 25.89636%;
+  margin-right: -100%;
+  width: 48.53437%;
+  border-bottom: 1px dotted #c8c8c8;
+  padding-bottom: 2.625em;
+  margin-bottom: 2.25em;
+  clear: left;
+}
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000384}}
+  .image-block-text-and-aside .text {
+    padding-bottom: 2.625em;
+    margin-bottom: 2.25em;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003102}}
 .image-block-with-intro {
   border-bottom: 1px dotted #c8c8c8;
   padding-bottom: 2.625em;
   margin-bottom: 2.25em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003102}}
   .image-block-with-intro {
     display: block;
     float: left;
@@ -2222,7 +2263,7 @@ a.course-v2 {
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003102}}
   .image-block-with-intro {
     display: block;
     float: left;
@@ -2232,18 +2273,18 @@ a.course-v2 {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003114}}
 .image-block-with-leading-intro {
   border-bottom: 1px dotted #c8c8c8;
   padding-bottom: 2.625em;
   margin-bottom: 2.25em;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003120}}
   .image-block-with-leading-intro ul li {
     min-height: 80px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003123}}
   .image-block-with-leading-intro ul figure {
     display: block;
     float: left;
@@ -2251,7 +2292,7 @@ a.course-v2 {
     margin-right: -100%;
     width: 22.02041%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003126}}
   .image-block-with-leading-intro ul .text {
     display: block;
     float: left;
@@ -2261,7 +2302,7 @@ a.course-v2 {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003114}}
   .image-block-with-leading-intro {
     display: block;
     float: left;
@@ -2269,7 +2310,7 @@ a.course-v2 {
     margin-right: -100%;
     width: 73.58801%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003135}}
   .image-block-with-leading-intro ul li {
     width: 47.28217%;
     clear: none;
@@ -2277,13 +2318,13 @@ a.course-v2 {
     margin-left: 0;
     margin-right: 5.43567%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003139}}
   .image-block-with-leading-intro ul li:last-child {
     margin-right: 0;
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003114}}
   .image-block-with-leading-intro {
     display: block;
     float: left;
@@ -2291,7 +2332,7 @@ a.course-v2 {
     margin-right: -100%;
     width: 48.53437%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003148}}
   .image-block-with-leading-intro ul figure {
     width: 47.42451%;
     clear: none;
@@ -2299,7 +2340,7 @@ a.course-v2 {
     margin-left: 0;
     margin-right: 5.15099%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-block\.scss}line{font-family:\00003152}}
   .image-block-with-leading-intro ul .text {
     width: 47.42451%;
     clear: none;
@@ -2422,6 +2463,71 @@ a.course-v2 {
     float: left;
     margin-left: 0;
     margin-right: 3.37603%;
+    margin-right: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000335}}
+.image-list-with-text-content {
+  border-bottom: 1px dotted #c8c8c8;
+  padding-bottom: 2.625em;
+  margin-bottom: 2.25em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000337}}
+.image-list-with-text-content ul {
+  padding-top: 0;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000335}}
+  .image-list-with-text-content {
+    display: block;
+    float: left;
+    margin-left: 13.39732%;
+    margin-right: -100%;
+    width: 73.58801%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000343}}
+  .image-list-with-text-content figure {
+    width: 29.70955%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 5.43567%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000347}}
+  .image-list-with-text-content .text {
+    width: 64.85478%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 5.43567%;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000335}}
+  .image-list-with-text-content {
+    display: block;
+    float: left;
+    margin-left: 25.89636%;
+    margin-right: -100%;
+    width: 48.53437%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000356}}
+  .image-list-with-text-content figure {
+    width: 34.28063%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 5.15099%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_image-list-with-text\.scss}line{font-family:\0000360}}
+  .image-list-with-text-content .text {
+    width: 60.56838%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 5.15099%;
     margin-right: 0;
   }
 }
@@ -2920,8 +3026,13 @@ a.course-v2 {
  */
 /** RESET AND LAYOUT
 ===================================*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000320}}
+.slider-full-width {
+  max-width: 100%;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000325}}
   .slider-8 {
     display: block;
     float: left;
@@ -2931,7 +3042,7 @@ a.course-v2 {
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000325}}
   .slider-8 {
     display: block;
     float: left;
@@ -2942,7 +3053,7 @@ a.course-v2 {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000334}}
   .slider-12 {
     display: block;
     float: left;
@@ -2952,7 +3063,7 @@ a.course-v2 {
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000334}}
   .slider-12 {
     display: block;
     float: left;
@@ -2962,7 +3073,7 @@ a.course-v2 {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000343}}
 .bx-wrapper {
   position: relative;
   margin: 0 auto 60px;
@@ -2970,7 +3081,7 @@ a.course-v2 {
   *zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000350}}
 .bx-wrapper img {
   max-width: 100%;
   display: block;
@@ -2978,7 +3089,7 @@ a.course-v2 {
 
 /** THEME
 ===================================*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000368}}
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -2987,7 +3098,7 @@ a.course-v2 {
 }
 
 /* LOADER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000376}}
 .bx-wrapper .bx-loading {
   min-height: 50px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
@@ -3000,7 +3111,7 @@ a.course-v2 {
 }
 
 /* PAGER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000389}}
 .bx-wrapper .bx-pager {
   text-align: center;
   font-size: .85em;
@@ -3010,7 +3121,7 @@ a.course-v2 {
   padding-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000399}}
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
@@ -3018,7 +3129,7 @@ a.course-v2 {
   *display: inline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003105}}
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
   text-indent: -9999px;
@@ -3032,36 +3143,36 @@ a.course-v2 {
   border-radius: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003119}}
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #000;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003125}}
 .bx-wrapper .bx-prev {
   left: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003130}}
 .bx-wrapper .bx-next {
   right: 10px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003135}}
 .bx-wrapper .bx-prev:hover {
   background-position: 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003139}}
 .bx-wrapper .bx-next:hover {
   background-position: -43px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003143}}
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
@@ -3074,18 +3185,18 @@ a.course-v2 {
   border-bottom: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003155}}
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
 }
 
 /* AUTO CONTROLS (START / STOP) */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003161}}
 .bx-wrapper .bx-controls-auto {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003165}}
 .bx-wrapper .bx-controls-auto .bx-start {
   display: block;
   text-indent: -9999px;
@@ -3096,13 +3207,13 @@ a.course-v2 {
   margin: 0 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003176}}
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
   background-position: -86px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003180}}
 .bx-wrapper .bx-controls-auto .bx-stop {
   display: block;
   text-indent: -9999px;
@@ -3113,27 +3224,27 @@ a.course-v2 {
   margin: 0 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003191}}
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
   background-position: -86px -33px;
 }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003197}}
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   text-align: left;
   width: 80%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003202}}
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
   right: 0;
   width: 35px;
 }
 
 /* IMAGE CAPTIONS */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003209}}
 .bx-wrapper .bx-caption {
   position: absolute;
   bottom: 0;
@@ -3143,7 +3254,7 @@ a.course-v2 {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/howard\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_bxslider\.scss}line{font-family:\00003218}}
 .bx-wrapper .bx-caption span {
   color: #fff;
   font-family: Arial;

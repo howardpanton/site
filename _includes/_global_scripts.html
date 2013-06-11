@@ -12,7 +12,7 @@
   });
 
   $(document).ready(function(){
-    $('.slider1').bxSlider({
+    $('.four-up-square').bxSlider({
       slideWidth: 293,
       minSlides: 1,
       maxSlides: 4,
@@ -23,18 +23,40 @@
   });
 
 $(document).ready(function(){
-  $(".expanded-content").hide();
-  $("#hide").click(function(){
-    // $(".expanded-content").hide();
-    $(".expanded-content").slideUp("fast");
-    $("#show").show();
-  });
-  $("#show").click(function(){
-    // $(".expanded-content").show();
-    $(".expanded-content").slideDown("fast");
-    $("#show").hide();
-  });
-});
 
+
+ // show/hide the relevant buttons for browsers that have JS enabled
+  $(".expanded-content").hide();
+  $(".show-more").show();
+  
+  // handle "Show More" button click
+  $(".show-more").click(function(e){
+      e.preventDefault();  
+      
+      var _clicked = $(this);
+    
+      /*if ( $(".hide-content").length > 0 ) {
+          // close all other currently expanded blocks
+          $(".expanded-content").each(function() {
+            $(this).hide();
+          });   
+      }*/
+    
+      var parent = _clicked.closest(".expandable-content-block"); 
+      $(".expanded-content",parent).slideDown(); 
+      _clicked.hide();
+
+      });
+
+      // handle "Show Less" button click
+      $(".hide-content").click(function(e){
+      e.preventDefault();  
+      
+      var _clicked = $(this);
+      var parent = _clicked.closest(".expandable-content-block"); 
+      $(".expanded-content",parent).hide();
+      $(parent).find(".show-more").show();
+      });
+  });
 
 </script>
