@@ -19,23 +19,6 @@ breadcrumb-link: main-navigation-revised.html
   <!--  {% include _college_link_menu.html %} -->
   {% include _global_banner_v2.html %}
   {% include _new_header_revised.html %}
-  
-  <!-- temporary breadcrumbs work - need to move to components once working 
-  <div>
-    <ul class="breadcrumb">
-          <li><a href="#"><i class="icon-home"></i>Home</a> </li>
-          {% assign crumbs = page.url | split: '/' %}
-          {% assign crumbstotal = crumbs | size %}
-          {% for crumb in crumbs offset:2 %}
-          {% unless crumb == 'index.html' %}
-            <li><span class="divider">&#187;</span> {{ crumb | remove: '.html' }} </li>
-          {% endunless %}
-          {% endfor %}
-      </ul>
-  </div>
-
-<script>$(".breadcrumb li").last().addClass('active');</script>  -->
-
 
 </div> <!-- end .row -->
 
