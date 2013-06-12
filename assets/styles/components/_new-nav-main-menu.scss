@@ -16,6 +16,7 @@
     #new-menu {
       width:50%;
       float:right;
+      display: none;
       // margin-right: 3.75%;
     }
  }
@@ -23,6 +24,7 @@
     #new-menu {
       width:100%;
       float:left;
+      display: none;
     }
  }
 
@@ -324,6 +326,10 @@
     // padding-right: 6px;  // removed to enable the menu button to sit flush with the right side of the browser chrome
     background-color: black;
     // @include padding-trailer(1);
+
+    .logo {
+      margin-top: 0;
+    }
   }
 
   @include gs-media(m, min-max) {
@@ -332,8 +338,13 @@
     // padding-right: 6px;  // removed to enable the menu button to sit flush with the right side of the browser chrome
     background-color: black;
     // @include padding-trailer(1);
+
+    .logo {
+      margin-top: 0;
+    }
   }
   
+ 
 }
 
 #mob-tab-menu {
@@ -370,7 +381,6 @@
 
 .ual-logo-tab-mobile { padding-top: 6px; }
 
-.ual-logo-tab-mobile { }
 
 
 .submenu {
