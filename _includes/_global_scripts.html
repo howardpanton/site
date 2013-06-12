@@ -71,6 +71,46 @@ $(document).ready(function(){
       $(parent).find(".show-more").show();
       parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
       });
+
+
+      // sidebar scripts (populate mobile and tablet menu)
+      if ($('.sidebar').length > 0) {
+
+        var _menuHtml = $('.sidebar').html();
+        
+        var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
+
+        var _mobMenuContent = _mobMenuButton + _menuHtml;
+        
+        // populate the mobile menu with the same content as the desktop sidebar nav
+        $('#mobile_sidebar').append(_mobMenuContent);
+
+        $('.show-mob-sidebar').click(function(e) {
+          
+          e.preventDefault();
+          _clicked = $(this);
+          
+          if (_clicked.hasClass('active')) {
+            _clicked.closest($('#mobile_sidebar')).find($('nav')).slideUp();
+            _clicked.html('≡ sub menu').removeClass('active');
+          }
+
+          else {
+
+          _clicked.closest($('#mobile_sidebar')).find($('nav')).slideDown();
+          
+          // update the menu button and set class to active
+          _clicked.html('x sub menu').addClass('active');
+
+          }
+
+        });
+      
+
+
+      }
+
+
   });
 
 </script>
