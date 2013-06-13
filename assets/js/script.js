@@ -40,42 +40,42 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
   //  any initialastion functions here. 
   /***********************************************/
   
-  this.init = function()
-  { 
-    getData();
-  }();
+  // this.init = function()
+  // { 
+  //   getData();
+  // }();
 
 
   /***********************************************/
   //  EXAMPLE METHODS
   /***********************************************/ 
   
-  // get some data
-  function getData()
-  {
-    // define a local variable
-    var localVariable = 'A local variable, scoped to this method.';
-    // console.log(localVariable);
+  // // get some data
+  // function getData()
+  // {
+  //   // define a local variable
+  //   var localVariable = 'A local variable, scoped to this method.';
+  //   // console.log(localVariable);
 
-    // access some instance variables
-    // console.log(CONSTANT_NAME);
-    // console.log(instanceVariable);
+  //   // access some instance variables
+  //   // console.log(CONSTANT_NAME);
+  //   // console.log(instanceVariable);
 
-    // call a method - maybe an ajax call?
-    onData('onData: I was called from on getData.');
-  }
+  //   // call a method - maybe an ajax call?
+  //   onData('onData: I was called from on getData.');
+  // }
   
-  // on data return
-  function onData(data)
-  {     
-    // log out some data
-    //console.log(data);
+  // // on data return
+  // function onData(data)
+  // {     
+  //   // log out some data
+  //   //console.log(data);
     
-    // get the body with jQuery, do something with it.
-    $('body').each(function (){
-      log(this);
-    })
-  }
+  //   // get the body with jQuery, do something with it.
+  //   $('body').each(function (){
+  //     log(this);
+  //   })
+  // }
   
     
 })(jQuery);
