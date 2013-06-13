@@ -643,6 +643,14 @@ Author: Dave Rupert
 Author URL: http://daverupert.com/
 Based on: https://github.com/filamentgroup/jQuery-Equal-Heights 
 
+//  example initialise code
+//
+//   $(window).load(function(){
+//      // $(groupOfItems).fitHeights(); 
+//      $('ul li').fitHeights();
+//    });
+
+
 */
 (function(){
   
@@ -672,10 +680,7 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
   };
 })(jQuery);
 
-$(window).load(function(){
-  /* $(groupOfItems).fitHeights(); */
-  $('ul li').fitHeights();
-});
+
 
 
 
