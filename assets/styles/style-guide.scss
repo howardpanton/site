@@ -22,6 +22,12 @@
 	height: auto;
 }
 
+.main-content {
+	@include gs-media (d,min-max) {
+		@include gs-span(d,5,16);
+	}
+}
+
 @import "style-guide/typography",
 		"style-guide/button-link",
 		"style-guide/panels",
