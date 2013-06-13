@@ -618,6 +618,26 @@ $(window).resize(function () {
 
 
 
+//
+//  Footer journeys - fade In / fadeOut on click 
+
+$('#footer-btn-explore').click(function(event) {
+  event.preventDefault();
+
+  _clicked = $(this); 
+  if ( !_clicked.hasClass('active')) {
+    _clicked.addClass('active');
+    $('.footer-journeys-panel').show();
+    
+  } else {
+    _clicked.removeClass('active');
+    $('.footer-journeys-panel').slideUp();
+  }
+
+});
+
+
+
     
    
 
