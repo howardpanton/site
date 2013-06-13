@@ -620,6 +620,29 @@ $(document).ready(function(){
   if ($('.slider').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
+
+
+
+//
+//  Footer journeys - fade In / fadeOut on click 
+
+$('#footer-btn-explore').click(function(event) {
+  event.preventDefault();
+
+  _clicked = $(this); 
+  if ( !_clicked.hasClass('active')) {
+    _clicked.addClass('active');
+    $('.footer-journeys-panel').show();
+    
+  } else {
+    _clicked.removeClass('active');
+    $('.footer-journeys-panel').slideUp();
+  }
+
+});
+
+
+
     
       $.each($('.slider'), function() {
 
