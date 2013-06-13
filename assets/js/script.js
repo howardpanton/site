@@ -55,11 +55,11 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
   {
     // define a local variable
     var localVariable = 'A local variable, scoped to this method.';
-    console.log(localVariable);
+    // console.log(localVariable);
 
     // access some instance variables
-    console.log(CONSTANT_NAME);
-    console.log(instanceVariable);
+    // console.log(CONSTANT_NAME);
+    // console.log(instanceVariable);
 
     // call a method - maybe an ajax call?
     onData('onData: I was called from on getData.');
@@ -405,7 +405,7 @@ $('a.menu').click(function(event) {
 
       // if course finder is open, close it
       if ( $('#mobile-course-finder').hasClass('show') ) {
-          console.log("course finder is already open");
+          // console.log("course finder is already open");
           $('#mobile-course-finder').removeClass('show').addClass('hide');
           $('#mobile-course-finder').css({'display':'none'});
 
@@ -414,7 +414,7 @@ $('a.menu').click(function(event) {
 
       // if search is open, close it
       if ( $('#mobile-search').hasClass('show') ) {
-          console.log("search is already open");
+          // console.log("search is already open");
            $('#mobile-search').removeClass('show').addClass('hide');
           $('#mobile-search').css({'display':'none'});
 
@@ -500,7 +500,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
   // if search or course finder clicked - give the input focus
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    console.log("course finder or search clicked");
+    // console.log("course finder or search clicked");
     g.find('input').focus();
   } 
 
@@ -516,7 +516,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
   // if search or course finder clicked - give the input focus
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    console.log("course finder or search clicked");
+    // console.log("course finder or search clicked");
     g.find('input').focus();
   } 
 };
