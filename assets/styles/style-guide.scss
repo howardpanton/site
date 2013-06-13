@@ -5,6 +5,7 @@
 
 @import "globals/variables", 
 		"globals/gridset",
+		"style-guide/gridset-utilities",
 		"globals/colors",
 		"globals/utilities";
 
@@ -21,6 +22,12 @@
 	height: auto;
 }
 
+.main-content {
+	@include gs-media (d,min-max) {
+		@include gs-span(d,5,16);
+	}
+}
+
 @import "style-guide/typography",
 		"style-guide/button-link",
 		"style-guide/panels",
@@ -28,7 +35,7 @@
 		"components/new-nav-main-menu",
 		"components/search-buttons",
 		"components/search-form",
-		"components/_nav-mobile-menu",
+		"components/nav-mobile-menu",
 		"components/breadcrumbs",
 		"globals/university-logos",
 		"style-guide/sidebar",
