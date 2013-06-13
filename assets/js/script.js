@@ -80,6 +80,10 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
     
 })(jQuery);
 
+var d = $('.breadcrumbs').find('a');
+d.last().hide();
+
+
 
   function checkWindowSize() {
     var width = $(window).width(),
@@ -607,8 +611,6 @@ $(window).resize(function () {
       $('.submenu > div').removeAttr("style").removeClass('menu-active');
     }, 500, "some unique string");
 });
-
-
 
 
 
