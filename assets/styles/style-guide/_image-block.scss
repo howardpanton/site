@@ -6,7 +6,7 @@
 		@include gs-span(t,2,7);
 	}
 	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+			@include gs-span(d, 5, 12, (5, 16));
 	}
 
 	figure {
@@ -23,7 +23,7 @@
 	}
 	.heading {
 		@include gs-media(d,min-max) {
-			@include gs-span(d,5,12);
+			@include gs-span(d, 5, 12, (5, 16));
 		}
 	}
 	.image {
@@ -31,7 +31,7 @@
 		aside {
 			@include gray-dotted-border-bottom;
 
-			@include gs-media(d,min-max) {
+			@include gs-media(d) {
 				@include gs-span(d,13,16);
 				font-size: emCalc(14px);
 				border: none;
@@ -43,8 +43,8 @@
 		}
 		figure {
 
-			@include gs-media(d,min-max) {
-				@include gs-span(d,5,12);
+			@include gs-media(d) {
+			@include gs-span(d, 5, 12, (5, 16));
 				border-bottom: 1px dotted $light-gray;
 				padding-bottom: rhythm(7, 16px);
 				margin-bottom: rhythm(6, 16px);
@@ -69,7 +69,7 @@
 		figure {
 			border-bottom: 0;
 
-			@include gs-media(d,min-max) {
+			@include gs-media(d) {
 				padding-bottom: 0;
 			}
 		}
@@ -106,7 +106,7 @@
 		@include gs-span(t,2,7);
 	}
 	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+			@include gs-span(d, 5, 12, (5, 16));
 	}
 }
 
@@ -142,8 +142,8 @@
 		}
 	}
 
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+	@include gs-media(d) {
+			@include gs-span(d, 5, 12, (5, 16));
 		ul {
 			figure {
 				width: gs-width(d, 5, 8, (5,12), true);
