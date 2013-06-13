@@ -614,14 +614,65 @@ $(window).resize(function () {
 
 
 
+$(document).ready(function(){
 
+  // detect slider component
+  if ($('.slider').length > 0) {
 
+    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
+    
+      $.each($('.slider'), function() {
 
+        var _this = $(this);
+        var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
+
+        // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
+        var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
+        var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
+        // slider instances always show next/prev controls, unless data-controls is false          
+        var _controlsOpt = true;
+        _controlsOpt = _this.data('controls');
+        // slider instances do not show a pager, unless data-pager is true          
+        var _pagerOpt = (_this.data('pager')) ? _this.data('pager') : false;
+        
+        _this.bxSlider({
+          slideWidth: _itemWidth,
+          minSlides: 1,
+          maxSlides: 4,
+          slideMargin: _itemMargin,
+          moveSlides: 1,
+          controls: _controlsOpt,
+          captions: true,
+          pager: _pagerOpt,
+          video: true,
+          onSliderLoad: function(currentIndex) {
+            if (_this.data('counter')) {
+              $(_this).closest('.bx-wrapper').find('.bx-controls').prepend('<div class="bx-counter"><span class="bx-index">' + (currentIndex+1) + '</span>/<span class="bx-total">' + _this.getSlideCount() + '</span></div>');
+            }
+          },
+          onSlideAfter: function($slideElement, oldIndex, newIndex) {
+            if (_this.data('counter')) {
+              $(_this).closest('.bx-wrapper').find('.bx-index').text(newIndex+1);
+            }
+          }
+        });
+      });
+    });
+
+  }
+
+}); // end document ready
 
     
-   
-
-
+/*   
+$('.four-up-square').bxSlider({
+      
+      
+      maxSlides: 4,
+      
+    });
+*/
 
 
 
