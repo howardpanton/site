@@ -13,7 +13,7 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
+	@include gs-media(d) {
 		@include gs-span(d,all);
 		li {
       @include gs-span(d,1,4);
@@ -46,8 +46,8 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,3,14);
+	@include gs-media(d) {
+					@include gs-span(d, 3, 14, (5, 16));
 		li {
       width: gs-width(d, 3, 6, (3,14), true);
       @include gs-float(d, left, (3,14));
@@ -79,8 +79,8 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,16);
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
 		li {
       width: gs-width(d, 5, 8, (5,16), true);
       @include gs-float(d, left, (3,16));
@@ -112,8 +112,8 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,1,16);
+	@include gs-media(d) {
+		@include gs-span(d,all);
 		li {
       @include gs-span(d,1,8);
 			&:nth-of-type(2) {
@@ -138,8 +138,8 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,3,14);
+	@include gs-media(d) {
+					@include gs-span(d, 3, 14, (5, 16));
 		li {
       width: gs-width(d, 3, 8, (3,14), true);
       @include gs-float(d, left, (3,14));
@@ -165,8 +165,9 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,16);
+	@include gs-media(d) {
+		// @include gs-span(d,5,16);
+		@include gs-span(d, 5, 16, (5, 16));
 		li {
       width: gs-width(d, 5, 10, (5,16), true);
       @include gs-float(d, left, (5,16));
@@ -192,8 +193,9 @@
 			}
 		}
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+	@include gs-media(d) {
+		// @include gs-span(d,5,12);
+		@include gs-span(d, 5, 12, (5, 16));
 		li {
       width: gs-width(d, 5, 8, (5,12), true);
       @include gs-float(d, left, (5,12));

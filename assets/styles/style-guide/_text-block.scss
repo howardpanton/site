@@ -4,10 +4,11 @@
 	@include gray-dotted-border-bottom;
 
 	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
+	@include gs-span(t,2,7);
 	}
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,12);
+	@include gs-media(d) {
+		// @include gs-span(d,5,12);
+		@include gs-span(d, 5, 12, (5, 16));
 	}
 
 	p.leader {
@@ -15,7 +16,7 @@
 		@include gs-media(t,min-max) {
 			font-size: emCalc(18px);
 		}
-		@include gs-media(d,min-max) {
+		@include gs-media(d) {
 			font-size: emCalc(24px);
 		}
 	}
@@ -25,11 +26,13 @@
 
 .text-block-aside {
 	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
+		 @include gs-span(t,2,7);
+
 	}
 	.text {
-		@include gs-media(d,min-max) {
-			@include gs-span(d,5,12);
+		@include gs-media(d) {
+			// @include gs-span(d,5,12);
+			@include gs-span(d, 5, 12, (5, 16));
 			@include gray-dotted-border-bottom;
 		}
 		p.leader {
@@ -37,7 +40,7 @@
 			@include gs-media(t,min-max) {
 				font-size: emCalc(18px);
 			}
-			@include gs-media(d,min-max) {
+			@include gs-media(d) {
 				font-size: emCalc(24px);
 			}
 		}
@@ -46,8 +49,8 @@
 
 		@include gray-dotted-border-bottom;
 
-		@include gs-media(d,min-max) {
-			@include gs-span(d,14,16);
+		@include gs-media(d) {
+						@include gs-span(d, 14, 16, (5, 16));
 			font-size: emCalc(14px);
 			border: none;
 		}
