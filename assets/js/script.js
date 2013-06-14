@@ -658,7 +658,6 @@ $(document).ready(function(){
       }
 
 
-  });
 
 
 
