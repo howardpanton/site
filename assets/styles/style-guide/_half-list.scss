@@ -25,8 +25,8 @@
 		}	
 	}
 
-	@include gs-media(d,min-max) {
-		@include gs-span(d,5,16);
+	@include gs-media(d) {
+					@include gs-span(d, 5, 16, (5, 16));
 		ul {
 			width: gs-width(d, 5, 10, (5,16), true);
 			@include gs-float(d, left, (5,16));

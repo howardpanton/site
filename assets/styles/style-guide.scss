@@ -22,12 +22,16 @@
 	height: auto;
 }
 
-// needs fixing MAtt
-// .main-content {
-// 	@include gs-media (d,min-max) {
-// 		@include gs-span(d,5,16);
-// 	}
-// }
+.main-content {
+
+@include gs-media (t,min-max) {
+		@include gs-span(t,all);
+	}
+
+	@include gs-media (d,min-max) {
+		@include gs-span(d,5,16);
+	}
+}
 
 @import "custom/course-finder";
 
