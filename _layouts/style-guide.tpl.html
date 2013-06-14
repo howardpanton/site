@@ -19,7 +19,7 @@
     <link href='{{ site.url }}/assets/js/libs/google-code-prettify/sunburst.css' rel="stylesheet">
 
     <!-- For all browsers -->
-<!--     <link rel='stylesheet' href='{{ site.url }}/assets/css/gridset.css'> -->
+    <!-- <link rel='stylesheet' href='{{ site.url }}/assets/css/gridset.css'> -->    
     <link rel='stylesheet' href='{{ site.url }}/assets/css/style-guide.css'>
     <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
 
@@ -78,6 +78,10 @@
   <script src='{{ site.url }}/assets/js/style-guide/jquery.bxslider.min.js'></script>
   <script src='{{ site.url }}/assets/js/style-guide/jquery.fitvids.js'></script>
 
+
+  <!-- Scripts -->
+  <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
+  
   <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
 
   {% if page.scripts == "ual" %}
