@@ -107,3 +107,170 @@ input:hover, input:focus {
 	@include adjust-font-size-to (16px);
 
 }
+
+
+
+
+
+input:focus{
+  outline:none;
+}
+
+.search-input-wrap {
+  background: white;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 24px;
+  border: 6px solid white;
+}
+
+.course-finder-input {
+ 
+	max-width: 850px;
+	min-width: 420px;
+	height: 44px;
+  margin-top: 3px;
+  margin-bottom: 0;
+	float:left;
+	border: none;
+	margin-left: 18px;
+  border-left: 1px solid #DDDDDD;
+  background-color: rgba(255,255,255, 0);
+  box-shadow: none !important;
+	
+  &::-webkit-input-placeholder {
+   color: #c8c8c8; 
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+   color: #c8c8c8; 
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+   color: #c8c8c8;   
+  }
+  
+  &:-ms-input-placeholder {  
+   color: #c8c8c8;   
+  }
+  
+}
+
+.search-link {
+  
+  background-color: black;
+  height:54px;
+  width: 54px;
+  display: block;
+  float: right;
+  
+  img{
+     margin-top: -3px; 
+  }
+}
+
+.course-search-form {
+  width:100%;
+  
+}
+
+
+input, .search-result-module, .search-input-wrap {
+	-webkit-transition: -webkit-box-shadow 450ms;
+	-moz-transition: -moz-box-shadow 450ms;
+	-o-transition: -o-box-shadow 450ms;
+	transition: border 450ms ease;
+  border: 6px solid rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+.search-input-wrap:hover, .search-inout-wrap:focus, .search-result-module:hover, .search-result-module:focus {
+	/* -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
+	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2); */
+  border: 6px solid #DDDDDD;
+ 
+}
+
+
+.arrow-next a {
+  right: 0px;
+  border-left: 20px solid #c8c8c8;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid transparent;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  
+}
+
+.arrow-next a {
+  position: absolute;
+  top: 45%;
+  right:50px;
+}
+
+.arrow-next a::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -21px;
+  border-left: 20px solid #f2f2f2;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+
+.search-result-module {
+  position: relative;
+  padding-bottom: 60px;
+  min-height: 138px;
+  height: auto;
+}
+
+.course-title {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 22px;
+  
+}
+.course-description {
+  width: 50%;
+  float: left;
+}
+
+.description-label {
+  
+  position: relative;
+  /* top: -30px; */
+  left: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 300;
+  display: none
+}
+
+.enrolment-type { 
+ /* position: absolute;
+  top: 25px;
+  left:25px; */
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 24px;
+  display: none;
+}
+
+.college-name {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  font-size: 16px;
+}
+
+
+
+
+
+
