@@ -1,0 +1,282 @@
+// Import global variables and mixins
+@import "globals/variables";
+@import "globals/mixins";
+
+// color names as defined in style guide 
+// $ual-black   : 	$ual-primary;  		// full black
+// $soft-black  : 	#282828;   			// softer black
+// $aaa-gray 	: 	$ual-secondary;   	// AAA gray
+// $light-gray  : 	#c8c8c8;   			// light gray 
+// $mid-gray 	: 	#666666;			// mid gray for LCF footer
+// $bg-gray 	: 	#eeeeee;   			// lighter gray for bg
+
+
+
+// Spacing Variables used with vertical rhythm mixins 
+// for standardizing spacing and keeping to the ba ba ba.. B A S E L I N E 
+
+$vertical-spacer1 : 4; // 4 baselines
+
+$vertical-spacer2 : 7; // 7 baselines
+
+$v-space-before-content : 28;  
+
+$v-space-after-content : 34; // 34 baselines
+
+
+.search-results-wrap {
+	@include clearfix();
+	background-color: $bg-gray;
+}
+
+
+nav.filter-results{
+	@include margin-leader(28);
+	
+	@include gs-media(d, min-max) {
+		@include gs-span(d,1,4);
+	}
+}
+
+.search-results {
+	@include margin-leader(14);
+	@include gs-media (d,min-max) {
+		@include gs-span(d,6,16);
+	}
+	h1 {
+		@include adjust-font-size-to (50px);
+		@include margin-trailer (7);
+	}
+
+}
+
+.search-results-list > li {
+	list-style: none;
+}
+
+.course-search-form {
+	// border-width: 1px;
+	// border-style: solid;
+	// border-color: rgb(168, 168, 168);
+}
+
+// styling the text-input field for searching courses
+.course-finder-input {
+	max-width: 350px;
+	width:auto;
+	height: 70px;
+	float:left;
+	border: none;
+	padding-left: 12px;
+	// border-width: 1px;
+	// border-style: solid;
+	// border-color: rgb(168, 168, 168);
+	@include adjust-font-size-to (16px);
+	@include margin-trailer (4);
+}
+
+input {
+	-webkit-transition: -webkit-box-shadow 1s;
+	-moz-transition: -moz-box-shadow 1s;
+	-o-transition: -o-box-shadow 1s;
+	transition: box-shadow 1s;
+}
+
+input:hover, input:focus {
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
+	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.search-button {
+	height: 70px;
+	width: 70px;
+	float:left;
+	background-color: black;
+}
+
+.search-result-module{
+	background-color: white;
+	width: 100%;
+	min-height: 150px;
+	height: auto;
+	padding: 24px;
+	@include margin-trailer (4);
+}
+
+// main course title in search results list
+.course-details > h3 {
+	color: black;
+	font-weight: bold;
+	@include adjust-font-size-to (16px);
+
+}
+
+
+* {
+   /* we need to use this for inner borders */
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.search-results input:focus{
+  outline:none;
+}
+
+.search-input-wrap {
+  background: white;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 24px;
+  border: 6px solid white;
+}
+
+.course-finder-input {
+ 
+	max-width: 850px;
+	min-width: 420px;
+	height: 44px;
+  margin-top: 3px;
+  margin-bottom: 0;
+	float:left;
+	border: none;
+	margin-left: 18px;
+  border-left: 1px solid #DDDDDD;
+  background-color: rgba(255,255,255, 0);
+  box-shadow: none !important;
+	
+  &::-webkit-input-placeholder {
+   color: #eeeeee; 
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+   color: #eeeeee; 
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+   color: #eeeeee;   
+  }
+  
+  &:-ms-input-placeholder {  
+   color: #eeeeee;   
+  }
+  
+}
+
+.search-link {
+  
+  background-color: black;
+  height:54px;
+  width: 54px;
+  display: block;
+  float: right;
+  
+  img{
+     margin-top: -3px; 
+  }
+}
+
+.course-search-form {
+  width:100%;
+  
+}
+
+
+input, .search-result-module, .search-input-wrap {
+	-webkit-transition: -webkit-box-shadow 450ms;
+	-moz-transition: -moz-box-shadow 450ms;
+	-o-transition: -o-box-shadow 450ms;
+	transition: border 450ms ease;
+  border: 6px solid rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+.search-input-wrap:hover, .search-inout-wrap:focus, .search-result-module:hover, .search-result-module:focus {
+	/* -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
+	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2); */
+  border: 6px solid #DDDDDD;
+ 
+}
+
+
+.arrow-next a {
+  right: 0px;
+  border-left: 20px solid #c8c8c8;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid transparent;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  
+}
+
+
+
+.course-finder-right-arrow {
+  position: absolute;
+  right: 12px;
+  top:35%;
+  width: 43px;
+  height: 77px;
+  background-repeat: no-repeat;
+  background-image:   url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
+  
+}
+
+
+.search-result-module {
+  position: relative;
+  padding-bottom: 60px;
+  min-height: 138px;
+  height: auto;
+}
+
+.course-title {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 0;
+  
+}
+.course-description {
+  
+  width: 45%;
+  float: left;
+  p {
+    margin-left: 12px;
+  }
+}
+
+.description-label {
+  
+  position: relative;
+  /* top: -30px; */
+  left: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 300;
+  display: none
+}
+
+.enrolment-type { 
+ /* position: absolute;
+  top: 25px;
+  left:25px; */
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 24px;
+  display: none;
+}
+.college-name {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  font-size: 16px;
+}
+
+
+
