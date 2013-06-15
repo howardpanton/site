@@ -116,9 +116,15 @@ footer {
     	display: inline-block; 
     	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
       	background-repeat: no-repeat;
-      	background-position: right 0px; 
+      	background-position: right 6px; 
       	padding-right: 28px;
+      	margin-left: 12px;
+      	margin-bottom: 12px;
       	border-bottom: 1px dotted $light-gray;
+
+      	&:first-child {
+      		margin-left: 12px;
+      	}
     }
     
     a {
@@ -129,8 +135,11 @@ footer {
       font-size: 13px;
       line-height: 18px;
       font-weight: 300;
-      border-bottom:none;
-
+      border-bottom: 1px dotted $light-gray;
+		
+	  &:hover {
+	  	border-bottom: 1px solid $light-gray;
+	  }
       &:first-child {
         padding-left:0px;
       }
