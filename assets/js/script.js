@@ -655,16 +655,24 @@ $('#footer-btn-explore').click(function(event) {
   _clicked = $(this); 
   if ( !_clicked.hasClass('active')) {
     _clicked.addClass('active');
-    $('#footer-journeys-panel').show();
+    $('#footer-journeys-panel').css({
+        "display": "block",
+        "overflow": "show" 
+      });
+
     _clicked.html('Close explore panel');
     _clicked.scrollToMe(); // scroll page to footer position
     
   } else {
     _clicked.removeClass('active');
-    $('#footer-journeys-panel').slideUp();
+    // $('#footer-journeys-panel').slideUp();
+    $('#footer-journeys-panel').css({
+        "display": "none",
+        "overflow": "hidden"
+      });
+    
     _clicked.html('Explore');
     _clicked.scrollToMe(); // scroll page to footer position
-   
   }
 
 });
