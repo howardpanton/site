@@ -165,18 +165,7 @@ d.last().hide();
 // });
 
 
-// Function to find the highest height of an element
-// used to set all sizes the same for lists or divs with varying content
-function highest(el) {
-    var highest = 0;
-    el.each(function() {
-        var height = $(this).height();
-        if(height > highest) {
-          highest = height;
-        }
-    });
-    return highest;   
-}
+// 
 
 
 
@@ -668,12 +657,13 @@ $('#footer-btn-explore').click(function(event) {
     _clicked.addClass('active');
     $('#footer-journeys-panel').show();
     _clicked.html('Close explore panel');
-    
+    _clicked.scrollToMe(); // scroll page to footer position
     
   } else {
     _clicked.removeClass('active');
     $('#footer-journeys-panel').slideUp();
     _clicked.html('Explore');
+    _clicked.scrollToMe(); // scroll page to footer position
    
   }
 
