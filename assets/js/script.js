@@ -657,8 +657,8 @@ $('#footer-btn-explore').click(function(event) {
     _clicked.addClass('active');
     $('#footer-journeys-panel').css({
         "display": "block",
-        "overflow": "show"
-    });
+        "overflow": "show" 
+      });
 
     _clicked.html('Close explore panel');
     _clicked.scrollToMe(); // scroll page to footer position
@@ -669,10 +669,10 @@ $('#footer-btn-explore').click(function(event) {
     $('#footer-journeys-panel').css({
         "display": "none",
         "overflow": "hidden"
-    });
+      });
+    
     _clicked.html('Explore');
     _clicked.scrollToMe(); // scroll page to footer position
-    
   }
 
 });
