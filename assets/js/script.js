@@ -781,9 +781,7 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
         
         if( $(this).height() > currentTallest ) { currentTallest = $(this).height(); }
       });
-
       items.css({ 'min-height' : currentTallest });
-    
     }
     
     setHeights();
