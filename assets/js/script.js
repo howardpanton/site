@@ -165,18 +165,7 @@ d.last().hide();
 // });
 
 
-// Function to find the highest height of an element
-// used to set all sizes the same for lists or divs with varying content
-function highest(el) {
-    var highest = 0;
-    el.each(function() {
-        var height = $(this).height();
-        if(height > highest) {
-          highest = height;
-        }
-    });
-    return highest;   
-}
+// 
 
 
 
