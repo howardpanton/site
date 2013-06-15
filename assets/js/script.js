@@ -657,16 +657,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-  // detect slider component
-  if ($('.slider').length > 0) {
-
-    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
-
-
-
 //
 //  Footer journeys - fade In / fadeOut on click 
 
@@ -676,16 +666,28 @@ $('#footer-btn-explore').click(function(event) {
   _clicked = $(this); 
   if ( !_clicked.hasClass('active')) {
     _clicked.addClass('active');
-    $('.footer-journeys-panel').show();
+    $('#footer-journeys-panel').show();
+    _clicked.html('Close explore panel');
+    
     
   } else {
     _clicked.removeClass('active');
-    $('.footer-journeys-panel').slideUp();
+    $('#footer-journeys-panel').slideUp();
+    _clicked.html('Explore');
+   
   }
 
 });
 
 
+
+
+
+
+  // detect slider component
+  if ($('.slider').length > 0) {
+
+    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
 
     
       $.each($('.slider'), function() {
