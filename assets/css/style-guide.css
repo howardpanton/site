@@ -1012,24 +1012,44 @@ a.img:hover {
 nav.filter-results {
   margin-top: 10.5em;
 }
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000333}}
+  nav.filter-results {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 23.39636%;
+  }
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000341}}
 .search-results {
   margin-top: 5.25em;
 }
+@media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000341}}
+  .search-results {
+    display: block;
+    float: left;
+    margin-left: 32.27566%;
+    margin-right: -100%;
+    width: 67.67226%;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000346}}
 .search-results h1 {
   font-size: 3.125em;
   line-height: 1.08em;
   margin-bottom: 2.625em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000353}}
 .search-results-list > li {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000364}}
 .course-finder-input {
   max-width: 350px;
   width: auto;
@@ -1042,7 +1062,7 @@ nav.filter-results {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000378}}
 input {
   -webkit-transition: -webkit-box-shadow 1s;
   -moz-transition: -moz-box-shadow 1s;
@@ -1050,14 +1070,14 @@ input {
   transition: box-shadow 1s;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000385}}
 input:hover, input:focus {
   -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
   box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000392}}
 .search-button {
   height: 70px;
   width: 70px;
@@ -1065,7 +1085,7 @@ input:hover, input:focus {
   background-color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000399}}
 .search-result-module {
   background-color: white;
   width: 100%;
@@ -1075,7 +1095,7 @@ input:hover, input:focus {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003109}}
 .course-details > h3 {
   color: black;
   font-weight: bold;
@@ -1083,12 +1103,20 @@ input:hover, input:focus {
   line-height: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003115}}
-input:focus {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003117}}
+* {
+  /* we need to use this for inner borders */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003124}}
+.search-results input:focus {
   outline: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003128}}
 .search-input-wrap {
   background: white;
   height: 60px;
@@ -1097,7 +1125,7 @@ input:focus {
   border: 6px solid white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003136}}
 .course-finder-input {
   max-width: 850px;
   min-width: 420px;
@@ -1111,26 +1139,26 @@ input:focus {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003150}}
 .course-finder-input::-webkit-input-placeholder {
-  color: #c8c8c8;
+  color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003154}}
 .course-finder-input:-moz-placeholder {
   /* Firefox 18- */
-  color: #c8c8c8;
+  color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003158}}
 .course-finder-input::-moz-placeholder {
   /* Firefox 19+ */
-  color: #c8c8c8;
+  color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003162}}
 .course-finder-input:-ms-input-placeholder {
-  color: #c8c8c8;
+  color: #eeeeee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003168}}
 .search-link {
   background-color: black;
   height: 54px;
@@ -1138,17 +1166,17 @@ input:focus {
   display: block;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003176}}
 .search-link img {
   margin-top: -3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003181}}
 .course-search-form {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003187}}
 input, .search-result-module, .search-input-wrap {
   -webkit-transition: -webkit-box-shadow 450ms;
   -moz-transition: -moz-box-shadow 450ms;
@@ -1158,7 +1186,7 @@ input, .search-result-module, .search-input-wrap {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003196}}
 .search-input-wrap:hover, .search-inout-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   /* -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
@@ -1166,7 +1194,7 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid #DDDDDD;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003205}}
 .arrow-next a {
   right: 0px;
   border-left: 20px solid #c8c8c8;
@@ -1178,26 +1206,18 @@ input, .search-result-module, .search-input-wrap {
   width: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003208}}
-.arrow-next a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003219}}
+.course-finder-right-arrow {
   position: absolute;
-  top: 45%;
-  right: 50px;
+  right: 12px;
+  top: 35%;
+  width: 43px;
+  height: 77px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003214}}
-.arrow-next a::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -21px;
-  border-left: 20px solid #f2f2f2;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 20px solid transparent;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003231}}
 .search-result-module {
   position: relative;
   padding-bottom: 60px;
@@ -1205,20 +1225,25 @@ input, .search-result-module, .search-input-wrap {
   height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003238}}
 .course-title {
   text-decoration: underline;
   font-weight: bold;
   font-size: 22px;
+  margin-top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003245}}
 .course-description {
-  width: 50%;
+  width: 45%;
   float: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003249}}
+.course-description p {
+  margin-left: 12px;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003254}}
 .description-label {
   position: relative;
   /* top: -30px; */
@@ -1229,7 +1254,7 @@ input, .search-result-module, .search-input-wrap {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003265}}
 .enrolment-type {
   /* position: absolute;
    top: 25px;
@@ -1240,7 +1265,7 @@ input, .search-result-module, .search-input-wrap {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
 .college-name {
   position: absolute;
   bottom: 20px;
@@ -5565,7 +5590,11 @@ footer .copyright {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_footer\.scss}line{font-family:\0000350}}
 .primary-links li:last-child {
-  float: right;
+  display: block;
+  float: left;
+  margin-left: 89.68932%;
+  margin-right: -100%;
+  width: 10.25859%;
   padding-right: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_footer\.scss}line{font-family:\0000357}}
@@ -5588,7 +5617,11 @@ footer .copyright {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_footer\.scss}line{font-family:\0000373}}
 .secondary-links li:last-child {
-  float: right;
+  display: block;
+  float: left;
+  margin-left: 89.68932%;
+  margin-right: -100%;
+  width: 10.25859%;
   padding-right: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mac\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_footer\.scss}line{font-family:\0000379}}
@@ -5636,7 +5669,7 @@ footer .copyright {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
   background-repeat: no-repeat;
   background-position: right 6px;
-  padding-right: 28px;
+  padding-right: 24px;
   margin-left: 12px;
   margin-bottom: 12px;
   border-bottom: 1px dotted #c8c8c8;
