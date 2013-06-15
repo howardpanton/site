@@ -440,6 +440,7 @@
       a {
         font-weight: lighter;
         color:white; 
+        border-bottom: 1px dotted $light-gray;
         @include gs-media(t, min-max) {
         font-size:16px;
         padding-left: 12px;
@@ -450,6 +451,10 @@
         font-size:16px;
         margin-bottom:0;
         font-weight: 300;
+        }
+
+        &:hover {
+           border-bottom: 1px solid $light-gray;
         }
       }
     span {
@@ -496,7 +501,11 @@
      font-size: 16px;
      padding-left: 12px;
      padding-bottom: 0;
-      border-bottom: none;
+     border-bottom: 1px dotted $light-gray;
+
+     &:hover {
+       border-bottom: 1px solid $light-gray;
+     }
   }
   
   .sub-inner-menu {
