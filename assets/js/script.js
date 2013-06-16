@@ -596,7 +596,7 @@ var waitForFinalEvent = (function () {
 
 $(window).resize(function () {
     waitForFinalEvent(function(){
-      //alert('Resize...');
+      alert('Resize...');
       checkWindowSize();
       $('.sub-inner-menu').removeAttr("style");
       $('.submenu > div').removeAttr("style").removeClass('menu-active');
@@ -605,11 +605,14 @@ $(window).resize(function () {
 
 
 
+
+
+
 $(document).ready(function(){
 
 
 
-   // sidebar scripts (populate mobile and tablet menu)
+   // sidebar script (populate mobile and tablet menu)
       if ($('.sidebar').length > 0) {
 
         var _menuHtml = $('.sidebar').html();
@@ -646,8 +649,9 @@ $(document).ready(function(){
 
 
 
-//
+////////////////////
 //  Footer journeys - fade In / fadeOut on click 
+///////////////////
 
 $('#footer-btn-explore').click(function(event) {
   event.preventDefault();
@@ -671,7 +675,33 @@ $('#footer-btn-explore').click(function(event) {
 
 });
 
+//////////////////////
+// back to top button 
+/////////////////////
 
+
+// fade in button when user scrolls down the page
+$(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          $('.back-to-top').fadeIn(200);
+        } else {
+          $('.back-to-top').fadeOut(200);
+        }
+      });
+
+
+// TO DO: change the color of the back-to-top link text 
+// to white when near the footer
+
+
+
+// scroll to the top of the page when the button is clicked
+$('.back-to-top').click(function(event){
+  
+  event.preventDefault();
+  $('html, body').animate({scrollTop: 0}, 300);
+
+});
 
 
 
