@@ -690,11 +690,6 @@ $(window).scroll(function() {
       });
 
 
-// TO DO: change the color of the back-to-top link text 
-// to white when near the footer
-
-
-
 // scroll to the top of the page when the button is clicked
 $('.back-to-top').click(function(event){
   
