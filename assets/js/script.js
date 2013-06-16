@@ -596,7 +596,7 @@ var waitForFinalEvent = (function () {
 
 $(window).resize(function () {
     waitForFinalEvent(function(){
-      alert('Resize...');
+      //alert('Resize...');
       checkWindowSize();
       $('.sub-inner-menu').removeAttr("style");
       $('.submenu > div').removeAttr("style").removeClass('menu-active');
