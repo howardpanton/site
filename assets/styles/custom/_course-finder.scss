@@ -35,7 +35,8 @@ $v-space-after-content : 34; // 34 baselines
 	
 	@include gs-media(d, min-max) {
 		@include gs-span(d,1,4);
-    @include margin-leader(4);
+    //@include margin-leader(4);
+    margin-top: 0;
     height: 760px;
     background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/filter-results-placeholder.png');
 	  background-repeat: no-repeat;
@@ -55,7 +56,8 @@ $v-space-after-content : 34; // 34 baselines
   
   @include gs-media(d, min-max) {
     @include gs-span(d,1,4);
-    @include margin-leader(4);
+    margin-top:0;
+    //@include margin-leader(4);
     //height: 760px;
     //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-short-courses-filter.png');
     //background-repeat: no-repeat;
@@ -75,7 +77,8 @@ $v-space-after-content : 34; // 34 baselines
   
   @include gs-media(d, min-max) {
     @include gs-span(d,1,4);
-    @include margin-leader(4);
+    margin-top:0;
+    //@include margin-leader(4);
     //height: 760px;
     //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-level-filter.png');
     //background-repeat: no-repeat;
@@ -95,14 +98,25 @@ $v-space-after-content : 34; // 34 baselines
 
 
 .search-results {
-	@include margin-leader(4);
+	//@include margin-leader(4);
 	@include gs-media (d,min-max) {
 		@include gs-span(d,6,16);
 	}
-	h1 {
-		@include adjust-font-size-to (50px);
-		@include margin-trailer (7);
+	h3 {
+		@include adjust-font-size-to (18px);
+    font-weight: bold;
+		margin-top: 0;
+    padding-top: 0;
 	}
+
+}
+
+// TO DO need to style this properly  (temporary styling)
+.tmpFilter {
+  padding-bottom: 24px;
+  padding-top: 0;
+  font-size: 18px;
+  font-weight: bold;
 
 }
 
@@ -297,7 +311,7 @@ input, .search-result-module, .search-input-wrap {
 }
 
 .course-title {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: bold;
   font-size: 22px;
   margin-top: 0;
