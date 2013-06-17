@@ -47,11 +47,16 @@ footer {
 		display: inline;
 		font-weight: 300;
 		padding-right: rhythm(2,16px);
+		border-bottom: 0;
 		&:last-child {
-			float: right;
+
+			@include gs-media(d, min-max) {
+				@include gs-span(d, 15, 16);
+			}
+			
 			padding-right: 0;
 		}
-
+		
 	}
 
 	a {
@@ -70,8 +75,12 @@ footer {
 		display: inline;
 		padding-right: rhythm(2,16px);
 		font-weight: 300;
+		border-bottom: 0;
 		&:last-child {
-			float: right;
+			@include gs-media(d, min-max) {
+				@include gs-span(d, 15, 16);
+			}
+			
 			padding-right: 0;
 		}
 	}
@@ -97,7 +106,8 @@ footer {
 		border-bottom: 1px solid black;
 		h3 {
 			color: white;
-			font-size: 16px; 
+			font-size: 24px; 
+			font-weight: 300;
 		}
 	}
 
@@ -116,9 +126,15 @@ footer {
     	display: inline-block; 
     	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
       	background-repeat: no-repeat;
-      	background-position: right 0px; 
-      	padding-right: 28px;
-      	border-bottom: 1px dotted $light-gray;
+      	background-position: right 12px; 
+      	padding-right: 24px;
+      	margin-left: 12px;
+      	margin-bottom: 12px;
+      	border-bottom: 0;
+
+      	&:first-child {
+      		margin-left: 12px;
+      	}
     }
     
     a {
@@ -129,11 +145,32 @@ footer {
       font-size: 13px;
       line-height: 18px;
       font-weight: 300;
-      border-bottom:none;
-
+      border-bottom: 1px dotted $light-gray;
+		
+	  &:hover {
+	  	border-bottom: 1px solid $light-gray;
+	  }
       &:first-child {
         padding-left:0px;
       }
 
     }
+}
+
+// the back to top button which appears 
+// after scrolling down the page
+.back-to-top {
+	display: none;
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	padding: 0.5em 0.5em 1px 0.5em;
+	font-size: 12px;
+	font-weight: 300;
+	background-color: white;
+	border-bottom: 1px dotted $light-gray;
+	
+	&:hover {
+	  border-bottom: 1px solid black;
+	}
 }

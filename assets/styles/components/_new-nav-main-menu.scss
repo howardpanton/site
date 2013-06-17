@@ -345,6 +345,7 @@
 
     .logo {
       margin-top: 0;
+      padding-top: 0;
     }
   }
 
@@ -440,16 +441,23 @@
       a {
         font-weight: lighter;
         color:white; 
+        border-bottom: 1px dotted $light-gray;
         @include gs-media(t, min-max) {
         font-size:16px;
-        padding-left: 12px;
-        margin-bottom:0;
         font-weight: 300;
+        padding-left: 12px;
+        border-bottom: 0;
+        margin-bottom:0;
         }
         @include gs-media(m, min-max) {
         font-size:16px;
-        margin-bottom:0;
         font-weight: 300;
+        margin-bottom:0;
+        border-bottom: 0;
+        }
+
+        &:hover {
+           border-bottom: 1px solid $light-gray;
         }
       }
     span {
@@ -496,7 +504,11 @@
      font-size: 16px;
      padding-left: 12px;
      padding-bottom: 0;
-      border-bottom: none;
+     border-bottom: 1px dotted $light-gray;
+
+     &:hover {
+       border-bottom: 1px solid $light-gray;
+     }
   }
   
   .sub-inner-menu {

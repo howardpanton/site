@@ -32,12 +32,17 @@ $v-space-after-content : 34; // 34 baselines
 
 nav.filter-results{
 	@include margin-leader(28);
-
+	
+	@include gs-media(d, min-max) {
+		@include gs-span(d,1,4);
+	}
 }
 
 .search-results {
 	@include margin-leader(14);
-
+	@include gs-media (d,min-max) {
+		@include gs-span(d,6,16);
+	}
 	h1 {
 		@include adjust-font-size-to (50px);
 		@include margin-trailer (7);
@@ -109,10 +114,14 @@ input:hover, input:focus {
 }
 
 
+* {
+   /* we need to use this for inner borders */
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
-
-
-input:focus{
+.search-results input:focus{
   outline:none;
 }
 
@@ -139,19 +148,19 @@ input:focus{
   box-shadow: none !important;
 	
   &::-webkit-input-placeholder {
-   color: #c8c8c8; 
+   color: #eeeeee; 
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-   color: #c8c8c8; 
+   color: #eeeeee; 
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-   color: #c8c8c8;   
+   color: #eeeeee;   
   }
   
   &:-ms-input-placeholder {  
-   color: #c8c8c8;   
+   color: #eeeeee;   
   }
   
 }
@@ -205,21 +214,17 @@ input, .search-result-module, .search-input-wrap {
   
 }
 
-.arrow-next a {
-  position: absolute;
-  top: 45%;
-  right:50px;
-}
 
-.arrow-next a::after {
-  content: "";
+
+.course-finder-right-arrow {
   position: absolute;
-  top: -20px;
-  left: -21px;
-  border-left: 20px solid #f2f2f2;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 20px solid transparent;
+  right: 12px;
+  top:35%;
+  width: 43px;
+  height: 77px;
+  background-repeat: no-repeat;
+  background-image:   url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
+  
 }
 
 
@@ -234,11 +239,16 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: underline;
   font-weight: bold;
   font-size: 22px;
+  margin-top: 0;
   
 }
 .course-description {
-  width: 50%;
+  
+  width: 45%;
   float: left;
+  p {
+    margin-left: 12px;
+  }
 }
 
 .description-label {
@@ -261,16 +271,12 @@ input, .search-result-module, .search-input-wrap {
   margin-bottom: 24px;
   display: none;
 }
-
 .college-name {
   position: absolute;
   bottom: 20px;
   left: 25px;
   font-size: 16px;
 }
-
-
-
 
 
 

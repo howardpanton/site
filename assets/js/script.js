@@ -165,18 +165,7 @@ d.last().hide();
 // });
 
 
-// Function to find the highest height of an element
-// used to set all sizes the same for lists or divs with varying content
-function highest(el) {
-    var highest = 0;
-    el.each(function() {
-        var height = $(this).height();
-        if(height > highest) {
-          highest = height;
-        }
-    });
-    return highest;   
-}
+// 
 
 
 
@@ -522,6 +511,8 @@ $('#mega-menu-nav-links li a').click(function(event) {
 };
 
 });
+
+
   // },
   
   // // OPTIONAL   
@@ -614,17 +605,53 @@ $(window).resize(function () {
 
 
 
+
+
+
 $(document).ready(function(){
 
-  // detect slider component
-  if ($('.slider').length > 0) {
-
-    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
 
 
+   // sidebar script (populate mobile and tablet menu)
+      if ($('.sidebar').length > 0) {
 
-//
+        var _menuHtml = $('.sidebar').html();
+        
+        var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
+
+        var _mobMenuContent = _mobMenuButton + _menuHtml;
+        
+        // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
+        $('#mobile_sidebar').html(_mobMenuContent);
+
+        $('.show-mob-sidebar').click(function(e) {
+          
+          e.preventDefault();
+          _clicked = $(this);
+          
+          if (_clicked.hasClass('active')) {
+            _clicked.closest($('#mobile_sidebar')).find($('nav')).slideUp();
+            _clicked.html('≡ sub menu').removeClass('active');
+          }
+          else {
+
+          _clicked.closest($('#mobile_sidebar')).find($('nav')).slideDown();
+          // update the menu button and set class to active
+          _clicked.html('x sub menu').addClass('active');
+
+          }
+
+        });
+      
+
+
+      }
+
+
+
+////////////////////
 //  Footer journeys - fade In / fadeOut on click 
+///////////////////
 
 $('#footer-btn-explore').click(function(event) {
   event.preventDefault();
@@ -632,16 +659,52 @@ $('#footer-btn-explore').click(function(event) {
   _clicked = $(this); 
   if ( !_clicked.hasClass('active')) {
     _clicked.addClass('active');
-    $('.footer-journeys-panel').show();
+    $('#footer-journeys-panel').css("display", "block");
+
+    _clicked.html('Close explore');
+    _clicked.scrollToMe(); // scroll page to footer position
     
   } else {
     _clicked.removeClass('active');
-    $('.footer-journeys-panel').slideUp();
+    // $('#footer-journeys-panel').slideUp();
+    $('#footer-journeys-panel').css("display", "none");
+
+    _clicked.html('Explore');
+    _clicked.scrollToMe(); // scroll page to footer position
   }
 
 });
 
+//////////////////////
+// back to top button 
+/////////////////////
 
+
+// fade in button when user scrolls down the page
+$(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          $('.back-to-top').fadeIn(200);
+        } else {
+          $('.back-to-top').fadeOut(200);
+        }
+      });
+
+
+// scroll to the top of the page when the button is clicked
+$('.back-to-top').click(function(event){
+  
+  event.preventDefault();
+  $('html, body').animate({scrollTop: 0}, 300);
+
+});
+
+
+
+
+  // detect slider component
+  if ($('.slider').length > 0) {
+
+    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
 
     
       $.each($('.slider'), function() {
@@ -743,9 +806,7 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
         
         if( $(this).height() > currentTallest ) { currentTallest = $(this).height(); }
       });
-
       items.css({ 'min-height' : currentTallest });
-    
     }
     
     setHeights();
