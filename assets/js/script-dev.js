@@ -428,7 +428,7 @@ $('a.menu').click(function(event) {
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
     $('#menu-icon-indicator').html('x');
-    $('submenu').css({'margin-top': '0', 'position': 'fixed', 'right': '0','z-index': '999999'});
+    $('submenu').css({'margin-top': '0'});
     t.slideDown('fast', 'linear', function() {  });
   };
 
