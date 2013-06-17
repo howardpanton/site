@@ -1,14 +1,12 @@
 // image block
 .image-block {
-	@include gray-dotted-border-bottom;
-
+	@include component-spacing-bottom;
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 	}
 	@include gs-media(d,min-max) {
-			@include gs-span(d, 5, 12, (5, 16));
+		@include gs-span(d, 5, 12, (5, 16));
 	}
-
 	figure {
 		figcaption {
 			font-size: emCalc(14px);
@@ -18,6 +16,7 @@
 
 // image block with aside 
 .image-block-aside {
+	@include component-spacing-bottom;
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 	}
@@ -27,25 +26,19 @@
 		}
 	}
 	.image {
-
 		aside {
-			@include gray-dotted-border-bottom;
-
 			@include gs-media(d) {
 				@include gs-span(d,13,16);
 				font-size: emCalc(14px);
 				border: none;
-
 			}
 			@media screen and (min-width: 75em) {
 				font-size: emCalc(16px); 
 			}
 		}
 		figure {
-
 			@include gs-media(d) {
 			@include gs-span(d, 5, 12, (5, 16));
-				border-bottom: 1px dotted $light-gray;
 				padding-bottom: rhythm(7, 16px);
 				margin-bottom: rhythm(6, 16px);
 			}
@@ -54,53 +47,37 @@
 			}
 		}	
 	}
-
-	
 }
 
 
 // image block with text & aside 
 .image-block-text-and-aside {
-	
 	@extend .image-block-aside;
 	
 	.image {
-
 		figure {
 			border-bottom: 0;
-
-			@include gs-media(d) {
+			@include gs-media(d,min-max) {
 				padding-bottom: 0;
 			}
 		}
-		
-		
 		figcaption {
 			font-size: emCalc(14px);
 		}
-
 	}
-
 	.text { 
-		@include gs-span(d,5,12);
-		@include gray-dotted-border-bottom;
 		clear: left; 
 		@include gs-media(d,min-max) {
+			@include gs-span(d, 5, 12, (5, 16));
 			padding-bottom: rhythm(7, 16px);
 			margin-bottom: rhythm(6, 16px); 
 		}
 	}
-
-	
-	
-
-	
-	
 }
 
 // image block with introduction
 .image-block-with-intro {
-	@include gray-dotted-border-bottom;
+	@include component-spacing-bottom;
 
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
@@ -112,8 +89,7 @@
 
 // image block with leading introduction
 .image-block-with-leading-intro {
-	
-	@include gray-dotted-border-bottom;
+	@include component-spacing-bottom;
 
 	@include gs-media(m,min-max) {
 		ul {
@@ -142,7 +118,7 @@
 		}
 	}
 
-	@include gs-media(d) {
+	@include gs-media(d,min-max) {
 			@include gs-span(d, 5, 12, (5, 16));
 		ul {
 			figure {

@@ -28,8 +28,8 @@
 				span {
 					background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
 					text-indent:-9000px;
-					width: 24px;
-					height: 24px;
+					width: 28px;
+					height: 28px;
 					position: absolute;
 					top: 12px;
 					right: 12px;
@@ -54,8 +54,9 @@
 	@include gs-media(t,min-max) {
 	 @include gs-span(t,2,7);
 	}
-	@include gs-media(d) {
-				@include gs-span(d, 5, 16, (5, 16));
+
+	@include gs-media(d,min-max) {
+		@include gs-span(d, 5, 16);
 	}
 }
 
