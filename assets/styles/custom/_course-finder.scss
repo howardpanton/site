@@ -30,16 +30,72 @@ $v-space-after-content : 34; // 34 baselines
 }
 
 
-nav.filter-results{
-	@include margin-leader(28);
+.filter-results{
+	// @include margin-leader(28);
 	
 	@include gs-media(d, min-max) {
 		@include gs-span(d,1,4);
-	}
+    @include margin-leader(4);
+    height: 760px;
+    background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/filter-results-placeholder.png');
+	  background-repeat: no-repeat;
+
+  }
+
+  @include gs-media(t, min-max) {
+    display: none;
+  }
+
+  @include gs-media(m, min-max) {
+    display: none;
+  }
 }
 
+.filter-search-top{
+  
+  @include gs-media(d, min-max) {
+    @include gs-span(d,1,4);
+    @include margin-leader(4);
+    //height: 760px;
+    //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-short-courses-filter.png');
+    //background-repeat: no-repeat;
+  }
+
+  @include gs-media(t, min-max) {
+    display: none;
+  }
+
+  @include gs-media(m, min-max) {
+    display: none;
+  }
+
+}
+
+.filter-search-level{
+  
+  @include gs-media(d, min-max) {
+    @include gs-span(d,1,4);
+    @include margin-leader(4);
+    //height: 760px;
+    //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-level-filter.png');
+    //background-repeat: no-repeat;
+
+  }
+
+  @include gs-media(t, min-max) {
+    display: none;
+  }
+
+  @include gs-media(m, min-max) {
+    display: none;
+  }
+
+}
+
+
+
 .search-results {
-	@include margin-leader(14);
+	@include margin-leader(4);
 	@include gs-media (d,min-max) {
 		@include gs-span(d,6,16);
 	}
@@ -50,8 +106,14 @@ nav.filter-results{
 
 }
 
+.search-results-list {
+  margin-left: 0;
+}
+
 .search-results-list > li {
 	list-style: none;
+
+
 }
 
 .course-search-form {
@@ -134,7 +196,6 @@ input:hover, input:focus {
 }
 
 .course-finder-input {
- 
 	max-width: 850px;
 	min-width: 420px;
 	height: 44px;
@@ -240,6 +301,10 @@ input, .search-result-module, .search-input-wrap {
   font-weight: bold;
   font-size: 22px;
   margin-top: 0;
+  padding-bottom: 1px;
+  a {
+    text-decoration: none;
+  }
   
 }
 .course-description {
