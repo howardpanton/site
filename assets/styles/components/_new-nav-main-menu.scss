@@ -158,6 +158,15 @@
 #mobile-search {
   @include padding-trailer(4);
   
+  .button-link {
+    margin-right: 0;
+    margin-top: 1em;
+  }
+
+  .site-search-input, .course-finder-txt-input {
+      width: 70%;
+  }
+
 }
 
 .mobile-go-search-btn {
@@ -167,6 +176,11 @@
 
 #mobile-course-finder {
   @include padding-trailer(4);
+
+  .button-link {
+    margin-right: 0;
+    margin-top: 1em;
+  }
 }
 
 .top-bar {
@@ -412,6 +426,11 @@
   
   li:last-child {
     border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    a {
+      padding-top: 18px;
+    }
   }
 
   .menu-active{
