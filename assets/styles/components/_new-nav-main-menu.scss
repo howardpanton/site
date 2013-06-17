@@ -144,7 +144,7 @@
   color: white; 
   border: none;
   padding: 10px;
-  padding-top: 14px;
+  padding-top: 12px;
   margin-left: 0;
   font-size: 14px;
   font-weight: lighter;
@@ -153,6 +153,20 @@
 
 #menu-icon-indicator {
   font-weight: lighter;
+}
+
+#mobile-search {
+  @include padding-trailer(4);
+  
+}
+
+.mobile-go-search-btn {
+  margin-top: 24px;
+  margin-right: 1em;
+}
+
+#mobile-course-finder {
+  @include padding-trailer(4);
 }
 
 .top-bar {
@@ -345,7 +359,12 @@
 
     .logo {
       margin-top: 0;
+      position: absolute;
       padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
     }
   }
 
@@ -358,6 +377,12 @@
 
     .logo {
       margin-top: 0;
+      position: absolute;
+      padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
     }
   }
   
@@ -369,6 +394,7 @@
   float: right;
   height: 48px;
   margin-bottom: 0;
+  padding-top:0;
 
   li {
     //@include padding-leader(1);
@@ -504,7 +530,7 @@
      font-size: 16px;
      padding-left: 12px;
      padding-bottom: 0;
-     border-bottom: 1px dotted $light-gray;
+     //border-bottom: 1px dotted $light-gray;
 
      &:hover {
        border-bottom: 1px solid $light-gray;
