@@ -144,7 +144,7 @@
   color: white; 
   border: none;
   padding: 10px;
-  padding-top: 14px;
+  padding-top: 12px;
   margin-left: 0;
   font-size: 14px;
   font-weight: lighter;
@@ -153,6 +153,34 @@
 
 #menu-icon-indicator {
   font-weight: lighter;
+}
+
+#mobile-search {
+  @include padding-trailer(4);
+  
+  .button-link {
+    margin-right: 0;
+    margin-top: 1em;
+  }
+
+  .site-search-input, .course-finder-txt-input {
+      width: 70%;
+  }
+
+}
+
+.mobile-go-search-btn {
+  margin-top: 24px;
+  margin-right: 1em;
+}
+
+#mobile-course-finder {
+  @include padding-trailer(4);
+
+  .button-link {
+    margin-right: 0;
+    margin-top: 1em;
+  }
 }
 
 .top-bar {
@@ -269,12 +297,8 @@
         width: 100%; 
         color:white !important;  
         font-size:13px;
-        border-bottom:none;
-        // padding-top:12px; 
-        // padding-bottom:12px; 
+        border-bottom:none; 
         padding: 12px 1em;
-        // padding-left: 1em; 
-        // padding-right: 1em; 
       
         @include gs-media(t, min-max) {
           padding-left: 0.75em; 
@@ -345,7 +369,12 @@
 
     .logo {
       margin-top: 0;
+      position: absolute;
       padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
     }
   }
 
@@ -358,6 +387,12 @@
 
     .logo {
       margin-top: 0;
+      position: absolute;
+      padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
     }
   }
   
@@ -369,6 +404,7 @@
   float: right;
   height: 48px;
   margin-bottom: 0;
+  padding-top:0;
 
   li {
     //@include padding-leader(1);
@@ -386,6 +422,11 @@
   
   li:last-child {
     border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    a {
+      padding-top: 18px;
+    }
   }
 
   .menu-active{
@@ -441,7 +482,7 @@
       a {
         font-weight: lighter;
         color:white; 
-        border-bottom: 1px dotted $light-gray;
+        border-bottom: 1px dotted $ual-white;
         @include gs-media(t, min-max) {
         font-size:16px;
         font-weight: 300;
@@ -484,7 +525,12 @@
     width:100%; 
     display:block; 
     float:left; 
-    border-bottom: dotted 1px #444;
+    border-bottom: dotted 1px $ual_white;
+
+    &:hover {
+       border-bottom: 1px s1px $ual_white;
+     }
+
     @include gs-media(t, min-max) {
       line-height:42px;
       border-bottom:none;
@@ -504,10 +550,10 @@
      font-size: 16px;
      padding-left: 12px;
      padding-bottom: 0;
-     border-bottom: 1px dotted $light-gray;
+     border: none;
 
      &:hover {
-       border-bottom: 1px solid $light-gray;
+       //border-bottom: 1px solid $light-gray;
      }
   }
   

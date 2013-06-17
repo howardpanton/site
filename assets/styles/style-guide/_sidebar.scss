@@ -13,6 +13,7 @@
 	ul {
 		li {
 			padding: rhythm(2, 16px) 0;
+				color: $aaa-gray;
 		}
 	}
 
@@ -23,9 +24,7 @@
 
 .mobile-sidebar {
 
-	@include gs-media (d) {
-		display: none;
-	}
+	@include gs-media (d) { display: none; }
 
 	font-size: emCalc(16px);
 	width: 100%;
@@ -44,8 +43,28 @@
 			padding-bottom: 9px;
 			display: block;
 			border-bottom: none;
-			
 		}
+	}
+}
+
+// this is the class that site manager adds to the current branch for the side menu
+.currentbranch0 a {
+	color: $aaa-gray;
+	border-bottom: 0;
+	&:hover {
+		border-bottom: 0;
+	}
+}
+
+
+.multilevel-linkul-0 {
+	margin-left: 24px;
+    font-size: 14px;
+    padding: 0;
+
+	li:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 }
 
