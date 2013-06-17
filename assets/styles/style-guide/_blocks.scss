@@ -66,6 +66,8 @@
 
 // three-up that can only be used on container spanning 12
 .three-up-content {
+	@include component-spacing-bottom;
+
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 		li {
@@ -152,6 +154,8 @@
 
 // two-up for standard featured content page
 .two-up-feature-content {
+	@include component-spacing-bottom;
+
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 		li {
@@ -180,6 +184,8 @@
 
 // two-up for standard default content page
 .two-up-content {
+	@include component-spacing-bottom;
+
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 		li {
