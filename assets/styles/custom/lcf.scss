@@ -1,6 +1,7 @@
 // Import global variables and mixins
 @import "globals/variables";
-@import "globals/mixins";
+@import "globals/gridset";
+@import "style-guide/mixins";
 
 
 // Type
@@ -12,6 +13,19 @@
         width: 248px; // mini hr
         margin-top: 0;
     }
+    figcaption, .video-wrapper .caption {
+        padding: 0 10px;
+        color: $ual-secondary;
+        font-family: $alt-font-family;
+        padding-top: 4px;
+        a {
+           color: $ual-secondary; 
+        }
+    }
+    p.leader {
+        font-size: emCalc(18px);
+        font-weight: bold;
+    }
 }
 
 .section-title {
@@ -20,20 +34,43 @@
     }
 }
 
-figcaption, .video-wrapper .caption {
-    padding: 0 10px;
-    color: $ual-secondary;
-    font-family: $alt-font-family;
-    padding-top: 4px;
-    a {
-       color: $ual-secondary; 
+
+
+
+
+// Feature with left image, as used on Graduate School page and LCF home page
+.feature-with-left-image {
+    @include component-spacing-bottom;
+    @include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+    }
+    @include gs-media(d,min-max) {
+        @include gs-span(d, 5, 16, (5, 16));
+    }
+
+    figure {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 5, 9, (5, 16));
+        }
+        figcaption {
+            font-size: emCalc(14px);
+            text-align: center;
+        }
+    }
+
+    .content {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 11, 16, (5, 16));
+        }
+    }
+
+    .lcf & {
+
     }
 }
 
-.standfirst {
-    font-size: 18px; // whoa are we using ems?
-    @include margin-trailer(9);
-}
+
+
 
 // Modular classes
 .bordered {
@@ -96,14 +133,36 @@ footer {
     }
 }
  
+// Multi-column layouts
+// ------------------------------------------------------------
 
-
+.two-columns {
+    @include gs-media(d,min-max) {
+        @include gs-span(d, 5, 16, (5, 16));
+    }
+    .left-col {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 5, 10, (5, 16));
+        }
+    }
+    .right-col {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 11, 16, (5, 16));
+        }
+    }
+}
 
 // GRADUATE SCHOOL
 .graduate-school {
-    h1 {
+    h1, h2 {
         font-family: $alt-font-family;
+        text-align: center;
     }
+    h2 {
+        background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+        margin-bottom: rhythm(4, 34px);
+    }
+
 }
 
 .cluster {
