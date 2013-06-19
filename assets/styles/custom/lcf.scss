@@ -8,6 +8,10 @@
 .lcf {
     h1,h2,h3,h4,h5,h6 {
         text-transform: uppercase;
+        border-bottom: 1px solid #000;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block; // so that borders run as far as the text but no further
     }
     hr {
         width: 248px; // mini hr
@@ -26,15 +30,14 @@
         font-size: emCalc(18px);
         font-weight: bold;
     }
-}
-
-.section-title {
-    h2, h3 {
-        display: inline-block; // so that borders run as far as the text but no further
+    .media-block {
+        text-align: center;
+    }
+    // SIDEBAR
+    &.home .sidebar {
+        margin-top: 70px;
     }
 }
-
-
 
 
 
@@ -70,13 +73,17 @@
 }
 
 
+.wrapper-d3-d14 {
+    @include gs-media (t,min-max) {
+        @include gs-span(t,all);
+    }
 
-
-// Modular classes
-.bordered {
-    border-bottom: 1px solid #000;
+    @include gs-media (d,min-max) {
+        @include gs-span(d,3,14);
+    }
 }
 
+// Modular classes
 .dark-bg {
     background-color: #000;
     color: #fff;
@@ -91,9 +98,9 @@
 
 // FEATURE CAROUSEL
 #feature-carousel {
-    overflow: hidden; // for flexslider controls
+    //overflow: hidden; // for flexslider controls
     img {
-        width: 100%;
+        //width: 100%;
     }
 }
 
@@ -111,11 +118,6 @@
     }
 }
 
-
-// SIDEBAR
-.sidebar {
-    margin-top: 80px;
-}
 
 // FOOTER
 footer {
@@ -154,9 +156,10 @@ footer {
 
 // GRADUATE SCHOOL
 .graduate-school {
-    h1, h2 {
+    h1,h2,h3,h4,h5,h6 {
         font-family: $alt-font-family;
-        text-align: center;
+        font-weight: normal;
+        border: 0 none;
     }
     h2 {
         background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;

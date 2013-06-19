@@ -6,79 +6,79 @@ title: Home
 template: true
 ---
 
+<div class="content-wrapper">
 
-
-<div class="content-wrapper lcf clearfix">
-
-	<div id="feature-carousel" class="row buffer-max centered">
-	    <div class="slider-container with-pager d-all">
-	    	<div class="slider" data-pager="true" data-controls="false">
-			    <div class="slide">
-	    			<img src="{{ site.url }}//assets/img/lcf/lcf-banner-2013.jpg" />
-			    </div>
-			    <div class="slide">
-					<img src="{{ site.url }}//assets/img/lcf/ChrystelLivolsi1.jpg" />
-			    </div>
-			    <div class="slide">
-		    		<img src="{{ site.url }}//assets/img/lcf/ChrystelLivolsi2.jpg" />
-			    </div>
-			</div>
-	    </div>
+	<div id="feature-carousel" class="row">
+		<div class="row">
+			<ul class="slider" data-pager="true">
+			  <li><img src="{{ site.url }}//assets/img/lcf/ChrystelLivolsi1.jpg" title="London College of Fashion" alt=""></li>
+			  <li><img src="{{ site.url }}//assets/img/lcf/ChrystelLivolsi2.jpg" title="Camberwell College of Arts" alt=""></li>
+			</ul>
+		</div>
 	</div><!-- #feature-carousel -->
 
-	<div class="row buffer-max">
-		<nav class="d1-d5 sidebar">
-			{% include _lcf_navigation.html %}
+	<div class="row">
+		<nav class="sidebar">
+			{% include _lcf_navigation.html %}		
 		</nav>	
 
-		<section id="better-lives" class="d6-d16">
-			<header class="section-title d6-d10 centered">
-				<h2 class="h5 bordered">Better Lives</h2>
-			</header>
-			<figure class="d6-d10">
-				<img src="{{ site.url }}//assets/img/lcf/lcf-better-lives.jpg">
-				<figcaption class="centered"><p>Cat Patterson — LCF Loves you<br><em><a href="#">BA (Hons) Fashion: Styling & Photography</a></em></p></figcaption>
-			</figure>
-			<div class="content">
-				<p class="leader">Using fashion to drive change, build a sustainable future and improve the way we live.</p>
-				<p>Better Lives is a term we use here at London College of Fashion to describe the work we do which uses fashion, as a discipline, to drive change, build a sustainable future and improve the way we live.</p>
+		<div class="main-content">
+			<div class="row">
+				<div class="feature-with-left-image">
+					<header class="section-title d6-d10 centered">
+						<h2 class="h5 bordered">Better Lives</h2>
+					</header>
+					<figure>
+						<img src="{{ site.url }}/assets/img/lcf/lcf-better-lives.jpg">
+						<figcaption><p>Cat Patterson — LCF Loves you<br><em><a href="#">MA Fashion Photography</a></em></p></figcaption>
+					</figure>
+					<div class="content">
+						<p class="leader">Using fashion to drive change, build a sustainable future and improve the way we live.</p>
+						<p>Better Lives is a term we use here at London College of Fashion to describe the work we do which uses fashion, as a discipline, to drive change, build a sustainable future and improve the way we live.</p>
+					</div>
+				</div>
 			</div>
-		</section>		
-	</div>
+		</div><!-- .main-content -->
+	</div><!-- .row -->
 
-	<section id="whats-on" class="row buffer-max centered">
-		<header class="section-title">
-			<h2 class="h5 bordered">What's On</h2>
-		</header>
-		<div class="">
-			<img src="{{ site.url }}//assets/img/lcf/lcf-whats-on.jpg">
+	<div class="row">
+		<div class="media-block">
+			<h2>What's On</h2>
+			<div class="feature-wall">
+				<img src="{{ site.url }}//assets/img/lcf/lcf-whats-on.jpg">
+			</div>
 		</div>
-	</section>	
+	</div>	
 
-	<section id="news-list" class="row buffer-max">
-		<div class="row buffer-plus">
-			<div class="d1-d8">
-	            <h3>News Title</h3>
-	            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
-	        </div>
-			<div class="d9-d16">
-	            <img src="{{ site.url }}//assets/img/lcf/lcf-news-1.jpg">
-	        </div>
-		</div><!-- .row -->
-
-		<div class="row">
-			<div class="d1-d8">
-	            <h3>News Title</h3>
-	            <p>On coribus pres eumqui volupitasin pos ex enisitent es vellorem sitas exerovi dusdae pra dolent eum exerum quunt aces magnis imincti doluptatium aceperro conserspe sit, optat oditium reri volupta voles ipsapiderum velit doloreprae velicte mperovid qui comnihi.</p>
-	        </div>
-			<div class="d9-d16">
-	            <img src="{{ site.url }}//assets/img/lcf/lcf-news-2.jpg">
-	        </div>
-		</div><!-- .row -->
-	</section>
+	<div class="row"><!-- same as existing image-list-with-text but uses H3 for item title -->
+		<div class="wrapper-d3-d14 image-list-with-text image-right">
+			<ul>
+				<li>
+					<figure>
+						<a href="" title=""><img src="{{ site.url }}//assets/img/lcf/lcf-news-1.jpg" alt="Image Alt"></a>
+					</figure>
+					
+					<div class="text">
+						<h3 class="title"><a href="" title="">News Title</a></h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis. Phasellus nisl mi, gravida in porta nec, hendrerit quis arcu. (max XX words)</p>
+					</div>
+				</li>
+				<li>
+					<figure>
+						<a href="" title=""><img src="{{ site.url }}//assets/img/lcf/lcf-news-2.jpg" alt="Image Alt"></a>
+					</figure>
+					
+					<div class="text">
+						<h3 class="title"><a href="" title="">News Title</a></h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis. Phasellus nisl mi, gravida in porta nec, hendrerit quis arcu. (max XX words)</p>
+					</div>
+				</li>
+	      	</ul>
+	    </div>
+	</div><!-- .row -->
 
 	<section id="showcase" class="row buffer-max relative centered">
-		<div class="slider-container with-pager d3-d14 dark-bg">
+		<div class="slider-container with-pager wrapper-d3-d14 ual-black-bg">
 			<div class="slider" data-slider-item-margin="0" data-pager="true" data-controls="false">
 				<div class="slide">
 	    			<figure class="buffer"><img src="{{ site.url }}//assets/img/lcf/lcf-showcase1.jpg" /></figure>
@@ -108,4 +108,5 @@ template: true
 		</div>
 	</section>
 
+	</div><!-- .row -->
 </div><!-- .content-wrapper -->
