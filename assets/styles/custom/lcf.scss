@@ -8,12 +8,12 @@
 .lcf {
     h1,h2,h3,h4,h5,h6 {
         text-transform: uppercase;
-        font-weight: bold;
         text-align: center;
         display: inline-block; // so that borders run as far as the text but no further
     }
-    h1,h2 {
-        border-bottom: 1px solid #000;
+    h2 {
+        background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+        margin-bottom: rhythm(4, 34px);
     }
     hr {
         width: 248px; // mini hr
@@ -23,7 +23,6 @@
         padding: 0 10px;
         color: $ual-secondary;
         font-family: $alt-font-family;
-        padding-top: 4px;
         a {
            color: $ual-secondary; 
         }
@@ -32,7 +31,7 @@
         font-size: emCalc(18px);
         font-weight: bold;
     }
-    .media-block {
+    .media-block, .section-title, .two-up { // LCF needs a header to wrap titles in to achieve centering AND inline-block for borders
         text-align: center;
     }
     // SIDEBAR
@@ -157,8 +156,7 @@ footer {
         border: 0 none;
     }
     h2 {
-        background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-        margin-bottom: rhythm(4, 34px);
+
     }
 
 }

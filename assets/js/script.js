@@ -698,7 +698,11 @@ $('.back-to-top').click(function(event){
 
 });
 
-
+   // detect accordion component
+   if ($('#st-accordion').length > 0) {
+      $('#st-accordion').accordion();
+   }
+ 
 
 
   // detect slider component

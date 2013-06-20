@@ -1,115 +1,21 @@
 ---
+title: Accordion
+last-updated: June 20, 2013
 layout: docs.tpl
-title: University of the Arts London - Website Style Guide
 class-home: docs
-breadcrumb: Simple Accordion
+breadcrumb: Accordion
 breadcrumb-link: accordion.html
 navigation: docs
 ---
 
-<div class="docs-content">
-  <div class="row">  
-    <div class="d1-d12">  
-      <p class="updated rhythm-3  border-bottom">Created: <strong>May 8th, 2013</strong> Last Updated: <strong>May 16th, 2013</strong> By: <strong>Wisbey</strong></p>
-      <h2 class="heading-x3 soft-black">Simple Accordion</h2>
-      <p><a href="http://tympanus.net/codrops/2011/10/12/flexible-slide-to-top-accordion/">http://tympanus.net/codrops/2011/10/12/flexible-slide-to-top-accordion/</a></p>
-      <hr>
+<div class="content-wrapper">
+    <p><a href="http://tympanus.net/codrops/2011/10/12/flexible-slide-to-top-accordion/">http://tympanus.net/codrops/2011/10/12/flexible-slide-to-top-accordion/</a></p>
+</div>
+
+<div class="panel bg-gray-bg">
+    <div class="content-wrapper">
+
+	   {% include components/_accordion.html %}
+
     </div>
-  </div>
-
-	<div class="row">
-
-
-                <div id="st-accordion" class="st-accordion">
-                    <ul>
-                        <li>
-                            <a href="#">Photography<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                <img src="{{ site.url }}/assets/img/accordion/1.jpg" alt="image01"/>
-                                <img src="{{ site.url }}/assets/img/accordion/2.jpg" alt="image02"/>
-                                <img src="{{ site.url }}/assets/img/accordion/3.jpg" alt="image03"/>
-                                <img src="{{ site.url }}/assets/img/accordion/4.jpg" alt="image04"/>
-                                <img src="{{ site.url }}/assets/img/accordion/5.jpg" alt="image05"/>
-                                <img src="{{ site.url }}/assets/img/accordion/6.jpg" alt="image06"/>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Web Design<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                <img src="{{ site.url }}/assets/img/accordion/7.jpg" alt="image07"/>
-                                <img src="{{ site.url }}/assets/img/accordion/8.jpg" alt="image08"/>
-                                <img src="{{ site.url }}/assets/img/accordion/9.jpg" alt="image09"/>
-                                <img src="{{ site.url }}/assets/img/accordion/10.jpg" alt="image10"/>
-                                <img src="{{ site.url }}/assets/img/accordion/11.jpg" alt="image11"/>
-                                <img src="{{ site.url }}/assets/img/accordion/12.jpg" alt="image12"/>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Illustrations<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>O my friend - but it is too much for my strength - I sink under the weight of the splendour of these visions!</p>
-                                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Miscancellous<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?"</p>
-                                <p>He thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">References<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
-                                <p>Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Internship<span class="st-arrow">Open or Close</span></a>
-                            <div class="st-content">
-                                <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
-                                <p>Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-
-
-
-
-		<!-- start accordion
-		<div id="accordion-container" class="blocks region d5-d12"> 
-			<h2 class="accordion-header">Section 1</h2> 
-				<div class="accordion-content"> 
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet metus vel leo mattis egestas. Aenean at odio sed dui auctor pharetra. Nullam in mattis lorem. Sed nisi mi, accumsan sed facilisis vitae, lacinia vel erat. Suspendisse sed metus neque. Nullam turpis nisi, facilisis et interdum sit amet, tincidunt lobortis ipsum. Mauris vehicula, eros vitae euismod sagittis, lectus dui pretium eros, ut aliquet felis justo sit amet magna. Duis pulvinar interdum neque at adipiscing. Vestibulum pretium semper libero sollicitudin vulputate. Donec tortor tortor, consectetur in elementum vel, aliquet eu felis. Etiam ligula sem, aliquet mollis mollis id, pharetra in urna. Curabitur fringilla lorem at odio facilisis dictum. Donec tincidunt nibh quis diam fringilla at congue lorem aliquet. Donec scelerisque ante ut eros imperdiet ultrices.</p> 
-				</div> 
-			<h2 class="accordion-header">Section 2</h2> 
-				<div class="accordion-content"> 
-				  <p>Suspendisse dictum sollicitudin ipsum id tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam iaculis iaculis ultricies. Sed sodales dui in dolor placerat eget sagittis ligula lobortis. Ut in egestas sapien. Fusce auctor mollis dignissim. Nullam bibendum imperdiet sodales. Nulla facilisi. Aenean quis enim et sem sagittis aliquam. Etiam est arcu, auctor sit amet porttitor malesuada, auctor et diam.</p> 
-				</div> 
-			<h2 class="accordion-header">Section 3</h2> 
-				<div class="accordion-content"> 
-				  <p>Aliquam eget libero sapien. Fusce et urna ultricies libero elementum volutpat ut sit amet ante. Sed ac consectetur odio. Nullam aliquet est quis nunc scelerisque commodo. Nullam blandit, est quis vulputate ullamcorper, magna nunc lacinia neque, sit amet euismod sapien lorem ac ante. Fusce consectetur turpis ac quam laoreet eget rhoncus augue tempus. Ut luctus vehicula enim, a mollis purus dictum quis. Aenean aliquet, turpis at fermentum consequat, ante lacus tempor arcu, ac fringilla leo tellus condimentum risus.</p> 
-				</div> 
-			<h2 class="accordion-header">Section 4</h2> 
-				<div class="accordion-content"> 
-				  <p>Suspendisse aliquam, est eu gravida mattis, odio erat placerat urna, nec placerat urna nulla ut lectus. Curabitur elementum fringilla posuere. Suspendisse risus quam, congue nec sodales ac, condimentum quis orci. Pellentesque sed odio sed metus vehicula adipiscing id vitae nunc. Donec nec nulla nisl, at pharetra dolor. Phasellus dignissim malesuada diam, a ullamcorper massa consequat ac. Pellentesque quis dapibus felis. Donec ultrices fringilla metus non laoreet. Mauris diam erat, malesuada sit amet suscipit non, placerat eget turpis. Praesent justo lacus, elementum id vehicula in, faucibus id neque. Mauris erat tellus, pretium ac vehicula eu, interdum in leo.</p> 
-				</div> 
-			<h2 class="accordion-header">Section 5</h2> 
-				<div class="accordion-content"> 
-				  <p>Vestibulum lobortis dui eget enim vehicula vitae sollicitudin justo euismod. Sed dignissim magna non lorem condimentum placerat at quis ipsum. Donec convallis elit quis massa viverra faucibus. Mauris at velit velit. Morbi ultricies tellus sit amet quam porta ac faucibus nulla tempus. Phasellus eu erat nibh, ac aliquet ipsum. Cras ut nisl augue. Duis neque odio, sagittis a aliquet et, rhoncus nec neque. Donec ac libero purus, vitae rutrum orci. Mauris dictum faucibus metus at suscipit. Curabitur ipsum nibh, fermentum vel adipiscing a, iaculis id est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porta dui sit amet velit commodo eu sollicitudin nibh varius. Duis quis erat diam.</p> 
-				</div> 
-		</div> -->
-		<!-- end accordion -->
-
-	</div>
 </div>
