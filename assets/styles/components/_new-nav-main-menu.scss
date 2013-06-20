@@ -165,6 +165,10 @@
 
   .site-search-input, .course-finder-txt-input {
       width: 70%;
+
+      &:focus {
+        outline-width: 0;
+      }
   }
 
 }
@@ -541,6 +545,7 @@
     }
   }
 
+  // .submenu li > a
   li > a {
      display: block; 
      padding-top: 6px;
@@ -548,13 +553,24 @@
      color: white; 
      font-weight: lighter;
      font-size: 16px;
-     padding-left: 12px;
+     padding-left: 0;
      padding-bottom: 0;
      border: none;
 
      &:hover {
        //border-bottom: 1px solid $light-gray;
      }
+     
+     @include gs-media(m, min-max) {
+       //padding-left: 12px;
+     }
+
+     @include gs-media(t, min-max) {
+       //padding-left: 12px;
+     }
+
+
+
   }
   
   .sub-inner-menu {

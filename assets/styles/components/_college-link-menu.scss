@@ -1,9 +1,7 @@
 .college-link-menu {
-
   ul {
           display:table;
           float:right;
-
     li {
       list-style:none; 
       float:left; 
@@ -11,13 +9,19 @@
       padding-left:1em;
       padding-right:1em;
       a {
-        color:#999999;
-
+        color: white;
+        font-weight: 300;
+        font-size: 13px;
         &:hover {
-          color:black;
+          //color:black;
         }
       }
-      border-right: 1px solid #999999;
+      //border-right: 1px solid #999999;
+
+      &:last-child {
+        border-right: none;
+
+      }
     }
   }
 
