@@ -1,0 +1,83 @@
+<header class='cf region header'>
+  
+  <!-- Slide-in menu toggle -->
+  <a href="#" id="docs-menu-toggle-btn" class="slide-in-menu-trigger menu-toggle-link">
+  <div id="slide-menu-toggle-btn">
+    <p>Menu</p>
+    <div id="docs-menu-icon" class="ui-icons-transparent-menu-button" style="position: absolute;
+    right: 0px;
+    top: -7px;
+    height: 50%;
+    width: 50%">
+    </div>
+  </div>
+  </a>
+
+  <div class='banner'>
+    <div class="content-wrapper">          
+      <!-- <a class="nav-btn" id="nav-open-btn" href="#slide-in-nav">Book Navigation</a> -->
+      <h2>
+         <!--  <a href="{{site.url}}docs/">ual: style guide</a> -->
+         <a href="{{site.url}}docs/">ual: style guide</a>
+      </h2>
+    </div>
+  </div>
+  
+<!-- slide in navigation (hidden on page load)  -->
+
+<nav id="slide-in-nav" role="navigation">
+      <div class="block">
+          <ul style="font-weight:lighter; padding: 24px">
+              <li>
+                  <a href="index2.html" class="ual-white">Home</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Get Started</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Scaffolding</a>
+              </li>
+
+              <li>
+                  <a href="#tools-block" class="ual-white smooth-scroll">Tools</a>
+              </li>
+              <li>
+                  <a href="#" class="ual-white">Base CSS</a>
+              </li>
+              <li>
+                  <a href="components.html" class="ual-white">Components</a>
+              </li>
+          </ul>
+          <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+      </div>
+</nav> 
+
+
+</header>
+
+
+
+<!-- May 26 - temporarily disabled breadcrumbs while working on new docs styling  -->
+
+<!-- <nav class="breadcrumb content-wrapper">
+    <ul>
+        <li><a href="{{ site.url }}/docs/">Docs home</a><span class="separator">&gt;</span></li>
+          {% if page.breadcrumb  %}
+        <li><a href="{{ site.url }}docs/{{page.breadcrumb-link}}">{{page.breadcrumb}}</a></li>
+          {% endif %}
+    </ul>
+</nav> -->
+
+      <div class="row bg-gray-bg">
+        <div class="content-wrapper" style="position: relative">
+          <div class="breadcrumbs">
+            <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
+          </div>
+          <div class="updated">Last updated: {{ page.last-updated }}</div>
+        </div>
+      </div>    
+      <div class="header-panel bg-gray-bg">
+          <div class="content-wrapper">
+              <h1>{{ page.title }}</h1>
+          </div>
+      </div>

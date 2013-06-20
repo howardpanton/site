@@ -1,0 +1,150 @@
+---
+title: Page Layout
+last-updated: June 20, 2013
+layout: docs.tpl
+class-home: docs
+breadcrumb: Page Layout 
+---
+<div class="content-wrapper">
+	<div class="row">
+
+		<!-- sidebar for page navigation -->
+		<div role="navigation" class="sidebar">
+			<ul>
+				<li><a href="" title="">sidebar sidebar sidebar sidebar</a></li>
+				<li><a href="" title="">sidebar</a></li>
+				<li><a href="" title="">sidebar</a></li>
+				<li><a href="" title="">sidebar sidebar sidebar sidebar sidebar sidebar sidebar</a></li>
+				<li><a href="" title="">sidebar</a></li>
+				<li><a href="" title="">sidebar</a></li>
+				<li><a href="" title="">sidebar</a></li>
+			</ul>
+		</div>
+
+		<div role="main" class="main-content">
+			<!-- text block -->
+			{% include components/_text-block.html %}
+
+			<!-- text block with aside -->
+			{% include components/_text-block-with-aside.html %}
+
+			<!-- image block -->
+			{% include components/_image-block-with-title.html %}
+
+			<!-- image block with aside -->
+			{% include components/_image-block-with-aside.html %}
+
+			<!-- media block -->
+			{% include components/_media-block.html %}
+
+			<!-- image list with text - feature -->
+			{% include components/_image-list-with-text-feature.html %}
+
+			<!-- image list with text - content -->
+			{% include components/_image-list-with-text-content.html %}
+
+			<!-- image block with intro -->
+			{% include components/_image-block-with-intro.html %}
+
+			<!-- image block with leading intro -->
+			{% include components/_image-block-with-leading-intro.html %}
+
+			<!-- block quote -->		
+			{% include components/_block-quote.html %}
+
+			<!-- block quote with image -->
+			{% include components/_block-quote-with-image.html %}
+
+			<!-- expandable content block -->
+			{% include components/_expandable-content-block.html %}
+
+			<!-- boxouts -->
+			{% include components/_boxout.html %}
+
+			<!-- boxout variant - not included as a component -->
+			<div class="row">
+				<div class="boxout ual-black-bg">
+					<h3 class="no-pad-top">Boxout (dark)</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<ul>
+						<li>Sagittis sed lacus.</li>
+						<li>Praesent ullamcorper tincidunt nisl, sit amet pretium nulla iaculis sit amet.</li>
+						<li>Consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet.</li>
+						<li>Porta nec, hendrerit quis arcu.</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- two up feature -->
+			{% include components/_two-up-feature.html %}
+
+			<!-- two up content -->
+			{% include components/_two-up-content.html %}
+			
+			<!-- three up content -->
+			{% include components/_three-up-content.html %}
+
+			<!-- highlight boxes 1, 2 and 3 -->
+			{% include components/_highlight-boxes.html %}
+
+			<!-- image gallery with hidden images on tablet/mobile -->
+			{% include components/_gallery-lightbox-four-up.html %}
+
+		</div><!-- end main-content -->
+	</div><!-- end row -->
+</div><!-- end content wrapper -->
+
+
+<!-- accordion -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_accordion.html %}
+	</div>
+</div>
+
+<!-- events listing -->
+<div class="content-wrapper">
+	{% include components/_events-listing.html %}
+</div>
+
+<!-- image gallery -->
+<div class="panel dark-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_gallery-lightbox-three-up.html %}
+	</div>
+</div>
+
+<!-- two up -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_two-up.html %}
+	</div>
+</div>
+
+<!-- three up -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_three-up.html %}		
+	</div>
+</div>
+
+<!-- four up -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_four-up.html %}		
+	</div>
+</div>
+
+<!-- map block -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_map-block.html %}
+	</div>
+</div>
+
+<!-- related content -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_related-content.html %}	
+	</div>
+</div>
