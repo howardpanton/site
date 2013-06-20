@@ -4,11 +4,22 @@
 
 {% if page.template == true %}
 
-  {% include _global_header.html %}
+  {% include _global_banner_v2.html %}
+  {% include _new_header_revised.html %}
 
-  {% include _global_navigation.html %}
+  {% if page.section != "home" %}
+
+    {% include _breadcrumb.html %}
+
+  {% endif %}
 
 {% endif %}
+
+    <div class="header-panel bg-gray-bg">
+      <div class="content-wrapper">
+          <h1>{{ page.title }}</h1>
+      </div>
+    </div>
 
     {{ content }}
 
@@ -17,10 +28,11 @@
   {% endif %}
 
 
-{% if page.template == true %}
+  {% if page.template == true %}
+      {% include _footer_journeys.html %}
+      {% include _global_footer.html %}
+  {% endif %}
 
-    {% include _global_footer.html %}
-{% endif %}
   <script>
     Modernizr.Detectizr.detect({detectScreen:false});
   </script>

@@ -55,7 +55,7 @@
  * TODO: Use an adapter
  */
 if (typeof jQuery == "undefined") {
-	alert("Hashgrid: jQuery not loaded. Make sure it's linked to your pages.");
+	//alert("Hashgrid: jQuery not loaded. Make sure it's linked to your pages.");
 }
 
 

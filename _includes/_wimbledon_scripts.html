@@ -16,37 +16,3 @@
     });
   </script>
 
-
-<script>
-   
-   // FLEX SLIDER for the top of the Wimbledon page
-   $(window).load(function() {
-      $('.flexslider').flexslider({
-        animation: "slide",             
-        easing: "swing",              
-        direction: "horizontal",  
-        pauseOnHover: true,       
-        useCSS: true,
-        controlNav: false,
-        controlsContainer: ".slider-container",
-        slideshowSpeed: 4000,           
-        animationSpeed: 400, 
-        start: function(slider) {
-         
-          // make sure that the height of the yellow block with the college name matches the height of the slider
-          $("#wi-slider-box").height($("#wi-slider-right").height());
-        },
-        after: function(slider) {
-        
-          // make sure that the height of the yellow block with the college name matches the height of the slider
-          $("#wi-slider-box").height($("#wi-slider-right").height());
-        }
-      });
-      // make sure that both sides of the top slider are the same height
-      // by setting the height of the left side to equal the height of the right slide  
-    });
-    // when the screen resizes, set the correct height for the left slider block (same size as right slider)
-    $(window).resize(function() {
-      $("#wi-slider-box").height($("#wi-slider-right").height());
-    });
-</script>
