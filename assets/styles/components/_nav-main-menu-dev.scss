@@ -14,16 +14,16 @@
 
  @include gs-media(t, min-max) {
     #new-menu {
-      width:50%;
-      float:right;
+      width: 50%;
+      float: right;
       display: none;
       // margin-right: 3.75%;
     }
  }
   @include gs-media(m, min-max) {
     #new-menu {
-      width:100%;
-      float:left;
+      width: 100%;
+      float: left;
       display: none;
     }
  }
@@ -61,33 +61,7 @@
   height: auto;
 }
 
-.new-main-menu {
-
-  width:100%; 
-  display:block; 
-  overflow:hidden;  
-  background:black;
-
-  ul {
-    display: table; 
-    height: 100%; 
-    width: 100%; 
-    margin: 0; 
-    padding: 0; 
-    background: black;
-    
-    @include gs-media(t, min-max) {
-      display:block;
-    }
-    
-    @include gs-media(m, min-max) {
-      display:block;
-    }
-
-  }
-}
-
-.new-main-menu-v2 {
+.main-menu {
 
   width:100%; 
   display:block; 
@@ -110,43 +84,33 @@
     @include gs-media(m, min-max) {
     display:block;
      }
+  }
 
+  .dropdown-arrow {
+    display: block;
+    color: #c8c8c8;;
+    float: right;
   }
 }
 
+
+
 // menu button that is diplayed in tablet and mobile view to toggle menu on/off
-// #main-menu-btn{
-//   // @extend .ui-icons-transparent-menu-button-black;
-//   // width: 80px;
-//   // height: 40px;
-//   background-color: #f0f0f0;
+// .menu-button-toggle {
+  // @extend .ui-icons-transparent-menu-button-black;
+  // width: 80px;
+  // height: 40px;
+  //background-color: #f0f0f0;
 //   color: #444; 
 //   border: none;
 //   padding: 10px;
 //   padding-top: 14px;
 //   margin-left:12px;
-//   font-size: 14px;
+//   font-size: 16px;
 //   font-weight: lighter;
 // }
 
-// menu button that is diplayed in tablet and mobile view to toggle menu on/off
-.menu-button-toggle {
-  // @extend .ui-icons-transparent-menu-button-black;
-  // width: 80px;
-  // height: 40px;
-  //background-color: #f0f0f0;
-  color: #444; 
-  border: none;
-  padding: 10px;
-  padding-top: 14px;
-  margin-left:12px;
-  font-size: 16px;
-  font-weight: lighter;
-
-  
-}
-
-.menu-button-toggle-v2{
+.m-menu-btn-toggle{
   color: white; 
   border: none;
   padding: 10px;
@@ -156,8 +120,8 @@
   font-weight: lighter;
   @include gs-media(d, min-max) { display: none !important; }
 }
-
-#menu-icon-indicator {
+.m-menu-icon {
+  color: white;
   font-weight: lighter;
   a span{
     width: 100%;
@@ -169,107 +133,102 @@
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
+}
+// Desktop View
+// -- course finder and search dropdown panel
 
+%d-menu-panel-dropdown {
+  @include gs-media(t, min-max) { display: none; }
+  @include gs-media(m, min-max) { display: none; }
+  // extend row, region ?
+  
+  > div {
+    @include padding-leader(8);
+    width: 100%;
+  }
 }
 
-#mobile-search {
-  @include padding-trailer(4);
+.d-search-menu-panel {
+  @extend %d-menu-panel-dropdown;
+}
+
+.d-course-finder-menu-panel{
+  @extend %d-menu-panel-dropdown;
+}
+
+
+// Desktop dropdown panel 'Go Search' button
+.d-go-search-button {
+  display:block;
+  float: right;
+  @include margin-leader(5);
   
-  .button-link {
-    margin-right: 0;
-    margin-top: 1em;
+  a {
+    @extend %button-link;
+    @extend %no-border;
   }
+}
+
+.d-search-input-form {
+    width: 100%;
+}
+// desktop input boxes for global search & course finder
+.site-search-input, .course-finder-txt-input {
+   max-width: 75%;
+   width: auto;
+   outline: none;
+   &:focus {
+    outline: none;
+    border-bottom: solid 1px $light-gray;
+   }
+}
+
+// Mobile View
+// -- course finder and search dropdown panel
+.mobile-search, .mobile-course-finder {
+  
+  @include padding-trailer(4);
+  @include padding-leader(4);
+  //@include gs-media(d, min-max) { display: none; }
+  background-color: $dark-gray;
+  width: 100%;
+  float: left;
+  clear: both;
+  display: none; // hide-initially
 
   .site-search-input, .course-finder-txt-input {
       width: 70%;
       font-size:24px;
       padding-left: 1em;
+      float: left;
       &:focus {
         outline-width: 0;
+        outline:none;
       }
       @include gs-media(m, min-max) { 
          width:65%; // smaller width on mobile so no overlap with go button
       }
   }
-
 }
 
-.mobile-go-search-btn {
-  margin-top: 12px;
+// mobile & tab go search button for dropdown menu panel
+.m-go-search-btn {
+  display:block;
+  float: right;
+  @include margin-leader(2);
   margin-right: 1em;
   @include gs-media(m, min-max) { 
-    margin-right: 0.5em; // smaller width on mobile so no overlap with go button
+    margin-right: 0.5em; // smaller margin on mobile so no overlap with go button
   }
-
-}
-
-#mobile-course-finder {
-  @include padding-trailer(4);
-
-  .button-link {
+  a {
+    @extend %button-link;
+    @extend %no-border;
     margin-right: 0;
     margin-top: 1em;
   }
 }
 
-.top-bar {
-		@extend .content-wrapper;
-    li {
-      list-style:none; 
-      padding-top:8px; 
-      padding-bottom:8px; 
-      width:auto; 
-      text-align: center; 
-      display: table-cell;
-
-      @include gs-media(t, min-max) {
-        display:block;
-        float:left;
-        width:100%;
-        text-align:left;
-      }
-      
-      @include gs-media(m, min-max) {
-        display:block;
-        float:left;
-        width:100%;
-        text-align:left;
-      }
-
-      a {
-        padding-top:4px; 
-        padding-bottom:4px; 
-        color:white !important; 
-        font-size:14px;
-        
-        @include gs-media(t, min-max) {
-          padding-left:1em; 
-          padding-right:1em; 
-        }
-
-        @include gs-media(m, min-max) {
-          padding-left:1em; 
-          padding-right:1em; 
-        }
-        
-        @include gs-media(dm) {
-          padding-left:1.5em; 
-          padding-right:1.5em; 
-        }
-        
-      }
-    }
-
-    li:hover {
-        background:#444444;
-    }
-
-    li.menu-active {
-        background:#333333;
-    }
-}
-
-.top-bar-v2{
+.top-bar{
     @extend .content-wrapper;
     
     > ul {
@@ -277,34 +236,27 @@
       @include gs-media(t, min-max) { display: none; }
       @include gs-media(m, min-max) { display: none; }
       
-
       .menu {
         @include gs-media(dm) { display: none; }
       }
     }
-
+    
+    .menu-active { background-color: #333 !important; }
 
     li {
       list-style:none; 
       padding:0;
       width:auto; 
-      // text-align: center; 
-      // display: table-cell;
       float: left;
       font-weight: lighter;
-
 
       // float the last three items to the right of the menu bar (menu, search, and course-finder buttons)
       &:last-child, &:nth-last-child(2), &:nth-last-child(3) {
         float: right;
       }
 
-      &:hover { background:#444444; }
-      
-      &.menu-active { background:#333333; }
+      &:hover { background-color: #444444; }   
 
-
-      
       @include gs-media(t, min-max) {
         display:block;
         float:left;
@@ -328,7 +280,11 @@
         font-size:13px;
         border-bottom:none; 
         padding: 12px 1em;
-      
+        
+        &:hover {
+          background-color : #444444;
+        }
+
         @include gs-media(t, min-max) {
           padding-left: 0.75em; 
           padding-right: 0.75em; 
@@ -343,7 +299,7 @@
           padding-left: 0.5em; 
           padding-right: 0.5em; 
         } 
-        
+
       }
     
     }
@@ -459,7 +415,7 @@
   }
 
   .menu-active{
-    background: #333333;
+    background-color: #333333;
   }
 
   
@@ -471,65 +427,64 @@
 
 
 .submenu {
-  
-  @include gs-media(d) {
-  @include gs-span(d, all);
-    }
-  
-  @include gs-media(t, min-max) {
-    padding: 6px;  
-  }
-
-  @include gs-media(m, min-max) {
-    padding: 6px;  
-  }
-  // overflow:hidden;
   @extend .dark-gray;
   
+  @include gs-media(d) { @include gs-span(d, all); }
+  
+  @include gs-media(t, min-max) { 
+    padding: 0, 6px 6px 6px; 
+
+  }
+
+  @include gs-media(m, min-max) { 
+    padding: 0, 6px 6px 6px; 
+  }
   
   > div {
     @extend .row;
     overflow:hidden;
-    @include gs-media(d) {
-      @include padding-trailer(6);
-    }
+    @include gs-media(d) { @include padding-trailer(6); }
+    
     @include gs-media(t, min-max) {
-      
       padding-bottom:0;
       margin-bottom:0;
     }
-      @include gs-media(m, min-max) {
-      
+    @include gs-media(m, min-max) {
       padding-bottom:0;
       margin-bottom:0;
-
     }
   }
 
 
   h2 {
+ 
       a {
         font-weight: lighter;
         color:white; 
         border-bottom: 1px dotted $ual-white;
+        
         @include gs-media(t, min-max) {
-        font-size:16px;
-        font-weight: 300;
-        padding-left: 12px;
-        border-bottom: 0;
-        margin-bottom:0;
+          font-size:16px;
+          font-weight: 300;
+          padding: 6px 0 6px 12px;
+          margin-bottom:0;
+          border-bottom: 0;
         }
+        
         @include gs-media(m, min-max) {
-        font-size:16px;
-        font-weight: 300;
-        margin-bottom:0;
-        border-bottom: 0;
+          font-size:16px;
+          font-weight: 300;
+          padding: 6px 0 6px 12px;
+          margin-bottom:0;
+          border-bottom: 0;
         }
 
         &:hover {
            border-bottom: 1px solid $light-gray;
         }
       }
+
+
     span {
       cursor: pointer;
     }
@@ -537,13 +492,15 @@
       @include padding-leader(1);
     }
     @include gs-media(t, min-max) {
-      margin-bottom:0;
-      margin-top:0px;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top:0;
       border-bottom: 1px solid #444;
     }
     @include gs-media(m, min-max) {
-      margin-bottom:0;
-      margin-top:0px;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 0;
       border-bottom: 1px dotted #444;
     }
   
@@ -599,7 +556,16 @@
   }
   
   .sub-inner-menu {
-     background-color: $soft-black;
+    background-color: $soft-black;
+      
+    @include gs-media(t, min-max) { 
+      padding-left: 12px;
+    }
+
+    @include gs-media(m, min-max) { 
+      padding-left:12px;
+    }
+
   }
 
   .subnav-1 {

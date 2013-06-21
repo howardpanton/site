@@ -1,84 +1,4 @@
 
-//  Make loging safe for all browsers
-window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};
-
-
-// This script is an IIFE (Immediately Invoked Function Expression) that passes 
-// jQuery in to avoid conflict with other libraries.
-
-// IMPORTANT - READ THIS FIRST
-// This script is run as soon as it is loaded, so should only be included at the base of the required page.
-
-
-(function($) 
-{ 
-  /***********************************************/
-  //  CONSTANTS
-  //  Use upper case variable names to declare
-  //  constants such as configuration paths, scoped to this
-  //  closure and available to all methods.
-  //  Separate words with underscores.
-  /***********************************************/
-  
-  var CONSTANT_NAME = 'A constant, available to all methods of this closure.';
-  
-
-  /***********************************************/
-  //  VARS
-  //  Use lower case variable names to declare
-  //  variables that are scoped to this
-  //  closure and available to all methods.
-  //  Use camel case to separate words.
-  /***********************************************/
-  
-  var instanceVariable = 'An instance variable, available to all methods of this closure.'; 
-  
-  
-  /***********************************************/
-  //  INIT
-  //  This function will be called upon load, so call
-  //  any initialastion functions here. 
-  /***********************************************/
-  
-  // this.init = function()
-  // { 
-  //   getData();
-  // }();
-
-
-  /***********************************************/
-  //  EXAMPLE METHODS
-  /***********************************************/ 
-  
-  // // get some data
-  // function getData()
-  // {
-  //   // define a local variable
-  //   var localVariable = 'A local variable, scoped to this method.';
-  //   // console.log(localVariable);
-
-  //   // access some instance variables
-  //   // console.log(CONSTANT_NAME);
-  //   // console.log(instanceVariable);
-
-  //   // call a method - maybe an ajax call?
-  //   onData('onData: I was called from on getData.');
-  // }
-  
-  // // on data return
-  // function onData(data)
-  // {     
-  //   // log out some data
-  //   //console.log(data);
-    
-  //   // get the body with jQuery, do something with it.
-  //   $('body').each(function (){
-  //     log(this);
-  //   })
-  // }
-  
-    
-})(jQuery);
 
 var d = $('.breadcrumbs').find('a');
 d.last().hide();
@@ -95,82 +15,6 @@ d.last().hide();
     $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
 }
 
-// function menuToggle() {
-// $('.menu-toggle').toggle(function() {
-//  $('.main-menu').slideDown(1000, 'swing', function() {
-//     // Animation complete.
-//   });
-
-// }, function() {
-
-//   $('.main-menu').slideUp(1000, 'swing', function() {
-//     $(this).removeAttr("style");
-//   });
-
-
-// });
-
-// }
-
-
-
-// $('.top-bar .span').toggle(function() {
-// var t = $(this).next('ul');
-// t.css('visibility', 'visible');
-// t.removeClass('is-removed-mobile');
-// //l = t.find('li');
-// //l.show();
-// console.log("ive been clicked off");
-// }, function() {
-// var t = $(this).next('ul');
-// t.css('visibility', 'hidden');
-// t.addClass('is-removed-mobile');
-// //l = t.find('li');
-// l.hide();
-
-// });
-
-
-
-// $(function(){
-
-
-//     var config = {    
-//          sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)    
-//          interval: 50,  // number = milliseconds for onMouseOver polling interval    
-//          over: doOpen,   // function = onMouseOver callback (REQUIRED)    
-//          timeout: 50,   // number = milliseconds delay before onMouseOut    
-//          out: doClose    // function = onMouseOut callback (REQUIRED)    
-//     };
-    
-//     function doOpen() {
-//         if ($(window).width() > 850) {
-//         $(this).addClass("hover");
-//         $('ul:first',this).css('visibility', 'visible');
-//         }
-//     }
- 
-//     function doClose() {
-//         if ($(window).width() > 850) {
-//         $(this).removeClass("hover");
-//         $('ul:first',this).css('visibility', 'hidden');
-//         }
-//     }
-
-//     $("ul.dropdown li").hoverIntent(config);
-    
-//     $("ul.dropdown li ul li:has(ul)").find("a:first").append(" &raquo; ");
-
-
-// });
-
-
-// 
-
-
-
-
-
 var waitForFinalEvent = (function () {
   var timers = {};
   return function (callback, ms, uniqueId) {
@@ -185,46 +29,20 @@ var waitForFinalEvent = (function () {
 })();
 
 
-// menuS = $('nav.sidebar').html();
-
-// b = $('.secondary-menu-mobile');
-
-// b.prepend(menuS);
-
-// c = b.find('ul li:first-child');
-
-// d = c.nextAll();
-
-// d.hide();
-
-// e = $('.secondary-menu-mobile span a');
-
-// e.toggle(function() {
-//  d.show();
-
-// }, function() {
-
-// d.hide();
-
-
-// });
-
 
 var _active_btn;
 
-// monitor mobile menu, it's initially opened at start, (we're not doing this as of june 14)  we use this variable to allow the menu to be hidden if other mobile nav buttons are clicked
+// monitor mobile menu, it's initially closed at start, (we're not showing it open on page load as of june 14)  we use this variable to allow the menu to be hidden if other mobile nav buttons are clicked
 var initMobMenu = 1;
 
 function checkMobileNavMenuState() {
 
   // if menu already open, then slide up and hide
   if ( $('#main-menu-btn').hasClass('active') || ( initMobMenu == 1)  ) {
-
     $('#new-menu').slideUp('fast', 'linear', function() { 
         $('#main-menu-btn').removeClass('active'); 
-        $('submenu').css({'padding-top': '0', 'margin-top': '24px'});
+        $('#main-menu-btn').parent().removeClass('menu-active');
         $('#menu-icon-indicator').html('≡');
-        $('#main-menu-btn').css({'background-color': '#000', 'color': 'white'});
         $('#new-menu').find('#desktop-menu-wrap').addClass('content-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
@@ -246,8 +64,8 @@ function checkMobileNavMenuState() {
 // Course Finder Button click script
 ////////////////
 
-$('#mob-tab-menu a.course-v2').click(function(event) {
-  
+$('#m-course-finder-btn').fastClick(function(event) {
+  event.preventDefault();
   var _clicked = $(this);
 
   // get number of active menu items
@@ -260,9 +78,9 @@ $('#mob-tab-menu a.course-v2').click(function(event) {
   // - if course finder already active, then close
   if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
     
-    $('#mobile-course-finder').slideUp('fast', 'linear', function() {
-      _clicked.parent('li').removeClass('menu-active');
-      $('#mobile-course-finder').removeClass('show').addClass('hide');
+    $('.mobile-course-finder').slideUp('fast', 'linear', function() {
+      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
+      $('.mobile-course-finder').removeClass('show').addClass('hide');
     });
 
     
@@ -275,13 +93,12 @@ $('#mob-tab-menu a.course-v2').click(function(event) {
     // hide search
     var _closeme = $('#mob-tab-menu').find('li.menu-active');
     _closeme.removeClass("menu-active");
-    $('#mobile-search').removeClass('show').addClass('hide');
-    $('#mobile-search').css({'display':'none'});
+    $('.mobile-search').removeClass('show').addClass('hide');
 
     _clicked.parent('li').addClass("menu-active");
-    $('#mobile-course-finder').removeClass('hide').addClass('show');
-    $('#mobile-course-finder').css({'display':'block'});
-    $('#mobile-course-finder').find('input').focus();
+    $('.mobile-course-finder').removeClass('hide').addClass('show');
+    $('.mobile-course-finder').css({'display':'block'});
+    $('.mobile-course-finder').find('input').focus();
   }
 
   
@@ -289,9 +106,9 @@ $('#mob-tab-menu a.course-v2').click(function(event) {
   // - if course finder not active, and NO other buttons are active, 
   else {
     _clicked.parent('li').addClass("menu-active");
-    $('#mobile-course-finder').removeClass('hide').addClass('show');
-    $('#mobile-course-finder').css({'display':'block'});
-    $('#mobile-course-finder').find('input').focus();
+    $('.mobile-course-finder').removeClass('hide').addClass('show');
+    $('.mobile-course-finder').css({'display':'block'});
+    $('.mobile-course-finder').find('input').focus();
   };
 
 
@@ -299,17 +116,12 @@ $('#mob-tab-menu a.course-v2').click(function(event) {
 
 
 
-
-
-
-
-
 /////////////////
 // Search Button click script
 ////////////////
 
-$('#mob-tab-menu a.search-v2').click(function(event) {
-  
+$('#m-search-btn').fastClick(function(event) {
+  event.preventDefault();
   var _clicked = $(this);
   // get number of active menu items
   _active_btn = $('#mob-tab-menu li.menu-active:visible');
@@ -323,9 +135,9 @@ $('#mob-tab-menu a.search-v2').click(function(event) {
   // -if search already active, then close
 
   if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
-    $('#mobile-search').slideUp('fast', 'linear', function() {
-      $('#mobile-search').removeClass('show').addClass('hide');
-      _clicked.parent('li').removeClass('menu-active');
+    $('.mobile-search').slideUp('fast', 'linear', function() {
+      $('.mobile-search').removeClass('show').addClass('hide');
+      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
     });
 
 
@@ -335,24 +147,24 @@ $('#mob-tab-menu a.search-v2').click(function(event) {
     
     // hide course finder
     $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
-    $('#mobile-course-finder').removeClass('show').addClass('hide');
-    $('#mobile-course-finder').css({'display':'none'});
+    $('.mobile-course-finder').removeClass('show').addClass('hide');
+    $('.mobile-course-finder').css({'display':'none'});
     
     // show search
     _clicked.parent('li').addClass("menu-active");
-    $('#mobile-search').removeClass('hide').addClass('show');
-    $('#mobile-search').css({'display':'block'});
-    $('#mobile-search').find('input').focus();
+    $('.mobile-search').removeClass('hide').addClass('show');
+    $('.mobile-search').css({'display':'block'});
+    $('.mobile-search').find('input').focus();
   }
 
   // Open Search Panel
   // - if search not active and no other buttons are active 
   else {
     _clicked.parent('li').addClass("menu-active");
-    $('#mobile-search').removeClass('hide').addClass('show');
-    $('#mobile-search').css({'display':'block'});
-    $('#mobile-search').find('input').focus();
-    // $('#mobile-search').slideDown('fast', 'linear', function() {});
+    $('.mobile-search').removeClass('hide').addClass('show');
+    $('.mobile-search').css({'display':'block'});
+    $('.mobile-search').find('input').focus();
+    // $('.mobile-search').slideDown('fast', 'linear', function() {});
   };
 
 }); // end mobile tablet search button click handler
@@ -363,8 +175,8 @@ $('#mob-tab-menu a.search-v2').click(function(event) {
 // mobile - main page navigation menu - button click handler 
 ///////////////
 
-$('a.menu').click(function(event) { 
-  
+$('a.menu').fastClick(function(event) { 
+  event.preventDefault();
   var t = $('#new-menu');
   var _clicked = $(this);
 
@@ -374,104 +186,69 @@ $('a.menu').click(function(event) {
 
     t.slideUp('fast', 'linear', function() { 
       _menu_to_toggle.removeClass('active'); 
-      $('submenu').css({'padding-top': '0', 'margin-top': '24px'});
       $('#menu-icon-indicator').html('≡');
-      _menu_to_toggle.css({'background-color': '#000', 'color': 'white'});
+      _clicked.parent().removeClass('menu-active').removeAttr('style');
       t.find('#desktop-menu-wrap').addClass('content-wrapper');
       t.removeAttr('style');
       t.hide();
     });
-    
-    
   } // - if any other menu is open, close first, then show the mobile pages menu
-  else if ( $('#mobile-course-finder').hasClass('show') || $('#mobile-search').hasClass('show')   ) {
-      
-      
-      
-      // clear up menu background highlighting (switch off the background color for any other menus open)
+  else if ( $('.mobile-course-finder').hasClass('show') || $('.mobile-search').hasClass('show')   ) {
+  
       $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
 
-
       // if course finder is open, close it
-      if ( $('#mobile-course-finder').hasClass('show') ) {
-          // console.log("course finder is already open");
-          $('#mobile-course-finder').removeClass('show').addClass('hide');
-          $('#mobile-course-finder').css({'display':'none'});
-
+      if ( $('.mobile-course-finder').hasClass('show') ) {
+          $('.mobile-course-finder').removeClass('show').addClass('hide');
       };
-
 
       // if search is open, close it
-      if ( $('#mobile-search').hasClass('show') ) {
-          // console.log("search is already open");
-           $('#mobile-search').removeClass('show').addClass('hide');
-          $('#mobile-search').css({'display':'none'});
-
+      if ( $('.mobile-search').hasClass('show') ) {
+          $('.mobile-search').removeClass('show').addClass('hide');
       };
 
+      // remove the content wrapper for mobile menu to allow for full width
       t.find('#desktop-menu-wrap').removeClass('content-wrapper');
 
       // show the pages menu  (update button highlight first)
-    
-      $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
+      $('#main-menu-btn').addClass('active');
+      $('#main-menu-btn').parent().addClass('menu-active');
       $('#menu-icon-indicator').html('x'); 
       
       // slide the menu down
       t.slideDown('fast', 'linear', function() { 
-        $('submenu').css({'margin-top': '0'});
+        //$('submenu').css({'margin-top': '0'});
       });
   }
-
   else {
 
     t.find('#desktop-menu-wrap').removeClass('content-wrapper');
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
-    $('#main-menu-btn').addClass('active').css({'background-color': '#333333', 'color': 'white'});
+    $('#main-menu-btn').addClass('active');
+    $('#main-menu-btn').parent().addClass('menu-active');
     $('#menu-icon-indicator').html('x');
-    $('submenu').css({'margin-top': '0'});
     t.slideDown('fast', 'linear', function() {  });
   };
-
 });
 
-
-
-
-// enquire
-
-// .register("screen and (min-width: 1000px)", {
-
-//   // REQUIRED
-//   // Triggered when the media query transitions
-//   // from *unmatched* to *matched*
-//   match : function() {
-
-
+///////////////////////
+// desktop view menu - handle click event for main menu links in desktop view
 //////////////////////
-//desktop view menu - handle click event for main menu links in desktop view
-//////////////////////
-
 
 $('#mega-menu-nav-links li a').click(function(event) {
   event.preventDefault();
-
   var _clicked = $(this);
+  
   var j = $('.submenu > div.menu-active:visible');
   var y = _clicked.parent();
-
   if (j.length == 1 && y.hasClass("menu-active")) {
 
-  // console.log(j.length + "length");
   var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']"); 
   j.slideUp('slow', 'swing', function() { y.removeClass('menu-active');  j.removeAttr('style'); });
 
-  // alert('one');
-
-
-  // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
-} else if (!_clicked.parent().hasClass('menu-active') && j.length == 1 ) {
-  //alert("it doesnt");
+// desktop view menu - if user clicks another top-level link once menu is already opened then do this:
+} else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
   var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
   l.parent().removeClass('menu-active');
@@ -484,97 +261,66 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
   // if search or course finder clicked - give the input focus
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    // console.log("course finder or search clicked");
     g.find('input').focus();
   } 
 
-  // desktop view menu - if no menu item already open then do this:
+// desktop view menu - if no menu item already open then do this:
 } else {
   _clicked.parent('li').addClass('menu-active');
   var t = _clicked.attr('data-item');
   var r = j.attr('data-menu');
   var g = $('div').find("[data-menu='"+ t +"']");
   g.addClass('menu-active');
-
   g.slideDown('slow', 'swing', function() {});
-
   // if search or course finder clicked - give the input focus
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    // console.log("course finder or search clicked");
     g.find('input').focus();
   } 
 };
 
 });
 
+// show/hide sub-menus
+$('.submenu span').fastClick(function(event) { 
+  event.preventDefault();
 
-  // },
-  
-  // // OPTIONAL   
-  // // Triggered when the media query transitions 
-  // // from a *matched* to *unmatched*                        
-  // unmatch : function() {},    
-                                
-  // // OPTIONAL
-  // // Triggered once immediately upon registration of handler
-  // setup : function() {},      
-                                
-  // // OPTIONAL
-  // // Defaults to false
-  // // If true, defers execution of the setup function
-  // // until the first media query is matched (still just once)
-  // deferSetup : true    
+  var _clicked = $(this);
+  var m = $('.sub-inner-menu:visible');
+    
+  // if not already open, but another menu is already expanded,
+  // hide the sub menu that is already open first and then show the menu you just clicked
+  if (m.length == 1 && !_clicked.hasClass('active')) {
+    m.parent().find('h2 span').removeClass('active');
+    m.parent().find('h2 span').removeClass('ui-icons-transparent-close');
+    m.parent().find('h2 span').addClass('ui-icons-transparent-plus');
+    m.hide().removeAttr("style");
+    $(this).addClass('active');
+    $(this).removeClass('ui-icons-transparent-plus');
+    $(this).addClass('ui-icons-transparent-close');
+    var h = $(this).parent().next('.sub-inner-menu');
+    h.slideDown('fast', 'linear', function() {});
 
-  // })
 
-// .register("screen and (max-width:60em)", function() {
-       
-      //
-      // mobile view menu
-      //
+  // if already open, then close the sub menu
+  } else if ($(this).hasClass("active")) { 
+    var _menu_to_close = $(this);  
+    var h = _menu_to_close.parent().next('.sub-inner-menu');
+    h.slideUp('fast', 'linear', function() {
+      h.removeAttr("style");
+      _menu_to_close.removeClass('active'); 
+      _menu_to_close.removeClass('ui-icons-transparent-close');
+      _menu_to_close.addClass('ui-icons-transparent-plus');});
 
-      // show/hide sub-menus
-      $('.submenu span').click(function(event) { 
-      event.preventDefault();
-     
-      var _clicked = $(this);
-      var m = $('.sub-inner-menu:visible');
-        
-      // if not already open, but another menu is already expanded,
-      // hide the sub menu that is already open first and then show the menu you just clicked
-      if (m.length == 1 && !_clicked.hasClass('active')) {
-        m.parent().find('h2 span').removeClass('active');
-        m.parent().find('h2 span').removeClass('ui-icons-transparent-close');
-        m.parent().find('h2 span').addClass('ui-icons-transparent-plus');
-        m.hide().removeAttr("style");
-        $(this).addClass('active');
-        $(this).removeClass('ui-icons-transparent-plus');
-        $(this).addClass('ui-icons-transparent-close');
-        var h = $(this).parent().next('.sub-inner-menu');
-        h.slideDown('fast', 'linear', function() {});
+  // if sub menu not already visible, then show the menu
+  } else {
+    $(this).addClass('active');
+    $(this).removeClass('ui-icons-transparent-plus');
+    $(this).addClass('ui-icons-transparent-close');
+    var h = $(this).parent().next('.sub-inner-menu');
+    h.slideDown('fast', 'linear', function() {});
+  };
+});      
 
-      
-      // if already open, then close the sub menu
-      } else if ($(this).hasClass("active")) { 
-
-        var _menu_to_close = $(this);  
-        var h = _menu_to_close.parent().next('.sub-inner-menu');
-        h.slideUp('fast', 'linear', function() {
-          h.removeAttr("style");
-          _menu_to_close.removeClass('active'); 
-          _menu_to_close.removeClass('ui-icons-transparent-close');
-          _menu_to_close.addClass('ui-icons-transparent-plus');});
-
-      // if sub menu not already visible, then show the menu
-      } else {
-        $(this).addClass('active');
-        $(this).removeClass('ui-icons-transparent-plus');
-        $(this).addClass('ui-icons-transparent-close');
-        var h = $(this).parent().next('.sub-inner-menu');
-        h.slideDown('fast', 'linear', function() {});
-      };
-    });      
-// });
 
 var waitForFinalEvent = (function () {
   var timers = {};
@@ -599,15 +345,8 @@ $(window).resize(function () {
 });
 
 
-
-
-
-
 $(document).ready(function(){
-
-
-
-   // sidebar script (populate mobile and tablet menu)
+// sidebar script (populate mobile and tablet menu)
       if ($('.sidebar').length > 0) {
 
         var _menuHtml = $('.sidebar').html();
@@ -619,8 +358,7 @@ $(document).ready(function(){
         // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
         $('#mobile_sidebar').html(_mobMenuContent);
 
-        $('.show-mob-sidebar').click(function(e) {
-          
+        $('.show-mob-sidebar').fastClick(function(e) {
           e.preventDefault();
           _clicked = $(this);
           
@@ -654,7 +392,7 @@ $('#footer-btn-explore').click(function(event) {
   _clicked = $(this); 
   if ( !_clicked.hasClass('active')) {
     _clicked.addClass('active');
-    $('#footer-journeys-panel').css("display", "block");
+    $('#footer-journeys-panel').addClass("block");
 
     _clicked.html('Close explore');
     _clicked.scrollToMe(); // scroll page to footer position
@@ -662,8 +400,7 @@ $('#footer-btn-explore').click(function(event) {
   } else {
     _clicked.removeClass('active');
     // $('#footer-journeys-panel').slideUp();
-    $('#footer-journeys-panel').css("display", "none");
-
+    $('#footer-journeys-panel').addClass("hide");
     _clicked.html('Explore');
     _clicked.scrollToMe(); // scroll page to footer position
   }
@@ -687,13 +424,10 @@ $(window).scroll(function() {
 
 // scroll to the top of the page when the button is clicked
 $('.back-to-top').click(function(event){
-  
   event.preventDefault();
   $('html, body').animate({scrollTop: 0}, 300);
 
 });
-
-
 
 
   // detect slider component
@@ -701,7 +435,6 @@ $('.back-to-top').click(function(event){
 
     $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
 
-    
       $.each($('.slider'), function() {
 
         var _this = $(this);
