@@ -54,8 +54,8 @@ p.docs-intro{
   
   li a {
     font-weight: 300;
-    color: white;
-    border-bottom: 1px dotted white;
+
+    border-bottom: 1px dotted ;
     margin-right: 12px;
     // make link transitions smoother
     transition: all 0.25s;
@@ -146,8 +146,8 @@ p.docs-intro{
 
   .header {
     background:black;
-    width:100%;
-    @extend .clearfix;
+    // width:100%;
+    // @extend .clearfix;
     @include padding-leader(0);
     border-top: 6px solid #000000;
 
@@ -168,9 +168,9 @@ p.docs-intro{
 
     .banner {
       @extend .wrapper;
-      @extend .clearfix;
+      // @extend .clearfix;
       position: relative;
-      @include padding-leader(2);
+      //@include padding-leader(2);
       @include gs-media(m, min-max) {
         @include gs-span(m, all);
         background:black;
@@ -211,11 +211,19 @@ a span.title {
 // menu toggle button
 #slide-menu-toggle-btn {
   position: absolute;
-  top:35px;
+  top:18px;
   right: 40px;
   height: 60px;
   width: 80px;
   z-index: 999999;
+}
+
+#docs-menu-icon {
+position: absolute;
+right: -5px;
+top: 3;
+height: 50%;
+width: 50%;
 }
 
 // slide in navigation list id
