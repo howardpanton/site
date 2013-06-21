@@ -39,17 +39,17 @@ h1, h2, h3, h4, h5, h6 {
 h1 { 
 	font-size:emCalc(36px); 
 	@include adjust-leading-to(7, 36px); 
-	padding: rhythm(5, 36px) 0 rhythm(3, 36px) 0; 	
+	// padding: rhythm(5, 36px) 0 rhythm(3, 36px) 0; 	
 
 	@include gs-media(t,min-max) {
 		font-size: emCalc(54px); 
 		@include adjust-leading-to(10, 54px); 
-		padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
+		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
 	}
 	@include gs-media(d,min-max) {
 		font-size: emCalc(54px); 
 		@include adjust-leading-to(10, 54px);
-		padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
+		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
 	}
 }
 h2 { 
@@ -204,7 +204,12 @@ aside {
 	}
 }
 
-
+p.leader {
+	font-size: emCalc(18px);
+	@include gs-media(d) {
+		font-size: emCalc(24px);
+	}
+}
 
 
 
