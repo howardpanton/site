@@ -887,9 +887,34 @@ a.img:hover {
   /* For IE 6/7 (trigger hasLayout) */
 }
 
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003423}}
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003427}}
+.cf {
+  zoom: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003431}}
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003435}}
+.cf:after {
+  clear: both;
+}
+
 /* Media on panel */
 /* ------------------------------------------------------------ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_utilities\.scss}line{font-family:\00003446}}
 .media-on-panel span {
   margin: -5px 0px 12px 0px;
 }
@@ -1213,82 +1238,17 @@ a.img:hover {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/plugins\/_animation\.scss}line{font-family:\000032}}
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -ms-animation-duration: 2s;
-  -o-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-@-webkit-keyframes fadeInDown {
-  /* line 3, ../styles/plugins/_animation.scss */
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-  }
-
-  /* line 6, ../styles/plugins/_animation.scss */
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-  }
-}
-
-@-moz-keyframes fadeInDown {
-  /* line 13, ../styles/plugins/_animation.scss */
-  0% {
-    opacity: 0;
-    -moz-transform: translateY(-20px);
-  }
-
-  /* line 18, ../styles/plugins/_animation.scss */
-  100% {
-    opacity: 1;
-    -moz-transform: translateY(0);
-  }
-}
-
-@-o-keyframes fadeInDown {
-  /* line 25, ../styles/plugins/_animation.scss */
-  0% {
-    opacity: 0;
-    -ms-transform: translateY(-20px);
-  }
-
-  /* line 30, ../styles/plugins/_animation.scss */
-  100% {
-    opacity: 1;
-    -ms-transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  /* line 37, ../styles/plugins/_animation.scss */
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  /* line 42, ../styles/plugins/_animation.scss */
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000327}}
 .search-results-wrap {
   *zoom: 1;
   background-color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003170}}
 .search-results-wrap:before, .search-results-wrap:after {
   content: " ";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003171}}
 .search-results-wrap:after {
   clear: both;
 }
@@ -1958,42 +1918,6 @@ p.leader {
   margin-bottom: 1.5em;
 }
 
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_panels\.scss}line{font-family:\0000335}}
-.clearfix {
-  *zoom: 1;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003283}}
-.clearfix:after {
-  clear: both;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_panels\.scss}line{font-family:\0000339}}
-.cf, .panel, .row, .submenu > div {
-  zoom: 1;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_panels\.scss}line{font-family:\0000343}}
-.cf:before, .panel:before, .row:before, .submenu > div:before,
-.cf:after,
-.panel:after,
-.row:after,
-.submenu > div:after {
-  content: "";
-  display: table;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_panels\.scss}line{font-family:\0000347}}
-.cf:after, .panel:after, .row:after, .submenu > div:after {
-  clear: both;
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/style-guide\/_main-nav\.scss}line{font-family:\000031}}
 nav.main-nav {
   font-size: 0.875em;
@@ -2360,12 +2284,12 @@ nav.main-nav a:hover {
 .ual-banner-menu {
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003170}}
 .ual-banner-menu:before, .ual-banner-menu:after {
   content: " ";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003171}}
 .ual-banner-menu:after {
   clear: both;
 }
@@ -3214,12 +3138,12 @@ a.course:before {
 .ual-banner-menu {
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003170}}
 .ual-banner-menu:before, .ual-banner-menu:after {
   content: " ";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_mixins\.scss}line{font-family:\00003171}}
 .ual-banner-menu:after {
   clear: both;
 }

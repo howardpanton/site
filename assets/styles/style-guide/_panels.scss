@@ -26,28 +26,3 @@
 	margin-bottom: rhythm(4, 16px);
 }
 
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
-
-// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
-
-// Use clearfix if you need general clearfixing
-.clearfix { 
-	@include clearfix; 
-}
-
-.cf { 
-	zoom: 1; 
-}
-.cf:before,
-.cf:after { 
-	content: ""; 
-	display: table; 
-}
-.cf:after { 
-	clear: both; 
-}
-
-.panel, .row {
-  @extend .cf;
-}

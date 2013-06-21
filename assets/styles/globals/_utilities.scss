@@ -415,6 +415,26 @@ a.img:hover { filter: grayscale(100%);
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+
+// Use clearfix if you need general clearfixing
+.clearfix { 
+  @include clearfix; 
+}
+
+.cf { 
+  zoom: 1; 
+}
+.cf:before,
+.cf:after { 
+  content: ""; 
+  display: table; 
+}
+.cf:after { 
+  clear: both; 
+}
 
 
 /* Media on panel */

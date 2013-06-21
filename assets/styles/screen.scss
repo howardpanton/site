@@ -23,59 +23,53 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::State styles
 // ::Debugs  
 
-// ::Zurb foundation - installed via the gem 
+// ::Compass imports 
 // ------------------------------------------------------------
 
-//@import "foundation/foundation-global";
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+
+/* ::Grid styles - using CSS files css/grid and css/grid-feature */
+/* ------------------------------------------------------------ */
+
+@import "globals/gridset";
+@import "style-guide/gridset-utilities";
+
 
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
+
 @import "globals/variables";
-
-// Mixins also references various Compass plugins e.g. vertical rhythm
 @import "globals/mixins";
-@import "compass/reset";
-// @import "plugins/normalize";
+@import "globals/colors";
 @import "globals/sprites";
+@import "globals/utilities";
 
-
-
-/* ::Grid styles - using CSS files css/grid and css/grid-feature */
-/* ------------------------------------------------------------ */
-@import "globals/gridset";
-
-
-/* :: include global zurb sass file */
-/* ------------------------------------------------------------ */
-@import "plugins/foundation/components/_global";
-//@import "foundation/foundation-global", "foundation/components/global", "foundation/components/dropdown";
 
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
-// Required for emCalc and other Foundation bits
 
-//@import "globals/typography";    
+   
 @import "plugins/rem";
-@import "globals/forms";  
-@import "plugins/foundation/components/tables";   
-@import "globals/university-logos"; 
 @import "globals/layout";
-@import "globals/blocks"; 
-@import "globals/media";
-@import "globals/colors";
+@import "style-guide/typography";  
+@import "globals/forms";  
+//@import "plugins/foundation/components/tables";   
+@import "globals/university-logos"; 
+
 
 /* ::Components */
 /* ------------------------------------------------------------ */
 
 
-// Modules
-@import "modules/modules";
+// Course Finder
+
+@import "custom/_course-finder.scss"; 
 
 // General
-@import "components/vallenato"; // Vallenato for accordions
-//ßß@import "components/bxslider"; // BXSlider for carousels and sliders
+
 @import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
 
@@ -85,30 +79,57 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Components for navigation
 @import "components/nav-main-menu-dev";
-@import "components/college-link-menu";
-@import "components/new-nav-main-menu";
 @import "components/nav-global-college-links";
 @import "components/secondary-menu";  
+
+// Navigation
+@import "components/_college-link-menu.scss";
+@import "components/new-nav-main-menu"; 
 @import "components/nav-mobile-menu"; 
-@import "components/breadcrumbs.scss";
+//@import "style-guide/main-nav"; 
 
-
-
-// Search components
+// Search
+@import "components/search-buttons"; 
 @import "components/search-form"; 
-@import "components/search-buttons";
 
-// Download Links
-@import "components/_download-link.scss";
+// Breadcrumbs
 
-// Dropdown components
-@import "components/dropdown";
-@import "components/dropdown-buttons";
+@import "components/breadcrumbs";
+
+// Buttons
+
+@import "style-guide/button-link"; 
 
 // Layout components
-@import "components/grid-boxes";
+@import "style-guide/sidebar";
+@import "style-guide/hero-unit";
+@import "style-guide/panels";
+@import "style-guide/text-block";
+@import "style-guide/image-block";
+@import "style-guide/media-block";    
+@import "style-guide/image-list-with-text";
+@import "style-guide/date";
+@import "style-guide/blocks";
+@import "style-guide/accordion";
+@import "style-guide/bxslider";
 @import "style-guide/boxout";
-@import "components/_a-z-index.scss";
+@import "style-guide/expandable-content-block";
+@import "style-guide/tables";
+@import "style-guide/feature-wall";
+@import "style-guide/four-up-content-gallery";
+@import "style-guide/three-up-content-gallery";
+@import "style-guide/map-block";
+@import "style-guide/half-list";
+@import "style-guide/quotes";
+@import "style-guide/events";
+@import "style-guide/social-media-links";
+@import "style-guide/highlight-boxes";
+@import "style-guide/related-content";
+@import "style-guide/footer";
+
+// Javascript components
+@import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
+@import "components/video"; // responsive video
 
 // Foundation components
 @import "plugins/mosaic";
@@ -118,6 +139,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ------------------------------------------------------------ */
 
 // styles for dropdown lists
+
 @import "custom/dropdown";
 
 /* ::Media queries */
@@ -126,5 +148,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 //@import "globals/media-queries";
 
 // Ordered last to override when necessary
+
 @import "globals/debug";
-@import "globals/utilities";    
+  
