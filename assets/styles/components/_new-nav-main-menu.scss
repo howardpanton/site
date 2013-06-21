@@ -212,105 +212,36 @@
   }
 }
 
-.top-bar {
-		@extend .content-wrapper;
-    li {
-      list-style:none; 
-      padding-top:8px; 
-      padding-bottom:8px; 
-      width:auto; 
-      text-align: center; 
-      display: table-cell;
-
-      @include gs-media(t, min-max) {
-        display:block;
-        float:left;
-        width:100%;
-        text-align:left;
-      }
-      
-      @include gs-media(m, min-max) {
-        display:block;
-        float:left;
-        width:100%;
-        text-align:left;
-      }
-
-      a {
-        padding-top:4px; 
-        padding-bottom:4px; 
-        color:white !important; 
-        font-size:14px;
-        
-        @include gs-media(t, min-max) {
-          padding-left:1em; 
-          padding-right:1em; 
-        }
-
-        @include gs-media(m, min-max) {
-          padding-left:1em; 
-          padding-right:1em; 
-        }
-        
-        @include gs-media(dm) {
-          padding-left:1.5em; 
-          padding-right:1.5em; 
-        }
-        
-      }
-    }
-
-    li:hover {
-        background:#444444;
-    }
-
-    li.menu-active {
-        background:#333333;
-    }
-}
-
-.top-bar-v2{
+.top-bar{
     @extend .content-wrapper;
     
     > ul {
       // hide the menu on mobile / tablet view
       @include gs-media(t, min-max) { display: none; }
       @include gs-media(m, min-max) { display: none; }
-      
-
-      .menu {
-        @include gs-media(dm) { display: none; }
-      }
     }
-
 
     li {
       list-style:none; 
       padding:0;
       width:auto; 
-      // text-align: center; 
-      // display: table-cell;
       float: left;
       font-weight: lighter;
 
-
       // float the last three items to the right of the menu bar (menu, search, and course-finder buttons)
-      &:last-child, &:nth-last-child(2), &:nth-last-child(3) {
+      &:last-child, &:nth-last-child(2) {
         float: right;
       }
 
       &:hover { background:#444444; }
       
       &.menu-active { background:#333333; }
-
-
       
       @include gs-media(t, min-max) {
         display:block;
         float:left;
         width:100%;
         text-align:left;
-
       }
       
       @include gs-media(m, min-max) {
@@ -347,7 +278,6 @@
       }
     
     }
-
 }
 
 // styles applied to the plus / minus icon on menu
@@ -387,14 +317,10 @@
 
 .ual-banner-menu {
   @include clearfix();
-  // @include padding-leader(1);
-  
   @include gs-media(t, min-max) {
     height: 48px;
     padding-left: 6px;
-    // padding-right: 6px;  // removed to enable the menu button to sit flush with the right side of the browser chrome
     background-color: black;
-    // @include padding-trailer(1);
 
     .logo {
       margin-top: 0;

@@ -1,4 +1,3 @@
-
 // compass imports
 @import "compass/reset",
 				"compass/typography/vertical_rhythm";
@@ -32,6 +31,11 @@
 		@include gs-span(d,5,16);
 	}
 }
+
+.row {
+	@include gs-span(d, all);
+}
+
 
 @import "custom/_course-finder.scss",
 		"components/_college-link-menu.scss";

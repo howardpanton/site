@@ -175,7 +175,7 @@ $('#m-search-btn').fastClick(function(event) {
 // mobile - main page navigation menu - button click handler 
 ///////////////
 
-$('a.menu').fastClick(function(event) { 
+$('#main-menu-btn').fastClick(function(event) { 
   event.preventDefault();
   var t = $('#new-menu');
   var _clicked = $(this);

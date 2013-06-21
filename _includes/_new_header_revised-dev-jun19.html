@@ -1,16 +1,3 @@
-<!-- remove breadcrumbs for now -->
-<!-- <ul>
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.navigation == 'docs' %}
-            <li>
-            <a href="{{ site.url }}/{{ page.url | remove: 'index.html' }}"> {{ page.breadcrumb }}</a>
-            </li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</ul>  -->
-
 <div id="mega-menu-nav-links" class='main-menu' role='navigation'>
   <div class="top-bar">        
       <ul>
@@ -47,9 +34,9 @@
             <a data-item="about" href='#' title=''>About UAL <span id="reveal-mega-menu"  class="dropdown-arrow">&darr;</span></a>
             <div class="menu"></div>
           </li>
-          <li>
-            <a href="#" id="main-menu-btn" class="menu m-menu-btn-toggle"><span id="menu-icon-indicator" class="m-menu-icon">≡</span></a>
-          </li>
+         <!--  <li>
+            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle"><span id="menu-icon-indicator" class="m-menu-icon">≡</span></a>
+          </li> -->
           <li> <a data-item="course-finder" href="#" class="course">Course Finder</a></li>
           <li class="search-btn-separator"><a data-item="search" href="#" class="search"></a></li>
       </ul>
@@ -316,10 +303,8 @@
         </a>
       </div>
     </div>
-
-        
+    
     <!-- Desktop - Search and Course Finder dropdowns -->
-
     <div data-menu="search" class="d-search-menu-panel row">
       <div class="relative"> 
         <form class="d-search-input-form">
@@ -348,7 +333,7 @@
         
 
       
- </div>  <!-- end content wrapper -->
+ </div> 
     </div>
 
 

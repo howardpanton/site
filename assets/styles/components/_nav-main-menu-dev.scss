@@ -93,23 +93,7 @@
   }
 }
 
-
-
-// menu button that is diplayed in tablet and mobile view to toggle menu on/off
-// .menu-button-toggle {
-  // @extend .ui-icons-transparent-menu-button-black;
-  // width: 80px;
-  // height: 40px;
-  //background-color: #f0f0f0;
-//   color: #444; 
-//   border: none;
-//   padding: 10px;
-//   padding-top: 14px;
-//   margin-left:12px;
-//   font-size: 16px;
-//   font-weight: lighter;
-// }
-
+// button that shows hides the main menu on tablet/mobile
 .m-menu-btn-toggle{
   color: white; 
   border: none;
@@ -120,6 +104,7 @@
   font-weight: lighter;
   @include gs-media(d, min-max) { display: none !important; }
 }
+
 .m-menu-icon {
   color: white;
   font-weight: lighter;
@@ -164,8 +149,10 @@
   @include margin-leader(5);
   
   a {
-    @extend %button-link;
-    @extend %no-border;
+    @extend .button-link;
+    @extend .no-border;
+    // @extend %button-link;
+    // @extend %no-border;    -- we should switch to placeholders
   }
 }
 
@@ -221,8 +208,10 @@
     margin-right: 0.5em; // smaller margin on mobile so no overlap with go button
   }
   a {
-    @extend %button-link;
-    @extend %no-border;
+    @extend .button-link;
+    @extend .no-border;
+    // @extend %button-link;
+    // @extend %no-border;
     margin-right: 0;
     margin-top: 1em;
   }
@@ -235,10 +224,6 @@
       // hide the menu on mobile / tablet view
       @include gs-media(t, min-max) { display: none; }
       @include gs-media(m, min-max) { display: none; }
-      
-      .menu {
-        @include gs-media(dm) { display: none; }
-      }
     }
     
     .menu-active { background-color: #333 !important; }
@@ -251,7 +236,7 @@
       font-weight: lighter;
 
       // float the last three items to the right of the menu bar (menu, search, and course-finder buttons)
-      &:last-child, &:nth-last-child(2), &:nth-last-child(3) {
+      &:last-child, &:nth-last-child(2) {
         float: right;
       }
 

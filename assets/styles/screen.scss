@@ -56,7 +56,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Required for emCalc and other Foundation bits
 
-@import "globals/typography";    
+//@import "globals/typography";    
 @import "plugins/rem";
 @import "globals/forms";  
 @import "plugins/foundation/components/tables";   
@@ -75,12 +75,16 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // General
 @import "components/vallenato"; // Vallenato for accordions
-@import "components/bxslider"; // BXSlider for carousels and sliders
+//ßß@import "components/bxslider"; // BXSlider for carousels and sliders
 @import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
 
+// Buttons & button groups
+@import "custom/buttons";
+@import "custom/button-groups";
+
 // Components for navigation
-@import "components/nav-main-menu";
+@import "components/nav-main-menu-dev";
 @import "components/college-link-menu";
 @import "components/new-nav-main-menu";
 @import "components/nav-global-college-links";
@@ -88,9 +92,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "components/nav-mobile-menu"; 
 @import "components/breadcrumbs.scss";
 
-// Buttons & button groups
-@import "custom/buttons";
-@import "custom/button-groups";
+
 
 // Search components
 @import "components/search-form"; 
@@ -105,7 +107,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Layout components
 @import "components/grid-boxes";
-@import "components/box-out";
+@import "style-guide/boxout";
 @import "components/_a-z-index.scss";
 
 // Foundation components

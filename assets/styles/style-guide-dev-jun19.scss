@@ -1,4 +1,3 @@
-
 // compass imports
 @import "compass/reset",
 				"compass/typography/vertical_rhythm";
@@ -24,8 +23,7 @@
 }
 
 .main-content {
-
-@include gs-media (t,min-max) {
+		@include gs-media (t,min-max) {
 		@include gs-span(t,all);
 	}
 
@@ -34,47 +32,53 @@
 	}
 }
 
+.row {
+	@include gs-span(d, all);
+}
+
+
+
 @import "custom/_course-finder.scss",
-		"components/_college-link-menu.scss";
-@import "components/new-nav-main-menu",
-				"components/search-buttons-jun-19",
-				"components/search-form",
-				"components/nav-mobile-menu",
-				"components/breadcrumbs";
-@import "style-guide/typography",
-				"style-guide/button-link",
-				"style-guide/panels",
-				"style-guide/main-nav",
-				"components/nav-main-menu-dev",
-				"components/search-buttons",
-				"components/search-form-dev-jun-19",
-				"components/nav-mobile-menu-dev-jun19",
-				"components/breadcrumbs",
-				"globals/university-logos",
-				"style-guide/sidebar",
-				"style-guide/hero-unit",
-				"style-guide/text-block",
-				"style-guide/image-block",
-				"style-guide/media-block",		
-				"style-guide/image-list-with-text",
-				"style-guide/date",
-				"style-guide/blocks",
-				"style-guide/accordion",
-				"style-guide/bxslider",
-				"style-guide/boxout",
-				"style-guide/exapandable-content-block",
-				"style-guide/tables",
-				"style-guide/feature-wall",
-				"style-guide/four-up-content-gallery",
-				"style-guide/three-up-content-gallery",
-				"style-guide/map-block",
-				"style-guide/half-list",
-				"style-guide/quotes",
-				"style-guide/events",
-				"style-guide/social-media-links",
-				"style-guide/highlight-boxes",
-				"style-guide/related-content",
-				"style-guide/footer";
+		"components/_college-link-menu.scss",
+		"style-guide/button-link",
+		"style-guide/typography",
+		"style-guide/panels",
+		"style-guide/main-nav",
+		"components/nav-main-menu-dev",
+		"components/search-buttons",
+		"components/search-form-dev-jun-19",
+		"components/nav-mobile-menu-dev-jun19",
+		"components/breadcrumbs",
+		"components/new-nav-main-menu",
+		"components/search-buttons",
+		"components/search-form",
+		"components/nav-mobile-menu",
+		"components/breadcrumbs",
+		"globals/university-logos",
+		"style-guide/sidebar",
+		"style-guide/hero-unit",
+		"style-guide/text-block",
+		"style-guide/image-block",
+		"style-guide/media-block",		
+		"style-guide/image-list-with-text",
+		"style-guide/date",
+		"style-guide/expandable-content-block",
+		"style-guide/blocks",
+		"style-guide/accordion",
+		"style-guide/bxslider",
+		"style-guide/boxout",
+		"style-guide/tables",
+		"style-guide/feature-wall",
+		"style-guide/four-up-content-gallery",
+		"style-guide/three-up-content-gallery",
+		"style-guide/map-block",
+		"style-guide/half-list",
+		"style-guide/quotes",
+		"style-guide/events",
+		"style-guide/social-media-links",
+		"style-guide/highlight-boxes",
+		"style-guide/related-content",
+		"style-guide/footer";
 
 
 
