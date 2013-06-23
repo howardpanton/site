@@ -1,4 +1,4 @@
-x{% include _docs_head.html %}
+{% include _docs_head.html %}
 
 <body class='style {{ page.class-home }}'>
 
@@ -23,10 +23,6 @@ x{% include _docs_head.html %}
   <script src='{{ site.url }}/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
 
- <!-- DEV ONLY  load in foundation javascripts for components. we'll need to work out how to selectively load these for pages that need them on the live site, but for now, adding them in the docs template so that the style guide displays correctly when using foundation based components -->  
-  
-
-
 
   <!-- Unveil script for lazy loading images -->
    <script src='{{ site.url }}/assets/js/libs/jquery.unveil.min.js'></script>
@@ -34,17 +30,8 @@ x{% include _docs_head.html %}
   <!-- load in script for responsive thumbnail gallery -->
   <script src='{{ site.url }}/assets/js/libs/responsivethumbnailgallery.js'></script>
 
-  <!-- load in fancyBox for lightboxes -->
-  <script src='{{ site.url }}/assets/js/libs/jquery.fancybox.pack.js'></script>
-
-  <!-- load in fresco (another lightbox option) -->
-  <script src='{{ site.url }}/assets/js/libs/fresco.js'></script>
-
   <!-- load in magnific (another lightbox option) -->
   <script src='{{ site.url }}/assets/js/libs/magnific-lightbox.js'></script> 
-
-  <!-- load in vallenato A simple accordion -->
-  <script src='{{ site.url }}/assets/js/components/jquery.accordion.js'></script>  
 
   <!-- load in bxSlider The Responsive jQuery Content Slider -->
   <script src='{{ site.url }}/assets/js/components/jquery.bxslider.min.js'></script> 
@@ -60,14 +47,11 @@ x{% include _docs_head.html %}
 
   <!-- load in Enquire for media queries in js -->
   <script src='{{ site.url }}/assets/js/libs/enquire.js'></script>
-
   <script src='{{ site.url }}/assets/js/libs/jquery.lettering.js'></script>
   <script src='{{ site.url }}/assets/js/libs/responsive.text.js'></script>
   <script src='{{ site.url }}/assets/js/libs/picturefill.js'></script>
   <script src='{{ site.url }}/assets/js/libs/hoverintent.js'></script>
-
   <script src='{{ site.url }}/assets/js/script.js'></script>
-
   <script src='{{ site.url }}/assets/js/foundation/foundation.min.js'></script> 
   <script src='{{ site.url }}/assets/js/foundation/foundation.interchange.js'></script>
   
@@ -136,10 +120,6 @@ x{% include _docs_head.html %}
       allPanels.removeAttr("style").hide();
   }
   );
-
-
-
-
     // set up responsive images using interchange from foundation
     $(document).foundation('interchange', {
       named_queries : {
@@ -182,11 +162,6 @@ x{% include _docs_head.html %}
         });
         }
 
-
-      if ($('#fancybox-lightbox').length > 0){
-            //initialise fancyBox to display images in a lightbox
-            $(".fancybox").fancybox(); 
-      };
        if ($('.magnific-lightbox').length > 0) {
             // initialise the magnific lightbox
             $('.magnific-lightbox').magnificPopup({
@@ -206,6 +181,7 @@ x{% include _docs_head.html %}
               
             });
       };
+
        if ($('#thumbnail-gallery1').length > 0) {
             // Initialize responsivethumbnailgallery.js 
             var thumbsgallery = new $.ThumbnailGallery($('#thumbnail-gallery1'), {

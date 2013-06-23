@@ -35,8 +35,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/gridset";
 @import "style-guide/gridset-utilities";
 
-
-
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
@@ -50,9 +48,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
-
-   
-@import "plugins/rem";
 @import "globals/layout";
 @import "style-guide/typography";  
 @import "globals/forms";  
@@ -68,27 +63,14 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 @import "custom/_course-finder.scss"; 
 
-// General
-
-@import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
-@import "components/video"; // responsive video
-
-// Buttons & button groups
-@import "custom/buttons";
-@import "custom/button-groups";
-
-// Components for navigation
-@import "components/nav-main-menu-dev";
-@import "components/nav-global-college-links";
-@import "components/secondary-menu";  
 
 // Navigation
+@import "components/nav-main-menu";
 @import "components/_college-link-menu.scss";
-@import "components/new-nav-main-menu"; 
-@import "components/nav-mobile-menu"; 
 //@import "style-guide/main-nav"; 
 
 // Search
+
 @import "components/search-buttons"; 
 @import "components/search-form"; 
 
@@ -101,6 +83,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "style-guide/button-link"; 
 
 // Layout components
+
 @import "style-guide/sidebar";
 @import "style-guide/hero-unit";
 @import "style-guide/panels";
@@ -128,10 +111,17 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "style-guide/footer";
 
 // Javascript components
+
 @import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
 
+
+
+
+
+
 // Foundation components
+
 @import "plugins/mosaic";
 
 
@@ -150,4 +140,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // Ordered last to override when necessary
 
 @import "globals/debug";
-  
+
+
+
+

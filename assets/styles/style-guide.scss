@@ -1,11 +1,13 @@
 // compass imports
 @import "compass/reset",
-		"compass/typography/vertical_rhythm";
+				"compass/typography/vertical_rhythm";
+
 @import "globals/variables", 
-		"globals/gridset",
-		"style-guide/gridset-utilities",
-		"globals/colors",
-		"globals/utilities";
+				"globals/gridset",
+				"style-guide/gridset-utilities",
+				"globals/colors",
+				"globals/utilities";
+
 @import "style-guide/mixins";
 @import "globals/sprites";
 
@@ -21,7 +23,7 @@
 }
 
 .main-content {
-	@include gs-media (t,min-max) {
+		@include gs-media (t,min-max) {
 		@include gs-span(t,all);
 	}
 
@@ -35,20 +37,17 @@
 }
 
 @import "custom/_course-finder.scss",
-		"components/_college-link-menu.scss";
-@import "components/new-nav-main-menu",
-		"components/search-buttons",
-		"components/search-form",
-		"components/nav-mobile-menu",
-		"components/breadcrumbs";
-@import "style-guide/typography";
-@import "style-guide/button-link",
+		"components/_college-link-menu.scss",
+		"style-guide/button-link",
+		"style-guide/typography",
 		"style-guide/panels",
 		"style-guide/main-nav",
-		"components/new-nav-main-menu",
+		"components/nav-main-menu",
 		"components/search-buttons",
 		"components/search-form",
-		"components/nav-mobile-menu",
+		"components/breadcrumbs",
+		"components/search-buttons",
+		"components/search-form",
 		"components/breadcrumbs",
 		"globals/university-logos",
 		"style-guide/sidebar",
@@ -58,11 +57,11 @@
 		"style-guide/media-block",		
 		"style-guide/image-list-with-text",
 		"style-guide/date",
+		"style-guide/expandable-content-block",
 		"style-guide/blocks",
 		"style-guide/accordion",
 		"style-guide/bxslider",
 		"style-guide/boxout",
-		"style-guide/expandable-content-block",
 		"style-guide/tables",
 		"style-guide/feature-wall",
 		"style-guide/four-up-content-gallery",
@@ -76,5 +75,4 @@
 		"style-guide/related-content",
 		"style-guide/footer";
 
-
-
+		//"components/new-nav-main-menu",
