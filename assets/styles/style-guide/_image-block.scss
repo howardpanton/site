@@ -1,6 +1,8 @@
 // image block
 .image-block {
 	@include component-spacing-bottom;
+	
+
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 	}
@@ -12,6 +14,11 @@
 			font-size: emCalc(14px);
 		}
 	}
+
+	.lcc & {
+		clear: left;
+  }
+
 }
 
 // image block with aside 
@@ -61,6 +68,7 @@
 				padding-bottom: 0;
 			}
 		}
+
 		figcaption {
 			font-size: emCalc(14px);
 		}
@@ -75,6 +83,19 @@
 	}
 }
 
+// image block with text & aside list with headings
+.image-block-with-h2-aside-list {
+    @extend .image-block-text-and-aside;
+    aside {
+        h2 {
+            font-size: emCalc(18px);
+            font-weight: bold;
+            padding-top: 0;
+        }
+    }
+        
+}
+
 // image block with introduction
 .image-block-with-intro {
 	@include component-spacing-bottom;
@@ -86,6 +107,10 @@
 			@include gs-span(d, 5, 12, (5, 16));
 	}
 }
+
+
+
+
 
 // image block with leading introduction
 .image-block-with-leading-intro {
