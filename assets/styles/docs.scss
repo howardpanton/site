@@ -1,14 +1,33 @@
 
-@import "globals/variables";
-// Mixins also references various Compass plugins e.g. vertical rhythm
-@import "globals/mixins";
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
 
-
-
-/* ::Grid styles */
+/* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 
 @import "globals/gridset";
+@import "style-guide/gridset-utilities";
+
+
+
+// ::Imports pre-render. Must be after reset 
+// ------------------------------------------------------------
+
+@import "globals/variables";
+@import "globals/mixins";
+@import "globals/colors";
+@import "globals/sprites";
+@import "globals/utilities";
+
+
+/* ::Global styles */
+/* ------------------------------------------------------------ */
+
+@import "globals/layout";
+@import "style-guide/typography";  
+@import "globals/forms";  
+//@import "plugins/foundation/components/tables";   
+@import "globals/university-logos"; 
 
 
 
@@ -167,7 +186,7 @@ p.docs-intro{
     }
 
     .banner {
-      @extend .wrapper;
+      @extend .content-wrapper ;
       // @extend .clearfix;
       position: relative;
       //@include padding-leader(2);
@@ -221,7 +240,7 @@ a span.title {
 #docs-menu-icon {
 position: absolute;
 right: -5px;
-top: 3;
+top: 3px;
 height: 50%;
 width: 50%;
 }
