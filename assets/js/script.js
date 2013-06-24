@@ -350,11 +350,13 @@ $(document).ready(function(){
       if ($('.sidebar').length > 0) {
 
         var _menuHtml = $('.sidebar').html();
-        
         var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
-
         var _mobMenuContent = _mobMenuButton + _menuHtml;
         
+
+
+        //mobile-nav.insertBefore('.sidebar');
+
         // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
         $('#mobile_sidebar').html(_mobMenuContent);
 
