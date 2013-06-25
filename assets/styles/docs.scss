@@ -9,39 +9,33 @@
 /* ------------------------------------------------------------ */
 
 @import "globals/gridset";
-@import "globals/layout";
+
 
 
 
 .docs {
 
-  .accordion {
-   div {
 
-      border-bottom: 0; 
-      &:last-of-type {
-      }
+
+.updated {
+   position: absolute;
+   top: 14px;
+   right: 0;
+   font-size: 13px;
+   line-height: 18px;
+}
+
+.gist-container {
+   @include gs-media (t,min-max) {
+      @include gs-span(t,all);
    }
 
-         a {
-        display: block;
-
-      }
-
-  div {
-     border-top: 0; 
-     &:last-of-type {
-       border-top: 1px solid white;
-       position: relative;
-       top: -1px;
-     }
-  }
-  
-  a {
-    transition: all 0.2s linear;   // make link transitions smoother
-  }
-  
-
+   @include gs-media (d,min-max) {
+      @include gs-span(d,all);
+   }
+   td {
+      text-align: left;
+   }
 }
 
 
@@ -60,8 +54,8 @@ p.docs-intro{
   
   li a {
     font-weight: 300;
-    color: white;
-    border-bottom: 1px dotted white;
+
+    border-bottom: 1px dotted ;
     margin-right: 12px;
     // make link transitions smoother
     transition: all 0.25s;
@@ -152,8 +146,8 @@ p.docs-intro{
 
   .header {
     background:black;
-    width:100%;
-    @extend .clearfix;
+    // width:100%;
+    // @extend .clearfix;
     @include padding-leader(0);
     border-top: 6px solid #000000;
 
@@ -174,9 +168,9 @@ p.docs-intro{
 
     .banner {
       @extend .wrapper;
-      @extend .clearfix;
+      // @extend .clearfix;
       position: relative;
-      @include padding-leader(2);
+      //@include padding-leader(2);
       @include gs-media(m, min-max) {
         @include gs-span(m, all);
         background:black;
@@ -217,11 +211,19 @@ a span.title {
 // menu toggle button
 #slide-menu-toggle-btn {
   position: absolute;
-  top:35px;
+  top:18px;
   right: 40px;
   height: 60px;
   width: 80px;
   z-index: 999999;
+}
+
+#docs-menu-icon {
+position: absolute;
+right: -5px;
+top: 3;
+height: 50%;
+width: 50%;
 }
 
 // slide in navigation list id
@@ -245,76 +247,27 @@ a span.title {
 // styles for the slide in panel and menu
 
 #jPanelMenu-menu {
-  
-  background-color: $ual-black;
-  
-
+   background-color: $ual-black;
 }
 .jPanelMenu-panel {
 
   background-color: $ual-black;
 }
 
+#jPanelMenu-menu {  
+  /*background-color: $ual-black;*/
+  }
 
+#jPanelMenu-menu ul {
+    margin-top: 86px;
+    width: 100%;
+  }
 
+#jPanelMenu-menu ul li {
+  padding:6px;
+  border-bottom: 1px dotted #444;
+}
 
-/// PREVIOUS SLIDE-in NAV STYLING
-
-// slide in nav styling
-
-// #slide-in-nav {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     padding-top: 5.25em;
-// }
-
-// #slide-in-nav:not(:target) {
-//   z-index: 1;
-//   height: 0;
-// }
-
-// #slide-in-nav:target .close-btn {
-//   display: block;
-// }
-// #slide-in-nav .close-btn {
-//   position: absolute;
-//   top: -3.75em;
-//   left: 1.875em;
-// }
-// #slide-in-nav .block {
-//   position: relative;
-//   padding: 0;
-// }
-// #slide-in-nav li {
-//   position: relative;
-//   border-top: 1px solid rgba(255, 255, 255, 0.1);
-// }
-// #slide-in-nav li:last-child {
-//   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-// }
-// #slide-in-nav li.is-active:after {
-//   z-index: 50;
-//   display: block;
-//   content: "";
-//   position: absolute;
-//   top: 50%;
-//   right: -0.03125em;
-//   margin-top: -0.625em;
-//   border-top: 0.625em transparent solid;
-//   border-bottom: 0.625em transparent solid;
-//   border-right: 0.625em white solid;
-// }
-
-// #slide-in-nav li a {
-//   padding: 0.85714em 2.14286em;
-//   color: white;
-// }
-
-
-// .docs-content {
-//   @include gs-span(d, all);
-//         @include gs-media(m, min-max) {
-//         @include gs-span(m, all);
-//       }
-// }
+.jPanelMenu-panel {
+  /*background-color: $ual-black;*/
+}
