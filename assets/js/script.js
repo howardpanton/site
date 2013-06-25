@@ -355,24 +355,23 @@ $(document).ready(function(){
         var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
         var _mobMenuContent = _mobMenuButton + _menuHtml;
         
-
-
-        //mobile-nav.insertBefore('.sidebar');
+        // create mobile sidebar div and add it to the page before the sidebar
+        $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
 
         // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-        $('#mobile_sidebar').html(_mobMenuContent);
+        $('#mobile-sidebar').html(_mobMenuContent);
 
         $('.show-mob-sidebar').fastClick(function(e) {
           e.preventDefault();
           _clicked = $(this);
           
           if (_clicked.hasClass('active')) {
-            _clicked.closest($('#mobile_sidebar')).find($('nav')).slideUp();
+            _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
             _clicked.html('≡ sub menu').removeClass('active');
           }
           else {
 
-          _clicked.closest($('#mobile_sidebar')).find($('nav')).slideDown();
+          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
           // update the menu button and set class to active
           _clicked.html('x sub menu').addClass('active');
 
