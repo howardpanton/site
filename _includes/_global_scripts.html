@@ -28,7 +28,7 @@ $(window).load(function(){
 $(document).ready(function(){
 
 
- // show/hide the relevant buttons for browsers that have JS enabled
+ // show/hide the relevant show more/less buttons
   $(".expanded-content").hide();
   $(".show-more").show();
   
@@ -48,7 +48,6 @@ $(document).ready(function(){
       var parent = _clicked.closest(".expandable-content-block"); 
       $(".expanded-content",parent).slideDown(); 
       _clicked.hide();
-
       });
 
       // handle "Show Less" button click
