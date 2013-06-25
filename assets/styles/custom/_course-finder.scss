@@ -10,57 +10,55 @@
 // $mid-gray 	: 	#666666;			// mid gray for LCF footer
 // $bg-gray 	: 	#eeeeee;   			// lighter gray for bg
 
-
-
-// Spacing Variables used with vertical rhythm mixins 
-// for standardizing spacing and keeping to the ba ba ba.. B A S E L I N E 
-
-$vertical-spacer1 : 4; // 4 baselines
-
-$vertical-spacer2 : 7; // 7 baselines
-
-$v-space-before-content : 28;  
-
-$v-space-after-content : 34; // 34 baselines
-
-
 .search-results-wrap {
 	@include clearfix();
 	background-color: $bg-gray;
 }
 
 
-.filter-results{
-	// @include margin-leader(28);
-	
-	@include gs-media(d, min-max) {
-		@include gs-span(d,1,4);
-    //@include margin-leader(4);
-    margin-top: 0;
-    height: 760px;
-    background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/filter-results-placeholder.png');
-	  background-repeat: no-repeat;
-
-  }
-
-  @include gs-media(t, min-max) {
-    display: none;
-  }
-
-  @include gs-media(m, min-max) {
-    display: none;
-  }
-}
-
-.filter-search-top{
+.search-filters{
   
+  ul { 
+    h2 {
+      padding: 12px 18px 12px 18px;
+      background-color: $ual-black;
+      color: $ual-white;
+      width: 100%;
+      font-size: emCalc(14px);
+      font-weight: 300;
+    }
+  }
+
+  li {
+      background-color: white;
+      @include border-image-dot();
+      
+      &:last-child { border-bottom: 0; } 
+      
+      a { 
+        padding: 0 30px 0 18px;
+        border-bottom: 0; 
+        color: $aaa-gray;
+        font-size: emCalc(14px);
+        font-weight: 300;
+        width:100%;
+        height:100%;
+        display:block;
+      }
+  }
+
+  li.active {
+    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    a { color: $ual-black;
+        font-weight: bold;
+    }
+  }
+
   @include gs-media(d, min-max) {
     @include gs-span(d,1,4);
-    margin-top:0;
-    //@include margin-leader(4);
-    //height: 760px;
-    //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-short-courses-filter.png');
-    //background-repeat: no-repeat;
+    //@include margin-leader(3);
   }
 
   @include gs-media(t, min-max) {
@@ -70,38 +68,17 @@ $v-space-after-content : 34; // 34 baselines
   @include gs-media(m, min-max) {
     display: none;
   }
-
 }
-
-.filter-search-level{
-  
-  @include gs-media(d, min-max) {
-    @include gs-span(d,1,4);
-    margin-top:0;
-    //@include margin-leader(4);
-    //height: 760px;
-    //background-image: url('http://artslondon.github.io/beta/assets/img/placeholders/placehold-level-filter.png');
-    //background-repeat: no-repeat;
-
-  }
-
-  @include gs-media(t, min-max) {
-    display: none;
-  }
-
-  @include gs-media(m, min-max) {
-    display: none;
-  }
-
-}
-
-
 
 .search-results {
 	//@include margin-leader(4);
 	@include gs-media (d,min-max) {
 		@include gs-span(d,6,16);
 	}
+  h2 {
+    padding-top: 0;
+  }
+
 	h3 {
 		@include adjust-font-size-to (18px);
     font-weight: bold;
@@ -111,42 +88,21 @@ $v-space-after-content : 34; // 34 baselines
 
 }
 
-// TO DO need to style this properly  (temporary styling)
-.tmpFilter {
-  padding-bottom: 24px;
-  padding-top: 0;
-  font-size: 18px;
-  font-weight: bold;
-
-}
-
 .search-results-list {
   margin-left: 0;
 }
 
 .search-results-list > li {
 	list-style: none;
-
-
-}
-
-.course-search-form {
-	// border-width: 1px;
-	// border-style: solid;
-	// border-color: rgb(168, 168, 168);
 }
 
 // styling the text-input field for searching courses
 .course-finder-input {
-	max-width: 350px;
-	width:auto;
+	width: 100%;
 	height: 70px;
-	float:left;
+	float: left;
 	border: none;
 	padding-left: 12px;
-	// border-width: 1px;
-	// border-style: solid;
-	// border-color: rgb(168, 168, 168);
 	@include adjust-font-size-to (16px);
 	@include margin-trailer (4);
 }
@@ -162,7 +118,6 @@ input:hover, input:focus {
 	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
 	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
 	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
-
 }
 
 .search-button {
@@ -172,29 +127,13 @@ input:hover, input:focus {
 	background-color: black;
 }
 
-.search-result-module{
-	background-color: white;
-	width: 100%;
-	min-height: 150px;
-	height: auto;
-	padding: 24px;
-	@include margin-trailer (4);
-}
+
 
 // main course title in search results list
 .course-details > h3 {
 	color: black;
 	font-weight: bold;
 	@include adjust-font-size-to (16px);
-
-}
-
-
-* {
-   /* we need to use this for inner borders */
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
 }
 
 .search-results input:focus{
@@ -209,19 +148,32 @@ input:hover, input:focus {
   border: 6px solid white;
 }
 
+.course-search-form {
+  position: relative;
+  width:100%;
+}
+
 .course-finder-input {
-	max-width: 850px;
-	min-width: 420px;
+	@include single-transition();
 	height: 44px;
   margin-top: 3px;
   margin-bottom: 0;
-	float:left;
 	border: none;
 	margin-left: 18px;
   border-left: 1px solid #DDDDDD;
   background-color: rgba(255,255,255, 0);
   box-shadow: none !important;
-	
+
+  @include gs-media(t, min-max) {
+    margin-left: 6px;
+  }
+
+  @include gs-media(m, min-max) {
+    max-width: 90%;
+    width:90%;
+    margin-left: 0;
+  }
+
   &::-webkit-input-placeholder {
    color: #eeeeee; 
   }
@@ -238,25 +190,42 @@ input:hover, input:focus {
    color: #eeeeee;   
   }
   
-}
-
-.search-link {
-  
-  background-color: black;
-  height:54px;
-  width: 54px;
-  display: block;
-  float: right;
-  
-  img{
-     margin-top: -3px; 
+  &:focus {
+    &::-webkit-input-placeholder {
+     color: $aaa-gray; 
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+     color: $aaa-gray; 
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+     color: $aaa-gray;   
+    }
+    &:-ms-input-placeholder {  
+     color: $aaa-gray;   
+    }
   }
 }
 
-.course-search-form {
-  width:100%;
-  
+
+
+.search-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-color: black;
+  height:48px;
+  width: 48px; 
+  img{
+     margin-top: -3px; 
+
+  }
+  a {
+    border-bottom: 0;
+  }
 }
+
+
 
 
 input, .search-result-module, .search-input-wrap {
@@ -265,15 +234,14 @@ input, .search-result-module, .search-input-wrap {
 	-o-transition: -o-box-shadow 450ms;
 	transition: border 450ms ease;
   border: 6px solid rgba(0,0,0,0);
-  //cursor: pointer;
 }
 
-.search-input-wrap:hover, .search-inout-wrap:focus, .search-result-module:hover, .search-result-module:focus {
-	/* -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
-	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
-	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2); */
+.search-gray-border {
   border: 6px solid #DDDDDD;
- 
+}
+
+.search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
+  @extend .search-gray-border;
 }
 
 
@@ -286,7 +254,6 @@ input, .search-result-module, .search-input-wrap {
   font-size: 0;
   line-height: 0;
   width: 0;
-  
 }
 
 
@@ -298,17 +265,80 @@ input, .search-result-module, .search-input-wrap {
   width: 43px;
   height: 77px;
   background-repeat: no-repeat;
-  background-image:   url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
-  
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
 }
 
-
-.search-result-module {
+.search-result-module{
   position: relative;
-  padding-bottom: 60px;
+  background-color: white;
+  width: 100%;
   min-height: 138px;
   height: auto;
+  padding: 24px;
+  padding-bottom: 60px;
+  @include margin-trailer (4);
 }
+
+.search-result-module {
+ 
+}
+
+.search-results-summary{
+  width: 100%;
+  clear:left;
+  min-height: 120px;
+  position: relative;
+
+}
+
+.search-results-info {
+   @include gs-media (d,min-max) {
+      @include gs-span(d,11,16,(6,16));
+    }
+
+    @include gs-media (t,min-max) {
+      @include gs-span(t,5,7);
+    }
+
+    @include gs-media (m,min-max) {
+      @include gs-span(m,all);
+      display: block;
+      clear: left;
+      p{
+          margin-bottom:  24px;
+      }
+    }
+  
+  p {
+    padding-top: 0; 
+    font-size:16px; 
+    font-weight: 300;
+    padding-bottom: 12px;
+  }
+}
+
+.search-pagination-btns {
+    a { margin-right: 1px; }
+
+    @include gs-media (d,min-max) {
+      @include gs-span(d,6,9,(6,16));
+    }
+
+    @include gs-media (t,min-max) {
+      @include gs-span(t,1,4);
+    }
+
+    @include gs-media (m,min-max) {
+      @include gs-span(m,all);
+      width: 100%;
+      display: block;
+      clear: left;
+    }
+  }
+
+
+
+
 
 .course-title {
   text-decoration: none;
@@ -319,6 +349,8 @@ input, .search-result-module, .search-input-wrap {
   a {
     text-decoration: none;
   }
+
+
   
 }
 .course-description {
@@ -328,12 +360,21 @@ input, .search-result-module, .search-input-wrap {
   p {
     margin-left: 12px;
   }
+
+  @include gs-media (m,min-max) {
+    width: 100%;
+    clear:left;
+    p {
+      margin-left: 0;
+      padding-top: emCalc(24px);
+    }
+  
+  }  
 }
 
 .description-label {
   
   position: relative;
-  /* top: -30px; */
   left: 0;
   margin-bottom: 24px;
   font-size: 14px;
@@ -342,19 +383,21 @@ input, .search-result-module, .search-input-wrap {
 }
 
 .enrolment-type { 
- /* position: absolute;
-  top: 25px;
-  left:25px; */
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 24px;
   display: none;
 }
+
 .college-name {
   position: absolute;
   bottom: 20px;
   left: 25px;
-  font-size: 16px;
+  font-size: emCalc(16px);
+  
+  @include gs-media (m,min-max) {
+    font-size: emCalc(14px)
+  }
 }
 
 

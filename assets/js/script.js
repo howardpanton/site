@@ -346,7 +346,9 @@ $(window).resize(function () {
 
 
 $(document).ready(function(){
-// sidebar script (populate mobile and tablet menu)
+      //////////////////
+      //    sidebar script (populate mobile and tablet menu)
+      /////////////////
       if ($('.sidebar').length > 0) {
 
         var _menuHtml = $('.sidebar').html();
@@ -377,15 +379,26 @@ $(document).ready(function(){
           }
 
         });
-      
+      } // end if $(.sidebar)
 
+
+      // focus highlighting for course search and site search input box
+      if ($('.search-input-wrap').length > 0) {
+        
+          $('#finder-search-input').focus(function () {
+            $('#finder-search-input').parent().parent().addClass('search-gray-border');
+          });
+
+          $('#finder-search-input').blur(function() {
+            $('#finder-search-input').parent().parent().removeClass('search-gray-border');
+          });
 
       }
 
 
 
 ////////////////////
-//  Footer journeys - fade In / fadeOut on click 
+//  Footer journeys - fadeIn / fadeOut on click 
 ///////////////////
 
 $('#footer-btn-explore').click(function(event) {
@@ -480,27 +493,9 @@ $('.back-to-top').click(function(event){
 
 }); // end document ready
 
-    
-/*   
-$('.four-up-square').bxSlider({
-      
-      
-      maxSlides: 4,
-      
-    });
-*/
-
-
-
-
-
-//console.log(c);
-//checkWindowSize();
-//dropMenu();
-//menuToggle();
-
-
-
+ 
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 
 /* 
@@ -516,8 +511,6 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 //      // $(groupOfItems).fitHeights(); 
 //      $('ul li').fitHeights();
 //    });
-
-
 */
 (function(){
   
@@ -549,7 +542,8 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 
 
-
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 
 
