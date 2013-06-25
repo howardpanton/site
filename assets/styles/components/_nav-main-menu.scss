@@ -1,263 +1,575 @@
-// Table of Contents
+ @include gs-media(t, min-max) {
+    #new-menu {
+      width: 50%;
+      float: right;
+      display: none;
+    }
+ }
+  @include gs-media(m, min-max) {
+    #new-menu {
+      width: 100%;
+      float: left;
+      display: none;
+    }
+ }
 
-// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
-// As a rule of thumb, don't nest further than 3 levels deep
-// -------------------------------------------------------------
+.main-nav-wrapper {
 
-// This is a good example!
-// .styleguide-format {
-//   border: 1px solid #0f0;
-//   color: #000;
-//   background: rgba(0,0,0,0.5);
-// }
+  width: 92.5%;
+  max-width: 1256px;
+  margin: 0 auto;
 
-// ::Layout styles 
-	// ::Media queries 
+  @include gs-media(t, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+  }
+  
+  @include gs-media(m, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+  }
 
+}
+
+.menu-contain-wrap{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
 
 .main-menu {
-		@extend .clearfix;
-		width:100%;
-		background:black;
-		overflow: visible;
-		height: 36px;
 
-		@include gs-media(m, min-max) {
-		width: 100%;
-		background: #2a2a2a;
-		overflow: visible;
-		height: auto;
-		// @include animated;
-		// @include fadeInDown;
-		}
+  width:100%; 
+  display:block; 
+  overflow:hidden;  
+  background:black;
+
+  ul {
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    margin: 0; 
+    margin-left: -0.5em;
+    padding: 0; 
+    background: black;
+    
+    @include gs-media(t, min-max) {
+    display:block;
+     }
+    
+    @include gs-media(m, min-max) {
+    display:block;
+     }
+  }
+
+  .dropdown-arrow {
+    display: block;
+    color: #c8c8c8;;
+    float: right;
+  }
 }
 
-.top-bar {
-		@extend .content-wrapper;
-
-		@include gs-media(m, min-max) {
-			width:100%;
-			overflow:hidden;
-		}
+// button that shows hides the main menu on tablet/mobile
+.m-menu-btn-toggle{
+  color: white; 
+  border: none;
+  padding: 10px;
+  padding-top: 12px;
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: lighter;
+  @include gs-media(d, min-max) { display: none !important; }
 }
 
-.dropdown {
+.m-menu-icon {
+  color: white;
+  font-weight: lighter;
+  a span{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -5px;
+    font-size: 24px;
+    font-weight: 300;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+}
 
-		width:100%;
-		list-style : none;
-		float: right;
-		margin-bottom: 0;
-		display:inline;
-		position: relative;
-		padding-left:0px;
-		@include gs-media(m, min-max) {
-			margin: 0 auto;
-			float:none;
-			display:block;
-			overflow: hidden;
-			padding-left:0px;
-		}
+// Desktop View
+// -- course finder and search dropdown panel
+%d-menu-panel-dropdown {
+  // hide the desktop search panels for mobile & tablet
+  @include gs-media(t, min-max) { display: none !important; }
+  @include gs-media(m, min-max) { display: none !important; }
+  // extend row, region ?
+  > div {
+    @include padding-leader(8);
+    width: 100%;
+  }
+}
 
+.d-search-menu-panel {
+  @extend %d-menu-panel-dropdown;
+}
 
-		li {
-			width: 13%;
-			float: none;
-			padding-left: 0;
-			padding-right: 0;
-			display: inline-block;
-			position: relative;
-			text-align: center;
-			border-right: 1px solid #ffffff;
-			@include padding-leader(1);
-			@include padding-trailer(1);
+.d-course-finder-menu-panel{
+  @extend %d-menu-panel-dropdown;
+}
 
-				@include gs-media(m, min-max) {
-					float: left;
-					display: block;
-					width:100%;
-					text-align: left;
-					border: none;
-					// border-top: 1px solid rgba(255, 255, 255, 0.0976562);
-					border-top: 1px solid rgba(102, 102, 102, 0.0976562);
-					border-bottom: 1px solid rgba(0, 0, 0, 0.347656);
-					position: relative;
-					padding:0px;
-				}
+// Desktop dropdown panel 'Go Search' button
+.d-go-search-button {
+  display:block;
+  float: right;
+  @include margin-leader(5);
+  
+  a {
+    @extend .button-link;
+    @extend .no-border;
+    // @extend %button-link;
+    // @extend %no-border;    <-- TO DO: switch to placeholders
+  }
+}
 
-			&:first-child {
-				border-left: 1px solid #ffffff;
-				@include gs-media(m, min-max) {
-					border-left: none;
-			}
+.d-search-input-form {
+    width: 100%;
+}
+// desktop input boxes for global search & course finder
+.site-search-input, .course-finder-txt-input {
+   max-width: 75%;
+   width: auto;
+   outline: none;
+   &:focus {
+    outline: none;
+    border-bottom: solid 1px $light-gray;
+   }
+}
 
-				a {
-					@include gs-media(m, min-max) {
-						// border-right: 1px solid rgba(255, 255, 255, 0.0976562);
-						border-right: 1px solid rgba(102, 102, 102, 0.0976562);
-					}
-				}
-			}
+// Mobile View
+// -- course finder and search dropdown panel
+.mobile-search, .mobile-course-finder {
+  
+  @include padding-trailer(4);
+  @include padding-leader(4);
+  background-color: $dark-gray;
+  width: 100%;
+  float: left;
+  clear: both;
+  display: none; // hide-initially
 
-			&:last-child {
-			margin-right: 0;
+  .site-search-input, .course-finder-txt-input {
+      width: 70%;
+      font-size:24px;
+      padding-left: 1em;
+      float: left;
+      &:focus {
+        outline-width: 0;
+        outline:none;
+      }
+      @include gs-media(m, min-max) { 
+         width:65%; // smaller width on mobile so no overlap with go button
+      }
+  }
+}
 
-			@include gs-media(m, min-max) {
-				border-bottom: none;
-			}
+// mobile & tab go search button for dropdown menu panel
+.m-go-search-btn {
+  display:block;
+  float: right;
+  @include margin-leader(2);
+  margin-right: 1em;
+  @include gs-media(m, min-max) { 
+    margin-right: 0.5em; // smaller margin on mobile so no overlap with go button
+  }
+  a {
+    @extend .button-link;
+    @extend .no-border;
+    // @extend %button-link;
+    // @extend %no-border;
+    margin-right: 0;
+    margin-top: 1em;
+  }
+}
 
-				a {
-					@include gs-media(m, min-max) {
-						//border-right: solid 2px #666;
-						// border-right: 1px solid rgba(255, 255, 255, 0.0976562);
-						border-right: 1px solid rgba(102, 102, 102, 0.0976562);
-					}
-				}
-			}
+.top-bar{
+    @extend .content-wrapper;
+    
+    > ul {
+      // hide the menu on mobile / tablet view
+      @include gs-media(t, min-max) { display: none; }
+      @include gs-media(m, min-max) { display: none; }
+    }
+    
+    .menu-active { background-color: #333 !important; }
 
-			a {
-				text-align: center;
-				//display: block;
-				color:white;
-				//padding-left: 0.375em;
-				//padding-right:0.375em;
-				font-weight: normal;
-				font-size: 13px;
-				border-bottom:none;
-				white-space: nowrap;
-				@include gs-media(m, min-max) {
-					text-align: left;
-					font-size: em(16px);
-					padding: 0px;
-					@include padding-leader(2);
-					@include padding-trailer(2);
-					color:#ccc;
-					float:left;
-					width: 80%;
-					text-indent: 12px;
-				}
-			}
+    li {
+      list-style:none; 
+      padding:0;
+      width:auto; 
+      float: left;
+      font-weight: lighter;
 
-			div.span {
-					@include gs-media(m, min-max) {
-					width: 20%;
-					display:block;
-					float:left;
-					height:48px;
-					position:relative;
-					border-left: 1px solid rgba(0, 0, 0, 0.347656);
+      // float the last three items to the right of the menu bar (menu, search, and course-finder buttons)
+      &:last-child, &:nth-last-child(2) {
+        float: right;
+      }
 
-					span {
-						color:#ffffff;
-						font-size: 2em;
-						position: absolute;
-						top:10px;
-						font-weight:normal;
-						left:24px;
-					}
+      &:hover { background-color: #444444; }   
 
-				}
-	 		 	&:hover {
-	 		 		@include gs-media(m, min-max) {
+      @include gs-media(t, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
 
-					}
-				}
- 				}
+      }
+      
+      @include gs-media(m, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
+      }
 
+      a {
+        display: block;
+        height: 100%;
+        width: 100%; 
+        color:white !important;  
+        font-size:13px;
+        border-bottom:none; 
+        padding: 12px 1em;
+        
+        &:hover {
+          background-color : #444444;
+        }
 
-		}
+        @include gs-media(t, min-max) {
+          padding-left: 0.75em; 
+          padding-right: 0.75em; 
+        }
+
+        @include gs-media(m, min-max) {
+          padding-left: 0.75em; 
+          padding-right: 0.75em; 
+        }
+
+        @include gs-media(dm) {
+          padding-left: 0.5em; 
+          padding-right: 0.5em; 
+        } 
+      }
+    }
 
 }
 
-
-.sub_menu {
-	width: auto; 
-	visibility: hidden; 
-	position: absolute; 
-	top: 100%; 
-	left: 0px; 
-	background:black; 
-	display: block; 
-	z-index:10;
-	padding-left:0px;
-
-	@include gs-media(m, min-max) {
-		width: auto;
-		position: relative;
-		top: 100%;
-		left: 1px;
-		background: black;
-		display: block;
-		z-index: 10;
-		margin-bottom: 0px;
-	}
-
-li {
-	float: left;
-	width:100%;
-	display:block;
-			&:first-child {
-				border-left:none;
-			}
-
-	@include gs-media(m, min-max) {
-		width: 100%;
-		border-bottom: none;
-		display: block;
-		border-right: none;
-		// border-top: 1px solid rgba(255, 255, 255, 0.1);
-		border-top: 1px solid rgba(102, 102, 102, 0.1);
-		border-bottom: 1px solid rgba(51, 51, 51, 0.0976562);
-		
-		&:first-child {
-			@include gs-media(m, min-max) {
-			border-left:none;
-			}
-		}
-
-		a {
-					color:white;
-			@include gs-media(m, min-max) {
-			 	text-align: left;
-				width: 100%;
-				float:left;
-				border-right:none;
-				background:#414141;
-				padding:0px;
-				@include padding-leader(2);
-				@include padding-trailer(2);
-				text-indent:12px;
-		 		}
-
-		 		 	&:hover {
-		 		 		@include gs-media(m, min-max) {
-						background:#666666;
-						}
-					}
-		 }
-
-	}
-
-	a {
-		display: inline-block;
-		white-space: nowrap;
-		color:white; 
-		text-align:left;
-		@include gs-media(m, min-max) {
-			white-space: normal;
-		}
-	}
-	color:white; text-align:left;
-}
+// styles applied to the plus / minus icon on menu
+.menu-open-closed-icon{
+  float:right; 
+  color:white; 
+  font-weight:normal; 
+  width: 36px; 
+  height: 36px; 
+  margin-top: 6px; 
+  font-size:30px; 
+  border-left:1px dotted #444444; 
+  padding-left: 12px;
 }
 
-ul.last{
-left:-35px;
+@include gs-media(d) {
+  .js .submenu > div {
+    display:none;
+  }
+}
+
+@include gs-media(t, min-max) {
+  .js .sub-inner-menu {
+    display:none;
+  }
+  .js #new-menu {
+    display:none;
+  }
+
+}
+
 @include gs-media(m, min-max) {
-	left:0;
-}
-}
-
-.is-removed-mobile a {
-	color:white;
+  .js .sub-inner-menu {
+    display:none;
+  }
 }
 
+.ual-banner-menu {
+  
+  @include clearfix();
+  @include gs-media(t, min-max) {
+    height: 48px;
+    padding-left: 6px;
+    background-color: black;
+
+    .logo {
+      margin-top: 0;
+      position: absolute;
+      padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
+    }
+  }
+
+  @include gs-media(m, min-max) {
+    height: 48px;
+    padding-left: 6px;
+    background-color: black;
+    // @include padding-trailer(1);
+
+    .logo {
+      margin-top: 0;
+      position: absolute;
+      padding-top: 0;
+      padding-bottom:0;
+      top: 0;
+      left: 0.5em;
+      width: 68px;
+    }
+  }
+  
+ 
+}
+
+#mob-tab-menu {
+  float: right;
+  height: 48px;
+  margin-bottom: 0;
+  padding-top:0;
+
+  li {
+    //@include padding-leader(1);
+    list-style: none;
+    display: inline-block;
+    height: 48px;
+    border-right: 1px solid #444;
+    float: left;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  li:last-child {
+    border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    a {
+      padding-top: 18px;
+    }
+  }
+
+  .menu-active{
+    background-color: #333333;
+  }
+}
+
+.ual-logo-tab-mobile { padding-top: 6px; }
+
+.submenu {
+  @extend .dark-gray;
+  
+  @include gs-media(d) { @include gs-span(d, all); }
+  
+  @include gs-media(t, min-max) { 
+    padding: 0, 6px 6px 6px; 
+
+  }
+
+  @include gs-media(m, min-max) { 
+    padding: 0, 6px 6px 6px; 
+  }
+  
+  > div {
+    @extend .row;
+    overflow:hidden;
+    @include gs-media(d) { @include padding-trailer(6); }
+    
+    @include gs-media(t, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+    @include gs-media(m, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+
+
+  h2 {
+ 
+      a {
+        font-weight: lighter;
+        color:white; 
+        border-bottom: 1px dotted $ual-white;
+        
+        @include gs-media(t, min-max) {
+          font-size:16px;
+          font-weight: 300;
+          padding: 6px 0 6px 12px;
+          margin-bottom:0;
+          border-bottom: 0;
+        }
+        
+        @include gs-media(m, min-max) {
+          font-size:16px;
+          font-weight: 300;
+          padding: 6px 0 6px 12px;
+          margin-bottom:0;
+          border-bottom: 0;
+        }
+
+        &:hover {
+           border-bottom: 1px solid $light-gray;
+        }
+      }
+
+    span {
+      cursor: pointer;
+    }
+    @include gs-media(d) {
+      @include padding-leader(1);
+    }
+    @include gs-media(t, min-max) {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top:0;
+      border-bottom: 1px solid #444;
+    }
+    @include gs-media(m, min-max) {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 0;
+      border-bottom: 1px dotted #444;
+    }
+  
+  }
+
+  li {
+    list-style:none;  
+    width:100%; 
+    display:block; 
+    float:left; 
+    border-bottom: dotted 1px $ual_white;
+
+    &:hover {
+       border-bottom: 1px s1px $ual_white;
+     }
+
+    @include gs-media(t, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+    @include gs-media(m, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+  }
+
+  // .submenu li > a
+  li > a {
+     display: block; 
+     padding-top: 6px;
+     padding-bottom: 6px; 
+     color: white; 
+     font-weight: lighter;
+     font-size: 16px;
+     padding-left: 0;
+     padding-bottom: 0;
+     border: none;
+
+     &:hover {
+       //border-bottom: 1px solid $light-gray;
+     }
+     
+     @include gs-media(m, min-max) {
+       //padding-left: 12px;
+     }
+
+     @include gs-media(t, min-max) {
+       //padding-left: 12px;
+     }
+
+
+
+  }
+  
+  .sub-inner-menu {
+    background-color: $soft-black;
+      
+    @include gs-media(t, min-max) { 
+      padding-left: 12px;
+    }
+
+    @include gs-media(m, min-max) { 
+      padding-left:12px;
+    }
+
+  }
+
+  .subnav-1 {
+    @include gs-media(d) {
+    @include gs-span(d, 1,4);
+    }
+    @include gs-media(t, min-max) {
+      width:100%;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+
+  .subnav-2 {
+      @include gs-media(d) {
+      @include gs-span(d, 5,8);
+    }
+      @include gs-media(t, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+      @include gs-media(m, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+  .subnav-3 {
+      @include gs-media(d) {
+      @include gs-span(d, 9,12);
+    }
+      @include gs-media(t, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+      @include gs-media(m, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+    .feature {
+      @include gs-span(d, 9,16);
+      color:white; 
+      font-size:22px;
+  }
+
+  .feature-image { 
+      @include gs-span(d, 13,16);
+  }
+}
