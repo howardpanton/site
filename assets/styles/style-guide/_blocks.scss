@@ -113,6 +113,7 @@
 
 // two-up - core styles
 .two-up {
+	@include component-spacing-bottom;
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 		li {
@@ -137,7 +138,7 @@
 	}
 	// two-up for standard featured content page
 	&.feature-content {
-		@include component-spacing-bottom;
+		//@include component-spacing-bottom;
 
 		@include gs-media(d) {
 			// @include gs-span(d,5,16);
