@@ -5,14 +5,14 @@ d.last().hide();
 
 
 
-  function checkWindowSize() {
-    var width = $(window).width(),
-    new_class = width > 850 ? 'gDesktop' :
-                width > 600 ? 'gTablet' :
-                width < 600 ? 'gmobile' :
-                width > 1289 ? 'gDesktop' : '';
+function checkWindowSize() {
+  var width = $(window).width(),
+  new_class = width > 850 ? 'gDesktop' :
+              width > 600 ? 'gTablet' :
+              width < 600 ? 'gmobile' :
+              width > 1289 ? 'gDesktop' : '';
 
-    $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
+  $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -345,85 +345,84 @@ $(window).resize(function () {
 });
 
 
+//////////////////////
+// ON DOCUMENT READY 
+/////////////////////
 $(document).ready(function(){
-      //////////////////
-      //    sidebar script (populate mobile and tablet menu)
-      /////////////////
-      if ($('.sidebar').length > 0) {
 
-        var _menuHtml = $('.sidebar').html();
-        var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
-        var _mobMenuContent = _mobMenuButton + _menuHtml;
-        
-        // create mobile sidebar div and add it to the page before the sidebar
-        $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
+  // sidebar script (populate mobile and tablet menu)
+  if ($('.sidebar').length > 0) {
 
-        // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-        $('#mobile-sidebar').html(_mobMenuContent);
+    var _menuHtml = $('.sidebar').html();
+    var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
+    var _mobMenuContent = _mobMenuButton + _menuHtml;
+    
+    // create mobile sidebar div and add it to the page before the sidebar
+    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
 
-        $('.show-mob-sidebar').fastClick(function(e) {
-          e.preventDefault();
-          _clicked = $(this);
-          
-          if (_clicked.hasClass('active')) {
-            _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-            _clicked.html('≡ sub menu').removeClass('active');
-          }
-          else {
+    // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
+    $('#mobile-sidebar').html(_mobMenuContent);
 
-          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
-          // update the menu button and set class to active
-          _clicked.html('x sub menu').addClass('active');
+    $('.show-mob-sidebar').fastClick(function(e) {
+      e.preventDefault();
+      _clicked = $(this);
+      
+      if (_clicked.hasClass('active')) {
+        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
+        _clicked.html('≡ sub menu').removeClass('active');
+      }
+      else {
 
-          }
-
-        });
-      } // end if $(.sidebar)
-
-
-      // focus highlighting for course search and site search input box
-      if ($('.search-input-wrap').length > 0) {
-
-          $('#finder-search-input').focus(function () {
-            $('#finder-search-input').parent().parent().addClass('search-gray-border');
-          });
-
-          $('#finder-search-input').blur(function() {
-            $('#finder-search-input').parent().parent().removeClass('search-gray-border');
-          });
+      _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
+      // update the menu button and set class to active
+      _clicked.html('x sub menu').addClass('active');
 
       }
 
+    });
+  } // end if $(.sidebar)
 
 
-////////////////////
-//  Footer journeys - fadeIn / fadeOut on click 
-///////////////////
+  // focus highlighting for course search and site search input box
+  if ($('.search-input-wrap').length > 0) {
 
-$('#footer-btn-explore').click(function(event) {
-  event.preventDefault();
+      $('#finder-search-input').focus(function () {
+        $('#finder-search-input').parent().parent().addClass('search-gray-border');
+      });
 
-  _clicked = $(this); 
-  if ( !_clicked.hasClass('active')) {
-    _clicked.addClass('active');
-    $('#footer-journeys-panel').addClass("block");
+      $('#finder-search-input').blur(function() {
+        $('#finder-search-input').parent().parent().removeClass('search-gray-border');
+      });
 
-    _clicked.html('Close explore');
-    _clicked.scrollToMe(); // scroll page to footer position
-    
-  } else {
-    _clicked.removeClass('active');
-    // $('#footer-journeys-panel').slideUp();
-    $('#footer-journeys-panel').addClass("hide");
-    _clicked.html('Explore');
-    _clicked.scrollToMe(); // scroll page to footer position
   }
 
-});
 
-//////////////////////
-// back to top button 
-/////////////////////
+  ////////////////////
+  //  Footer journeys - fadeIn / fadeOut on click 
+  ///////////////////
+
+  $('#footer-btn-explore').click(function(event) {
+    event.preventDefault();
+
+    _clicked = $(this); 
+    if ( !_clicked.hasClass('active')) {
+      _clicked.addClass('active');
+      $('#footer-journeys-panel').addClass("block");
+
+      _clicked.html('Close explore');
+      _clicked.scrollToMe(); // scroll page to footer position
+      
+    } else {
+      _clicked.removeClass('active');
+      // $('#footer-journeys-panel').slideUp();
+      $('#footer-journeys-panel').addClass("hide");
+      _clicked.html('Explore');
+      _clicked.scrollToMe(); // scroll page to footer position
+    }
+
+  });
+
+
 
 
   // fade in button when user scrolls down the page
@@ -515,6 +514,8 @@ $('#footer-btn-explore').click(function(event) {
     });
   }
 
+  // make videos adapt responsively
+  $('.video-wrapper').fitVids();
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
