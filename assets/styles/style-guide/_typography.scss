@@ -5,8 +5,6 @@ body {
 	// font-family: $font-family;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-weight: 200;
-
-	
 	font-size: emCalc(16px);
 	@media screen and (min-width: 75em) {
 		font-size: emCalc(18px) ; // 18  
@@ -46,7 +44,7 @@ h1 {
 		@include adjust-leading-to(10, 54px); 
 		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
 	}
-	@include gs-media(d,min-max) {
+	@include gs-media(d) {
 		font-size: emCalc(54px); 
 		@include adjust-leading-to(10, 54px);
 		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
@@ -62,7 +60,7 @@ h2 {
 		@include adjust-leading-to(7, 36px); 
 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
 	}
-	@include gs-media(d,min-max) {
+	@include gs-media(d) {
 		font-size: emCalc(36px); 
 		@include adjust-leading-to(7, 36px); 
 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
@@ -104,6 +102,17 @@ p, ol, ul {
 		padding: rhythm(1, 18px) 0 rhythm(2, 18px) 0; 	
 	}
 }
+
+p.leader {
+	font-size: emCalc(18px);
+	// @include gs-media(t,min-max) {
+	// 	font-size: emCalc(18px);
+	// }
+	@include gs-media(d) {
+		font-size: emCalc(24px);
+	}
+}
+
 
 .square-box {
 	li {
