@@ -438,22 +438,21 @@ $('#footer-btn-explore').click(function(event) {
 /////////////////////
 
 
-// fade in button when user scrolls down the page
-$(window).scroll(function() {
-        if ($(this).scrollTop() > 200) {
-          $('.back-to-top').fadeIn(200);
-        } else {
-          $('.back-to-top').fadeOut(200);
-        }
-      });
+  // fade in button when user scrolls down the page
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $('.back-to-top').fadeIn(200);
+    } else {
+      $('.back-to-top').fadeOut(200);
+    }
+  });
 
 
-// scroll to the top of the page when the button is clicked
-$('.back-to-top').click(function(event){
-  event.preventDefault();
-  $('html, body').animate({scrollTop: 0}, 300);
-
-});
+  // scroll to the top of the page when the button is clicked
+  $('.back-to-top').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 300);
+  });
 
 
   // detect slider component
@@ -501,6 +500,33 @@ $('.back-to-top').click(function(event){
     });
 
   }
+
+  // detect accordion component
+  if ($('.accordion').length > 0) {
+    $('#st-accordion').accordion();
+  }
+  
+  // detect lightbox component
+  if ($('.lightbox').length > 0) {
+      
+    // initialise the magnific lightbox
+    $('.lightbox').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      },
+      image: {
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      }
+    
+    });
+  }
+
 
 }); // end document ready
 
