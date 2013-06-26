@@ -1,20 +1,20 @@
-.news-events-2x6 {
-	li {
-		border-bottom: 8px solid $soft-black;
-		padding-bottom: rhythm(8, 16px);
-		margin-bottom: rhythm(8, 16px);
+.courses-2x6 {
+	ul {
+		li {
+			background: $bg-gray;
+			overflow: hidden;
+			margin-bottom: 48px;
+			ul {
+				width: 100%;
+				li {
+					font-size: emCalc(24px);
+					padding: 24px;
+					margin-bottom: 0;
+				}
+			}		
+		}	
 	}
-	.event {
-		background: $bg-gray;
-		padding: rhythm(4, 16px);
-		border: none;
-		.date, .venue {
-			font-size: emCalc(24px)
-		}
-		.venue {
-			font-weight: bold;
-		}
-	}
+
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
 		li {
@@ -30,6 +30,9 @@
 			&:nth-of-type(2) {
 				margin-right: 0; 
 			}		
+		}
+		h2, p {
+			padding: 24px;
 		}
 	}
 }
