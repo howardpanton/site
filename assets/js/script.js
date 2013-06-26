@@ -1,4 +1,16 @@
 
+// --------------------------------------------------
+// function to allow scroll to an element on the page
+//
+// example:  $('some-div').scrollToMe();  
+//
+jQuery.fn.extend({
+  scrollToMe: function () {
+  var x = jQuery(this).offset().top - 100;
+  jQuery('html,body').animate({scrollTop: x}, 500);
+}});
+
+// --------------------------------------------------
 
 var d = $('.breadcrumbs').find('a');
 d.last().hide();
@@ -406,7 +418,7 @@ $('#footer-btn-explore').click(function(event) {
   _clicked = $(this); 
   if ( !_clicked.hasClass('active')) {
     _clicked.addClass('active');
-    $('#footer-journeys-panel').addClass("block");
+    $('#footer-journeys-panel').addClass("block").removeClass("hide");
 
     _clicked.html('Close explore');
     _clicked.scrollToMe(); // scroll page to footer position
@@ -414,7 +426,7 @@ $('#footer-btn-explore').click(function(event) {
   } else {
     _clicked.removeClass('active');
     // $('#footer-journeys-panel').slideUp();
-    $('#footer-journeys-panel').addClass("hide");
+    $('#footer-journeys-panel').addClass("hide").removeClass("block");
     _clicked.html('Explore');
     _clicked.scrollToMe(); // scroll page to footer position
   }

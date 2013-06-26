@@ -2,6 +2,7 @@
 .image-block {
 	@include component-spacing-bottom;
 	
+	clear: left;
 
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
@@ -13,12 +14,12 @@
 		figcaption {
 			font-size: emCalc(14px);
 		}
-	}
+	}  
 
-	.lcc & {
-		clear: left;
-  }
+}
 
+.image {
+	clear: left;
 }
 
 // image block with aside 
