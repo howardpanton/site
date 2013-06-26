@@ -7,11 +7,12 @@
 // Type
 .lcf {
     h1,h2,h3,h4,h5,h6 {
+        font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         text-align: center;
         display: inline-block; // so that borders run as far as the text but no further
     }
-    h2 {
+    h1,h2 {
         background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
         margin-bottom: rhythm(4, 34px);
     }
@@ -112,6 +113,28 @@
     }
 }
 
+/*
+@include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+        li {
+      width: gs-width(t, 2, 3, (2,7), true);
+      @include gs-float(t, left, (2,7));
+            &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
+                margin-right: 0;
+            }
+        }
+    }
+    @include gs-media(d) {
+            @include gs-span(d, 5, 16, (5, 16));
+        li {
+      width: gs-width(d, 5, 7, (5,16), true);
+      @include gs-float(d, left, (5,16));
+            &:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+                margin-right: 0;
+            }
+        }
+    }
+*/
 
 // FOOTER
 footer {
@@ -119,6 +142,19 @@ footer {
         border-bottom: 1px dotted $mid-gray;
     }
     .flex-block {
+        @include gs-media(d) {
+            @include gs-float(d, left, (1,16));
+        }
+        &:nth-of-type(1) {
+            width: gs-width(d, 1, 6, (1,16), true);
+        }
+        &:nth-of-type(2) {
+            width: gs-width(d, 7, 11, (1,16), true);
+        }
+        &:nth-of-type(3) {
+            width: gs-width(d, 12, 16, (1,16), true);
+            margin-right: 0;
+        }
         .middle {
             border-left: 1px dotted $mid-gray;
             border-right: 1px dotted $mid-gray;
