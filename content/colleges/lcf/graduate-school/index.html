@@ -33,64 +33,39 @@ template: true
 					</div>
 				</div>
 			</div>
-			<section class="row">
-				<header class="section-title">
-					<h2>Our Programmes</h2>
-				</header>
-				<div class="two-columns">
-					<div class="left-col">
-						<p>We recruit a dynamic mix of students from a range of academic backgrounds, including architecture, history, sociology, business and media, as well as from fashion based first degrees. Many students have spent time working in a profession before coming back into education and this experience enriches their postgraduate work. Our students come from all over the world to study at LCF, and this brings a diverse set of competencies, skills and cultures to each course, with many opportunities for cross fertilisation of ideas and concepts.</p>
-						<p>A number of our MA graduates go on to research degrees within the School, and all students benefit from the interactions, such as lectures, workshops and seminars, between the research and taught postgraduate parts of the School. A programme of high profile guest speakers from industry, open to any student within the School, is run every year. This is both inspirational and informative, and provides excellent opportunities for networking.</p>
-					</div>
-					<div class="right-col">
-						<p>Our graduates are sought after by the relevant sectors of the industry, and are established in senior positions in multinational companies. Others go into business as entrepreneurs and own label designers, while some pursue successful careers as lecturers and researchers within an academic environment. The emphasis within the School on quality of research, innovation and craftsmanship ensures that all graduates can make a significant contribution in their particular fields.</p>
+			<div class="row">
+				<div class="two-column-block">
+					<header class="section-title">
+						<h2>Our Programmes</h2>
+					</header>
+					<div class="row">
+						<div class="left-col">
+							<p>We recruit a dynamic mix of students from a range of academic backgrounds, including architecture, history, sociology, business and media, as well as from fashion based first degrees. Many students have spent time working in a profession before coming back into education and this experience enriches their postgraduate work. Our students come from all over the world to study at LCF, and this brings a diverse set of competencies, skills and cultures to each course, with many opportunities for cross fertilisation of ideas and concepts.</p>
+							<p>A number of our MA graduates go on to research degrees within the School, and all students benefit from the interactions, such as lectures, workshops and seminars, between the research and taught postgraduate parts of the School. A programme of high profile guest speakers from industry, open to any student within the School, is run every year. This is both inspirational and informative, and provides excellent opportunities for networking.</p>
+						</div>
+						<div class="right-col">
+							<p>Our graduates are sought after by the relevant sectors of the industry, and are established in senior positions in multinational companies. Others go into business as entrepreneurs and own label designers, while some pursue successful careers as lecturers and researchers within an academic environment. The emphasis within the School on quality of research, innovation and craftsmanship ensures that all graduates can make a significant contribution in their particular fields.</p>
+						</div>
 					</div>
 				</div>
-			</section>
-			<div class="row">
+			</div>
+			<div id="design-technology" class="row">
 				<div class="media-block">
 					<h2>Design and Technology</h2>
 					<figure><img src="{{ site.url }}/assets/img/lcf/lcf-gs-2.jpg"></figure>
 				</div>
-			</div>	
-			<div class="row">
-				<div class="half-list">
-					<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-artefact/">MA Fashion Artefact</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-footwear/">MA Fashion Footwear</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-design-technology-menswear/">MA Fashion Design Technology, Menswear</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-design-technology-womenswear/">MA Fashion Design Technology, Womenswear</a></li></ul>
-						<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-and-the-environment/">MA Fashion and the Environment</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-costume-design-for-performance/">MA Costume Design for Performance</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/pg-dip-pattern-design-and-garment-technology/">Postgraduate Diploma Pattern Design and Garment Technology</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/pg-cert-fashion-creative-pattern-cutting/">Postgraduate Certificate Fashion: Creative Pattern Cutting for the Fashion Industry</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/grad-dip-fashion-design-technology/">Graduate Diploma in Fashion Design Technology</a></li>
-					</ul>
-				</div>
 			</div>
-			<div class="row">
+			{% include components/_half-list.html %}
+
+			<div id="business-management" class="row">
 				<div class="media-block">
 					<h2>Business and Management</h2>
 					<figure><img src="{{ site.url }}/assets/img/lcf/lcf-gs-3.jpg"></figure>
 				</div>
 			</div>
-			<div class="row">
-				<div class="half-list">
-					<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-strategic-fashion-marketing/">MA Strategic Fashion Marketing</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-design-management-for-the-fashion-industries/">MA Design Management for the Fashion Industries</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-entrepreneurship/">MA Fashion Entrepreneurship</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-retail/">MA Fashion Retail</a></li>
-					</ul>
-					<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/pg-cert-fashion-buying-and-merchanding/">Postgraduate Certificate Fashion: Buying and Merchandising</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/grad-dip-fashion-management/">Graduate Diploma in Fashion Management</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/emba-fashion/">Executive MBA (Fashion)</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
+			{% include components/_half-list.html %}
+
+			<div id="media-communication" class="row">
 				<div class="media-block">
 					<h2>Media and Communication</h2>
 					<figure>
@@ -98,24 +73,8 @@ template: true
 					</figure>
 				</div>
 			</div>
-			<div class="row">
-				<div class="half-list">
-					<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-media-production/">MA Fashion Media Production</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-history-and-culture-of-fashion/">MA History and Culture of Fashion</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-curation/">MA Fashion Curation</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-and-film/">MA Fashion and Film</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-photography/">MA Fashion Photography</a></li>
-					</ul>
-					<ul>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-fashion-journalism/">MA Fashion Journalism</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/pg-cert-fashion-lifestyle-journalism/">Postgraduate Certificate Fashion: Fashion and Lifestyle Journalism</a></li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/grad-dip-fashion-media-styling/">Graduate Diploma in Fashion Media Styling</a>
-						</li>
-						<li><a href="/courses/../courses-by-level/../courses/graduate-school/ma-collaborative-performance/">MA Collaborative Performance</a></li>
-					</ul>
-				</div>
-			</div>
+			{% include components/_half-list.html %}
+			
 			<section class="row"><!-- this will have a title and rollover effects -->
 				<div class="media-block">
 					<figure><img src="{{ site.url }}/assets/img/lcf/lcf-gs-5.jpg"></figure>
