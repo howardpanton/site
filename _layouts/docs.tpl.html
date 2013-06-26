@@ -45,6 +45,10 @@
   <!-- load in FitVids for repsonsive videos -->
   <script src='{{ site.url }}/assets/js/libs/jquery.fitvids.js'></script>
 
+  <!-- load in accordion scripts -->
+  <script src='{{ site.url }}/assets/js/style-guide/jquery.accordion.js'></script>
+  <script src='{{ site.url }}/assets/js/style-guide/jquery.easing.1.3.js'></script>
+
   <!-- load in Enquire for media queries in js -->
   <script src='{{ site.url }}/assets/js/libs/enquire.js'></script>
   <script src='{{ site.url }}/assets/js/libs/jquery.lettering.js'></script>
@@ -77,39 +81,9 @@
 //   }
 // }
 
-// show/hide the relevant buttons for browsers that have JS enabled
-  $(".expanded-content").hide();
-  $(".show-more").show();
+
   
-  // handle "Show More" button click
-  $(".show-more").click(function(e){
-      e.preventDefault();  
-      
-      var _clicked = $(this);
-    
-      /*if ( $(".hide-content").length > 0 ) {
-          // close all other currently expanded blocks
-          $(".expanded-content").each(function() {
-            $(this).hide();
-          });   
-      }*/
-    
-      var parent = _clicked.closest(".expandable-content-block"); 
-      $(".expanded-content",parent).slideDown(); 
-      _clicked.hide();
-
-      });
-
-      // handle "Show Less" button click
-      $(".hide-content").click(function(e){
-      e.preventDefault();  
-      
-      var _clicked = $(this);
-      var parent = _clicked.closest(".expandable-content-block"); 
-      $(".expanded-content",parent).hide();
-      $(parent).find(".show-more").show();
-      parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
-      });
+ 
 
 
     
