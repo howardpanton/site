@@ -238,7 +238,7 @@
       a {
         display: block;
         height: 100%;
-        width: 100%; 
+        //width: 100%; 
         color:white !important;  
         font-size:13px;
         border-bottom:none; 
@@ -373,9 +373,24 @@
   .menu-active{
     background-color: #333333;
   }
+  
+  @include gs-media(d) { display: none; }
+
 }
 
-.ual-logo-tab-mobile { padding-top: 6px; }
+.ual-logo-tab-mobile { 
+
+  padding-top: 6px; 
+  @include gs-media(d) { display: none; }
+
+}
+
+.ual-logo-desktop {
+
+  @include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+}
 
 .submenu {
   @extend .dark-gray;
