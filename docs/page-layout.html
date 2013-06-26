@@ -5,6 +5,10 @@ layout: docs.tpl
 class-home: docs
 breadcrumb: Page Layout 
 ---
+
+<!-- carousel slider -->
+{% include components/_carousel.html %}
+
 <div class="content-wrapper">
 	<div class="row">
 
@@ -22,11 +26,12 @@ breadcrumb: Page Layout
 		</div>
 
 		<div role="main" class="main-content">
-			<!-- chelsea homepage news and events -->
-			{%include components/_news-events-2x6.html %}
 			
 			<!-- chelsea homepage news and events -->
-			{%include components/_courses-2x6.html %}
+			{% include components/_news-events-2x6.html %}
+			
+			<!-- chelsea homepage news and events -->
+			{% include components/_courses-2x6.html %}
 
 			<!-- text block -->
 			{% include components/_text-block.html %}
