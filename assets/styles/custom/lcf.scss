@@ -8,13 +8,11 @@
 .lcf {
     .content-wrapper {
         h1,h2,h3,h4,h5,h6 {
-            font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-family: "Swiss721BT-Black";
             text-align: center;
-            display: inline-block; // so that borders run as far as the text but no further
         }
         h1,h2,.swiss-black {
             text-transform: uppercase;
-            font-weight: 900;
         }
         h1 {
             letter-spacing: 3px;
@@ -43,8 +41,8 @@
         font-size: emCalc(18px);
         font-weight: bold;
     }
-    .media-block, .section-title, .two-up, .flex-block { // LCF needs a header to wrap titles in to achieve centering AND inline-block for borders
-        text-align: center;
+    .section-title, .two-up, .flex-block { // LCF needs a header to wrap titles in to achieve centering AND inline-block for borders
+        //text-align: center;
     }
     // SIDEBAR
     &.home .sidebar {
@@ -125,7 +123,6 @@
             margin-left: -(gs-width(d, 5, 6, (5,16), true));
         }
     }
-
 }
 
 
