@@ -55,7 +55,7 @@ function checkMobileNavMenuState() {
         $('#main-menu-btn').removeClass('active'); 
         $('#main-menu-btn').parent().removeClass('menu-active');
         $('#menu-icon-indicator').html('≡');
-        $('#new-menu').find('#desktop-menu-wrap').addClass('content-wrapper');
+        $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
         initMobMenu = 0; // update menu tracker 
@@ -200,7 +200,7 @@ $('#main-menu-btn').fastClick(function(event) {
       _menu_to_toggle.removeClass('active'); 
       $('#menu-icon-indicator').html('≡');
       _clicked.parent().removeClass('menu-active').removeAttr('style');
-      t.find('#desktop-menu-wrap').addClass('content-wrapper');
+      t.find('#desktop-menu-wrap').addClass('header-wrapper');
       t.removeAttr('style');
       t.hide();
     });
@@ -220,7 +220,7 @@ $('#main-menu-btn').fastClick(function(event) {
       }
 
       // remove the content wrapper for mobile menu to allow for full width
-      t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+      t.find('#desktop-menu-wrap').removeClass('header-wrapper');
 
       // show the pages menu  (update button highlight first)
       $('#main-menu-btn').addClass('active');
@@ -234,7 +234,7 @@ $('#main-menu-btn').fastClick(function(event) {
   }
   else {
 
-    t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+    t.find('#desktop-menu-wrap').removeClass('header-wrapper');
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active');
     $('#main-menu-btn').parent().addClass('menu-active');
