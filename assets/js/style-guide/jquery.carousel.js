@@ -46,7 +46,7 @@ window.Pointer=function(a,b,c){function v(a){i.cssText=a}function w(a,b){return 
         size = getSize();
         updateImageSizes(size, previous);
       });
-      ajax('carousel.php?size='+sizes[size], function() {
+      ajax('carousel.html?size='+sizes[size], function() {
         carousel.innerHTML += xhr.responseText;
         slides = getSlides();
         imgs = carousel.querySelectorAll('img');

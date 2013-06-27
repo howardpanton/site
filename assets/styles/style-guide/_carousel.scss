@@ -5,7 +5,7 @@
   position: relative;
   display: block;
   white-space: nowrap;
-  background: red;
+  height: 480px;
 }
 .carousel .slides {
   margin: 0;
@@ -37,7 +37,6 @@
 }
 .slides a {
   display: block;
-  border: none;
 }
 .slides a img {
   width: 100%;
@@ -49,15 +48,9 @@
   top: 0;
   left: 0;
 }
-.carousel .slide a img, .carousel .slide img {
-  // margin-bottom: -4px;
-}
-
 
 @media all and (min-width: 54em) {
   .carousel.is-loaded {
-    height: 480px;
-    background: yellow;
   }
   .slides {
     height: 100%;
@@ -72,23 +65,34 @@
   }
 }
 
-.carousel .slide.layout1 a {
+// .carousel .slide.layout1 a
+.carousel .slide.layout1 a, .carousel .slide.layout2 a, .carousel .slide.layout3 a, .carousel .slide.layout4 a {
   width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
-.carousel .slide.layout2 a.image0 {
+.carousel .slide.layout1 a.image0 img {
+  width: 100%;
+  max-width: 720px;
+  max-height: 480px;
+
+}
+
+.carousel .slide.layout2 a.image0 img {
   float: right;
   width: 66.66666666666666%;
   max-width: 480px;
   max-height: 480px;
 }
-.carousel .slide.layout2 a.image1 {
+.carousel .slide.layout2 a.image1 img {
   float: left;
   width: 33.33333333333333%;
   max-width: 240px;
   max-height: 240px;
 }
-.carousel .slide.layout2 a.image2 {
+.carousel .slide.layout2 a.image2 img {
   clear: left;
   float: left;
   width: 33.33333333333333%;
@@ -96,19 +100,19 @@
   max-height: 240px;
 }
 
-.carousel .slide.layout3 a.image0 {
+.carousel .slide.layout3 a.image0 img {
   float: left;
   width: 66.66666666666666%;
   max-width: 480px;
   max-width: 480px;
 }
-.carousel .slide.layout3 a.image1 {
+.carousel .slide.layout3 a.image1 img {
   float: right;
   width: 33.33333333333333%;
   max-width: 240px;
   max-height: 240px;
 }
-.carousel .slide.layout3 a.image2 {
+.carousel .slide.layout3 a.image2 img {
   clear: right;
   float: right;
   width: 33.33333333333333%;
@@ -117,25 +121,25 @@
 }
 
 
-.carousel .slide.layout4 a.image0 {
+.carousel .slide.layout4 a.image0 img {
   float: left;
   width: 100%;
   max-width: 770px;
   max-height: 240px;
 }
-.carousel .slide.layout4 a.image1 {
+.carousel .slide.layout4 a.image1 img {
   float: left;
   width: 33.33333333333333%;
   max-width: 240px;
   max-height: 240px;
 }
-.carousel .slide.layout4 a.image2 {
+.carousel .slide.layout4 a.image2 img {
   float: left;
   width: 33.33333333333333%;
   max-width: 240px;
   max-height: 240px;
 }
-.carousel .slide.layout4 a.image3 {
+.carousel .slide.layout4 a.image3 img {
   float: left;
   width: 33.33333333333333%;
   max-width: 240px;
