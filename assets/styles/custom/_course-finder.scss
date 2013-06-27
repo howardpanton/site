@@ -68,7 +68,7 @@
     background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
     background-repeat: no-repeat;
     background-position: 95% 50%;
-    a { color: $ual-black;
+    > a { color: $ual-black;
         font-weight: bold;
     }
   }
@@ -77,6 +77,14 @@
 
 .filter-module-short-courses{
   @extend .filter-module;
+
+  .collapsible {
+    display: none;
+    .active &{
+      display: block;
+    }
+  }
+
 }
 
 .filter-menu-list > li {
@@ -84,24 +92,45 @@
     background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-plus-19px.png");
     background-repeat: no-repeat;
     background-position: 95% 50%;
-    a { 
-      color: white;
-    }
+    
+    > a { color: white; }
+    
     &.active {
       background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
-      a {
+      background-position: 95% 12px;
+      padding-bottom: 0;
+      > a {
         color: $ual-white;
-        font-weight: light;
+        font-weight: 300;
+        padding-bottom: 6px;
+
       }
+      ul {
+        display: block;
+      }
+
     }
     &.expanded {
       background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
     }
+
+    ul { 
+      margin-bottom: 0;
+      padding-bottom: 0;
+      display:none;
+    }
+
     ul > li {
       background-color: white;
+      @include border-image-dot();
+      a { 
+         color: $soft-black;
+         font-weight: 300;
+      }
+
+      &:last-child { border-bottom: 0; } 
     } 
   }
-
 
 
 
