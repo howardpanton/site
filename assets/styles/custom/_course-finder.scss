@@ -17,47 +17,7 @@
 
 
 .search-filters{
- 
-  ul { 
-    h2 {
-      padding: 12px 18px 12px 18px;
-      background-color: $ual-black;
-      color: $ual-white;
-      font-size: emCalc(14px);
-      font-weight: 300;
-    }
-  }
-
-  li {
-
-      background-color: white;
-      @include border-image-dot();
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
-      background-repeat: no-repeat;
-      background-position: 95% 50%;
-      
-      &:last-child { border-bottom: 0; } 
-      
-      a { 
-        padding: 0 30px 0 18px;
-        border-bottom: 0; 
-        color: $aaa-gray;
-        font-size: emCalc(14px);
-        font-weight: 300;
-        height:100%;
-        display:block;
-      }
-  }
-
-  li.active {
-    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    a { color: $ual-black;
-        font-weight: bold;
-    }
-  }
-
+  
   @include gs-media(d, min-max) {
     @include gs-span(d,1,4);
     @include margin-leader(9);
@@ -71,6 +31,85 @@
     @include gs-span(m,all);
   }
 }
+
+
+.filter-module {
+  
+  h2 {
+      padding: 12px 18px 12px 18px;
+      background-color: $ual-black;
+      color: $ual-white;
+      font-size: emCalc(14px);
+      font-weight: 300;
+  }
+
+  ul { padding-top: 0; }
+    li {
+        background-color: white;
+        @include border-image-dot();
+        background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+
+        &:last-child { border-bottom: 0; } 
+      
+        a { 
+          padding: 0 30px 0 18px;
+          border-bottom: 0; 
+          color: $aaa-gray;
+          font-size: emCalc(14px);
+          font-weight: 300;
+          height:100%;
+          display:block;
+        }
+    }
+
+  li.active {
+    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    a { color: $ual-black;
+        font-weight: bold;
+    }
+  }
+
+}
+
+.filter-module-short-courses{
+  @extend .filter-module;
+}
+
+.filter-menu-list > li {
+    background-color: $aaa-gray;
+    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-plus-19px.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    a { 
+      color: white;
+    }
+    &.active {
+      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
+      a {
+        color: $ual-white;
+        font-weight: light;
+      }
+    }
+    &.expanded {
+      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
+    }
+
+    ul > li {
+      background-color: white;
+    } 
+  }
+
+
+
+
+
+
+
+
 
 .search-results {
 	//@include margin-leader(4);
@@ -379,7 +418,7 @@ input, .search-result-module, .search-input-wrap {
   @include gs-media (t,min-max) {
     width: 65%;
   }
-    
+
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
