@@ -120,9 +120,12 @@
         }
     }
 
-    .lcf & {
-
+    .leader {
+        @include gs-media(d,min-max) {
+            margin-left: -(gs-width(d, 5, 6, (5,16), true));
+        }
     }
+
 }
 
 
@@ -136,7 +139,9 @@
     @include gs-media(d,min-max) {
         @include gs-span(d, 5, 16, (5, 16));
     }
-
+    p {
+        padding: rhythm(4, 16px); 
+    }
     figure {
         figcaption {
             @include gs-media(t,min-max) {
@@ -164,12 +169,17 @@
         @include gs-media(d,min-max) {
             @include gs-span(d, 10, 16, (5, 16));
         }
-        position: relative;
+        //position: relative;
         figure {
-            position: absolute;
-            top: 0;
-            right: 0;
-
+            width: gs-width(d, 13, 16, (5, 16), true);
+            margin: rhythm(4, 16px);
+            float: right;
+        }
+    }
+    .view-more-bar {
+        border-top: 1px solid #FFF;
+        p {
+            padding-left: rhythm(4, 16px);  
         }
     }
 }
@@ -241,37 +251,7 @@
 }
 
 
-// FOOTER
-.college-footer {
-    border-bottom: 1px dotted $mid-gray;
-    padding-top: 0;
-}
 
-.flex-block {
-    @include gs-media(d) {
-        @include gs-float(d, left, (1,16));
-    }
-    &.left {
-        width: gs-width(d, 1, 4, (1,16), true);
-    }
-    &.middle {
-        width: gs-width(d, 5, 10, (1,16), true);
-        .inner {
-            border-left: 1px dotted $mid-gray;
-            border-right: 1px dotted $mid-gray;
-        }
-    }
-    &.right {
-        width: gs-width(d, 11, 16, (1,16), true);
-        margin-right: 0;
-    }
-    .inner {
-        padding: 40px;
-    }
-    .bordered {
-        border-bottom: 2px solid #fff;
-    }
-}
  
 
 

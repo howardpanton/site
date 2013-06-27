@@ -2,50 +2,28 @@
 layout: main.tpl
 college: ual
 section: single-course
-title: Course page
+title: BA (Hons) Fashion Design Technology, Womenswear
 template: true
 ---
 
-<div class="row">
-	<div class="content-wrapper">
-		<nav class="buffer-top sidebar m-hide t-hide" role='navigation'>
-			<ul class="no-bullet">
-				<li><a href="#">About LCF</a>
-                    <div class='span d-hide t-hide'><span><a href='#'>+</a></span></div>
-        		</li>
-				<li><a href="#">Courses</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">Events</a></li>
-				<li><a href="#">Life at LCF</a></li>
-				<li><a href="#">LCF People</a></li>
-				<li><a href="#">LCF Channel</a></li>
-				<li><a href="#">LCF Research</a></li>
-				<li><a href="#">LCF Business</a></li>
-			</ul>		
-		</nav>	
-		<div role="main" class="main-column d5-d16">
-			<!--<div class="d5-d12 buffer-top">
-				<nav>
-					<h4><a href="#" data-dropdown="sibling-nav" class="button dropdown">Select another Undergraduate course</a></h4>
-					<ul id="sibling-nav" class="f-dropdown">
-						<li><a href="#">This is a link</a></li>
-						<li><a href="#">This is another</a></li>
-						<li><a href="#">Yet another</a></li>
-					</ul>
-				</nav>
-			</div>-->
-			<header class="d-all">
-				<h1>BA (Hons) Fashion Design Technology: Womenswear</h1>
-			</header>
-			<div class="d-all super-teaser buffer">
-				<p>Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
-			</div>
-			<div class="d-all buffer">	
-				<div class="box-out bg-gray-bg buffer">
-					<h3>Critical time-sensitive</h3>
-					<p><a href="#">We're running to the quad!</a></p>
+<div class="content-wrapper">
+	<div class="row">
+		<nav class="sidebar">
+			<ul>
+				<li>BA (Hons) Painting</li>
+				<li><a href="/colleges/camberwell/courses/undergraduate/ba-sculpture/">BA (Hons) Sculpture</a></li>
+				<li><a href="/colleges/camberwell/courses/undergraduate/ba-hons-illustration/">BA (Hons) Illustration</a></li>
+			</ul>
+		</nav>
+		<div role="main" class="main-content">
+			<div class="row">
+				<div class="text-block">
+					<p class="leader">Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
 				</div>
 			</div>
+			
+			{% include components/_boxout.html %}
+
 			<div id="course-carousel" class="d-all buffer-plus">
 	        	<div class="slider" data-slider-item-width="960" data-counter="true">
 				    <div class="slide">
@@ -84,6 +62,13 @@ template: true
 		</div><!-- .main-column -->	
 	</div><!-- .content-wrapper -->
 </div><!-- .row -->
+
+<!-- accordion -->
+<div class="panel bg-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_accordion.html %}
+	</div>
+</div>
 
 <div class="row bg-gray-bg">
 	<div class="content-wrapper">
@@ -328,8 +313,10 @@ template: true
 			<iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="http://stg.unistats.eduserv.org.uk/Widget.aspx?i=10007162&amp;c=10167&amp;o=vertical" scrolling="no" style="overflow: hidden; border: 0px none transparent; width: 200px; height: 470px;"></iframe>
 
 		</div>
-	</div><!-- .content-wrapper -->
 </section><!-- .row -->
+
+</div><!-- .content-wrapper -->
+
 
 <!--<section id="related-links" class="row bg-gray-bg">
 	<div class="content-wrapper">
