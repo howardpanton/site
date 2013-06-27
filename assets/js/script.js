@@ -61,7 +61,7 @@ function checkMobileNavMenuState() {
         initMobMenu = 0; // update menu tracker 
       }
     );
-  };
+  }
 
 } // end toggleMobileNavMenuState()
 
@@ -121,7 +121,7 @@ $('#m-course-finder-btn').fastClick(function(event) {
     $('.mobile-course-finder').removeClass('hide').addClass('show');
     $('.mobile-course-finder').css({'display':'block'});
     $('.mobile-course-finder').find('input').focus();
-  };
+  }
 
 
 }); // end mobile view course finder button click handler 
@@ -177,7 +177,7 @@ $('#m-search-btn').fastClick(function(event) {
     $('.mobile-search').css({'display':'block'});
     $('.mobile-search').find('input').focus();
     // $('.mobile-search').slideDown('fast', 'linear', function() {});
-  };
+  }
 
 }); // end mobile tablet search button click handler
 
@@ -212,12 +212,12 @@ $('#main-menu-btn').fastClick(function(event) {
       // if course finder is open, close it
       if ( $('.mobile-course-finder').hasClass('show') ) {
           $('.mobile-course-finder').removeClass('show').addClass('hide');
-      };
+      }
 
       // if search is open, close it
       if ( $('.mobile-search').hasClass('show') ) {
           $('.mobile-search').removeClass('show').addClass('hide');
-      };
+      }
 
       // remove the content wrapper for mobile menu to allow for full width
       t.find('#desktop-menu-wrap').removeClass('header-wrapper');
@@ -240,7 +240,7 @@ $('#main-menu-btn').fastClick(function(event) {
     $('#main-menu-btn').parent().addClass('menu-active');
     $('#menu-icon-indicator').html('x');
     t.slideDown('fast', 'linear', function() {  });
-  };
+  }
 });
 
 ///////////////////////
@@ -261,7 +261,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
 // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
 } else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
-  var r = j.attr('data-menu');
+  //var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
   l.parent().removeClass('menu-active');
   j.hide();
@@ -280,7 +280,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 } else {
   _clicked.parent('li').addClass('menu-active');
   var t = _clicked.attr('data-item');
-  var r = j.attr('data-menu');
+  //var r = j.attr('data-menu');
   var g = $('div').find("[data-menu='"+ t +"']");
   g.addClass('menu-active');
   g.slideDown('slow', 'swing', function() {});
@@ -288,7 +288,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
     g.find('input').focus();
   } 
-};
+}
 
 });
 
@@ -330,7 +330,7 @@ $('.submenu span').fastClick(function(event) {
     $(this).addClass('ui-icons-transparent-close');
     var h = $(this).parent().next('.sub-inner-menu');
     h.slideDown('fast', 'linear', function() {});
-  };
+  }
 });      
 
 
@@ -401,26 +401,7 @@ $(document).ready(function(){
       $('#finder-search-input').focus(function () {
         $('#finder-search-input').parent().parent().addClass('search-gray-border');
       });
-
-  _clicked = $(this); 
-  if ( !_clicked.hasClass('active')) {
-    _clicked.addClass('active');
-    $('#footer-journeys-panel').addClass("block").removeClass("hide");
-
-    _clicked.html('Close explore');
-    _clicked.scrollToMe(); // scroll page to footer position
-    
-  } else {
-    _clicked.removeClass('active');
-    // $('#footer-journeys-panel').slideUp();
-    $('#footer-journeys-panel').addClass("hide").removeClass("block");
-    _clicked.html('Explore');
-    _clicked.scrollToMe(); // scroll page to footer position
-      $('#finder-search-input').blur(function() {
-        $('#finder-search-input').parent().parent().removeClass('search-gray-border');
-      });
-
-
+   
   }
 
 
@@ -535,7 +516,7 @@ $(document).ready(function(){
         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
       },
       image: {
-        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
       }
     
     });
@@ -552,14 +533,6 @@ $(document).ready(function(){
   $(".show-more").click(function(e){
     e.preventDefault();  
     var _clicked = $(this);
-    
-    /*if ( $(".hide-content").length > 0 ) {
-        // close all other currently expanded blocks
-        $(".expanded-content").each(function() {
-          $(this).hide();
-        });   
-    }*/
-  
     var parent = _clicked.closest(".expandable-content-block"); 
     $(".expanded-content",parent).slideDown(); 
     _clicked.hide();
@@ -573,7 +546,7 @@ $(document).ready(function(){
     var parent = _clicked.closest(".expandable-content-block"); 
     $(".expanded-content",parent).hide();
     $(parent).find(".show-more").show();
-      parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
+    parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
 
 
@@ -656,6 +629,5 @@ $(window).load(function(){
 
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
 
 
