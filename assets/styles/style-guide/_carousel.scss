@@ -5,7 +5,6 @@
   position: relative;
   display: block;
   white-space: nowrap;
-  height: 480px;
 }
 .carousel .slides {
   margin: 0;
@@ -51,6 +50,7 @@
 
 @media all and (min-width: 54em) {
   .carousel.is-loaded {
+    height: 480px;
   }
   .slides {
     height: 100%;
@@ -149,14 +149,31 @@
 .carousel .control {
   position: absolute;
   display: block;
-  z-index: 100;
+  // z-index: 100;
   top: 0;
   bottom: 0;
   font-size: 2em;
   color: #FFF;
-  width: 1.5em;
+  width: 1.2em;
   height: 100%;
   text-align: center;
+  background: $ual-black;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+  filter: alpha(opacity=50); /* IE 5-7 */
+  -moz-opacity: 0.5; /* Netscape */
+  -khtml-opacity: 0.5; /* Safari 1.x */
+  opacity: 0.5;  /* Good browsers */
+  transition: all .5s ease-out;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;  
+  &:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
+    filter: alpha(opacity=80); /* IE 5-7 */
+    -moz-opacity: 0.8; /* Netscape */
+    -khtml-opacity: 0.8; /* Safari 1.x */
+    opacity: 0.8;  /* Good browsers */
+  }
 }
 .carousel.touch .control {
   display: none;
@@ -172,10 +189,11 @@
   top: 50%;
   margin-top: -0.75em;
   width: 1.5em;
+  height: 1.5em;
   line-height: 1.5em;
   text-align: center;
-  background: #555D50;
-  background: rgba(85,93,80,0.9);
+  // background: #555D50;
+  // background: rgba(85,93,80,0.9);
   -webkit-transition: text-indent 0.3s linear;
   -moz-transition: text-indent 0.3s linear;
   transition: text-indent 0.3s linear;
