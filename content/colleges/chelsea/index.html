@@ -1,14 +1,22 @@
 ---
 layout: main.tpl
-class-home: active
+college: chelsea
+section: home
 title: Chelsea College of Art and Design
 template: true
 ---
 
 <div class="content-wrapper">
 	<div class="row">
-        <h1>Chelsea College of Art and Design</h1>
+		<nav class="sidebar">
+			{% include _lcf_navigation.html %}		
+		</nav>
 
+		<div class="main-content">
+			
+			{% include components/_media-block.html %}
+
+		</div><!-- .main-content -->
 
 	</div>
 </div>
