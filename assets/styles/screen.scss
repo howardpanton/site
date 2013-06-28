@@ -33,7 +33,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ------------------------------------------------------------ */
 
 @import "globals/gridset";
-@import "style-guide/gridset-utilities";
+@import "globals/gridset-utilities";
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
@@ -49,7 +49,8 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ------------------------------------------------------------ */
 
 @import "globals/layout";
-@import "style-guide/typography";  
+@import "custom/my-fonts"; 
+@import "globals/typography";  
 @import "globals/forms";  
 //@import "plugins/foundation/components/tables";   
 @import "globals/university-logos"; 
@@ -60,14 +61,15 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 
 // Course Finder
-
 @import "custom/_course-finder.scss"; 
 
 
 // Navigation
 @import "components/nav-main-menu";
 @import "components/_college-link-menu.scss";
+@import "components/_college-footer.scss";
 //@import "style-guide/main-nav"; 
+
 
 // Search
 
@@ -84,31 +86,35 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Layout components
 
-@import "style-guide/sidebar";
-@import "style-guide/hero-unit";
-@import "style-guide/panels";
-@import "style-guide/text-block";
-@import "style-guide/image-block";
-@import "style-guide/media-block";    
-@import "style-guide/image-list-with-text";
-@import "style-guide/date";
-@import "style-guide/blocks";
-@import "style-guide/accordion";
-@import "style-guide/bxslider";
-@import "style-guide/boxout";
-@import "style-guide/expandable-content-block";
-@import "style-guide/tables";
-@import "style-guide/feature-wall";
-@import "style-guide/four-up-content-gallery";
-@import "style-guide/three-up-content-gallery";
-@import "style-guide/map-block";
-@import "style-guide/half-list";
-@import "style-guide/quotes";
-@import "style-guide/events";
-@import "style-guide/social-media-links";
-@import "style-guide/highlight-boxes";
-@import "style-guide/related-content";
-@import "style-guide/footer";
+@import "style-guide/sidebar", 
+		"style-guide/hero-unit",
+		"style-guide/panels",
+		"style-guide/text-block",
+		"style-guide/image-block",
+		"style-guide/media-block",    
+		"style-guide/image-list-with-text",
+		"style-guide/date",
+		"style-guide/blocks",
+		"style-guide/accordion",
+		"style-guide/bxslider",
+		"style-guide/boxout",
+		"style-guide/news-events-2x6",
+		"style-guide/courses-2x6",
+		"style-guide/top-stories",
+		"style-guide/expandable-content-block",
+		"style-guide/tables",
+		"style-guide/feature-wall",
+		"style-guide/four-up-content-gallery",
+		"style-guide/three-up-content-gallery",
+		"style-guide/map-block",
+		"style-guide/half-list",
+		"style-guide/quotes",
+		"style-guide/events",
+		"style-guide/social-media-links",
+		"style-guide/highlight-boxes",
+		"style-guide/related-content",
+		"style-guide/footer",
+		"style-guide/carousel";
 
 // Javascript components
 
@@ -116,13 +122,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "components/video"; // responsive video
 
 
-
-
-
-
-// Foundation components
-
-@import "plugins/mosaic";
 
 
 /* ::Custom styling - local add-ons & college-level styles */

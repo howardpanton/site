@@ -6,16 +6,25 @@
 
 // Type
 .lcf {
-    h1,h2,h3,h4,h5,h6 {
-        font-family: "Swiss 721", Helvetica Neue, Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-        text-align: center;
-        display: inline-block; // so that borders run as far as the text but no further
+    .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Swiss721BT-Black";
+            text-align: center;
+        }
+        h1,h2,.swiss-black {
+            text-transform: uppercase;
+        }
+        h1 {
+            letter-spacing: 3px;
+        }
+        h2 {
+            padding-bottom: rhythm(1, 24px);
+            margin-bottom: rhythm(3, 24px);
+            background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+            letter-spacing: 5px;
+        }
     }
-    h1,h2 {
-        background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-        margin-bottom: rhythm(4, 34px);
-    }
+    
     hr {
         width: 248px; // mini hr 
         margin-top: 0;
@@ -32,15 +41,49 @@
         font-size: emCalc(18px);
         font-weight: bold;
     }
-    .media-block, .section-title, .two-up { // LCF needs a header to wrap titles in to achieve centering AND inline-block for borders
-        text-align: center;
+    .section-title, .two-up, .flex-block { // LCF needs a header to wrap titles in to achieve centering AND inline-block for borders
+        //text-align: center;
     }
     // SIDEBAR
     &.home .sidebar {
         margin-top: 70px;
     }
+
+    
 }
 
+
+// GRADUATE SCHOOL
+.graduate-school {
+    .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-family: $alt-font-family;
+            font-weight: normal;
+            border: 0 none;
+            letter-spacing: 0;
+        }
+        h1 {
+            font-size:emCalc(30px); 
+            padding-bottom:  rhythm(1, 30px);
+            margin-bottom: rhythm(4, 30px);
+            background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+        }
+        h2 {
+            font-size:emCalc(20px);
+            margin-bottom: rhythm(4, 24px);
+        }
+        .main-content {
+            margin-top: 40px;
+        }
+        .sidebar {
+            margin-top: 100px;
+        }
+        .media-block {
+            padding-bottom: 0;
+        }
+    }
+
+}
 
 
 // Feature with left image, as used on Graduate School page and LCF home page
@@ -54,6 +97,9 @@
     }
 
     figure {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,1,4);
+        }
         @include gs-media(d,min-max) {
             @include gs-span(d, 5, 9, (5, 16));
         }
@@ -64,15 +110,103 @@
     }
 
     .content {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,5,8);
+        }
         @include gs-media(d,min-max) {
             @include gs-span(d, 11, 16, (5, 16));
         }
     }
 
-    .lcf & {
-
+    .leader {
+        @include gs-media(d,min-max) {
+            margin-left: -(gs-width(d, 5, 6, (5,16), true));
+        }
     }
 }
+
+
+// Deluxe boxout with columns and image
+.boxout-deluxe {
+    //@include component-spacing-bottom;
+    margin-bottom: rhythm(6, 16px);
+    @include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+    }
+    @include gs-media(d,min-max) {
+        @include gs-span(d, 5, 16, (5, 16));
+    }
+    p {
+        padding: rhythm(4, 16px); 
+    }
+    figure {
+        figcaption {
+            @include gs-media(t,min-max) {
+                @include gs-span(t,all);
+            }
+            @include gs-media(d,min-max) {
+                width: gs-width(d, 5, 12, (5,16), true);
+                @include gs-float(d, left, (5,16));
+            }
+            font-size: emCalc(14px);
+        }
+    }
+    .left-col {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,2,7);
+        }
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 5, 9, (5, 16));
+        }
+    }
+    .right-col {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,2,7);
+        }
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 10, 16, (5, 16));
+        }
+        //position: relative;
+        figure {
+            width: gs-width(d, 13, 16, (5, 16), true);
+            margin: rhythm(4, 16px);
+            float: right;
+        }
+    }
+    .view-more-bar {
+        border-top: 1px solid #FFF;
+        p {
+            padding-left: rhythm(4, 16px);  
+        }
+    }
+}
+
+// Two column block
+// ------------------------------------------------------------
+
+.two-column-block {
+    @include component-spacing-bottom;
+
+    @include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+    }
+
+    @include gs-media(d,min-max) {
+        @include gs-span(d, 5, 16, (5, 16));
+    }
+    .left-col {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 5, 10, (5, 16));
+        }
+    }
+    .right-col {
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 11, 16, (5, 16));
+        }
+    }
+}
+
+
 
 
 .wrapper-d3-d14 {
@@ -113,89 +247,11 @@
     }
 }
 
-/*
-@include gs-media(t,min-max) {
-        @include gs-span(t,2,7);
-        li {
-      width: gs-width(t, 2, 3, (2,7), true);
-      @include gs-float(t, left, (2,7));
-            &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
-                margin-right: 0;
-            }
-        }
-    }
-    @include gs-media(d) {
-            @include gs-span(d, 5, 16, (5, 16));
-        li {
-      width: gs-width(d, 5, 7, (5,16), true);
-      @include gs-float(d, left, (5,16));
-            &:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
-                margin-right: 0;
-            }
-        }
-    }
-*/
 
-// FOOTER
-footer {
-    &.zone-footer {
-        border-bottom: 1px dotted $mid-gray;
-    }
-    .flex-block {
-        @include gs-media(d) {
-            @include gs-float(d, left, (1,16));
-        }
-        &:nth-of-type(1) {
-            width: gs-width(d, 1, 6, (1,16), true);
-        }
-        &:nth-of-type(2) {
-            width: gs-width(d, 7, 11, (1,16), true);
-        }
-        &:nth-of-type(3) {
-            width: gs-width(d, 12, 16, (1,16), true);
-            margin-right: 0;
-        }
-        .middle {
-            border-left: 1px dotted $mid-gray;
-            border-right: 1px dotted $mid-gray;
-        }
-        .inner {
-            padding: 40px;
-        }
-    }
-}
+
  
-// Multi-column layouts
-// ------------------------------------------------------------
 
-.two-columns {
-    @include gs-media(d,min-max) {
-        @include gs-span(d, 5, 16, (5, 16));
-    }
-    .left-col {
-        @include gs-media(d,min-max) {
-            @include gs-span(d, 5, 10, (5, 16));
-        }
-    }
-    .right-col {
-        @include gs-media(d,min-max) {
-            @include gs-span(d, 11, 16, (5, 16));
-        }
-    }
-}
 
-// GRADUATE SCHOOL
-.graduate-school {
-    h1,h2,h3,h4,h5,h6 {
-        font-family: $alt-font-family;
-        font-weight: normal;
-        border: 0 none;
-    }
-    h2 {
-
-    }
-
-}
 
 .cluster {
 

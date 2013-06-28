@@ -1,9 +1,25 @@
 <!-- run scripts for the course finder results page -->
   <script>
     $(document).ready(function() {
-        $(".expandable-1").expandable();
-
+        
         console.log('ran the custom script for course');
+
+        
+        $('.sub-filter-title').fastClick(function(event) {
+  			event.preventDefault();
+  			var c = $(this);
+  			
+  			if (c.parent().hasClass('active') ) {
+  				c.parent().removeClass('active');
+  			}
+  			else {
+  				c.parent().addClass('active');
+  			}
+  		});
+
+  		
+
     });
+
   </script>
 

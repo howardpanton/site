@@ -1,18 +1,30 @@
 
+// --------------------------------------------------
+// function to allow scroll to an element on the page
+//
+// example:  $('some-div').scrollToMe();  
+//
+jQuery.fn.extend({
+  scrollToMe: function () {
+  var x = jQuery(this).offset().top - 100;
+  jQuery('html,body').animate({scrollTop: x}, 500);
+}});
+
+// --------------------------------------------------
 
 var d = $('.breadcrumbs').find('a');
 d.last().hide();
 
 
 
-  function checkWindowSize() {
-    var width = $(window).width(),
-    new_class = width > 850 ? 'gDesktop' :
-                width > 600 ? 'gTablet' :
-                width < 600 ? 'gmobile' :
-                width > 1289 ? 'gDesktop' : '';
+function checkWindowSize() {
+  var width = $(window).width(),
+  new_class = width > 850 ? 'gDesktop' :
+              width > 600 ? 'gTablet' :
+              width < 600 ? 'gmobile' :
+              width > 1289 ? 'gDesktop' : '';
 
-    $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
+  $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -43,15 +55,16 @@ function checkMobileNavMenuState() {
         $('#main-menu-btn').removeClass('active'); 
         $('#main-menu-btn').parent().removeClass('menu-active');
         $('#menu-icon-indicator').html('≡');
-        $('#new-menu').find('#desktop-menu-wrap').addClass('content-wrapper');
+        $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
         initMobMenu = 0; // update menu tracker 
       }
     );
-  };
+  }
 
 } // end toggleMobileNavMenuState()
+
 
 
 
@@ -109,7 +122,7 @@ $('#m-course-finder-btn').fastClick(function(event) {
     $('.mobile-course-finder').removeClass('hide').addClass('show');
     $('.mobile-course-finder').css({'display':'block'});
     $('.mobile-course-finder').find('input').focus();
-  };
+  }
 
 
 }); // end mobile view course finder button click handler 
@@ -165,7 +178,7 @@ $('#m-search-btn').fastClick(function(event) {
     $('.mobile-search').css({'display':'block'});
     $('.mobile-search').find('input').focus();
     // $('.mobile-search').slideDown('fast', 'linear', function() {});
-  };
+  }
 
 }); // end mobile tablet search button click handler
 
@@ -188,7 +201,7 @@ $('#main-menu-btn').fastClick(function(event) {
       _menu_to_toggle.removeClass('active'); 
       $('#menu-icon-indicator').html('≡');
       _clicked.parent().removeClass('menu-active').removeAttr('style');
-      t.find('#desktop-menu-wrap').addClass('content-wrapper');
+      t.find('#desktop-menu-wrap').addClass('header-wrapper');
       t.removeAttr('style');
       t.hide();
     });
@@ -200,15 +213,15 @@ $('#main-menu-btn').fastClick(function(event) {
       // if course finder is open, close it
       if ( $('.mobile-course-finder').hasClass('show') ) {
           $('.mobile-course-finder').removeClass('show').addClass('hide');
-      };
+      }
 
       // if search is open, close it
       if ( $('.mobile-search').hasClass('show') ) {
           $('.mobile-search').removeClass('show').addClass('hide');
-      };
+      }
 
       // remove the content wrapper for mobile menu to allow for full width
-      t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+      t.find('#desktop-menu-wrap').removeClass('header-wrapper');
 
       // show the pages menu  (update button highlight first)
       $('#main-menu-btn').addClass('active');
@@ -222,13 +235,13 @@ $('#main-menu-btn').fastClick(function(event) {
   }
   else {
 
-    t.find('#desktop-menu-wrap').removeClass('content-wrapper');
+    t.find('#desktop-menu-wrap').removeClass('header-wrapper');
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active');
     $('#main-menu-btn').parent().addClass('menu-active');
     $('#menu-icon-indicator').html('x');
     t.slideDown('fast', 'linear', function() {  });
-  };
+  }
 });
 
 ///////////////////////
@@ -249,7 +262,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
 // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
 } else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
-  var r = j.attr('data-menu');
+  //var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
   l.parent().removeClass('menu-active');
   j.hide();
@@ -268,7 +281,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
 } else {
   _clicked.parent('li').addClass('menu-active');
   var t = _clicked.attr('data-item');
-  var r = j.attr('data-menu');
+  //var r = j.attr('data-menu');
   var g = $('div').find("[data-menu='"+ t +"']");
   g.addClass('menu-active');
   g.slideDown('slow', 'swing', function() {});
@@ -276,7 +289,7 @@ $('#mega-menu-nav-links li a').click(function(event) {
   if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
     g.find('input').focus();
   } 
-};
+}
 
 });
 
@@ -318,7 +331,7 @@ $('.submenu span').fastClick(function(event) {
     $(this).addClass('ui-icons-transparent-close');
     var h = $(this).parent().next('.sub-inner-menu');
     h.slideDown('fast', 'linear', function() {});
-  };
+  }
 });      
 
 
@@ -345,85 +358,80 @@ $(window).resize(function () {
 });
 
 
+//////////////////////
+// ON DOCUMENT READY 
+/////////////////////
 $(document).ready(function(){
-      //////////////////
-      //    sidebar script (populate mobile and tablet menu)
-      /////////////////
-      if ($('.sidebar').length > 0) {
 
-        var _menuHtml = $('.sidebar').html();
-        var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>'
-        var _mobMenuContent = _mobMenuButton + _menuHtml;
-        
-        // create mobile sidebar div and add it to the page before the sidebar
-        $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
+  // sidebar script (populate mobile and tablet menu)
+  if ($('.sidebar').length > 0) {
 
-        // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-        $('#mobile-sidebar').html(_mobMenuContent);
+    var _menuHtml = $('.sidebar').html();
+    var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡ sub-menu</a>';
+    var _mobMenuContent = _mobMenuButton + _menuHtml;
+    
+    // create mobile sidebar div and add it to the page before the sidebar
+    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
 
-        $('.show-mob-sidebar').fastClick(function(e) {
-          e.preventDefault();
-          _clicked = $(this);
-          
-          if (_clicked.hasClass('active')) {
-            _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-            _clicked.html('≡ sub menu').removeClass('active');
-          }
-          else {
+    // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
+    $('#mobile-sidebar').html(_mobMenuContent);
 
-          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
-          // update the menu button and set class to active
-          _clicked.html('x sub menu').addClass('active');
+    $('.show-mob-sidebar').fastClick(function(e) {
+      e.preventDefault();
+      _clicked = $(this);
+      
+      if (_clicked.hasClass('active')) {
+        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
+        _clicked.html('≡ sub menu').removeClass('active');
+      }
+      else {
 
-          }
-
-        });
-      } // end if $(.sidebar)
-
-
-      // focus highlighting for course search and site search input box
-      if ($('.search-input-wrap').length > 0) {
-
-          $('#finder-search-input').focus(function () {
-            $('#finder-search-input').parent().parent().addClass('search-gray-border');
-          });
-
-          $('#finder-search-input').blur(function() {
-            $('#finder-search-input').parent().parent().removeClass('search-gray-border');
-          });
+      _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
+      // update the menu button and set class to active
+      _clicked.html('x sub menu').addClass('active');
 
       }
 
+    });
+  } // end if $(.sidebar)
 
 
-////////////////////
-//  Footer journeys - fadeIn / fadeOut on click 
-///////////////////
+  // focus highlighting for course search and site search input box
+  if ($('.search-input-wrap').length > 0) {
 
-$('#footer-btn-explore').click(function(event) {
-  event.preventDefault();
-
-  _clicked = $(this); 
-  if ( !_clicked.hasClass('active')) {
-    _clicked.addClass('active');
-    $('#footer-journeys-panel').addClass("block");
-
-    _clicked.html('Close explore');
-    _clicked.scrollToMe(); // scroll page to footer position
-    
-  } else {
-    _clicked.removeClass('active');
-    // $('#footer-journeys-panel').slideUp();
-    $('#footer-journeys-panel').addClass("hide");
-    _clicked.html('Explore');
-    _clicked.scrollToMe(); // scroll page to footer position
+      $('#finder-search-input').focus(function () {
+        $('#finder-search-input').parent().parent().addClass('search-gray-border');
+      });
+   
   }
 
-});
 
-//////////////////////
-// back to top button 
-/////////////////////
+  ////////////////////
+  //  Footer journeys - fadeIn / fadeOut on click 
+  ///////////////////
+
+  $('#footer-btn-explore').click(function(event) {
+    event.preventDefault();
+
+    _clicked = $(this); 
+    if ( !_clicked.hasClass('active')) {
+      _clicked.addClass('active');
+      $('#footer-journeys-panel').addClass("block");
+
+      _clicked.html('Close explore');
+      _clicked.scrollToMe(); // scroll page to footer position
+      
+    } else {
+      _clicked.removeClass('active');
+      // $('#footer-journeys-panel').slideUp();
+      $('#footer-journeys-panel').addClass("hide");
+      _clicked.html('Explore');
+      _clicked.scrollToMe(); // scroll page to footer position
+    }
+
+  });
+
+
 
 
   // fade in button when user scrolls down the page
@@ -509,12 +517,14 @@ $('#footer-btn-explore').click(function(event) {
         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
       },
       image: {
-        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
       }
     
     });
   }
 
+  // make videos adapt responsively
+  $('.video-wrapper').fitVids();
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -524,14 +534,6 @@ $('#footer-btn-explore').click(function(event) {
   $(".show-more").click(function(e){
     e.preventDefault();  
     var _clicked = $(this);
-    
-    /*if ( $(".hide-content").length > 0 ) {
-        // close all other currently expanded blocks
-        $(".expanded-content").each(function() {
-          $(this).hide();
-        });   
-    }*/
-  
     var parent = _clicked.closest(".expandable-content-block"); 
     $(".expanded-content",parent).slideDown(); 
     _clicked.hide();
@@ -545,7 +547,7 @@ $('#footer-btn-explore').click(function(event) {
     var parent = _clicked.closest(".expandable-content-block"); 
     $(".expanded-content",parent).hide();
     $(parent).find(".show-more").show();
-      parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
+    parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
 
 
@@ -628,6 +630,5 @@ $(window).load(function(){
 
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
 
 
