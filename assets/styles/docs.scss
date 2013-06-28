@@ -25,34 +25,26 @@
 @import "globals/layout";
 @import "style-guide/mixins";
 
-
-
-
-
-
 .docs {
-
-
-
-.updated {
-   position: absolute;
-   top: 14px;
-   right: 0;
-   font-size: 13px;
-   line-height: 18px;
-}
-
-.gist-container {
-   @include gs-media (t,min-max) {
+  .updated {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $ual-white;
+  }
+  .gist-container {
+    @include gs-media (t,min-max) {
       @include gs-span(t,all);
-   }
+    }
 
-   @include gs-media (d,min-max) {
+    @include gs-media (d,min-max) {
       @include gs-span(d,all);
-   }
-   td {
+    }
+    td {
       text-align: left;
-   }
+    }
 }
 
 
