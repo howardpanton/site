@@ -46,7 +46,7 @@ window.Pointer=function(a,b,c){function v(a){i.cssText=a}function w(a,b){return 
         size = getSize();
         updateImageSizes(size, previous);
       });
-      ajax('carousel.php?size='+sizes[size], function() {
+      ajax('carousel.html?size='+sizes[size], function() {
         carousel.innerHTML += xhr.responseText;
         slides = getSlides();
         imgs = carousel.querySelectorAll('img');
@@ -154,9 +154,9 @@ window.Pointer=function(a,b,c){function v(a){i.cssText=a}function w(a,b){return 
         var prev = document.createElement('a'),
           next = document.createElement('a');
         prev.className = 'control prev';
-        prev.innerHTML = '<span>&#8592;</span>';
+        prev.innerHTML = '<span>&lt;</span>';
         next.className = 'control next';
-        next.innerHTML = '<span>&#8594;</span>';
+        next.innerHTML = '<span>&gt;</span>';
         prev.href = next.href = '#';
         addEvent(carouselOuter, 'click', function(e) {
           var elem = getElem(e);
