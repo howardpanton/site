@@ -168,11 +168,12 @@
   -moz-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;  
   &:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
-    filter: alpha(opacity=80); /* IE 5-7 */
-    -moz-opacity: 0.8; /* Netscape */
-    -khtml-opacity: 0.8; /* Safari 1.x */
-    opacity: 0.8;  /* Good browsers */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; /* IE 8 */
+    filter: alpha(opacity=90); /* IE 5-7 */
+    -moz-opacity: 0.9; /* Netscape */
+    -khtml-opacity: 0.9; /* Safari 1.x */
+    opacity: 0.9;  /* Good browsers */
+    cursor: pointer;
   }
 }
 .carousel.touch .control {
@@ -187,28 +188,34 @@
   position: absolute;
   overflow: hidden;
   top: 50%;
-  margin-top: -0.75em;
+  margin-top: -0.85em;
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
   text-align: center;
   // background: #555D50;
   // background: rgba(85,93,80,0.9);
-  -webkit-transition: text-indent 0.3s linear;
-  -moz-transition: text-indent 0.3s linear;
-  transition: text-indent 0.3s linear;
+  // -webkit-transition: text-indent 0.3s linear;
+  // -moz-transition: text-indent 0.3s linear;
+  // transition: text-indent 0.3s linear;
 }
 .carousel .control.prev {
-  left: 0;
+  left: 10px;
+  height: 1.5em;
+  width: 1.5em;
+  top: 44.5%
 }
 .carousel .control.prev:hover span {
-  text-indent: -0.25em;
+  // text-indent: -0.25em;
 }
 .carousel .control.next {
-  right: 0;
+  right: 10px;
+  height: 1.5em;
+  width: 1.5em;
+  top: 44.5%
 }
 .carousel .control.next:hover span {
-  text-indent: 0.25em;
+  // text-indent: 0.25em;
 }
 @media all and (min-width: 50em) {
   .carousel.touch .control {
