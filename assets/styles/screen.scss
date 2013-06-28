@@ -26,103 +26,92 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::Compass imports 
 // ------------------------------------------------------------
 
-@import "compass/reset";
-@import "compass/typography/vertical_rhythm";
+@import "compass/reset",
+				"compass/typography/vertical_rhythm";
 
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 
-@import "globals/gridset";
-@import "globals/gridset-utilities";
+@import "globals/gridset",
+				"globals/gridset-utilities";
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
-@import "globals/variables";
-@import "globals/mixins";
-@import "globals/colors";
-@import "globals/sprites";
-@import "globals/utilities";
+@import "globals/variables",
+				"globals/mixins",
+				"globals/colors",
+				"globals/sprites",
+				"globals/utilities";
 
 
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
-@import "globals/layout";
-@import "custom/my-fonts"; 
-@import "globals/typography";  
-@import "globals/forms";  
-//@import "plugins/foundation/components/tables";   
-@import "globals/university-logos"; 
+@import "globals/layout",
+				"custom/my-fonts",
+				"globals/typography",
+				"globals/forms",
+				"globals/university-logos"; 
 
 
 /* ::Components */
 /* ------------------------------------------------------------ */
 
-
 // Course Finder
-@import "custom/_course-finder.scss"; 
+@import "custom/course-finder"; 
 
 
 // Navigation
-@import "components/nav-main-menu";
-@import "components/_college-link-menu.scss";
-@import "components/_college-footer.scss";
-//@import "style-guide/main-nav"; 
-
+@import "components/nav-main-menu",
+				"components/college-link-menu",
+				"components/college-footer";
 
 // Search
-
-@import "components/search-buttons"; 
-@import "components/search-form"; 
+@import "components/search-buttons",
+				"components/search-form"; 
 
 // Breadcrumbs
-
 @import "components/breadcrumbs";
 
 // Buttons
-
 @import "style-guide/button-link"; 
 
 // Layout components
-
 @import "style-guide/sidebar", 
-		"style-guide/hero-unit",
-		"style-guide/panels",
-		"style-guide/text-block",
-		"style-guide/image-block",
-		"style-guide/media-block",    
-		"style-guide/image-list-with-text",
-		"style-guide/date",
-		"style-guide/blocks",
-		"style-guide/accordion",
-		"style-guide/bxslider",
-		"style-guide/boxout",
-		"style-guide/news-events-2x6",
-		"style-guide/courses-2x6",
-		"style-guide/top-stories",
-		"style-guide/expandable-content-block",
-		"style-guide/tables",
-		"style-guide/feature-wall",
-		"style-guide/four-up-content-gallery",
-		"style-guide/three-up-content-gallery",
-		"style-guide/map-block",
-		"style-guide/half-list",
-		"style-guide/quotes",
-		"style-guide/events",
-		"style-guide/social-media-links",
-		"style-guide/highlight-boxes",
-		"style-guide/related-content",
-		"style-guide/footer",
-		"style-guide/carousel";
+				"style-guide/hero-unit",
+				"style-guide/panels",
+				"style-guide/text-block",
+				"style-guide/image-block",
+				"style-guide/media-block",    
+				"style-guide/image-list-with-text",
+				"style-guide/date",
+				"style-guide/blocks",
+				"style-guide/accordion",
+				"style-guide/bxslider",
+				"style-guide/boxout",
+				"style-guide/news-events-2x6",
+				"style-guide/courses-2x6",
+				"style-guide/top-stories",
+				"style-guide/expandable-content-block",
+				"style-guide/tables",
+				"style-guide/feature-wall",
+				"style-guide/four-up-content-gallery",
+				"style-guide/three-up-content-gallery",
+				"style-guide/map-block",
+				"style-guide/half-list",
+				"style-guide/quotes",
+				"style-guide/events",
+				"style-guide/social-media-links",
+				"style-guide/highlight-boxes",
+				"style-guide/related-content",
+				"style-guide/footer",
+				"style-guide/carousel";
 
 // Javascript components
 
 @import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
-
-
-
 
 /* ::Custom styling - local add-ons & college-level styles */
 /* ------------------------------------------------------------ */

@@ -28,7 +28,13 @@
   display: block;
   width: 80%;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 720px !important;
+}
+.slides li.college {
+  display: block;
+  width: 142%;
+  margin: 0 auto;
+  max-width: 1280px !important; 
 }
 .is-loaded .slides li {
   position: absolute;
@@ -56,23 +62,35 @@
     height: 100%;
   }
   .slides li {
-    width: 720px;
+    width: 720px !important;
     height: 100%;
     padding-bottom: 0;
   }
+  .slides li.college {
+    width: 1280px !important;
+    height: 100%;
+    padding-bottom: 0;
+  }
+
   .slides .slide {
     position: static;
   }
 }
 
 // .carousel .slide.layout1 a
-.carousel .slide.layout1 a, .carousel .slide.layout2 a, .carousel .slide.layout3 a, .carousel .slide.layout4 a {
+.carousel .slide.layout0 a, .carousel .slide.layout1 a, .carousel .slide.layout2 a, .carousel .slide.layout3 a, .carousel .slide.layout4 a {
   width: 100%;
   padding: 0;
   margin: 0;
   border: none;
 }
 
+.carousel .slide.layout0.image0 a img {
+  width: 100%;
+  max-width: 1280px;
+  max-height: 480px;
+
+}
 .carousel .slide.layout1 a.image0 img {
   width: 100%;
   max-width: 720px;
@@ -188,7 +206,7 @@
   position: absolute;
   overflow: hidden;
   top: 50%;
-  margin-top: -0.85em;
+  margin-top: -0.75em;
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
