@@ -164,16 +164,16 @@
     </ul>
 </nav> -->
 
-      <div class="row bg-gray-bg">
-        <div class="content-wrapper" style="position: relative">
-          <div class="breadcrumbs">
-            <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
-          </div>
-          <div class="updated">Last updated: {{ page.last-updated }}</div>
-        </div>
-      </div>    
-      <div class="header-panel bg-gray-bg">
-          <div class="content-wrapper">
-              <h1>{{ page.title }}</h1>
-          </div>
+  <div class="header-panel bg-gray-bg">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="breadcrumbs">
+          <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
+        </div> 
+        <div class="updated">Last updated: {{ page.last-updated }}</div>
       </div>
+      <div class="row">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
