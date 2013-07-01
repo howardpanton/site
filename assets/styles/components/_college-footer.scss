@@ -1,31 +1,15 @@
-// FOOTER
-.college-footer {
-    border-bottom: 1px dotted $mid-gray;
-    padding-top: 0;
-}
-
 .flex-block {
-    @include gs-media(d) {
-        @include gs-float(d, left, (1,16));
-    }
-    &.left {
-        width: gs-width(d, 1, 4, (1,16), true);
-    }
-    &.middle {
-        width: gs-width(d, 5, 10, (1,16), true);
-        .inner {
-            border-left: 1px dotted $mid-gray;
-            border-right: 1px dotted $mid-gray;
-        }
-    }
-    &.right {
-        width: gs-width(d, 11, 16, (1,16), true);
-        margin-right: 0;
-    }
-    .inner {
-        padding: 40px;
-    }
-    .bordered {
-        border-bottom: 2px solid #fff;
-    }
+  @include gs-media(d) {
+    @include gs-float(d, left, (1,16));
+  }
+  &.left {
+    width: gs-width(d, 1, 4, (1,16), true);
+  }
+  &.middle {
+    width: gs-width(d, 5, 10, (1,16), true);
+  }
+  &.right {
+    width: gs-width(d, 11, 16, (1,16), true);
+    margin-right: 0;
+  }
 }

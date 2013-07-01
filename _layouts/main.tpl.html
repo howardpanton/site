@@ -9,6 +9,8 @@
   
   {% if page.college == "lcf" %}
     {% include _lcf_breadcrumb.html %}
+  {% else if page.college == "lcc" %}
+    {% include _lcc_breadcrumb.html %}
   {% else if page.college == "ual" %}
     {% include _breadcrumb.html %}
   {% endif %}
@@ -16,11 +18,11 @@
 {% endif %}
 
 {% if page.section != "home" and page.section != "graduate-school" %}
-    <div class="header-panel bg-gray-bg">
-      <div class="content-wrapper">
-          <h1>{{ page.title }}</h1>
-      </div>
+  <div class="header-panel bg-gray-bg">
+    <div class="content-wrapper">
+      <h1>{{ page.title }}</h1>
     </div>
+  </div>
 {% endif %}
 
 {{ content }}
@@ -54,6 +56,9 @@
   <!-- Development scripts, not for production -->
   <script src='{{ site.url }}/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <!-- carousel -->
+  <script src='{{ site.url }}assets/js/style-guide/jquery.carousel.js'></script>
 
   <!-- Add Media Queries support for IE 6-8 -->
   <script src='{{ site.url }}/assets/js/libs/respond.min.js' type='text/javascript'></script>

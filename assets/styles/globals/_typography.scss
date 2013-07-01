@@ -4,9 +4,9 @@
 body {
 	font-family: $font-family;
 	font-size: emCalc(16px);
-	@media screen and (min-width: 75em) {
-		font-size: emCalc(18px) ; // 18  
-	}
+	// @media screen and (min-width: 75em) {
+	// 	font-size: emCalc(18px) ; // 18  
+	// }
 }
 
 a {
@@ -44,6 +44,17 @@ h1 {
 		@include adjust-leading-to(10, 54px);
 		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
 	}
+	.lcc & {
+		@extend .LeagueGothicRegular;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+}
+.size-h1 {
+	@include gs-media(d) {
+		font-size: emCalc(54px); 
+		@include adjust-leading-to(10, 54px);
+	}
 }
 
 h2 { 
@@ -60,6 +71,19 @@ h2 {
 		font-size: emCalc(36px); 
 		@include adjust-leading-to(7, 36px); 
 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
+	}
+	.lcc & {
+		@extend .LeagueGothicRegular;
+		border-bottom: 4px solid $ual-black;
+		margin-bottom: 24px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		a {
+			border-bottom: none;
+			&:hover {
+				color: $lcc-secondary-pink;
+			}
+		}
 	}
 }
 
@@ -100,6 +124,7 @@ p, ol, ul {
 	@include adjust-leading-to(4, 16px); 
 	padding: rhythm(1, 16px) 0 rhythm(2, 16px) 0; 	  
 	@media screen and (min-width: 75em) {
+		font-size: emCalc(18px) ; // 18  
 		@include adjust-leading-to(5, 18px); 
 		padding: rhythm(1, 18px) 0 rhythm(2, 18px) 0; 	
 	}
@@ -233,8 +258,4 @@ p.leader {
 .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
 .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
 
-.lcc {
-	h1,h2 {
-		
-	}
-}
+

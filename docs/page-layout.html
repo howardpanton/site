@@ -2,6 +2,7 @@
 title: Page Layout
 last-updated: June 28, 2013
 layout: docs.tpl
+college: docs
 class-home: docs
 breadcrumb: Page Layout 
 ---
@@ -26,6 +27,9 @@ breadcrumb: Page Layout
 		</div>
 
 		<div role="main" class="main-content">
+			
+			<!-- article list with leading article on left - used on lcc homepage -->
+			{% include components/_article-listing-main-article-left.html %}
 			
 			<!-- top stories right side comp -->
 			{% include components/_top-stories.html %}
