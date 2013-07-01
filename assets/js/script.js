@@ -550,7 +550,6 @@ $(document).ready(function(){
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
 
-
 }); // end document ready
 
  

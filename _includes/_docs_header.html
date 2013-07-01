@@ -8,20 +8,10 @@
     </div>
   </div>
   </a>
-
-  <div class='banner'>
-    <div class="content-wrapper">          
-      <!-- <a class="nav-btn" id="nav-open-btn" href="#slide-in-nav">Book Navigation</a> -->
-      <h1>
-         <!--  <a href="{{site.url}}docs/">ual: style guide</a> -->
-         <a href="{{site.url}}docs/">ual:</a>
-      </h1>
-    </div>
-  </div>
   
 <!-- slide in navigation (hidden on page load)  -->
 
-<nav id="slide-in-nav" role="navigation">
+<nav id="slide-in-nav" role="navigation"> 
       <div class="block">
           <ul style="font-weight:lighter; padding: 24px">
               <li>
@@ -98,8 +88,8 @@
          <a href="media.html">Text with Image</a>
        </li>-->
 
-         <li><a href="image-blocks.html">Image blocks (with optional title or aside)</a></li>
-
+<!--          <li><a href="image-blocks.html">Image blocks (with optional title or aside)</a></li>
+ -->
        <!--
       <h3>Layout</h3>
       <ul>
@@ -174,16 +164,16 @@
     </ul>
 </nav> -->
 
-      <div class="row bg-gray-bg">
-        <div class="content-wrapper" style="position: relative">
-          <div class="breadcrumbs">
-            <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
-          </div>
-          <div class="updated">Last updated: {{ page.last-updated }}</div>
-        </div>
-      </div>    
-      <div class="header-panel bg-gray-bg">
-          <div class="content-wrapper">
-              <h1>{{ page.title }}</h1>
-          </div>
+  <div class="header-panel bg-gray-bg">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="breadcrumbs">
+          <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
+        </div> 
+        <div class="updated">Last updated: {{ page.last-updated }}</div>
       </div>
+      <div class="row">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>

@@ -2,17 +2,15 @@
 
 <body class='style {{ page.class-home }}'>
 
-    <div class="feature-wrapper">
+  {% include _global_banner.html %}
     
-    {% include _docs_header.html %}
-  
-    {{ content }}
+  {% include _docs_header.html %}
 
-    {% include _global_footer.html %}
+  {{ content }}
 
-    </div>
+  {% include _global_footer.html %}
 
-  <script src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'></script>
+
   <script>
     if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
@@ -24,7 +22,7 @@
   <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
 
   <!-- carousel -->
-  <script src='{{ site.url }}/assets/js/style-guide/jquery.carousel.js'></script>
+  <script src='{{ site.url }}assets/js/style-guide/jquery.carousel.js'></script>
 
   <!-- Unveil script for lazy loading images -->
   <script src='{{ site.url }}/assets/js/libs/jquery.unveil.min.js'></script>
@@ -38,6 +36,9 @@
   <!-- load in bxSlider The Responsive jQuery Content Slider -->
   <script src='{{ site.url }}/assets/js/components/jquery.bxslider.min.js'></script> 
   
+  <!-- carouFredSel - used for college homepage sliders -->
+  <script src="{{ site.url }}/assets/js/style-guide/jquery.carouFredSel-6.2.1.js"></script>
+
   <!-- load in JW Video Player -->
   <script src='{{ site.url }}/assets/js/libs/jwplayer/jwplayer.js'></script>
 

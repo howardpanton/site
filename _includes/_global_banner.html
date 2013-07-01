@@ -17,7 +17,7 @@
         </ul>
       </nav>
       
-      
+      {% if page.class-home != "docs" %}
         <nav class="college-link-menu">
           <ul>
             <li><a href="/">UAL</a></li>
@@ -29,6 +29,7 @@
               <li><a href="{{ site.url }}/beta/content/colleges/wimbledon/">Wimbledon</a></li>
           </ul>
         </nav>
+      {% endif %}
 
     </div>
   </div>

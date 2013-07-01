@@ -1,6 +1,5 @@
 
-@import "compass/reset";
-@import "compass/typography/vertical_rhythm";
+
 
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
@@ -24,106 +23,28 @@
 /* ------------------------------------------------------------ */
 
 @import "globals/layout";
-@import "style-guide/typography";  
-@import "globals/forms";
-//@import "plugins/foundation/components/tables";   
-@import "globals/university-logos"; 
-
-
 @import "style-guide/mixins";
 
-
-.content-wrapper {
-  width: 92.5%;
-  max-width: 1256px;
-  margin: 0 auto;
-  min-width:320px;
-}
-.content-wrapper img {
-  max-width: 100%;
-  height: auto;
-}
-
-.main-content {
-    @include gs-media (t,min-max) {
-    @include gs-span(t,all);
-  }
-
-  @include gs-media (d,min-max) {
-    @include gs-span(d,5,16);
-  }
-}
-
-.row {
-  @include gs-span(d, all);
-}
-
-@import "custom/_course-finder.scss",
-    "components/_college-link-menu.scss",
-    "style-guide/button-link",
-    "style-guide/typography",
-    "style-guide/panels",
-    "style-guide/main-nav",
-    "components/nav-main-menu",
-    "components/search-buttons",
-    "components/search-form",
-    "components/breadcrumbs",
-    "components/search-buttons",
-    "components/search-form",
-    "components/breadcrumbs",
-    "globals/university-logos",
-    "style-guide/sidebar",
-    "style-guide/hero-unit",
-    "style-guide/text-block",
-    "style-guide/image-block",
-    "style-guide/media-block",    
-    "style-guide/image-list-with-text",
-    "style-guide/date",
-    "style-guide/expandable-content-block",
-    "style-guide/blocks",
-    "style-guide/accordion",
-    "style-guide/bxslider",
-    "style-guide/boxout",
-    "style-guide/news-events-2x6",
-    "style-guide/courses-2x6",
-    "style-guide/carousel",
-    "style-guide/tables",
-    "style-guide/feature-wall",
-    "style-guide/four-up-content-gallery",
-    "style-guide/three-up-content-gallery",
-    "style-guide/map-block",
-    "style-guide/half-list",
-    "style-guide/quotes",
-    "style-guide/events",
-    "style-guide/social-media-links",
-    "style-guide/highlight-boxes",
-    "style-guide/related-content",
-    "style-guide/footer";
-
-
 .docs {
-
-
-
-.updated {
-   position: absolute;
-   top: 14px;
-   right: 0;
-   font-size: 13px;
-   line-height: 18px;
-}
-
-.gist-container {
-   @include gs-media (t,min-max) {
+  .updated {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $ual-white;
+  }
+  .gist-container {
+    @include gs-media (t,min-max) {
       @include gs-span(t,all);
-   }
+    }
 
-   @include gs-media (d,min-max) {
+    @include gs-media (d,min-max) {
       @include gs-span(d,all);
-   }
-   td {
+    }
+    td {
       text-align: left;
-   }
+    }
 }
 
 
