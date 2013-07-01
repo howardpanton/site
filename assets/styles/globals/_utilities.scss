@@ -451,4 +451,15 @@ margin:-5px 0px 12px 0px;
 
 }
 
+// use this to prevent long URLs or titles from extending
+// beyond their div container
+%no-word-wrap, .no-word-wrap {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
 
