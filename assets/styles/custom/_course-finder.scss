@@ -443,8 +443,9 @@ input, .search-result-module, .search-input-wrap {
   
   width: 60%;
   float: left;
+  margin-left: 18px;
   p {
-    margin-left: 12px;
+    
     padding-top: 0;
   }
 
@@ -455,8 +456,9 @@ input, .search-result-module, .search-input-wrap {
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
+    margin-left: 0;
     p {
-      margin-left: 0;
+      
       @include margin-leader(4);
       @include margin-trailer(4);
     }
