@@ -170,15 +170,15 @@
 }
 
 // styling the text-input field for searching courses
-.course-finder-input {
-	width: 100%;
-	height: 70px;
-	float: left;
-	border: none;
-	padding-left: 12px;
-	@include adjust-font-size-to (16px);
-	@include margin-trailer (4);
-}
+// .course-finder-input {
+// 	width: 100%;
+// 	height: 70px;
+// 	float: left;
+// 	border: none;
+// 	padding-left: 12px;
+// 	@include adjust-font-size-to (16px);
+// 	@include margin-trailer (4);
+// }
 
 input {
 	-webkit-transition: -webkit-box-shadow 1s;
@@ -228,38 +228,43 @@ input:hover, input:focus {
 
 .course-finder-input {
 	@include single-transition();
-	height: 44px;
-  margin-top: 3px;
+	height: 48px;
+  width: 100%;
+  // margin-top: 3px;
   margin-bottom: 0;
 	border: none;
-	margin-left: 18px;
+	margin-left: 12px;
   background-color: rgba(255,255,255, 0);
   box-shadow: none !important;
+  @include adjust-font-size-to (16px);
 
   @include gs-media(t, min-max) {
-    margin-left: 6px;
+    margin-left: 12px;
+    @include adjust-font-size-to (14px);
   }
 
   @include gs-media(m, min-max) {
     max-width: 90%;
     width:90%;
     margin-left: 0;
+    padding-left: 6px;
+    @include adjust-font-size-to (12px);
   }
 
   &::-webkit-input-placeholder {
-   color: #eeeeee; 
+   color: $light-gray; 
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-   color: #eeeeee; 
+   color: $light-gray; 
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-   color: #eeeeee;   
+   color: $light-gray;   
   }
   
   &:-ms-input-placeholder {  
-   color: #eeeeee;   
+   color: $light-gray;   
   }
   
   &:focus {
@@ -504,13 +509,15 @@ input, .search-result-module, .search-input-wrap {
   display: none;
   list-style: none;
   background-color: #ffffff;
+  left: 0;
+  padding-left: 18px;
   @include border-image-dot();
- 
  
   .ui-menu-item > a.ui-corner-all {
     display: block;
     clear: both;
     white-space: nowrap;
+    border-bottom: 0;
  
     &.ui-state-hover, &.ui-state-active {
       color: $soft-black;
@@ -523,5 +530,12 @@ input, .search-result-module, .search-input-wrap {
     }
   }
 }
+
+.ui-helper-hidden-accessible {
+  position: relative;
+  top: -20px;
+}
+
+
 
 
