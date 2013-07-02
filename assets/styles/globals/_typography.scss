@@ -19,7 +19,7 @@ a {
 		color: $aaa-gray;
 		border-bottom: 1px solid $primary;
 	}
-
+/*
 	span {
 		height: 1px;
 		width: 1px;
@@ -27,6 +27,7 @@ a {
 		overflow: hidden;
 		top: -10px;	
 	}
+*/
 }
 
 h1 { 
@@ -127,7 +128,10 @@ p.leader {
 // default unordered list
 ul {
 	li {
-		padding: rhythm(1, 16px) 0; 	
+		padding: rhythm(1, 16px) 0; 
+		&.with-icon {
+			padding-left: rhythm(8, 16px);
+		}	
 	}
 }
 
