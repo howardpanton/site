@@ -25,11 +25,10 @@
   </div>
 {% endif %}
 
-
 {{ content }}
 
-{% if page.college %}
-  {% include _college_footer.html %}
+{% if page.college == "lcc" %}
+  {% include _lcc_footer.html %}
 {% endif %}
 
 
