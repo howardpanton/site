@@ -1,0 +1,31 @@
+.article-listing-main-article-left {
+	margin-bottom: 24px;
+
+	@include gs-media(t,min-max) {
+		@include gs-span(d, 2, 7, (1, 8));
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+	}
+	.leading-article {
+		@include gs-media(d) {
+			@include gs-span(d, 5, 10, (5, 16));
+			h2 {
+				@extend .size-h1;
+				padding-top: 12px;
+			}
+		}
+	}
+	.other-articles {
+		@include gs-media(d) {
+			@include gs-span(d, 11, 16, (5, 16));
+			li {
+				&:nth-of-type(1) {
+					h2 {
+						padding-top: 0;
+					}
+				}				
+			}
+		}
+	}
+}
