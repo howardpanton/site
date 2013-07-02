@@ -1,6 +1,16 @@
 // Tabs to accordion 
 // (styled for LCC homepage)
 
+// accordian variables
+$border-width : 6px;
+
+$border-color : $ual-black;
+
+
+
+// calculated settings
+$d-border-width : ($border-width * 2);
+
 .tabs-container {
   width: 100%;
 }
@@ -10,18 +20,21 @@ ul.tabs {
 	float: left;
 	list-style: none;
   width: 100%;
-  border-top: 6px solid black;
-	border-right: 6px solid black;
-	border-left: 6px solid black;
+  border-top: $border-width solid $border-color;
+	border-right: $border-width solid $border-color;
+	border-left: $border-width solid $border-color;
   border-bottom: 0;
-
+  
 	@include gs-media (d,min-max) {
-		border-top: 12px solid black;
-	  border-right: 12px solid black;
-	  border-left:12px solid black;
+		border-top: $d-border-width solid $border-color;
+	  border-right: $d-border-width solid $border-color;
+	  border-left: $d-border-width solid $border-color;
 	  
 	}
-
+  
+  @include gs-media (m,min-max) {
+    display: none;
+  }
   
 }
 
@@ -56,7 +69,7 @@ ul.tabs li {
 
 ul.tabs li:hover {
 	background-color: #ffff00;
-	color: black;
+	color: $border-color;
 }
 
 ul.tabs li.active {
@@ -72,13 +85,15 @@ ul.tabs li.active {
 
 .tab_container {
 	
-	border: 1px solid #333;
+	//border: $border-width solid $border-color;
 	border-top: none;
 	clear: both;
 	float: left;
 	width: 100%;
 	background: #fff;
 	overflow: auto;
+  @include margin-trailer(2);
+
 	@include gs-media (d,min-max) {
 		@include margin-trailer(4);
 	}
@@ -94,7 +109,7 @@ ul.tabs li.active {
   }
 	
 	@include gs-media (d,min-max) {
-		border: 12px solid black;
+		border: $d-border-width solid black;
 	}
 
 }
@@ -103,7 +118,7 @@ ul.tabs li.active {
   @extend .cf;
   background-color: black;
   width: 100%;
-  padding: 12px 0 12px 0;
+  padding: 12px;
   color: white;
 
   .block-a, .block-b {
@@ -117,32 +132,40 @@ ul.tabs li.active {
 			clear: none;
 		}
   }
-
-  
 }
 
-.tab_drawer_heading { display: none; }
+.tab_drawer_heading {
 
-@media screen and (max-width: 480px) {
-	.tabs {
-		display: none;
-	}
-	.tab_drawer_heading {
-		color: $soft-black;
-		border-top: 1px solid #333;
-		margin: 0;
-		padding: 12px 18px;
-		display: block;
-		cursor: pointer;
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		-khtml-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-	}
-	.d_active {
-		background-color: #666;
-		color: #fff;
-	}
+  color: $soft-black;
+  border-top: 1px solid #333;
+  margin: 0;
+  padding: 12px 18px;
+  display: block;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  @include gs-media (t, min-max) {
+    display: none; 
+  }
+
+  @include gs-media (d, min-max) {
+    display: none; 
+  }
+}
+
+.d_active {
+	background-color: $bg-gray;
+  //border-width: $border-width;
+  border-color: $ual-black;
+
+  border-bottom: 0;
+	color: #fff;
+  @include gs-media (d, min-max) {
+
+  }
 }
