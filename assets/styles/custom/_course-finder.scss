@@ -170,15 +170,15 @@
 }
 
 // styling the text-input field for searching courses
-.course-finder-input {
-	width: 100%;
-	height: 70px;
-	float: left;
-	border: none;
-	padding-left: 12px;
-	@include adjust-font-size-to (16px);
-	@include margin-trailer (4);
-}
+// .course-finder-input {
+// 	width: 100%;
+// 	height: 70px;
+// 	float: left;
+// 	border: none;
+// 	padding-left: 12px;
+// 	@include adjust-font-size-to (16px);
+// 	@include margin-trailer (4);
+// }
 
 input {
 	-webkit-transition: -webkit-box-shadow 1s;
@@ -228,38 +228,43 @@ input:hover, input:focus {
 
 .course-finder-input {
 	@include single-transition();
-	height: 44px;
-  margin-top: 3px;
+	height: 48px;
+  width: 100%;
+  // margin-top: 3px;
   margin-bottom: 0;
 	border: none;
-	margin-left: 18px;
+	margin-left: 12px;
   background-color: rgba(255,255,255, 0);
   box-shadow: none !important;
+  @include adjust-font-size-to (16px);
 
   @include gs-media(t, min-max) {
-    margin-left: 6px;
+    margin-left: 12px;
+    @include adjust-font-size-to (14px);
   }
 
   @include gs-media(m, min-max) {
     max-width: 90%;
     width:90%;
     margin-left: 0;
+    padding-left: 6px;
+    @include adjust-font-size-to (12px);
   }
 
   &::-webkit-input-placeholder {
-   color: #eeeeee; 
+   color: $light-gray; 
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-   color: #eeeeee; 
+   color: $light-gray; 
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-   color: #eeeeee;   
+   color: $light-gray;   
   }
   
   &:-ms-input-placeholder {  
-   color: #eeeeee;   
+   color: $light-gray;   
   }
   
   &:focus {
@@ -295,8 +300,6 @@ input:hover, input:focus {
     border-bottom: 0;
   }
 }
-
-
 
 
 input, .search-result-module, .search-input-wrap {
@@ -359,34 +362,25 @@ input, .search-result-module, .search-input-wrap {
   @include margin-trailer (4);
 }
 
-.search-result-module {
- 
-}
-
 .search-results-summary{
-  width: 100%;
   clear:left;
   min-height: 120px;
-  position: relative;
-
 }
 
 .search-results-info {
    @include gs-media (d,min-max) {
-      @include gs-span(d,11,16,(6,16));
+      @include gs-span(d,10,16);
     }
 
     @include gs-media (t,min-max) {
-      @include gs-span(t,5,7);
+      @include gs-span(t,5,8);
     }
 
     @include gs-media (m,min-max) {
       @include gs-span(m,all);
       display: block;
       clear: left;
-      p{
-          margin-bottom:  24px;
-      }
+      p { margin-bottom:  24px; }
     }
   
   p {
@@ -401,7 +395,7 @@ input, .search-result-module, .search-input-wrap {
     a { margin-right: 1px; }
 
     @include gs-media (d,min-max) {
-      @include gs-span(d,6,9,(6,16));
+      @include gs-span(d,6,10,(6,16));
     }
 
     @include gs-media (t,min-max) {
@@ -416,7 +410,6 @@ input, .search-result-module, .search-input-wrap {
     }
   }
 
-
 .course-title {
   display: block;
   width: 32%;
@@ -428,8 +421,9 @@ input, .search-result-module, .search-input-wrap {
     font-size: 18px;
     margin-top: 0;
     padding-bottom: 1px;
-    a { text-decoration: none; }
-
+    a { 
+      @include hyphenation;
+      text-decoration: none; }
   }
   
   @include gs-media (m,min-max) {
@@ -443,20 +437,21 @@ input, .search-result-module, .search-input-wrap {
   
   width: 60%;
   float: left;
+  margin-left: 18px;
   p {
-    margin-left: 12px;
     padding-top: 0;
   }
 
   @include gs-media (t,min-max) {
-    width: 65%;
+    width: 64%;
   }
 
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
+    margin-left: 0;
+
     p {
-      margin-left: 0;
       @include margin-leader(4);
       @include margin-trailer(4);
     }
@@ -493,10 +488,12 @@ input, .search-result-module, .search-input-wrap {
   width: 60%;
   float: left;
   font-size: emCalc(16px);
+  margin-left: 10px;
   @include gs-media (m,min-max) {
     width: 100%;
     clear: left;
     font-size: emCalc(14px);
+    margin-left: 0;
   }
 }
 
@@ -504,6 +501,41 @@ input, .search-result-module, .search-input-wrap {
   text-align: center;
   margin: 0 auto;
 }
+
+
+.ui-autocomplete {
+  z-index: 1000;
+  float: left;
+  display: none;
+  list-style: none;
+  background-color: #ffffff;
+  left: 0;
+  padding-left: 18px;
+  @include border-image-dot();
+ 
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    clear: both;
+    white-space: nowrap;
+    border-bottom: 0;
+ 
+    &.ui-state-hover, &.ui-state-active {
+      color: $soft-black;
+      text-decoration: none;
+      background-color: $bg-gray;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      background-image: none;
+    }
+  }
+}
+
+.ui-helper-hidden-accessible {
+  position: relative;
+  top: -20px;
+}
+
 
 
 

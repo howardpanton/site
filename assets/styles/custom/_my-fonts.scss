@@ -49,8 +49,14 @@
 /* @import must be at top of file, otherwise CSS will not work */
 //@import url("//hello.myfonts.net/count/278568");
 
-  
-@font-face {font-family: 'Swiss721BT-Light';src: url('../fonts/278568_0_0.eot');src: url('../fonts/278568_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_0_0.woff') format('woff'),url('../fonts/278568_0_0.ttf') format('truetype');}
+@include font-face("Swiss721BT-Light", 
+    font-files(
+        "../fonts/278568_0_0.woff", woff,
+        "../fonts/278568_0_0.ttf", ttf),
+        "../fonts/278568_0_0.eot?#iefix"
+);
+
+/*@font-face {font-family: 'Swiss721BT-Light';src: url('../fonts/278568_0_0.eot');src: url('../fonts/278568_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_0_0.woff') format('woff'),url('') format('truetype');}*/
  
   
 @font-face {font-family: 'Swiss721BT-Roman';src: url('../fonts/278568_1_0.eot');src: url('../fonts/278568_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_1_0.woff') format('woff'),url('../fonts/278568_1_0.ttf') format('truetype');}
@@ -61,8 +67,16 @@
   
 @font-face {font-family: 'Swiss721BT-Bold';src: url('../fonts/278568_3_0.eot');src: url('../fonts/278568_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_3_0.woff') format('woff'),url('../fonts/278568_3_0.ttf') format('truetype');}
  
-  
-@font-face {font-family: 'Swiss721BT-Black';src: url('../fonts/278568_4_0.eot');src: url('../fonts/278568_4_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_4_0.woff') format('woff'),url('../fonts/278568_4_0.ttf') format('truetype');}
+
+@include font-face("Swiss721BT-Black", 
+    font-files(
+        "../fonts/278568_4_0.woff", woff,
+        "../fonts/278568_4_0.ttf", ttf),
+        "../fonts/278568_4_0.eot?#iefix"
+);
+
+
+/*@font-face {font-family: 'Swiss721BT-Black';src: url('../fonts/278568_4_0.eot');src: url('../fonts/278568_4_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_4_0.woff') format('woff'),url('../fonts/278568_4_0.ttf') format('truetype');}*/
  
   
 @font-face {font-family: 'Swiss721BT-Medium';src: url('../fonts/278568_5_0.eot');src: url('../fonts/278568_5_0.eot?#iefix') format('embedded-opentype'),url('../fonts/278568_5_0.woff') format('woff'),url('../fonts/278568_5_0.ttf') format('truetype');}
