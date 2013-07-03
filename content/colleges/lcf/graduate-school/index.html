@@ -13,26 +13,15 @@ template: true
 		</nav>	
 
 		<div role="main" class="main-content">
+			<!-- only on graduate school -->
 			<div class="row">
 				<header class="section-title">
 					<h1>{{ page.title }}</h1>
 				</header>
-				<div class="feature-with-left-image">
-					<figure>
-						<img src="{{ site.url }}/assets/img/lcf/lcf-gs-1.jpg">
-						<figcaption><p>Cat Patterson — LCF Loves you<br><em><a href="#">MA Fashion Photography</a></em></p></figcaption>
-					</figure>
-					<div class="content">
-						<p class="leader">We offer a broad range of taught courses, including MA Fashion, Executive MBA, Postgraduate Diploma, Postgraduate Certificate and Graduate Diploma courses.</p>
-						<p>Browse by cluster:</p>
-						<ul class="no-bullet">
-							<li><a href="#design-technology">Design & Technology</a></li>
-							<li><a href="#business-management">Business & Management</a></li>
-							<li><a href="#media-communication">Media & Communication</a></li>
-						</ul>
-					</div>
-				</div>
 			</div>
+				
+			{% include components/_intro-block-with-left-image.html %}
+
 			<div class="row">
 				<div class="two-column-block">
 					<header class="section-title">
