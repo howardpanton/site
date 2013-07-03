@@ -538,10 +538,14 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 
-  &.cf-dropdown-predict-search{
+  &.cf-predictive-search-matches{
     background-color: $dark-gray;
+    li a {
+      color: $ual-white;
+      font-size: emCalc(24px);
+    }
   }
-  
+
   li {
     @include border-image-dot();
   }
