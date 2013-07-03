@@ -9,15 +9,20 @@ template: true
 <div class="content-wrapper">
 	<div class="row">
 		<nav class="sidebar">
-			{% include _lcf_navigation.html %}		
+			<!--{% include _lcf_navigation.html %}-->		
 		</nav>	
 
 		<div role="main" class="main-content">
-			<div class="row">
-				<div class="media-block">
-					
-				</div>
-			</div>
+
+			{% include components/_three-up-content.html %}
+
+			{% include components/_gallery-lightbox-four-up.html %}
+
+
+		
+
+
+
 		</div>	
 	</div><!-- .row -->
 </div><!-- .content-wrapper -->
