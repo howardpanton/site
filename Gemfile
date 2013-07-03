@@ -9,9 +9,15 @@
 source 'https://rubygems.org'
 
 group :development do
+
+	gem 'growl'
+
 	gem 'sass'
+  	gem 'compass'
 	gem 'jekyll'
+
   	gem 'guard'
-  	gem 'guard-sass'
-  	gem 'guard-jekyll'
+	gem 'guard-compass'
+	gem 'guard-jekyll'
+
 end

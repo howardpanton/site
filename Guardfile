@@ -1,8 +1,10 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+notification:growl
 
-guard 'sass', 
-	:input => 'assets/styles', 
-	:output=> 'assets/css', 
-	:compass => true, 
-	:style => :expanded
+guard 'compass' do
+  watch(%r{(.*)\.s[ac]ss$})
+end
+
+guard 'jekyll' do
+  watch /^.*\.(htm|html|xml|js|css|ttf|eot|woff|jpg|svg)/
+  ignore %r{^_site/}, %r{/assets/styles/}, %r{/.sass-cache/}
+end
