@@ -1,110 +1,160 @@
 ---
 layout: main.tpl
 college: lcc
+section: home
 title: London College of Communication
+breadcrumb: breadcrumb
 template: true
-
 ---
+
+<div class="row">
+	<div class="carousel">
+	  <ul class="slides">
+	    <li class="college">
+	      <div class="slide layout0">
+	        <a class="image0" href="#">
+	          <img src="{{ site.url }}/assets/img/carousel-imgs/lcc/slide_1.jpg" alt="#">
+	        </a>
+	      </div>
+	    </li>         
+	    <li class="college">
+	      <div class="slide layout0">
+	        <a class="image0" href="#">
+	          <img src="{{ site.url }}/assets/img/carousel-imgs/lcc/slide_2.jpg" alt="#">
+	        </a>
+	      </div>
+	    </li>
+	    <li class="college">
+	      <div class="slide layout0">
+	        <a class="image0" href="#">
+	          <img src="{{ site.url }}/assets/img/carousel-imgs/lcc/slide_3.jpg" alt="#">
+	        </a>
+	      </div>
+	    </li>
+	    <li class="college">
+	      <div class="slide layout0">
+	        <a class="image0" href="#">
+	          <img src="{{ site.url }}/assets/img/carousel-imgs/lcc/slide_4.jpg" alt="#">
+	        </a>
+	      </div>
+	    </li>
+	  </ul>
+	</div>
+</div>
+
 <div class="content-wrapper">
-  
+
   <div class="row">
     <nav class="sidebar">
       {% include _lcc_navigation.html %}    
-    </nav>
+    </nav>  
+
     <div class="main-content">
-      <div class="slider-container">
-        <ul class="slider" data-pager="true">
-          <li><img src="http://placehold.it/1280x800" alt=""></li>
-          <li><img src="http://placehold.it/1280x800" title="" alt=""></li>
-          <li><img src="http://placehold.it/1280x800" title="" alt=""></li>
-        </ul>
-      </div>
 
-      <!-- {% include components/_image-block-with-aside.html %} -->
-      <div class="image-block-with-h2-aside-list">
-        <div class="image">
-          <figure>
-            <img src="http://placehold.it/1000x500&text=IMAGE, VIDEO OR SLIDER" alt="Image Alt">
-            <!--   <figcaption>
-              <p>This is a information for the image above, it can be either accreditation or a caption. This should not run more then 2 lines. (optional)</p>
-            </figcaption>  -->
-          </figure>
-          <div class="cf">
-            <div class="heading">
-              <h2>Image block with optional title and aside</h2>
-            </div>      
-          </div>
-        </div>
-          <aside>
-            <ul>
-              <li>
-                <h2>There will be some content heading here</h2>
-                <p>Aside, Praesent ullamcorper tincidunt nisl, sit amet pretium nulla iaculis sit amet. (max 30 words for a paragraph)</p>
-              </li>
-              <li><a href="#">link here &rarr;</a>
-                <h2>There will be some content heading here</h2>
-                <p>Aside, Praesent ullamcorper tincidunt nisl, sit amet pretium nulla iaculis sit amet. (max 30 words for a paragraph)</p>
-              </li>
-              <li>
-                <a href="#">link here &rarr;</a>
-                <h2>There will be some content heading here</h2>
-                <p>Aside, Praesent ullamcorper tincidunt nisl, sit amet pretium nulla iaculis sit amet. (max 30 words for a paragraph)</p>
-                <a href="#">link here &rarr;</a>  
-              </li>
-            </ul>
-          </aside>
-        
-      </div>
+			<div class="row">
+				<div class="article-listing-main-article-left">
+					<ul class="leading-article">
+						<li>
+							<figure>
+								<a href="#" title="#"><img src="{{ site.url }}/assets/img/lcc/image_1.jpg" alt="#"></a>
+								<figcaption></figcaption>
+							</figure>
+							<h2><a href="#" title="#">Transform your ambition into real experience</a></h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a sagittis elit, porta ornare felis. Donec purus dui, condimentum at magna at, aliquet euismod turpis. Nunc posuere sit amet mauris et egestas. Morbi rhoncus, tellus et facilisis fermentum, magna massa porta est.</p>
+								<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+								<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>How to Apply</a></p>
+						</li>
+					</ul>
+					<ul class="other-articles">
+						<li>
+							<h2><a href="#" title="#">Study Undergraduate</a></h2>
+								<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+								<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>View Undergraduate Courses</a></p>
+						</li>
+						<li>
+							<h2><a href="#" title="#">Study Postgraduate</a></h2>
+								<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+								<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>View Undergraduate Courses</a></p>
+						</li>
+						<li>
+							<h2><a href="#" title="#">Study a Short Course</a></h2>
+								<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+								<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>View Short Courses</a></p>
+						</li>
+					</ul>
+				</div> <!-- .article-listing-main-article-left -->
+			</div>
 
-    </div> 
-  </div>  
+			<div class="row">
+				<div class="top-stories">
+					<div class="stories">
+						<div class="story">
+						<figure>
+							<a href="#" title="#"><img src="{{ site.url }}/assets/img/lcc/image_2.jpg" alt="#"></a>
+							<figcaption></figcaption>
+						</figure>
+						<h2><a href="#" title="#">Preparing students for successful careers in the creative industry</a></h2>
+							<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+							<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>More about LCC</a></p>
+						</div>
+						<div class="story">
+						<figure>
+							<a href="#" title="#"><img src="{{ site.url }}/assets/img/lcc/image_3.jpg" alt="#"></a>
+							<figcaption></figcaption>
+						</figure>
+						<h2><a href="#" title="#">Discover the courses that interest you and explore LCC</a></h2>
+							<p>Eget malesuada magna sapien eget metus. In hac habitasse platea dictumst. Nulla facilisi. Aenean eget ante in justo congue commodo in vitae nisi.</p>
+							<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>Find out more about Open Days</a></p>
+						</div>
+					</div>
+					<div class="stories-list">
+						<h2>Top Stories</h2>
+							<ul>
+								<li>
+									<p class="date">28/06</p>
+									<p><a href="#" title="#">Advertising students Show Racism the Red Card</a></p>
+								</li>
+								<li>
+									<p class="date">01/07</p>
+									<p><a href="#" title="#">Design Challenges – Green Week 2013</a></p>
+								</li>
+								<li>
+									<p class="date">22/07</p>
+									<p><a href="#" title="#">Sustainability experts challenge LCC design students</a></p>
+								</li>
+								<li>
+									<p class="date">16/08</p>
+									<p><a href="#" title="#">Sustainability experts challenge LCC design students</a></p>					
+								</li>
+							</ul>
+					</div>
+				</div> <!-- .top-stories -->
+			</div>
 
-  <div class="row">
-    <div class="wrapper-d5-d16">
-      <div class="image-block">
-        <h2>Image block with optional title</h2>
-        <figure>
-          <img src="http://placehold.it/1000x500&text=IMAGE, VIDEO OR SLIDER" alt="Image Alt">
-          <figcaption>
-            <p>This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)</p>
-          </figcaption> 
-        </figure>
-      </div>
+			<div class="row">
+				<div class="two-up feature-content">
+					<ul>
+						<li>
+							<figure>
+								<a href="#" title="#"><img src="{{ site.url }}/assets/img/lcc/image_4.jpg" alt="#"></a>
+							</figure>
+							<h2><a href="" title="">50 years of innovation at the heart of Elephant and Castle</a></h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam.</p>
+							<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>Read about our History</a></p>
+						</li>
+						<li>
+							<figure>
+								<a href="#" title="#"><img src="{{ site.url }}/assets/img/lcc/image_5.jpg" alt="#"></a>
+							</figure>
+							<h2><a href="" title="">With the opportunity to do anything and everything</a></h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam.</p>
+							<p><a class="button-link" href="" title=""><span>Discriptive text about where this kink will go </span>Find out about our Facilities</a></p>
+						</li>
+					</ul>
+				</div> <!-- .two-up .feature-content -->
+			</div>
 
-      <div class="image-block">
-        <h2>Image block with optional title</h2>
-        <figure>
-          <img src="http://placehold.it/1000x500&text=IMAGE, VIDEO OR SLIDER" alt="Image Alt">
-          <figcaption>
-            <p>This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)</p>
-          </figcaption> 
-        </figure>
-      </div>
-    
-      <div class="span4-boxout-aside light-gray-bg">
-        <ul>
-          <li><a href="#">link list item here</a></li>
-          <li><a href="#">link list item here</a></li>
-          <li><a href="#">link list item here</a></li>
-          <li><a href="#">link list item here</a></li>
-          <li><a href="#">link list item here</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-    
-    
-  
-  
+    </div> <!-- .main-wrapper -->
+  </div> <!-- .row -->
 
-  
-    
-      
-  
-
-
-</div>
-
-
-
-    
+</div> <!-- .content-wrapper -->

@@ -1,43 +1,31 @@
 <header class='cf header'>
-    <div class='search-buttons'>
-        <div class='primary-buttons is-hidden-mobile'>
-            <button class='course'>
-                Courses
-            </button>
-            <button class='search'>
-                Search
-            </button>
-        </div>
+  <div class='search-buttons'>
+    <div class='primary-buttons is-hidden-mobile'>
+      <button class='course'>Courses</button>
+      <button class='search'>Search</button>
     </div>
-    <div class='banner'>
-        <div class='menu-toggle d-hide t-hide'>
-            <img alt='' src='{{ site.url }}/assets/img/menu-toggle.png'>
-        </div>
-        <div class='logo'>
-            <img alt='' class='d-hide t-hide' src='{{ site.url }}/assets/img/ual-logo-small.png'>
-            <img alt='' class='m-hide' src='{{ site.url }}/assets/img/logos/ual-logo.png'>
-        </div>
-        <nav class='global-college-links m-hide' role='navigation'>
-            <ul>
-                <li>
-                    <a href="{{site.url}}content/index.html">ual</a>
-                </li>
-                <li>
-                    <a href="{{site.url}}content/colleges/camberwell/">camberwell</a>
-                </li>
-                <li>
-                    <a href="{{site.url}}content/colleges/chelsea/">chelsea</a>
-                </li>
-                <li>
-                    <a href="{{site.url}}content/colleges/lcc/">lcc</a>
-                </li>
-                <li>
-                    <a href="{{site.url}}content/colleges/lcf/">lcf</a>
-                </li>
-                <li>
-                    <a href="{{site.url}}content/colleges/wimbledon/">wimbledon</a>
-                </li>
-            </ul>
-        </nav>
+  </div>
+  <div class='banner'>
+    <div class='menu-toggle d-hide t-hide'>
+      <img alt='' src='{{ site.url }}/assets/img/menu-toggle.png'>
     </div>
+    <div class='logo'>
+      <img alt='' class='d-hide t-hide' src='{{ site.url }}/assets/img/ual-logo-small.png'>
+      {% if page.college == "docs" %}
+          {% include _logo_ual.html %}
+      {% else if page.college == "lcc" %}
+          {% include _lcc_lcc.html %}
+      {% endif %}
+    </div>
+    <nav class='global-college-links m-hide' role='navigation'>
+      <ul>
+        <li><a href="{{site.url}}content/index.html">ual</a></li>
+        <li><a href="{{site.url}}content/colleges/camberwell/">camberwell</a></li>
+        <li><a href="{{site.url}}content/colleges/chelsea/">chelsea</a></li>
+        <li><a href="{{site.url}}content/colleges/lcc/">lcc</a></li>
+        <li><a href="{{site.url}}content/colleges/lcf/">lcf</a></li>
+        <li><a href="{{site.url}}content/colleges/wimbledon/">wimbledon</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
