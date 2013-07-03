@@ -1,5 +1,3 @@
-notification:growl
-
 guard 'compass' do
   watch(%r{(.*)\.s[ac]ss$})
 end

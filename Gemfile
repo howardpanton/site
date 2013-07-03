@@ -10,8 +10,6 @@ source 'https://rubygems.org'
 
 group :development do
 
-	gem 'growl'
-
 	gem 'sass'
   	gem 'compass'
 	gem 'jekyll'
