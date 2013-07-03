@@ -388,7 +388,7 @@ input, .search-result-module, .search-input-wrap {
 
 .search-results-summary{
   clear:left;
-  min-height: 120px;
+  // min-height: 120px;
 }
 
 .search-results-info {
@@ -532,10 +532,16 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   display: none;
   position: relative;
-  left: 0;
+  left: 0 !important;
+  top: 23px;
   list-style: none;
   background-color: #ffffff;
   padding-left: 18px;
+
+  &.cf-dropdown-predict-search{
+    background-color: $dark-gray;
+  }
+  
   li {
     @include border-image-dot();
   }
@@ -559,9 +565,12 @@ input, .search-result-module, .search-input-wrap {
 }
 
 .ui-helper-hidden-accessible {
+  display: none !important;
   position: relative;
   top: -20px;
 }
+
+
 
 
 

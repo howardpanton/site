@@ -2371,7 +2371,6 @@ input, .search-result-module, .search-input-wrap {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003389}}
 .search-results-summary {
   clear: left;
-  min-height: 120px;
 }
 
 @media only screen and (min-width: 960px) {
@@ -2578,12 +2577,17 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   display: none;
   position: relative;
-  left: 0;
+  left: 0 !important;
+  top: 23px;
   list-style: none;
   background-color: #ffffff;
   padding-left: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003539}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003541}}
+.ui-autocomplete.cf-dropdown-predict-search {
+  background-color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003545}}
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;
@@ -2591,14 +2595,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003543}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003549}}
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003549}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003555}}
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -2609,8 +2613,9 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003561}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003567}}
 .ui-helper-hidden-accessible {
+  display: none !important;
   position: relative;
   top: -20px;
 }
@@ -2848,7 +2853,7 @@ input, .search-result-module, .search-input-wrap {
   font-weight: lighter;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003217}}
-.top-bar li:last-child, .top-bar li:nth-last-child(2) {
+.top-bar li:last-child {
   float: right;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003221}}
@@ -3713,6 +3718,7 @@ a.course:before {
   border-bottom: 1px solid #c8c8c8;
   text-align: right;
   padding-right: 12px;
+  font-size: 1.875em;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -7189,12 +7195,12 @@ img.mfp-img {
 
 /* ::Custom styling - local add-ons & college-level styles */
 /* ------------------------------------------------------------ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000316}}
 .tabs-container {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000319}}
 ul.tabs {
   margin: 0;
   padding: 0 0 0 0;
@@ -7207,7 +7213,7 @@ ul.tabs {
   border-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000319}}
   ul.tabs {
     border-top: 12px solid black;
     border-right: 12px solid black;
@@ -7215,13 +7221,13 @@ ul.tabs {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000319}}
   ul.tabs {
     display: none;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000343}}
 ul.tabs li {
   float: left;
   margin: 0;
@@ -7240,27 +7246,27 @@ ul.tabs li {
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000361}}
 ul.tabs li:first-child {
   border-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000365}}
 ul.tabs li:last-child {
   border-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000370}}
 .tab_last {
   border-right: 1px solid #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000372}}
 ul.tabs li:hover {
-  background-color: #ffff00;
+  background-color: yellow;
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000377}}
 ul.tabs li.active {
   background-color: #eeeeee;
   color: black;
@@ -7271,7 +7277,7 @@ ul.tabs li.active {
   background-position: center bottom;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000388}}
 .tab_container {
   border-top: 6px solid black;
   clear: both;
@@ -7281,40 +7287,45 @@ ul.tabs li.active {
   overflow: auto;
   margin-bottom: 0.75em;
 }
-@media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000386}}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000388}}
   .tab_container {
-    margin-bottom: 1.5em;
     border-top: 0;
   }
 }
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\0000388}}
+  .tab_container {
+    margin-bottom: 1.5em;
+  }
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003111}}
 .tab_content {
   border: 6px solid black;
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003114}}
 .tab_content img {
   max-width: 100%;
   width: auto;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003111}}
   .tab_content {
     border: 12px solid black;
     border-top: 0;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003126}}
 .tab-content-caption-block {
   background-color: black;
   width: 100%;
   padding: 12px;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003133}}
 .tab-content-caption-block .block-a, .tab-content-caption-block .block-b {
   background-color: black;
   width: 100%;
@@ -7322,7 +7333,7 @@ ul.tabs li.active {
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003133}}
   .tab-content-caption-block .block-a, .tab-content-caption-block .block-b {
     width: 50%;
     float: left;
@@ -7330,7 +7341,7 @@ ul.tabs li.active {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003146}}
 .tab_drawer_heading {
   color: #282828;
   border-left: 6px solid black;
@@ -7349,19 +7360,19 @@ ul.tabs li.active {
   user-select: none;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003146}}
   .tab_drawer_heading {
     display: none;
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003146}}
   .tab_drawer_heading {
     display: none;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_tabs-to-accordion\.scss}line{font-family:\00003174}}
 .d_active {
   background-color: white;
   border-color: black;

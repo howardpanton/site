@@ -6,6 +6,8 @@ $border-width : 6px;
 
 $border-color : $ual-black;
 
+$hover-highlight-color: $lcc-primary-yellow;
+
 // -------------------------
 
 // calculated settings
@@ -68,7 +70,7 @@ ul.tabs li {
 .tab_last { border-right: 1px solid #333; }
 
 ul.tabs li:hover {
-	background-color: #ffff00;
+	background-color: $hover-highlight-color;
 	color: $border-color;
 }
 
@@ -94,9 +96,14 @@ ul.tabs li.active {
 	overflow: auto;
   @include margin-trailer(2);
 
+  @include gs-media (t,min-max) {
+    //@include margin-trailer(4);
+    border-top: 0;
+  }
+
 	@include gs-media (d,min-max) {
 		@include margin-trailer(4);
-    border-top: 0;
+    //border-top: 0;
 	}
 
 }
