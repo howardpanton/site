@@ -1,6 +1,13 @@
 // four up content gallery (with optional title links)
 .four-up-content-gallery {
-
+	li {
+		background: $ual-white;
+		padding: 0;
+		margin-bottom: 24px;
+		h3 {
+			padding: 12px 24px 24px 24px;
+		}	
+	}
 
 	@include gs-media(t,min-max) {
 		@include gs-span(t,2,7);
