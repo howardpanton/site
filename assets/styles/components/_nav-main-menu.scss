@@ -119,6 +119,42 @@
 
 .d-course-finder-menu-panel{
   @extend %d-menu-panel-dropdown;
+
+  .ui-autocomplete {
+    z-index: 1000;
+    float: left;
+    display: none;
+    position: relative;
+    left: 0 !important;
+    top: 23px;
+    list-style: none;
+    padding-left: 18px;
+    background-color: $dark-gray;
+
+    li { @include border-image-dot(); }
+    
+    li a {
+      color: $ual-white;
+      font-size: emCalc(24px);
+    }
+
+    .ui-menu-item > a.ui-corner-all {
+      display: block;
+      clear: both;
+      white-space: nowrap;
+      border-bottom: 0;
+   
+      &.ui-state-hover, &.ui-state-active {
+        color: $soft-black;
+        text-decoration: none;
+        background-color: $bg-gray;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        background-image: none;
+      }
+    }
+  }
 }
 
 // Desktop dropdown panel 'Go Search' button
@@ -173,6 +209,44 @@
       @include gs-media(m, min-max) { 
          width:65%; // smaller width on mobile so no overlap with go button
       }
+  }
+}
+
+.mobile-course-finder {
+  .ui-autocomplete {
+    z-index: 1000;
+    float: left;
+    display: none;
+    position: relative;
+    left: 0 !important;
+    top: 23px;
+    list-style: none;
+    padding-left: 12px;
+    background-color: $dark-gray;
+
+    li { @include border-image-dot(); }
+    
+    li a {
+      color: $ual-white;
+      font-size: emCalc(16px);
+    }
+
+    .ui-menu-item > a.ui-corner-all {
+      display: block;
+      clear: both;
+      white-space: nowrap;
+      border-bottom: 0;
+   
+      &.ui-state-hover, &.ui-state-active {
+        color: $soft-black;
+        text-decoration: none;
+        background-color: $bg-gray;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        background-image: none;
+      }
+    }
   }
 }
 
