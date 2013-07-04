@@ -1500,20 +1500,19 @@ a {
   text-decoration: none;
   padding-bottom: 1px;
   border-bottom: 1px dotted black;
-  /*
-  	span {
-  		height: 1px;
-  		width: 1px;
-  		position: absolute;
-  		overflow: hidden;
-  		top: -10px;	
-  	}
-  */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/globals\/_typography\.scss}line{font-family:\0000318}}
 a:hover {
   color: #757575;
   border-bottom: 1px solid black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/globals\/_typography\.scss}line{font-family:\0000323}}
+a .hide-descriptive-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/globals\/_typography\.scss}line{font-family:\0000333}}
@@ -2814,14 +2813,12 @@ input, .search-result-module, .search-input-wrap {
     display: block;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000374}}
 .main-menu .dropdown-arrow {
-  display: block;
-  color: #c8c8c8;
-  float: right;
+  display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000380}}
 .m-menu-btn-toggle {
   color: white;
   border: none;
@@ -2832,18 +2829,18 @@ input, .search-result-module, .search-input-wrap {
   font-weight: lighter;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000380}}
   .m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000391}}
 .m-menu-icon {
   color: white;
   font-weight: lighter;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\0000394}}
 .m-menu-icon a span {
   width: 100%;
   height: 100%;
@@ -2856,24 +2853,24 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003108}}
   .d-search-menu-panel, .d-course-finder-menu-panel {
     display: none !important;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003108}}
   .d-search-menu-panel, .d-course-finder-menu-panel {
     display: none !important;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003113}}
 .d-search-menu-panel > div, .d-course-finder-menu-panel > div {
   padding-top: 3em;
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003126}}
 .d-course-finder-menu-panel .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -2885,7 +2882,7 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 18px;
   background-color: #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003137}}
 .d-course-finder-menu-panel .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;
@@ -2893,19 +2890,19 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003139}}
 .d-course-finder-menu-panel .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003144}}
 .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003150}}
 .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -2916,31 +2913,31 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003164}}
 .d-go-search-button {
   display: block;
   float: right;
   margin-top: 1.875em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003177}}
 .d-search-input-form {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003181}}
 .site-search-input, .course-finder-txt-input {
   max-width: 75%;
   width: auto;
   outline: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003185}}
 .site-search-input:focus, .course-finder-txt-input:focus {
   outline: none;
   border-bottom: solid 1px #c8c8c8;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003193}}
 .mobile-search, .mobile-course-finder {
   padding-bottom: 1.5em;
   padding-top: 1.5em;
@@ -2950,26 +2947,26 @@ input, .search-result-module, .search-input-wrap {
   clear: both;
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003203}}
 .mobile-search .site-search-input, .mobile-search .course-finder-txt-input, .mobile-course-finder .site-search-input, .mobile-course-finder .course-finder-txt-input {
   width: 70%;
   font-size: 24px;
   padding-left: 1em;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003208}}
 .mobile-search .site-search-input:focus, .mobile-search .course-finder-txt-input:focus, .mobile-course-finder .site-search-input:focus, .mobile-course-finder .course-finder-txt-input:focus {
   outline-width: 0;
   outline: none;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003203}}
   .mobile-search .site-search-input, .mobile-search .course-finder-txt-input, .mobile-course-finder .site-search-input, .mobile-course-finder .course-finder-txt-input {
     width: 65%;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003219}}
 .mobile-course-finder .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -2981,7 +2978,7 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 12px;
   background-color: #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003230}}
 .mobile-course-finder .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;
@@ -2989,19 +2986,19 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003232}}
 .mobile-course-finder .ui-autocomplete li a {
   color: white;
   font-size: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003237}}
 .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003243}}
 .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3012,7 +3009,7 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003257}}
 .m-go-search-btn {
   display: block;
   float: right;
@@ -3020,34 +3017,34 @@ input, .search-result-module, .search-input-wrap {
   margin-right: 1em;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003257}}
   .m-go-search-btn {
     margin-right: 0.5em;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003262}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003265}}
 .m-go-search-btn a {
   margin-right: 0;
   margin-top: 1em;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003278}}
   .top-bar > ul {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003278}}
   .top-bar > ul {
     display: none;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003284}}
 .top-bar .menu-active {
   background-color: #333 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003286}}
 .top-bar li {
   list-style: none;
   padding: 0;
@@ -3055,16 +3052,16 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   font-weight: lighter;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003295}}
 .top-bar li:last-child {
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003299}}
 .top-bar li:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003286}}
   .top-bar li {
     display: block;
     float: left;
@@ -3073,7 +3070,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003286}}
   .top-bar li {
     display: block;
     float: left;
@@ -3081,7 +3078,7 @@ input, .search-result-module, .search-input-wrap {
     text-align: left;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003316}}
 .top-bar li a {
   display: block;
   height: 100%;
@@ -3090,33 +3087,33 @@ input, .search-result-module, .search-input-wrap {
   border-bottom: none;
   padding: 12px 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003325}}
 .top-bar li a:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003316}}
   .top-bar li a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003316}}
   .top-bar li a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1060px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003316}}
   .top-bar li a {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003349}}
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -3130,29 +3127,29 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003362}}
   .js .submenu > div {
     display: none;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003368}}
   .js .sub-inner-menu {
     display: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003371}}
   .js #new-menu {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003378}}
   .js .sub-inner-menu {
     display: none;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003383}}
 .ual-banner-menu {
   *zoom: 1;
 }
@@ -3166,13 +3163,13 @@ input, .search-result-module, .search-input-wrap {
   clear: both;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003383}}
   .ual-banner-menu {
     height: 48px;
     padding-left: 6px;
     background-color: black;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003391}}
   .ual-banner-menu .logo {
     margin-top: 0;
     position: absolute;
@@ -3184,13 +3181,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003383}}
   .ual-banner-menu {
     height: 48px;
     padding-left: 6px;
     background-color: black;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003405}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003408}}
   .ual-banner-menu .logo {
     margin-top: 0;
     position: absolute;
@@ -3202,14 +3199,14 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003422}}
 #mob-tab-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003425}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003428}}
 #mob-tab-menu li {
   list-style: none;
   display: inline-block;
@@ -3217,59 +3214,59 @@ input, .search-result-module, .search-input-wrap {
   border-right: 1px solid #444;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003435}}
 #mob-tab-menu li a {
   display: block;
   height: 100%;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003439}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003442}}
 #mob-tab-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003443}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003446}}
 #mob-tab-menu li:last-child a {
   padding-top: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003448}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003451}}
 #mob-tab-menu .menu-active {
   background-color: #333333;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003422}}
   #mob-tab-menu {
     display: none;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003459}}
 .ual-logo-tab-mobile {
   padding-top: 6px;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003459}}
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003466}}
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003466}}
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003473}}
   .submenu {
     clear: both;
     display: block;
@@ -3279,49 +3276,49 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003473}}
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003473}}
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003487}}
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003487}}
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003487}}
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003487}}
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003505}}
 .submenu h2 a {
   font-weight: lighter;
   color: white;
   border-bottom: 1px dotted white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003505}}
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -3331,7 +3328,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003505}}
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -3340,22 +3337,22 @@ input, .search-result-module, .search-input-wrap {
     border-bottom: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003526}}
 .submenu h2 a:hover {
   border-bottom: 1px solid #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003528}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003531}}
 .submenu h2 span {
   cursor: pointer;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003503}}
   .submenu h2 {
     padding-top: 0.375em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003503}}
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
@@ -3364,7 +3361,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003503}}
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
@@ -3372,7 +3369,7 @@ input, .search-result-module, .search-input-wrap {
     border-bottom: 1px dotted #444;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003549}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003552}}
 .submenu li {
   list-style: none;
   width: 100%;
@@ -3380,25 +3377,25 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   border-bottom: dotted 1px white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003556}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003559}}
 .submenu li:hover {
   border-bottom: 1px s1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003549}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003552}}
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003549}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003552}}
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003571}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003574}}
 .submenu li > a {
   display: block;
   padding-top: 6px;
@@ -3410,24 +3407,24 @@ input, .search-result-module, .search-input-wrap {
   padding-bottom: 0;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003598}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003601}}
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003598}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003601}}
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003598}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003601}}
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003611}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003614}}
   .submenu .subnav-1 {
     display: block;
     float: left;
@@ -3437,7 +3434,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003611}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003614}}
   .submenu .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -3445,7 +3442,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003622}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003625}}
   .submenu .subnav-2 {
     display: block;
     float: left;
@@ -3455,7 +3452,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003622}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003625}}
   .submenu .subnav-2 {
     width: 100%;
     clear: left;
@@ -3464,7 +3461,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003622}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003625}}
   .submenu .subnav-2 {
     width: 100%;
     clear: left;
@@ -3473,7 +3470,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003639}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003642}}
   .submenu .subnav-3 {
     display: block;
     float: left;
@@ -3483,7 +3480,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003639}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003642}}
   .submenu .subnav-3 {
     width: 100%;
     clear: left;
@@ -3492,7 +3489,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003639}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003642}}
   .submenu .subnav-3 {
     width: 100%;
     clear: left;
@@ -3500,7 +3497,7 @@ input, .search-result-module, .search-input-wrap {
     margin-bottom: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003656}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003659}}
 .submenu .feature {
   display: block;
   float: left;
@@ -3510,7 +3507,7 @@ input, .search-result-module, .search-input-wrap {
   color: white;
   font-size: 22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003662}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/components\/_nav-main-menu\.scss}line{font-family:\00003665}}
 .submenu .feature-image {
   display: block;
   float: left;
@@ -6787,37 +6784,37 @@ footer .copyright {
   left: 0;
 }
 
-@media all and (min-width: 54em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000359}}
+@media all and (min-width: 80em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000360}}
   .carousel.is-loaded {
     height: 480px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000363}}
   .slides {
     height: 100%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000366}}
   .slides li {
     width: 720px !important;
     height: 100%;
     padding-bottom: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000371}}
   .slides li.college {
     width: 1280px !important;
     height: 100%;
     padding-bottom: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000377}}
   .slides .slide {
     position: static;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000383}}
 .carousel .slide.layout0 a, .carousel .slide.layout1 a, .carousel .slide.layout2 a, .carousel .slide.layout3 a, .carousel .slide.layout4 a {
   width: 100%;
   padding: 0;
@@ -6825,21 +6822,21 @@ footer .copyright {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000390}}
 .carousel .slide.layout0.image0 a img {
   width: 100%;
   max-width: 1280px;
   max-height: 480px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\0000396}}
 .carousel .slide.layout1 a.image0 img {
   width: 100%;
   max-width: 720px;
   max-height: 480px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003103}}
 .carousel .slide.layout2 a.image0 img {
   float: right;
   width: 66.66666666666666%;
@@ -6847,7 +6844,7 @@ footer .copyright {
   max-height: 480px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003109}}
 .carousel .slide.layout2 a.image1 img {
   float: left;
   width: 33.33333333333333%;
@@ -6855,7 +6852,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003115}}
 .carousel .slide.layout2 a.image2 img {
   clear: left;
   float: left;
@@ -6864,7 +6861,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003123}}
 .carousel .slide.layout3 a.image0 img {
   float: left;
   width: 66.66666666666666%;
@@ -6872,7 +6869,7 @@ footer .copyright {
   max-width: 480px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003129}}
 .carousel .slide.layout3 a.image1 img {
   float: right;
   width: 33.33333333333333%;
@@ -6880,7 +6877,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003135}}
 .carousel .slide.layout3 a.image2 img {
   clear: right;
   float: right;
@@ -6889,7 +6886,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003144}}
 .carousel .slide.layout4 a.image0 img {
   float: left;
   width: 100%;
@@ -6897,7 +6894,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003150}}
 .carousel .slide.layout4 a.image1 img {
   float: left;
   width: 33.33333333333333%;
@@ -6905,7 +6902,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003156}}
 .carousel .slide.layout4 a.image2 img {
   float: left;
   width: 33.33333333333333%;
@@ -6913,7 +6910,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003162}}
 .carousel .slide.layout4 a.image3 img {
   float: left;
   width: 33.33333333333333%;
@@ -6921,7 +6918,7 @@ footer .copyright {
   max-height: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003169}}
 .carousel .control {
   position: absolute;
   display: block;
@@ -6948,7 +6945,7 @@ footer .copyright {
   -moz-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003190}}
 .carousel .control:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   /* IE 8 */
@@ -6963,18 +6960,18 @@ footer .copyright {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003199}}
 .carousel.touch .control {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003203}}
 .carousel .control:hover,
 .carousel .control:focus {
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003206}}
 .carousel .control span {
   display: block;
   position: absolute;
@@ -6987,7 +6984,7 @@ footer .copyright {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003222}}
 .carousel .control.prev {
   left: 10px;
   height: 1.5em;
@@ -6995,7 +6992,7 @@ footer .copyright {
   top: 44.5%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003231}}
 .carousel .control.next {
   right: 10px;
   height: 1.5em;
@@ -7004,7 +7001,7 @@ footer .copyright {
 }
 
 @media all and (min-width: 50em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/amucklow\/Sites\/dev\/beta\/assets\/styles\/style-guide\/_carousel\.scss}line{font-family:\00003241}}
   .carousel.touch .control {
     display: block;
   }
