@@ -454,7 +454,7 @@ $(document).ready(function(){
   // detect slider component
   if ($('.slider').length > 0) {
 
-    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
+    $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
       $.each($('.slider'), function() {
 
@@ -497,10 +497,25 @@ $(document).ready(function(){
 
   }
 
-  // detect accordion component
-  if ($('.accordion').length > 0) {
-    $('#st-accordion').accordion();
-  }
+// detect accordion component
+if ($('.accordion').length > 0) {
+
+    $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.accordion.js" ),
+        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+
+        //place your code here, the scripts are all loaded
+        $('#st-accordion').accordion({
+            oneOpenedItem: true
+        });
+
+    });
+
+}
   
   // detect lightbox component
   if ($('.lightbox').length > 0) {
