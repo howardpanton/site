@@ -162,15 +162,24 @@ footer {
 .back-to-top {
 	display: none;
 	position: fixed;
-	right: 1em;
-	bottom: 1em;
-	padding: 0.5em 0.5em 1px 0.5em;
-	font-size: 12px;
+	right: .75em;
+	bottom: 0;
+	font-size: 14px;
 	font-weight: 300;
-	background-color: white;
-	border-bottom: 1px dotted $light-gray;
+	background-color: $ual-white;
+	padding: 1.125em .75em 1.125em .75em;
 	
-	&:hover {
-	  border-bottom: 1px solid black;
+	a {
+		color: $primary;
+		padding-bottom: 1px;
+		border-bottom: 1px dotted black;
+		text-decoration: none;
+
+		&:hover {
+			// border-bottom: 1px solid black;
+			color: $light-gray;
+			text-decoration: none;
+		}
 	}
 }
+
