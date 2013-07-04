@@ -13,29 +13,31 @@
 	  	border-top: none;
 	  }		
 	  li {
+	  	height: 80px; // needs to match a line-height
 	    overflow: hidden;
 	    background: $ual-white;
 	    margin-bottom: 1px;
+	    padding: 0;
 	    > a {
-				font-size: emCalc(24px);
-				display: block;
-				position: relative;
-				@include adjust-leading-to(8, 24px); 
-				outline:none;
-				border-bottom: none;
-				margin-left: rhythm(4, 24px);
-				padding-right: rhythm(8, 24px);
-				span {
-					background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
-					text-indent:-9000px;
-					width: 28px;
-					height: 28px;
-					position: absolute;
-					top: 12px;
-					right: 12px;
-					opacity:1;
-				} 
-			}
+	    	line-height: 80px; // needs to match li height
+			font-size: emCalc(24px);
+			display: block;
+			position: relative;
+			outline:none;
+			border-bottom: none;
+			margin-left: rhythm(4, 24px);
+			padding-right: rhythm(8, 24px);
+			span {
+				background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
+				text-indent:-9000px;
+				width: 28px;
+				height: 28px;
+				position: absolute;
+				top: 26px;
+				right: 13px;
+				opacity:1;
+			} 
+		  }
 		}
 		.st-open > a{
 		}
