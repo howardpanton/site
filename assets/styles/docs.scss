@@ -22,9 +22,6 @@
 /* ::Global styles */
 /* ------------------------------------------------------------ */
 
-@import "globals/layout";
-@import "style-guide/mixins";
-
 .docs {
   .updated {
     position: absolute;
@@ -175,27 +172,7 @@ p.docs-intro{
 
     }
 
-    .banner {
-      @extend .content-wrapper ;
-      // @extend .clearfix;
-      position: relative;
-      //@include padding-leader(2);
-      @include gs-media(m, min-max) {
-        @include gs-span(m, all);
-        background:black;
-        padding-left:3.75%;
-        padding-right:3.75%;
-        overflow: visible;
-        //@include padding-leader(1);
-        @include padding-trailer(1);
-      }
 
-
-      
-      .header {
-        @include gs-span(d, all);
-      }
-    }
   }
 }
 
