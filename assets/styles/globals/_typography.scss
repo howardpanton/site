@@ -19,15 +19,15 @@ a {
 		color: $aaa-gray;
 		border-bottom: 1px solid $primary;
 	}
-/*
-	span {
+
+	.hide-descriptive-text {
 		height: 1px;
 		width: 1px;
 		position: absolute;
 		overflow: hidden;
 		top: -10px;	
 	}
-*/
+
 }
 
 h1 { 
@@ -139,6 +139,8 @@ h5, h6 {
 		padding: rhythm(4, 18px) 0 rhythm(3, 18px) 0; 	
 	}
 }
+
+
 
 p, ol, ul { 
 	@include adjust-leading-to(4, 16px); 
@@ -282,3 +284,76 @@ p.leader {
 .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
 
 
+// LCF Variants 
+
+.lcf {
+    .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Swiss721BT-Black";
+        }
+        h1,h2 {
+            text-transform: uppercase;
+        }
+        h1 {
+            letter-spacing: 3px;
+        }
+        h2 {
+            padding-bottom: rhythm(1, 24px);
+            margin-bottom: rhythm(3, 24px);
+            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+            letter-spacing: 5px;
+            .ual-black-bg & {
+            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+            }
+        }
+
+    }
+
+    .main-content {
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+    }
+
+    figcaption, .flex-video .caption {
+        padding: 0 10px;
+        color: $ual-secondary;
+        font-family: $alt-font-family;
+        a {
+           color: $ual-secondary; 
+        }
+    }
+}
+
+// GRADUATE SCHOOL
+
+.graduate-school {
+    .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-family: $alt-font-family;
+            font-weight: normal;
+            border: 0 none;
+            letter-spacing: 0;
+        }
+        h1 {
+            font-size:emCalc(30px); 
+            padding-bottom:  rhythm(1, 30px);
+            margin-bottom: rhythm(4, 30px);
+            background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+        }
+        h2 {
+            font-size:emCalc(20px);
+            margin-bottom: rhythm(4, 24px);
+        }
+        .main-content {
+            margin-top: 40px;
+        }
+        .sidebar {
+            margin-top: 100px;
+        }
+        .media-block {
+            padding-bottom: 0;
+        }
+    }
+
+}

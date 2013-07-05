@@ -1,11 +1,7 @@
-<div class="row bg-gray-bg">  
-	<div class="content-wrapper">
-		<div class="breadcrumbs">
-			<a href="{{ site.url }}content/" title="#">Home</a>
-			<a href="{{ site.url }}content/colleges/" title="#">Colleges</a>
-			{% if page.breadcrumb  %}
-			<a href="{{ site.url }}docs/{{page.breadcrumb-link}}">{{page.breadcrumb}}</a>
-			{% endif %}
-		</div>  
-	</div> 
-</div>
+<div class="breadcrumbs">
+	<a href="{{ site.url }}content/" title="#">Home</a>
+	<a href="{{ site.url }}content/colleges/" title="#">Colleges</a>
+	{% if page.breadcrumb  %}
+	<a href="{{ site.url }}docs/{{page.breadcrumb-link}}">{{page.breadcrumb}}</a>
+	{% endif %}
+</div>  

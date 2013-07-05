@@ -1,0 +1,38 @@
+// Feature with left image, as used on Graduate School page and LCF home page
+.intro-block-with-left-image {
+    @include component-spacing-bottom;
+    @include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+    }
+    @include gs-media(d,min-max) {
+        @include gs-span(d, 5, 16, (5, 16));
+    }
+
+    figure {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,1,4);
+        }
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 5, 9, (5, 16));
+        }
+        figcaption {
+            font-size: emCalc(14px);
+            text-align: center;
+        }
+    }
+
+    .content {
+        @include gs-media(t,min-max) {
+            @include gs-span(t,5,8);
+        }
+        @include gs-media(d,min-max) {
+            @include gs-span(d, 11, 16, (5, 16));
+        }
+    }
+
+    .leader {
+        @include gs-media(d,min-max) {
+            margin-left: -(gs-width(d, 5, 6, (5,16), true));
+        }
+    }
+}
