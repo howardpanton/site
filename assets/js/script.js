@@ -517,6 +517,22 @@ if ($('.accordion').length > 0) {
 
 }
   
+  // detect search filters 
+  if ($('.search-filters').length > 0) {
+     //allow expand and close for search filters
+    $('.filter-heading').fastClick(function(event) {
+      event.preventDefault();
+      var c = $(this);
+      if (c.parent().hasClass('active') ) {
+        c.parent().removeClass('active');
+      }
+      else {
+        c.parent().addClass('active');
+      }
+    });
+  }
+
+
   // detect lightbox component
   if ($('.lightbox').length > 0) {
       
