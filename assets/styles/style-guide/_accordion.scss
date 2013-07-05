@@ -1,55 +1,48 @@
 /* Flexible Slide-to-top Accordion Style*/
 
 .accordion {
-	margin-top: rhythm(4, 16px);
-
 	.st-accordion {
 		width: 100%;
 		margin: 0 auto;
 	}
-
 	ul {
-	  li:first-child {
-	  	border-top: none;
-	  }		
-	  li {
-	  	height: 80px; // needs to match a line-height
-	    overflow: hidden;
-	    background: $ual-white;
-	    margin-bottom: 1px;
-	    padding: 0;
-	    > a {
-	    	line-height: 80px; // needs to match li height
-			font-size: emCalc(24px);
-			display: block;
-			position: relative;
-			outline:none;
-			border-bottom: none;
-			margin-left: rhythm(4, 24px);
-			padding-right: rhythm(8, 24px);
-			span {
-				background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
-				text-indent:-9000px;
-				width: 28px;
-				height: 28px;
-				position: absolute;
-				top: 26px;
-				right: 13px;
-				opacity:1;
-			} 
-		  }
+		padding: 0;
+		li:first-child {
+			border-top: none;
+		}		
+		li {
+			height: 80px; // needs to match a line-height
+			overflow: hidden;
+			background: $ual-white;
+			margin-bottom: 1px;
+			padding: 0;
+			> a {
+				line-height: 80px; // needs to match li height
+				font-size: emCalc(24px);
+				display: block;
+				position: relative;
+				outline:none;
+				border-bottom: none;
+				margin-left: rhythm(4, 24px);
+				padding-right: rhythm(8, 24px);
+				span {
+					background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
+					text-indent:-9000px;
+					width: 28px;
+					height: 28px;
+					position: absolute;
+					top: 26px;
+					right: 13px;
+					opacity:1;
+					@include default-transition();
+				} 
+			}
 		}
-		.st-open > a{
+		.st-open > a span {
+			@include rotate(45deg);
 		}
-		.st-open > a span{
-			-webkit-transform:rotate(45deg);
-			-moz-transform:rotate(45deg);
-	    transform:rotate(45deg);
-			transition: all 0.4s ease-in-out;				
-			opacity:1;
-		}
-		.st-content{
-	    padding: rhythm(4, 16px);
+		.st-content {
+	    	padding: 0 rhythm(4, 16px) rhythm(4, 16px);
 		}
 	}
 
@@ -61,6 +54,3 @@
 		@include gs-span(d, 5, 16);
 	}
 }
-
-
-
