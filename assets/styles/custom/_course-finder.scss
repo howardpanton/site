@@ -1,231 +1,20 @@
 // Import global variables and mixins
-@import "globals/variables";
-@import "globals/mixins";
-
-// color names as defined in style guide 
-// $ual-black   : 	$ual-primary;  		// full black
-// $soft-black  : 	#282828;   			// softer black
-// $aaa-gray 	: 	$ual-secondary;   	// AAA gray
-// $light-gray  : 	#c8c8c8;   			// light gray 
-// $mid-gray 	: 	#666666;			// mid gray for LCF footer
-// $bg-gray 	: 	#eeeeee;   			// lighter gray for bg
+// @import "globals/variables";
+// @import "globals/mixins";
 
 .search-results-wrap {
 	@include clearfix();
+  clear: left;
 	background-color: $bg-gray;
-}
-
-
-.search-filters{
-  
-  @include gs-media(d, min-max) {
-    @include gs-span(d,1,4);
-    @include margin-leader(9);
-  }
-
-  @include gs-media(t, min-max) {
-    @include gs-span(t,2,7);
-    clear:left;
-  }
-
-  @include gs-media(m, min-max) {
-    @include gs-span(m,all);
-  }
-}
-
-
-.filter-module {
-
-  &:last-child li.active { 
-    ul { border-bottom: 0; }
-  }
-
-  h3 {
-      @extend .size-h4;
-      padding: 12px 18px 12px 18px;
-      background-color: $ual-black;
-      color: $ual-white;
-      font-size: emCalc(14px);
-      font-weight: 300;
-      border-bottom: 1px solid $dark-gray;
-      &:hover{
-        cursor: pointer;
-      }
-  }
-
-  ul { 
-    padding-top: 0; 
-    padding-bottom: 0;
-    display: none;
-    // border-bottom: 1px solid $dark-gray;
-    li {
-        background-color: white;
-        @include border-image-dot();
-        background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
-        background-repeat: no-repeat;
-        background-position: 95% 50%;
-
-        &:last-child { border-bottom: 0; } 
-        a { 
-          padding: 0 30px 0 18px;
-          border-bottom: 0; 
-          color: $aaa-gray;
-          font-size: emCalc(14px);
-          font-weight: 300;
-          height:100%;
-          display:block;
-        }
-    }
-
-    li.active {
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
-      background-repeat: no-repeat;
-      background-position: 95% 50%;
-      > a { 
-        color: $ual-black;
-      }
-    }
-
-
-  }
-
-  &.active {
-    border-bottom: 0;
-    
-    ul {
-      display: block;
-      
-    }
-  }
-
-}
-
-.filter-module-short-courses {
-  @extend .filter-module;
-  ul {
-    border-bottom: 0;
-    h4 {
-      padding: 12px 18px 12px 18px;
-      background-color: $dark-gray;
-      color: $ual-white;
-      font-size: emCalc(14px);
-      font-weight: 300;
-      &:hover{
-        cursor: pointer;
-      }
-      a.sub-filter-title {
-        color: $ual-white;
-        padding-left: 0;
-      }
-    }
-
-    li{
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    > ul li {
-      padding: rhythm(1, 16px) 0; 
-    }
-
-  }
-
-  .collapsible {
-    display: none;
-    .sub-filter-list .active > & {
-      display: block;
-    }
-  }
-
-}
-
-
-
-.sub-filter-list {
-    
-    background-color: $aaa-gray;
-    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-plus-19px.png");
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    
-    &.active {
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
-      background-position: 95% 12px;
-      padding-bottom: 0;
-      > a {
-        color: $ual-white;
-        font-weight: 300;
-        padding-bottom: 6px;
-
-      }
-      ul {
-        display: block;
-      }
-
-    }
-    &.expanded {
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/transparent-close-19px.png");
-    }
-
-    ul { 
-      margin-bottom: 0;
-      padding-bottom: 0;
-      display:none;
-    }
-
-    ul > li {
-      background-color: white;
-      @include border-image-dot();
-      a { 
-         color: $soft-black;
-         font-weight: 300;
-      }
-
-      &:last-child { border-bottom: 0; } 
-    }
-
-    
-}
-
-
-
-li.filter-link-only {
-
-    background-color: white !important;
-    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png") !important;
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    @include border-image-dot();
-    
-    a { 
-       color: $soft-black !important;
-       font-weight: 300;
-    }
-    
-    &:last-child { border-bottom: 0; } 
-    
-    &.active {
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png") !important;
-      background-repeat: no-repeat;
-      background-position: 95% 50%;
-      > a { 
-        color: $ual-black;
-        font-weight: bold;
-      }
-    }
-  }
-
-.sub-filter-list input {
-  display: block;
-  width: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
+  @include padding-leader(8);
+  @include padding-trailer(8);
 }
 
 .search-results {
 	@include gs-media (d,min-max) {
 		@include gs-span(d,6,16);
-	}
+  }
+  
   h2 {
     padding-top: 0;
   }
@@ -247,27 +36,12 @@ li.filter-link-only {
 	list-style: none;
 }
 
-input {
-	-webkit-transition: -webkit-box-shadow 1s;
-	-moz-transition: -moz-box-shadow 1s;
-	-o-transition: -o-box-shadow 1s;
-	transition: box-shadow 1s;
-}
-
-input:hover, input:focus {
-	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2); 
-	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2); 
-	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
-}
-
 .search-button {
 	height: 70px;
 	width: 70px;
 	float:left;
 	background-color: black;
 }
-
-
 
 // main course title in search results list
 .course-details > h3 {
@@ -396,7 +170,6 @@ input, .search-result-module, .search-input-wrap {
 }
 
 
-
 .course-finder-right-arrow {
   position: absolute;
   right: 12px;
@@ -427,41 +200,54 @@ input, .search-result-module, .search-input-wrap {
   @include margin-trailer (4);
 }
 
-h3.sub-filter-title {
-  background-color: $aaa-gray;
-  color: white;
-
-}
-
 .search-results-summary{
  
-  min-height: 120px;
   @include gs-media (d,min-max) {
     min-height: 60px;
+  }
+  
+  @include gs-media (t,min-max) {
+    min-height: 60px;
+  }
+
+  @include gs-media (m,min-max) {
+    min-height: 120px;
   }
 
 }
 
 .search-results-info {
+  
+  p {
+    @extend .size-h3;
+    font-weight: 300;
+    @include margin-trailer(2);
+  }
+
    @include gs-media (d,min-max) {
-      @include gs-span(d,6,11,(6,16));
+      @include gs-span(d,6,14,(6,16));
+      p { padding-top: 2px; }
     }
 
     @include gs-media (t,min-max) {
       @include gs-span(t,1,4);
+      p { padding-top: 0; }
     }
 
     @include gs-media (m,min-max) {
-      // @include gs-span(m,all);
-      // p { margin-bottom:  24px; }
+      p { padding-top: 0; }
     }
-  
-  p {
-    padding-top: 0; 
-    font-size:16px; 
-    font-weight: 300;
-    padding-bottom: 12px;
+}
+
+.lower-search-results-info {
+  @extend .search-results-info;
+  p { 
+    @extend .size-h4; 
   }
+  @include gs-media (d,min-max) {
+    @include gs-span(d,6,11,(6,16));
+  }
+
 }
 
 .search-pagination-btns {
@@ -580,7 +366,6 @@ h3.sub-filter-title {
   margin: 0 auto;
 }
 
-
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -592,7 +377,7 @@ h3.sub-filter-title {
   background-color: #ffffff;
   padding-left: 18px;
 
-  &.cf-predictive-search-matches{
+  .header-wrapper & {
     background-color: $dark-gray;
     li a {
       color: $ual-white;
@@ -629,6 +414,14 @@ h3.sub-filter-title {
 }
 
 
+.warning-icon {
+  img {
+    width: 146px;
+    max-width: 146px;
+    height: 146px;
+    max-height: 146px;
+  }
+}
 
 
 

@@ -517,6 +517,37 @@ if ($('.accordion').length > 0) {
 
 }
   
+  // detect circles-callout component
+
+  if ($('.open-days-container').length > 0) {
+    $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+      // initialise skrollr to handle movement of the circles
+      var s = skrollr.init();
+    });
+  
+  }
+
+  // detect search filters on page
+  if ($('.search-filters').length > 0) {
+     //allow expand and close for search filters
+    $('.filter-heading').fastClick(function(event) {
+      event.preventDefault();
+      var c = $(this);
+      if (c.parent().hasClass('active') ) {
+        c.parent().removeClass('active');
+      }
+      else {
+        c.parent().addClass('active');
+      }
+    });
+  }
+
+
 // detect lightbox component
 if ($('.lightbox').length > 0) {
 
@@ -538,6 +569,7 @@ if ($('.lightbox').length > 0) {
             }
 
         });
+
     });
 }
 
