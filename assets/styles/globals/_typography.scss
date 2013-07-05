@@ -159,6 +159,7 @@ p.leader {
 	// }
 	@include gs-media(d) {
 		font-size: emCalc(24px);
+		@include adjust-leading-to(5, 18px);
 	}
 }
 
@@ -224,7 +225,6 @@ figure {
 
 table {
 	@include adjust-leading-to(4, 16px); 
-	margin-top: rhythm(4, 24px); 
 	margin-bottom: rhythm(4, 24px); 
 
 	width: 100%;
@@ -245,12 +245,15 @@ table {
 		padding: rhythm(2, 16px); 
 
 	}
-	th {
-
+	&.course-data {
+		th {
+			padding-left: 0;
+		}
+		td {
+			padding-right: 0;
+		}
 	}
-	td {
-
-	}
+	
 }
 
 aside {
