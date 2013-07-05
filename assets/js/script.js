@@ -517,26 +517,29 @@ if ($('.accordion').length > 0) {
 
 }
   
-  // detect lightbox component
-  if ($('.lightbox').length > 0) {
-      
-    // initialise the magnific lightbox
-    $('.lightbox').magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      tLoading: 'Loading image #%curr%...',
-      mainClass: 'mfp-img-mobile',
-      gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-      },
-      image: {
-        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-      }
-    
+// detect lightbox component
+if ($('.lightbox').length > 0) {
+
+    $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+
+        // initialise the magnific lightbox
+        $('.lightbox').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            }
+
+        });
     });
-  }
+}
 
   // make videos adapt responsively
   $('.video-wrapper').fitVids();
