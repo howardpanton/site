@@ -2,7 +2,8 @@
 layout: main.tpl
 class-home: active
 college: ual
-content-type: course-finder-results
+template: true
+section: course finder
 title: Short Course Finder Results Page
 ---
 
@@ -120,7 +121,7 @@ title: Short Course Finder Results Page
       
           
     <div class="row search-results-summary">
-      <div class="search-results-info"> 
+      <div class="lower-search-results-info"> 
         <p>Results: 1 – 20 of 23 search results for Graphic Design</p>
       </div>
       <div class="search-pagination-btns">
@@ -145,113 +146,9 @@ title: Short Course Finder Results Page
     </div>   
   </section> <!--  Search Results section -->
   
-  <div class="search-filters">
-    
-      <h2 class="size-h4">Filter by short courses:</h2>
+  
       
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Discipline</h3>
-          <ul> 
-            <li><a href="#">Some filter here</a></li>
-            <li><a href="#">Another filter here</a></li>
-            <li class="active"><a href="#">Another filter here</a></li>
-            <li><a href="#">Another filter here</a></li>
-            <li><a href="#">Another filter here</a></li>
-          </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Session</h3>
-        <ul> 
-          <li><a href="#">Some filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li class="active"><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Age Group</h3>
-        <ul> 
-          <li><a href="#">Some filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li class="active"><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-        </ul>
-      </div>
-      
-      <div class="filter-module">   
-        <h3 class="filter-heading size-h4">Start Date</h3>
-        <ul> 
-          <li>
-            <input type="date">
-          </li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Select Days</h3>
-        <ul> 
-          <li><a href="#">Some filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-          <li><a href="#">Another filter here</a></li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Preferred Time</h3>
-        <ul> 
-          <li>
-            <input type="time">
-          </li>
-        </ul>
-      </div>
-      <div class="filter-module">
-        <ul>
-          <li class="filter-link-only">
-            <a href="#">Available Courses</a>
-          </li>
-        </ul>
-      </div>
-
-      
-      <h2 class="size-h4">Filter results by:</h2>
-      <div class="filter-module active">
-        <h3 class="filter-heading">Colleges</h3>
-        <ul>
-          <li><a href="#">Camberwell</a></li>
-          <li class="active"><a href="#">Central Saint Martins</a></li>
-          <li><a href="#">Chelsea</a></li>
-          <li><a href="#">London College of Communication</a></li>
-          <li class="active"><a href="#">London College of Fashion</a></li>
-          <li><a href="#">Wimbledon</a></li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading">Level</h3>
-        <ul>
-          <li><a href="#">Short Course</a></li>
-          <li class="active"><a href="#">Language Courses</a></li>
-          <li><a href="#">Further Education</a></li>
-          <li><a href="#">Undergraduate</a></li>
-          <li><a href="#">Postgraduate</a></li>
-          <li class="active"><a href="#">Research</a></li>
-          <li><a href="#">Study Abroad</a></li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading">Mode</h3>
-        <ul>
-          <li class="active"><a href="#">Full-time</a></li>
-          <li><a href="#">Part-time</a></li>
-        </ul>
-      </div>
+  {% include components/_search-filters-short-courses.html %}
    
   </div>
 </div>

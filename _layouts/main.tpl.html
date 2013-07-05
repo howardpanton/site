@@ -7,25 +7,27 @@
   {% include _global_banner.html %}
   {% include _new_header.html %}
 
-  <div class="header-panel bg-gray-bg">
-    <div class="row">
-      <div class="content-wrapper">
-        {% if page.college == "lcf" %}
-          {% include _lcf_breadcrumb.html %}
-        {% else if page.college == "lcc" %}
-          {% include _lcc_breadcrumb.html %}
-        {% else if page.college == "ual" %}
-          {% include _breadcrumb.html %}
-        {% endif %}
+  {% if page.section != "course finder" %}
+    <div class="header-panel bg-gray-bg">
+      <div class="row">
+        <div class="content-wrapper">
+          {% if page.college == "lcf" %}
+            {% include _lcf_breadcrumb.html %}
+          {% else if page.college == "lcc" %}
+            {% include _lcc_breadcrumb.html %}
+          {% else if page.college == "ual" %}
+            {% include _breadcrumb.html %}
+          {% endif %}
 
-        {% if page.section != "home" and page.section != "graduate-school" %}
-        
-            <h1>{{ page.title }}</h1>
+          {% if page.section != "home" and page.section != "graduate-school" %}
+          
+              <h1>{{ page.title }}</h1>
 
-        {% endif %}
-      </div>
-    </div>    
-  </div><!-- .header-panel -->
+          {% endif %}
+        </div>
+      </div>    
+    </div><!-- .header-panel -->
+  {% endif %}
 
 {% endif %}
 

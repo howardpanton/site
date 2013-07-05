@@ -4,13 +4,17 @@
 
 .search-results-wrap {
 	@include clearfix();
+  clear: left;
 	background-color: $bg-gray;
+  @include padding-leader(8);
+  @include padding-trailer(8);
 }
 
 .search-results {
 	@include gs-media (d,min-max) {
 		@include gs-span(d,6,16);
-	}
+  }
+  
   h2 {
     padding-top: 0;
   }
@@ -198,33 +202,52 @@ input, .search-result-module, .search-input-wrap {
 
 .search-results-summary{
  
-  min-height: 120px;
   @include gs-media (d,min-max) {
     min-height: 60px;
+  }
+  
+  @include gs-media (t,min-max) {
+    min-height: 60px;
+  }
+
+  @include gs-media (m,min-max) {
+    min-height: 120px;
   }
 
 }
 
 .search-results-info {
+  
+  p {
+    @extend .size-h3;
+    font-weight: 300;
+    @include margin-trailer(2);
+  }
+
    @include gs-media (d,min-max) {
-      @include gs-span(d,6,11,(6,16));
+      @include gs-span(d,6,14,(6,16));
+      p { padding-top: 2px; }
     }
 
     @include gs-media (t,min-max) {
       @include gs-span(t,1,4);
+      p { padding-top: 0; }
     }
 
     @include gs-media (m,min-max) {
-      // @include gs-span(m,all);
-      // p { margin-bottom:  24px; }
+      p { padding-top: 0; }
     }
-  
-  p {
-    padding-top: 0; 
-    font-size:16px; 
-    font-weight: 300;
-    padding-bottom: 12px;
+}
+
+.lower-search-results-info {
+  @extend .search-results-info;
+  p { 
+    @extend .size-h4; 
   }
+  @include gs-media (d,min-max) {
+    @include gs-span(d,6,11,(6,16));
+  }
+
 }
 
 .search-pagination-btns {
@@ -354,7 +377,7 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 
-  &.cf-predictive-search-matches{
+  &.header-wrapper{
     background-color: $dark-gray;
     li a {
       color: $ual-white;
@@ -391,6 +414,14 @@ input, .search-result-module, .search-input-wrap {
 }
 
 
+.warning-icon {
+  img {
+    width: 146px;
+    max-width: 146px;
+    height: 146px;
+    max-height: 146px;
+  }
+}
 
 
 

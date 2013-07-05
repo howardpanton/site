@@ -1623,7 +1623,7 @@ h4 {
 
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_typography\.scss}line{font-family:\00003118}}
-  .size-h3 {
+  .size-h3, .search-results-info p, .lower-search-results-info p {
     font-size: 1.5em;
     line-height: 1em;
   }
@@ -1631,7 +1631,7 @@ h4 {
 
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/globals\/_typography\.scss}line{font-family:\00003124}}
-  .size-h4, .filter-module h3 {
+  .size-h4, .filter-module h3, .lower-search-results-info p {
     font-size: 1.125em;
     line-height: 1em;
   }
@@ -2043,6 +2043,10 @@ input[type="checkbox"]:focus {
 
 /* ::Components */
 /* ------------------------------------------------------------ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\000034}}
+.search-filters h2 {
+  padding-top: 0;
+}
 @media only screen and (min-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\000032}}
   .search-filters {
@@ -2051,7 +2055,6 @@ input[type="checkbox"]:focus {
     margin-left: 0%;
     margin-right: -100%;
     width: 23.39636%;
-    margin-top: 3.375em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -2076,11 +2079,11 @@ input[type="checkbox"]:focus {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000324}}
 .filter-module:last-child li.active ul {
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000327}}
 .filter-module h3 {
   padding: 12px 18px 12px 18px;
   background-color: black;
@@ -2089,17 +2092,17 @@ input[type="checkbox"]:focus {
   font-weight: 300;
   border-bottom: 1px solid #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000335}}
 .filter-module h3:hover {
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000340}}
 .filter-module ul {
   padding-top: 0;
   padding-bottom: 0;
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000345}}
 .filter-module ul li {
   background-color: white;
   border-width: 0 0 1px 0;
@@ -2107,15 +2110,12 @@ input[type="checkbox"]:focus {
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
-  background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000352}}
 .filter-module ul li:last-child {
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000354}}
 .filter-module ul li a {
   padding: 0 30px 0 18px;
   border-bottom: 0;
@@ -2125,26 +2125,38 @@ input[type="checkbox"]:focus {
   height: 100%;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000363}}
-.filter-module ul li.active {
-  background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png");
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000364}}
+.filter-module ul li input[type="checkbox"] {
+  float: right;
+  margin-left: 18px;
+  margin-right: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000370}}
+.filter-module ul li input[type="checkbox"]:checked + label {
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000374}}
+.filter-module ul li label {
+  padding-left: 18px;
+  cursor: pointer;
+  color: #757575;
+  font-size: 0.875em;
+  font-weight: 300;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000388}}
 .filter-module ul li.active > a {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000396}}
 .filter-module.active {
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000398}}
 .filter-module.active ul {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003103}}
 li.filter-link-only {
   background-color: white !important;
   background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png") !important;
@@ -2156,36 +2168,44 @@ li.filter-link-only {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003111}}
 li.filter-link-only a {
   color: #282828 !important;
   font-weight: 300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003116}}
 li.filter-link-only:last-child {
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003118}}
 li.filter-link-only.active {
   background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png") !important;
   background-repeat: no-repeat;
   background-position: 95% 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003122}}
 li.filter-link-only.active > a {
   color: black;
   font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/components\/_sidebar-search-filters\.scss}line{font-family:\00003129}}
+.short-course-filters {
+  margin-bottom: 1.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\000035}}
 .search-results-wrap {
   overflow: hidden;
   *zoom: 1;
+  clear: left;
   background-color: #eeeeee;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000313}}
   .search-results {
     display: block;
     float: left;
@@ -2194,11 +2214,11 @@ li.filter-link-only.active > a {
     width: 67.67226%;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000318}}
 .search-results h2 {
   padding-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000321}}
 .search-results h3 {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -2207,18 +2227,18 @@ li.filter-link-only.active > a {
   padding-top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000330}}
 .search-results-list {
   margin-left: 0;
   clear: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000335}}
 .search-results-list > li {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000339}}
 .search-button {
   height: 70px;
   width: 70px;
@@ -2226,7 +2246,7 @@ li.filter-link-only.active > a {
   background-color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000347}}
 .course-details > h3 {
   color: black;
   font-weight: bold;
@@ -2234,25 +2254,25 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000353}}
 .search-results input:focus {
   outline: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000357}}
 .search-input-wrap {
   background: white;
   margin-bottom: 24px;
   border: 6px solid white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000363}}
 .course-search-form {
   position: relative;
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000368}}
 .course-finder-input {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
@@ -2274,7 +2294,7 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000368}}
   .course-finder-input {
     margin-left: 12px;
     font-size: 0.875em;
@@ -2282,7 +2302,7 @@ li.filter-link-only.active > a {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000368}}
   .course-finder-input {
     max-width: 90%;
     width: 90%;
@@ -2292,44 +2312,44 @@ li.filter-link-only.active > a {
     line-height: 1.5em;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000393}}
 .course-finder-input::-webkit-input-placeholder {
   color: #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000397}}
 .course-finder-input:-moz-placeholder {
   /* Firefox 18- */
   color: #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003101}}
 .course-finder-input::-moz-placeholder {
   /* Firefox 19+ */
   color: #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003105}}
 .course-finder-input:-ms-input-placeholder {
   color: #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003110}}
 .course-finder-input:focus::-webkit-input-placeholder {
   color: #757575;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003113}}
 .course-finder-input:focus:-moz-placeholder {
   /* Firefox 18- */
   color: #757575;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003116}}
 .course-finder-input:focus::-moz-placeholder {
   /* Firefox 19+ */
   color: #757575;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003119}}
 .course-finder-input:focus:-ms-input-placeholder {
   color: #757575;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003127}}
 .search-link {
   position: absolute;
   top: 0;
@@ -2339,16 +2359,16 @@ li.filter-link-only.active > a {
   height: 48px;
   width: 48px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003135}}
 .search-link img {
   margin-top: -3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003138}}
 .search-link a {
   border-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003144}}
 input, .search-result-module, .search-input-wrap {
   -webkit-transition: -webkit-box-shadow 450ms;
   -moz-transition: -moz-box-shadow 450ms;
@@ -2357,12 +2377,12 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid rgba(0, 0, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003152}}
 .search-gray-border, .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   border: 6px solid #DDDDDD;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003161}}
 .arrow-next a {
   right: 0px;
   border-left: 20px solid #c8c8c8;
@@ -2374,7 +2394,7 @@ input, .search-result-module, .search-input-wrap {
   width: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003173}}
 .course-finder-right-arrow {
   position: absolute;
   right: 12px;
@@ -2385,19 +2405,19 @@ input, .search-result-module, .search-input-wrap {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003173}}
   .course-finder-right-arrow {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003173}}
   .course-finder-right-arrow {
     display: none;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003193}}
 .search-result-module {
   position: relative;
   background-color: white;
@@ -2408,20 +2428,68 @@ input, .search-result-module, .search-input-wrap {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003199}}
-.search-results-summary {
-  min-height: 120px;
-}
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003203}}
   .search-results-summary {
     min-height: 60px;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003203}}
+  .search-results-summary {
+    min-height: 60px;
+  }
+}
+@media only screen and (max-width: 599px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003203}}
+  .search-results-summary {
+    min-height: 120px;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003221}}
+.search-results-info p, .lower-search-results-info p {
+  font-weight: 300;
+  margin-bottom: 0.75em;
+}
+@media only screen and (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003219}}
+  .search-results-info, .lower-search-results-info {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 81.1465%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003229}}
+  .search-results-info p, .lower-search-results-info p {
+    padding-top: 2px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003219}}
+  .search-results-info, .lower-search-results-info {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 48.19132%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003234}}
+  .search-results-info p, .lower-search-results-info p {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 599px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003238}}
+  .search-results-info p, .lower-search-results-info p {
+    padding-top: 0;
+  }
+}
 
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003208}}
-  .search-results-info {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003242}}
+  .lower-search-results-info {
     display: block;
     float: left;
     margin-left: 0%;
@@ -2429,35 +2497,18 @@ input, .search-result-module, .search-input-wrap {
     width: 52.86624%;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003208}}
-  .search-results-info {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 48.19132%;
-  }
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003222}}
-.search-results-info p {
-  padding-top: 0;
-  font-size: 16px;
-  font-weight: 300;
-  padding-bottom: 12px;
-}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003253}}
 .search-pagination-btns {
   text-align: right;
   margin-top: 0.85714em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003257}}
 .search-pagination-btns a {
   margin-right: 1px;
 }
 @media only screen and (min-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003253}}
   .search-pagination-btns {
     display: block;
     float: left;
@@ -2468,7 +2519,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003253}}
   .search-pagination-btns {
     display: block;
     float: left;
@@ -2478,20 +2529,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003253}}
   .search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
 .course-title {
   display: block;
   width: 32%;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003256}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003279}}
 .course-title h3 {
   text-decoration: none;
   font-weight: bold;
@@ -2499,7 +2550,7 @@ input, .search-result-module, .search-input-wrap {
   margin-top: 0;
   padding-bottom: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003262}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003285}}
 .course-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -2510,44 +2561,44 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
   .course-title {
     width: 100%;
     clear: left;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003297}}
 .course-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003302}}
 .course-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003297}}
   .course-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003297}}
   .course-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003315}}
   .course-description p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003323}}
 .search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -2557,25 +2608,25 @@ input, .search-result-module, .search-input-wrap {
   width: 100%;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003323}}
   .search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003336}}
 .lower-search-again-box {
   clear: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003340}}
 .enrolment-type {
   width: 32%;
   float: left;
   font-size: 1em;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003340}}
   .enrolment-type {
     width: 100%;
     clear: left;
@@ -2583,7 +2634,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003351}}
 .college-name {
   width: 60%;
   float: left;
@@ -2591,7 +2642,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003351}}
   .college-name {
     width: 100%;
     clear: left;
@@ -2600,13 +2651,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003364}}
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003369}}
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -2618,16 +2669,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003357}}
-.ui-autocomplete.cf-predictive-search-matches {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003380}}
+.ui-autocomplete.header-wrapper {
   background-color: #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003359}}
-.ui-autocomplete.cf-predictive-search-matches li a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003382}}
+.ui-autocomplete.header-wrapper li a {
   color: white;
   font-size: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003388}}
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #eeeeee;
@@ -2635,14 +2686,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003392}}
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003398}}
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -2653,11 +2704,19 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003410}}
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/prichardson\/Dropbox\/htdocs\/beta\/assets\/styles\/custom\/_course-finder\.scss}line{font-family:\00003418}}
+.warning-icon img {
+  width: 146px;
+  max-width: 146px;
+  height: 146px;
+  max-height: 146px;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
