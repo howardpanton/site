@@ -13,6 +13,8 @@
         <!-- <img alt='' class='ual-logo-desktop' src='{{ site.url }}/assets/img/logos/ual-logo.png'> -->      
       </div>  
        
+
+      {% if page.class-home != "docs" %} 
       <!-- Mobile & tablet main navigation links (hidden on desktop) -->
       <nav class="d-hide">
         <ul id="mob-tab-menu" >       
@@ -22,18 +24,17 @@
         </ul>
       </nav>
       
-      {% if page.class-home != "docs" %}
-        <nav class="college-link-menu">
-          <ul>
-            <li><a href="/">UAL</a></li>
-              <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
-              <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
-              <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
-              <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
-              <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
-              <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
-          </ul>
-        </nav>
+      <nav class="college-link-menu">
+        <ul>
+          <li><a href="/">UAL</a></li>
+            <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
+            <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
+            <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
+            <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
+        </ul>
+      </nav>
       {% endif %}
 
     </div>
