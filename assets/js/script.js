@@ -519,7 +519,7 @@ if ($('.accordion').length > 0) {
   
   // detect circles-callout component
 
-  if ($('.open-days-container').length > 0) {
+  if ($('.circles-component').length > 0) {
     $.when(
         $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
         $.Deferred(function( deferred ){
