@@ -65,11 +65,17 @@
           float: right;
           margin-left: 18px;
           margin-right: 18px;
+          margin-top: 6px;
         }
-
+          
         input[type="checkbox"]:checked + label{
           color: $ual-black;
         }
+
+        input[type="checkbox"]:disabled + label{
+          opacity: 0.5;
+          @include opacity(50);
+        } 
 
         label { 
           padding-left: 18px; 
