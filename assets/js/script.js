@@ -696,8 +696,15 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 // initialise
 $(window).load(function(){
-  // $(groupOfItems).fitHeights(); 
-  $('.related-content ul li').fitHeights();
+  
+  if ($('.related-content ul li').length > 0) {
+    $('.related-content ul li').fitHeights();
+  }
+
+  if ($('.highlight-box-3').length > 0) {
+    $('.highlight-box-3 ul li').fitHeights();
+  }
+
 });
 
 
