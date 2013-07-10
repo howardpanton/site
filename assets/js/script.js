@@ -519,7 +519,7 @@ if ($('.accordion').length > 0) {
   
   // detect circles-callout component
 
-  if ($('.open-days-container').length > 0) {
+  if ($('.circles-component').length > 0) {
     $.when(
         $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
         $.Deferred(function( deferred ){
@@ -696,8 +696,15 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 // initialise
 $(window).load(function(){
-  // $(groupOfItems).fitHeights(); 
-  $('.related-content ul li').fitHeights();
+  
+  if ($('.related-content ul li').length > 0) {
+    $('.related-content ul li').fitHeights();
+  }
+
+  if ($('.highlight-box-3').length > 0) {
+    $('.highlight-box-3 ul li').fitHeights();
+  }
+
 });
 
 
