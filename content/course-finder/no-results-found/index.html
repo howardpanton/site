@@ -2,13 +2,13 @@
 layout: main.tpl
 class-home: active
 college: ual
-content-type: course-finder-results
+template: true
+section: course finder
 title: Course Finder No Results Found
 ---
 
 <div class="search-results-wrap">
 <div class="content-wrapper">  
-<div class="row">
 
 
 <section id="search-results" role="main" class='search-results'>  
@@ -27,48 +27,16 @@ title: Course Finder No Results Found
      </form>
   </div> 
   <div class="no-results-found">
+    <figure class="warning-icon">
+      <img  src="http://artslondon.github.io/beta/assets/img/sprite/ui-icons/exclamation-mark.png" alt="exclamation mark">
+    </figure>
     <h2>Sorry, we couldn’t find any results</h2>
     <p>Please try modifying your seach.</p>
-    <img src="http://artslondon.github.io/beta/assets/img/sprite/ui-icons/exclamation-mark.png" alt="exclamation mark">
+   
   </div>
 </section> <!--  Search Results section -->
 
-   <div class="search-filters">
-    
-    <div class="filter-module">
-      <h2>Filter by level</h2>
-      <ul>
-        <li><a href="#">Short Course</a></li>
-        <li class="active"><a href="#">Language Courses</a></li>
-        <li><a href="#">Further Education</a></li>
-        <li><a href="#">Undergraduate</a></li>
-        <li><a href="#">Postgraduate</a></li>
-        <li class="active"><a href="#">Research</a></li>
-        <li><a href="#">Study Abroad</a></li>
-      </ul>
-    </div>
-    
-    <div class="filter-module">
-      <h2>Filter by colleges</h2>
-      <ul>
-        <li><a href="#">Camberwell</a></li>
-        <li class="active"><a href="#">Central Saint Martins</a></li>
-        <li><a href="#">Chelsea</a></li>
-        <li><a href="#">London College of Communication</a></li>
-        <li class="active"><a href="#">London College of Fashion</a></li>
-        <li><a href="#">Wimbledon</a></li>
-      </ul>
-    </div>
+  {% include components/_search-filters.html %}
 
-    <div class="filter-module">
-      <h2>Filter by mode</h2>
-      <ul>
-        <li class="active"><a href="#">Full-time</a></li>
-        <li><a href="#">Part-time</a></li>
-      </ul>
-    </div>
-
-</div>
-  </div>
   </div>
 </div>

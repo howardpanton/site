@@ -362,14 +362,37 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 }
 
 @mixin component-spacing-bottom {
-  padding-bottom: rhythm(7, 16px);
-  margin-bottom: rhythm(6, 16px);
+  //padding-bottom: rhythm(4, 16px); - no, this will add padding inside certain components (like boxouts)
+  margin-bottom: rhythm(8, 16px);
 }
 
 @mixin no-border {
   border: none;
 }
 
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin default-transition() {
+  transition: all 0.4s ease-in-out;
+}
+
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+
+
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $base-font-size * 1em;
+}
 
 
 

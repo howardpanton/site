@@ -21,16 +21,6 @@ Used to provide fallback for browsers which don't support some of the latest fea
 How it works
 Modernizr runs quickly on page load to detect features; it then creates a JavaScript object with the results, and adds classes to the html element for you to key your CSS on. Modernizr supports dozens of tests, and optionally includes YepNope.js for conditional loading of external .js and .css resources.
 
-
-## hoverintent.js 
-
-[http://cherne.net/brian/resources/jquery.hoverIntent.html] http://cherne.net/brian/resources/jquery.hoverIntent.html
-
-** used in _____ pages **
-
-hoverIntent is a plug-in that attempts to determine the user's intent... like a crystal ball, only with mouse movement! It is similar to jQuery's hover method. However, instead of calling the handlerIn function immediately, hoverIntent waits until the user's mouse slows down enough before making the call. 
-
-
 ## response.js
 
 [http://responsejs.com/] http://responsejs.com/
@@ -38,7 +28,6 @@ hoverIntent is a plug-in that attempts to determine the user's intent... like a 
 ** used in _____ pages **
 
 Response is a jQuery plugin that provides tools for building performance-optimized, mobile-first responsive websites. Its breakpoint sets use HTML5 data attributes to dynamically swap markup based on breakpoints so that rich content can be served progressively. Its API includes cross-browser event hooks, HTML5 dataset, and ways to get or test responsive properties.
-
 
 ## fitVid.js
 
@@ -48,24 +37,6 @@ Response is a jQuery plugin that provides tools for building performance-optimiz
 
 For fluid width video embeds - use to make videos responsive
 
-
-## FitText.js
-
-[http://fittextjs.com/] http://fittextjs.com/
-
-** used in _____ pages **
-
-FitText makes font-sizes flexible. 
-Use this plugin on your fluid or responsive layout to achieve scalable headlines that fill the width of a parent element.
-
-
-## picturefill.js
-
-[https://github.com/scottjehl/picturefill] https://github.com/scottjehl/picturefill
-
-** used in _____ pages **
-
-Serves up different sized images for different screen sizes 
 
 ## jQuery picture
 
@@ -77,16 +48,6 @@ jQuery Picture is a plugin to add support for responsive images to your layouts.
 It supports both figure elements with some custom data attributes and the new proposed picture format. 
 This plugin will be made redundant when the format is approved and implemented by browsers. 
 Lets hope that happens soon. In the meantime this plugin will be kept up to date with latest developments.
-
-
-## Chart.js
-
-[http://www.jscharts.com/] http://www.jscharts.com/
-
-** used in _____ pages **
-
-JS Charts is a JavaScript based chart generator. 
-
 
 ## Skrollr.js
 

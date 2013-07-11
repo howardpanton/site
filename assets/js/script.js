@@ -454,7 +454,7 @@ $(document).ready(function(){
   // detect slider component
   if ($('.slider').length > 0) {
 
-    $.getScript('http://artslondon.github.io/beta/assets/js/style-guide/jquery.bxslider.min.js', function() {
+    $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
       $.each($('.slider'), function() {
 
@@ -497,31 +497,81 @@ $(document).ready(function(){
 
   }
 
-  // detect accordion component
-  if ($('.accordion').length > 0) {
-    $('#st-accordion').accordion();
-  }
+// detect accordion component
+if ($('.accordion').length > 0) {
+
+    $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.accordion.js" ),
+        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+
+        //place your code here, the scripts are all loaded
+        $('#st-accordion').accordion({
+            oneOpenedItem: true
+        });
+
+    });
+
+}
   
-  // detect lightbox component
-  if ($('.lightbox').length > 0) {
-      
-    // initialise the magnific lightbox
-    $('.lightbox').magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      tLoading: 'Loading image #%curr%...',
-      mainClass: 'mfp-img-mobile',
-      gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-      },
-      image: {
-        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+  // detect circles-callout component
+
+  if ($('.open-days-container').length > 0) {
+    $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+      // initialise skrollr to handle movement of the circles
+      var s = skrollr.init();
+    });
+  
+  }
+
+  // detect search filters on page
+  if ($('.search-filters').length > 0) {
+     //allow expand and close for search filters
+    $('.filter-heading').fastClick(function(event) {
+      event.preventDefault();
+      var c = $(this);
+      if (c.parent().hasClass('active') ) {
+        c.parent().removeClass('active');
       }
-    
+      else {
+        c.parent().addClass('active');
+      }
     });
   }
+
+
+// detect lightbox component
+if ($('.lightbox').length > 0) {
+
+    $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+
+        // initialise the magnific lightbox
+        $('.lightbox').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            }
+
+        });
+
+    });
+}
 
   // make videos adapt responsively
   $('.video-wrapper').fitVids();
