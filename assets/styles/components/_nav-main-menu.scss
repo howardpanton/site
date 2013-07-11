@@ -80,11 +80,13 @@
 .m-menu-btn-toggle{
   color: white; 
   border: none;
-  padding: 10px;
-  padding-top: 12px;
-  margin-left: 0;
+  padding: 6px;
   font-size: 14px;
   font-weight: 300;
+  span {
+    @extend .icon;
+    display: block;
+  }
   @include gs-media(d, min-max) { display: none !important; }
 }
 
@@ -294,6 +296,7 @@
 
       &:last-child {
         float: right;
+        a { padding-top: 0; }
       }
 
       &:hover { background-color: #444444; }   
@@ -443,9 +446,9 @@
     border-right: none;
     padding-top: 0;
     padding-bottom: 0;
-    a {
-      padding-top: 18px;
-    }
+    // a {
+    //   padding-top: 18px;
+    // }
   }
 
   .menu-active{
