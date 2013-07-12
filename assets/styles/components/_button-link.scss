@@ -1,0 +1,30 @@
+.button-link, %button-link{
+  font-size: emCalc(14px);
+  background: $black;
+  color: $white;
+	margin: rhythm(4, 14px) 0 rhythm(3, 14px) 0; 	
+	padding: rhythm(2, 14px) rhythm(3, 14px); 	
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  border-bottom: none;
+}
+.button-link:hover, %button-link:hover{
+  background: $aaa-gray;
+  color: $white;
+  text-decoration: none;
+  border-bottom: none;
+  cursor: pointer;
+  .lcc & {
+    background: $lcc-secondary-pink;
+    color: $white;
+  }
+}
+// .button-link:active {
+//   background: #2E5481;
+//   border: solid 1px #203E5F;
+// }

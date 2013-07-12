@@ -1,0 +1,32 @@
+// four up content gallery (with optional title links)
+.four-up-content-gallery {
+	li {
+		background: $white;
+		padding: 0;
+		margin-bottom: 24px;
+		h3 {
+			padding: 12px 24px 24px 24px;
+		}	
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+		li {
+      width: gs-width(t, 2, 3, (2,7), true);
+      @include gs-float(t, left, (2,7));
+			&:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
+				margin-right: 0;
+			}
+		}
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d, 5, 16);
+		li {
+      width: gs-width(d, 5, 7, (5,16), true);
+      @include gs-float(d, left, (5,16));
+			&:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+				margin-right: 0;
+			}
+		}
+	}
+}
