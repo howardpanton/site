@@ -1,0 +1,13 @@
+.short-course-booking {
+	// mobile first
+	> table {
+		background: $bg-gray;
+	}
+
+	@include gs-media (t, min-max) {
+		@include gs-span (t, 2, 7);
+	}
+	@include gs-media (d) {
+		@include gs-span (d, 5, 16);
+	}
+}
