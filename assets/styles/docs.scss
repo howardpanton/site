@@ -1,13 +1,8 @@
-
-
-
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 
 @import "globals/gridset";
 @import "globals/gridset-utilities";
-
-
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
@@ -15,7 +10,6 @@
 @import "globals/variables";
 @import "globals/mixins";
 @import "globals/colors";
-@import "globals/sprites";
 @import "globals/utilities";
 
 
@@ -26,21 +20,7 @@
   .updated {
     font-size: 12px;
     line-height: 16px;
-    padding: 0 0 12px 0;
-    color: $ual-black;
-    
-    // @include gs-media (t,min-max) {
-    //   // position: absolute;
-    //   top: 25px;
-    //   left: 93px;
-    // }
-    
-    // @include gs-media (d,min-max) {
-    //   // position: absolute;
-    //   top: 6px;
-    //   left: 3.75%;
-    // }
-
+    color: $white;
   }
   .gist-container {
     @include gs-media (t,min-max) {
@@ -208,7 +188,7 @@ a span.title {
 // menu toggle button
 #slide-menu-toggle-btn {
   position: absolute;
-  top: 6px;
+  top:4px;
   right: 40px;
   height: 60px;
   width: 80px;
@@ -246,16 +226,13 @@ a span.title {
   
 }
 
-
-
-
 // styles for the slide in panel and menu
 
 #jPanelMenu-menu {
-   background-color: $ual-black;
+   background-color: $black;
 }
 .jPanelMenu-panel {
-  background-color: $ual-black;
+  background-color: $black;
 }
 
 
@@ -270,5 +247,78 @@ a span.title {
 }
 
 .jPanelMenu-panel {
-  /*background-color: $ual-black;*/
+  /*background-color: $black;*/
+}
+
+//
+
+
+
+// New added styles
+// four up content gallery (with optional title links)
+.four-up {
+  li {
+    padding: 0;
+    margin-bottom: 24px;
+    background: none;
+    h3 {
+      padding: 12px 24px 24px 24px;
+    } 
+
+    p {
+      padding: 0;
+    }
+  }
+
+  @include gs-media(t,min-max) {
+    @include gs-span(t,2,7);
+    li {
+      width: gs-width(t, 2, 3, (2,7), true);
+      @include gs-float(t, left, (2,7));
+      &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include gs-media(d) {
+    @include gs-span(d, all);
+    li {
+      width: gs-width(d, 1, 4, false, true);
+      &:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+$base_grey_docs :#757275 ;
+
+.docs_grey_bg {
+  background: $base_grey_docs;
+    color: white;
+  a {
+      color: white;
+  }
+}
+
+.docs_grey_darken_bg {
+  background: darken($base_grey_docs, 10%);
+  color: white;
+  a {
+      color: white;
+  }
+}
+
+
+i.docs {
+  font-size: 5em;
+  position: relative;
+  top: 25px;
+}
+
+
+.mobile-menu {
+  position: relative;
+  float: right;
+  top: 10px;
 }

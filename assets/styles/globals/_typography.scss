@@ -1,23 +1,32 @@
-
 @include establish-baseline(16px);
 
-body {
-	font-family: $font-family;
-	font-size: emCalc(16px);
-	// @media screen and (min-width: 75em) {
-	// 	font-size: emCalc(18px) ; // 18  
-	// }
+// Always show scrollbar to prevent jumps when content is expanded
+html {
+    overflow-y: scroll;
 }
 
+// Set box-sizing rules to all Div's.
+* {
+ 	@include box-sizing(border-box);
+}
+
+// Apply UAL global font to body
+body {
+	font-family: $ual-global-font-stack;
+	font-size: emCalc(16px);
+}
+
+// Global link colors
 a {
-	color: $primary;
+	color: $black;
 	text-decoration: none;
 	padding-bottom: 1px;
-	border-bottom: 1px dotted $primary;
+	border-bottom: 1px dotted $black;
 	
 	&:hover {
 		color: $aaa-gray;
-		border-bottom: 1px solid $primary;
+		padding-bottom: 1px;
+		border-bottom: 1px solid $black;
 	}
 
 	.hide-descriptive-text {
@@ -32,18 +41,11 @@ a {
 
 h1 { 
 	font-size:emCalc(36px); 
-	@include adjust-leading-to(7, 36px); 
-	// padding: rhythm(5, 36px) 0 rhythm(3, 36px) 0; 	
+	@include adjust-leading-to(7, 36px); 	
 
-	@include gs-media(t,min-max) {
+	@include gs-media(t,min) {
 		font-size: emCalc(54px); 
 		@include adjust-leading-to(10, 54px); 
-		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
-	}
-	@include gs-media(d) {
-		font-size: emCalc(54px); 
-		@include adjust-leading-to(10, 54px);
-		// padding: rhythm(7, 54px) 0 rhythm(5, 54px) 0; 	
 	}
 	.lcc .content-wrapper & {
 		@extend .LeagueGothicRegular;
@@ -71,7 +73,7 @@ h2 {
 
 	.lcc .content-wrapper & {
 		@extend .LeagueGothicRegular;
-		border-bottom: 4px solid $ual-black;
+		border-bottom: 4px solid $black;
 		margin-bottom: 24px;
 		text-transform: uppercase;
 		letter-spacing: 2px;
@@ -240,7 +242,7 @@ table {
 		background: $bg-gray;
 	}
 	tr:nth-child(even) {
-		background: $ual-white;
+		background: $white;
 	}
 	th, td {
 		padding: rhythm(2, 16px); 
@@ -288,6 +290,14 @@ p.leader {
 .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
 
 
+.icon {
+  font-family: "entypo";
+}
+
+.icon-social {
+  font-family: "entypo-social";
+}
+
 // LCF Variants 
 
 .lcf {
@@ -322,7 +332,7 @@ p.leader {
     figcaption, .flex-video .caption {
         padding: 0 10px;
         color: $ual-secondary;
-        font-family: $alt-font-family;
+        font-family: $lcf-heading-font;
         a {
            color: $ual-secondary; 
         }
@@ -334,7 +344,7 @@ p.leader {
 .graduate-school {
     .content-wrapper {
         h1,h2,h3,h4,h5,h6 {
-            font-family: $alt-font-family;
+            font-family: $lcf-heading-font;
             font-weight: normal;
             border: 0 none;
             letter-spacing: 0;
