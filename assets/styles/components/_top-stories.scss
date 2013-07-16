@@ -1,0 +1,48 @@
+
+.top-stories{
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+	}	
+
+	.stories {
+		@include gs-media(t,min-max) {
+			@include gs-span(t,2,7);
+		}
+		@include gs-media(d) {
+			@include gs-span(d, 5, 12, (5, 16));
+		}	
+	}
+	.story {
+		clear: both;
+		margin-bottom: 48px;
+	}
+
+	.stories-list {
+		background: $bg-gray;
+		padding: 24px;
+		h2 {
+			padding: 0;
+		}
+		.date {
+			font-size: 36px;
+			font-weight: bold;
+			padding: 0;	
+			.lcc & {
+				@extend .LeagueGothicRegular;
+				color: $lcc-green;
+			}
+		}
+		p {
+		 padding-top: 0;
+		}
+		@include gs-media(t,min-max) {
+			@include gs-span(t,2,7);
+		}
+		@include gs-media(d) {
+			@include gs-span(d, 13, 16, (5, 16));
+		}	
+	}
+}

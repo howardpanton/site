@@ -1,0 +1,50 @@
+.panel {
+	width: 100%;
+	float: left;
+	display: block;
+	padding: rhythm(8, 16px) 0;
+}
+
+.header-panel {
+	width: 100%;
+	float: left;
+	display: block;
+	padding-bottom: rhythm(4, 16px);
+	margin-bottom: rhythm(4, 16px);
+	.home & {
+		margin: 0;
+		padding: 0;
+	}
+	border-left: 10px solid $black;
+	h1 {
+		color: $dark-gray;
+	}
+	// custom variation for colleges namespace
+	.camberwell & {
+		border-left: 10px solid $ccw-green ;
+	}
+	.csm & {
+		border-left: 10px solid $csm-primary;
+	}
+	.chelsea & {
+		border-left: 10px solid $ccw-salmon;
+	}
+	.lcc & {
+		border-left: 10px solid $lcc-primary-yellow;
+	}
+	.lcf & {
+		border-left: 10px solid $logo-gray;
+	}
+	.wimbledon & {
+		border-left: 10px solid $ccw-blue;
+	}
+}
+
+.footer-panel {
+	width: 100%;
+	float: left;
+	display: block;
+	margin-top: rhythm(4, 16px);
+	margin-bottom: rhythm(4, 16px);
+}
+
