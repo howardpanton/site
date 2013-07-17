@@ -19,8 +19,9 @@
 			}
 		}
 	}
+	
 	@include gs-media(d,min-max) {
-		@include gs-span(d, 5, 16);
+		@include gs-span(d, 5, 16, (5, 16));
 		li {
       width: gs-width(d, 5, 7, (5,16), true);
       @include gs-float(d, left, (5,16));
