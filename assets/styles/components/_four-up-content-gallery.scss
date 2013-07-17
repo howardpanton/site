@@ -1,11 +1,14 @@
 // four up content gallery (with optional title links)
 .four-up-content-gallery {
+	
+	ul { clear: left; }
+
 	li {
 		background: $white;
 		padding: 0;
 		margin-bottom: 24px;
 		h3 {
-			padding: 12px 24px 24px 24px;
+			// padding: 12px 24px 24px 24px;
 		}	
 	}
 
@@ -19,15 +22,22 @@
 			}
 		}
 	}
-	
+
 	@include gs-media(d,min-max) {
 		@include gs-span(d, 5, 16, (5, 16));
 		li {
       width: gs-width(d, 5, 7, (5,16), true);
       @include gs-float(d, left, (5,16));
-			&:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+			
+			&:nth-of-type(4), &:nth-of-type(8), 
+			&:nth-of-type(12), &:nth-of-type(16) {
 				margin-right: 0;
 			}
 		}
+
+		h2 {
+			@include gs-span(d, 5, 12, (5, 16));
+		}
+
 	}
 }
