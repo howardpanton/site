@@ -279,6 +279,8 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
           <a href="index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
         </div> 
         <div class="updated">Last updated: {{ page.last-updated }}</div>
+
+        <div class="credits-btn"><a href="#" class="show-credits">Show Credits</a></div>
       </div>
       <div class="row">
         <h1>{{ page.title }}</h1>
@@ -291,11 +293,11 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
   {% include _global_footer.html %}
 
 
-  // <script>
+<script>
   //   if (typeof jQuery == 'undefined') {
   //   document.write(unescape("%3Cscript src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
   // }
-  // </script>
+</script>
 
   <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
