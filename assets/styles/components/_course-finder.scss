@@ -5,7 +5,7 @@
 .search-results-wrap {
 	@include clearfix();
   clear: left;
-	background-color: $bg-gray;
+	// background-color: $bg-gray;
   @include padding-leader(8);
   @include padding-trailer(8);
 }
@@ -176,8 +176,8 @@ input, .search-result-module, .search-input-wrap {
   top:30%;
   width: 43px;
   height: 77px;
-  background-repeat: no-repeat;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
+  //background-repeat: no-repeat;
+  //background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABNCAMAAAAILm21AAAAMFBMVEX////5+frj5OX9/f319fbT1Nbe3+D19fXe3uDR0tTx8fLo6Ons7e3w8fH+/v7z8/QfYEHbAAAAP0lEQVR42u3KwRGAIBAEwUX09AAl/2zNgNo/0++WVI4q13mFn28ymUwmk1f58XNkk6nnoFKpVOrm9fWrvinPD2ymB+dkUM+3AAAAAElFTkSuQmCC);
   
   @include gs-media(t, min-max) {
     display: none;
@@ -192,7 +192,7 @@ input, .search-result-module, .search-input-wrap {
 
 .search-result-module{
   position: relative;
-  background-color: white;
+  background-color: $bg-gray;
   min-height: 138px;
   height: auto;
   padding: 24px;

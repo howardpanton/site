@@ -18,6 +18,9 @@
 
 .filter-module {
   
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+
   &:last-child li.active { 
     ul { border-bottom: 0; }
   }
@@ -46,6 +49,7 @@
     li {
         background-color: white;
         margin-left: 0;
+        padding-left: 18px;
         @include border-image-dot();
         // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
         // background-repeat: no-repeat;
@@ -79,8 +83,7 @@
           @include opacity(50);
         } 
 
-        label { 
-          padding-left: 18px; 
+        label {  
           cursor: pointer; 
           color: $aaa-gray;
           font-size: emCalc(14px);
@@ -100,6 +103,9 @@
 
 
   }
+
+  // divs inside filter module are hidden by default
+  div { display: none}  
 
   &.active { 
     border-bottom: 0;
