@@ -8,7 +8,7 @@ breadcrumb: Page Layout
 ---
 
 <!-- carousel slider -->
-{% include components/_carousel.html %}
+{% include components/_carousel-college.html %}
 
 <div class="content-wrapper">
 	<div class="row">
@@ -16,17 +16,27 @@ breadcrumb: Page Layout
 		<!-- sidebar for page navigation --> 
 		<div role="navigation" class="sidebar">
 			<ul>
-				<li><a href="" title="">sidebar</a></li>
-				<li><a href="" title="">sidebar</a></li>
-				<li><a href="" title="">sidebar</a></li>
-				<li><a href="" title="">sidebar</a></li>
-				<li><a href="" title="">sidebar</a></li>
-				<li><a href="" title="">sidebar</a></li> 
-				<li><a href="" title="">sidebar</a></li> 
-			</ul>
+				<!-- new feature block -->
+				{% include _docs-sidebar.html %}
+			</ul> 
 		</div>
 
-		<div role="main" class="main-content">
+		<div role="main" class="main-content"> 
+
+			<!-- new feature block -->
+			{% include components/_new-feature-block.html %}
+
+			<!-- content carousel -->
+			{% include components/_bxslider-content-carousel.html %}
+
+			<!-- student stories -->
+			{% include components/_student-stories.html %}
+
+			<!-- link lists - used on short course pages -->
+			{% include components/_lists.html %}
+
+			<!-- short course booking -->
+			{% include components/_short-course-booking.html %}
 
 			<!-- text block with image -->
 			{% include components/_text-block-with-image.html %}
@@ -53,27 +63,27 @@ breadcrumb: Page Layout
 			{% include components/_text-block-with-aside.html %}
 
 			<!-- image block -->
-			{% include components/_image-block-with-title.html %}
+			{% include components/_image-block.html %}
 
 			<!-- image block with aside -->
 			{% include components/_image-block-with-aside.html %}
 
+
+			<!-- image block with intro -->
+<!-- 			{% include components/_image-block-with-intro.html %}
+ -->
+			<!-- image block with leading intro -->
+<!-- 			{% include components/_image-block-with-leading-intro.html %}
+ -->
+
 			<!-- media block -->
-			{% include components/_media-block.html %}
+<!-- 			{% include components/_media-block.html %} -->
 
 			<!-- image list with text - feature -->
 			{% include components/_image-list-with-text-feature.html %}
 
 			<!-- image list with text - content -->
-			{% include components/_image-list-with-text-content.html %}
-
-			<!-- image block with intro -->
-			{% include components/_image-block-with-intro.html %}
-
-			<!-- image block with leading intro -->
-			{% include components/_image-block-with-leading-intro.html %}
-
-			
+			{% include components/_image-list-with-text-content.html %}			
 
 			<!-- block quote -->		
 			{% include components/_block-quote.html %}

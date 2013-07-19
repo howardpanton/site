@@ -1,0 +1,22 @@
+.new-feature-block {
+
+	@include gs-media(t,min-max) {
+		@include gs-span(d, 2, 7, (1, 8));
+	}
+
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+		h2 {
+			@include gs-span(d, 5, 12, (5, 16));
+		}
+		.content {
+			@include gs-span(d, 5, 12, (5, 16));
+		}
+		.feature {
+			@include gs-span(d, 5, 16, (5, 16));
+		}
+		.teaser {
+			@include gs-span(d, 5, 12, (5, 16));
+		}
+	}
+}
