@@ -467,6 +467,8 @@ $(document).ready(function(){
 
         // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        // set the minimum number of slides before it starts to be responsive
+        var _itemMinSlides = (_this.data('slider-min-slides') > 0) ? _this.data('slider-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
         var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
         // slider instances always show next/prev controls, unless data-controls is false          
@@ -477,8 +479,8 @@ $(document).ready(function(){
         
         _this.bxSlider({
           slideWidth: _itemWidth,
-          minSlides: 1,
-          maxSlides: 4,
+          minSlides: _itemMinSlides,
+          maxSlides: 10,
           slideMargin: _itemMargin,
           moveSlides: 1,
           controls: _controlsOpt,
@@ -500,6 +502,33 @@ $(document).ready(function(){
     });
 
   }
+
+  ///////////////////////
+  /////// accreditation
+  ///////////////////////
+
+  // $(".accreditation").hide();
+
+    // detect search filters on page
+
+     //allow expand and close for search filters
+  
+  if ($('.credits').length > 0) {
+    $('.credits-btn').addClass("show");
+    $('.show-credits').fastClick(function(event) {
+      event.preventDefault();
+      // $('.credits').toggle();
+      var c = $(this);
+      if (c.hasClass('active') ) {
+        c.removeClass('active').html("Show Credits");
+        $('.credits').fadeOut();
+      } else {
+        c.addClass('active').html("Hide Credits");
+        $('.credits').fadeIn();
+      }
+    });
+  }
+
 
 // detect accordion component
 if ($('.accordion').length > 0) {
@@ -563,7 +592,8 @@ if ($('.lightbox').length > 0) {
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
         // initialise the magnific lightbox
-        $('.lightbox').magnificPopup({
+        $('.lightbox').each(function() {
+          $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
             tLoading: 'Loading image #%curr%...',
@@ -576,7 +606,7 @@ if ($('.lightbox').length > 0) {
             image: {
               tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
             }
-
+          });
         });
 
     });
@@ -593,7 +623,7 @@ if ($('.lightbox').length > 0) {
   $(".show-more").click(function(e){
     e.preventDefault();  
     var _clicked = $(this);
-    var parent = _clicked.closest(".expandable-content-block"); 
+    var parent = _clicked.closest(".expandable-content"); 
     $(".expanded-content",parent).slideDown(); 
     _clicked.hide();
   });
@@ -603,7 +633,7 @@ if ($('.lightbox').length > 0) {
     e.preventDefault();  
     var _clicked = $(this);
 
-    var parent = _clicked.closest(".expandable-content-block"); 
+    var parent = _clicked.closest(".expandable-content"); 
     $(".expanded-content",parent).hide();
     $(parent).find(".show-more").show();
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
