@@ -27,6 +27,22 @@
     <link rel='stylesheet' href='{{ site.url }}/assets/css/grid/gridset.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
   -->
+   <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url }}/assets/css/logos/logos.data.png.css", "{{ site.url }}/assets/css/logos/logos.fallback.css" ] );
+    </script>
+  <noscript><link href="{{ site.url }}/assets/img/css/logos.fallback.css" rel="stylesheet"></noscript>
+
+<!-- need to combine these two includes -->
+
+  <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}/assets/img/svg/icons.data.png.css", "{{ site.url }}/assets/img/svg/icons.fallback.css" ] );
+    </script>
+  <noscript><link href="{{ site.url }}/assets/img/svg/icons.fallback.css" rel="stylesheet"></noscript>
+
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
   
   <!-- Zone-specific -->
@@ -48,12 +64,9 @@
 
     <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
 
-    <script>
-  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url }}/assets/css/logos/logos.data.png.css", "{{ site.url }}/assets/css/logos/logos.fallback.css" ] );
-    </script>
-  <noscript><link href="{{ site.url }}/assets/img/css/logos.fallback.css" rel="stylesheet"></noscript>
+   
+
+
 
   <!--[if (lt IE 9) & (!IEMobile)]>
   // selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
@@ -122,6 +135,7 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
           {% else if page.college == "ual" %}
             <div class="icon-ual"></div>
           {% endif %} 
+
         </div> 
       </div>  
        
@@ -190,7 +204,7 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
     Modernizr.Detectizr.detect({detectScreen:false});
   </script>
 
-  // <script>
+ <script>
   //   if (typeof jQuery == 'undefined') {
   //       document.write(unescape("%3Cscript src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
   //   }
@@ -223,42 +237,12 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
   <script src='{{ site.url }}/assets/js/libs/jquery.fastClick.js' type='text/javascript'></script>
 
   <!-- Scripts -->
+  <script src='{{ site.url }}/assets/js/libs/uisearch.js'></script>
+  <script src='{{ site.url }}/assets/js/libs/classie.js'></script>
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
-<<<<<<< HEAD
-  
-  <script>
-  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}/assets/img/svg/icons.data.png.css", "{{ site.url }}/assets/img/svg/icons.fallback.css" ] );
-    </script>
-  <noscript><link href="icons.fallback.css" rel="stylesheet"></noscript>
+
   
 
-
-  {% if page.college == "lcf" %}
-    {% include _ual_scripts.html %}
-  {% else if page.college == "ual" %}
-    {% include _ual_scripts.html %}
-  {% else if page.college == "lcc" %}
-    {% include _lcc_scripts.html %}
-  {% else if page.college == "csm" %}
-    {% include _csm_scripts.html %}
-  {% else if page.college == "ccw" %}
-    {% include _ccw_scripts.html %}
-  {% else if page.college == "camberwell" %}
-    {% include _ual_scripts.html %}
-
-  {% else if page.college == "chelsea" %}
-    {% include _chelsea_scripts.html %}
-  {% else if page.college == "wimbledon" %}
-    {% include _wimbledon_scripts.html %}
-  {% else %}
-
-  {% endif %}
-  
-=======
-
->>>>>>> 251fd582f4beabc2ae9aeaf3ae47fd66867cd61d
 
   </body>
 

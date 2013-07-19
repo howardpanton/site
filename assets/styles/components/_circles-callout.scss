@@ -10,7 +10,7 @@
 		background-color: $bg-gray;
 		position: relative;
 		
-		.camberwell & { background-color: $camberwell-bg-highlight;}
+		.camberwell & { background-color: $bg-gray;}
 		
 		.circles-wrapper {
 			max-width: 800px;
@@ -39,11 +39,11 @@
 			text-align: center;
 			height: 400px;
 			width: 400px;
-			padding-top:120px;
+			padding-top: 120px;
 			color: white;
 			box-sizing: border-box;
 
-			@include circle ($ual-black, 0.8);
+			@include circle ($black, 0.8);
 
 			&:hover {
 				//background-image: url('../../img/camberwell/cw-college.png');
@@ -100,7 +100,7 @@
 			left: 0;
 
 			.camberwell & {
-				@include circle ($camberwell-primary, 0.8);
+				@include circle ($ccw-green, 0.8);
 				&:hover {
 					//background-image: url('../../img/camberwell/cw-college.png');
 					//transition: background 0.2s ease-in;
@@ -118,7 +118,7 @@
 			right: 0;
 
 			.camberwell & {
-				@include circle ($camberwell-secondary, 0.8);
+				@include circle ($ccw-blue, 0.8);
 				
 				&:hover {
 					//background-image: url('../../img/camberwell/cw-placeholder1.png');

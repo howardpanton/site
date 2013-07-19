@@ -550,6 +550,11 @@ if ($('.accordion').length > 0) {
       }
     });
   }
+  
+  // detect expandable search page
+  if ($('#sb-search').length > 0) {
+    new UISearch( document.getElementById( 'sb-search' ) );
+  }
 
 
 // detect lightbox component
@@ -652,6 +657,15 @@ if ($('.lightbox').length > 0) {
 }); // end document ready
 
  
+
+
+
+////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////

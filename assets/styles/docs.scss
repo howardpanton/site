@@ -1,20 +1,21 @@
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 
-@import "globals/gridset";
-@import "globals/gridset-utilities";
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
-@import "globals/variables";
-@import "globals/mixins";
-@import "globals/colors";
-@import "globals/utilities";
+
 
 
 /* ::Global styles */
 /* ------------------------------------------------------------ */
+@import "globals/gridset",
+        "globals/gridset-utilities";
+@import "globals/variables";
+@import "globals/mixins";
+@import "globals/colors";
+@import "globals/utilities";
 
 .docs {
   .updated {

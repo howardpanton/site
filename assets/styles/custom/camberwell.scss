@@ -3,56 +3,24 @@
 
 @import "globals/variables";
 
-// Mixins also references various Compass plugins e.g. vertical rhythm
+// // Mixins also references various Compass plugins e.g. vertical rhythm
 @import "globals/mixins";
-@import "plugins/normalize";
-@import "globals/sprites";
+// @import "globals/sprites";
 
 
-/* ::Grid styles - using CSS files css/grid and css/grid-feature */
-/* ------------------------------------------------------------ */
+// /* ::Grid styles - using CSS files css/grid and css/grid-feature */
+// /* ------------------------------------------------------------ */
 @import "globals/gridset"; 
-
-
-//  camberwell colors - for quick reference
-//  $camberwell-primary : #5ac882;   // Light Green
-//  $camberwell-secondary : #8cd2f0; // Light blue
-//  $camberwell-light-gray : #f2f2f2;   // Very Light gray 
-//  $camberwell-background-highlight : #f2f2f2;  // Very Light gray 
-//  $camberwell-footer-bg : #333333;	// dark gray
-
-
-
-// This SlabText plugin styling should be moved to a shared file 
-// if it will be used across multiple pages
-
-.slabtexted .slabtext {
-    display:-moz-inline-box;
-    display:inline-block;
-    white-space:nowrap;
-}
-
-.slabtextinactive .slabtext {
-    display:inline;
-    white-space:normal;
-    font-size:1em !important;
-    letter-spacing:inherit !important;
-    word-spacing:inherit !important;
-    *letter-spacing:0 !important;
-    *word-spacing:0 !important;
-}
-
-.slabtextdone .slabtext {
-	display:block;
-}
-
-// END SLAB TEXT STYLING
-
 
 
 //  Camberwell Styling
 
 //------------ TYPOGRAPHY / HEADINGS -------------- // 
+
+$camberwell-primary: $ccw-green;
+
+$camberwell-secondary: $ccw-blue;
+
 
 // camberwell class applied to page-wrapper (after UAL header and main navigation)
 .camberwell{
@@ -69,7 +37,7 @@
 	}
 
 	h1, h2, h3, h4, h5 {
-		font-family: "Brandon Text", Helvetica, Arial, sans-serif;
+		font-family: $ccw-brandon-font;
 		font-weight: bold;
 	}
 
@@ -109,7 +77,7 @@
 	
 	.cw-courses-heading {
 		@include adjust-font-size-to(78px);
-		color: $camberwell-navy;
+		color: $camberwell-secondary;
 
 	}
 
@@ -118,7 +86,7 @@
 		@include trailer(4);
 		// @mixin adjust-font-size-to("48px");
 		border-top: solid 12px $camberwell-secondary; // baseline x2 
-		color: $camberwell-navy;
+		color: $camberwell-secondary;
 		@include adjust-font-size-to(42px);
 		width: 100%;
 
@@ -131,7 +99,7 @@
 	}
 	
 	.cw-course-list {
-		color: $camberwell-navy;
+		color: $camberwell-secondary;
 		@include adjust-font-size-to(29px);
 	}
 
@@ -139,7 +107,7 @@
 	a {
 		color: $camberwell-primary;
 		text-decoration: none;
-		border-bottom: solid 1px $camberwell-light-gray;
+		border-bottom: solid 1px $light-gray;
 	}
 
 	a.with-arrow {
@@ -667,7 +635,7 @@
 				h3 {
 					//@include adjust-font-size-to(16px);
 					// set to standard UAL font
-					font-family: $font-family;
+					font-family: $ccw-brandon-font;
 					font-size: $base-font-size;
 					font-weight: bold;
 					color: $camberwell-primary;
@@ -763,7 +731,7 @@
 .cw-footer {
 		//@include gs-span(d, all);
 		width: 100%;
-		background-color: $camberwell-footer-bg;
+		// background-color: $camberwell-footer-bg;
 		
 		// text stylin
 		color: white;
@@ -781,7 +749,7 @@
 			width: 100%;
 
 			a{
-				border-bottom: solid 1px $camberwell-light-gray;
+				border-bottom: solid 1px $light-gray;
 			}
 		}
 		.contact-us{
