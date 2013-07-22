@@ -1,18 +1,59 @@
 ---
-title: Image blocks
-last-updated: May 2, 2013
+title: Image Blocks
+last-updated: July 18, 2013
 layout: docs.tpl
+college: docs
 class-home: docs
-breadcrumb: Image blocks
+breadcrumb: Image Blocks 
 ---
 
 <div class="content-wrapper">
-	<div class="main-content">
-		{% include components/_image-block-with-title.html %}
-		{% include components/_image-block-with-aside.html %}
-	</div>
+	<div class="row">
+		<!-- sidebar for page navigation --> 
+		<div role="navigation" class="sidebar">
+			<ul>
+				<!-- new feature block -->
+				{% include _docs-sidebar.html %}
+			</ul> 
+		</div>
+		<div role="main" class="main-content">
 
-	<div class="gist-container">
-   		{% gist 5822000 %}
-   	</div>
-</div>
+			<div class="row">
+				<div class="text-block-with-aside">
+					<div class="text">
+						<p class="leader">Morbi sem orci, ullamcorper non elementum vitae, sagittis sed lacus. Suspendisse feugiat, nunc eget ornare condimentum.</p>
+						<p>Morbi sem orci, ullamcorper non elementum vitae, sagittis sed lacus. Suspendisse feugiat, nunc eget ornare condimentum, neque est venenatis est, eu feugiat libero tellus vitae purus. Sed et laoreet erat. Duis ac risus rutrum metus volutpat volutpat non eget ante. Etiam ac nisl vel mauris imperdiet scelerisque ut ut lectus. Aenean vitae arcu arcu. Duis in interdum magna.</p>
+				</div>
+					<aside>
+						<h3>Usage</h3>
+							<p>Example pages of where this component is used.</p>
+						<h3>SCSS</h3>
+							<p>_image-blocks.scss</p>
+						<h3>Includes</h3>
+							<p>_image-block.html</p>
+							<p>_image-block-with-aside.html</p>
+							<p>_image-block-2-up.html</p>
+							<p>_image-block-3-up.html</p>
+					</aside>
+				</div>			
+			</div>
+
+				<!-- image block -->
+				{% include components/_image-block.html %}
+
+				<!-- image block -->
+				{% include components/_image-block-with-aside.html %}
+
+				<!-- image block -->
+				{% include components/_image-block-2-up.html %}
+
+				<!-- image block -->
+				{% include components/_image-block-3-up.html %}
+
+
+		
+		</div> <!-- end main-content -->
+	</div> <!-- end row -->
+</div> <!-- end content-wrapper -->			
+
+
