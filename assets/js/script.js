@@ -392,7 +392,7 @@ $(document).ready(function(){
 
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
-      _clicked.html('✖').addClass('active');
+      _clicked.html('❌').addClass('active');
 
       }
 

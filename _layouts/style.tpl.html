@@ -27,6 +27,14 @@
     <link rel='stylesheet' href='{{ site.url }}/assets/css/grid/gridset.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
   -->
+
+  <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+  window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+  grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url }}/assets/css/logos/logos.data.png.css", "{{ site.url }}/assets/css/logos/logos.fallback.css" ] );
+  </script>
+  <noscript><link href="{{ site.url }}/assets/img/logos/logos.fallback.css" rel="stylesheet"></noscript>
+
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/components/grid.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/docs.css'>
@@ -37,12 +45,12 @@
     {% elsif page.college == "ual" %}
     <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/ual.css'>
     {% elsif page.college == "ccw" %}
-        
+  
     {% elsif page.college == "camberwell" %}
         <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/camberwell.css'>    
     {% elsif page.college == "chelsea" %}
       <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/chelsea.css'> 
-  {% elsif page.college == "lcc" %}
+    {% elsif page.college == "lcc" %}
       <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/lcc.css'> 
     {% elsif page.college == "csm" %}
       <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/csm.css'> 
@@ -151,8 +159,8 @@ padding-bottom: 1.5em;
 
   <!-- Scripts -->
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
-<script>
-        if ($('#slide-in-nav').length > 0) {
+  <script>
+      if ($('#slide-in-nav').length > 0) {
 
       // hide the slide-in-nav list at the start
       $('#slide-in-nav').hide();
@@ -165,12 +173,14 @@ padding-bottom: 1.5em;
         openEasing: 'linear',
         closeEasing: 'linear',
         afterOpen: function () { 
-          $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
-          $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+          // $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
+          // $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+          $('#docs-menu-icon span').html('❌');
            },
         afterClose: function () { 
-          $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
-          $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+          // $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
+          // $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+          $('#docs-menu-icon span').html('☰');
            },
         duration: 200
       
@@ -180,7 +190,7 @@ padding-bottom: 1.5em;
       jPM.on();
 
     }
-</script>
+  </script>
   </body>
 
 </html>
