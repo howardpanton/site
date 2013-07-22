@@ -2,6 +2,121 @@
 // Forms
 // --------------------------------------------------
 
+$baseLineHeight:        24px !default;
+$baseFontSize:  16px;
+$base_grey_docs :#757275 ;
+// Forms
+// -------------------------
+$inputBackground:               $white !default;
+$inputBorder:                   #ccc !default;
+$inputBorderRadius:             30px !default;
+$inputDisabledBackground:       $light-gray !default;
+$formActionsBackground:         #f5f5f5 !default;
+$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:         $light-gray !default;
+
+// Horizontal forms & lists
+// -------------------------
+$horizontalComponentOffset:       180px !default;
+
+
+// Form states and alerts
+// -------------------------
+$warningText:             #c09853 !default;
+$warningBackground:       #fcf8e3 !default;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
+
+$errorText:               #b94a48 !default;
+$errorBackground:         #f2dede !default;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText:             #468847 !default;
+$successBackground:       #dff0d8 !default;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText:                #3a87ad !default;
+$infoBackground:          #d9edf7 !default;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+
+
+
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+// Webkit-style focus
+// ------------------
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// IE7 inline-block
+// ----------------
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+
+
+// Placeholder text
+// -------------------------
+@mixin placeholder($color: $placeholderText) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+// Mixin for form field states
+@mixin formFieldState($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
+  // Set the text color
+  .control-label,
+  .help-block,
+  .help-inline {
+    color: $textColor;
+  }
+  // Style inputs accordingly
+  .checkbox,
+  .radio,
+  input,
+  select,
+  textarea {
+    color: $textColor;
+  }
+  input,
+  select,
+  textarea {
+    border-color: $borderColor;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken($borderColor, 10%);
+      @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($borderColor, 20%));
+    }
+  }
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: $textColor;
+    background-color: $backgroundColor;
+    border-color: $textColor;
+  }
+}
+
 
 // GENERAL STYLES
 // --------------
@@ -25,14 +140,14 @@ legend {
   margin-bottom: $baseLineHeight;
   font-size: $baseFontSize * 1.5;
   line-height: $baseLineHeight * 2;
-  color: $grayDark;
+  color: $light-gray;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 
   // Small
   small {
     font-size: $baseLineHeight * .75;
-    color: $grayLight;
+    color: $light-gray;
   }
 }
 
@@ -48,7 +163,7 @@ input,
 button,
 select,
 textarea {
-  font-family: $baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+  font-family: $ual-global-font-stack; // And only set font-family here for those that need it (note the missing label element)
 }
 
 // Identify controls by their labels
@@ -79,14 +194,14 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: $baseLineHeight;
+  height: 42px;
   padding: 4px 6px;
-  margin-bottom: $baseLineHeight / 2;;
+  margin-bottom: $baseLineHeight / 2;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
-  color: $gray;
-  @include border-radius($inputBorderRadius);
+  color: black;
   vertical-align: middle;
+  clear:left;
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -94,11 +209,12 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 206px; // plus 12px padding and 2px border
+  width: 100%; // plus 12px padding and 2px border
 }
 // Reset height since textareas have rows
 textarea {
   height: auto;
+  border:none;
 }
 // Everything else
 textarea,
@@ -117,17 +233,15 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  background-color: $inputBackground;
-  border: 1px solid $inputBorder;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  background-color: lighten($base_grey_docs, 50%);
   @include transition(border linear .2s, box-shadow linear .2s);
 
   // Focus state
   &:focus {
-    border-color: rgba(82,168,236,.8);
+    border-color: $light-gray;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+    //@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
   }
 }
 
@@ -161,9 +275,9 @@ input[type="file"] {
 
 // Make select elements obey height by applying a border
 select {
-  width: 220px; // default input width + 10px of padding that doesn't get applied
-  border: 1px solid $inputBorder;
-  background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
+  width: 100%; // default input width + 10px of padding that doesn't get applied
+ border:none;
+  background-color: lighten($base_grey_docs, 50%);// Chrome on Linux and Mobile Safari need background-color
 }
 
 // Make multiple select elements height not fixed
@@ -187,7 +301,7 @@ input[type="checkbox"]:focus {
 // Make uneditable inputs look inactive
 .uneditable-input,
 .uneditable-textarea {
-  color: $grayLight;
+  color: $light-gray;
   background-color: darken($inputBackground, 1%);
   border-color: $inputBorder;
   @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
@@ -294,29 +408,6 @@ textarea[class*="span"],
 
 
 
-// GRID SIZING FOR INPUTS
-// ----------------------
-
-// Grid sizes
-@include grid-input($gridColumnWidth, $gridGutterWidth);
-
-// Control row for multiple inputs per line
-.controls-row {
-  @include clearfix(); // Clear the float from controls
-}
-
-// Float to collapse white-space for proper grid alignment
-.controls-row [class*="span"],
-// Redeclare the fluid grid collapse since we undo the float for inputs
-.row-fluid .controls-row [class*="span"] {
-  float: left;
-}
-// Explicity set top padding on all checkboxes/radios, not just first-child
-.controls-row .checkbox[class*="span"],
-.controls-row .radio[class*="span"] {
-  padding-top: 5px;
-}
-
 
 
 
@@ -398,7 +489,7 @@ select:focus:invalid {
 
 .help-block,
 .help-inline {
-  color: lighten($textColor, 15%); // lighten the text some for contrast
+  color: lighten($black, 15%); // lighten the text some for contrast
 }
 
 .help-block {
@@ -460,7 +551,7 @@ select:focus:invalid {
     line-height: $baseLineHeight;
     text-align: center;
     text-shadow: 0 1px 0 $white;
-    background-color: $grayLighter;
+    background-color: $light-gray;
     border: 1px solid #ccc;
   }
   .add-on,
@@ -470,8 +561,8 @@ select:focus:invalid {
     @include border-radius(0);
   }
   .active {
-    background-color: lighten($green, 30);
-    border-color: $green;
+    background-color: lighten($ccw-green, 30);
+    border-color: $ccw-green;
   }
 }
 
