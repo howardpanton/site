@@ -66,15 +66,23 @@
      }
   }
 
-  // .dropdown-arrow {
-  //   display: block;
-  //   color: #c8c8c8;;
-  //   float: right;
-  // }
+  
   .dropdown-arrow {
     display: none;
   }
 }
+
+
+.m-nav-menu-wrap {
+  @include gs-media(d, min-max) {
+    display: none;
+  }
+  .icon {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
 
 // button that shows hides the main menu on tablet/mobile
 .m-menu-btn-toggle{
@@ -87,6 +95,7 @@
     @extend .icon;
     display: block;
   }
+
   @include gs-media(d, min-max) { display: none !important; }
 }
 
@@ -421,11 +430,15 @@
  
 }
 
-#mob-tab-menu {
+.mobile-menu { 
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top:0;
+  
+  ul {
+    padding-bottom: 0;
+  }
 
   li {
     //@include padding-leader(1);
@@ -445,9 +458,6 @@
     border-right: none;
     padding-top: 0;
     padding-bottom: 0;
-    // a {
-    //   padding-top: 18px;
-    // }
   }
 
   .menu-active{

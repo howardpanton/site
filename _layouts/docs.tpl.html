@@ -439,12 +439,14 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
         openEasing: 'linear',
         closeEasing: 'linear',
         afterOpen: function () { 
-          $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
-          $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+          // $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
+          // $('#docs-menu-icon').addClass('ui-icons-transparent-close');
+          $('#docs-menu-icon').html('❌');
            },
         afterClose: function () { 
-          $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
-          $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+          // $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
+          // $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
+          $('#docs-menu-icon').html('☰');
            },
         duration: 200
       

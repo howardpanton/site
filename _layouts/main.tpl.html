@@ -139,15 +139,25 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
         </div> 
       </div>  
        
+      {% if page.class-home != "docs" %} 
       <!-- Mobile & tablet main navigation links (hidden on desktop) -->
-      <nav class="d-hide">
-        <ul id="mob-tab-menu" >       
-          <li><a id="m-course-finder-btn" href="#" class="course">Course Finder</a></li>
-          <li><a id="m-search-btn" href="#" class="search">Search</a></li>  
-          <li><a href="#" id="main-menu-btn" class="m-menu-btn-toggle"><span id="menu-icon-indicator" class="ual-white">≡</span> Menu</a></li>
+      <nav class="m-nav-menu-wrap">
+        <ul id="mob-tab-menu" class="mobile-menu">       
+          <li>
+            <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
+          </li>
+          <li>
+            <a id="m-search-btn" href="#" class="search">
+              <span class="icon">🔍</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle">
+              <span id="menu-icon-indicator" class="icon docs-menu-toggle">☰</span>
+            </a>
+          </li>
         </ul>
       </nav>
-      
       <nav class="college-link-menu">
         <ul>
           <li><a href="/">UAL</a></li>
@@ -159,6 +169,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
             <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
         </ul>
       </nav>
+      {% endif %}
     </div>
   </div>
 </div>
