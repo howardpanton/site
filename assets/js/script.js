@@ -371,7 +371,7 @@ $(document).ready(function(){
   if ($('.sidebar').length > 0) {
 
     var _menuHtml = $('.sidebar').html();
-    var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡</a>';
+    var _mobMenuButton = '<a href="#" class="show-mob-sidebar icon">≡</a>';
     var _mobMenuContent = _mobMenuButton + _menuHtml;
     
     // create mobile sidebar div and add it to the page before the sidebar
@@ -386,13 +386,13 @@ $(document).ready(function(){
       
       if (_clicked.hasClass('active')) {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-        _clicked.html('≡').removeClass('active');
+        _clicked.html('☰').removeClass('active');
       }
       else {
 
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
-      _clicked.html('x').addClass('active');
+      _clicked.html('✖').addClass('active');
 
       }
 
