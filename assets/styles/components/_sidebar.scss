@@ -1,0 +1,84 @@
+// in page left hand navigation
+.sidebar {
+	float: left;
+	font-size: emCalc(16px);
+	@include gs-media (d) {
+		@include gs-span(d,1,4);
+		font-size: emCalc(14px);
+	}
+
+	@include gs-media(t, min-max) { display: none; }
+
+  	@include gs-media(m, min-max) { display: none; }
+
+	ul {
+		li {
+			padding: rhythm(1, 14px) 0;
+			color: $aaa-gray;
+		}
+	}
+
+	
+
+}
+
+
+.mobile-sidebar {
+
+	@include gs-media (d) { display: none; }
+
+	font-size: emCalc(16px);
+	width: 100%;
+	margin-bottom: 18px;
+	
+	nav, ul { display: none; }
+	
+
+	ul li {
+		//padding: rhythm(3, 16px) 0;
+		background-color: $bg-gray;
+		border-bottom: 1px solid $light-gray;
+		padding-left: 12px;
+		a { 
+			width: 100%;
+			line-height: 24px;
+			padding-top: 9px;
+			padding-bottom: 9px;
+			display: block;
+			border-bottom: none;
+		}
+	}
+}
+
+// this is the class that site manager adds to the current branch for the side menu
+.currentbranch0 a {
+	color: $aaa-gray;
+	border-bottom: 0;
+	&:hover {
+		border-bottom: 0;
+	}
+}
+
+
+.multilevel-linkul-0 {
+	margin-left: 24px;
+    font-size: 14px;
+    padding: 0;
+
+	li:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+.show-mob-sidebar {
+	display:block;
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid $light-gray;
+	text-align: right;
+	padding-right: 12px;
+	font-size: emCalc(30px);
+	
+}

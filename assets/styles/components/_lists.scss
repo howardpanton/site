@@ -1,0 +1,41 @@
+.lists {
+	@include gs-media(t, min-max) {
+		@include gs-span(t, 2, 7);
+		.list {
+	    width: gs-width(t, 2, 4, (2, 7), true);
+	    @include gs-float(t, left, (2, 7));
+			&:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6) {
+				margin-right: 0;
+			}
+		}	
+	}
+
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+		.list {
+	    width: gs-width(d, 5, 8, (5, 16), true);
+	    @include gs-float(d, left, (5, 16));
+			&:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9) {
+				margin-right: 0;
+			}
+		}	
+	}
+}
+
+
+
+// li {
+//     width: gs-width(d, 5, 7, (5,16), true);
+//     @include gs-float(d, left, (5,16));
+// 	&:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+// 		margin-right: 0;
+// 	}
+// }
+
+
+// ul {
+// 	width: gs-width(t, 2, 4, (2, 7));
+// 	&:nth-of-type(2) {
+// 		margin-right: 0;
+// 	}
+// }

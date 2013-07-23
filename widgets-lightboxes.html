@@ -1,0 +1,158 @@
+---
+layout: style.tpl
+title: University of the Arts London - Website Style Guide
+class-home: docs
+breadcrumb: Widgets Lightboxes
+breadcrumb-link: "widgets-lightboxes.html"
+---
+
+<div class="docs-content">
+  
+  <div class="row">  
+    <div class="d1-d12">  
+      <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 8, 2013</strong></p>
+        <h2 class="heading-x3 soft-black">Widgets: Lightboxes test</h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d1-d12"> 
+      
+      <h3> Lightbox Example 1 (using magnific)</h3>
+      <p> More info on usage here &rarr; <a href="http://dimsemenov.com/plugins/magnific-popup/"> magnific popup </a> </p>
+      <p> This lightbox <strong>requires magnific-lightbox.js</strong> to be loaded on the page. (currently in assets/js/libs/)</p>
+
+      <div id="magnific-lightbox" class='magnific-lightbox'>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg" />
+            </a>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg" />
+            </a>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg" />
+            </a>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg" />
+            </a>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg" />
+            </a>
+            <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg" title="Example Artwork Title">
+              <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg" />
+            </a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="row"> 
+
+    <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code for Magnific lightbox</a></h3>
+        <div class="panel">
+          <h6>HTML code: </h6>
+          <script src="https://gist.github.com/denovo/5546727.js"></script>
+          
+          <h6>Javascript: </h6>
+          <p> Should be placed near the end of the page before the &lt;/body&gt; tag</p>
+          <script src="https://gist.github.com/denovo/5546773.js"></script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  
+  <div class="row"> 
+    <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code block for Fresco lightbox</a></h3>
+        <div class="panel">
+          <h6>HTML code: </h6>   
+          <script src="https://gist.github.com/denovo/5546461.js"></script>
+
+          <h6>Javascript: </h6>
+          <p> Fresco.js must be loaded into the page. The javascript will look for links with the class of fresco and if you want them to be linked as a group, you need to add the 'data-fresco-group' attribute to all the links you want to be in the same grouped gallery. See example above.</p>
+        </div>
+    </div>
+
+    </div>
+  </div>  
+  
+  <!-- 
+  <div class="row">
+     <div class="d1-d12 rhythm-margin-top">   
+  <div>
+  </div> -->
+
+
+  <div class="row">
+    <div class="d1-d12 rhythm-margin-top"> 
+        <h3> lightbox (using fancyBox)</h3>
+        <p> more info on usage here &rarr; <a href="http://fancyapps.com/fancybox/#instructions"> fancyBox homepage </a> </p>
+        
+        <div id="fancybox-lightbox" class='demonstrations'>
+          <ul class="no-bullet display-inline">
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="fancybox no-underline" rel="gallery1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg">
+                <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  
+  <div class="d-all rhythm-margin-top">
+      <div class="accordion">
+        <h3 class="heading-x1 soft-black"><a class="show-code" href="">Show code block for Fancybox lightbox</a></h3>
+        <div class="panel">
+          <h6 class="rhythm-margin-top">HTML </h6>
+          <script src="https://gist.github.com/denovo/5546449.js"></script>
+          <h6 class="rhythm-margin-top">Javascript: </h6>
+          <p> Requires <strong>jquery.fancybox.js</strong> which must be loaded into the page you want to display the lightbox in. 
+          Initialise using the code below.</p>
+          <script src="https://gist.github.com/denovo/5546813.js"></script>
+        </div>
+      </div>
+  </div>
+
+
+
+  
+
+
+<script type="text/javascript">
+  window.onload=function(){
+   
+  }
+</script>

@@ -1,0 +1,262 @@
+---
+layout: style.tpl
+title: "UAL Style Guide - Widgets"
+---
+
+<header class='title'>
+  <h1 class='leader'>Widgets</h1>
+</header>
+
+<section>
+  <h3>Example showtime images feed</h3>
+  <p> loads the latest 3 images uploaded to Showtime for CSM, LCF &amp; wimbledon, and sorts them by date. (links to screen size images) </p>
+  <div id="showtime-lightbox-gallery" class=""> Loading images from showtime, Please wait..... </div>
+</section> <!-- End of showtime feeds section -->
+<hr/>
+
+<section>
+  <h2>Image Gallery Examples</h2>
+  
+  <h3> Flexslider Gallery w/thumbnail controlnav pattern <h3>
+  <!-- Temp inline styles need to be sorted out -->
+  <div class="flexslider2">
+    <ul class="slides">
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li data-thumb="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb7.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+    </ul>
+  </div>
+  
+
+  <h3> Flexslider Gallery w/ with Carousel Slider as Navigation </h3>
+  <!-- Temp inline styles need to be sorted out -->
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+    </ul>
+  </div>
+  <div id="carousel" class="flexslider">
+    <ul class="slides">
+     
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg" />
+      </li>
+      <li>
+        <img src="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img7.jpg" />
+      </li>
+      <!-- items mirrored twice, total of 7 images -->
+    </ul>
+  </div>
+
+</section> <!-- End of Image Gallery section -->
+
+<section>
+<h2>LightBoxes</h2>
+
+<h3> lightbox (using magnific)</h3>
+<p> more info on usage here &rarr; <a href="http://dimsemenov.com/plugins/magnific-popup/"> magnific popup </a> </p>
+
+<div id="magnific-lightbox" class='magnific-demo'>
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+   
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+
+      <a class="no-underline" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg" title="Example Artwork Title">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+</div>
+
+<hr/>
+
+<h3> lightbox (using fancyBox)</h3>
+<p> more info on usage here &rarr; <a href="http://fancyapps.com/fancybox/#instructions"> fancyBox instructions </a> </p>
+<div id="fancybox-lightbox" class='demonstrations'>
+  <ul class="no-bullet display-inline">
+    <li>
+      <a class="fancybox no-underline " rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fancybox no-underline" rel="group" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+    </li>
+  </ul>
+</div>
+
+<hr/>
+
+<h3> fresco lightbox example</h3>
+<p> more info on usage here &rarr; <a href="http://www.frescojs.com/documentation/usage"> fresco lightbox instructions </a> </p>
+
+<div id="fresco-lightbox" class='demonstrations'>
+
+  <ul class="no-bullet display-inline">
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img1.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb1.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img2.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb2.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img3.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb3.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img4.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb4.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img5.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb5.jpg" />
+      </a>
+    </li>
+    <li>
+      <a class="fresco no-underline" data-fresco-group="fresco-group1" href="{{ site.url }}/assets/img/placeholder-content/gallery-imgs/img6.jpg">
+        <img src="{{ site.url }}/assets/img/placeholder-content/thumbs/thumb6.jpg" />
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+</section>  <!-- End of lightboxes section -->
+
+
+
+
+<script type="text/javascript">
+  window.onload=function(){
+    
+    // load in showtime images for the fancybox gallery example
+    fetchShowtimeGallery(3, ['csm','lcf','wimbledon'], 'thumb', 'screen', 'showtime-lightbox-gallery') ;
+
+    // initialise flexslider on the widgets page
+    
+    $('.flexslider2').flexslider({
+      animation: "fade",
+      controlNav: "thumbnails"
+    });
+
+    // The slider being synced must be initialized first
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 210,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+     
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+
+    // load in showtime images for fresco example
+    //fetchShowtimeGallery( 2, ['lcf','camberwell']), 'thumb', 'screen', 'fresco-lightbox');
+  };
+
+</script>
+
