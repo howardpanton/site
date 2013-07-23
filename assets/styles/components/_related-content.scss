@@ -1,30 +1,23 @@
 .related-content {
-	@include gs-media(m,min-max) {
-		@include gs-span(m,all);
+	@include gs-media(m, min-max) {
+		@include gs-span(m, all);
 		li {
 			background: $white;
 			margin-bottom: 1px;
-			p {
-				padding: 0;
-				padding: rhythm(2, 16px) rhythm(3, 16px);
-			}
 		}
 	}
 
-	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
+	@include gs-media(t, min-max) {
+		@include gs-span(t, 2, 7);
 		li {
 			background: $white;
 			margin-bottom: 1px;
-			p {
-				padding: 0;
-				padding: rhythm(2, 16px) rhythm(3, 16px);
-			}
 		}
 	}
 
 	@include gs-media(d) {
-		@include gs-span(d,all);
+		@include gs-span(d, all);
+
 		li {
 			background: $white;
 			padding: 0;
@@ -43,10 +36,6 @@
 				@include gs-float(d, left, (1,16));
 				margin-right: 0;
 			}
-			p {
-				padding: 0;
-				padding: rhythm(2, 24px) rhythm(3, 24px) rhythm(3, 24px) rhythm(3, 24px);
-			}
 			&:hover {
 				filter: grayscale(100%);
 				-webkit-filter: grayscale(100%);
@@ -57,10 +46,8 @@
 				-moz-transition: all ease 0.2s;
 				-o-transition: all ease 0.2s;
 				transition: all ease 0.2s;
-				background: $black;
-				p {
-					color: $white;		
-				}
+				// background: $black;
+
 			}
 		}
 	}

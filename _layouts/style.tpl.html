@@ -151,7 +151,24 @@ padding-bottom: 1.5em;
 
   <!-- Scripts -->
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
-<script>
+
+  <script type="text/javascript" src="{{ site.url }}/assets/js/libs/sha1.js"></script>
+  <script type="text/javascript" src="{{ site.url }}/assets/js/libs/codebird.js"></script>
+
+  <script type="text/javascript">
+  var cb = new Codebird;
+  cb.setConsumerKey("9NRLAM2fK1lq34ADnbonAA", "R0DqGEUkTrxNdK7EvRbvSaOZ8IXVjCok5JGYL3wj4");
+
+  cb.__call(
+    "statuses_homeTimeline",
+    {},
+    function (reply) {
+        console.log("test" + reply);
+    }
+);
+
+  </script>
+  <script>
         if ($('#slide-in-nav').length > 0) {
 
       // hide the slide-in-nav list at the start
