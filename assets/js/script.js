@@ -550,33 +550,96 @@ if ($('.accordion').length > 0) {
 
 }
   
-  // detect circles-callout component
+// detect circles-callout component
 
-  if ($('.circles-component').length > 0) {
-    $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      // initialise skrollr to handle movement of the circles
-      var s = skrollr.init();
-    });
+if ($('.circles-component').length > 0) {
+  $.when(
+      $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
+      $.Deferred(function( deferred ){
+          $( deferred.resolve );
+      })
+  ).done(function(){
+    // initialise skrollr to handle movement of the circles
+    var s = skrollr.init();
+  });
+
+}
+
+// detect search filters on page
+if ($('.search-filters').length > 0) {
+   //allow expand and close for search filters
+  $('.filter-heading').fastClick(function(event) {
+    event.preventDefault();
+    var c = $(this);
+    if (c.parent().hasClass('active') ) {
+      c.parent().removeClass('active');
+    }
+    else {
+      c.parent().addClass('active');
+    }
+  });
+}
+
+
+// Showtime JSON loader
+if ($('#showtime-json').length){
+
+  // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
+  $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+
+    var feedUrl = $('#showtime-json').data('url');
+    var limit = $('#showtime-json').data('limit');
+    
+    $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
+        
+      var outputNode = $('#showtime-json');
+      var string = '';
+      var media = '';
+              
+      if (data.data.Student) { // this is a single Showtime profile
+        var profileUrl = data.data.Student.Student.profileurl;
+        var studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
+        media = data.data.Student.Media;
+      } 
+      
+      if (data.data.Profiles) { // this is a group of objects in Showtime
+        media = data.data.Profiles;
+      }
+<<<<<<< HEAD
+
+      $.each(media, function(i, item) {
+        
+            profileImg = item.thumb.split('gallery');
+            item.profileImg = profileImg[0] + 'profile.jpg';
+            item.zoomImg = profileImg[0] + 'screen.jpg';
+    
+            //console.log(item);  
+            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
+          
+            outputNode.append(string); 
+                
+      }); // end each loop
+      
+      $('.zoom').magnificPopup({ 
+        type: 'image',
+        image: {
+          titleSrc: function(item) {
+            return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+          }
+        },
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        } 
+      });
+
+    }); // end getJSON loop
+
+  });
   
-  }
-
-  // detect search filters on page
-  if ($('.search-filters').length > 0) {
-     //allow expand and close for search filters
-    $('.filter-heading').fastClick(function(event) {
-      event.preventDefault();
-      var c = $(this);
-      if (c.parent().hasClass('active') ) {
-        c.parent().removeClass('active');
-      }
-      else {
-        c.parent().addClass('active');
-      }
+}
+=======
     });
   }
   
@@ -584,9 +647,11 @@ if ($('.accordion').length > 0) {
   if ($('#sb-search').length > 0) {
     new UISearch( document.getElementById( 'sb-search' ) );
   }
+>>>>>>> 61d747bbf05c42096458cb3fba5edb3494e179ed
 
 
 // detect lightbox component
+
 if ($('.lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
@@ -680,6 +745,7 @@ if ($('.lightbox').length > 0) {
     }
 
 // End tabs to accordion 
+
 
 
   
