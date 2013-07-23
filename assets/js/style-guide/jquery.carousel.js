@@ -153,10 +153,10 @@ window.Pointer=function(a,b,c){function v(a){i.cssText=a}function w(a,b){return 
       function createControls() {
         var prev = document.createElement('a'),
           next = document.createElement('a');
-        prev.className = 'control prev';
-        prev.innerHTML = '<span>&lt;</span>';
-        next.className = 'control next';
-        next.innerHTML = '<span>&gt;</span>';
+        prev.className = 'control prev icon-black-bg-button-prev';
+        // prev.innerHTML = '<span>&lt;</span>';
+        next.className = 'control next icon-black-bg-button-next';
+        // next.innerHTML = '<span>&gt;</span>';
         prev.href = next.href = '#';
         addEvent(carouselOuter, 'click', function(e) {
           var elem = getElem(e);

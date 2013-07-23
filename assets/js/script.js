@@ -54,7 +54,8 @@ function checkMobileNavMenuState() {
     $('#new-menu').slideUp('fast', 'linear', function() { 
         $('#main-menu-btn').removeClass('active'); 
         $('#main-menu-btn').parent().removeClass('menu-active');
-        $('#menu-icon-indicator').html('≡');
+        // $('#menu-icon-indicator').html('≡');
+        $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
         $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
@@ -199,7 +200,8 @@ $('#main-menu-btn').fastClick(function(event) {
 
     t.slideUp('fast', 'linear', function() { 
       _menu_to_toggle.removeClass('active'); 
-      $('#menu-icon-indicator').html('≡');
+      // $('#menu-icon-indicator').html('≡');
+      $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
       _clicked.parent().removeClass('menu-active').removeAttr('style');
       t.find('#desktop-menu-wrap').addClass('header-wrapper');
       t.removeAttr('style');
@@ -226,7 +228,8 @@ $('#main-menu-btn').fastClick(function(event) {
       // show the pages menu  (update button highlight first)
       $('#main-menu-btn').addClass('active');
       $('#main-menu-btn').parent().addClass('menu-active');
-      $('#menu-icon-indicator').html('x'); 
+      // $('#menu-icon-indicator').html('x'); 
+      $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
       
       // slide the menu down
       t.slideDown('fast', 'linear', function() { 
@@ -239,7 +242,8 @@ $('#main-menu-btn').fastClick(function(event) {
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active');
     $('#main-menu-btn').parent().addClass('menu-active');
-    $('#menu-icon-indicator').html('x');
+    // $('#menu-icon-indicator').html('x');
+    $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
     t.slideDown('fast', 'linear', function() {  });
   }
 });
@@ -367,7 +371,7 @@ $(document).ready(function(){
   if ($('.sidebar').length > 0) {
 
     var _menuHtml = $('.sidebar').html();
-    var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡</a>';
+    var _mobMenuButton = '<a href="#" class="show-mob-sidebar icon">≡</a>';
     var _mobMenuContent = _mobMenuButton + _menuHtml;
     
     // create mobile sidebar div and add it to the page before the sidebar
@@ -382,13 +386,13 @@ $(document).ready(function(){
       
       if (_clicked.hasClass('active')) {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-        _clicked.html('≡').removeClass('active');
+        _clicked.html('☰').removeClass('active');
       }
       else {
 
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
-      _clicked.html('x').addClass('active');
+      _clicked.html('❌').addClass('active');
 
       }
 
@@ -548,7 +552,7 @@ if ($('.accordion').length > 0) {
   
   // detect circles-callout component
 
-  if ($('.open-days-container').length > 0) {
+  if ($('.circles-component').length > 0) {
     $.when(
         $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
         $.Deferred(function( deferred ){
@@ -574,6 +578,11 @@ if ($('.accordion').length > 0) {
         c.parent().addClass('active');
       }
     });
+  }
+  
+  // detect expandable search page
+  if ($('#sb-search').length > 0) {
+    new UISearch( document.getElementById( 'sb-search' ) );
   }
 
 
@@ -680,6 +689,15 @@ if ($('.lightbox').length > 0) {
  
 
 
+
+////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
@@ -726,8 +744,15 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 // initialise
 $(window).load(function(){
-  // $(groupOfItems).fitHeights(); 
-  $('.related-content ul li').fitHeights();
+  
+  if ($('.related-content ul li').length > 0) {
+    $('.related-content ul li').fitHeights();
+  }
+
+  if ($('.highlight-box-3').length > 0) {
+    $('.highlight-box-3 ul li').fitHeights();
+  }
+
 });
 
 

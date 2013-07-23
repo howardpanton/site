@@ -1,31 +1,20 @@
-
-
-
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
-
-@import "globals/gridset";
-@import "globals/gridset-utilities";
-
-
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 
+/* ::Global styles */
+/* ------------------------------------------------------------ */
+@import "globals/gridset",
+        "globals/gridset-utilities";
 @import "globals/variables";
 @import "globals/mixins";
 @import "globals/colors";
 @import "globals/utilities";
 
-
-/* ::Global styles */
-/* ------------------------------------------------------------ */
-
 .docs {
   .updated {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     font-size: 12px;
     line-height: 16px;
     color: $white;
@@ -43,23 +32,17 @@
     }
 }
 
-
 // Docs page intro section styling
 p.docs-intro{
   font-weight: lighter;
-  @include adjust-font-size-to(42px); 
+  @include adjust-font-size-to(42px);
 
 }
-
-
-
-
 
 .docs-intro-nav {
   
   li a {
     font-weight: 300;
-
     border-bottom: 1px dotted ;
     margin-right: 12px;
     // make link transitions smoother
@@ -78,9 +61,6 @@ p.docs-intro{
   }
 
 }
-
-
-
 
 .git-twitter-btns-list {
   height: 30px;
@@ -184,31 +164,21 @@ a span.title {
 }
 
 
+
+//
+// Docs Menu Styling //
+//
+
+
 .menu-toggle-link {
-    color: white;
-}
-
-//
-// Jpanel Menu Styling //
-//
-
-
-// menu toggle button
-#slide-menu-toggle-btn {
   position: absolute;
-  top:4px;
-  right: 40px;
-  height: 60px;
-  width: 80px;
-  z-index: 999999;
+  top: 0;
+  right: 0;
 }
 
-#docs-menu-icon {
-position: absolute;
-right: -5px;
-top: 3px;
-height: 50%;
-width: 50%;
+.docs-menu-toggle {
+  font-size: emCalc(54px);
+  line-height: emCalc(54px);
 }
 
 // slide in navigation list id
@@ -249,9 +219,6 @@ width: 50%;
 .jPanelMenu-panel {
   /*background-color: $black;*/
 }
-
-//
-
 
 
 // New added styles

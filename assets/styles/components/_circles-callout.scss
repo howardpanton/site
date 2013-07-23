@@ -1,0 +1,138 @@
+.circles-component {
+
+		@include padding-leader(4);
+		@include padding-trailer(4);
+		width: 100%;
+		clear:left;
+		min-height: 465px;
+		height: auto;
+		float: left;
+		background-color: $bg-gray;
+		position: relative;
+		
+		.camberwell & { background-color: $bg-gray;}
+		
+		.circles-wrapper {
+			max-width: 800px;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			@include gs-media(t, min-max) {
+				max-width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			@include gs-media(m, min-max) {
+				max-width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+
+		%circle-callout {
+			
+			position: absolute;
+			max-width: 400px;
+			max-height: 400px;
+			text-align: center;
+			height: 400px;
+			width: 400px;
+			padding-top: 120px;
+			color: white;
+			box-sizing: border-box;
+
+			@include circle ($black, 0.8);
+
+			&:hover {
+				//background-image: url('../../img/camberwell/cw-college.png');
+				//transition: background 0.2s ease-in;
+				//-webkit-filter: grayscale(100%);
+			}
+
+			.border-radius & {
+				// fallback for IE and browsers which don't support border radius,
+				// serve a transparent png background
+				background: url('../../img/camberwell/green-circle-bg.png') no-repeat ;
+				background-position: center;
+			}
+
+			h2 {
+				@include adjust-font-size-to(36px);
+				max-width: 300px;
+				margin: 0 auto;
+				text-align: center;
+				@include padding-trailer(2);
+			}
+
+			a {
+				@include adjust-font-size-to(14px);
+				font-weight: normal;
+				text-decoration: none;
+				border-bottom: none;
+				color: white;
+			}
+
+			a:after {
+					content: "→";
+					color: white;
+			}
+
+			@include gs-media(t, min-max) {
+				position: static;
+				margin-left: auto;
+				margin-right: auto;
+				opacity: 1 !important;
+			}
+
+			@include gs-media(m, min-max) {
+				position: static;
+				margin-left: auto;
+				margin-right: auto;
+				opacity: 1 !important;
+			}
+		}
+
+		.circle-callout-a {
+
+			@extend %circle-callout;
+			left: 0;
+
+			.camberwell & {
+				@include circle ($ccw-green, 0.8);
+				&:hover {
+					//background-image: url('../../img/camberwell/cw-college.png');
+					//transition: background 0.2s ease-in;
+					//-webkit-filter: grayscale(100%);
+				}
+				.border-radius & {
+					background: url('../../img/camberwell/green-circle-bg.png') no-repeat ;
+					background-position: center;
+				}
+			}
+		}
+
+		.circle-callout-b {
+			@extend %circle-callout;
+			right: 0;
+
+			.camberwell & {
+				@include circle ($ccw-blue, 0.8);
+				
+				&:hover {
+					//background-image: url('../../img/camberwell/cw-placeholder1.png');
+					//transition: background 0.2s ease-in;
+					//-webkit-filter: grayscale(100%);
+				}
+				.border-radius & {
+					background: url ('../../img/camberwell/blue-circle-bg.png') no-repeat ;
+					background-position: center;
+				}
+			}
+		}
+}
+
+
+
+

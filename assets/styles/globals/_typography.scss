@@ -55,6 +55,7 @@ h1 {
 }
 
 h2 { 
+  
 	font-size: emCalc(24px);
 	@include adjust-leading-to(5, 24px); 
 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
@@ -69,6 +70,7 @@ h2 {
 		@include adjust-leading-to(7, 36px); 
 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
 	}
+
 	.lcc .content-wrapper & {
 		@extend .LeagueGothicRegular;
 		border-bottom: 4px solid $black;
@@ -147,8 +149,6 @@ h5, h6 {
 	// 	padding: rhythm(4, 18px) 0 rhythm(3, 18px) 0; 	
 	// }
 }
-
-
 
 p, ol, ul { 
 	@include adjust-leading-to(4, 16px); 

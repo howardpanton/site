@@ -1,10 +1,10 @@
-
 .search-filters {
   
   h2 { padding-top: 0; }
 
   @include gs-media(d, min-max) {
     @include gs-span(d,1,4);
+    float: left;
   }
 
   @include gs-media(t, min-max) {
@@ -17,9 +17,11 @@
   }
 }
 
-
 .filter-module {
   
+  // border-left: 1px solid $light-gray;
+  // border-right: 1px solid $light-gray;
+
   &:last-child li.active { 
     ul { border-bottom: 0; }
   }
@@ -30,6 +32,8 @@
       background-color: $black;
       color: $white;
       font-size: emCalc(14px);
+      display: block;
+      clear: left;
       font-weight: 300;
       border-bottom: 1px solid $dark-gray;
       &:hover{
@@ -41,10 +45,13 @@
     padding-top: 0; 
     padding-bottom: 0;
     display: none;
+    clear: left;
     // border-bottom: 1px solid $dark-gray;
     li {
-        background-color: white;
-        @include border-image-dot();
+        background-color: $bg-gray;
+        margin-left: 0;
+        padding-left: 18px;
+        @include border-image-dot(1px, $light-gray);
         // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png");
         // background-repeat: no-repeat;
         // background-position: 95% 50%;
@@ -65,18 +72,28 @@
           float: right;
           margin-left: 18px;
           margin-right: 18px;
+          margin-top: 6px;
         }
-
+        input[type="checkbox"]:hover {
+          cursor: pointer;
+        }
+          
         input[type="checkbox"]:checked + label{
           color: $black;
         }
 
-        label { 
-          padding-left: 18px; 
+        input[type="checkbox"]:disabled + label{
+          opacity: 0.5;
+          @include opacity(50);
+        } 
+
+        label {  
           cursor: pointer; 
           color: $aaa-gray;
           font-size: emCalc(14px);
           font-weight: 300;
+          width: 100%;
+          display: block;
         }
         
         }
@@ -93,19 +110,23 @@
 
   }
 
+  // divs inside filter module are hidden by default
+  div { display: none}  
+
   &.active { 
     border-bottom: 0;
     ul { display: block; }
+    div { display: block; }
   }
 
 }
 
 li.filter-link-only {
 
-    background-color: white !important;
-    background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png") !important;
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
+    // background-color: white !important;
+    // // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png") !important;
+    // // background-repeat: no-repeat;
+    // // background-position: 95% 50%;
     @include border-image-dot();
 
     a { 
@@ -116,9 +137,9 @@ li.filter-link-only {
     &:last-child { border-bottom: 0; } 
     
     &.active {
-      background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png") !important;
-      background-repeat: no-repeat;
-      background-position: 95% 50%;
+      // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png") !important;
+      // background-repeat: no-repeat;
+      // background-position: 95% 50%;
       > a { 
         color: $black;
         font-weight: bold;
