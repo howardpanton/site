@@ -605,7 +605,6 @@ if ($('#showtime-json').length){
       if (data.data.Profiles) { // this is a group of objects in Showtime
         media = data.data.Profiles;
       }
-<<<<<<< HEAD
 
       $.each(media, function(i, item) {
         
@@ -636,18 +635,9 @@ if ($('#showtime-json').length){
 
     }); // end getJSON loop
 
-  });
+  }); // end getScript loop
   
 }
-=======
-    });
-  }
-  
-  // detect expandable search page
-  if ($('#sb-search').length > 0) {
-    new UISearch( document.getElementById( 'sb-search' ) );
-  }
->>>>>>> 61d747bbf05c42096458cb3fba5edb3494e179ed
 
 
 // detect lightbox component
@@ -676,6 +666,11 @@ if ($('.lightbox').length > 0) {
 
     });
 }
+
+  // detect expandable search page
+  if ($('#sb-search').length > 0) {
+    new UISearch( document.getElementById( 'sb-search' ) );
+  }
 
   // make videos adapt responsively
   $('.video-wrapper').fitVids();
