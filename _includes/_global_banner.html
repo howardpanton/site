@@ -5,25 +5,29 @@
     <div class="ual-banner-menu">
       <div class="logo">
         <img alt="" class="ual-logo-tab-mobile" src="{{ site.url }}/assets/img/ual-logo-small.png">
-        {% if page.college == "docs" %}
-            {% include _logo_ual.html %}
-        {% else if page.college == "lcc" %}
-            {% include _logo_lcc.html %}
-        {% endif %}          
-        <!-- <img alt='' class='ual-logo-desktop' src='{{ site.url }}/assets/img/logos/ual-logo.png'> -->      
       </div>  
-       
 
       {% if page.class-home != "docs" %} 
       <!-- Mobile & tablet main navigation links (hidden on desktop) -->
       <nav class="d-hide">
         <ul id="mob-tab-menu" >       
-          <li><a id="m-course-finder-btn" href="#" class="course">Course Finder</a></li>
-          <li><a id="m-search-btn" href="#" class="search">Search</a></li>  
-          <li><a href="#" id="main-menu-btn" class="m-menu-btn-toggle"><span id="menu-icon-indicator" class="ual-white">≡</span> Menu</a></li>
+
+          <li>
+            <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
+          </li>
+          <li>
+            <a id="m-search-btn" href="#" class="search">
+              <span class="icon">🔍</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle">
+              <span id="menu-icon-indicator" class="icon docs-menu-toggle">☰</span>
+            </a>
+          </li>
+
         </ul>
       </nav>
-      
       <nav class="college-link-menu">
         <ul>
           <li><a href="/">UAL</a></li>

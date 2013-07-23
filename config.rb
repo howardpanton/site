@@ -1,7 +1,4 @@
 # Require any additional compass plugins here.
-#require 'ruby-growl'
-#require 'susy'
-#require 'zurb-foundation'
 require 'compass'
 
 # Set this to the root of your project when deployed:
@@ -12,24 +9,6 @@ fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
-
-
-# on_sprite_saved do |filename|
- 
-#   unless filename.match(/^transparent/)
- 
-#     png8filename = filename.sub(/\.png/, '-fs8.png')
-#     %x{compile/pngquant/pngquant #{filename}}
-#     %x{mv -f #{png8filename} #{filename}}
- 
-#   end
- 
-#   g = Growl.new "localhost", "ruby-growl",
-#     ["ruby-growl Notification"]
-#   g.notify "ruby-growl Notification", "Compass sprite generation",
-#     "Your sprite is done:" + filename 
- 
-# end
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

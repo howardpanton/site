@@ -162,16 +162,12 @@
   border-image:url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
 
-
-
 // We use this to do clear floats
 @mixin clearfix() {
   *zoom:1;
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
 }
-
-
 
 // ------------------------------------------------------
 
@@ -226,7 +222,6 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
   $prefix-for-opera:     false;
   $prefix-for-spec:      false;
 }
-
 
 // ---- Mixins for FlexBox
 //  This mixin adds the vendor prefixes when using flex-box for layouts
@@ -380,6 +375,15 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 
 @mixin default-transition() {
   transition: all 0.4s ease-in-out;
+}
+
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $base-font-size * 1em;
 }
 
 

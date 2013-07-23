@@ -1,11 +1,181 @@
-{% include _head.html %}
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+  <!--> <html lang="en"> <!--
+<![endif]-->
+<head>
+    <title>University of Arts London Beta</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='grid test' name='description'>
+    <meta content='University of Arts London, Web Team' name='author'>
+
+    <!-- For all browsers -->
+    <!--
+    <link rel='stylesheet' href='{{ site.url }}/assets/css/foundation.min.css'>
+    <link rel='stylesheet' href='{{ site.url }}/assets/css/grid/gridset.css'>
+  <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
+  -->
+   <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url }}/assets/css/logos/logos.data.png.css", "{{ site.url }}/assets/css/logos/logos.fallback.css" ] );
+    </script>
+  <noscript><link href="{{ site.url }}/assets/img/css/logos.fallback.css" rel="stylesheet"></noscript>
+
+<!-- need to combine these two includes -->
+
+  <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}/assets/img/svg/icons.data.png.css", "{{ site.url }}/assets/img/svg/icons.fallback.css" ] );
+    </script>
+  <noscript><link href="{{ site.url }}/assets/img/svg/icons.fallback.css" rel="stylesheet"></noscript>
+
+  <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
+  
+  <!-- Zone-specific -->
+    {% if page.college == "lcf" %}
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/lcf.css'>
+    {% elsif page.college == "ual" %}
+    <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/ual.css'>
+    {% elsif page.college == "ccw" %}
+        
+    {% elsif page.college == "camberwell" %}
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/camberwell.css'>    
+    {% elsif page.college == "chelsea" %}
+      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/chelsea.css'> 
+  {% elsif page.college == "lcc" %}
+      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/lcc.css'> 
+    {% elsif page.college == "csm" %}
+      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/csm.css'> 
+    {% endif %}
+
+    <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
+
+   
+
+
+
+  <!--[if (lt IE 9) & (!IEMobile)]>
+  // selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
+  <script src='{{ site.url }}/assets/js/libs/selectivizr-min.js'></script>
+  <script src="{{ site.url }}/assets/js/libs/html5shiv.js"></script>
+  <link rel='stylesheet' href='{{ site.url }}/assets/styles/gridset-ie-lte8.css'>
+  <![endif]-->
+  <!-- JavaScript -->
+  <!--Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser -->
+  <script src='{{ site.url }}/assets/js/libs/modernizr-2.6.2-min.js'></script>
+  <!-- Detectizr is a Modernizr extension to detect devices -->
+  <script src='{{ site.url }}/assets/js/libs/detectizr.min.js'></script>
+  <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
+  <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.png">
+  <!-- <link rel="apple-touch-icon-precomposed" href="{{ site.url }}/assets/img/l/apple-touch-icon-precomposed.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/assets/img/m/apple-touch-icon-72x72-precomposed.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/assets/img/h/apple-touch-icon-114x114-precomposed.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/assets/img/h/apple-touch-icon-144x144-precomposed.png"> -->
+      <!--iOS -->
+  <!-- <meta name="apple-mobile-web-app-title" content="Rock Hammer"> -->
+  <!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+  <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+      <!-- Startup images -->
+  <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}/assets/img/startup/startup-320x460.png" media="screen and (max-device-width:320px)"> -->
+  <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}/assets/img/startup/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)"> -->
+  <!-- <link rel="apple-touch-startup-image" href="{{ site.url }}/assets/img/startup/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)"> -->
+  <!-- <link rel="apple-touch-startup-image" sizes="1024x748" href="{{ site.url }}/assets/img/startup/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)"> -->
+  <!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="{{ site.url }}/assets/img/startup/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)"> -->
+  <!-- Windows 8 / RT -->
+  <meta content='&lt;!-- @path apple-touch-icon-144x144-precomposed.png --&gt;' name='msapplication-TileImage'>
+  <meta content='#000' name='msapplication-TileColor'>
+
+
+  <script>
+    Modernizr.Detectizr.detect({detectScreen:false});
+  </script>
+</head>
+
 
   <body class='{{ page.college }} {{ page.section }}'>
 
 {% if page.template == true %}
 
-  {% include _global_banner.html %}
-  {% include _new_header.html %}
+<div class="ual-black-bg cf">
+<div class="main-nav-wrapper">
+  <div class="row">  
+    <div class="ual-banner-menu">
+      <div class="logo"> 
+        <div class="ual-logo-tab-mobile">
+          <div class="icon-ual-mobile"></div>
+        </div>
+        <div class="ual-logo-desktop">
+          {% if page.college == "csm" %}
+            <div class="icon-ual-csm"></div>
+          {% else if page.college == "lcc" %}
+            <div class="icon-ual-lcc"></div>
+          {% else if page.college == "lcf" %}
+            <div class="icon-ual-lcf"></div>
+          {% else if page.college == "chelsea" %}
+            <div class="icon-ual-chelsea"></div>
+          {% else if page.college == "camberwell" %}
+            <div class="icon-ual-camberwell"></div>
+          {% else if page.college == "wimbledon" %}
+            <div class="icon-ual-wimbledon"></div>
+          {% else if page.college == "ual" %}
+            <div class="icon-ual"></div>
+          {% endif %} 
+
+        </div> 
+      </div>  
+       
+      {% if page.class-home != "docs" %} 
+      <!-- Mobile & tablet main navigation links (hidden on desktop) -->
+      <nav class="m-nav-menu-wrap">
+        <ul id="mob-tab-menu" class="mobile-menu">       
+          <li>
+            <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
+          </li>
+          <li>
+            <a id="m-search-btn" href="#" class="search">
+              <span class="icon">🔍</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle">
+              <span id="menu-icon-indicator" class="icon docs-menu-toggle">☰</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="college-link-menu">
+        <ul>
+          <li><a href="/">UAL</a></li>
+            <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
+            <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
+            <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
+            <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+
+  {% include header.html %}
 
   {% if page.section != "course finder" %}
     <div class="header-panel bg-gray-bg">
@@ -17,12 +187,9 @@
             {% include _lcc_breadcrumb.html %}
           {% else if page.college == "ual" %}
             {% include _breadcrumb.html %}
-          {% endif %}
-
+          {% endif %}  
           {% if page.section != "home" and page.section != "graduate-school" %}
-          
               <h1>{{ page.title }}</h1>
-
           {% endif %}
         </div>
       </div>    
@@ -30,7 +197,6 @@
   {% endif %}
 
 {% endif %}
-
 {{ content }}
 
 {% if page.college == "lcc" %}
@@ -41,7 +207,6 @@
 
 
   {% if page.template == true %}
-      {% include _footer_journeys.html %}
       {% include _global_footer.html %}
   {% endif %}
 
@@ -49,18 +214,14 @@
     Modernizr.Detectizr.detect({detectScreen:false});
   </script>
 
-  <script>
-    if (typeof jQuery == 'undefined') {
-        document.write(unescape("%3Cscript src='{{ site.url }}/assets/js/libs/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-  </script>
 
-  <!-- load in jQuery Mobile 
-  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
-  
 
-  <!-- /%script{:type => "text/javascript", :src  => "{{ site.url }}/assets/js/libs/jquery.jpanelmenu.min.js"} -->
+
   
+  <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+
   <!-- Development scripts, not for production -->
   <script src='{{ site.url }}/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
@@ -70,61 +231,28 @@
 
   <!-- Add Media Queries support for IE 6-8 -->
   <script src='{{ site.url }}/assets/js/libs/respond.min.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/libs/jquery.lettering.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/libs/responsive.text.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/libs/picturefill.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/libs/hoverintent.js' type='text/javascript'></script>
   
   <script src='{{ site.url }}/assets/js/libs/jquery.fitvids.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/libs/jquery.expandable.js' type='text/javascript'></script>
 
-  <script src='{{ site.url }}/assets/js/libs/jquery.fittext.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/debug.js' type='text/javascript'></script>
 
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
 
-  
-  <script src='{{ site.url }}/assets/js/foundation/zepto.min.js' type='text/javascript'></script>
-  <script src='{{ site.url }}/assets/js/foundation/foundation.min.js' type='text/javascript'></script> 
-  <script src='{{ site.url }}/assets/js/foundation/foundation.interchange.js' type='text/javascript'></script>
+
+
 
   <!-- fastClicks script - improve click speed on mobile -->
   <script src='{{ site.url }}/assets/js/libs/jquery.fastClick.js' type='text/javascript'></script>
 
   <!-- Scripts -->
+
+
+  <!-- scripts used for expandable search box -->
+  <script src='{{ site.url }}/assets/js/libs/uisearch.js'></script>
+  <script src='{{ site.url }}/assets/js/libs/classie.js'></script>
+
+
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
-  
-  <script>
-  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}/assets/img/svg/icons.data.png.css", "{{ site.url }}/assets/img/svg/icons.fallback.css" ] );
-    </script>
-  <noscript><link href="icons.fallback.css" rel="stylesheet"></noscript>
-  
-
-
-  {% if page.college == "lcf" %}
-    {% include _ual_scripts.html %}
-  {% else if page.college == "ual" %}
-    {% include _ual_scripts.html %}
-  {% else if page.college == "lcc" %}
-    {% include _lcc_scripts.html %}
-  {% else if page.college == "csm" %}
-    {% include _csm_scripts.html %}
-  {% else if page.college == "ccw" %}
-    {% include _ccw_scripts.html %}
-  {% else if page.college == "camberwell" %}
-    {% include _ual_scripts.html %}
-
-  {% else if page.college == "chelsea" %}
-    {% include _chelsea_scripts.html %}
-  {% else if page.college == "wimbledon" %}
-    {% include _wimbledon_scripts.html %}
-  {% else %}
-
-  {% endif %}
-  
-
   </body>
 
 

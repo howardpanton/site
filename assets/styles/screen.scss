@@ -14,11 +14,11 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ::Imports pre-render
 // :: Reset
 // :: Settings
-// :: Mixins
+// :: Mixins 
 // ::Clearfix extends
 // ::Base styles
 
-// ::Layout styles 
+// ::Layout styles  
 // ::Media queries 
 // ::State styles
 // ::Debugs  
@@ -27,7 +27,8 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 // ------------------------------------------------------------
 
 @import "compass/reset",
-				"compass/typography/vertical_rhythm";
+				"compass";
+
 
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
@@ -41,7 +42,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/variables",
 				"globals/mixins",
 				"globals/colors",
-				"globals/sprites",
 				"globals/utilities";
 
 
@@ -49,10 +49,14 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ------------------------------------------------------------ */
 
 @import "globals/layout",
-				"custom/my-fonts",
+				"globals/icons",
 				"globals/typography",
-				"globals/forms",
-				"globals/university-logos"; 
+				"globals/font-face",
+				"globals/logos",
+				"globals/logos.fallback",
+				"globals/formalize",
+				"globals/forms"; 
+
 
 
 /* ::Components */
@@ -60,9 +64,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Course Finder
 @import "components/sidebar-search-filters",
-			  "custom/course-finder"; 
-
-
+			  "components/course-finder"; 
 
 // Navigation
 @import "components/nav-main-menu",
@@ -71,53 +73,62 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 // Search
 @import "components/search-buttons",
+				"components/expandable-search-input",
 				"components/search-form"; 
 
 // Breadcrumbs
 @import "components/breadcrumbs";
 
 // Buttons
-@import "style-guide/button-link"; 
+@import "components/button-link"; 
 
 // Layout components
-@import "style-guide/sidebar",
-				"style-guide/hero-unit",
-				"style-guide/images",
-				"style-guide/panels",
-				"style-guide/text-block",
-				"style-guide/image-block",
-				"style-guide/media-block",    
-				"style-guide/image-list-with-text",
-				"style-guide/date",
-				"style-guide/blocks",
-				"style-guide/accordion",
-				"style-guide/bxslider",
-				"style-guide/boxout",
-				"style-guide/news-events-2x6",
-				"style-guide/courses-2x6",
-				"style-guide/top-stories",
-				"style-guide/article-listing-main-article-left",
-				"style-guide/expandable-content-block",
-				"style-guide/tables",
-				"style-guide/feature-wall",
-				"style-guide/text-block-with-image",
-				"style-guide/four-up-content-gallery",
-				"style-guide/three-up-content-gallery",
-				"style-guide/map-block",
-				"style-guide/half-list",
-				"style-guide/quotes",
-				"style-guide/events",
-				"style-guide/social-media-links",
-				"style-guide/highlight-boxes",
-				"style-guide/related-content",
-				"style-guide/footer",
-				"style-guide/circles-callout",
-				"style-guide/carousel";
-
+@import "components/sidebar", 
+				"components/hero-unit", 
+				"components/credits",
+				"components/images",
+				"components/panels",
+				"components/media-block",    
+				"components/image-list-with-text",
+				"components/date",
+				"components/blocks",
+				"components/bxslider",
+				"components/boxout",
+				"components/news-events-2x6",
+				"components/courses-2x6",
+				"components/top-stories",
+				"components/article-listing-main-article-left",
+				"components/tables",
+				"components/feature-wall",
+				"components/text-block-with-image",
+				"components/four-up-content-gallery",
+				"components/three-up-content-gallery",
+				"components/map-block",
+				"components/half-list",
+				"components/quotes",
+				"components/events",
+				"components/social-media-links",
+				"components/highlight-boxes",
+				"components/related-content",
+				"components/footer",
+				"components/circles-callout",
+				"components/carousel", 
+				"components/short-course-booking", 
+				"components/lists",
+				"components/student-stories",
+				"components/bxslider-content-carousel",
+				"components/new-feature-block";
+@import "components/text-blocks",
+				"components/image-blocks",
+				"components/accordion",
+				"components/media-galleries",
+				"components/expandable-content",
+				"components/highlight-blocks",
+				"components/colors";
 
 // Javascript components
 
-@import "plugins/magnific/magnific-popup"; // Magnific for lightboxes
+@import "components/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
 
 /* ::Custom styling - local add-ons & college-level styles */
@@ -135,7 +146,7 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 
 
 // styles for dropdown lists
-@import "custom/dropdown";
+@import "components/dropdown";
 
 
 /* ::Media queries */

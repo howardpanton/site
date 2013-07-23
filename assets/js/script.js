@@ -54,7 +54,8 @@ function checkMobileNavMenuState() {
     $('#new-menu').slideUp('fast', 'linear', function() { 
         $('#main-menu-btn').removeClass('active'); 
         $('#main-menu-btn').parent().removeClass('menu-active');
-        $('#menu-icon-indicator').html('≡');
+        // $('#menu-icon-indicator').html('≡');
+        $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
         $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
@@ -199,7 +200,8 @@ $('#main-menu-btn').fastClick(function(event) {
 
     t.slideUp('fast', 'linear', function() { 
       _menu_to_toggle.removeClass('active'); 
-      $('#menu-icon-indicator').html('≡');
+      // $('#menu-icon-indicator').html('≡');
+      $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
       _clicked.parent().removeClass('menu-active').removeAttr('style');
       t.find('#desktop-menu-wrap').addClass('header-wrapper');
       t.removeAttr('style');
@@ -226,7 +228,8 @@ $('#main-menu-btn').fastClick(function(event) {
       // show the pages menu  (update button highlight first)
       $('#main-menu-btn').addClass('active');
       $('#main-menu-btn').parent().addClass('menu-active');
-      $('#menu-icon-indicator').html('x'); 
+      // $('#menu-icon-indicator').html('x'); 
+      $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
       
       // slide the menu down
       t.slideDown('fast', 'linear', function() { 
@@ -239,7 +242,8 @@ $('#main-menu-btn').fastClick(function(event) {
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active');
     $('#main-menu-btn').parent().addClass('menu-active');
-    $('#menu-icon-indicator').html('x');
+    // $('#menu-icon-indicator').html('x');
+    $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
     t.slideDown('fast', 'linear', function() {  });
   }
 });
@@ -367,7 +371,7 @@ $(document).ready(function(){
   if ($('.sidebar').length > 0) {
 
     var _menuHtml = $('.sidebar').html();
-    var _mobMenuButton = '<a href="#" class="show-mob-sidebar">≡</a>';
+    var _mobMenuButton = '<a href="#" class="show-mob-sidebar icon">≡</a>';
     var _mobMenuContent = _mobMenuButton + _menuHtml;
     
     // create mobile sidebar div and add it to the page before the sidebar
@@ -382,13 +386,13 @@ $(document).ready(function(){
       
       if (_clicked.hasClass('active')) {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-        _clicked.html('≡').removeClass('active');
+        _clicked.html('☰').removeClass('active');
       }
       else {
 
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
-      _clicked.html('x').addClass('active');
+      _clicked.html('❌').addClass('active');
 
       }
 
@@ -463,6 +467,8 @@ $(document).ready(function(){
 
         // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        // set the minimum number of slides before it starts to be responsive
+        var _itemMinSlides = (_this.data('slider-min-slides') > 0) ? _this.data('slider-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
         var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
         // slider instances always show next/prev controls, unless data-controls is false          
@@ -473,8 +479,8 @@ $(document).ready(function(){
         
         _this.bxSlider({
           slideWidth: _itemWidth,
-          minSlides: 1,
-          maxSlides: 4,
+          minSlides: _itemMinSlides,
+          maxSlides: 10,
           slideMargin: _itemMargin,
           moveSlides: 1,
           controls: _controlsOpt,
@@ -496,6 +502,33 @@ $(document).ready(function(){
     });
 
   }
+
+  ///////////////////////
+  /////// accreditation
+  ///////////////////////
+
+  // $(".accreditation").hide();
+
+    // detect search filters on page
+
+     //allow expand and close for search filters
+  
+  if ($('.credits').length > 0) {
+    $('.credits-btn').addClass("show");
+    $('.show-credits').fastClick(function(event) {
+      event.preventDefault();
+      // $('.credits').toggle();
+      var c = $(this);
+      if (c.hasClass('active') ) {
+        c.removeClass('active').html("Show Credits");
+        $('.credits').fadeOut();
+      } else {
+        c.addClass('active').html("Hide Credits");
+        $('.credits').fadeIn();
+      }
+    });
+  }
+
 
 // detect accordion component
 if ($('.accordion').length > 0) {
@@ -572,6 +605,7 @@ if ($('#showtime-json').length){
       if (data.data.Profiles) { // this is a group of objects in Showtime
         media = data.data.Profiles;
       }
+<<<<<<< HEAD
 
       $.each(media, function(i, item) {
         
@@ -605,6 +639,15 @@ if ($('#showtime-json').length){
   });
   
 }
+=======
+    });
+  }
+  
+  // detect expandable search page
+  if ($('#sb-search').length > 0) {
+    new UISearch( document.getElementById( 'sb-search' ) );
+  }
+>>>>>>> 61d747bbf05c42096458cb3fba5edb3494e179ed
 
 
 // detect lightbox component
@@ -614,7 +657,8 @@ if ($('.lightbox').length > 0) {
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
         // initialise the magnific lightbox
-        $('.lightbox').magnificPopup({
+        $('.lightbox').each(function() {
+          $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
             tLoading: 'Loading image #%curr%...',
@@ -627,7 +671,7 @@ if ($('.lightbox').length > 0) {
             image: {
               tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
             }
-
+          });
         });
 
     });
@@ -644,7 +688,7 @@ if ($('.lightbox').length > 0) {
   $(".show-more").click(function(e){
     e.preventDefault();  
     var _clicked = $(this);
-    var parent = _clicked.closest(".expandable-content-block"); 
+    var parent = _clicked.closest(".expandable-content"); 
     $(".expanded-content",parent).slideDown(); 
     _clicked.hide();
   });
@@ -654,7 +698,7 @@ if ($('.lightbox').length > 0) {
     e.preventDefault();  
     var _clicked = $(this);
 
-    var parent = _clicked.closest(".expandable-content-block"); 
+    var parent = _clicked.closest(".expandable-content"); 
     $(".expanded-content",parent).hide();
     $(parent).find(".show-more").show();
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
@@ -709,6 +753,15 @@ if ($('.lightbox').length > 0) {
 }); // end document ready
 
  
+
+
+
+////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////
