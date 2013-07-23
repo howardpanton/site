@@ -376,22 +376,6 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
     $(document).ready(function(){
 
-      if ($('#vid-player').length > 0) {
-        jwplayer('vid-player').setup({
-          'file': 'https://s3.amazonaws.com/ual-beta/lcf-sample-video.mp4',
-          'flashplayer': '{{ site.url }}assets/js/libs/jwplayer/jwplayer.flash.swf',       
-          'width': '100%',
-          'image': '{{ site.url }}/assets/video/hero-image/lcf-video.jpg',
-          'autostart' :  'false',
-          'aspectratio' : '16:9',
-          'stretching': 'exactfit',
-          'volume': '70',
-          'quality': 'true'
-        });
-        $('#vid-player_logo').hide(); // hide the JW player logo
-        $('#vid-player').fitVids(); // use fitVids to make video responsive
-      };
-     
       // Lazy Loading images
       $("img").unveil();
 
@@ -457,13 +441,9 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
     }
 
-
-    
-
   </script>
   
   
-      
   
 
 

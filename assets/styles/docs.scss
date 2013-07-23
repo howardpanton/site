@@ -15,7 +15,7 @@
 
 .docs {
   .updated {
-    font-size: 12px;
+    font-size: 12px; 
     line-height: 16px;
     color: $white;
   }
@@ -172,8 +172,21 @@ a span.title {
 
 .menu-toggle-link {
   position: absolute;
-  top: 0;
-  right: 0;
+
+  top: 6px;
+  right: 40px;
+  height: 60px;
+  width: 80px;
+  z-index: 999999;
+  
+  p {
+    display: none;
+  }
+
+  .ui-icons-transparent-close {
+    right: -36px !important; // move icon right when menu is expanded
+  }
+
 }
 
 .docs-menu-toggle {

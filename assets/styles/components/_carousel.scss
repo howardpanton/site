@@ -1,10 +1,24 @@
+.carousel {
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: emCalc(24px);
+    background: $black;
+    color: $white;
+    line-height: 24px;
+    padding: 5px 10px;
+    opacity: 0.6;
+    text-align: left;
+  }
+}
 .carousel.is-loaded {
   text-align: center;
   padding: 0;
   overflow: hidden;
   position: relative;
   display: block;
-  white-space: nowrap;
+  // white-space: nowrap;
   margin-bottom: 24px;
 }
 .carousel .slides {
@@ -16,6 +30,7 @@
   -ms-touch-action: pan-y;
 }
 .carousel.is-loaded .slides {
+
   padding: 0 0 38%;
 }
 .slides.animate {
@@ -55,7 +70,7 @@
   left: 0;
 }
 
-// @media all and (min-width: 54em) {
+// 1280px
 @media all and (min-width: 80em) {
   .carousel.is-loaded {
     height: 480px;
@@ -73,7 +88,6 @@
     height: 100%;
     padding-bottom: 0;
   }
-
   .slides .slide {
     position: static;
   }
