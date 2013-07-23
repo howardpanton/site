@@ -54,7 +54,8 @@ function checkMobileNavMenuState() {
     $('#new-menu').slideUp('fast', 'linear', function() { 
         $('#main-menu-btn').removeClass('active'); 
         $('#main-menu-btn').parent().removeClass('menu-active');
-        $('#menu-icon-indicator').html('≡');
+        // $('#menu-icon-indicator').html('≡');
+        $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
         $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
         $('#new-menu').removeAttr('style');
         $('#new-menu').hide();
@@ -199,7 +200,8 @@ $('#main-menu-btn').fastClick(function(event) {
 
     t.slideUp('fast', 'linear', function() { 
       _menu_to_toggle.removeClass('active'); 
-      $('#menu-icon-indicator').html('≡');
+      // $('#menu-icon-indicator').html('≡');
+      $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
       _clicked.parent().removeClass('menu-active').removeAttr('style');
       t.find('#desktop-menu-wrap').addClass('header-wrapper');
       t.removeAttr('style');
@@ -226,7 +228,8 @@ $('#main-menu-btn').fastClick(function(event) {
       // show the pages menu  (update button highlight first)
       $('#main-menu-btn').addClass('active');
       $('#main-menu-btn').parent().addClass('menu-active');
-      $('#menu-icon-indicator').html('x'); 
+      // $('#menu-icon-indicator').html('x'); 
+      $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
       
       // slide the menu down
       t.slideDown('fast', 'linear', function() { 
@@ -239,7 +242,8 @@ $('#main-menu-btn').fastClick(function(event) {
     $('#mob-tab-menu li.menu-active').removeClass("menu-active");
     $('#main-menu-btn').addClass('active');
     $('#main-menu-btn').parent().addClass('menu-active');
-    $('#menu-icon-indicator').html('x');
+    // $('#menu-icon-indicator').html('x');
+    $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
     t.slideDown('fast', 'linear', function() {  });
   }
 });
