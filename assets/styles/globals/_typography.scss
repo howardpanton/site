@@ -39,6 +39,10 @@ a {
 
 }
 
+strong {
+	font-weight: bold;
+}
+
 h1 { 
 	font-size:emCalc(36px); 
 	@include adjust-leading-to(7, 36px); 	
@@ -311,11 +315,8 @@ p.leader {
         h1,h2,h3,h4,h5,h6 {
             font-family: "Swiss721BT-Black";
         }
-        h1,h2 {
+        h2 {
             text-transform: uppercase;
-        }
-        h1 {
-            letter-spacing: 3px;
         }
         h2 {
             padding-bottom: rhythm(1, 24px);
@@ -333,6 +334,11 @@ p.leader {
         h1,h2,h3,h4 {
             text-align: center;
         }
+        .text-block {
+        	h3, h4 {
+        		text-align: left;
+        	}
+        }
     }
 
     figcaption, .flex-video .caption {
@@ -348,14 +354,14 @@ p.leader {
 
 
 .characters li {
-float: left;
-margin: 0 20px 0 0;
-width: 20px;
-font-family: "entypo";
-font-size: 3em;
-line-height: 1;
-text-align: center;
-color: #333;
+	float: left;
+	margin: 0 20px 0 0;
+	width: 20px;
+	font-family: "entypo";
+	font-size: 3em;
+	line-height: 1;
+	text-align: center;
+	color: #333;
 }
 // GRADUATE SCHOOL
 

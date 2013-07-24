@@ -756,7 +756,7 @@ if ($('.lightbox').length > 0) {
 
 
 
-  
+$('video,audio').mediaelementplayer(/* Options */);
 
 }); // end document ready
 
