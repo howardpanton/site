@@ -548,6 +548,19 @@ if ($('.accordion').length > 0) {
 
     });
 
+    $(".accordion-list-anchor").on("click", ".size-h4", function(event){
+        var circle = ($(this).next('.st-arrow'));
+        var elem = ($(this).parent().next('.st-content'));
+        console.log(circle);
+              //circle.rotate({animateTo:360});
+              if (!elem.is(':visible'))  {
+                circle.rotate({animateTo:90});
+               } else {
+                circle.rotate({animateTo:180, center: ["50%", "50%"], });
+            };
+
+});
+
 }
   
 // detect circles-callout component

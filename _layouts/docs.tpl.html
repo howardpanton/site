@@ -341,6 +341,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   <script src='{{ site.url }}/assets/js/foundation/foundation.min.js'></script> 
   <script src='{{ site.url }}/assets/js/foundation/foundation.interchange.js'></script>
+    <script src='{{ site.url }}/assets/js/libs/jquery-rotate.js'></script>
   <script src='{{ site.url }}/assets/js/dev/debug.js' type='text/javascript'></script>
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
   
@@ -374,7 +375,8 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
     $(document).foundation('interchange', 'reflow');
 
-    $(document).ready(function(){
+   $(document).ready(function(){
+
 
       // Lazy Loading images
       $("img").unveil();
