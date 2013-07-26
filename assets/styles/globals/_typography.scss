@@ -88,6 +88,7 @@ h2 {
 
 h3 { 
 	font-size: emCalc(24px);
+	@extend .Swiss721BT-Bold;
 	@include adjust-leading-to(4, 24px); 
 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
 	a { // only to allow for bottom-borders
@@ -120,10 +121,9 @@ h4 {
 	}
 }
 .size-h3 {
-	@include gs-media(d) {
-		font-size: emCalc(24px); 
-		@include adjust-leading-to(4, 24px);
-	}
+	font-size: emCalc(24px);
+	@extend .Swiss721BT-Bold;
+	@include adjust-leading-to(4, 24px); 
 }
 .size-h4 {
 	@include gs-media(d) {
@@ -160,18 +160,6 @@ p, ol, ul {
 	// }
 
 }
-
-p.leader {
-	font-size: emCalc(18px);
-	// @include gs-media(t,min-max) {
-	// 	font-size: emCalc(18px);
-	// }
-	@include gs-media(d) {
-		font-size: emCalc(24px);
-		@include adjust-leading-to(5, 18px);
-	}
-}
-
 
 .square-box {
 	li {
@@ -274,7 +262,8 @@ aside {
 p.leader {
 	font-size: emCalc(18px);
 	@include gs-media(d) {
-		font-size: emCalc(24px);
+		font-size: emCalc(22px);
+		@include adjust-leading-to(6, 22px); 
 	}
 }
 
