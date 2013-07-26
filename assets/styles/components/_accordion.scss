@@ -1,60 +1,15 @@
 /* Flexible Slide-to-top Accordion Style*/
 
+
 .accordion {
-	.st-accordion {
-		width: 100%;
-		margin: 0 auto;
-	}
-	ul {
+
+	.accordion-list {
 		padding: 0;
 		li:first-child {
 			border-top: none;
 		}		
-		li {
-			height: 80px; // needs to match a line-height
-			overflow: hidden;
-			background: $white;
-			margin-bottom: 1px;
-			padding: 0;
-			> a {
-				line-height: 80px; // needs to match li height
-				font-size: emCalc(24px);
-				display: block;
-				position: relative;
-				outline:none;
-				border-bottom: none;
-				margin-left: rhythm(4, 24px);
-				padding-right: rhythm(8, 24px);
-				span {
-					// background: transparent url(http://artslondon.github.io/beta/assets/img/accordion/cross-plus-small.png) no-repeat center center;
-					// text-indent:-9000px;
-					// width: 28px;
-					// height: 28px;
-					font-size: emCalc(36px);
-					position: absolute;
-					top: 0px;
-					right: 24px;
-					opacity:1;
-					@include default-transition();
-				} 
-			}
-		}
-		.st-open > a span {
-			@include rotate(45deg);
-		}
 		.st-content {
     	padding: 0 rhythm(4, 16px) rhythm(4, 16px);
-    	a {
-				color: $black;
-				text-decoration: none;
-				padding-bottom: 1px;
-				border-bottom: 1px dotted $black;
-				&:hover {
-					color: $aaa-gray;
-					padding-bottom: 1px;
-					border-bottom: 1px solid $black; 
-				}
-			}
 		}
 	}
 
@@ -65,4 +20,32 @@
 	@include gs-media(d,min-max) {
 		@include gs-span(d, 5, 16);
 	}
+			.accordion-list-item {
+			height: 80px; // needs to match a line-height
+			overflow: hidden;
+			background: $white;
+			margin-bottom: 1px;
+			padding: 0;
+			.accordion-list-anchor {
+				line-height: 80px; // needs to match li height
+				font-size: emCalc(24px);
+				display: block;
+				position: relative;
+				outline:none;
+				border-bottom: none;
+				margin-left: rhythm(4, 24px);
+				padding-right: rhythm(8, 24px);
+				.st-arrow {
+					font-size: emCalc(36px);
+					position: absolute;
+					top: 27px;
+					right: 24px;
+					opacity:1;
+					line-height:36px;
+					width:28px;
+					//@include default-transition();
+				} 
+			}
+		}
+
 }

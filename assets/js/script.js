@@ -548,45 +548,113 @@ if ($('.accordion').length > 0) {
 
     });
 
+    $(".accordion-list-anchor").on("click", ".size-h4", function(event){
+        var circle = ($(this).next('.st-arrow'));
+        var elem = ($(this).parent().next('.st-content'));
+        console.log(circle);
+              //circle.rotate({animateTo:360});
+              if (!elem.is(':visible'))  {
+                circle.rotate({animateTo:90});
+               } else {
+                circle.rotate({animateTo:180, center: ["50%", "50%"], });
+            };
+
+});
+
 }
   
-  // detect circles-callout component
+// detect circles-callout component
 
-  if ($('.circles-component').length > 0) {
-    $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      // initialise skrollr to handle movement of the circles
-      var s = skrollr.init();
-    });
-  
-  }
+if ($('.circles-component').length > 0) {
+  $.when(
+      $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
+      $.Deferred(function( deferred ){
+          $( deferred.resolve );
+      })
+  ).done(function(){
+    // initialise skrollr to handle movement of the circles
+    var s = skrollr.init();
+  });
 
-  // detect search filters on page
-  if ($('.search-filters').length > 0) {
-     //allow expand and close for search filters
-    $('.filter-heading').fastClick(function(event) {
-      event.preventDefault();
-      var c = $(this);
-      if (c.parent().hasClass('active') ) {
-        c.parent().removeClass('active');
+}
+
+// detect search filters on page
+if ($('.search-filters').length > 0) {
+   //allow expand and close for search filters
+  $('.filter-heading').fastClick(function(event) {
+    event.preventDefault();
+    var c = $(this);
+    if (c.parent().hasClass('active') ) {
+      c.parent().removeClass('active');
+    }
+    else {
+      c.parent().addClass('active');
+    }
+  });
+}
+
+
+// Showtime JSON loader
+if ($('#showtime-json').length){
+
+  // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
+  $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+
+    var feedUrl = $('#showtime-json').data('url');
+    var limit = $('#showtime-json').data('limit');
+    
+    $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
+        
+      var outputNode = $('#showtime-json');
+      var string = '';
+      var media = '';
+              
+      if (data.data.Student) { // this is a single Showtime profile
+        var profileUrl = data.data.Student.Student.profileurl;
+        var studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
+        media = data.data.Student.Media;
+      } 
+      
+      if (data.data.Profiles) { // this is a group of objects in Showtime
+        media = data.data.Profiles;
       }
-      else {
-        c.parent().addClass('active');
-      }
-    });
-  }
+
+      $.each(media, function(i, item) {
+        
+            profileImg = item.thumb.split('gallery');
+            item.profileImg = profileImg[0] + 'profile.jpg';
+            item.zoomImg = profileImg[0] + 'screen.jpg';
+    
+            //console.log(item);  
+            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
+          
+            outputNode.append(string); 
+                
+      }); // end each loop
+      
+      $('.zoom').magnificPopup({ 
+        type: 'image',
+        image: {
+          titleSrc: function(item) {
+            return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+          }
+        },
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        } 
+      });
+
+    }); // end getJSON loop
+
+  }); // end getScript loop
   
-  // detect expandable search page
-  if ($('#sb-search').length > 0) {
-    new UISearch( document.getElementById( 'sb-search' ) );
-  }
+}
 
 
 // detect lightbox component
+
 if ($('.lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
@@ -611,6 +679,11 @@ if ($('.lightbox').length > 0) {
 
     });
 }
+
+  // detect expandable search page
+  if ($('#sb-search').length > 0) {
+    new UISearch( document.getElementById( 'sb-search' ) );
+  }
 
   // make videos adapt responsively
   $('.video-wrapper').fitVids();
@@ -682,7 +755,8 @@ if ($('.lightbox').length > 0) {
 // End tabs to accordion 
 
 
-  
+
+$('video,audio').mediaelementplayer(/* Options */);
 
 }); // end document ready
 
