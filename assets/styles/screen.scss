@@ -11,14 +11,20 @@
     $COMPASS
 \*------------------------------------*/
 
-@import "compass";
+@import "compass"; 
 
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
 
-@import "compass/reset";
+@import "compass/reset"; 
 
+/*------------------------------------*\
+    $GRIDSET
+\*------------------------------------*/
+
+@import "globals/gridset",
+				"globals/gridset-utilities";
 
 /*------------------------------------*\
     $ELEMENTS
@@ -30,6 +36,11 @@
     $FONT-FACE
 \*------------------------------------*/
 
+@import "font-face/brandon-text.scss",
+				"font-face/bureau-grot.scss",
+				"font-face/entypo.scss",
+				"font-face/league-gothic.scss",
+				"font-face/swiss-721.scss";
 
 
 /*------------------------------------*\
@@ -82,8 +93,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 
-@import "globals/gridset",
-				"globals/gridset-utilities";
 
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
@@ -100,7 +109,6 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 @import "globals/layout",
 				"globals/icons",
 				"globals/typography",
-				"globals/font-face",
 				"globals/logos",
 				"globals/logos.fallback",
 				"globals/forms"; 

@@ -52,7 +52,7 @@ h1 {
 		@include adjust-leading-to(10, 54px); 
 	}
 	.lcc .content-wrapper & {
-		@extend .LeagueGothicRegular;
+		@extend %LeagueGothicRegular;
 		text-transform: uppercase;
 		letter-spacing: 3px;
 	}
@@ -76,7 +76,7 @@ h2 {
 	}
 
 	.lcc .content-wrapper & {
-		@extend .LeagueGothicRegular;
+		@extend %LeagueGothicRegular;
 		border-bottom: 4px solid $black;
 		margin-bottom: 24px;
 		text-transform: uppercase;
@@ -92,7 +92,7 @@ h2 {
 
 h3 { 
 	font-size: emCalc(24px);
-	@extend .Swiss721BT-Bold;
+	// @extend %Swiss721BT-bold;
 	@include adjust-leading-to(4, 24px); 
 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
 	a { // only to allow for bottom-borders
@@ -126,7 +126,7 @@ h4 {
 }
 .size-h3 {
 	font-size: emCalc(24px);
-	@extend .Swiss721BT-Bold;
+	// @extend %Swiss721BT-bold;
 	@include adjust-leading-to(4, 24px); 
 }
 .size-h4 {
@@ -272,42 +272,42 @@ p.leader {
 }
 
 
-// Custom Web Fonts
+// // Custom Web Fonts
 
-.Swiss721BT-Light { font-family: Swiss721BT-Light; }
-.Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
-.Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
-.Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
-.Swiss721BT-Black { font-family: Swiss721BT-Black; }
-.Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
+// .Swiss721BT-Light { font-family: Swiss721BT-Light; }
+// .Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
+// .Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
+// .Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
+// .Swiss721BT-Black { font-family: Swiss721BT-Black; }
+// .Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
 
-// CCW
-.BrandonText-Bold { font-family: BrandonText-Bold; }
-.BrandonText-Regular { font-family: BrandonText-Regular; }
+// // CCW
+// .BrandonText-Bold { font-family: BrandonText-Bold; }
+// .BrandonText-Regular { font-family: BrandonText-Regular; }
 
-// LCC
-.LeagueGothicRegular { font-family: LeagueGothicRegular; }
-.LeagueGothicItalic { font-family: LeagueGothicItalic; }
-.LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
-.LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
+// // LCC
+// .LeagueGothicRegular { font-family: LeagueGothicRegular; }
+// .LeagueGothicItalic { font-family: LeagueGothicItalic; }
+// .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
+// .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
 
-// CSM
-.BureauGrotBold { font-family: BureauGrotBold; }
+// // CSM
+// .BureauGrotBold { font-family: BureauGrotBold; }
 
-.icon { font-family: "entypo"; }
-.icon-social { font-family: "entypo-social"; }
+// .icon { font-family: "entypo"; }
+// .icon-social { font-family: "entypo-social"; }
 
 // LCF Variants 
 
 b, strong, h2, h3, h4 {
-	@extend .Swiss721BT-Bold;
+	@extend %Swiss721BT-Bold;
 }
 
 
 .lcf {
     .content-wrapper {
         h1,h2,h3,h4,h5,h6 {
-            font-family: "Swiss721BT-Black";
+        	@extend %Swiss721BT-Black;
         }
         h2 {
             text-transform: uppercase;
