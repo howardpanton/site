@@ -531,21 +531,25 @@ $(document).ready(function(){
         }).data('royalSlider');
 
         $('#content-slider-1').royalSlider({
-          autoScaleSlider: true, 
-          autoScaleSliderWidth: 930,     
-          autoScaleSliderHeight: 465,
-          slidesSpacing: 0,
-          arrowsNav: false,
+          arrowsNav: true,
+          controlNavigation: 'none',
+          loop: true,
+          //autoHeight: true
+          /*autoScaleSlider: true, 
+          autoScaleSliderWidth: 800,     
+          autoScaleSliderHeight: 400,
+          //globalCaption: true,
+          //autoHeight: true,
           fadeinLoadedSlide: false,
           controlNavigationSpacing: 0,
-          controlNavigation: 'tabs',
+          
           imageScaleMode: 'none',
-          imageAlignCenter: true,
+          //imageAlignCenter:true,
           loop: false,
           loopRewind: true,
           numImagesToPreload: 6,
           keyboardNavEnabled: true,
-          usePreloader: false
+          usePreloader: false*/
         });
     });
   }
@@ -809,11 +813,11 @@ if ($('video').length > 0) {
 
     //console.log('script loaded');
 
-    /*$('video').mediaelementplayer({
+    $('video').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
-    });*/
+    });
     // declare object for video
-    var player = new MediaElementPlayer('#player1');
+    //var player = new MediaElementPlayer('#player1');
 
   });
 
