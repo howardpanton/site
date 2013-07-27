@@ -503,6 +503,58 @@ $(document).ready(function(){
 
   }
 
+  // detect slider component
+  if ($('.royalSlider').length > 0) {
+
+    $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.royalslider.min.js', function() {
+
+        var si = $('#gallery-1').royalSlider({
+          addActiveClass: true,
+          arrowsNav: false,
+          controlNavigation: 'none',
+          autoScaleSlider: true, 
+          autoScaleSliderWidth: 930,     
+          autoScaleSliderHeight: 465,
+          loop: true,
+          fadeinLoadedSlide: false,
+          globalCaption: true,
+          keyboardNavEnabled: true,
+          globalCaptionInside: false,
+
+          visibleNearby: {
+            enabled: true,
+            centerArea: 0.5,
+            center: true,
+            breakpoint: 650,
+            breakpointCenterArea: 0.64
+          }
+        }).data('royalSlider');
+
+        $('#content-slider-1').royalSlider({
+          arrowsNav: true,
+          controlNavigation: 'none',
+          loop: true,
+          //autoHeight: true
+          /*autoScaleSlider: true, 
+          autoScaleSliderWidth: 800,     
+          autoScaleSliderHeight: 400,
+          //globalCaption: true,
+          //autoHeight: true,
+          fadeinLoadedSlide: false,
+          controlNavigationSpacing: 0,
+          
+          imageScaleMode: 'none',
+          //imageAlignCenter:true,
+          loop: false,
+          loopRewind: true,
+          numImagesToPreload: 6,
+          keyboardNavEnabled: true,
+          usePreloader: false*/
+        });
+    });
+  }
+
+
   ///////////////////////
   /////// accreditation
   ///////////////////////
@@ -686,7 +738,7 @@ if ($('.lightbox').length > 0) {
   }
 
   // make videos adapt responsively
-  $('.video-wrapper').fitVids();
+  //$('.video-wrapper').fitVids();
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -755,8 +807,22 @@ if ($('.lightbox').length > 0) {
 // End tabs to accordion 
 
 
+if ($('video').length > 0) {
 
-$('video,audio').mediaelementplayer(/* Options */);
+  $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
+
+    //console.log('script loaded');
+
+    $('video').mediaelementplayer({
+      pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+    });
+    // declare object for video
+    //var player = new MediaElementPlayer('#player1');
+
+  });
+
+}
+
 
 }); // end document ready
 

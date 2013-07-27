@@ -23,8 +23,69 @@ template: true
 			</div>
 
 			{% include components/_boxout.html %}
+      
+      <!--
+      <div class="row slider-container">
 
-			{% include components/_slider-12.html %}
+        <div id="gallery-1" class="royalSlider rsDefault visibleNearby">
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Still Life: Vase with Twelve Sunflowers<span>Vincent van Gogh</span></a>
+            <a class="rsImg" href="http://placehold.it/400x465" data-rsw="400" data-rsh="465">Mona Lisa<span>Leonardo da Vinci</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">American Gothic<span>Grant DeVolson Wood</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">The Night Watch<span>Rembrandt</span></a>
+            <a class="rsImg" href="http://placehold.it/640x360" data-rsw="640" data-rsh="360" data-rsvideo="http://www.youtube.com/watch?v=HFbHRWwyihE">The Starry Night (with video)<span>Vincent van Gogh</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Girl with a Pearl Earring<span>Johannes Vermeer</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Card Players<span>Paul Cezanne</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Reply of the Zaporozhian Cossacks<span>Ilya Repin</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Chesmabattle<span>Ivan Aivazovsky</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">The Kiss<span>Gustav Klimt</span></a>
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Morning in a Pine Forest<span>Ivan Shishkin</span></a>
+        </div>  
+      </div>
+      -->
+
+      <div class="row slider-container">
+        <div id="content-slider-1" class="royalSlider contentSlider rsDefault">
+          
+            <img class="rsImg" src="http://placehold.it/930x465&text=SLIDER IMAGE 1 SPAN 12" title="University of the Arts London" alt="">
+            <img class="rsImg" src="http://placehold.it/310x465&text=SLIDER IMAGE 2 PORTRAIT" title="London College of Fashion" alt="">
+            <img class="rsImg" src="http://placehold.it/930x465" data-rsvideo="http://www.youtube.com/watch?v=HFbHRWwyihE" />
+            <a class="rsImg" href="http://placehold.it/310x465" data-rsw="310" data-rsh="465">Girl with a Pearl Earring<span>Johannes Vermeer</span></a>
+
+
+        </div>
+      </div>
+
+      <!--
+      <div class="row">
+        <div class="bxslider-content-carousel">
+          <h2>Carousel showing 3 slides (move one at a time)</h2>
+
+          <div class="bx-wrapper">
+            <div class="bx-viewport">
+              <ul class="slider" data-slider-item-width="310" data-slider-item-margin="10" data-slider-min-slides="3"> 
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_1.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_2.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_3.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_4.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_1.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_2.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_3.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+                <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_4.jpg">
+                  <p>This is some text <a href="">for this slide</a></p></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    -->
 
 		</div><!-- .main-content -->	
 	</div><!-- .row -->
@@ -40,7 +101,7 @@ template: true
 <div class="content-wrapper">
   <div class="row">
   	<div class="main-content">
-        {% include components/_image-list-with-text-content.html %}
+        
   	</div><!-- .content-wrapper -->
   </div><!-- .row -->
 </div><!-- .content-wrapper -->
