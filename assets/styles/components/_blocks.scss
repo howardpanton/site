@@ -1,4 +1,78 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
+ */
+
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+
+
+.block {
+
+	figcaption {
+  		@include font-size(14);
+		line-height: 18px;
+		@include padding-leader(1);
+		@include padding-trailer(1);
+		@extend .bg-gray-bg;
+	}
+}
+
+
+/*------------------------------------*\
+    $Text
+\*------------------------------------*/
+
+.__text {
+
+}
+
+
+/*------------------------------------*\
+    $Media
+\*------------------------------------*/
+
+
+.__media {
+
+	h3, p {
+		@include gs-media (d) {
+			@include gs-span(d, 5,12, (5, 16));
+			clear:left;
+		}
+	}
+
+	&.__with-aside { 
+	/**
+	* Images with aside will run from d5 to d13 
+	*/
+		.l-content{
+			@include gs-media (t,min-max) {
+				@include gs-span(t, all);
+			}
+			@include gs-media (d) {
+				@include gs-span(d, 5,13, (5, 16));
+			}
+		}
+
+		h3, p {
+			@include gs-media (d) {
+				@include gs-span(d, 5,12, (5, 13));
+				clear:left;
+			}
+		}
+	}
+
+}
+
 // four-up spanning 16
+
 .four-up {
 	li {
 		padding: 0;
