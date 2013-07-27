@@ -1,9 +1,9 @@
-/*------------------------------------*\
-University of the Arts London
-CSS stylesheet
-Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
- */
-
+/*-----------------------------------------*\
+    //*	University of the Arts London
+		//*	CSS stylesheet
+		//*	Authors: Howard Panton, Matt Wisbey,
+		// Pete Richardson, Alastair Mucklow
+\*-----------------------------------------*/
 
 /*------------------------------------*\
     $CONTENTS
@@ -15,80 +15,76 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
  */
 
 /*------------------------------------*\
-    $COMPASS
+    $COMPASSS
 \*------------------------------------*/
 
-@import "compass"; 
+ 	@import "compass"; 
 
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
 
-@import "compass/reset"; 
+
+	@import "compass/reset"; 
+
 
 /*------------------------------------*\
     $GRIDSET
 \*------------------------------------*/
 
-@import "globals/gridset",
-				"globals/gridset-utilities";
+
+	@import "globals/gridset";
+	@import	"globals/gridset-utilities";
+
 
 /*------------------------------------*\
-    $ELEMENTS
+    $GLOBALS
 \*------------------------------------*/
 
 
+	@import "globals/variables";
+	@import	"globals/mixins";
+	@import	"globals/colors";
+	
 
 /*------------------------------------*\
     $FONT-FACE
 \*------------------------------------*/
 
-@import "font-face/brandon-text.scss",
-				"font-face/bureau-grot.scss",
-				"font-face/entypo.scss",
-				"font-face/league-gothic.scss",
-				"font-face/swiss-721.scss";
 
+	@import "font-face/brandon-text.scss",
+					"font-face/bureau-grot.scss",
+					"font-face/entypo.scss",
+					"font-face/league-gothic.scss",
+					"font-face/swiss-721.scss";
+
+
+/*------------------------------------*\
+    $CORE
+\*------------------------------------*/
+
+
+@import	"globals/icons",
+				"globals/typography",
+				"globals/logos",
+				"globals/logos.fallback",
+				"globals/forms"; 
+
+@import	"globals/utilities";
 
 /*------------------------------------*\
     $OBJECTS-AND-EXTRACTIONS
 \*------------------------------------*/
 
 
+	@import "globals/layout";
+	@import "globals/icons";
+
+
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
 
-
-/*------------------------------------*\
-    $UTILITIES
-\*------------------------------------*/
-
-
-
-// ::Imports pre-render. Must be after reset 
-// ------------------------------------------------------------
-
-@import "globals/variables",
-				"globals/mixins",
-				"globals/colors",
-				"globals/utilities";
-
-
-/* ::Global styles */
-/* ------------------------------------------------------------ */
-
-@import "globals/layout",
-				"globals/icons",
-				"globals/typography",
-				"globals/logos",
-				"globals/logos.fallback",
-				"globals/forms"; 
-
-
-
-/* ::Components */
-/* ------------------------------------------------------------ */
 
 // Course Finder
 @import "components/sidebar-search-filters",
@@ -155,34 +151,24 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 				"components/highlight-blocks",
 				"components/colors";
 
+//tabs to accordion widget (LCC homepage)
+@import "components/tabs-to-accordion";
+
+// ** - LCF - **
+@import "components/intro-block-with-left-image";
+
 // Javascript components
 
 @import "components/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
-
-/* ::Custom styling - local add-ons & college-level styles */
-/* ------------------------------------------------------------ */
-
-
-// ** - LCC - **
-
-// tabs to accordion widget (LCC homepage)
-@import "components/tabs-to-accordion";
-
-// ** - LCF - **
-
-@import "components/intro-block-with-left-image";
 
 
 // styles for dropdown lists
 @import "components/dropdown";
 
 
-/* ::Media queries */
-/* ------------------------------------------------------------ */
-
-//@import "globals/media-queries";
-
-// Ordered last to override when necessary
+/*------------------------------------*\
+    $utilities
+\*------------------------------------*/
 
 @import "globals/debug";

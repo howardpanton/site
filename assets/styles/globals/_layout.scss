@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-=======
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
 /**
- * This is where we set global layout classes
- *
- * 
- * 
- *
- * 
- *
- *
- * 
- * 
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
  */
-
-
 
 
 /*------------------------------------*\
@@ -97,7 +89,7 @@
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
->>>>>>> 7d23fe6c1966f4a1ca6d143fa2e85f468c498fef
+
 
 
 .content-wrapper, .header-wrapper, .footer-wrapper {
@@ -161,29 +153,5 @@ aside {
 	  clear: none;
 	}
 
-}
-
-
-/*------------------------------------*\
-    $Page Block Classes
-\*------------------------------------*/
-
-// two-up - core styles
-.two-up {
-	@include gs-media(t,min-max) {
-		@extend %t2-t7;
-		li {
-      width: gs-width(d, 2, 4, false, true);
-			&:nth-of-type(2), &:nth-of-type(4) {
-				margin-right: 0;
-			}
-		}
-	}
-	@include gs-media(d) {
-		@extend %d-all;
-		li {
-      width: gs-width(d, 1, 8, false, true);
-		}
-	}
 }
 
