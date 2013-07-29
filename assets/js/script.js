@@ -532,6 +532,7 @@ $(document).ready(function(){
 
         $('#content-slider-1').royalSlider({
           arrowsNav: true,
+          arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
           //autoHeight: true
