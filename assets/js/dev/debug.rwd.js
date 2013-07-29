@@ -140,7 +140,7 @@
     },
 
     on: function () {
-      $.each($('.region').not('#debug-grid .region, .region .region'), function (index, value) {
+      $.each($('.block').not('#debug-grid .block, .block .block'), function (index, value) {
         $(value).wrapInner('<div class="debug-box"></div>');
         $(value).find('.debug-box').append('<div class="debug-number">' + (index + 1) + '</div>');
       });

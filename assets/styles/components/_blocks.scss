@@ -1,228 +1,390 @@
-// four-up spanning 16
-.four-up {
-	li {
-		padding: 0;
-		background: $white;
-		min-height: 250px;
-		margin-bottom: rhythm(8, 16px);
-		h3 {
-			padding: rhythm(2, 24px) rhythm(3, 24px) rhythm(3, 24px) rhythm(3, 24px);
-		}
-		p {
-			padding: rhythm(2, 16px) rhythm(3, 16px) rhythm(3, 16px) rhythm(3, 16px);
-		}
-	}
-	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 4, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(2) {
-				margin-right: 0;
-			}
-			&:nth-of-type(4) {
-				margin-right: 0;
-			}
-		}
-	}
-	@include gs-media(d) {
-		@include gs-span(d,all);
-		li {
-		@include gs-span(d,1,4);
-		float: left;
- 			&:nth-of-type(2) {
-      	@include gs-span(d,5,8);
-			}
- 			&:nth-of-type(3) {
-      	@include gs-span(d,9,12);
-			}
- 			&:nth-of-type(4) {
-      	@include gs-span(d,13,16);
-			}
-		}
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
+ */
+
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+
+
+.block {
+
+	figcaption {
+  		@include font-size(14);
+		line-height: 18px;
+		@include padding-leader(1);
+		@include padding-trailer(1);
+		@extend .bg-gray-bg;
 	}
 }
 
-// three-up that can only be used on container spanning 12
-.three-up {
-	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 3, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(3) {
-				margin-right: 0;
-			}
-			&:nth-of-type(6) {
-				margin-right: 0;
-			}
-		}
-	}
-	@include gs-media(d) {
-					@include gs-span(d, 3, 14, (5, 16));
-		li {
-      width: gs-width(d, 3, 6, (3,14), true);
-      @include gs-float(d, left, (3,14));
-			&:nth-of-type(3) {
-				margin-right: 0;
-			}
-			&:nth-of-type(6) {
-				margin-right: 0;
-			}
-			&:nth-of-type(9) {
-				margin-right: 0;
-			}
-		}
-	}
+
+/*------------------------------------*\
+    $Text
+\*------------------------------------*/
+
+.__text {
+
 }
 
-// three-up that can only be used on container spanning 12
-.three-up-content {
-	@include component-spacing-bottom;
 
-	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 3, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(3) {
-				margin-right: 0;
+/*------------------------------------*\
+    $Media
+\*------------------------------------*/
+
+
+.__media {
+
+	h3, p {
+		@include gs-media (d) {
+			@include gs-span(d, 5,12, (5, 16));
+			clear:left;
+		}
+	}
+
+	&.__with-aside { 
+	/**
+	* Images with aside will run from d5 to d13 
+	*/
+		.l-content{
+			@include gs-media (t,min-max) {
+				@include gs-span(t, all);
 			}
-			&:nth-of-type(6) {
-				margin-right: 0;
+			@include gs-media (d) {
+				@include gs-span(d, 5,13, (5, 16));
+			}
+		}
+
+		h3, p {
+			@include gs-media (d) {
+				@include gs-span(d, 5,12, (5, 13));
+				clear:left;
 			}
 		}
 	}
-	@include gs-media(d) {
-		@include gs-span(d, 5, 16, (5, 16));
-		li {
-      width: gs-width(d, 5, 8, (5,16), true);
-      @include gs-float(d, left, (3,16));
-			&:nth-of-type(3) {
-				margin-right: 0;
-			}
-			&:nth-of-type(6) {
-				margin-right: 0;
-			}
-			&:nth-of-type(9) {
-				margin-right: 0;
-			}
-		}
-	}
+
 }
+
+
+/*------------------------------------*\
+    $Page Block Classes
+\*------------------------------------*/
 
 // two-up - core styles
+// 
 .two-up {
-	@include component-spacing-bottom;
 	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 4, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(2) {
-				margin-right: 0;
-			}
-			&:nth-of-type(4) {
-				margin-right: 0;
-			}
-		}
-	}
-	@include gs-media(d) {
-		@include gs-span(d,1,16);
-		li {
-      @include gs-span(d,1,8,(1, 16));
-			&:nth-of-type(2) {
-	      @include gs-span(d,9,16,(1, 16));
-			}
-		}
-	}
-	// two-up for standard featured content page
-	&.feature-content {
-		//@include component-spacing-bottom;
-
-		@include gs-media(d) {
-			// @include gs-span(d,5,16);
-			@include gs-span(d, 5, 16, (5, 16));
+		@extend %t2-t7;
 			li {
-	      width: gs-width(d, 5, 10, (5,16), true);
-	      @include gs-float(d, left, (5,16));
-				&:nth-of-type(2) {
-					margin-right: 0;
-				}
+				@include gs-span(t, 2, 4, (2, 7));
+			}
+
+			li:last-child {
+				@include gs-span(t, 5, 7, (2, 7));
+			}
+	}
+
+		&.l-content {
+			@include gs-media(d) {
+			@extend %d5-d12--within-d5-d16;
+			li {
+				@include gs-span(d, 5, 8, (5, 12));
+			}
+
+			li:last-child {
+				@include gs-span(d, 9, 12, (5, 12));
 			}
 		}
 	}
-}
 
-.panel .two-up {
-	li {
-		padding: 0;
-		background: $white;
-		//margin-top: rhythm(10, 16px); - why? AM
-		h3 {
-			padding: rhythm(2, 24px) rhythm(3, 24px) rhythm(3, 24px) rhythm(3, 24px);
-		}
-		p {
-			padding: rhythm(2, 16px) rhythm(3, 16px) rhythm(3, 16px) rhythm(3, 16px);
+	&.l-content-full-width {
+			@include gs-media(d) {
+			@extend %d5-d16--within-d5-d16;
+			li {
+				@include gs-span(d, 5, 10, (5, 16));
+			}
+
+			li:last-child {
+				@include gs-span(d, 11, 16, (5, 16));
+			}
 		}
 	}
+
 }
 
-
-// two-up centered
-.two-up-centered {
+// three-up - core styles
+// 
+.three-up {
 	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 4, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(2) {
-				margin-right: 0;
+		@extend %t2-t7;
+			li {
+				@include gs-span(t, 2, 3, (2, 7));
 			}
-			&:nth-of-type(4) {
-				margin-right: 0;
+
+			li + li {
+				@include gs-span(t, 4, 5, (2, 7));
+			}
+			li:last-child {
+				@include gs-span(t, 6, 7, (2, 7));
+			}
+		}
+
+	&.l-content-full-width {
+			@include gs-media(d) {
+			@extend %d5-d16--within-d5-d16;
+			li {
+				@include gs-span(d, 5, 8, (5, 16));
+			}
+
+			li + li {
+				@include gs-span(d, 9, 12, (5, 16));
+			}
+			li:last-child {
+				@include gs-span(d, 13, 16, (5, 16));
 			}
 		}
 	}
-	@include gs-media(d) {
-					@include gs-span(d, 3, 14, (5, 16));
-		li {
-      width: gs-width(d, 3, 8, (3,14), true);
-      @include gs-float(d, left, (3,14));
-			&:nth-of-type(2) {
-				margin-right: 0;
-			}
-		}
-	}
+
 }
 
 
-// two-up for standard default content page
-.two-up-content {
-	@include component-spacing-bottom;
 
-	@include gs-media(t,min-max) {
-		@include gs-span(t,2,7);
-		li {
-      width: gs-width(t, 2, 4, (2,7), true);
-      @include gs-float(t, left, (2,7));
-			&:nth-of-type(2) {
-				margin-right: 0;
-			}
-			&:nth-of-type(4) {
-				margin-right: 0;
-			}
-		}
-	}
-	@include gs-media(d) {
-		// @include gs-span(d,5,12);
-		@include gs-span(d, 5, 12, (5, 16));
-		li {
-      width: gs-width(d, 5, 8, (5,12), true);
-      @include gs-float(d, left, (5,12));
-			&:nth-of-type(2) {
-				margin-right: 0;
-			}
-		}
-	}
-}
+
+
+
+
+// // four-up spanning 16
+
+// .four-up {
+// 	li {
+// 		padding: 0;
+// 		background: $white;
+// 		min-height: 250px;
+// 		margin-bottom: rhythm(8, 16px);
+// 		h3 {
+// 			padding: rhythm(2, 24px) rhythm(3, 24px) rhythm(3, 24px) rhythm(3, 24px);
+// 		}
+// 		p {
+// 			padding: rhythm(2, 16px) rhythm(3, 16px) rhythm(3, 16px) rhythm(3, 16px);
+// 		}
+// 	}
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 4, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(4) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 		@include gs-span(d,all);
+// 		li {
+// 		@include gs-span(d,1,4);
+// 		float: left;
+//  			&:nth-of-type(2) {
+//       	@include gs-span(d,5,8);
+// 			}
+//  			&:nth-of-type(3) {
+//       	@include gs-span(d,9,12);
+// 			}
+//  			&:nth-of-type(4) {
+//       	@include gs-span(d,13,16);
+// 			}
+// 		}
+// 	}
+// }
+
+// // three-up that can only be used on container spanning 12
+// .three-up {
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 3, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(3) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(6) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 					@include gs-span(d, 3, 14, (5, 16));
+// 		li {
+//       width: gs-width(d, 3, 6, (3,14), true);
+//       @include gs-float(d, left, (3,14));
+// 			&:nth-of-type(3) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(6) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(9) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+// // three-up that can only be used on container spanning 12
+// .three-up-content {
+// 	@include component-spacing-bottom;
+
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 3, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(3) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(6) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 		@include gs-span(d, 5, 16, (5, 16));
+// 		li {
+//       width: gs-width(d, 5, 8, (5,16), true);
+//       @include gs-float(d, left, (3,16));
+// 			&:nth-of-type(3) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(6) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(9) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+// // two-up - core styles
+// .two-up {
+// 	@include component-spacing-bottom;
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 4, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(4) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 		@include gs-span(d,1,16);
+// 		li {
+//       @include gs-span(d,1,8,(1, 16));
+// 			&:nth-of-type(2) {
+// 	      @include gs-span(d,9,16,(1, 16));
+// 			}
+// 		}
+// 	}
+// 	// two-up for standard featured content page
+// 	&.feature-content {
+// 		//@include component-spacing-bottom;
+
+// 		@include gs-media(d) {
+// 			// @include gs-span(d,5,16);
+// 			@include gs-span(d, 5, 16, (5, 16));
+// 			li {
+// 	      width: gs-width(d, 5, 10, (5,16), true);
+// 	      @include gs-float(d, left, (5,16));
+// 				&:nth-of-type(2) {
+// 					margin-right: 0;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .panel .two-up {
+// 	li {
+// 		padding: 0;
+// 		background: $white;
+// 		//margin-top: rhythm(10, 16px); - why? AM
+// 		h3 {
+// 			padding: rhythm(2, 24px) rhythm(3, 24px) rhythm(3, 24px) rhythm(3, 24px);
+// 		}
+// 		p {
+// 			padding: rhythm(2, 16px) rhythm(3, 16px) rhythm(3, 16px) rhythm(3, 16px);
+// 		}
+// 	}
+// }
+
+
+// // two-up centered
+// .two-up-centered {
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 4, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(4) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 					@include gs-span(d, 3, 14, (5, 16));
+// 		li {
+//       width: gs-width(d, 3, 8, (3,14), true);
+//       @include gs-float(d, left, (3,14));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// // two-up for standard default content page
+// .two-up-content {
+// 	@include component-spacing-bottom;
+
+// 	@include gs-media(t,min-max) {
+// 		@include gs-span(t,2,7);
+// 		li {
+//       width: gs-width(t, 2, 4, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 			&:nth-of-type(4) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// 	@include gs-media(d) {
+// 		// @include gs-span(d,5,12);
+// 		@include gs-span(d, 5, 12, (5, 16));
+// 		li {
+//       width: gs-width(d, 5, 8, (5,12), true);
+//       @include gs-float(d, left, (5,12));
+// 			&:nth-of-type(2) {
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+// }

@@ -1,70 +1,94 @@
-/* 
-University of the Arts London
-CSS stylesheet
-Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
-*/
+/*-----------------------------------------*\
+    //*	University of the Arts London
+		//*	CSS stylesheet
+		//*	Authors: Howard Panton, Matt Wisbey,
+		// Pete Richardson, Alastair Mucklow
+\*-----------------------------------------*/
 
-// Table of Contents
-//
-// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
-// -------------------------------------------------------------
-// As a rule of thumb, don't nest further than 3 levels deep
-// -------------------------------------------------------------
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
+ */
 
-// ::Imports pre-render
-// :: Reset
-// :: Settings
-// :: Mixins 
-// ::Clearfix extends
-// ::Base styles
+/*------------------------------------*\
+    $COMPASSS
+\*------------------------------------*/
 
-// ::Layout styles  
-// ::Media queries 
-// ::State styles
-// ::Debugs  
+ 	@import "compass"; 
 
-// ::Compass imports 
-// ------------------------------------------------------------
-
-@import "compass/reset",
-				"compass";
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
 
 
-/* ::Grid styles - using CSS files css/grid and css/grid-feature */
-/* ------------------------------------------------------------ */
-
-@import "globals/gridset",
-				"globals/gridset-utilities";
-
-// ::Imports pre-render. Must be after reset 
-// ------------------------------------------------------------
-
-@import "globals/variables",
-				"globals/mixins",
-				"globals/colors",
-				"globals/utilities";
+	@import "compass/reset"; 
 
 
-/* ::Global styles */
-/* ------------------------------------------------------------ */
+/*------------------------------------*\
+    $GRIDSET
+\*------------------------------------*/
 
-@import "globals/layout",
-				"globals/icons",
+
+	@import "globals/gridset";
+	@import	"globals/gridset-utilities";
+
+
+/*------------------------------------*\
+    $GLOBALS
+\*------------------------------------*/
+
+
+	@import "globals/variables";
+	@import	"globals/mixins";
+	@import	"globals/colors";
+	
+
+/*------------------------------------*\
+    $FONT-FACE
+\*------------------------------------*/
+
+
+	@import "font-face/brandon-text.scss",
+					"font-face/bureau-grot.scss",
+					"font-face/entypo.scss",
+					"font-face/league-gothic.scss",
+					"font-face/swiss-721.scss";
+
+
+/*------------------------------------*\
+    $CORE
+\*------------------------------------*/
+
+
+@import	"globals/icons",
 				"globals/typography",
-				"globals/font-face",
 				"globals/logos",
 				"globals/logos.fallback",
-				"globals/formalize",
 				"globals/forms"; 
 
+@import	"globals/utilities";
+
+/*------------------------------------*\
+    $OBJECTS-AND-EXTRACTIONS
+\*------------------------------------*/
 
 
-/* ::Components */
-/* ------------------------------------------------------------ */
+	@import "globals/layout";
+	@import "globals/icons";
+
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+
 
 // Course Finder
 @import "components/sidebar-search-filters",
-			  "components/course-finder"; 
+			  "components/course-finder";  
 
 // Navigation
 @import "components/nav-main-menu",
@@ -127,34 +151,24 @@ Authors: Howard Panton, Matt Wisbey, Pete Richardson, Alastair Mucklow
 				"components/highlight-blocks",
 				"components/colors";
 
+//tabs to accordion widget (LCC homepage)
+@import "components/tabs-to-accordion";
+
+// ** - LCF - **
+@import "components/intro-block-with-left-image";
+
 // Javascript components
 
 @import "components/magnific-popup"; // Magnific for lightboxes
 @import "components/video"; // responsive video
-
-/* ::Custom styling - local add-ons & college-level styles */
-/* ------------------------------------------------------------ */
-
-
-// ** - LCC - **
-
-// tabs to accordion widget (LCC homepage)
-@import "components/tabs-to-accordion";
-
-// ** - LCF - **
-
-@import "components/intro-block-with-left-image";
 
 
 // styles for dropdown lists
 @import "components/dropdown";
 
 
-/* ::Media queries */
-/* ------------------------------------------------------------ */
-
-//@import "globals/media-queries";
-
-// Ordered last to override when necessary
+/*------------------------------------*\
+    $utilities
+\*------------------------------------*/
 
 @import "globals/debug";
