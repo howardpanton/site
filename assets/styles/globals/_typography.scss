@@ -1,5 +1,22 @@
 @include establish-baseline(16px);
 
+
+
+aside {
+	font-size: emCalc(14px);
+	font-size: remCalc(14);
+	background: $bg-gray;
+	padding: 24px;
+	clear: left;
+	
+	@include gs-media(d) {
+		background: $white;
+	  padding: 0;
+	  clear: none;
+	}
+}
+
+
 // Always show scrollbar to prevent jumps when content is expanded
 html {
     overflow-y: scroll;
@@ -37,10 +54,6 @@ a {
 		top: -10px;	
 	}
 
-}
-
-strong {
-	font-weight: bold;
 }
 
 h1 { 
@@ -257,11 +270,6 @@ table {
 	
 }
 
-aside {
-	img {
-		width: 100%;
-	}
-}
 
 p.leader {
 	font-size: emCalc(18px);
