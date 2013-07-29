@@ -16,10 +16,6 @@
 .block {
 
 	figcaption {
-  		@include font-size(14);
-		line-height: 18px;
-		@include padding-leader(1);
-		@include padding-trailer(1);
 		@extend .bg-gray-bg;
 	}
 }
@@ -30,6 +26,13 @@
 \*------------------------------------*/
 
 .__text {
+
+	.leader {
+		font-size: remCalc(22);
+		font-size: 22px;
+		@include adjust-leading-to(5, 22px); 	
+		padding-bottom: rhythm(4, 22px);
+	}
 
 }
 
