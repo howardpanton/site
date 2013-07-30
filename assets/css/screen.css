@@ -2529,6 +2529,28 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 69, ../styles/globals/_layout.scss */
+  .l-short-courses-filter {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 48.31199%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* line 74, ../styles/globals/_layout.scss */
+  .l-short-courses-list {
+    display: block;
+    float: left;
+    margin-left: 51.68801%;
+    margin-right: -100%;
+    width: 48.31199%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* line 80, ../styles/globals/_layout.scss */
   .l-content, .two-up.l-content {
     display: block;
     float: left;
@@ -2539,7 +2561,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 75, ../styles/globals/_layout.scss */
+  /* line 86, ../styles/globals/_layout.scss */
   .l-content-full-width, .two-up.l-content-full-width, .three-up.l-content-full-width {
     display: block;
     float: left;
@@ -2550,7 +2572,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 82, ../styles/globals/_layout.scss */
+  /* line 93, ../styles/globals/_layout.scss */
   aside {
     display: block;
     float: left;
@@ -2563,7 +2585,7 @@ a.img:hover {
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 95, ../styles/globals/_layout.scss */
+/* line 106, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2571,7 +2593,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 102, ../styles/globals/_layout.scss */
+/* line 113, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2580,14 +2602,14 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 143, ../styles/globals/_layout.scss */
+/* line 162, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   padding: 24px;
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 143, ../styles/globals/_layout.scss */
+  /* line 162, ../styles/globals/_layout.scss */
   aside {
     background: white;
     padding: 0;
@@ -9378,6 +9400,60 @@ a.back-to-top:hover {
   .colors li:nth-of-type(4), .colors li:nth-of-type(8) {
     margin-right: 0;
   }
+}
+
+/* line 8, ../styles/components/_short-courses.scss */
+.controls ul {
+  margin-left: 0;
+}
+
+/* line 11, ../styles/components/_short-courses.scss */
+.controls h3 {
+  clear: left;
+}
+
+/* line 15, ../styles/components/_short-courses.scss */
+.controls li {
+  cursor: pointer;
+  float: left;
+  list-style-type: none;
+  background: black;
+  color: white;
+  padding: 6px 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* line 28, ../styles/components/_short-courses.scss */
+.controls li.active, .controls li:hover {
+  background: yellow;
+  color: black;
+}
+
+/* line 34, ../styles/components/_short-courses.scss */
+.grid {
+  margin-top: 24px;
+  margin-left: 0;
+}
+
+/* line 42, ../styles/components/_short-courses.scss */
+.grid:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 48, ../styles/components/_short-courses.scss */
+.grid .mix {
+  display: none;
+  opacity: 0;
+  width: 100%;
+}
+
+/* line 64, ../styles/components/_short-courses.scss */
+.grid .gap {
+  display: inline-block;
+  width: 200px;
 }
 
 /*------------------------------------*\
