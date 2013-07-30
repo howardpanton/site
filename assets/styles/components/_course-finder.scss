@@ -11,10 +11,7 @@
 }
 
 .search-results {
-	@include gs-media (d,min-max) {
-		@include gs-span(d,6,16);
-    float: left;
-  }
+	@extend %d6-d16;
   
   h2 {
     padding-top: 0;
@@ -59,11 +56,19 @@
   background: white;
   margin-bottom: 24px;
   border: 6px solid white;
+  height: 60px;
 }
 
 .course-search-form {
   position: relative;
   width:100%;
+  margin-bottom: 0;
+  input { 
+    margin-left: 0; 
+    margin-bottom: 0;
+    height: 48px;
+  }
+
 }
 
 .course-finder-input {
@@ -151,11 +156,13 @@ input, .search-result-module, .search-input-wrap {
 }
 
 .search-gray-border {
-  border: 6px solid #DDDDDD;
+  border: 6px solid $light-gray ;
+  
 }
 
 .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   @extend .search-gray-border;
+  
 }
 
 
@@ -191,7 +198,8 @@ input, .search-result-module, .search-input-wrap {
 
 }
 
-.search-result-module{
+
+.search-result-module {
   position: relative;
   background-color: $bg-gray;
   min-height: 138px;
@@ -201,11 +209,13 @@ input, .search-result-module, .search-input-wrap {
   @include margin-trailer (4);
 }
 
-.search-results-summary{
- 
+
+.search-results-summary {
+  
+  @extend %d6-d16--within-d6-d16;
+  
   @include gs-media (d,min-max) {
     min-height: 60px;
-    @include gs-span(d,6,16,(6,16));
     position: relative;
   }
   
@@ -220,28 +230,31 @@ input, .search-result-module, .search-input-wrap {
 
 }
 
+
 .search-results-info {
   
   p {
     @extend .size-h3;
     font-weight: 300;
-    @include margin-trailer(2);
+    margin-bottom: 0;
+    // @include margin-trailer(2);
   }
 
-   @include gs-media (d,min-max) {
-      @include gs-span(d,6,14,(6,16));
-      p { padding-top: 2px; }
-    }
+  @include gs-media (d,min-max) {
+    @include gs-span(d,6,14,(6,16));
+    p { padding-top: 2px; }
+  }
 
-    @include gs-media (t,min-max) {
-      @include gs-span(t,1,4);
-      p { padding-top: 0; }
-    }
+  @include gs-media (t,min-max) {
+    @include gs-span(t,1,4);
+    p { padding-top: 0; }
+  }
 
-    @include gs-media (m,min-max) {
-      p { padding-top: 0; }
-    }
+  @include gs-media (m,min-max) {
+    p { padding-top: 0; }
+  }
 }
+
 
 .lower-search-results-info {
   @extend .search-results-info;
@@ -254,6 +267,7 @@ input, .search-result-module, .search-input-wrap {
   }
 
 }
+
 
 .search-pagination-btns {
 
@@ -281,7 +295,7 @@ input, .search-result-module, .search-input-wrap {
   }
 
 .lower-search-pagination-btns {
-  
+  a { margin-right: 1px; }
   @include gs-media (d,min-max) {
       @include gs-span(d,12,16,(6,16));
       text-align: right;

@@ -65,6 +65,13 @@
 	}
 }
 
+%d6-d16 {
+	@include gs-media (d) {
+		@include gs-span(d,6,16);
+    // float: left;
+  }
+}
+
 
 %d5-d12--within-d5-d16 {
 	@include gs-media (d) {
@@ -78,10 +85,15 @@
 	}
 }
 
-
 %d14-d16--within-d5-d16 {
 	@include gs-media (d) {
 		@include gs-span(d, 14, 16, (5,16));
+	}
+}
+
+%d6-d16--within-d6-d16 {
+	@include gs-media (d) {
+		@include gs-span(d,6,16,(6,16));
 	}
 }
 
