@@ -812,13 +812,10 @@ if ($('video').length > 0) {
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
-    //console.log('script loaded');
-
     $('video').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
     });
-    // declare object for video
-    //var player = new MediaElementPlayer('#player1');
+
 
   });
 
