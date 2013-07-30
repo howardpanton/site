@@ -532,7 +532,7 @@ $(document).ready(function(){
   function moveScroller() {
     var move = function() {
       var st = $(window).scrollTop();
-      var ot = $(".l-short-course-list").offset().top; 
+      var ot = $(".l-short-courses-list").offset().top; 
       var s = $(".grid");
       if(st > ot) {
         s.css({
@@ -553,9 +553,9 @@ $(document).ready(function(){
     move();
   }
 
-  // $(function() {
-  //   moveScroller();
-  // });
+  $(function() {
+    moveScroller();
+  });
 
   // ////////////////////
   // //  Footer journeys - fadeIn / fadeOut on click 
