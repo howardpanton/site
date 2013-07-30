@@ -16,10 +16,6 @@
 .block {
 
 	figcaption {
-  		@include font-size(14);
-		line-height: 18px;
-		@include padding-leader(1);
-		@include padding-trailer(1);
 		@extend .bg-gray-bg;
 	}
 }
@@ -31,11 +27,19 @@
 
 .__text {
 
+
 	@include gs-media (t,min-max) {
 		@include gs-span(t, all);
 	}
 	@include gs-media (d) {
 		@include gs-span(d, 5,12, (5, 16));
+	}
+
+	.leader {
+		font-size: remCalc(22);
+		font-size: 22px;
+		@include adjust-leading-to(5, 22px); 	
+		padding-bottom: rhythm(4, 22px);
 	}
 
 }

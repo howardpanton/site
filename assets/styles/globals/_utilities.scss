@@ -440,28 +440,46 @@ a.img:hover { filter: grayscale(100%);
 /* Media on panel */
 /* ------------------------------------------------------------ */
 
-
 .media-on-panel {
-
-span {
-
-margin:-5px 0px 12px 0px;
-
-}
-
+  span {
+    margin:-5px 0px 12px 0px;
+  }
 }
 
 // use this to prevent long URLs or titles from extending
 // beyond their div container (it will auto insert)
 // PS: we can also use @include hyphenation; (built-in compass function)
 %word-wrap-hyphen, .word-wrap-hyphen {
-    -ms-word-break: break-all;
-    word-break: break-all;
-    /* Non standard for webkit */
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
+.hide-descriptive-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px; 
+}
+
+.size-h1 {
+  font-size: emCalc(54px); 
+  @include adjust-leading-to(10, 54px);
+}
+.size-h2 {
+  font-size: emCalc(36px); 
+  @include adjust-leading-to(7, 36px);
+}
+.size-h3 {
+  font-size: emCalc(24px);
+  @include adjust-leading-to(5, 24px); 
+}
+.size-h4 {
+  font-size: emCalc(18px); 
+  @include adjust-leading-to(4, 18px);
+}
