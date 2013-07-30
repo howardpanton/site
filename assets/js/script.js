@@ -410,30 +410,30 @@ $(document).ready(function(){
   }
 
 
-  ////////////////////
-  //  Footer journeys - fadeIn / fadeOut on click 
-  ///////////////////
+  // ////////////////////
+  // //  Footer journeys - fadeIn / fadeOut on click 
+  // ///////////////////
 
-  $('#footer-btn-explore').click(function(event) {
-    event.preventDefault();
+  // $('#footer-btn-explore').click(function(event) {
+  //   event.preventDefault();
 
-    _clicked = $(this); 
-    if ( !_clicked.hasClass('active')) {
-      _clicked.addClass('active');
-      $('#footer-journeys-panel').addClass("block");
+  //   _clicked = $(this); 
+  //   if ( !_clicked.hasClass('active')) {
+  //     _clicked.addClass('active');
+  //     $('#footer-journeys-panel').addClass("block");
 
-      _clicked.html('Close explore');
-      _clicked.scrollToMe(); // scroll page to footer position
+  //     _clicked.html('Close explore');
+  //     _clicked.scrollToMe(); // scroll page to footer position
       
-    } else {
-      _clicked.removeClass('active');
-      // $('#footer-journeys-panel').slideUp();
-      $('#footer-journeys-panel').addClass("hide");
-      _clicked.html('Explore');
-      _clicked.scrollToMe(); // scroll page to footer position
-    }
+  //   } else {
+  //     _clicked.removeClass('active');
+  //     // $('#footer-journeys-panel').slideUp();
+  //     $('#footer-journeys-panel').addClass("hide");
+  //     _clicked.html('Explore');
+  //     _clicked.scrollToMe(); // scroll page to footer position
+  //   }
 
-  });
+  // });
 
 
 
@@ -766,7 +766,6 @@ if ($('.lightbox').length > 0) {
 
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
-  //  currently used on LCC homepage
   //---------------------------------------
 
   if ($('.tabs-container').length > 0) {
@@ -791,7 +790,7 @@ if ($('.lightbox').length > 0) {
 
       /* if in drawer mode */
       $(".tab_drawer_heading").click(function() {
-        
+
         $(".tab_content").hide();
         var d_activeTab = $(this).attr("rel"); 
         $("#"+d_activeTab).show();
@@ -801,6 +800,7 @@ if ($('.lightbox').length > 0) {
 
         $("ul.tabs li").removeClass("active");
         $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+        $(this).scrollToMe();
       });
     }
 
