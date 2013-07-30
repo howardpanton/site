@@ -18,7 +18,6 @@
   }
 	h3 {
 		@include adjust-font-size-to (18px);
-    font-weight: bold;
 		margin-top: 0;
     padding-top: 0;
 	}
@@ -66,7 +65,14 @@
   input { 
     margin-left: 0; 
     margin-bottom: 0;
+    padding-left: 6px;
     height: 48px;
+  }
+
+  @include gs-media(d) {
+     input { 
+         padding-left: 12px;
+     }
   }
 
 }
@@ -311,7 +317,6 @@ input, .search-result-module, .search-input-wrap {
   
   h3 {
     text-decoration: none;
-    font-weight: bold;
     font-size: 18px;
     margin-top: 0;
     padding-bottom: 1px;
@@ -374,7 +379,8 @@ input, .search-result-module, .search-input-wrap {
 .enrolment-type { 
   width: 32%;
   float: left;
-  font-size: emCalc(16px);
+  font-size: 14px;
+  font-size: remCalc(14px);
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
@@ -385,7 +391,8 @@ input, .search-result-module, .search-input-wrap {
 .college-name {
   width: 60%;
   float: left;
-  font-size: emCalc(16px);
+  font-size: 14px;
+  font-size: remCalc(14px);
   margin-left: 10px;
   @include gs-media (m,min-max) {
     width: 100%;
