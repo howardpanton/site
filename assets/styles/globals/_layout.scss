@@ -65,18 +65,6 @@
 	}
 }
 
-// SHIRT COURSES
-%d5-d10--within-d5-d16 {
-	@include gs-media (d) {
-		@include gs-span(d, 5,10, (5, 16));
-	}
-}
-%d11-d16--within-d5-d16 {
-	@include gs-media (d) {
-		@include gs-span(d, 11,16, (5, 16));
-	}
-}
-
 %d5-d12--within-d5-d16 {
 	@include gs-media (d) {
 		@include gs-span(d, 5,12, (5, 16));
@@ -86,6 +74,12 @@
 %d5-d16--within-d5-d16 {
 	@include gs-media (d) {
 		@include gs-span(d, 5,16, (5, 16));
+	}
+}
+
+%d13-d16--within-d5-d16 {
+	@include gs-media (d) {
+		@include gs-span(d, 13,16, (5, 16));
 	}
 }
 
@@ -137,11 +131,11 @@
 }
 
 // SHORT COURSES
-.l-short-courses-filter {
-	@extend %d5-d10--within-d5-d16;
-}
 .l-short-courses-list {
-	@extend %d11-d16--within-d5-d16;
+	@extend %d5-d12--within-d5-d16;
+}
+.l-short-courses-filter {
+	@extend %d13-d16--within-d5-d16;
 }
 
 
