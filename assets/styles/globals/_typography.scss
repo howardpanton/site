@@ -22,12 +22,14 @@ html {
 // Apply UAL global font to body
 body {
 	font-family: $ual-global-font-stack;
-	font-size: remCalc(16);
 	font-size: 16px;
+	font-size: remCalc(16);
 }
 
 // Global link colors
+
 a {
+	@extend %Swiss721BT-Roman;
 	color: $black;
 	text-decoration: none;
 	padding-bottom: 1px;
@@ -36,6 +38,15 @@ a {
 		color: $aaa-gray;
 		padding-bottom: 1px;
 		border-bottom: 1px solid $black;
+	}
+	h2 & {
+	@extend %Swiss721BT-Bold;
+	}
+	h3 & {
+	@extend %Swiss721BT-Bold;
+	}
+	h4 & {
+	@extend %Swiss721BT-Bold;
 	}
 }
 
@@ -75,7 +86,7 @@ p {
 	font-size: remCalc(16);
 	font-size: 16px;
 	@include adjust-leading-to(4, 16px); 	
-	padding-bottom: rhythm(3, 16px);
+	padding-bottom: rhythm(2, 16px);
 }
 
 nav ul {
@@ -95,8 +106,7 @@ ul, ol {
 }
 
 ul {
-	margin-left: 16px;
-	list-style-type: square;
+
 	li {
 		
 	}
@@ -158,15 +168,29 @@ table {
 }
 
 figure {
-	figcaption {
-
-		@extend %Swiss721BT-Light;
-		font-size: remCalc(14);
-		font-size: 14px;
-		@include adjust-leading-to(3, 14px); 	
-		padding: rhythm(1, 14px);
+	margin-bottom: rhythm(3, 14px);
+	a {
+		@extend %Swiss721BT-Roman;
+		color: $black;
+		text-decoration: none;
+		padding-bottom: 0;
+		border-bottom: 0;
+		&:hover {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
 	}
 }
+
+figcaption, .rsCaption {
+	@extend %Swiss721BT-Light;
+	font-size: remCalc(14);
+	font-size: 14px;
+	@include adjust-leading-to(3, 14px); 	
+	padding: rhythm(1, 14px);
+}
+
+
 
 // @include establish-baseline(16px);
 
@@ -293,36 +317,6 @@ figure {
 // 	// 	@include adjust-leading-to(4, 24px); 
 // 	// 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
 // 	// }
-// }
-
-// .size-h1 {
-// 	@include gs-media(d) {
-// 		font-size: emCalc(54px); 
-// 		@include adjust-leading-to(10, 54px);
-// 	}
-// }
-// .size-h2 {
-// 	@include gs-media(d) {
-// 		font-size: emCalc(36px); 
-// 		@include adjust-leading-to(7, 36px);
-// 	}
-// }
-// .size-h3 {
-// 	font-size: emCalc(24px);
-// 	// @extend %Swiss721BT-bold;
-// 	@include adjust-leading-to(4, 24px); 
-// }
-// .size-h4 {
-// 	@include gs-media(d) {
-// 		font-size: emCalc(18px); 
-// 		@include adjust-leading-to(3, 18px);
-// 	}
-// }
-// .size-h5 {
-// 	@include gs-media(d) {
-// 		font-size: emCalc(16px); 
-// 		@include adjust-leading-to(2, 16px);
-// 	}
 // }
 
 // h5, h6 { 

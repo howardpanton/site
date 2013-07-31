@@ -15,7 +15,7 @@
 
 .block {
 
-	figcaption {
+	figcaption, .rsCaption {
 		@extend .bg-gray-bg;
 	}
 }
@@ -27,11 +27,30 @@
 
 .__text {
 
+
+	@include gs-media (t,min-max) {
+		@include gs-span(t, all);
+	}
+	@include gs-media (d) {
+		@include gs-span(d, 5,12, (5, 16));
+	}
+
+	.l-content & {
+		@include gs-media (d) {
+			@include gs-span(d, 5,12, (5, 12));
+		}
+	}
+
 	.leader {
 		font-size: remCalc(22);
 		font-size: 22px;
 		@include adjust-leading-to(5, 22px); 	
-		padding-bottom: rhythm(4, 22px);
+		padding-bottom: rhythm(3, 22px);
+	}
+
+	ul li {
+		margin-left: 16px;
+		list-style-type: square;
 	}
 
 }
@@ -44,12 +63,6 @@
 
 .__media {
 
-	h3, p {
-		@include gs-media (d) {
-			@include gs-span(d, 5,12, (5, 16));
-			clear:left;
-		}
-	}
 	li h3, li p {
 		width: 100%;
 	}
@@ -66,10 +79,9 @@
 				@include gs-span(d, 5,13, (5, 16));
 			}
 		}
-		h3, p {
+		.__text {
 			@include gs-media (d) {
 				@include gs-span(d, 5,12, (5, 13));
-				clear:left;
 			}
 		}
 	}
@@ -170,8 +182,13 @@
 		}
 	}
 
-}
+	&.__gallery {
+			ul  {
+				clear:left;
+			}
+	}
 
+}
 
 // four-up - core styles
 // 
@@ -209,6 +226,12 @@
 				@include gs-span(d, 13, 16);
 			}
 		}
+	}
+
+		&.__gallery {
+			ul  {
+				clear:left;
+			}
 	}
 
 }

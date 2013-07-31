@@ -530,15 +530,21 @@ $(document).ready(function(){
           }
         }).data('royalSlider');
 
-        $('#content-slider-1').royalSlider({
+        $('.royalSlider').royalSlider({
           arrowsNav: true,
+          arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
+          autoScaleSlider: true,
+          imageScalePadding: 0,
+          globalCaption: true,
+          //imgWidth: 930,
+          //imgHeight: 465
           //autoHeight: true
           /*autoScaleSlider: true, 
           autoScaleSliderWidth: 800,     
           autoScaleSliderHeight: 400,
-          //globalCaption: true,
+          
           //autoHeight: true,
           fadeinLoadedSlide: false,
           controlNavigationSpacing: 0,
@@ -707,12 +713,12 @@ if ($('#showtime-json').length){
 
 // detect lightbox component
 
-if ($('.lightbox').length > 0) {
+if ($('.js-lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
         // initialise the magnific lightbox
-        $('.lightbox').each(function() {
+        $('.js-lightbox').each(function() {
           $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
@@ -811,13 +817,10 @@ if ($('video').length > 0) {
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
-    //console.log('script loaded');
-
     $('video').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
     });
-    // declare object for video
-    //var player = new MediaElementPlayer('#player1');
+
 
   });
 
