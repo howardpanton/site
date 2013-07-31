@@ -1,6 +1,7 @@
 .search-results-wrap {
   @include padding-leader(8);
   @include padding-trailer(8);
+  clear: left;
 }
 
 .search-results {
@@ -384,10 +385,15 @@ input, .search-result-module, .search-input-wrap {
   left:0;
   padding-left: 25px;
   width: 100%;
+  min-height: 18px;
   @include gs-media (m,min-max) {
     font-size: emCalc(14px);
   }
+}
 
+.site-search-results-lower-wrap {
+  @extend .search-results-lower-wrap;
+  right: 0;
 }
 
 .lower-search-again-box{
@@ -395,7 +401,7 @@ input, .search-result-module, .search-input-wrap {
   @include margin-leader(4);
 }
 
-.enrolment-type { 
+.enrolment-type, .result-file-type { 
   width: 32%;
   float: left;
   font-size: 14px;
@@ -408,19 +414,48 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
+.site-search-section-name {
+  font-size: 14px;
+  font-size: remCalc(14);
+
+}
 .college-name {
-  width: 60%;
-  float: left;
+  position: absolute;
+  left: 32%;
+  width: 60%; 
   font-size: 14px;
   font-size: remCalc(14px);
   margin-left: 10px;
   @include gs-media (m,min-max) {
+    position: static;
     width: 100%;
     clear: left;
     font-size: 14px;
     font-size: remCalc(14);
     margin-left: 0;
   }
+}
+
+.result-url {
+  position: absolute;
+  left: 32%;
+  width: 60%;  
+  margin-left: 10px;
+  float: right;
+  font-size: 14px;
+  font-size: remCalc(14px);
+  margin-left: 10px;
+  word-wrap: break-word;
+  
+  @include gs-media (m,min-max) {
+    width: 100%;
+    margin-right: 0;
+    clear: left;
+    font-size: 14px;
+    font-size: remCalc(14);
+    margin-left: 0;
+  }
+    
 }
 
 .no-results-found {
