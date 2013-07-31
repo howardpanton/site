@@ -168,14 +168,7 @@ table {
 }
 
 figure {
-	figcaption {
-		@extend %Swiss721BT-Light;
-		font-size: remCalc(14);
-		font-size: 14px;
-		@include adjust-leading-to(3, 14px); 	
-		padding: rhythm(1, 14px);
-		margin-bottom: rhythm(3, 14px);
-	}
+	margin-bottom: rhythm(3, 14px);
 	a {
 		@extend %Swiss721BT-Roman;
 		color: $black;
@@ -188,6 +181,16 @@ figure {
 		}
 	}
 }
+
+figcaption, .rsCaption {
+	@extend %Swiss721BT-Light;
+	font-size: remCalc(14);
+	font-size: 14px;
+	@include adjust-leading-to(3, 14px); 	
+	padding: rhythm(1, 14px);
+}
+
+
 
 // @include establish-baseline(16px);
 
