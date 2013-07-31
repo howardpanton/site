@@ -15,7 +15,7 @@
 
 .block {
 
-	figcaption {
+	figcaption, .rsCaption {
 		@extend .bg-gray-bg;
 	}
 }
@@ -33,6 +33,12 @@
 	}
 	@include gs-media (d) {
 		@include gs-span(d, 5,12, (5, 16));
+	}
+
+	.l-content & {
+		@include gs-media (d) {
+			@include gs-span(d, 5,12, (5, 12));
+		}
 	}
 
 	.leader {

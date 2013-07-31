@@ -1,9 +1,26 @@
 <div class="row slider-container">
-	<div class="slider-12">
-		<ul class="slider">
-			<li><img src="http://placehold.it/1280x640&text=SLIDER IMAGE 1 SPAN 12" title="University of the Arts London" alt=""></li>
-			<li><img src="http://placehold.it/1280x640&text=SLIDER IMAGE 2 SPAN 12" title="London College of Fashion" alt=""></li>
-			<li><img src="http://placehold.it/1280x640&text=SLIDER IMAGE 3 SPAN 12" title="Camberwell College of Arts" alt=""></li>
-		</ul>
+	<div class="royalSlider contentSlider rsDefault  block">
+	  	
+	  	<figure>
+        	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/1860x930_lcf.jpg" alt="some alt text" />
+        	<figcaption class="rsCaption">1860 x 930 2x retina (shrinks to fit area)</figcaption>
+    	</figure>
+    	<figure>
+        	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/930x465_csm-jiaxin-tang.jpg" alt="some alt text" />
+        	<figcaption class="rsCaption">930 x 465 - is NOT upscaled, but shrinks to fit when compressed</figcaption>
+    	</figure>
+    	<figure>
+        	<img class="rsImg" src="http://placehold.it/310x465" alt="some alt text" />
+        	<figcaption class="rsCaption">310 x 465 - smaller portait image</figcaption>
+    	</figure>
+    	<figure>
+        	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/480x480_courses.jpg" alt="This text will be IGNORED!" />
+        	<figcaption class="rsCaption">480 x 480 - square image auto-scaled to fit</figcaption>
+    	</figure>
+	  	<div>
+	    	<a class="rsImg" href="http://placehold.it/930x465" data-rsvideo="http://www.youtube.com/watch?v=HFbHRWwyihE" /></a>
+	    	<div class="rsCaption">Video from Youtube</div>
+	    </div>
+
 	</div>
 </div>

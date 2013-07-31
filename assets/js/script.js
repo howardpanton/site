@@ -530,16 +530,21 @@ $(document).ready(function(){
           }
         }).data('royalSlider');
 
-        $('#content-slider-1').royalSlider({
+        $('.royalSlider').royalSlider({
           arrowsNav: true,
           arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
+          autoScaleSlider: true,
+          imageScalePadding: 0,
+          globalCaption: true,
+          //imgWidth: 930,
+          //imgHeight: 465
           //autoHeight: true
           /*autoScaleSlider: true, 
           autoScaleSliderWidth: 800,     
           autoScaleSliderHeight: 400,
-          //globalCaption: true,
+          
           //autoHeight: true,
           fadeinLoadedSlide: false,
           controlNavigationSpacing: 0,
