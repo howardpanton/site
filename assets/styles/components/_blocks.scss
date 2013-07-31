@@ -27,6 +27,14 @@
 
 .__text {
 
+
+	@include gs-media (t,min-max) {
+		@include gs-span(t, all);
+	}
+	@include gs-media (d) {
+		@include gs-span(d, 5,12, (5, 16));
+	}
+
 	.leader {
 		font-size: remCalc(22);
 		font-size: 22px;
@@ -44,12 +52,6 @@
 
 .__media {
 
-	h3, p {
-		@include gs-media (d) {
-			@include gs-span(d, 5,12, (5, 16));
-			clear:left;
-		}
-	}
 	li h3, li p {
 		width: 100%;
 	}
@@ -66,10 +68,9 @@
 				@include gs-span(d, 5,13, (5, 16));
 			}
 		}
-		h3, p {
+		.__text {
 			@include gs-media (d) {
 				@include gs-span(d, 5,12, (5, 13));
-				clear:left;
 			}
 		}
 	}
@@ -171,7 +172,6 @@
 	}
 
 }
-
 
 // four-up - core styles
 // 

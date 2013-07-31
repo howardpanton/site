@@ -15,7 +15,7 @@ template: true
 				<li><a href="/colleges/camberwell/courses/undergraduate/ba-hons-illustration/">BA (Hons) Illustration</a></li>
 			</ul>
 		</nav>
-		<div role="main" class="main-content">
+		<div role="main" class="content">
 			<div class="row">
 				<div class="text-block">
 					<p class="leader">Wimbledon BA Fine Art Painting graduates are a prominent force in the international art world. Driven to forge new possibilities through the material of paint and its relationship to other media, they are characterised by their inventiveness, ambition and professionalism.</p>
@@ -23,7 +23,7 @@ template: true
 			</div>
 
 			{% include components/_boxout.html %}
-      
+
       <!--
       <div class="row slider-container">
 
@@ -92,20 +92,37 @@ template: true
 </div><!-- .content-wrapper -->
 
 <!-- accordion -->
-<div class="panel bg-gray-bg">
-	<div class="content-wrapper">
-		{% include components/_accordion.html %}
-	</div>
-</div>
+{% include components/_accordion.html %}
 
-<div class="content-wrapper">
-  <div class="row">
-  	<div class="main-content">
-        
-  	</div><!-- .content-wrapper -->
-  </div><!-- .row -->
-</div><!-- .content-wrapper -->
-
+<div class="panel">
+  <div class="content-wrapper">
+    <div class="row">
+    	<div class="content">
+          <h2>Latest News</h2>
+          <ul>
+            <li>
+              <div class="text">
+                <p class="title"><a href="" title="">Sub title for list</a></p>
+                <p class="date"><strong>21 May 2013</strong></p>
+              </div>
+            </li>
+            <li>
+              <div class="text">
+                <p class="title"><a href="" title="">Sub title for list</a></p>
+                <p class="date"><strong>21 May 2013</strong></p>
+              </div>
+            </li>
+            <li>
+              <div class="text">
+                <p class="title"><a href="" title="">Sub title for list</a></p>
+                <p class="date"><strong>21 May 2013</strong></p>
+              </div>
+            </li>
+          </ul>
+    	</div><!-- .content -->
+    </div><!-- .row -->
+  </div><!-- .content-wrapper -->
+</div><!-- .panel -->
 
 <div class="panel bg-gray-bg">
   <div class="content-wrapper">
