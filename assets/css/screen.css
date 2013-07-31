@@ -494,6 +494,11 @@ h2 a, h3 a, h4 a, h2, h3, h4, dl dt {
   font-family: Swiss721BT-Bold;
 }
 
+/* line 73, ../styles/font-face/_swiss-721.scss */
+.filter-module h3 {
+  font-family: Swiss721BT-Medium;
+}
+
 /* @license
  * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
  * 
@@ -716,6 +721,16 @@ figcaption, .rsCaption {
   font-size: 14px;
   line-height: 1.28571em;
   padding: 0.42857em;
+}
+
+/* line 471, ../styles/globals/_typography.scss */
+.icon, .m-menu-btn-toggle span, a.search span {
+  font-family: "entypo";
+}
+
+/* line 472, ../styles/globals/_typography.scss */
+.icon-social {
+  font-family: "entypo-social";
 }
 
 /* line 1, ../styles/globals/_logos.scss */
@@ -2552,7 +2567,18 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 69, ../styles/globals/_layout.scss */
+  /* line 68, ../styles/globals/_layout.scss */
+  .search-results {
+    display: block;
+    float: left;
+    margin-left: 32.27566%;
+    margin-right: -100%;
+    width: 67.67226%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* line 76, ../styles/globals/_layout.scss */
   .l-content, .two-up.l-content {
     display: block;
     float: left;
@@ -2563,7 +2589,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 75, ../styles/globals/_layout.scss */
+  /* line 82, ../styles/globals/_layout.scss */
   .l-content-full-width, .two-up.l-content-full-width, .three-up.l-content-full-width {
     display: block;
     float: left;
@@ -2574,7 +2600,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 82, ../styles/globals/_layout.scss */
+  /* line 88, ../styles/globals/_layout.scss */
   aside {
     display: block;
     float: left;
@@ -2584,10 +2610,21 @@ a.img:hover {
   }
 }
 
+@media only screen and (min-width: 960px) {
+  /* line 94, ../styles/globals/_layout.scss */
+  .search-results-summary {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 100%;
+  }
+}
+
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 95, ../styles/globals/_layout.scss */
+/* line 107, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2595,7 +2632,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 102, ../styles/globals/_layout.scss */
+/* line 114, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2604,14 +2641,14 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 143, ../styles/globals/_layout.scss */
+/* line 155, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   padding: 24px;
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 143, ../styles/globals/_layout.scss */
+  /* line 155, ../styles/globals/_layout.scss */
   aside {
     background: white;
     padding: 0;
@@ -2678,7 +2715,6 @@ aside {
   font-size: 0.875em;
   display: block;
   clear: left;
-  font-weight: 300;
   border-bottom: 1px solid #333333;
 }
 /* line 39, ../styles/components/_sidebar-search-filters.scss */
@@ -2692,7 +2728,7 @@ aside {
   display: none;
   clear: left;
 }
-/* line 50, ../styles/components/_sidebar-search-filters.scss */
+/* line 49, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li {
   background-color: #e6e6e6;
   margin-left: 0;
@@ -2702,12 +2738,14 @@ aside {
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
 }
-/* line 59, ../styles/components/_sidebar-search-filters.scss */
+/* line 56, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li:last-child {
   border-bottom: 0;
 }
-/* line 61, ../styles/components/_sidebar-search-filters.scss */
+/* line 58, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li a {
   padding: 0 30px 0 18px;
   border-bottom: 0;
@@ -2717,28 +2755,28 @@ aside {
   height: 100%;
   display: block;
 }
-/* line 71, ../styles/components/_sidebar-search-filters.scss */
+/* line 68, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"] {
   float: right;
   margin-left: 18px;
   margin-right: 18px;
   margin-top: 6px;
 }
-/* line 77, ../styles/components/_sidebar-search-filters.scss */
+/* line 74, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:hover {
   cursor: pointer;
 }
-/* line 81, ../styles/components/_sidebar-search-filters.scss */
+/* line 78, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:checked + label {
   color: black;
 }
-/* line 85, ../styles/components/_sidebar-search-filters.scss */
+/* line 82, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:disabled + label {
   opacity: 0.5;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
   opacity: 50;
 }
-/* line 90, ../styles/components/_sidebar-search-filters.scss */
+/* line 87, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li label {
   cursor: pointer;
   color: #757575;
@@ -2746,29 +2784,34 @@ aside {
   font-weight: 300;
   width: 100%;
   display: block;
+  padding-top: 0.375em;
 }
-/* line 105, ../styles/components/_sidebar-search-filters.scss */
+/* line 100, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li.active > a {
   color: black;
 }
-/* line 114, ../styles/components/_sidebar-search-filters.scss */
+/* line 108, ../styles/components/_sidebar-search-filters.scss */
+.filter-module label {
+  margin-bottom: 0;
+}
+/* line 113, ../styles/components/_sidebar-search-filters.scss */
 .filter-module div {
   display: none;
 }
-/* line 116, ../styles/components/_sidebar-search-filters.scss */
+/* line 115, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active {
   border-bottom: 0;
 }
-/* line 118, ../styles/components/_sidebar-search-filters.scss */
+/* line 117, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active ul {
   display: block;
 }
-/* line 119, ../styles/components/_sidebar-search-filters.scss */
+/* line 118, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active div {
   display: block;
 }
 
-/* line 124, ../styles/components/_sidebar-search-filters.scss */
+/* line 123, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -2776,68 +2819,57 @@ li.filter-link-only {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 132, ../styles/components/_sidebar-search-filters.scss */
+/* line 131, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only a {
   color: #282828 !important;
   font-weight: 300;
 }
-/* line 137, ../styles/components/_sidebar-search-filters.scss */
+/* line 136, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only:last-child {
   border-bottom: 0;
 }
-/* line 143, ../styles/components/_sidebar-search-filters.scss */
+/* line 142, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only.active > a {
   color: black;
   font-weight: bold;
 }
 
-/* line 150, ../styles/components/_sidebar-search-filters.scss */
+/* line 149, ../styles/components/_sidebar-search-filters.scss */
 .short-course-filters {
   margin-bottom: 1.5em;
 }
 
-/* line 5, ../styles/components/_course-finder.scss */
+/* line 1, ../styles/components/_course-finder.scss */
 .search-results-wrap {
   padding-top: 3em;
   padding-bottom: 3em;
+  clear: left;
 }
 
-@media only screen and (min-width: 960px) {
-  /* line 13, ../styles/components/_course-finder.scss */
-  .search-results {
-    display: block;
-    float: left;
-    margin-left: 32.27566%;
-    margin-right: -100%;
-    width: 67.67226%;
-    float: left;
-  }
-}
-/* line 19, ../styles/components/_course-finder.scss */
+/* line 10, ../styles/components/_course-finder.scss */
 .search-results h2 {
   padding-top: 0;
 }
-/* line 22, ../styles/components/_course-finder.scss */
+/* line 13, ../styles/components/_course-finder.scss */
 .search-results h3 {
   font-size: 1.125em;
   line-height: 1.33333em;
-  font-weight: bold;
   margin-top: 0;
   padding-top: 0;
 }
 
-/* line 31, ../styles/components/_course-finder.scss */
+/* line 21, ../styles/components/_course-finder.scss */
 .search-results-list {
   margin-left: 0;
   clear: left;
 }
 
-/* line 36, ../styles/components/_course-finder.scss */
+/* line 26, ../styles/components/_course-finder.scss */
 .search-results-list > li {
   list-style: none;
 }
 
-/* line 40, ../styles/components/_course-finder.scss */
+/* line 30, ../styles/components/_course-finder.scss */
 .search-button {
   height: 70px;
   width: 70px;
@@ -2845,7 +2877,7 @@ li.filter-link-only.active > a {
   background-color: black;
 }
 
-/* line 48, ../styles/components/_course-finder.scss */
+/* line 38, ../styles/components/_course-finder.scss */
 .course-details > h3 {
   color: black;
   font-weight: bold;
@@ -2853,25 +2885,40 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 
-/* line 54, ../styles/components/_course-finder.scss */
+/* line 44, ../styles/components/_course-finder.scss */
 .search-results input:focus {
   outline: none;
 }
 
-/* line 58, ../styles/components/_course-finder.scss */
+/* line 48, ../styles/components/_course-finder.scss */
 .search-input-wrap {
   background: white;
   margin-bottom: 24px;
   border: 6px solid white;
+  height: 60px;
 }
 
-/* line 64, ../styles/components/_course-finder.scss */
+/* line 55, ../styles/components/_course-finder.scss */
 .course-search-form {
   position: relative;
   width: 100%;
+  margin-bottom: 0;
+}
+/* line 59, ../styles/components/_course-finder.scss */
+.course-search-form input {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 6px;
+  height: 48px;
+}
+@media only screen and (min-width: 960px) {
+  /* line 67, ../styles/components/_course-finder.scss */
+  .course-search-form input {
+    padding-left: 12px;
+  }
 }
 
-/* line 69, ../styles/components/_course-finder.scss */
+/* line 74, ../styles/components/_course-finder.scss */
 .course-finder-input {
   -webkit-transition: all 300ms ease-out;
   -moz-transition: all 300ms ease-out;
@@ -2892,7 +2939,7 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 69, ../styles/components/_course-finder.scss */
+  /* line 74, ../styles/components/_course-finder.scss */
   .course-finder-input {
     margin-left: 12px;
     font-size: 0.875em;
@@ -2900,7 +2947,7 @@ li.filter-link-only.active > a {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 69, ../styles/components/_course-finder.scss */
+  /* line 74, ../styles/components/_course-finder.scss */
   .course-finder-input {
     max-width: 90%;
     width: 90%;
@@ -2910,44 +2957,44 @@ li.filter-link-only.active > a {
     line-height: 1.5em;
   }
 }
-/* line 94, ../styles/components/_course-finder.scss */
+/* line 99, ../styles/components/_course-finder.scss */
 .course-finder-input::-webkit-input-placeholder {
   color: #c8c8c8;
 }
-/* line 98, ../styles/components/_course-finder.scss */
+/* line 103, ../styles/components/_course-finder.scss */
 .course-finder-input:-moz-placeholder {
   /* Firefox 18- */
   color: #c8c8c8;
 }
-/* line 102, ../styles/components/_course-finder.scss */
+/* line 107, ../styles/components/_course-finder.scss */
 .course-finder-input::-moz-placeholder {
   /* Firefox 19+ */
   color: #c8c8c8;
 }
-/* line 106, ../styles/components/_course-finder.scss */
+/* line 111, ../styles/components/_course-finder.scss */
 .course-finder-input:-ms-input-placeholder {
   color: #c8c8c8;
 }
-/* line 111, ../styles/components/_course-finder.scss */
+/* line 116, ../styles/components/_course-finder.scss */
 .course-finder-input:focus::-webkit-input-placeholder {
   color: #757575;
 }
-/* line 114, ../styles/components/_course-finder.scss */
+/* line 119, ../styles/components/_course-finder.scss */
 .course-finder-input:focus:-moz-placeholder {
   /* Firefox 18- */
   color: #757575;
 }
-/* line 117, ../styles/components/_course-finder.scss */
+/* line 122, ../styles/components/_course-finder.scss */
 .course-finder-input:focus::-moz-placeholder {
   /* Firefox 19+ */
   color: #757575;
 }
-/* line 120, ../styles/components/_course-finder.scss */
+/* line 125, ../styles/components/_course-finder.scss */
 .course-finder-input:focus:-ms-input-placeholder {
   color: #757575;
 }
 
-/* line 128, ../styles/components/_course-finder.scss */
+/* line 133, ../styles/components/_course-finder.scss */
 .search-link {
   position: absolute;
   top: 0;
@@ -2957,16 +3004,16 @@ li.filter-link-only.active > a {
   height: 48px;
   width: 48px;
 }
-/* line 136, ../styles/components/_course-finder.scss */
+/* line 141, ../styles/components/_course-finder.scss */
 .search-link img {
   margin-top: -3px;
 }
-/* line 139, ../styles/components/_course-finder.scss */
+/* line 144, ../styles/components/_course-finder.scss */
 .search-link a {
   border-bottom: 0;
 }
 
-/* line 145, ../styles/components/_course-finder.scss */
+/* line 150, ../styles/components/_course-finder.scss */
 input, .search-result-module, .search-input-wrap {
   -webkit-transition: -webkit-box-shadow 450ms;
   -moz-transition: -moz-box-shadow 450ms;
@@ -2975,45 +3022,17 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid rgba(0, 0, 0, 0);
 }
 
-/* line 153, ../styles/components/_course-finder.scss */
+/* line 158, ../styles/components/_course-finder.scss */
 .search-gray-border, .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
-  border: 6px solid #DDDDDD;
+  border: 6px solid #c8c8c8;
 }
 
 /* line 162, ../styles/components/_course-finder.scss */
-.arrow-next a {
-  right: 0px;
-  border-left: 20px solid #c8c8c8;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 20px solid transparent;
-  font-size: 0;
-  line-height: 0;
-  width: 0;
+.search-bg-gray-border, .search-input-wrap, .search-result-module, .search-result-module:focus {
+  border: 6px solid #e6e6e6;
 }
 
-/* line 174, ../styles/components/_course-finder.scss */
-.course-finder-right-arrow {
-  position: absolute;
-  right: 12px;
-  top: 30%;
-  width: 43px;
-  height: 77px;
-}
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 174, ../styles/components/_course-finder.scss */
-  .course-finder-right-arrow {
-    display: none;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 174, ../styles/components/_course-finder.scss */
-  .course-finder-right-arrow {
-    display: none;
-  }
-}
-
-/* line 194, ../styles/components/_course-finder.scss */
+/* line 212, ../styles/components/_course-finder.scss */
 .search-result-module {
   position: relative;
   background-color: #e6e6e6;
@@ -3025,52 +3044,48 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 204, ../styles/components/_course-finder.scss */
+  /* line 223, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 100%;
     position: relative;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 204, ../styles/components/_course-finder.scss */
+  /* line 223, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 204, ../styles/components/_course-finder.scss */
+  /* line 223, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 120px;
+    margin-bottom: 1.125em;
   }
 }
 
-/* line 225, ../styles/components/_course-finder.scss */
+/* line 247, ../styles/components/_course-finder.scss */
 .search-results-info p, .lower-search-results-info p {
   font-weight: 300;
-  margin-bottom: 0.75em;
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 245, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
     margin-left: 0%;
     margin-right: -100%;
-    width: 81.1465%;
+    width: 71.71974%;
   }
-  /* line 233, ../styles/components/_course-finder.scss */
+  /* line 256, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 2px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 245, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3078,20 +3093,20 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 48.19132%;
   }
-  /* line 238, ../styles/components/_course-finder.scss */
+  /* line 261, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 242, ../styles/components/_course-finder.scss */
+  /* line 265, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 246, ../styles/components/_course-finder.scss */
+  /* line 270, ../styles/components/_course-finder.scss */
   .lower-search-results-info {
     display: block;
     float: left;
@@ -3102,29 +3117,29 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 258, ../styles/components/_course-finder.scss */
+/* line 283, ../styles/components/_course-finder.scss */
 .search-pagination-btns {
   text-align: right;
 }
-/* line 261, ../styles/components/_course-finder.scss */
+/* line 286, ../styles/components/_course-finder.scss */
 .search-pagination-btns a {
   margin-right: 1px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 258, ../styles/components/_course-finder.scss */
+  /* line 283, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
-    margin-left: 84.84077%;
+    margin-left: 75.41402%;
     margin-right: -100%;
-    width: 15.15923%;
+    width: 24.58598%;
     position: absolute;
     top: 0.75em;
     margin-bottom: 0.75em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 258, ../styles/components/_course-finder.scss */
+  /* line 283, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3136,15 +3151,34 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 258, ../styles/components/_course-finder.scss */
+  /* line 283, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
+/* line 310, ../styles/components/_course-finder.scss */
+.lower-search-pagination-btns a {
+  margin-right: 1px;
+}
+/* line 312, ../styles/components/_course-finder.scss */
+.lower-search-pagination-btns a:first-child {
+  padding-top: 16px;
+}
+/* line 315, ../styles/components/_course-finder.scss */
+.lower-search-pagination-btns a:first-child:hover {
+  padding-top: 16px;
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 308, ../styles/components/_course-finder.scss */
+  .lower-search-pagination-btns {
+    margin-top: 6px;
+    text-align: right;
+  }
+}
 @media only screen and (min-width: 960px) {
-  /* line 283, ../styles/components/_course-finder.scss */
+  /* line 308, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     display: block;
     float: left;
@@ -3157,21 +3191,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 293, ../styles/components/_course-finder.scss */
+/* line 334, ../styles/components/_course-finder.scss */
 .course-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 298, ../styles/components/_course-finder.scss */
+/* line 339, ../styles/components/_course-finder.scss */
 .course-title h3 {
   text-decoration: none;
-  font-weight: bold;
   font-size: 18px;
   margin-top: 0;
   padding-bottom: 1px;
 }
-/* line 304, ../styles/components/_course-finder.scss */
+/* line 344, ../styles/components/_course-finder.scss */
 .course-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -3182,104 +3215,145 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 293, ../styles/components/_course-finder.scss */
+  /* line 334, ../styles/components/_course-finder.scss */
   .course-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 316, ../styles/components/_course-finder.scss */
+/* line 356, ../styles/components/_course-finder.scss */
 .course-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 321, ../styles/components/_course-finder.scss */
+/* line 361, ../styles/components/_course-finder.scss */
 .course-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 316, ../styles/components/_course-finder.scss */
+  /* line 356, ../styles/components/_course-finder.scss */
   .course-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 316, ../styles/components/_course-finder.scss */
+  /* line 356, ../styles/components/_course-finder.scss */
   .course-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 334, ../styles/components/_course-finder.scss */
+  /* line 374, ../styles/components/_course-finder.scss */
   .course-description p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-/* line 342, ../styles/components/_course-finder.scss */
-.search-results-lower-wrap {
+/* line 382, ../styles/components/_course-finder.scss */
+.search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
   left: 0;
   padding-left: 25px;
-  font-size: 1em;
   width: 100%;
+  min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 342, ../styles/components/_course-finder.scss */
-  .search-results-lower-wrap {
+  /* line 382, ../styles/components/_course-finder.scss */
+  .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 355, ../styles/components/_course-finder.scss */
+/* line 394, ../styles/components/_course-finder.scss */
+.site-search-results-lower-wrap {
+  right: 0;
+}
+
+/* line 399, ../styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
 
-/* line 360, ../styles/components/_course-finder.scss */
-.enrolment-type {
+/* line 404, ../styles/components/_course-finder.scss */
+.enrolment-type, .result-file-type {
   width: 32%;
   float: left;
-  font-size: 1em;
+  font-size: 14px;
+  font-size: remCalc(14px);
 }
 @media only screen and (max-width: 599px) {
-  /* line 360, ../styles/components/_course-finder.scss */
-  .enrolment-type {
+  /* line 404, ../styles/components/_course-finder.scss */
+  .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
-    font-size: 0.875em;
+    font-size: 14px;
+    font-size: remCalc(14);
   }
 }
 
-/* line 371, ../styles/components/_course-finder.scss */
+/* line 417, ../styles/components/_course-finder.scss */
+.site-search-section-name {
+  font-size: 14px;
+  font-size: remCalc(14);
+}
+
+/* line 422, ../styles/components/_course-finder.scss */
 .college-name {
+  position: absolute;
+  left: 32%;
   width: 60%;
-  float: left;
-  font-size: 1em;
+  font-size: 14px;
+  font-size: remCalc(14px);
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 371, ../styles/components/_course-finder.scss */
+  /* line 422, ../styles/components/_course-finder.scss */
   .college-name {
+    position: static;
     width: 100%;
     clear: left;
-    font-size: 0.875em;
+    font-size: 14px;
+    font-size: remCalc(14);
     margin-left: 0;
   }
 }
 
-/* line 384, ../styles/components/_course-finder.scss */
+/* line 439, ../styles/components/_course-finder.scss */
+.result-url {
+  position: absolute;
+  left: 32%;
+  width: 60%;
+  margin-left: 10px;
+  float: right;
+  font-size: 14px;
+  font-size: remCalc(14px);
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+@media only screen and (max-width: 599px) {
+  /* line 439, ../styles/components/_course-finder.scss */
+  .result-url {
+    width: 100%;
+    margin-right: 0;
+    clear: left;
+    font-size: 14px;
+    font-size: remCalc(14);
+    margin-left: 0;
+  }
+}
+
+/* line 461, ../styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 389, ../styles/components/_course-finder.scss */
+/* line 466, ../styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3291,16 +3365,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 400, ../styles/components/_course-finder.scss */
+/* line 477, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete {
   background-color: #333333;
 }
-/* line 402, ../styles/components/_course-finder.scss */
+/* line 479, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 408, ../styles/components/_course-finder.scss */
+/* line 485, ../styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -3308,14 +3382,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 412, ../styles/components/_course-finder.scss */
+/* line 489, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 418, ../styles/components/_course-finder.scss */
+/* line 495, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3326,14 +3400,14 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 430, ../styles/components/_course-finder.scss */
+/* line 507, ../styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 438, ../styles/components/_course-finder.scss */
+/* line 515, ../styles/components/_course-finder.scss */
 .warning-icon img {
   width: 146px;
   max-width: 146px;
@@ -4581,9 +4655,10 @@ a.course:before {
 /* line 1, ../styles/components/_button-link.scss */
 .button-link, .d-go-search-button a, .m-go-search-btn a {
   font-size: 0.875em;
-  background: black;
+  background-color: black;
   color: white;
-  border-bottom: 0px;
+  padding-bottom: 0;
+  border-bottom: 0;
   margin: 1.71429em 0 1.28571em 0;
   padding: 0.85714em 1.28571em;
   -webkit-transition-duration: 0.2s;
@@ -4593,22 +4668,20 @@ a.course:before {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-bottom: none;
 }
 
 /* line 18, ../styles/components/_button-link.scss */
 .button-link:hover, .d-go-search-button a:hover, .m-go-search-btn a:hover {
-  background: #757575;
+  background-color: #757575;
   color: white;
   text-decoration: none;
-  border-bottom: none;
   cursor: pointer;
   padding: 0.85714em 1.28571em;
-  border-bottom: 0px;
+  border-bottom: 0;
 }
-/* line 27, ../styles/components/_button-link.scss */
+/* line 26, ../styles/components/_button-link.scss */
 .lcc .button-link:hover, .lcc .d-go-search-button a:hover, .d-go-search-button .lcc a:hover, .lcc .m-go-search-btn a:hover, .m-go-search-btn .lcc a:hover {
-  background: #e5006e;
+  background-color: #e5006e;
   color: white;
 }
 
@@ -4629,6 +4702,14 @@ a.course:before {
   line-height: 1.5;
   padding: 20px 40px 20px 40px;
   background-color: #757575;
+}
+
+/* line 57, ../styles/components/_button-link.scss */
+.button-link.icon, .m-menu-btn-toggle span.button-link, .d-go-search-button a.icon, .m-go-search-btn a.icon, a.search span.button-link {
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
+  font-size: 24px;
+  font-size: remCalc(24px);
 }
 
 /* line 2, ../styles/components/_sidebar.scss */
@@ -5314,9 +5395,13 @@ a figure img {
     width: 31.08265%;
   }
 }
+/* line 182, ../styles/components/_blocks.scss */
+.three-up.__gallery ul {
+  clear: left;
+}
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 188, ../styles/components/_blocks.scss */
+  /* line 194, ../styles/components/_blocks.scss */
   .four-up li:first-child {
     display: block;
     float: left;
@@ -5324,7 +5409,7 @@ a figure img {
     margin-right: -100%;
     width: 47.28217%;
   }
-  /* line 191, ../styles/components/_blocks.scss */
+  /* line 197, ../styles/components/_blocks.scss */
   .four-up li + li {
     display: block;
     float: left;
@@ -5332,7 +5417,7 @@ a figure img {
     margin-right: -100%;
     width: 47.28217%;
   }
-  /* line 194, ../styles/components/_blocks.scss */
+  /* line 200, ../styles/components/_blocks.scss */
   .four-up li:nth-of-type(3) {
     display: block;
     float: left;
@@ -5341,7 +5426,7 @@ a figure img {
     width: 47.28217%;
     clear: left;
   }
-  /* line 198, ../styles/components/_blocks.scss */
+  /* line 204, ../styles/components/_blocks.scss */
   .four-up li:last-child {
     display: block;
     float: left;
@@ -5351,7 +5436,7 @@ a figure img {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 206, ../styles/components/_blocks.scss */
+  /* line 212, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li {
     display: block;
     float: left;
@@ -5359,7 +5444,7 @@ a figure img {
     margin-right: -100%;
     width: 23.39636%;
   }
-  /* line 209, ../styles/components/_blocks.scss */
+  /* line 215, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li + li {
     display: block;
     float: left;
@@ -5367,7 +5452,7 @@ a figure img {
     margin-right: -100%;
     width: 23.01718%;
   }
-  /* line 212, ../styles/components/_blocks.scss */
+  /* line 218, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li + li + li {
     display: block;
     float: left;
@@ -5375,7 +5460,7 @@ a figure img {
     margin-right: -100%;
     width: 23.01718%;
   }
-  /* line 215, ../styles/components/_blocks.scss */
+  /* line 221, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li:last-child {
     display: block;
     float: left;
@@ -5383,6 +5468,10 @@ a figure img {
     margin-right: -100%;
     width: 23.01718%;
   }
+}
+/* line 228, ../styles/components/_blocks.scss */
+.four-up.__gallery ul {
+  clear: left;
 }
 
 /**
@@ -6974,7 +7063,7 @@ img.rsImg {
   .article-listing-main-article-left .leading-article h2 {
     padding-top: 12px;
   }
-  /* line 42, ../styles/components/_article-listing-main-article-left.scss */
+  /* line 41, ../styles/components/_article-listing-main-article-left.scss */
   .article-listing-main-article-left .other-articles h2 {
     padding-top: 0;
   }
@@ -8981,15 +9070,15 @@ a.back-to-top:hover {
 @media only screen and (min-width: 960px) {
   /* line 53, ../styles/components/_media-galleries.scss */
   .media-gallery-4-up {
+    clear: both;
     display: block;
     float: left;
-    margin-left: 0%;
-    margin-right: -100%;
+    margin-left: 0;
     width: 100%;
   }
   /* line 69, ../styles/components/_media-galleries.scss */
   .media-gallery-4-up li {
-    width: 22.46798%;
+    width: 23.39636%;
     clear: none;
     float: left;
     margin-left: 0;

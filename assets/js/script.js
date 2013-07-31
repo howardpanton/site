@@ -713,12 +713,12 @@ if ($('#showtime-json').length){
 
 // detect lightbox component
 
-if ($('.lightbox').length > 0) {
+if ($('.js-lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
         // initialise the magnific lightbox
-        $('.lightbox').each(function() {
+        $('.js-lightbox').each(function() {
           $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
