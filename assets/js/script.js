@@ -550,14 +550,9 @@ $(document).ready(function(){
 
       });
 
-
-
-
-  // if ($('.grid').length > 0) {
-  //   $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.mixitup.min.js', function() {
-  //     $('.grid').mixitup();
-  //   })
-  // }
+  ////////////////////
+  //  Stick div to top of browser on scroll 
+  ///////////////////
 
   // function moveScroller() {
   //   var move = function() {

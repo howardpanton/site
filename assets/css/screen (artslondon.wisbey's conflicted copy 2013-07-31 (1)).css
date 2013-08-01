@@ -622,7 +622,7 @@ h1 {
   font-size: remCalc(54);
   font-size: 54px;
   line-height: 1.11111em;
-  padding: 0.22222em 0 0.44444em 0;
+  padding: 0.44444em 0;
 }
 
 /* line 64, ../styles/globals/_typography.scss */
@@ -693,9 +693,8 @@ table {
   font-size: remCalc(14);
   font-size: 14px;
   line-height: 1.71429em;
-  padding-bottom: 0.75em;
 }
-/* line 144, ../styles/globals/_typography.scss */
+/* line 143, ../styles/globals/_typography.scss */
 table th, table td {
   padding-top: 0.42857em;
   padding-right: 0.42857em;
@@ -703,25 +702,24 @@ table th, table td {
   padding-left: 0.42857em;
 }
 
-/* line 171, ../styles/globals/_typography.scss */
+/* line 170, ../styles/globals/_typography.scss */
 figure {
-  position: relative;
   margin-bottom: 1.28571em;
 }
-/* line 174, ../styles/globals/_typography.scss */
+/* line 172, ../styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: 0;
 }
-/* line 180, ../styles/globals/_typography.scss */
+/* line 178, ../styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 187, ../styles/globals/_typography.scss */
+/* line 185, ../styles/globals/_typography.scss */
 figcaption, .rsCaption {
   font-size: remCalc(14);
   font-size: 14px;
@@ -729,24 +727,12 @@ figcaption, .rsCaption {
   padding: 0.42857em;
 }
 
-/* line 195, ../styles/globals/_typography.scss */
-blockquote {
-  background: url('http://artslondon.github.io/beta/assets/img/icons/quote_marks.gif?1375351101') no-repeat;
-  font-size: remCalc(16);
-  font-size: 16px;
-  line-height: 1.5em;
-  margin-top: 0.75em;
-  padding-bottom: 1.5em;
-  padding-left: 68px;
-  padding-right: 18%;
-}
-
-/* line 480, ../styles/globals/_typography.scss */
+/* line 469, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 481, ../styles/globals/_typography.scss */
+/* line 470, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -4636,9 +4622,10 @@ a.course:before {
 .breadcrumbs {
   width: 100%;
   margin-bottom: 0;
+  padding-bottom: 12px;
   padding-top: 12px;
 }
-/* line 6, ../styles/components/_breadcrumbs.scss */
+/* line 7, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a {
   display: inline-block;
   padding-left: 18px;
@@ -4652,7 +4639,7 @@ a.course:before {
   font-weight: 300;
   border-bottom: none;
 }
-/* line 18, ../styles/components/_breadcrumbs.scss */
+/* line 19, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a:first-child {
   padding-left: 0px;
 }
@@ -7502,17 +7489,6 @@ img.rsImg {
   }
 }
 
-/* line 1, ../styles/components/_pull-quote.scss */
-.pull-quote {
-  background: url('http://artslondon.github.io/beta/assets/img/icons/quote_marks_big.gif?1375359305') no-repeat;
-  padding-bottom: 1.63636em;
-  padding-left: 82px;
-  font-size: remCalc(22);
-  margin-top: 1.09091em;
-  font-size: 22px;
-  line-height: 1.36364em;
-}
-
 /* line 2, ../styles/components/_events.scss */
 .events-listing li {
   padding: 0;
@@ -9821,9 +9797,15 @@ aside h3 {
 
 /* line 346, ../styles/components/_short-courses.scss */
 .fail_element {
+  position: absolute;
   opacity: 0;
+  top: 100px;
   text-align: center;
-  font-size: 16px;
+  width: 50%;
+  left: 25%;
+  line-height: 1.4;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 /* line 358, ../styles/components/_short-courses.scss */
