@@ -1,8 +1,9 @@
 // Pagination styling
-
 .pagination {
 	@include margin-leader(3);
 	@include margin-trailer(3);
+	text-align: center;
+	position: relative;
 	
 	ul {
 		list-style-type: none;
@@ -34,11 +35,79 @@
 	.page-prev, .page-next, .go-first, .go-last {
 		display: inline-block;
 		min-width: 36px;
+	}
+
+	.page-prev, .page-next {
 		a { 
 			font-size: 22px;
 			padding-top: 6px;
-		  // padding-top: emCalc(6px);
 		}
-	} 
+	}
+
+	// .page-number-links {
+	// 	@extend %m2-m3;
+	// 	@extend %t4-t5--within-t2-d7;
+
+	// }
+
+	// .m-left-side-buttons {
+	// 	@extend %m1;
+	// 	@extend %t2-t3--within-t2-d7;
+	// }
+
+	// .m-right-side-buttons {
+	// 	@extend %m4;
+	// 	@extend %t6-t7--within-t2-d7;
+	// }
 
 }
+
+
+
+
+// styles for jPages based pagination (using default classnames from the library)
+
+.holder {
+	@include margin-leader(3);
+	@include margin-trailer(3);
+	text-align: center;
+}
+
+.holder a {
+	min-width: 36px;
+	text-align: center;
+	font-size: 14px;
+	font-size: remCalc(14);
+	border-top: 1px solid $light-gray;
+	border-bottom: none;
+	padding: rhythm(2, 14px) rhythm(3, 14px);
+}
+
+.holder a:hover {
+	border-bottom: none;
+	padding: rhythm(2, 14px) rhythm(3, 14px); 
+	border-top: 1px solid $black;
+	
+}
+
+// .holder a.jp-previous { margin-right: 15px; }
+// .holder a.jp-next { margin-left: 15px; }
+
+.holder a.jp-current, a.jp-current:hover { 
+	border-top: 1px solid $black;
+}
+
+.holder a.jp-disabled, a.jp-disabled:hover {
+	color: $light-gray;
+}
+
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+	cursor: default; 
+	background: none;
+}
+
+.holder span { margin: 0 5px; }
+
+
+
