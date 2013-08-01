@@ -34,8 +34,8 @@
 	background-color: black;
 }
 
-// main course title in search results list
-.course-details > h3 {
+// main course / search title in search results list
+.course-details > h3, .search-details > h3 {
 	color: black;
 	font-weight: bold;
 	@include adjust-font-size-to (16px);
@@ -52,7 +52,7 @@
   height: 60px;
 }
 
-.course-search-form {
+.course-search-form, .site-search-form {
   position: relative;
   width:100%;
   margin-bottom: 0;
@@ -62,7 +62,6 @@
     padding-left: 6px;
     height: 48px;
   }
-
   @include gs-media(d) {
      input { 
          padding-left: 12px;
@@ -71,7 +70,7 @@
 
 }
 
-.course-finder-input {
+.course-finder-input, .site-search-results-input {
 	@include single-transition();
   @include border-image-dot();
 	height: 48px;
@@ -87,7 +86,6 @@
     margin-left: 12px;
     @include adjust-font-size-to (14px);
   }
-
   @include gs-media(m, min-max) {
     max-width: 90%;
     width: 90%;
@@ -128,8 +126,6 @@
   }
 }
 
-
-
 .search-link {
   position: absolute;
   top: 0;
@@ -138,7 +134,7 @@
   background-color: black;
   height:48px;
   width: 48px; 
-  img{
+  img {
      margin-top: -3px; 
   }
   a {
@@ -331,7 +327,7 @@ input, .search-result-module, .search-input-wrap {
 
 }
 
-.course-title {
+.course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
@@ -353,7 +349,7 @@ input, .search-result-module, .search-input-wrap {
 
   
 }
-.course-description {
+.course-description, .search-description {
   
   width: 60%;
   float: left;
