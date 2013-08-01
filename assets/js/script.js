@@ -266,9 +266,8 @@ $('#mega-menu-nav-links li a').click(function(event) {
 
 // desktop view menu - if user clicks another top-level link once menu is already opened then do this:
 } else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
-  //var r = j.attr('data-menu');
   var l = $('li').find("[data-item='"+ r +"']");
-  l.parent().removeClass('menu-active');
+  $('#mega-menu-nav-links').find('li.menu-active').removeClass('menu-active');
   j.hide();
   _clicked.parent('li').addClass('menu-active');
   var t = _clicked.attr('data-item');
