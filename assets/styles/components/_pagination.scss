@@ -1,0 +1,44 @@
+// Pagination styling
+
+.pagination {
+	@include margin-leader(3);
+	@include margin-trailer(3);
+	
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+		}
+	}
+
+	a {
+		min-width: 36px;
+		text-align: center;
+		font-size: 14px;
+		font-size: remCalc(14);
+		border-top: 1px solid $light-gray;
+		border-bottom: none;
+		padding: rhythm(2, 14px) rhythm(3, 14px); 	
+		
+		&:hover {
+			border-bottom: none;
+			padding: rhythm(2, 14px) rhythm(3, 14px); 
+			border-top: 1px solid $black;
+		}
+
+		&.active {
+			border-top: 1px solid $black;
+		}
+	}
+
+	.page-prev, .page-next {
+		display: inline-block;
+		min-width: 36px;
+		a { 
+			font-size: 22px;
+			padding-top: 6px;
+		  // padding-top: emCalc(6px);
+		}
+	} 
+
+}
