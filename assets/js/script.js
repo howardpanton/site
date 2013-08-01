@@ -409,31 +409,208 @@ $(document).ready(function(){
    
   }
 
+  //////////////////////
+  // MIXITUP FOR SHORT COURSES 
+  /////////////////////
 
-  ////////////////////
-  //  Footer journeys - fadeIn / fadeOut on click 
-  ///////////////////
-
-  $('#footer-btn-explore').click(function(event) {
-    event.preventDefault();
-
-    _clicked = $(this); 
-    if ( !_clicked.hasClass('active')) {
-      _clicked.addClass('active');
-      $('#footer-journeys-panel').addClass("block");
-
-      _clicked.html('Close explore');
-      _clicked.scrollToMe(); // scroll page to footer position
+      /* 
+      * We would normally recommend that all JavaScript is kept in a seperate .js file,
+      *   but we have included it in the document head for convenience.
+      */
       
-    } else {
-      _clicked.removeClass('active');
-      // $('#footer-journeys-panel').slideUp();
-      $('#footer-journeys-panel').addClass("hide");
-      _clicked.html('Explore');
-      _clicked.scrollToMe(); // scroll page to footer position
-    }
+      // NICE IMAGE LOADING
+      
+      /* 
+      * Not part of MixItUp, but this is a great lightweight way 
+      *   to gracefully fade-in images with CSS3 after they have loaded
+      */
+      
+      function imgLoaded(img){  
+        $(img).parent().addClass('loaded');
+      };
+      
+      // ON DOCUMENT READY:
+    
+      $(function(){
+        
+        // INSTANTIATE MIXITUP
 
-  });
+        $.when(
+            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery-ui.sortable.min.js" ),
+            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.ui.touch-punch.min.js" ),
+            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mixitup.min.js" ),
+            $.Deferred(function( deferred ){
+                $( deferred.resolve );
+            })
+        ).done(function(){
+
+          $('#Parks').mixitup({
+            layoutMode: 'list', // Start in list mode (display: block) by default
+            listClass: 'list', // Container class for when in list mode
+            gridClass: 'grid', // Container class for when in grid mode
+            effects: ['fade','blur'], // List of effects 
+            listEffects: ['fade','rotateX'] // List of effects ONLY for list mode
+
+          });
+
+        });
+        
+        // HANDLE LAYOUT CHANGES
+        
+        // Bind layout buttons to toList and toGrid methods:
+        
+        $('#ToList').on('click',function(){
+          $('.button').removeClass('active');
+          $(this).addClass('active');
+          $('#Parks').mixitup('toList');
+        });
+
+        $('#ToGrid').on('click',function(){
+          $('.button').removeClass('active');
+          $(this).addClass('active');
+          $('#Parks').mixitup('toGrid');
+        });
+        
+        // HANDLE MULTI-DIMENSIONAL CHECKBOX FILTERING
+        
+        /*  
+        * The desired behaviour of multi-dimensional filtering can differ greatly 
+        * from project to project. MixItUp's built in filter button handlers are best
+        * suited to simple filter operations, so we will need to build our own handlers
+        * for this demo to achieve the precise behaviour we need.
+        */
+        
+        var $filters = $('#Filters').find('li'),
+          dimensions = {
+            subject: 'all', // Create string for first dimension
+            session: 'all', // Create string for second dimension
+            interest: 'all' // Create string for third dimension
+          };
+          
+        // Bind checkbox click handlers:
+        
+        $filters.on('click',function(){
+          var $t = $(this),
+            dimension = $t.attr('data-dimension'),
+            filter = $t.attr('data-filter'),
+            filterString = dimensions[dimension];
+            
+          if(filter == 'all'){
+            // If "all"
+            if(!$t.hasClass('active')){
+              // if unchecked, check "all" and uncheck all other active filters
+              $t.addClass('active').siblings().removeClass('active');
+              // Replace entire string with "all"
+              filterString = 'all'; 
+            } else {
+              // Uncheck
+              $t.removeClass('active');
+              // Emtpy string
+              filterString = '';
+            }
+          } else {
+            // Else, uncheck "all"
+            $t.siblings('[data-filter="all"]').removeClass('active');
+            // Remove "all" from string
+            filterString = filterString.replace('all','');
+            if(!$t.hasClass('active')){
+              // Check checkbox
+              $t.addClass('active');
+              // Append filter to string
+              filterString = filterString == '' ? filter : filterString+' '+filter;
+            } else {
+              // Uncheck
+              $t.removeClass('active');
+              // Remove filter and preceeding space from string with RegEx
+              var re = new RegExp('(\\s|^)'+filter);
+              filterString = filterString.replace(re,'');
+            };
+          };
+          
+          // Set demension with filterString
+          dimensions[dimension] = filterString;
+          
+          // We now have two strings containing the filter arguments for each dimension:  
+          // console.info('dimension 1: '+dimensions.region);
+          console.info('dimension 1: '+dimensions.subject);
+          console.info('dimension 2: '+dimensions.session);
+          console.info('dimension 3: '+dimensions.interest);
+          
+          /*
+          * We then send these strings to MixItUp using the filter method. We can send as
+          * many dimensions to MixitUp as we need using an array as the second argument
+          * of the "filter" method. Each dimension must be a space seperated string.
+          *
+          * In this case, MixItUp will show elements using OR logic within each dimension and
+          * AND logic between dimensions. At least one dimension must pass for the element to show.
+          */
+          
+          $('#Parks').mixitup('filter',[dimensions.subject, dimensions.session, dimensions.interest])      
+        });
+
+      });
+
+
+
+
+  // if ($('.grid').length > 0) {
+  //   $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.mixitup.min.js', function() {
+  //     $('.grid').mixitup();
+  //   })
+  // }
+
+  // function moveScroller() {
+  //   var move = function() {
+  //     var st = $(window).scrollTop();
+  //     var ot = $(".l-short-courses-list").offset().top; 
+  //     var s = $(".grid");
+  //     if(st > ot) {
+  //       s.css({
+  //         position: "fixed",
+  //         top: "0px",
+  //         bottom: "25%"
+  //       });
+  //     } else {
+  //       if(st <= ot) {
+  //         s.css({
+  //           position: "relative",
+  //           top: ""
+  //         });
+  //       }
+  //     }
+  //   };
+  //   $(window).scroll(move);
+  //   move();
+  // }
+
+  // $(function() {
+  //   moveScroller();
+  // });
+
+  // ////////////////////
+  // //  Footer journeys - fadeIn / fadeOut on click 
+  // ///////////////////
+
+  // $('#footer-btn-explore').click(function(event) {
+  //   event.preventDefault();
+
+  //   _clicked = $(this); 
+  //   if ( !_clicked.hasClass('active')) {
+  //     _clicked.addClass('active');
+  //     $('#footer-journeys-panel').addClass("block");
+
+  //     _clicked.html('Close explore');
+  //     _clicked.scrollToMe(); // scroll page to footer position
+      
+  //   } else {
+  //     _clicked.removeClass('active');
+  //     // $('#footer-journeys-panel').slideUp();
+  //     $('#footer-journeys-panel').addClass("hide");
+  //     _clicked.html('Explore');
+  //     _clicked.scrollToMe(); // scroll page to footer position
+  //   }
+
+  // });
 
 
 
@@ -772,7 +949,6 @@ if ($('.js-lightbox').length > 0) {
 
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
-  //  currently used on LCC homepage
   //---------------------------------------
 
   if ($('.tabs-container').length > 0) {
@@ -797,7 +973,7 @@ if ($('.js-lightbox').length > 0) {
 
       /* if in drawer mode */
       $(".tab_drawer_heading").click(function() {
-        
+
         $(".tab_content").hide();
         var d_activeTab = $(this).attr("rel"); 
         $("#"+d_activeTab).show();
@@ -807,6 +983,7 @@ if ($('.js-lightbox').length > 0) {
 
         $("ul.tabs li").removeClass("active");
         $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+        $(this).scrollToMe();
       });
     }
 
