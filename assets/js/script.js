@@ -611,9 +611,9 @@ if ($('.accordion').length > 0) {
         console.log(circle);
               //circle.rotate({animateTo:360});
               if (!elem.is(':visible'))  {
-                circle.rotate({animateTo:90});
+                circle.rotate({animateTo:135});
                } else {
-                circle.rotate({animateTo:45, center: ["50%", "50%"], });
+                circle.rotate({animateTo:0, center: ["50%", "50%"], });
             };
 
 });
@@ -716,7 +716,6 @@ if ($('#showtime-json').length){
 
 
 // detect lightbox component
-
 if ($('.js-lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {

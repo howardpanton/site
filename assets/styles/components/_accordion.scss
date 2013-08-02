@@ -2,50 +2,66 @@
 
 
 .accordion {
+	@extend %t2-t7;
+	// @extend %d5-d16;
+	clear: left;
+}
 
-	.accordion-list {
-		padding: 0;
-		li:first-child {
-			border-top: none;
-		}		
-		.st-content {
-    	padding: 0 rhythm(4, 16px) rhythm(4, 16px);
-		}
-	}
+.accordion-list {
+	padding: 0;
+	li:first-child {
+		border-top: none;
+	}		
+	.st-content {
+  	padding: rhythm(4, 16px) 0 rhythm(4, 16px) 0;
+  	background-color: $white;
 
-	@include gs-media(t,min-max) {
-	 @include gs-span(t,2,7);
-	}
+  	table {
+  		font-size: 16px;
+  		font-size: remCalc(16);
+  		p { 
+  			font-size: 16px;
+  			font-size: remCalc(16);
+  		}
+			th {
+				@extend %Swiss721BT-Bold;
+				width: 25%;
+			}
+			tr {
+				&:nth-child(even) { background-color: $white; }
+			}
 
-	@include gs-media(d,min-max) {
-		@include gs-span(d, 5, 16);
-	}
-			.accordion-list-item {
-			height: 80px; // needs to match a line-height
-			overflow: hidden;
-			background: $white;
-			margin-bottom: 1px;
-			padding: 0;
-			.accordion-list-anchor {
-				line-height: 80px; // needs to match li height
-				font-size: emCalc(24px);
-				display: block;
-				position: relative;
-				outline:none;
-				border-bottom: none;
-				margin-left: rhythm(4, 24px);
-				padding-right: rhythm(8, 24px);
-				.st-arrow {
-					font-size: emCalc(36px);
-					position: absolute;
-					top: 27px;
-					right: 24px;
-					opacity:1;
-					line-height:36px;
-					width:28px;
-					//@include default-transition();
-				} 
+			td p{
+				padding: 0;
 			}
 		}
+	}
+}
+
+.accordion-list-item {
+	height: 58px; // needs to match a line-height
+	overflow: hidden;
+	background-color: $bg-gray;
+	margin-bottom: 1px;
+	padding: 0;
+	.accordion-list-anchor {
+		line-height: 58px; // needs to match li height
+		display: block;
+		position: relative;
+		outline:none;
+		border-bottom: none;
+		margin-left: rhythm(4, 24px);
+		padding-right: rhythm(8, 24px);
+		.st-arrow {
+				font-size: emCalc(36px);
+				position: absolute;
+				top: 12px;
+				right: 24px;
+				opacity:1;
+				line-height:36px;
+				width:28px;
+				//@include default-transition();
+		} 
+	}
 
 }
