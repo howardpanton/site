@@ -632,6 +632,7 @@ $(document).ready(function(){
 
 
   // detect slider component
+  /*
   if ($('.slider').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
@@ -678,61 +679,33 @@ $(document).ready(function(){
     });
 
   }
+  */
 
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.royalslider.min.js', function() {
 
-        var si = $('#gallery-1').royalSlider({
-          addActiveClass: true,
-          arrowsNav: false,
-          controlNavigation: 'none',
-          autoScaleSlider: true, 
-          autoScaleSliderWidth: 930,     
-          autoScaleSliderHeight: 465,
-          loop: true,
-          fadeinLoadedSlide: false,
-          globalCaption: true,
-          keyboardNavEnabled: true,
-          globalCaptionInside: false,
+      $.each($('.royalSlider'), function() {
 
-          visibleNearby: {
-            enabled: true,
-            centerArea: 0.5,
-            center: true,
-            breakpoint: 650,
-            breakpointCenterArea: 0.64
-          }
-        }).data('royalSlider');
+        var _this = $(this);
 
-        $('.royalSlider').royalSlider({
+        // get the individual slide width and height from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the dimensions to sensible defaults
+        var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 930;
+        var _itemHeight = (_this.data('slider-item-height') > 0) ? _this.data('slider-item-height') : 465;
+
+        _this.royalSlider({
           arrowsNav: true,
           arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
           autoScaleSlider: true,
+          autoScaleSliderWidth: _itemWidth,
+          autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
           globalCaption: true,
-          //imgWidth: 930,
-          //imgHeight: 465
-          //autoHeight: true
-          /*autoScaleSlider: true, 
-          autoScaleSliderWidth: 800,     
-          autoScaleSliderHeight: 400,
-          
-          //autoHeight: true,
-          fadeinLoadedSlide: false,
-          controlNavigationSpacing: 0,
-          
-          imageScaleMode: 'none',
-          //imageAlignCenter:true,
-          loop: false,
-          loopRewind: true,
-          numImagesToPreload: 6,
-          keyboardNavEnabled: true,
-          usePreloader: false*/
         });
+      });
     });
   }
 
@@ -1001,6 +974,9 @@ if ($('video').length > 0) {
   });
 
 }
+
+
+$('a[href$=".pdf"]').parent().addClass('icon download');
 
 
 }); // end document ready
