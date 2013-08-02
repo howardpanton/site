@@ -169,15 +169,20 @@ a span.title {
 // Docs Menu Styling //
 //
 
+.slide-in-menu-trigger  {
+  border-bottom: 0;
+  &:hover { 
+    border-bottom: 0;
+  }
+}
 
 .menu-toggle-link {
   position: absolute;
-
-  top: 6px;
-  right: 40px;
+  top: -66px; // WTF ??  can't see why this is getting pushed down the page
+  right: -42px;
   height: 60px;
   width: 80px;
-  z-index: 999999;
+  z-index: 99999;
   
   p {
     display: none;
