@@ -121,7 +121,14 @@ ol {
 }
 
 strong, b, em {
+	@extend %Swiss721BT-Bold;
+}
 
+code {
+	@extend %Swiss721BT-Italic;
+	background: $bg-gray;
+	font-size: 12px;
+	padding: rhythm(1, 12px);
 }
 
 dl {

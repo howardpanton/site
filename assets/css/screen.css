@@ -499,8 +499,13 @@ a, figure a {
   font-family: Swiss721BT-Roman;
 }
 
+/* line 70, ../styles/font-face/_swiss-721.scss */
+code {
+  font-family: Swiss721BT-Italic;
+}
+
 /* line 71, ../styles/font-face/_swiss-721.scss */
-h2 a, h3 a, h4 a, h2, h3, h4, dl dt {
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt {
   font-family: Swiss721BT-Bold;
 }
 
@@ -678,16 +683,23 @@ ol {
 }
 
 /* line 127, ../styles/globals/_typography.scss */
+code {
+  background: #e6e6e6;
+  font-size: 12px;
+  padding: 0.5em;
+}
+
+/* line 134, ../styles/globals/_typography.scss */
 dl {
   line-height: 1.5em;
 }
-/* line 132, ../styles/globals/_typography.scss */
+/* line 139, ../styles/globals/_typography.scss */
 dl dd {
   padding-bottom: 0.75em;
   padding-left: 0.75em;
 }
 
-/* line 138, ../styles/globals/_typography.scss */
+/* line 145, ../styles/globals/_typography.scss */
 table {
   width: 100%;
   font-size: remCalc(14);
@@ -695,7 +707,7 @@ table {
   line-height: 1.71429em;
   padding-bottom: 0.75em;
 }
-/* line 144, ../styles/globals/_typography.scss */
+/* line 151, ../styles/globals/_typography.scss */
 table th, table td {
   padding-top: 0.42857em;
   padding-right: 0.42857em;
@@ -703,25 +715,25 @@ table th, table td {
   padding-left: 0.42857em;
 }
 
-/* line 171, ../styles/globals/_typography.scss */
+/* line 178, ../styles/globals/_typography.scss */
 figure {
   position: relative;
   margin-bottom: 1.28571em;
 }
-/* line 174, ../styles/globals/_typography.scss */
+/* line 181, ../styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: 0;
 }
-/* line 180, ../styles/globals/_typography.scss */
+/* line 187, ../styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 187, ../styles/globals/_typography.scss */
+/* line 194, ../styles/globals/_typography.scss */
 figcaption, .rsCaption {
   font-size: remCalc(14);
   font-size: 14px;
@@ -729,7 +741,7 @@ figcaption, .rsCaption {
   padding: 0.42857em;
 }
 
-/* line 195, ../styles/globals/_typography.scss */
+/* line 202, ../styles/globals/_typography.scss */
 blockquote {
   background: url('http://artslondon.github.io/beta/assets/img/icons/quote_marks.gif?1375351101') no-repeat;
   font-size: remCalc(16);
@@ -741,12 +753,12 @@ blockquote {
   padding-right: 18%;
 }
 
-/* line 480, ../styles/globals/_typography.scss */
+/* line 487, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 481, ../styles/globals/_typography.scss */
+/* line 488, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -2519,7 +2531,7 @@ a.img:hover {
 \*------------------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 28, ../styles/globals/_layout.scss */
-  .row, .submenu > div, .l-full-width, .content {
+  .row, .submenu > div, .l-full-width {
     clear: both;
     display: block;
     float: left;
@@ -2530,7 +2542,7 @@ a.img:hover {
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 34, ../styles/globals/_layout.scss */
-  .l-content-full-width, .l-content, .two-up, .three-up, .four-up {
+  .l-content-full-width, .l-content, .content, .two-up, .three-up, .four-up {
     display: block;
     float: left;
     margin-left: 13.39732%;
@@ -2573,15 +2585,8 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  display: block;
-  float: left;
-  margin-left: 32.27566%;
-  margin-right: -100%;
-  width: 67.67226%;
-}
-@media only screen and (min-width: 960px) {
-  /* line 75, ../styles/globals/_layout.scss */
-  .l-content, .l-short-courses-list, .two-up.l-content {
+  /* line 69, ../styles/globals/_layout.scss */
+  .l-content, .two-up.l-content {
     display: block;
     float: left;
     margin-left: 0%;
@@ -2591,8 +2596,8 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 81, ../styles/globals/_layout.scss */
-  .l-short-courses-filter {
+  /* line 75, ../styles/globals/_layout.scss */
+  aside {
     display: block;
     float: left;
     margin-left: 68.91735%;
@@ -2602,18 +2607,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 87, ../styles/globals/_layout.scss */
-  aside {
-    display: block;
-    float: left;
-    margin-left: 77.53202%;
-    margin-right: -100%;
-    width: 22.46798%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  /* line 93, ../styles/globals/_layout.scss */
+  /* line 81, ../styles/globals/_layout.scss */
   .search-results-summary {
     display: block;
     float: left;
@@ -2626,7 +2620,7 @@ a.img:hover {
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 106, ../styles/globals/_layout.scss */
+/* line 94, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2634,7 +2628,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 113, ../styles/globals/_layout.scss */
+/* line 101, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2643,17 +2637,19 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 162, ../styles/globals/_layout.scss */
+/* line 142, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
+  border-left: none;
   padding: 24px;
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 162, ../styles/globals/_layout.scss */
+  /* line 142, ../styles/globals/_layout.scss */
   aside {
     background: white;
-    padding: 0;
+    border-left: 1px dotted #e6e6e6;
+    padding-left: 23px;
     clear: none;
   }
 }
@@ -5256,7 +5252,7 @@ a figure img {
     float: left;
     margin-left: 0%;
     margin-right: -100%;
-    width: 74.15599%;
+    width: 65.54132%;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -9118,90 +9114,6 @@ aside h3 {
   padding-top: 0.375em;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 2, ../styles/components/_expandable-content.scss */
-  .expandable-content {
-    display: block;
-    float: left;
-    margin-left: 13.39732%;
-    margin-right: -100%;
-    width: 73.58801%;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 2, ../styles/components/_expandable-content.scss */
-  .expandable-content {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 65.54132%;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 12, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content {
-    display: block;
-    float: left;
-    margin-left: 13.39732%;
-    margin-right: -100%;
-    width: 73.58801%;
-  }
-  /* line 16, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content figure {
-    width: 29.70955%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 5.43567%;
-  }
-  /* line 21, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content aside li {
-    display: inline;
-    margin-right: 24px;
-  }
-  /* line 24, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content aside li:last-child {
-    margin-right: 0;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 12, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 100%;
-  }
-  /* line 33, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content figure {
-    width: 13.85331%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 3.37603%;
-  }
-  /* line 37, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content .story {
-    width: 48.31199%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 3.37603%;
-  }
-  /* line 41, ../styles/components/_expandable-content.scss */
-  .expandable-content-with-image-and-aside .expandable-content aside {
-    width: 31.08265%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 3.37603%;
-    margin-right: 0;
-  }
-}
-
 /* line 2, ../styles/components/_highlight-blocks.scss */
 .highlight-block-2-up li, .highlight-block-3-up li, .highlight-homepage-block-2-up li, .highlight-homepage-block-4-up li {
   background: #e6e6e6;
@@ -9536,6 +9448,35 @@ aside h3 {
   .colors li:nth-of-type(4), .colors li:nth-of-type(8) {
     margin-right: 0;
   }
+}
+
+/* line 1, ../styles/components/_vcards.scss */
+.vcard {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1.5em;
+  padding: 2.25em 0;
+}
+/* line 7, ../styles/components/_vcards.scss */
+.vcard table th {
+  width: 30%;
+}
+/* line 10, ../styles/components/_vcards.scss */
+.vcard table tbody {
+  padding: 2.25em 0;
+}
+/* line 14, ../styles/components/_vcards.scss */
+.vcard table tr:nth-child(even) {
+  background-color: white;
+}
+/* line 20, ../styles/components/_vcards.scss */
+.vcard .fn, .vcard .phone, .vcard .email, .vcard .title, .vcard .org, .vcard .url, .vcard .blogurl, .vcard .twitter, .vcard .facebook, .vcard .linkedin {
+  background-color: #e6e6e6;
+  padding: 0.375em;
+}
+/* line 23, ../styles/components/_vcards.scss */
+.vcard .fn a, .vcard .phone a, .vcard .email a, .vcard .title a, .vcard .org a, .vcard .url a, .vcard .blogurl a, .vcard .twitter a, .vcard .facebook a, .vcard .linkedin a {
+  border-bottom: none;
 }
 
 /* line 2, ../styles/components/_short-courses.scss */
@@ -10029,7 +9970,13 @@ aside h3 {
     display: none;
   }
 }
-/* line 16, ../styles/components/_tabs-to-accordion.scss */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 7, ../styles/components/_tabs-to-accordion.scss */
+  .tabs-container .tabs {
+    display: none;
+  }
+}
+/* line 19, ../styles/components/_tabs-to-accordion.scss */
 .tabs-container .tabs li {
   float: left;
   margin: 0;
@@ -10045,22 +9992,22 @@ aside h3 {
   padding-right: 0.75em;
   margin-right: 0.375em;
 }
-/* line 31, ../styles/components/_tabs-to-accordion.scss */
+/* line 34, ../styles/components/_tabs-to-accordion.scss */
 .tabs-container .tabs li:hover {
   border-bottom: 1px solid black;
 }
-/* line 36, ../styles/components/_tabs-to-accordion.scss */
+/* line 39, ../styles/components/_tabs-to-accordion.scss */
 .tabs-container .tabs li:last-child {
   margin-right: 0;
 }
 
-/* line 43, ../styles/components/_tabs-to-accordion.scss */
+/* line 46, ../styles/components/_tabs-to-accordion.scss */
 ul.tabs li.active {
   border-bottom: 1px solid black;
   display: block;
 }
 
-/* line 48, ../styles/components/_tabs-to-accordion.scss */
+/* line 51, ../styles/components/_tabs-to-accordion.scss */
 .tab_container {
   clear: both;
   float: left;
@@ -10068,15 +10015,15 @@ ul.tabs li.active {
   overflow: auto;
   margin-bottom: 0.75em;
 }
-/* line 54, ../styles/components/_tabs-to-accordion.scss */
+/* line 57, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab_content {
   display: none;
 }
-/* line 57, ../styles/components/_tabs-to-accordion.scss */
+/* line 60, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab-content-caption-block {
   width: 100%;
 }
-/* line 61, ../styles/components/_tabs-to-accordion.scss */
+/* line 64, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab_drawer_heading {
   margin: 0;
   display: block;
@@ -10088,14 +10035,8 @@ ul.tabs li.active {
   -ms-user-select: none;
   user-select: none;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 61, ../styles/components/_tabs-to-accordion.scss */
-  .tab_container .tab_drawer_heading {
-    display: none;
-  }
-}
 @media only screen and (min-width: 960px) {
-  /* line 61, ../styles/components/_tabs-to-accordion.scss */
+  /* line 64, ../styles/components/_tabs-to-accordion.scss */
   .tab_container .tab_drawer_heading {
     display: none;
   }
