@@ -360,6 +360,16 @@ questions: http://www.webtype.com
   src: url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.svg') format('svg'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo-social/entypo-social.woff') format('woff');
 }
 
+/* line 25, ../styles/font-face/_entypo.scss */
+.icon, .m-menu-btn-toggle span, a.search span {
+  font-family: "entypo";
+}
+
+/* line 26, ../styles/font-face/_entypo.scss */
+.icon-social {
+  font-family: "entypo-social";
+}
+
 /* line 28, ../styles/font-face/_entypo.scss */
 .download:before {
   content: "&#128196;";
@@ -2426,20 +2436,20 @@ a.img:hover {
 }
 
 /* line 427, ../styles/globals/_utilities.scss */
-.cf, .tab-content-caption-block {
+.cf, .tab_container .tab-content-caption-block {
   zoom: 1;
 }
 
 /* line 431, ../styles/globals/_utilities.scss */
-.cf:before, .tab-content-caption-block:before,
+.cf:before, .tab_container .tab-content-caption-block:before,
 .cf:after,
-.tab-content-caption-block:after {
+.tab_container .tab-content-caption-block:after {
   content: "";
   display: table;
 }
 
 /* line 435, ../styles/globals/_utilities.scss */
-.cf:after, .tab-content-caption-block:after {
+.cf:after, .tab_container .tab-content-caption-block:after {
   clear: both;
 }
 
@@ -2492,18 +2502,6 @@ a.img:hover {
 .size-h4, .filter-module h3, .lower-search-results-info p {
   font-size: 1.125em;
   line-height: 1.33333em;
-}
-
-/* line 486, ../styles/globals/_utilities.scss */
-.size-h5 {
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-/* line 490, ../styles/globals/_utilities.scss */
-.size-h6, aside h3 {
-  font-size: 0.875em;
-  line-height: 1.71429em;
 }
 
 /*------------------------------------*\
@@ -2576,7 +2574,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 68, ../styles/globals/_layout.scss */
+  /* line 70, ../styles/globals/_layout.scss */
   .search-results {
     display: block;
     float: left;
@@ -2587,29 +2585,18 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 76, ../styles/globals/_layout.scss */
-  .l-content, .two-up.l-content {
+  /* line 78, ../styles/globals/_layout.scss */
+  .l-short-courses-filter {
     display: block;
     float: left;
-    margin-left: 0%;
+    margin-left: 68.91735%;
     margin-right: -100%;
-    width: 65.54132%;
+    width: 31.08265%;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 82, ../styles/globals/_layout.scss */
-  .l-content-full-width, .two-up.l-content-full-width, .three-up.l-content-full-width {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  /* line 88, ../styles/globals/_layout.scss */
+  /* line 84, ../styles/globals/_layout.scss */
   aside {
     display: block;
     float: left;
@@ -2620,7 +2607,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 94, ../styles/globals/_layout.scss */
+  /* line 90, ../styles/globals/_layout.scss */
   .search-results-summary {
     display: block;
     float: left;
@@ -2633,7 +2620,7 @@ a.img:hover {
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 107, ../styles/globals/_layout.scss */
+/* line 103, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2641,7 +2628,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 114, ../styles/globals/_layout.scss */
+/* line 110, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2650,14 +2637,14 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 155, ../styles/globals/_layout.scss */
+/* line 159, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   padding: 24px;
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 155, ../styles/globals/_layout.scss */
+  /* line 159, ../styles/globals/_layout.scss */
   aside {
     background: white;
     padding: 0;
@@ -2887,7 +2874,7 @@ li.filter-link-only.active > a {
 }
 
 /* line 38, ../styles/components/_course-finder.scss */
-.course-details > h3 {
+.course-details > h3, .search-details > h3 {
   color: black;
   font-weight: bold;
   font-size: 1em;
@@ -2908,27 +2895,27 @@ li.filter-link-only.active > a {
 }
 
 /* line 55, ../styles/components/_course-finder.scss */
-.course-search-form {
+.course-search-form, .site-search-form {
   position: relative;
   width: 100%;
   margin-bottom: 0;
 }
 /* line 59, ../styles/components/_course-finder.scss */
-.course-search-form input {
+.course-search-form input, .site-search-form input {
   margin-left: 0;
   margin-bottom: 0;
   padding-left: 6px;
   height: 48px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 67, ../styles/components/_course-finder.scss */
-  .course-search-form input {
+  /* line 66, ../styles/components/_course-finder.scss */
+  .course-search-form input, .site-search-form input {
     padding-left: 12px;
   }
 }
 
-/* line 74, ../styles/components/_course-finder.scss */
-.course-finder-input {
+/* line 73, ../styles/components/_course-finder.scss */
+.course-finder-input, .site-search-results-input {
   -webkit-transition: all 300ms ease-out;
   -moz-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
@@ -2948,16 +2935,16 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 74, ../styles/components/_course-finder.scss */
-  .course-finder-input {
+  /* line 73, ../styles/components/_course-finder.scss */
+  .course-finder-input, .site-search-results-input {
     margin-left: 12px;
     font-size: 0.875em;
     line-height: 1.28571em;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 74, ../styles/components/_course-finder.scss */
-  .course-finder-input {
+  /* line 73, ../styles/components/_course-finder.scss */
+  .course-finder-input, .site-search-results-input {
     max-width: 90%;
     width: 90%;
     margin-left: 0;
@@ -2966,44 +2953,44 @@ li.filter-link-only.active > a {
     line-height: 1.5em;
   }
 }
-/* line 99, ../styles/components/_course-finder.scss */
-.course-finder-input::-webkit-input-placeholder {
+/* line 97, ../styles/components/_course-finder.scss */
+.course-finder-input::-webkit-input-placeholder, .site-search-results-input::-webkit-input-placeholder {
   color: #c8c8c8;
 }
-/* line 103, ../styles/components/_course-finder.scss */
-.course-finder-input:-moz-placeholder {
+/* line 101, ../styles/components/_course-finder.scss */
+.course-finder-input:-moz-placeholder, .site-search-results-input:-moz-placeholder {
   /* Firefox 18- */
   color: #c8c8c8;
 }
-/* line 107, ../styles/components/_course-finder.scss */
-.course-finder-input::-moz-placeholder {
+/* line 105, ../styles/components/_course-finder.scss */
+.course-finder-input::-moz-placeholder, .site-search-results-input::-moz-placeholder {
   /* Firefox 19+ */
   color: #c8c8c8;
 }
-/* line 111, ../styles/components/_course-finder.scss */
-.course-finder-input:-ms-input-placeholder {
+/* line 109, ../styles/components/_course-finder.scss */
+.course-finder-input:-ms-input-placeholder, .site-search-results-input:-ms-input-placeholder {
   color: #c8c8c8;
 }
-/* line 116, ../styles/components/_course-finder.scss */
-.course-finder-input:focus::-webkit-input-placeholder {
+/* line 114, ../styles/components/_course-finder.scss */
+.course-finder-input:focus::-webkit-input-placeholder, .site-search-results-input:focus::-webkit-input-placeholder {
   color: #757575;
 }
-/* line 119, ../styles/components/_course-finder.scss */
-.course-finder-input:focus:-moz-placeholder {
+/* line 117, ../styles/components/_course-finder.scss */
+.course-finder-input:focus:-moz-placeholder, .site-search-results-input:focus:-moz-placeholder {
   /* Firefox 18- */
   color: #757575;
 }
-/* line 122, ../styles/components/_course-finder.scss */
-.course-finder-input:focus::-moz-placeholder {
+/* line 120, ../styles/components/_course-finder.scss */
+.course-finder-input:focus::-moz-placeholder, .site-search-results-input:focus::-moz-placeholder {
   /* Firefox 19+ */
   color: #757575;
 }
-/* line 125, ../styles/components/_course-finder.scss */
-.course-finder-input:focus:-ms-input-placeholder {
+/* line 123, ../styles/components/_course-finder.scss */
+.course-finder-input:focus:-ms-input-placeholder, .site-search-results-input:focus:-ms-input-placeholder {
   color: #757575;
 }
 
-/* line 133, ../styles/components/_course-finder.scss */
+/* line 129, ../styles/components/_course-finder.scss */
 .search-link {
   position: absolute;
   top: 0;
@@ -3013,16 +3000,16 @@ li.filter-link-only.active > a {
   height: 48px;
   width: 48px;
 }
-/* line 141, ../styles/components/_course-finder.scss */
+/* line 137, ../styles/components/_course-finder.scss */
 .search-link img {
   margin-top: -3px;
 }
-/* line 144, ../styles/components/_course-finder.scss */
+/* line 140, ../styles/components/_course-finder.scss */
 .search-link a {
   border-bottom: 0;
 }
 
-/* line 150, ../styles/components/_course-finder.scss */
+/* line 146, ../styles/components/_course-finder.scss */
 input, .search-result-module, .search-input-wrap {
   -webkit-transition: -webkit-box-shadow 450ms;
   -moz-transition: -moz-box-shadow 450ms;
@@ -3031,17 +3018,17 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid rgba(0, 0, 0, 0);
 }
 
-/* line 158, ../styles/components/_course-finder.scss */
+/* line 154, ../styles/components/_course-finder.scss */
 .search-gray-border, .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   border: 6px solid #c8c8c8;
 }
 
-/* line 162, ../styles/components/_course-finder.scss */
+/* line 158, ../styles/components/_course-finder.scss */
 .search-bg-gray-border, .search-input-wrap, .search-result-module, .search-result-module:focus {
   border: 6px solid #e6e6e6;
 }
 
-/* line 212, ../styles/components/_course-finder.scss */
+/* line 208, ../styles/components/_course-finder.scss */
 .search-result-module {
   position: relative;
   background-color: #e6e6e6;
@@ -3053,34 +3040,34 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 219, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 219, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 219, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 120px;
     margin-bottom: 1.125em;
   }
 }
 
-/* line 247, ../styles/components/_course-finder.scss */
+/* line 243, ../styles/components/_course-finder.scss */
 .search-results-info p, .lower-search-results-info p {
   font-weight: 300;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 245, ../styles/components/_course-finder.scss */
+  /* line 241, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3088,13 +3075,13 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 71.71974%;
   }
-  /* line 256, ../styles/components/_course-finder.scss */
+  /* line 252, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 2px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 245, ../styles/components/_course-finder.scss */
+  /* line 241, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3102,20 +3089,20 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 48.19132%;
   }
-  /* line 261, ../styles/components/_course-finder.scss */
+  /* line 257, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 265, ../styles/components/_course-finder.scss */
+  /* line 261, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 270, ../styles/components/_course-finder.scss */
+  /* line 266, ../styles/components/_course-finder.scss */
   .lower-search-results-info {
     display: block;
     float: left;
@@ -3126,16 +3113,16 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 283, ../styles/components/_course-finder.scss */
+/* line 279, ../styles/components/_course-finder.scss */
 .search-pagination-btns {
   text-align: right;
 }
-/* line 286, ../styles/components/_course-finder.scss */
+/* line 282, ../styles/components/_course-finder.scss */
 .search-pagination-btns a {
   margin-right: 1px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 283, ../styles/components/_course-finder.scss */
+  /* line 279, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3148,7 +3135,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 283, ../styles/components/_course-finder.scss */
+  /* line 279, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3160,34 +3147,34 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 283, ../styles/components/_course-finder.scss */
+  /* line 279, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
-/* line 310, ../styles/components/_course-finder.scss */
+/* line 306, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a {
   margin-right: 1px;
 }
-/* line 312, ../styles/components/_course-finder.scss */
+/* line 308, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child {
   padding-top: 16px;
 }
-/* line 315, ../styles/components/_course-finder.scss */
+/* line 311, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child:hover {
   padding-top: 16px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 308, ../styles/components/_course-finder.scss */
+  /* line 304, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     margin-top: 6px;
     text-align: right;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 308, ../styles/components/_course-finder.scss */
+  /* line 304, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     display: block;
     float: left;
@@ -3200,21 +3187,21 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 334, ../styles/components/_course-finder.scss */
-.course-title {
+/* line 330, ../styles/components/_course-finder.scss */
+.course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 339, ../styles/components/_course-finder.scss */
-.course-title h3 {
+/* line 335, ../styles/components/_course-finder.scss */
+.course-title h3, .search-title h3 {
   text-decoration: none;
   font-size: 18px;
   margin-top: 0;
   padding-bottom: 1px;
 }
-/* line 344, ../styles/components/_course-finder.scss */
-.course-title h3 a {
+/* line 340, ../styles/components/_course-finder.scss */
+.course-title h3 a, .search-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
   word-break: break-word;
@@ -3224,44 +3211,44 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 334, ../styles/components/_course-finder.scss */
-  .course-title {
+  /* line 330, ../styles/components/_course-finder.scss */
+  .course-title, .search-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 356, ../styles/components/_course-finder.scss */
-.course-description {
+/* line 352, ../styles/components/_course-finder.scss */
+.course-description, .search-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 361, ../styles/components/_course-finder.scss */
-.course-description p {
+/* line 357, ../styles/components/_course-finder.scss */
+.course-description p, .search-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 356, ../styles/components/_course-finder.scss */
-  .course-description {
+  /* line 352, ../styles/components/_course-finder.scss */
+  .course-description, .search-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 356, ../styles/components/_course-finder.scss */
-  .course-description {
+  /* line 352, ../styles/components/_course-finder.scss */
+  .course-description, .search-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 374, ../styles/components/_course-finder.scss */
-  .course-description p {
+  /* line 370, ../styles/components/_course-finder.scss */
+  .course-description p, .search-description p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-/* line 382, ../styles/components/_course-finder.scss */
+/* line 378, ../styles/components/_course-finder.scss */
 .search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -3271,24 +3258,24 @@ input, .search-result-module, .search-input-wrap {
   min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 382, ../styles/components/_course-finder.scss */
+  /* line 378, ../styles/components/_course-finder.scss */
   .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 394, ../styles/components/_course-finder.scss */
+/* line 390, ../styles/components/_course-finder.scss */
 .site-search-results-lower-wrap {
   right: 0;
 }
 
-/* line 399, ../styles/components/_course-finder.scss */
+/* line 395, ../styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
 
-/* line 404, ../styles/components/_course-finder.scss */
+/* line 400, ../styles/components/_course-finder.scss */
 .enrolment-type, .result-file-type {
   width: 32%;
   float: left;
@@ -3296,7 +3283,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: remCalc(14px);
 }
 @media only screen and (max-width: 599px) {
-  /* line 404, ../styles/components/_course-finder.scss */
+  /* line 400, ../styles/components/_course-finder.scss */
   .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
@@ -3305,13 +3292,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 417, ../styles/components/_course-finder.scss */
+/* line 413, ../styles/components/_course-finder.scss */
 .site-search-section-name {
   font-size: 14px;
   font-size: remCalc(14);
 }
 
-/* line 422, ../styles/components/_course-finder.scss */
+/* line 418, ../styles/components/_course-finder.scss */
 .college-name {
   position: absolute;
   left: 32%;
@@ -3321,7 +3308,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 422, ../styles/components/_course-finder.scss */
+  /* line 418, ../styles/components/_course-finder.scss */
   .college-name {
     position: static;
     width: 100%;
@@ -3332,7 +3319,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 439, ../styles/components/_course-finder.scss */
+/* line 435, ../styles/components/_course-finder.scss */
 .result-url {
   position: absolute;
   left: 32%;
@@ -3345,7 +3332,7 @@ input, .search-result-module, .search-input-wrap {
   word-wrap: break-word;
 }
 @media only screen and (max-width: 599px) {
-  /* line 439, ../styles/components/_course-finder.scss */
+  /* line 435, ../styles/components/_course-finder.scss */
   .result-url {
     width: 100%;
     margin-right: 0;
@@ -3356,13 +3343,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 461, ../styles/components/_course-finder.scss */
+/* line 457, ../styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 466, ../styles/components/_course-finder.scss */
+/* line 462, ../styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3374,16 +3361,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 477, ../styles/components/_course-finder.scss */
+/* line 473, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete {
   background-color: #333333;
 }
-/* line 479, ../styles/components/_course-finder.scss */
+/* line 475, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 485, ../styles/components/_course-finder.scss */
+/* line 481, ../styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -3391,14 +3378,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 489, ../styles/components/_course-finder.scss */
+/* line 485, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 495, ../styles/components/_course-finder.scss */
+/* line 491, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3409,14 +3396,14 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 507, ../styles/components/_course-finder.scss */
+/* line 503, ../styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 515, ../styles/components/_course-finder.scss */
+/* line 511, ../styles/components/_course-finder.scss */
 .warning-icon img {
   width: 146px;
   max-width: 146px;
@@ -9534,161 +9521,554 @@ aside h3 {
   }
 }
 
-/* line 16, ../styles/components/_tabs-to-accordion.scss */
+/* line 2, ../styles/components/_short-courses.scss */
+.wrapper {
+  padding-bottom: 130px;
+}
+
+/* line 6, ../styles/components/_short-courses.scss */
+.clear {
+  clear: both;
+}
+
+/* line 10, ../styles/components/_short-courses.scss */
+.clearfix {
+  clear: both;
+  overflow: hidden;
+}
+
+/* line 15, ../styles/components/_short-courses.scss */
+.spacer {
+  clear: both;
+  height: 40px;
+}
+
+/* line 20, ../styles/components/_short-courses.scss */
+.ib {
+  display: inline-block;
+}
+
+/* line 24, ../styles/components/_short-courses.scss */
+.ab {
+  position: absolute;
+}
+
+/* line 28, ../styles/components/_short-courses.scss */
+.caps {
+  text-transform: uppercase;
+}
+
+/* line 32, ../styles/components/_short-courses.scss */
+.left {
+  float: left;
+}
+
+/* line 36, ../styles/components/_short-courses.scss */
+.right {
+  float: right;
+}
+
+/* line 40, ../styles/components/_short-courses.scss */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 44, ../styles/components/_short-courses.scss */
+.trans {
+  opacity: 0;
+}
+
+/* line 48, ../styles/components/_short-courses.scss */
+.break {
+  width: 100%;
+  height: 0;
+  margin: 0;
+}
+
+/* line 60, ../styles/components/_short-courses.scss */
+.ns {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* IMAGES */
+/* CONTROLS STYLES */
+/* line 137, ../styles/components/_short-courses.scss */
+.group {
+  display: inline-block;
+}
+
+/* line 142, ../styles/components/_short-courses.scss */
+.button,
+.drop_down {
+  cursor: pointer;
+}
+
+/* line 160, ../styles/components/_short-courses.scss */
+.drop_down {
+  width: 100%;
+  background: none;
+  color: #c3bdb8;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+}
+
+/* line 171, ../styles/components/_short-courses.scss */
+.drop_down span {
+  padding-right: 20px;
+}
+
+/* line 177, ../styles/components/_short-courses.scss */
+.drop_down span::after,
+.drop_down span::before {
+  position: absolute;
+  top: 8px;
+  right: 3px;
+  display: block;
+  content: '';
+  border: 6px solid transparent;
+  border-top: 7px solid #c3bdb8;
+}
+
+/* line 187, ../styles/components/_short-courses.scss */
+.drop_down span::before {
+  top: 6px;
+  border-top-color: #f9f6f0;
+  z-index: 10;
+}
+
+/* line 193, ../styles/components/_short-courses.scss */
+.drop_down:hover span::after {
+  border-top-color: #333;
+}
+
+/* line 197, ../styles/components/_short-courses.scss */
+.drop_down ul {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  background: #fff;
+  text-align: left;
+}
+
+/* line 218, ../styles/components/_short-courses.scss */
+.drop_down:hover ul {
+  opacity: 1;
+  background: white;
+}
+
+/* line 224, ../styles/components/_short-courses.scss */
+.drop_down:hover span {
+  color: #333;
+}
+
+/* line 228, ../styles/components/_short-courses.scss */
+.drop_down li {
+  display: block;
+  text-transform: none;
+  color: #808080;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  transition: all 150ms;
+}
+
+/* line 243, ../styles/components/_short-courses.scss */
+.drop_down li:after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: 1px;
+  margin-left: 6px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* line 258, ../styles/components/_short-courses.scss */
+.drop_down li:last-of-type {
+  margin: 0;
+}
+
+/* line 262, ../styles/components/_short-courses.scss */
+.drop_down li:hover {
+  color: #59514c;
+}
+
+/* line 266, ../styles/components/_short-courses.scss */
+.drop_down li.active {
+  color: #e96d51;
+  font-weight: 400;
+}
+
+/* line 271, ../styles/components/_short-courses.scss */
+.drop_down li.active:after {
+  background: #e96d51;
+  border-color: #e96d51;
+}
+
+/* line 276, ../styles/components/_short-courses.scss */
+.button.active {
+  background: #e96d51;
+}
+
+/* line 280, ../styles/components/_short-courses.scss */
+.button i {
+  position: relative;
+  display: inline-block;
+  background: #f9f6f0;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  top: 3px;
+}
+
+/* line 291, ../styles/components/_short-courses.scss */
+.button i:before,
+.button i:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: #c3bdb8;
+}
+
+/* line 299, ../styles/components/_short-courses.scss */
+#ToGrid i:before,
+#ToGrid i:after {
+  width: 100%;
+  height: 3px;
+  top: 7px;
+}
+
+/* line 305, ../styles/components/_short-courses.scss */
+#ToGrid i:after {
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 7px;
+}
+
+/* line 313, ../styles/components/_short-courses.scss */
+#ToList i:before,
+#ToList i:after {
+  width: 100%;
+  height: 4px;
+  top: 3px;
+}
+
+/* line 319, ../styles/components/_short-courses.scss */
+#ToList i:after {
+  top: 10px;
+}
+
+/* line 324, ../styles/components/_short-courses.scss */
+.button.active i:before,
+.button.active i:after {
+  background: #e96d51;
+}
+
+/* FAIL ELEMENT */
+/* line 330, ../styles/components/_short-courses.scss */
+#Parks {
+  position: relative;
+}
+
+/* line 333, ../styles/components/_short-courses.scss */
+#Parks li {
+  float: left;
+  width: 30%;
+  text-align: center;
+  padding: 12px;
+  background: gray;
+  margin-right: 3%;
+  height: 140px;
+  margin-bottom: 24px;
+}
+
+/* line 344, ../styles/components/_short-courses.scss */
+#Parks ul {
+  margin-left: 0;
+}
+
+/* line 348, ../styles/components/_short-courses.scss */
+.fail_element {
+  position: absolute;
+  opacity: 0;
+  top: 100px;
+  text-align: center;
+  width: 50%;
+  left: 25%;
+  line-height: 1.4;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+/* line 360, ../styles/components/_short-courses.scss */
+.fail .fail_element {
+  opacity: 1;
+}
+
+/* line 366, ../styles/components/_short-courses.scss */
+#Parks.list .list_header {
+  clear: left;
+}
+
+/* line 379, ../styles/components/_short-courses.scss */
+#Parks.list .meta {
+  display: inline-block;
+}
+
+/* line 389, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta {
+  line-height: 38px;
+  border: 0 none;
+}
+
+/* line 405, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* line 418, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span:after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  border: 5px solid transparent;
+}
+
+/* line 426, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.asc:after {
+  border-top: 7px solid #c3bdb8;
+}
+
+/* line 430, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.desc:after {
+  top: 4px;
+  border-bottom: 7px solid #c3bdb8;
+}
+
+/* line 435, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span:hover {
+  background: #c3bdb8;
+}
+
+/* line 439, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.asc:hover:after {
+  border-top-color: #f0ebe5;
+}
+
+/* line 443, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.desc:hover:after {
+  border-bottom-color: #f0ebe5;
+}
+
+/* line 447, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.active.asc:after {
+  border-top-color: #e96d51;
+}
+
+/* line 451, ../styles/components/_short-courses.scss */
+#Parks.list .list_header .meta span.active.desc:after {
+  border-bottom-color: #e96d51;
+}
+
+/* line 456, ../styles/components/_short-courses.scss */
+#Parks.list .mix {
+  display: none;
+  opacity: 0;
+}
+
+/* line 470, ../styles/components/_short-courses.scss */
+#Parks.list .mix .meta * {
+  line-height: 1;
+}
+
+/* line 475, ../styles/components/_short-courses.scss */
+#Parks.list .mix .meta p,
+#Parks.list .mix .meta ul {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+}
+
+/* line 481, ../styles/components/_short-courses.scss */
+#Parks.list .mix .meta li {
+  margin-bottom: 5px;
+}
+
+/* line 485, ../styles/components/_short-courses.scss */
+#Parks.list .img_wrapper {
+  display: inline-block;
+  width: 177px;
+  height: 95px;
+  vertical-align: top;
+  margin-right: 30px;
+}
+
+/* line 493, ../styles/components/_short-courses.scss */
+#Parks.list .titles {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 498, ../styles/components/_short-courses.scss */
+#Parks.list .titles h2 {
+  font-weight: 700;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #47a497;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  line-height: 1.2 !important;
+}
+
+/* line 508, ../styles/components/_short-courses.scss */
+#Parks.list .titles p {
+  text-indent: -2px;
+}
+
+/* GRID VIEW STYLES */
+/* line 519, ../styles/components/_short-courses.scss */
+#Parks.grid .list_header,
+#Parks.grid .meta {
+  display: none;
+}
+
+/* line 523, ../styles/components/_short-courses.scss */
+#Parks.grid .meta.name {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: block;
+}
+
+/* line 531, ../styles/components/_short-courses.scss */
+#Parks.grid .mix {
+  display: none;
+  opacity: 0;
+  position: relative;
+  width: 48.5%;
+  padding-top: 26%;
+  margin-bottom: 3%;
+}
+
+/* line 586, ../styles/components/_short-courses.scss */
+.controls ul {
+  margin-left: 0;
+}
+
+/* line 589, ../styles/components/_short-courses.scss */
+.controls h3 {
+  clear: left;
+}
+
+/* line 593, ../styles/components/_short-courses.scss */
+.controls li {
+  cursor: pointer;
+  float: left;
+  list-style-type: none;
+  background: #e6e6e6;
+  color: black;
+  padding: 6px 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* line 607, ../styles/components/_short-courses.scss */
+.controls li.active, .controls li:hover {
+  background: black;
+  color: white;
+  font-size: 14px;
+}
+
+/*------------------------------------*\
+    $TABS TO ACCORDION
+\*------------------------------------*/
+/* line 5, ../styles/components/_tabs-to-accordion.scss */
 .tabs-container {
   width: 100%;
 }
-
-/* line 19, ../styles/components/_tabs-to-accordion.scss */
-ul.tabs {
+/* line 7, ../styles/components/_tabs-to-accordion.scss */
+.tabs-container .tabs {
   margin: 0;
   padding: 0 0 0 0;
   float: left;
   list-style: none;
   width: 100%;
-  border-top: 6px solid black;
-  border-right: 6px solid black;
-  border-left: 6px solid black;
-  border-bottom: 0;
-}
-@media only screen and (min-width: 960px) {
-  /* line 19, ../styles/components/_tabs-to-accordion.scss */
-  ul.tabs {
-    border-top: 12px solid black;
-    border-right: 12px solid black;
-    border-left: 12px solid black;
-  }
 }
 @media only screen and (max-width: 599px) {
-  /* line 19, ../styles/components/_tabs-to-accordion.scss */
-  ul.tabs {
+  /* line 7, ../styles/components/_tabs-to-accordion.scss */
+  .tabs-container .tabs {
     display: none;
   }
 }
-
-/* line 43, ../styles/components/_tabs-to-accordion.scss */
-ul.tabs li {
+/* line 16, ../styles/components/_tabs-to-accordion.scss */
+.tabs-container .tabs li {
   float: left;
   margin: 0;
   cursor: pointer;
-  padding: 18px 18px;
   height: auto;
-  line-height: 31px;
-  border-left: 1px solid #333;
-  border-bottom: 0;
-  color: #757575;
-  /*overflow: hidden;*/
   position: relative;
   word-wrap: break-word;
-  width: 33.333333%;
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  border-bottom: 1px solid #e6e6e6;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  margin-right: 0.375em;
 }
-/* line 61, ../styles/components/_tabs-to-accordion.scss */
-ul.tabs li:first-child {
-  border-left: 0;
+/* line 31, ../styles/components/_tabs-to-accordion.scss */
+.tabs-container .tabs li:hover {
+  border-bottom: 1px solid black;
 }
-/* line 65, ../styles/components/_tabs-to-accordion.scss */
-ul.tabs li:last-child {
-  border-right: 0;
-}
-
-/* line 70, ../styles/components/_tabs-to-accordion.scss */
-.tab_last {
-  border-right: 1px solid #333;
-}
-
-/* line 72, ../styles/components/_tabs-to-accordion.scss */
-ul.tabs li:hover {
-  background-color: yellow;
-  color: black;
+/* line 36, ../styles/components/_tabs-to-accordion.scss */
+.tabs-container .tabs li:last-child {
+  margin-right: 0;
 }
 
-/* line 77, ../styles/components/_tabs-to-accordion.scss */
+/* line 43, ../styles/components/_tabs-to-accordion.scss */
 ul.tabs li.active {
-  background-color: #e6e6e6;
-  color: black;
-  border-bottom: 0;
+  border-bottom: 1px solid black;
   display: block;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  background-position: center bottom;
 }
 
-/* line 88, ../styles/components/_tabs-to-accordion.scss */
+/* line 48, ../styles/components/_tabs-to-accordion.scss */
 .tab_container {
-  border-top: 6px solid black;
   clear: both;
   float: left;
   width: 100%;
-  background: #fff;
   overflow: auto;
   margin-bottom: 0.75em;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 88, ../styles/components/_tabs-to-accordion.scss */
-  .tab_container {
-    border-top: 0;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 88, ../styles/components/_tabs-to-accordion.scss */
-  .tab_container {
-    margin-bottom: 1.5em;
-  }
-}
-
-/* line 111, ../styles/components/_tabs-to-accordion.scss */
-.tab_content {
-  border: 6px solid black;
+/* line 54, ../styles/components/_tabs-to-accordion.scss */
+.tab_container .tab_content {
   display: none;
 }
-/* line 114, ../styles/components/_tabs-to-accordion.scss */
-.tab_content img {
-  max-width: 100%;
-  width: auto;
-}
-@media only screen and (min-width: 960px) {
-  /* line 111, ../styles/components/_tabs-to-accordion.scss */
-  .tab_content {
-    border: 12px solid black;
-    border-top: 0;
-  }
-}
-
-/* line 126, ../styles/components/_tabs-to-accordion.scss */
-.tab-content-caption-block {
-  background-color: black;
+/* line 57, ../styles/components/_tabs-to-accordion.scss */
+.tab_container .tab-content-caption-block {
   width: 100%;
-  padding: 12px;
-  color: white;
 }
-/* line 133, ../styles/components/_tabs-to-accordion.scss */
-.tab-content-caption-block .block-a, .tab-content-caption-block .block-b {
-  background-color: black;
-  width: 100%;
-  float: left;
-  clear: left;
-}
-@media only screen and (min-width: 960px) {
-  /* line 133, ../styles/components/_tabs-to-accordion.scss */
-  .tab-content-caption-block .block-a, .tab-content-caption-block .block-b {
-    width: 50%;
-    float: left;
-    clear: none;
-  }
-}
-
-/* line 146, ../styles/components/_tabs-to-accordion.scss */
-.tab_drawer_heading {
-  color: #282828;
-  border-left: 6px solid black;
-  border-right: 6px solid black;
-  border-bottom: 6px solid black;
-  background-color: #c8c8c8;
+/* line 61, ../styles/components/_tabs-to-accordion.scss */
+.tab_container .tab_drawer_heading {
   margin: 0;
-  padding: 12px 18px;
   display: block;
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -9699,24 +10079,16 @@ ul.tabs li.active {
   user-select: none;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 146, ../styles/components/_tabs-to-accordion.scss */
-  .tab_drawer_heading {
+  /* line 61, ../styles/components/_tabs-to-accordion.scss */
+  .tab_container .tab_drawer_heading {
     display: none;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 146, ../styles/components/_tabs-to-accordion.scss */
-  .tab_drawer_heading {
+  /* line 61, ../styles/components/_tabs-to-accordion.scss */
+  .tab_container .tab_drawer_heading {
     display: none;
   }
-}
-
-/* line 174, ../styles/components/_tabs-to-accordion.scss */
-.d_active {
-  background-color: white;
-  border-color: black;
-  border-bottom: 0;
-  color: black;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
