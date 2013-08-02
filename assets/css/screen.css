@@ -360,6 +360,11 @@ questions: http://www.webtype.com
   src: url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.svg') format('svg'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo-social/entypo-social.woff') format('woff');
 }
 
+/* line 28, ../styles/font-face/_entypo.scss */
+.download:before {
+  content: "&#128196;";
+}
+
 /**
  * League Gothic
  *
@@ -722,13 +727,17 @@ figcaption, .rsCaption {
   line-height: 1.28571em;
   padding: 0.42857em;
 }
+/* line 193, ../styles/globals/_typography.scss */
+figcaption p, .rsCaption p {
+  padding-bottom: 0;
+}
 
-/* line 471, ../styles/globals/_typography.scss */
+/* line 474, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 472, ../styles/globals/_typography.scss */
+/* line 475, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -5781,8 +5790,12 @@ a figure img {
   float: left;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+/* line 42, ../styles/components/_royalslider.scss */
+.overflow .rsOverflow {
+  overflow: visible;
+}
 
-/* line 43, ../styles/components/_royalslider.scss */
+/* line 46, ../styles/components/_royalslider.scss */
 .rsVisibleNearbyWrap {
   width: 100%;
   height: 100%;
@@ -5793,14 +5806,14 @@ a figure img {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 52, ../styles/components/_royalslider.scss */
+/* line 55, ../styles/components/_royalslider.scss */
 .rsVisibleNearbyWrap .rsOverflow {
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* line 58, ../styles/components/_royalslider.scss */
+/* line 61, ../styles/components/_royalslider.scss */
 .rsContainer {
   position: relative;
   width: 100%;
@@ -5808,19 +5821,19 @@ a figure img {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 66, ../styles/components/_royalslider.scss */
+/* line 69, ../styles/components/_royalslider.scss */
 .rsArrow,
 .rsThumbsArrow {
   cursor: pointer;
 }
 
-/* line 70, ../styles/components/_royalslider.scss */
+/* line 73, ../styles/components/_royalslider.scss */
 .rsThumb {
   float: left;
   position: relative;
 }
 
-/* line 78, ../styles/components/_royalslider.scss */
+/* line 81, ../styles/components/_royalslider.scss */
 .rsArrow,
 .rsNav,
 .rsThumbsArrow {
@@ -5831,7 +5844,7 @@ a figure img {
   transition: opacity 0.3s linear;
 }
 
-/* line 85, ../styles/components/_royalslider.scss */
+/* line 88, ../styles/components/_royalslider.scss */
 .rsHidden {
   opacity: 0;
   visibility: hidden;
@@ -5841,13 +5854,13 @@ a figure img {
   transition: visibility 0s linear 0.3s,opacity 0.3s linear;
 }
 
-/* line 95, ../styles/components/_royalslider.scss */
+/* line 98, ../styles/components/_royalslider.scss */
 .rsGCaption {
   width: 100%;
 }
 
 /* Fullscreen options, very important ^^ */
-/* line 100, ../styles/components/_royalslider.scss */
+/* line 103, ../styles/components/_royalslider.scss */
 .royalSlider.rsFullscreen {
   position: fixed !important;
   height: auto !important;
@@ -5861,7 +5874,7 @@ a figure img {
   right: 0 !important;
 }
 
-/* line 113, ../styles/components/_royalslider.scss */
+/* line 116, ../styles/components/_royalslider.scss */
 .royalSlider .rsSlide.rsFakePreloader {
   opacity: 1 !important;
   -webkit-transition: 0s;
@@ -5871,7 +5884,7 @@ a figure img {
   display: none;
 }
 
-/* line 122, ../styles/components/_royalslider.scss */
+/* line 125, ../styles/components/_royalslider.scss */
 .rsSlide {
   position: absolute;
   left: 0;
@@ -5882,38 +5895,38 @@ a figure img {
   width: 100%;
 }
 
-/* line 134, ../styles/components/_royalslider.scss */
+/* line 137, ../styles/components/_royalslider.scss */
 .royalSlider.rsAutoHeight,
 .rsAutoHeight .rsSlide {
   height: auto;
 }
 
-/* line 138, ../styles/components/_royalslider.scss */
+/* line 141, ../styles/components/_royalslider.scss */
 .rsContent {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* line 144, ../styles/components/_royalslider.scss */
+/* line 147, ../styles/components/_royalslider.scss */
 .rsPreloader {
   position: absolute;
   z-index: 0;
 }
 
-/* line 149, ../styles/components/_royalslider.scss */
+/* line 152, ../styles/components/_royalslider.scss */
 .rsNav {
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
   user-select: none;
 }
 
-/* line 154, ../styles/components/_royalslider.scss */
+/* line 157, ../styles/components/_royalslider.scss */
 .rsNavItem {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.25);
 }
 
-/* line 158, ../styles/components/_royalslider.scss */
+/* line 161, ../styles/components/_royalslider.scss */
 .rsThumbs {
   cursor: pointer;
   position: relative;
@@ -5922,20 +5935,20 @@ a figure img {
   z-index: 22;
 }
 
-/* line 165, ../styles/components/_royalslider.scss */
+/* line 168, ../styles/components/_royalslider.scss */
 .rsTabs {
   float: left;
   background: none !important;
 }
 
-/* line 170, ../styles/components/_royalslider.scss */
+/* line 173, ../styles/components/_royalslider.scss */
 .rsTabs,
 .rsThumbs {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 176, ../styles/components/_royalslider.scss */
+/* line 179, ../styles/components/_royalslider.scss */
 .rsVideoContainer {
   /*left: 0;
   top: 0;
@@ -5952,7 +5965,7 @@ a figure img {
   position: relative;
 }
 
-/* line 191, ../styles/components/_royalslider.scss */
+/* line 194, ../styles/components/_royalslider.scss */
 .rsVideoFrameHolder {
   position: absolute;
   left: 0;
@@ -5962,12 +5975,12 @@ a figure img {
   -webkit-transition: .3s;
 }
 
-/* line 199, ../styles/components/_royalslider.scss */
+/* line 202, ../styles/components/_royalslider.scss */
 .rsVideoFrameHolder.rsVideoActive {
   opacity: 1;
 }
 
-/* line 205, ../styles/components/_royalslider.scss */
+/* line 208, ../styles/components/_royalslider.scss */
 .rsVideoContainer iframe,
 .rsVideoContainer video,
 .rsVideoContainer embed,
@@ -5981,7 +5994,7 @@ a figure img {
 }
 
 /* ios controls over video bug, shifting video */
-/* line 216, ../styles/components/_royalslider.scss */
+/* line 219, ../styles/components/_royalslider.scss */
 .rsVideoContainer.rsIOSVideo iframe,
 .rsVideoContainer.rsIOSVideo video,
 .rsVideoContainer.rsIOSVideo embed {
@@ -5991,7 +6004,7 @@ a figure img {
   padding-right: 44px;
 }
 
-/* line 223, ../styles/components/_royalslider.scss */
+/* line 226, ../styles/components/_royalslider.scss */
 .rsABlock {
   left: 0;
   top: 0;
@@ -5999,27 +6012,27 @@ a figure img {
   z-index: 15;
 }
 
-/* line 231, ../styles/components/_royalslider.scss */
+/* line 234, ../styles/components/_royalslider.scss */
 img.rsImg {
   max-width: none;
 }
 
-/* line 235, ../styles/components/_royalslider.scss */
+/* line 238, ../styles/components/_royalslider.scss */
 .grab-cursor {
   cursor: url(grab.png) 8 8, move;
 }
 
-/* line 239, ../styles/components/_royalslider.scss */
+/* line 242, ../styles/components/_royalslider.scss */
 .grabbing-cursor {
   cursor: url(grabbing.png) 8 8, move;
 }
 
-/* line 243, ../styles/components/_royalslider.scss */
+/* line 246, ../styles/components/_royalslider.scss */
 .rsNoDrag {
   cursor: auto;
 }
 
-/* line 247, ../styles/components/_royalslider.scss */
+/* line 250, ../styles/components/_royalslider.scss */
 .rsLink {
   left: 0;
   top: 0;
@@ -6050,7 +6063,7 @@ img.rsImg {
 * 
 ******************************/
 /* Background */
-/* line 285, ../styles/components/_royalslider.scss */
+/* line 288, ../styles/components/_royalslider.scss */
 .rsDefault,
 .rsDefault .rsOverflow,
 .rsDefault .rsSlide,
@@ -6065,7 +6078,7 @@ img.rsImg {
 *  1. Arrows
 *
 ****************/
-/* line 297, ../styles/components/_royalslider.scss */
+/* line 300, ../styles/components/_royalslider.scss */
 .rsDefault .rsArrow {
   height: 100%;
   width: 44px;
@@ -6075,37 +6088,37 @@ img.rsImg {
   z-index: 21;
 }
 
-/* line 305, ../styles/components/_royalslider.scss */
+/* line 308, ../styles/components/_royalslider.scss */
 .rsDefault.rsVer .rsArrow {
   width: 100%;
   height: 44px;
 }
 
-/* line 310, ../styles/components/_royalslider.scss */
+/* line 313, ../styles/components/_royalslider.scss */
 .rsDefault.rsVer .rsArrowLeft {
   top: 0;
   left: 0;
 }
 
-/* line 311, ../styles/components/_royalslider.scss */
+/* line 314, ../styles/components/_royalslider.scss */
 .rsDefault.rsVer .rsArrowRight {
   bottom: 0;
   left: 0;
 }
 
-/* line 313, ../styles/components/_royalslider.scss */
+/* line 316, ../styles/components/_royalslider.scss */
 .rsDefault.rsHor .rsArrowLeft {
   left: 0;
   top: 0;
 }
 
-/* line 314, ../styles/components/_royalslider.scss */
+/* line 317, ../styles/components/_royalslider.scss */
 .rsDefault.rsHor .rsArrowRight {
   right: 0;
   top: 0;
 }
 
-/* line 316, ../styles/components/_royalslider.scss */
+/* line 319, ../styles/components/_royalslider.scss */
 .rsDefault .rsArrowIcn {
   width: 32px;
   height: 32px;
@@ -6122,32 +6135,32 @@ img.rsImg {
   border-radius: 2px;
 }
 
-/* line 334, ../styles/components/_royalslider.scss */
+/* line 337, ../styles/components/_royalslider.scss */
 .rsDefault .rsArrowIcn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 338, ../styles/components/_royalslider.scss */
+/* line 341, ../styles/components/_royalslider.scss */
 .rsDefault.rsHor .rsArrowLeft .rsArrowIcn {
   background-position: -64px -32px;
 }
 
-/* line 339, ../styles/components/_royalslider.scss */
+/* line 342, ../styles/components/_royalslider.scss */
 .rsDefault.rsHor .rsArrowRight .rsArrowIcn {
   background-position: -64px -64px;
 }
 
-/* line 341, ../styles/components/_royalslider.scss */
+/* line 344, ../styles/components/_royalslider.scss */
 .rsDefault.rsVer .rsArrowLeft .rsArrowIcn {
   background-position: -96px -32px;
 }
 
-/* line 342, ../styles/components/_royalslider.scss */
+/* line 345, ../styles/components/_royalslider.scss */
 .rsDefault.rsVer .rsArrowRight .rsArrowIcn {
   background-position: -96px -64px;
 }
 
-/* line 344, ../styles/components/_royalslider.scss */
+/* line 347, ../styles/components/_royalslider.scss */
 .rsDefault .rsArrowDisabled .rsArrowIcn {
   opacity: .2;
   filter: alpha(opacity=20);
@@ -6159,7 +6172,7 @@ img.rsImg {
 *  2. Bullets
 *
 ****************/
-/* line 353, ../styles/components/_royalslider.scss */
+/* line 356, ../styles/components/_royalslider.scss */
 .rsDefault .rsBullets {
   position: absolute;
   z-index: 35;
@@ -6175,7 +6188,7 @@ img.rsImg {
   overflow: hidden;
 }
 
-/* line 369, ../styles/components/_royalslider.scss */
+/* line 372, ../styles/components/_royalslider.scss */
 .rsDefault .rsBullet {
   width: 8px;
   height: 8px;
@@ -6185,7 +6198,7 @@ img.rsImg {
   padding: 6px 5px 6px;
 }
 
-/* line 377, ../styles/components/_royalslider.scss */
+/* line 380, ../styles/components/_royalslider.scss */
 .rsDefault .rsBullet span {
   display: block;
   width: 8px;
@@ -6195,7 +6208,7 @@ img.rsImg {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 385, ../styles/components/_royalslider.scss */
+/* line 388, ../styles/components/_royalslider.scss */
 .rsDefault .rsBullet.rsNavSelected span {
   background-color: #FFF;
 }
@@ -6205,13 +6218,13 @@ img.rsImg {
 *  3. Thumbnails
 *
 ****************/
-/* line 399, ../styles/components/_royalslider.scss */
+/* line 402, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsHor {
   width: 100%;
   height: 72px;
 }
 
-/* line 403, ../styles/components/_royalslider.scss */
+/* line 406, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsVer {
   width: 96px;
   height: 100%;
@@ -6220,19 +6233,19 @@ img.rsImg {
   right: 0;
 }
 
-/* line 410, ../styles/components/_royalslider.scss */
+/* line 413, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsHor .rsThumbsContainer {
   position: relative;
   height: 100%;
 }
 
-/* line 414, ../styles/components/_royalslider.scss */
+/* line 417, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsContainer {
   position: relative;
   width: 100%;
 }
 
-/* line 418, ../styles/components/_royalslider.scss */
+/* line 421, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumb {
   float: left;
   overflow: hidden;
@@ -6240,30 +6253,30 @@ img.rsImg {
   height: 72px;
 }
 
-/* line 424, ../styles/components/_royalslider.scss */
+/* line 427, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumb img {
   width: 100%;
   height: 100%;
 }
 
-/* line 428, ../styles/components/_royalslider.scss */
+/* line 431, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumb.rsNavSelected {
   background: #02874a;
 }
 
-/* line 431, ../styles/components/_royalslider.scss */
+/* line 434, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumb.rsNavSelected img {
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
 
-/* line 435, ../styles/components/_royalslider.scss */
+/* line 438, ../styles/components/_royalslider.scss */
 .rsDefault .rsTmb {
   display: block;
 }
 
 /* Thumbnails with text */
-/* line 440, ../styles/components/_royalslider.scss */
+/* line 443, ../styles/components/_royalslider.scss */
 .rsDefault .rsTmb h5 {
   font-size: 16px;
   margin: 0;
@@ -6272,7 +6285,7 @@ img.rsImg {
   color: #FFF;
 }
 
-/* line 447, ../styles/components/_royalslider.scss */
+/* line 450, ../styles/components/_royalslider.scss */
 .rsDefault .rsTmb span {
   color: #DDD;
   margin: 0;
@@ -6282,7 +6295,7 @@ img.rsImg {
 }
 
 /* Thumbnails arrow icons */
-/* line 458, ../styles/components/_royalslider.scss */
+/* line 461, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsArrow {
   height: 100%;
   width: 20px;
@@ -6294,42 +6307,42 @@ img.rsImg {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* line 468, ../styles/components/_royalslider.scss */
+/* line 471, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsArrow:hover {
   background: rgba(0, 0, 0, 0.9);
 }
 
-/* line 471, ../styles/components/_royalslider.scss */
+/* line 474, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsArrow {
   width: 100%;
   height: 20px;
 }
 
-/* line 475, ../styles/components/_royalslider.scss */
+/* line 478, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsArrowLeft {
   top: 0;
   left: 0;
 }
 
-/* line 476, ../styles/components/_royalslider.scss */
+/* line 479, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsArrowRight {
   bottom: 0;
   left: 0;
 }
 
-/* line 478, ../styles/components/_royalslider.scss */
+/* line 481, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsHor .rsThumbsArrowLeft {
   left: 0;
   top: 0;
 }
 
-/* line 479, ../styles/components/_royalslider.scss */
+/* line 482, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsHor .rsThumbsArrowRight {
   right: 0;
   top: 0;
 }
 
-/* line 481, ../styles/components/_royalslider.scss */
+/* line 484, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsArrowIcn {
   width: 16px;
   height: 16px;
@@ -6342,45 +6355,45 @@ img.rsImg {
   background: url("../img/royalslider/rs-default.png");
 }
 
-/* line 493, ../styles/components/_royalslider.scss */
+/* line 496, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn {
   background-position: -128px -32px;
 }
 
-/* line 494, ../styles/components/_royalslider.scss */
+/* line 497, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn {
   background-position: -128px -48px;
 }
 
-/* line 496, ../styles/components/_royalslider.scss */
+/* line 499, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsArrowLeft .rsThumbsArrowIcn {
   background-position: -144px -32px;
 }
 
-/* line 497, ../styles/components/_royalslider.scss */
+/* line 500, ../styles/components/_royalslider.scss */
 .rsDefault.rsWithThumbsVer .rsThumbsArrowRight .rsThumbsArrowIcn {
   background-position: -144px -48px;
 }
 
-/* line 499, ../styles/components/_royalslider.scss */
+/* line 502, ../styles/components/_royalslider.scss */
 .rsDefault .rsThumbsArrowDisabled {
   display: none !important;
 }
 
 /* Thumbnails resizing on smaller screens */
 @media screen and (min-width: 0px) and (max-width: 800px) {
-  /* line 503, ../styles/components/_royalslider.scss */
+  /* line 506, ../styles/components/_royalslider.scss */
   .rsDefault .rsThumb {
     width: 59px;
     height: 44px;
   }
 
-  /* line 507, ../styles/components/_royalslider.scss */
+  /* line 510, ../styles/components/_royalslider.scss */
   .rsDefault .rsThumbsHor {
     height: 44px;
   }
 
-  /* line 510, ../styles/components/_royalslider.scss */
+  /* line 513, ../styles/components/_royalslider.scss */
   .rsDefault .rsThumbsVer {
     width: 59px;
   }
@@ -6390,7 +6403,7 @@ img.rsImg {
 *  4. Tabs
 *
 ****************/
-/* line 524, ../styles/components/_royalslider.scss */
+/* line 527, ../styles/components/_royalslider.scss */
 .rsDefault .rsTabs {
   width: 100%;
   height: auto;
@@ -6401,7 +6414,7 @@ img.rsImg {
   position: relative;
 }
 
-/* line 531, ../styles/components/_royalslider.scss */
+/* line 534, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab {
   display: inline-block;
   cursor: pointer;
@@ -6424,7 +6437,7 @@ img.rsImg {
   *zoom: 1;
 }
 
-/* line 555, ../styles/components/_royalslider.scss */
+/* line 558, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab:first-child {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
@@ -6432,7 +6445,7 @@ img.rsImg {
   border-bottom-left-radius: 4px;
 }
 
-/* line 561, ../styles/components/_royalslider.scss */
+/* line 564, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab:last-child {
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
@@ -6441,14 +6454,14 @@ img.rsImg {
   border-right: 1px solid #cfcfcf;
 }
 
-/* line 569, ../styles/components/_royalslider.scss */
+/* line 572, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab:active {
   border: 1px solid #D9D9DD;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
 
-/* line 574, ../styles/components/_royalslider.scss */
+/* line 577, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab.rsNavSelected {
   color: #FFF;
   border: 1px solid #999;
@@ -6465,7 +6478,7 @@ img.rsImg {
 *  5. Fullscreen button
 *
 ****************/
-/* line 595, ../styles/components/_royalslider.scss */
+/* line 598, ../styles/components/_royalslider.scss */
 .rsDefault .rsFullscreenBtn {
   right: 0;
   top: 0;
@@ -6477,7 +6490,7 @@ img.rsImg {
   cursor: pointer;
 }
 
-/* line 606, ../styles/components/_royalslider.scss */
+/* line 609, ../styles/components/_royalslider.scss */
 .rsDefault .rsFullscreenIcn {
   display: block;
   margin: 6px;
@@ -6490,12 +6503,12 @@ img.rsImg {
   border-radius: 2px;
 }
 
-/* line 619, ../styles/components/_royalslider.scss */
+/* line 622, ../styles/components/_royalslider.scss */
 .rsDefault .rsFullscreenIcn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 622, ../styles/components/_royalslider.scss */
+/* line 625, ../styles/components/_royalslider.scss */
 .rsDefault.rsFullscreen .rsFullscreenIcn {
   background-position: -32px 0;
 }
@@ -6505,7 +6518,7 @@ img.rsImg {
 *  6. Play/close video button
 *
 ****************/
-/* line 636, ../styles/components/_royalslider.scss */
+/* line 639, ../styles/components/_royalslider.scss */
 .rsDefault .rsPlayBtn {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
   width: 64px;
@@ -6515,7 +6528,7 @@ img.rsImg {
   cursor: pointer;
 }
 
-/* line 644, ../styles/components/_royalslider.scss */
+/* line 647, ../styles/components/_royalslider.scss */
 .rsDefault .rsPlayBtnIcon {
   width: 64px;
   display: block;
@@ -6531,19 +6544,19 @@ img.rsImg {
   *background-color: #000;
 }
 
-/* line 660, ../styles/components/_royalslider.scss */
+/* line 663, ../styles/components/_royalslider.scss */
 .rsDefault .rsPlayBtn:hover .rsPlayBtnIcon {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 663, ../styles/components/_royalslider.scss */
+/* line 666, ../styles/components/_royalslider.scss */
 .rsDefault .rsBtnCenterer {
   position: absolute;
   left: 50%;
   top: 50%;
 }
 
-/* line 668, ../styles/components/_royalslider.scss */
+/* line 671, ../styles/components/_royalslider.scss */
 .rsDefault .rsCloseVideoBtn {
   right: 0;
   top: 0;
@@ -6556,13 +6569,13 @@ img.rsImg {
   -webkit-transform: translateZ(0);
 }
 
-/* line 680, ../styles/components/_royalslider.scss */
+/* line 683, ../styles/components/_royalslider.scss */
 .rsDefault .rsCloseVideoBtn.rsiOSBtn {
   top: -38px;
   right: -6px;
 }
 
-/* line 685, ../styles/components/_royalslider.scss */
+/* line 688, ../styles/components/_royalslider.scss */
 .rsDefault .rsCloseVideoIcn {
   margin: 6px;
   width: 32px;
@@ -6573,7 +6586,7 @@ img.rsImg {
   *background-color: #000;
 }
 
-/* line 694, ../styles/components/_royalslider.scss */
+/* line 697, ../styles/components/_royalslider.scss */
 .rsDefault .rsCloseVideoIcn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -6583,7 +6596,7 @@ img.rsImg {
 *  7. Preloader
 *
 ****************/
-/* line 706, ../styles/components/_royalslider.scss */
+/* line 709, ../styles/components/_royalslider.scss */
 .rsDefault .rsPreloader {
   width: 20px;
   height: 20px;
@@ -6617,7 +6630,7 @@ img.rsImg {
 	border-radius: 2px;
 }
 */
-/* line 748, ../styles/components/_royalslider.scss */
+/* line 751, ../styles/components/_royalslider.scss */
 .visibleNearby {
   width: 100%;
   background: #141414;
@@ -6625,7 +6638,7 @@ img.rsImg {
   padding-top: 25px;
 }
 
-/* line 754, ../styles/components/_royalslider.scss */
+/* line 757, ../styles/components/_royalslider.scss */
 .visibleNearby .rsGCaption {
   font-size: 16px;
   line-height: 18px;
@@ -6639,7 +6652,7 @@ img.rsImg {
   text-align: center;
 }
 
-/* line 766, ../styles/components/_royalslider.scss */
+/* line 769, ../styles/components/_royalslider.scss */
 .visibleNearby .rsGCaption span {
   display: block;
   clear: both;
@@ -6649,7 +6662,7 @@ img.rsImg {
 }
 
 /* Scaling transforms */
-/* line 776, ../styles/components/_royalslider.scss */
+/* line 779, ../styles/components/_royalslider.scss */
 .visibleNearby .rsSlide img {
   opacity: 0.45;
   -webkit-transition: all 0.3s ease-out;
@@ -6662,7 +6675,7 @@ img.rsImg {
   transform: scale(0.9);
 }
 
-/* line 788, ../styles/components/_royalslider.scss */
+/* line 791, ../styles/components/_royalslider.scss */
 .visibleNearby .rsActiveSlide img {
   opacity: 1;
   -webkit-transform: scale(1);
@@ -6674,31 +6687,31 @@ img.rsImg {
 
 /* Non-linear resizing on smaller screens */
 @media screen and (min-width: 0px) and (max-width: 900px) {
-  /* line 799, ../styles/components/_royalslider.scss */
+  /* line 802, ../styles/components/_royalslider.scss */
   #gallery-1 {
     padding: 12px 0 12px;
   }
 
-  /* line 803, ../styles/components/_royalslider.scss */
+  /* line 806, ../styles/components/_royalslider.scss */
   #gallery-1 .rsOverflow,
   .royalSlider#gallery-1 {
     height: 400px !important;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 500px) {
-  /* line 809, ../styles/components/_royalslider.scss */
+  /* line 812, ../styles/components/_royalslider.scss */
   #gallery-1 .rsOverflow,
   .royalSlider#gallery-1 {
     height: 300px !important;
   }
 }
 /* contentSlider */
-/* line 816, ../styles/components/_royalslider.scss */
+/* line 819, ../styles/components/_royalslider.scss */
 .contentSlider {
   width: 100%;
 }
 
-/* line 823, ../styles/components/_royalslider.scss */
+/* line 826, ../styles/components/_royalslider.scss */
 .contentSlider,
 .contentSlider .rsOverflow,
 .contentSlider .rsSlide,
@@ -6708,13 +6721,13 @@ img.rsImg {
   color: #000;
 }
 
-/* line 829, ../styles/components/_royalslider.scss */
+/* line 832, ../styles/components/_royalslider.scss */
 .contentSlider .rsSlide,
 .contentSlider .rsOverflow {
   background: #eee;
 }
 
-/* line 832, ../styles/components/_royalslider.scss */
+/* line 835, ../styles/components/_royalslider.scss */
 .contentSlider h3 {
   font-size: 24px;
   line-height: 31px;
@@ -6722,14 +6735,14 @@ img.rsImg {
   font-weight: bold;
 }
 
-/* line 838, ../styles/components/_royalslider.scss */
+/* line 841, ../styles/components/_royalslider.scss */
 .contentSlider img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* line 843, ../styles/components/_royalslider.scss */
+/* line 846, ../styles/components/_royalslider.scss */
 .content-slider-bg {
   width: 86%;
   padding: 24px 7%;
