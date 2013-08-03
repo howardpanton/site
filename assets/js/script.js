@@ -448,7 +448,7 @@ $(document).ready(function(){
 
 
   // scroll to the top of the page when the button is clicked
-  $('.back-to-top').click(function(e){
+  $('.back-to-top').fastClick(function(e){
     e.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
   });
@@ -620,6 +620,33 @@ if ($('.accordion').length > 0) {
 
 }
   
+
+// detect dropdown menu button
+if ($('.dd-menu').length > 0) {
+
+    $(".js-dd-menu").fastClick(function (event){
+       event.preventDefault();
+       var _d = $(this);
+       var _d_menu = _d.parent();
+       
+       if (_d_menu.hasClass('active')) {
+          _d_menu.find('.js-dd-menu-icon').html("&#59236;");
+          _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
+            _d_menu.removeClass('active');
+         });
+       }
+       else { 
+          _d_menu.find('.js-dd-menu-icon').html("&#59239;");
+          _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
+            _d_menu.addClass('active');
+         });
+       }
+
+    });       
+}
+
+
+
 // detect circles-callout component
 
 if ($('.circles-component').length > 0) {
