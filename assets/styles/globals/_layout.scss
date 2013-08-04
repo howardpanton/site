@@ -72,6 +72,18 @@
 	}
 }
 
+%d5-d10--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 5,10, (5, 16));
+	}
+}
+
+%d11-d16--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 11,16, (5, 16));
+	}
+}
+
 %d13-d16--within-d5-d16 { // used for asides
 	@include gs-media (d) {
 		@include gs-span(d, 13,16, (5, 16));
@@ -119,8 +131,11 @@
 	@extend %d5-d16--within-d5-d16;
 }
 
+.l-content-half-width {
+	@extend %d5-d10--within-d5-d16;
+}
+
 .l-content {
-	@extend %t2-t7;
 	@extend %d5-d12--within-d5-d16;
 }
 

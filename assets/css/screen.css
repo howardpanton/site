@@ -2542,7 +2542,7 @@ a.img:hover {
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 34, ../styles/globals/_layout.scss */
-  .l-content-full-width, .l-content, .content, .two-up, .three-up, .four-up {
+  .l-content-full-width, .content, .two-up, .three-up, .four-up {
     display: block;
     float: left;
     margin-left: 13.39732%;
@@ -2597,6 +2597,17 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 75, ../styles/globals/_layout.scss */
+  .l-content-half-width {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 48.31199%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* line 87, ../styles/globals/_layout.scss */
   aside {
     display: block;
     float: left;
@@ -2607,7 +2618,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 81, ../styles/globals/_layout.scss */
+  /* line 93, ../styles/globals/_layout.scss */
   .search-results-summary {
     display: block;
     float: left;
@@ -2620,7 +2631,7 @@ a.img:hover {
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 94, ../styles/globals/_layout.scss */
+/* line 106, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2628,7 +2639,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 101, ../styles/globals/_layout.scss */
+/* line 113, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2637,7 +2648,7 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 142, ../styles/globals/_layout.scss */
+/* line 157, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   border-left: none;
@@ -2645,7 +2656,7 @@ aside {
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 142, ../styles/globals/_layout.scss */
+  /* line 157, ../styles/globals/_layout.scss */
   aside {
     background: white;
     border-left: 1px dotted #e6e6e6;
@@ -5232,7 +5243,7 @@ a figure img {
 /* line 70, ../styles/components/_blocks.scss */
 .__media.__with-aside {
   /**
-  * Images with aside will run from d5 to d13 
+  * Images with aside will run from d5 to d12 
   */
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -9451,31 +9462,30 @@ aside h3 {
 }
 
 /* line 1, ../styles/components/_vcards.scss */
-.vcard {
+ul.vcard {
+  margin-top: 1.5em;
+  margin-left: 0;
   border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.125em;
   padding: 2.25em 0;
 }
-/* line 7, ../styles/components/_vcards.scss */
-.vcard table th {
-  width: 30%;
+/* line 8, ../styles/components/_vcards.scss */
+ul.vcard li {
+  margin-left: 0;
+  list-style-type: none;
 }
-/* line 10, ../styles/components/_vcards.scss */
-.vcard table tbody {
-  padding: 2.25em 0;
+/* line 11, ../styles/components/_vcards.scss */
+ul.vcard li .info {
+  display: inline-block;
+  width: 25%;
 }
-/* line 14, ../styles/components/_vcards.scss */
-.vcard table tr:nth-child(even) {
-  background-color: white;
-}
-/* line 20, ../styles/components/_vcards.scss */
-.vcard .fn, .vcard .phone, .vcard .email, .vcard .title, .vcard .org, .vcard .url, .vcard .blogurl, .vcard .twitter, .vcard .facebook, .vcard .linkedin {
+/* line 17, ../styles/components/_vcards.scss */
+ul.vcard .fn, ul.vcard .phone, ul.vcard .email, ul.vcard .title, ul.vcard .org, ul.vcard .url, ul.vcard .blogurl, ul.vcard .twitter, ul.vcard .facebook, ul.vcard .linkedin {
   background-color: #e6e6e6;
   padding: 0.375em;
 }
-/* line 23, ../styles/components/_vcards.scss */
-.vcard .fn a, .vcard .phone a, .vcard .email a, .vcard .title a, .vcard .org a, .vcard .url a, .vcard .blogurl a, .vcard .twitter a, .vcard .facebook a, .vcard .linkedin a {
+/* line 20, ../styles/components/_vcards.scss */
+ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcard .org a, ul.vcard .url a, ul.vcard .blogurl a, ul.vcard .twitter a, ul.vcard .facebook a, ul.vcard .linkedin a {
   border-bottom: none;
 }
 
@@ -10018,12 +10028,13 @@ ul.tabs li.active {
 /* line 57, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab_content {
   display: none;
+  margin-top: 0.75em;
 }
-/* line 60, ../styles/components/_tabs-to-accordion.scss */
+/* line 61, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab-content-caption-block {
   width: 100%;
 }
-/* line 64, ../styles/components/_tabs-to-accordion.scss */
+/* line 65, ../styles/components/_tabs-to-accordion.scss */
 .tab_container .tab_drawer_heading {
   margin: 0;
   display: block;
@@ -10036,7 +10047,7 @@ ul.tabs li.active {
   user-select: none;
 }
 @media only screen and (min-width: 960px) {
-  /* line 64, ../styles/components/_tabs-to-accordion.scss */
+  /* line 65, ../styles/components/_tabs-to-accordion.scss */
   .tab_container .tab_drawer_heading {
     display: none;
   }
