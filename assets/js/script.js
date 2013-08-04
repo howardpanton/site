@@ -756,9 +756,9 @@ if ($('.accordion').length > 0) {
         console.log(circle);
               //circle.rotate({animateTo:360});
               if (!elem.is(':visible'))  {
-                circle.rotate({animateTo:90});
+                circle.rotate({animateTo:135});
                } else {
-                circle.rotate({animateTo:180, center: ["50%", "50%"], });
+                circle.rotate({animateTo:0, center: ["50%", "50%"], });
             };
 
 });
@@ -786,11 +786,16 @@ if ($('.search-filters').length > 0) {
   $('.filter-heading').fastClick(function(event) {
     event.preventDefault();
     var c = $(this);
-    if (c.parent().hasClass('active') ) {
-      c.parent().removeClass('active');
-    }
-    else {
-      c.parent().addClass('active');
+    
+    //process click event if the heading is not set to not-active
+    if (!c.hasClass('not-active')){ 
+
+      if (c.parent().hasClass('active') ) {
+        c.parent().removeClass('active');
+      }
+      else {
+        c.parent().addClass('active');
+      }
     }
   });
 }
@@ -856,7 +861,6 @@ if ($('#showtime-json').length){
 
 
 // detect lightbox component
-
 if ($('.js-lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {

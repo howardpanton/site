@@ -511,7 +511,7 @@ code {
 }
 
 /* line 71, ../styles/font-face/_swiss-721.scss */
-h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt {
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .accordion-list .st-content table th {
   font-family: Swiss721BT-Bold;
 }
 
@@ -721,38 +721,43 @@ table th, table td {
   padding-bottom: 0.42857em;
   padding-left: 0.42857em;
 }
+/* line 159, ../styles/globals/_typography.scss */
+table th {
+  text-align: left;
+  vertical-align: top;
+}
 
-/* line 180, ../styles/globals/_typography.scss */
+/* line 186, ../styles/globals/_typography.scss */
 figure {
   position: relative;
   margin-bottom: 1.28571em;
 }
-/* line 183, ../styles/globals/_typography.scss */
+/* line 189, ../styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: 0;
 }
-/* line 189, ../styles/globals/_typography.scss */
+/* line 195, ../styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 196, ../styles/globals/_typography.scss */
+/* line 202, ../styles/globals/_typography.scss */
 figcaption, .rsCaption {
   font-size: remCalc(14);
   font-size: 14px;
   line-height: 1.28571em;
   padding: 0.42857em;
 }
-/* line 202, ../styles/globals/_typography.scss */
+/* line 208, ../styles/globals/_typography.scss */
 figcaption p, .rsCaption p {
   padding-bottom: 0;
 }
 
-/* line 207, ../styles/globals/_typography.scss */
+/* line 213, ../styles/globals/_typography.scss */
 blockquote {
   background: url('http://artslondon.github.io/beta/assets/img/icons/quote_marks.gif') no-repeat;
   font-size: remCalc(16);
@@ -764,12 +769,12 @@ blockquote {
   padding-right: 18%;
 }
 
-/* line 492, ../styles/globals/_typography.scss */
+/* line 498, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 493, ../styles/globals/_typography.scss */
+/* line 499, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -2509,7 +2514,7 @@ a.img:hover {
     $Gridset Layout Classes
 \*------------------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 28, ../styles/globals/_layout.scss */
+  /* line 46, ../styles/globals/_layout.scss */
   .row, .submenu > div, .l-full-width {
     clear: both;
     display: block;
@@ -2520,8 +2525,8 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 34, ../styles/globals/_layout.scss */
-  .l-content-full-width, .l-content, .content, .two-up, .three-up, .four-up {
+  /* line 52, ../styles/globals/_layout.scss */
+  .l-content-full-width, .l-content, .content, .two-up, .three-up, .four-up, .accordion {
     display: block;
     float: left;
     margin-left: 13.39732%;
@@ -2531,7 +2536,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 43, ../styles/globals/_layout.scss */
+  /* line 78, ../styles/globals/_layout.scss */
   .row, .submenu > div, .l-full-width, .four-up.l-content-full-width {
     clear: both;
     display: block;
@@ -2542,7 +2547,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 49, ../styles/globals/_layout.scss */
+  /* line 84, ../styles/globals/_layout.scss */
   .sidebar {
     display: block;
     float: left;
@@ -2553,7 +2558,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 56, ../styles/globals/_layout.scss */
+  /* line 91, ../styles/globals/_layout.scss */
   .content {
     display: block;
     float: left;
@@ -2564,7 +2569,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 69, ../styles/globals/_layout.scss */
+  /* line 104, ../styles/globals/_layout.scss */
   .l-content, .two-up.l-content {
     display: block;
     float: left;
@@ -2575,7 +2580,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 75, ../styles/globals/_layout.scss */
+  /* line 110, ../styles/globals/_layout.scss */
   aside {
     display: block;
     float: left;
@@ -2586,7 +2591,7 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 81, ../styles/globals/_layout.scss */
+  /* line 116, ../styles/globals/_layout.scss */
   .search-results-summary {
     display: block;
     float: left;
@@ -2599,7 +2604,7 @@ a.img:hover {
 /*------------------------------------*\
     $Global Layout Classes
 \*------------------------------------*/
-/* line 94, ../styles/globals/_layout.scss */
+/* line 129, ../styles/globals/_layout.scss */
 .content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
@@ -2607,7 +2612,7 @@ a.img:hover {
   min-width: 320px;
 }
 
-/* line 101, ../styles/globals/_layout.scss */
+/* line 136, ../styles/globals/_layout.scss */
 .content-wrapper img, .top-bar img {
   max-width: 100%;
   height: auto;
@@ -2616,7 +2621,7 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 142, ../styles/globals/_layout.scss */
+/* line 177, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   border-left: none;
@@ -2624,7 +2629,7 @@ aside {
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 142, ../styles/globals/_layout.scss */
+  /* line 177, ../styles/globals/_layout.scss */
   aside {
     background: white;
     border-left: 1px dotted #e6e6e6;
@@ -2698,14 +2703,19 @@ aside {
 .filter-module h3:hover {
   cursor: pointer;
 }
-/* line 44, ../styles/components/_sidebar-search-filters.scss */
+/* line 43, ../styles/components/_sidebar-search-filters.scss */
+.filter-module h3.not-active {
+  color: #444;
+  cursor: default;
+}
+/* line 49, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul {
   padding-top: 0;
   padding-bottom: 0;
   display: none;
   clear: left;
 }
-/* line 49, ../styles/components/_sidebar-search-filters.scss */
+/* line 54, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li {
   background-color: #e6e6e6;
   margin-left: 0;
@@ -2718,11 +2728,11 @@ aside {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
-/* line 56, ../styles/components/_sidebar-search-filters.scss */
+/* line 61, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li:last-child {
   border-bottom: 0;
 }
-/* line 58, ../styles/components/_sidebar-search-filters.scss */
+/* line 63, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li a {
   padding: 0 30px 0 18px;
   border-bottom: 0;
@@ -2732,28 +2742,28 @@ aside {
   height: 100%;
   display: block;
 }
-/* line 68, ../styles/components/_sidebar-search-filters.scss */
+/* line 73, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"] {
   float: right;
   margin-left: 18px;
   margin-right: 18px;
   margin-top: 6px;
 }
-/* line 74, ../styles/components/_sidebar-search-filters.scss */
+/* line 79, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:hover {
   cursor: pointer;
 }
-/* line 78, ../styles/components/_sidebar-search-filters.scss */
+/* line 83, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:checked + label {
   color: black;
 }
-/* line 82, ../styles/components/_sidebar-search-filters.scss */
+/* line 87, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:disabled + label {
   opacity: 0.5;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
   opacity: 50;
 }
-/* line 87, ../styles/components/_sidebar-search-filters.scss */
+/* line 92, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li label {
   cursor: pointer;
   color: #757575;
@@ -2763,32 +2773,32 @@ aside {
   display: block;
   padding-top: 0.375em;
 }
-/* line 100, ../styles/components/_sidebar-search-filters.scss */
+/* line 105, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li.active > a {
   color: black;
 }
-/* line 108, ../styles/components/_sidebar-search-filters.scss */
+/* line 113, ../styles/components/_sidebar-search-filters.scss */
 .filter-module label {
   margin-bottom: 0;
 }
-/* line 113, ../styles/components/_sidebar-search-filters.scss */
+/* line 118, ../styles/components/_sidebar-search-filters.scss */
 .filter-module div {
   display: none;
 }
-/* line 115, ../styles/components/_sidebar-search-filters.scss */
+/* line 120, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active {
   border-bottom: 0;
 }
-/* line 117, ../styles/components/_sidebar-search-filters.scss */
+/* line 122, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active ul {
   display: block;
 }
-/* line 118, ../styles/components/_sidebar-search-filters.scss */
+/* line 123, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active div {
   display: block;
 }
 
-/* line 123, ../styles/components/_sidebar-search-filters.scss */
+/* line 128, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -2796,22 +2806,22 @@ li.filter-link-only {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 131, ../styles/components/_sidebar-search-filters.scss */
+/* line 136, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only a {
   color: #282828 !important;
   font-weight: 300;
 }
-/* line 136, ../styles/components/_sidebar-search-filters.scss */
+/* line 141, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only:last-child {
   border-bottom: 0;
 }
-/* line 142, ../styles/components/_sidebar-search-filters.scss */
+/* line 147, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only.active > a {
   color: black;
   font-weight: bold;
 }
 
-/* line 149, ../styles/components/_sidebar-search-filters.scss */
+/* line 154, ../styles/components/_sidebar-search-filters.scss */
 .short-course-filters {
   margin-bottom: 1.5em;
 }
@@ -3009,7 +3019,7 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid #e6e6e6;
 }
 
-/* line 208, ../styles/components/_course-finder.scss */
+/* line 174, ../styles/components/_course-finder.scss */
 .search-result-module {
   position: relative;
   background-color: #e6e6e6;
@@ -3021,34 +3031,34 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 219, ../styles/components/_course-finder.scss */
+  /* line 185, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 219, ../styles/components/_course-finder.scss */
+  /* line 185, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 219, ../styles/components/_course-finder.scss */
+  /* line 185, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 120px;
     margin-bottom: 1.125em;
   }
 }
 
-/* line 243, ../styles/components/_course-finder.scss */
+/* line 209, ../styles/components/_course-finder.scss */
 .search-results-info p, .lower-search-results-info p {
   font-weight: 300;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 241, ../styles/components/_course-finder.scss */
+  /* line 207, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3056,13 +3066,13 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 71.71974%;
   }
-  /* line 252, ../styles/components/_course-finder.scss */
+  /* line 218, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 2px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 241, ../styles/components/_course-finder.scss */
+  /* line 207, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3070,20 +3080,20 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 48.19132%;
   }
-  /* line 257, ../styles/components/_course-finder.scss */
+  /* line 223, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 261, ../styles/components/_course-finder.scss */
+  /* line 227, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 266, ../styles/components/_course-finder.scss */
+  /* line 232, ../styles/components/_course-finder.scss */
   .lower-search-results-info {
     display: block;
     float: left;
@@ -3094,16 +3104,16 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 279, ../styles/components/_course-finder.scss */
+/* line 245, ../styles/components/_course-finder.scss */
 .search-pagination-btns {
   text-align: right;
 }
-/* line 282, ../styles/components/_course-finder.scss */
+/* line 248, ../styles/components/_course-finder.scss */
 .search-pagination-btns a {
   margin-right: 1px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 279, ../styles/components/_course-finder.scss */
+  /* line 245, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3116,7 +3126,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 279, ../styles/components/_course-finder.scss */
+  /* line 245, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3128,34 +3138,34 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 279, ../styles/components/_course-finder.scss */
+  /* line 245, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
-/* line 306, ../styles/components/_course-finder.scss */
+/* line 272, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a {
   margin-right: 1px;
 }
-/* line 308, ../styles/components/_course-finder.scss */
+/* line 274, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child {
   padding-top: 16px;
 }
-/* line 311, ../styles/components/_course-finder.scss */
+/* line 277, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child:hover {
   padding-top: 16px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 304, ../styles/components/_course-finder.scss */
+  /* line 270, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     margin-top: 6px;
     text-align: right;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 304, ../styles/components/_course-finder.scss */
+  /* line 270, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     display: block;
     float: left;
@@ -3168,20 +3178,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 330, ../styles/components/_course-finder.scss */
+/* line 296, ../styles/components/_course-finder.scss */
 .course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 335, ../styles/components/_course-finder.scss */
+/* line 301, ../styles/components/_course-finder.scss */
 .course-title h3, .search-title h3 {
   text-decoration: none;
   font-size: 18px;
   margin-top: 0;
   padding-bottom: 1px;
 }
-/* line 340, ../styles/components/_course-finder.scss */
+/* line 306, ../styles/components/_course-finder.scss */
 .course-title h3 a, .search-title h3 a {
   word-break: break-all;
   word-break: break-word;
@@ -3193,44 +3203,44 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 330, ../styles/components/_course-finder.scss */
+  /* line 296, ../styles/components/_course-finder.scss */
   .course-title, .search-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 352, ../styles/components/_course-finder.scss */
+/* line 318, ../styles/components/_course-finder.scss */
 .course-description, .search-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 357, ../styles/components/_course-finder.scss */
+/* line 323, ../styles/components/_course-finder.scss */
 .course-description p, .search-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 352, ../styles/components/_course-finder.scss */
+  /* line 318, ../styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 352, ../styles/components/_course-finder.scss */
+  /* line 318, ../styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 370, ../styles/components/_course-finder.scss */
+  /* line 336, ../styles/components/_course-finder.scss */
   .course-description p, .search-description p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-/* line 378, ../styles/components/_course-finder.scss */
+/* line 344, ../styles/components/_course-finder.scss */
 .search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -3240,24 +3250,24 @@ input, .search-result-module, .search-input-wrap {
   min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 378, ../styles/components/_course-finder.scss */
+  /* line 344, ../styles/components/_course-finder.scss */
   .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 390, ../styles/components/_course-finder.scss */
+/* line 356, ../styles/components/_course-finder.scss */
 .site-search-results-lower-wrap {
   right: 0;
 }
 
-/* line 395, ../styles/components/_course-finder.scss */
+/* line 361, ../styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
 
-/* line 400, ../styles/components/_course-finder.scss */
+/* line 366, ../styles/components/_course-finder.scss */
 .enrolment-type, .result-file-type {
   width: 32%;
   float: left;
@@ -3265,7 +3275,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: remCalc(14px);
 }
 @media only screen and (max-width: 599px) {
-  /* line 400, ../styles/components/_course-finder.scss */
+  /* line 366, ../styles/components/_course-finder.scss */
   .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
@@ -3274,13 +3284,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 413, ../styles/components/_course-finder.scss */
+/* line 379, ../styles/components/_course-finder.scss */
 .site-search-section-name {
   font-size: 14px;
   font-size: remCalc(14);
 }
 
-/* line 418, ../styles/components/_course-finder.scss */
+/* line 384, ../styles/components/_course-finder.scss */
 .college-name {
   position: absolute;
   left: 32%;
@@ -3290,7 +3300,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 418, ../styles/components/_course-finder.scss */
+  /* line 384, ../styles/components/_course-finder.scss */
   .college-name {
     position: static;
     width: 100%;
@@ -3301,7 +3311,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 435, ../styles/components/_course-finder.scss */
+/* line 401, ../styles/components/_course-finder.scss */
 .result-url {
   position: absolute;
   left: 32%;
@@ -3314,7 +3324,7 @@ input, .search-result-module, .search-input-wrap {
   word-wrap: break-word;
 }
 @media only screen and (max-width: 599px) {
-  /* line 435, ../styles/components/_course-finder.scss */
+  /* line 401, ../styles/components/_course-finder.scss */
   .result-url {
     width: 100%;
     margin-right: 0;
@@ -3325,13 +3335,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 457, ../styles/components/_course-finder.scss */
+/* line 423, ../styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 462, ../styles/components/_course-finder.scss */
+/* line 428, ../styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3343,16 +3353,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 473, ../styles/components/_course-finder.scss */
+/* line 439, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete {
   background-color: #333333;
 }
-/* line 475, ../styles/components/_course-finder.scss */
+/* line 441, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 481, ../styles/components/_course-finder.scss */
+/* line 447, ../styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -3360,14 +3370,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 485, ../styles/components/_course-finder.scss */
+/* line 451, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 491, ../styles/components/_course-finder.scss */
+/* line 457, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3378,14 +3388,14 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 503, ../styles/components/_course-finder.scss */
+/* line 469, ../styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 511, ../styles/components/_course-finder.scss */
+/* line 477, ../styles/components/_course-finder.scss */
 .warning-icon img {
   width: 146px;
   max-width: 146px;
@@ -8480,6 +8490,10 @@ a.back-to-top:hover {
     display: block;
   }
 }
+/* line 2, ../styles/components/_short-course-booking.scss */
+.short-course-booking {
+  clear: left;
+}
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 2, ../styles/components/_short-course-booking.scss */
   .short-course-booking {
@@ -8501,7 +8515,7 @@ a.back-to-top:hover {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 9, ../styles/components/_short-course-booking.scss */
+  /* line 10, ../styles/components/_short-course-booking.scss */
   .short-course-booking .course-details {
     display: block;
     float: left;
@@ -8511,7 +8525,7 @@ a.back-to-top:hover {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 9, ../styles/components/_short-course-booking.scss */
+  /* line 10, ../styles/components/_short-course-booking.scss */
   .short-course-booking .course-details {
     display: block;
     float: left;
@@ -8521,7 +8535,7 @@ a.back-to-top:hover {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 18, ../styles/components/_short-course-booking.scss */
+  /* line 19, ../styles/components/_short-course-booking.scss */
   .short-course-booking .book {
     display: block;
     float: left;
@@ -8531,7 +8545,7 @@ a.back-to-top:hover {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 18, ../styles/components/_short-course-booking.scss */
+  /* line 19, ../styles/components/_short-course-booking.scss */
   .short-course-booking .book {
     display: block;
     float: left;
@@ -8919,50 +8933,58 @@ a.back-to-top:hover {
 }
 
 /* Flexible Slide-to-top Accordion Style*/
-/* line 6, ../styles/components/_accordion.scss */
-.accordion .accordion-list {
+/* line 4, ../styles/components/_accordion.scss */
+.accordion {
+  clear: left;
+}
+
+/* line 10, ../styles/components/_accordion.scss */
+.accordion-list {
   padding: 0;
 }
-/* line 8, ../styles/components/_accordion.scss */
-.accordion .accordion-list li:first-child {
+/* line 12, ../styles/components/_accordion.scss */
+.accordion-list li:first-child {
   border-top: none;
 }
-/* line 11, ../styles/components/_accordion.scss */
-.accordion .accordion-list .st-content {
-  padding: 0 1.5em 1.5em;
+/* line 15, ../styles/components/_accordion.scss */
+.accordion-list .st-content {
+  padding: 1.5em 0 1.5em 0;
+  background-color: white;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 4, ../styles/components/_accordion.scss */
-  .accordion {
-    display: block;
-    float: left;
-    margin-left: 13.39732%;
-    margin-right: -100%;
-    width: 73.58801%;
-  }
+/* line 19, ../styles/components/_accordion.scss */
+.accordion-list .st-content table {
+  font-size: 16px;
+  font-size: remCalc(16);
 }
-@media only screen and (min-width: 960px) {
-  /* line 4, ../styles/components/_accordion.scss */
-  .accordion {
-    display: block;
-    float: left;
-    margin-left: 25.89636%;
-    margin-right: -100%;
-    width: 74.05155%;
-  }
+/* line 22, ../styles/components/_accordion.scss */
+.accordion-list .st-content table p {
+  font-size: 16px;
+  font-size: remCalc(16);
 }
-/* line 23, ../styles/components/_accordion.scss */
-.accordion .accordion-list-item {
-  height: 80px;
+/* line 26, ../styles/components/_accordion.scss */
+.accordion-list .st-content table th {
+  width: 25%;
+}
+/* line 31, ../styles/components/_accordion.scss */
+.accordion-list .st-content table tr:nth-child(even) {
+  background-color: white;
+}
+/* line 34, ../styles/components/_accordion.scss */
+.accordion-list .st-content table td p {
+  padding: 0;
+}
+
+/* line 41, ../styles/components/_accordion.scss */
+.accordion-list-item {
+  height: 58px;
   overflow: hidden;
-  background: white;
+  background-color: #e6e6e6;
   margin-bottom: 1px;
   padding: 0;
 }
-/* line 29, ../styles/components/_accordion.scss */
-.accordion .accordion-list-item .accordion-list-anchor {
-  line-height: 80px;
-  font-size: 1.5em;
+/* line 47, ../styles/components/_accordion.scss */
+.accordion-list-item .accordion-list-anchor {
+  line-height: 58px;
   display: block;
   position: relative;
   outline: none;
@@ -8970,11 +8992,11 @@ a.back-to-top:hover {
   margin-left: 1em;
   padding-right: 2em;
 }
-/* line 38, ../styles/components/_accordion.scss */
-.accordion .accordion-list-item .accordion-list-anchor .st-arrow {
+/* line 55, ../styles/components/_accordion.scss */
+.accordion-list-item .accordion-list-anchor .st-arrow {
   font-size: 2.25em;
   position: absolute;
-  top: 27px;
+  top: 12px;
   right: 24px;
   opacity: 1;
   line-height: 36px;
@@ -9116,15 +9138,97 @@ a.back-to-top:hover {
   }
 }
 
-/* Aside styles */
-/* line 4, ../styles/components/_aside.scss */
-aside p, aside a {
+/* line 2, ../styles/components/_pagination.scss */
+.pagination {
+  margin-top: 1.125em;
+  margin-bottom: 1.125em;
+  text-align: center;
+  position: relative;
+}
+/* line 8, ../styles/components/_pagination.scss */
+.pagination ul {
+  list-style-type: none;
+}
+/* line 10, ../styles/components/_pagination.scss */
+.pagination ul li {
+  display: inline-block;
+}
+/* line 15, ../styles/components/_pagination.scss */
+.pagination a {
+  min-width: 36px;
+  text-align: center;
   font-size: 14px;
   font-size: remCalc(14);
+  border-top: 1px solid #c8c8c8;
+  border-bottom: none;
+  padding: 0.85714em 1.28571em;
 }
-/* line 8, ../styles/components/_aside.scss */
-aside h3 {
-  padding-top: 0.375em;
+/* line 24, ../styles/components/_pagination.scss */
+.pagination a:hover {
+  border-bottom: none;
+  padding: 0.85714em 1.28571em;
+  border-top: 1px solid black;
+}
+/* line 30, ../styles/components/_pagination.scss */
+.pagination a.active {
+  border-top: 1px solid black;
+}
+/* line 35, ../styles/components/_pagination.scss */
+.pagination .page-prev, .pagination .page-next, .pagination .go-first, .pagination .go-last {
+  display: inline-block;
+  min-width: 36px;
+}
+/* line 41, ../styles/components/_pagination.scss */
+.pagination .page-prev a, .pagination .page-next a {
+  font-size: 22px;
+  padding-top: 6px;
+}
+
+/* line 70, ../styles/components/_pagination.scss */
+.holder {
+  margin-top: 1.125em;
+  margin-bottom: 1.125em;
+  text-align: center;
+}
+
+/* line 76, ../styles/components/_pagination.scss */
+.holder a {
+  min-width: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-size: remCalc(14);
+  border-top: 1px solid #c8c8c8;
+  border-bottom: none;
+  padding: 0.85714em 1.28571em;
+}
+
+/* line 86, ../styles/components/_pagination.scss */
+.holder a:hover {
+  border-bottom: none;
+  padding: 0.85714em 1.28571em;
+  border-top: 1px solid black;
+}
+
+/* line 96, ../styles/components/_pagination.scss */
+.holder a.jp-current, a.jp-current:hover {
+  border-top: 1px solid black;
+}
+
+/* line 100, ../styles/components/_pagination.scss */
+.holder a.jp-disabled, a.jp-disabled:hover {
+  color: #c8c8c8;
+}
+
+/* line 105, ../styles/components/_pagination.scss */
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+  cursor: default;
+  background: none;
+}
+
+/* line 110, ../styles/components/_pagination.scss */
+.holder span {
+  margin: 0 5px;
 }
 
 /* line 2, ../styles/components/_highlight-blocks.scss */

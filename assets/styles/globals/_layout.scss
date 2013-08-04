@@ -21,6 +21,24 @@
 	}
 }
 
+%m1 {
+	@include gs-media (m) {
+		@include gs-span(m, 1);
+	}
+}
+
+%m2-m3 {
+	@include gs-media (m) {
+		@include gs-span(m, 2, 3);
+	}
+}
+
+%m4 {
+	@include gs-media (m) {
+		@include gs-span(m, 4);
+	}
+}
+
 
 
 // Tablet Layouts
@@ -37,6 +55,23 @@
 	}
 }
 
+%t2-t3--within-t2-d7  {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 2, 3, (2,7));
+	}
+}
+
+%t4-t5--within-t2-d7 {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 4, 5, (2,7));
+	}
+}
+
+%t6-t7--within-t2-d7 {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 6, 7, (2,7));
+	}
+}
 
 // Desktop Layouts
 
