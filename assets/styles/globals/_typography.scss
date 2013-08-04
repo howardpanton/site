@@ -105,10 +105,12 @@ ul, ol {
 	
 }
 
-ul {
-
-	li {
-		
+aside, .__text {
+	ul {
+		li {
+			margin-left: 16px;
+			list-style-type: square;
+		}
 	}
 }
 
@@ -154,11 +156,15 @@ table {
 		padding-bottom: rhythm(1, 14px);
 		padding-left: rhythm(1, 14px);
 	}
+	th{
+		text-align: left;
+		vertical-align: top;
+	}
 	thead {
 		@extend .aaa-gray-bg; 
 		@extend .ual-white;
 		th {
-
+				
 		}
 	}
 	tbody {
@@ -171,6 +177,8 @@ table {
 		}
 		&:nth-child(even) {
 			@extend .bg-gray-bg;
+
+
 		}
 	}
 }
@@ -197,6 +205,9 @@ figcaption, .rsCaption {
 	font-size: 14px;
 	@include adjust-leading-to(3, 14px); 	
 	padding: rhythm(1, 14px);
+	p {
+		padding-bottom: 0;
+	}
 }
 
 blockquote {
