@@ -3,70 +3,16 @@ layout: style.tpl
 college: ual
 title: University of the Arts London
 template: false
+branch: 1
 ---
 
-<!-- ========================== HEADER ========================== -->
-<header class="padding-top ual-black-bg cf">
-	<div class="header-wrapper">        
-	 <div class="row relative">
-      <!-- Docs UAL logo -->
-      <div class="docs-logo icon-ual-mobile"></div>
-  	  
-      <!-- Slide-in menu toggle -->
-      <div id="slide-menu-toggle-btn" class="menu-toggle-link">
-  	    <a href="#" id="docs-menu-toggle-btn" class="slide-in-menu-trigger ">
-    	   <span id="docs-menu-icon" class="icon docs-menu-toggle">☰</span>
-        </a>
-  	  </div>
-    </div>
-  </div>
-
-  <!-- slide in navigation (hidden on page load)  -->
-  <nav id="slide-in-nav" role="navigation"> 
-    <div class="block">
-        <ul style="font-weight:300; padding: 24px">
-            <li>
-                <a href="index2.html" class="ual-white">Home</a>
-            </li>
-            <li>
-                <a href="#" class="ual-white">Get Started</a>
-            </li>
-            <li>
-                <a href="#" class="ual-white">Scaffolding</a>
-            </li>
-            <li>
-                <a href="#tools-block" class="ual-white smooth-scroll">Tools</a>
-            </li>
-            <li>
-                <a href="#" class="ual-white">Base CSS</a>
-            </li>
-            <li>
-                <a href="components.html" class="ual-white">Components</a>
-            </li>
-            <li>
-              <a class="ual-white" href="page-layout.html">Page Layout</a>
-            </li>
-            <li>
-              <a class="ual-white" href="headings.html">Headings</a>
-            </li>
-            <li>
-              <a class="ual-white" href="typography.html">Typography</a>
-            </li>
-            <li>
-              <a class="ual-white" href="images.html">Images</a>
-            </li>
-        </ul>
-        <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
-    </div>
-  </nav> 
-</header>
 
     <!-- ========================== FEATURES ========================== -->
     <section class="docs_grey_bg  cf">
 			<div class="header-wrapper">        
 				<div class="row pad-top-11x centered">
                 <h1 class="region">Beta Framework</h1>
-                <p class="d5-d12 region">Some super-awesome summary text for the new style guide front page. The UAL website is built using the following technologies: Gridsetapp for, SASS, JQuery, etc etc etc. More notes here about the main technologies used and maybe a link to more details.
+                <p class="d5-d12 leader">Some super-awesome summary text for the new style guide front page. The UAL website is built using the following technologies: <a href="https://gridsetapp.com/">Gridsetapp</a>, <a href="http://sass-lang.com/">SASS</a>, <a href="http://compass-style.org/">Compass</a>, <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://jquery.com/">JQuery</a> etc etc. More notes here about the main technologies used and maybe a link to more details.
                 </p>
             </div>
         </div>
@@ -142,39 +88,32 @@ template: false
         </div>
  
 
-                <div class="row text center normal margin-top">
-          <div class="content-wrapper">
-          <div class="content-wrapper">        <div class="l-content-full-width  block  __media  four-up">                 
-            <ul>        
-<li>            <div class="column_3">
-                <a href="examples/blog.html" target="_blank" class="tip-right" data-tip="Click to view">
-    <figure>                <img src="http://placehold.it/940x500&text=IMAGE" alt="Image Alt"></figure>
-                </a>
-                <h5><strong>Blog</strong> Page</h5>
-            </div></li>
- <li>           <div class="column_3">
-                 <a href="examples/landing.html" target="_blank" class="tip-right" data-tip="Click to view">
-            <figure>         <img src="http://placehold.it/940x500&text=IMAGE" alt="Image Alt"></figure>
-                 </a>
-                 <h5><strong>Landing</strong> Page</h5>
-             </div></li>
-<li>            <div class="column_3">
-                <a href="examples/profile.html" target="_blank" class="tip-left" data-tip="Click to view">
-                  <figure>    <img src="http://placehold.it/940x500&text=IMAGE" alt="Image Alt"></figure>
-                </a>
-                <h5><strong>Profile</strong> Page</h5>
-            </div></li>
-
-<li>            <div class="column_3">
-                <a href="examples/app.html" target="_blank" class="tip-left" data-tip="Click to view">
-              <figure>        <img src="http://placehold.it/940x500&text=IMAGE" alt="Image Alt"></figure>
-                </a>
-                <h5>Web <strong>Application</strong> <span class="tag bck theme">NEW!</span></h5>
-            </div></li>
-             </ul>
-           </div>
-        </div>
+        <div class="row text center normal margin-top">
+    <div class="bx-wrapper">
+      <div class="bx-viewport">
+        <ul class="js-slider" data-slider-item-width="220" data-slider-item-margin="24" data-slider-min-slides="2"> 
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_1.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_2.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_3.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_4.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_1.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_2.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_3.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+          <li class="slide"><img src="{{ site.url }}/assets/img/carousel-imgs/square_slide_4.jpg">
+            <p>This is some text <a href="">for this slide</a></p></li>
+        </ul>
+      </div>
+    </div>
          </div>
+         
+         
                 </div>
              </div>
     </section>
@@ -186,7 +125,6 @@ template: false
           <div class="row">            
           <div class="d5-d12 centered region">
                 <h1 class="color theme">Turn it up to 16 columns on desktop</h1>
-                <h3>Tuktuk is divided horizontally into a series of 12 columns, and vertically into rows. 12 columns divide nicely into equal columns of two, three, four, or six columns.</h3>
              </div>
           </div>
         <div class="row margin-bottom rhythm-3">
@@ -266,6 +204,13 @@ template: false
     </section>
 
     <!-- ========================== FORMS & TABLES ========================== -->
-      <div role="main" class="content">
-      {% include components/_typography.html %}
-</div>
+      <section class="typography">
+        <row>
+          <div class="content-wrapper">
+                <div role="main" class="content">
+                  {% include components/_typography.html %}
+                </div>
+          </div>
+        </row>
+      </section>
+  

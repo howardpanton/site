@@ -632,12 +632,12 @@ $(document).ready(function(){
 
 
   // detect slider component
-  /*
-  if ($('.slider').length > 0) {
+  
+  if ($('.js-slider').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
-      $.each($('.slider'), function() {
+      $.each($('.js-slider'), function() {
 
         var _this = $(this);
         var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
@@ -679,7 +679,7 @@ $(document).ready(function(){
     });
 
   }
-  */
+  
 
   // detect slider component
   if ($('.royalSlider').length > 0) {
