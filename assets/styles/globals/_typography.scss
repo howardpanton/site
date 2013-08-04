@@ -54,7 +54,7 @@ h1 {
 	font-size: remCalc(54);
 	font-size: 54px;
 	@include adjust-leading-to(10, 54px); 	
-	padding: rhythm(4, 54px) 0;
+	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
 }
 
 h2, h3, h4 {
@@ -123,7 +123,14 @@ ol {
 }
 
 strong, b, em {
+	@extend %Swiss721BT-Bold;
+}
 
+code {
+	@extend %Swiss721BT-Italic;
+	background: $bg-gray;
+	font-size: 12px;
+	padding: rhythm(1, 12px);
 }
 
 dl {
@@ -142,6 +149,7 @@ table {
 	font-size: remCalc(14);
 	font-size: 14px;
 	@include adjust-leading-to(4, 14px); 	
+	padding-bottom: rhythm(2, 16px);
 	th, td {
 		padding-top: rhythm(1, 14px);
 		padding-right: rhythm(1, 14px);
@@ -170,6 +178,7 @@ table {
 }
 
 figure {
+	position: relative;
 	margin-bottom: rhythm(3, 14px);
 	a {
 		@extend %Swiss721BT-Roman;
@@ -195,7 +204,16 @@ figcaption, .rsCaption {
 	}
 }
 
-
+blockquote {
+	background: image-url('icons/quote_marks.gif') no-repeat;
+	font-size: remCalc(16);
+	font-size: 16px;
+	@include adjust-leading-to(4, 16px); 	
+	margin-top: rhythm(2, 16px);
+	padding-bottom: rhythm(4, 16px);
+	padding-left: 68px;
+	padding-right: 18%;
+}
 
 // @include establish-baseline(16px);
 

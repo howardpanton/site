@@ -66,30 +66,21 @@
 	}
 }
 
-
-%d6-d16 {
+%d5-d12--within-d5-d16 { // used for content
 	@include gs-media (d) {
-		@include gs-span(d,6,16);
-    // float: left;
-  }
+		@include gs-span(d, 5,12, (5, 16));
+	}
 }
 
-
-%d13-d16--within-d5-d16 {
+%d13-d16--within-d5-d16 { // used for asides
 	@include gs-media (d) {
 		@include gs-span(d, 13,16, (5, 16));
 	}
 }
 
-%d14-d16--within-d5-d16 {
-	@include gs-media (d) {
-		@include gs-span(d, 14, 16, (5,16));
-	}
-}
-
 %d6-d16--within-d6-d16 {
 	@include gs-media (d) {
-		@include gs-span(d,6,16,(6,16));
+		@include gs-span(d, 6,16, (6,16));
 	}
 }
 
@@ -133,14 +124,6 @@
 	@extend %d5-d12--within-d5-d16;
 }
 
-// SHORT COURSES
-.l-short-courses-list {
-	@extend %d5-d12--within-d5-d16;
-}
-.l-short-courses-filter {
-	@extend %d13-d16--within-d5-d16;
-}
-
 
 /*------------------------------------*\
     $Page Layout Classes
@@ -148,7 +131,7 @@
 
 
 .content {
-	@extend %t-all;
+	@extend %t2-t7;
 	@extend %d5-d16;
 }
 
@@ -158,16 +141,18 @@
 
 aside {
 
-	@extend %d14-d16--within-d5-d16;
+	@extend %d13-d16--within-d5-d16;
 	
 	background: $bg-gray;
+	border-left: none;
 	padding: 24px;
 	clear: left;
 	
 	@include gs-media(d) {
 		background: $white;
-		padding: 0;
-		clear: none;
+		border-left: 1px dotted $bg-gray;
+	  padding-left: 23px;
+	  clear: none;
 	}
 
 }
