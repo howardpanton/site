@@ -2616,17 +2616,6 @@ a.img:hover {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 110, ../styles/globals/_layout.scss */
-  .l-content-half-width {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 48.31199%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
   /* line 122, ../styles/globals/_layout.scss */
   aside {
     display: block;
@@ -2668,7 +2657,7 @@ a.img:hover {
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 192, ../styles/globals/_layout.scss */
+/* line 188, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   border-left: none;
@@ -2676,7 +2665,7 @@ aside {
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 192, ../styles/globals/_layout.scss */
+  /* line 188, ../styles/globals/_layout.scss */
   aside {
     background: white;
     border-left: 1px dotted #e6e6e6;
@@ -5317,12 +5306,25 @@ a figure img {
 .__media.__highlight:hover h2, .__media.__highlight:hover h3 {
   color: white;
 }
+/* line 104, ../styles/components/_blocks.scss */
+.__media .event {
+  background: #282828;
+  color: white;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+/* line 111, ../styles/components/_blocks.scss */
+.__media .course {
+  background: #e6e6e6;
+  padding: 24px;
+  margin-bottom: 24px;
+}
 
 /*------------------------------------*\
     $Page Block Classes
 \*------------------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 116, ../styles/components/_blocks.scss */
+  /* line 129, ../styles/components/_blocks.scss */
   .two-up li {
     display: block;
     float: left;
@@ -5330,7 +5332,7 @@ a figure img {
     margin-right: -100%;
     width: 47.28217%;
   }
-  /* line 119, ../styles/components/_blocks.scss */
+  /* line 132, ../styles/components/_blocks.scss */
   .two-up li:last-child {
     display: block;
     float: left;
@@ -5340,7 +5342,7 @@ a figure img {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 127, ../styles/components/_blocks.scss */
+  /* line 140, ../styles/components/_blocks.scss */
   .two-up.l-content li {
     display: block;
     float: left;
@@ -5348,7 +5350,7 @@ a figure img {
     margin-right: -100%;
     width: 47.42451%;
   }
-  /* line 130, ../styles/components/_blocks.scss */
+  /* line 143, ../styles/components/_blocks.scss */
   .two-up.l-content li:last-child {
     display: block;
     float: left;
@@ -5358,7 +5360,7 @@ a figure img {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 139, ../styles/components/_blocks.scss */
+  /* line 152, ../styles/components/_blocks.scss */
   .two-up.l-content-full-width li {
     display: block;
     float: left;
@@ -5366,8 +5368,26 @@ a figure img {
     margin-right: -100%;
     width: 48.31199%;
   }
-  /* line 142, ../styles/components/_blocks.scss */
+  /* line 155, ../styles/components/_blocks.scss */
   .two-up.l-content-full-width li:last-child {
+    display: block;
+    float: left;
+    margin-left: 51.68801%;
+    margin-right: -100%;
+    width: 48.31199%;
+  }
+}
+@media only screen and (min-width: 960px) {
+  /* line 164, ../styles/components/_blocks.scss */
+  .two-up.l-content-half-width ul {
+    display: block;
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+    width: 48.31199%;
+  }
+  /* line 167, ../styles/components/_blocks.scss */
+  .two-up.l-content-half-width ul:last-child {
     display: block;
     float: left;
     margin-left: 51.68801%;
@@ -5377,7 +5397,7 @@ a figure img {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 155, ../styles/components/_blocks.scss */
+  /* line 179, ../styles/components/_blocks.scss */
   .three-up li {
     display: block;
     float: left;
@@ -5385,7 +5405,7 @@ a figure img {
     margin-right: -100%;
     width: 29.70955%;
   }
-  /* line 158, ../styles/components/_blocks.scss */
+  /* line 182, ../styles/components/_blocks.scss */
   .three-up li + li {
     display: block;
     float: left;
@@ -5393,7 +5413,7 @@ a figure img {
     margin-right: -100%;
     width: 29.70955%;
   }
-  /* line 161, ../styles/components/_blocks.scss */
+  /* line 185, ../styles/components/_blocks.scss */
   .three-up li:last-child {
     display: block;
     float: left;
@@ -5403,7 +5423,7 @@ a figure img {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 169, ../styles/components/_blocks.scss */
+  /* line 193, ../styles/components/_blocks.scss */
   .three-up.l-content-full-width li {
     display: block;
     float: left;
@@ -5411,7 +5431,7 @@ a figure img {
     margin-right: -100%;
     width: 31.08265%;
   }
-  /* line 172, ../styles/components/_blocks.scss */
+  /* line 196, ../styles/components/_blocks.scss */
   .three-up.l-content-full-width li + li {
     display: block;
     float: left;
@@ -5419,7 +5439,7 @@ a figure img {
     margin-right: -100%;
     width: 31.08265%;
   }
-  /* line 175, ../styles/components/_blocks.scss */
+  /* line 199, ../styles/components/_blocks.scss */
   .three-up.l-content-full-width li:last-child {
     display: block;
     float: left;
@@ -5428,13 +5448,13 @@ a figure img {
     width: 31.08265%;
   }
 }
-/* line 182, ../styles/components/_blocks.scss */
+/* line 206, ../styles/components/_blocks.scss */
 .three-up.__gallery ul {
   clear: left;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 194, ../styles/components/_blocks.scss */
+  /* line 218, ../styles/components/_blocks.scss */
   .four-up li:first-child {
     display: block;
     float: left;
@@ -5442,7 +5462,7 @@ a figure img {
     margin-right: -100%;
     width: 47.28217%;
   }
-  /* line 197, ../styles/components/_blocks.scss */
+  /* line 221, ../styles/components/_blocks.scss */
   .four-up li + li {
     display: block;
     float: left;
@@ -5450,7 +5470,7 @@ a figure img {
     margin-right: -100%;
     width: 47.28217%;
   }
-  /* line 200, ../styles/components/_blocks.scss */
+  /* line 224, ../styles/components/_blocks.scss */
   .four-up li:nth-of-type(3) {
     display: block;
     float: left;
@@ -5459,7 +5479,7 @@ a figure img {
     width: 47.28217%;
     clear: left;
   }
-  /* line 204, ../styles/components/_blocks.scss */
+  /* line 228, ../styles/components/_blocks.scss */
   .four-up li:last-child {
     display: block;
     float: left;
@@ -5469,7 +5489,7 @@ a figure img {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 212, ../styles/components/_blocks.scss */
+  /* line 236, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li {
     display: block;
     float: left;
@@ -5477,7 +5497,7 @@ a figure img {
     margin-right: -100%;
     width: 23.39636%;
   }
-  /* line 215, ../styles/components/_blocks.scss */
+  /* line 239, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li + li {
     display: block;
     float: left;
@@ -5485,7 +5505,7 @@ a figure img {
     margin-right: -100%;
     width: 23.01718%;
   }
-  /* line 218, ../styles/components/_blocks.scss */
+  /* line 242, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li + li + li {
     display: block;
     float: left;
@@ -5493,7 +5513,7 @@ a figure img {
     margin-right: -100%;
     width: 23.01718%;
   }
-  /* line 221, ../styles/components/_blocks.scss */
+  /* line 245, ../styles/components/_blocks.scss */
   .four-up.l-content-full-width li:last-child {
     display: block;
     float: left;
@@ -5502,7 +5522,7 @@ a figure img {
     width: 23.01718%;
   }
 }
-/* line 228, ../styles/components/_blocks.scss */
+/* line 252, ../styles/components/_blocks.scss */
 .four-up.__gallery ul {
   clear: left;
 }
