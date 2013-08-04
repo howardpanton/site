@@ -69,7 +69,7 @@ padding-bottom: 1.5em;
 <body class="style-guide">
 
 <!-- ========================== HEADER ========================== -->
-<header class="padding-top ual-black-bg cf">
+<header class="padding-top ual-black-bg cf nav-fixed">
   <div class="header-wrapper">        
    <div class="row relative">
       <!-- Docs UAL logo -->
@@ -79,7 +79,7 @@ padding-bottom: 1.5em;
       <nav class="docs-menu d2-d14">
         <ul>
           <li><a href="{{ site.url }}getting-started/">Getting Started</a></li>
-          <li><a href="{{ site.url }}css/">Css</a></li>
+          <li><a href="{{ site.url }}css/">CSS</a></li>
           <li><a href="{{ site.url }}blocks/">Blocks</a></li>
           <li><a href="{{ site.url }}components/">Components</a></li>
           <li><a href="{{ site.url }}javascript/">Javascript</a></li>          
@@ -91,14 +91,12 @@ padding-bottom: 1.5em;
 
 {% if page.branch != 1 %} 
 
-  <div class="header-panel bg-gray-bg">
+  <div class="header-panel bg-gray-bg adjust-margin-nav">
     <div class="content-wrapper">
       <div class="row">
         <div class="breadcrumbs">
           <a href="{{ site.url }}index.html">Style Guide index</a><a href="#">{{ page.breadcrumb }}</a>      
         </div> 
-        <div class="updated">Last updated: {{ page.last-updated }}</div>
-
         <div class="credits-btn"><a href="#" class="show-credits">Show Credits</a></div>
       </div>
       <div class="row">
@@ -125,6 +123,8 @@ padding-bottom: 1.5em;
           </li>
         </ul>
       </nav>
+      <div class="updated">Last updated: {{ page.last-updated }}</div>
+
     </div>
   </div>
 </footer>
@@ -175,9 +175,25 @@ padding-bottom: 1.5em;
 
   <script src='{{ site.url }}/assets/js/libs/jquery.formalize.js' type='text/javascript'></script>
 
+    <script src='{{ site.url }}/assets/js/libs/affix.js' type='text/javascript'></script>
+
   <!-- Scripts -->
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
   <script>
+
+$('.affix').affix({
+    offset: {
+      top: 50
+    , bottom: function () {
+        return (this.bottom = $('#footer').outerHeight(true))
+      }
+    }
+  })
+
+  var d = $('.breadcrumbs').find('a');
+d.last().show();
+
+
       if ($('#slide-in-nav').length > 0) {
 
       // hide the slide-in-nav list at the start
