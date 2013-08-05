@@ -117,8 +117,37 @@ breadcrumb-link: /css/
         </tbody>
       </table>
 
-      
+
+
+      <h3 id="typography">Typography</h3>
+      <hr>
+      	<h4>Headings</h4>
+      		<p>All headings <code>&lt;h1&gt;</code> through <code>&lt;h4&gt;</code>.</p>
+
+      		<h1>Bootsrap heading 1</h1>
+      		<h2>Bootsrap heading 2</h2>
+      		<h3>Bootsrap heading 3</h3>
+      		<h4>Bootsrap heading 4</h4>
+
+				<h4>Body copy</h4>
+					<p>Bootstrap's global default <code>font-size</code> is <strong>16px</strong>, with a <code>line-height</code> of <strong>1.5</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their computed line-height (10px by default).
+
+				<h4>Lead body copy</h4>
+					<p>Make a paragraph stand out by adding <code>.leader</code>.</p>
+
+					{% gist 6157175 %}
+
+				<h4>Built with SCSS</h4>
+					<p>The typographic scale is based on two SCSS variables in <strong>variables.scss</strong>: <code>$base-font-size</code> and <code>$base-line-height</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Bootstrap adapts.</p>
         
+        <h4>Bold</h4>
+        	<p>For emphasizing a snippet of text with a heavier font-weight.</p>
+        	<p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+					<code>&lt;strong&gt;rendered as bold text.&lt;/strong&gt;</code>
+
+				<h4>Blockquotes</h4>
+				
+
 				
 			</div> <!-- end .l-content .block .__text -->
 		</div> <!-- end main-content -->
