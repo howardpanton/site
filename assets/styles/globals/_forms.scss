@@ -803,6 +803,12 @@ legend + .control-group {
 
 // --------------------------------------------------
 
+// link styling within forms
+.form-link {
+  font-size: 14px;
+  font-size: remCalc(14);
+  @include margin-trailer(2);
+}
 
 // checkbox and radio button styling
 input[type="checkbox"],
@@ -811,6 +817,7 @@ input[type="radio"] {
   display: inline-block;
   opacity: 0;
 }
+
 input[type="checkbox"]+label,
 input[type="radio"]+label {
   font-size:16px;
@@ -848,13 +855,16 @@ input[type="radio"]:disabled+label:before {
   cursor: default;
 }
 
+input:disabled {
+  cursor: default;
+}
+
 input[type="radio"]:disabled + label, 
 input[type="checkbox"]:disabled + label {
   cursor: default;
 }
 
-
-//submit button styles
+// submit button styles
 input.submit-btn {
   @extend .button-link;
   border-width: 0;
@@ -867,8 +877,51 @@ input.submit-btn:hover {
   cursor: pointer;
 }
 
-input.submit-btn:disabled {
+input.submit-btn:disabled, input.submit-btn:disabled:hover, {
   color: $aaa-gray;
   background-color: $bg-gray;
   cursor: default;
 }
+
+
+// search textinput with gray search icon
+
+.search-with-icon-wrap { position: relative;}
+
+input[type="search"] {
+  height: 42px;
+  padding: 6px 6px;
+  padding-right: 18px;
+  padding-top: 10px;
+  width: 100%;
+  background-color: $bg-gray;
+}
+
+.with-search-icon {
+  @extend .ui-icons-sprite;
+  @extend .ui-icons-grey-search;
+  position: absolute;
+  left:6px;
+  top:0px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+
+// textarea styling
+
+textarea {
+  border-color: rgba(0,0,0,0);
+  border-width: 6px;
+  border-style: solid;
+  padding: 12px;
+
+  &:focus {
+    border-color: $light-gray;
+    border-width: 6px;
+    border-style: solid;
+    outline: 0;
+  }
+}
+
+
