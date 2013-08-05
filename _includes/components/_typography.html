@@ -340,7 +340,52 @@
 
   <h2>vCard (for specific profiles)</h2>
 
-  <div class="vcard">
+  <ul class="vcard">
+    <li><span class="info">Name</span> <span class="fn">John Doe</span></li>
+    <li><span class="info">Telephone</span> <span class="phone">+44 (0)207 567 1234</span></li>
+    <li><span class="info">Email</span> <span class="email">j.doe@something.com</span></li>
+    <li><span class="info">Job Title</span> <span class="title">Made Up Assistant</span></li>
+    <li><span class="info">Department/ College</span> <span class="org">The Made Up Company</span></li>
+    <li><span class="info">Website</span> <span class="url"><a href="http://www.example.com">www.something-or-other.com</a></span></li>
+    <li><span class="info">Blog</span> <span class="blogurl"><a href="http://www.example.com">www.something-or-other.com/blog</a></span></li>
+    <li><span class="info">Twitter</span> <span class="twitter"><a href="http://www.example.com">@johndoeuk</a></span></li>
+    <li><span class="info">Facebook</span> <span class="facebook"><a href="http://www.example.com">https://www.facebook.com/johndoe</a></span></li>
+    <li><span class="info">LinkedIn</span> <span class="linkedin"><a href="http://www.example.com">uk.linkedin.com/in/johndoe/</a></span></li>
+  </ul>
+
+
+    <t4 type="content" name="Box section title" output="selective-output" modifiers="" format="<h2>$value</h2>" />
+
+
+
+  <ul class="vcard">
+    <li><span class="info">Name</span> <span class="fn"><t4 type="content" name="Profile Name" output="normal" modifiers=""  /></span></li>
+    <t4 type="content" name="Telephone" output="selective-output" modifiers="" format="<li><span class='info'>Telephone</span> <span class='phone'>$value</span></li>"  />
+    <t4 type="content" name="Email" output="selective-output" modifiers="" format="<li><span class='info'>Email</span> <span class='email'>$value</span></li>"  />
+    <t4 type="content" name="Job Title" output="selective-output" modifiers="" format="<li><span class='info'>Job Title</span> <span class='title'>$value</span></li>"  />
+    
+    <t4 type="content" name="Organisation Name" output="selective-output" modifiers="" process-format="true" format="<li><span class=&quot;info&quot;><t4 type=&quot;content&quot; name=&quot;Organisation Type&quot; output=&quot;normal&quot; modifiers=&quot;&quot;  /></span> <span class=&quot;org&quot;>$value</span></li>"  />  
+  
+
+
+    <t4 type="content" name="Website" output="selective-output" modifiers="" format="<li><span class='info'>Website</span> 
+      <span class='url'><a title=&quot;$value&quot; href=&quot;$value&quot;>$value</a></span></li>"  />
+    
+    <t4 type="content" name="Blog" output="selective-output" modifiers="" format="<li><span class='info'>Blog</span> 
+      <span class='blogurl'><a title=&quot;$value&quot; href=&quot;$value&quot;>$value</a></span></li>"  />
+    
+    <t4 type="content" name="Twitter" output="selective-output" modifiers="" format="<li><span class='info'>Twitter</span> 
+      <span class='twitter'><a title=&quot;$value&quot; href=&quot;https://twitter.com/$value&quot;>&#64;$value</a></span></li>"  />
+    
+    <t4 type="content" name="Facebook" output="selective-output" modifiers="" format="<li><span class='info'>Facebook</span> 
+      <span class='facebook'><a title=&quot;$value&quot; href=&quot;$value&quot;>&#64;$value</a></span></li>"  />
+    
+    <t4 type="content" name="LinkedIn" output="selective-output" modifiers="" format="<li><span class='info'>LinkedIn</span> 
+      <span class='linkedin'><a title=&quot;$value&quot; href=&quot;$value&quot;>&#64;$value</a></span></li>"  />
+  </ul>
+
+
+<!--   <div class="vcard">
     <table>
       <tr>
         <th>Name</th>
@@ -383,7 +428,7 @@
         <td><span class="linkedin"><a href="http://www.example.com">uk.linkedin.com/in/johndoe/</a></span></td>
     </table>    
   </div>
-
+ -->
 
 
 </div>
