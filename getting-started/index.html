@@ -1,210 +1,189 @@
 ---
-layout: docs.tpl
-title: University of the Arts London - Website Style Guide
+layout: style.tpl
+title: Getting started
+last-updated: August 04, 2013
 class-home: docs
 breadcrumb: Grid how to
-breadcrumb-link: grid-how-to.html
+breadcrumb-link: /getting-started/
 ---
-
-<div class="docs-content">
-<div class="row">  
-<div class="d1-d12">  <p class="updated rhythm-3  border-bottom">Last Updated: <strong>May 2nd, 2013</strong></p>
-  <h2 class="heading-x3 soft-black">Grid Framework: How To Use</h2>
-  <hr>
-  <h3  class="heading-x2 soft-black">A responsive, proportional, nestable, and mobile-first 16-column grid framework.</h2>
-  <hr>
-  <ol>
-    <li>
-      <h4 class="heading-x1 soft-black">Responsive</h4>
-      <ul class="basic">
-        <li><strong>Flexible grid</strong> defined in percentages</li>
-        <li><strong>Flexible media</strong> that will proportionaly scale down when larger than the parent tag</li>
-        <li><strong>Media Queries:</strong> that create breakpoints at: 320px, 480px, 600px, 769px, and 960px</li>
-      </ul>
-    </li>
-    <li>
-      <h4 class="heading-x1 soft-black">Proportional</h4>
-      <p>The sizes are based on commonly used proportions: 1/1, 1/2, 2/3, 1/3, 1/4, etc. See <a href="grid_region_sizes.aspx">Region Sizes</a></p>
-    </li>
-    <li>
-      <h4 class="heading-x1 soft-black">Nestable</h4>
-      <p>Grids can be infinitely nested within other grids in order to create more complex layouts.</p>
-    </li>
-    <li>
-      <h4 class="heading-x1 soft-black">Mobile-First</h4>
-      <p>Only when the viewport width is above 768px does the grid take affect, otherwise it remains collapsed vertically.</p>
-    </li>
-    <li>
-      <h4 class="heading-x1 soft-black">Modular</h4>
-      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus.</p>
-    </li>
-    <li>
-      <h4 class="heading-x1 soft-black">Sustainable</h4>
-      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus.</p>
-    </li>
-  </ol>
-  <hr>
-    <h3 class="h2">Getting Started</h3>
-    <p>The framework is built around a combination of these three elements: <code>content-wrapper</code>, <code>rows</code>, and <code>region</code>.</p>
-    <ol>
-      <li>The <code>container</code> class sets the max-width of the page and centers it horizontally. It also sets the left and right margins on small screens.</li>
-      <li>The <code>row</code> class defines horizontal divisions of the page.</li>
-      <li>The <code>region</code> class creates veritcal divisions of the page with defined sizes for containing content. (They can be thought of as “columns”)</li>
-    </ol>
-    <pre data-type="HTML" class="prettyprint">
-      <code>&lt;div class="content-wrapper"&gt;
-          &lt;div class="row"&gt;
-            &lt;div class="region d1-d12"&gt;d1 - d12&lt;/div&gt;
-            &lt;div class="region d13-d16"&gt;d13 - d16&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      </code>
-    </pre>
-  </div>
-  </div>
-  <div class='row rhythm-margin-top'>
-        <div class='t-hide m-hide'>
-          <!-- class examples -->
-          <div class='d1-d12 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">d1 - d12</h4>
-          </div>
-          <div class='d13-d16 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">d13 - d16</h4>
-          </div>
-        </div>
-        <div class='d-hide m-hide'>
-          <!-- class examples -->
-          <div class='t1-t5 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">t1 - t5</h4>
-          </div>
-          <div class='t6-t8 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">t6- t8</h4>
-          </div>
-        </div>
-        <div class='d-hide t-hide'>
-          <!-- class examples -->
-          <div class='m-all region light-gray-bg box'>
-            <h4 class="heading-x1 centered">m - all</h4>
-          </div>
-          <div class='m-all region light-gray-bg box'>
-            <h4 class="heading-x1 centered">m - all</h4>
-          </div>
-        </div>
-  </div>
-    <div class='row rhythm-margin-top'>
-        <div class='t-hide m-hide'>
-          <!-- class examples -->
-          <div class='d1-d4 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">d1 - d4</h4>
-          </div>
-          <div class='d5-d16 region light-gray-bg box'>
-            <h4 class="heading-x1 centered">d5 - d16</h4>
-          </div>
-        </div>
-  </div>
-    <div class='t-hide m-hide'>
-      <!-- class examples -->
-      <div class='row rhythm-margin-top'>
-        <div class="d1 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d1</h4>
-        </div>
-        <div class="d2 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d2</h4>
-        </div>
-        <div class="d3 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d3</h4>
-        </div>
-        <div class="d4 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d4</h4>
-        </div>
-        <div class="d5 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d5</h4>
-        </div>
-        <div class="d6 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d6</h4>
-        </div>
-        <div class="d7 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d7</h4>
-        </div>
-        <div class="d8 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d8</h4>
-        </div>
-        <div class="d9 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d9</h4>
-        </div>
-        <div class="d10 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d10</h4>
-        </div>
-        <div class="d11 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d11</h4>
-        </div>
-        <div class="d12 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d12</h4>
-        </div>
-        <div class="d13 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d13</h4>
-        </div>
-        <div class="d14 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d14</h4>
-        </div>
-        <div class="d15 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d15</h4>
-        </div>
-        <div class="d16 region light-gray-bg box">
-          <h4 class="heading-x1 centered">d16</h4>
+<section class="cf">
+<div class="content-wrapper">
+  <div class="row">
+    <div role="main" class="content">
+      <div class="l-content  block  __text  ">
+        <h2  class="heading-x2 soft-black">A responsive, proportional, nestable, and mobile-first 16-column grid framework.</h2>
+        <hr>
+        <p class="leader">
+          The grid system uses <a href="https://gridsetapp.com">gridset</a> by Mark Boulton as its foundation. Gridset is a tool for making grids, and you can find out more by visiting their document <a href="https://gridsetapp.com/documentation/">page</a>.
+        </p>
+        <p>The grid system has three layouts, Desktop, Tablet and mobile</p>
+        <dl>
+          <dt>Mobile</dt>
+          <dd>- 320px - 599px</dd>
+          <dt>Tablet</dt>
+          <dd>- 600px - 959px</dd>
+          <dt>Desktop</dt>
+          <dd>- 960px - 1280px</dd>
+        </dl>
         </div>
       </div>
-      <div class="row rhythm-margin-top">
-        <!-- column span examples -->
-        <h4 class="heading-x1 soft-black">Column span examples</h4>
-        <div class="d1-d12">        
-          <pre data-type="HTML" class="prettyprint">
-            <code>
-              &lt;div class="content-wrapper"&gt;
-              &lt;div class="row"&gt;
-                &lt;div class="region d1-d8"&gt;d1-d8&lt;/div&gt;
-                &lt;div class="region d9-d16"&gt;d9-d16&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            </code>
-          </pre>
-        </div>
-        <div class="d1-d8 region light-gray-bg box rhythm-margin-top">
-          <h4 class="heading-x1 centered">d1-d8</h4>
-        </div>
-        <div class="d9-d16 region light-gray-bg box rhythm-margin-top">
-          <h4 class="heading-x1 centered">d9-d16</h4>
-        </div>
-      </div>
-      <div class="row rhythm-margin-top">
-        <!-- full width example -->
-      </div>
-      <div class="row rhythm-margin-top">
-        <h4 class="heading-x1 soft-black">Full width example</h4>
-        <div class="d1-d12">        
-          <pre data-type="HTML" class="prettyprint">
-            <code>
-              &lt;div class="content-wrapper"&gt;
-              &lt;div class="row"&gt;
-                &lt;div class="region d-all"&gt;d1-all&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            </code>
-          </pre>
-        </div>
-        <div class="d-all region light-gray-bg box rhythm-margin-top">
-           <h4 class="heading-x1 centered">d-all</h4>
-        </div>
-      </div>
-      </div>
-
-      <!-- padding examples -->
-      <div class="d1 d-padin box"><h1>d1 d-padin</h1></div>
-      <div class="d16 d-pad box"><h1>d16 d-pad</h1></div>
-
-      <hr />
-      <div class="d1 d-padinfull box"><h1>d1 d-padinfull</h1></div>
-      <div class="d16 d-padfull box"><h1>d16 d-padfull</h1></div>
-    
     </div>
+  </div>
+</section>
+<section class="docs_grey_bg  cf">
+<div class="content-wrapper">
+  <div class='row rhythm-margin-top'>
+        <h2  class="heading-x2 soft-black">Desktop examples</h2>
+        <div class="row">        
+          <div class='sidebar block light-gray-bg box'>
+            <h4 class="heading-x1 centered">.sidebar</h4>
+          </div>
+          <div class='content block light-gray-bg box'>
+            <h4 class="heading-x1 centered">.content</h4>
+          </div>
+        </div>
+        <div class="row rhythm-margin-top">        
+          <div class='sidebar block light-gray-bg box'>
+            <h4 class="heading-x1 centered">.sidebar</h4>
+          </div>
+        <div role="main" class="content">
+          <div class="l-content  block  __text  light-gray-bg box ">
+             <h4>.l-content</h4>
+              <h4>Nested wihtin .content</h4>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.</p>
+            </div>
+          </div>
+      </div>
+      <div class="row rhythm-margin-top">        
+          <div class='sidebar block light-gray-bg box'>
+            <h4 class="heading-x1 centered">.sidebar</h4>
+          </div>
+        <div role="main" class="content">
+          <div class="block  __text  __with-aside light-gray-bg  ">
+             <h4>.l-content</h4>
+              <h4>Nested wihtin .content</h4>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.</p>
+            </div>
+            <aside>
+              <h4>.aside</h4>
+            </aside>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- <div class='row rhythm-margin-top'>
+      <div class='t-hide m-hide'>
+        class examples
+        <div class='d1-d4 region light-gray-bg box'>
+          <h4 class="heading-x1 centered">d1 - d4</h4>
+        </div>
+        <div class='d5-d16 region light-gray-bg box'>
+          <h4 class="heading-x1 centered">d5 - d16</h4>
+        </div>
+      </div>
 </div>
+  <div class='t-hide m-hide'>
+    class examples
+    <div class='row rhythm-margin-top'>
+      <div class="d1 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d1</h4>
+      </div>
+      <div class="d2 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d2</h4>
+      </div>
+      <div class="d3 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d3</h4>
+      </div>
+      <div class="d4 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d4</h4>
+      </div>
+      <div class="d5 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d5</h4>
+      </div>
+      <div class="d6 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d6</h4>
+      </div>
+      <div class="d7 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d7</h4>
+      </div>
+      <div class="d8 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d8</h4>
+      </div>
+      <div class="d9 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d9</h4>
+      </div>
+      <div class="d10 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d10</h4>
+      </div>
+      <div class="d11 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d11</h4>
+      </div>
+      <div class="d12 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d12</h4>
+      </div>
+      <div class="d13 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d13</h4>
+      </div>
+      <div class="d14 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d14</h4>
+      </div>
+      <div class="d15 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d15</h4>
+      </div>
+      <div class="d16 region light-gray-bg box">
+        <h4 class="heading-x1 centered">d16</h4>
+      </div>
+    </div>
+    <div class="row rhythm-margin-top">
+      column span examples
+      <h4 class="heading-x1 soft-black">Column span examples</h4>
+      <div class="d1-d12">        
+        <pre data-type="HTML" class="prettyprint">
+          <code>
+            &lt;div class="content-wrapper"&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="region d1-d8"&gt;d1-d8&lt;/div&gt;
+              &lt;div class="region d9-d16"&gt;d9-d16&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="d1-d8 region light-gray-bg box rhythm-margin-top">
+        <h4 class="heading-x1 centered">d1-d8</h4>
+      </div>
+      <div class="d9-d16 region light-gray-bg box rhythm-margin-top">
+        <h4 class="heading-x1 centered">d9-d16</h4>
+      </div>
+    </div>
+    <div class="row rhythm-margin-top">
+      full width example
+    </div>
+    <div class="row rhythm-margin-top">
+      <h4 class="heading-x1 soft-black">Full width example</h4>
+      <div class="d1-d12">        
+        <pre data-type="HTML" class="prettyprint">
+          <code>
+            &lt;div class="content-wrapper"&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="region d-all"&gt;d1-all&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="d-all region light-gray-bg box rhythm-margin-top">
+         <h4 class="heading-x1 centered">d-all</h4>
+      </div>
+    </div>
+    </div>
+
+    padding examples
+    <div class="d1 d-padin box"><h1>d1 d-padin</h1></div>
+    <div class="d16 d-pad box"><h1>d16 d-pad</h1></div>
+
+    <hr />
+    <div class="d1 d-padinfull box"><h1>d1 d-padinfull</h1></div>
+    <div class="d16 d-padfull box"><h1>d16 d-padfull</h1></div> -->
+    

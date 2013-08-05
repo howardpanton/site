@@ -25,7 +25,7 @@
 \*------------------------------------*/
 
 
-	@import "compass/reset"; 
+	@import "compass/reset";
 
 
 /*------------------------------------*\
@@ -65,12 +65,20 @@
 
 
 @import	"globals/icons",
-				"globals/typography", 
-				"globals/logos",
-				"globals/logos.fallback",
-				"globals/forms"; 
+		"globals/typography", 
+		"globals/logos",
+		"globals/logos.fallback",
+		"globals/forms"; 
 
 @import	"globals/utilities";
+
+
+
+/*------------------------------------*\
+    $SPRITES
+\*------------------------------------*/
+@import "../img/sprite/ui-icons/*.png";
+@include all-ui-icons-sprites;
 
 /*------------------------------------*\
     $OBJECTS-AND-EXTRACTIONS
@@ -130,6 +138,7 @@
 				"components/map-block",
 				"components/half-list",
 				"components/quotes",
+				"components/pull-quote",
 				"components/events",
 				"components/social-media-links",
 				"components/highlight-boxes",
@@ -145,10 +154,11 @@
 				"components/image-blocks",
 				"components/accordion",
 				"components/media-galleries",
-				"components/aside",
+				"components/pagination",
 				"components/expandable-content",
 				"components/highlight-blocks",
-				"components/colors";
+				"components/colors",
+				"components/vcards";
 
 // Short Courses
 @import "components/short-courses";

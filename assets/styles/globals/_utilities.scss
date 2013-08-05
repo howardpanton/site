@@ -12,6 +12,7 @@
 
 .affix {
   position: fixed;
+  top:80px;
 }
 
 .top {
@@ -194,6 +195,17 @@
   margin-left: 0;
 }
 
+.adjust-margin-nav {
+  margin-top: 68px;
+}
+
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
 
 // no underline (removes styling for both text underline and border bottom)
 .no-underline {
@@ -486,9 +498,9 @@ a.img:hover { filter: grayscale(100%);
 
 
 .icon {
-  @extend %icon; 
+  @extend %icon !optional; 
 }
 .icon-social { 
-  @extend %icon-social; 
+  @extend %icon-social !optional; 
 }
 

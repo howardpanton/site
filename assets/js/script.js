@@ -549,14 +549,9 @@ $(document).ready(function(){
 
       });
 
-
-
-
-  // if ($('.grid').length > 0) {
-  //   $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.mixitup.min.js', function() {
-  //     $('.grid').mixitup();
-  //   })
-  // }
+  ////////////////////
+  //  Stick div to top of browser on scroll 
+  ///////////////////
 
   // function moveScroller() {
   //   var move = function() {
@@ -625,19 +620,19 @@ $(document).ready(function(){
 
 
   // scroll to the top of the page when the button is clicked
-  $('.back-to-top').click(function(e){
+  $('.back-to-top').fastClick(function(e){
     e.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
   });
 
 
   // detect slider component
-  /*
-  if ($('.slider').length > 0) {
+  
+  if ($('.js-slider').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
-      $.each($('.slider'), function() {
+      $.each($('.js-slider'), function() {
 
         var _this = $(this);
         var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
@@ -679,7 +674,7 @@ $(document).ready(function(){
     });
 
   }
-  */
+  
 
   // detect slider component
   if ($('.royalSlider').length > 0) {
@@ -761,15 +756,42 @@ if ($('.accordion').length > 0) {
         console.log(circle);
               //circle.rotate({animateTo:360});
               if (!elem.is(':visible'))  {
-                circle.rotate({animateTo:90});
+                circle.rotate({animateTo:135});
                } else {
-                circle.rotate({animateTo:180, center: ["50%", "50%"], });
+                circle.rotate({animateTo:0, center: ["50%", "50%"], });
             };
 
 });
 
 }
   
+
+// detect dropdown menu button
+if ($('.dd-menu').length > 0) {
+
+    $(".js-dd-menu").fastClick(function (event){
+       event.preventDefault();
+       var _d = $(this);
+       var _d_menu = _d.parent();
+       
+       if (_d_menu.hasClass('active')) {
+          _d_menu.find('.js-dd-menu-icon').html("&#59236;");
+          _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
+            _d_menu.removeClass('active');
+         });
+       }
+       else { 
+          _d_menu.find('.js-dd-menu-icon').html("&#59239;");
+          _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
+            _d_menu.addClass('active');
+         });
+       }
+
+    });       
+}
+
+
+
 // detect circles-callout component
 
 if ($('.circles-component').length > 0) {
@@ -791,11 +813,16 @@ if ($('.search-filters').length > 0) {
   $('.filter-heading').fastClick(function(event) {
     event.preventDefault();
     var c = $(this);
-    if (c.parent().hasClass('active') ) {
-      c.parent().removeClass('active');
-    }
-    else {
-      c.parent().addClass('active');
+    
+    //process click event if the heading is not set to not-active
+    if (!c.hasClass('not-active')){ 
+
+      if (c.parent().hasClass('active') ) {
+        c.parent().removeClass('active');
+      }
+      else {
+        c.parent().addClass('active');
+      }
     }
   });
 }
@@ -861,7 +888,6 @@ if ($('#showtime-json').length){
 
 
 // detect lightbox component
-
 if ($('.js-lightbox').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
