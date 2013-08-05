@@ -273,9 +273,8 @@ template: false
           <div class="row">             
             <div class="d5-d12 region">
                 <h1 class="centered">Forms</h1>
-                <h3 class="centered">Make forms look gorgeous regardless of device and browser.</h3>
 
-                <form id="form" name="form" class="margin-top">
+                <form id="form" name="form" class="margin-top with-box-shadow">
                     <label>Label example</label>
                     <input type="text" name="default" id="default" />
                     <!--
@@ -285,13 +284,16 @@ template: false
 
                     <fieldset>
                         <label>Drop down:<small>Select option</small></label>
-                        <span class="select">
-                            <select>
+                        <!-- <span class="select"> -->
+                         <!--    <select>
                                 <option value="1">HTML5 Jedi</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
-                            </select>
-                        </span>
+                            </select> -->
+                        <!-- </span> -->
+
+                        <!-- dropdown menu button-->
+                        {% include components/_dropdown-menu.html %}
                     </fieldset>
 
                     <fieldset>
@@ -301,31 +303,74 @@ template: false
 
                     <fieldset>
                         <label>Feedback:<small>Comments here</small></label>
-                        <textarea></textarea>
+                        <textarea cols="40" rows="8"></textarea>
                     </fieldset>
 
-                    <fieldset>
+
+                    <!-- <fieldset>
                         <label>Switches<small>Touch lover</small></label>
                         <div data-control="checkbox">
                             <input type="checkbox" value="None" id="prueba" />
                             <label for="prueba"></label>
                         </div>
-                    </fieldset>
+                    </fieldset> -->
 
-                    <fieldset>
+                   <!--  <fieldset>
                         <label>Radio<small>buttons</small></label>
-                        <input type="radio" name="radio1"  /><span>Yes</span>
-                        <input type="radio" name="radio2" disabled /><span>No</span>
+                        <input type="radio" id="r1" name="radio"  />
+                        <label for="r1"><span></span>Yes</label>
+                        <input type="radio" id="r2" name="radio" />
+                        <label for="r2"><span></span>No</label>
+                        <input type="radio" id="r3" name="radio" disabled />
+                        <label for="r3"><span></span>disabled</label>
                     </fieldset>
 
                     <fieldset>
                         <label>Checkbox:<small>Styled</small></label>
-                        <input type="checkbox" name="radio1" /><span>One</span>
-                        <input type="checkbox" name="radio2" /><span>Two</span>
-                    </fieldset>
+                        <input type="checkbox" id="c1" name="cc" /><label for="c1"><span></span>Checkbox 1</label>
+                        <input type="checkbox" id="c2" name="cc" /><label for="c2"><span></span>Checkbox 2</label>
+                        <input type="checkbox" id="c3" name="cc" disabled /><label for="c3"><span></span>Checkbox disabled</label>
+
+                    </fieldset> -->
+
+                      <fieldset>
+                        <input id="c1" type="checkbox" name="cc">
+                        <label for="c1">Checkbox 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="c2" type="checkbox" name="cc">
+                        <label for="c2">Checkbox 2</label>
+                      </fieldset>
+                       <fieldset>
+                        <input id="c3" type="checkbox" name="cc" disabled>
+                        <label for="c3">Checkbox 3 (disabled)</label>
+                      </fieldset>
+                      <br/>
+                      <fieldset>
+                        <input id="r1" type="radio" name="rb">
+                        <label for="r1">Radio Button 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r2" type="radio" name="rb">
+                        <label for="r2">Radio Button 2</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r3" type="radio" name="rb" disabled>
+                        <label for="r3">Radio Button 3 (disabled)</label>
+                      </fieldset>
+
+
+                      <p>
+                        <input type="submit" value="Submit Button" class="submit-btn" />
+                        <input type="submit" value="Disabled Submit Button" class="submit-btn" disabled>
+                      </p>
                 </form>
             </div>
           </div>
+
+          </div>
+
+
           <div class="row">   
             <div class="d5-d12 region">
                 <div class="text book center">
