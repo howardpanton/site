@@ -184,7 +184,7 @@ table {
 }
 
 figure {
-	position: relative;
+	position: relative; // for credits
 	margin-bottom: rhythm(3, 14px);
 	a {
 		@extend %Swiss721BT-Roman;
@@ -192,6 +192,8 @@ figure {
 		text-decoration: none;
 		padding-bottom: 0;
 		border-bottom: 0;
+		display: block;
+		line-height: 0;
 		&:hover {
 			padding-bottom: 0;
 			border-bottom: 0;
