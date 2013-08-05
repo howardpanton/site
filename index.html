@@ -6,6 +6,65 @@ template: false
 branch: 1
 ---
 
+<!-- ========================== HEADER ========================== -->
+<header class="padding-top ual-black-bg cf">
+	<!-- Slide-in menu toggle -->
+  <div id="slide-menu-toggle-btn" class="menu-toggle-link">
+    <a href="#" id="docs-menu-toggle-btn" class="slide-in-menu-trigger ">
+     <span id="docs-menu-icon" class="icon docs-menu-toggle">☰</span>
+    </a>
+  </div>
+  
+  <div class="header-wrapper">    
+	<div class="row relative">
+    <!-- Docs UAL logo -->
+    <div class="docs-logo icon-ual-mobile">
+    </div>
+
+    
+  	  
+      
+  </div>
+
+  <!-- slide in navigation (hidden on page load)  -->
+  <nav id="slide-in-nav" role="navigation"> 
+    <div class="block">
+        <ul style="font-weight:300; padding: 24px">
+            <li>
+                <a href="index2.html" class="ual-white">Home</a>
+            </li>
+            <li>
+                <a href="#" class="ual-white">Get Started</a>
+            </li>
+            <li>
+                <a href="#" class="ual-white">Scaffolding</a>
+            </li>
+            <li>
+                <a href="#tools-block" class="ual-white smooth-scroll">Tools</a>
+            </li>
+            <li>
+                <a href="#" class="ual-white">Base CSS</a>
+            </li>
+            <li>
+                <a href="components.html" class="ual-white">Components</a>
+            </li>
+            <li>
+              <a class="ual-white" href="page-layout.html">Page Layout</a>
+            </li>
+            <li>
+              <a class="ual-white" href="headings.html">Headings</a>
+            </li>
+            <li>
+              <a class="ual-white" href="typography.html">Typography</a>
+            </li>
+            <li>
+              <a class="ual-white" href="images.html">Images</a>
+            </li>
+        </ul>
+        <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+    </div>
+  </nav> 
+</header>
 
     <!-- ========================== FEATURES ========================== -->
     <section class="docs_grey_bg  cf">
@@ -206,13 +265,147 @@ branch: 1
     </section>
 
     <!-- ========================== FORMS & TABLES ========================== -->
-      <section class="typography">
-        <row>
-          <div class="content-wrapper">
-                <div role="main" class="content">
-                  {% include components/_typography.html %}
+  <section class="typography">
+      <div class="content-wrapper">
+            <div role="main" class="content">
+              {% include components/_typography.html %}
+            </div>
+      </div>
+  </section>
+   <section class="rhythm-8 cf">
+       <div class="content-wrapper">   
+          <div class="row">             
+            <div class="d5-d12 region">
+                <h1 class="centered">Forms</h1>
+
+                <form id="form" name="form" class="margin-top with-box-shadow">
+                    <label>Label example</label>
+                    <input type="text" name="default" id="default" />
+                    <!--
+                    <label>Label example</label>
+                    <input type="text" name="large" id="large" class="large" />
+                    -->
+
+                    <fieldset>
+                        <label>Drop down:<small>Select option</small></label>
+                        <!-- <span class="select"> -->
+                         <!--    <select>
+                                <option value="1">HTML5 Jedi</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select> -->
+                        <!-- </span> -->
+
+                        <!-- dropdown menu button-->
+                        {% include components/_dropdown-menu.html %}
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Required:<small>field</small></label>
+                        <input type="text" name="name" id="name" required />
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Feedback:<small>Comments here</small></label>
+                        <textarea cols="40" rows="8"></textarea>
+                    </fieldset>
+
+
+                    <!-- <fieldset>
+                        <label>Switches<small>Touch lover</small></label>
+                        <div data-control="checkbox">
+                            <input type="checkbox" value="None" id="prueba" />
+                            <label for="prueba"></label>
+                        </div>
+                    </fieldset> -->
+
+                   <!--  <fieldset>
+                        <label>Radio<small>buttons</small></label>
+                        <input type="radio" id="r1" name="radio"  />
+                        <label for="r1"><span></span>Yes</label>
+                        <input type="radio" id="r2" name="radio" />
+                        <label for="r2"><span></span>No</label>
+                        <input type="radio" id="r3" name="radio" disabled />
+                        <label for="r3"><span></span>disabled</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Checkbox:<small>Styled</small></label>
+                        <input type="checkbox" id="c1" name="cc" /><label for="c1"><span></span>Checkbox 1</label>
+                        <input type="checkbox" id="c2" name="cc" /><label for="c2"><span></span>Checkbox 2</label>
+                        <input type="checkbox" id="c3" name="cc" disabled /><label for="c3"><span></span>Checkbox disabled</label>
+
+                    </fieldset> -->
+
+                      <fieldset>
+                        <input id="c1" type="checkbox" name="cc">
+                        <label for="c1">Checkbox 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="c2" type="checkbox" name="cc">
+                        <label for="c2">Checkbox 2</label>
+                      </fieldset>
+                       <fieldset>
+                        <input id="c3" type="checkbox" name="cc" disabled>
+                        <label for="c3">Checkbox 3 (disabled)</label>
+                      </fieldset>
+                      <br/>
+                      <fieldset>
+                        <input id="r1" type="radio" name="rb">
+                        <label for="r1">Radio Button 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r2" type="radio" name="rb">
+                        <label for="r2">Radio Button 2</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r3" type="radio" name="rb" disabled>
+                        <label for="r3">Radio Button 3 (disabled)</label>
+                      </fieldset>
+
+
+                      <p>
+                        <input type="submit" value="Submit Button" class="submit-btn" />
+                        <input type="submit" value="Disabled Submit Button" class="submit-btn" disabled>
+                      </p>
+                </form>
+            </div>
+          </div>
+
+          </div>
+
+
+          <div class="row">   
+            <div class="d5-d12 region">
+                <div class="text book center">
+                    <h1 class="color theme">Buttons</h1>
+                    <h3>Gallery of styles and sizes that will be enough to interact with your site.</h3>
+                    <div class="margin-top">
+                        <a href="#" class="button large">Large</a>
+                        <a href="#" class="button secondary">Normal</a>
+                        <a href="#" class="button success small">Small</a>
+                        <a href="#" class="button alert tiny">Tiny</a>
+                    </div>
+
+                    <div class="margin-top">
+                        <a href="#" class="button large"><span class="icon ok"></span>Large</a>
+                        <a href="#" class="button secondary"><span class="icon ok"></span>Normal</a>
+                        <a href="#" class="button success small"><span class="icon ok"></span>Small</a>
+                        <a href="#" class="button alert tiny"><span class="icon ok"></span>Tiny</a>
+                    </div>
+
+                    <div class="margin-top">
+                        <a href="#" class="button large icon ok"></a>
+                        <a href="#" class="button secondary icon ok"></a>
+                        <a href="#" class="button success small icon ok"></a>
+                        <a href="#" class="button alert tiny icon ok"></a>
+                    </div>
+
+                    <div class="margin-top">
+                        <a href="#" class="button anchor secondary"><span class="icon ok"></span>Anchor</a>
+                    </div>
                 </div>
           </div>
-        </row>
+        </div>
       </section>
   
