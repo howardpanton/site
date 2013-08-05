@@ -715,39 +715,42 @@ table th, table td {
 
 /* line 172, ../styles/globals/_typography.scss */
 figure {
+  position: relative;
   margin-bottom: 1.28571em;
 }
-/* line 174, ../styles/globals/_typography.scss */
+/* line 175, ../styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: 0;
+  display: block;
+  line-height: 0;
 }
-/* line 180, ../styles/globals/_typography.scss */
+/* line 183, ../styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 187, ../styles/globals/_typography.scss */
+/* line 190, ../styles/globals/_typography.scss */
 figcaption, .rsCaption {
   font-size: remCalc(14);
   font-size: 14px;
   line-height: 1.28571em;
   padding: 0.42857em;
 }
-/* line 193, ../styles/globals/_typography.scss */
+/* line 196, ../styles/globals/_typography.scss */
 figcaption p, .rsCaption p {
   padding-bottom: 0;
 }
 
-/* line 474, ../styles/globals/_typography.scss */
+/* line 477, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 475, ../styles/globals/_typography.scss */
+/* line 478, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -5468,263 +5471,6 @@ a figure img {
 /* line 228, ../styles/components/_blocks.scss */
 .four-up.__gallery ul {
   clear: left;
-}
-
-/**
- * BxSlider v4.0 - Fully loaded, responsive content slider
- * http://bxslider.com
- *
- * Written by: Steven Wanderski, 2012
- * http://stevenwanderski.com
- * (while drinking Belgian ales and listening to jazz)
- *
- * CEO and founder of bxCreative, LTD
- * http://bxcreative.com
- */
-/** RESET AND LAYOUT
-===================================*/
-/* line 19, ../styles/components/_bxslider.scss */
-.slider-container {
-  margin-bottom: 3em;
-}
-
-/* line 23, ../styles/components/_bxslider.scss */
-.slider-full-width {
-  max-width: 100%;
-}
-
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 27, ../styles/components/_bxslider.scss */
-  .slider-8 {
-    display: block;
-    float: left;
-    margin-left: 13.39732%;
-    margin-right: -100%;
-    width: 73.58801%;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 27, ../styles/components/_bxslider.scss */
-  .slider-8 {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 65.54132%;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 36, ../styles/components/_bxslider.scss */
-  .slider-12 {
-    display: block;
-    float: left;
-    margin-left: 13.39732%;
-    margin-right: -100%;
-    width: 73.58801%;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 36, ../styles/components/_bxslider.scss */
-  .slider-12 {
-    display: block;
-    float: left;
-    margin-left: 0%;
-    margin-right: -100%;
-    width: 100%;
-  }
-}
-
-/* line 45, ../styles/components/_bxslider.scss */
-.bx-wrapper {
-  position: relative;
-  margin: 0 auto;
-  padding: 0;
-  *zoom: 1;
-}
-/* line 50, ../styles/components/_bxslider.scss */
-.bx-wrapper ul, .bx-wrapper li {
-  padding: 0;
-}
-/* line 53, ../styles/components/_bxslider.scss */
-.bx-wrapper img {
-  width: 100%;
-  display: block;
-}
-
-/** THEME
-===================================*/
-/* line 72, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-pager,
-.bx-wrapper .bx-controls-auto {
-  position: absolute;
-  bottom: -30px;
-  width: 100%;
-}
-
-/* LOADER */
-/* line 80, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-loading {
-  min-height: 50px;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2000;
-}
-
-/* PAGER */
-/* line 93, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-pager {
-  text-align: center;
-  font-size: .85em;
-  font-family: inherit;
-  font-weight: bold;
-  color: #666;
-  padding-top: 20px;
-}
-
-/* line 103, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-  display: inline-block;
-  *zoom: 1;
-  *display: inline;
-}
-
-/* line 109, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-pager.bx-default-pager a {
-  background: #666;
-  text-indent: -9999px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  outline: 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-/* line 123, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-pager.bx-default-pager a:hover,
-.bx-wrapper .bx-pager.bx-default-pager a.active {
-  background: #000;
-}
-
-/* DIRECTION CONTROLS (NEXT / PREV) */
-/* line 129, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-prev {
-  left: 10px;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
-}
-
-/* line 134, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-next {
-  right: 10px;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
-}
-
-/* line 139, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-prev:hover {
-  background-position: 0 0;
-}
-
-/* line 143, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-next:hover {
-  background-position: -43px 0;
-}
-
-/* line 147, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-direction a {
-  position: absolute;
-  top: 50%;
-  margin-top: -16px;
-  outline: 0;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
-  z-index: 9999;
-  border-bottom: none;
-}
-
-/* line 159, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-direction a.disabled {
-  display: none;
-}
-
-/* AUTO CONTROLS (START / STOP) */
-/* line 165, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-auto {
-  text-align: center;
-}
-
-/* line 169, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-auto .bx-start {
-  display: block;
-  text-indent: -9999px;
-  width: 10px;
-  height: 11px;
-  outline: 0;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) -86px -11px no-repeat;
-  margin: 0 3px;
-}
-
-/* line 180, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-auto .bx-start:hover,
-.bx-wrapper .bx-controls-auto .bx-start.active {
-  background-position: -86px 0;
-}
-
-/* line 184, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-auto .bx-stop {
-  display: block;
-  text-indent: -9999px;
-  width: 9px;
-  height: 11px;
-  outline: 0;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) -86px -44px no-repeat;
-  margin: 0 3px;
-}
-
-/* line 195, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls-auto .bx-stop:hover,
-.bx-wrapper .bx-controls-auto .bx-stop.active {
-  background-position: -86px -33px;
-}
-
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-/* line 201, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-  text-align: left;
-  width: 80%;
-}
-
-/* line 206, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-  right: 0;
-  width: 35px;
-}
-
-/* IMAGE CAPTIONS */
-/* line 213, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #666666 \9;
-  background: rgba(80, 80, 80, 0.75);
-  width: 100%;
-}
-
-/* line 222, ../styles/components/_bxslider.scss */
-.bx-wrapper .bx-caption span {
-  color: #fff;
-  display: block;
-  font-size: .85em;
-  padding: 10px;
 }
 
 /* v1.0.5 */
