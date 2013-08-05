@@ -26,7 +26,7 @@ breadcrumb-link: /css/
 		<div role="main" class="content">
       <h2>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.</h2>
 			<div class="l-content block __text">
-				<h3>Overview</h3>
+				<h3 id="overview">Overview</h3>
 				<hr>
 				<p class="leader">Get the lowdown on the key pieces of Bootstrap's infrastructure, including our approach to better, faster, stronger web development.</p>
 
@@ -56,7 +56,7 @@ breadcrumb-link: /css/
 					<p>Easily center a page's contents by wrapping its contents in a <code>.content-wrapper</code>. Containers set max-width at various media query breakpoints to match our grid system.</p>
 
 
-			<h3>Grid system</h3>
+			<h3 id="grid">Grid system</h3>
 			<hr>
 			  <p class="leader">
 			  	Our bootstrap includes a responsive, mobile-first grid system that appropriately scales up to 16 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts.</p>
@@ -146,9 +146,202 @@ breadcrumb-link: /css/
 					<code>&lt;strong&gt;rendered as bold text.&lt;/strong&gt;</code>
 
 				<h4>Blockquotes</h4>
-				
+					<p>For quoting blocks of content from another source within your document.</p>
+					<p><strong>Default blockquote</strong></p>
+					<p>Wrap <code>&lt;blockquote&gt;</code> around any HTML as the quote. For straight quotes, we recommend a <code>&lt;p&gt;</code>.
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+					</blockquote>
 
-				
+					<p><strong>Pull quote</strong></p>
+						<div class="l-content-full-width">
+							<p class="pull-quote">Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
+						</div>
+
+					{% gist 6157363 %}
+
+				<h4>Lists</h4>
+					<p><strong>Unordered</strong></p>
+					<p>A list of items in which the order <strong>does not</strong> explicitly matter.</p>
+						<ul>
+							<li>Lorem ipsum dolor sit amet</li>
+							<li>Consectetur adipiscing elit</li>
+							<li>Integer molestie lorem at massa</li>
+							<li>Facilisis in pretium nisl aliquet</li>
+							<li>Nulla volutpat aliquam velit
+								<ul>
+									<li>Phasellus iaculis neque</li>
+									<li>Purus sodales ultricies</li>
+									<li>Vestibulum laoreet porttitor sem</li>
+									<li>Ac tristique libero volutpat at</li>
+								</ul>
+							</li>
+							<li>Faucibus porta lacus fringilla vel</li>
+							<li>Aenean sit amet erat nunc</li>
+							<li>Eget porttitor lorem</li>
+						</ul>
+
+					<p><strong>Ordered</strong></p>
+					<p>A list of items in which the order <strong>does</strong> explicitly matter.</p>
+						<ol>
+							<li>Lorem ipsum dolor sit amet</li>
+							<li>Consectetur adipiscing elit</li>
+							<li>Integer molestie lorem at massa</li>
+							<li>Facilisis in pretium nisl aliquet</li>
+							<li>Nulla volutpat aliquam velit</li>
+							<li>Faucibus porta lacus fringilla vel</li>
+							<li>Aenean sit amet erat nunc</li>
+							<li>Eget porttitor lorem</li>
+						</ol>
+
+				<h4>Description</h4>
+					<p>A list of terms with their associated descriptions.</p>
+						<dl>
+							<dt>Description lists</dt>
+								<dd>A description list is perfect for defining terms.</dd>
+							<dt>Euismod</dt>
+								<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+								<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+							<dt>Malesuada porta</dt>
+								<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+						</dl>		
+
+
+			<h3 id="tables">Tables</h3>
+			<hr>
+				<h4>Basic example</h4>
+				<p>For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.</p>
+
+
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th>#</th>
+				      <th>First Name</th>
+				      <th>Last Name</th>
+				      <th>Username</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td>1</td>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				    </tr>
+				    <tr>
+				      <td>2</td>
+				      <td>Jacob</td>
+				      <td>Thornton</td>
+				      <td>@fat</td>
+				    </tr>
+				    <tr>
+				      <td>3</td>
+				      <td>Larry</td>
+				      <td>the Bird</td>
+				      <td>@twitter</td>
+				    </tr>
+				  </tbody>
+				</table>
+
+
+			<h3 id="forms">Forms</h3>
+			<hr>
+			<h4>Basic example</h4>
+			<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to width: 100%; by default.</p>
+
+					<h2>Example form</h2>
+
+                <form id="form" name="form" class="margin-top with-box-shadow">
+                    <label>Label example</label>
+                    <input type="text" name="default" id="default" />
+
+                    <fieldset>
+                        <label>Drop down:<small>Select option</small></label>
+
+<div class="dd-menu">
+  <div class="js-dd-menu dd-menu-heading">
+    <h3 class="dd-menu-title">dropdown menu title</h3>
+    <div class="dd-menu-arrow"><span class="js-dd-menu-icon icon">&#59236;</span></div>
+  </div>
+  <ul class="js-dd-menu-list">
+    <li><a href="#">Link one</a></li>
+    <li><a href="#">Link two</a></li>
+    <li><a href="#">Link three</a></li>
+    <li><a href="#">Link four</a></li>
+  </ul>
+</div>                    
+
+</fieldset>
+
+                    <fieldset>
+                        <label>Required:<small>field</small></label>
+                        <input type="text" name="name" id="name" required />
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Feedback:<small>Comments here</small></label>
+                        <textarea cols="40" rows="8"></textarea>
+                    </fieldset>
+
+                      <fieldset>
+                        <input id="c1" type="checkbox" name="cc">
+                        <label for="c1">Checkbox 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="c2" type="checkbox" name="cc">
+                        <label for="c2">Checkbox 2</label>
+                      </fieldset>
+                       <fieldset>
+                        <input id="c3" type="checkbox" name="cc" disabled>
+                        <label for="c3">Checkbox 3 (disabled)</label>
+                      </fieldset>
+                      <br/>
+                      <fieldset>
+                        <input id="r1" type="radio" name="rb">
+                        <label for="r1">Radio Button 1</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r2" type="radio" name="rb">
+                        <label for="r2">Radio Button 2</label>
+                      </fieldset>
+                      <fieldset>
+                        <input id="r3" type="radio" name="rb" disabled>
+                        <label for="r3">Radio Button 3 (disabled)</label>
+                      </fieldset>
+
+
+                      <p>
+                        <input type="submit" value="Submit Button" class="submit-btn" />
+                        <input type="submit" value="Disabled Submit Button" class="submit-btn" disabled>
+                      </p>
+                </form>
+
+
+			<h3 id="images">Images</h3>
+			<hr>
+				<h4>ReSRC.it</h4>
+				<p>Making use of <a href="http://www.resrc.it/">ReSRC.it</a> which is a responsiuve images - on demand from the cloud service.</p>
+				<ul>
+					<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Ap2IuWZylLxqdE02V2V3SFNabHhkZXpqUG53Q3RLZEE#gid=0">Image sizes</a></li>
+				</ul>
+            <p style="color:red;">Insert table for image sizes once all sizes have been agreed</p>
+
+
+			<h3 id="helper">Helper classes</h3>
+			<hr>
+			<h4>.pull-left</h4>	
+				<p>Float an element left</p>
+				<p><code>&lt;div class=&quot;pull-left&quot;&gt;...&lt;/div&gt;</code></p>
+			<h4>.pull-right</h4>	
+				<p>Float an element right</p>
+				<p><code>&lt;div class=&quot;pull-right&quot;&gt;...&lt;/div&gt;</code></p>
+			<h4>.clearfix</h4>	
+				<p>Clear the <code>float</code> on any element.</p>
+				<p><code>&lt;div class=&quot;clearfix&quot;&gt;...&lt;/div&gt;</code></p>
+
+
+
 			</div> <!-- end .l-content .block .__text -->
 		</div> <!-- end main-content -->
 	</div> <!-- end row -->
