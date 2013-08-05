@@ -1,49 +1,126 @@
 ---
-title: CSS
-last-updated: August 4th, 2013
 layout: style.tpl
-college: docs
+title: CSS
+last-updated: August 04, 2013
 class-home: docs
-breadcrumb: CSS 
+breadcrumb: CSS
+breadcrumb-link: /css/
 ---
 
 <div class="content-wrapper">
 	<div class="row">
-		<!-- sidebar for page navigation --> 
 		<div role="navigation" class="sidebar">
-			<div class="js-affix" data-spy="affix" data-offset-top="50">
-				<ul>
-					<li><a href="#grid-system" title="">Grid system</a></li>
-					<li><a href="#typography" title="">Typography</a></li>
-					<li><a href="#tables" title="">Tables</a></li>
-					<li><a href="#form" title="">Forms</a></li>
-					<li><a href="#images" title="">Images</a></li>
-					<li><a href="#branding" title="">Branding</a></li>
-					<li><a href="#colors" title="">Colors</a></li>
-					<li><a href="#helper-classes" title="">Helper classes</a></li>
-					<li><a href="#responsive-utilities" title="">Responsive utilities</a></li>
-				</ul>
-      </div>
-		</div>
+			<ul>
+        <li><a href="#overview" title="">Overview</a></li>
+        <li><a href="#grid" title="">Grid system</a></li>
+        <li><a href="#typography" title="">Typography</a></li>
+        <li><a href="#Entypo" title="">Entypo</a></li>
+        <li><a href="#tables" title="">Tables</a></li>
+        <li><a href="#forms" title="">Forms</a></li>
+        <li><a href="#buttons" title="">Buttons</a></li>
+        <li><a href="#images" title="">Responsive images</a></li>
+        <li><a href="#utilities" title="">Responsive utilities</a></li>
+        <li><a href="#helper" title="">Helper classes</a></li>
+			</ul>
+    </div> <!-- end sidebar -->
 		<div role="main" class="content">
-			<div class="row">
-				<div class="l-content  block  __text  __with-aside ">
-						<p class="leader">Morbi sem orci, ullamcorper non elementum vitae, sagittis sed lacus. Suspendisse feugiat, nunc eget ornare condimentum.</p>
-						<p>Morbi sem orci, ullamcorper non elementum vitae, sagittis sed lacus. Suspendisse feugiat, nunc eget ornare condimentum, neque est venenatis est, eu feugiat libero tellus vitae purus. Sed et laoreet erat. Duis ac risus rutrum metus volutpat volutpat non eget ante. Etiam ac nisl vel mauris imperdiet scelerisque ut ut lectus. Aenean vitae arcu arcu. Duis in interdum magna.</p>
-				</div>	
-				<aside>
-						<h3>Usage</h3>
-							<p>Example pages of where this component is used.</p>
-						<h3>SCSS</h3>
-							<p>_typography.scss</p>
-						<h3>Includes</h3>
-							<p>_typography.html</p>
-				</aside>		
-			</div>
+      <h2>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.</h2>
+			<div class="l-content block __text">
+				<h3>Overview</h3>
+				<hr>
+				<p class="leader">Get the lowdown on the key pieces of Bootstrap's infrastructure, including our approach to better, faster, stronger web development.</p>
+
+				<h4>HTML5 doctype required</h4>
+					<p>Bootstrap makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
+
+					{% gist 6155926 %}
+
+				<h4>Mobile first</h4>
+					<p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
+					<p>To ensure proper rendering and touch zooming, add the viewport meta tag to your <code>&lt;head&gt;</code>.</p>
+
+				<h4>Typography and links</h4>
+					<p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
+					<ul>
+						<li>Remove <code>margin</code> on the body</li>
+						<li>Set <code>background-color: white;</code> on the body</li>
+						<li>Use the <code>@font-family-base</code>, <code>@font-size-base</code>, and <code>@line-height-base</code> attributes as our typographic base</li>
+						<li>Set the global link color via <code>@link-color</code> and apply link underlines only on <code>:hover</code></li>
+					</ul>
+					<p>These styles can be found within <code>typography.scss</code>.</p>
+	
+				<h4>Compass Reset</h4>
+					<p>For improved cross-browser rendering, we use <a href="http://compass-style.org/reference/compass/reset/">Compass Reset</a>, a project by by Christopher M. Eppstein.</p>
 				
-				<!-- typography -->
-				{% include components/_typography.html %}
-		
+				<h4>Centering with container</h4>
+					<p>Easily center a page's contents by wrapping its contents in a <code>.content-wrapper</code>. Containers set max-width at various media query breakpoints to match our grid system.</p>
+
+
+			<h3>Grid system</h3>
+			<hr>
+			  <p class="leader">
+			  	Our bootstrap includes a responsive, mobile-first grid system that appropriately scales up to 16 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts.</p>
+			  <p>The grid system uses <a href="https://gridsetapp.com">gridset</a> by Mark Boulton as its foundation. Gridset is a tool for making grids, and you can find out more by visiting their document <a href="https://gridsetapp.com/documentation/">page</a>.</p>
+
+			  <h3>Grid options</h3>
+			  	<p>See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>
+
+<table class="table table-bordered table-striped bs-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              Tiny devices
+              <small>Phones (&lt;599px)</small>
+            </th>
+            <th>
+              Small-Medium devices
+              <small>Tablets (&gt;960px)</small>
+            </th>
+            <th>
+              Large devices
+              <small>Desktops (&gt;1280px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th># of columns</th>
+            <td>4 columns</td>
+            <td>8 columns</td>
+            <td>16 columns</td>
+          </tr>
+          <tr>
+            <th>Max container width</th>
+            <td>599px</td>
+            <td>959px</td>
+            <td>1280px</td>
+          </tr>
+          <tr>
+            <th>Max column width</th>
+            <td>122px</td>
+            <td>83px</td>
+            <td>54px</td>
+          </tr>
+          <tr>
+            <th>Gutter width</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <th>Nestable</th>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      
+        
+				
+			</div> <!-- end .l-content .block .__text -->
 		</div> <!-- end main-content -->
 	</div> <!-- end row -->
 </div> <!-- end content-wrapper -->			
