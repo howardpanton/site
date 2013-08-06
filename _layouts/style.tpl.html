@@ -31,9 +31,7 @@
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/components/grid.css'>
   <link rel='stylesheet' href='{{ site.url }}/assets/css/docs.css'>
-  
-
-    <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
+  <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
 
   <!--[if (lt IE 9) & (!IEMobile)]>
   // selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 //
@@ -74,15 +72,15 @@ padding-bottom: 1.5em;
    <div class="row relative">
       <!-- Docs UAL logo -->
       <div class="d1">
-        <div class="docs-logo icon-ual-mobile"></div>
+        <a href="http://artslondon.github.io/beta/"><div class="docs-logo icon-ual-mobile"></div></a>
       </div>
       <nav class="docs-menu d2-d14">
         <ul>
           <li><a href="{{ site.url }}getting-started/">Getting Started</a></li>
           <li><a href="{{ site.url }}css/">CSS</a></li>
           <li><a href="{{ site.url }}blocks/">Blocks</a></li>
-          <li><a href="{{ site.url }}components/">Components</a></li>
-          <li><a href="{{ site.url }}javascript/">Javascript</a></li>          
+<!--           <li><a href="{{ site.url }}components/">Components</a></li>
+       <li><a href="{{ site.url }}javascript/">Javascript</a></li>    -->       
         </ul>
       </nav>
     </div>
@@ -118,8 +116,10 @@ padding-bottom: 1.5em;
             <a href="{{ site.url }}roadmap/">Roadmap</a>
             <a href="{{ site.url }}changelog/">Changelog</a>
             <a href="{{ site.url }}download/">Download</a>
-            <a href="{{ site.url }}digital">Digital Team</a>
-            <a href="{{ site.url }}colophon/">Colophon</a>
+<!--             <a href="{{ site.url }}digital">Digital Team</a>          <a href="{{ site.url }}download/">Download</a>
+<a href="{{ site.url }}digital">Digital Team</a>
+>>>>>>> release-candidate-v1-0
+<a href="{{ site.url }}colophon/">Colophon</a> -->
           </li>
         </ul>
       </nav>
@@ -191,39 +191,8 @@ $('.affix').affix({
   })
 
   var d = $('.breadcrumbs').find('a');
-d.last().show();
+  d.last().show();
 
-
-      if ($('#slide-in-nav').length > 0) {
-
-      // hide the slide-in-nav list at the start
-      $('#slide-in-nav').hide();
-     
-      // slide in navigation (using jPanelMenu)
-      var jPM = $.jPanelMenu({
-        menu: '#slide-in-nav',
-        trigger: '.slide-in-menu-trigger',
-        direction: 'right',
-        openEasing: 'linear',
-        closeEasing: 'linear',
-        afterOpen: function () { 
-          // $('#docs-menu-icon').removeClass('ui-icons-transparent-menu-button');
-          // $('#docs-menu-icon').addClass('ui-icons-transparent-close');
-          $('#docs-menu-icon').html('❌');
-           },
-        afterClose: function () { 
-          // $('#docs-menu-icon').removeClass('ui-icons-transparent-close');
-          // $('#docs-menu-icon').addClass('ui-icons-transparent-menu-button');
-          $('#docs-menu-icon').html('☰');
-           },
-        duration: 200
-      
-      });
-
-      // turn on the slide in menu (fingers crossed!)
-      jPM.on();
-
-    }
   </script>
   </body>
 
