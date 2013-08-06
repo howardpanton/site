@@ -8,7 +8,7 @@
   <h2>Figure/ Figure Caption</h2>
     <figure>
       <img src="http://placehold.it/1000x500&text=img" alt="Image Alt">
-      <div class="credits">This is where the credit will be</div>
+      <div class="credits">Image credits will go here</div>
       <figcaption>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</figcaption> 
     </figure>
 
@@ -163,10 +163,6 @@
       <th>Column Two</th>
       <th>Column Three</th>
       <th>Column Four</th>
-      <th>Column Five</th>
-      <th>Column Six</th>
-      <th>Column Seven</th>
-      <th>Column Eight</th>
     </tr>
   </thead>
   <tbody>
@@ -175,60 +171,37 @@
       <td>Row 1 Cell 2</td>
       <td>Row 1 Cell 3</td>
       <td>Row 1 Cell 4</td>
-      <td>Row 1 Cell 5</td>
-      <td>Row 1 Cell 6</td>
-      <td>Row 1 Cell 7</td>
-      <td>Row 1 Cell 8</td>
     </tr>
     <tr>
       <td>Row 2 Cell 1</td>
       <td>Row 2 Cell 2</td>
       <td>Row 2 Cell 3</td>
       <td>Row 2 Cell 4</td>
-      <td>Row 2 Cell 5</td>
-      <td>Row 2 Cell 6</td>
-      <td>Row 2 Cell 7</td>
-      <td>Row 2 Cell 8</td>
     </tr>
     <tr>
       <td>Row 3 Cell 1</td>
       <td>Row 3 Cell 2</td>
       <td>Row 3 Cell 3</td>
       <td>Row 3 Cell 4</td>
-      <td>Row 3 Cell 5</td>
-      <td>Row 3 Cell 6</td>
-      <td>Row 3 Cell 7</td>
-      <td>Row 3 Cell 8</td>
     </tr>
     <tr>
       <td>Row 4 Cell 1</td>
       <td>Row 4 Cell 2</td>
       <td>Row 4 Cell 3</td>
       <td>Row 4 Cell 4</td>
-      <td>Row 4 Cell 5</td>
-      <td>Row 4 Cell 6</td>
-      <td>Row 4 Cell 7</td>
-      <td>Row 4 Cell 8</td>
+
     </tr>
     <tr>
       <td>Row 5 Cell 1</td>
       <td>Row 5 Cell 2</td>
       <td>Row 5 Cell 3</td>
       <td>Row 5 Cell 4</td>
-      <td>Row 5 Cell 5</td>
-      <td>Row 5 Cell 6</td>
-      <td>Row 5 Cell 7</td>
-      <td>Row 5 Cell 8</td>
     </tr>
     <tr>
       <td>Row 6 Cell 1</td>
       <td>Row 6 Cell 2</td>
       <td>Row 6 Cell 3</td>
       <td>Row 6 Cell 4</td>
-      <td>Row 6 Cell 5</td>
-      <td>Row 6 Cell 6</td>
-      <td>Row 6 Cell 7</td>
-      <td>Row 6 Cell 8</td>
     </tr>
   </tbody>
 </table>
@@ -345,7 +318,7 @@
     <li><span class="info">Telephone</span> <span class="phone">+44 (0)207 567 1234</span></li>
     <li><span class="info">Email</span> <span class="email">j.doe@something.com</span></li>
     <li><span class="info">Job Title</span> <span class="title">Made Up Assistant</span></li>
-    <li><span class="info">Department/ College</span> <span class="org">The Made Up Company</span></li>
+    <li><span class="info">Company</span> <span class="org">The Made Up Company</span></li>
     <li><span class="info">Website</span> <span class="url"><a href="http://www.example.com">www.something-or-other.com</a></span></li>
     <li><span class="info">Blog</span> <span class="blogurl"><a href="http://www.example.com">www.something-or-other.com/blog</a></span></li>
     <li><span class="info">Twitter</span> <span class="twitter"><a href="http://www.example.com">@johndoeuk</a></span></li>
@@ -354,81 +327,7 @@
   </ul>
 
 
-    <t4 type="content" name="Box section title" output="selective-output" modifiers="" format="<h2>$value</h2>" />
 
-
-
-  <ul class="vcard">
-    <li><span class="info">Name</span> <span class="fn"><t4 type="content" name="Profile Name" output="normal" modifiers=""  /></span></li>
-    <t4 type="content" name="Telephone" output="selective-output" modifiers="" format="<li><span class='info'>Telephone</span> <span class='phone'>$value</span></li>"  />
-    <t4 type="content" name="Email" output="selective-output" modifiers="" format="<li><span class='info'>Email</span> <span class='email'>$value</span></li>"  />
-    <t4 type="content" name="Job Title" output="selective-output" modifiers="" format="<li><span class='info'>Job Title</span> <span class='title'>$value</span></li>"  />
-    
-    <t4 type="content" name="Organisation Name" output="selective-output" modifiers="" process-format="true" format="<li><span class=&quot;info&quot;><t4 type=&quot;content&quot; name=&quot;Organisation Type&quot; output=&quot;normal&quot; modifiers=&quot;&quot;  /></span> <span class=&quot;org&quot;>$value</span></li>"  />  
-  
-
-
-    <t4 type="content" name="Website" output="selective-output" modifiers="" format="<li><span class='info'>Website</span> 
-      <span class='url'><a title=&quot;$value&quot; href=&quot;$value&quot;>$value</a></span></li>"  />
-    
-    <t4 type="content" name="Blog" output="selective-output" modifiers="" format="<li><span class='info'>Blog</span> 
-      <span class='blogurl'><a title=&quot;$value&quot; href=&quot;$value&quot;>$value</a></span></li>"  />
-    
-    <t4 type="content" name="Twitter" output="selective-output" modifiers="" format="<li><span class='info'>Twitter</span> 
-      <span class='twitter'><a title=&quot;$value&quot; href=&quot;https://twitter.com/$value&quot;>&#64;$value</a></span></li>"  />
-    
-    <t4 type="content" name="Facebook" output="selective-output" modifiers="" format="<li><span class='info'>Facebook</span> 
-      <span class='facebook'><a title=&quot;$value&quot; href=&quot;$value&quot;>&#64;$value</a></span></li>"  />
-    
-    <t4 type="content" name="LinkedIn" output="selective-output" modifiers="" format="<li><span class='info'>LinkedIn</span> 
-      <span class='linkedin'><a title=&quot;$value&quot; href=&quot;$value&quot;>&#64;$value</a></span></li>"  />
-  </ul>
-
-
-<!--   <div class="vcard">
-    <table>
-      <tr>
-        <th>Name</th>
-        <td><span class="fn">John Doe</span></td>
-      </tr>
-      <tr>
-        <th>Telephone</th>
-        <td><span class="phone">+44 (0)207 567 1234</span></td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td><span class="email">j.doe@something.com</span></td>
-      </tr>
-      <tr>
-        <th>Job Title</th>
-        <td><span class="title">Made Up Assistant</span></td>
-      </tr>
-      <tr>
-        <th>Department/ College</th>
-        <td><span class="org">The Made Up Company</span></td>
-      </tr>
-      <tr>
-        <th>Website</th>
-        <td><span class="url"><a href="http://www.example.com">www.something-or-other.com</a></span></td>
-      </tr>
-      <tr>
-        <th>Blog</th>
-        <td><span class="blogurl"><a href="http://www.example.com">www.something-or-other.com/blog</a></span></td>
-      </tr>
-      <tr>
-        <th>Twitter</th>
-        <td><span class="twitter"><a href="http://www.example.com">@johndoeuk</a></span></td>
-      </tr>
-      <tr>
-        <th>Facebook</th>
-        <td><span class="facebook"><a href="http://www.example.com">https://www.facebook.com/johndoe</a></span></td>
-      </tr>
-      <tr>
-        <th>LinkedIn</th>
-        <td><span class="linkedin"><a href="http://www.example.com">uk.linkedin.com/in/johndoe/</a></span></td>
-    </table>    
-  </div>
- -->
 
 
 </div>

@@ -131,6 +131,7 @@ code {
 	background: $bg-gray;
 	font-size: 12px;
 	padding: rhythm(1, 12px);
+	color: $csm-primary;
 }
 
 dl {
@@ -184,7 +185,7 @@ table {
 }
 
 figure {
-	position: relative;
+	position: relative; // for credits
 	margin-bottom: rhythm(3, 14px);
 	a {
 		@extend %Swiss721BT-Roman;
@@ -192,6 +193,8 @@ figure {
 		text-decoration: none;
 		padding-bottom: 0;
 		border-bottom: 0;
+		display: block;
+		line-height: 0;
 		&:hover {
 			padding-bottom: 0;
 			border-bottom: 0;
@@ -211,7 +214,9 @@ figcaption, .rsCaption {
 }
 
 blockquote {
-	background: image-url('icons/quote_marks.gif') no-repeat;
+	@extend .ui-icons-quote_marks;
+  background-repeat: no-repeat;
+  background-position: top left;
 	font-size: remCalc(16);
 	font-size: 16px;
 	@include adjust-leading-to(4, 16px); 	
