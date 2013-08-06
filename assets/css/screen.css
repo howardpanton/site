@@ -113,7 +113,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   */
   /* Mobile hiding ----- */
   /* line 35, ../styles/globals/_gridset-utilities.scss */
-  .m-hide {
+  .m-hide, .dd-heading {
     display: none !important;
   }
 }
@@ -142,7 +142,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   */
   /* Tablet hiding ----- */
   /* line 71, ../styles/globals/_gridset-utilities.scss */
-  .t-hide {
+  .t-hide, .dd-heading {
     display: none !important;
   }
 }
@@ -362,7 +362,7 @@ questions: http://www.webtype.com
 }
 
 /* line 25, ../styles/font-face/_entypo.scss */
-.icon, .m-menu-btn-toggle span, a.search span {
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
@@ -570,7 +570,7 @@ h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .accordion-list .st-content 
     $CORE
 \*------------------------------------*/
 /* line 6, ../styles/globals/_icons.scss */
-.icon, .m-menu-btn-toggle span, a.search span {
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   width: 36px;
   height: 36px;
   background-position: 0% 0%;
@@ -775,7 +775,7 @@ blockquote {
 }
 
 /* line 498, ../styles/globals/_typography.scss */
-.icon, .m-menu-btn-toggle span, a.search span {
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
@@ -1419,15 +1419,6 @@ textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
-}
-/* line 473, ../styles/globals/_forms.scss */
-input:focus:invalid:focus,
-textarea:focus:invalid:focus,
-select:focus:invalid:focus {
-  border-color: #e9322d;
-  -webkit-box-shadow: 0 0 6px #f8b9b7;
-  -moz-box-shadow: 0 0 6px #f8b9b7;
-  box-shadow: 0 0 6px #f8b9b7;
 }
 
 /* line 484, ../styles/globals/_forms.scss */
@@ -2642,7 +2633,7 @@ a.img:hover {
 }
 
 /* line 490, ../styles/globals/_utilities.scss */
-.size-h3, .search-results-info p, .lower-search-results-info p {
+.size-h3, .search-results-info p, .lower-search-results-info p, .dd-heading {
   font-size: 1.5em;
   line-height: 1.25em;
 }
@@ -2876,7 +2867,7 @@ input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg,
     $Global Layout Classes
 \*------------------------------------*/
 /* line 154, ../styles/globals/_layout.scss */
-.content-wrapper, .top-bar, .header-wrapper, .footer-wrapper {
+.content-wrapper, .header-wrapper, .top-bar, .footer-wrapper {
   width: 92.5%;
   max-width: 1280px;
   margin: 0 auto;
@@ -2884,7 +2875,7 @@ input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg,
 }
 
 /* line 161, ../styles/globals/_layout.scss */
-.content-wrapper img, .top-bar img {
+.content-wrapper img {
   max-width: 100%;
   height: auto;
 }
@@ -2915,7 +2906,7 @@ aside {
 }
 
 /* line 6, ../styles/globals/_icons.scss */
-.icon, .m-menu-btn-toggle span, a.search span {
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   width: 36px;
   height: 36px;
   background-position: 0% 0%;
@@ -3629,11 +3620,11 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 18px;
 }
 /* line 439, ../styles/components/_course-finder.scss */
-.header-wrapper .ui-autocomplete {
+.header-wrapper .ui-autocomplete, .top-bar .ui-autocomplete {
   background-color: #333333;
 }
 /* line 441, ../styles/components/_course-finder.scss */
-.header-wrapper .ui-autocomplete li a {
+.header-wrapper .ui-autocomplete li a, .top-bar .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
@@ -3679,7 +3670,7 @@ input, .search-result-module, .search-input-wrap {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 2, ../styles/components/_nav-main-menu.scss */
+  /* line 3, ../styles/components/_nav-main-menu.scss */
   #new-menu {
     width: 50%;
     float: right;
@@ -3687,14 +3678,14 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 9, ../styles/components/_nav-main-menu.scss */
+  /* line 10, ../styles/components/_nav-main-menu.scss */
   #new-menu {
     width: 100%;
     float: left;
     display: none;
   }
 }
-/* line 16, ../styles/components/_nav-main-menu.scss */
+/* line 17, ../styles/components/_nav-main-menu.scss */
 .main-nav-wrapper {
   width: 92.5%;
   max-width: 1256px;
@@ -3702,7 +3693,7 @@ input, .search-result-module, .search-input-wrap {
   position: relative;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 16, ../styles/components/_nav-main-menu.scss */
+  /* line 17, ../styles/components/_nav-main-menu.scss */
   .main-nav-wrapper {
     width: 100%;
     max-width: 100%;
@@ -3711,7 +3702,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 16, ../styles/components/_nav-main-menu.scss */
+  /* line 17, ../styles/components/_nav-main-menu.scss */
   .main-nav-wrapper {
     width: 100%;
     max-width: 100%;
@@ -3720,21 +3711,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 38, ../styles/components/_nav-main-menu.scss */
+/* line 39, ../styles/components/_nav-main-menu.scss */
 .menu-contain-wrap {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-/* line 44, ../styles/components/_nav-main-menu.scss */
+/* line 45, ../styles/components/_nav-main-menu.scss */
 .main-menu {
   width: 100%;
   display: block;
-  overflow: hidden;
   background: black;
 }
-/* line 51, ../styles/components/_nav-main-menu.scss */
+/* line 52, ../styles/components/_nav-main-menu.scss */
 .main-menu ul {
   display: block;
   height: 100%;
@@ -3745,59 +3735,67 @@ input, .search-result-module, .search-input-wrap {
   background: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 51, ../styles/components/_nav-main-menu.scss */
+  /* line 52, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 51, ../styles/components/_nav-main-menu.scss */
+  /* line 52, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
-/* line 70, ../styles/components/_nav-main-menu.scss */
+/* line 71, ../styles/components/_nav-main-menu.scss */
 .main-menu .dropdown-arrow {
   display: none;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 76, ../styles/components/_nav-main-menu.scss */
+  /* line 77, ../styles/components/_nav-main-menu.scss */
   .m-nav-menu-wrap {
     display: none;
   }
 }
-/* line 80, ../styles/components/_nav-main-menu.scss */
-.m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
+/* line 81, ../styles/components/_nav-main-menu.scss */
+.m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.m-menu-btn-toggle span, a.m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
   font-size: 48px;
   line-height: 48px;
 }
 
-/* line 88, ../styles/components/_nav-main-menu.scss */
-.m-menu-btn-toggle {
+/* line 89, ../styles/components/_nav-main-menu.scss */
+.m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
+  position: absolute;
+  right: 48px;
+  top: 12px;
   border: none;
   padding: 6px;
-  font-size: 14px;
+  font-size: 36px;
   font-weight: 300;
+  padding: 0;
+  margin: 0;
 }
-/* line 94, ../styles/components/_nav-main-menu.scss */
-.m-menu-btn-toggle span {
+/* line 100, ../styles/components/_nav-main-menu.scss */
+.m-menu-btn-toggle span, a.m-menu-btn-toggle span {
+  padding: 0;
   display: block;
+  margin: 0;
+  font-size: 56px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 88, ../styles/components/_nav-main-menu.scss */
-  .m-menu-btn-toggle {
+  /* line 89, ../styles/components/_nav-main-menu.scss */
+  .m-menu-btn-toggle, a.m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-/* line 102, ../styles/components/_nav-main-menu.scss */
+/* line 112, ../styles/components/_nav-main-menu.scss */
 .m-menu-icon {
   color: white;
   font-weight: 300;
 }
-/* line 105, ../styles/components/_nav-main-menu.scss */
+/* line 115, ../styles/components/_nav-main-menu.scss */
 .m-menu-icon a span {
   width: 100%;
   height: 100%;
@@ -3809,25 +3807,12 @@ input, .search-result-module, .search-input-wrap {
   padding-right: 0.3em;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 119, ../styles/components/_nav-main-menu.scss */
-  .d-search-menu-panel, .d-course-finder-menu-panel {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 119, ../styles/components/_nav-main-menu.scss */
-  .d-search-menu-panel, .d-course-finder-menu-panel {
-    display: none !important;
-  }
-}
-/* line 124, ../styles/components/_nav-main-menu.scss */
+/* line 134, ../styles/components/_nav-main-menu.scss */
 .d-search-menu-panel > div, .d-course-finder-menu-panel > div {
-  padding-top: 3em;
   width: 100%;
 }
 
-/* line 137, ../styles/components/_nav-main-menu.scss */
+/* line 147, ../styles/components/_nav-main-menu.scss */
 .d-course-finder-menu-panel .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3839,7 +3824,7 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 18px;
   background-color: #333333;
 }
-/* line 148, ../styles/components/_nav-main-menu.scss */
+/* line 158, ../styles/components/_nav-main-menu.scss */
 .d-course-finder-menu-panel .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -3847,19 +3832,19 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 150, ../styles/components/_nav-main-menu.scss */
+/* line 160, ../styles/components/_nav-main-menu.scss */
 .d-course-finder-menu-panel .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 155, ../styles/components/_nav-main-menu.scss */
+/* line 165, ../styles/components/_nav-main-menu.scss */
 .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 161, ../styles/components/_nav-main-menu.scss */
+/* line 171, ../styles/components/_nav-main-menu.scss */
 .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .d-course-finder-menu-panel .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3870,31 +3855,39 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 175, ../styles/components/_nav-main-menu.scss */
+/* line 185, ../styles/components/_nav-main-menu.scss */
 .d-go-search-button {
-  display: block;
-  float: right;
-  margin-top: 1.875em;
+  display: inline-block;
+  margin-left: 18px;
+  vertical-align: top;
+  padding-top: 12px;
 }
 
-/* line 188, ../styles/components/_nav-main-menu.scss */
+/* line 199, ../styles/components/_nav-main-menu.scss */
 .d-search-input-form {
   width: 100%;
+  margin-bottom: 0;
 }
 
-/* line 192, ../styles/components/_nav-main-menu.scss */
+/* line 204, ../styles/components/_nav-main-menu.scss */
 .site-search-input, .course-finder-txt-input {
   max-width: 75%;
   width: auto;
   outline: none;
 }
-/* line 196, ../styles/components/_nav-main-menu.scss */
+/* line 208, ../styles/components/_nav-main-menu.scss */
 .site-search-input:focus, .course-finder-txt-input:focus {
   outline: none;
   border-bottom: solid 1px #c8c8c8;
 }
 
-/* line 204, ../styles/components/_nav-main-menu.scss */
+/* line 214, ../styles/components/_nav-main-menu.scss */
+input[type="text"].course-finder-txt-input {
+  background-color: #333333;
+  color: white;
+}
+
+/* line 221, ../styles/components/_nav-main-menu.scss */
 .mobile-search, .mobile-course-finder {
   padding-bottom: 1.5em;
   padding-top: 1.5em;
@@ -3904,26 +3897,26 @@ input, .search-result-module, .search-input-wrap {
   clear: both;
   display: none;
 }
-/* line 214, ../styles/components/_nav-main-menu.scss */
+/* line 231, ../styles/components/_nav-main-menu.scss */
 .mobile-search .site-search-input, .mobile-search .course-finder-txt-input, .mobile-course-finder .site-search-input, .mobile-course-finder .course-finder-txt-input {
   width: 70%;
   font-size: 24px;
   padding-left: 1em;
   float: left;
 }
-/* line 219, ../styles/components/_nav-main-menu.scss */
+/* line 236, ../styles/components/_nav-main-menu.scss */
 .mobile-search .site-search-input:focus, .mobile-search .course-finder-txt-input:focus, .mobile-course-finder .site-search-input:focus, .mobile-course-finder .course-finder-txt-input:focus {
   outline-width: 0;
   outline: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 214, ../styles/components/_nav-main-menu.scss */
+  /* line 231, ../styles/components/_nav-main-menu.scss */
   .mobile-search .site-search-input, .mobile-search .course-finder-txt-input, .mobile-course-finder .site-search-input, .mobile-course-finder .course-finder-txt-input {
     width: 65%;
   }
 }
 
-/* line 230, ../styles/components/_nav-main-menu.scss */
+/* line 247, ../styles/components/_nav-main-menu.scss */
 .mobile-course-finder .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3935,7 +3928,7 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 12px;
   background-color: #333333;
 }
-/* line 241, ../styles/components/_nav-main-menu.scss */
+/* line 258, ../styles/components/_nav-main-menu.scss */
 .mobile-course-finder .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e6e6e6;
@@ -3943,19 +3936,19 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 243, ../styles/components/_nav-main-menu.scss */
+/* line 260, ../styles/components/_nav-main-menu.scss */
 .mobile-course-finder .ui-autocomplete li a {
   color: white;
   font-size: 1em;
 }
-/* line 248, ../styles/components/_nav-main-menu.scss */
+/* line 265, ../styles/components/_nav-main-menu.scss */
 .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 254, ../styles/components/_nav-main-menu.scss */
+/* line 271, ../styles/components/_nav-main-menu.scss */
 .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .mobile-course-finder .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3966,7 +3959,7 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 268, ../styles/components/_nav-main-menu.scss */
+/* line 285, ../styles/components/_nav-main-menu.scss */
 .m-go-search-btn {
   display: block;
   float: right;
@@ -3974,59 +3967,38 @@ input, .search-result-module, .search-input-wrap {
   margin-right: 1em;
 }
 @media only screen and (max-width: 599px) {
-  /* line 268, ../styles/components/_nav-main-menu.scss */
+  /* line 285, ../styles/components/_nav-main-menu.scss */
   .m-go-search-btn {
     margin-right: 0.5em;
   }
 }
-/* line 276, ../styles/components/_nav-main-menu.scss */
+/* line 293, ../styles/components/_nav-main-menu.scss */
 .m-go-search-btn a {
   margin-right: 0;
   margin-top: 1em;
 }
 
-/* line 286, ../styles/components/_nav-main-menu.scss */
+/* line 305, ../styles/components/_nav-main-menu.scss */
 .top-bar {
   position: relative;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 290, ../styles/components/_nav-main-menu.scss */
-  .top-bar > ul {
-    display: none;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 290, ../styles/components/_nav-main-menu.scss */
-  .top-bar > ul {
-    display: none;
-  }
-}
-/* line 295, ../styles/components/_nav-main-menu.scss */
+/* line 313, ../styles/components/_nav-main-menu.scss */
 .top-bar .menu-active {
   background-color: #333 !important;
 }
-/* line 297, ../styles/components/_nav-main-menu.scss */
+/* line 315, ../styles/components/_nav-main-menu.scss */
 .top-bar li {
   list-style: none;
   padding: 0;
   width: auto;
-  float: left;
   font-weight: 300;
 }
-/* line 306, ../styles/components/_nav-main-menu.scss */
-.top-bar li:last-child {
-  float: right;
-}
-/* line 308, ../styles/components/_nav-main-menu.scss */
-.top-bar li:last-child a {
-  padding-top: 0;
-}
-/* line 311, ../styles/components/_nav-main-menu.scss */
+/* line 322, ../styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 297, ../styles/components/_nav-main-menu.scss */
+  /* line 315, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4035,7 +4007,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 297, ../styles/components/_nav-main-menu.scss */
+  /* line 315, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4043,42 +4015,42 @@ input, .search-result-module, .search-input-wrap {
     text-align: left;
   }
 }
-/* line 328, ../styles/components/_nav-main-menu.scss */
-.top-bar li a {
+/* line 339, ../styles/components/_nav-main-menu.scss */
+.top-bar li > a {
   display: block;
   height: 100%;
-  color: white !important;
+  color: white;
   font-size: 13px;
   border-bottom: none;
   padding: 12px 1em;
 }
-/* line 337, ../styles/components/_nav-main-menu.scss */
-.top-bar li a:hover {
+/* line 348, ../styles/components/_nav-main-menu.scss */
+.top-bar li > a:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 328, ../styles/components/_nav-main-menu.scss */
-  .top-bar li a {
+  /* line 339, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 328, ../styles/components/_nav-main-menu.scss */
-  .top-bar li a {
+  /* line 339, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1060px) {
-  /* line 328, ../styles/components/_nav-main-menu.scss */
-  .top-bar li a {
+  /* line 339, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
 }
 
-/* line 360, ../styles/components/_nav-main-menu.scss */
+/* line 371, ../styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -4091,32 +4063,11 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 12px;
 }
 
-@media only screen and (min-width: 960px) {
-  /* line 373, ../styles/components/_nav-main-menu.scss */
-  .js .submenu > div {
-    display: none;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 379, ../styles/components/_nav-main-menu.scss */
-  .js .sub-inner-menu {
-    display: none;
-  }
-
-  /* line 382, ../styles/components/_nav-main-menu.scss */
-  .js #new-menu {
-    display: none;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 389, ../styles/components/_nav-main-menu.scss */
-  .js .sub-inner-menu {
-    display: none;
-  }
-}
-/* line 394, ../styles/components/_nav-main-menu.scss */
+/* line 405, ../styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
+  padding-left: 6px;
+  display: none;
 }
 /* line 169, ../styles/globals/_mixins.scss */
 .ual-banner-menu:before, .ual-banner-menu:after {
@@ -4127,55 +4078,38 @@ input, .search-result-module, .search-input-wrap {
 .ual-banner-menu:after {
   clear: both;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 394, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 405, ../styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
-    height: 48px;
-    padding-left: 6px;
+    display: block;
+    *zoom: 1;
+    height: 120px;
     background-color: black;
+    padding-top: 0.75em;
   }
-  /* line 402, ../styles/components/_nav-main-menu.scss */
-  .ual-banner-menu .logo {
-    margin-top: 0;
-    position: absolute;
-    padding-top: 0;
-    padding-bottom: 0;
-    top: 0;
-    left: 0.5em;
-    width: 68px;
+  /* line 169, ../styles/globals/_mixins.scss */
+  .ual-banner-menu:before, .ual-banner-menu:after {
+    content: " ";
+    display: table;
   }
-}
-@media only screen and (max-width: 599px) {
-  /* line 394, ../styles/components/_nav-main-menu.scss */
-  .ual-banner-menu {
-    height: 48px;
-    padding-left: 6px;
-    background-color: black;
-  }
-  /* line 419, ../styles/components/_nav-main-menu.scss */
-  .ual-banner-menu .logo {
-    margin-top: 0;
-    position: absolute;
-    padding-top: 0;
-    padding-bottom: 0;
-    top: 0;
-    left: 0.5em;
-    width: 68px;
+  /* line 170, ../styles/globals/_mixins.scss */
+  .ual-banner-menu:after {
+    clear: both;
   }
 }
 
-/* line 433, ../styles/components/_nav-main-menu.scss */
+/* line 421, ../styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 439, ../styles/components/_nav-main-menu.scss */
+/* line 427, ../styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 443, ../styles/components/_nav-main-menu.scss */
+/* line 431, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
@@ -4184,36 +4118,45 @@ input, .search-result-module, .search-input-wrap {
   border-right: 1px solid #444;
   float: left;
 }
-/* line 451, ../styles/components/_nav-main-menu.scss */
+/* line 439, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 459, ../styles/components/_nav-main-menu.scss */
+/* line 447, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 463, ../styles/components/_nav-main-menu.scss */
+/* line 451, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 468, ../styles/components/_nav-main-menu.scss */
+/* line 456, ../styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
   background-color: #333333;
 }
 @media only screen and (min-width: 960px) {
-  /* line 433, ../styles/components/_nav-main-menu.scss */
+  /* line 421, ../styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
+/* line 465, ../styles/components/_nav-main-menu.scss */
+.dd-heading {
+  padding-left: 12px;
+}
+
+/* line 473, ../styles/components/_nav-main-menu.scss */
+.ual-logo-tab-mobile {
+  padding-left: 12px;
+}
 @media only screen and (min-width: 960px) {
-  /* line 476, ../styles/components/_nav-main-menu.scss */
+  /* line 473, ../styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
@@ -4362,37 +4305,26 @@ input, .search-result-module, .search-input-wrap {
     border-bottom: none;
   }
 }
-/* line 598, ../styles/components/_nav-main-menu.scss */
-.submenu li > a {
-  display: block;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  color: white;
-  font-weight: 300;
-  font-size: 16px;
-  padding-left: 0;
-  padding-bottom: 0;
-  border: none;
-}
-/* line 625, ../styles/components/_nav-main-menu.scss */
+/* line 622, ../styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 625, ../styles/components/_nav-main-menu.scss */
+  /* line 622, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 625, ../styles/components/_nav-main-menu.scss */
+  /* line 622, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
+
 @media only screen and (min-width: 960px) {
   /* line 638, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-1 {
+  .top-bar .subnav-1 {
     display: block;
     float: left;
     margin-left: 0%;
@@ -4402,7 +4334,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 638, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-1 {
+  .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -4410,7 +4342,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (min-width: 960px) {
   /* line 649, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-2 {
+  .top-bar .subnav-2 {
     display: block;
     float: left;
     margin-left: 25.89636%;
@@ -4420,7 +4352,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 649, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-2 {
+  .top-bar .subnav-2 {
     width: 100%;
     clear: left;
     padding-bottom: 0;
@@ -4429,7 +4361,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (max-width: 599px) {
   /* line 649, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-2 {
+  .top-bar .subnav-2 {
     width: 100%;
     clear: left;
     padding-bottom: 0;
@@ -4438,7 +4370,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (min-width: 960px) {
   /* line 666, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-3 {
+  .top-bar .subnav-3 {
     display: block;
     float: left;
     margin-left: 51.41355%;
@@ -4448,7 +4380,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 666, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-3 {
+  .top-bar .subnav-3 {
     width: 100%;
     clear: left;
     padding-bottom: 0;
@@ -4457,7 +4389,7 @@ input, .search-result-module, .search-input-wrap {
 }
 @media only screen and (max-width: 599px) {
   /* line 666, ../styles/components/_nav-main-menu.scss */
-  .submenu .subnav-3 {
+  .top-bar .subnav-3 {
     width: 100%;
     clear: left;
     padding-bottom: 0;
@@ -4465,7 +4397,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 /* line 683, ../styles/components/_nav-main-menu.scss */
-.submenu .feature {
+.top-bar .feature {
   display: block;
   float: left;
   margin-left: 51.41355%;
@@ -4475,7 +4407,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: 22px;
 }
 /* line 689, ../styles/components/_nav-main-menu.scss */
-.submenu .feature-image {
+.top-bar .feature-image {
   display: block;
   float: left;
   margin-left: 76.93073%;
@@ -4743,11 +4675,10 @@ a.course:before {
   position: absolute;
   top: 0;
   right: 0;
-  border: 1px solid #757575;
+  border: 0;
   outline: none;
   background: #fff;
   width: 100%;
-  height: 48px;
   margin: 0;
   z-index: 10;
   padding: 20px 65px 20px 20px;
@@ -4772,7 +4703,12 @@ a.course:before {
   color: #757575;
 }
 
-/* line 59, ../styles/components/_expandable-search-input.scss */
+/* line 58, ../styles/components/_expandable-search-input.scss */
+input[type="text"].sb-search-input {
+  height: 48px;
+}
+
+/* line 63, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search,
 .sb-search-submit {
   width: 48px;
@@ -4788,7 +4724,7 @@ a.course:before {
   cursor: pointer;
 }
 
-/* line 73, ../styles/components/_expandable-search-input.scss */
+/* line 77, ../styles/components/_expandable-search-input.scss */
 .sb-search-submit {
   background: #fff;
   /* IE needs this */
@@ -4803,7 +4739,7 @@ a.course:before {
   z-index: -1;
 }
 
-/* line 84, ../styles/components/_expandable-search-input.scss */
+/* line 88, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search {
   color: #fff;
   background-color: black;
@@ -4818,19 +4754,19 @@ a.course:before {
   transition: all 0.3s;
 }
 
-/* line 99, ../styles/components/_expandable-search-input.scss */
+/* line 103, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search:hover {
   background-color: #333333;
 }
 
 /* Open state */
-/* line 105, ../styles/components/_expandable-search-input.scss */
+/* line 109, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open,
 .no-js .sb-search {
   width: 100%;
 }
 
-/* line 110, ../styles/components/_expandable-search-input.scss */
+/* line 114, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
   background-color: #333333;
@@ -4838,7 +4774,7 @@ a.course:before {
   z-index: 11;
 }
 
-/* line 117, ../styles/components/_expandable-search-input.scss */
+/* line 121, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
   z-index: 90;
@@ -4967,7 +4903,7 @@ a.course:before {
 }
 
 /* line 57, ../styles/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .m-menu-btn-toggle span.button-link, .d-go-search-button a.icon, .m-go-search-btn a.icon, a.search span.button-link {
+.button-link.icon, input.icon.submit-btn, .m-menu-btn-toggle span.button-link, a.m-menu-btn-toggle span.button-link, .d-go-search-button a.icon, .m-go-search-btn a.icon, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
@@ -5037,40 +4973,40 @@ a.course:before {
   background-color: #e6e6e6;
   border-bottom: 1px solid #c8c8c8;
   padding-left: 12px;
+  line-height: 24px;
 }
-/* line 47, ../styles/components/_sidebar.scss */
+/* line 48, ../styles/components/_sidebar.scss */
 .mobile-sidebar ul li a {
   width: 100%;
-  line-height: 24px;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   display: block;
   border-bottom: none;
 }
 
-/* line 59, ../styles/components/_sidebar.scss */
+/* line 60, ../styles/components/_sidebar.scss */
 .currentbranch0 a {
   color: #757575;
   border-bottom: 0;
 }
-/* line 62, ../styles/components/_sidebar.scss */
+/* line 63, ../styles/components/_sidebar.scss */
 .currentbranch0 a:hover {
   border-bottom: 0;
 }
 
-/* line 68, ../styles/components/_sidebar.scss */
+/* line 69, ../styles/components/_sidebar.scss */
 .multilevel-linkul-0 {
   margin-left: 24px;
       font-size: 14px;
       padding: 0;
 }
-/* line 73, ../styles/components/_sidebar.scss */
+/* line 74, ../styles/components/_sidebar.scss */
 .multilevel-linkul-0 li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 79, ../styles/components/_sidebar.scss */
+/* line 80, ../styles/components/_sidebar.scss */
 .show-mob-sidebar {
   display: block;
   width: 100%;
@@ -5336,7 +5272,7 @@ a figure img {
   margin-left: 3.37603%;
 }
 /* line 45, ../styles/components/_image-list-with-text.scss */
-.lcf .content-wrapper .image-list-with-text h3, .lcf .top-bar .image-list-with-text h3 {
+.lcf .content-wrapper .image-list-with-text h3 {
   text-align: left;
   padding-top: 0;
 }
@@ -9537,6 +9473,161 @@ a.back-to-top:hover {
   margin: 0 5px;
 }
 
+/* line 139, ../styles/components/_megamenu.scss */
+.megamenu_container {
+  width: 100%;
+  height: 48px;
+  *height: 46px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 9999;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 151, ../styles/components/_megamenu.scss */
+.megamenu_fixed {
+  width: inherit;
+  position: fixed;
+  top: 0;
+  /* IE7 Fix */
+  *width: expression(this.parentNode.currentStyle['width']);
+}
+
+/* line 158, ../styles/components/_megamenu.scss */
+.megamenu {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  /* For IE7 */
+  margin: 0;
+  font-size: 14px;
+}
+
+/* line 165, ../styles/components/_megamenu.scss */
+.megamenu > li {
+  float: left;
+  margin: 0;
+  padding-bottom: 0;
+  border: none;
+  background-color: black;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+  -ms-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+}
+/* line 177, ../styles/components/_megamenu.scss */
+.megamenu > li.active {
+  background-color: #333333;
+}
+
+/* line 182, ../styles/components/_megamenu.scss */
+.megamenu > li > a {
+  font-size: 14px;
+  outline: 0;
+  text-decoration: none;
+  display: block;
+  padding: 12px 15px 12px 15px;
+}
+
+/* line 192, ../styles/components/_megamenu.scss */
+.megamenu li.megamenu_button {
+  display: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+/* line 199, ../styles/components/_megamenu.scss */
+.megamenu li.megamenu_button a {
+  padding: 0;
+  margin: 0;
+}
+
+/* Right aligned menu item */
+/* line 207, ../styles/components/_megamenu.scss */
+.megamenu li.megamenu_right {
+  float: right;
+  margin-right: -1px;
+}
+
+/* line 211, ../styles/components/_megamenu.scss */
+.megamenu li.megamenu_right a {
+  margin-right: 5px;
+}
+
+/* line 228, ../styles/components/_megamenu.scss */
+.megamenu li .dropdown_container,
+.megamenu li .dropdown_fullwidth,
+.megamenu li .dropdown_multilevel {
+  position: absolute;
+  margin: 0;
+  padding: 12px;
+  left: -9999em;
+  top: -9999em;
+  display: block;
+  zoom: 1;
+  z-index: 9998;
+  float: left;
+}
+
+/* line 240, ../styles/components/_megamenu.scss */
+.megamenu li .dropdown_first {
+  margin-left: -1px;
+}
+
+/* line 243, ../styles/components/_megamenu.scss */
+.megamenu li .droplast_right {
+  margin-right: -1px;
+}
+
+/* Showing Drop Down on Mouse Hover */
+/* line 249, ../styles/components/_megamenu.scss */
+.megamenu li:hover .dropdown_container {
+  top: 45px;
+  left: auto;
+}
+
+/* line 253, ../styles/components/_megamenu.scss */
+.megamenu li:hover .dropdown_fullwidth {
+  top: 45px;
+  left: -1px;
+}
+
+/* line 257, ../styles/components/_megamenu.scss */
+.megamenu li .dropdown_right {
+  right: 0;
+}
+
+/* line 260, ../styles/components/_megamenu.scss */
+.megamenu li:hover .dropdown_right {
+  top: 45px;
+  left: auto;
+  right: 0;
+}
+
+/*
+	Bigger containers need smaller padding values and
+	on the opposite, smaller containers will have
+	higher paddings. 
+	This makes the content within each kind of drop down 
+	equally distant from the left edge. 
+*/
+/* line 331, ../styles/components/_megamenu.scss */
+.megamenu .dropdown_12columns,
+.megamenu .dropdown_fullwidth {
+  width: 100%;
+}
+
+/* line 336, ../styles/components/_megamenu.scss */
+.dropdown_fullwidth {
+  background-color: #333333;
+}
+
 /* line 2, ../styles/components/_highlight-blocks.scss */
 .highlight-block-2-up li, .highlight-block-3-up li, .highlight-homepage-block-2-up li, .highlight-homepage-block-4-up li {
   background: #e6e6e6;
@@ -12179,7 +12270,7 @@ img.mfp-img {
   height: 36px;
 }
 /* line 56, ../styles/components/_dropdown.scss */
-.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span {
+.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.m-menu-btn-toggle span, a.m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span {
   font-size: 32px;
   text-align: center;
   vertical-align: middle;
