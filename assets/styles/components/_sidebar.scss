@@ -18,14 +18,20 @@
 		li {
 			font-size: 14px;
 			font-size: remCalc(14px);
-			padding: rhythm(1, 14px) 0;
+			padding:0.375em 0.75em;
 			color: $aaa-gray;
 			list-style-type: none;
 			margin-left: 0;
+			line-height:24px; 
+			border-bottom:1px dotted $light-gray;
+			&:hover {
+				background:$bg-gray;
+			}
 		}
 	}
 	a {
 		@extend %Swiss721BT-Light;
+		border-bottom:none;
 	}
 }
 
