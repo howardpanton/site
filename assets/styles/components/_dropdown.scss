@@ -1,10 +1,9 @@
 //
-// Dropdown menu button UAL default styles 
+// Dropdown menu button 
+// & UAL styled select box styles
 //
 
-
-
-.dd-menu {
+.dd-menu, .select-box {
    max-width:650px;
    clear: left;
    @include margin-trailer(2);   
@@ -16,7 +15,6 @@
         padding: 0;
         height: 36px;
         padding-left: 12px;
-      
       }
       li a {
         display: block; 
@@ -34,7 +32,7 @@
    }
 }
 
-.dd-menu-heading {
+.dd-menu-heading, .select-box-heading {
   background-color: black;
   color: white;
   position: relative;
@@ -45,7 +43,7 @@
      @extend %Swiss721BT-Light;
   }
   
-  .dd-menu-arrow {
+  .dd-menu-arrow, .select-box-arrow {
      position: absolute;
      right: 0;
      top: 0;

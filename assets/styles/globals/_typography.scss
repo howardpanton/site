@@ -214,9 +214,17 @@ figcaption, .rsCaption {
 }
 
 blockquote {
-	@extend .ui-icons-quote_marks;
-  background-repeat: no-repeat;
-  background-position: top left;
+	position: relative;
+	span { 
+		@extend .ui-icons-quote_marks;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-repeat: no-repeat;
+  	background-position: top left; 
+	}
+	
+  
 	font-size: remCalc(16);
 	font-size: 16px;
 	@include adjust-leading-to(4, 16px); 	
@@ -224,6 +232,10 @@ blockquote {
 	padding-bottom: rhythm(4, 16px);
 	padding-left: 68px;
 	padding-right: 18%;
+}
+
+hr {
+	clear: both;
 }
 
 // @include establish-baseline(16px);
