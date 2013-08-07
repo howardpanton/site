@@ -473,7 +473,12 @@ $(document).ready(function(){
           autoScaleSliderWidth: _itemWidth,
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
-          globalCaption: true,
+          globalCaption: true, 
+          autoPlay: {
+            // autoplay options go here
+            enabled: true,
+            pauseOnHover: true
+          }
         });
       });
     });
