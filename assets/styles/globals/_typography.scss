@@ -215,11 +215,6 @@ figcaption, .rsCaption {
 
 blockquote {
 	position: relative;
-	
-	&:before{
-		content: " ";
-		@extend .ui-icons-quote_marks;
-	}
 	span { 
 		@extend .ui-icons-quote_marks;
 		position: absolute;
@@ -237,6 +232,10 @@ blockquote {
 	padding-bottom: rhythm(4, 16px);
 	padding-left: 68px;
 	padding-right: 18%;
+}
+
+hr {
+	clear: both;
 }
 
 // @include establish-baseline(16px);
