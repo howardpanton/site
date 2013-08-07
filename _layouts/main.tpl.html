@@ -114,10 +114,10 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 <div class="main-nav-wrapper">
   <div class="row">  
     <div class="ual-banner-menu">
-      <div class="logo"> 
+      <!-- <div class="logo"> 
         <div class="ual-logo-tab-mobile">
           <div class="logo-ual-mobile"></div>
-        </div>
+        </div> -->
         <div class="ual-logo-desktop">
           <!-- {% if page.college == "csm" %}
             <div class="logo-ual-csm"></div>
@@ -156,7 +156,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
        
       {% if page.class-home != "docs" %} 
       <!-- Mobile & tablet main navigation links (hidden on desktop) -->
-      <nav class="m-nav-menu-wrap">
+      <!-- <nav class="m-nav-menu-wrap">
         <ul id="mob-tab-menu" class="mobile-menu">       
           <li>
             <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
@@ -172,7 +172,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
       <nav class="college-link-menu">
         <ul>
           <li><a href="/">UAL</a></li>
@@ -250,7 +250,8 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
 
-
+  
+  
 
 
   <!-- fastClicks script - improve click speed on mobile -->
@@ -265,6 +266,22 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
 
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
+  <script type="text/javascript" src="http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js"></script><!-- Mega Menu Plugins -->
+  <script type="text/javascript" src="http://artslondon.github.io/beta/assets/js/libs/megamenu.js"></script><!-- Mega Menu Script -->
+  <script>
+  $(document).ready(function($){
+      $('.megamenu').megaMenuCompleteSet({
+          menu_speed_show : 300, // Time (in milliseconds) to show a drop down
+          menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+          menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+      });
+  });
+  </script>
+
   </body>
 
 
