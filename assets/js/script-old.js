@@ -41,42 +41,324 @@ var waitForFinalEvent = (function () {
 })();
 
 
+
+var _active_btn;
+
+// monitor mobile menu, it's initially closed at start, (we're not showing it open on page load as of june 14)  we use this variable to allow the menu to be hidden if other mobile nav buttons are clicked
+var initMobMenu = 1;
+
+function checkMobileNavMenuState() {
+
+  // if menu already open, then slide up and hide
+  if ( $('#main-menu-btn').hasClass('active') || ( initMobMenu == 1)  ) {
+    $('#new-menu').slideUp('fast', 'linear', function() { 
+        $('#main-menu-btn').removeClass('active'); 
+        $('#main-menu-btn').parent().removeClass('menu-active');
+        // $('#menu-icon-indicator').html('≡');
+        $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
+        $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
+        $('#new-menu').removeAttr('style');
+        $('#new-menu').hide();
+        initMobMenu = 0; // update menu tracker 
+      }
+    );
+  }
+
+} // end toggleMobileNavMenuState()
+
+
+
+
+
 // ---------------------------------------
 //   mobile / tablet view button handlers
 // ---------------------------------------
 
+////////////////
+// Course Finder Button click script
+////////////////
+
+$('#m-course-finder-btn').fastClick(function(event) {
+  event.preventDefault();
+  var _clicked = $(this);
+
+  // get number of active menu items
+  _active_btn = $('#mob-tab-menu li.menu-active:visible');
+  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+  
+
+
+  // Close Course Finder panel
+  // - if course finder already active, then close
+  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
+    
+    $('.mobile-course-finder').slideUp('fast', 'linear', function() {
+      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
+      $('.mobile-course-finder').removeClass('show').addClass('hide');
+    });
+
+    
+    
+  // Show Course Finder panel
+  // - a button different to the course finder is already open,
+  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
+    
+    checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+    // hide search
+    var _closeme = $('#mob-tab-menu').find('li.menu-active');
+    _closeme.removeClass("menu-active");
+    $('.mobile-search').removeClass('show').addClass('hide');
+
+    _clicked.parent('li').addClass("menu-active");
+    $('.mobile-course-finder').removeClass('hide').addClass('show');
+    $('.mobile-course-finder').css({'display':'block'});
+    $('.mobile-course-finder').find('input').focus();
+  }
+
+  
+  // Show Course Finder panel
+  // - if course finder not active, and NO other buttons are active, 
+  else {
+    _clicked.parent('li').addClass("menu-active");
+    $('.mobile-course-finder').removeClass('hide').addClass('show');
+    $('.mobile-course-finder').css({'display':'block'});
+    $('.mobile-course-finder').find('input').focus();
+  }
+
+
+}); // end mobile view course finder button click handler 
 
 
 
+/////////////////
+// Search Button click script
+////////////////
+
+$('#m-search-btn').fastClick(function(event) {
+  event.preventDefault();
+  var _clicked = $(this);
+  // get number of active menu items
+  _active_btn = $('#mob-tab-menu li.menu-active:visible');
+
+  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+  
+
+
+
+  // Close Search panel
+  // -if search already active, then close
+
+  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
+    $('.mobile-search').slideUp('fast', 'linear', function() {
+      $('.mobile-search').removeClass('show').addClass('hide');
+      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
+    });
+
+
+  // Open Search Panel
+  // - if another mobile menu panel is open
+  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
+    
+    // hide course finder
+    $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
+    $('.mobile-course-finder').removeClass('show').addClass('hide');
+    $('.mobile-course-finder').css({'display':'none'});
+    
+    // show search
+    _clicked.parent('li').addClass("menu-active");
+    $('.mobile-search').removeClass('hide').addClass('show');
+    $('.mobile-search').css({'display':'block'});
+    $('.mobile-search').find('input').focus();
+  }
+
+  // Open Search Panel
+  // - if search not active and no other buttons are active 
+  else {
+    _clicked.parent('li').addClass("menu-active");
+    $('.mobile-search').removeClass('hide').addClass('show');
+    $('.mobile-search').css({'display':'block'});
+    $('.mobile-search').find('input').focus();
+    // $('.mobile-search').slideDown('fast', 'linear', function() {});
+  }
+
+}); // end mobile tablet search button click handler
+
+
+
+///////////////
+// mobile - main page navigation menu - button click handler 
+///////////////
+
+$('#main-menu-btn').fastClick(function(event) { 
+  event.preventDefault();
+  var t = $('#new-menu');
+  var _clicked = $(this);
+
+  // if menu already open, then close
+  if (_clicked.hasClass("active")) {
+    var _menu_to_toggle = $(this);
+
+    t.slideUp('fast', 'linear', function() { 
+      _menu_to_toggle.removeClass('active'); 
+      // $('#menu-icon-indicator').html('≡');
+      $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
+      _clicked.parent().removeClass('menu-active').removeAttr('style');
+      t.find('#desktop-menu-wrap').addClass('header-wrapper');
+      t.removeAttr('style');
+      t.hide();
+    });
+  } // - if any other menu is open, close first, then show the mobile pages menu
+  else if ( $('.mobile-course-finder').hasClass('show') || $('.mobile-search').hasClass('show')   ) {
+  
+      $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
+
+      // if course finder is open, close it
+      if ( $('.mobile-course-finder').hasClass('show') ) {
+          $('.mobile-course-finder').removeClass('show').addClass('hide');
+      }
+
+      // if search is open, close it
+      if ( $('.mobile-search').hasClass('show') ) {
+          $('.mobile-search').removeClass('show').addClass('hide');
+      }
+
+      // remove the content wrapper for mobile menu to allow for full width
+      t.find('#desktop-menu-wrap').removeClass('header-wrapper');
+
+      // show the pages menu  (update button highlight first)
+      $('#main-menu-btn').addClass('active');
+      $('#main-menu-btn').parent().addClass('menu-active');
+      // $('#menu-icon-indicator').html('x'); 
+      $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
+      
+      // slide the menu down
+      t.slideDown('fast', 'linear', function() { 
+        //$('submenu').css({'margin-top': '0'});
+      });
+  }
+  else {
+
+    t.find('#desktop-menu-wrap').removeClass('header-wrapper');
+    $('#mob-tab-menu li.menu-active').removeClass("menu-active");
+    $('#main-menu-btn').addClass('active');
+    $('#main-menu-btn').parent().addClass('menu-active');
+    // $('#menu-icon-indicator').html('x');
+    $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
+    t.slideDown('fast', 'linear', function() {  });
+  }
+});
 
 ///////////////////////
 // desktop view menu - handle click event for main menu links in desktop view
 //////////////////////
 
+$('#mega-menu-nav-links li a').click(function(event) {
+  event.preventDefault();
+  var _clicked = $(this);
+  
+  var j = $('.submenu > div.menu-active:visible');
+  var y = _clicked.parent();
+  if (j.length == 1 && y.hasClass("menu-active")) {
+
+  var r = j.attr('data-menu');
+  var l = $('li').find("[data-item='"+ r +"']"); 
+  j.slideUp('slow', 'swing', function() { y.removeClass('menu-active');  j.removeAttr('style'); });
+
+// desktop view menu - if user clicks another top-level link once menu is already opened then do this:
+} else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
+  var l = $('li').find("[data-item='"+ r +"']");
+  $('#mega-menu-nav-links').find('li.menu-active').removeClass('menu-active');
+  j.hide();
+  _clicked.parent('li').addClass('menu-active');
+  var t = _clicked.attr('data-item');
+  var g = $('div').find("[data-menu='"+ t +"']");
+  g.addClass('menu-active');
+  g.fadeIn();
+
+  // if search or course finder clicked - give the input focus
+  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
+    g.find('input').focus();
+  } 
+
+// desktop view menu - if no menu item already open then do this:
+} else {
+  _clicked.parent('li').addClass('menu-active');
+  var t = _clicked.attr('data-item');
+  //var r = j.attr('data-menu');
+  var g = $('div').find("[data-menu='"+ t +"']");
+  g.addClass('menu-active');
+  g.slideDown('slow', 'swing', function() {});
+  // if search or course finder clicked - give the input focus
+  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
+    g.find('input').focus();
+  } 
+}
+
+});
+
+// show/hide sub-menus
+$('.submenu span').fastClick(function(event) { 
+  event.preventDefault();
+
+  var _clicked = $(this);
+  var m = $('.sub-inner-menu:visible');
+    
+  // if not already open, but another menu is already expanded,
+  // hide the sub menu that is already open first and then show the menu you just clicked
+  if (m.length == 1 && !_clicked.hasClass('active')) {
+    m.parent().find('h2 span').removeClass('active');
+    m.parent().find('h2 span').removeClass('ui-icons-transparent-close');
+    m.parent().find('h2 span').addClass('ui-icons-transparent-plus');
+    m.hide().removeAttr("style");
+    $(this).addClass('active');
+    $(this).removeClass('ui-icons-transparent-plus');
+    $(this).addClass('ui-icons-transparent-close');
+    var h = $(this).parent().next('.sub-inner-menu');
+    h.slideDown('fast', 'linear', function() {});
 
 
+  // if already open, then close the sub menu
+  } else if ($(this).hasClass("active")) { 
+    var _menu_to_close = $(this);  
+    var h = _menu_to_close.parent().next('.sub-inner-menu');
+    h.slideUp('fast', 'linear', function() {
+      h.removeAttr("style");
+      _menu_to_close.removeClass('active'); 
+      _menu_to_close.removeClass('ui-icons-transparent-close');
+      _menu_to_close.addClass('ui-icons-transparent-plus');});
 
-// var waitForFinalEvent = (function () {
-//   var timers = {};
-//   return function (callback, ms, uniqueId) {
-//     if (!uniqueId) {
-//       uniqueId = "Don't call this twice without a uniqueId";
-//     }
-//     if (timers[uniqueId]) {
-//       clearTimeout (timers[uniqueId]);
-//     }
-//     timers[uniqueId] = setTimeout(callback, ms);
-//   };
-// })();
+  // if sub menu not already visible, then show the menu
+  } else {
+    $(this).addClass('active');
+    $(this).removeClass('ui-icons-transparent-plus');
+    $(this).addClass('ui-icons-transparent-close');
+    var h = $(this).parent().next('.sub-inner-menu');
+    h.slideDown('fast', 'linear', function() {});
+  }
+});      
 
-// $(window).resize(function () {
-//     waitForFinalEvent(function(){
-//       //alert('Resize...');
-//       checkWindowSize();
-//     //   $('.sub-inner-menu').removeAttr("style");
-//     //   $('.submenu > div').removeAttr("style").removeClass('menu-active');
-//     // }, 500, "some unique string");
-// });
+
+var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) {
+      uniqueId = "Don't call this twice without a uniqueId";
+    }
+    if (timers[uniqueId]) {
+      clearTimeout (timers[uniqueId]);
+    }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
+
+$(window).resize(function () {
+    waitForFinalEvent(function(){
+      //alert('Resize...');
+      checkWindowSize();
+      $('.sub-inner-menu').removeAttr("style");
+      $('.submenu > div').removeAttr("style").removeClass('menu-active');
+    }, 500, "some unique string");
+});
 
 
 //////////////////////
@@ -347,28 +629,27 @@ $(document).ready(function(){
 
   // detect megamenu 
 
-  // if ($('.megamenu_container').length > 0) {
+  if ($('megamenu_container').length > 0) {
 
-  //     $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu.js" ),
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-  //             $('.megamenu').megaMenuCompleteSet({
-  //             menu_speed_show : 300, // Time (in milliseconds) to show a drop down
-  //             menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
-  //             menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
-  //             menu_effect : 'click_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-  //             menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-  //             menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-  //             menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-  //             });
-  //   });
+      $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu.js" ),
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+        $('.megamenu').megaMenuCompleteSet({
+          menu_speed_show : 300, // Time (in milliseconds) to show a drop down
+          menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+          menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+          menu_effect : 'click_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+          menu_show_onload : 0 // Drop down to show on page load (type the number of the drop down, 0 for none)
+        });
+    });
 
 
-  // }
+  }
 
   
 
@@ -513,7 +794,7 @@ if ($('.accordion').length > 0) {
 }
   
 
-// detect dropdown menu button used in forms or in page for drop menus
+// detect dropdown menu button
 if ($('.dd-menu').length > 0) {
 
     $(".js-dd-menu").fastClick(function (event){
@@ -660,7 +941,7 @@ if ($('.js-lightbox').length > 0) {
     });
 }
 
-  // detect expandable search button
+  // detect expandable search page
   if ($('#sb-search').length > 0) {
     new UISearch( document.getElementById( 'sb-search' ) );
   }
