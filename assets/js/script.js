@@ -111,11 +111,35 @@ $(document).ready(function(){
     });
   } // end if $(.sidebar)
 
-
+  // check for selectboxes on the page
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
     enableSelectBoxes();
   
+  }
+
+
+  // check for regular blockquotes on the page - 
+  // we insert a span at the beginning of the element to show a background image sprite 
+  if ($('blockquote').length > 0 ) {
+    
+    $('blockquote').each(function() {
+        $(this).prepend('<span></span>');
+    });
+
+
+  
+  }
+
+  // check for large blockquotes on the page - 
+  // - insert a span at the beginning to show large blockquote img (sprite)
+  if ($('.pull-quote').length > 0) {
+
+    $('.pull-quote').each(function() {
+      $(this).prepend('<span></span>');
+    });
+
+
   }
 
 
