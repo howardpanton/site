@@ -495,7 +495,7 @@ questions: http://www.webtype.com
 }
 
 /* line 68, ../styles/font-face/_swiss-721.scss */
-figcaption, .rsCaption, .sidebar a, .dd-menu ul li a, .dd-menu-heading h3 {
+figcaption, .rsCaption, .sidebar a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
   font-family: Swiss721BT-Light;
 }
 
@@ -766,8 +766,7 @@ figcaption p, .rsCaption p {
 
 /* line 216, ../styles/globals/_typography.scss */
 blockquote {
-  background-repeat: no-repeat;
-  background-position: top left;
+  position: relative;
   font-size: remCalc(16);
   font-size: 16px;
   line-height: 1.5em;
@@ -776,13 +775,26 @@ blockquote {
   padding-left: 68px;
   padding-right: 18%;
 }
+/* line 218, ../styles/globals/_typography.scss */
+blockquote span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
 
-/* line 503, ../styles/globals/_typography.scss */
+/* line 237, ../styles/globals/_typography.scss */
+hr {
+  clear: both;
+}
+
+/* line 515, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 504, ../styles/globals/_typography.scss */
+/* line 516, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
@@ -2652,93 +2664,127 @@ a.img:hover {
 \*------------------------------------*/
 /* line 170, ../img/sprite/ui-icons/*.png */
 .ui-icons-sprite, .form-ico, input[type="checkbox"] + label:before,
-input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, .ui-icons-checkbox-un-checked-disabled, .ui-icons-checkbox-un-checked, .ui-icons-dashline_border_img, .ui-icons-green-circle-bg, .ui-icons-grey-search, .ui-icons-quote_marks, blockquote, .ui-icons-quote_marks_big, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, .ui-icons-radio-un-selected-disabled, .ui-icons-radio-un-selected {
+input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, .ui-icons-checkbox-un-checked-disabled, .ui-icons-checkbox-un-checked, .ui-icons-dashline_border_img, .ui-icons-green-circle-bg, .ui-icons-grey-search, .ui-icons-quote_marks, blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, .ui-icons-radio-un-selected-disabled, .ui-icons-radio-un-selected {
   background: url('http://artslondon.github.io/beta/assets/img/../img/sprite/ui-icons-s3fd643362c.png') no-repeat;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-blue-circle-bg {
   background-position: 0 -400px;
+  height: 400px;
+  width: 400px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-selected {
   background-position: 0 -856px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-unselected-disabled {
   background-position: 0 -964px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-unselected {
   background-position: 0 -932px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-checked-disabled {
   background-position: 0 -1012px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:before {
   background-position: 0 -1028px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-un-checked-disabled {
   background-position: 0 -1060px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:before {
   background-position: 0 -1044px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-dashline_border_img {
   background-position: 0 -1076px;
+  height: 1px;
+  width: 4px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-green-circle-bg {
   background-position: 0 0;
+  height: 400px;
+  width: 400px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-grey-search, .with-search-icon {
   background-position: 0 -1077px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-quote_marks, blockquote {
+.ui-icons-quote_marks, blockquote span {
   background-position: 0 -872px;
+  height: 44px;
+  width: 64px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-quote_marks_big {
+.ui-icons-quote_marks_big, .pull-quote span {
   background-position: 0 -800px;
+  height: 56px;
+  width: 78px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-selected-disabled {
   background-position: 0 -916px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-selected, input[type="radio"]:checked + label:before {
   background-position: 0 -980px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-un-selected-disabled, input[type="checkbox"]:disabled + label:before, input[type="radio"]:disabled + label:before {
   background-position: 0 -948px;
+  height: 16px;
+  width: 16px;
 }
 
 /* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-un-selected, input[type="radio"] + label:before {
   background-position: 0 -996px;
+  height: 16px;
+  width: 16px;
 }
 
 /*------------------------------------*\
@@ -2834,7 +2880,7 @@ input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg,
 
 @media only screen and (min-width: 960px) {
   /* line 123, ../styles/globals/_layout.scss */
-  .__text.l-content-half-width {
+  .l-forms, .__text.l-content-half-width {
     display: block;
     float: left;
     margin-left: 0%;
@@ -2890,7 +2936,7 @@ input[type="radio"] + label:before, .with-search-icon, .ui-icons-blue-circle-bg,
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 209, ../styles/globals/_layout.scss */
+/* line 213, ../styles/globals/_layout.scss */
 aside {
   background: #e6e6e6;
   border-left: none;
@@ -2898,7 +2944,7 @@ aside {
   clear: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 209, ../styles/globals/_layout.scss */
+  /* line 213, ../styles/globals/_layout.scss */
   aside {
     background: white;
     border-left: 1px dotted #e6e6e6;
@@ -3995,7 +4041,7 @@ input[type="text"].course-finder-txt-input {
   width: auto;
   font-weight: 300;
 }
-/* line 322, ../styles/components/_nav-main-menu.scss */
+/* line 321, ../styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
   background-color: #444444;
 }
@@ -4017,7 +4063,7 @@ input[type="text"].course-finder-txt-input {
     text-align: left;
   }
 }
-/* line 339, ../styles/components/_nav-main-menu.scss */
+/* line 338, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a {
   display: block;
   height: 100%;
@@ -4026,33 +4072,33 @@ input[type="text"].course-finder-txt-input {
   border-bottom: none;
   padding: 12px 1em;
 }
-/* line 348, ../styles/components/_nav-main-menu.scss */
+/* line 346, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 339, ../styles/components/_nav-main-menu.scss */
+  /* line 338, ../styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 339, ../styles/components/_nav-main-menu.scss */
+  /* line 338, ../styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1060px) {
-  /* line 339, ../styles/components/_nav-main-menu.scss */
+  /* line 338, ../styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
 }
 
-/* line 371, ../styles/components/_nav-main-menu.scss */
+/* line 369, ../styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -4065,7 +4111,7 @@ input[type="text"].course-finder-txt-input {
   padding-left: 12px;
 }
 
-/* line 405, ../styles/components/_nav-main-menu.scss */
+/* line 381, ../styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
   padding-left: 6px;
@@ -4081,7 +4127,7 @@ input[type="text"].course-finder-txt-input {
   clear: both;
 }
 @media only screen and (min-width: 960px) {
-  /* line 405, ../styles/components/_nav-main-menu.scss */
+  /* line 381, ../styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
     display: block;
     *zoom: 1;
@@ -4100,18 +4146,18 @@ input[type="text"].course-finder-txt-input {
   }
 }
 
-/* line 421, ../styles/components/_nav-main-menu.scss */
+/* line 397, ../styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 427, ../styles/components/_nav-main-menu.scss */
+/* line 403, ../styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 431, ../styles/components/_nav-main-menu.scss */
+/* line 407, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
@@ -4120,65 +4166,65 @@ input[type="text"].course-finder-txt-input {
   border-right: 1px solid #444;
   float: left;
 }
-/* line 439, ../styles/components/_nav-main-menu.scss */
+/* line 414, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 447, ../styles/components/_nav-main-menu.scss */
+/* line 422, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 451, ../styles/components/_nav-main-menu.scss */
+/* line 426, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 456, ../styles/components/_nav-main-menu.scss */
+/* line 431, ../styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
   background-color: #333333;
 }
 @media only screen and (min-width: 960px) {
-  /* line 421, ../styles/components/_nav-main-menu.scss */
+  /* line 397, ../styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
-/* line 465, ../styles/components/_nav-main-menu.scss */
+/* line 440, ../styles/components/_nav-main-menu.scss */
 .dd-heading {
   padding-left: 12px;
 }
 
-/* line 473, ../styles/components/_nav-main-menu.scss */
+/* line 448, ../styles/components/_nav-main-menu.scss */
 .ual-logo-tab-mobile {
   padding-left: 12px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 473, ../styles/components/_nav-main-menu.scss */
+  /* line 448, ../styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 484, ../styles/components/_nav-main-menu.scss */
+  /* line 459, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 484, ../styles/components/_nav-main-menu.scss */
+  /* line 459, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 497, ../styles/components/_nav-main-menu.scss */
+  /* line 472, ../styles/components/_nav-main-menu.scss */
   .submenu {
     clear: both;
     display: block;
@@ -4188,49 +4234,49 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 497, ../styles/components/_nav-main-menu.scss */
+  /* line 472, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 497, ../styles/components/_nav-main-menu.scss */
+  /* line 472, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-/* line 511, ../styles/components/_nav-main-menu.scss */
+/* line 486, ../styles/components/_nav-main-menu.scss */
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-  /* line 511, ../styles/components/_nav-main-menu.scss */
+  /* line 486, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 511, ../styles/components/_nav-main-menu.scss */
+  /* line 486, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 511, ../styles/components/_nav-main-menu.scss */
+  /* line 486, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-/* line 529, ../styles/components/_nav-main-menu.scss */
+/* line 503, ../styles/components/_nav-main-menu.scss */
 .submenu h2 a {
   font-weight: 300;
   color: white;
   border-bottom: 1px dotted white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 529, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -4240,7 +4286,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 529, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -4249,22 +4295,22 @@ input[type="text"].course-finder-txt-input {
     border-bottom: 0;
   }
 }
-/* line 550, ../styles/components/_nav-main-menu.scss */
+/* line 524, ../styles/components/_nav-main-menu.scss */
 .submenu h2 a:hover {
   border-bottom: 1px solid #c8c8c8;
 }
-/* line 555, ../styles/components/_nav-main-menu.scss */
+/* line 529, ../styles/components/_nav-main-menu.scss */
 .submenu h2 span {
   cursor: pointer;
 }
 @media only screen and (min-width: 960px) {
-  /* line 527, ../styles/components/_nav-main-menu.scss */
+  /* line 501, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     padding-top: 0.375em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 527, ../styles/components/_nav-main-menu.scss */
+  /* line 501, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
@@ -4273,7 +4319,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 527, ../styles/components/_nav-main-menu.scss */
+  /* line 501, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
@@ -4281,7 +4327,7 @@ input[type="text"].course-finder-txt-input {
     border-bottom: 1px dotted #444;
   }
 }
-/* line 576, ../styles/components/_nav-main-menu.scss */
+/* line 550, ../styles/components/_nav-main-menu.scss */
 .submenu li {
   list-style: none;
   width: 100%;
@@ -4289,43 +4335,43 @@ input[type="text"].course-finder-txt-input {
   float: left;
   border-bottom: dotted 1px white;
 }
-/* line 583, ../styles/components/_nav-main-menu.scss */
+/* line 557, ../styles/components/_nav-main-menu.scss */
 .submenu li:hover {
   border-bottom: 1px 1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 576, ../styles/components/_nav-main-menu.scss */
+  /* line 550, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 576, ../styles/components/_nav-main-menu.scss */
+  /* line 550, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-/* line 622, ../styles/components/_nav-main-menu.scss */
+/* line 596, ../styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 622, ../styles/components/_nav-main-menu.scss */
+  /* line 596, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 622, ../styles/components/_nav-main-menu.scss */
+  /* line 596, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 638, ../styles/components/_nav-main-menu.scss */
+  /* line 612, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     display: block;
     float: left;
@@ -4335,7 +4381,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 638, ../styles/components/_nav-main-menu.scss */
+  /* line 612, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -4343,7 +4389,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 649, ../styles/components/_nav-main-menu.scss */
+  /* line 623, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     display: block;
     float: left;
@@ -4353,7 +4399,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 649, ../styles/components/_nav-main-menu.scss */
+  /* line 623, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4362,7 +4408,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 649, ../styles/components/_nav-main-menu.scss */
+  /* line 623, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4371,7 +4417,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 666, ../styles/components/_nav-main-menu.scss */
+  /* line 640, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     display: block;
     float: left;
@@ -4381,7 +4427,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 666, ../styles/components/_nav-main-menu.scss */
+  /* line 640, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4390,7 +4436,7 @@ input[type="text"].course-finder-txt-input {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 666, ../styles/components/_nav-main-menu.scss */
+  /* line 640, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4398,7 +4444,7 @@ input[type="text"].course-finder-txt-input {
     margin-bottom: 0;
   }
 }
-/* line 683, ../styles/components/_nav-main-menu.scss */
+/* line 657, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature {
   display: block;
   float: left;
@@ -4408,7 +4454,7 @@ input[type="text"].course-finder-txt-input {
   color: white;
   font-size: 22px;
 }
-/* line 689, ../styles/components/_nav-main-menu.scss */
+/* line 663, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature-image {
   display: block;
   float: left;
@@ -7506,13 +7552,20 @@ img.rsImg {
 
 /* line 1, ../styles/components/_pull-quote.scss */
 .pull-quote {
-  background: url('http://artslondon.github.io/beta/assets/img/icons/quote_marks_big.gif') no-repeat;
+  position: relative;
   padding-bottom: 1.63636em;
   padding-left: 82px;
   font-size: remCalc(22);
   margin-top: 1.09091em;
   font-size: 22px;
   line-height: 1.36364em;
+}
+/* line 3, ../styles/components/_pull-quote.scss */
+.pull-quote span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: none;
 }
 
 /* line 2, ../styles/components/_events.scss */
@@ -11934,26 +11987,26 @@ img.mfp-img {
 }
 
 /* End: Postroll */
-/* line 7, ../styles/components/_dropdown.scss */
-.dd-menu {
+/* line 6, ../styles/components/_dropdown.scss */
+.dd-menu, .select-box {
   max-width: 650px;
   clear: left;
   margin-bottom: 0.75em;
 }
-/* line 11, ../styles/components/_dropdown.scss */
-.dd-menu ul {
+/* line 10, ../styles/components/_dropdown.scss */
+.dd-menu ul, .select-box ul {
   display: none;
 }
-/* line 13, ../styles/components/_dropdown.scss */
-.dd-menu ul li {
+/* line 12, ../styles/components/_dropdown.scss */
+.dd-menu ul li, .select-box ul li {
   background-color: #e6e6e6;
   border-top: 1px solid white;
   padding: 0;
   height: 36px;
   padding-left: 12px;
 }
-/* line 21, ../styles/components/_dropdown.scss */
-.dd-menu ul li a {
+/* line 19, ../styles/components/_dropdown.scss */
+.dd-menu ul li a, .select-box ul li a {
   display: block;
   width: 100%;
   padding-top: 0.375em;
@@ -11962,25 +12015,25 @@ img.mfp-img {
   font-size: 14px;
   font-weight: normal;
 }
-/* line 32, ../styles/components/_dropdown.scss */
-.dd-menu.active {
+/* line 30, ../styles/components/_dropdown.scss */
+.dd-menu.active, .select-box.active {
   /* ul { display: block; }*/
 }
 
-/* line 37, ../styles/components/_dropdown.scss */
-.dd-menu-heading {
+/* line 35, ../styles/components/_dropdown.scss */
+.dd-menu-heading, .select-box-heading {
   background-color: black;
   color: white;
   position: relative;
   cursor: pointer;
 }
-/* line 42, ../styles/components/_dropdown.scss */
-.dd-menu-heading h3 {
+/* line 40, ../styles/components/_dropdown.scss */
+.dd-menu-heading h3, .select-box-heading h3 {
   padding-left: 12px;
   font-size: 14px;
 }
-/* line 48, ../styles/components/_dropdown.scss */
-.dd-menu-heading .dd-menu-arrow {
+/* line 46, ../styles/components/_dropdown.scss */
+.dd-menu-heading .dd-menu-arrow, .dd-menu-heading .select-box-arrow, .select-box-heading .dd-menu-arrow, .select-box-heading .select-box-arrow {
   position: absolute;
   right: 0;
   top: 0;
@@ -11989,8 +12042,8 @@ img.mfp-img {
   width: 36px;
   height: 36px;
 }
-/* line 56, ../styles/components/_dropdown.scss */
-.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span {
+/* line 54, ../styles/components/_dropdown.scss */
+.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .select-box-arrow span.icon, .dd-menu-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .select-box-arrow span, .dd-menu-heading .select-box-arrow a.search span, a.search .dd-menu-heading .select-box-arrow span, .select-box-heading .dd-menu-arrow span.icon, .select-box-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .dd-menu-arrow span, .select-box-heading .dd-menu-arrow a.search span, a.search .select-box-heading .dd-menu-arrow span, .select-box-heading .select-box-arrow span.icon, .select-box-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .select-box-arrow span, .select-box-heading .select-box-arrow a.search span, a.search .select-box-heading .select-box-arrow span {
   font-size: 32px;
   text-align: center;
   vertical-align: middle;
