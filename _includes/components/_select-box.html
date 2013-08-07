@@ -1,0 +1,28 @@
+<!-- UAL Select box based on code from: 
+ http://apptha.com/blog/how-to-custom-style-a-select-box-with-form-value-support/ -->
+
+
+
+<!-- The html for select boxes should be in the same format as below. 
+     
+     Notes: 
+        1. all js- prefixed classnames are needed for the select box to function 
+        2. the data-sb-value for each list item is the value that will be put in the hidden form input field on click
+
+     For a more detailed explanation see the notes at the link above.
+-->
+
+<div class="js-select-box select-box">
+  <input type="hidden" value="option one" class="js-select-box-value">
+  <div class="select-box-heading">
+    <h3 class="select-box-title selected">Option one</h3>
+    <div class="select-box-arrow"><span class="js-select-box-icon icon">&#59236;</span></div>
+  </div>
+  <ul class="js-select-box-list select-box-options">
+    <li class="select-box-option" data-sb-value="option1"><a href="#">Option one</a></li>
+    <li class="select-box-option" data-sb-value="option2"><a href="#">Option two</a></li>
+    <li class="select-box-option" data-sb-value="option3"><a href="#">Option three</a></li>
+    <li class="select-box-option" data-sb-value="option4"><a href="#">Option four</a></li>
+  </ul>
+</div>
+
