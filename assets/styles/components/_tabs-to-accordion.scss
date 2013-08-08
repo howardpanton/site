@@ -56,7 +56,7 @@ ul.tabs li.active {
   @include margin-trailer(2);
   .tab_content {
     display: none;
-    @include margin-leader(2);
+    // @include margin-leader(2);
   }
   .tab-content-caption-block {
     @extend .cf;
@@ -79,4 +79,70 @@ ul.tabs li.active {
   }
   .d_active {
   }
+
 }
+
+
+// lcc styling 
+.tabs {
+  .lcc & { 
+    border: 12px solid $black;
+    border-bottom: none;
+    li {
+      border-bottom: none;
+      padding: 12px 46px 12px 12px;
+      width: 33.33%;
+      margin-right: 0;
+      &:hover {
+        border-bottom: none;
+        background-color: $lcc-green;
+      }
+    }
+    li + li {
+      border-left: 1px solid $black;
+      border-right: 1px solid $black;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+}
+ul.tabs li.active {
+  .lcc & {
+    border-bottom: none;
+    display: block;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: center bottom;  
+    background-color: $bg-gray;
+  }
+}
+.tab_container {
+  .lcc & {   
+    background-color: $black;
+    color: $white;
+    padding: 12px;
+    h3 {
+      padding: 0 0 12px 12px;
+      margin-bottom: 24px;
+      font-size: 36px;
+      font-size: remCalc(36);
+      letter-spacing: 1px;
+      border-bottom: 2px solid $lcc-green;
+    }
+    img {
+      border: none;
+    }
+    .button-link {
+      background-color: $white;
+      color: $black;
+      &:hover {
+        background-color: $lcc-green;
+        color: $black;
+      }
+    }
+  }
+}  
+
+
+

@@ -547,7 +547,27 @@ if ($('.accordion').length > 0) {
 }
   
 
+
+// detect vertical accordion component
+if ($('#va-accordion').length > 0) {
+  $.when(
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
+    $.Deferred(function( deferred ){
+      $( deferred.resolve );
+    })
+  ).done(function(){
+  //place your code here, the scripts are all loaded
+    $('#va-accordion').vaccordion();
+  }); 
+}
+
+
+
+
 // detect dropdown menu button used in forms or in page for drop menus
+
 if ($('.dd-menu').length > 0) {
 
     $(".js-dd-menu").fastClick(function (event){
