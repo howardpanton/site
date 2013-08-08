@@ -11,7 +11,7 @@ breadcrumb-link: /components/
     <div class="row">
     <div role="navigation" class="sidebar">
       <ul>
-        <li><a href="#bookmark" title="">Link</a></li>
+        <li><a href="#sliders" title="">Sliders</a></li>
       </ul>
     </div> <!-- end sidebar -->
     <div role="main" class="content">
@@ -22,14 +22,81 @@ breadcrumb-link: /components/
             <a href="https://twitter.com/artslondondev">@artsdevlondon</a> have put together a library of responsive components that can be used on any webpage under the arts.ac.uk domain.
           </p>
           <p>All library components are responsive ... or they should be lol.</p>
-
-
-
-
         </div> <!-- end .l-content block __text -->
       </div> <!-- end .content -->
     </div> <!-- end .row -->
   </div> <!-- end .content-wrapper -->
+</section>
+<section id="sliders">
+  <div class="content-wrapper">
+    <div class="row">
+      <h2>Full-width overflow slider</h2>
+    </div>
+  </div>
+
+  <!-- feature carousel -->
+  {% include components/_carousel-feature.html %}
+
+  <section class="gists margin-top-4x">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="l-content-fullwidth">
+          <p> We use <a href="http://dimsemenov.com/plugins/royal-slider/">Royal Slider</a> for managin our full width sliders.</p>
+          {% gist 6172527 %}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="content-wrapper">
+    <div class="row">
+      <h2>Full-width contained slider</h2>
+    </div>
+    <div class="row slider-container">
+      <div class="royalSlider contentSlider rsDefault  block" data-slider-item-width="1280" data-slider-item-height="480">
+        <figure>
+              <img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-1.jpg" alt="some alt text" />
+              <figcaption class="rsCaption">1280 x 480</figcaption>
+          </figure>
+          <figure>
+              <img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-2.jpg" alt="some alt text" />
+              <figcaption class="rsCaption">1280 x 480</figcaption>
+          </figure>
+      </div>
+    </div><!-- .slider-container -->
+
+
+    <div class="row">
+
+      <div role="main" class="content">
+
+        <div class="row">
+          <h2>slider 12 #1</h2>
+        </div>
+        <!-- text block -->
+        {% include components/_slider-12.html %}
+
+        <div class="row">
+          <h2>slider 12 #2</h2>
+        </div>
+        <!-- text block -->
+        {% include components/_slider-12.html %}
+
+        <div class="row">
+          <h2>slider 8</h2>
+        </div>
+        <div class="row">
+          <div class="l-content-full-width  block  __media  __with-aside">
+            {% include components/_slider-8.html %}
+          </div>
+        </div>
+
+        <!-- csm blocks -->
+        {% include components/_image-wall.html %}
+
+      </div><!-- end main-content -->
+    </div><!-- end row -->
+  </div><!-- end content wrapper -->
 </section>
 
     

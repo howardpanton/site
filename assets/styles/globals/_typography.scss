@@ -12,6 +12,7 @@
 // Always show scrollbar to prevent jumps when content is expanded
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 // Set box-sizing rules to all Div's.
@@ -33,20 +34,20 @@ a {
 	color: $black;
 	text-decoration: none;
 	padding-bottom: 1px;
-	border-bottom: 1px dotted $black;
+	border-bottom: 1px dotted $soft-black  ;
 	&:hover {
 		color: $aaa-gray;
 		padding-bottom: 1px;
-		border-bottom: 1px solid $black;
+		border-bottom: 1px dotted $black;
 	}
 	h2 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h3 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h4 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 }
 
@@ -122,6 +123,13 @@ aside, .__text {
 			margin-left: 16px;
 			list-style-type: square;
 		}
+	}
+	h3 {
+		@extend .size-h6;
+		@include padding-leader(1);
+	}
+	p {
+		font-size: 14px;
 	}
 }
 
@@ -225,7 +233,17 @@ figcaption, .rsCaption {
 }
 
 blockquote {
-	background: image-url('icons/quote_marks.gif') no-repeat;
+	position: relative;
+	span { 
+		@extend .ui-icons-quote_marks;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-repeat: no-repeat;
+  	background-position: top left; 
+	}
+	
+  
 	font-size: remCalc(16);
 	font-size: 16px;
 	@include adjust-leading-to(4, 16px); 	
@@ -233,6 +251,10 @@ blockquote {
 	padding-bottom: rhythm(4, 16px);
 	padding-left: 68px;
 	padding-right: 18%;
+}
+
+hr {
+	clear: both;
 }
 
 // @include establish-baseline(16px);
@@ -254,10 +276,6 @@ blockquote {
 // }
 
 
-// // Always show scrollbar to prevent jumps when content is expanded
-// html {
-//     overflow-y: scroll;
-// }
 
 // // Set box-sizing rules to all Div's.
 // * {
@@ -512,56 +530,55 @@ blockquote {
 .icon { font-family: "entypo"; }
 .icon-social { font-family: "entypo-social"; }
 
-// // LCF Variants 
+// LCF Variants 
 
-// b, strong, h2, h3, h4 {
-// 	@extend %Swiss721BT-Bold;
-// }
+b, strong, h2, h3, h4 {
+	@extend %Swiss721BT-Bold;
+}
 
+.lcf {
+     .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+         	@extend %Swiss721BT-Black;
+        }
+        h4,h5,h6 {
+             font-family: "Swiss721BT-Bold";
+        }
+        h2 {
+             text-transform: uppercase;
+        }
+        h2 {
+            padding-bottom: rhythm(1, 24px);
+            margin-bottom: rhythm(3, 24px);
+            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+            letter-spacing: 5px;
+            .ual-black-bg & {
+            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+            }
+        }
 
-// .lcf {
-//     .content-wrapper {
-//         h1,h2,h3,h4,h5,h6 {
-//         	@extend %Swiss721BT-Black;
-//         }
-//         h4,h5,h6 {
-//             font-family: "Swiss721BT-Bold";
-//         }
-//         h2 {
-//             text-transform: uppercase;
-//         }
-//         h2 {
-//             padding-bottom: rhythm(1, 24px);
-//             margin-bottom: rhythm(3, 24px);
-//             background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-//             letter-spacing: 5px;
-//             .ual-black-bg & {
-//             	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-//             }
-//         }
+    }
 
-//     }
+    .content {
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+        .text-block {
+        	h3, h4 {
+        		text-align: left;
+         	}
+        }
+     }
 
-//     .main-content {
-//         h1,h2,h3,h4 {
-//             text-align: center;
-//         }
-//         .text-block {
-//         	h3, h4 {
-//         		text-align: left;
-//         	}
-//         }
-//     }
-
-//     figcaption, .flex-video .caption {
-//         padding: 0 10px;
-//         color: $ual-secondary;
-//         font-family: $lcf-heading-font;
-//         a {
-//            color: $ual-secondary; 
-//         }
-//     }
-// }
+    /* figcaption, .flex-video .caption {
+        padding: 0 10px;
+        color: $ual-secondary;
+        font-family: $lcf-heading-font;
+        a {
+           color: $ual-secondary; 
+        }
+    }*/
+}
 
 
 
@@ -575,6 +592,7 @@ blockquote {
 // 	text-align: center;
 // 	color: #333;
 // }
+
 // // GRADUATE SCHOOL
 
 // .graduate-school {

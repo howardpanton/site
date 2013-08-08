@@ -77,8 +77,9 @@
 /*------------------------------------*\
     $SPRITES
 \*------------------------------------*/
+$ico-sprite-dimensions: true;
 @import "../img/sprite/ui-icons/*.png";
-@include all-ui-icons-sprites;
+@include all-ui-icons-sprites(true);
 
 /*------------------------------------*\
     $OBJECTS-AND-EXTRACTIONS
@@ -112,7 +113,7 @@
 @import "components/breadcrumbs";
 
 // Buttons
-@import "components/button-link"; 
+@import "components/button-link";
 
 // Layout components
 @import "components/sidebar", 
@@ -124,7 +125,7 @@
 				"components/image-list-with-text",
 				"components/date",
 				"components/blocks",
-				//"components/bxslider",
+				"components/bxslider",
 				"components/royalslider",
 				"components/boxout",
 				"components/news-events-2x6",
@@ -155,6 +156,7 @@
 				"components/accordion",
 				"components/media-galleries",
 				"components/pagination",
+				"components/megamenu",
 				"components/expandable-content",
 				"components/highlight-blocks",
 				"components/colors",

@@ -1,0 +1,205 @@
+---
+layout: style.tpl
+title: Forms
+last-updated: August 07, 2013
+class-home: docs
+breadcrumb: Forms
+breadcrumb-link: /forms/
+---
+
+<div class="content-wrapper">
+	<div class="row">
+		<div role="navigation" class="sidebar">
+			<ul>
+        <li><a href="#text-inputs" title="">Text Inputs</a></li>
+        <li><a href="#checkboxes" title="">Checkboxes</a></li>
+        <li><a href="#radio-buttons" title="">Radio buttons</a></li>
+        <li><a href="#select-boxes-tab" title="">Select Boxes</a></li>
+        <li><a href="#buttons-tab" title="">Buttons</a></li>
+        <li><a href="#example-form-tab" title="">Example Standard Form</a></li>
+        <li><a href="#example-login-form" title="">Example Login Form</a></li>
+			</ul>
+    </div> <!-- end sidebar -->
+		<div role="main" class="content">
+
+    <h2>UAL default form elements, custom styling and fully repsonsive.</h2>
+			
+		<div class="l-content block __text margin-bottom-x4">
+			<h3 id="overview">Overview</h3>
+			<p>Individual form controls automatically receive some global UAL styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements are set to <code>width: 100%;</code> by default. </p>
+			<p>UAL styled select boxes must follow a specific html structure. <br/>Please refer to the <a href="#">UAL select box</a> guidelines below for more information.</p>
+			<p>Use the class <code>.with-box-shadow</code> on the main <code>&lt;form&gt;</code> tag to give forms a subtle drop shadow.</p>
+		</div>
+
+		<div class="row l-content">
+			<h2>Form Elements</h2>
+		</div>
+
+		<div id="text-inputs" class="row l-content">
+			<h3>Text Inputs</h3>
+			<form action="" class="margin-top with-box-shadow">
+		   	
+		   	<label>Default Textbox</label>
+		   	<input type="text" name="default" id="default" />
+				
+				<label>Required text input</label>
+		    <input type="text" name="name" id="name" required />
+				
+				<label for="p-login1">Password</label>
+        <input id="p-login1" type="password" name="p-login" required >
+
+        <label>Textarea</label>
+		    <textarea cols="40" rows="8"></textarea>
+			</form>
+
+			<script src="https://gist.github.com/denovo/6174247.js"></script>
+	 	</div>
+
+
+		<div id="checkboxes" class="row l-content">
+			<h3>Checkboxes</h3>
+			<form action="" class="margin-top with-box-shadow">
+
+		     <input id="c4" type="checkbox" name="cc">
+		     <label for="c4">Checkbox 1</label>
+
+		     <input id="c5" type="checkbox" name="cc">
+		     <label for="c5">Checkbox 2</label>
+		 
+		     <input id="c6" type="checkbox" name="cc" disabled>
+		     <label for="c6">Checkbox 3 (disabled)</label>
+		
+			</form>
+
+			<script src="https://gist.github.com/denovo/6174189.js"></script>
+	 	</div>
+
+		<div id="radio-buttons" class="row l-content">
+			<h3>Radio buttons</h3>
+			<form action="" class="margin-top with-box-shadow">
+		     <input id="r4" type="radio" name="rb">
+		     <label for="r4">Radio Button 1</label>
+
+		     <input id="r5" type="radio" name="rb">
+		     <label for="r5">Radio Button 2</label>
+		   
+		     <input id="r6" type="radio" name="rb" disabled>
+		     <label for="r6">Radio Button 3 (disabled)</label>		
+			</form>
+
+			<script src="https://gist.github.com/denovo/6174210.js"></script>
+	 	</div>
+
+		<div id="select-boxes-tab" class="row l-content">
+			<h3>Select Box</h3>
+			<form action="" class="margin-top with-box-shadow">
+		    <div class="js-select-box select-box">
+				  <input type="hidden" value="option one" class="js-select-box-value">
+				  <div class="select-box-heading">
+				    <h3 class="select-box-title selected">Option one</h3>
+				    <div class="select-box-arrow"><span class="js-select-box-icon icon">&#59236;</span></div>
+				  </div>
+				  <ul class="js-select-box-list select-box-options">
+				    <li class="select-box-option" data-sb-value="option1"><a href="#">Option one</a></li>
+				    <li class="select-box-option" data-sb-value="option2"><a href="#">Option two</a></li>
+				    <li class="select-box-option" data-sb-value="option3"><a href="#">Option three</a></li>
+				    <li class="select-box-option" data-sb-value="option4"><a href="#">Option four</a></li>
+				  </ul>
+				</div>
+			</form>
+			<script src="https://gist.github.com/denovo/6174368.js"></script>
+	 	</div>
+
+	 	<div id="buttons-tab" class="row l-content">
+			<h3>buttons</h3>
+			<form action="" class="margin-top with-box-shadow">
+		     <input type="submit" value="Submit Button" class="submit-btn" />
+		     <input type="submit" value="Disabled Submit Button" class="submit-btn" disabled>		
+			</form>
+
+			<script src="https://gist.github.com/denovo/6174306.js"></script>
+	 	</div>
+
+		<div id="example-form-tab" class="row"> 
+     	<h2>Example Form</h2>
+     	<form id="form" name="form" class="l-forms margin-top with-box-shadow">
+		   <label>Label example</label>
+		   <input type="text" name="default" id="default" />
+		   <fieldset>
+		   <label>Select box:</label>
+			   <!-- dropdown menu button-->
+			   {% include components/_select-box.html %}
+		   </fieldset>
+
+		   <fieldset>
+		       <label>Required:<small>field</small></label>
+		       <input type="text" name="name" id="name" required />
+		   </fieldset>
+
+		   <fieldset>
+		       <label>Feedback:<small>Comments here</small></label>
+		       <textarea cols="40" rows="8"></textarea>
+		   </fieldset>
+
+		     <fieldset>
+		       <input id="c1" type="checkbox" name="cc">
+		       <label for="c1">Checkbox 1</label>
+		     </fieldset>
+		     <fieldset>
+		       <input id="c2" type="checkbox" name="cc">
+		       <label for="c2">Checkbox 2</label>
+		     </fieldset>
+		      <fieldset>
+		       <input id="c3" type="checkbox" name="cc" disabled>
+		       <label for="c3">Checkbox 3 (disabled)</label>
+		     </fieldset>
+		     <br/>
+		     <fieldset>
+		       <input id="r1" type="radio" name="rb">
+		       <label for="r1">Radio Button 1</label>
+		     </fieldset>
+		     <fieldset>
+		       <input id="r2" type="radio" name="rb">
+		       <label for="r2">Radio Button 2</label>
+		     </fieldset>
+		     <fieldset>
+		       <input id="r3" type="radio" name="rb" disabled>
+		       <label for="r3">Radio Button 3 (disabled)</label>
+		     </fieldset>
+		     <p>
+		       <input type="submit" value="Submit Button" class="submit-btn" />
+		       <input type="submit" value="Disabled Submit Button" class="submit-btn" disabled>
+		     </p>
+			</form>
+    </div>
+
+		<div class="row">
+			<h3>HTML Code</h3>
+			<script src="https://gist.github.com/denovo/6173954.js"></script>
+	 	</div>
+
+		<div id="example-login-form" class="row">			
+			<h2>Example Login Form</h2>
+			<div class="l-content">
+			<script src="https://gist.github.com/denovo/6174420.js"></script>
+			</div>
+			<aside>
+       <form id="form" name="form" class=" margin-top with-box-shadow">
+          <h3>login form</h3>
+          <label for="s-login1">Username</label>
+          <input id="s-login1" type="text" name="s-login" >
+          <label for="p-login1">Password</label>
+          <input id="p-login1" type="password" name="p-login" >
+          <a href="#" class="form-link pull-right">Register</a>
+          <input type="submit" value="Submit" class="submit-btn" />
+          <a href="#" class="form-link">Forgot Password</a>
+       </form>
+     	</aside>
+		</div>
+
+
+		</div> <!-- end main-content -->
+	</div> <!-- end row -->
+</div> <!-- end content-wrapper -->			
+
+

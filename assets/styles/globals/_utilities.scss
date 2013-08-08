@@ -31,6 +31,13 @@
   right: 0;
 }
 
+.nav-fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 // Quick floats
 .pull-right {
   float: right;
@@ -199,13 +206,6 @@
   margin-top: 68px;
 }
 
-.nav-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
 
 // no underline (removes styling for both text underline and border bottom)
 .no-underline {
@@ -399,6 +399,10 @@ a.img:hover { filter: grayscale(100%);
 
 .ajust-margin-top {
   margin-top:0px;
+}
+
+.nav-ajust-margin-top {
+  margin-top:68px;
 }
 
 @include gs-media(m, min-max) {

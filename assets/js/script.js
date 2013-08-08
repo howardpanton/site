@@ -41,325 +41,38 @@ var waitForFinalEvent = (function () {
 })();
 
 
-
-var _active_btn;
-
-// monitor mobile menu, it's initially closed at start, (we're not showing it open on page load as of june 14)  we use this variable to allow the menu to be hidden if other mobile nav buttons are clicked
-var initMobMenu = 1;
-
-function checkMobileNavMenuState() {
-
-  // if menu already open, then slide up and hide
-  if ( $('#main-menu-btn').hasClass('active') || ( initMobMenu == 1)  ) {
-    $('#new-menu').slideUp('fast', 'linear', function() { 
-        $('#main-menu-btn').removeClass('active'); 
-        $('#main-menu-btn').parent().removeClass('menu-active');
-        // $('#menu-icon-indicator').html('≡');
-        $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
-        $('#new-menu').find('#desktop-menu-wrap').addClass('header-wrapper');
-        $('#new-menu').removeAttr('style');
-        $('#new-menu').hide();
-        initMobMenu = 0; // update menu tracker 
-      }
-    );
-  }
-
-} // end toggleMobileNavMenuState()
-
-
-
-
-
-// ---------------------------------------
-//   mobile / tablet view button handlers
-// ---------------------------------------
-
-////////////////
-// Course Finder Button click script
-////////////////
-
-$('#m-course-finder-btn').fastClick(function(event) {
-  event.preventDefault();
-  var _clicked = $(this);
-
-  // get number of active menu items
-  _active_btn = $('#mob-tab-menu li.menu-active:visible');
-  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
+// enables UAL themed select boxes
+function enableSelectBoxes() {
   
+  $('.js-select-box').each(function() {
+    var _start_val = $(this).children('ul.js-select-box-list').children('li.select-box-option:first').children('a').html();
+    $(this).children('div').children('h3.selected').html(_start_val);
+    $('input.js-select-box-value').attr('value',$(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
 
-
-  // Close Course Finder panel
-  // - if course finder already active, then close
-  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
-    
-    $('.mobile-course-finder').slideUp('fast', 'linear', function() {
-      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
-      $('.mobile-course-finder').removeClass('show').addClass('hide');
+    $(this).children('div').children('h3.selected,div.select-box-arrow').fastClick(function(event) {
+      event.preventDefault();
+      if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
+        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
+        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59239;');
+      }
+      else
+      {
+        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
+         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+      }
     });
 
-    
-    
-  // Show Course Finder panel
-  // - a button different to the course finder is already open,
-  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
-    
-    checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
-    // hide search
-    var _closeme = $('#mob-tab-menu').find('li.menu-active');
-    _closeme.removeClass("menu-active");
-    $('.mobile-search').removeClass('show').addClass('hide');
-
-    _clicked.parent('li').addClass("menu-active");
-    $('.mobile-course-finder').removeClass('hide').addClass('show');
-    $('.mobile-course-finder').css({'display':'block'});
-    $('.mobile-course-finder').find('input').focus();
-  }
-
-  
-  // Show Course Finder panel
-  // - if course finder not active, and NO other buttons are active, 
-  else {
-    _clicked.parent('li').addClass("menu-active");
-    $('.mobile-course-finder').removeClass('hide').addClass('show');
-    $('.mobile-course-finder').css({'display':'block'});
-    $('.mobile-course-finder').find('input').focus();
-  }
-
-
-}); // end mobile view course finder button click handler 
-
-
-
-/////////////////
-// Search Button click script
-////////////////
-
-$('#m-search-btn').fastClick(function(event) {
-  event.preventDefault();
-  var _clicked = $(this);
-  // get number of active menu items
-  _active_btn = $('#mob-tab-menu li.menu-active:visible');
-
-  checkMobileNavMenuState(); // check that mobile nav is not already displayed, hide if it is
-  
-
-
-
-  // Close Search panel
-  // -if search already active, then close
-
-  if ( _active_btn.length > 0 && _clicked.parent('li').hasClass("menu-active") ) {
-    $('.mobile-search').slideUp('fast', 'linear', function() {
-      $('.mobile-search').removeClass('show').addClass('hide');
-      _clicked.parent('li').removeClass('menu-active').removeAttr('style');
+    $(this).find('li.select-box-option').fastClick(function(event){
+      event.preventDefault();
+      $(this).parent().css('display','none');
+      $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
+      var _test = 'the select option is :' + $(this).attr('data-sb-value');
+      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
+      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+      $(this).parent().parent().scrollToMe();
     });
-
-
-  // Open Search Panel
-  // - if another mobile menu panel is open
-  } else if (!_clicked.parent('li').hasClass("menu-active") && _active_btn.length > 0 ) {
-    
-    // hide course finder
-    $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
-    $('.mobile-course-finder').removeClass('show').addClass('hide');
-    $('.mobile-course-finder').css({'display':'none'});
-    
-    // show search
-    _clicked.parent('li').addClass("menu-active");
-    $('.mobile-search').removeClass('hide').addClass('show');
-    $('.mobile-search').css({'display':'block'});
-    $('.mobile-search').find('input').focus();
-  }
-
-  // Open Search Panel
-  // - if search not active and no other buttons are active 
-  else {
-    _clicked.parent('li').addClass("menu-active");
-    $('.mobile-search').removeClass('hide').addClass('show');
-    $('.mobile-search').css({'display':'block'});
-    $('.mobile-search').find('input').focus();
-    // $('.mobile-search').slideDown('fast', 'linear', function() {});
-  }
-
-}); // end mobile tablet search button click handler
-
-
-
-///////////////
-// mobile - main page navigation menu - button click handler 
-///////////////
-
-$('#main-menu-btn').fastClick(function(event) { 
-  event.preventDefault();
-  var t = $('#new-menu');
-  var _clicked = $(this);
-
-  // if menu already open, then close
-  if (_clicked.hasClass("active")) {
-    var _menu_to_toggle = $(this);
-
-    t.slideUp('fast', 'linear', function() { 
-      _menu_to_toggle.removeClass('active'); 
-      // $('#menu-icon-indicator').html('≡');
-      $('#menu-icon-indicator').removeClass('icon-no-bg-white-close').addClass('icon-no-bg-white-menu');
-      _clicked.parent().removeClass('menu-active').removeAttr('style');
-      t.find('#desktop-menu-wrap').addClass('header-wrapper');
-      t.removeAttr('style');
-      t.hide();
-    });
-  } // - if any other menu is open, close first, then show the mobile pages menu
-  else if ( $('.mobile-course-finder').hasClass('show') || $('.mobile-search').hasClass('show')   ) {
-  
-      $('#mob-tab-menu').find('li.menu-active').removeClass("menu-active");
-
-      // if course finder is open, close it
-      if ( $('.mobile-course-finder').hasClass('show') ) {
-          $('.mobile-course-finder').removeClass('show').addClass('hide');
-      }
-
-      // if search is open, close it
-      if ( $('.mobile-search').hasClass('show') ) {
-          $('.mobile-search').removeClass('show').addClass('hide');
-      }
-
-      // remove the content wrapper for mobile menu to allow for full width
-      t.find('#desktop-menu-wrap').removeClass('header-wrapper');
-
-      // show the pages menu  (update button highlight first)
-      $('#main-menu-btn').addClass('active');
-      $('#main-menu-btn').parent().addClass('menu-active');
-      // $('#menu-icon-indicator').html('x'); 
-      $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
-      
-      // slide the menu down
-      t.slideDown('fast', 'linear', function() { 
-        //$('submenu').css({'margin-top': '0'});
-      });
-  }
-  else {
-
-    t.find('#desktop-menu-wrap').removeClass('header-wrapper');
-    $('#mob-tab-menu li.menu-active').removeClass("menu-active");
-    $('#main-menu-btn').addClass('active');
-    $('#main-menu-btn').parent().addClass('menu-active');
-    // $('#menu-icon-indicator').html('x');
-    $('#menu-icon-indicator').addClass('icon-no-bg-white-close').removeClass('icon-no-bg-white-menu');
-    t.slideDown('fast', 'linear', function() {  });
-  }
-});
-
-///////////////////////
-// desktop view menu - handle click event for main menu links in desktop view
-//////////////////////
-
-$('#mega-menu-nav-links li a').click(function(event) {
-  event.preventDefault();
-  var _clicked = $(this);
-  
-  var j = $('.submenu > div.menu-active:visible');
-  var y = _clicked.parent();
-  if (j.length == 1 && y.hasClass("menu-active")) {
-
-  var r = j.attr('data-menu');
-  var l = $('li').find("[data-item='"+ r +"']"); 
-  j.slideUp('slow', 'swing', function() { y.removeClass('menu-active');  j.removeAttr('style'); });
-
-// desktop view menu - if user clicks another top-level link once menu is already opened then do this:
-} else if (!_clicked.parent().hasClass('menu-active') && j.length >= 1 ) {
-  var l = $('li').find("[data-item='"+ r +"']");
-  $('#mega-menu-nav-links').find('li.menu-active').removeClass('menu-active');
-  j.hide();
-  _clicked.parent('li').addClass('menu-active');
-  var t = _clicked.attr('data-item');
-  var g = $('div').find("[data-menu='"+ t +"']");
-  g.addClass('menu-active');
-  g.fadeIn();
-
-  // if search or course finder clicked - give the input focus
-  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    g.find('input').focus();
-  } 
-
-// desktop view menu - if no menu item already open then do this:
-} else {
-  _clicked.parent('li').addClass('menu-active');
-  var t = _clicked.attr('data-item');
-  //var r = j.attr('data-menu');
-  var g = $('div').find("[data-menu='"+ t +"']");
-  g.addClass('menu-active');
-  g.slideDown('slow', 'swing', function() {});
-  // if search or course finder clicked - give the input focus
-  if ( (t.toString() == 'search') || (t.toString() == 'course-finder')) {
-    g.find('input').focus();
-  } 
+  });       
 }
-
-});
-
-// show/hide sub-menus
-$('.submenu span').fastClick(function(event) { 
-  event.preventDefault();
-
-  var _clicked = $(this);
-  var m = $('.sub-inner-menu:visible');
-    
-  // if not already open, but another menu is already expanded,
-  // hide the sub menu that is already open first and then show the menu you just clicked
-  if (m.length == 1 && !_clicked.hasClass('active')) {
-    m.parent().find('h2 span').removeClass('active');
-    m.parent().find('h2 span').removeClass('ui-icons-transparent-close');
-    m.parent().find('h2 span').addClass('ui-icons-transparent-plus');
-    m.hide().removeAttr("style");
-    $(this).addClass('active');
-    $(this).removeClass('ui-icons-transparent-plus');
-    $(this).addClass('ui-icons-transparent-close');
-    var h = $(this).parent().next('.sub-inner-menu');
-    h.slideDown('fast', 'linear', function() {});
-
-
-  // if already open, then close the sub menu
-  } else if ($(this).hasClass("active")) { 
-    var _menu_to_close = $(this);  
-    var h = _menu_to_close.parent().next('.sub-inner-menu');
-    h.slideUp('fast', 'linear', function() {
-      h.removeAttr("style");
-      _menu_to_close.removeClass('active'); 
-      _menu_to_close.removeClass('ui-icons-transparent-close');
-      _menu_to_close.addClass('ui-icons-transparent-plus');});
-
-  // if sub menu not already visible, then show the menu
-  } else {
-    $(this).addClass('active');
-    $(this).removeClass('ui-icons-transparent-plus');
-    $(this).addClass('ui-icons-transparent-close');
-    var h = $(this).parent().next('.sub-inner-menu');
-    h.slideDown('fast', 'linear', function() {});
-  }
-});      
-
-
-var waitForFinalEvent = (function () {
-  var timers = {};
-  return function (callback, ms, uniqueId) {
-    if (!uniqueId) {
-      uniqueId = "Don't call this twice without a uniqueId";
-    }
-    if (timers[uniqueId]) {
-      clearTimeout (timers[uniqueId]);
-    }
-    timers[uniqueId] = setTimeout(callback, ms);
-  };
-})();
-
-$(window).resize(function () {
-    waitForFinalEvent(function(){
-      //alert('Resize...');
-      checkWindowSize();
-      $('.sub-inner-menu').removeAttr("style");
-      $('.submenu > div').removeAttr("style").removeClass('menu-active');
-    }, 500, "some unique string");
-});
-
 
 //////////////////////
 // ON DOCUMENT READY 
@@ -397,6 +110,37 @@ $(document).ready(function(){
 
     });
   } // end if $(.sidebar)
+
+  // check for selectboxes on the page
+  if ($('.select-box').length > 0) {
+    // enable custom styled selectboxes
+    enableSelectBoxes();
+  
+  }
+
+
+  // check for regular blockquotes on the page - 
+  // we insert a span at the beginning of the element to show a background image sprite 
+  if ($('blockquote').length > 0 ) {
+    
+    $('blockquote').each(function() {
+        $(this).prepend('<span></span>');
+    });
+
+
+  
+  }
+
+  // check for large blockquotes on the page - 
+  // - insert a span at the beginning to show large blockquote img (sprite)
+  if ($('.pull-quote').length > 0) {
+
+    $('.pull-quote').each(function() {
+      $(this).prepend('<span></span>');
+    });
+
+
+  }
 
 
   // focus highlighting for course search and site search input box
@@ -626,23 +370,52 @@ $(document).ready(function(){
   });
 
 
+
+  // detect megamenu 
+
+  // if ($('.megamenu_container').length > 0) {
+
+  //     $.when(
+  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu.js" ),
+  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js" ),
+  //       $.Deferred(function( deferred ){
+  //           $( deferred.resolve );
+  //       })
+  //   ).done(function(){
+  //             $('.megamenu').megaMenuCompleteSet({
+  //             menu_speed_show : 300, // Time (in milliseconds) to show a drop down
+  //             menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+  //             menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+  //             menu_effect : 'click_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+  //             menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+  //             menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+  //             menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+  //             });
+  //   });
+
+
+  // }
+
+  
+
+
   // detect slider component
   
-  if ($('.js-slider').length > 0) {
+  if ($('.js-carousel').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
-      $.each($('.js-slider'), function() {
+      $.each($('.js-carousel'), function() {
 
         var _this = $(this);
         var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
 
         // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
-        var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        var _itemWidth = (_this.data('carousel-item-width') > 0) ? _this.data('carousel-item-width') : 0;
         // set the minimum number of slides before it starts to be responsive
-        var _itemMinSlides = (_this.data('slider-min-slides') > 0) ? _this.data('slider-min-slides') : 0;
+        var _itemMinSlides = (_this.data('carousel-min-slides') > 0) ? _this.data('carousel-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
-        var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
+        var _itemMargin = (_this.data('carousel-item-margin') > 0) ? _this.data('carousel-item-margin') : 0;
         // slider instances always show next/prev controls, unless data-controls is false          
         var _controlsOpt = true;
         _controlsOpt = _this.data('controls');
@@ -676,6 +449,8 @@ $(document).ready(function(){
   }
   
 
+
+
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
@@ -691,6 +466,7 @@ $(document).ready(function(){
 
         _this.royalSlider({
           arrowsNav: true,
+          fadeinLoadedSlide: false,
           arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
@@ -771,6 +547,7 @@ if ($('.accordion').length > 0) {
 }
   
 
+
 // detect vertical accordion component
 if ($('#va-accordion').length > 0) {
   $.when(
@@ -789,7 +566,8 @@ if ($('#va-accordion').length > 0) {
 
 
 
-// detect dropdown menu button
+// detect dropdown menu button used in forms or in page for drop menus
+
 if ($('.dd-menu').length > 0) {
 
     $(".js-dd-menu").fastClick(function (event){
@@ -809,10 +587,8 @@ if ($('.dd-menu').length > 0) {
             _d_menu.addClass('active');
          });
        }
-
     });       
 }
-
 
 
 // detect circles-callout component
@@ -936,7 +712,7 @@ if ($('.js-lightbox').length > 0) {
     });
 }
 
-  // detect expandable search page
+  // detect expandable search button
   if ($('#sb-search').length > 0) {
     new UISearch( document.getElementById( 'sb-search' ) );
   }
@@ -1024,8 +800,14 @@ if ($('video').length > 0) {
 
 }
 
-
+// Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('icon download');
+
+$('#debug').hide();
+$('.debug-toggle').click(function(e) {
+  $('#debug').toggle();
+  e.preventDefault();
+});
 
 
 }); // end document ready

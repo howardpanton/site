@@ -7,15 +7,23 @@ class-home: docs
 breadcrumb: Page Layout 
 ---
 
-<!-- carousel slider -->
-{% include components/_carousel.html %}
+<!-- carousel slider 
+{% include components/_carousel.html %}-->
+
+<div class="content-wrapper">
+	<div class="row">
+		<h2>Full-width overflow slider</h2>
+	</div>
+</div>
 
 <!-- feature carousel -->
-{% include components/_carousel-feature.html %}
+{% include components/_slider-overflow.html %}
 
 
 <div class="content-wrapper">
-
+	<div class="row">
+		<h2>Full-width contained slider</h2>
+	</div>
 	<div class="row slider-container">
 		<div class="royalSlider contentSlider rsDefault  block" data-slider-item-width="1280" data-slider-item-height="480">
 			<figure>
@@ -25,6 +33,10 @@ breadcrumb: Page Layout
 	    	<figure>
 	        	<img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-2.jpg" alt="some alt text" />
 	        	<figcaption class="rsCaption">1280 x 480</figcaption>
+	    	</figure>
+	    	<figure>
+	        	<img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-2.jpg" alt="no caption test alt" />
+	        	
 	    	</figure>
 		</div>
 	</div><!-- .slider-container -->
@@ -46,10 +58,6 @@ breadcrumb: Page Layout
 		</div>
 
 		<div role="main" class="content">
-			
-			<div class="row">
-				<h2>example for a college slider</h2>
-			</div>
 
 			<div class="row">
 				<h2>slider 12 #1</h2>
