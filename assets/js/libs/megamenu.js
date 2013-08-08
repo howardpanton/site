@@ -50,7 +50,7 @@
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
 
-                    if ($(window).width() < 768) {
+                    if ($(window).width() < 960) {
                         $(menuDropDown).css({'left':'-1px', 'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -303,7 +303,7 @@
         // Without those top and left values, the drop downs would be hidden
         // when not hovered.
 
-        if (($(window).width() < 768) && (settings.menu_responsive === 1)) {
+        if (($(window).width() < 960) && (settings.menu_responsive === 1)) {
             $('.dropdown_container, .dropdown_fullwidth').css({'left':'-1px', 'top':'auto'}).hide();
             $('.dropdown_first').css({'left':'0'}).hide();
             $('.dropdown_flyout_level, .dropdown_flyout_level_left').css({'left':'0', 'top':'0'}).hide();
