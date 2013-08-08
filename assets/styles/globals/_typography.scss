@@ -41,13 +41,13 @@ a {
 		border-bottom: 1px dotted $black;
 	}
 	h2 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h3 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h4 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 }
 
@@ -265,10 +265,6 @@ hr {
 // }
 
 
-// // Always show scrollbar to prevent jumps when content is expanded
-// html {
-//     overflow-y: scroll;
-// }
 
 // // Set box-sizing rules to all Div's.
 // * {
@@ -523,56 +519,55 @@ hr {
 .icon { font-family: "entypo"; }
 .icon-social { font-family: "entypo-social"; }
 
-// // LCF Variants 
+// LCF Variants 
 
-// b, strong, h2, h3, h4 {
-// 	@extend %Swiss721BT-Bold;
-// }
+b, strong, h2, h3, h4 {
+	@extend %Swiss721BT-Bold;
+}
 
+.lcf {
+     .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+         	@extend %Swiss721BT-Black;
+        }
+        h4,h5,h6 {
+             font-family: "Swiss721BT-Bold";
+        }
+        h2 {
+             text-transform: uppercase;
+        }
+        h2 {
+            padding-bottom: rhythm(1, 24px);
+            margin-bottom: rhythm(3, 24px);
+            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+            letter-spacing: 5px;
+            .ual-black-bg & {
+            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+            }
+        }
 
-// .lcf {
-//     .content-wrapper {
-//         h1,h2,h3,h4,h5,h6 {
-//         	@extend %Swiss721BT-Black;
-//         }
-//         h4,h5,h6 {
-//             font-family: "Swiss721BT-Bold";
-//         }
-//         h2 {
-//             text-transform: uppercase;
-//         }
-//         h2 {
-//             padding-bottom: rhythm(1, 24px);
-//             margin-bottom: rhythm(3, 24px);
-//             background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-//             letter-spacing: 5px;
-//             .ual-black-bg & {
-//             	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-//             }
-//         }
+    }
 
-//     }
+    .content {
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+        .text-block {
+        	h3, h4 {
+        		text-align: left;
+         	}
+        }
+     }
 
-//     .main-content {
-//         h1,h2,h3,h4 {
-//             text-align: center;
-//         }
-//         .text-block {
-//         	h3, h4 {
-//         		text-align: left;
-//         	}
-//         }
-//     }
-
-//     figcaption, .flex-video .caption {
-//         padding: 0 10px;
-//         color: $ual-secondary;
-//         font-family: $lcf-heading-font;
-//         a {
-//            color: $ual-secondary; 
-//         }
-//     }
-// }
+    /* figcaption, .flex-video .caption {
+        padding: 0 10px;
+        color: $ual-secondary;
+        font-family: $lcf-heading-font;
+        a {
+           color: $ual-secondary; 
+        }
+    }*/
+}
 
 
 
@@ -586,6 +581,7 @@ hr {
 // 	text-align: center;
 // 	color: #333;
 // }
+
 // // GRADUATE SCHOOL
 
 // .graduate-school {
