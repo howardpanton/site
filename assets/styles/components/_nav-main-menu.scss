@@ -1,24 +1,134 @@
+// /*  _______________________________________________
+//
+//     01 MEGA MENU BAR
+//     _______________________________________________  */
 
- @include gs-media(t, min-max) {
-    #new-menu {
-      width: 50%;
-      float: right;
-      display: none;
-    }
- }
-  @include gs-media(m, min-max) {
-    #new-menu {
-      width: 100%;
-      float: left;
-      display: none;
-    }
- }
+.megamenu_container {
+  width:100%;
+  height: 48px;
+  *height: 46px;
+  margin:0 auto;
+  position: relative;
+  z-index:9999;
+  @include gs-media(d) {
+    width: 92.5%;
+  }
+}
+
+.megamenu {
+  list-style:none;
+  padding:0;
+  position:relative; /* For IE7 */
+  margin:0;
+  font-size:14px;
+  @include gs-media(d) {
+    margin-left: -10px;  // this is to align the first menu item with the main UAL logo on desktop
+  }
+}
+
+.megamenu > li {
+  float:left;
+  margin: 0;
+  padding-bottom: 0;
+  border:none;
+  background-color: black;    
+  @include prefixer(transition, $transition-bg);
+
+  &.active {
+    background-color: $dark-gray;
+  }
+
+}
+
+.megamenu > li > a {
+  font-size:14px;
+  outline:0;
+  text-decoration:none;
+  display:block;
+  padding: 12px 15px 12px 15px;
+}
+
+.megamenu > li .megamenu_drop {
+  // padding-right:30px;
+}
+
+.megamenu li.megamenu_button {
+  display: none;
+  @include prefixer(transition, $transition-bg);
+  a {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Right aligned menu item */
+.megamenu li.megamenu_right {
+  float:right;
+  margin-right:-1px;
+}
+.megamenu li.megamenu_right a {
+  margin-right:5px;
+}
+
+    
+// /*  _______________________________________________
+
+//     02 MEGA MENU CONTAINERS
+//     _______________________________________________  */
+
+.megamenu li .dropdown_container,
+.megamenu li .dropdown_fullwidth,
+.megamenu li .dropdown_multilevel {
+  position: absolute;
+  margin:0;
+  padding:12px;
+  left:-9999em;
+  top:-9999em;
+  display: block;
+  zoom:1;
+  z-index:9998;
+  float: left;
+}
+
+.megamenu li .dropdown_right {
+  right:0;
+}
+
+.megamenu .dropdown_12columns,
+.megamenu .dropdown_fullwidth {
+  width: 100%;
+}
+
+.dropdown_fullwidth {
+  background-color: $dark-gray;
+}
+
+ 
+
+
+// ----------------------------------------
+
+
+ // @include gs-media(t, min-max) {
+ //    #new-menu {
+ //      width: 50%;
+ //      float: right;
+ //      display: none;
+ //    }
+ // }
+ //  @include gs-media(m, min-max) {
+ //    #new-menu {
+ //      width: 100%;
+ //      float: left;
+ //      display: none;
+ //    }
+ // }
 
 .main-nav-wrapper {
-  width: 92.5%;
-  max-width: 1256px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  background-color: black;
   
   @include gs-media(t, min-max) {
       width: 100%;
