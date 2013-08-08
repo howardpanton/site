@@ -57,8 +57,19 @@ h1 {
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
 }
 
+h1 {
+	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	}
+}
+
 h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
+	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	}
 }
 
 h2 {
