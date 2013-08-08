@@ -41,43 +41,38 @@ var waitForFinalEvent = (function () {
 })();
 
 
-// ---------------------------------------
-//   mobile / tablet view button handlers
-// ---------------------------------------
+// enables UAL themed select boxes
+function enableSelectBoxes() {
+  
+  $('.js-select-box').each(function() {
+    var _start_val = $(this).children('ul.js-select-box-list').children('li.select-box-option:first').children('a').html();
+    $(this).children('div').children('h3.selected').html(_start_val);
+    $('input.js-select-box-value').attr('value',$(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
 
+    $(this).children('div').children('h3.selected,div.select-box-arrow').fastClick(function(event) {
+      event.preventDefault();
+      if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
+        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
+        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59239;');
+      }
+      else
+      {
+        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
+         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+      }
+    });
 
-
-
-
-///////////////////////
-// desktop view menu - handle click event for main menu links in desktop view
-//////////////////////
-
-
-
-
-// var waitForFinalEvent = (function () {
-//   var timers = {};
-//   return function (callback, ms, uniqueId) {
-//     if (!uniqueId) {
-//       uniqueId = "Don't call this twice without a uniqueId";
-//     }
-//     if (timers[uniqueId]) {
-//       clearTimeout (timers[uniqueId]);
-//     }
-//     timers[uniqueId] = setTimeout(callback, ms);
-//   };
-// })();
-
-// $(window).resize(function () {
-//     waitForFinalEvent(function(){
-//       //alert('Resize...');
-//       checkWindowSize();
-//     //   $('.sub-inner-menu').removeAttr("style");
-//     //   $('.submenu > div').removeAttr("style").removeClass('menu-active');
-//     // }, 500, "some unique string");
-// });
-
+    $(this).find('li.select-box-option').fastClick(function(event){
+      event.preventDefault();
+      $(this).parent().css('display','none');
+      $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
+      var _test = 'the select option is :' + $(this).attr('data-sb-value');
+      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
+      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+      $(this).parent().parent().scrollToMe();
+    });
+  });       
+}
 
 //////////////////////
 // ON DOCUMENT READY 
@@ -115,6 +110,37 @@ $(document).ready(function(){
 
     });
   } // end if $(.sidebar)
+
+  // check for selectboxes on the page
+  if ($('.select-box').length > 0) {
+    // enable custom styled selectboxes
+    enableSelectBoxes();
+  
+  }
+
+
+  // check for regular blockquotes on the page - 
+  // we insert a span at the beginning of the element to show a background image sprite 
+  if ($('blockquote').length > 0 ) {
+    
+    $('blockquote').each(function() {
+        $(this).prepend('<span></span>');
+    });
+
+
+  
+  }
+
+  // check for large blockquotes on the page - 
+  // - insert a span at the beginning to show large blockquote img (sprite)
+  if ($('.pull-quote').length > 0) {
+
+    $('.pull-quote').each(function() {
+      $(this).prepend('<span></span>');
+    });
+
+
+  }
 
 
   // focus highlighting for course search and site search input box
@@ -423,6 +449,8 @@ $(document).ready(function(){
   }
   
 
+
+
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
@@ -445,7 +473,12 @@ $(document).ready(function(){
           autoScaleSliderWidth: _itemWidth,
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
-          globalCaption: true,
+          globalCaption: true, 
+          autoPlay: {
+            // autoplay options go here
+            enabled: true,
+            pauseOnHover: true
+          }
         });
       });
     });
@@ -533,10 +566,8 @@ if ($('.dd-menu').length > 0) {
             _d_menu.addClass('active');
          });
        }
-
     });       
 }
-
 
 
 // detect circles-callout component

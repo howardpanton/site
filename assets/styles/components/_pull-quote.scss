@@ -1,5 +1,12 @@
 .pull-quote {
-	background: image-url('icons/quote_marks_big.gif') no-repeat;
+	position: relative;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend .ui-icons-quote_marks_big;
+    background-repeat: none;
+  }
 	padding-bottom: rhythm(6, 22px);
 	padding-left: 82px;	font-size: remCalc(22);
 	margin-top: rhythm(4, 22px);
