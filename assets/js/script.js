@@ -466,6 +466,7 @@ $(document).ready(function(){
 
         _this.royalSlider({
           arrowsNav: true,
+          fadeinLoadedSlide: false,
           arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
@@ -779,8 +780,14 @@ if ($('video').length > 0) {
 
 }
 
-
+// Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('icon download');
+
+$('#debug').hide();
+$('.debug-toggle').click(function(e) {
+  $('#debug').toggle();
+  e.preventDefault();
+});
 
 
 }); // end document ready
