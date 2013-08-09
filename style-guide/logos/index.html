@@ -22,21 +22,31 @@ breadcrumb-link: /logos/
     </div> <!-- end sidebar -->
 		<div role="main" class="content">
 	    <h2>SVG logos for browsers that support them, <br/>PNG fallbacks for those that don't.</h2>
+			<p>We are using grumpicon to display SVG images for our college logos, this script also provides a PNG fallback of the image for browsers or devices that don't support SVG images.</p>
+			<p>For more information, see the <a href="https://github.com/filamentgroup/grunticongithub">grunticon github page</a></p>
+			<p><a href="{{site.url}}assets/img/logos/ual-logos.zip">download our logo pack</a></p>
+			<h3>How to Use</h3>
+			<p>To include a logo on a page:</p>
+			<h4>Sample HTML</h4>
+			{% gist 6192025 %}
 
 			<div id="#ual-logo-section" class="row">
 	      <div class="l-content block __text">
 		    	
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">UAL Logo Desktop</h3>
+		    		<p>Classname: <strong>logo-ual</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual"></div>
 			    		</div>
-			    	</div>
+			    	</div>		
+			    
 		    	</div>
 
-					<div id="" class="row">
+					<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">LCF Logo</h3>
+		    		<p>Classname: <strong>logo-ual-lcf</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-lcf"></div>
@@ -44,8 +54,9 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">CSM Logo</h3>
+		    		<p>Classname: <strong>logo-ual-csm</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-csm"></div>
@@ -53,8 +64,9 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">LCC Logo</h3>
+		    		<p>Classname: <strong>logo-ual-lcc</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-lcc"></div>
@@ -62,8 +74,9 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">Camberwell Logo</h3>
+		    		<p>Classname: <strong>logo-ual-camberwell</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-camberwell"></div>
@@ -71,8 +84,9 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">Chelsea Logo</h3>
+		    		<p>Classname: <strong>logo-ual-chelsea</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-chelsea"></div>
@@ -80,8 +94,9 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">Wimbledon Logo</h3>
+		    		<p>Classname: <strong>logo-ual-wimbledon</strong></p>
 			    	<div class="ual-black-bg">
 			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x">
 								<div class="logo-ual-wimbledon"></div>
@@ -89,13 +104,16 @@ breadcrumb-link: /logos/
 			    	</div>
 		    	</div>
 
-		    	<div id="" class="row">
+		    	<div id="" class="row margin-bottom-2x">
 		    		<h3 id="text">UAL logo Tablet &amp; Mobile</h3>
+		   			<p>Classname: <strong>logo-ual-mobile</strong></p>
+		   			<p>hidden on desktop sized screens by default</p>
 			    	<div class="ual-black-bg">
-			    		<div class="ual-logo-desktop rhythm-2 pad-left-2x ">
-								<div class="logo-ual"></div>
-			    		</div>
+			    		<div class="ual-logo-tab-mobile rhythm-2 pad-left-2x">
+  							<div class="logo-ual-mobile"></div>
+							</div>
 			    	</div>
+						{% gist 6192168 %}
 		    	</div>
 
 
