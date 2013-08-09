@@ -554,6 +554,19 @@ if ($('.accordion').length > 0) {
               };
     });
 
+    $(".st-arrow").on("click", function(e){
+      console.log("clicked icon");
+      resetSpinners();
+      var _icon = $(this);
+      var _st = $(this).parent().parent();
+
+      if (!_st.hasClass('st-open'))  {
+        _icon.rotate({animateTo:135});
+      } else {
+        _icon.rotate({animateTo:0, center: ["50%", "50%"], });
+      };
+
+    });
 }
   
 
