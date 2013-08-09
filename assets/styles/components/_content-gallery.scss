@@ -59,12 +59,13 @@
 			}
 		}
 
+
 		@include gs-media(d,min-max) {
 			@include gs-span(d, 5, 16, (5, 16));
 			li {
 	      		width: gs-width(d, 5, 7, (5,16), true);
 	      		@include gs-float(d, left, (5,16));
-				&:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+				&:nth-child(4n) {
 					margin-right: 0;
 				}
 			}

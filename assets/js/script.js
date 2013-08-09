@@ -634,6 +634,7 @@ if ($('#showtime-json').length){
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
     var feedUrl = $('#showtime-json').data('url');
+    // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
     var limit = $('#showtime-json').data('limit');
     
     $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
@@ -641,6 +642,7 @@ if ($('#showtime-json').length){
       var outputNode = $('#showtime-json');
       var string = '';
       var media = '';
+      var counter = 0;
               
       if (data.data.Student) { // this is a single Showtime profile
         var profileUrl = data.data.Student.Student.profileurl;
@@ -653,16 +655,23 @@ if ($('#showtime-json').length){
       }
 
       $.each(media, function(i, item) {
-        
-            profileImg = item.thumb.split('gallery');
-            item.profileImg = profileImg[0] + 'profile.jpg';
-            item.zoomImg = profileImg[0] + 'screen.jpg';
-    
-            //console.log(item);  
-            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
-          
-            outputNode.append(string); 
-                
+
+            if (counter < limit) {
+
+              profileImg = item.thumb.split('gallery');
+              item.profileImg = profileImg[0] + 'profile.jpg';
+              item.zoomImg = profileImg[0] + 'screen.jpg';
+      
+              string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
+            
+              outputNode.append(string); 
+
+              counter++;
+
+            } else {
+              return false;
+            }
+
       }); // end each loop
       
       $('.zoom').magnificPopup({ 
