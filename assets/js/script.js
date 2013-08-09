@@ -542,6 +542,7 @@ if ($('.accordion').length > 0) {
     }
 
     $(".accordion-list-anchor").on("click", ".size-h4", function(event){
+        event.preventDefault();
         var circle = ($(this).next('.st-arrow'));
         var accordion = ($(this).parent().parent());
         var elem = ($(this).parent().next('.st-content'));
@@ -555,6 +556,7 @@ if ($('.accordion').length > 0) {
     });
 
     $(".st-arrow").on("click", function(e){
+      e.preventDefault();
       console.log("clicked icon");
       resetSpinners();
       var _icon = $(this);
