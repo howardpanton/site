@@ -40,8 +40,11 @@
 				padding: 0;
 			}
 		}
+
+
 	}
 }
+
 
 .accordion-list-item {
 	
@@ -80,7 +83,51 @@
 				//@include default-transition();
 		} 
 	}
+}
 
+.accordion-list-item .st-content {
+  ul, ol, dl {
+  margin-bottom: rhythm(3, 16px);
+
+  li {
+
+      font-size: remCalc(16);
+      font-size: 16px;
+      margin-left: 16px;
+      list-style-type: square;
+      @include adjust-leading-to(4, 16px);  
+      padding-bottom: rhythm(2, 16px);
+    }
+  } 
+
+  ul li ul, ol li ol {
+    padding-top: rhythm(2, 16px);
+    padding-bottom: 0;
+
+    li {
+      padding-bottom: rhythm(2, 16px);
+    }
+  }
+
+  ol {
+    margin-left: rhythm(4, 16px);
+    list-style-type: decimal-leading-zero;
+    li {
+      
+    }
+  }
+
+  dl {
+    @include adjust-leading-to(4, 16px); 
+    padding-bottom: rhythm(1, 16px);
+    dt {
+      @extend %Swiss721BT-Bold;
+    }
+    dd {
+      padding-bottom: rhythm(2, 16px);
+      padding-left: rhythm(4, 16px);
+    }
+  }
 }
 
 // vertical accordion
