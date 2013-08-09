@@ -65,12 +65,12 @@
 
 
 @import	"globals/icons",
-		"globals/typography", 
-		"globals/logos",
-		"globals/logos.fallback",
-		"globals/forms"; 
-
-@import	"globals/utilities";
+				"globals/typography", 
+				"globals/logos",
+				"globals/logos.fallback",
+				
+				"globals/forms",
+				"globals/utilities";
 
 
 
@@ -78,6 +78,7 @@
     $SPRITES
 \*------------------------------------*/
 $ico-sprite-dimensions: true;
+@import "globals/retina-sprites";
 @import "../img/sprite/ui-icons/*.png";
 @include all-ui-icons-sprites(true);
 
@@ -86,8 +87,8 @@ $ico-sprite-dimensions: true;
 \*------------------------------------*/
 
 
-	@import "globals/layout";
-	@import "globals/icons";
+@import "globals/layout";
+@import "globals/icons";
 
 
 /*------------------------------------*\
