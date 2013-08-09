@@ -1,24 +1,127 @@
+// /*  _______________________________________________
+//
+//     01 MEGA MENU BAR
+//     _______________________________________________  */
 
- @include gs-media(t, min-max) {
-    #new-menu {
-      width: 50%;
-      float: right;
-      display: none;
-    }
- }
-  @include gs-media(m, min-max) {
-    #new-menu {
-      width: 100%;
-      float: left;
-      display: none;
-    }
- }
+.megamenu_container {
+  width:100%;
+  height: 48px;
+  *height: 46px;
+  margin:0 auto;
+  position: relative;
+  z-index:9999;
+  @include gs-media(d) {
+    // width: 92.5%;
+  }
+}
+
+.megamenu {
+  list-style:none;
+  padding:0;
+  position:relative; /* For IE7 */
+  margin:0;
+  font-size:14px;
+  @include gs-media(d) {
+    margin-left: -10px;  // this is to align the first menu item with the main UAL logo on desktop
+  }
+}
+
+.megamenu > li {
+  float:left;
+  margin: 0;
+  padding-bottom: 0;
+  border:none;
+  background-color: black;    
+  @include prefixer(transition, $transition-bg);
+
+  &.active {
+    background-color: $dark-gray;
+  }
+
+}
+
+.megamenu > li > a {
+  font-size:14px;
+  outline:0;
+  text-decoration:none;
+  display:block;
+  padding: 12px 15px 12px 15px;
+}
+
+.megamenu > li .megamenu_drop {
+  // padding-right:30px;
+}
+
+.megamenu li.megamenu_button {
+  display: none;
+  position: absolute;
+  right: 48px;
+  top: 0px;
+  width: 48px;
+  height: 48px;
+  border-right: 1px solid $aaa-gray;
+  @include prefixer(transition, $transition-bg);
+  a {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Right aligned menu item */
+.megamenu li.megamenu_right {
+  float:right;
+  margin-right:-1px;
+}
+.megamenu li.megamenu_right a {
+  margin-right:5px;
+}
+
+    
+// /*  _______________________________________________
+
+//     02 MEGA MENU CONTAINERS
+//     _______________________________________________  */
+
+.megamenu li .dropdown_container,
+.megamenu li .dropdown_fullwidth,
+.megamenu li .dropdown_multilevel {
+  position: absolute;
+  margin:0;
+  padding:12px;
+  left:-9999em;
+  top:-9999em;
+  display: block;
+  zoom:1;
+  z-index:9998;
+  float: left;
+}
+
+.megamenu li .dropdown_right {
+  right:0;
+}
+
+.megamenu .dropdown_12columns,
+.megamenu .dropdown_fullwidth {
+  width: 100%;
+}
+
+.dropdown_fullwidth {
+  background-color: $dark-gray;
+}
+
+ 
+
+
+// ----------------------------------------
+
+
+
 
 .main-nav-wrapper {
-  width: 92.5%;
-  max-width: 1256px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  background-color: black;
   
   @include gs-media(t, min-max) {
       width: 100%;
@@ -88,20 +191,22 @@
 // button that shows hides the main menu on tablet/mobile
 .m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
-  position: absolute;
-  right: 48px;
-  top: 12px; 
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
   border: none;
-  padding: 6px;
   font-size: 36px;
   font-weight: 300;
   padding: 0;
   margin: 0;
   span {
     @extend .icon;
-    padding: 0;
     display: block;
     margin: 0;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    padding: 0;
     font-size: 56px;
 
   }
@@ -109,201 +214,8 @@
   @include gs-media(d, min-max) { display: none !important; }
 }
 
-.m-menu-icon {
-  color: white;
-  font-weight: 300;
-  a span{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: -5px;
-    font-size: 24px;
-    font-weight: 300;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-  }
-}
-
-// Desktop View
-// -- course finder and search dropdown panel
-%d-menu-panel-dropdown {
-  // hide the desktop search panels for mobile & tablet
-  //@include gs-media(t, min-max) { display: none !important; }
-  //@include gs-media(m, min-max) { display: none !important; }
-  // extend row, region ?
-  > div {
-    //@include padding-leader(8);
-    width: 100%;
-  }
-}
-
-.d-search-menu-panel {
-  @extend %d-menu-panel-dropdown;
-}
-
-.d-course-finder-menu-panel{
-  @extend %d-menu-panel-dropdown;
-
-  .ui-autocomplete {
-    z-index: 1000;
-    float: left;
-    display: none;
-    position: relative;
-    left: 0 !important;
-    top: 23px;
-    list-style: none;
-    padding-left: 18px;
-    background-color: $dark-gray;
-
-    li { @include border-image-dot(); }
-    
-    li a {
-      color: $white;
-      font-size: emCalc(24px);
-    }
-
-    .ui-menu-item > a.ui-corner-all {
-      display: block;
-      clear: both;
-      white-space: nowrap;
-      border-bottom: 0;
-   
-      &.ui-state-hover, &.ui-state-active {
-        color: $soft-black;
-        text-decoration: none;
-        background-color: $bg-gray;
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        background-image: none;
-      }
-    }
-  }
-}
-
-// Desktop dropdown panel 'Go Search' button
-.d-go-search-button {
-  display: inline-block;
-  margin-left: 18px;
-  vertical-align: top;
-  padding-top: 12px;
-  
-  a {
-    @extend .button-link;
-    @extend .no-border;
-    // @extend %button-link;
-    // @extend %no-border;    <-- TO DO: switch to placeholders
-  }
-}
-
-.d-search-input-form {
-    width: 100%;
-    margin-bottom: 0;
-}
-// desktop input boxes for global search & course finder
-.site-search-input, .course-finder-txt-input {
-   max-width: 75%;
-   width: auto;
-   outline: none;
-   &:focus {
-    outline: none;
-    border-bottom: solid 1px $light-gray;
-   }
-}
-
-input[type="text"].course-finder-txt-input {
-  background-color: $dark-gray;
-  color: $white;
-}
-
-// Mobile View
-// -- course finder and search dropdown panel
-.mobile-search, .mobile-course-finder {
-  
-  @include padding-trailer(4);
-  @include padding-leader(4);
-  background-color: $dark-gray;
-  width: 100%;
-  float: left;
-  clear: both;
-  display: none; // hide-initially
-
-  .site-search-input, .course-finder-txt-input {
-      width: 70%;
-      font-size:24px;
-      padding-left: 1em;
-      float: left;
-      &:focus {
-        outline-width: 0;
-        outline:none;
-      }
-      @include gs-media(m, min-max) { 
-         width:65%; // smaller width on mobile so no overlap with go button
-      }
-  }
-}
-
-.mobile-course-finder {
-  .ui-autocomplete {
-    z-index: 1000;
-    float: left;
-    display: none;
-    position: relative;
-    left: 0 !important;
-    top: 23px;
-    list-style: none;
-    padding-left: 12px;
-    background-color: $dark-gray;
-
-    li { @include border-image-dot(); }
-    
-    li a {
-      color: $white;
-      font-size: emCalc(16px);
-    }
-
-    .ui-menu-item > a.ui-corner-all {
-      display: block;
-      clear: both;
-      white-space: nowrap;
-      border-bottom: 0;
-   
-      &.ui-state-hover, &.ui-state-active {
-        color: $soft-black;
-        text-decoration: none;
-        background-color: $bg-gray;
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        background-image: none;
-      }
-    }
-  }
-}
-
-// mobile & tab go search button for dropdown menu panel
-.m-go-search-btn {
-  display:block;
-  float: right;
-  @include margin-leader(2);
-  margin-right: 1em;
-  @include gs-media(m, min-max) { 
-    margin-right: 0.5em; // smaller margin on mobile so no overlap with go button
-  }
-  a {
-    @extend .button-link;
-    @extend .no-border;
-    // @extend %button-link;
-    // @extend %no-border;
-    margin-right: 0;
-    margin-top: 1em;
-  }
-}
-
-
-
 .top-bar{
-    @extend .header-wrapper;
+    // @extend .header-wrapper;
     position: relative;
     > ul {
       // hide the menu on mobile / tablet view
@@ -356,11 +268,6 @@ input[type="text"].course-finder-txt-input {
               padding-left: 0.75em; 
               padding-right: 0.75em; 
             }
-
-            @include gs-media(dm) {
-              padding-left: 0.5em; 
-              padding-right: 0.5em; 
-            } 
           }
     }
 }
@@ -387,7 +294,7 @@ input[type="text"].course-finder-txt-input {
   @include gs-media(d) {
     display: block;
     @include clearfix();
-    height: 120px;
+    height: 108px;
     background-color: black;
     @include padding-leader(2);
   }
@@ -446,9 +353,8 @@ input[type="text"].course-finder-txt-input {
 
 
 .ual-logo-tab-mobile { 
-  
-  padding-left: 12px;
-
+  // padding-left: 12px;
+  float: left;
   @include gs-media(d) { display: none; }
   
   .logo-ual-mobile{
@@ -460,7 +366,7 @@ input[type="text"].course-finder-txt-input {
   
   .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
   .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
-  .logo-ual-camberwell  {
+  .logo-ual-camberwell {
     @extend %desktop-logo;
   }
 
@@ -568,32 +474,7 @@ input[type="text"].course-finder-txt-input {
     }
   }
 
-  // .submenu li > a
-  // li > a {
-  //    display: block; 
-  //    padding-top: 6px;
-  //    padding-bottom: 6px; 
-  //    color: white; 
-  //    font-weight: 300;
-  //    font-size: 16px;
-  //    padding-left: 0;
-  //    padding-bottom: 0;
-  //    border: none;
-
-  //    &:hover {
-  //      //border-bottom: 1px solid $light-gray;
-  //    }
-     
-  //    @include gs-media(m, min-max) {
-  //      //padding-left: 12px;
-  //    }
-
-  //    @include gs-media(t, min-max) {
-  //      //padding-left: 12px;
-  //    }
-  // }
-  
-  .sub-inner-menu {
+.sub-inner-menu {
     background-color: $soft-black;
       
     @include gs-media(t, min-max) { 
