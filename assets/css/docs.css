@@ -901,12 +901,24 @@ a.img:hover {
   line-height: 1.33333em;
 }
 
-/* line 10, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 502, ../styles/globals/_utilities.scss */
+.size-h5 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/* line 506, ../styles/globals/_utilities.scss */
+.size-h6 {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 10, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%;
 }
 
-/* line 12, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 .content-wrapper {
   clear: both;
   min-height: 100%;
@@ -914,12 +926,12 @@ html, body {
   height: 100%;
   margin-bottom: -72px;
 }
-/* line 18, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 18, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 .content-wrapper #layout_footer {
   height: 72px;
 }
 
-/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
@@ -1061,7 +1073,7 @@ html, body {
 .docs .header {
   background: black;
   padding-top: 0em;
-  border-top: 6px solid black;
+  border-top: 6px solid #000000;
 }
 /* line 156, ../styles/docs.scss */
 .docs .header h1, .docs .header h2, .docs .header h3, .docs .header h4, .docs .header h5, .docs .header h6, .docs .header p {
@@ -1156,7 +1168,7 @@ a span.title {
 /* line 249, ../styles/docs.scss */
 #jPanelMenu-menu ul li {
   padding: 6px;
-  border-bottom: 1px dotted #444444;
+  border-bottom: 1px dotted #444;
 }
 
 /* line 254, ../styles/docs.scss */
@@ -1248,4 +1260,56 @@ footer.docs .footer-links li {
 /* line 380, ../styles/docs.scss */
 footer.docs .updated-footer {
   color: white;
+}
+
+/* -----------------------------------------
+    holders hold the colours and everything
+    else for the swatches
+/* ------------------------------------------------------------ */
+/* line 389, ../styles/docs.scss */
+.jqueryswatches .holder {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+/* -----------------------------------------
+    everything below styles the individual
+    color blocks
+/* ------------------------------------------------------------ */
+/* line 402, ../styles/docs.scss */
+.jqueryswatches .color {
+  height: 100%;
+  display: inline-block;
+}
+
+/* -----------------------------------------
+    the shade class contains the names of
+    the colors for the popup effect
+/* ------------------------------------------------------------ */
+/* line 419, ../styles/docs.scss */
+.jqueryswatches .color-names {
+  font-size: 9px;
+  color: #aaa;
+}
+
+/* line 424, ../styles/docs.scss */
+.holder span {
+  margin: 0;
+}
+
+/* line 428, ../styles/docs.scss */
+.jqueryswatches .name {
+  display: inline-block;
+  height: 100%;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* -----------------------------------------
+    styles the name of the swatch
+/* ------------------------------------------------------------ */
+/* line 438, ../styles/docs.scss */
+.jqueryswatches .info {
+  color: #000;
 }
