@@ -1,7 +1,7 @@
 <?php 
 
 // Create a array object from Site Manager inputs
-$<t4 type="content" name="Choose Group" output="selective-output" modifiers="" format="$value"  />[] = array( 
+$array[] = array( 
 "heading" => "<t4 type="content" name="Heading" output="selective-output" modifiers="" format="$value"  />", 
 "title" => "<t4 type="content" name="Title" output="selective-output" modifiers="" format="$value"  />", 
 "section_link" => "<t4 type="content" name="Section Link" output="linkurl" modifiers="nav_sections"  />", 
@@ -21,9 +21,8 @@ $last = "<t4 type="content" name="Check last element" output="normal" modifiers=
 if ($last == "Yes") {
 	
 	// Create new object for blocks
-	$a<t4 type="content" name="Choose Group" output="normal" modifiers=""  /> = new Block($<t4 type="content" name="Choose Group" output="normal" modifiers=""  />, "<t4 type="content" name="Block Style" output="normal" modifiers=""  />", "<t4 type="content" name="Media Width" output="normal" modifiers=""  />", "<t4 type="content" name="Heading" output="normal" modifiers=""  />" );
-	
-  $b<t4 type="content" name="Choose Group" output="normal" modifiers=""  /> = $a<t4 type="content" name="Choose Group" output="normal" modifiers=""  />->Output();
+	$block = new Block($array, "<t4 type="content" name="Block Style" output="normal" modifiers=""  />", "<t4 type="content" name="Media Width" output="normal" modifiers=""  />", "<t4 type="content" name="Heading" output="normal" modifiers=""  />" );
+	$block->set_block_output();
 }
 
 ?>
