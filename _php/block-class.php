@@ -1,193 +1,175 @@
-<!-- php block class -->
-<?php
-if(class_exists('Block') != true) 
-{
+	<!-- php block class -->
+	<?php
+	// check whether class exists
+	if(class_exists('Block') != true) 
+	{
+		/**
+		 * 2, 3, 4 up Block class for building block object from an array
+		 */
+		class Block {
+			// Block layout, content or featured
+			// Block template, 2up, 3up or 4up
+			public $template; // 2up, 3up or 4up
+			public $component; //  content or fullwidth
+			public $heading; // main block heading
+			public $array; // blocks content array
 
-class Block {
-	
-	public $environment;	
-	public $layout;
-	public $panel;
-	public static $template;
-	public static $component;
-	public $content_style;
-	public $component_start;
-	public $component_end;
-	public static $heading;
-	public static $title;
-	public static $link_title; 
-	public static $section_link; 
-	public static $external_link; 
-	public static $image;
-	public static $credit;
-	public static $figcaption;
-	public static $text;
-	public static $arr;
-	public static $items;
-	
-    public function __construct(Array $array = array(), $template = "default", $component = "default", $heading = "default") {
-	
-		self::$arr = $array;
-		self::$items = count($array);
-		self::$template = $template;
-		self::$component = $component;
-		self::$heading = $heading;
 
-	 }
-	
-	public static function environment() {
-
-		$uri = $_SERVER['REQUEST_URI'];
-
-		if (strpos($uri, 'phppreview') !== false) {
-			$environment = 'cms';
-		} else {
-			$environment = 'live';
-		}
-
-		return $environment;
-	}
-
-	public static function template() {
-		
-		switch (self::$template) {
-		    case "two-up":
-		        $layout = "two-up";
-		        break;
-		    case "three-up":
-		        $layout = "three-up";
-		        break;
-		    case "four-up":
-		        $layout = "four-up";
-		        break;
-
-		    default:
-		       $layout = "default";
-		}
-		return $layout;
-	}
-	
-	public static function component() {
-		
-		switch (self::$component) {
-		    case "feature":
-		        $b = "l-content-full-width";
-		        break;
-		    case "content":
-		        $b = "l-content";
-		        break;
-		    default:
-		       $b = "default";
-		}
-		return $b;
-	}
-	
-  	public static function set_component_start() {
-		$template = self::template();
-		$b = self::component();
-		$t = self::$template;
-		if ($t == "four-up") {
-			$component_four_up = "</div>";
-		}
-    		$component_start = "<div class=\"row\">";
-        	$component_start .= "<div class=\"" . $b . " block  __media  " .  $template  . "\">";
-		if ($t == "four-up") {
-			echo $component_four_up;
-		}
-			echo $component_start;
- 	}
-
-	public static function set_component_end() {
-		$t = self::$template;
-		if ($t == "four-up") {
-			$component_four_up_end = "<div class=\"row\">";
-			$component_four_up_end .= "<div role=\"main\" class=\"content\">";
-		}
-	    $component_end = "</div> <!-- end image-block -->";
-		$component_end .= "</div> <!-- end row -->";
-	 	echo $component_end;
-		if ($t == "four-up") {
-			echo $component_four_up_end;
-
-		}
-	}
-	
-	public static function set_block_output($string) { 
-		$e = self::environment();
-		$a = self::$arr; 
-		$h = self::$heading;
-		self::set_component_start();
-		if	($string ==  "two-up" || "three-up" || "four-up" ) {
-			if	(!$h == "") {
-				echo  "<h2>" . $h . "</h2>";
+			/**
+			 * [__construct description]
+			 *
+			 * @param array   $array     [array of content]
+			 * @param string  $template  [set whether it is a 2up, 3up or 4uip]
+			 * @param string  $component [set whether it is fullwidth or content width]
+			 * @param string  $heading   [set component heading]
+			 */
+			public function __construct( array $array = array(), $template = "default", $component = "default", $heading = "default" ) {
+				$this->array = $array;
+				$this->template = $template;
+				$this->component = $component;
+				$this->heading = $heading;
 			}
-			echo "<ul>"; 
-			for ($i = 0; $i < count($a); $i++) {
-				$d = count($a); 
-				if ($i < $d) { 
-				
-				echo "<li>";
 
+			/**
+			 * [__destruct destroy array after completion]
+			 */
+			public function __destruct() {
+				unset( $this->array );
+			}
+
+			/**
+			 * [environment check whether on local or live site]
+			 * @return [string] [server environment]
+			 */
+			public function environment() {
+				// get the value of the server uri
+				$uri = $_SERVER['REQUEST_URI'];
+
+				if (strpos($uri, 'phppreview') !== false) {
+					$environment = 'cms';
+				} else {
+					$environment = 'live';
+				}
+
+				return $environment;
+			}
+
+			/**
+			 * [set_component_start output opening div]
+			 */
+			public function set_component_start() {
+				
+				if  ( $this->template == "four-up" ) {
+					$compenent_four_up = "</div>";
+				}
+
+				$component_start = "<div class=\"row\">";
+				$component_start .= "<div class=\"" . $this->component . " block  __media  " .  $this->template  . "\">";
+				
+				if ( $t == "four-up" ) {
+					echo $compenent_four_up;
+				}
+					echo $component_start;
+			}
+
+			/**
+			 * [set_component_end output closing divs and check whether it is a four-up]
+			 */
+			public function set_component_end() {
+
+				if ( $this->template == "four-up" ) {
+					$compenent_four_up_end = "<div class=\"row\">";
+					$compenent_four_up_end .= "<div role=\"main\" class=\"content\">";
+				}
+
+				$component_end = "</div> <!-- end image-block -->";
+				$component_end .= "</div> <!-- end row -->";
+
+				echo $component_end;
+
+				if ( $this->template == "four-up" ) {
+					echo $compenent_four_up_end;
+
+				}
+			}
+
+			/**
+			 * [set_block_output output the content for the blocks]
+			 */
+			public function set_block_output() {
+				$this->set_component_start();
+				if ( !$this->heading == "" ) :
+					echo  "<h2>" . $this->heading . "</h2>";
+				endif;
+
+				echo "<ul>";
+
+					for ( $i = 0; $i < count( $this->array ); $i++ ) {
+						echo "<li>";
+
+			 		if (!$this->array[$i]['video-url'] == "" ) { 
+			 		
+						  echo "<video src=\"" .$this->array[$i]['media']. "\" style=\"width:100%;height:100%;\" controls=\"control\" preload=\"none\">";
+						  echo "<source src=\"" .$this->array[$i]['video-url']. "\" type=\"video/youtube\"/>";
+						  echo "</video>";
+					}
+
+					if ( !$this->array[$i]['image'] == "" ) {
 					echo "<figure class=\"feature\">";
-						if	(!$a[$i]['section_link'] == "") {
-							echo "<a href=\""  . $a[$i]['section_link'] . "\"title=\"" . $a[$i]['link_title'] . "\">" ;
+
+						if ( !$this->array[$i]['section_link'] == "" ) {
+							echo "<a href=\""  . $this->array[$i]['section_link'] . "\"title=\"" . $this->array[$i]['link_title'] . "\">" ;
 						}
-						if	(!$a[$i]['image'] == "") {
-							// If we're working in the CMS, reveal the original upload
-							if ($e == 'cms') {
-								echo "<img src=\""  . $a[$i]['image'] . "\" alt=\"Image Alt\">";
-							} else { // otherwise, load a resrc'd image
-								echo "<img data-src=\"http://app.resrc.it/"  . $a[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
-							}
+									// If we're working in the CMS, reveal the original upload
+									if ($this->environment() == 'cms') {
+										echo "<img src=\""  . $this->array[$i]['image'] . "\" alt=\"Image Alt\">";
+									// otherwise, load a resrc'd image
+									} else { 
+										echo "<img data-src=\"http://app.resrc.it/"  . $this->array[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
+									}
+
+						echo "</a>";
+						if ( !$this->array[$i]['credit'] == "" ) {
+							echo "<div class=\"credits\">" . $this->array[$i]['credit'] . "</div>";
 						}
-							echo "</a>";
-						if	(!$a[$i]['credit'] == "") {
-							echo "<div class=\"credits\">" . $a[$i]['credit'] . "</div>";
+
+						if ( !$this->array[$i]['figcaption'] == "" ) {
+							echo "<figcaption>" . $this->array[$i]['figcaption'] . "</figcaption>";
 						}
-						if	(!$a[$i]['figcaption'] == "") {
-							echo "<figcaption>" . $a[$i]['figcaption'] . "</figcaption>";				
-						}
-					echo "</figure>";
-					if	(!$a[$i]['title'] == "") {
-						echo "<h3><a href=\""  . $a[$i]['section_link'] . "\" title=\"". $a[$i]['link_title'] . "\">" . $a[$i]['title'] . "</a></h3>";
+
+						echo "</figure>";
+
 					}
-					if	(!$a[$i]['text'] == "") {
-						echo "<p>" .  $a[$i]['text'] . "</p>";
+					// end image
+
+					if ( !$this->array[$i]['title'] == "" ) {
+						echo "<h3><a href=\""  . $this->array[$i]['section_link'] . "\" title=\"". $this->array[$i]['link_title'] . "\">" . $this->array[$i]['title'] . "</a></h3>";
 					}
-					if	(!$a[$i]['external_link'] == "") {
-						echo "<p><a href=\"" . $a[$i]['external_link']  . "\" class=\"button-link\"><span class=\"hide-descriptive-text\">Follow this link to go to more information about</span>" . $a[$i]['button_link_text'] . "Optional button</a></p>";
+
+					if ( !$this->array[$i]['text'] == "" ) {
+						echo "<p>" .  $this->array[$i]['text'] . "</p>";
 					}
-				echo "</li>";
-				
-					 } 				
 
-				} 
-				echo "</ul>"; 
-			} 
+					if ( !$this->array[$i]['external_link'] == "" ) {
+						echo "<p><a href=\"" . $this->array[$i]['external_link']  . "\" class=\"button-link\"><span class=\"hide-descriptive-text\">Follow this link to go to more information about</span>" . $this->array[$i]['button_link_text'] . "Optional button</a></p>";
+					}
+
+					echo "</li>";
+
+				}
+
+				echo "</ul>";
+
+
+				$this->set_component_end();
+			}
+
+
+		} // Block Class declaration
+
+
+	} // end check if class_exists
+
+	?>
 	
-		self::set_component_end();
-	} 
-
 	
-	public function Output() {
-		$template = self::template();
-		
-		switch ($template) {
-		    case "two-up":
-		        self::set_block_output('two-up');
-		        break;
-		    case "three-up":
-		        self::set_block_output('three-up');
-		        break;
-		    case "four-up":
-		        self::set_block_output('four-up');
-		        break;
-		}
-
-	}
-	
-} // Block Class declaration
-
-} // end check if class_exists
-
-?>

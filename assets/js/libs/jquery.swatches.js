@@ -34,14 +34,14 @@
             var name    = target.data('name');
             var colors  = typeof target.data('colors') === 'string' ? target.data('colors').split('/') : target.data('colors');
             var sass  = typeof target.data('sass') === 'string' ? target.data('sass').split('/') : target.data('sass');
-            var width   = 100/colors.length + '%';
+            //var width   = 100/colors.length + '%';
 
             var infoContents = $('<div/>', {class: 'shade'});
             var holder       = $('<div/>', {class: 'holder'});
-console.log(colors);
+            //console.log(colors);
             for (var i = 0; i < colors.length; i++) {
-                infoContents.append( $('<code/>', {class: 'name'}).css('width', width).text(sass[i].toUpperCase()) );
-                holder.append( $('<span/>', {class: 'color'}).css({width: width, 'background-color': "rgb" + colors[i]}) );
+                infoContents.append( $('<code/>', {class: 'name'}).text(sass[i].toUpperCase()) );
+                holder.append( $('<div/>', {class: 'color'}).css({'background-color': "rgb" + colors[i]}) );
             }
 
             holder.append(infoContents);
