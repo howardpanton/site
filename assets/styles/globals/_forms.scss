@@ -810,19 +810,21 @@ legend + .control-group {
   @include margin-trailer(2);
 }
 
-// checkbox and radio button styling
+// checkbox and radio button styling 
+// default: boxes appear to the right of the label
+// add class "before-label" to make the checkbox or radio button appear before the label
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
-  display: inline-block;
-  opacity: 0;
+  display: none;
+  //opacity: 0;
 }
 
 input[type="checkbox"]+label,
 input[type="radio"]+label {
   font-size:16px;
   font-size: remCalc(16);
-  // padding-left: 6px;
+  padding-bottom: 6px;
   margin-left: -12px;
   display: inline-block;
   cursor:pointer;
@@ -856,6 +858,62 @@ input[type="radio"]:disabled+label:after {
   cursor: default;
 }
 
+
+
+// styles for boxes before the label
+input[type="checkbox"].before-label,
+input[type="radio"].before-label {
+  vertical-align: middle;
+  display: none;
+  //opacity: 0;
+
+}
+
+input[type="checkbox"].before-label+label,
+input[type="radio"].before-label+label {
+  font-size:16px;
+  font-size: remCalc(16);
+  margin-left: -12px;
+  display: inline-block;
+  cursor:pointer;
+}
+input[type="checkbox"].before-label+label:before,
+input[type="radio"].before-label+label:before {
+  @extend .form-ico;
+  content: "";
+  display: inline-block;
+  margin: -2px 12px 0 12px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"].before-label+label:after,
+input[type="radio"].before-label+label:after{
+  display: none;
+}
+
+
+input[type="checkbox"].before-label+label:before {
+  @extend .ui-icons-checkbox-un-checked;
+}
+input[type="checkbox"].before-label:checked+label:before {
+  @extend .ui-icons-checkbox-checked;
+}
+input[type="checkbox"].before-label:disabled+label:before {
+  @extend .ui-icons-checkbox-un-checked-disabled;
+  cursor: default;
+}
+input[type="radio"].before-label+label:before {
+  @extend .ui-icons-radio-un-selected;
+}
+input[type="radio"].before-label:checked+label:before {
+  @extend .ui-icons-radio-selected;
+}
+input[type="radio"].before-label:disabled+label:before {
+  @extend .ui-icons-radio-un-selected-disabled;
+  cursor: default;
+}
+
+// disabled form elements have regular mouse pointer
 input:disabled {
   cursor: default;
 }
