@@ -46,7 +46,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
   
   <!-- Zone-specific -->
     {% if page.college == "lcf" %}
-        <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/lcf.css'>
+
     {% elsif page.college == "ual" %}
     <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/ual.css'>
     {% elsif page.college == "ccw" %}
@@ -110,92 +110,57 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
 {% if page.template == true %}
 
-<div class="ual-black-bg cf">
-<div class="main-nav-wrapper">
+
+<header class="ual-black-bg full-width">
+<div class="header-wrapper">
   <div class="row">  
     <div class="ual-banner-menu">
-      <!-- <div class="logo"> 
-        <div class="ual-logo-tab-mobile">
-          <div class="logo-ual-mobile"></div>
-        </div> -->
-        <div class="ual-logo-desktop">
-          <!-- {% if page.college == "csm" %}
-            <div class="logo-ual-csm"></div>
-          {% else if page.college == "lcc" %}
-            <div class="logo-ual-lcc"></div>
-          {% else if page.college == "lcf" %}
-            <div class="logo-ual-lcf"></div>
-          {% else if page.college == "chelsea" %}
-            <div class="logo-ual-chelsea"></div>
-          {% else if page.college == "camberwell" %}
-            <div class="logo-ual-camberwell"></div>
-          {% else if page.college == "wimbledon" %}
-            <div class="logo-ual-wimbledon"></div>
-          {% else if page.college == "ual" %}
-            <div class="logo-ual"></div>
-          {% endif %} 
- -->
-          {% case page.college %}
-          {% when "csm" %}
-            <div class="logo-ual-csm"></div>
-          {% when "lcc" %}
-            <div class="logo-ual-lcc"></div>
-          {% when "lcf" %}
-            <div class="logo-ual-lcf"></div>
-          {% when "chelsea" %}
-            <div class="logo-ual-chelsea"></div>
-          {% when "camberwell" %}
-            <div class="logo-ual-camberwell"></div>
-          {% when "wimbledon" %}
-            <div class="logo-ual-wimbledon"></div>
-          {% else %}
-            <div class="logo-ual"></div>
-          {% endcase %}
-        </div> 
-      </div>  
-       
+      <div class="ual-logo-desktop">
+        {% case page.college %}
+        {% when "csm" %}
+          <div class="logo-ual-csm"></div>
+        {% when "lcc" %}
+          <div class="logo-ual-lcc"></div>
+        {% when "lcf" %}
+          <div class="logo-ual-lcf"></div>
+        {% when "chelsea" %}
+          <div class="logo-ual-chelsea"></div>
+        {% when "camberwell" %}
+          <div class="logo-ual-camberwell"></div>
+        {% when "wimbledon" %}
+          <div class="logo-ual-wimbledon"></div>
+        {% else %}
+          <div class="logo-ual"></div>
+        {% endcase %}
+      </div> 
+    </div> 
       {% if page.class-home != "docs" %} 
-      <!-- Mobile & tablet main navigation links (hidden on desktop) -->
-      <!-- <nav class="m-nav-menu-wrap">
-        <ul id="mob-tab-menu" class="mobile-menu">       
-          <li>
-            <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
-          </li>
-          <li>
-            <a id="m-search-btn" href="#" class="search">
-              <span class="icon">🔍</span>
-            </a>
-          </li>  
-          <li>
-            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle">
-              <span id="menu-icon-indicator" class="icon docs-menu-toggle">☰</span>
-            </a>
-          </li>
-        </ul>
-      </nav> -->
-      <nav class="college-link-menu">
-        <ul>
-          <li><a href="/">UAL</a></li>
-            <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
-            <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
-            <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
-            <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
-            <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
-            <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
-        </ul>
-      </nav>
+        <nav class="college-link-menu">
+          <ul>
+            <li><a href="/">UAL</a></li>
+              <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
+              <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
+              <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
+              <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
+              <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
+              <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
+          </ul>
+        </nav>
       {% endif %}
-    </div>
+  </div>
+  <div class="row">
+  {% include header.html %}
   </div>
 </div>
-</div>
+</header> <!-- end .ual-black-bg -->
 
-  {% include header.html %}
 
   {% if page.section != "course finder" %}
-    <div class="header-panel bg-gray-bg">
+    
+    <div class="bg-gray-bg full-width">
       <div class="row">
-        <div class="content-wrapper">
+        <div class="header-panel">
+          <div class="header-wrapper">
           {% if page.college == "lcf" %}
             {% include _lcf_breadcrumb.html %}
           {% else if page.college == "lcc" %}
@@ -206,6 +171,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
           {% if page.section != "home" and page.section != "graduate-school" %}
               <h1>{{ page.title }}</h1>
           {% endif %}
+          </div>
         </div>
       </div>    
     </div><!-- .header-panel -->
@@ -271,9 +237,9 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
   <script>
   $(document).ready(function($){
       $('.megamenu').megaMenuCompleteSet({
-          menu_speed_show : 300, // Time (in milliseconds) to show a drop down
-          menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
-          menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+          // menu_speed_show : 300, // Time (in milliseconds) to show a drop down
+          // menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+          // menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
           menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
           menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
           menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)

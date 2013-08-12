@@ -41,13 +41,13 @@ a {
 		border-bottom: 1px dotted $black;
 	}
 	h2 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h3 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 	h4 & {
-	@extend %Swiss721BT-Bold;
+		@extend %Swiss721BT-Bold;
 	}
 }
 
@@ -58,8 +58,19 @@ h1 {
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
 }
 
+h1 {
+	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	}
+}
+
 h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
+	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	}
 }
 
 h2 {
@@ -81,6 +92,16 @@ h4 {
 	font-size: 18px;
 	@include adjust-leading-to(4, 18px); 	
 	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
+}
+
+h5 {
+	font-size: remCalc(16);
+	font-size: 16px;
+}
+
+h6 {
+	font-size: remCalc(14);
+	font-size: 14px;
 }
 
 p {
@@ -114,7 +135,7 @@ aside, .__text {
 		}
 	}
 	h3 {
-		@extend .size-h6;
+		//@extend .size-h6; (I think this is wrong - Al)
 		@include padding-leader(1);
 	}
 	p {
@@ -215,10 +236,14 @@ figcaption, .rsCaption {
 	font-size: remCalc(14);
 	font-size: 14px;
 	@include adjust-leading-to(3, 14px); 	
-	padding: rhythm(1, 14px);
-	p {
-		padding-bottom: 0;
+	span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
+		display: block;
+		padding: rhythm(1, 14px);
+		p {
+			padding-bottom: 0;
+		}
 	}
+	
 }
 
 blockquote {
@@ -265,10 +290,6 @@ hr {
 // }
 
 
-// // Always show scrollbar to prevent jumps when content is expanded
-// html {
-//     overflow-y: scroll;
-// }
 
 // // Set box-sizing rules to all Div's.
 // * {
@@ -523,56 +544,55 @@ hr {
 .icon { font-family: "entypo"; }
 .icon-social { font-family: "entypo-social"; }
 
-// // LCF Variants 
+// LCF Variants 
 
-// b, strong, h2, h3, h4 {
-// 	@extend %Swiss721BT-Bold;
-// }
+b, strong, h2, h3, h4 {
+	@extend %Swiss721BT-Bold;
+}
 
+.lcf {
+     .content-wrapper {
+        h1,h2,h3,h4,h5,h6 {
+         	@extend %Swiss721BT-Black;
+        }
+        h4,h5,h6 {
+             font-family: "Swiss721BT-Bold";
+        }
+        h2 {
+             text-transform: uppercase;
+        }
+        h2 {
+            padding-bottom: rhythm(1, 24px);
+            margin-bottom: rhythm(3, 24px);
+            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+            letter-spacing: 5px;
+            .ual-black-bg & {
+            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+            }
+        }
 
-// .lcf {
-//     .content-wrapper {
-//         h1,h2,h3,h4,h5,h6 {
-//         	@extend %Swiss721BT-Black;
-//         }
-//         h4,h5,h6 {
-//             font-family: "Swiss721BT-Bold";
-//         }
-//         h2 {
-//             text-transform: uppercase;
-//         }
-//         h2 {
-//             padding-bottom: rhythm(1, 24px);
-//             margin-bottom: rhythm(3, 24px);
-//             background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-//             letter-spacing: 5px;
-//             .ual-black-bg & {
-//             	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-//             }
-//         }
+    }
 
-//     }
+    .content {
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+        .text-block {
+        	h3, h4 {
+        		text-align: left;
+         	}
+        }
+     }
 
-//     .main-content {
-//         h1,h2,h3,h4 {
-//             text-align: center;
-//         }
-//         .text-block {
-//         	h3, h4 {
-//         		text-align: left;
-//         	}
-//         }
-//     }
-
-//     figcaption, .flex-video .caption {
-//         padding: 0 10px;
-//         color: $ual-secondary;
-//         font-family: $lcf-heading-font;
-//         a {
-//            color: $ual-secondary; 
-//         }
-//     }
-// }
+    /* figcaption, .flex-video .caption {
+        padding: 0 10px;
+        color: $ual-secondary;
+        font-family: $lcf-heading-font;
+        a {
+           color: $ual-secondary; 
+        }
+    }*/
+}
 
 
 
@@ -586,6 +606,7 @@ hr {
 // 	text-align: center;
 // 	color: #333;
 // }
+
 // // GRADUATE SCHOOL
 
 // .graduate-school {

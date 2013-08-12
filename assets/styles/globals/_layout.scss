@@ -158,6 +158,12 @@
 	min-width: 320px;
 }
 
+.header-wrapper {
+	position: relative;
+
+	
+}
+
 .content-wrapper img {
 	max-width: 100%;
 	height: auto;
@@ -175,13 +181,21 @@
 
 .l-content-full-width {
 	// @extend .main-content;
-	@extend %t2-t7;
-	//@extend %d5-d16--within-d5-d16;
+	// @extend %t2-t7;
+	// @extend %d5-d16--within-d5-d16;
 	width: 100%;
 }
 
 .l-content {
 	@extend %d5-d12--within-d5-d16;
+}
+
+.l-content-d5-d10 { // content left
+	@extend %d5-d10--within-d5-d16;
+}
+
+.l-content-d11-d16 { // content right
+	@extend %d11-d16--within-d5-d16;
 }
 
 .l-forms {
@@ -228,4 +242,3 @@ aside {
 
 
 }
-

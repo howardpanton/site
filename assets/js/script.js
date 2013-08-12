@@ -401,21 +401,21 @@ $(document).ready(function(){
 
   // detect slider component
   
-  if ($('.js-slider').length > 0) {
+  if ($('.js-carousel').length > 0) {
 
     $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
 
-      $.each($('.js-slider'), function() {
+      $.each($('.js-carousel'), function() {
 
         var _this = $(this);
         var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
 
         // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
-        var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 0;
+        var _itemWidth = (_this.data('carousel-item-width') > 0) ? _this.data('carousel-item-width') : 0;
         // set the minimum number of slides before it starts to be responsive
-        var _itemMinSlides = (_this.data('slider-min-slides') > 0) ? _this.data('slider-min-slides') : 0;
+        var _itemMinSlides = (_this.data('carousel-min-slides') > 0) ? _this.data('carousel-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
-        var _itemMargin = (_this.data('slider-item-margin') > 0) ? _this.data('slider-item-margin') : 0;
+        var _itemMargin = (_this.data('carousel-item-margin') > 0) ? _this.data('carousel-item-margin') : 0;
         // slider instances always show next/prev controls, unless data-controls is false          
         var _controlsOpt = true;
         _controlsOpt = _this.data('controls');
@@ -466,6 +466,7 @@ $(document).ready(function(){
 
         _this.royalSlider({
           arrowsNav: true,
+          fadeinLoadedSlide: false,
           arrowsNavAutoHide: false,
           controlNavigation: 'none',
           loop: true,
@@ -546,7 +547,27 @@ if ($('.accordion').length > 0) {
 }
   
 
+
+// detect vertical accordion component
+if ($('#va-accordion').length > 0) {
+  $.when(
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
+    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
+    $.Deferred(function( deferred ){
+      $( deferred.resolve );
+    })
+  ).done(function(){
+  //place your code here, the scripts are all loaded
+    $('#va-accordion').vaccordion();
+  }); 
+}
+
+
+
+
 // detect dropdown menu button used in forms or in page for drop menus
+
 if ($('.dd-menu').length > 0) {
 
     $(".js-dd-menu").fastClick(function (event){
@@ -613,6 +634,7 @@ if ($('#showtime-json').length){
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
     var feedUrl = $('#showtime-json').data('url');
+    // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
     var limit = $('#showtime-json').data('limit');
     
     $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
@@ -620,6 +642,7 @@ if ($('#showtime-json').length){
       var outputNode = $('#showtime-json');
       var string = '';
       var media = '';
+      var counter = 0;
               
       if (data.data.Student) { // this is a single Showtime profile
         var profileUrl = data.data.Student.Student.profileurl;
@@ -632,16 +655,23 @@ if ($('#showtime-json').length){
       }
 
       $.each(media, function(i, item) {
-        
-            profileImg = item.thumb.split('gallery');
-            item.profileImg = profileImg[0] + 'profile.jpg';
-            item.zoomImg = profileImg[0] + 'screen.jpg';
-    
-            //console.log(item);  
-            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
-          
-            outputNode.append(string); 
-                
+
+            if (counter < limit) {
+
+              profileImg = item.thumb.split('gallery');
+              item.profileImg = profileImg[0] + 'profile.jpg';
+              item.zoomImg = profileImg[0] + 'screen.jpg';
+      
+              string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
+            
+              outputNode.append(string); 
+
+              counter++;
+
+            } else {
+              return false;
+            }
+
       }); // end each loop
       
       $('.zoom').magnificPopup({ 
@@ -779,8 +809,14 @@ if ($('video').length > 0) {
 
 }
 
-
+// Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('icon download');
+
+$('#debug').hide();
+$('.debug-toggle').click(function(e) {
+  $('#debug').toggle();
+  e.preventDefault();
+});
 
 
 }); // end document ready
