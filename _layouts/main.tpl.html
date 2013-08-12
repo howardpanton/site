@@ -157,10 +157,9 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   {% if page.section != "course finder" %}
     
-    <div class="bg-gray-bg full-width">
-      <div class="row">
-        <div class="header-panel">
-          <div class="header-wrapper">
+    <div class="bg-gray-bg header-panel">
+      <div class="header-wrapper">
+          <div class="row">
           {% if page.college == "lcf" %}
             {% include _lcf_breadcrumb.html %}
           {% else if page.college == "lcc" %}
@@ -172,7 +171,6 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
               <h1>{{ page.title }}</h1>
           {% endif %}
           </div>
-        </div>
       </div>    
     </div><!-- .header-panel -->
   {% endif %}
