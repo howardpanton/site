@@ -475,11 +475,11 @@ $(document).ready(function(){
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
           globalCaption: true, 
-          autoPlay: {
+          /*autoPlay: {
             // autoplay options go here
             enabled: true,
             pauseOnHover: true
-          }
+          }*/
         });
       });
     });
