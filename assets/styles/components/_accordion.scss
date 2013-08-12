@@ -1,8 +1,7 @@
 /* Flexible Slide-to-top Accordion Style*/
 
 .accordion {
-	@extend %t2-t7;
-	// @extend %d5-d16;
+	
 	clear: left;
 }
 
@@ -12,21 +11,28 @@
 		border-top: none;
 	}		
 	.st-content {
-  	padding: rhythm(4, 16px) 0 rhythm(4, 16px) 0;
+  	padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
   	background-color: $white;
 
   	table {
   		font-size: 16px;
   		font-size: remCalc(16);
-  		p { 
+  		
+      p {  
+        @extend %d5-d12--within-d5-d16;
+        display: block;
+        float: none; 
+        clear: left;
   			font-size: 16px;
   			font-size: remCalc(16);
   		}
+
 			th {
 				@extend %Swiss721BT-Bold;
 				width: 25%;
 			}
-			tr {
+			
+      tr {
 				&:nth-child(even) { background-color: $white; }
 			}
 
@@ -34,15 +40,27 @@
 				padding: 0;
 			}
 		}
+
+
 	}
 }
 
+
 .accordion-list-item {
-	height: 58px; // needs to match a line-height
+	
+  //height: 58px; // needs to match a line-height
 	overflow: hidden;
 	background-color: $bg-gray;
 	margin-bottom: 1px;
 	padding: 0;
+
+  p {
+    @extend %d5-d12--within-d5-d16;
+    display: block;
+    float: none; 
+    clear: left;
+  }
+
 	.accordion-list-anchor {
 		line-height: 58px; // needs to match li height
 		display: block;
@@ -51,18 +69,65 @@
 		border-bottom: none;
 		margin-left: rhythm(4, 24px);
 		padding-right: rhythm(8, 24px);
+
 		.st-arrow {
-				font-size: emCalc(36px);
+
+				font-size: emCalc(42px);
 				position: absolute;
 				top: 12px;
 				right: 24px;
 				opacity:1;
 				line-height:36px;
 				width:28px;
+        text-align: center;
 				//@include default-transition();
 		} 
 	}
+}
 
+.accordion-list-item .st-content {
+  ul, ol, dl {
+  margin-bottom: rhythm(3, 16px);
+
+  li {
+
+      font-size: remCalc(16);
+      font-size: 16px;
+      margin-left: 16px;
+      list-style-type: square;
+      @include adjust-leading-to(4, 16px);  
+      padding-bottom: rhythm(2, 16px);
+    }
+  } 
+
+  ul li ul, ol li ol {
+    padding-top: rhythm(2, 16px);
+    padding-bottom: 0;
+
+    li {
+      padding-bottom: rhythm(2, 16px);
+    }
+  }
+
+  ol {
+    margin-left: rhythm(4, 16px);
+    list-style-type: decimal-leading-zero;
+    li {
+      
+    }
+  }
+
+  dl {
+    @include adjust-leading-to(4, 16px); 
+    padding-bottom: rhythm(1, 16px);
+    dt {
+      @extend %Swiss721BT-Bold;
+    }
+    dd {
+      padding-bottom: rhythm(2, 16px);
+      padding-left: rhythm(4, 16px);
+    }
+  }
 }
 
 // vertical accordion
