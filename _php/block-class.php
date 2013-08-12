@@ -1,4 +1,7 @@
+<!-- php block class -->
 <?php
+if(class_exists('Block') != true) 
+{
 
 class Block {
 	
@@ -34,9 +37,9 @@ class Block {
 	
 	public static function environment() {
 
-		$root = $_SERVER['DOCUMENT_ROOT'];
+		$uri = $_SERVER['REQUEST_URI'];
 
-		if (strpos($root, 't4') !== false) {
+		if (strpos($uri, 'phppreview') !== false) {
 			$environment = 'cms';
 		} else {
 			$environment = 'live';
@@ -123,7 +126,7 @@ class Block {
 				$d = count($a); 
 				if ($i < $d) { 
 				
-				echo "<li>"; echo "<!--" . $e . "-->";
+				echo "<li>";
 
 					echo "<figure class=\"feature\">";
 						if	(!$a[$i]['section_link'] == "") {
@@ -131,11 +134,11 @@ class Block {
 						}
 						if	(!$a[$i]['image'] == "") {
 							// If we're working in the CMS, reveal the original upload
-							//if ($e == 'cms') {
+							if ($e == 'cms') {
 								echo "<img src=\""  . $a[$i]['image'] . "\" alt=\"Image Alt\">";
-							//} else { // otherwise, load a resrc'd image
-								//echo "<img data-src=\"http://app.resrc.it/"  . $a[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
-							//}
+							} else { // otherwise, load a resrc'd image
+								echo "<img data-src=\"http://app.resrc.it/"  . $a[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
+							}
 						}
 							echo "</a>";
 						if	(!$a[$i]['credit'] == "") {
@@ -183,9 +186,8 @@ class Block {
 
 	}
 	
-}
+} // Block Class declaration
 
-
-
+} // end check if class_exists
 
 ?>
