@@ -805,8 +805,9 @@ legend + .control-group {
 
 // link styling within forms
 .form-link {
-  font-size: 14px;
   font-size: remCalc(14);
+  font-size: 14px;
+  line-height: 14px;
   @include margin-trailer(2);
 }
 
@@ -822,12 +823,12 @@ input[type="radio"] {
 
 input[type="checkbox"]+label,
 input[type="radio"]+label {
-  font-size:16px;
+  font-size: 16px;
   font-size: remCalc(16);
   padding-bottom: 6px;
-  margin-left: -12px;
+  //margin-left: -12px;
   display: inline-block;
-  cursor:pointer;
+  cursor: pointer;
 }
 input[type="checkbox"]+label:after,
 input[type="radio"]+label:after {
@@ -838,7 +839,10 @@ input[type="radio"]+label:after {
   vertical-align: middle;
 }
 input[type="checkbox"]+label:after {
+  //@include use-sprite(checkbox-un-checked);
   @extend .ui-icons-checkbox-un-checked;
+  
+
 }
 input[type="checkbox"]:checked+label:after {
   @extend .ui-icons-checkbox-checked;
@@ -874,6 +878,7 @@ input[type="radio"].before-label+label {
   font-size:16px;
   font-size: remCalc(16);
   margin-left: -12px;
+  margin-right: 12px;
   display: inline-block;
   cursor:pointer;
 }
