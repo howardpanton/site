@@ -140,7 +140,7 @@
 										echo "<img src=\""  . $this->array[$i]['image'] . "\" alt=\"Image Alt\">";
 									// otherwise, load a resrc'd image
 									} else { 
-										echo "<img data-src=\"http://app.resrc.it/"  . $this->array[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
+										echo "<img data-src=\"http://app.resrc.it/http://beta.arts.ac.uk"  . $this->array[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
 									}
 
 						echo "</a>";
@@ -186,5 +186,4 @@
 	} // end check if class_exists
 
 	?>
-	
 	
