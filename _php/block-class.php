@@ -54,6 +54,21 @@
 				return $environment;
 			}
 
+			public function component() {
+		
+				switch ($this->component) {
+				    case "feature":
+				        $b = "l-content-full-width";
+				        break;
+				    case "content":
+				        $b = "l-content";
+				        break;
+				    default:
+				       $b = "default";
+				}
+				return $b;
+			}
+
 			/**
 			 * [set_component_start output opening div]
 			 */
@@ -64,7 +79,7 @@
 				}
 
 				$component_start = "<div class=\"row\">";
-				$component_start .= "<div class=\"" . $this->component . " block  __media  " .  $this->template  . "\">";
+				$component_start .= "<div class=\"" . $this->component() . " block  __media  " .  $this->template  . "\">";
 				
 				if ( $t == "four-up" ) {
 					echo $compenent_four_up;
@@ -125,7 +140,7 @@
 										echo "<img src=\""  . $this->array[$i]['image'] . "\" alt=\"Image Alt\">";
 									// otherwise, load a resrc'd image
 									} else { 
-										echo "<img data-src=\"http://app.resrc.it/"  . $this->array[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
+										echo "<img data-src=\"http://app.resrc.it/http://beta.arts.ac.uk"  . $this->array[$i]['image'] . "\" alt=\"Image Alt\" class=\"resrc\">";
 									}
 
 						echo "</a>";
@@ -171,5 +186,4 @@
 	} // end check if class_exists
 
 	?>
-	
 	
