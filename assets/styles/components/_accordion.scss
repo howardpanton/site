@@ -1,12 +1,10 @@
 /* Flexible Slide-to-top Accordion Style*/
 
 .accordion {
-	
 	clear: left;
 }
 
 .accordion-list {
-	padding: 0;
 	li:first-child {
 		border-top: none;
 	}		
@@ -54,9 +52,8 @@
 	margin-bottom: 1px;
 	padding: 0;
 
-  p {
+  p, ul {
     @extend %d5-d12--within-d5-d16;
-    display: block;
     float: none; 
     clear: left;
   }
@@ -87,16 +84,16 @@
 
 .accordion-list-item .st-content {
   ul, ol, dl {
-  margin-bottom: rhythm(3, 16px);
+    margin-bottom: rhythm(3, 16px);
 
-  li {
+    li {
 
-      font-size: remCalc(16);
-      font-size: 16px;
-      margin-left: 16px;
-      list-style-type: square;
-      @include adjust-leading-to(4, 16px);  
-      padding-bottom: rhythm(2, 16px);
+        font-size: remCalc(16);
+        font-size: 16px;
+        margin-left: 16px;
+        list-style-type: square;
+        @include adjust-leading-to(4, 16px);  
+        padding-bottom: rhythm(2, 16px);
     }
   } 
 
@@ -112,9 +109,6 @@
   ol {
     margin-left: rhythm(4, 16px);
     list-style-type: decimal-leading-zero;
-    li {
-      
-    }
   }
 
   dl {
