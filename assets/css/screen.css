@@ -520,7 +520,7 @@ code {
 }
 
 /* line 72, ../styles/font-face/_swiss-721.scss */
-h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .sidebar ul li:first-child a, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
   font-family: Swiss721BT-Bold;
 }
 
@@ -5168,32 +5168,41 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
   padding: 1em 0 1em 10px;
   border-bottom: 0;
 }
-/* line 25, ../styles/components/_sidebar.scss */
+/* line 26, ../styles/components/_sidebar.scss */
+.sidebar ul li:first-child a {
+  line-height: 24px;
+}
+/* line 31, ../styles/components/_sidebar.scss */
 .sidebar ul li:first-child:hover {
   background: white;
 }
-/* line 28, ../styles/components/_sidebar.scss */
+/* line 34, ../styles/components/_sidebar.scss */
 .sidebar ul li {
   font-size: 14px;
   font-size: remCalc(14px);
   padding-left: 10px;
+  padding-bottom: 0;
   color: #757575;
   list-style-type: none;
   margin-left: 0;
   line-height: 36px;
   border-bottom: 1px dotted #c8c8c8;
 }
-/* line 37, ../styles/components/_sidebar.scss */
+/* line 44, ../styles/components/_sidebar.scss */
+.sidebar ul li:nth-of-type(2) {
+  border-top: 1px dotted #c8c8c8;
+}
+/* line 47, ../styles/components/_sidebar.scss */
 .sidebar ul li:hover {
   background: #e6e6e6;
 }
-/* line 42, ../styles/components/_sidebar.scss */
+/* line 52, ../styles/components/_sidebar.scss */
 .sidebar a {
   display: block;
   border-bottom: none;
 }
 
-/* line 50, ../styles/components/_sidebar.scss */
+/* line 60, ../styles/components/_sidebar.scss */
 .mobile-sidebar {
   *zoom: 1;
   position: relative;
@@ -5202,7 +5211,7 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
   margin-bottom: 18px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 50, ../styles/components/_sidebar.scss */
+  /* line 60, ../styles/components/_sidebar.scss */
   .mobile-sidebar {
     display: none;
   }
@@ -5216,18 +5225,18 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
 .mobile-sidebar:after {
   clear: both;
 }
-/* line 58, ../styles/components/_sidebar.scss */
+/* line 68, ../styles/components/_sidebar.scss */
 .mobile-sidebar nav, .mobile-sidebar ul {
   display: none;
 }
-/* line 60, ../styles/components/_sidebar.scss */
+/* line 70, ../styles/components/_sidebar.scss */
 .mobile-sidebar ul li {
   background-color: #e6e6e6;
   border-bottom: 1px solid #c8c8c8;
   padding-left: 12px;
   line-height: 24px;
 }
-/* line 66, ../styles/components/_sidebar.scss */
+/* line 76, ../styles/components/_sidebar.scss */
 .mobile-sidebar ul li a {
   width: 100%;
   display: block;
@@ -5235,36 +5244,36 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
   padding-bottom: 12px;
   border-bottom: none;
 }
-/* line 76, ../styles/components/_sidebar.scss */
+/* line 86, ../styles/components/_sidebar.scss */
 .mobile-sidebar .mob-sb-dd-title {
   position: absolute;
   top: 24px;
   left: 12px;
 }
 
-/* line 86, ../styles/components/_sidebar.scss */
+/* line 96, ../styles/components/_sidebar.scss */
 .currentbranch0 a {
   color: #757575;
   border-bottom: 0;
 }
-/* line 89, ../styles/components/_sidebar.scss */
+/* line 99, ../styles/components/_sidebar.scss */
 .currentbranch0 a:hover {
   border-bottom: 0;
 }
 
-/* line 95, ../styles/components/_sidebar.scss */
+/* line 105, ../styles/components/_sidebar.scss */
 .multilevel-linkul-0 {
   margin-left: 24px;
       font-size: 14px;
       padding: 0;
 }
-/* line 100, ../styles/components/_sidebar.scss */
+/* line 110, ../styles/components/_sidebar.scss */
 .multilevel-linkul-0 li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 106, ../styles/components/_sidebar.scss */
+/* line 116, ../styles/components/_sidebar.scss */
 .show-mob-sidebar {
   display: block;
   width: 100%;

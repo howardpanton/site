@@ -22,6 +22,12 @@
 			padding: rhythm(3, 18px) 0 rhythm(3, 18px) 10px;
 			border-bottom: 0;
 		}
+
+		li:first-child a {
+			@extend %Swiss721BT-Bold;
+			line-height: 24px;
+		}
+
 		li:first-child:hover {
 			background: $white;
 		}
@@ -29,11 +35,15 @@
 			font-size: 14px;
 			font-size: remCalc(14px);
 			padding-left: 10px;
+			padding-bottom: 0;
 			color: $aaa-gray;
 			list-style-type: none;
 			margin-left: 0;
 			line-height:36px; 
 			border-bottom:1px dotted $light-gray;
+			&:nth-of-type(2) {
+				border-top:1px dotted $light-gray;
+			}
 			&:hover {
 				background:$bg-gray;
 			}
