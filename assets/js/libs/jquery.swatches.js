@@ -40,27 +40,27 @@
             var holder       = $('<div/>', {class: 'holder'});
             //console.log(colors);
             for (var i = 0; i < colors.length; i++) {
-                infoContents.append( $('<code/>', {class: 'name'}).text(sass[i].toUpperCase()) );
+                infoContents.append( $('<div/>', {class: 'name'}).text(sass[i].toUpperCase()) );
                 holder.append( $('<div/>', {class: 'color'}).css({'background-color': "rgb" + colors[i]}) );
             }
 
             holder.append(infoContents);
             target.append(holder);
 
-           // target.append( $('<div/>', {class: 'info'}).text(name) );
+            target.append( $('<div/>', {class: 'info'}).text(name) );
             
             target.addClass('jqueryswatches');
         });
     };
 
-    // hover animation
-    // $(document).on('mouseenter', '.jqueryswatches .holder', function() {
-    //     $(this).find('.shade').stop().animate({height: '27px'}, 200);
-    //     $(this).find('.name').stop().animate({opacity: '1'}, 200);
-    // })
-    // .on('mouseleave', '.jqueryswatches .holder', function() {
-    //     $(this).find('.shade').stop().animate({height: '10px'}, 200);
-    //     $(this).find('.name').stop().animate({opacity: '0'}, 200);
-    // });
+     //hover animation
+     // $(document).on('mouseenter', '.jqueryswatches .holder', function() {
+     //     $(this).find('.shade').stop().animate({height: '27px'}, 200);
+     //     $(this).find('.name').stop().animate({opacity: '1'}, 200);
+     // })
+     // .on('mouseleave', '.jqueryswatches .holder', function() {
+     //     $(this).find('.shade').stop().animate({height: '10px'}, 200);
+     //     $(this).find('.name').stop().animate({opacity: '0'}, 200);
+     // });
 
 }( jQuery ));
