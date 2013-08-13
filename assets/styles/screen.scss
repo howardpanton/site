@@ -60,27 +60,26 @@
 
 
 /*------------------------------------*\
-    $CORE
+    $SPRITES
 \*------------------------------------*/
 
+$ico-sprite-dimensions: true;
+//@import "globals/retina-sprites"; 
+@import "../img/sprite/ui-icons/*.png";
+@include all-ui-icons-sprites(true);
+
+
+/*------------------------------------*\
+    $CORE
+\*------------------------------------*/
 
 @import	"globals/icons",
 				"globals/typography", 
 				"globals/logos",
 				"globals/logos.fallback",
-				
 				"globals/forms",
 				"globals/utilities";
 
-
-
-/*------------------------------------*\
-    $SPRITES
-\*------------------------------------*/
-$ico-sprite-dimensions: true;
-@import "globals/retina-sprites";
-@import "../img/sprite/ui-icons/*.png";
-@include all-ui-icons-sprites(true);
 
 /*------------------------------------*\
     $OBJECTS-AND-EXTRACTIONS
