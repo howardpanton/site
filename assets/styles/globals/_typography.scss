@@ -23,8 +23,7 @@ html {
 // Apply UAL global font to body
 body {
 	font-family: $ual-global-font-stack;
-	font-size: 16px;
-	font-size: remCalc(16);
+	@include font-size(16);
 }
 
 // Global link colors
@@ -52,8 +51,7 @@ a {
 }
 
 h1 {
-	font-size: remCalc(54);
-	font-size: 54px;
+	@include font-size(54);
 	@include adjust-leading-to(10, 54px); 	
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
 }
@@ -74,41 +72,35 @@ h2, h3, h4 {
 }
 
 h2 {
-	font-size: remCalc(36);
-	font-size: 36px;
+	@include font-size(36);
 	@include adjust-leading-to(7, 36px); 	
-	padding: rhythm(3, 36px) 0 rhythm(4, 36px) 0;
+	padding: rhythm(3, 36px) 0 rhythm(3, 36px) 0;
 }
 
 h3 {
-	font-size: remCalc(24);
-	font-size: 24px;
+	@include font-size(24);
 	@include adjust-leading-to(5, 24px); 	
 	padding: rhythm(3, 24px) 0;
 }
 
 h4 {
-	font-size: remCalc(18);
-	font-size: 18px;
+	@include font-size(18);
 	@include adjust-leading-to(4, 18px); 	
 	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
 }
 
 h5 {
-	font-size: remCalc(16);
-	font-size: 16px;
+	@include font-size(16);
 }
 
 h6 {
-	font-size: remCalc(14);
-	font-size: 14px;
+	@include font-size(14);
 }
 
 p {
-	font-size: remCalc(16);
-	font-size: 16px;
+	@include font-size(16);
 	@include adjust-leading-to(4, 16px); 	
-	padding-bottom: rhythm(2, 16px);
+	padding-bottom: rhythm(3, 16px);
 }
 
 nav ul {
@@ -116,20 +108,30 @@ nav ul {
 	list-style-type: none;	
 }
 
-ul, ol {
+ul, ol, dl {
+	margin-bottom: rhythm(3, 16px);
+
 	li {
-		font-size: remCalc(16);
-		font-size: 16px;
+		@include font-size(16);
 		@include adjust-leading-to(4, 16px); 	
 		padding-bottom: rhythm(2, 16px);
-	}
-
-	
+	}	
 }
+
+	ul li ul, ol li ol {
+  padding-top: rhythm(2, 16px);
+  padding-bottom: 0;
+
+  li {
+    padding-bottom: rhythm(2, 16px);
+  }
+ }
+
 
 aside, .__text {
 	ul {
 		li {
+			padding-left: 9px;
 			margin-left: 16px;
 			list-style-type: square;
 		}
@@ -139,12 +141,16 @@ aside, .__text {
 		@include padding-leader(1);
 	}
 	p {
-		font-size: 14px;
+	@include font-size(16);
 	}
 }
 
+aside p {
+		@include font-size(14);
+}
+
 ol {
-	margin-left: 30px;
+	margin-left: rhythm(4, 16px);
 	list-style-type: decimal-leading-zero;
 	li {
 		
@@ -158,33 +164,33 @@ strong, b, em {
 code {
 	@extend %Swiss721BT-Italic;
 	background: $bg-gray;
-	font-size: 12px;
+	@include font-size(12);
 	padding: rhythm(1, 12px);
-	color: $csm-primary;
 }
 
 dl {
-	@include adjust-leading-to(4, 16px); 	
+		@include adjust-leading-to(4, 16px); 
+	  padding-bottom: rhythm(1, 16px);
 	dt {
 		@extend %Swiss721BT-Bold;
 	}
 	dd {
 		padding-bottom: rhythm(2, 16px);
-		padding-left: rhythm(2, 16px);
+		padding-left: rhythm(4, 16px);
 	}
 }
 
 table {
 	width: 100%;
-	font-size: remCalc(14);
-	font-size: 14px;
+	@include font-size(14);
 	@include adjust-leading-to(4, 14px); 	
-	padding-bottom: rhythm(2, 16px);
+	padding-bottom: rhythm(2, 14px);
+	margin-bottom: rhythm(3, 14px);
 	th, td {
 		padding-top: rhythm(1, 14px);
 		padding-right: rhythm(1, 14px);
 		padding-bottom: rhythm(1, 14px);
-		padding-left: rhythm(1, 14px);
+		padding-left: rhythm(2, 14px);
 	}
 	th{
 		text-align: left;
@@ -233,12 +239,11 @@ figure {
 
 figcaption, .rsCaption {
 	@extend %Swiss721BT-Light;
-	font-size: remCalc(14);
-	font-size: 14px;
+	@include font-size(14);
 	@include adjust-leading-to(3, 14px); 	
 	span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
 		display: block;
-		padding: rhythm(1, 14px);
+		padding: 9px 12px 6px 12px;
 		p {
 			padding-bottom: 0;
 		}
@@ -258,11 +263,10 @@ blockquote {
 	}
 	
   
-	font-size: remCalc(16);
-	font-size: 16px;
+	@include font-size(16);
 	@include adjust-leading-to(4, 16px); 	
 	margin-top: rhythm(2, 16px);
-	padding-bottom: rhythm(4, 16px);
+	padding-bottom: rhythm(2, 16px);
 	padding-left: 68px;
 	padding-right: 18%;
 }

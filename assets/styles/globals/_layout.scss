@@ -227,6 +227,15 @@
 
 aside {
 
+	font-size: 14px;
+	font-size: remCalc(14);
+ 
+
+	h3 {
+	  @extend .size-h6;
+	  @include padding-leader(1);
+	}
+
 	@extend %d13-d16--within-d5-d16;
 	
 	background-color: $bg-gray;
