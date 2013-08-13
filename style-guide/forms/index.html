@@ -22,12 +22,12 @@ breadcrumb-link: /forms/
     </div> <!-- end sidebar -->
 		<div role="main" class="content">
 
-    <h2>UAL default form elements, custom styling and fully repsonsive.</h2>
+    <h2>UAL default form elements, repsonsive &amp; custom styles</h2>
 			
 		<div class="l-content block __text margin-bottom-x4">
 			<h3 id="overview">Overview</h3>
 			<p>Individual form controls automatically receive some global UAL styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements are set to <code>width: 100%;</code> by default. </p>
-			<p>UAL styled select boxes must follow a specific html structure. <br/>Please refer to the <a href="#">UAL select box</a> guidelines below for more information.</p>
+			<p>UAL styled select boxes must follow a specific html structure. <br/>Please refer to the <a href="#select-boxes-tab">UAL select box</a> guidelines below for more information.</p>
 			<p>Use the class <code>.with-box-shadow</code> on the main <code>&lt;form&gt;</code> tag to give forms a subtle drop shadow.</p>
 		</div>
 
@@ -58,8 +58,10 @@ breadcrumb-link: /forms/
 
 		<div id="checkboxes" class="row l-content">
 			<h3>Checkboxes</h3>
+			<p>By default, checkboxes will appear after labels. To make checkboxes appear to the left of the labels, keep the HTML structure the same, and add a class <code>before-label</code> to the input element.</p>
 			<form action="" class="margin-top with-box-shadow">
 
+				 <h4>Checkboxes after labels:</h4>
 		     <input id="c4" type="checkbox" name="cc">
 		     <label for="c4">Checkbox 1</label>
 
@@ -68,10 +70,21 @@ breadcrumb-link: /forms/
 		 
 		     <input id="c6" type="checkbox" name="cc" disabled>
 		     <label for="c6">Checkbox 3 (disabled)</label>
+
+		     <br/>
+				 <h4>Checkboxes before labels:</h4>
+		     <input id="c7" class="before-label" type="checkbox" name="cc">
+		     <label for="c7">Checkbox 1</label>
+
+		     <input id="c8" class="before-label" type="checkbox" name="cc">
+		     <label for="c8">Checkbox 2</label>
+		 
+		     <input id="c9" class="before-label" type="checkbox" name="cc" disabled>
+		     <label for="c9">Checkbox 3 (disabled)</label>
 		
 			</form>
-
-			<script src="https://gist.github.com/denovo/6174189.js"></script>
+		<script src="https://gist.github.com/denovo/6174189.js"></script>
+		
 	 	</div>
 
 		<div id="radio-buttons" class="row l-content">
@@ -183,16 +196,17 @@ breadcrumb-link: /forms/
 			<div class="l-content">
 			<script src="https://gist.github.com/denovo/6174420.js"></script>
 			</div>
-			<aside>
-       <form id="form" name="form" class=" margin-top with-box-shadow">
+			<aside class="no-bg no-pad no-border-left">
+       <form id="form" name="form" class=" margin-top with-box-shadow cf">
           <h3>login form</h3>
           <label for="s-login1">Username</label>
           <input id="s-login1" type="text" name="s-login" >
           <label for="p-login1">Password</label>
           <input id="p-login1" type="password" name="p-login" >
-          <a href="#" class="form-link pull-right">Register</a>
-          <input type="submit" value="Submit" class="submit-btn" />
-          <a href="#" class="form-link">Forgot Password</a>
+          <input type="submit" value="Submit" class="submit-btn pull-left margin-bottom-3x" />
+          <a href="#" class="form-link pull-left clear-left">Forgot Password</a>
+          <a href="#" class="form-link pull-left clear-left">Register</a>
+         	 
        </form>
      	</aside>
 		</div>

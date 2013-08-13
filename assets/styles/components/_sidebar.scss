@@ -1,8 +1,7 @@
-// in page left hand navigation
+// in page left side navigation
 .sidebar {
 	float: left;
 	font-size: emCalc(16px);
-	
 	@include gs-media (d) {
 		@include gs-span(d,1,4);
 		font-size: emCalc(14px);
@@ -16,18 +15,35 @@
 		margin-left: 0;
 
 		li:first-child {
+			@extend %Swiss721BT-Bold;
 			color: #000;
-			font-size: 22px;
+			font-size: 18px;
+			font-size: remCalc(18px);
+			padding: rhythm(3, 18px) 0 rhythm(3, 18px) 10px;
+			border-bottom: 0;
+		}
+
+		li:first-child a {
+			@extend %Swiss721BT-Bold;
+			line-height: 24px;
+		}
+
+		li:first-child:hover {
+			background: $white;
 		}
 		li {
 			font-size: 14px;
 			font-size: remCalc(14px);
-			padding:0.375em 0.75em;
+			padding-left: 10px;
+			padding-bottom: 0;
 			color: $aaa-gray;
 			list-style-type: none;
 			margin-left: 0;
-			line-height:24px; 
+			line-height:36px; 
 			border-bottom:1px dotted $light-gray;
+			&:nth-of-type(2) {
+				border-top:1px dotted $light-gray;
+			}
 			&:hover {
 				background:$bg-gray;
 			}
@@ -35,16 +51,18 @@
 	}
 	a {
 		@extend %Swiss721BT-Light;
-		border-bottom:none;
+		display: block;
+		border-bottom: none;
+
 	}
 }
 
 .mobile-sidebar {
-
 	@include gs-media (d) { display: none; }
-
+	@include clearfix();
+	position: relative;
+	display: block;
 	font-size: emCalc(16px);
-	width: 100%;
 	margin-bottom: 18px;
 	
 	nav, ul { display: none; }
@@ -58,12 +76,20 @@
 		a { 
 			width: 100%;
 			// line-height: 24px;
+			display: block;
 			padding-top: 12px;
 			padding-bottom: 12px;
-			display: block;
 			border-bottom: none;
 		}
 	}
+
+	.mob-sb-dd-title {
+		position: absolute;
+		top: 24px;
+		left: 12px;
+
+	}
+
 }
 
 // this is the class that site manager adds to the current branch for the side menu

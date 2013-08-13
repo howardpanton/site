@@ -83,11 +83,12 @@ $(document).ready(function(){
   if ($('.sidebar').length > 0) {
 
     var _menuHtml = $('.sidebar').html();
-    var _mobMenuButton = '<a href="#" class="show-mob-sidebar icon">≡</a>';
+    var _sideBarTitle = $('.sidebar li a').first().html();
+    var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
     var _mobMenuContent = _mobMenuButton + _menuHtml;
     
-    // create mobile sidebar div and add it to the page before the sidebar
-    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').insertBefore('.sidebar');
+    // create mobile sidebar div and add it to the main content div
+    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
     // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
     $('#mobile-sidebar').html(_mobMenuContent);
