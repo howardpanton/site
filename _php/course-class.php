@@ -13,14 +13,24 @@ if(class_exists('Course') != true)
 //	
 		function set_college($properties) {
 		    // returns whether the input integer is odd
-		    return($properties['college'] == "London College of fashion");
+		    $college = "";
+		    $level = "";
+		    parse_str($_SERVER['QUERY_STRING']);
+		    $d = urldecode($college);
+		    $l = urldecode($level);
+
+
+		    return($properties['college'] == $d && $properties['level'] == $l);
 		}
+ 
+ 			if (!empty($_GET)) {
 
-
-		$test = array_filter($properties, "set_college");
-		//print_r($test);
-
-      		foreach($test as $key => $value) {
+			$test = array_filter($properties, "set_college");
+					//print_r($test);
+			} else {
+				$test = $properties ;
+			}
+			     foreach($test as $key => $value) {
         		$this->{$key} = $value;
       		}
     		}
@@ -36,7 +46,7 @@ if(class_exists('Course') != true)
 
 $courses[] = array( 
 "title" => "Ipsum Porta Inceptos Parturient Euismod",
-"level"  => "Undergraduate",
+"level"  => "Foo",
 "college" => "not",
 "mode"  => "Full time",
 "url" => "http://www.arts.ac.uk/fashion/courses/undergraduate/ba-fashion",
@@ -84,6 +94,33 @@ $courses[] = array(
 "title" => "Ipsum Porta Inceptos Parturient Euismod",
 "level"  => "Undergraduate",
 "college" => "London College of fashion",
+"mode"  => "Full time",
+"url" => "http://www.arts.ac.uk/fashion/courses/undergraduate/ba-fashion",
+"usp"  => "Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+);
+
+$courses[] = array( 
+"title" => "Ipsum Porta Inceptos Parturient Euismod",
+"level"  => "Undergraduate",
+"college" => "Central Saint Martins",
+"mode"  => "Full time",
+"url" => "http://www.arts.ac.uk/fashion/courses/undergraduate/ba-fashion",
+"usp"  => "Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+);
+
+$courses[] = array( 
+"title" => "Ipsum Porta Inceptos Parturient Euismod",
+"level"  => "Foundation",
+"college" => "Central Saint Martins",
+"mode"  => "Full time",
+"url" => "http://www.arts.ac.uk/fashion/courses/undergraduate/ba-fashion",
+"usp"  => "Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+);
+
+$courses[] = array( 
+"title" => "Ipsum Porta Inceptos Parturient Euismod",
+"level"  => "Undergraduate",
+"college" => "Central Saint Martins",
 "mode"  => "Full time",
 "url" => "http://www.arts.ac.uk/fashion/courses/undergraduate/ba-fashion",
 "usp"  => "Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
@@ -92,7 +129,13 @@ $courses[] = array(
   
 $course = new Course($courses);
 
-parse_str($_SERVER['QUERY_STRING']);
-
+//parse_str($_SERVER['QUERY_STRING']);
+//echo $test;
+	//	    $college = "";
+	//	    parse_str($_SERVER['QUERY_STRING']);
+	//	    $d = urldecode($college);
+		//    echo $d;
 // output course array in JSON
+// 
+
 echo json_encode($course);
