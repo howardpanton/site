@@ -1,3 +1,4 @@
+@charset "UTF-8";
 		 /*-----------------------------------------*\
     //*	University of the Arts London
 		//*	CSS stylesheet
@@ -18,7 +19,7 @@
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
-/* line 17, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -40,45 +41,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -194,7 +195,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 17, ../styles/globals/_colors.scss */
 .dark-gray, .submenu {
-  color: #333333;
+  color: #373737;
 }
 
 /* line 21, ../styles/globals/_colors.scss */
@@ -231,7 +232,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 50, ../styles/globals/_colors.scss */
 .dark-gray-bg {
-  background: #333333;
+  background: #373737;
   color: white;
 }
 
@@ -247,7 +248,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 63, ../styles/globals/_colors.scss */
 .bg-gray-bg, table tr:nth-child(even), .block figcaption, .block .rsCaption {
-  background: #e6e6e6;
+  background: #e9e9e9;
 }
 
 /* line 67, ../styles/globals/_colors.scss */
@@ -361,7 +362,7 @@ questions: http://www.webtype.com
 }
 
 /* line 25, ../styles/font-face/_entypo.scss */
-.icon, .m-menu-btn-toggle span, a.search span {
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span, .warning-icon {
   font-family: "entypo";
 }
 
@@ -500,26 +501,35 @@ figcaption, .rsCaption, .sidebar a, .dd-menu ul li a, .select-box ul li a, .dd-m
 }
 
 /* line 69, ../styles/font-face/_swiss-721.scss */
+.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
+.megamenu li .dropdown_fullwidth h2 a,
+.megamenu li .dropdown_fullwidth a,
+.megamenu li .dropdown_multilevel h2 a,
+.megamenu li .dropdown_multilevel a, .dd-heading a {
+  font-family: Swiss721BT-Light !important;
+}
+
+/* line 70, ../styles/font-face/_swiss-721.scss */
 a, figure a {
   font-family: Swiss721BT-Roman;
 }
 
-/* line 70, ../styles/font-face/_swiss-721.scss */
+/* line 71, ../styles/font-face/_swiss-721.scss */
 code {
   font-family: Swiss721BT-Italic;
 }
 
-/* line 71, ../styles/font-face/_swiss-721.scss */
-h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
+/* line 72, ../styles/font-face/_swiss-721.scss */
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .sidebar ul li:first-child a, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
   font-family: Swiss721BT-Bold;
 }
 
-/* line 72, ../styles/font-face/_swiss-721.scss */
+/* line 73, ../styles/font-face/_swiss-721.scss */
 .lcf .content-wrapper h1, .lcf .content-wrapper h2, .lcf .content-wrapper h3, .lcf .content-wrapper h4, .lcf .content-wrapper h5, .lcf .content-wrapper h6, .lcf .header-wrapper h1, .lcf .header-wrapper h2, .lcf .header-wrapper h3, .lcf .header-wrapper h4, .lcf .header-wrapper h5, .lcf .header-wrapper h6 {
   font-family: Swiss721BT-Black;
 }
 
-/* line 73, ../styles/font-face/_swiss-721.scss */
+/* line 74, ../styles/font-face/_swiss-721.scss */
 .filter-module h3 {
   font-family: Swiss721BT-Medium;
 }
@@ -571,6 +581,133 @@ h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .accordion-list .st-content 
  * © 2013 MyFonts Inc
 */
 /*------------------------------------*\
+    $SPRITES
+\*------------------------------------*/
+/* line 170, ../img/sprite/ui-icons/*.png */
+.ui-icons-sprite, .ui-icons-blue-circle-bg, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, .ui-icons-dashline_border_img, .ui-icons-green-circle-bg, .ui-icons-grey-search, .with-search-icon, .ui-icons-quote_marks, blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, .form-ico {
+  background: url('http://artslondon.github.io/beta/assets/img/../img/sprite/ui-icons-s3fd643362c.png') no-repeat;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-blue-circle-bg {
+  background-position: 0 -400px;
+  height: 400px;
+  width: 400px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-cf-selected {
+  background-position: 0 -856px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-cf-unselected-disabled {
+  background-position: 0 -964px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-cf-unselected {
+  background-position: 0 -932px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-checkbox-checked-disabled {
+  background-position: 0 -1012px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before {
+  background-position: 0 -1028px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before {
+  background-position: 0 -1060px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before {
+  background-position: 0 -1044px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-dashline_border_img {
+  background-position: 0 -1076px;
+  height: 1px;
+  width: 4px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-green-circle-bg {
+  background-position: 0 0;
+  height: 400px;
+  width: 400px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-grey-search, .with-search-icon {
+  background-position: 0 -1077px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-quote_marks, blockquote span {
+  background-position: 0 -872px;
+  height: 44px;
+  width: 64px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-quote_marks_big, .pull-quote span {
+  background-position: 0 -800px;
+  height: 56px;
+  width: 78px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-radio-selected-disabled {
+  background-position: 0 -916px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before {
+  background-position: 0 -980px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before {
+  background-position: 0 -948px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before {
+  background-position: 0 -996px;
+  height: 16px;
+  width: 16px;
+}
+
+/*------------------------------------*\
     $CORE
 \*------------------------------------*/
 /* line 6, ../styles/globals/_icons.scss */
@@ -588,12 +725,12 @@ h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .accordion-list .st-content 
  * RESET...............Set our reset defaults
  * FONT-FACE...........Import brand font files
  */
-/* line 61, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 100%;
 }
 
-/* line 64, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 16px;
   line-height: 0.375em;
@@ -616,164 +753,188 @@ html {
 body {
   font-family: "Swiss721BT-Light", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-size: remCalc(16);
+  font-size: 1rem;
 }
 
-/* line 32, ../styles/globals/_typography.scss */
+/* line 31, ../styles/globals/_typography.scss */
 a {
   color: black;
   text-decoration: none;
   padding-bottom: 1px;
   border-bottom: 1px dotted #282828;
 }
-/* line 38, ../styles/globals/_typography.scss */
+/* line 37, ../styles/globals/_typography.scss */
 a:hover {
   color: #757575;
   padding-bottom: 1px;
   border-bottom: 1px dotted black;
 }
 
-/* line 54, ../styles/globals/_typography.scss */
+/* line 53, ../styles/globals/_typography.scss */
 h1 {
-  font-size: remCalc(54);
   font-size: 54px;
+  font-size: 3.375rem;
   line-height: 1.11111em;
   padding: 0.22222em 0 0.44444em 0;
 }
 
-/* line 62, ../styles/globals/_typography.scss */
+/* line 60, ../styles/globals/_typography.scss */
 .lcc h1 {
   text-transform: uppercase;
 }
 
-/* line 70, ../styles/globals/_typography.scss */
+/* line 68, ../styles/globals/_typography.scss */
 .lcc h2, .lcc h3, .lcc h4 {
   text-transform: uppercase;
 }
 
-/* line 76, ../styles/globals/_typography.scss */
+/* line 74, ../styles/globals/_typography.scss */
 h2 {
-  font-size: remCalc(36);
   font-size: 36px;
+  font-size: 2.25rem;
   line-height: 1.16667em;
-  padding: 0.5em 0 0.66667em 0;
+  padding: 0.5em 0 0.5em 0;
 }
 
-/* line 83, ../styles/globals/_typography.scss */
+/* line 80, ../styles/globals/_typography.scss */
 h3 {
-  font-size: remCalc(24);
   font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.25em;
   padding: 0.75em 0;
 }
 
-/* line 90, ../styles/globals/_typography.scss */
+/* line 86, ../styles/globals/_typography.scss */
 h4 {
-  font-size: remCalc(18);
   font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.33333em;
   padding: 0.66667em 0 1em 0;
 }
 
-/* line 97, ../styles/globals/_typography.scss */
+/* line 92, ../styles/globals/_typography.scss */
 h5 {
-  font-size: remCalc(16);
   font-size: 16px;
+  font-size: 1rem;
 }
 
-/* line 102, ../styles/globals/_typography.scss */
+/* line 96, ../styles/globals/_typography.scss */
 h6 {
-  font-size: remCalc(14);
   font-size: 14px;
+  font-size: 0.875rem;
 }
 
-/* line 107, ../styles/globals/_typography.scss */
+/* line 100, ../styles/globals/_typography.scss */
 p {
-  font-size: remCalc(16);
   font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5em;
-  padding-bottom: 0.75em;
+  padding-bottom: 1.125em;
 }
 
-/* line 114, ../styles/globals/_typography.scss */
+/* line 106, ../styles/globals/_typography.scss */
 nav ul {
   margin-left: 0;
   list-style-type: none;
 }
 
-/* line 120, ../styles/globals/_typography.scss */
-ul li, ol li {
-  font-size: remCalc(16);
+/* line 111, ../styles/globals/_typography.scss */
+ul, ol, dl {
+  margin-bottom: 1.125em;
+}
+/* line 114, ../styles/globals/_typography.scss */
+ul li, ol li, dl li {
   font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5em;
   padding-bottom: 0.75em;
 }
 
-/* line 132, ../styles/globals/_typography.scss */
+/* line 121, ../styles/globals/_typography.scss */
+ul li ul, ol li ol {
+  padding-top: 0.75em;
+  padding-bottom: 0;
+}
+/* line 125, ../styles/globals/_typography.scss */
+ul li ul li, ol li ol li {
+  padding-bottom: 0.75em;
+}
+
+/* line 133, ../styles/globals/_typography.scss */
 aside ul li, .__text ul li {
+  padding-left: 9px;
   margin-left: 16px;
   list-style-type: square;
 }
-/* line 137, ../styles/globals/_typography.scss */
+/* line 139, ../styles/globals/_typography.scss */
 aside h3, .__text h3 {
   padding-top: 0.375em;
 }
-/* line 141, ../styles/globals/_typography.scss */
+/* line 143, ../styles/globals/_typography.scss */
 aside p, .__text p {
-  font-size: 14px;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
-/* line 146, ../styles/globals/_typography.scss */
+/* line 148, ../styles/globals/_typography.scss */
+aside p {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+/* line 152, ../styles/globals/_typography.scss */
 ol {
-  margin-left: 30px;
+  margin-left: 1.5em;
   list-style-type: decimal-leading-zero;
 }
 
-/* line 158, ../styles/globals/_typography.scss */
+/* line 164, ../styles/globals/_typography.scss */
 code {
-  background: #e6e6e6;
+  background: #e9e9e9;
   font-size: 12px;
+  font-size: 0.75rem;
   padding: 0.5em;
-  color: #ff0c00;
 }
 
-/* line 166, ../styles/globals/_typography.scss */
+/* line 171, ../styles/globals/_typography.scss */
 dl {
   line-height: 1.5em;
+  padding-bottom: 0.375em;
 }
-/* line 171, ../styles/globals/_typography.scss */
+/* line 177, ../styles/globals/_typography.scss */
 dl dd {
   padding-bottom: 0.75em;
-  padding-left: 0.75em;
+  padding-left: 1.5em;
 }
 
-/* line 177, ../styles/globals/_typography.scss */
+/* line 183, ../styles/globals/_typography.scss */
 table {
   width: 100%;
-  font-size: remCalc(14);
   font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.71429em;
-  padding-bottom: 0.75em;
+  padding-bottom: 0.85714em;
+  margin-bottom: 1.28571em;
 }
-/* line 183, ../styles/globals/_typography.scss */
+/* line 189, ../styles/globals/_typography.scss */
 table th, table td {
   padding-top: 0.42857em;
   padding-right: 0.42857em;
   padding-bottom: 0.42857em;
-  padding-left: 0.42857em;
+  padding-left: 0.85714em;
 }
-/* line 189, ../styles/globals/_typography.scss */
+/* line 195, ../styles/globals/_typography.scss */
 table th {
   text-align: left;
   vertical-align: top;
 }
 
-/* line 216, ../styles/globals/_typography.scss */
+/* line 222, ../styles/globals/_typography.scss */
 figure {
   position: relative;
   margin-bottom: 1.28571em;
 }
-/* line 219, ../styles/globals/_typography.scss */
+/* line 225, ../styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
@@ -782,40 +943,40 @@ figure a {
   display: block;
   line-height: 0;
 }
-/* line 227, ../styles/globals/_typography.scss */
+/* line 233, ../styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 234, ../styles/globals/_typography.scss */
+/* line 240, ../styles/globals/_typography.scss */
 figcaption, .rsCaption {
-  font-size: remCalc(14);
   font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.28571em;
 }
-/* line 239, ../styles/globals/_typography.scss */
+/* line 244, ../styles/globals/_typography.scss */
 figcaption span, .rsCaption span {
   display: block;
-  padding: 0.42857em;
+  padding: 9px 12px 6px 12px;
 }
-/* line 242, ../styles/globals/_typography.scss */
+/* line 247, ../styles/globals/_typography.scss */
 figcaption span p, .rsCaption span p {
   padding-bottom: 0;
 }
 
-/* line 249, ../styles/globals/_typography.scss */
+/* line 254, ../styles/globals/_typography.scss */
 blockquote {
   position: relative;
-  font-size: remCalc(16);
   font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5em;
   margin-top: 0.75em;
-  padding-bottom: 1.5em;
+  padding-bottom: 0.75em;
   padding-left: 68px;
   padding-right: 18%;
 }
-/* line 251, ../styles/globals/_typography.scss */
+/* line 256, ../styles/globals/_typography.scss */
 blockquote span {
   position: absolute;
   top: 0px;
@@ -824,56 +985,56 @@ blockquote span {
   background-position: top left;
 }
 
-/* line 270, ../styles/globals/_typography.scss */
+/* line 274, ../styles/globals/_typography.scss */
 hr {
   clear: both;
 }
 
-/* line 544, ../styles/globals/_typography.scss */
+/* line 548, ../styles/globals/_typography.scss */
 .icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span {
   font-family: "entypo";
 }
 
-/* line 545, ../styles/globals/_typography.scss */
+/* line 549, ../styles/globals/_typography.scss */
 .icon-social {
   font-family: "entypo-social";
 }
 
-/* line 553, ../styles/globals/_typography.scss */
+/* line 557, ../styles/globals/_typography.scss */
 .lcf {
   /* figcaption, .flex-video .caption {
-      padding: 0 10px;
-      color: $ual-secondary;
-      font-family: $lcf-heading-font;
-      a {
-         color: $ual-secondary; 
-      }
-  }*/
+  //     padding: 0 10px;
+  //     color: $ual-secondary;
+  //     font-family: $lcf-heading-font;
+  //     a {
+  //        color: $ual-secondary; 
+  //     }
+  // }*/
 }
-/* line 558, ../styles/globals/_typography.scss */
+/* line 562, ../styles/globals/_typography.scss */
 .lcf .content-wrapper h4, .lcf .content-wrapper h5, .lcf .content-wrapper h6, .lcf .header-wrapper h4, .lcf .header-wrapper h5, .lcf .header-wrapper h6 {
   font-family: "Swiss721BT-Bold";
 }
-/* line 561, ../styles/globals/_typography.scss */
+/* line 565, ../styles/globals/_typography.scss */
 .lcf .content-wrapper h2, .lcf .header-wrapper h2 {
   text-transform: uppercase;
 }
-/* line 564, ../styles/globals/_typography.scss */
+/* line 568, ../styles/globals/_typography.scss */
 .lcf .content-wrapper h2, .lcf .header-wrapper h2 {
   padding-bottom: 0.25em;
   margin-bottom: 0.75em;
   background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
   letter-spacing: 5px;
 }
-/* line 569, ../styles/globals/_typography.scss */
+/* line 573, ../styles/globals/_typography.scss */
 .ual-black-bg .lcf .content-wrapper h2, .ual-black-bg .lcf .header-wrapper h2 {
   background-image: url(../img/lcf/lcf-title-underline-white.gif);
 }
-/* line 577, ../styles/globals/_typography.scss */
+/* line 581, ../styles/globals/_typography.scss */
 .lcf .content h1, .lcf .content h2, .lcf .content h3, .lcf .content h4 {
   text-align: center;
 }
-/* line 581, ../styles/globals/_typography.scss */
+/* line 585, ../styles/globals/_typography.scss */
 .lcf .content .text-block h3, .lcf .content .text-block h4 {
   text-align: left;
 }
@@ -1001,49 +1162,49 @@ hr {
 
 /* line 1, ../styles/globals/_logos.fallback.scss */
 .icon-ual-camberwell {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 5, ../styles/globals/_logos.fallback.scss */
 .icon-ual-chelsea {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 9, ../styles/globals/_logos.fallback.scss */
 .icon-ual-csm {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 13, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcc {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 17, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcf {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 21, ../styles/globals/_logos.fallback.scss */
 .icon-ual-mobile {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 25, ../styles/globals/_logos.fallback.scss */
 .icon-ual-wimbledon {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1374834225');
   background-repeat: no-repeat;
 }
 
 /* line 29, ../styles/globals/_logos.fallback.scss */
 .icon-ual {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1374834225');
   background-repeat: no-repeat;
 }
 
@@ -1248,7 +1409,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1651,7 +1812,7 @@ select:focus:invalid {
   text-align: center;
   text-shadow: 0 1px 0 white;
   background-color: #c8c8c8;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 /* line 567, ../styles/globals/_forms.scss */
 .input-append .add-on,
@@ -1968,37 +2129,38 @@ legend + .control-group {
 
 /* line 798, ../styles/globals/_forms.scss */
 .form-ico, input[type="checkbox"] + label:after,
-input[type="radio"] + label:after {
+input[type="radio"] + label:after, input[type="checkbox"].before-label + label:before,
+input[type="radio"].before-label + label:before {
   height: 16px;
   width: 16px;
 }
 
 /* line 807, ../styles/globals/_forms.scss */
 .form-link {
-  font-size: 14px;
   font-size: remCalc(14);
+  font-size: 14px;
+  line-height: 14px;
   margin-bottom: 0.75em;
 }
 
-/* line 815, ../styles/globals/_forms.scss */
+/* line 818, ../styles/globals/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
-  display: inline-block;
-  opacity: 0;
+  display: none;
 }
 
-/* line 822, ../styles/globals/_forms.scss */
+/* line 825, ../styles/globals/_forms.scss */
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   font-size: 16px;
   font-size: remCalc(16);
-  margin-left: -12px;
+  padding-bottom: 6px;
   display: inline-block;
   cursor: pointer;
 }
 
-/* line 831, ../styles/globals/_forms.scss */
+/* line 834, ../styles/globals/_forms.scss */
 input[type="checkbox"] + label:after,
 input[type="radio"] + label:after {
   content: "";
@@ -2007,63 +2169,106 @@ input[type="radio"] + label:after {
   vertical-align: middle;
 }
 
-/* line 844, ../styles/globals/_forms.scss */
+/* line 850, ../styles/globals/_forms.scss */
 input[type="checkbox"]:disabled + label:after {
   cursor: default;
 }
 
-/* line 854, ../styles/globals/_forms.scss */
+/* line 860, ../styles/globals/_forms.scss */
 input[type="radio"]:disabled + label:after {
   cursor: default;
 }
 
-/* line 859, ../styles/globals/_forms.scss */
+/* line 869, ../styles/globals/_forms.scss */
+input[type="checkbox"].before-label,
+input[type="radio"].before-label {
+  vertical-align: middle;
+  display: none;
+}
+
+/* line 877, ../styles/globals/_forms.scss */
+input[type="checkbox"].before-label + label,
+input[type="radio"].before-label + label {
+  font-size: 16px;
+  font-size: remCalc(16);
+  margin-left: -12px;
+  margin-right: 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* line 886, ../styles/globals/_forms.scss */
+input[type="checkbox"].before-label + label:before,
+input[type="radio"].before-label + label:before {
+  content: "";
+  display: inline-block;
+  margin: -2px 12px 0 12px;
+  vertical-align: middle;
+}
+
+/* line 895, ../styles/globals/_forms.scss */
+input[type="checkbox"].before-label + label:after,
+input[type="radio"].before-label + label:after {
+  display: none;
+}
+
+/* line 906, ../styles/globals/_forms.scss */
+input[type="checkbox"].before-label:disabled + label:before {
+  cursor: default;
+}
+
+/* line 916, ../styles/globals/_forms.scss */
+input[type="radio"].before-label:disabled + label:before {
+  cursor: default;
+}
+
+/* line 922, ../styles/globals/_forms.scss */
 input:disabled {
   cursor: default;
 }
 
-/* line 864, ../styles/globals/_forms.scss */
+/* line 927, ../styles/globals/_forms.scss */
 input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
   cursor: default;
 }
 
-/* line 869, ../styles/globals/_forms.scss */
+/* line 932, ../styles/globals/_forms.scss */
 input.submit-btn {
   border-width: 0;
   border-radius: 0;
   display: block;
 }
 
-/* line 876, ../styles/globals/_forms.scss */
+/* line 939, ../styles/globals/_forms.scss */
 input.submit-btn:hover {
   background-color: #333;
   cursor: pointer;
 }
 
-/* line 881, ../styles/globals/_forms.scss */
+/* line 944, ../styles/globals/_forms.scss */
 input.submit-btn:disabled, input.submit-btn:disabled:hover {
   color: #757575;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   cursor: default;
 }
 
-/* line 890, ../styles/globals/_forms.scss */
+/* line 953, ../styles/globals/_forms.scss */
 .search-with-icon-wrap {
   position: relative;
 }
 
-/* line 892, ../styles/globals/_forms.scss */
+/* line 955, ../styles/globals/_forms.scss */
 input[type="search"] {
   height: 42px;
   padding: 6px 6px;
   padding-right: 18px;
   padding-top: 10px;
   width: 100%;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
 }
 
-/* line 901, ../styles/globals/_forms.scss */
+/* line 964, ../styles/globals/_forms.scss */
 .with-search-icon {
   position: absolute;
   left: 6px;
@@ -2072,14 +2277,14 @@ input[type="search"] {
   background-repeat: no-repeat;
 }
 
-/* line 914, ../styles/globals/_forms.scss */
+/* line 977, ../styles/globals/_forms.scss */
 textarea {
   border-color: rgba(0, 0, 0, 0);
   border-width: 6px;
   border-style: solid;
   padding: 12px;
 }
-/* line 920, ../styles/globals/_forms.scss */
+/* line 983, ../styles/globals/_forms.scss */
 textarea:focus {
   border-color: #c8c8c8;
   border-width: 6px;
@@ -2765,13 +2970,13 @@ a.img:hover {
 }
 
 /* line 492, ../styles/globals/_utilities.scss */
-.size-h3, .search-results-info p, .lower-search-results-info p, .dd-heading {
+.size-h3, .search-results-info p, .lower-search-results-info p {
   font-size: 1.5em;
   line-height: 1.25em;
 }
 
 /* line 496, ../styles/globals/_utilities.scss */
-.size-h4, .filter-module h3, .lower-search-results-info p {
+.size-h4, .filter-module h3, .lower-search-results-info p, .dd-heading {
   font-size: 1.125em;
   line-height: 1.33333em;
 }
@@ -2783,137 +2988,9 @@ a.img:hover {
 }
 
 /* line 504, ../styles/globals/_utilities.scss */
-.size-h6 {
+.size-h6, aside h3 {
   font-size: 0.875em;
   line-height: 1.71429em;
-}
-
-/*------------------------------------*\
-    $SPRITES
-\*------------------------------------*/
-/* line 170, ../img/sprite/ui-icons/*.png */
-.ui-icons-sprite, .form-ico, input[type="checkbox"] + label:after,
-input[type="radio"] + label:after, .with-search-icon, .ui-icons-blue-circle-bg, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, .ui-icons-checkbox-un-checked-disabled, .ui-icons-checkbox-un-checked, .ui-icons-dashline_border_img, .ui-icons-green-circle-bg, .ui-icons-grey-search, .ui-icons-quote_marks, blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, .ui-icons-radio-un-selected-disabled, .ui-icons-radio-un-selected {
-  background: url('http://artslondon.github.io/beta/assets/img/../img/sprite/ui-icons-s3fd643362c.png') no-repeat;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-blue-circle-bg {
-  background-position: 0 -400px;
-  height: 400px;
-  width: 400px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-cf-selected {
-  background-position: 0 -856px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-cf-unselected-disabled {
-  background-position: 0 -964px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-cf-unselected {
-  background-position: 0 -932px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-checkbox-checked-disabled {
-  background-position: 0 -1012px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after {
-  background-position: 0 -1028px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after {
-  background-position: 0 -1060px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after {
-  background-position: 0 -1044px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-dashline_border_img {
-  background-position: 0 -1076px;
-  height: 1px;
-  width: 4px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-green-circle-bg {
-  background-position: 0 0;
-  height: 400px;
-  width: 400px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-grey-search, .with-search-icon {
-  background-position: 0 -1077px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-quote_marks, blockquote span {
-  background-position: 0 -872px;
-  height: 44px;
-  width: 64px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-quote_marks_big, .pull-quote span {
-  background-position: 0 -800px;
-  height: 56px;
-  width: 78px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-radio-selected-disabled {
-  background-position: 0 -916px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-radio-selected, input[type="radio"]:checked + label:after {
-  background-position: 0 -980px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after {
-  background-position: 0 -948px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, ../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.ui-icons-radio-un-selected, input[type="radio"] + label:after {
-  background-position: 0 -996px;
-  height: 16px;
-  width: 16px;
 }
 
 /*------------------------------------*\
@@ -2976,18 +3053,7 @@ input[type="radio"] + label:after, .with-search-icon, .ui-icons-blue-circle-bg, 
 
 @media only screen and (min-width: 960px) {
   /* line 91, ../styles/globals/_layout.scss */
-  .content {
-    display: block;
-    float: left;
-    margin-left: 25.89636%;
-    margin-right: -100%;
-    width: 74.05155%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  /* line 98, ../styles/globals/_layout.scss */
-  .search-results {
+  .content, .search-results {
     display: block;
     float: left;
     margin-left: 25.89636%;
@@ -3065,20 +3131,21 @@ input[type="radio"] + label:after, .with-search-icon, .ui-icons-blue-circle-bg, 
   max-width: 1280px;
   margin: 0 auto;
   min-width: 320px;
+  clear: both;
 }
 
-/* line 161, ../styles/globals/_layout.scss */
+/* line 162, ../styles/globals/_layout.scss */
 .header-wrapper {
   position: relative;
 }
 
-/* line 167, ../styles/globals/_layout.scss */
+/* line 168, ../styles/globals/_layout.scss */
 .content-wrapper img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 182, ../styles/globals/_layout.scss */
+/* line 183, ../styles/globals/_layout.scss */
 .l-content-full-width {
   width: 100%;
 }
@@ -3086,18 +3153,28 @@ input[type="radio"] + label:after, .with-search-icon, .ui-icons-blue-circle-bg, 
 /*------------------------------------*\
     $Page Layout Classes
 \*------------------------------------*/
-/* line 227, ../styles/globals/_layout.scss */
+/* line 228, ../styles/globals/_layout.scss */
 aside {
-  background: #e6e6e6;
+  font-size: 14px;
+  font-size: remCalc(14);
+  background-color: #e9e9e9;
   border-left: none;
   padding: 24px;
   clear: left;
 }
+/* line 234, ../styles/globals/_layout.scss */
+aside h3 {
+  padding-top: 0.375em;
+}
+/* line 242, ../styles/globals/_layout.scss */
+aside.no-bg {
+  background-color: white;
+}
 @media only screen and (min-width: 960px) {
-  /* line 227, ../styles/globals/_layout.scss */
+  /* line 228, ../styles/globals/_layout.scss */
   aside {
     background: white;
-    border-left: 1px dotted #e6e6e6;
+    border-left: 1px dotted #e9e9e9;
     padding-left: 23px;
     clear: none;
   }
@@ -3149,12 +3226,16 @@ aside {
     width: 100%;
   }
 }
+/* line 19, ../styles/components/_sidebar-search-filters.scss */
+.search-filters form {
+  padding: 0;
+}
 
-/* line 26, ../styles/components/_sidebar-search-filters.scss */
+/* line 30, ../styles/components/_sidebar-search-filters.scss */
 .filter-module:last-child li.active ul {
   border-bottom: 0;
 }
-/* line 29, ../styles/components/_sidebar-search-filters.scss */
+/* line 33, ../styles/components/_sidebar-search-filters.scss */
 .filter-module h3 {
   padding: 12px 18px 12px 18px;
   background-color: black;
@@ -3162,27 +3243,27 @@ aside {
   font-size: 0.875em;
   display: block;
   clear: left;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #373737;
 }
-/* line 39, ../styles/components/_sidebar-search-filters.scss */
+/* line 43, ../styles/components/_sidebar-search-filters.scss */
 .filter-module h3:hover {
   cursor: pointer;
 }
-/* line 43, ../styles/components/_sidebar-search-filters.scss */
+/* line 47, ../styles/components/_sidebar-search-filters.scss */
 .filter-module h3.not-active {
   color: #444;
   cursor: default;
 }
-/* line 49, ../styles/components/_sidebar-search-filters.scss */
+/* line 53, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul {
   padding-top: 0;
   padding-bottom: 0;
   display: none;
   clear: left;
 }
-/* line 54, ../styles/components/_sidebar-search-filters.scss */
+/* line 58, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li {
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   margin-left: 0;
   padding-left: 18px;
   border-width: 0 0 1px 0;
@@ -3193,11 +3274,11 @@ aside {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
-/* line 61, ../styles/components/_sidebar-search-filters.scss */
+/* line 65, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li:last-child {
   border-bottom: 0;
 }
-/* line 63, ../styles/components/_sidebar-search-filters.scss */
+/* line 67, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li a {
   padding: 0 30px 0 18px;
   border-bottom: 0;
@@ -3207,28 +3288,28 @@ aside {
   height: 100%;
   display: block;
 }
-/* line 73, ../styles/components/_sidebar-search-filters.scss */
+/* line 77, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"] {
   float: right;
   margin-left: 18px;
   margin-right: 18px;
   margin-top: 6px;
 }
-/* line 79, ../styles/components/_sidebar-search-filters.scss */
+/* line 83, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:hover {
   cursor: pointer;
 }
-/* line 83, ../styles/components/_sidebar-search-filters.scss */
+/* line 87, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:checked + label {
   color: black;
 }
-/* line 87, ../styles/components/_sidebar-search-filters.scss */
+/* line 91, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li input[type="checkbox"]:disabled + label {
   opacity: 0.5;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
   opacity: 50;
 }
-/* line 92, ../styles/components/_sidebar-search-filters.scss */
+/* line 96, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li label {
   cursor: pointer;
   color: #757575;
@@ -3238,55 +3319,55 @@ aside {
   display: block;
   padding-top: 0.375em;
 }
-/* line 105, ../styles/components/_sidebar-search-filters.scss */
+/* line 109, ../styles/components/_sidebar-search-filters.scss */
 .filter-module ul li.active > a {
   color: black;
 }
-/* line 113, ../styles/components/_sidebar-search-filters.scss */
+/* line 117, ../styles/components/_sidebar-search-filters.scss */
 .filter-module label {
   margin-bottom: 0;
 }
-/* line 118, ../styles/components/_sidebar-search-filters.scss */
+/* line 122, ../styles/components/_sidebar-search-filters.scss */
 .filter-module div {
   display: none;
 }
-/* line 120, ../styles/components/_sidebar-search-filters.scss */
+/* line 124, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active {
   border-bottom: 0;
 }
-/* line 122, ../styles/components/_sidebar-search-filters.scss */
+/* line 126, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active ul {
   display: block;
 }
-/* line 123, ../styles/components/_sidebar-search-filters.scss */
+/* line 127, ../styles/components/_sidebar-search-filters.scss */
 .filter-module.active div {
   display: block;
 }
 
-/* line 128, ../styles/components/_sidebar-search-filters.scss */
+/* line 132, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only {
   border-width: 0 0 1px 0;
-  border-bottom: 1px dotted #e6e6e6;
+  border-bottom: 1px dotted #e9e9e9;
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 136, ../styles/components/_sidebar-search-filters.scss */
+/* line 140, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only a {
   color: #282828 !important;
   font-weight: 300;
 }
-/* line 141, ../styles/components/_sidebar-search-filters.scss */
+/* line 145, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only:last-child {
   border-bottom: 0;
 }
-/* line 147, ../styles/components/_sidebar-search-filters.scss */
+/* line 151, ../styles/components/_sidebar-search-filters.scss */
 li.filter-link-only.active > a {
   color: black;
   font-weight: bold;
 }
 
-/* line 154, ../styles/components/_sidebar-search-filters.scss */
+/* line 158, ../styles/components/_sidebar-search-filters.scss */
 .short-course-filters {
   margin-bottom: 1.5em;
 }
@@ -3355,8 +3436,9 @@ li.filter-link-only.active > a {
   position: relative;
   width: 100%;
   margin-bottom: 0;
+  padding: 0;
 }
-/* line 59, ../styles/components/_course-finder.scss */
+/* line 60, ../styles/components/_course-finder.scss */
 .course-search-form input, .site-search-form input {
   margin-left: 0;
   margin-bottom: 0;
@@ -3364,7 +3446,7 @@ li.filter-link-only.active > a {
   height: 48px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 66, ../styles/components/_course-finder.scss */
+  /* line 67, ../styles/components/_course-finder.scss */
   .course-search-form input, .site-search-form input {
     padding-left: 12px;
   }
@@ -3376,7 +3458,7 @@ li.filter-link-only.active > a {
   -moz-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
   border-width: 0 0 1px 0;
-  border-bottom: 1px dotted #e6e6e6;
+  border-bottom: 1px dotted #e9e9e9;
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
@@ -3481,13 +3563,13 @@ input, .search-result-module, .search-input-wrap {
 
 /* line 158, ../styles/components/_course-finder.scss */
 .search-bg-gray-border, .search-input-wrap, .search-result-module, .search-result-module:focus {
-  border: 6px solid #e6e6e6;
+  border: 6px solid #e9e9e9;
 }
 
 /* line 174, ../styles/components/_course-finder.scss */
 .search-result-module {
   position: relative;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   min-height: 138px;
   height: auto;
   padding: 24px;
@@ -3819,7 +3901,7 @@ input, .search-result-module, .search-input-wrap {
 }
 /* line 439, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete {
-  background-color: #333333;
+  background-color: #373737;
 }
 /* line 441, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a {
@@ -3829,7 +3911,7 @@ input, .search-result-module, .search-input-wrap {
 /* line 447, ../styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
-  border-bottom: 1px dotted #e6e6e6;
+  border-bottom: 1px dotted #e9e9e9;
   -moz-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
@@ -3845,7 +3927,7 @@ input, .search-result-module, .search-input-wrap {
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -3859,15 +3941,26 @@ input, .search-result-module, .search-input-wrap {
   top: -20px;
 }
 
-/* line 477, ../styles/components/_course-finder.scss */
-.warning-icon img {
-  width: 146px;
-  max-width: 146px;
-  height: 146px;
-  max-height: 146px;
+/* line 476, ../styles/components/_course-finder.scss */
+.warning-icon {
+  font-size: remCalc(120);
+  font-size: 120px;
+  line-height: 120px;
+  padding: 24px;
+  color: #757575;
 }
 
-/* line 6, ../styles/components/_nav-main-menu.scss */
+/* position it off screen */
+/* line 9, ../styles/components/_nav-main-menu.scss */
+.scrollbar-measure {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+}
+
+/* line 17, ../styles/components/_nav-main-menu.scss */
 .megamenu_container {
   width: 100%;
   height: 48px;
@@ -3877,7 +3970,7 @@ input, .search-result-module, .search-input-wrap {
   z-index: 9999;
 }
 
-/* line 18, ../styles/components/_nav-main-menu.scss */
+/* line 29, ../styles/components/_nav-main-menu.scss */
 .megamenu {
   list-style: none;
   padding: 0;
@@ -3887,13 +3980,13 @@ input, .search-result-module, .search-input-wrap {
   font-size: 14px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 18, ../styles/components/_nav-main-menu.scss */
+  /* line 29, ../styles/components/_nav-main-menu.scss */
   .megamenu {
-    margin-left: -10px;
+    margin-left: -12px;
   }
 }
 
-/* line 29, ../styles/components/_nav-main-menu.scss */
+/* line 40, ../styles/components/_nav-main-menu.scss */
 .megamenu > li {
   float: left;
   margin: 0;
@@ -3905,12 +3998,12 @@ input, .search-result-module, .search-input-wrap {
   -ms-transition: background 0.2s ease;
   -o-transition: background 0.2s ease;
 }
-/* line 37, ../styles/components/_nav-main-menu.scss */
+/* line 48, ../styles/components/_nav-main-menu.scss */
 .megamenu > li.active {
-  background-color: #333333;
+  background-color: #373737;
 }
 
-/* line 43, ../styles/components/_nav-main-menu.scss */
+/* line 54, ../styles/components/_nav-main-menu.scss */
 .megamenu > li > a {
   font-size: 14px;
   outline: 0;
@@ -3919,7 +4012,7 @@ input, .search-result-module, .search-input-wrap {
   padding: 12px 15px 12px 15px;
 }
 
-/* line 55, ../styles/components/_nav-main-menu.scss */
+/* line 66, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_button {
   display: none;
   position: absolute;
@@ -3933,25 +4026,25 @@ input, .search-result-module, .search-input-wrap {
   -ms-transition: background 0.2s ease;
   -o-transition: background 0.2s ease;
 }
-/* line 64, ../styles/components/_nav-main-menu.scss */
+/* line 75, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_button a {
   padding: 0;
   margin: 0;
 }
 
 /* Right aligned menu item */
-/* line 71, ../styles/components/_nav-main-menu.scss */
+/* line 82, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_right {
   float: right;
   margin-right: -1px;
 }
 
-/* line 75, ../styles/components/_nav-main-menu.scss */
+/* line 86, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_right a {
   margin-right: 5px;
 }
 
-/* line 87, ../styles/components/_nav-main-menu.scss */
+/* line 98, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_container,
 .megamenu li .dropdown_fullwidth,
 .megamenu li .dropdown_multilevel {
@@ -3965,24 +4058,56 @@ input, .search-result-module, .search-input-wrap {
   z-index: 9998;
   float: left;
 }
+/* line 108, ../styles/components/_nav-main-menu.scss */
+.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
+.megamenu li .dropdown_fullwidth h2 a,
+.megamenu li .dropdown_fullwidth a,
+.megamenu li .dropdown_multilevel h2 a,
+.megamenu li .dropdown_multilevel a {
+  font-size: remCalc(14);
+  font-size: 14px;
+}
 
-/* line 99, ../styles/components/_nav-main-menu.scss */
+/* line 116, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_right {
   right: 0;
 }
 
-/* line 104, ../styles/components/_nav-main-menu.scss */
+/* line 121, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns,
 .megamenu .dropdown_fullwidth {
   width: 100%;
 }
-
-/* line 108, ../styles/components/_nav-main-menu.scss */
-.dropdown_fullwidth {
-  background-color: #333333;
+/* line 124, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .course-finder-txt-input,
+.megamenu .dropdown_fullwidth .course-finder-txt-input {
+  background-color: #373737;
+}
+/* line 128, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .go-search-button,
+.megamenu .dropdown_fullwidth .go-search-button {
+  margin-left: 18px;
+}
+/* line 131, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .go-search-button a,
+.megamenu .dropdown_fullwidth .go-search-button a {
+  border-bottom: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-decoration: none;
+}
+/* line 137, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .go-search-button a:hover,
+.megamenu .dropdown_fullwidth .go-search-button a:hover {
+  color: white;
 }
 
-/* line 120, ../styles/components/_nav-main-menu.scss */
+/* line 143, ../styles/components/_nav-main-menu.scss */
+.dropdown_fullwidth {
+  background-color: #373737;
+}
+
+/* line 154, ../styles/components/_nav-main-menu.scss */
 .main-nav-wrapper {
   width: 100%;
   margin: 0 auto;
@@ -3990,7 +4115,7 @@ input, .search-result-module, .search-input-wrap {
   background-color: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 120, ../styles/components/_nav-main-menu.scss */
+  /* line 154, ../styles/components/_nav-main-menu.scss */
   .main-nav-wrapper {
     width: 100%;
     max-width: 100%;
@@ -3999,7 +4124,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 120, ../styles/components/_nav-main-menu.scss */
+  /* line 154, ../styles/components/_nav-main-menu.scss */
   .main-nav-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4008,20 +4133,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 142, ../styles/components/_nav-main-menu.scss */
+/* line 176, ../styles/components/_nav-main-menu.scss */
 .menu-contain-wrap {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-/* line 148, ../styles/components/_nav-main-menu.scss */
+/* line 182, ../styles/components/_nav-main-menu.scss */
 .main-menu {
   width: 100%;
   display: block;
   background: black;
 }
-/* line 155, ../styles/components/_nav-main-menu.scss */
+/* line 189, ../styles/components/_nav-main-menu.scss */
 .main-menu ul {
   display: block;
   height: 100%;
@@ -4032,35 +4157,35 @@ input, .search-result-module, .search-input-wrap {
   background: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 155, ../styles/components/_nav-main-menu.scss */
+  /* line 189, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 155, ../styles/components/_nav-main-menu.scss */
+  /* line 189, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
-/* line 174, ../styles/components/_nav-main-menu.scss */
+/* line 208, ../styles/components/_nav-main-menu.scss */
 .main-menu .dropdown-arrow {
   display: none;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 180, ../styles/components/_nav-main-menu.scss */
+  /* line 214, ../styles/components/_nav-main-menu.scss */
   .m-nav-menu-wrap {
     display: none;
   }
 }
-/* line 184, ../styles/components/_nav-main-menu.scss */
-.m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
+/* line 218, ../styles/components/_nav-main-menu.scss */
+.m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.m-menu-btn-toggle span, a.m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
   font-size: 48px;
   line-height: 48px;
 }
 
-/* line 192, ../styles/components/_nav-main-menu.scss */
+/* line 226, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
   padding-top: 12px;
@@ -4072,7 +4197,7 @@ input, .search-result-module, .search-input-wrap {
   padding: 0;
   margin: 0;
 }
-/* line 202, ../styles/components/_nav-main-menu.scss */
+/* line 236, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle span, a.m-menu-btn-toggle span {
   display: block;
   margin: 0;
@@ -4083,33 +4208,33 @@ input, .search-result-module, .search-input-wrap {
   font-size: 56px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 192, ../styles/components/_nav-main-menu.scss */
+  /* line 226, ../styles/components/_nav-main-menu.scss */
   .m-menu-btn-toggle, a.m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-/* line 217, ../styles/components/_nav-main-menu.scss */
+/* line 251, ../styles/components/_nav-main-menu.scss */
 .top-bar {
   position: relative;
 }
-/* line 225, ../styles/components/_nav-main-menu.scss */
+/* line 259, ../styles/components/_nav-main-menu.scss */
 .top-bar .menu-active {
-  background-color: #333 !important;
+  background-color: #333333 !important;
 }
-/* line 227, ../styles/components/_nav-main-menu.scss */
+/* line 261, ../styles/components/_nav-main-menu.scss */
 .top-bar li {
   list-style: none;
   padding: 0;
   width: auto;
   font-weight: 300;
 }
-/* line 233, ../styles/components/_nav-main-menu.scss */
+/* line 267, ../styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 227, ../styles/components/_nav-main-menu.scss */
+  /* line 261, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4118,7 +4243,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 227, ../styles/components/_nav-main-menu.scss */
+  /* line 261, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4126,7 +4251,7 @@ input, .search-result-module, .search-input-wrap {
     text-align: left;
   }
 }
-/* line 250, ../styles/components/_nav-main-menu.scss */
+/* line 284, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a {
   display: block;
   height: 100%;
@@ -4135,26 +4260,26 @@ input, .search-result-module, .search-input-wrap {
   border-bottom: none;
   padding: 12px 1em;
 }
-/* line 258, ../styles/components/_nav-main-menu.scss */
+/* line 292, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 250, ../styles/components/_nav-main-menu.scss */
+  /* line 284, ../styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 250, ../styles/components/_nav-main-menu.scss */
+  /* line 284, ../styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     padding-left: 0.75em;
     padding-right: 0.75em;
   }
 }
 
-/* line 276, ../styles/components/_nav-main-menu.scss */
+/* line 310, ../styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -4167,7 +4292,7 @@ input, .search-result-module, .search-input-wrap {
   padding-left: 12px;
 }
 
-/* line 288, ../styles/components/_nav-main-menu.scss */
+/* line 322, ../styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
   padding-left: 6px;
@@ -4183,12 +4308,13 @@ input, .search-result-module, .search-input-wrap {
   clear: both;
 }
 @media only screen and (min-width: 960px) {
-  /* line 288, ../styles/components/_nav-main-menu.scss */
+  /* line 322, ../styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
     display: block;
     *zoom: 1;
     height: 108px;
     background-color: black;
+    padding-left: 0px;
     padding-top: 0.75em;
   }
   /* line 169, ../styles/globals/_mixins.scss */
@@ -4202,85 +4328,90 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 304, ../styles/components/_nav-main-menu.scss */
+/* line 339, ../styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 310, ../styles/components/_nav-main-menu.scss */
+/* line 345, ../styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 314, ../styles/components/_nav-main-menu.scss */
+/* line 349, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
   height: 48px;
   min-width: 48px;
-  border-right: 1px solid #444;
+  border-right: 1px solid #444444;
   float: left;
 }
-/* line 321, ../styles/components/_nav-main-menu.scss */
+/* line 356, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 329, ../styles/components/_nav-main-menu.scss */
+/* line 364, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 333, ../styles/components/_nav-main-menu.scss */
+/* line 368, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 338, ../styles/components/_nav-main-menu.scss */
+/* line 373, ../styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
   background-color: #333333;
 }
 @media only screen and (min-width: 960px) {
-  /* line 304, ../styles/components/_nav-main-menu.scss */
+  /* line 339, ../styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
-/* line 347, ../styles/components/_nav-main-menu.scss */
+/* line 382, ../styles/components/_nav-main-menu.scss */
 .dd-heading {
   padding-left: 12px;
+  text-transform: capitalize !important;
+}
+/* line 388, ../styles/components/_nav-main-menu.scss */
+.dd-heading a {
+  color: white !important;
 }
 
-/* line 355, ../styles/components/_nav-main-menu.scss */
+/* line 395, ../styles/components/_nav-main-menu.scss */
 .ual-logo-tab-mobile {
   float: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 355, ../styles/components/_nav-main-menu.scss */
+  /* line 395, ../styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 365, ../styles/components/_nav-main-menu.scss */
+  /* line 405, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 365, ../styles/components/_nav-main-menu.scss */
+  /* line 405, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 378, ../styles/components/_nav-main-menu.scss */
+  /* line 418, ../styles/components/_nav-main-menu.scss */
   .submenu {
     clear: both;
     display: block;
@@ -4290,49 +4421,49 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 378, ../styles/components/_nav-main-menu.scss */
+  /* line 418, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 378, ../styles/components/_nav-main-menu.scss */
+  /* line 418, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-/* line 392, ../styles/components/_nav-main-menu.scss */
+/* line 432, ../styles/components/_nav-main-menu.scss */
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-  /* line 392, ../styles/components/_nav-main-menu.scss */
+  /* line 432, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 392, ../styles/components/_nav-main-menu.scss */
+  /* line 432, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 392, ../styles/components/_nav-main-menu.scss */
+  /* line 432, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-/* line 409, ../styles/components/_nav-main-menu.scss */
+/* line 449, ../styles/components/_nav-main-menu.scss */
 .submenu h2 a {
   font-weight: 300;
   color: white;
   border-bottom: 1px dotted white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 409, ../styles/components/_nav-main-menu.scss */
+  /* line 449, ../styles/components/_nav-main-menu.scss */
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -4342,7 +4473,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 409, ../styles/components/_nav-main-menu.scss */
+  /* line 449, ../styles/components/_nav-main-menu.scss */
   .submenu h2 a {
     font-size: 16px;
     font-weight: 300;
@@ -4351,39 +4482,39 @@ input, .search-result-module, .search-input-wrap {
     border-bottom: 0;
   }
 }
-/* line 430, ../styles/components/_nav-main-menu.scss */
+/* line 470, ../styles/components/_nav-main-menu.scss */
 .submenu h2 a:hover {
   border-bottom: 1px solid #c8c8c8;
 }
-/* line 435, ../styles/components/_nav-main-menu.scss */
+/* line 475, ../styles/components/_nav-main-menu.scss */
 .submenu h2 span {
   cursor: pointer;
 }
 @media only screen and (min-width: 960px) {
-  /* line 407, ../styles/components/_nav-main-menu.scss */
+  /* line 447, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     padding-top: 0.375em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 407, ../styles/components/_nav-main-menu.scss */
+  /* line 447, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
     padding-top: 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444444;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 407, ../styles/components/_nav-main-menu.scss */
+  /* line 447, ../styles/components/_nav-main-menu.scss */
   .submenu h2 {
     margin-bottom: 0;
     margin-top: 0;
     padding-top: 0;
-    border-bottom: 1px dotted #444;
+    border-bottom: 1px dotted #444444;
   }
 }
-/* line 456, ../styles/components/_nav-main-menu.scss */
+/* line 496, ../styles/components/_nav-main-menu.scss */
 .submenu li {
   list-style: none;
   width: 100%;
@@ -4391,43 +4522,43 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   border-bottom: dotted 1px white;
 }
-/* line 463, ../styles/components/_nav-main-menu.scss */
+/* line 503, ../styles/components/_nav-main-menu.scss */
 .submenu li:hover {
   border-bottom: 1px 1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 496, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 496, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-/* line 477, ../styles/components/_nav-main-menu.scss */
+/* line 517, ../styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 477, ../styles/components/_nav-main-menu.scss */
+  /* line 517, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 477, ../styles/components/_nav-main-menu.scss */
+  /* line 517, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 493, ../styles/components/_nav-main-menu.scss */
+  /* line 534, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     display: block;
     float: left;
@@ -4437,7 +4568,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 493, ../styles/components/_nav-main-menu.scss */
+  /* line 534, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -4445,7 +4576,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 504, ../styles/components/_nav-main-menu.scss */
+  /* line 545, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     display: block;
     float: left;
@@ -4455,7 +4586,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 504, ../styles/components/_nav-main-menu.scss */
+  /* line 545, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4464,7 +4595,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 504, ../styles/components/_nav-main-menu.scss */
+  /* line 545, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4473,7 +4604,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 521, ../styles/components/_nav-main-menu.scss */
+  /* line 562, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     display: block;
     float: left;
@@ -4483,7 +4614,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 521, ../styles/components/_nav-main-menu.scss */
+  /* line 562, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4492,7 +4623,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 521, ../styles/components/_nav-main-menu.scss */
+  /* line 562, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4500,7 +4631,35 @@ input, .search-result-module, .search-input-wrap {
     margin-bottom: 0;
   }
 }
-/* line 538, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 580, ../styles/components/_nav-main-menu.scss */
+  .top-bar .subnav-4 {
+    display: block;
+    float: left;
+    margin-left: 76.93073%;
+    margin-right: -100%;
+    width: 23.01718%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* line 580, ../styles/components/_nav-main-menu.scss */
+  .top-bar .subnav-4 {
+    width: 100%;
+    clear: left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 599px) {
+  /* line 580, ../styles/components/_nav-main-menu.scss */
+  .top-bar .subnav-4 {
+    width: 100%;
+    clear: left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+/* line 597, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature {
   display: block;
   float: left;
@@ -4510,7 +4669,7 @@ input, .search-result-module, .search-input-wrap {
   color: white;
   font-size: 22px;
 }
-/* line 544, ../styles/components/_nav-main-menu.scss */
+/* line 603, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature-image {
   display: block;
   float: left;
@@ -4545,11 +4704,10 @@ input, .search-result-module, .search-input-wrap {
   font-weight: 300;
   font-size: 13px;
 }
-/* line 26, ../styles/components/_college-link-menu.scss */
+/* line 25, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li:last-child {
   border-right: none;
   margin-right: 0;
-  padding-right: 6px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 1, ../styles/components/_college-link-menu.scss */
@@ -4752,7 +4910,7 @@ a.course:before {
 
 /* line 134, ../styles/components/_search-buttons.scss */
 .search-btn-separator {
-  border-right: 1px solid #444;
+  border-right: 1px solid #444444;
 }
 
 /* line 5, ../styles/components/_expandable-search-input.scss */
@@ -4943,12 +5101,12 @@ input[type="text"].sb-search-input {
 /* line 7, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a {
   display: inline-block;
-  padding-left: 18px;
+  padding-left: 12px;
   padding-right: 28px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
   background-repeat: no-repeat;
   background-position: right 0px;
-  color: #333333;
+  color: #373737;
   font-size: 13px;
   line-height: 18px;
   font-weight: 300;
@@ -4957,15 +5115,16 @@ input[type="text"].sb-search-input {
 /* line 19, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a:first-child {
   padding-left: 0px;
-  margin-left: -5px;
 }
 
 /* line 1, ../styles/components/_button-link.scss */
-.button-link, input.submit-btn {
-  font-size: 0.875em;
+.button-link, input.submit-btn, .megamenu .dropdown_12columns .go-search-button,
+.megamenu .dropdown_fullwidth .go-search-button {
+  font-size: 14px;
+  font-size: 0.875rem;
   background-color: black;
   color: white;
-  padding: 6px 12px;
+  padding: 0.85714em 1.28571em;
   border-bottom: 0;
   display: inline-block;
   margin-top: 12px;
@@ -4979,17 +5138,20 @@ input[type="text"].sb-search-input {
 }
 
 /* line 20, ../styles/components/_button-link.scss */
-.button-link:hover, input.submit-btn:hover {
+.button-link:hover, input.submit-btn:hover, .megamenu .dropdown_12columns .go-search-button:hover,
+.megamenu .dropdown_fullwidth .go-search-button:hover {
   background-color: #757575;
   color: white;
   text-decoration: none;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 0.85714em 1.28571em;
   display: inline-block;
   margin-top: 12px;
 }
 /* line 30, ../styles/components/_button-link.scss */
-.lcc .button-link:hover, .lcc input.submit-btn:hover {
+.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .lcc .go-search-button:hover,
+.lcc .megamenu .dropdown_fullwidth .go-search-button:hover,
+.megamenu .dropdown_fullwidth .lcc .go-search-button:hover {
   background-color: #e5006e;
   color: white;
 }
@@ -5014,7 +5176,14 @@ input[type="text"].sb-search-input {
 }
 
 /* line 61, ../styles/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .m-menu-btn-toggle span.button-link, a.search span.button-link {
+.button-link.icon, input.icon.submit-btn, .megamenu .dropdown_12columns .icon.go-search-button, .megamenu .dropdown_12columns .m-menu-btn-toggle span.go-search-button, .m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.m-menu-btn-toggle span.go-search-button, a.m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.search span.go-search-button, a.search .megamenu .dropdown_12columns span.go-search-button,
+.megamenu .dropdown_fullwidth .icon.go-search-button,
+.megamenu .dropdown_fullwidth .m-menu-btn-toggle span.go-search-button,
+.m-menu-btn-toggle .megamenu .dropdown_fullwidth span.go-search-button,
+.megamenu .dropdown_fullwidth a.m-menu-btn-toggle span.go-search-button,
+a.m-menu-btn-toggle .megamenu .dropdown_fullwidth span.go-search-button,
+.megamenu .dropdown_fullwidth a.search span.go-search-button,
+a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle span.button-link, a.m-menu-btn-toggle span.button-link, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
@@ -5024,7 +5193,8 @@ input[type="text"].sb-search-input {
 /* line 2, ../styles/components/_sidebar.scss */
 .sidebar {
   float: left;
-  font-size: 1em;
+  font-size: 16px;
+  font-size: 1rem;
 }
 @media only screen and (min-width: 960px) {
   /* line 2, ../styles/components/_sidebar.scss */
@@ -5034,7 +5204,8 @@ input[type="text"].sb-search-input {
     margin-left: 0%;
     margin-right: -100%;
     width: 23.39636%;
-    font-size: 0.875em;
+    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -5049,90 +5220,131 @@ input[type="text"].sb-search-input {
     display: none;
   }
 }
-/* line 15, ../styles/components/_sidebar.scss */
+/* line 14, ../styles/components/_sidebar.scss */
 .sidebar ul {
   margin-left: 0;
 }
-/* line 18, ../styles/components/_sidebar.scss */
+/* line 17, ../styles/components/_sidebar.scss */
 .sidebar ul li:first-child {
   color: #000;
-  font-size: 22px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 1em 0 1em 10px;
+  border-bottom: 0;
 }
-/* line 22, ../styles/components/_sidebar.scss */
-.sidebar ul li {
-  font-size: 14px;
-  font-size: remCalc(14px);
-  padding: 0.375em 0.75em;
-  color: #757575;
-  list-style-type: none;
-  margin-left: 0;
+/* line 25, ../styles/components/_sidebar.scss */
+.sidebar ul li:first-child a {
   line-height: 24px;
-  border-bottom: 1px dotted #c8c8c8;
 }
-/* line 31, ../styles/components/_sidebar.scss */
-.sidebar ul li:hover {
-  background: #e6e6e6;
+/* line 30, ../styles/components/_sidebar.scss */
+.sidebar ul li:first-child:hover {
+  background: white;
+}
+/* line 33, ../styles/components/_sidebar.scss */
+.sidebar ul li {
+  padding: 0px;
 }
 /* line 36, ../styles/components/_sidebar.scss */
+.sidebar ul li a {
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding-left: 10px;
+  padding-bottom: 0;
+  list-style-type: none;
+  margin-left: 0;
+  line-height: 36px;
+  border-bottom: 1px dotted #c8c8c8;
+}
+/* line 44, ../styles/components/_sidebar.scss */
+.sidebar ul li a:nth-of-type(2) {
+  border-top: 1px dotted #c8c8c8;
+}
+/* line 47, ../styles/components/_sidebar.scss */
+.sidebar ul li a:hover {
+  background: #e9e9e9;
+  color: black;
+}
+/* line 57, ../styles/components/_sidebar.scss */
 .sidebar a {
-  border-bottom: none;
-}
-
-/* line 42, ../styles/components/_sidebar.scss */
-.mobile-sidebar {
-  font-size: 1em;
-  width: 100%;
-  margin-bottom: 18px;
-}
-@media only screen and (min-width: 960px) {
-  /* line 42, ../styles/components/_sidebar.scss */
-  .mobile-sidebar {
-    display: none;
-  }
-}
-/* line 50, ../styles/components/_sidebar.scss */
-.mobile-sidebar nav, .mobile-sidebar ul {
-  display: none;
-}
-/* line 52, ../styles/components/_sidebar.scss */
-.mobile-sidebar ul li {
-  background-color: #e6e6e6;
-  border-bottom: 1px solid #c8c8c8;
-  padding-left: 12px;
-  line-height: 24px;
-}
-/* line 58, ../styles/components/_sidebar.scss */
-.mobile-sidebar ul li a {
-  width: 100%;
-  padding-top: 12px;
-  padding-bottom: 12px;
   display: block;
   border-bottom: none;
 }
 
-/* line 70, ../styles/components/_sidebar.scss */
+/* line 65, ../styles/components/_sidebar.scss */
+.mobile-sidebar {
+  *zoom: 1;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+@media only screen and (min-width: 960px) {
+  /* line 65, ../styles/components/_sidebar.scss */
+  .mobile-sidebar {
+    display: none;
+  }
+}
+/* line 169, ../styles/globals/_mixins.scss */
+.mobile-sidebar:before, .mobile-sidebar:after {
+  content: " ";
+  display: table;
+}
+/* line 170, ../styles/globals/_mixins.scss */
+.mobile-sidebar:after {
+  clear: both;
+}
+/* line 73, ../styles/components/_sidebar.scss */
+.mobile-sidebar nav, .mobile-sidebar ul {
+  display: none;
+}
+/* line 75, ../styles/components/_sidebar.scss */
+.mobile-sidebar ul li {
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #c8c8c8;
+  padding-left: 12px;
+  line-height: 24px;
+}
+/* line 81, ../styles/components/_sidebar.scss */
+.mobile-sidebar ul li a {
+  width: 100%;
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: none;
+}
+/* line 91, ../styles/components/_sidebar.scss */
+.mobile-sidebar .mob-sb-dd-title {
+  position: absolute;
+  top: 24px;
+  left: 12px;
+}
+
+/* line 101, ../styles/components/_sidebar.scss */
 .currentbranch0 a {
   color: #757575;
   border-bottom: 0;
 }
-/* line 73, ../styles/components/_sidebar.scss */
+/* line 104, ../styles/components/_sidebar.scss */
 .currentbranch0 a:hover {
   border-bottom: 0;
 }
 
-/* line 79, ../styles/components/_sidebar.scss */
+/* line 110, ../styles/components/_sidebar.scss */
 .multilevel-linkul-0 {
+  font-size: 14px;
+  font-size: 0.875rem;
   margin-left: 24px;
-      font-size: 14px;
-      padding: 0;
+    padding: 0;
 }
-/* line 84, ../styles/components/_sidebar.scss */
-.multilevel-linkul-0 li:last-child {
+/* line 115, ../styles/components/_sidebar.scss */
+.multilevel-linkul-0  
+li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 90, ../styles/components/_sidebar.scss */
+/* line 121, ../styles/components/_sidebar.scss */
 .show-mob-sidebar {
   display: block;
   width: 100%;
@@ -5141,7 +5353,8 @@ input[type="text"].sb-search-input {
   border-bottom: 1px solid #c8c8c8;
   text-align: right;
   padding-right: 12px;
-  font-size: 2.25em;
+  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -5223,43 +5436,43 @@ a figure img {
   float: left;
   margin-bottom: 1.5em;
   clear: both;
-  border-left: 10px solid black;
+  border-left: 10px solid #e9e9e9;
 }
 /* line 13, ../styles/components/_panels.scss */
 .home .header-panel {
   margin: 0;
   padding: 0;
 }
-/* line 18, ../styles/components/_panels.scss */
+/* line 19, ../styles/components/_panels.scss */
 .header-panel h1 {
   color: black;
 }
-/* line 22, ../styles/components/_panels.scss */
+/* line 23, ../styles/components/_panels.scss */
 .camberwell .header-panel {
-  border-left: 10px solid #288f2b;
+  border-left: 10px solid #2576c0;
 }
-/* line 25, ../styles/components/_panels.scss */
+/* line 26, ../styles/components/_panels.scss */
 .csm .header-panel {
   border-left: 10px solid #ff0c00;
 }
-/* line 28, ../styles/components/_panels.scss */
+/* line 29, ../styles/components/_panels.scss */
 .chelsea .header-panel {
   border-left: 10px solid #be3c3c;
 }
-/* line 31, ../styles/components/_panels.scss */
+/* line 32, ../styles/components/_panels.scss */
 .lcc .header-panel {
   border-left: 10px solid yellow;
 }
-/* line 34, ../styles/components/_panels.scss */
+/* line 35, ../styles/components/_panels.scss */
 .lcf .header-panel {
   border-left: 10px solid #a7a9ac;
 }
-/* line 37, ../styles/components/_panels.scss */
+/* line 38, ../styles/components/_panels.scss */
 .wimbledon .header-panel {
-  border-left: 10px solid #2576c0;
+  border-left: 10px solid #288f2b;
 }
 
-/* line 42, ../styles/components/_panels.scss */
+/* line 43, ../styles/components/_panels.scss */
 .footer-panel {
   width: 100%;
   float: left;
@@ -5466,7 +5679,7 @@ a figure img {
 /* line 14, ../styles/components/_date.scss */
 .date-box .month {
   float: left;
-  background: #e6e6e6;
+  background: #e9e9e9;
   color: black;
   width: 100%;
   font-size: 0.875em;
@@ -5571,7 +5784,7 @@ a figure img {
 }
 /* line 82, ../styles/components/_blocks.scss */
 .__media.__highlight {
-  background: #e6e6e6;
+  background: #e9e9e9;
 }
 /* line 84, ../styles/components/_blocks.scss */
 .__media.__highlight:hover {
@@ -5599,7 +5812,7 @@ a figure img {
 }
 /* line 108, ../styles/components/_blocks.scss */
 .__media .course {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 24px;
   margin-bottom: 24px;
 }
@@ -6059,7 +6272,7 @@ a figure img {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666666 \9;
+  background: #666\9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%;
 }
@@ -6180,10 +6393,10 @@ a figure img {
 .rsHidden {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -moz-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -o-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
 }
 
 /* line 98, ../styles/components/_royalslider.scss */
@@ -6754,15 +6967,15 @@ img.rsImg {
   color: #333;
   padding: 5px 13px 6px;
   min-width: 72px;
-  border: 1px solid #D9D9DD;
-  border-right: 1px solid #f5f5f5;
+  border: 1px solid #d9d9dd;
+  border-right: 1px solid whitesmoke;
   text-decoration: none;
   background-color: #FFF;
   background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: -moz-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
-  -webkit-box-shadow: inset 1px 0 0 #fff;
-  box-shadow: inset 1px 0 0 #fff;
+  -webkit-box-shadow: inset 1px 0 0 white;
+  box-shadow: inset 1px 0 0 white;
   *display: inline;
   *zoom: 1;
 }
@@ -6786,7 +6999,7 @@ img.rsImg {
 
 /* line 568, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab:active {
-  border: 1px solid #D9D9DD;
+  border: 1px solid #d9d9dd;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
@@ -6794,7 +7007,7 @@ img.rsImg {
 /* line 573, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab.rsNavSelected {
   color: #FFF;
-  border: 1px solid #999;
+  border: 1px solid #999999;
   text-shadow: 1px 1px #838383;
   box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
   background: #ACACAC;
@@ -7114,7 +7327,7 @@ img.rsImg {
 
 /* line 869, ../styles/components/_royalslider.scss */
 .rsMinW .rsArrowDisabled .rsArrowIcn {
-  opacity: .3 !important;
+  opacity: 0.3 !important;
   filter: alpha(opacity=30);
   *display: none;
 }
@@ -7227,7 +7440,7 @@ img.rsImg {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 2px solid #FFF;
+  border: 2px solid white;
   border: 2px solid rgba(255, 255, 255, 0.9);
   -webkit-backface-visibility: hidden;
 }
@@ -7360,8 +7573,8 @@ img.rsImg {
   color: #333;
   padding: 5px 13px 6px;
   min-width: 72px;
-  border: 1px solid #D9D9DD;
-  border-right: 1px solid #f5f5f5;
+  border: 1px solid #d9d9dd;
+  border-right: 1px solid whitesmoke;
   text-decoration: none;
   background-color: #000;
   background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
@@ -7390,7 +7603,7 @@ img.rsImg {
 
 /* line 1078, ../styles/components/_royalslider.scss */
 .rsMinW .rsTab:active {
-  border: 1px solid #D9D9DD;
+  border: 1px solid #d9d9dd;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
@@ -7398,7 +7611,7 @@ img.rsImg {
 /* line 1083, ../styles/components/_royalslider.scss */
 .rsMinW .rsTab.rsNavSelected {
   color: #000;
-  border: 1px solid #999;
+  border: 1px solid #999999;
   text-shadow: 1px 1px #838383;
   box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
   background: #ACACAC;
@@ -7626,7 +7839,7 @@ img.rsImg {
 }
 /* line 6, ../styles/components/_news-events-2x6.scss */
 .news-events-2x6 .event {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 1.5em;
   border: none;
 }
@@ -7685,7 +7898,7 @@ img.rsImg {
 
 /* line 3, ../styles/components/_courses-2x6.scss */
 .courses-2x6 ul li {
-  background: #e6e6e6;
+  background: #e9e9e9;
   overflow: hidden;
   margin-bottom: 48px;
 }
@@ -7758,7 +7971,7 @@ img.rsImg {
 }
 /* line 7, ../styles/components/_top-stories.scss */
 .top-stories .stories-list {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 0 24px;
 }
 /* line 10, ../styles/components/_top-stories.scss */
@@ -8163,7 +8376,7 @@ img.rsImg {
 }
 /* line 5, ../styles/components/_quotes.scss */
 .block-quote blockquote, .block-quote-with-image blockquote {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 1.5em;
 }
 /* line 8, ../styles/components/_quotes.scss */
@@ -8255,9 +8468,9 @@ img.rsImg {
   position: relative;
   padding-bottom: 1.63636em;
   padding-left: 82px;
-  font-size: remCalc(22);
-  margin-top: 1.09091em;
   font-size: 22px;
+  font-size: 1.375rem;
+  margin-top: 0.54545em;
   line-height: 1.36364em;
 }
 /* line 3, ../styles/components/_pull-quote.scss */
@@ -8271,7 +8484,7 @@ img.rsImg {
 /* line 2, ../styles/components/_events.scss */
 .events-listing li {
   padding: 0;
-  background: #e6e6e6;
+  background: #e9e9e9;
   clear: both;
   margin-bottom: 3em;
   max-height: 294px;
@@ -8320,7 +8533,7 @@ img.rsImg {
 
 /* line 2, ../styles/components/_social-media-links.scss */
 .social-media-links ul {
-  background: #e6e6e6;
+  background: #e9e9e9;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 1, ../styles/components/_social-media-links.scss */
@@ -8349,7 +8562,7 @@ img.rsImg {
 }
 /* line 3, ../styles/components/_highlight-boxes.scss */
 .highlight-box li {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 0;
 }
 /* line 6, ../styles/components/_highlight-boxes.scss */
@@ -8405,7 +8618,7 @@ img.rsImg {
 }
 /* line 41, ../styles/components/_highlight-boxes.scss */
 .highlight-box-2 li {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 0;
   margin-bottom: 2.625em;
 }
@@ -8474,7 +8687,7 @@ img.rsImg {
 }
 /* line 95, ../styles/components/_highlight-boxes.scss */
 .highlight-box-3 li {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 0;
   margin-bottom: 2.625em;
 }
@@ -8677,7 +8890,7 @@ footer .copyright {
 
 /* line 96, ../styles/components/_footer.scss */
 .footer-journeys-panel {
-  background-color: #333333;
+  background-color: #373737;
   display: none;
 }
 
@@ -8742,7 +8955,7 @@ a.back-to-top {
   bottom: 0;
   font-size: 14px;
   background-color: white;
-  padding: 1.125em .75em 1.125em .75em;
+  padding: 1.125em 0.75em 1.125em 0.75em;
   color: black;
   padding-bottom: 1px;
   border-bottom: 1px dotted black;
@@ -8763,12 +8976,12 @@ a.back-to-top:hover {
   min-height: 465px;
   height: auto;
   float: left;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   position: relative;
 }
 /* line 13, ../styles/components/_circles-callout.scss */
 .camberwell .circles-component {
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
 }
 /* line 15, ../styles/components/_circles-callout.scss */
 .circles-component .circles-wrapper {
@@ -9139,10 +9352,10 @@ a.back-to-top:hover {
   /* Safari 1.x */
   opacity: 0.5;
   /* Good browsers */
-  transition: all .5s ease-out;
-  -webkit-transition: all .5s ease-out;
-  -moz-transition: all .5s ease-out;
-  -o-transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
 /* line 204, ../styles/components/_carousel.scss */
 .carousel .control:hover {
@@ -9507,7 +9720,7 @@ a.back-to-top:hover {
 
 /* line 25, ../styles/components/_image-blocks.scss */
 .image-block-with-aside aside {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 24px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
@@ -9691,7 +9904,7 @@ a.back-to-top:hover {
 /* line 47, ../styles/components/_accordion.scss */
 .accordion-list-item {
   overflow: hidden;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   margin-bottom: 1px;
   padding: 0;
 }
@@ -9785,17 +9998,17 @@ a.back-to-top:hover {
 
 /* line 148, ../styles/components/_accordion.scss */
 .va-slice-1 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-staff.jpg?1376066747') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-staff.jpg?1376327695') no-repeat center center;
 }
 
 /* line 151, ../styles/components/_accordion.scss */
 .va-slice-2 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-student.jpg?1376066747') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-student.jpg?1376327695') no-repeat center center;
 }
 
 /* line 154, ../styles/components/_accordion.scss */
 .va-slice-3 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-alumni.jpg?1376066747') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-alumni.jpg?1376327695') no-repeat center center;
 }
 
 /* line 157, ../styles/components/_accordion.scss */
@@ -9829,12 +10042,16 @@ a.back-to-top:hover {
   display: none;
 }
 /* line 178, ../styles/components/_accordion.scss */
-.lcc .va-content .button-link, .lcc .va-content input.submit-btn {
+.lcc .va-content .button-link, .lcc .va-content input.submit-btn, .lcc .va-content .megamenu .dropdown_12columns .go-search-button, .megamenu .dropdown_12columns .lcc .va-content .go-search-button,
+.lcc .va-content .megamenu .dropdown_fullwidth .go-search-button,
+.megamenu .dropdown_fullwidth .lcc .va-content .go-search-button {
   background-color: white;
   color: black;
 }
 /* line 181, ../styles/components/_accordion.scss */
-.lcc .va-content .button-link:hover, .lcc .va-content input.submit-btn:hover {
+.lcc .va-content .button-link:hover, .lcc .va-content input.submit-btn:hover, .lcc .va-content .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .lcc .va-content .go-search-button:hover,
+.lcc .va-content .megamenu .dropdown_fullwidth .go-search-button:hover,
+.megamenu .dropdown_fullwidth .lcc .va-content .go-search-button:hover {
   background-color: #28e598;
   color: black;
 }
@@ -9962,7 +10179,7 @@ a.back-to-top:hover {
 
 /* line 2, ../styles/components/_highlight-blocks.scss */
 .highlight-block-2-up li, .highlight-block-3-up li, .highlight-homepage-block-2-up li, .highlight-homepage-block-4-up li {
-  background: #e6e6e6;
+  background: #e9e9e9;
   padding: 0;
 }
 /* line 5, ../styles/components/_highlight-blocks.scss */
@@ -9985,7 +10202,7 @@ a.back-to-top:hover {
 
 /* line 24, ../styles/components/_highlight-blocks.scss */
 .highlight-block .wrapper {
-  background: #e6e6e6;
+  background: #e9e9e9;
 }
 /* line 26, ../styles/components/_highlight-blocks.scss */
 .highlight-block .wrapper:hover {
@@ -10179,7 +10396,7 @@ a.back-to-top:hover {
 }
 /* line 16, ../styles/components/_colors.scss */
 .colors .dark-gray, .colors .submenu {
-  background: #333333;
+  background: #373737;
 }
 /* line 19, ../styles/components/_colors.scss */
 .colors .aaa-gray {
@@ -10196,7 +10413,7 @@ a.back-to-top:hover {
 }
 /* line 29, ../styles/components/_colors.scss */
 .colors .bg-gray {
-  background: #e6e6e6;
+  background: #e9e9e9;
   color: black;
 }
 /* line 35, ../styles/components/_colors.scss */
@@ -10300,9 +10517,9 @@ a.back-to-top:hover {
 ul.vcard {
   margin-top: 1.5em;
   margin-left: 0;
-  border-top: 1px solid #e6e6e6;
-  margin-bottom: 1.125em;
-  padding: 2.25em 0;
+  border-top: 1px solid #e9e9e9;
+  padding: 9px 12px 6px 12px;
+  margin-bottom: 3px;
 }
 /* line 8, ../styles/components/_vcards.scss */
 ul.vcard li {
@@ -10316,7 +10533,7 @@ ul.vcard li .info {
 }
 /* line 17, ../styles/components/_vcards.scss */
 ul.vcard .fn, ul.vcard .phone, ul.vcard .email, ul.vcard .title, ul.vcard .org, ul.vcard .url, ul.vcard .blogurl, ul.vcard .twitter, ul.vcard .facebook, ul.vcard .linkedin {
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   padding: 0.375em;
 }
 /* line 20, ../styles/components/_vcards.scss */
@@ -10504,7 +10721,7 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   height: 10px;
   top: 1px;
   margin-left: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -10792,7 +11009,7 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   cursor: pointer;
   float: left;
   list-style-type: none;
-  background: #e6e6e6;
+  background: #e9e9e9;
   color: black;
   padding: 6px 10px;
   margin-right: 6px;
@@ -10845,7 +11062,7 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e9e9e9;
   padding-left: 0.75em;
   padding-right: 0.75em;
   margin-right: 0.375em;
@@ -10934,7 +11151,7 @@ ul.tabs li.active {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
 }
 
 /* line 121, ../styles/components/_tabs-to-accordion.scss */
@@ -10957,12 +11174,16 @@ ul.tabs li.active {
   border: none;
 }
 /* line 136, ../styles/components/_tabs-to-accordion.scss */
-.lcc .tab_container .button-link, .lcc .tab_container input.submit-btn {
+.lcc .tab_container .button-link, .lcc .tab_container input.submit-btn, .lcc .tab_container .megamenu .dropdown_12columns .go-search-button, .megamenu .dropdown_12columns .lcc .tab_container .go-search-button,
+.lcc .tab_container .megamenu .dropdown_fullwidth .go-search-button,
+.megamenu .dropdown_fullwidth .lcc .tab_container .go-search-button {
   background-color: white;
   color: black;
 }
 /* line 139, ../styles/components/_tabs-to-accordion.scss */
-.lcc .tab_container .button-link:hover, .lcc .tab_container input.submit-btn:hover {
+.lcc .tab_container .button-link:hover, .lcc .tab_container input.submit-btn:hover, .lcc .tab_container .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .lcc .tab_container .go-search-button:hover,
+.lcc .tab_container .megamenu .dropdown_fullwidth .go-search-button:hover,
+.megamenu .dropdown_fullwidth .lcc .tab_container .go-search-button:hover {
   background-color: #28e598;
   color: black;
 }
@@ -11319,7 +11540,7 @@ button::-moz-focus-inner {
 /* line 346, ../styles/components/_magnific-popup.scss */
 .mfp-arrow-left:after,
 .mfp-arrow-left .mfp-a {
-  border-right: 17px solid #FFF;
+  border-right: 17px solid white;
   margin-left: 31px;
 }
 /* line 351, ../styles/components/_magnific-popup.scss */
@@ -11336,7 +11557,7 @@ button::-moz-focus-inner {
 /* line 360, ../styles/components/_magnific-popup.scss */
 .mfp-arrow-right:after,
 .mfp-arrow-right .mfp-a {
-  border-left: 17px solid #FFF;
+  border-left: 17px solid white;
   margin-left: 39px;
 }
 /* line 365, ../styles/components/_magnific-popup.scss */
@@ -12023,7 +12244,7 @@ img.mfp-img {
   -moz-border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
-  border: solid 2px #333;
+  border: solid 2px #333333;
   top: -2px;
   text-align: center;
 }
@@ -12035,7 +12256,7 @@ img.mfp-img {
   background: #eee;
   width: 36px;
   height: 17px;
-  border: solid 1px #333;
+  border: solid 1px #333333;
   top: -26px;
   margin-left: -18px;
   text-align: center;
@@ -12058,8 +12279,8 @@ img.mfp-img {
   width: 0;
   height: 0;
   line-height: 0;
-  border: solid 5px #eee;
-  border-color: #eee transparent transparent transparent;
+  border: solid 5px #eeeeee;
+  border-color: #eeeeee transparent transparent transparent;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -12326,7 +12547,7 @@ img.mfp-img {
   position: absolute;
   top: 0;
   left: 0;
-  -xborder-right: solid 1px #fff;
+  -xborder-right: solid 1px white;
   width: 10000px;
   z-index: 1;
 }
@@ -12354,8 +12575,8 @@ img.mfp-img {
   color: #fff;
   padding: 5px;
   display: block;
-  border-right: solid 1px #333;
-  border-bottom: solid 1px #333;
+  border-right: solid 1px #333333;
+  border-bottom: solid 1px #333333;
   cursor: pointer;
 }
 
@@ -12497,7 +12718,7 @@ img.mfp-img {
   top: 0;
   left: 0;
   background: #fff;
-  border: solid 1px #999;
+  border: solid 1px #999999;
   z-index: 1001;
   /* make sure it shows on fullscreen */
 }
@@ -12637,13 +12858,12 @@ img.mfp-img {
 }
 /* line 12, ../styles/components/_dropdown.scss */
 .dd-menu ul li, .select-box ul li {
-  background-color: #e6e6e6;
+  background-color: #e9e9e9;
   border-top: 1px solid white;
-  padding: 0;
+  padding-left: 18px;
   height: 36px;
-  padding-left: 12px;
 }
-/* line 19, ../styles/components/_dropdown.scss */
+/* line 18, ../styles/components/_dropdown.scss */
 .dd-menu ul li a, .select-box ul li a {
   display: block;
   width: 100%;
@@ -12651,27 +12871,33 @@ img.mfp-img {
   padding-bottom: 0.375em;
   border-bottom: 0;
   font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
 }
-/* line 30, ../styles/components/_dropdown.scss */
+/* line 29, ../styles/components/_dropdown.scss */
 .dd-menu.active, .select-box.active {
   /* ul { display: block; }*/
 }
 
-/* line 35, ../styles/components/_dropdown.scss */
+/* line 34, ../styles/components/_dropdown.scss */
 .dd-menu-heading, .select-box-heading {
-  background-color: black;
-  color: white;
+  background-color: #e9e9e9;
+  color: black;
   position: relative;
   cursor: pointer;
 }
 /* line 40, ../styles/components/_dropdown.scss */
 .dd-menu-heading h3, .select-box-heading h3 {
-  padding-left: 12px;
   font-size: 14px;
+  font-size: 0.875rem;
+  padding: 0.85714em 1.28571em;
+  padding-left: 18px;
+  padding-right: 18px;
 }
-/* line 46, ../styles/components/_dropdown.scss */
+/* line 48, ../styles/components/_dropdown.scss */
 .dd-menu-heading .dd-menu-arrow, .dd-menu-heading .select-box-arrow, .select-box-heading .dd-menu-arrow, .select-box-heading .select-box-arrow {
+  background-color: black;
+  color: white;
   position: absolute;
   right: 0;
   top: 0;
@@ -12680,12 +12906,13 @@ img.mfp-img {
   width: 36px;
   height: 36px;
 }
-/* line 54, ../styles/components/_dropdown.scss */
-.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .select-box-arrow span.icon, .dd-menu-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .select-box-arrow span, .dd-menu-heading .select-box-arrow a.search span, a.search .dd-menu-heading .select-box-arrow span, .select-box-heading .dd-menu-arrow span.icon, .select-box-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .dd-menu-arrow span, .select-box-heading .dd-menu-arrow a.search span, a.search .select-box-heading .dd-menu-arrow span, .select-box-heading .select-box-arrow span.icon, .select-box-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .select-box-arrow span, .select-box-heading .select-box-arrow a.search span, a.search .select-box-heading .select-box-arrow span {
+/* line 59, ../styles/components/_dropdown.scss */
+.dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.m-menu-btn-toggle span, a.m-menu-btn-toggle .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .select-box-arrow span.icon, .dd-menu-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .dd-menu-heading .select-box-arrow span, .dd-menu-heading .select-box-arrow a.m-menu-btn-toggle span, a.m-menu-btn-toggle .dd-menu-heading .select-box-arrow span, .dd-menu-heading .select-box-arrow a.search span, a.search .dd-menu-heading .select-box-arrow span, .select-box-heading .dd-menu-arrow span.icon, .select-box-heading .dd-menu-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .dd-menu-arrow span, .select-box-heading .dd-menu-arrow a.m-menu-btn-toggle span, a.m-menu-btn-toggle .select-box-heading .dd-menu-arrow span, .select-box-heading .dd-menu-arrow a.search span, a.search .select-box-heading .dd-menu-arrow span, .select-box-heading .select-box-arrow span.icon, .select-box-heading .select-box-arrow .m-menu-btn-toggle span, .m-menu-btn-toggle .select-box-heading .select-box-arrow span, .select-box-heading .select-box-arrow a.m-menu-btn-toggle span, a.m-menu-btn-toggle .select-box-heading .select-box-arrow span, .select-box-heading .select-box-arrow a.search span, a.search .select-box-heading .select-box-arrow span {
   font-size: 32px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 17px;
+  padding-top: 18px;
+  padding-left: 4px;
   display: block;
 }
 
@@ -12706,7 +12933,7 @@ img.mfp-img {
 /* line 12, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 24px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   margin: 0;
   padding: 0;
 }

@@ -1,11 +1,10 @@
-// in page left hand navigation
+// in page left side navigation
 .sidebar {
 	float: left;
-	font-size: emCalc(16px);
-	
+	@include font-size(16);
 	@include gs-media (d) {
 		@include gs-span(d,1,4);
-		font-size: emCalc(14px);
+			@include font-size(14);
 	}
 
 	@include gs-media(t, min-max) { display: none; }
@@ -16,35 +15,59 @@
 		margin-left: 0;
 
 		li:first-child {
+			@extend %Swiss721BT-Bold;
 			color: #000;
-			font-size: 22px;
+			@include font-size(18);
+			padding: rhythm(3, 18px) 0 rhythm(3, 18px) 10px;
+			border-bottom: 0;
+		}
+
+		li:first-child a {
+			@extend %Swiss721BT-Bold;
+			line-height: 24px;
+		}
+
+		li:first-child:hover {
+			background: $white;
 		}
 		li {
-			font-size: 14px;
-			font-size: remCalc(14px);
-			padding:0.375em 0.75em;
-			color: $aaa-gray;
-			list-style-type: none;
-			margin-left: 0;
-			line-height:24px; 
-			border-bottom:1px dotted $light-gray;
-			&:hover {
-				background:$bg-gray;
+			padding:0px;
+
+			a {
+				@include font-size(14);
+				padding-left: 10px;
+				padding-bottom: 0;
+				list-style-type: none;
+				margin-left: 0;
+				line-height:36px; 
+				border-bottom:1px dotted $light-gray;
+				&:nth-of-type(2) {
+					border-top:1px dotted $light-gray;
+				}
+				&:hover {
+					background:$bg-gray;
+					color:$black;
+				}
 			}
+
 		}
+
 	}
+
 	a {
 		@extend %Swiss721BT-Light;
-		border-bottom:none;
+		display: block;
+		border-bottom: none;
+
 	}
 }
 
 .mobile-sidebar {
-
 	@include gs-media (d) { display: none; }
-
-	font-size: emCalc(16px);
-	width: 100%;
+	@include clearfix();
+	position: relative;
+	display: block;
+	@include font-size(16);
 	margin-bottom: 18px;
 	
 	nav, ul { display: none; }
@@ -58,12 +81,20 @@
 		a { 
 			width: 100%;
 			// line-height: 24px;
+			display: block;
 			padding-top: 12px;
 			padding-bottom: 12px;
-			display: block;
 			border-bottom: none;
 		}
 	}
+
+	.mob-sb-dd-title {
+		position: absolute;
+		top: 24px;
+		left: 12px;
+
+	}
+
 }
 
 // this is the class that site manager adds to the current branch for the side menu
@@ -77,9 +108,9 @@
 
 
 .multilevel-linkul-0 {
+	@include font-size(14);
 	margin-left: 24px;
-    font-size: 14px;
-    padding: 0;
+  padding: 0; 
 
 	li:last-child {
 		margin-bottom: 0;
@@ -95,6 +126,6 @@
 	border-bottom: 1px solid $light-gray;
 	text-align: right;
 	padding-right: 12px;
-	font-size: emCalc(36px);
+	@include font-size(36);
 	
 }

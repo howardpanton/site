@@ -46,6 +46,10 @@
                 menuItemElement = $(menuItem).add(menuItemFlyOut);
                 menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
 
+                $(menuItemLink).click(function(event) {
+                    event.preventDefault();
+                    window.location.hash = this.hash;
+                });    
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
@@ -171,6 +175,7 @@
                             $('.megamenu > li:nth-child(' + settings.menu_show_onload + ')')
                                 .find(menuDropDown).show()
                                 .closest(menuItem).toggleClass('active');
+                                
 
                             $(menuItem).unbind('mouseenter mouseleave').click(function () {
 
@@ -312,14 +317,41 @@
         }
 
         else {
-
             $('.dropdown_container').css({'left':'auto', 'top':'auto'}).hide();
             $('.dropdown_fullwidth').css({'left':'-1px', 'top':'auto'}).hide();
+            
+
+            // //------ MEASURE THE SCROLLBAR WIDTH
+            // // Create the measurement node
+            // var scrollDiv = document.createElement("div");
+            // scrollDiv.className = "scrollbar-measure";
+            // document.body.appendChild(scrollDiv);
+
+            // // Get the scrollbar width
+            // var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+
+            // // Delete the DIV 
+            // document.body.removeChild(scrollDiv);
+            // //----------------------------------
+
+            // var _winW = $(window).width();
+            // var _calcM = ((_winW / 100) * 3.75) ; // calculate left margin size
+            // console.log("the calculated left margin is: " + _calcM) ;
+            // var _leftMargin = ("-" + (_calcM - scrollbarWidth) + "px");
+            
+            // $('.dropdown_fullwidth').css({
+            //     'position':'absolute',
+            //     'left':'0',
+            //     'right':'0',
+            //     'width' : _winW, 
+            //     'top':'47px',
+            //     'margin-left': _leftMargin
+            // });  
+
             $('.dropdown_flyout_level').css({'left':'95%', 'top':'-21px'}).hide();
             $('.dropdown_flyout_level_left').css({'left':'-108%', 'right':'100%'}).hide();
             $('.megamenu').children('li').show(0);
             $('.megamenu_button').hide(0);
-        
         }
 
         $('.megamenu_container_vertical').find('.dropdown_container, .dropdown_fullwidth').css({'top':'0'});

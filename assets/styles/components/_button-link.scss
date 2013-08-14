@@ -1,8 +1,8 @@
 .button-link {
-  font-size: emCalc(14px);
+  @include font-size(14);
   background-color: $black;
   color: $white;
-  padding:6px 12px;
+  padding: rhythm(2, 14px) rhythm(3, 14px);
   border-bottom: 0;
   display:inline-block;
   margin-top:12px;
@@ -22,7 +22,7 @@
   color: $white;
   text-decoration: none;
   cursor: pointer;
-  padding:6px 12px;
+  padding: rhythm(2, 14px) rhythm(3, 14px);
   display:inline-block;
   margin-top:12px;
 
