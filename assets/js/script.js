@@ -4,6 +4,17 @@
 //
 // example:  $('some-div').scrollToMe();  
 //
+//
+$(document).ready(function($){
+      $('.megamenu').megaMenuCompleteSet({
+          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+      });
+});
+
+
 jQuery.fn.extend({
   scrollToMe: function () {
   var x = jQuery(this).offset().top - 100;
@@ -16,6 +27,48 @@ var d = $('.breadcrumbs').find('a');
 d.last().hide();
 
 
+  var Link_col = $(".college-nav").find("li").slice(3, 6);
+  var Link_study_1 = $(".study-nav").find("li").slice(6, 11);
+  var Link_study_2 = $(".study-nav").find("li").slice(11, 16);
+  var Link_study_3 = $(".study-nav").find("li").slice(16, 19);
+  var Link_student = $(".student-nav").find("li").slice(3, 4);
+  var Link_alumni = $(".alumni-nav").find("li").slice(4, 6);
+  var Link_about = $(".about-nav").find("li").slice(5, 9);
+  var Link_about_1 = $(".about-nav").find("li").slice(9, 11);
+
+
+  Link_col.remove();
+  Link_study_1.remove();
+  Link_study_2.remove();
+  Link_study_3.remove();
+  Link_student.remove();
+  Link_alumni.remove();
+  Link_about.remove();
+  Link_about_1.remove();
+  console.log(Link_study_3);
+
+  $( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
+  $('.college-nav .subnav-2').prepend(Link_col);
+
+  $( ".study-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
+  $('.study-nav .subnav-2').prepend(Link_study_1);
+  $( ".study-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
+  $('.study-nav .subnav-3').prepend(Link_study_2);
+  $( ".study-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
+  $('.study-nav .subnav-4').prepend(Link_study_3);
+
+  $( ".student-nav" ).append("<ul class=\"subnav-2 region\">");
+  $('.student-nav .subnav-2').prepend(Link_student);
+
+  $( ".alumni-nav" ).append("<ul class=\"subnav-2 region\">");
+  $('.alumni-nav .subnav-2').prepend(Link_alumni);
+
+
+  $( ".about-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
+  $('.about-nav .subnav-2').prepend(Link_about);
+
+  $( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
+  $('.about-nav .subnav-3').prepend(Link_about_1);
 
 function checkWindowSize() {
   var width = $(window).width(),
