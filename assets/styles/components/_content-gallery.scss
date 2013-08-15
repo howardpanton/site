@@ -16,14 +16,14 @@
 
 	&.three-up {
 
+		li:nth-child(3n) {
+			margin-right: 0;
+		}
 		@include gs-media(t,min-max) {
 			@include gs-span(t,2,7);
 			li {
 	      		width: gs-width(t, 2, 3, (2,7), true);
 	      		@include gs-float(t, left, (2,7));
-				&:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
-					margin-right: 0;
-				}
 			}
 		}
 
@@ -32,42 +32,33 @@
 			li {
 	      		width: gs-width(d, 5, 8, (5,16), true);
 	      		@include gs-float(d, left, (5,16));
-				&:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
-					margin-right: 0;
-				}
 			}
-
 		}
 
 		// needs making responsive
 		#showtime-json a {
 	  		height: 290px;
 		}
-
 	}
 
 	&.four-up {
 
+		li:nth-child(4n) {
+			margin-right: 0;
+		}
 		@include gs-media(t,min-max) {
 			@include gs-span(t,2,7);
 			li {
 	      		width: gs-width(t, 2, 3, (2,7), true);
 	      		@include gs-float(t, left, (2,7));
-				&:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
-					margin-right: 0;
-				}
 			}
 		}
-
 
 		@include gs-media(d,min-max) {
 			@include gs-span(d, 5, 16, (5, 16));
 			li {
 	      		width: gs-width(d, 5, 7, (5,16), true);
 	      		@include gs-float(d, left, (5,16));
-				&:nth-child(4n) {
-					margin-right: 0;
-				}
 			}
 
 		}
@@ -76,7 +67,5 @@
 		#showtime-json a {
 	  		height: 200px;
 		}
-
 	}
-	
 }
