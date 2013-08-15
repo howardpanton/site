@@ -12,9 +12,12 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-var d = $('.breadcrumbs').find('a');
-d.last().hide();
+if ($('.breadcrumbs').length > 0) {
 
+  var d = $('.breadcrumbs').find('a');
+  d.last().hide();
+  $('.breadcrumbs').niceScroll({horizrailenabled:true});
+}
 
 
 function checkWindowSize() {
@@ -102,7 +105,6 @@ $(document).ready(function(){
         _clicked.html('☰').removeClass('active');
       }
       else {
-
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
       _clicked.html('❌').addClass('active');
@@ -118,6 +120,8 @@ $(document).ready(function(){
     enableSelectBoxes();
   
   }
+
+
 
 
   // check for regular blockquotes on the page - 
