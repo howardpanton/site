@@ -75,7 +75,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
   <![endif]-->
   <!-- JavaScript -->
   <!--Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser--> 
-  <script src='{{ site.url }}/assets/js/libs/modernizr-2.6.2-min.js'></script>
+  <script src='{{ site.url }}/assets/js/libs/modernizr.dev.js'></script>
   <!-- Detectizr is a Modernizr extension to detect devices -->
   <script src='{{ site.url }}/assets/js/libs/detectizr.min.js'></script>
   <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
@@ -154,7 +154,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 </div>
 </header> <!-- end .ual-black-bg -->
 
-  {% if page.section != "course finder" %}
+  {% if page.section != "course finder" and page.section != "home" %}
     
     <div class="header-panel bg-gray-bg">
       <div class="header-wrapper">
@@ -166,7 +166,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
           {% else if page.college == "ual" %}
             {% include _breadcrumb.html %}
           {% endif %}  
-          {% if page.section != "home" and page.section != "graduate-school" %}
+          {% if page.section != "graduate-school" %}
               <h1>{{ page.title }}</h1>
           {% endif %}
           </div>
@@ -220,8 +220,8 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
   <!-- fastClicks script - improve click speed on mobile -->
   <script src='{{ site.url }}/assets/js/libs/jquery.fastClick.js' type='text/javascript'></script>
 
-  <!-- Scripts -->
-
+  <!-- Background video -->
+  <script src='{{ site.url }}/assets/js/libs/bg-video.js'></script>
 
   <!-- scripts used for expandable search box -->
   <script src='{{ site.url }}/assets/js/libs/uisearch.js'></script>
