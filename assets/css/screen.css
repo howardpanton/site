@@ -11141,6 +11141,378 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   font-size: 14px;
 }
 
+/* icons font-face */
+/*@font-face {
+    font-family: "FiltrifyRegular";
+    src: url("../font/filtrify/filtrify-webfont.eot");
+    src: url("../font/filtrify/filtrify-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../font/filtrify/filtrify-webfont.woff") format("woff"),
+         url("../font/filtrify/filtrify-webfont.ttf") format("truetype"),
+         url("../font/filtrify/filtrify-webfont.svg#FiltrifyRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}*/
+/* reset */
+/* line 16, ../styles/components/_filtrify.scss */
+ul.ft-menu,
+ul.ft-menu * {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  line-height: 1;
+  position: relative;
+  text-align: left;
+  font: normal normal 100% sans-serif;
+}
+
+/* line 27, ../styles/components/_filtrify.scss */
+ul.ft-menu {
+  list-style: none;
+}
+
+/* line 31, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 30px;
+  background: none !important;
+  position: relative !important;
+}
+
+/* line 40, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > span.ft-label {
+  cursor: pointer;
+}
+
+/* line 43, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > span.ft-label:before {
+  /*    font-family: "FiltrifyRegular"; 
+      content: "t"; */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 20px;
+}
+
+/* line 51, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > span.ft-label:after {
+  font-size: 80%;
+  content: " \25bc";
+}
+
+/* line 55, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
+  content: "T";
+  color: #2D3743;
+}
+
+/* line 59, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after {
+  content: " \25b2";
+}
+
+/* line 63, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel {
+  position: absolute;
+  min-width: 200px;
+  background-clip: padding-box;
+  border: 5px solid #333333;
+  /*	border: 5px solid rgba(0, 0, 0, 0.3);
+  	-webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;*/
+  top: 100%;
+  margin-top: 15px;
+  left: 50%;
+  /*	margin-left: -105px;
+  */
+  z-index: 9999;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 80, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel:before,
+ul.ft-menu > li.ft-field > div.ft-panel:after {
+  position: absolute;
+  content: " ";
+  height: 0;
+  width: 0;
+  left: 10%;
+}
+
+/* line 87, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel:before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #333333;
+  /*	border-bottom: 10px solid rgba(0, 0, 0, 0.3);
+  */
+  top: -15px;
+  margin-left: -10px;
+}
+
+/* line 95, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel:after {
+  content: " ";
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #f5f3ee;
+  top: -8px;
+  margin-left: -8px;
+}
+
+/* line 106, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
+  padding: 10px 10px 0 10px;
+  background: #F5F3EE;
+}
+
+/* line 110, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
+  font-size: 10px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 1px;
+  cursor: pointer;
+  padding: 0px 5px 1px 5px;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #057ed0;
+  border: 1px solid rgba(5, 126, 208, 0.7);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: #019AD2;
+  background: -webkit-linear-gradient(#33bcef, #019ad2);
+  background: -moz-linear-gradient(#33bcef, #019ad2);
+  background: -o-linear-gradient(#33bcef, #019ad2);
+  background: -ms-linear-gradient(#33bcef, #019ad2);
+  background: linear-gradient(#33bcef, #019ad2);
+}
+
+/* line 135, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
+  content: " \00D7";
+  color: white;
+}
+
+/* line 139, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
+  background: #33BCEF;
+  background: -webkit-linear-gradient(#019ad2, #33bcef);
+  background: -moz-linear-gradient(#019ad2, #33bcef);
+  background: -o-linear-gradient(#019ad2, #33bcef);
+  background: -ms-linear-gradient(#019ad2, #33bcef);
+  background: linear-gradient(#019ad2, #33bcef);
+}
+
+/* line 148, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search {
+  padding: 10px;
+  background: #F5F3EE;
+  background: -webkit-linear-gradient(#f5f3ee, #d0cdc9);
+  background: -moz-linear-gradient(#f5f3ee, #d0cdc9);
+  background: -o-linear-gradient(#f5f3ee, #d0cdc9);
+  background: -ms-linear-gradient(#f5f3ee, #d0cdc9);
+  background: linear-gradient(#f5f3ee, #d0cdc9);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#F5F3EE", EndColorStr="#D0CDC9");
+}
+
+/* line 158, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search:before {
+  font: normal normal 12px "FiltrifyRegular";
+  content: "s";
+  position: absolute;
+  width: 20px;
+  bottom: 15px;
+  left: 18px;
+  color: #BBB;
+  text-shadow: none;
+  z-index: 1;
+}
+
+/* line 169, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search > input {
+  outline: none;
+  display: block;
+  width: 140px;
+  padding: 4px 10px 4px 25px;
+  color: gray;
+  background: white;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* line 182, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
+  position: relative !important;
+  max-height: 200px !important;
+  border-top: 1px solid #33373d;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* line 190, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
+  font-size: 12px;
+  display: block;
+  border-bottom: 1px solid #33373d;
+  box-shadow: inset 0 1px 0 0 #878e98;
+  display: block;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  padding: 8px 35px 8px 15px;
+  cursor: pointer;
+  background: #616975;
+  background: -webkit-linear-gradient(#727a86, #505864);
+  background: -moz-linear-gradient(#727a86, #505864);
+  background: -o-linear-gradient(#727a86, #505864);
+  background: -ms-linear-gradient(#727a86, #505864);
+  background: linear-gradient(#727a86, #505864);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#727a86", EndColorStr="#505864");
+}
+
+/* line 209, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
+  content: attr(data-count);
+  font-size: 11px;
+  font-weight: normal;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -9px;
+  padding: 3px 6px;
+  color: white;
+  background: #48515C;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
+}
+
+/* line 228, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
+  border-bottom: 1px solid #103c56;
+  box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+  background: #35AFE3;
+  background: -webkit-linear-gradient(#45c7eb, #2698db);
+  background: -moz-linear-gradient(#45c7eb, #2698db);
+  background: -o-linear-gradient(#45c7eb, #2698db);
+  background: -ms-linear-gradient(#45c7eb, #2698db);
+  background: linear-gradient(#45c7eb, #2698db);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#45c7eb", EndColorStr="#2698db");
+}
+
+/* line 239, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:active {
+  background: -webkit-linear-gradient(#2698db, #45c7eb);
+  background: -moz-linear-gradient(#2698db, #45c7eb);
+  background: -o-linear-gradient(#2698db, #45c7eb);
+  background: -ms-linear-gradient(#2698db, #45c7eb);
+  background: linear-gradient(#2698db, #45c7eb);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#2698DB", EndColorStr="#45C7EB");
+}
+
+/* line 247, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
+  background: #2173A1;
+}
+
+/* line 251, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
+  font-size: 11px;
+  padding: 10px 15px;
+  color: white;
+  background: #555555;
+  background: -webkit-linear-gradient(#555555, #333333);
+  background: -moz-linear-gradient(#555555, #333333);
+  background: -o-linear-gradient(#555555, #333333);
+  background: -ms-linear-gradient(#555555, #333333);
+  background: linear-gradient(#555555, #333333);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#555555", EndColorStr="#333333");
+}
+
+/* REQUIRED! */
+/* line 265, ../styles/components/_filtrify.scss */
+.ft-hidden {
+  display: none !important;
+}
+
+/* Custom webkit scrollbars */
+/* line 269, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* line 272, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  background: #DDD;
+}
+
+/* line 276, ../styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  background: #EEE;
+}
+
+/* line 1, ../styles/components/_jPages.scss */
+div#pagination {
+  margin-top: 30px;
+}
+
+/* line 5, ../styles/components/_jPages.scss */
+div#pagination > a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 10, ../styles/components/_jPages.scss */
+div#pagination a.jp-previous {
+  margin-left: 0;
+}
+
+/* line 17, ../styles/components/_jPages.scss */
+div#pagination > a.jp-current,
+div#pagination > a.jp-current:hover,
+div#pagination > a.jp-disabled,
+div#pagination > a.jp-disabled:hover {
+  color: red;
+  cursor: default !important;
+}
+
+/* line 22, ../styles/components/_jPages.scss */
+div#pagination > span {
+  margin: 0 5px;
+  color: green;
+}
+
+/* line 27, ../styles/components/_jPages.scss */
+#container li {
+  width: 25%;
+  border: 1px solid white;
+  background-color: #e9e9e9;
+  float: left;
+  height: 120px;
+  padding: 12px;
+}
+
 /*------------------------------------*\
     $TABS TO ACCORDION
 \*------------------------------------*/
