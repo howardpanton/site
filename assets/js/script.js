@@ -889,7 +889,7 @@ if ($('video').length > 0) {
 }
 
 // Add download class to PDF links
-$('a[href$=".pdf"]').parent().addClass('icon download');
+$('a[href$=".pdf"]').parent().addClass('download');
 
 $('#debug').hide();
 $('.debug-toggle').click(function(e) {
@@ -899,6 +899,16 @@ $('.debug-toggle').click(function(e) {
 
 
 }); // end document ready
+
+
+
+ // // Add download class to PDF links
+ //  var pdf = $('a[href$=".pdf"]');
+
+ //  if ( pdf.length > 0 && pdf.parent("li").length > 0) {
+ //    pdf.closest("li").addClass('download');
+ //  }
+
 
  
 
