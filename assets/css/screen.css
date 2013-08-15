@@ -11473,37 +11473,62 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
 
 /* line 1, ../styles/components/_jPages.scss */
 div#pagination {
-  margin-top: 30px;
-}
-
-/* line 5, ../styles/components/_jPages.scss */
-div#pagination > a {
-  margin: 0 10px;
-  color: black;
-  text-decoration: none;
+  /*	margin-top: 30px;
+  */
+  margin-top: 2.125em;
+  margin-bottom: 2.125em;
+  text-align: center;
+  position: relative;
 }
 
 /* line 10, ../styles/components/_jPages.scss */
-div#pagination a.jp-previous {
-  margin-left: 0;
+div#pagination > a {
+  /*	margin: 0 10px;
+  	color: black;
+  	text-decoration: none;*/
+  min-width: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-size: remCalc(14);
+  border-top: 1px solid #c8c8c8;
+  border-bottom: none;
+  padding: 0.85714em 1.28571em;
+  margin: 0.25em;
+  cursor: pointer;
 }
 
-/* line 17, ../styles/components/_jPages.scss */
+/* line 26, ../styles/components/_jPages.scss */
+div#pagination > a:hover {
+  border-top: 1px solid black;
+}
+
+/* line 30, ../styles/components/_jPages.scss */
+div#pagination a.jp-previous {
+  margin-left: 0;
+  cursor: pointer;
+}
+
+/* line 38, ../styles/components/_jPages.scss */
 div#pagination > a.jp-current,
 div#pagination > a.jp-current:hover,
 div#pagination > a.jp-disabled,
 div#pagination > a.jp-disabled:hover {
-  color: red;
+  border-top: 1px solid black;
   cursor: default !important;
 }
 
-/* line 22, ../styles/components/_jPages.scss */
+/* line 43, ../styles/components/_jPages.scss */
 div#pagination > span {
   margin: 0 5px;
   color: green;
 }
 
-/* line 27, ../styles/components/_jPages.scss */
+/* line 48, ../styles/components/_jPages.scss */
+#container {
+  width: 100%;
+}
+
+/* line 51, ../styles/components/_jPages.scss */
 #container li {
   width: 25%;
   border: 1px solid white;
