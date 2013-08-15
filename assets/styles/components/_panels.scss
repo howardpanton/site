@@ -10,16 +10,25 @@
 	float: left;
 	margin-bottom: rhythm(4, 16px);
 	clear: both;
+	border-left: 10px solid $bg-gray;
+	
+	
+	h1 {
+		color: $black;
+
+		@include font-size(36);
+
+		@include gs-media(d) {
+    	@include font-size(54);
+  	}	
+
+
+	}
+	// custom variation for colleges namespace
 	.home & {
 		margin: 0;
 		padding: 0;
 	}
-
-	border-left: 10px solid $bg-gray;
-	h1 {
-		color: $black;
-	}
-	// custom variation for colleges namespace
 	.camberwell & {
 		border-left: 10px solid  $ccw-blue ;
 	}
