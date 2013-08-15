@@ -1,65 +1,68 @@
 <nav class="main-nav-wrapper" role="navigation">
-  <div class="megamenu_container top-bar">        
-     <a href="#">
-      <div class="ual-logo-tab-mobile">
-        <div class="logo-ual-mobile"></div>
-      </div>
-     </a>
-    
+    <div class="megamenu_container top-bar">        
+        <a href="#">
+            <div class="ual-logo-tab-mobile">
+                <div class="logo-ual-mobile"></div>
+            </div>
+        </a>
     <ul class="megamenu">
-      
       <!-- mobile menu button  -->
-      <li class="megamenu_button">
-        <a href="#" class="m-menu-btn-toggle"><span>&#9776;</span></a></li> 
-
+        <li class="megamenu_button">
+            <a href="#" class="m-menu-btn-toggle"><span>&#9776;</span></a>
+        </li> 
       <!-- Course Finder -->          
       <!-- menu button -->
-      <li><a href="#" class="megamenu_drop">Course Finder</a><!-- Begin Item -->
+      <li>
+        <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div>
+        <a href="#" class="megamenu_drop">Course Finder</a><!-- Begin Item -->
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
-          <div class="d-course-finder-menu-panel row">
-            <div class="relative">
-              <form class="d-search-input-form">
-              <input class="course-finder-txt-input" type="text" required placeholder="Search for a course here">
-              <div class="go-search-button"> <a>Search</a> </div>
-              </form>
-            </div>
-          </div>     
+            <div class="dd-menu-dropdown-wrapper">
+                <div class="d-course-finder-menu-panel row">
+                    <div class="relative">
+                        <form class="d-search-input-form">
+                            <input class="course-finder-txt-input" type="text" required placeholder="Search for a course here">
+                            <div class="go-search-button"> 
+                                <a>Search</a> 
+                            </div>
+                        </form>
+                    </div>
+                 </div> 
+            </div>    
         </div><!-- End Item Container --> 
       </li><!-- End Item -->
       <!-- End Course Finder -->
 
-
       <!-- Colleges --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Colleges</a>
+      <li>
+        <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div>
+        <a href="#" class="megamenu_drop" title="">Colleges</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
-          <div class="region">  
-            <ul class="subnav-1 region">
-              <li>
-                <a href='{{ site.url }}/content/colleges/camberwell/' title='Visit Camberwell College of Arts'>Camberwell College of Arts</a>
-              </li>
-              <li>
-                <a href='{{ site.url }}/content/colleges/csm/' title='Visit Central Saint Martins'>Central Saint Martins (CSM)</a>
-              </li>
-              <li>
-                <a href='{{ site.url }}/content/colleges/' title='Visit Chelsea College of Art and Design'>Chelsea College of Art and Design</a>
-              </li>
-            </ul>
-
-            <ul class="subnav-2 region">
-              <li>
-                <a href='{{ site.url }}/content/colleges/' title='Visit London College of Communication'>London College of Communication (LCC)</a>
-              </li>
-              <li>
-                <a href='{{ site.url }}/content/colleges/' title='Visit London College of Fashion'>London College of Fashion (LCF)</a>
-              </li>
-              <li>
-                <a href='{{ site.url }}/content/colleges/' title='Visit Wimbledon College of Art'>Wimbledon College of Art</a>
-              </li>
-            </ul>
-
+            <div class="dd-menu-dropdown-wrapper">
+                <div class="region college-nav">  
+                    <ul class="subnav-1 region">
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/camberwell/' title='Visit Camberwell College of Arts'>Camberwell College of Arts</a>
+                        </li>
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/csm/' title='Visit Central Saint Martins'>Central Saint Martins (CSM)</a>
+                        </li>
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/' title='Visit Chelsea College of Art and Design'>Chelsea College of Art and Design</a>
+                        </li>
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/' title='Visit London College of Communication'>London College of Communication (LCC)</a>
+                        </li>
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/' title='Visit London College of Fashion'>London College of Fashion (LCF)</a>
+                        </li>
+                        <li>
+                            <a href='{{ site.url }}/content/colleges/' title='Visit Wimbledon College of Art'>Wimbledon College of Art</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div><!-- End Item Container --> 
       </li>
@@ -67,92 +70,88 @@
 
       <!-- Study at UAL --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Study at UAL</a>
+      <li>
+        <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div>
+        <a href="#" class="megamenu_drop" title="">Study at UAL</a>
         <!-- dropdown -->
-        <div class="dropdown_fullwidth"> 
-          <h2 class="dd-heading">
-            <a href="#">Study at UAL</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span>
-          </h2>
-          <ul class="subnav-1 region" >
-            <li><a href='#' title=''>Courses</a></li>
-            <li><a href='#' title=''>Open days</a></li>
-            <li><a href='#' title=''>Why UAL</a></li>
-            <li><a href='#' title=''>Tuition Fees</a></li>
-            <li><a href='#' title=''>Financial Advice</a></li>
-          </ul>
-          <ul class="subnav-2 region">
-            <li><a href='#' title=''>Scholarships, Bursaries &amp; Loans</a></li>
-            <li><a href='#' title=''>Student Support</a></li>
-            <li><a href='#' title=''>Apply</a></li>
-            <li><a href='#' title=''>Enrol</a></li>
-            <li><a href='#' title=''>Term Dates</a></li>
-          </ul>
-          <ul class="subnav-3 region">
-            <li><a href='#' title=''>Academic Regulations</a></li>
-            <li><a href='#' title=''>International</a></li>
-            <li><a href='#' title=''>Library Services</a></li>
-            <li><a href='#' title=''>Learning &amp; Teaching</a></li>
-            <li><a href='#' title=''>Accomodation</a></li>
-           
-          </ul>
-          <ul class="subnav-4 region">
-            <li><a href='#' title=''>Students' Union</a></li>
-            <li><a href='#' title=''>Facilities</a></li>
-            <li><a href='#' title=''>Widening Participation</a></li>
-          </ul>
-          
-
-        </div><!-- End dropdown --> 
-
+            <div class="dropdown_fullwidth"> 
+                <div class="dd-menu-dropdown-wrapper study-nav">
+                    <ul class="subnav-1 no-pad-top region" >
+                          <li class="no-border-top"><a href='#' title=''>Study at UAL</a></li>
+                          <li><a href='#' title=''>Courses</a></li>
+                          <li><a href='#' title=''>Open days</a></li>
+                          <li><a href='#' title=''>Why UAL</a></li>
+                          <li><a href='#' title=''>Tuition Fees</a></li>
+              
+                          <li><a href='#' title=''>Financial Advice</a></li>
+                          <li><a href='#' title=''>Scholarships, Bursaries &amp; Loans</a></li>
+                          <li><a href='#' title=''>Student Support</a></li>
+                          <li><a href='#' title=''>Apply</a></li>
+                          <li><a href='#' title=''>Enrol</a></li>
+                          
+                          <li><a href='#' title=''>Term Dates</a></li>
+                          <li><a href='#' title=''>Academic Regulations</a></li>
+                          <li><a href='#' title=''>International</a></li>
+                          <li><a href='#' title=''>Library Services</a></li>
+                          <li><a href='#' title=''>Learning &amp; Teaching</a></li>
+                          
+                          <li><a href='#' title=''>Accomodation</a></li>
+                          <li><a href='#' title=''>Students' Union</a></li>
+                          <li><a href='#' title=''>Facilities</a></li>
+                          <li><a href='#' title=''>Widening Participation</a></li>
+                    </ul>
+                </div>
+            </div><!-- End dropdown --> 
       </li>
       <!-- End Study at UAL -->
 
 
       <!-- Research --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Research</a>
+      <li>
+        <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div><a href="#" class="megamenu_drop" title="">Research</a>
         <!-- dropdown -->
-        <div class="dropdown_fullwidth"> 
-          <div class="row region">
-            <h2 class="dd-heading">
-              <a href="#">Research</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon">&nbsp;</span>
-            </h2>
-            <div class="sub-inner-menu">
-              <ul class="subnav-1 region" >
-                <li>
-                  <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
-                </li>
-                <li>
-                  <a href='{{site.url}}/content/research/research-degrees/' title=''>Research Degrees</a>
-                </li>
-                <li>
-                  <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
-                </li>
-              </ul>
-            </div>
-            <div class="feature-image m-hide t-hide" >
+            <div class="dropdown_fullwidth"> 
+                <div class="dd-menu-dropdown-wrapper">
+                    <div class="row region">
+                        <div class="sub-inner-menu research-nav">
+                            <ul class="subnav-1 no-pad-top region" >
+                                <li class="no-border-top">
+                                  <a href='{{site.url}}/content/research/' title=''>Research</a>
+                                </li>
+                                <li>
+                                  <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
+                                </li>
+                                <li>
+                                  <a href='{{site.url}}/content/research/research-degrees/' title=''>Research Degrees</a>
+                                </li>
+                                <li>
+                                  <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
+                                </li>
+                            </ul>
+                        </div>
+            <!-- <div class="feature-image m-hide t-hide" >
               <a href="#" title="Link title">
                 <figure>
                   <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
                 </figure>
               </a>
-            </div>
-          </div>
-        </div><!-- End dropdown --> 
+            </div> -->
+                    </div>
+                </div>
+            </div><!-- End dropdown --> 
       </li>
       <!-- End Research -->
 
 
       <!-- Student Jobs & Careers --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Student Jobs &amp; Careers</a>
+      <li><div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div><a href="#" class="megamenu_drop" title="">Student Jobs &amp; Careers </a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth">  
+          <div class="dd-menu-dropdown-wrapper">
           <div class="row region">
-              <h2 class="dd-heading">
-                <a href="#">Student Jobs &amp; Careers</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span>
-              </h2>
-              <div class="sub-inner-menu">
+              <div class="sub-inner-menu student-nav">
                 <ul class="subnav-1 region" >
                   <li>
                     <a href='' title=''>Opportunities</a>
@@ -166,8 +165,6 @@
                   <li >
                     <a href='' title=''>Resources</a>
                   </li>
-                </ul>
-                <ul class="subnav-2 region">
                   <li>
                     <a href='' title=''>About SEE</a>
                   </li>
@@ -181,6 +178,7 @@
                 </a>
               </div>
           </div>
+          </div>
         </div><!-- End dropdown --> 
       </li>
       <!-- End Student Jobs & Careers -->
@@ -188,21 +186,17 @@
 
       <!-- Alumni & Friends --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Alumni &amp; Friends</a>
+      <li><div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div><a href="#" class="megamenu_drop" title="">Alumni &amp; Friends</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"> 
+          <div class="dd-menu-dropdown-wrapper">
           <div class="row region">
-            <h2 class="dd-heading">
-              <a href="#">Alumni &amp; Friends</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon" >&nbsp;</span>
-            </h2>
-            <div class="sub-inner-menu">
+            <div class="sub-inner-menu alumni-nav">
               <ul class="subnav-1 region" >
                 <li><a href='' title=''>Alumni Benefits</a></li>
                 <li><a href='' title=''>Inspiring Alumni</a></li>
                 <li><a href='' title=''>Give and Support</a></li>
                 <li><a href='' title=''>Register your details</a></li>
-              </ul>
-              <ul class="subnav-2 region" >
                 <li><a href='' title=''>Stay Connected</a></li>
                 <li><a href='' title=''>Contact Us</a></li>
               </ul>
@@ -215,6 +209,7 @@
               </a>
             </div>
           </div>
+          </div>
         </div><!-- End dropdown --> 
       </li>
       <!-- End Alumni & Friends -->
@@ -222,29 +217,31 @@
 
       <!-- Business & Innovation --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">Industry Links</a>
+      <li><div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div><a href="#" class="megamenu_drop" title="">Industry Links</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"> 
-          <div data-menu="business" class="row region">
-            <div class="sub-inner-menu">
-              <ul class="subnav-1 region" >
-                <li>
-                  <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
-                </li>
-                <li>
-                  <a href='{{site.url}}/content/research/research-degrees/' title=''>Research Degrees</a>
-                </li>
-                <li>
-                  <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
-                </li>
-              </ul>
-            </div>
-            <div class="feature-image m-hide t-hide" >
-              <a href="#" title="Link title">
-                <figure>
-                  <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
-                </figure>
-              </a>
+          <div class="dd-menu-dropdown-wrapper">
+            <div data-menu="business" class="row region">
+              <div class="sub-inner-menu industry-nav">
+                <ul class="subnav-1 region" >
+                  <li>
+                    <a href='{{site.url}}/content/research/research-environment/' title=''>Research Environment</a>
+                  </li>
+                  <li>
+                    <a href='{{site.url}}/content/research/research-degrees/' title=''>Research Degrees</a>
+                  </li>
+                  <li>
+                    <a href='{{site.url}}/content/research/research-staff/' title=''>Research Staff</a>
+                  </li>
+                </ul>
+              </div>
+             <!--  <div class="feature-image m-hide t-hide" >
+                <a href="#" title="Link title">
+                  <figure>
+                    <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
+                  </figure>
+                </a>
+              </div> -->
             </div>
           </div>
         </div><!-- End dropdown --> 
@@ -254,36 +251,35 @@
         
       <!-- About UAL --> 
       <!-- menu button -->
-      <li ><a href="#" class="megamenu_drop" title="">About UAL</a>
+      <li><div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div><a href="#" class="megamenu_drop" title="">About UAL</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"> 
+          <div class="dd-menu-dropdown-wrapper">
           <div class="row region">
-            <h2 class="dd-heading"><a href="#">About UAL</a><span class="d-hide ui-icons-transparent-plus menu-open-closed-icon">&nbsp;</span></h2>
-            <div class="sub-inner-menu">
-              <ul class="subnav-1 region" >
+           
+            <div class="sub-inner-menu about-nav">
+              <ul class="subnav-1 no-pad-top region" >
+                <li class="no-border-top"><a href='' title=''>About UAL</a></li>
                 <li><a href='' title=''>News</a></li>
                 <li><a href='' title=''>Events Calendar</a></li>
                 <li><a href='' title=''>Our History</a></li>
                 <li><a href='' title=''>Invest in the Future</a></li>
-              </ul>
-              <ul class="subnav-2 region">
                 <li><a href='' title=''>Press Office</a></li>
                 <li><a href='' title=''>Charitable Status</a></li>
                 <li><a href='' title=''>Governance and Policy</a></li>
                 <li><a href='' title=''>Administrative</a></li>
-              </ul>
-              <ul class="subnav-3 region">
                 <li><a href='' title=''>Staff Directory</a></li>
                 <li><a href='' title=''>Contact UAL</a></li>
               </ul>
             </div>
-            <div class="feature-image m-hide t-hide" >
+            <!-- <div class="feature-image m-hide t-hide" >
               <a href="#" title="Link title">
                 <figure>
                   <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
                 </figure>
               </a>
-            </div>
+            </div> -->
+          </div>
           </div>
         </div><!-- End dropdown --> 
       </li>

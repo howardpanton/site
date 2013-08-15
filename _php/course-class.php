@@ -12,15 +12,44 @@ if(class_exists('Course') != true)
 //		}
 //	
 		function set_college($properties) {
-		    // returns whether the input integer is odd
-		    $college = "";
-		    $level = "";
 		    parse_str($_SERVER['QUERY_STRING']);
-		    $d = urldecode($college);
-		    $l = urldecode($level);
+		    if (isset($college)) {
+		    	$d = urldecode($college);
+		    }
+		    if (isset($level)) {
+		    	$l = urldecode($level);
+		    }
+		    if (isset($mode)) {
+		    	$m = urldecode($mode);
+		    }
 
+		    //$m = urldecode($mode);
+		    if ( isset($d)  ) {
+		    	$t = $properties['college'] == $d;
 
-		    return($properties['college'] == $d && $properties['level'] == $l);
+		    }
+
+		    if ( isset($l)  ) {
+		    	$t = $properties['level'] == $l;
+
+		    }
+		    if ( isset($m)  ) {
+		    	$t = $properties['mode'] == $m;
+
+		    }  
+
+		    if (isset($d) && isset($l) ) {
+		    	$t = $properties['college'] == $d && $properties['level'] == $l;
+		    }
+		    if (isset($d) && isset($m) ) {
+		    	$t = $properties['college'] == $d && $properties['mode'] == $m;
+		    }
+		    if (isset($l) && isset($m) ) {
+		    	$t = $properties['level'] == $l && $properties['mode'] == $m;
+		    }
+		    
+		    return($t);
+	
 		}
  
  			if (!empty($_GET)) {

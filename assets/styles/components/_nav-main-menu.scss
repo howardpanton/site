@@ -20,7 +20,7 @@
   *height: 46px;
   margin:0 auto;
   position: relative;
-  z-index:9999;
+  z-index:999;
   @include gs-media(d) {
     // width: 92.5%;
   }
@@ -31,9 +31,9 @@
   padding:0;
   position:relative; /* For IE7 */
   margin:0;
-  font-size:14px;
+  @include font-size(14);
   @include gs-media(d) {
-    margin-left: -12px;  // this is to align the first menu item with the main UAL logo on desktop
+    // margin-left: -12px;  // this is to align the first menu item with the main UAL logo on desktop
   }
 }
 
@@ -49,10 +49,22 @@
     background-color: $dark-gray;
   }
 
+  .menu-plus {
+    @extend %icon;
+    @include font-size(48);
+    float: right;
+    color: $white;
+    text-align: center;
+    line-height: 48px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+
 }
 
 .megamenu > li > a {
-  font-size:14px;
+  @include font-size(14);
   outline:0;
   text-decoration:none;
   display:block;
@@ -98,7 +110,7 @@
 .megamenu li .dropdown_multilevel {
   position: absolute;
   margin:0;
-  padding:12px;
+  //padding:12px;
   left:-9999em;
   top:-9999em;
   display: block;
@@ -107,10 +119,12 @@
   float: left;
   h2 a, a {
     @extend %Swiss721BT-Light-important;
-    font-size: remCalc(14);
-    font-size: 14px;
+    @include font-size(14);
 
   }
+  li > a:hover {
+    background-color: $black;
+  } 
 }
 
 .megamenu li .dropdown_right {
@@ -141,14 +155,47 @@
 }
 
 .dropdown_fullwidth {
+  
+  @include gs-media(d) {
+    @include padding-leader(4);
+    @include padding-trailer(4);
+  }
+  //box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
   background-color: $dark-gray;
+  
+  li {
+    border-top: 1px dotted $aaa-gray;
+    &:last-child {
+      border-bottom: 1px dotted $aaa-gray;
+    }
+  }
+
+  ul > li > a {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+  }
 }
 
 
 
 // ----------------------------------------
 
-
+// used in the mega menu to keep the content "within a content wrapper"
+.dd-menu-dropdown-wrapper {
+  @extend .content-wrapper; 
+  @include gs-media(t, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+  }
+  @include gs-media(m, min-max) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
 
 
 .main-nav-wrapper {
@@ -216,7 +263,7 @@
     display: none;
   }
   .icon {
-    font-size: 48px;
+    @include font-size(48);
     line-height: 48px;
   }
 }
@@ -229,7 +276,7 @@
   padding-left: 12px;
   padding-right: 12px;
   border: none;
-  font-size: 36px;
+  @include font-size(36);
   font-weight: 300;
   padding: 0;
   margin: 0;
@@ -241,7 +288,7 @@
     top: 12px;
     left: 10px;
     padding: 0;
-    font-size: 56px;
+    @include font-size(56);
 
   }
 
@@ -285,9 +332,9 @@
             display: block;
             height: 100%;
             color: white;  
-            font-size: 13px;
+            @include font-size(13);
             border-bottom:none; 
-            padding: 12px 1em;
+            padding: 12px 10px;
             
             &:hover {
               background-color : #444444;
@@ -314,7 +361,7 @@
   width: 36px; 
   height: 36px; 
   margin-top: 6px; 
-  font-size: 30px; 
+  @include font-size(30);
   border-left: 1px dotted #444444; 
   padding-left: 12px;
 }
@@ -404,15 +451,18 @@
 
 .ual-logo-desktop {
   
+  padding-left: 10px;
+  
+  @include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+
   .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
   .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
   .logo-ual-camberwell {
     @extend %desktop-logo;
   }
 
-  @include gs-media(t, min-max) { display: none; }
-
-  @include gs-media(m, min-max) { display: none; }
 }
 
 .submenu {
@@ -442,55 +492,6 @@
       padding-bottom:0;
       margin-bottom:0;
     }
-  }
-
-  h2 {
- 
-      a {
-        font-weight: 300;
-        color:white; 
-        border-bottom: 1px dotted $white;
-        
-        @include gs-media(t, min-max) {
-          font-size:16px;
-          font-weight: 300;
-          padding: 6px 0 6px 12px;
-          margin-bottom:0;
-          border-bottom: 0;
-        }
-        
-        @include gs-media(m, min-max) {
-          font-size:16px;
-          font-weight: 300;
-          padding: 6px 0 6px 12px;
-          margin-bottom:0;
-          border-bottom: 0;
-        }
-
-        &:hover {
-           border-bottom: 1px solid $light-gray;
-        }
-      }
-
-    span {
-      cursor: pointer;
-    }
-    @include gs-media(d) {
-      @include padding-leader(1);
-    }
-    @include gs-media(t, min-max) {
-      margin-bottom: 0;
-      margin-top: 0;
-      padding-top:0;
-      border-bottom: 1px solid #444;
-    }
-    @include gs-media(m, min-max) {
-      margin-bottom: 0;
-      margin-top: 0;
-      padding-top: 0;
-      border-bottom: 1px dotted #444;
-    }
-  
   }
 
   li {
@@ -530,7 +531,7 @@
 }
 
 .top-bar {
- 
+  
   .subnav-1 {
     @include gs-media(d) {
     @include gs-span(d, 1,4);
@@ -597,7 +598,7 @@
     .feature {
       @include gs-span(d, 9,16);
       color:white; 
-      font-size:22px;
+      @include font-size(22);
   }
 
   .feature-image { 

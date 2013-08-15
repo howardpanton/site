@@ -8,9 +8,6 @@
 (function ($) {
 
     var settings = {
-        menu_speed_show:300, // Time (in milliseconds) to show a drop down
-        menu_speed_hide:200, // Time (in milliseconds) to hide a drop down
-        menu_speed_delay:200, // Time (in milliseconds) before showing a drop down
         menu_effect:'click_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', 'click_fade', 'click_slide', 'open_close_fade', 'open_close_slide'
         menu_click_outside:0, // Clicks outside the drop down close it (1 = true, 0 = false)
         menu_show_onload:0, // Drop down to show on page load (type the number of the drop down, 0 for none)
@@ -49,13 +46,14 @@
                 $(menuItemLink).click(function(event) {
                     event.preventDefault();
                     window.location.hash = this.hash;
+    
                 });    
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
 
                     if ($(window).width() < 960) {
-                        $(menuDropDown).css({'left':'-1px', 'top':'auto'}).hide();
+                        $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
                         $(menuButton).show(0);
@@ -79,6 +77,8 @@
                         var $this = $(this);
                         $this.parent(menuItem).toggleClass('active noactive')
                             .find(menuDropDown).toggle(0);
+                        confirm('test');
+                        console.log('test');
                         // No chaining here, the horizontal and vertical
                         // versions don't use the exact same structure.
                         $this.parent(menuItem).siblings().addClass('noactive').removeClass('active')
@@ -126,6 +126,7 @@
                     $(menuButton).children('a').click(function () {
                         $(menuButton).toggleClass('megamenu_button_active');
                         $(menuItem).not(":eq(0)").toggle(0);
+
                     });
 
                     if (settings.menu_click_outside === 1) {
@@ -146,12 +147,12 @@
                             menuEffectHide = 'fadeOut';
                             break;
                         case 'open_close_slide':
-                        var menuEffectShow = 'slideToggle',
-                            menuEffectHide = 'slideUp';
+                        var menuEffectShow = 'slideDown',
+                            menuEffectHide = 'fadeOut';
                             break;
                         case 'open_close_toggle':
                         var menuEffectShow = 'toggle',
-                            menuEffectHide = 'hide';
+                            menuEffectHide = 'fadeOut';
                             break;
 
                     }
@@ -172,39 +173,70 @@
                         case 'open_close_slide':
                         case 'open_close_toggle':
 
-                            $('.megamenu > li:nth-child(' + settings.menu_show_onload + ')')
-                                .find(menuDropDown).show()
-                                .closest(menuItem).toggleClass('active');
+                            // $('.megamenu > li:nth-child(' + settings.menu_show_onload + ')')
+                            //     .find(menuDropDown).show()
+                            //     .closest(menuItem).toggleClass('active');
                                 
 
-                            $(menuItem).unbind('mouseenter mouseleave').click(function () {
+                            $(menuItem).unbind('mouseenter mouseleave').bind('click', function(event) {
 
                                 var $this = $(this);
-                                $this.siblings().removeClass('active')
-                                    .find(menuDropDown)[menuEffectHide](settings.menu_speed_hide);
-                                $this.toggleClass('active')
-                                    .find(menuDropDown).first()
-                                    .delay(settings.menu_speed_delay)[menuEffectShow](settings.menu_speed_show)
-                                    .click(function (event) {
-                                        event.stopPropagation();
-                                    });
+                                var dd = $this.find(menuDropDown);
+                                var _clickedNode = event.target.nodeName;
+  
+                                // only handle the closing and hiding of dropdown menu if clicking a link
+                                if (_clickedNode == 'A') {
+                                    
+                                    // check if another list item is already open
+                                    if ($this.siblings().hasClass('active')) {
+                                       
+                                        // confirm("another menu item is already open");
+                                        $this.siblings().removeClass('active');
+                                        $this.siblings().find(menuDropDown).hide();
+                                        $this.toggleClass('active');
+                                        dd.show();
+                                    }
+                                    else {
+                                        $this.siblings().removeClass('active');
+                                        $this.toggleClass('active');
+                                        
+                                        if ($this.hasClass('active') ){
+                                            dd.slideDown();
+                                            $this.find('.js-mob-exp-icon').html('&#59235;');
+                                        }
+                                        else {
+                                            $this.find('.js-mob-exp-icon').html('&#59232;');
+                                            dd.slideUp();
+                                        }
+                                      
+                                    }
+                                }
 
+                               
+
+                                // $this.siblings().removeClass('active')
+                                //     .find(menuDropDown)[menuEffectHide](settings);
+                                // $this.toggleClass('active')
+                                //     confirm("test")
+                                //     .click(function (event) {
+                                //         event.stopPropagation();
+                                //     });
                             });
 
-                            $(menuItemFlyOut).unbind('mouseenter mouseleave').click(function () {
+                            // $(menuItemFlyOut).unbind('mouseenter mouseleave').click(function () {
 
-                                var $this = $(this);
-                                $this.siblings().removeClass('active')
-                                    .find(menuItemFlyOutDropDown)[menuEffectHide](settings.menu_speed_hide);
-                                $this.siblings().find('li').removeClass('active');
-                                $this.toggleClass('active')
-                                    .find(menuItemFlyOutDropDown).first()
-                                    .delay(settings.menu_speed_delay)[menuEffectShow](settings.menu_speed_show)
-                                    .click(function (event) {
-                                        event.stopPropagation();
-                                    });
+                            //     var $this = $(this);
+                            //     $this.siblings().removeClass('active')
+                            //         .find(menuItemFlyOutDropDown)[menuEffectHide](settings.menu_speed_hide);
+                            //     $this.siblings().find('li').removeClass('active');
+                            //     $this.toggleClass('active')
+                            //         .find(menuItemFlyOutDropDown).first()
+                            //         .delay(settings.menu_speed_delay)[menuEffectShow](settings.menu_speed_show)
+                            //         .click(function (event) {
+                            //             event.stopPropagation();
+                            //         });
 
-                            });
+                            // });
 
                             break;
 
@@ -249,6 +281,7 @@
         switch (settings.menu_effect) {
             case 'hover_fade':
                 $(dropDownMega).fadeIn(settings.menu_speed_show);
+                console.log('test');
                 break;
             case 'hover_slide':
                 $(dropDownMega).slideDown(settings.menu_speed_show);
@@ -263,7 +296,7 @@
                 break;
             case 'click_slide':
                 $this.click(function () {
-                    $(dropDownMega).slideDown(settings.menu_speed_show);
+                 $(dropDownMega).slideDown(settings.menu_speed_show);
                 });
                 break;
             case 'click_toggle':
@@ -323,30 +356,54 @@
 
             // //------ MEASURE THE SCROLLBAR WIDTH
             // // Create the measurement node
-            // var scrollDiv = document.createElement("div");
-            // scrollDiv.className = "scrollbar-measure";
-            // document.body.appendChild(scrollDiv);
+            var scrollDiv = document.createElement("div");
+            scrollDiv.className = "scrollbar-measure";
+            document.body.appendChild(scrollDiv);
 
-            // // Get the scrollbar width
-            // var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+            // Get the scrollbar width
+            var scrollbarWidth = (scrollDiv.offsetWidth - scrollDiv.clientWidth) - 3;
 
             // // Delete the DIV 
-            // document.body.removeChild(scrollDiv);
+            document.body.removeChild(scrollDiv);
             // //----------------------------------
 
-            // var _winW = $(window).width();
-            // var _calcM = ((_winW / 100) * 3.75) ; // calculate left margin size
-            // console.log("the calculated left margin is: " + _calcM) ;
-            // var _leftMargin = ("-" + (_calcM - scrollbarWidth) + "px");
-            
-            // $('.dropdown_fullwidth').css({
-            //     'position':'absolute',
-            //     'left':'0',
-            //     'right':'0',
-            //     'width' : _winW, 
-            //     'top':'47px',
-            //     'margin-left': _leftMargin
-            // });  
+            var _winW = $(window).width();
+
+            if (_winW > 1280) {
+                // calculate width at the edge of the content
+                var _spaceAroundContent = (_winW - 1280);
+                var _marginCalc = ( (_spaceAroundContent / 2) - scrollbarWidth + 12);
+                var _lMargin =  ("-" + _marginCalc + "px");
+                console.log("window width: " + _winW);
+                console.log("scrollbar width: " + scrollbarWidth);
+                console.log("from left edge to content: " + _marginCalc);
+
+                $('.dropdown_fullwidth').css({
+                    'position':'absolute',
+                    'left':'0',
+                    'right':'0',
+                    'width' : _winW,
+                    'top':'47px',
+                    'margin-left': _lMargin
+                });
+
+            }
+            else {
+                var _contentW = _winW;
+                console.log("the content width is: " + _contentW);
+                var _calcM = ( ((_contentW / 100) * 3.75) - scrollbarWidth + 12); // calculate left margin size
+                console.log("the calculated left margin is: " + _calcM) ;
+                var _leftMargin = ("-" + _calcM + "px");
+                
+                $('.dropdown_fullwidth').css({
+                    'position':'absolute',
+                    'left':'0',
+                    'right':'0',
+                    'width' : _winW,
+                    'top':'47px',
+                    'margin-left': _leftMargin
+                });
+            }  
 
             $('.dropdown_flyout_level').css({'left':'95%', 'top':'-21px'}).hide();
             $('.dropdown_flyout_level_left').css({'left':'-108%', 'right':'100%'}).hide();
