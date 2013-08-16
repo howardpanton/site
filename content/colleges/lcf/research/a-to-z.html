@@ -1,0 +1,33 @@
+---
+layout: main.tpl
+college: ual
+section: research
+title: Research A-Z
+template: true
+---
+
+<div class="content-wrapper">
+	<div class="row">
+		<nav class="sidebar">
+			{% include _lcf_navigation.html %}		
+		</nav>	
+
+		<div role="main" class="content">
+
+			<div class="row  az-group" data-group="A">
+				<h2 class="az-letter">A</h2>
+				{% include components/_image-list-with-text-content.html %}
+			</div>
+			<div class="row  az-group" data-group="B">
+				<h2 class="az-letter">B</h2>
+				{% include components/_image-list-with-text-content.html %}
+			</div>
+			<div class="row  az-group" data-group="C">
+				<h2 class="az-letter">C</h2>
+				{% include components/_image-list-with-text-content.html %}
+			</div>
+
+			
+		</div>		
+	</div><!-- .row -->
+</div><!-- .content-wrapper -->
