@@ -34,7 +34,17 @@ footer {
   }
 
   ul li:first-child {
-    border-top: 1px dotted $aaa-gray;
+    border-top: 0;
+    @include gs-media (d) {
+      border-top: 1px dotted $aaa-gray;
+    } 
+  }
+
+  ul li:last-child {
+    // border-bottom: 0;
+    @include gs-media (d) {
+      border-bottom: 1px dotted $aaa-gray;
+    } 
   }
 }
 
