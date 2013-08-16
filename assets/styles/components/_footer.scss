@@ -1,154 +1,108 @@
-// .footer {
-// 	font-size: emCalc(16px);
-
-// 	ul li {
-// 		display: inline;
-// 	}
-// 	.primary, .secondary {
-// 		@include gs-media(t,min-max) {
-// 			@include gs-span(t,all);
-// 		}
-// 		@include gs-media(d,min-max) {
-// 			@include gs-span(d,all);
-// 		}
-// 		ul {
-// 			float: left;
-// 		}
-// 		p {
-// 			float: right;
-// 		}
-// 	}
-// 	.primary {
-// 		background: $black;
-// 		a {
-// 			color: $white;
-// 			border-bottom: 1px dotted $white;
-// 			&:hover {
-// 				border-bottom: 1px solid $white;
-// 			}
-// 		}
-// 	}
-// }
-
 footer {
+  @extend .panel;
 	margin-top: 0;
 	margin-bottom: 0;
-	@include padding-leader(4);
+	@include padding-leader(6);
+  @include padding-trailer(2);
   background-color: $black;
-  clear:left;
+  clear: left;
+  color: $white;
   
 	.copyright {
-		font-size: 12px;
-	}
-}
-
-
-.primary-links {
-	li {
-		display: inline;
-		padding-right: rhythm(2,16px);
-		border-bottom: 0;
-		&:last-child {
-
-			@include gs-media(d, min-max) {
-				@include gs-span(d, 15, 16);
-			}
-			
-			padding-right: 0;
-		}
+    @include margin-leader(2);
+    p {
+      @include font-size(12);
+    }
 		
 	}
-
-	a {
-		color: $white;
-		border-bottom: 1px dotted $white;
-			font-size: 13px;
-		&:hover {
-			border-bottom: 1px solid $white;
-		}
-	}
 }
 
-.secondary-links {
-	li {
-		display: inline;
-		padding-right: rhythm(2,16px);
-		border-bottom: 0;
-		&:last-child {
-			@include gs-media(d, min-max) {
-				@include gs-span(d, 15, 16);
-			}
-			
-			padding-right: 0;
-		}
-	}
 
-	a { 
-		color: $white;
-		border-bottom: 1px dotted $white;
-		font-size: 13px;
-		&:hover {
-			border-bottom: 1px solid $white;
-		}
-	}
-}
+.footer-links {
+  ul li {
+    border-bottom: 1px dotted $aaa-gray;
+    padding-bottom: 0;
 
-.footer-journeys-panel {
-	background-color: $dark-gray;
-	display: none;
-}
-
-.footer-journeys {
-	> li {
-		border-bottom: 1px solid black;
-		h3 {
-			color: white;
-			font-size: 24px; 
-		}
-	}
-
-	> li:last-child {
-		border-bottom: none;
-	}
-}
-
-.journey-breadcrumb {
-	width: 100%;
-  	margin-bottom: 0;
-    padding-bottom:12px;
-    padding-top:12px;
-
-    li { 
-    	display: inline-block; 
-    	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
-      	background-repeat: no-repeat;
-      	background-position: right 12px; 
-      	padding-right: 24px;
-      	margin-left: 12px;
-      	margin-bottom: 12px;
-      	border-bottom: 0;
-
-      	&:first-child {
-      		margin-left: 12px;
-      	}
-    }
-    
     a {
-		display: inline-block;
-		padding-left: 18px;
-		color: $white;
-		font-size: 13px;
-		line-height: 18px;
-		border-bottom: 1px dotted $light-gray;
-
-		&:hover {
-			border-bottom: 1px solid $light-gray;
-	  	}
-      	&:first-child {
-      		padding-left:0px;
-      	}
+      @extend %Swiss721BT-Light;
+      @include font-size(14);
+      line-height: rhythm(6, 16px);
+      padding-left: 10px;
+      display: block;
+      color: $white;
     }
+  }
+
+  ul li:first-child {
+    border-top: 1px dotted $aaa-gray;
+  }
 }
+
+.footer-col-1 {
+  @extend %d1-d4;
+}
+
+.footer-col-2 {
+   @extend %d5-d8;
+}
+
+.footer-col-3 {
+  @extend %d9-d12;
+}
+
+.social-links {
+  @extend %d13-d16;
+  
+  // title for social links in footer
+  h3 {
+    @extend %Swiss721BT-Light-important;
+    @include font-size(14);
+    line-height: rhythm(6, 16px);
+    padding: 0;
+    text-transform: capitalize !important;
+  }
+
+  li {
+    border: none !important;
+    display: inline-block;
+    a {
+      line-height: 36px;
+      border-bottom: 0;
+      padding-left: 0;
+      padding-right: 18px;
+      display: block;
+    }
+    a:first-child {
+      padding-left: 0 !important;
+    }
+  }
+
+  li:first-child {
+    display: block;
+    border-top: 0 !important;
+  }
+  
+}
+
+.footer-ico {
+  @extend %icon-social;
+  @include font-size(36);
+  width: rhythm(6, 16px);
+  line-height: 36px;
+  color: $white;
+  
+}
+
+.youtube {
+  @extend %icon;
+  @include font-size(36);
+  width: rhythm(6, 16px);
+  line-height: 36px;
+  
+
+}
+
+
 
 // the back to top button which appears 
 // after scrolling down the page
