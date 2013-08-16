@@ -22,7 +22,8 @@
   position: relative;
   z-index:999;
   @include gs-media(d) {
-    // width: 92.5%;
+    height: rhythm(6, 16px);
+    @include padding-leader(2);
   }
 }
 
@@ -136,16 +137,24 @@
   width: 100%;
 
   .course-finder-txt-input {
-    background-color: $dark-gray;
+    background-color: $bg-gray;
+    margin-bottom: 0;
+  }
+
+  .small-text-link {
+    color: $aaa-gray;
+    @include font-size(12);
   }
   
   .go-search-button {
     @extend .button-link;
-    margin-left: 18px;
+    //margin-left: 18px;
     a {
       border-bottom: 0;
-      padding-left: 12px;
-      padding-right: 12px;
+      padding-left: 0;
+      padding-right: 0;
+      width: 48px;
+      text-align: center;
       text-decoration: none;
     }
     a:hover {
@@ -195,29 +204,6 @@
       padding-left: 0;
       padding-right: 0;
   }
-}
-
-
-.main-nav-wrapper {
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  background-color: black;
-  
-  @include gs-media(t, min-max) {
-      width: 100%;
-      max-width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-  }
-  
-  @include gs-media(m, min-max) {
-      width: 100%;
-      max-width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-  }
-
 }
 
 .menu-contain-wrap{
@@ -333,8 +319,10 @@
             height: 100%;
             color: white;  
             @include font-size(13);
+            line-height: 24px;
+
             border-bottom:none; 
-            padding: 12px 10px;
+            padding: 6px 10px;
             
             &:hover {
               background-color : #444444;

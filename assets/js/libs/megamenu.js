@@ -383,7 +383,7 @@
                     'left':'0',
                     'right':'0',
                     'width' : _winW,
-                    'top':'47px',
+                    'top':'36px',
                     'margin-left': _lMargin
                 });
 
@@ -400,7 +400,7 @@
                     'left':'0',
                     'right':'0',
                     'width' : _winW,
-                    'top':'47px',
+                    'top':'36px',
                     'margin-left': _leftMargin
                 });
             }  
