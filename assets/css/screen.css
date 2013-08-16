@@ -8906,10 +8906,22 @@ footer .copyright p {
 }
 /* line 36, ../styles/components/_footer.scss */
 .footer-links ul li:first-child {
-  border-top: 1px dotted #757575;
+  border-top: 0;
+}
+@media only screen and (min-width: 960px) {
+  /* line 36, ../styles/components/_footer.scss */
+  .footer-links ul li:first-child {
+    border-top: 1px dotted #757575;
+  }
+}
+@media only screen and (min-width: 960px) {
+  /* line 43, ../styles/components/_footer.scss */
+  .footer-links ul li:last-child {
+    border-bottom: 1px dotted #757575;
+  }
 }
 
-/* line 57, ../styles/components/_footer.scss */
+/* line 67, ../styles/components/_footer.scss */
 .social-links h3 {
   font-size: 14px;
   font-size: 0.875rem;
@@ -8917,12 +8929,12 @@ footer .copyright p {
   padding: 0;
   text-transform: capitalize !important;
 }
-/* line 65, ../styles/components/_footer.scss */
+/* line 75, ../styles/components/_footer.scss */
 .social-links li {
   border: none !important;
   display: inline-block;
 }
-/* line 68, ../styles/components/_footer.scss */
+/* line 78, ../styles/components/_footer.scss */
 .social-links li a {
   line-height: 36px;
   border-bottom: 0;
@@ -8930,17 +8942,17 @@ footer .copyright p {
   padding-right: 18px;
   display: block;
 }
-/* line 75, ../styles/components/_footer.scss */
+/* line 85, ../styles/components/_footer.scss */
 .social-links li a:first-child {
   padding-left: 0 !important;
 }
-/* line 80, ../styles/components/_footer.scss */
+/* line 90, ../styles/components/_footer.scss */
 .social-links li:first-child {
   display: block;
   border-top: 0 !important;
 }
 
-/* line 87, ../styles/components/_footer.scss */
+/* line 97, ../styles/components/_footer.scss */
 .footer-ico {
   font-size: 36px;
   font-size: 2.25rem;
@@ -8949,7 +8961,7 @@ footer .copyright p {
   color: white;
 }
 
-/* line 96, ../styles/components/_footer.scss */
+/* line 106, ../styles/components/_footer.scss */
 .youtube {
   font-size: 36px;
   font-size: 2.25rem;
@@ -8957,7 +8969,7 @@ footer .copyright p {
   line-height: 36px;
 }
 
-/* line 109, ../styles/components/_footer.scss */
+/* line 119, ../styles/components/_footer.scss */
 a.back-to-top {
   position: fixed;
   right: .75em;
@@ -8970,7 +8982,7 @@ a.back-to-top {
   border-bottom: 1px dotted black;
   text-decoration: none;
 }
-/* line 121, ../styles/components/_footer.scss */
+/* line 131, ../styles/components/_footer.scss */
 a.back-to-top:hover {
   color: #c8c8c8;
   text-decoration: none;
