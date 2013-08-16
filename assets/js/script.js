@@ -14,9 +14,12 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-var d = $('.breadcrumbs').find('a');
-d.last().hide();
+if ($('.breadcrumbs').length > 0) {
 
+  var d = $('.breadcrumbs').find('a');
+  d.last().hide();
+  $('.breadcrumbs').niceScroll({horizrailenabled:true});
+}
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
   var Link_study_1 = $(".study-nav").find("li").slice(6, 11);
@@ -146,7 +149,6 @@ $(document).ready(function(){
         _clicked.html('☰').removeClass('active');
       }
       else {
-
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
       _clicked.html('❌').addClass('active');
@@ -162,6 +164,8 @@ $(document).ready(function(){
     enableSelectBoxes();
   
   }
+
+
 
 
   // check for regular blockquotes on the page - 
@@ -370,37 +374,12 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
-  // ////////////////////
-  // //  Footer journeys - fadeIn / fadeOut on click 
-  // ///////////////////
-
-  // $('#footer-btn-explore').click(function(event) {
-  //   event.preventDefault();
-
-  //   _clicked = $(this); 
-  //   if ( !_clicked.hasClass('active')) {
-  //     _clicked.addClass('active');
-  //     $('#footer-journeys-panel').addClass("block");
-
-  //     _clicked.html('Close explore');
-  //     _clicked.scrollToMe(); // scroll page to footer position
-      
-  //   } else {
-  //     _clicked.removeClass('active');
-  //     // $('#footer-journeys-panel').slideUp();
-  //     $('#footer-journeys-panel').addClass("hide");
-  //     _clicked.html('Explore');
-  //     _clicked.scrollToMe(); // scroll page to footer position
-  //   }
-
-  // });
-
 
 
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 450) {
       $('.back-to-top').fadeIn(200);
     } else {
       $('.back-to-top').fadeOut(200);
@@ -564,6 +543,7 @@ if ($('.accordion').length > 0) {
     $.when(
         $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.accordion.js" ),
         $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
