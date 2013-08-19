@@ -282,15 +282,11 @@
 }
 
 .top-bar{
-    // @extend .header-wrapper;
     position: relative;
     > ul {
-      // hide the menu on mobile / tablet view
-      // @include gs-media(t, min-max) { display: none; }
-      // @include gs-media(m, min-max) { display: none; }
+     
     }
-    .menu-active { background-color: #333 !important; }
-
+    
     li {
       list-style:none; 
       padding:0;
@@ -315,29 +311,29 @@
       }
 
       > a {
-            display: block;
-            height: 100%;
-            color: white;  
-            @include font-size(13);
-            line-height: 24px;
+        display: block;
+        height: 100%;
+        color: white;  
+        @include font-size(16);
+        @extend %Swiss721BT-Light;
+        // padding-left: 0.75em; 
+        // padding-right: 0.75em;
+        padding: 6px 10px; 
+        line-height: 36px;
 
-            border-bottom:none; 
-            padding: 6px 10px;
-            
-            &:hover {
-              background-color : #444444;
-            }
+        @include gs-media(d) { 
+          @extend %Swiss721BT-Roman;
+          @include font-size(13); 
+          line-height: 24px;
+          padding: 6px 10px;
+        }
+        border-bottom:none; 
+        &:hover {
+          background-color : #444444;
+        }
 
-            @include gs-media(t, min-max) {
-              padding-left: 0.75em; 
-              padding-right: 0.75em; 
-            }
-
-            @include gs-media(m, min-max) {
-              padding-left: 0.75em; 
-              padding-right: 0.75em; 
-            }
-          }
+      }
+      .menu-active { background-color: #333 !important; }
     }
 }
 
@@ -366,7 +362,7 @@
     height: 108px;
     background-color: black;
     padding-left: 0px;
-    @include padding-leader(2);
+    @include padding-leader(3);
   }
  
 }
