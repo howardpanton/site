@@ -1,3 +1,45 @@
+.call-to-action {
+	z-index: 100;
+	position: absolute;
+	background-color: $black;
+	right: 2%;
+	bottom: 5%;
+	font-size: 16px;
+	a {
+		padding: rhythm(2, 16px);
+		color: $white;
+		&:hover {
+			padding: rhythm(2, 16px);
+			background-color: $aaa-gray;
+			.csm & {
+				background-color: $csm-primary;
+			}
+		}
+	}
+
+	@include gs-media (t,min-max) {
+		font-size: 18px;
+		a {
+			padding: rhythm(3, 18px);
+			&:hover {
+				padding: rhythm(3, 18px);
+			}
+		}
+	}
+
+	@include gs-media (d) {
+		font-size: 18px;
+		a {
+			padding: rhythm(4, 18px);
+			&:hover {
+				padding: rhythm(4, 18px);
+			}
+		}
+	}
+}
+
+
+
 /* v1.0.5 */
 /* Core RS CSS file. 95% of time you shouldn't change anything here. */
 .royalSlider {

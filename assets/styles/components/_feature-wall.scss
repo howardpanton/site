@@ -1,45 +1,62 @@
-// feature wall
-.feature-wall-1 {
-	float: left;
-	width: 100%;
-	img {
+// feature wall used for CSM homepage
+.__feature-wall { 
+	margin-top: 1px;
+	padding-bottom: 48px;
+	iframe, img {
 		width: 100%;
 	}
-	.left {
-		float: left;
-		width: 25%;
+	a {
+		border-bottom: none;
 	}
-	.middle {
-		float: left;
-		width: 50%;
+	a > li {
+		font-size: 24px;
+		font-size: remCalc(24);
+		margin-bottom: 1px;
+		margin-top: 1px;
+		padding: 12px;
+		@include adjust-leading-to(4, 24px); 	
+	} 
+	li {
+		background-color: $csm-primary;
+		color: $white;
+		padding: 0;
+		margin: 0; 
+		line-height: 0;
 	}
-	.right {
-		float: left;
-		width: 25%;
+
+	@include gs-media (t,min-max) {
+		@include gs-span(t, 2, 7);
+
+	}
+
+	@include gs-media (d) {
+		@include gs-span(d, all);
+
+		li {
+			margin: 0;
+			padding: 0;
+			line-height: 0;
+			a img:hover {
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				-ms-filter: grayscale(100%);
+				-o-filter: grayscale(100%);
+				-webkit-transition: all ease 0.4s;
+				-moz-transition: all ease 0.4s;
+				-o-transition: all ease 0.4s;
+				transition: all ease 0.4s;		
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+			&:nth-of-type(2), &:nth-of-type(3) {
+				width: 50%;
+				float: left;
+			}  
+		}	
 	}
 }
 
-.feature-wall-2 {
-	float: left;
-	width: 100%;
-	img {
-		width: 100%;
-	}
-	.left {
-		float: left;
-		width: 33.333%;
-	}
-	.middle {
-		float: left;
-		width: 33.333%;
-	}
-	.right {
-		float: left;
-		width: 33.333%;
-	}
-}
-
-.feature-wall {
-	
-}
 
