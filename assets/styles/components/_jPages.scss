@@ -1,21 +1,42 @@
 div#pagination {
-	margin-top: 30px;
+/*	margin-top: 30px;
+*/
+margin-top: 2.125em;
+margin-bottom: 2.125em;
+text-align: center;
+position: relative;
 }
 
 div#pagination > a {
-	margin: 0 10px;
+/*	margin: 0 10px;
 	color: black;
-	text-decoration: none;
+	text-decoration: none;*/
+
+min-width: 36px;
+text-align: center;
+font-size: 14px;
+font-size: remCalc(14);
+border-top: 1px solid #c8c8c8;
+border-bottom: none;
+padding: 0.85714em 1.28571em;
+margin: 0.25em;
+cursor: pointer;
+
 }
+div#pagination > a:hover {
+	border-top: 1px solid black;
+}
+
 div#pagination a.jp-previous {
     margin-left: 0;
+    cursor: pointer;
 }
 
 div#pagination > a.jp-current, 
 div#pagination > a.jp-current:hover,
 div#pagination > a.jp-disabled, 
 div#pagination > a.jp-disabled:hover { 
-	color: red;
+	border-top: 1px solid black;
   cursor: default !important;
 }
 
@@ -24,6 +45,9 @@ div#pagination > span {
     color: green;
 }
 
+#container {
+	width: 100%;	
+}
 #container li {
 	width: 25%;
 	border: 1px solid white;
