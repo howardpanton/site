@@ -777,7 +777,7 @@ if ($('.js-lightbox').length > 0) {
   }
 
   // make videos adapt responsively
-  //$('.video-wrapper').fitVids();
+  //$('.video-container').fitVids();
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -850,7 +850,7 @@ if ($('video').length > 0) {
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
-    $('video').mediaelementplayer({
+    $('video:not(.no-mejs)').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
     });
 
