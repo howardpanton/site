@@ -280,7 +280,7 @@
         switch (settings.menu_effect) {
             case 'hover_fade':
                 $(dropDownMega).fadeIn(settings.menu_speed_show);
-                console.log('test');
+                // console.log('test');
                 break;
             case 'hover_slide':
                 $(dropDownMega).slideDown(settings.menu_speed_show);
