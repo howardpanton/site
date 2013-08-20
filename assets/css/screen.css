@@ -19,7 +19,7 @@
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,49 +41,332 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
+/*------------------------------------*\
+    $FONT-FACE
+\*------------------------------------*/
+/**
+ * Brandon
+ *
+ * This is the specific font face that is being used for CCW (Camberwell, Chelsea and Wimbledon)
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "BrandonText-Bold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "BrandonText-Regular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.ttf') format('truetype');
+}
+
+/**
+ * Bureau Grot Bold
+ *
+ * This is the specific font face that is being used for Central Saint Martins
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "BureauGrotBold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.ttf') format('truetype');
+}
+
+/*
+This CSS resource incorporates links to font software which is 
+the valuable copyrighted property of WebType LLC, The Font Bureau 
+and/or their suppliers. You may not 
+attempt to copy, install, redistribute, convert, modify or reverse 
+engineer this font software. Please contact WebType with any 
+questions: http://www.webtype.com 
+*/
+/**
+ * Entypo
+ *
+ * http://www.entypo.com/
+ *
+ */
+@font-face {
+  font-family: "entypo";
+  src: url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo/entypo.otf') format('opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.woff') format('woff');
+}
+
+@font-face {
+  font-family: "entypo-social";
+  src: url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.svg') format('svg'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo-social/entypo-social.woff') format('woff');
+}
+
+/* line 25, ../styles/font-face/_entypo.scss */
+.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span, .warning-icon, .megamenu > li .menu-plus, .sb-icon-search, .youtube {
+  font-family: "entypo";
+}
+
+/* line 26, ../styles/font-face/_entypo.scss */
+.icon-social, .footer-ico {
+  font-family: "entypo-social";
+}
+
+/* line 28, ../styles/font-face/_entypo.scss */
+.download:before {
+  font-family: "entypo";
+  font-size: 36px;
+  content: "📄";
+  vertical-align: middle;
+  padding-right: 1.5em;
+}
+
+/**
+ * League Gothic
+ *
+ * This is the specific font face that is being used for London College of Communications
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "LeagueGothicRegular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.svg#LeagueGothicRegular') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicItalic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.svg#LeagueGothicItalic') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicCondensedRegular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.svg#LeagueGothicCondensedRegular') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicCondensedItalic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.svg#LeagueGothicCondensedItalic') format('svg');
+}
+
+/* line 50, ../styles/font-face/_league-gothic.scss */
+.lcc h1, .lcc h2, .lcc h3, .lcc h4, .lcc .footer-block h3, .lcc .top-stories .stories-list .date {
+  font-family: LeagueGothicRegular;
+}
+
+/* @license
+ * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed ../fonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Swiss 721 Light by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Italic by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Bold by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Black by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Medium by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Brandon Text Bold by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * Webfont: Brandon Text Regular by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
+ * 
+ * © 2013 MyFonts Inc
+*/
+/**
+ * Swiss 721
+ *
+ * This is the specific font face that is being used for the University of the Arts London
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "Swiss721BT-Light";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Roman";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Italic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Bold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Black";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Medium";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.ttf') format('truetype');
+}
+
+/* line 68, ../styles/font-face/_swiss-721.scss */
+figure a, figcaption, .rsCaption, .top-bar li > a, .sidebar a, .footer-links ul li a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
+  font-family: Swiss721BT-Light;
+}
+
+/* line 69, ../styles/font-face/_swiss-721.scss */
+.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
+.megamenu li .dropdown_fullwidth h2 a,
+.megamenu li .dropdown_fullwidth a,
+.megamenu li .dropdown_multilevel h2 a,
+.megamenu li .dropdown_multilevel a, .dd-heading a, .social-links h3 {
+  font-family: Swiss721BT-Light !important;
+}
+
+/* line 70, ../styles/font-face/_swiss-721.scss */
+a {
+  font-family: Swiss721BT-Roman;
+}
+
+/* line 71, ../styles/font-face/_swiss-721.scss */
+code {
+  font-family: Swiss721BT-Italic;
+}
+
+/* line 72, ../styles/font-face/_swiss-721.scss */
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .sidebar ul li:first-child a, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
+  font-family: Swiss721BT-Bold;
+}
+
+/* line 73, ../styles/font-face/_swiss-721.scss */
+.lcf .content-wrapper h1, .lcf .dd-menu-dropdown-wrapper h1, .lcf .content-wrapper h2, .lcf .dd-menu-dropdown-wrapper h2, .lcf .content-wrapper h3, .lcf .dd-menu-dropdown-wrapper h3, .lcf .content-wrapper h4, .lcf .dd-menu-dropdown-wrapper h4, .lcf .content-wrapper h5, .lcf .dd-menu-dropdown-wrapper h5, .lcf .content-wrapper h6, .lcf .dd-menu-dropdown-wrapper h6, .lcf .header-wrapper h1, .lcf .header-wrapper h2, .lcf .header-wrapper h3, .lcf .header-wrapper h4, .lcf .header-wrapper h5, .lcf .header-wrapper h6 {
+  font-family: Swiss721BT-Black;
+}
+
+/* line 74, ../styles/font-face/_swiss-721.scss */
+.filter-module h3 {
+  font-family: Swiss721BT-Medium;
+}
+
+/* @license
+ * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed ../fonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Swiss 721 Light by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Italic by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Bold by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Black by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Medium by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Brandon Text Bold by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * Webfont: Brandon Text Regular by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
+ * 
+ * © 2013 MyFonts Inc
+*/
 /*------------------------------------*\
     $GRIDSET
 \*------------------------------------*/
@@ -302,289 +585,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /*------------------------------------*\
-    $FONT-FACE
-\*------------------------------------*/
-/**
- * Brandon
- *
- * This is the specific font face that is being used for CCW (Camberwell, Chelsea and Wimbledon)
- *
- */
-/**
- * ^h1 ^h2
- */
-@font-face {
-  font-family: "BrandonText-Bold";
-  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "BrandonText-Regular";
-  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.ttf') format('truetype');
-}
-
-/**
- * Bureau Grot Bold
- *
- * This is the specific font face that is being used for Central Saint Martins
- *
- */
-/**
- * ^h1 ^h2
- */
-@font-face {
-  font-family: "BureauGrotBold";
-  src: url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.ttf') format('truetype');
-}
-
-/*
-This CSS resource incorporates links to font software which is 
-the valuable copyrighted property of WebType LLC, The Font Bureau 
-and/or their suppliers. You may not 
-attempt to copy, install, redistribute, convert, modify or reverse 
-engineer this font software. Please contact WebType with any 
-questions: http://www.webtype.com 
-*/
-/**
- * Entypo
- *
- * http://www.entypo.com/
- *
- */
-@font-face {
-  font-family: "entypo";
-  src: url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo/entypo.otf') format('opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.woff') format('woff');
-}
-
-@font-face {
-  font-family: "entypo-social";
-  src: url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.svg') format('svg'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo-social/entypo-social.woff') format('woff');
-}
-
-/* line 25, ../styles/font-face/_entypo.scss */
-.icon, .m-menu-btn-toggle span, a.m-menu-btn-toggle span, a.search span, .warning-icon, .megamenu > li .menu-plus, .youtube {
-  font-family: "entypo";
-}
-
-/* line 26, ../styles/font-face/_entypo.scss */
-.icon-social, .footer-ico {
-  font-family: "entypo-social";
-}
-
-/* line 28, ../styles/font-face/_entypo.scss */
-.download:before {
-  font-family: "entypo";
-  font-size: 36px;
-  content: "📄";
-  vertical-align: middle;
-  padding-right: 0.375em;
-}
-
-/**
- * League Gothic
- *
- * This is the specific font face that is being used for London College of Communications
- *
- */
-/**
- * ^h1 ^h2
- */
-@font-face {
-  font-family: "LeagueGothicRegular";
-  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.svg#LeagueGothicRegular') format('svg');
-}
-
-@font-face {
-  font-family: "LeagueGothicItalic";
-  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.svg#LeagueGothicItalic') format('svg');
-}
-
-@font-face {
-  font-family: "LeagueGothicCondensedRegular";
-  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.svg#LeagueGothicCondensedRegular') format('svg');
-}
-
-@font-face {
-  font-family: "LeagueGothicCondensedItalic";
-  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.svg#LeagueGothicCondensedItalic') format('svg');
-}
-
-/* line 50, ../styles/font-face/_league-gothic.scss */
-.lcc h1, .lcc h2, .lcc h3, .lcc h4, .lcc .footer-block h3, .lcc .top-stories .stories-list .date {
-  font-family: LeagueGothicRegular;
-}
-
-/* @license
- * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
- * 
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed ../fonts(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: Swiss 721 Light by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Italic by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Bold by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Black by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Medium by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Brandon Text Bold by HVD Fonts
- * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
- * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
- * 
- * Webfont: Brandon Text Regular by HVD Fonts
- * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
- * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
- * 
- * 
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
- * 
- * © 2013 MyFonts Inc
-*/
-/**
- * Swiss 721
- *
- * This is the specific font face that is being used for the University of the Arts London
- *
- */
-/**
- * ^h1 ^h2
- */
-@font-face {
-  font-family: "Swiss721BT-Light";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.eot?#iefix') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: "Swiss721BT-Roman";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot?#iefix') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: "Swiss721BT-Italic";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot?#iefix') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: "Swiss721BT-Bold";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot?#iefix') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: "Swiss721BT-Black";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot?#iefix') format('embedded-opentype');
-}
-
-@font-face {
-  font-family: "Swiss721BT-Medium";
-  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.ttf') format('truetype');
-}
-
-/* line 68, ../styles/font-face/_swiss-721.scss */
-figure a, figcaption, .rsCaption, .sidebar a, .footer-links ul li a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
-  font-family: Swiss721BT-Light;
-}
-
-/* line 69, ../styles/font-face/_swiss-721.scss */
-.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
-.megamenu li .dropdown_fullwidth h2 a,
-.megamenu li .dropdown_fullwidth a,
-.megamenu li .dropdown_multilevel h2 a,
-.megamenu li .dropdown_multilevel a, .dd-heading a, .social-links h3 {
-  font-family: Swiss721BT-Light !important;
-}
-
-/* line 70, ../styles/font-face/_swiss-721.scss */
-a {
-  font-family: Swiss721BT-Roman;
-}
-
-/* line 71, ../styles/font-face/_swiss-721.scss */
-code {
-  font-family: Swiss721BT-Italic;
-}
-
-/* line 72, ../styles/font-face/_swiss-721.scss */
-h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .sidebar ul li:first-child a, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
-  font-family: Swiss721BT-Bold;
-}
-
-/* line 73, ../styles/font-face/_swiss-721.scss */
-.lcf .content-wrapper h1, .lcf .dd-menu-dropdown-wrapper h1, .lcf .content-wrapper h2, .lcf .dd-menu-dropdown-wrapper h2, .lcf .content-wrapper h3, .lcf .dd-menu-dropdown-wrapper h3, .lcf .content-wrapper h4, .lcf .dd-menu-dropdown-wrapper h4, .lcf .content-wrapper h5, .lcf .dd-menu-dropdown-wrapper h5, .lcf .content-wrapper h6, .lcf .dd-menu-dropdown-wrapper h6, .lcf .header-wrapper h1, .lcf .header-wrapper h2, .lcf .header-wrapper h3, .lcf .header-wrapper h4, .lcf .header-wrapper h5, .lcf .header-wrapper h6 {
-  font-family: Swiss721BT-Black;
-}
-
-/* line 74, ../styles/font-face/_swiss-721.scss */
-.filter-module h3 {
-  font-family: Swiss721BT-Medium;
-}
-
-/* @license
- * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
- * 
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed ../fonts(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: Swiss 721 Light by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Italic by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Bold by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Black by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Swiss 721 Medium by Bitstream
- * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
- * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
- * 
- * Webfont: Brandon Text Bold by HVD Fonts
- * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
- * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
- * 
- * Webfont: Brandon Text Regular by HVD Fonts
- * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
- * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
- * 
- * 
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
- * 
- * © 2013 MyFonts Inc
-*/
-/*------------------------------------*\
     $SPRITES
 \*------------------------------------*/
 /* line 170, ../img/sprite/ui-icons/*.png */
@@ -592,119 +592,119 @@ h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, 
   background: url('http://artslondon.github.io/beta/assets/img/../img/sprite/ui-icons-s3fd643362c.png') no-repeat;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-blue-circle-bg {
   background-position: 0 -400px;
   height: 400px;
   width: 400px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-selected {
   background-position: 0 -856px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-unselected-disabled {
   background-position: 0 -964px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-cf-unselected {
   background-position: 0 -932px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-checked-disabled {
   background-position: 0 -1012px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before {
   background-position: 0 -1028px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before {
   background-position: 0 -1060px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before {
   background-position: 0 -1044px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-dashline_border_img {
   background-position: 0 -1076px;
   height: 1px;
   width: 4px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-green-circle-bg {
   background-position: 0 0;
   height: 400px;
   width: 400px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-grey-search, .with-search-icon {
   background-position: 0 -1077px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-quote_marks, blockquote span {
   background-position: 0 -872px;
   height: 44px;
   width: 64px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-quote_marks_big, .pull-quote span {
   background-position: 0 -800px;
   height: 56px;
   width: 78px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-selected-disabled {
   background-position: 0 -916px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before {
   background-position: 0 -980px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before {
   background-position: 0 -948px;
   height: 16px;
   width: 16px;
 }
 
-/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before {
   background-position: 0 -996px;
   height: 16px;
@@ -729,12 +729,12 @@ h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, 
  * RESET...............Set our reset defaults
  * FONT-FACE...........Import brand font files
  */
-/* line 61, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 100%;
 }
 
-/* line 64, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 16px;
   line-height: 0.375em;
@@ -1162,49 +1162,49 @@ hr {
 
 /* line 1, ../styles/globals/_logos.fallback.scss */
 .icon-ual-camberwell {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1374771217');
   background-repeat: no-repeat;
 }
 
 /* line 5, ../styles/globals/_logos.fallback.scss */
 .icon-ual-chelsea {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1374771210');
   background-repeat: no-repeat;
 }
 
 /* line 9, ../styles/globals/_logos.fallback.scss */
 .icon-ual-csm {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1374771210');
   background-repeat: no-repeat;
 }
 
 /* line 13, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcc {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1374771211');
   background-repeat: no-repeat;
 }
 
 /* line 17, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcf {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1374771215');
   background-repeat: no-repeat;
 }
 
 /* line 21, ../styles/globals/_logos.fallback.scss */
 .icon-ual-mobile {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1374771215');
   background-repeat: no-repeat;
 }
 
 /* line 25, ../styles/globals/_logos.fallback.scss */
 .icon-ual-wimbledon {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1374771217');
   background-repeat: no-repeat;
 }
 
 /* line 29, ../styles/globals/_logos.fallback.scss */
 .icon-ual {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1374834225');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1374771215');
   background-repeat: no-repeat;
 }
 
@@ -1409,7 +1409,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1812,7 +1812,7 @@ select:focus:invalid {
   text-align: center;
   text-shadow: 0 1px 0 white;
   background-color: #c8c8c8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
 /* line 567, ../styles/globals/_forms.scss */
 .input-append .add-on,
@@ -4146,11 +4146,12 @@ form.d-search-input-form {
 /* line 144, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .small-text-link,
 .megamenu .dropdown_fullwidth .small-text-link {
-  color: #757575;
+  color: white;
   font-size: 12px;
   font-size: 0.75rem;
+  margin-left: 12px;
 }
-/* line 152, ../styles/components/_nav-main-menu.scss */
+/* line 153, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .go-search-button a,
 .megamenu .dropdown_fullwidth .go-search-button a {
   border-bottom: 0;
@@ -4160,39 +4161,39 @@ form.d-search-input-form {
   text-align: center;
   text-decoration: none;
 }
-/* line 160, ../styles/components/_nav-main-menu.scss */
+/* line 161, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .go-search-button a:hover,
 .megamenu .dropdown_fullwidth .go-search-button a:hover {
   color: white;
 }
 
-/* line 166, ../styles/components/_nav-main-menu.scss */
+/* line 167, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth {
   background-color: #373737;
 }
 @media only screen and (min-width: 960px) {
-  /* line 166, ../styles/components/_nav-main-menu.scss */
+  /* line 167, ../styles/components/_nav-main-menu.scss */
   .dropdown_fullwidth {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
   }
 }
-/* line 175, ../styles/components/_nav-main-menu.scss */
+/* line 176, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li {
   border-top: 1px dotted #757575;
 }
-/* line 177, ../styles/components/_nav-main-menu.scss */
+/* line 178, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li:last-child {
   border-bottom: 1px dotted #757575;
 }
-/* line 182, ../styles/components/_nav-main-menu.scss */
+/* line 183, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth ul > li > a {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 193, ../styles/components/_nav-main-menu.scss */
+  /* line 194, ../styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4201,7 +4202,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 193, ../styles/components/_nav-main-menu.scss */
+  /* line 194, ../styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4210,20 +4211,20 @@ form.d-search-input-form {
   }
 }
 
-/* line 209, ../styles/components/_nav-main-menu.scss */
+/* line 210, ../styles/components/_nav-main-menu.scss */
 .menu-contain-wrap {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-/* line 215, ../styles/components/_nav-main-menu.scss */
+/* line 216, ../styles/components/_nav-main-menu.scss */
 .main-menu {
   width: 100%;
   display: block;
   background: black;
 }
-/* line 222, ../styles/components/_nav-main-menu.scss */
+/* line 223, ../styles/components/_nav-main-menu.scss */
 .main-menu ul {
   display: block;
   height: 100%;
@@ -4234,36 +4235,36 @@ form.d-search-input-form {
   background: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 222, ../styles/components/_nav-main-menu.scss */
+  /* line 223, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 222, ../styles/components/_nav-main-menu.scss */
+  /* line 223, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
-/* line 241, ../styles/components/_nav-main-menu.scss */
+/* line 242, ../styles/components/_nav-main-menu.scss */
 .main-menu .dropdown-arrow {
   display: none;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 247, ../styles/components/_nav-main-menu.scss */
+  /* line 248, ../styles/components/_nav-main-menu.scss */
   .m-nav-menu-wrap {
     display: none;
   }
 }
-/* line 251, ../styles/components/_nav-main-menu.scss */
+/* line 252, ../styles/components/_nav-main-menu.scss */
 .m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.m-menu-btn-toggle span, a.m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
   font-size: 48px;
   font-size: 3rem;
   line-height: 48px;
 }
 
-/* line 259, ../styles/components/_nav-main-menu.scss */
+/* line 260, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
   padding-top: 12px;
@@ -4276,7 +4277,7 @@ form.d-search-input-form {
   padding: 0;
   margin: 0;
 }
-/* line 269, ../styles/components/_nav-main-menu.scss */
+/* line 270, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle span, a.m-menu-btn-toggle span {
   display: block;
   margin: 0;
@@ -4288,33 +4289,29 @@ form.d-search-input-form {
   font-size: 3.5rem;
 }
 @media only screen and (min-width: 960px) {
-  /* line 259, ../styles/components/_nav-main-menu.scss */
+  /* line 260, ../styles/components/_nav-main-menu.scss */
   .m-menu-btn-toggle, a.m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-/* line 284, ../styles/components/_nav-main-menu.scss */
+/* line 285, ../styles/components/_nav-main-menu.scss */
 .top-bar {
   position: relative;
 }
-/* line 292, ../styles/components/_nav-main-menu.scss */
-.top-bar .menu-active {
-  background-color: #333333 !important;
-}
-/* line 294, ../styles/components/_nav-main-menu.scss */
+/* line 291, ../styles/components/_nav-main-menu.scss */
 .top-bar li {
   list-style: none;
   padding: 0;
   width: auto;
   font-weight: 300;
 }
-/* line 300, ../styles/components/_nav-main-menu.scss */
+/* line 297, ../styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
   background-color: #444444;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 294, ../styles/components/_nav-main-menu.scss */
+  /* line 291, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4323,7 +4320,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 294, ../styles/components/_nav-main-menu.scss */
+  /* line 291, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4331,37 +4328,36 @@ form.d-search-input-form {
     text-align: left;
   }
 }
-/* line 317, ../styles/components/_nav-main-menu.scss */
+/* line 314, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a {
   display: block;
   height: 100%;
   color: white;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 24px;
-  border-bottom: none;
+  font-size: 16px;
+  font-size: 1rem;
   padding: 6px 10px;
+  line-height: 36px;
+  border-bottom: none;
 }
-/* line 327, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 314, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 24px;
+    padding: 6px 12px;
+  }
+}
+/* line 332, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a:hover {
   background-color: #444444;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 317, ../styles/components/_nav-main-menu.scss */
-  .top-bar li > a {
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 317, ../styles/components/_nav-main-menu.scss */
-  .top-bar li > a {
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-  }
+/* line 337, ../styles/components/_nav-main-menu.scss */
+.top-bar li .menu-active {
+  background-color: #333 !important;
 }
 
-/* line 345, ../styles/components/_nav-main-menu.scss */
+/* line 342, ../styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -4375,7 +4371,7 @@ form.d-search-input-form {
   padding-left: 12px;
 }
 
-/* line 357, ../styles/components/_nav-main-menu.scss */
+/* line 354, ../styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
   padding-left: 6px;
@@ -4391,14 +4387,14 @@ form.d-search-input-form {
   clear: both;
 }
 @media only screen and (min-width: 960px) {
-  /* line 357, ../styles/components/_nav-main-menu.scss */
+  /* line 354, ../styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
     display: block;
     *zoom: 1;
     height: 108px;
     background-color: black;
     padding-left: 0px;
-    padding-top: 0.75em;
+    padding-top: 1.125em;
   }
   /* line 169, ../styles/globals/_mixins.scss */
   .ual-banner-menu:before, .ual-banner-menu:after {
@@ -4411,94 +4407,94 @@ form.d-search-input-form {
   }
 }
 
-/* line 374, ../styles/components/_nav-main-menu.scss */
+/* line 371, ../styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 380, ../styles/components/_nav-main-menu.scss */
+/* line 377, ../styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 384, ../styles/components/_nav-main-menu.scss */
+/* line 381, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
   height: 48px;
   min-width: 48px;
-  border-right: 1px solid #444444;
+  border-right: 1px solid #444;
   float: left;
 }
-/* line 391, ../styles/components/_nav-main-menu.scss */
+/* line 388, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 399, ../styles/components/_nav-main-menu.scss */
+/* line 396, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 403, ../styles/components/_nav-main-menu.scss */
+/* line 400, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 408, ../styles/components/_nav-main-menu.scss */
+/* line 405, ../styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
   background-color: #333333;
 }
 @media only screen and (min-width: 960px) {
-  /* line 374, ../styles/components/_nav-main-menu.scss */
+  /* line 371, ../styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
-/* line 417, ../styles/components/_nav-main-menu.scss */
+/* line 414, ../styles/components/_nav-main-menu.scss */
 .dd-heading {
   padding-left: 12px;
   text-transform: capitalize !important;
 }
-/* line 423, ../styles/components/_nav-main-menu.scss */
+/* line 420, ../styles/components/_nav-main-menu.scss */
 .dd-heading a {
   color: white !important;
 }
 
-/* line 430, ../styles/components/_nav-main-menu.scss */
+/* line 427, ../styles/components/_nav-main-menu.scss */
 .ual-logo-tab-mobile {
   float: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 430, ../styles/components/_nav-main-menu.scss */
+  /* line 427, ../styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
-/* line 440, ../styles/components/_nav-main-menu.scss */
+/* line 437, ../styles/components/_nav-main-menu.scss */
 .ual-logo-desktop {
-  padding-left: 10px;
+  padding-left: 12px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 440, ../styles/components/_nav-main-menu.scss */
+  /* line 437, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 440, ../styles/components/_nav-main-menu.scss */
+  /* line 437, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 453, ../styles/components/_nav-main-menu.scss */
   .submenu {
     clear: both;
     display: block;
@@ -4508,42 +4504,42 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 453, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 453, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-/* line 470, ../styles/components/_nav-main-menu.scss */
+/* line 467, ../styles/components/_nav-main-menu.scss */
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 467, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 467, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 467, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-/* line 485, ../styles/components/_nav-main-menu.scss */
+/* line 482, ../styles/components/_nav-main-menu.scss */
 .submenu li {
   list-style: none;
   width: 100%;
@@ -4551,43 +4547,43 @@ form.d-search-input-form {
   float: left;
   border-bottom: dotted 1px white;
 }
-/* line 492, ../styles/components/_nav-main-menu.scss */
+/* line 489, ../styles/components/_nav-main-menu.scss */
 .submenu li:hover {
   border-bottom: 1px 1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 485, ../styles/components/_nav-main-menu.scss */
+  /* line 482, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 485, ../styles/components/_nav-main-menu.scss */
+  /* line 482, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-/* line 506, ../styles/components/_nav-main-menu.scss */
+/* line 503, ../styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 506, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 506, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 523, ../styles/components/_nav-main-menu.scss */
+  /* line 520, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     display: block;
     float: left;
@@ -4597,7 +4593,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 523, ../styles/components/_nav-main-menu.scss */
+  /* line 520, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -4605,7 +4601,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 531, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     display: block;
     float: left;
@@ -4615,7 +4611,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 531, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4624,7 +4620,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 531, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4633,7 +4629,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 548, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     display: block;
     float: left;
@@ -4643,7 +4639,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 548, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4652,7 +4648,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 548, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4661,7 +4657,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 566, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     display: block;
     float: left;
@@ -4671,7 +4667,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 566, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -4680,7 +4676,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 566, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -4688,7 +4684,7 @@ form.d-search-input-form {
     margin-bottom: 0;
   }
 }
-/* line 586, ../styles/components/_nav-main-menu.scss */
+/* line 583, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature {
   display: block;
   float: left;
@@ -4699,7 +4695,7 @@ form.d-search-input-form {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 592, ../styles/components/_nav-main-menu.scss */
+/* line 589, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature-image {
   display: block;
   float: left;
@@ -4714,13 +4710,13 @@ form.d-search-input-form {
   top: 0;
   right: 0;
 }
-/* line 6, ../styles/components/_college-link-menu.scss */
+/* line 5, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul {
   display: table;
   float: right;
-  padding-top: 6px;
+  padding-top: 0.75em;
 }
-/* line 10, ../styles/components/_college-link-menu.scss */
+/* line 9, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li {
   list-style: none;
   float: left;
@@ -4728,13 +4724,13 @@ form.d-search-input-form {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 16, ../styles/components/_college-link-menu.scss */
+/* line 15, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li a {
   color: white;
   font-weight: 300;
   font-size: 13px;
 }
-/* line 25, ../styles/components/_college-link-menu.scss */
+/* line 24, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li:last-child {
   border-right: none;
   margin-right: 0;
@@ -4940,7 +4936,7 @@ a.course:before {
 
 /* line 134, ../styles/components/_search-buttons.scss */
 .search-btn-separator {
-  border-right: 1px solid #444444;
+  border-right: 1px solid #444;
 }
 
 /* line 5, ../styles/components/_expandable-search-input.scss */
@@ -4963,10 +4959,13 @@ a.course:before {
   /* line 5, ../styles/components/_expandable-search-input.scss */
   .sb-search {
     max-width: 100%;
+    min-width: 36px;
+    height: 36px;
+    margin-top: 0.75em;
   }
 }
 
-/* line 25, ../styles/components/_expandable-search-input.scss */
+/* line 28, ../styles/components/_expandable-search-input.scss */
 .sb-search-input {
   position: absolute;
   top: 0;
@@ -4982,29 +4981,35 @@ a.course:before {
   font-size: 20px;
   color: #2c3e50;
 }
-/* line 41, ../styles/components/_expandable-search-input.scss */
+/* line 44, ../styles/components/_expandable-search-input.scss */
 .sb-search-input::-webkit-input-placeholder {
   color: #757575;
 }
-/* line 45, ../styles/components/_expandable-search-input.scss */
+/* line 48, ../styles/components/_expandable-search-input.scss */
 .sb-search-input:-moz-placeholder {
   color: #757575;
 }
-/* line 49, ../styles/components/_expandable-search-input.scss */
+/* line 52, ../styles/components/_expandable-search-input.scss */
 .sb-search-input::-moz-placeholder {
   color: #757575;
 }
-/* line 53, ../styles/components/_expandable-search-input.scss */
+/* line 56, ../styles/components/_expandable-search-input.scss */
 .sb-search-input:-ms-input-placeholder {
   color: #757575;
 }
 
-/* line 58, ../styles/components/_expandable-search-input.scss */
+/* line 61, ../styles/components/_expandable-search-input.scss */
 input[type="text"].sb-search-input {
   height: 48px;
 }
+@media only screen and (min-width: 960px) {
+  /* line 61, ../styles/components/_expandable-search-input.scss */
+  input[type="text"].sb-search-input {
+    height: 36px;
+  }
+}
 
-/* line 63, ../styles/components/_expandable-search-input.scss */
+/* line 69, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search,
 .sb-search-submit {
   width: 48px;
@@ -5019,8 +5024,17 @@ input[type="text"].sb-search-input {
   text-align: center;
   cursor: pointer;
 }
+@media only screen and (min-width: 960px) {
+  /* line 69, ../styles/components/_expandable-search-input.scss */
+  .sb-icon-search,
+  .sb-search-submit {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+  }
+}
 
-/* line 77, ../styles/components/_expandable-search-input.scss */
+/* line 88, ../styles/components/_expandable-search-input.scss */
 .sb-search-submit {
   background: #fff;
   /* IE needs this */
@@ -5035,34 +5049,39 @@ input[type="text"].sb-search-input {
   z-index: -1;
 }
 
-/* line 88, ../styles/components/_expandable-search-input.scss */
+/* line 99, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search {
   color: #fff;
   background-color: black;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20baseProfile%3D%22tiny%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M27.642%2025.42l-4.836-4.836c.729-1.197%201.149-2.604%201.149-4.11%200-4.372-3.789-8.161-8.163-8.161-4.372%200-7.917%203.545-7.917%207.918s3.789%208.16%208.161%208.16c1.454%200%202.817-.393%203.986-1.077l4.862%204.862c.476.476%201.247.476%201.725%200l1.203-1.205c.477-.476.305-1.075-.17-1.551zm-17.33-9.19c0-3.028%202.454-5.482%205.48-5.482%203.027%200%205.727%202.698%205.727%205.725%200%203.026-2.454%205.482-5.483%205.482-3.027.001-5.724-2.698-5.724-5.725z%22/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 6px 6px;
   z-index: 90;
-  font-size: 22px;
+  font-size: 42px;
+  font-size: 2.625rem;
   speak: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
+@media only screen and (min-width: 960px) {
+  /* line 99, ../styles/components/_expandable-search-input.scss */
+  .sb-icon-search {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
 
-/* line 103, ../styles/components/_expandable-search-input.scss */
+/* line 120, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search:hover {
   background-color: #333333;
 }
 
 /* Open state */
-/* line 109, ../styles/components/_expandable-search-input.scss */
+/* line 126, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open,
 .no-js .sb-search {
   width: 100%;
 }
 
-/* line 114, ../styles/components/_expandable-search-input.scss */
+/* line 131, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
   background-color: #333333;
@@ -5070,7 +5089,7 @@ input[type="text"].sb-search-input {
   z-index: 11;
 }
 
-/* line 121, ../styles/components/_expandable-search-input.scss */
+/* line 138, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
   z-index: 90;
@@ -5122,7 +5141,7 @@ input[type="text"].sb-search-input {
   white-space: nowrap;
   padding-top: 10px;
   margin-bottom: 0;
-  padding-left: 1px;
+  padding-left: 2px;
 }
 /* line 9, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a {
@@ -5280,7 +5299,7 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
 .sidebar ul li a {
   font-size: 14px;
   font-size: 0.875rem;
-  padding-left: 10px;
+  padding-left: 12px;
   padding-bottom: 0;
   list-style-type: none;
   margin-left: 0;
@@ -6313,7 +6332,7 @@ a figure img {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666\9;
+  background: #666666 \9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%;
 }
@@ -6486,10 +6505,10 @@ a figure img {
 .rsHidden {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-  -moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-  -o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -webkit-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s,opacity 0.3s linear;
 }
 
 /* line 140, ../styles/components/_royalslider.scss */
@@ -7060,15 +7079,15 @@ img.rsImg {
   color: #333;
   padding: 5px 13px 6px;
   min-width: 72px;
-  border: 1px solid #d9d9dd;
-  border-right: 1px solid whitesmoke;
+  border: 1px solid #D9D9DD;
+  border-right: 1px solid #f5f5f5;
   text-decoration: none;
   background-color: #FFF;
   background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: -moz-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
-  -webkit-box-shadow: inset 1px 0 0 white;
-  box-shadow: inset 1px 0 0 white;
+  -webkit-box-shadow: inset 1px 0 0 #fff;
+  box-shadow: inset 1px 0 0 #fff;
   *display: inline;
   *zoom: 1;
 }
@@ -7092,7 +7111,7 @@ img.rsImg {
 
 /* line 610, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab:active {
-  border: 1px solid #d9d9dd;
+  border: 1px solid #D9D9DD;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
@@ -7100,7 +7119,7 @@ img.rsImg {
 /* line 615, ../styles/components/_royalslider.scss */
 .rsDefault .rsTab.rsNavSelected {
   color: #FFF;
-  border: 1px solid #999999;
+  border: 1px solid #999;
   text-shadow: 1px 1px #838383;
   box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
   background: #ACACAC;
@@ -7420,7 +7439,7 @@ img.rsImg {
 
 /* line 911, ../styles/components/_royalslider.scss */
 .rsMinW .rsArrowDisabled .rsArrowIcn {
-  opacity: 0.3 !important;
+  opacity: .3 !important;
   filter: alpha(opacity=30);
   *display: none;
 }
@@ -7533,7 +7552,7 @@ img.rsImg {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 2px solid white;
+  border: 2px solid #FFF;
   border: 2px solid rgba(255, 255, 255, 0.9);
   -webkit-backface-visibility: hidden;
 }
@@ -7666,8 +7685,8 @@ img.rsImg {
   color: #333;
   padding: 5px 13px 6px;
   min-width: 72px;
-  border: 1px solid #d9d9dd;
-  border-right: 1px solid whitesmoke;
+  border: 1px solid #D9D9DD;
+  border-right: 1px solid #f5f5f5;
   text-decoration: none;
   background-color: #000;
   background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
@@ -7696,7 +7715,7 @@ img.rsImg {
 
 /* line 1120, ../styles/components/_royalslider.scss */
 .rsMinW .rsTab:active {
-  border: 1px solid #d9d9dd;
+  border: 1px solid #D9D9DD;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
@@ -7704,7 +7723,7 @@ img.rsImg {
 /* line 1125, ../styles/components/_royalslider.scss */
 .rsMinW .rsTab.rsNavSelected {
   color: #000;
-  border: 1px solid #999999;
+  border: 1px solid #999;
   text-shadow: 1px 1px #838383;
   box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
   background: #ACACAC;
@@ -8971,11 +8990,21 @@ footer .copyright p {
 }
 
 /* line 22, ../styles/components/_footer.scss */
+.footer-links ul {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 960px) {
+  /* line 22, ../styles/components/_footer.scss */
+  .footer-links ul {
+    margin-bottom: 1.125em;
+  }
+}
+/* line 29, ../styles/components/_footer.scss */
 .footer-links ul li {
   border-bottom: 1px dotted #757575;
   padding-bottom: 0;
 }
-/* line 26, ../styles/components/_footer.scss */
+/* line 33, ../styles/components/_footer.scss */
 .footer-links ul li a {
   font-size: 14px;
   font-size: 0.875rem;
@@ -8984,55 +9013,79 @@ footer .copyright p {
   display: block;
   color: white;
 }
-/* line 36, ../styles/components/_footer.scss */
+/* line 43, ../styles/components/_footer.scss */
 .footer-links ul li:first-child {
-  border-top: 0;
+  border-top: 1px dotted #757575;
+}
+/* line 47, ../styles/components/_footer.scss */
+.footer-links ul li:last-child {
+  border-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 36, ../styles/components/_footer.scss */
-  .footer-links ul li:first-child {
-    border-top: 1px dotted #757575;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 43, ../styles/components/_footer.scss */
+  /* line 47, ../styles/components/_footer.scss */
   .footer-links ul li:last-child {
     border-bottom: 1px dotted #757575;
   }
 }
 
-/* line 67, ../styles/components/_footer.scss */
+/* line 66, ../styles/components/_footer.scss */
+.footer-col-3 li:last-child {
+  border-bottom: 1px dotted #757575 !important;
+}
+@media only screen and (min-width: 960px) {
+  /* line 66, ../styles/components/_footer.scss */
+  .footer-col-3 li:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* line 79, ../styles/components/_footer.scss */
 .social-links h3 {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 2.25em;
   padding: 0;
+  padding-left: 10px;
   text-transform: capitalize !important;
 }
-/* line 75, ../styles/components/_footer.scss */
+@media only screen and (min-width: 960px) {
+  /* line 79, ../styles/components/_footer.scss */
+  .social-links h3 {
+    padding-left: 0;
+  }
+}
+/* line 91, ../styles/components/_footer.scss */
 .social-links li {
   border: none !important;
   display: inline-block;
 }
-/* line 78, ../styles/components/_footer.scss */
+/* line 94, ../styles/components/_footer.scss */
 .social-links li a {
   line-height: 36px;
   border-bottom: 0;
-  padding-left: 0;
+  padding-left: 10px;
   padding-right: 18px;
   display: block;
 }
-/* line 85, ../styles/components/_footer.scss */
-.social-links li a:first-child {
-  padding-left: 0 !important;
+@media only screen and (min-width: 960px) {
+  /* line 94, ../styles/components/_footer.scss */
+  .social-links li a {
+    padding-left: 0;
+  }
 }
-/* line 90, ../styles/components/_footer.scss */
+@media only screen and (min-width: 960px) {
+  /* line 104, ../styles/components/_footer.scss */
+  .social-links li a:first-child {
+    padding-left: 0 !important;
+  }
+}
+/* line 111, ../styles/components/_footer.scss */
 .social-links li:first-child {
   display: block;
   border-top: 0 !important;
 }
 
-/* line 97, ../styles/components/_footer.scss */
+/* line 118, ../styles/components/_footer.scss */
 .footer-ico {
   font-size: 36px;
   font-size: 2.25rem;
@@ -9041,7 +9094,7 @@ footer .copyright p {
   color: white;
 }
 
-/* line 106, ../styles/components/_footer.scss */
+/* line 127, ../styles/components/_footer.scss */
 .youtube {
   font-size: 36px;
   font-size: 2.25rem;
@@ -9049,20 +9102,20 @@ footer .copyright p {
   line-height: 36px;
 }
 
-/* line 119, ../styles/components/_footer.scss */
+/* line 140, ../styles/components/_footer.scss */
 a.back-to-top {
   position: fixed;
   right: .75em;
   bottom: 0;
   font-size: 14px;
   background-color: white;
-  padding: 1.125em 0.75em 1.125em 0.75em;
+  padding: 1.125em .75em 1.125em .75em;
   color: black;
   padding-bottom: 1px;
   border-bottom: 1px dotted black;
   text-decoration: none;
 }
-/* line 131, ../styles/components/_footer.scss */
+/* line 152, ../styles/components/_footer.scss */
 a.back-to-top:hover {
   color: #c8c8c8;
   text-decoration: none;
@@ -9453,10 +9506,10 @@ a.back-to-top:hover {
   /* Safari 1.x */
   opacity: 0.5;
   /* Good browsers */
-  transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
+  transition: all .5s ease-out;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
 }
 /* line 204, ../styles/components/_carousel.scss */
 .carousel .control:hover {
@@ -10099,17 +10152,17 @@ a.back-to-top:hover {
 
 /* line 148, ../styles/components/_accordion.scss */
 .va-slice-1 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-staff.jpg?1376411685') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-staff.jpg?1376036583') no-repeat center center;
 }
 
 /* line 151, ../styles/components/_accordion.scss */
 .va-slice-2 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-student.jpg?1376411685') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-student.jpg?1376036583') no-repeat center center;
 }
 
 /* line 154, ../styles/components/_accordion.scss */
 .va-slice-3 {
-  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-alumni.jpg?1376411685') no-repeat center center;
+  background: black url('http://artslondon.github.io/beta/assets/img/lcc/LCC-people-alumni.jpg?1376036583') no-repeat center center;
 }
 
 /* line 157, ../styles/components/_accordion.scss */
@@ -10822,7 +10875,7 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   height: 10px;
   top: 1px;
   margin-left: 6px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -11243,7 +11296,7 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
   width: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #f5f3ee;
+  border-bottom: 8px solid #F5F3EE;
   top: -8px;
   margin-left: -8px;
 }
@@ -11265,7 +11318,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
   padding: 0px 5px 1px 5px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border: 1px solid #057ed0;
+  border: 1px solid #057ED0;
   border: 1px solid rgba(5, 126, 208, 0.7);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -11340,7 +11393,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search > input {
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   position: relative !important;
   max-height: 200px !important;
-  border-top: 1px solid #33373d;
+  border-top: 1px solid #33373D;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
@@ -11350,7 +11403,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
   font-size: 12px;
   display: block;
-  border-bottom: 1px solid #33373d;
+  border-bottom: 1px solid #33373D;
   box-shadow: inset 0 1px 0 0 #878e98;
   display: block;
   font-weight: bold;
@@ -11390,7 +11443,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
 
 /* line 228, ../styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
-  border-bottom: 1px solid #103c56;
+  border-bottom: 1px solid #103C56;
   box-shadow: inset 0px 1px 0px 0px #6ad2ef;
   background: #35AFE3;
   background: -webkit-linear-gradient(#45c7eb, #2698db);
@@ -12038,7 +12091,7 @@ button::-moz-focus-inner {
 /* line 346, ../styles/components/_magnific-popup.scss */
 .mfp-arrow-left:after,
 .mfp-arrow-left .mfp-a {
-  border-right: 17px solid white;
+  border-right: 17px solid #FFF;
   margin-left: 31px;
 }
 /* line 351, ../styles/components/_magnific-popup.scss */
@@ -12055,7 +12108,7 @@ button::-moz-focus-inner {
 /* line 360, ../styles/components/_magnific-popup.scss */
 .mfp-arrow-right:after,
 .mfp-arrow-right .mfp-a {
-  border-left: 17px solid white;
+  border-left: 17px solid #FFF;
   margin-left: 39px;
 }
 /* line 365, ../styles/components/_magnific-popup.scss */
@@ -12742,7 +12795,7 @@ img.mfp-img {
   -moz-border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
-  border: solid 2px #333333;
+  border: solid 2px #333;
   top: -2px;
   text-align: center;
 }
@@ -12754,7 +12807,7 @@ img.mfp-img {
   background: #eee;
   width: 36px;
   height: 17px;
-  border: solid 1px #333333;
+  border: solid 1px #333;
   top: -26px;
   margin-left: -18px;
   text-align: center;
@@ -12777,8 +12830,8 @@ img.mfp-img {
   width: 0;
   height: 0;
   line-height: 0;
-  border: solid 5px #eeeeee;
-  border-color: #eeeeee transparent transparent transparent;
+  border: solid 5px #eee;
+  border-color: #eee transparent transparent transparent;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -13045,7 +13098,7 @@ img.mfp-img {
   position: absolute;
   top: 0;
   left: 0;
-  -xborder-right: solid 1px white;
+  -xborder-right: solid 1px #fff;
   width: 10000px;
   z-index: 1;
 }
@@ -13073,8 +13126,8 @@ img.mfp-img {
   color: #fff;
   padding: 5px;
   display: block;
-  border-right: solid 1px #333333;
-  border-bottom: solid 1px #333333;
+  border-right: solid 1px #333;
+  border-bottom: solid 1px #333;
   cursor: pointer;
 }
 
@@ -13216,7 +13269,7 @@ img.mfp-img {
   top: 0;
   left: 0;
   background: #fff;
-  border: solid 1px #999999;
+  border: solid 1px #999;
   z-index: 1001;
   /* make sure it shows on fullscreen */
 }
@@ -13459,7 +13512,7 @@ img.mfp-img {
 /* line 12, ../styles/globals/_debug.scss */
 #grid div.horiz {
   height: 24px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   margin: 0;
   padding: 0;
 }
