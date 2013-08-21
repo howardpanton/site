@@ -64,6 +64,13 @@
 
 }
 
+// float the search icon on desktop to the right of the screen
+.megamenu > li:last-child {
+  @include gs-media(d) {
+    float: right;
+  }
+}
+
 .megamenu > li > a {
   @include font-size(14);
   outline:0;
@@ -173,7 +180,7 @@
     top: 0;
     text-align: center;
     @include gs-media(d) {
-      width: gs-width(d, 16, 16, (1,16), true);
+      min-width: gs-width(d, 16, 16, (1,16), true);
       height: 36px;
     }
     a {
@@ -322,7 +329,7 @@
       width:auto; 
       font-weight: 300;
 
-      &:hover { background-color: #444444; }   
+      &:hover { background-color: $dark-gray; }   
 
       @include gs-media(t, min-max) {
         display:block;
@@ -358,11 +365,26 @@
         }
         border-bottom:none; 
         &:hover {
-          background-color : #444444;
+          background-color : $dark-gray;
         }
 
       }
-      .menu-active { background-color: #333 !important; }
+  
+      //site search icon on main nav
+      > a.search-icon {
+        font-family: "entypo" !important;
+        vertical-align: middle;
+        color: $white;
+        @include font-size(42);
+        @include gs-media(d, min-max) {
+          @include font-size(36);
+          min-width: gs-width(d, 16, 16, (1, 16), true);
+          text-align: center;
+          
+        }
+      }
+
+      .menu-active { background-color: $dark-gray !important; }
     }
 }
 
@@ -375,7 +397,7 @@
   height: 36px; 
   margin-top: 6px; 
   @include font-size(30);
-  border-left: 1px dotted #444444; 
+  border-left: 1px dotted $dark-gray; 
   padding-left: 12px;
 }
 
@@ -431,7 +453,7 @@
   }
 
   .menu-active{
-    background-color: #333333;
+    background-color: $dark-gray;
   }
   
   @include gs-media(d) { display: none; }
@@ -590,7 +612,6 @@
       margin-bottom:0;
     }
   }
-
   .subnav-4 {
       @include gs-media(d) {
       @include gs-span(d, 13, 16);
@@ -608,10 +629,16 @@
       margin-bottom:0;
     }
   }
-    .feature {
+  .feature {
       @include gs-span(d, 9,16);
       color:white; 
       @include font-size(22);
+      p {
+        @extend .leader;
+        @include padding-leader(2);
+        @extend %Swiss721BT-Light;
+        padding-bottom: 0;
+      }
   }
 
   .feature-image { 
@@ -620,12 +647,10 @@
 }
 
 
+
 .site-search-input, .course-finder-txt-input {
  
   color: $aaa-gray;
-  //$s-width: gs-width(d, 1, 15, (1,16), true);
-  //$s-gutter: gs-gutter(d);
-  //width: $s-width;
   width: 100%;
   height: 48px;
   @include gs-media(d) {
