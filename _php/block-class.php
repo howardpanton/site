@@ -1,5 +1,5 @@
-	<!-- php block class -->
-	<?php
+  <?php
+        // Block class
 	// check whether class exists
 	if(class_exists('Block') != true) 
 	{
@@ -149,7 +149,7 @@
 						}
 
 						if ( !$this->array[$i]['figcaption'] == "" ) {
-							echo "<figcaption>" . $this->array[$i]['figcaption'] . "</figcaption>";
+							echo "<figcaption><span>" . $this->array[$i]['figcaption'] . "</span></figcaption>";
 						}
 
 						echo "</figure>";
