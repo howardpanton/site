@@ -55,7 +55,7 @@ ul.tabs li.active {
 	overflow: auto;
   @include margin-trailer(2);
   .tab_content {
-    display: none;
+    display: block;
     // @include margin-leader(2);
   }
   .tab-content-caption-block {
@@ -85,7 +85,7 @@ ul.tabs li.active {
 
 // lcc styling 
 .tabs {
-  .lcc & { 
+  .lcc-tabs & { 
     border: 12px solid $black;
     border-bottom: none;
     li {
@@ -108,7 +108,7 @@ ul.tabs li.active {
   }
 }
 ul.tabs li.active {
-  .lcc & {
+  .lcc-tabs & {
     border-bottom: none;
     display: block;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
@@ -118,12 +118,12 @@ ul.tabs li.active {
   }
 }
 .tab_container {
-  .lcc & {   
+   &.lcc-tabs {   
     background-color: $black;
     color: $white;
     padding: 12px;
     h3 {
-      padding: 0 0 12px 12px;
+      padding: 0 0 12px 0;
       margin-bottom: 24px;
       font-size: 36px;
       font-size: remCalc(36);
