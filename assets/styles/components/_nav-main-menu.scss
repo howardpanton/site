@@ -139,28 +139,56 @@
   .course-finder-txt-input {
     background-color: $bg-gray;
     margin-bottom: 0;
+    border: 0;
+    height: 36px;
+    @include gs-media(d) {
+      padding-left: 12px;
+    }
   }
 
   .small-text-link {
-    color: $white;
-    @include font-size(12);
-    margin-left: 12px;
+    @extend .row;
+    @include margin-leader(1);
+    margin-bottom: -6px;
+    
+    a {
+      color: $white;
+      @include font-size(12);
+      margin-left: 12px;
+      line-height: 16px;
+      border-bottom: 0;
+    }
+
+    a:hover {
+      border-bottom: 1px dotted $white;
+    }
+    
+
   }
   
   .go-search-button {
     @extend .button-link;
-    //margin-left: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    @include gs-media(d) {
+      width: gs-width(d, 16, 16, (1,16), true);
+      height: 36px;
+    }
     a {
+      color: $white;
       border-bottom: 0;
       padding-left: 0;
       padding-right: 0;
-      width: 48px;
       text-align: center;
       text-decoration: none;
     }
     a:hover {
       color: $white;
     }
+
+
   }
 }
 
@@ -363,7 +391,7 @@
     height: 108px;
     background-color: black;
     padding-left: 0px;
-    @include padding-leader(3);
+    @include padding-leader(2);
   }
  
 }
@@ -588,5 +616,19 @@
 
   .feature-image { 
       @include gs-span(d, 13,16);
+  }
+}
+
+
+.site-search-input, .course-finder-txt-input {
+ 
+  color: $aaa-gray;
+  //$s-width: gs-width(d, 1, 15, (1,16), true);
+  //$s-gutter: gs-gutter(d);
+  //width: $s-width;
+  width: 100%;
+  height: 48px;
+  @include gs-media(d) {
+    height: 24px;
   }
 }
