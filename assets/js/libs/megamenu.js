@@ -216,7 +216,6 @@
                                 // $this.siblings().removeClass('active')
                                 //     .find(menuDropDown)[menuEffectHide](settings);
                                 // $this.toggleClass('active')
-                                //     confirm("test")
                                 //     .click(function (event) {
                                 //         event.stopPropagation();
                                 //     });
