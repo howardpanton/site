@@ -32,22 +32,8 @@ template: true
 		</nav>	
 
 		<div class="content">
-			<div class="row">
-				<div class="intro-block-with-left-image">
-					<header class="section-title">
-						<h2>Better Lives</h2>
-					</header>
-					<figure>
-						<img src="{{ site.url }}/assets/img/lcf/lcf-better-lives.jpg">
-						<figcaption><p>Cat Patterson — LCF Loves you<br><em><a href="#">MA Fashion Photography</a></em></p></figcaption>
-					</figure>
-					<div class="content">
-						<p class="leader">Using fashion to drive change, build a sustainable future and improve the way we live.</p>
-						<p>Better Lives is a term we use here at London College of Fashion to describe the work we do which uses fashion, as a discipline, to drive change, build a sustainable future and improve the way we live.</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- .main-content -->
+			{% include components/_intro-block-with-left-image.html %}
+		</div><!-- .content -->
 	</div><!-- .row -->
 
 	<div class="row">
@@ -56,6 +42,9 @@ template: true
 			<figure><img src="{{ site.url }}//assets/img/lcf/lcf-whats-on.jpg"></figure>
 		</div>
 	</div>	
+
+	{% include components/_image-list-with-text-feature.html %}
+	
 
 	<div class="row"><!-- same as existing image-list-with-text but uses H3 for item title -->
 		<div class="wrapper-d3-d14 image-list-with-text image-right">
