@@ -14,8 +14,6 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-var d = $('.breadcrumbs').find('a');
-d.last().hide();
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -123,6 +121,22 @@ function enableSelectBoxes() {
 /////////////////////
 $(document).ready(function(){
 
+  // detect and handle breadcrumbs
+  if ($('.breadcrumbs').length > 0) {
+
+    var d = $('.breadcrumbs').find('a');
+    d.last().hide();
+
+    $.when(
+          $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
+          $.Deferred(function( deferred ){
+              $( deferred.resolve );
+          })
+      ).done(function(){
+        $('.breadcrumbs').niceScroll({horizrailenabled:true});
+      });
+  }
+
   // sidebar script (populate mobile and tablet menu)
   if ($('.sidebar').length > 0) {
 
@@ -146,7 +160,6 @@ $(document).ready(function(){
         _clicked.html('☰').removeClass('active');
       }
       else {
-
       _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
       // update the menu button and set class to active
       _clicked.html('❌').addClass('active');
@@ -162,6 +175,8 @@ $(document).ready(function(){
     enableSelectBoxes();
   
   }
+
+
 
 
   // check for regular blockquotes on the page - 
@@ -370,37 +385,12 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
-  // ////////////////////
-  // //  Footer journeys - fadeIn / fadeOut on click 
-  // ///////////////////
-
-  // $('#footer-btn-explore').click(function(event) {
-  //   event.preventDefault();
-
-  //   _clicked = $(this); 
-  //   if ( !_clicked.hasClass('active')) {
-  //     _clicked.addClass('active');
-  //     $('#footer-journeys-panel').addClass("block");
-
-  //     _clicked.html('Close explore');
-  //     _clicked.scrollToMe(); // scroll page to footer position
-      
-  //   } else {
-  //     _clicked.removeClass('active');
-  //     // $('#footer-journeys-panel').slideUp();
-  //     $('#footer-journeys-panel').addClass("hide");
-  //     _clicked.html('Explore');
-  //     _clicked.scrollToMe(); // scroll page to footer position
-  //   }
-
-  // });
-
 
 
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 450) {
       $('.back-to-top').fadeIn(200);
     } else {
       $('.back-to-top').fadeOut(200);
@@ -564,6 +554,7 @@ if ($('.accordion').length > 0) {
     $.when(
         $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.accordion.js" ),
         $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -797,7 +788,7 @@ if ($('.js-lightbox').length > 0) {
   }
 
   // make videos adapt responsively
-  //$('.video-wrapper').fitVids();
+  //$('.video-container').fitVids();
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -870,7 +861,7 @@ if ($('video').length > 0) {
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
-    $('video').mediaelementplayer({
+    $('video:not(.no-mejs)').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
     });
 

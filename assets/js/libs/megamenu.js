@@ -73,12 +73,11 @@
                     // to prevent the drop down from being closed if a touch
                     // event occurs within its area.
 
+                    //mobile and tablet handler when top level menu items are clicked
                     $(menuItemLink).hammer().on('tap', function () {
                         var $this = $(this);
                         $this.parent(menuItem).toggleClass('active noactive')
                             .find(menuDropDown).toggle(0);
-                        confirm('test');
-                        console.log('test');
                         // No chaining here, the horizontal and vertical
                         // versions don't use the exact same structure.
                         $this.parent(menuItem).siblings().addClass('noactive').removeClass('active')
@@ -217,7 +216,6 @@
                                 // $this.siblings().removeClass('active')
                                 //     .find(menuDropDown)[menuEffectHide](settings);
                                 // $this.toggleClass('active')
-                                //     confirm("test")
                                 //     .click(function (event) {
                                 //         event.stopPropagation();
                                 //     });
@@ -281,7 +279,7 @@
         switch (settings.menu_effect) {
             case 'hover_fade':
                 $(dropDownMega).fadeIn(settings.menu_speed_show);
-                console.log('test');
+                // console.log('test');
                 break;
             case 'hover_slide':
                 $(dropDownMega).slideDown(settings.menu_speed_show);
@@ -383,7 +381,7 @@
                     'left':'0',
                     'right':'0',
                     'width' : _winW,
-                    'top':'47px',
+                    'top':'36px',
                     'margin-left': _lMargin
                 });
 
@@ -400,7 +398,7 @@
                     'left':'0',
                     'right':'0',
                     'width' : _winW,
-                    'top':'47px',
+                    'top':'36px',
                     'margin-left': _leftMargin
                 });
             }  
