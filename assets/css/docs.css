@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ::Grid styles - using CSS files css/grid and css/grid-feature */
 /* ------------------------------------------------------------ */
 /* ::Global styles */
@@ -1002,12 +1003,12 @@ footer.docs a {
  * 
  * © 2013 MyFonts Inc
 */
-/* line 10, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 10, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%;
 }
 
-/* line 12, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 .content-wrapper {
   clear: both;
   min-height: 100%;
@@ -1015,12 +1016,12 @@ html, body {
   height: 100%;
   margin-bottom: -72px;
 }
-/* line 18, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 18, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 .content-wrapper #layout_footer {
   height: 72px;
 }
 
-/* line 20, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
@@ -1061,20 +1062,24 @@ html, body {
 .docs .gist-container td {
   text-align: left;
 }
-/* line 46, ../styles/docs.scss */
+/* line 45, ../styles/docs.scss */
+.docs .docs-menu {
+  padding-top: 12px;
+}
+/* line 47, ../styles/docs.scss */
 .docs .docs-menu li {
   display: inline;
   float: left;
   margin-right: 16px;
   line-height: 42px;
 }
-/* line 55, ../styles/docs.scss */
+/* line 56, ../styles/docs.scss */
 .docs p.docs-intro {
   font-weight: lighter;
   font-size: 2.625em;
   line-height: 1.14286em;
 }
-/* line 63, ../styles/docs.scss */
+/* line 64, ../styles/docs.scss */
 .docs .docs-intro-nav li a {
   font-weight: 300;
   border-bottom: 1px dotted;
@@ -1086,26 +1091,26 @@ html, body {
   -o-transition: "all 0.25s";
   margin-bottom: 12px;
 }
-/* line 77, ../styles/docs.scss */
+/* line 78, ../styles/docs.scss */
 .docs .docs-intro-nav li a:hover {
   color: #757575;
 }
-/* line 84, ../styles/docs.scss */
+/* line 85, ../styles/docs.scss */
 .docs .git-twitter-btns-list {
   height: 30px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 89, ../styles/docs.scss */
+/* line 90, ../styles/docs.scss */
 .docs .git-twitter-btns-list ul {
   margin-bottom: 0;
 }
-/* line 92, ../styles/docs.scss */
+/* line 93, ../styles/docs.scss */
 .docs .git-twitter-btns-list ul li {
   margin-right: 12px;
 }
-/* line 100, ../styles/docs.scss */
+/* line 101, ../styles/docs.scss */
 .docs .docs-section-links-nav li a {
   font-weight: 300;
   margin-right: 12px;
@@ -1116,7 +1121,7 @@ html, body {
   -o-transition: "all 0.25s";
   margin-bottom: 12px;
 }
-/* line 109, ../styles/docs.scss */
+/* line 110, ../styles/docs.scss */
 .docs .docs-section-links-nav li a .section-link {
   font-size: 2.25em;
   line-height: 1.16667em;
@@ -1124,7 +1129,7 @@ html, body {
   font-weight: lighter;
   border-bottom: 1px dotted #757575;
 }
-/* line 117, ../styles/docs.scss */
+/* line 118, ../styles/docs.scss */
 .docs .docs-section-links-nav p {
   font-size: 1em;
   line-height: 1.5em;
@@ -1133,23 +1138,23 @@ html, body {
   color: #282828;
   margin-bottom: 3.75em;
 }
-/* line 128, ../styles/docs.scss */
+/* line 129, ../styles/docs.scss */
 .docs .breadcrumb {
   padding-top: 1.125em;
   clear: both;
 }
-/* line 131, ../styles/docs.scss */
+/* line 132, ../styles/docs.scss */
 .docs .breadcrumb ul {
   padding-left: 0;
 }
-/* line 133, ../styles/docs.scss */
+/* line 134, ../styles/docs.scss */
 .docs .breadcrumb ul li {
   list-style: none;
   display: inline;
   float: left;
   margin-right: 1em;
 }
-/* line 141, ../styles/docs.scss */
+/* line 142, ../styles/docs.scss */
 .docs .breadcrumb .separator {
   display: inline-block;
   overflow: hidden;
@@ -1158,30 +1163,30 @@ html, body {
   width: 33px;
   vertical-align: bottom;
 }
-/* line 151, ../styles/docs.scss */
+/* line 152, ../styles/docs.scss */
 .docs .header {
   background: black;
   padding-top: 0em;
-  border-top: 6px solid #000000;
+  border-top: 6px solid black;
 }
-/* line 158, ../styles/docs.scss */
+/* line 159, ../styles/docs.scss */
 .docs .header h1, .docs .header h2, .docs .header h3, .docs .header h4, .docs .header h5, .docs .header h6, .docs .header p {
   color: white;
 }
-/* line 160, ../styles/docs.scss */
+/* line 161, ../styles/docs.scss */
 .docs .header h1 a, .docs .header h2 a, .docs .header h3 a, .docs .header h4 a, .docs .header h5 a, .docs .header h6 a, .docs .header p a {
   color: white;
   border: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 151, ../styles/docs.scss */
+  /* line 152, ../styles/docs.scss */
   .docs .header {
     padding-top: 0px;
     border-top: 0px;
   }
 }
 
-/* line 177, ../styles/docs.scss */
+/* line 178, ../styles/docs.scss */
 a span.title {
   height: 1px;
   width: 1px;
@@ -1190,16 +1195,16 @@ a span.title {
   top: -10px;
 }
 
-/* line 191, ../styles/docs.scss */
+/* line 192, ../styles/docs.scss */
 .slide-in-menu-trigger {
   border-bottom: 0;
 }
-/* line 193, ../styles/docs.scss */
+/* line 194, ../styles/docs.scss */
 .slide-in-menu-trigger:hover {
   border-bottom: 0;
 }
 
-/* line 198, ../styles/docs.scss */
+/* line 199, ../styles/docs.scss */
 .menu-toggle-link {
   position: absolute;
   top: -66px;
@@ -1208,99 +1213,103 @@ a span.title {
   width: 80px;
   z-index: 99999;
 }
-/* line 206, ../styles/docs.scss */
+/* line 207, ../styles/docs.scss */
 .menu-toggle-link p {
   display: none;
 }
-/* line 210, ../styles/docs.scss */
+/* line 211, ../styles/docs.scss */
 .menu-toggle-link .ui-icons-transparent-close {
   right: -36px !important;
 }
 
-/* line 216, ../styles/docs.scss */
+/* line 217, ../styles/docs.scss */
 .docs-menu-toggle {
   font-size: 3.375em;
   line-height: 3.375em;
 }
 
-/* line 222, ../styles/docs.scss */
+/* line 223, ../styles/docs.scss */
 #slide-in-nav {
   display: none;
   background-color: black;
 }
-/* line 225, ../styles/docs.scss */
+/* line 226, ../styles/docs.scss */
 #slide-in-nav > ul li {
   width: 100%;
   border-bottom: 1px dotted #e9e9e9;
 }
-/* line 230, ../styles/docs.scss */
+/* line 231, ../styles/docs.scss */
 #slide-in-nav > ul li a {
   color: white;
 }
 
-/* line 238, ../styles/docs.scss */
+/* line 239, ../styles/docs.scss */
 #jPanelMenu-menu {
   background-color: black;
 }
 
-/* line 241, ../styles/docs.scss */
+/* line 242, ../styles/docs.scss */
 .jPanelMenu-panel {
   background-color: black;
 }
 
-/* line 246, ../styles/docs.scss */
+/* line 247, ../styles/docs.scss */
 #jPanelMenu-menu ul {
   margin-top: 86px;
   width: 100%;
 }
 
-/* line 251, ../styles/docs.scss */
+/* line 252, ../styles/docs.scss */
 #jPanelMenu-menu ul li {
   padding: 6px;
-  border-bottom: 1px dotted #444;
+  border-bottom: 1px dotted #444444;
 }
 
-/* line 256, ../styles/docs.scss */
+/* line 257, ../styles/docs.scss */
 .jPanelMenu-panel {
   /*background-color: $black;*/
 }
 
-/* line 300, ../styles/docs.scss */
+/* line 301, ../styles/docs.scss */
 .docs_grey_bg {
   background: #757275;
   color: white;
 }
-/* line 303, ../styles/docs.scss */
+/* line 304, ../styles/docs.scss */
 .docs_grey_bg a {
   color: white;
 }
 
-/* line 308, ../styles/docs.scss */
+/* line 309, ../styles/docs.scss */
 .docs_grey_darken_bg {
   background: #5b595b;
   color: white;
 }
-/* line 311, ../styles/docs.scss */
+/* line 312, ../styles/docs.scss */
 .docs_grey_darken_bg a {
   color: white;
 }
 
-/* line 316, ../styles/docs.scss */
+/* line 317, ../styles/docs.scss */
 .docs_grey_darken_20_bg {
   background: #414041;
   color: white;
 }
-/* line 319, ../styles/docs.scss */
+/* line 320, ../styles/docs.scss */
 .docs_grey_darken_20_bg a {
   color: white;
 }
 
-/* line 324, ../styles/docs.scss */
+/* line 325, ../styles/docs.scss */
 .docs_grey_lighten_80_bg {
   background: #f3f3f3;
 }
 
-/* line 336, ../styles/docs.scss */
+/* line 334, ../styles/docs.scss */
+.docs-menu {
+  padding-top: 12px;
+}
+/* line 337, ../styles/docs.scss */
 .docs-menu ul li {
   display: inline;
   float: left;
@@ -1308,31 +1317,31 @@ a span.title {
   height: 54px;
   line-height: 24px;
 }
-/* line 344, ../styles/docs.scss */
+/* line 345, ../styles/docs.scss */
 .docs-menu ul li a:hover {
   border-bottom: 1px solid white;
 }
 
-/* line 351, ../styles/docs.scss */
+/* line 352, ../styles/docs.scss */
 i.docs {
   font-size: 5em;
   position: relative;
   top: 16px;
 }
 
-/* line 358, ../styles/docs.scss */
+/* line 359, ../styles/docs.scss */
 .mobile-menu {
   position: relative;
   float: right;
   top: 10px;
 }
 
-/* line 364, ../styles/docs.scss */
+/* line 365, ../styles/docs.scss */
 footer.docs {
   overflow: hidden;
   margin-top: 60px;
 }
-/* line 367, ../styles/docs.scss */
+/* line 368, ../styles/docs.scss */
 footer.docs a {
   color: white;
   text-decoration: none;
@@ -1340,23 +1349,23 @@ footer.docs a {
   border-bottom: 1px dotted white;
   margin-right: 16px;
 }
-/* line 374, ../styles/docs.scss */
+/* line 375, ../styles/docs.scss */
 footer.docs a:hover {
   color: #757575;
   padding-bottom: 1px;
   border-bottom: 1px solid white;
 }
-/* line 382, ../styles/docs.scss */
+/* line 383, ../styles/docs.scss */
 footer.docs .footer-links li {
   float: left;
   display: inline;
 }
-/* line 388, ../styles/docs.scss */
+/* line 389, ../styles/docs.scss */
 footer.docs .updated-footer {
   color: white;
 }
 
-/* line 393, ../styles/docs.scss */
+/* line 394, ../styles/docs.scss */
 .docs-color-code-block {
   margin-bottom: 3em;
   background-color: #26292C;
@@ -1364,11 +1373,11 @@ footer.docs .updated-footer {
   padding: 24px;
   clear: left;
 }
-/* line 399, ../styles/docs.scss */
+/* line 400, ../styles/docs.scss */
 .docs-color-code-block .function-color {
   color: #6FCCEC;
 }
-/* line 402, ../styles/docs.scss */
+/* line 403, ../styles/docs.scss */
 .docs-color-code-block .number-color {
   color: #A491FD;
 }
@@ -1377,7 +1386,7 @@ footer.docs .updated-footer {
     holders hold the colours and everything
     else for the swatches
 /* ------------------------------------------------------------ */
-/* line 414, ../styles/docs.scss */
+/* line 415, ../styles/docs.scss */
 .jqueryswatches .holder {
   position: relative;
   width: 100%;
@@ -1389,7 +1398,7 @@ footer.docs .updated-footer {
     everything below styles the individual
     color blocks
 /* ------------------------------------------------------------ */
-/* line 428, ../styles/docs.scss */
+/* line 429, ../styles/docs.scss */
 .jqueryswatches .color {
   height: 100%;
   display: inline-block;
@@ -1399,7 +1408,7 @@ footer.docs .updated-footer {
     the shade class contains the names of
     the colors for the popup effect
 /* ------------------------------------------------------------ */
-/* line 437, ../styles/docs.scss */
+/* line 438, ../styles/docs.scss */
 .jqueryswatches .shade {
   position: absolute;
   bottom: 0;
@@ -1408,27 +1417,27 @@ footer.docs .updated-footer {
   color: #FFF;
 }
 
-/* line 445, ../styles/docs.scss */
+/* line 446, ../styles/docs.scss */
 .jqueryswatches .color-names {
   font-size: 9px;
   color: #aaa;
 }
 
-/* line 450, ../styles/docs.scss */
+/* line 451, ../styles/docs.scss */
 .jqueryswatches .color {
   height: 100%;
   display: inline-block;
   width: 25%;
 }
 
-/* line 456, ../styles/docs.scss */
+/* line 457, ../styles/docs.scss */
 .holder {
   margin: 0;
   height: 100px;
   text-align: left;
 }
 
-/* line 462, ../styles/docs.scss */
+/* line 463, ../styles/docs.scss */
 .jqueryswatches .name {
   display: inline-block;
   height: 100%;
@@ -1443,7 +1452,7 @@ footer.docs .updated-footer {
 /* -----------------------------------------
     styles the name of the swatch
 /* ------------------------------------------------------------ */
-/* line 476, ../styles/docs.scss */
+/* line 477, ../styles/docs.scss */
 .jqueryswatches .info {
   color: #000;
   display: none;
