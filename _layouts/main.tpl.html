@@ -180,13 +180,23 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
 {% endif %}
 {{ content }}
-
-{% if page.college == "lcc" %}
-  {% include _lcc_footer.html %}
-{% else %}
-  {% include _college_footer.html %}
-{% endif %}
-
+ 
+ {% case page.college %}
+    {% when "csm" %}
+      {% include _csm_footer.html %}
+    {% when "lcc" %}
+      {% include _lcc_footer.html %}
+    {% when "lcf" %}
+      {% include _lcf_footer.html %}
+    {% when "chelsea" %}
+      {% include _chelsea_footer.html %}
+    {% when "camberwell" %}
+      {% include _camberwell_footer.html %}
+    {% when "wimbledon" %}
+      {% include _wimbledon_footer.html %}
+    {% else %}
+     
+  {% endcase %}
 
   {% if page.template == true %}
       {% include _global_footer.html %}

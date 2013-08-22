@@ -340,7 +340,7 @@
         // when not hovered.
 
         if (($(window).width() < 960) && (settings.menu_responsive === 1)) {
-            $('.dropdown_container, .dropdown_fullwidth').css({'left':'-1px', 'top':'auto'}).hide();
+            $('.dropdown_container, .dropdown_fullwidth').css({'left':'0', 'top':'auto'}).hide();
             $('.dropdown_first').css({'left':'0'}).hide();
             $('.dropdown_flyout_level, .dropdown_flyout_level_left').css({'left':'0', 'top':'0'}).hide();
             $('.megamenu').children('li').hide(0);
@@ -351,57 +351,34 @@
             $('.dropdown_container').css({'left':'auto', 'top':'auto'}).hide();
             $('.dropdown_fullwidth').css({'left':'-1px', 'top':'auto'}).hide();
             
+            // get width of page to -- used to set the width of the menu dropdown
+            var _innerW = $('body').innerWidth();
 
-            // //------ MEASURE THE SCROLLBAR WIDTH
-            // // Create the measurement node
-            var scrollDiv = document.createElement("div");
-            scrollDiv.className = "scrollbar-measure";
-            document.body.appendChild(scrollDiv);
+            var _nav_wrap = document.getElementById('global-nav'),
+                x_pos;
 
-            // Get the scrollbar width
-            var scrollbarWidth = (scrollDiv.offsetWidth - scrollDiv.clientWidth) - 3;
+            // get x-position (distance from left side of screen) of navigation
+            x_pos = _nav_wrap.getBoundingClientRect().left;
 
-            // // Delete the DIV 
-            document.body.removeChild(scrollDiv);
-            // //----------------------------------
+            // console.log("global nav position is: ");
+            // console.log(x_pos, y_pos, w);
 
-            var _winW = $(window).width();
+            // console.log("inner width is: " + _innerW);
+            // console.log("window width is: " + _winW);
 
-            if (_winW > 1280) {
-                // calculate width at the edge of the content
-                var _spaceAroundContent = (_winW - 1280);
-                var _marginCalc = ( (_spaceAroundContent / 2) - scrollbarWidth + 12);
-                var _lMargin =  ("-" + _marginCalc + "px");
-                console.log("window width: " + _winW);
-                console.log("scrollbar width: " + scrollbarWidth);
-                console.log("from left edge to content: " + _marginCalc);
 
-                $('.dropdown_fullwidth').css({
+            // set negative left margin to push 
+            // menu dropdown to the left edge of the screen
+            var _l_margin = ("-" + x_pos + "px");
+
+            $('.dropdown_fullwidth').css({
                     'position':'absolute',
                     'left':'0',
                     'right':'0',
-                    'width' : _winW,
+                    'width' : _innerW, // set dropdown to full screen width
                     'top':'36px',
-                    'margin-left': _lMargin
-                });
-
-            }
-            else {
-                var _contentW = _winW;
-                console.log("the content width is: " + _contentW);
-                var _calcM = ( ((_contentW / 100) * 3.75) - scrollbarWidth + 12); // calculate left margin size
-                console.log("the calculated left margin is: " + _calcM) ;
-                var _leftMargin = ("-" + _calcM + "px");
-                
-                $('.dropdown_fullwidth').css({
-                    'position':'absolute',
-                    'left':'0',
-                    'right':'0',
-                    'width' : _winW,
-                    'top':'36px',
-                    'margin-left': _leftMargin
-                });
-            }  
+                    'margin-left': _l_margin // push dropdown to the left side of screen
+            });
 
             $('.dropdown_flyout_level').css({'left':'95%', 'top':'-21px'}).hide();
             $('.dropdown_flyout_level_left').css({'left':'-108%', 'right':'100%'}).hide();
