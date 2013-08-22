@@ -61,6 +61,10 @@ h1 {
 		@extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
+
+  .csm & {
+    @extend %BureauGrotBold;
+  }
 }
 
 h2, h3, h4 {
@@ -69,6 +73,7 @@ h2, h3, h4 {
 		@extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
+
 }
 
 h2 {
@@ -157,8 +162,12 @@ ol {
 	}
 }
 
-strong, b, em {
+strong, b,{
 	@extend %Swiss721BT-Bold;
+}
+
+em {
+  @extend %Swiss721BT-Italic;
 }
 
 code {
@@ -555,26 +564,25 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-     .content-wrapper, .header-wrapper {
-        h1,h2,h3,h4,h5,h6 {
-         	@extend %Swiss721BT-Black;
-        }
-        h4,h5,h6 {
-             font-family: "Swiss721BT-Bold";
-        }
-        h2 {
-             text-transform: uppercase;
-        }
-        h2 {
-            padding-bottom: rhythm(1, 24px);
-            margin-bottom: rhythm(3, 24px);
-            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-            letter-spacing: 5px;
-            .ual-black-bg & {
-            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-            }
-        }
-
+    .content-wrapper, .header-wrapper {
+      h1,h2,h3,h4,h5,h6 {
+       	@extend %Swiss721BT-Black;
+      }
+      h4,h5,h6 {
+           font-family: "Swiss721BT-Bold";
+      }
+      h2 {
+           text-transform: uppercase;
+      }
+      h2 {
+          padding-bottom: rhythm(1, 24px);
+          margin-bottom: rhythm(3, 24px);
+          background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+          letter-spacing: 5px;
+          .ual-black-bg & {
+          	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+          }
+      }
     }
 
     .content {
@@ -587,7 +595,10 @@ b, strong, h2, h3, h4 {
          	}
         }
      }
-
+    
+    footer {
+      
+    }
     /* figcaption, .flex-video .caption {
     //     padding: 0 10px;
     //     color: $ual-secondary;
