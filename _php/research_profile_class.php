@@ -1,4 +1,4 @@
-<!-- php research profile class -->
+<!-- Research Profile Class -->
 <?php
 // check whether class exists
 if(class_exists('Profile') != true) 
@@ -102,7 +102,7 @@ if(class_exists('Profile') != true)
 				</figure>
 				<div class="text">
 					<h3 class="size-h5"><a href="<?php echo $item['section_link']; ?>" title=""><?php echo $item['title']; ?></a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis. Phasellus nisl mi, gravida in porta nec, hendrerit quis arcu. (max XX words)</p>
+					<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis. Phasellus nisl mi, gravida in porta nec, hendrerit quis arcu. (max XX words)</p>-->
 				</div>
 			</li>
 		<?php 	
@@ -118,7 +118,7 @@ if(class_exists('Profile') != true)
 			$enhanced = $this->enhance_arrays();
 
 			$sorted = $this->alpha_sort_array($enhanced, 'surname');
-			
+
 			?>
 			<div class="row">
 				
