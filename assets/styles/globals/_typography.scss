@@ -12,7 +12,6 @@
 // Always show scrollbar to prevent jumps when content is expanded
 html {
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 // Set box-sizing rules to all Div's.
@@ -23,6 +22,7 @@ html {
 // Apply UAL global font to body
 body {
 	font-family: $ual-global-font-stack;
+	overflow-x: hidden;
 	@include font-size(16);
 }
 

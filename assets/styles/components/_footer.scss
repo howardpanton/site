@@ -19,6 +19,13 @@ footer {
 
 
 .footer-links {
+  ul { 
+    margin-bottom: 0;
+    @include gs-media (d) {
+      margin-bottom: rhythm(3, 16px);
+    }
+  }
+
   ul li {
     border-bottom: 1px dotted $aaa-gray;
     padding-bottom: 0;
@@ -34,14 +41,11 @@ footer {
   }
 
   ul li:first-child {
-    border-top: 0;
-    @include gs-media (d) {
-      border-top: 1px dotted $aaa-gray;
-    } 
+    border-top: 1px dotted $aaa-gray;
   }
 
   ul li:last-child {
-    // border-bottom: 0;
+    border-bottom: 0;
     @include gs-media (d) {
       border-bottom: 1px dotted $aaa-gray;
     } 
@@ -58,6 +62,14 @@ footer {
 
 .footer-col-3 {
   @extend %d9-d12;
+  
+  li:last-child{
+    border-bottom: 1px dotted $aaa-gray !important;
+    @include gs-media (d) {
+      border-bottom: 0;
+    } 
+  }
+
 }
 
 .social-links {
@@ -69,7 +81,11 @@ footer {
     @include font-size(14);
     line-height: rhythm(6, 16px);
     padding: 0;
+    padding-left: 10px;
     text-transform: capitalize !important;
+    @include gs-media (d) {
+      padding-left: 0;
+    }
   }
 
   li {
@@ -78,12 +94,17 @@ footer {
     a {
       line-height: 36px;
       border-bottom: 0;
-      padding-left: 0;
+      padding-left:10px;
+      @include gs-media (d) {
+        padding-left: 0;
+      }
       padding-right: 18px;
       display: block;
     }
     a:first-child {
-      padding-left: 0 !important;
+      @include gs-media (d) {
+        padding-left: 0 !important;
+      }
     }
   }
 

@@ -14,12 +14,7 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-if ($('.breadcrumbs').length > 0) {
 
-  var d = $('.breadcrumbs').find('a');
-  d.last().hide();
-  $('.breadcrumbs').niceScroll({horizrailenabled:true});
-}
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
   var Link_study_1 = $(".study-nav").find("li").slice(6, 11);
@@ -125,6 +120,22 @@ function enableSelectBoxes() {
 // ON DOCUMENT READY 
 /////////////////////
 $(document).ready(function(){
+
+  // detect and handle breadcrumbs
+  if ($('.breadcrumbs').length > 0) {
+
+    var d = $('.breadcrumbs').find('a');
+    d.last().hide();
+
+    $.when(
+          $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
+          $.Deferred(function( deferred ){
+              $( deferred.resolve );
+          })
+      ).done(function(){
+        $('.breadcrumbs').niceScroll({horizrailenabled:true});
+      });
+  }
 
   // sidebar script (populate mobile and tablet menu)
   if ($('.sidebar').length > 0) {

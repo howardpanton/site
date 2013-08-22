@@ -64,6 +64,13 @@
 
 }
 
+// float the search icon on desktop to the right of the screen
+.megamenu > li:last-child {
+  @include gs-media(d) {
+    float: right;
+  }
+}
+
 .megamenu > li > a {
   @include font-size(14);
   outline:0;
@@ -139,27 +146,56 @@
   .course-finder-txt-input {
     background-color: $bg-gray;
     margin-bottom: 0;
+    border: 0;
+    height: 36px;
+    @include gs-media(d) {
+      padding-left: 12px;
+    }
   }
 
   .small-text-link {
-    color: $aaa-gray;
-    @include font-size(12);
+    @extend .row;
+    @include margin-leader(1);
+    margin-bottom: -6px;
+    
+    a {
+      color: $white;
+      @include font-size(12);
+      margin-left: 12px;
+      line-height: 16px;
+      border-bottom: 0;
+    }
+
+    a:hover {
+      border-bottom: 1px dotted $white;
+    }
+    
+
   }
   
   .go-search-button {
     @extend .button-link;
-    //margin-left: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    @include gs-media(d) {
+      min-width: gs-width(d, 16, 16, (1,16), true);
+      height: 36px;
+    }
     a {
+      color: $white;
       border-bottom: 0;
       padding-left: 0;
       padding-right: 0;
-      width: 48px;
       text-align: center;
       text-decoration: none;
     }
     a:hover {
       color: $white;
     }
+
+
   }
 }
 
@@ -282,22 +318,18 @@
 }
 
 .top-bar{
-    // @extend .header-wrapper;
     position: relative;
     > ul {
-      // hide the menu on mobile / tablet view
-      // @include gs-media(t, min-max) { display: none; }
-      // @include gs-media(m, min-max) { display: none; }
+     
     }
-    .menu-active { background-color: #333 !important; }
-
+    
     li {
       list-style:none; 
       padding:0;
       width:auto; 
       font-weight: 300;
 
-      &:hover { background-color: #444444; }   
+      &:hover { background-color: $dark-gray; }   
 
       @include gs-media(t, min-max) {
         display:block;
@@ -315,29 +347,44 @@
       }
 
       > a {
-            display: block;
-            height: 100%;
-            color: white;  
-            @include font-size(13);
-            line-height: 24px;
+        display: block;
+        height: 100%;
+        color: white;  
+        @include font-size(16);
+        @extend %Swiss721BT-Light;
+        // padding-left: 0.75em; 
+        // padding-right: 0.75em;
+        padding: 6px 10px; 
+        line-height: 36px;
 
-            border-bottom:none; 
-            padding: 6px 10px;
-            
-            &:hover {
-              background-color : #444444;
-            }
+        @include gs-media(d) { 
+          // @extend %Swiss721BT-Roman;
+          @include font-size(13); 
+          line-height: 24px;
+          padding: 6px 12px;
+        }
+        border-bottom:none; 
+        &:hover {
+          background-color : $dark-gray;
+        }
 
-            @include gs-media(t, min-max) {
-              padding-left: 0.75em; 
-              padding-right: 0.75em; 
-            }
+      }
+  
+      //site search icon on main nav
+      > a.search-icon {
+        font-family: "entypo" !important;
+        vertical-align: middle;
+        color: $white;
+        @include font-size(42);
+        @include gs-media(d, min-max) {
+          @include font-size(36);
+          min-width: gs-width(d, 16, 16, (1, 16), true);
+          text-align: center;
+          
+        }
+      }
 
-            @include gs-media(m, min-max) {
-              padding-left: 0.75em; 
-              padding-right: 0.75em; 
-            }
-          }
+      .menu-active { background-color: $dark-gray !important; }
     }
 }
 
@@ -350,7 +397,7 @@
   height: 36px; 
   margin-top: 6px; 
   @include font-size(30);
-  border-left: 1px dotted #444444; 
+  border-left: 1px dotted $dark-gray; 
   padding-left: 12px;
 }
 
@@ -406,7 +453,7 @@
   }
 
   .menu-active{
-    background-color: #333333;
+    background-color: $dark-gray;
   }
   
   @include gs-media(d) { display: none; }
@@ -439,7 +486,7 @@
 
 .ual-logo-desktop {
   
-  padding-left: 10px;
+  padding-left: 12px;
   
   @include gs-media(t, min-max) { display: none; }
 
@@ -565,7 +612,6 @@
       margin-bottom:0;
     }
   }
-
   .subnav-4 {
       @include gs-media(d) {
       @include gs-span(d, 13, 16);
@@ -583,13 +629,31 @@
       margin-bottom:0;
     }
   }
-    .feature {
+  .feature {
       @include gs-span(d, 9,16);
       color:white; 
       @include font-size(22);
+      p {
+        @extend .leader;
+        @include padding-leader(2);
+        @extend %Swiss721BT-Light;
+        padding-bottom: 0;
+      }
   }
 
   .feature-image { 
       @include gs-span(d, 13,16);
+  }
+}
+
+
+
+.site-search-input, .course-finder-txt-input {
+ 
+  color: $aaa-gray;
+  width: 100%;
+  height: 48px;
+  @include gs-media(d) {
+    height: 24px;
   }
 }

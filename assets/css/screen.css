@@ -84,6 +84,289 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /*------------------------------------*\
+    $FONT-FACE
+\*------------------------------------*/
+/**
+ * Brandon
+ *
+ * This is the specific font face that is being used for CCW (Camberwell, Chelsea and Wimbledon)
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "BrandonText-Bold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "BrandonText-Regular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/brandon/brandon-text-regular.ttf') format('truetype');
+}
+
+/**
+ * Bureau Grot Bold
+ *
+ * This is the specific font face that is being used for Central Saint Martins
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "BureauGrotBold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/bureau-grot/bureau-grot-bold.ttf') format('truetype');
+}
+
+/*
+This CSS resource incorporates links to font software which is 
+the valuable copyrighted property of WebType LLC, The Font Bureau 
+and/or their suppliers. You may not 
+attempt to copy, install, redistribute, convert, modify or reverse 
+engineer this font software. Please contact WebType with any 
+questions: http://www.webtype.com 
+*/
+/**
+ * Entypo
+ *
+ * http://www.entypo.com/
+ *
+ */
+@font-face {
+  font-family: "entypo";
+  src: url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo/entypo.otf') format('opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/entypo/entypo.woff') format('woff');
+}
+
+@font-face {
+  font-family: "entypo-social";
+  src: url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.svg') format('svg'), url('http://artslondon.github.io/beta/assets/fonts/entypo-social/entypo-social.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/fonts/entypo-social/entypo-social.woff') format('woff');
+}
+
+/* line 25, ../styles/font-face/_entypo.scss */
+.icon, .m-menu-btn-toggle span, a.search span, .warning-icon, .megamenu > li .menu-plus, .sb-icon-search, .youtube {
+  font-family: "entypo";
+}
+
+/* line 26, ../styles/font-face/_entypo.scss */
+.icon-social, .footer-ico {
+  font-family: "entypo-social";
+}
+
+/* line 28, ../styles/font-face/_entypo.scss */
+.download:before {
+  font-family: "entypo";
+  font-size: 36px;
+  content: "📄";
+  vertical-align: middle;
+  padding-right: 1.5em;
+}
+
+/**
+ * League Gothic
+ *
+ * This is the specific font face that is being used for London College of Communications
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "LeagueGothicRegular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Regular-webfont.svg#LeagueGothicRegular') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicItalic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-Italic-webfont.svg#LeagueGothicItalic') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicCondensedRegular";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedRegular-webfont.svg#LeagueGothicCondensedRegular') format('svg');
+}
+
+@font-face {
+  font-family: "LeagueGothicCondensedItalic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/league-gothic/LeagueGothic-CondensedItalic-webfont.svg#LeagueGothicCondensedItalic') format('svg');
+}
+
+/* line 50, ../styles/font-face/_league-gothic.scss */
+.lcc h1, .lcc h2, .lcc h3, .lcc h4, .lcc .footer-block h3, .lcc .top-stories .stories-list .date {
+  font-family: LeagueGothicRegular;
+}
+
+/* @license
+ * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed ../fonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Swiss 721 Light by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Italic by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Bold by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Black by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Medium by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Brandon Text Bold by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * Webfont: Brandon Text Regular by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
+ * 
+ * © 2013 MyFonts Inc
+*/
+/**
+ * Swiss 721
+ *
+ * This is the specific font face that is being used for the University of the Arts London
+ *
+ */
+/**
+ * ^h1 ^h2
+ */
+@font-face {
+  font-family: "Swiss721BT-Light";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-light.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Roman";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-roman.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Italic";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-italic.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Bold";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-bold.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Black";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.ttf') format('truetype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-black.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Swiss721BT-Medium";
+  src: url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.woff') format('woff'), url('http://artslondon.github.io/beta/assets/fonts/swiss/swiss-medium.ttf') format('truetype');
+}
+
+/* line 68, ../styles/font-face/_swiss-721.scss */
+figure a, figcaption, .rsCaption, .top-bar li > a, .top-bar .feature p, .college-link-menu ul li a, .sidebar a, .footer-links ul li a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
+  font-family: Swiss721BT-Light;
+}
+
+/* line 69, ../styles/font-face/_swiss-721.scss */
+.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
+.megamenu li .dropdown_fullwidth h2 a,
+.megamenu li .dropdown_fullwidth a,
+.megamenu li .dropdown_multilevel h2 a,
+.megamenu li .dropdown_multilevel a, .dd-heading a, .social-links h3 {
+  font-family: Swiss721BT-Light !important;
+}
+
+/* line 70, ../styles/font-face/_swiss-721.scss */
+a {
+  font-family: Swiss721BT-Roman;
+}
+
+/* line 71, ../styles/font-face/_swiss-721.scss */
+code {
+  font-family: Swiss721BT-Italic;
+}
+
+/* line 72, ../styles/font-face/_swiss-721.scss */
+h2 a, h3 a, h4 a, h2, h3, h4, strong, b, em, dl dt, .sidebar ul li:first-child, .sidebar ul li:first-child a, .accordion-list .st-content table th, .accordion-list-item .st-content dl dt {
+  font-family: Swiss721BT-Bold;
+}
+
+/* line 73, ../styles/font-face/_swiss-721.scss */
+.lcf .content-wrapper h1, .lcf .dd-menu-dropdown-wrapper h1, .lcf .content-wrapper h2, .lcf .dd-menu-dropdown-wrapper h2, .lcf .content-wrapper h3, .lcf .dd-menu-dropdown-wrapper h3, .lcf .content-wrapper h4, .lcf .dd-menu-dropdown-wrapper h4, .lcf .content-wrapper h5, .lcf .dd-menu-dropdown-wrapper h5, .lcf .content-wrapper h6, .lcf .dd-menu-dropdown-wrapper h6, .lcf .header-wrapper h1, .lcf .header-wrapper h2, .lcf .header-wrapper h3, .lcf .header-wrapper h4, .lcf .header-wrapper h5, .lcf .header-wrapper h6 {
+  font-family: Swiss721BT-Black;
+}
+
+/* line 74, ../styles/font-face/_swiss-721.scss */
+.filter-module h3 {
+  font-family: Swiss721BT-Medium;
+}
+
+/* @license
+ * MyFonts Webfont Build ID 2590056, 2013-06-27T08:49:50-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed ../fonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Swiss 721 Light by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/swiss-721/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Italic by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/italic/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Bold by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/bold/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Black by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/black/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Swiss 721 Medium by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/medium/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * Webfont: Brandon Text Bold by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/bold/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * Webfont: Brandon Text Regular by HVD Fonts
+ * URL: http://www.myfonts.com/fonts/hvdfonts/brandon-text/regular/
+ * Copyright: Copyright (c) 2012 by Hannes von Doehren. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2590056
+ * 
+ * © 2013 MyFonts Inc
+*/
+/*------------------------------------*\
     $GRIDSET
 \*------------------------------------*/
 /* Grids generated by Gridset: https://gridsetapp.com */
@@ -361,7 +644,7 @@ questions: http://www.webtype.com
 }
 
 /* line 25, ../styles/font-face/_entypo.scss */
-.icon, .m-menu-btn-toggle span, a.search span, .warning-icon, .megamenu > li .menu-plus, .youtube {
+.icon, .m-menu-btn-toggle span, a.search span, .warning-icon, .megamenu > li .menu-plus, .sb-icon-search, .youtube {
   font-family: "entypo";
 }
 
@@ -499,7 +782,7 @@ questions: http://www.webtype.com
 }
 
 /* line 68, ../styles/font-face/_swiss-721.scss */
-figure a, figcaption, .rsCaption, .sidebar a, .footer-links ul li a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
+figure a, figcaption, .rsCaption, .top-bar li > a, .top-bar .feature p, .college-link-menu ul li a, .sidebar a, .footer-links ul li a, .dd-menu ul li a, .select-box ul li a, .dd-menu-heading h3, .select-box-heading h3 {
   font-family: Swiss721BT-Light;
 }
 
@@ -742,19 +1025,19 @@ html {
 /* line 13, ../styles/globals/_typography.scss */
 html {
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 
-/* line 19, ../styles/globals/_typography.scss */
+/* line 18, ../styles/globals/_typography.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 24, ../styles/globals/_typography.scss */
+/* line 23, ../styles/globals/_typography.scss */
 body {
   font-family: "Swiss721BT-Light", Helvetica Neue, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -1156,49 +1439,49 @@ hr {
 
 /* line 1, ../styles/globals/_logos.fallback.scss */
 .icon-ual-camberwell {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-camberwell.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 5, ../styles/globals/_logos.fallback.scss */
 .icon-ual-chelsea {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-chelsea.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 9, ../styles/globals/_logos.fallback.scss */
 .icon-ual-csm {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-csm.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 13, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcc {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcc.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 17, ../styles/globals/_logos.fallback.scss */
 .icon-ual-lcf {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-lcf.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 21, ../styles/globals/_logos.fallback.scss */
 .icon-ual-mobile {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-mobile.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 25, ../styles/globals/_logos.fallback.scss */
 .icon-ual-wimbledon {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual-wimbledon.png?1377175137');
   background-repeat: no-repeat;
 }
 
 /* line 29, ../styles/globals/_logos.fallback.scss */
 .icon-ual {
-  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1374843825');
+  background-image: url('http://artslondon.github.io/beta/assets/img/logos/png/ual.png?1377175137');
   background-repeat: no-repeat;
 }
 
@@ -3003,7 +3286,8 @@ a.img:hover {
 \*------------------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 46, ../styles/globals/_layout.scss */
-  .row, .submenu > div, .open-days-container, .l-full-width {
+  .row, .megamenu .dropdown_12columns .small-text-link,
+  .megamenu .dropdown_fullwidth .small-text-link, .submenu > div, .open-days-container, .l-full-width {
     clear: both;
     display: block;
     float: left;
@@ -3025,7 +3309,8 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 78, ../styles/globals/_layout.scss */
-  .row, .submenu > div, .open-days-container, .l-full-width, .four-up.l-content-full-width {
+  .row, .megamenu .dropdown_12columns .small-text-link,
+  .megamenu .dropdown_fullwidth .small-text-link, .submenu > div, .open-days-container, .l-full-width, .four-up.l-content-full-width {
     clear: both;
     display: block;
     float: left;
@@ -3614,36 +3899,40 @@ input, .search-result-module, .search-input-wrap {
   padding-bottom: 60px;
   margin-bottom: 1.5em;
 }
+/* line 183, ../styles/components/_course-finder.scss */
+.search-result-module h3 {
+  padding-top: 0;
+}
 
 @media only screen and (min-width: 960px) {
-  /* line 185, ../styles/components/_course-finder.scss */
+  /* line 189, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 185, ../styles/components/_course-finder.scss */
+  /* line 189, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 185, ../styles/components/_course-finder.scss */
+  /* line 189, ../styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 120px;
     margin-bottom: 1.125em;
   }
 }
 
-/* line 209, ../styles/components/_course-finder.scss */
+/* line 213, ../styles/components/_course-finder.scss */
 .search-results-info p, .lower-search-results-info p {
   font-weight: 300;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 207, ../styles/components/_course-finder.scss */
+  /* line 211, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3651,13 +3940,13 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 71.71974%;
   }
-  /* line 218, ../styles/components/_course-finder.scss */
+  /* line 222, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 2px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 207, ../styles/components/_course-finder.scss */
+  /* line 211, ../styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -3665,20 +3954,20 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 48.19132%;
   }
-  /* line 223, ../styles/components/_course-finder.scss */
+  /* line 227, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 227, ../styles/components/_course-finder.scss */
+  /* line 231, ../styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 232, ../styles/components/_course-finder.scss */
+  /* line 236, ../styles/components/_course-finder.scss */
   .lower-search-results-info {
     display: block;
     float: left;
@@ -3689,16 +3978,16 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 245, ../styles/components/_course-finder.scss */
+/* line 249, ../styles/components/_course-finder.scss */
 .search-pagination-btns {
   text-align: right;
 }
-/* line 248, ../styles/components/_course-finder.scss */
+/* line 252, ../styles/components/_course-finder.scss */
 .search-pagination-btns a {
   margin-right: 1px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 245, ../styles/components/_course-finder.scss */
+  /* line 249, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3711,7 +4000,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 245, ../styles/components/_course-finder.scss */
+  /* line 249, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     display: block;
     float: left;
@@ -3723,34 +4012,34 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 245, ../styles/components/_course-finder.scss */
+  /* line 249, ../styles/components/_course-finder.scss */
   .search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
-/* line 272, ../styles/components/_course-finder.scss */
+/* line 276, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a {
   margin-right: 1px;
 }
-/* line 274, ../styles/components/_course-finder.scss */
+/* line 278, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child {
   padding-top: 16px;
 }
-/* line 277, ../styles/components/_course-finder.scss */
+/* line 281, ../styles/components/_course-finder.scss */
 .lower-search-pagination-btns a:first-child:hover {
   padding-top: 16px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 270, ../styles/components/_course-finder.scss */
+  /* line 274, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     margin-top: 6px;
     text-align: right;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 270, ../styles/components/_course-finder.scss */
+  /* line 274, ../styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     display: block;
     float: left;
@@ -3763,20 +4052,20 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 296, ../styles/components/_course-finder.scss */
+/* line 300, ../styles/components/_course-finder.scss */
 .course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 301, ../styles/components/_course-finder.scss */
+/* line 305, ../styles/components/_course-finder.scss */
 .course-title h3, .search-title h3 {
   text-decoration: none;
   font-size: 18px;
   margin-top: 0;
   padding-bottom: 1px;
 }
-/* line 306, ../styles/components/_course-finder.scss */
+/* line 310, ../styles/components/_course-finder.scss */
 .course-title h3 a, .search-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -3787,44 +4076,44 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 296, ../styles/components/_course-finder.scss */
+  /* line 300, ../styles/components/_course-finder.scss */
   .course-title, .search-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 318, ../styles/components/_course-finder.scss */
+/* line 322, ../styles/components/_course-finder.scss */
 .course-description, .search-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 323, ../styles/components/_course-finder.scss */
+/* line 327, ../styles/components/_course-finder.scss */
 .course-description p, .search-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 318, ../styles/components/_course-finder.scss */
+  /* line 322, ../styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 318, ../styles/components/_course-finder.scss */
+  /* line 322, ../styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 336, ../styles/components/_course-finder.scss */
+  /* line 340, ../styles/components/_course-finder.scss */
   .course-description p, .search-description p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-/* line 344, ../styles/components/_course-finder.scss */
+/* line 348, ../styles/components/_course-finder.scss */
 .search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -3834,24 +4123,24 @@ input, .search-result-module, .search-input-wrap {
   min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 344, ../styles/components/_course-finder.scss */
+  /* line 348, ../styles/components/_course-finder.scss */
   .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 356, ../styles/components/_course-finder.scss */
+/* line 360, ../styles/components/_course-finder.scss */
 .site-search-results-lower-wrap {
   right: 0;
 }
 
-/* line 361, ../styles/components/_course-finder.scss */
+/* line 365, ../styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
 
-/* line 366, ../styles/components/_course-finder.scss */
+/* line 370, ../styles/components/_course-finder.scss */
 .enrolment-type, .result-file-type {
   width: 32%;
   float: left;
@@ -3859,7 +4148,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: remCalc(14px);
 }
 @media only screen and (max-width: 599px) {
-  /* line 366, ../styles/components/_course-finder.scss */
+  /* line 370, ../styles/components/_course-finder.scss */
   .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
@@ -3868,13 +4157,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 379, ../styles/components/_course-finder.scss */
+/* line 383, ../styles/components/_course-finder.scss */
 .site-search-section-name {
   font-size: 14px;
   font-size: remCalc(14);
 }
 
-/* line 384, ../styles/components/_course-finder.scss */
+/* line 388, ../styles/components/_course-finder.scss */
 .college-name {
   position: absolute;
   left: 32%;
@@ -3884,7 +4173,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 384, ../styles/components/_course-finder.scss */
+  /* line 388, ../styles/components/_course-finder.scss */
   .college-name {
     position: static;
     width: 100%;
@@ -3895,7 +4184,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 401, ../styles/components/_course-finder.scss */
+/* line 405, ../styles/components/_course-finder.scss */
 .result-url {
   position: absolute;
   left: 32%;
@@ -3908,7 +4197,7 @@ input, .search-result-module, .search-input-wrap {
   word-wrap: break-word;
 }
 @media only screen and (max-width: 599px) {
-  /* line 401, ../styles/components/_course-finder.scss */
+  /* line 405, ../styles/components/_course-finder.scss */
   .result-url {
     width: 100%;
     margin-right: 0;
@@ -3919,13 +4208,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 423, ../styles/components/_course-finder.scss */
+/* line 427, ../styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 428, ../styles/components/_course-finder.scss */
+/* line 432, ../styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -3937,16 +4226,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 439, ../styles/components/_course-finder.scss */
+/* line 443, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete {
   background-color: #373737;
 }
-/* line 441, ../styles/components/_course-finder.scss */
+/* line 445, ../styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 447, ../styles/components/_course-finder.scss */
+/* line 451, ../styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e9e9e9;
@@ -3954,14 +4243,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 451, ../styles/components/_course-finder.scss */
+/* line 455, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 457, ../styles/components/_course-finder.scss */
+/* line 461, ../styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -3972,14 +4261,14 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 469, ../styles/components/_course-finder.scss */
+/* line 473, ../styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 476, ../styles/components/_course-finder.scss */
+/* line 480, ../styles/components/_course-finder.scss */
 .warning-icon {
   font-size: remCalc(120);
   font-size: 120px;
@@ -3988,7 +4277,7 @@ input, .search-result-module, .search-input-wrap {
   color: #757575;
 }
 
-/* line 486, ../styles/components/_course-finder.scss */
+/* line 490, ../styles/components/_course-finder.scss */
 form.d-search-input-form {
   margin: 0;
   padding: 0;
@@ -4061,7 +4350,14 @@ form.d-search-input-form {
   cursor: pointer;
 }
 
-/* line 67, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 68, ../styles/components/_nav-main-menu.scss */
+  .megamenu > li:last-child {
+    float: right;
+  }
+}
+
+/* line 74, ../styles/components/_nav-main-menu.scss */
 .megamenu > li > a {
   font-size: 14px;
   font-size: 0.875rem;
@@ -4071,7 +4367,7 @@ form.d-search-input-form {
   padding: 12px 15px 12px 15px;
 }
 
-/* line 79, ../styles/components/_nav-main-menu.scss */
+/* line 86, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_button {
   display: none;
   position: absolute;
@@ -4085,25 +4381,25 @@ form.d-search-input-form {
   -ms-transition: background 0.2s ease;
   -o-transition: background 0.2s ease;
 }
-/* line 88, ../styles/components/_nav-main-menu.scss */
+/* line 95, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_button a {
   padding: 0;
   margin: 0;
 }
 
 /* Right aligned menu item */
-/* line 95, ../styles/components/_nav-main-menu.scss */
+/* line 102, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_right {
   float: right;
   margin-right: -1px;
 }
 
-/* line 99, ../styles/components/_nav-main-menu.scss */
+/* line 106, ../styles/components/_nav-main-menu.scss */
 .megamenu li.megamenu_right a {
   margin-right: 5px;
 }
 
-/* line 111, ../styles/components/_nav-main-menu.scss */
+/* line 118, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_container,
 .megamenu li .dropdown_fullwidth,
 .megamenu li .dropdown_multilevel {
@@ -4116,7 +4412,7 @@ form.d-search-input-form {
   z-index: 9998;
   float: left;
 }
-/* line 121, ../styles/components/_nav-main-menu.scss */
+/* line 128, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
 .megamenu li .dropdown_fullwidth h2 a,
 .megamenu li .dropdown_fullwidth a,
@@ -4125,79 +4421,118 @@ form.d-search-input-form {
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 126, ../styles/components/_nav-main-menu.scss */
+/* line 133, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_container li > a:hover,
 .megamenu li .dropdown_fullwidth li > a:hover,
 .megamenu li .dropdown_multilevel li > a:hover {
   background-color: black;
 }
 
-/* line 131, ../styles/components/_nav-main-menu.scss */
+/* line 138, ../styles/components/_nav-main-menu.scss */
 .megamenu li .dropdown_right {
   right: 0;
 }
 
-/* line 136, ../styles/components/_nav-main-menu.scss */
+/* line 143, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns,
 .megamenu .dropdown_fullwidth {
   width: 100%;
 }
-/* line 139, ../styles/components/_nav-main-menu.scss */
+/* line 146, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .course-finder-txt-input,
 .megamenu .dropdown_fullwidth .course-finder-txt-input {
   background-color: #e9e9e9;
   margin-bottom: 0;
+  border: 0;
+  height: 36px;
 }
-/* line 144, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 146, ../styles/components/_nav-main-menu.scss */
+  .megamenu .dropdown_12columns .course-finder-txt-input,
+  .megamenu .dropdown_fullwidth .course-finder-txt-input {
+    padding-left: 12px;
+  }
+}
+/* line 156, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .small-text-link,
 .megamenu .dropdown_fullwidth .small-text-link {
-  color: #757575;
+  margin-top: 0.375em;
+  margin-bottom: -6px;
+}
+/* line 161, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .small-text-link a,
+.megamenu .dropdown_fullwidth .small-text-link a {
+  color: white;
   font-size: 12px;
   font-size: 0.75rem;
+  margin-left: 12px;
+  line-height: 16px;
+  border-bottom: 0;
 }
-/* line 152, ../styles/components/_nav-main-menu.scss */
+/* line 169, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .small-text-link a:hover,
+.megamenu .dropdown_fullwidth .small-text-link a:hover {
+  border-bottom: 1px dotted white;
+}
+/* line 176, ../styles/components/_nav-main-menu.scss */
+.megamenu .dropdown_12columns .go-search-button,
+.megamenu .dropdown_fullwidth .go-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+@media only screen and (min-width: 960px) {
+  /* line 176, ../styles/components/_nav-main-menu.scss */
+  .megamenu .dropdown_12columns .go-search-button,
+  .megamenu .dropdown_fullwidth .go-search-button {
+    min-width: 3.88132%;
+    height: 36px;
+  }
+}
+/* line 186, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .go-search-button a,
 .megamenu .dropdown_fullwidth .go-search-button a {
+  color: white;
   border-bottom: 0;
   padding-left: 0;
   padding-right: 0;
-  width: 48px;
   text-align: center;
   text-decoration: none;
 }
-/* line 160, ../styles/components/_nav-main-menu.scss */
+/* line 194, ../styles/components/_nav-main-menu.scss */
 .megamenu .dropdown_12columns .go-search-button a:hover,
 .megamenu .dropdown_fullwidth .go-search-button a:hover {
   color: white;
 }
 
-/* line 166, ../styles/components/_nav-main-menu.scss */
+/* line 202, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth {
   background-color: #373737;
 }
 @media only screen and (min-width: 960px) {
-  /* line 166, ../styles/components/_nav-main-menu.scss */
+  /* line 202, ../styles/components/_nav-main-menu.scss */
   .dropdown_fullwidth {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
   }
 }
-/* line 175, ../styles/components/_nav-main-menu.scss */
+/* line 211, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li {
   border-top: 1px dotted #757575;
 }
-/* line 177, ../styles/components/_nav-main-menu.scss */
+/* line 213, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li:last-child {
   border-bottom: 1px dotted #757575;
 }
-/* line 182, ../styles/components/_nav-main-menu.scss */
+/* line 218, ../styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth ul > li > a {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 193, ../styles/components/_nav-main-menu.scss */
+  /* line 229, ../styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4206,7 +4541,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 193, ../styles/components/_nav-main-menu.scss */
+  /* line 229, ../styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4215,20 +4550,20 @@ form.d-search-input-form {
   }
 }
 
-/* line 209, ../styles/components/_nav-main-menu.scss */
+/* line 245, ../styles/components/_nav-main-menu.scss */
 .menu-contain-wrap {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-/* line 215, ../styles/components/_nav-main-menu.scss */
+/* line 251, ../styles/components/_nav-main-menu.scss */
 .main-menu {
   width: 100%;
   display: block;
   background: black;
 }
-/* line 222, ../styles/components/_nav-main-menu.scss */
+/* line 258, ../styles/components/_nav-main-menu.scss */
 .main-menu ul {
   display: block;
   height: 100%;
@@ -4239,36 +4574,36 @@ form.d-search-input-form {
   background: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 222, ../styles/components/_nav-main-menu.scss */
+  /* line 258, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 222, ../styles/components/_nav-main-menu.scss */
+  /* line 258, ../styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
-/* line 241, ../styles/components/_nav-main-menu.scss */
+/* line 277, ../styles/components/_nav-main-menu.scss */
 .main-menu .dropdown-arrow {
   display: none;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 247, ../styles/components/_nav-main-menu.scss */
+  /* line 283, ../styles/components/_nav-main-menu.scss */
   .m-nav-menu-wrap {
     display: none;
   }
 }
-/* line 251, ../styles/components/_nav-main-menu.scss */
+/* line 287, ../styles/components/_nav-main-menu.scss */
 .m-nav-menu-wrap .icon, .m-nav-menu-wrap .m-menu-btn-toggle span, .m-menu-btn-toggle .m-nav-menu-wrap span, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
   font-size: 48px;
   font-size: 3rem;
   line-height: 48px;
 }
 
-/* line 259, ../styles/components/_nav-main-menu.scss */
+/* line 295, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
   padding-top: 12px;
@@ -4281,7 +4616,7 @@ form.d-search-input-form {
   padding: 0;
   margin: 0;
 }
-/* line 269, ../styles/components/_nav-main-menu.scss */
+/* line 305, ../styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle span, a.m-menu-btn-toggle span {
   display: block;
   margin: 0;
@@ -4293,33 +4628,29 @@ form.d-search-input-form {
   font-size: 3.5rem;
 }
 @media only screen and (min-width: 960px) {
-  /* line 259, ../styles/components/_nav-main-menu.scss */
+  /* line 295, ../styles/components/_nav-main-menu.scss */
   .m-menu-btn-toggle, a.m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-/* line 284, ../styles/components/_nav-main-menu.scss */
+/* line 320, ../styles/components/_nav-main-menu.scss */
 .top-bar {
   position: relative;
 }
-/* line 292, ../styles/components/_nav-main-menu.scss */
-.top-bar .menu-active {
-  background-color: #333 !important;
-}
-/* line 294, ../styles/components/_nav-main-menu.scss */
+/* line 326, ../styles/components/_nav-main-menu.scss */
 .top-bar li {
   list-style: none;
   padding: 0;
   width: auto;
   font-weight: 300;
 }
-/* line 300, ../styles/components/_nav-main-menu.scss */
+/* line 332, ../styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
-  background-color: #444444;
+  background-color: #373737;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 294, ../styles/components/_nav-main-menu.scss */
+  /* line 326, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4328,7 +4659,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 294, ../styles/components/_nav-main-menu.scss */
+  /* line 326, ../styles/components/_nav-main-menu.scss */
   .top-bar li {
     display: block;
     float: left;
@@ -4336,37 +4667,53 @@ form.d-search-input-form {
     text-align: left;
   }
 }
-/* line 317, ../styles/components/_nav-main-menu.scss */
+/* line 349, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a {
   display: block;
   height: 100%;
   color: white;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 24px;
-  border-bottom: none;
+  font-size: 16px;
+  font-size: 1rem;
   padding: 6px 10px;
+  line-height: 36px;
+  border-bottom: none;
 }
-/* line 327, ../styles/components/_nav-main-menu.scss */
+@media only screen and (min-width: 960px) {
+  /* line 349, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 24px;
+    padding: 6px 12px;
+  }
+}
+/* line 367, ../styles/components/_nav-main-menu.scss */
 .top-bar li > a:hover {
-  background-color: #444444;
+  background-color: #373737;
 }
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 317, ../styles/components/_nav-main-menu.scss */
-  .top-bar li > a {
-    padding-left: 0.75em;
-    padding-right: 0.75em;
+/* line 374, ../styles/components/_nav-main-menu.scss */
+.top-bar li > a.search-icon {
+  font-family: "entypo" !important;
+  vertical-align: middle;
+  color: white;
+  font-size: 42px;
+  font-size: 2.625rem;
+}
+@media only screen and (min-width: 960px) {
+  /* line 374, ../styles/components/_nav-main-menu.scss */
+  .top-bar li > a.search-icon {
+    font-size: 36px;
+    font-size: 2.25rem;
+    min-width: 3.88132%;
+    text-align: center;
   }
 }
-@media only screen and (max-width: 599px) {
-  /* line 317, ../styles/components/_nav-main-menu.scss */
-  .top-bar li > a {
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-  }
+/* line 387, ../styles/components/_nav-main-menu.scss */
+.top-bar li .menu-active {
+  background-color: #373737 !important;
 }
 
-/* line 345, ../styles/components/_nav-main-menu.scss */
+/* line 392, ../styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -4376,11 +4723,11 @@ form.d-search-input-form {
   margin-top: 6px;
   font-size: 30px;
   font-size: 1.875rem;
-  border-left: 1px dotted #444444;
+  border-left: 1px dotted #373737;
   padding-left: 12px;
 }
 
-/* line 357, ../styles/components/_nav-main-menu.scss */
+/* line 404, ../styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
   padding-left: 6px;
@@ -4396,7 +4743,7 @@ form.d-search-input-form {
   clear: both;
 }
 @media only screen and (min-width: 960px) {
-  /* line 357, ../styles/components/_nav-main-menu.scss */
+  /* line 404, ../styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
     display: block;
     *zoom: 1;
@@ -4416,18 +4763,18 @@ form.d-search-input-form {
   }
 }
 
-/* line 374, ../styles/components/_nav-main-menu.scss */
+/* line 421, ../styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 380, ../styles/components/_nav-main-menu.scss */
+/* line 427, ../styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 384, ../styles/components/_nav-main-menu.scss */
+/* line 431, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
@@ -4436,74 +4783,74 @@ form.d-search-input-form {
   border-right: 1px solid #444;
   float: left;
 }
-/* line 391, ../styles/components/_nav-main-menu.scss */
+/* line 438, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 399, ../styles/components/_nav-main-menu.scss */
+/* line 446, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 403, ../styles/components/_nav-main-menu.scss */
+/* line 450, ../styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 408, ../styles/components/_nav-main-menu.scss */
+/* line 455, ../styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
-  background-color: #333333;
+  background-color: #373737;
 }
 @media only screen and (min-width: 960px) {
-  /* line 374, ../styles/components/_nav-main-menu.scss */
+  /* line 421, ../styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
-/* line 417, ../styles/components/_nav-main-menu.scss */
+/* line 464, ../styles/components/_nav-main-menu.scss */
 .dd-heading {
   padding-left: 12px;
   text-transform: capitalize !important;
 }
-/* line 423, ../styles/components/_nav-main-menu.scss */
+/* line 470, ../styles/components/_nav-main-menu.scss */
 .dd-heading a {
   color: white !important;
 }
 
-/* line 430, ../styles/components/_nav-main-menu.scss */
+/* line 477, ../styles/components/_nav-main-menu.scss */
 .ual-logo-tab-mobile {
   float: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 430, ../styles/components/_nav-main-menu.scss */
+  /* line 477, ../styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
-/* line 440, ../styles/components/_nav-main-menu.scss */
+/* line 487, ../styles/components/_nav-main-menu.scss */
 .ual-logo-desktop {
-  padding-left: 10px;
+  padding-left: 12px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 440, ../styles/components/_nav-main-menu.scss */
+  /* line 487, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 440, ../styles/components/_nav-main-menu.scss */
+  /* line 487, ../styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu {
     clear: both;
     display: block;
@@ -4513,42 +4860,42 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 456, ../styles/components/_nav-main-menu.scss */
+  /* line 503, ../styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-/* line 470, ../styles/components/_nav-main-menu.scss */
+/* line 517, ../styles/components/_nav-main-menu.scss */
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 517, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 517, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 470, ../styles/components/_nav-main-menu.scss */
+  /* line 517, ../styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-/* line 485, ../styles/components/_nav-main-menu.scss */
+/* line 532, ../styles/components/_nav-main-menu.scss */
 .submenu li {
   list-style: none;
   width: 100%;
@@ -4556,43 +4903,43 @@ form.d-search-input-form {
   float: left;
   border-bottom: dotted 1px white;
 }
-/* line 492, ../styles/components/_nav-main-menu.scss */
+/* line 539, ../styles/components/_nav-main-menu.scss */
 .submenu li:hover {
   border-bottom: 1px 1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 485, ../styles/components/_nav-main-menu.scss */
+  /* line 532, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 485, ../styles/components/_nav-main-menu.scss */
+  /* line 532, ../styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-/* line 506, ../styles/components/_nav-main-menu.scss */
+/* line 553, ../styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 506, ../styles/components/_nav-main-menu.scss */
+  /* line 553, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 506, ../styles/components/_nav-main-menu.scss */
+  /* line 553, ../styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 523, ../styles/components/_nav-main-menu.scss */
+  /* line 570, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     display: block;
     float: left;
@@ -4602,7 +4949,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 523, ../styles/components/_nav-main-menu.scss */
+  /* line 570, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -4610,7 +4957,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 581, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     display: block;
     float: left;
@@ -4620,7 +4967,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 581, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4629,7 +4976,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 534, ../styles/components/_nav-main-menu.scss */
+  /* line 581, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -4638,7 +4985,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 598, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     display: block;
     float: left;
@@ -4648,7 +4995,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 598, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4657,7 +5004,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 551, ../styles/components/_nav-main-menu.scss */
+  /* line 598, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -4666,7 +5013,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 615, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     display: block;
     float: left;
@@ -4676,7 +5023,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 615, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -4685,7 +5032,7 @@ form.d-search-input-form {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 569, ../styles/components/_nav-main-menu.scss */
+  /* line 615, ../styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -4693,7 +5040,7 @@ form.d-search-input-form {
     margin-bottom: 0;
   }
 }
-/* line 586, ../styles/components/_nav-main-menu.scss */
+/* line 632, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature {
   display: block;
   float: left;
@@ -4704,7 +5051,12 @@ form.d-search-input-form {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 592, ../styles/components/_nav-main-menu.scss */
+/* line 636, ../styles/components/_nav-main-menu.scss */
+.top-bar .feature p {
+  padding-top: 0.75em;
+  padding-bottom: 0;
+}
+/* line 644, ../styles/components/_nav-main-menu.scss */
 .top-bar .feature-image {
   display: block;
   float: left;
@@ -4713,19 +5065,32 @@ form.d-search-input-form {
   width: 23.01718%;
 }
 
+/* line 651, ../styles/components/_nav-main-menu.scss */
+.site-search-input, .course-finder-txt-input {
+  color: #757575;
+  width: 100%;
+  height: 48px;
+}
+@media only screen and (min-width: 960px) {
+  /* line 651, ../styles/components/_nav-main-menu.scss */
+  .site-search-input, .course-finder-txt-input {
+    height: 24px;
+  }
+}
+
 /* line 1, ../styles/components/_college-link-menu.scss */
 .college-link-menu {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 6, ../styles/components/_college-link-menu.scss */
+/* line 5, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul {
   display: table;
   float: right;
-  padding-top: 6px;
+  padding-top: 0.75em;
 }
-/* line 10, ../styles/components/_college-link-menu.scss */
+/* line 9, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li {
   list-style: none;
   float: left;
@@ -4733,16 +5098,21 @@ form.d-search-input-form {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 16, ../styles/components/_college-link-menu.scss */
+/* line 15, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li a {
   color: white;
-  font-weight: 300;
   font-size: 13px;
+  font-size: 0.8125rem;
+  border-bottom: 0;
 }
 /* line 25, ../styles/components/_college-link-menu.scss */
 .college-link-menu ul li:last-child {
   border-right: none;
   margin-right: 0;
+}
+/* line 30, ../styles/components/_college-link-menu.scss */
+.college-link-menu ul li li:hover a {
+  background-color: #373737;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* line 1, ../styles/components/_college-link-menu.scss */
@@ -4755,6 +5125,30 @@ form.d-search-input-form {
   .college-link-menu {
     display: none;
   }
+}
+/* line 49, ../styles/components/_college-link-menu.scss */
+.camberwell .college-link-menu .col-link-camberwell > a {
+  border-bottom: dotted 1px white;
+}
+/* line 55, ../styles/components/_college-link-menu.scss */
+.csm .college-link-menu .col-link-csm > a {
+  border-bottom: dotted 1px white;
+}
+/* line 61, ../styles/components/_college-link-menu.scss */
+.chelsea .college-link-menu .col-link-chelsea > a {
+  border-bottom: dotted 1px white;
+}
+/* line 67, ../styles/components/_college-link-menu.scss */
+.lcc .college-link-menu .col-link-lcc > a {
+  border-bottom: dotted 1px white;
+}
+/* line 73, ../styles/components/_college-link-menu.scss */
+.lcf .college-link-menu .col-link-lcf > a {
+  border-bottom: dotted 1px white;
+}
+/* line 79, ../styles/components/_college-link-menu.scss */
+.wimbledon .college-link-menu .col-link-wimbledon > a {
+  border-bottom: dotted 1px white;
 }
 
 /* line 2, ../styles/components/_college-footer.scss */
@@ -4968,48 +5362,63 @@ a.course:before {
   /* line 5, ../styles/components/_expandable-search-input.scss */
   .sb-search {
     max-width: 100%;
+    min-width: 3.88132%;
+    height: 36px;
+    margin-top: 0.75em;
   }
 }
+/* line 27, ../styles/components/_expandable-search-input.scss */
+.sb-search form {
+  height: 48px;
+  margin-bottom: 0;
+}
 
-/* line 25, ../styles/components/_expandable-search-input.scss */
+/* line 33, ../styles/components/_expandable-search-input.scss */
 .sb-search-input {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -2px;
   border: 0;
   outline: none;
-  background: #fff;
+  background: white;
   width: 100%;
   margin: 0;
   z-index: 10;
   padding: 20px 65px 20px 20px;
   font-family: inherit;
-  font-size: 20px;
-  color: #2c3e50;
-}
-/* line 41, ../styles/components/_expandable-search-input.scss */
-.sb-search-input::-webkit-input-placeholder {
-  color: #757575;
-}
-/* line 45, ../styles/components/_expandable-search-input.scss */
-.sb-search-input:-moz-placeholder {
+  font-size: 24px;
   color: #757575;
 }
 /* line 49, ../styles/components/_expandable-search-input.scss */
-.sb-search-input::-moz-placeholder {
+.sb-search-input::-webkit-input-placeholder {
   color: #757575;
 }
 /* line 53, ../styles/components/_expandable-search-input.scss */
+.sb-search-input:-moz-placeholder {
+  color: #757575;
+}
+/* line 57, ../styles/components/_expandable-search-input.scss */
+.sb-search-input::-moz-placeholder {
+  color: #757575;
+}
+/* line 61, ../styles/components/_expandable-search-input.scss */
 .sb-search-input:-ms-input-placeholder {
   color: #757575;
 }
 
-/* line 58, ../styles/components/_expandable-search-input.scss */
+/* line 66, ../styles/components/_expandable-search-input.scss */
 input[type="text"].sb-search-input {
   height: 48px;
 }
+@media only screen and (min-width: 960px) {
+  /* line 66, ../styles/components/_expandable-search-input.scss */
+  input[type="text"].sb-search-input {
+    height: 36px;
+    margin-bottom: 0;
+  }
+}
 
-/* line 63, ../styles/components/_expandable-search-input.scss */
+/* line 75, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search,
 .sb-search-submit {
   width: 48px;
@@ -5024,10 +5433,19 @@ input[type="text"].sb-search-input {
   text-align: center;
   cursor: pointer;
 }
+@media only screen and (min-width: 960px) {
+  /* line 75, ../styles/components/_expandable-search-input.scss */
+  .sb-icon-search,
+  .sb-search-submit {
+    height: 36px;
+    min-width: 3.88132%1;
+    line-height: 36px;
+  }
+}
 
-/* line 77, ../styles/components/_expandable-search-input.scss */
+/* line 95, ../styles/components/_expandable-search-input.scss */
 .sb-search-submit {
-  background: #fff;
+  background: white;
   /* IE needs this */
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   /* IE 8 */
@@ -5040,85 +5458,50 @@ input[type="text"].sb-search-input {
   z-index: -1;
 }
 
-/* line 88, ../styles/components/_expandable-search-input.scss */
+/* line 106, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search {
   color: #fff;
   background-color: black;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20baseProfile%3D%22tiny%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M27.642%2025.42l-4.836-4.836c.729-1.197%201.149-2.604%201.149-4.11%200-4.372-3.789-8.161-8.163-8.161-4.372%200-7.917%203.545-7.917%207.918s3.789%208.16%208.161%208.16c1.454%200%202.817-.393%203.986-1.077l4.862%204.862c.476.476%201.247.476%201.725%200l1.203-1.205c.477-.476.305-1.075-.17-1.551zm-17.33-9.19c0-3.028%202.454-5.482%205.48-5.482%203.027%200%205.727%202.698%205.727%205.725%200%203.026-2.454%205.482-5.483%205.482-3.027.001-5.724-2.698-5.724-5.725z%22/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 6px 6px;
   z-index: 90;
-  font-size: 22px;
+  font-size: 42px;
+  font-size: 2.625rem;
   speak: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
+@media only screen and (min-width: 960px) {
+  /* line 106, ../styles/components/_expandable-search-input.scss */
+  .sb-icon-search {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
 
-/* line 103, ../styles/components/_expandable-search-input.scss */
+/* line 122, ../styles/components/_expandable-search-input.scss */
 .sb-icon-search:hover {
-  background-color: #333333;
+  background-color: #373737;
 }
 
 /* Open state */
-/* line 109, ../styles/components/_expandable-search-input.scss */
+/* line 128, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open,
 .no-js .sb-search {
   width: 100%;
 }
 
-/* line 114, ../styles/components/_expandable-search-input.scss */
+/* line 133, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
-  background-color: #333333;
-  color: #fff;
+  background-color: #373737;
+  color: white;
   z-index: 11;
 }
 
-/* line 121, ../styles/components/_expandable-search-input.scss */
+/* line 140, ../styles/components/_expandable-search-input.scss */
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
   z-index: 90;
-}
-
-@media only screen and (max-width: 599px) {
-  /* line 3, ../styles/components/_search-form.scss */
-  form.search-mobile {
-    padding-top: 0.375em;
-    padding-bottom: 0.375em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.34766);
-  }
-}
-
-@media only screen and (max-width: 599px) {
-  /* line 12, ../styles/components/_search-form.scss */
-  .search {
-    padding-left: em(12px);
-    padding-right: em(12px);
-    padding-top: 0.375em;
-    padding-bottom: 0.375em;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 21, ../styles/components/_search-form.scss */
-  .search input.input-medium {
-    background: #4d4d4d;
-    border: none;
-    border-radius: 3px;
-    color: #ccc;
-    width: 100%;
-    text-indent: em(13px);
-    font-size: em(16px);
-    height: em(42px);
-  }
-}
-
-/* line 38, ../styles/components/_search-form.scss */
-.site-search-input, .course-finder-txt-input {
-  color: #ccc;
-  width: 90%;
-  font-size: em(34px);
-  height: 48px;
 }
 
 /* line 2, ../styles/components/_breadcrumbs.scss */
@@ -5127,7 +5510,7 @@ input[type="text"].sb-search-input {
   white-space: nowrap;
   padding-top: 10px;
   margin-bottom: 0;
-  padding-left: 1px;
+  padding-left: 2px;
 }
 /* line 9, ../styles/components/_breadcrumbs.scss */
 .breadcrumbs a {
@@ -5283,7 +5666,7 @@ a.search .megamenu .dropdown_fullwidth span.go-search-button, .m-menu-btn-toggle
 .sidebar ul li a {
   font-size: 14px;
   font-size: 0.875rem;
-  padding-left: 10px;
+  padding-left: 12px;
   padding-bottom: 0;
   list-style-type: none;
   margin-left: 0;
@@ -5719,7 +6102,7 @@ a figure img {
 }
 
 /* line 44, ../styles/components/_blocks.scss */
-.leader {
+.leader, .top-bar .feature p {
   font-size: remCalc(22);
   font-size: 22px;
   line-height: 1.36364em;
@@ -8880,11 +9263,21 @@ footer .copyright p {
 }
 
 /* line 22, ../styles/components/_footer.scss */
+.footer-links ul {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 960px) {
+  /* line 22, ../styles/components/_footer.scss */
+  .footer-links ul {
+    margin-bottom: 1.125em;
+  }
+}
+/* line 29, ../styles/components/_footer.scss */
 .footer-links ul li {
   border-bottom: 1px dotted #757575;
   padding-bottom: 0;
 }
-/* line 26, ../styles/components/_footer.scss */
+/* line 33, ../styles/components/_footer.scss */
 .footer-links ul li a {
   font-size: 14px;
   font-size: 0.875rem;
@@ -8893,55 +9286,79 @@ footer .copyright p {
   display: block;
   color: white;
 }
-/* line 36, ../styles/components/_footer.scss */
+/* line 43, ../styles/components/_footer.scss */
 .footer-links ul li:first-child {
-  border-top: 0;
+  border-top: 1px dotted #757575;
+}
+/* line 47, ../styles/components/_footer.scss */
+.footer-links ul li:last-child {
+  border-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 36, ../styles/components/_footer.scss */
-  .footer-links ul li:first-child {
-    border-top: 1px dotted #757575;
-  }
-}
-@media only screen and (min-width: 960px) {
-  /* line 43, ../styles/components/_footer.scss */
+  /* line 47, ../styles/components/_footer.scss */
   .footer-links ul li:last-child {
     border-bottom: 1px dotted #757575;
   }
 }
 
-/* line 67, ../styles/components/_footer.scss */
+/* line 66, ../styles/components/_footer.scss */
+.footer-col-3 li:last-child {
+  border-bottom: 1px dotted #757575 !important;
+}
+@media only screen and (min-width: 960px) {
+  /* line 66, ../styles/components/_footer.scss */
+  .footer-col-3 li:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* line 79, ../styles/components/_footer.scss */
 .social-links h3 {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 2.25em;
   padding: 0;
+  padding-left: 10px;
   text-transform: capitalize !important;
 }
-/* line 75, ../styles/components/_footer.scss */
+@media only screen and (min-width: 960px) {
+  /* line 79, ../styles/components/_footer.scss */
+  .social-links h3 {
+    padding-left: 0;
+  }
+}
+/* line 91, ../styles/components/_footer.scss */
 .social-links li {
   border: none !important;
   display: inline-block;
 }
-/* line 78, ../styles/components/_footer.scss */
+/* line 94, ../styles/components/_footer.scss */
 .social-links li a {
   line-height: 36px;
   border-bottom: 0;
-  padding-left: 0;
+  padding-left: 10px;
   padding-right: 18px;
   display: block;
 }
-/* line 85, ../styles/components/_footer.scss */
-.social-links li a:first-child {
-  padding-left: 0 !important;
+@media only screen and (min-width: 960px) {
+  /* line 94, ../styles/components/_footer.scss */
+  .social-links li a {
+    padding-left: 0;
+  }
 }
-/* line 90, ../styles/components/_footer.scss */
+@media only screen and (min-width: 960px) {
+  /* line 104, ../styles/components/_footer.scss */
+  .social-links li a:first-child {
+    padding-left: 0 !important;
+  }
+}
+/* line 111, ../styles/components/_footer.scss */
 .social-links li:first-child {
   display: block;
   border-top: 0 !important;
 }
 
-/* line 97, ../styles/components/_footer.scss */
+/* line 118, ../styles/components/_footer.scss */
 .footer-ico {
   font-size: 36px;
   font-size: 2.25rem;
@@ -8950,7 +9367,7 @@ footer .copyright p {
   color: white;
 }
 
-/* line 106, ../styles/components/_footer.scss */
+/* line 127, ../styles/components/_footer.scss */
 .youtube {
   font-size: 36px;
   font-size: 2.25rem;
@@ -8958,7 +9375,7 @@ footer .copyright p {
   line-height: 36px;
 }
 
-/* line 119, ../styles/components/_footer.scss */
+/* line 140, ../styles/components/_footer.scss */
 a.back-to-top {
   position: fixed;
   right: .75em;
@@ -8971,7 +9388,7 @@ a.back-to-top {
   border-bottom: 1px dotted black;
   text-decoration: none;
 }
-/* line 131, ../styles/components/_footer.scss */
+/* line 152, ../styles/components/_footer.scss */
 a.back-to-top:hover {
   color: #c8c8c8;
   text-decoration: none;
@@ -11580,7 +11997,7 @@ ul.tabs li.active {
 }
 @media only screen and (min-width: 960px) {
   /* line 10, ../styles/components/_intro-block-with-left-image.scss */
-  .intro-block-with-left-image .leader {
+  .intro-block-with-left-image .leader, .intro-block-with-left-image .top-bar .feature p, .top-bar .feature .intro-block-with-left-image p {
     margin-left: -13.85331%;
   }
 }
