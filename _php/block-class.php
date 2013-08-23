@@ -1,5 +1,5 @@
-	<!-- php block class -->
-	<?php
+  <?php
+        // Block class
 	// check whether class exists
 	if(class_exists('Block') != true) 
 	{
@@ -149,7 +149,7 @@
 						}
 
 						if ( !$this->array[$i]['figcaption'] == "" ) {
-							echo "<figcaption>" . $this->array[$i]['figcaption'] . "</figcaption>";
+							echo "<figcaption><span>" . $this->array[$i]['figcaption'] . "</span></figcaption>";
 						}
 
 						echo "</figure>";
@@ -158,7 +158,13 @@
 					// end image
 
 					if ( !$this->array[$i]['title'] == "" ) {
-						echo "<h3><a href=\""  . $this->array[$i]['section_link'] . "\" title=\"". $this->array[$i]['link_title'] . "\">" . $this->array[$i]['title'] . "</a></h3>";
+						
+						if ( !$this->array[$i]['section_link'] == "" ) {
+							echo "<h3><a href=\"" . $this->array[$i]['section_link'] . "\" title=\"". $this->array[$i]['title'] . "\">" . $this->array[$i]['title'] . "</a></h3>";
+						} else {
+							echo "<h3>" . $this->array[$i]['title'] . "</h3>";
+						}
+						
 					}
 
 					if ( !$this->array[$i]['text'] == "" ) {
@@ -166,7 +172,7 @@
 					}
 
 					if ( !$this->array[$i]['external_link'] == "" ) {
-						echo "<p><a href=\"" . $this->array[$i]['external_link']  . "\" class=\"button-link\"><span class=\"hide-descriptive-text\">Follow this link to go to more information about</span>" . $this->array[$i]['button_link_text'] . "Optional button</a></p>";
+						echo "<p><a href=\"" . $this->array[$i]['external_link']  . "\" class=\"button-link\" title=\"" . $this->array[$i]['link_title'] . "\"><span class=\"hide-descriptive-text\">Follow this link to go to more information about</span>" . $this->array[$i]['button_link_text'] . "</a></p>";
 					}
 
 					echo "</li>";
