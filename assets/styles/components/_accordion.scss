@@ -130,6 +130,8 @@
 	position:relative;
 	// margin:40px auto 0 auto;
 	color: $white;
+  margin-top: rhythm(5, 16px);
+  margin-bottom: rhythm(10, 16px);
 	.va-wrapper{
 		width:100%;
 		height:100%;
@@ -144,25 +146,38 @@
 	width:100%;
 	left:0px;
 	overflow:hidden;
+
+  img {
+    float: right;
+    z-index: -1;
+    @include gs-media(m) {
+      max-width: 228px;
+    }
+    @include gs-media(t, min-max) {
+      max-width: 256px;
+    }
+    @include gs-media(d) {
+    }
+  }
 }	
-.va-slice-1{
-	background: #000 image-url('lcc/LCC-people-staff.jpg') no-repeat center center;
-}
-.va-slice-2{
-	background: #000 image-url('lcc/LCC-people-student.jpg') no-repeat center center;
-}
-.va-slice-3{
-	background: #000 image-url('lcc/LCC-people-alumni.jpg') no-repeat center center;
-}
-.va-slice-color-1{
-	background-color:#97c5eb;
-}
-.va-slice-color-2{
-	background-color:#68ace5;
-}
-.va-slice-color-3{
-	background-color:#0072cf;
-}
+// .va-slice-1{
+// 	background: #000 image-url('lcc/LCC-people-staff.jpg') no-repeat center center;
+// }
+// .va-slice-2{
+// 	background: #000 image-url('lcc/LCC-people-student.jpg') no-repeat center center;
+// }
+// .va-slice-3{
+// 	background: #000 image-url('lcc/LCC-people-alumni.jpg') no-repeat center center;
+// }
+// .va-slice-color-1{
+// 	background-color:#97c5eb;
+// }
+// .va-slice-color-2{
+// 	background-color:#68ace5;
+// }
+// .va-slice-color-3{
+// 	background-color:#0072cf;
+// }
 .va-title{
   margin: 0 0 0 12px;
   margin-bottom: 24px;
@@ -170,9 +185,12 @@
   font-size: remCalc(36);
   letter-spacing: 1px;
   border-bottom: 2px solid $lcc-green;
+  @include gs-media(t, min-max) {
+    margin: 12px;
+  }
 }
 .va-content{
-  margin: 0 0 0 12px;
+  margin: 0 12px;
 	display:none;
 	.lcc & {
     .button-link {
