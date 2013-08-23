@@ -667,6 +667,7 @@ if ($('.circles-component').length > 0) {
 
 }
 
+
 // detect search filters on page
 if ($('.search-filters').length > 0) {
    //allow expand and close for search filters
