@@ -200,9 +200,6 @@
 }
 
 .l-content-full-width {
-	// @extend .main-content;
-	// @extend %t2-t7;
-	// @extend %d5-d16--within-d5-d16;
 	width: 100%;
 }
 
@@ -242,6 +239,9 @@
 .content {
 	@extend %t2-t7;
 	@extend %d5-d16;
+	@include gs-media(d) {
+		min-height: 600px;
+	}
 }
 
 .sidebar {

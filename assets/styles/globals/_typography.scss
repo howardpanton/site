@@ -62,6 +62,10 @@ h1 {
 		@extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
+
+  .csm & {
+    @extend %BureauGrotBold;
+  }
 }
 
 h2, h3, h4 {
@@ -70,6 +74,7 @@ h2, h3, h4 {
 		@extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
+
 }
 
 h2 {
@@ -79,9 +84,9 @@ h2 {
 }
 
 h3 {
-	@include font-size(24);
-	@include adjust-leading-to(5, 24px); 	
-	padding: rhythm(3, 24px) 0;
+	@include font-size(22);
+	@include adjust-leading-to(5, 22px); 	
+	padding: rhythm(3, 22px) 0;
 }
 
 h4 {
@@ -128,6 +133,9 @@ ul, ol, dl {
   }
  }
 
+p {
+	@include font-size(16);
+}
 
 aside, .__text {
 	ul {
@@ -140,9 +148,6 @@ aside, .__text {
 	h3 {
 		//@extend .size-h6; (I think this is wrong - Al)
 		@include padding-leader(1);
-	}
-	p {
-	@include font-size(16);
 	}
 }
 
@@ -158,8 +163,12 @@ ol {
 	}
 }
 
-strong, b, em {
+strong, b,{
 	@extend %Swiss721BT-Bold;
+}
+
+em {
+  @extend %Swiss721BT-Italic;
 }
 
 code {
@@ -170,8 +179,8 @@ code {
 }
 
 dl {
-		@include adjust-leading-to(4, 16px); 
-	  padding-bottom: rhythm(1, 16px);
+	@include adjust-leading-to(4, 16px); 
+	padding-bottom: rhythm(1, 16px);
 	dt {
 		@extend %Swiss721BT-Bold;
 	}
@@ -229,8 +238,6 @@ figure {
 		text-decoration: none;
 		padding-bottom: 0;
 		border-bottom: 0;
-		display: block;
-		line-height: 0;
 		&:hover {
 			padding-bottom: 0;
 			border-bottom: 0;
@@ -330,86 +337,7 @@ hr {
 
 // }
 
-// h1 { 
-// 	font-size:emCalc(36px); 
-// 	@include adjust-leading-to(7, 36px); 	
 
-// 	@include gs-media(t,min) {
-// 		font-size: emCalc(54px); 
-// 		@include adjust-leading-to(10, 54px); 
-// 	}
-// 	.lcc .content-wrapper & {
-// 		@extend %LeagueGothicRegular;
-// 		text-transform: uppercase;
-// 		letter-spacing: 3px;
-// 	}
-// }
-
-// h2 { 
-  
-// 	font-size: emCalc(24px);
-// 	@include adjust-leading-to(5, 24px); 
-// 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
-
-// 	@include gs-media(t,min-max) {
-// 		font-size: emCalc(36px); 
-// 		@include adjust-leading-to(7, 36px); 
-// 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
-// 	}
-// 	@include gs-media(d) {
-// 		font-size: emCalc(36px); 
-// 		@include adjust-leading-to(7, 36px); 
-// 		padding: rhythm(4, 36px) 0 rhythm(3, 36px) 0; 	
-// 	}
-
-// 	.lcc .content-wrapper & {
-// 		@extend %LeagueGothicRegular;
-// 		border-bottom: 4px solid $black;
-// 		margin-bottom: 24px;
-// 		text-transform: uppercase;
-// 		letter-spacing: 2px;
-// 		a {
-// 			border-bottom: none;
-// 			&:hover {
-// 				color: $lcc-secondary-pink;
-// 			}
-// 		}
-// 	}
-// }
-
-// h3 { 
-// 	font-size: emCalc(24px);
-// 	// @extend %Swiss721BT-bold;
-// 	@include adjust-leading-to(4, 24px); 
-// 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
-// 	a { // only to allow for bottom-borders
-// 		@include adjust-leading-to(5, 24px);
-// 	}
-// }
-
-// h4 { 
-// 	font-size: emCalc(18px); 
-// 	@include adjust-leading-to(3, 18px); 
-// 	padding: rhythm(4, 18px) 0 rhythm(3, 18px) 0; 	
-	
-// 	// @media screen and (min-width: 75em) {
-// 	// 	font-size: emCalc(24px); 
-// 	// 	@include adjust-leading-to(4, 24px); 
-// 	// 	padding: rhythm(4, 24px) 0 rhythm(3, 24px) 0; 	
-// 	// }
-// }
-
-// h5, h6 { 
-// 	font-size: emCalc(16px); 
-// 	@include adjust-leading-to(3, 16px); 
-// 	padding: rhythm(4, 16px) 0 rhythm(3, 16px) 0; 	
-
-// 	// @media screen and (min-width: 75em) {
-// 	// 	font-size: emCalc(18px); 
-// 	// 	@include adjust-leading-to(3, 18px); 
-// 	// 	padding: rhythm(4, 18px) 0 rhythm(3, 18px) 0; 	
-// 	// }
-// }
 
 // p, ol, ul { 
 // 	@include adjust-leading-to(4, 16px); 
@@ -556,26 +484,25 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-     .content-wrapper, .header-wrapper {
-        h1,h2,h3,h4,h5,h6 {
-         	@extend %Swiss721BT-Black;
-        }
-        h4,h5,h6 {
-             font-family: "Swiss721BT-Bold";
-        }
-        h2 {
-             text-transform: uppercase;
-        }
-        h2 {
-            padding-bottom: rhythm(1, 24px);
-            margin-bottom: rhythm(3, 24px);
-            background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-            letter-spacing: 5px;
-            .ual-black-bg & {
-            	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-            }
-        }
-
+    .content-wrapper, .header-wrapper {
+      h1,h2,h3,h4,h5,h6 {
+       	@extend %Swiss721BT-Black;
+      }
+      h4,h5,h6 {
+           font-family: "Swiss721BT-Bold";
+      }
+      h2 {
+           text-transform: uppercase;
+      }
+      h2 {
+          padding-bottom: rhythm(1, 24px);
+          margin-bottom: rhythm(3, 24px);
+          background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+          letter-spacing: 5px;
+          .ual-black-bg & {
+          	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+          }
+      }
     }
 
     .content {
@@ -588,7 +515,10 @@ b, strong, h2, h3, h4 {
          	}
         }
      }
-
+    
+    footer {
+      
+    }
     /* figcaption, .flex-video .caption {
     //     padding: 0 10px;
     //     color: $ual-secondary;
@@ -624,7 +554,7 @@ b, strong, h2, h3, h4 {
             margin-top: 40px;
         }
         .sidebar {
-            margin-top: 100px;
+            //margin-top: 100px;
         }
         .media-block {
             padding-bottom: 0;
