@@ -1,6 +1,4 @@
-
 .circles-component {
-
 		@include padding-leader(4);
 		@include padding-trailer(4);
 		width: 100%;
@@ -23,13 +21,11 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
-
 			@include gs-media(m, min-max) {
 				max-width: 90%;
 				margin-left: auto;
 				margin-right: auto;
 			}
-
 		}
 
 		%circle-callout {
@@ -73,10 +69,13 @@
 				text-decoration: none;
 				border-bottom: none;
 				color: white;
+				&:hover {
+					border-bottom: 1px dotted $white;
+				}
 			}
 
 			a:after {
-					content: "→";
+					content: " →";
 					color: white;
 			}
 
