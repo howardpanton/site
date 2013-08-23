@@ -125,7 +125,7 @@
 			li {
 				@include gs-span(t, 2, 4, (2, 7));
 			}
-			li:last-child {
+			li:nth-child(2n) {
 				@include gs-span(t, 5, 7, (2, 7));
 			}
 		}
@@ -136,7 +136,7 @@
 			li {
 				@include gs-span(d, 5, 8, (5, 12));
 			}
-			li:last-child {
+			li:nth-child(2n) {
 				@include gs-span(d, 9, 12, (5, 12));
 			}
 		}
@@ -148,7 +148,7 @@
 			li {
 				@include gs-span(d, 5, 10, (5, 16));
 			}
-			li:last-child {
+			li:nth-child(2n) {
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
@@ -160,7 +160,7 @@
 			ul {
 				@include gs-span(d, 5, 10, (5, 16));
 			}
-			ul:last-child {
+			ul:nth-child(2n) {
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
