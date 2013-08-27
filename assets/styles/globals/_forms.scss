@@ -805,8 +805,7 @@ legend + .control-group {
 
 // link styling within forms
 .form-link {
-  font-size: remCalc(14);
-  font-size: 14px;
+  @include font-size(14);
   line-height: 14px;
   @include margin-trailer(2);
 }
@@ -823,8 +822,7 @@ input[type="radio"] {
 
 input[type="checkbox"]+label,
 input[type="radio"]+label {
-  font-size: 16px;
-  font-size: remCalc(16);
+  @include font-size(16);
   padding-bottom: 6px;
   //margin-left: -12px;
   display: inline-block;
@@ -875,8 +873,7 @@ input[type="radio"].before-label {
 
 input[type="checkbox"].before-label+label,
 input[type="radio"].before-label+label {
-  font-size:16px;
-  font-size: remCalc(16);
+  @include font-size(16);
   margin-left: -12px;
   margin-right: 12px;
   display: inline-block;

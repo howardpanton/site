@@ -250,7 +250,7 @@ figcaption, .rsCaption {
 	@include adjust-leading-to(3, 14px); 	
 	span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
 		display: block;
-		padding: 9px 12px 6px 12px;
+		padding: 8px 12px 6px 12px;
 		p {
 			padding-bottom: 0;
 		}
@@ -291,8 +291,7 @@ hr {
 
 
 // aside {
-// 	font-size: emCalc(14px);
-// 	font-size: remCalc(14);
+// 	@include font-size(14);
 // 	background: $bg-gray;
 // 	padding: 24px;
 // 	clear: left;
