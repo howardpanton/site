@@ -59,6 +59,7 @@ jQuery.fn.extend({
   $( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
   $('.about-nav .subnav-3').prepend(Link_about_1);
 
+
 function checkWindowSize() {
   var width = $(window).width(),
   new_class = width > 850 ? 'gDesktop' :
@@ -83,6 +84,15 @@ var waitForFinalEvent = (function () {
 })();
 
 
+// fastclick library: https://github.com/ftlabs/fastclick
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+
+
+
+
+
 // enables UAL themed select boxes
 function enableSelectBoxes() {
   
@@ -91,7 +101,7 @@ function enableSelectBoxes() {
     $(this).children('div').children('h3.selected').html(_start_val);
     $('input.js-select-box-value').attr('value',$(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
 
-    $(this).children('div').children('h3.selected,div.select-box-arrow').fastClick(function(event) {
+    $(this).children('div').children('h3.selected,div.select-box-arrow').click(function(event) {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
@@ -104,7 +114,7 @@ function enableSelectBoxes() {
       }
     });
 
-    $(this).find('li.select-box-option').fastClick(function(event){
+    $(this).find('li.select-box-option').click(function(event){
       event.preventDefault();
       $(this).parent().css('display','none');
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
@@ -120,6 +130,7 @@ function enableSelectBoxes() {
 // ON DOCUMENT READY 
 /////////////////////
 $(document).ready(function(){
+
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
@@ -151,7 +162,7 @@ $(document).ready(function(){
     // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
     $('#mobile-sidebar').html(_mobMenuContent);
 
-    $('.show-mob-sidebar').fastClick(function(e) {
+    $('.show-mob-sidebar').click(function(e) {
       e.preventDefault();
       _clicked = $(this);
       
@@ -176,8 +187,29 @@ $(document).ready(function(){
   
   }
 
+  // check for fitText classes
+  // if ($('#icon-fit-text').length > 0) {
+    
+  //   //load fitText library
+  //   $.when(
+  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
+  //       $.Deferred(function( deferred ){
+  //           $( deferred.resolve );
+  //       })
+  //   ).done(function(){
 
+  //       // use fitText on elements with a fit-text class
+  //       $('#icon-fit-text').fitText();
+  //   });
+  
+  // }
 
+  // use fit text for social media icons in footer
+  if ($('.icon-fit-text').length > 0) {
+    $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
+  }
+
+  
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
@@ -399,7 +431,7 @@ $(document).ready(function(){
 
 
   // scroll to the top of the page when the button is clicked
-  $('.back-to-top').fastClick(function(e){
+  $('.back-to-top').click(function(e){
     e.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
   });
@@ -533,7 +565,7 @@ $(document).ready(function(){
   
   if ($('.credits').length > 0) {
     $('.credits-btn').addClass("show");
-    $('.show-credits').fastClick(function(event) {
+    $('.show-credits').click(function(event) {
       event.preventDefault();
       // $('.credits').toggle();
       var c = $(this);
@@ -631,7 +663,7 @@ if ($('#va-accordion').length > 0) {
 
 if ($('.dd-menu').length > 0) {
 
-    $(".js-dd-menu").fastClick(function (event){
+    $(".js-dd-menu").click(function (event){
        event.preventDefault();
        var _d = $(this);
        var _d_menu = _d.parent();
@@ -670,7 +702,7 @@ if ($('.circles-component').length > 0) {
 // detect search filters on page
 if ($('.search-filters').length > 0) {
    //allow expand and close for search filters
-  $('.filter-heading').fastClick(function(event) {
+  $('.filter-heading').click(function(event) {
     event.preventDefault();
     var c = $(this);
     
