@@ -34,7 +34,7 @@ jQuery.fn.extend({
   Link_alumni.remove();
   Link_about.remove();
   Link_about_1.remove();
-  console.log(Link_study_3);
+  //console.log(Link_study_3);
 
   $( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
   $('.college-nav .subnav-2').prepend(Link_col);
@@ -602,7 +602,7 @@ if ($('.accordion').length > 0) {
 
     $(".st-arrow").on("click", function(e){
       e.preventDefault();
-      console.log("clicked icon");
+      //console.log("clicked icon");
       resetSpinners();
       var _icon = $(this);
       var _st = $(this).parent().parent();
