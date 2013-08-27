@@ -65,7 +65,7 @@
 
 
                     $(menuButton).children('a').hammer().on('tap', function (event) {
-                        event.preventDefault();
+                        //event.preventDefault();
                         $(menuButton).toggleClass('megamenu_button_active')
                         $(menuItem).not(":eq(0)").toggle(0);
                     });
@@ -193,7 +193,7 @@
                                 
 
                             $(menuItem).unbind('mouseenter mouseleave').bind('click', function(event) {
-                                event.preventDefault();
+                                //event.preventDefault();
                                 var $this = $(this);
                                 var dd = $this.find(menuDropDown);
                                 var _clickedNode = event.target.nodeName;
