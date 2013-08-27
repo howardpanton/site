@@ -43,11 +43,12 @@
                 menuItemElement = $(menuItem).add(menuItemFlyOut);
                 menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
 
-                $(menuItemLink).click(function(event) {
-                    event.preventDefault();
-                    window.location.hash = this.hash;
+                // to remove the #_ at the end of URL
+                // $(menuItemLink).click(function(event) {
+                //     event.preventDefault();
+                //     window.location.hash = this.hash;
     
-                });    
+                // });    
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
@@ -62,7 +63,9 @@
                         megaMenuDropDownPosition();
                     }
 
-                    $(menuButton).children('a').hammer().on('tap', function () {
+
+                    $(menuButton).children('a').hammer().on('tap', function (event) {
+                        event.preventDefault();
                         $(menuButton).toggleClass('megamenu_button_active')
                         $(menuItem).not(":eq(0)").toggle(0);
                     });
@@ -74,10 +77,21 @@
                     // event occurs within its area.
 
                     //mobile and tablet handler when top level menu items are clicked
-                    $(menuItemLink).hammer().on('tap', function () {
+                    $(menuItemLink).hammer().on('tap', function (event) {
+                        event.preventDefault();
                         var $this = $(this);
-                        $this.parent(menuItem).toggleClass('active noactive')
+                        var $thisParentItem = $this.closest(menuItem);
+                        $thisParentItem.toggleClass('active noactive')
                             .find(menuDropDown).toggle(0);
+                        
+                        $thisParentItem.find('.js-mob-exp-icon').toggle(
+                            function() {
+                                $(this).html('&#59235;');
+                            }, function() {
+                                $(this).html('&#59232;');
+                            });
+                        
+                        
                         // No chaining here, the horizontal and vertical
                         // versions don't use the exact same structure.
                         $this.parent(menuItem).siblings().addClass('noactive').removeClass('active')
@@ -121,8 +135,9 @@
                     $(window).resize(function() {
                         megaMenuDropDownPosition();
                     });
-
+                    // mobile menu icon show hide menu
                     $(menuButton).children('a').click(function () {
+
                         $(menuButton).toggleClass('megamenu_button_active');
                         $(menuItem).not(":eq(0)").toggle(0);
 
@@ -172,20 +187,22 @@
                         case 'open_close_slide':
                         case 'open_close_toggle':
 
-                            // $('.megamenu > li:nth-child(' + settings.menu_show_onload + ')')
-                            //     .find(menuDropDown).show()
-                            //     .closest(menuItem).toggleClass('active');
+                            $('.megamenu > li:nth-child(' + settings.menu_show_onload + ')')
+                                .find(menuDropDown).show()
+                                .closest(menuItem).toggleClass('active');
                                 
 
                             $(menuItem).unbind('mouseenter mouseleave').bind('click', function(event) {
-
+                                event.preventDefault();
                                 var $this = $(this);
                                 var dd = $this.find(menuDropDown);
                                 var _clickedNode = event.target.nodeName;
-  
+
+                                // confirm("clicked node was:" + _clickedNode);
                                 // only handle the closing and hiding of dropdown menu if clicking a link
-                                if (_clickedNode == 'A') {
-                                    
+                                if ($(event.target).hasClass("megamenu_drop") || 
+                                      $(event.target).hasClass("js-mob-exp-icon"))  {
+                                   
                                     // check if another list item is already open
                                     if ($this.siblings().hasClass('active')) {
                                        
@@ -211,30 +228,23 @@
                                     }
                                 }
 
-                               
-
-                                // $this.siblings().removeClass('active')
-                                //     .find(menuDropDown)[menuEffectHide](settings);
-                                // $this.toggleClass('active')
-                                //     .click(function (event) {
-                                //         event.stopPropagation();
-                                //     });
+                            
                             });
 
-                            // $(menuItemFlyOut).unbind('mouseenter mouseleave').click(function () {
+                            $(menuItemFlyOut).unbind('mouseenter mouseleave').click(function () {
 
-                            //     var $this = $(this);
-                            //     $this.siblings().removeClass('active')
-                            //         .find(menuItemFlyOutDropDown)[menuEffectHide](settings.menu_speed_hide);
-                            //     $this.siblings().find('li').removeClass('active');
-                            //     $this.toggleClass('active')
-                            //         .find(menuItemFlyOutDropDown).first()
-                            //         .delay(settings.menu_speed_delay)[menuEffectShow](settings.menu_speed_show)
-                            //         .click(function (event) {
-                            //             event.stopPropagation();
-                            //         });
+                                var $this = $(this);
+                                $this.siblings().removeClass('active')
+                                    .find(menuItemFlyOutDropDown)[menuEffectHide](settings.menu_speed_hide);
+                                $this.siblings().find('li').removeClass('active');
+                                $this.toggleClass('active')
+                                    .find(menuItemFlyOutDropDown).first()
+                                    .delay(settings.menu_speed_delay)[menuEffectShow](settings.menu_speed_show)
+                                    .click(function (event) {
+                                        event.stopPropagation();
+                                    });
 
-                            // });
+                            });
 
                             break;
 
@@ -339,11 +349,18 @@
         // Without those top and left values, the drop downs would be hidden
         // when not hovered.
 
-        if (($(window).width() < 960) && (settings.menu_responsive === 1)) {
-            $('.dropdown_container, .dropdown_fullwidth').css({'left':'0', 'top':'auto'}).hide();
+        // get width of page -- used to set the width of the menu dropdowns a
+        var _innerW = $('body').innerWidth();
+
+        if ((_innerW < 960) && (settings.menu_responsive === 1)) {
+            $('.megamenu').children('li').hide(0);
+            $('.dropdown_container, .dropdown_fullwidth').css({
+                'left':'0', 
+                'top':'auto',
+                'width': _innerW
+                }).hide();
             $('.dropdown_first').css({'left':'0'}).hide();
             $('.dropdown_flyout_level, .dropdown_flyout_level_left').css({'left':'0', 'top':'0'}).hide();
-            $('.megamenu').children('li').hide(0);
             $('.megamenu_button').show(0);
         }
 
@@ -351,9 +368,6 @@
             $('.dropdown_container').css({'left':'auto', 'top':'auto'}).hide();
             $('.dropdown_fullwidth').css({'left':'-1px', 'top':'auto'}).hide();
             
-            // get width of page to -- used to set the width of the menu dropdown
-            var _innerW = $('body').innerWidth();
-
             var _nav_wrap = document.getElementById('global-nav'),
                 x_pos;
 
