@@ -188,7 +188,14 @@
 	}
 }
 
-.header-wrapper { position: relative; }
+.header-wrapper { 
+	position: relative; 
+	width: 100%; 
+	@include gs-media(d) {
+		width: 92.5%;
+	}
+
+}
 
 .content-wrapper img {
 	max-width: 100%;
