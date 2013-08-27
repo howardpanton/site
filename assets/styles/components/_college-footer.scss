@@ -104,7 +104,12 @@
   }
 
   h3 {
-    @include margin-trailer(6);
+    @include margin-trailer(3);
+    
+    @include gs-media(d) {
+      @include margin-trailer(6);
+    }
+
     .lcc & {
       @extend %LeagueGothicRegular;
       text-transform: uppercase;
@@ -146,6 +151,8 @@
       text-align: left;
       a {
         border: none;
+        width:100%;
+        display:block;
 
       }
       a:hover{
@@ -154,8 +161,11 @@
       a span {
         @extend %icon-social;
         color: $white;
-        line-height: 54px;
-        @include font-size(76);
+        //line-height: 54px;
+        width: 100%;
+        display: block;
+        //@include font-size(76);
+        font-size: 1em; // set in px so that fitText can work
 
         .csm & {
           color: $black;
