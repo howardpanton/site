@@ -151,34 +151,46 @@ $(document).ready(function(){
   // sidebar script (populate mobile and tablet menu)
   if ($('.sidebar').length > 0) {
 
-    var _menuHtml = $('.sidebar').html();
-    var _sideBarTitle = $('.sidebar li a').first().html();
-    var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
-    var _mobMenuContent = _mobMenuButton + _menuHtml;
+    var _no_of_li_items = $(".sidebar li").size();
     
-    // create mobile sidebar div and add it to the main content div
-    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
-    // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-    $('#mobile-sidebar').html(_mobMenuContent);
-
-    $('.show-mob-sidebar').click(function(e) {
-      e.preventDefault();
-      _clicked = $(this);
+    // If there's more than one item in the left sidebar, then build the mobile sidebar
+    if (_no_of_li_items > 1 ) {
+      var _menuHtml = $('.sidebar').html();
+      var _sideBarTitle = $('.sidebar li').first();
+      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
+      var _mobMenuContent = _mobMenuButton + _menuHtml;
       
-      if (_clicked.hasClass('active')) {
-        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-        _clicked.html('☰').removeClass('active');
-      }
-      else {
-      _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
-      // update the menu button and set class to active
-      _clicked.html('❌').addClass('active');
+      // create mobile sidebar div and add it to the main content div
+      $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
-      }
+      // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
+      $('#mobile-sidebar').html(_mobMenuContent);
 
-    });
-  } // end if $(.sidebar)
+      $('.show-mob-sidebar').click(function(e) {
+        e.preventDefault();
+        _clicked = $(this);
+        
+        if (_clicked.hasClass('active')) {
+          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
+          _clicked.html('&#9776;').removeClass('active');
+        }
+        else {
+        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
+        // update the menu button and set class to active
+        _clicked.html('&#10060;').addClass('active');
+        }
+      });
+
+      console.log('the text of the first item in sidebar is: ' + $('.sidebar li').first().text() );
+      // check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
+      if(_sideBarTitle.text() == 'In This Section') {
+        
+        // hide "In This Section" in the sidebar dropdown
+        $('#mobile-sidebar li').first().remove(); 
+      }
+    }
+  } // end if $(.sidebar) > 0
 
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
