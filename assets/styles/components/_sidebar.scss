@@ -13,33 +13,8 @@
 
 	ul {
 		margin-left: 0;
-
-		li:first-child {
-			@extend %Swiss721BT-Bold;
-			color: #000;
-			@include font-size(18);
-			padding: rhythm(3, 18px) 0 rhythm(3, 18px) 0;
-			border-bottom: 0;
-			a {
-					@extend %Swiss721BT-Bold;
-					color: #000;
-					border-bottom: 0;
-					padding-left: 10px;
-
-			}
-		}
-
-		li:first-child a {
-			@extend %Swiss721BT-Bold;
-			line-height: 24px;
-		}
-
-		li:first-child:hover, li:first-child a:hover {
-			background: $white;
-		}
 		li {
 			padding:0px;
-
 			a {
 				@include font-size(14);
 				padding-left: 12px;
@@ -56,7 +31,14 @@
 					color:$black;
 				}
 			}
+			&.menu-heading {
+				@extend %Swiss721BT-Bold;
+				@include font-size(18);
+				padding: rhythm(3, 18px) 0 rhythm(3, 18px) 10px;
+				border-bottom: 0;
+			}
 		}
+
 	}
 
 	a {

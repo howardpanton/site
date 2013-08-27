@@ -29,7 +29,6 @@
 
   .lcf & {
     background-color: $black;
-    text-align: center;
     border-bottom: 1px solid $bg-gray;
   }
 
@@ -146,6 +145,10 @@
       text-align: left;
       a {
         border: none;
+
+      }
+      a:hover{
+        border-bottom: 0;
       }
       a span {
         @extend %icon-social;
@@ -157,6 +160,7 @@
           color: $black;
         }
       }
+
       .lcf &{
         text-align: center;
       }

@@ -259,24 +259,28 @@ figcaption, .rsCaption {
 	
 }
 
-blockquote {
-	position: relative;
-	span { 
-		@extend .ui-icons-quote_marks;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		background-repeat: no-repeat;
-  	background-position: top left; 
-	}
-	
+
+%blockquote {
+  position: relative;
+  span { 
+    @extend .ui-icons-quote_marks;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: top left; 
+  }
   
-	@include font-size(16);
-	@include adjust-leading-to(4, 16px); 	
-	margin-top: rhythm(2, 16px);
-	padding-bottom: rhythm(2, 16px);
-	padding-left: 68px;
-	padding-right: 18%;
+  @include font-size(16);
+  @include adjust-leading-to(4, 16px);  
+  margin-top: rhythm(2, 16px);
+  padding-bottom: rhythm(2, 16px);
+  padding-left: 68px;
+  padding-right: 18%;
+}
+
+blockquote {
+	@extend %blockquote;
 }
 
 hr {
@@ -506,8 +510,8 @@ b, strong, h2, h3, h4 {
     }
 
     .content {
-        h1,h2,h3,h4 {
-            //text-align: center;
+        h2 {
+            text-align: center;
         }
         .text-block {
         	h3, h4 {

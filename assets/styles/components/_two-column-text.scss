@@ -1,8 +1,7 @@
 // add optional title
 
-.half-list {
-	@include clearfix();
-	@include component-spacing-bottom;
+.two-column-text {
+	//@include component-spacing-bottom;
 
 	@include gs-media(t,min-max) {
 		@include gs-span (t,2,7);
@@ -13,7 +12,6 @@
 			@include gs-float(d, left, (5,16));
 			width: gs-width(d, 5, 10, (5,16), true);
 			&:nth-child(even) {
-	    		color: red;
 	    		margin-right: 0;
 			}
 		}
