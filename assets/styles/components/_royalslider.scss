@@ -294,7 +294,6 @@ img.rsImg {
 .rsDefault .rsVideoFrameHolder,
 .rsDefault .rsThumbs {
 	background: #151515;
-	color: #FFF;
 }
 
 
@@ -333,7 +332,7 @@ img.rsImg {
 
 	position: absolute;	
 	cursor: pointer;	
-	background: url('../img/royalslider/rs-default.png');
+	background: url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png');
 
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
@@ -493,7 +492,7 @@ img.rsImg {
 	margin-left: -8px;
 	position: absolute;	
 	cursor: pointer;	
-	background: url('../img/royalslider/rs-default.png');
+	background: url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png');
 }
 
 .rsDefault.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn { background-position: -128px -32px; }
@@ -615,7 +614,7 @@ img.rsImg {
 	width: 32px;
 	height: 32px;
 
-	background: url('../img/royalslider/rs-default.png') 0 0;
+	background: url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png') 0 0;
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
 	*background-color: #000;
@@ -658,7 +657,7 @@ img.rsImg {
 	-moz-transition: .3s;
 	transition: .3s;
 
-	background:url(../img/royalslider/rs-default.png) no-repeat 0 -32px;
+	background:url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png') no-repeat 0 -32px;
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
 	*background-color: #000;
@@ -692,7 +691,7 @@ img.rsImg {
 	margin: 6px;
 	width: 32px;
 	height: 32px;
-	background: url('../img/royalslider/rs-default.png') -64px 0;
+	background: url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png') -64px 0;
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
 	*background-color: #000;
@@ -749,39 +748,6 @@ img.rsImg {
 
 
 
-/* contentSlider */
-.contentSlider {
-  width: 100%;
-}
-.contentSlider,
-.contentSlider .rsOverflow,
-.contentSlider .rsSlide,
-.contentSlider .rsVideoFrameHolder,
-.contentSlider .rsThumbs {
-  background: #eee;
-  color: #000;
-}
-
-.contentSlider .rsSlide,
-.contentSlider .rsOverflow {
-  background: #eee;
-}
-.contentSlider h3 {
-  font-size: 24px;
-  line-height: 31px;
-  margin: 12px 0 8px;
-  font-weight: bold;
-}
-.contentSlider img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-.content-slider-bg {
-  width: 86%;
-  padding: 24px 7%;
-  background: #eee;
-}
 
 
 
@@ -806,6 +772,9 @@ img.rsImg {
 			.csm & {
 				background-color: $csm-primary;
 			}
+			.graduate-school & {
+				background: none;
+			}
 		}
 	}
 
@@ -828,4 +797,31 @@ img.rsImg {
 			}
 		}
 	}
+
+	.graduate-school & {
+		width: 100%;
+		background-color: transparent;
+		color: $white;
+		right: 0;
+		bottom: 50%;
+		a, a:hover {
+			padding: 0;
+		}
+	}
+}
+
+
+
+/***************
+*
+*  10. Special slider for LCF home page
+*
+****************/
+
+.d3-d14 {
+	@extend %d3-d14;
+}
+
+.box-text {
+	width: 65%;	
 }

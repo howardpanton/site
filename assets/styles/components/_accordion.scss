@@ -13,16 +13,14 @@
   	background-color: $white;
 
   	table {
-  		font-size: 16px;
-  		font-size: remCalc(16);
+  		@include font-size(16);
   		
       p {  
         @extend %d5-d12--within-d5-d16;
         display: block;
         float: none; 
         clear: left;
-  			font-size: 16px;
-  			font-size: remCalc(16);
+  			@include font-size(16);
   		}
 
 			th {
@@ -88,8 +86,7 @@
 
     li {
 
-        font-size: remCalc(16);
-        font-size: 16px;
+        @include font-size(16);
         margin-left: 16px;
         list-style-type: square;
         @include adjust-leading-to(4, 16px);  
@@ -181,8 +178,7 @@
 .va-title{
   margin: 0 0 0 12px;
   margin-bottom: 24px;
-  font-size: 36px;
-  font-size: remCalc(36);
+  @include font-size(36);
   letter-spacing: 1px;
   border-bottom: 2px solid $lcc-green;
   @include gs-media(t, min-max) {

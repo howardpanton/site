@@ -66,10 +66,10 @@ ul.tabs li.active {
       margin-left: 16px;
       list-style-type: square;
     }
+
     blockquote {
       @extend %blockquote;
     }
-
   }
   .tab_drawer_heading {
     margin: 0;
@@ -134,8 +134,7 @@ ul.tabs li.active {
     h3 {
       padding: 0 0 12px 0;
       margin-bottom: 24px;
-      font-size: 36px;
-      font-size: remCalc(36);
+      @include font-size(36);
       letter-spacing: 1px;
       border-bottom: 2px solid $lcc-green;
     }

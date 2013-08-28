@@ -86,43 +86,7 @@
     }
 }
 
-// Two column block
-// ------------------------------------------------------------
 
-.two-column-block {
-    @include component-spacing-bottom;
-
-    @include gs-media(t,min-max) {
-        @include gs-span(t,2,7);
-    }
-
-    @include gs-media(d,min-max) {
-        @include gs-span(d, 5, 16, (5, 16));
-    }
-    .left-col {
-        @include gs-media(d,min-max) {
-            @include gs-span(d, 5, 10, (5, 16));
-        }
-    }
-    .right-col {
-        @include gs-media(d,min-max) {
-            @include gs-span(d, 11, 16, (5, 16));
-        }
-    }
-}
-
-
-
-
-.wrapper-d3-d14 {
-    @include gs-media (t,min-max) {
-        @include gs-span(t,all);
-    }
-
-    @include gs-media (d,min-max) {
-        @include gs-span(d,3,14);
-    }
-}
 
 
 

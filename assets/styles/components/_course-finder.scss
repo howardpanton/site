@@ -370,34 +370,29 @@ input, .search-result-module, .search-input-wrap {
 .enrolment-type, .result-file-type { 
   width: 32%;
   float: left;
-  font-size: 14px;
-  font-size: remCalc(14px);
+  @include font-size(14);
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
-    font-size: 14px;
-    font-size: remCalc(14);
+    @include font-size(14);
   }
 }
 
 .site-search-section-name {
-  font-size: 14px;
-  font-size: remCalc(14);
+  @include font-size(14);
 
 }
 .college-name {
   position: absolute;
   left: 32%;
   width: 60%; 
-  font-size: 14px;
-  font-size: remCalc(14px);
+  @include font-size(14);
   margin-left: 10px;
   @include gs-media (m,min-max) {
     position: static;
     width: 100%;
     clear: left;
-    font-size: 14px;
-    font-size: remCalc(14);
+    @include font-size(14);
     margin-left: 0;
   }
 }
@@ -408,8 +403,7 @@ input, .search-result-module, .search-input-wrap {
   width: 60%;  
   margin-left: 10px;
   float: right;
-  font-size: 14px;
-  font-size: remCalc(14px);
+  @include font-size(14);
   margin-left: 10px;
   word-wrap: break-word;
   
@@ -417,8 +411,7 @@ input, .search-result-module, .search-input-wrap {
     width: 100%;
     margin-right: 0;
     clear: left;
-    font-size: 14px;
-    font-size: remCalc(14);
+    @include font-size(14);
     margin-left: 0;
   }
     
@@ -479,8 +472,7 @@ input, .search-result-module, .search-input-wrap {
 // used for exclamation mark icon and question mark icon on no results found page
 .warning-icon {
   @extend %icon;
-  font-size: remCalc(120);
-  font-size: 120px;
+  @include font-size(120);
   line-height: 120px;
   padding: 24px;
   color: $aaa-gray;
