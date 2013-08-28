@@ -59,6 +59,7 @@ jQuery.fn.extend({
   $( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
   $('.about-nav .subnav-3').prepend(Link_about_1);
 
+
 function checkWindowSize() {
   var width = $(window).width(),
   new_class = width > 850 ? 'gDesktop' :
@@ -83,6 +84,15 @@ var waitForFinalEvent = (function () {
 })();
 
 
+// fastclick library: https://github.com/ftlabs/fastclick
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+
+
+
+
+
 // enables UAL themed select boxes
 function enableSelectBoxes() {
   
@@ -91,7 +101,7 @@ function enableSelectBoxes() {
     $(this).children('div').children('h3.selected').html(_start_val);
     $('input.js-select-box-value').attr('value',$(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
 
-    $(this).children('div').children('h3.selected,div.select-box-arrow').fastClick(function(event) {
+    $(this).children('div').children('h3.selected,div.select-box-arrow').click(function(event) {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
@@ -104,7 +114,7 @@ function enableSelectBoxes() {
       }
     });
 
-    $(this).find('li.select-box-option').fastClick(function(event){
+    $(this).find('li.select-box-option').click(function(event){
       event.preventDefault();
       $(this).parent().css('display','none');
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
@@ -121,53 +131,81 @@ function enableSelectBoxes() {
 /////////////////////
 $(document).ready(function(){
 
+
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
 
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
 
-    $.when(
-          $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-          $.Deferred(function( deferred ){
-              $( deferred.resolve );
-          })
-      ).done(function(){
-        $('.breadcrumbs').niceScroll({horizrailenabled:true});
-      });
+    // $.when(
+    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
+    //       $.Deferred(function( deferred ){
+    //           $( deferred.resolve );
+    //       })
+    //   ).done(function(){
+    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
+    //   });
+
+    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
+    // add class to hide them on desktop & then insert before the first footer on the page  
+    
+    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
+    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
+    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
+    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
+    _ual_footer.prepend(_mobileBreadCrumbs);
   }
+
+   
 
   // sidebar script (populate mobile and tablet menu)
   if ($('.sidebar').length > 0) {
 
-    var _menuHtml = $('.sidebar').html();
-    var _sideBarTitle = $('.sidebar li a').first().html();
-    var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
-    var _mobMenuContent = _mobMenuButton + _menuHtml;
+    var _no_of_li_items = $(".sidebar li").size();
     
-    // create mobile sidebar div and add it to the main content div
-    $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
-
-    // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-    $('#mobile-sidebar').html(_mobMenuContent);
-
-    $('.show-mob-sidebar').fastClick(function(e) {
-      e.preventDefault();
-      _clicked = $(this);
+    // If there's more than one item in the left sidebar, then build the mobile sidebar
+    if (_no_of_li_items > 1 ) {
+      var _menuHtml = $('.sidebar').html();
+      var _sideBarTitle = $('.sidebar li').first();
+      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
+      var _mobMenuContent = _mobMenuButton + _menuHtml;
       
-      if (_clicked.hasClass('active')) {
-        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-        _clicked.html('☰').removeClass('active');
-      }
-      else {
-      _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
-      // update the menu button and set class to active
-      _clicked.html('❌').addClass('active');
+      // create mobile sidebar div and add it to the main content div
+      $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
-      }
+      // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
+      $('#mobile-sidebar').html(_mobMenuContent);
 
-    });
-  } // end if $(.sidebar)
+      $('.show-mob-sidebar').click(function(e) {
+        e.preventDefault();
+        _clicked = $(this);
+        
+        if (_clicked.hasClass('active')) {
+          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
+          _clicked.html('&#9776;').removeClass('active');
+        }
+        else {
+        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
+        // update the menu button and set class to active
+        _clicked.html('&#10060;').addClass('active');
+        }
+      });
+
+      // check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
+      if(_sideBarTitle.text() == 'In This Section') {
+        
+        // hide "In This Section" in the sidebar dropdown
+        $('#mobile-sidebar li').first().remove(); 
+      }
+    }
+  } // end if $(.sidebar) > 0
+
+
+
+
+
+
 
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
@@ -176,8 +214,29 @@ $(document).ready(function(){
   
   }
 
+  // check for fitText classes
+  // if ($('#icon-fit-text').length > 0) {
+    
+  //   //load fitText library
+  //   $.when(
+  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
+  //       $.Deferred(function( deferred ){
+  //           $( deferred.resolve );
+  //       })
+  //   ).done(function(){
 
+  //       // use fitText on elements with a fit-text class
+  //       $('#icon-fit-text').fitText();
+  //   });
+  
+  // }
 
+  // use fit text for social media icons in footer
+  if ($('.icon-fit-text').length > 0) {
+    $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
+  }
+
+  
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
@@ -399,7 +458,7 @@ $(document).ready(function(){
 
 
   // scroll to the top of the page when the button is clicked
-  $('.back-to-top').fastClick(function(e){
+  $('.back-to-top').click(function(e){
     e.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
   });
@@ -517,10 +576,10 @@ $(document).ready(function(){
           }
         });
 
-        var slider = _this.data('royalSlider');
-        slider.ev.on('rsAfterContentSet', function(e, object) {
-          resrc.resrcAll();
-        });
+        // var slider = _this.data('royalSlider');
+        // slider.ev.on('rsAfterContentSet', function(e, object) {
+        //   resrc.resrcAll();
+        // });
 
       });
 
@@ -542,7 +601,7 @@ $(document).ready(function(){
   
   if ($('.credits').length > 0) {
     $('.credits-btn').addClass("show");
-    $('.show-credits').fastClick(function(event) {
+    $('.show-credits').click(function(event) {
       event.preventDefault();
       // $('.credits').toggle();
       var c = $(this);
@@ -602,7 +661,6 @@ if ($('.accordion').length > 0) {
 
     $(".st-arrow").on("click", function(e){
       e.preventDefault();
-      //console.log("clicked icon");
       resetSpinners();
       var _icon = $(this);
       var _st = $(this).parent().parent();
@@ -637,10 +695,9 @@ if ($('#va-accordion').length > 0) {
 
 
 // detect dropdown menu button used in forms or in page for drop menus
-
 if ($('.dd-menu').length > 0) {
 
-    $(".js-dd-menu").fastClick(function (event){
+    $(".js-dd-menu").click(function (event){
        event.preventDefault();
        var _d = $(this);
        var _d_menu = _d.parent();
@@ -680,7 +737,7 @@ if ($('.circles-component').length > 0) {
 // detect search filters on page
 if ($('.search-filters').length > 0) {
    //allow expand and close for search filters
-  $('.filter-heading').fastClick(function(event) {
+  $('.filter-heading').click(function(event) {
     event.preventDefault();
     var c = $(this);
     
@@ -967,6 +1024,14 @@ $(window).load(function(){
 
   if ($('.highlight-box-3').length > 0) {
     $('.highlight-box-3 ul li').fitHeights();
+  }
+  
+  if ($('.three-up ul li').length > 0) {
+    $('.three-up ul li').fitHeights();
+  }
+  
+  if ($('.two-up ul li').length > 0) {
+    $('.two-up ul li').fitHeights();
   }
 
   if ($('.__gallery').length > 0) {

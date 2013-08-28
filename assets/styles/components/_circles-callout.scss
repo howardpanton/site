@@ -1,6 +1,7 @@
 .circles-component {
 		@include padding-leader(4);
 		@include padding-trailer(4);
+		@include margin-trailer(12);
 		width: 100%;
 		clear:left;
 		min-height: 465px;
@@ -29,7 +30,9 @@
 		}
 
 		%circle-callout {
-			
+	@include gs-media(m) {
+		padding-top: 64px;
+	}
 			position: absolute;
 			max-width: 400px;
 			max-height: 400px;
@@ -61,6 +64,8 @@
 				margin: 0 auto;
 				text-align: center;
 				@include padding-trailer(2);
+				// remove h2 border top
+				border-top: none;
 			}
 
 			a {
@@ -100,35 +105,39 @@
 			left: 0;
 
 			.camberwell & {
+				@include circle ($ccw-salmon, 0.8);
+			}
+			.chelsea & {
 				@include circle ($ccw-green, 0.8);
-				&:hover {
-					//background-image: url('../../img/camberwell/cw-college.png');
-					//transition: background 0.2s ease-in;
-					//-webkit-filter: grayscale(100%);
-				}
-				.border-radius & {
-					background: url('../../img/camberwell/green-circle-bg.png') no-repeat ;
-					background-position: center;
-				}
+			}
+			.wimbledon & {
+				@include circle ($ccw-salmon, 0.8);
 			}
 		}
 
 		.circle-callout-b {
+			margin-top: -40px;
+			@include gs-media(d) {
+				margin-top: 0;
+			}
 			@extend %circle-callout;
 			right: 0;
 
 			.camberwell & {
+				@include circle ($ccw-green, 0.8);
+			}
+			.chelsea & {
 				@include circle ($ccw-blue, 0.8);
-				
-				&:hover {
-					//background-image: url('../../img/camberwell/cw-placeholder1.png');
-					//transition: background 0.2s ease-in;
-					//-webkit-filter: grayscale(100%);
-				}
-				.border-radius & {
-					background: url ('../../img/camberwell/blue-circle-bg.png') no-repeat ;
-					background-position: center;
-				}
+			}
+			.wimbledon & {
+				@include circle ($ccw-blue, 0.8);
+			}
+		}
+
+		@include gs-media(m) {
+			.circle-callout-a, .circle-callout-b {
+				width: 310px;
+				height: 310px; 
 			}
 		}
 }
