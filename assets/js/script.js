@@ -969,6 +969,10 @@ $(window).load(function(){
     $('.highlight-box-3 ul li').fitHeights();
   }
 
+  if ($('.__gallery').length > 0) {
+    $('.__gallery ul li').fitHeights();
+  }
+
 });
 
 
