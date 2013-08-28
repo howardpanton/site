@@ -1,7 +1,23 @@
 // add optional title
 
 .two-column-text {
-	//@include component-spacing-bottom;
+	@include component-spacing-bottom;
+
+	// lists just like sidebar
+	ul li {
+		padding-bottom: 0;
+		a {
+			@include font-size(14);
+			@extend %Swiss721BT-Light;
+			display: block;
+			border-bottom:1px dotted $light-gray;
+			line-height:36px; 
+			&:hover {
+				background:$bg-gray;
+				color:$black;
+			}
+		}
+	}
 
 	@include gs-media(t,min-max) {
 		@include gs-span (t,2,7);
@@ -16,4 +32,5 @@
 			}
 		}
 	}
+
 }
