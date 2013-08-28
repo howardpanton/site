@@ -138,22 +138,33 @@ $(document).ready(function(){
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
 
-    $.when(
-          $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-          $.Deferred(function( deferred ){
-              $( deferred.resolve );
-          })
-      ).done(function(){
-        $('.breadcrumbs').niceScroll({horizrailenabled:true});
-      });
+    // $.when(
+    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
+    //       $.Deferred(function( deferred ){
+    //           $( deferred.resolve );
+    //       })
+    //   ).done(function(){
+    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
+    //   });
+
+    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
+    // add class to hide them on desktop & then insert before the first footer on the page  
+    
+    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
+    var _first_footer = $('footer').first();
+    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
+    _mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
+    _first_footer.prepend(_mobileBreadCrumbs);
+
   }
+
+   
 
   // sidebar script (populate mobile and tablet menu)
   if ($('.sidebar').length > 0) {
 
     var _no_of_li_items = $(".sidebar li").size();
     
-
     // If there's more than one item in the left sidebar, then build the mobile sidebar
     if (_no_of_li_items > 1 ) {
       var _menuHtml = $('.sidebar').html();
@@ -182,7 +193,6 @@ $(document).ready(function(){
         }
       });
 
-      console.log('the text of the first item in sidebar is: ' + $('.sidebar li').first().text() );
       // check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
       if(_sideBarTitle.text() == 'In This Section') {
         
@@ -191,6 +201,12 @@ $(document).ready(function(){
       }
     }
   } // end if $(.sidebar) > 0
+
+
+
+
+
+
 
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
@@ -637,7 +653,6 @@ if ($('.accordion').length > 0) {
 
     $(".st-arrow").on("click", function(e){
       e.preventDefault();
-      console.log("clicked icon");
       resetSpinners();
       var _icon = $(this);
       var _st = $(this).parent().parent();
@@ -672,7 +687,6 @@ if ($('#va-accordion').length > 0) {
 
 
 // detect dropdown menu button used in forms or in page for drop menus
-
 if ($('.dd-menu').length > 0) {
 
     $(".js-dd-menu").click(function (event){
