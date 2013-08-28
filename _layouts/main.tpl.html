@@ -44,28 +44,9 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   <link rel='stylesheet' href='{{ site.url }}/assets/css/screen.css'>
 
-  <!-- fonts.css -->
   <link rel="stylesheet" type="text/css" media="" href="http://beta.arts.ac.uk/media/beta/beta-assets/fonts.css" />
 
-  
-  <!-- Zone-specific -->
-    {% if page.college == "lcf" %}
-
-    {% elsif page.college == "ual" %}
-    <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/ual.css'>
-    {% elsif page.college == "ccw" %}
-        
-    {% elsif page.college == "camberwell" %}
-        <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/camberwell.css'>    
-    {% elsif page.college == "chelsea" %}
-      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/chelsea.css'> 
-  {% elsif page.college == "lcc" %}
-      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/lcc.css'> 
-    {% elsif page.college == "csm" %}
-      <link rel='stylesheet' href='{{ site.url }}/assets/css/custom/csm.css'> 
-    {% endif %}
-
-    <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
+  <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
 
    
 
