@@ -124,6 +124,12 @@
 	}
 }
 
+%d3-d14 {
+	@include gs-media (d) {
+		@include gs-span(d, 3,14);
+	}
+}
+
 %d5-d12--within-d5-d16 { // used for content
 	@include gs-media (d) {
 		@include gs-span(d, 5,12, (5, 16));
@@ -165,6 +171,8 @@
 		@include gs-span(d, 6,16, (6,16));
 	}
 }
+
+
 
 
 /*------------------------------------*\

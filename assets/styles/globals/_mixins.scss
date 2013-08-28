@@ -357,9 +357,9 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
   @include prefixer(align-content, $value, webkit moz spec)
 }
 
-@mixin component-spacing-bottom {
+@mixin component-spacing-bottom($spacing: 8 ) {
   //padding-bottom: rhythm(4, 16px); - no, this will add padding inside certain components (like boxouts)
-  margin-bottom: rhythm(8, 16px);
+  margin-bottom: rhythm($spacing, 16px);
 }
 
 @mixin no-border {
