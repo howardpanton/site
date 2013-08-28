@@ -576,10 +576,10 @@ $(document).ready(function(){
           }
         });
 
-        var slider = _this.data('royalSlider');
-        slider.ev.on('rsAfterContentSet', function(e, object) {
-          resrc.resrcAll();
-        });
+        // var slider = _this.data('royalSlider');
+        // slider.ev.on('rsAfterContentSet', function(e, object) {
+        //   resrc.resrcAll();
+        // });
 
       });
 
@@ -1024,6 +1024,14 @@ $(window).load(function(){
 
   if ($('.highlight-box-3').length > 0) {
     $('.highlight-box-3 ul li').fitHeights();
+  }
+  
+  if ($('.three-up ul li').length > 0) {
+    $('.three-up ul li').fitHeights();
+  }
+  
+  if ($('.two-up ul li').length > 0) {
+    $('.two-up ul li').fitHeights();
   }
 
   if ($('.__gallery').length > 0) {

@@ -21,16 +21,23 @@
 }
 
 .block-item {
-	margin-bottom: rhythm(6, 16px); 
+	@include component-spacing-bottom;
 	background-color: $bg-gray;
+	// college specific coloring
+	.camberwell & {
+		background-color: $ccw-blue-light;
+	}
+	.chelsea & {
+		background-color: $ccw-salmon-light;
+	}
+	.wimbledon & {
+		background-color: $ccw-green-light;
+	}
 	figure {
 		margin-bottom: 0;
 	}
 	.text {
 		padding: 0 rhythm(4, 16px);
-	}
-	.chelsea & {
-		background-color: $ccw-salmon-light;
 	}
 }
 
@@ -66,9 +73,45 @@
 
 
 .__media {
+	h2 {
+		width: 100%;
+		@include gs-media(t,min-max) {
+			.camberwell &, .chelsea &, .wimbledon & {
+				width: 47.28217%;
+				margin-top: 24px;
+			}
+		}
+		@include gs-media(d) {
+			.camberwell &, .chelsea &, .wimbledon & {
+				width: 48.31199%;
+				margin-top: 48px;
+			}
+		}
+	}
+
+	li {
+		@include component-spacing-bottom;
+		// college specific coloring
+		.camberwell &, .chelsea &, .wimbledon & {
+			padding-bottom: 0;
+		}
+		.camberwell & {
+			background-color: $ccw-blue-light;
+		}
+		.chelsea & {
+			background-color: $ccw-salmon-light;
+		}
+		.wimbledon & {
+			background-color: $ccw-green-light;
+		}
+	}
 
 	li h3, li p {
 		width: 100%;
+		.camberwell &, .chelsea &, .wimbledon & {
+			padding-left: 18px;
+			padding-right: 18px;
+		}
 	}
 
 	figure a {
@@ -181,14 +224,17 @@
 .three-up {
 	@include gs-media(t,min-max) {
 		li {
-			@include gs-span(t, 2, 3, (2, 7));
+			@include gs-span(t, 2, 7, (2, 7));
+			clear: left;
+			@include component-spacing-bottom;
 		}
-		li:nth-child(2n) {
-			@include gs-span(t, 4, 5, (2, 7));
-		}
-		li:nth-child(3n) {
-			@include gs-span(t, 6, 7, (2, 7));
-		}
+		// li:nth-child(2n) {
+		// 	@include gs-span(t, 2, 4, (2, 7));
+		// 	clear: left;
+		// }
+		// li:nth-child(3n) {
+		// 	@include gs-span(t, 5, 7, (2, 7));
+		// }
 	}
 
 	&.l-content-full-width {
