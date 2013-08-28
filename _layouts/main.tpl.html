@@ -15,7 +15,7 @@
 <head>
     <title>University of Arts London Beta</title>
     <meta charset='utf-8'>
-    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1' name='viewport' >
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
     <meta content='on' http-equiv='cleartype'>
     <meta content='grid test' name='description'>
@@ -163,14 +163,21 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
     <div class="header-panel bg-gray-bg">
       <div class="header-wrapper">
           <div class="row">
-          {% if page.college == "lcf" %}
-            {% include _lcf_breadcrumb.html %}
-          {% else if page.college == "lcc" %}
-            {% include _lcc_breadcrumb.html %}
-          {% else if page.college == "ual" %}
-            {% include _breadcrumb.html %}
-          {% endif %}  
-              <h1>{{ page.title }}</h1>
+            <!-- breadcrumbs -->
+            {% if page.college == "lcf" %}
+              {% include _lcf_breadcrumb.html %}
+            {% else if page.college == "lcc" %}
+              {% include _lcc_breadcrumb.html %}
+            {% else if page.college == "ual" %}
+              {% include _breadcrumb.html %}
+            {% endif %} 
+          </div>
+          <div class="row"> 
+
+            {% if page.section != "graduate-school" %}
+                <!-- main page title -->
+                <h1>{{ page.title }}</h1>
+            {% endif %}
           </div>
       </div>    
     </div><!-- .header-panel -->
@@ -200,10 +207,12 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
       {% include _global_footer.html %}
   {% endif %}
 
+
   <!-- 
   To be added to the layout in Site Manager
   <script src="//use.resrc.it"></script> 
   -->
+  
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 
@@ -224,23 +233,16 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   <script src='{{ site.url }}/assets/js/dev/debug.rwd.js' type='text/javascript'></script>
 
-  
-  
-
-
-  <!-- fastClicks script - improve click speed on mobile -->
-  <script src='{{ site.url }}/assets/js/libs/jquery.fastClick.js' type='text/javascript'></script>
   <!-- Background video -->
   <script src='{{ site.url }}/assets/js/libs/bg-video.js'></script>
 
-
-  <!-- scripts used for expandable search box -->
-  <script src='{{ site.url }}/assets/js/libs/uisearch.js'></script>
-  <script src='{{ site.url }}/assets/js/libs/classie.js'></script>
-  
-
+  <!-- fastClick -->
+  <script src='{{ site.url }}/assets/js/libs/fastclick.js' type='text/javascript'></script>
+  <!-- FitText -->
+  <script src='{{ site.url }}/assets/js/libs/jquery.fittext.js' type='text/javascript'></script>
 
   <script src='{{ site.url }}/assets/js/script.js' type='text/javascript'></script>
+
   <script type="text/javascript" src="http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js"></script><!-- Mega Menu Plugins -->
   <script type="text/javascript" src="http://artslondon.github.io/beta/assets/js/libs/megamenu.js"></script><!-- Mega Menu Script -->
   <script>
