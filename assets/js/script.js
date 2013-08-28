@@ -151,11 +151,10 @@ $(document).ready(function(){
     // add class to hide them on desktop & then insert before the first footer on the page  
     
     var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    var _first_footer = $('footer').first();
+    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
     _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    _mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    _first_footer.prepend(_mobileBreadCrumbs);
-
+    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
+    _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
