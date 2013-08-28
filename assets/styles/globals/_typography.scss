@@ -55,6 +55,9 @@ h1 {
 	@include font-size(54);
 	@include adjust-leading-to(10, 54px); 	
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
+	.csm & {
+		@extend %LeviathanBlackItalic;
+	}
 }
 
 h2, h3, h4 {
@@ -69,6 +72,9 @@ h1, h2, h3 {
 		@extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
+}
+
+h2, h3 {
   .csm & {
     @extend %BureauGrotBold;
   }

@@ -85,9 +85,9 @@ var waitForFinalEvent = (function () {
 
 
 // fastclick library: https://github.com/ftlabs/fastclick
-window.addEventListener('load', function() {
-    FastClick.attach(document.body);
-}, false);
+// window.addEventListener('load', function() {
+//     FastClick.attach(document.body);
+// }, false);
 
 
 
@@ -1018,7 +1018,7 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 // initialise
 $(window).load(function(){
   
-  if ($('.related-content ul li').length > 0) {
+  if ($('.related-content').length > 0) {
     $('.related-content ul li').fitHeights();
   }
 
@@ -1035,7 +1035,10 @@ $(window).load(function(){
   }
 
   if ($('.__gallery').length > 0) {
-    $('.__gallery ul li').fitHeights();
+    $('.__gallery').each( function() {
+      $(this).find('li').fitHeights();
+    });
+    //$('.__gallery ul li').fitHeights();
   }
 
 });
