@@ -3,6 +3,7 @@
 	li {
 		background: $white;
 		padding: 0;
+		margin-bottom: 18px;
 	}
 	figure {
 		margin-bottom: 0;
@@ -12,6 +13,9 @@
 	}
 
 	@include gs-media(d) {
+		li {
+			margin-bottom: 0;
+		}
 		li:hover {
 			filter: grayscale(100%);
 			-webkit-filter: grayscale(100%);
@@ -20,4 +24,5 @@
 			-o-filter: grayscale(100%);
 		}
 	}
+
 }

@@ -34,7 +34,7 @@ jQuery.fn.extend({
   Link_alumni.remove();
   Link_about.remove();
   Link_about_1.remove();
-  console.log(Link_study_3);
+  //console.log(Link_study_3);
 
   $( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
   $('.college-nav .subnav-2').prepend(Link_col);
@@ -558,6 +558,7 @@ $(document).ready(function(){
         // get the individual slide width and height from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the dimensions to sensible defaults
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 930;
         var _itemHeight = (_this.data('slider-item-height') > 0) ? _this.data('slider-item-height') : 465;
+        var _itemAutoPlay = (_this.data('slider-auto-play') == true) ? _this.data('slider-auto-play') : false;
 
         _this.royalSlider({
           arrowsNav: true,
@@ -570,13 +571,21 @@ $(document).ready(function(){
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
           globalCaption: true, 
-          /*autoPlay: {
-            // autoplay options go here
-            enabled: true,
+          autoPlay: {
+            enabled: _itemAutoPlay,
             pauseOnHover: true
-          }*/
+          }
         });
+
+        var slider = _this.data('royalSlider');
+        slider.ev.on('rsAfterContentSet', function(e, object) {
+          resrc.resrcAll();
+        });
+
       });
+
+
+
     });
   }
 
@@ -724,6 +733,7 @@ if ($('.circles-component').length > 0) {
   });
 
 }
+
 
 // detect search filters on page
 if ($('.search-filters').length > 0) {
@@ -1015,6 +1025,10 @@ $(window).load(function(){
 
   if ($('.highlight-box-3').length > 0) {
     $('.highlight-box-3 ul li').fitHeights();
+  }
+
+  if ($('.__gallery').length > 0) {
+    $('.__gallery ul li').fitHeights();
   }
 
 });

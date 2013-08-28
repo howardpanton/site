@@ -12,6 +12,7 @@
 // Always show scrollbar to prevent jumps when content is expanded
 html {
   overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 // Set box-sizing rules to all Div's.
@@ -487,29 +488,32 @@ b, strong, h2, h3, h4 {
 
 .lcf {
     .content-wrapper, .header-wrapper {
-      h1,h2,h3,h4,h5,h6 {
-       	@extend %Swiss721BT-Black;
-      }
-      h4,h5,h6 {
-           font-family: "Swiss721BT-Bold";
-      }
-      h2 {
-           text-transform: uppercase;
-      }
-      h2 {
-          padding-bottom: rhythm(1, 24px);
-          margin-bottom: rhythm(3, 24px);
-          background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-          letter-spacing: 5px;
-          .ual-black-bg & {
-          	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-          }
-      }
+		h1,h2,h3,h4,h5,h6 {
+			@extend %Swiss721BT-Black;
+		}
+		h4,h5,h6 {
+		   font-family: "Swiss721BT-Bold";
+		}
+		h1,h2 {
+			background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
+		}
+		h2,.call-to-action h3 {
+			@include font-size(20);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		h2 {
+		  	margin-bottom: rhythm(4, 24px);
+		  
+		  .ual-black-bg & {
+		  	background-image: url(../img/lcf/lcf-title-underline-white.gif);
+		  }
+		}
     }
 
     .content {
-        h1,h2,h3,h4 {
-            //text-align: center;
+        h1,h2,.call-to-action h3 {
+            text-align: center;
         }
         .text-block {
         	h3, h4 {
@@ -518,9 +522,6 @@ b, strong, h2, h3, h4 {
         }
      }
     
-    footer {
-      
-    }
     /* figcaption, .flex-video .caption {
     //     padding: 0 10px;
     //     color: $ual-secondary;
@@ -535,31 +536,20 @@ b, strong, h2, h3, h4 {
 // // GRADUATE SCHOOL
 
 .graduate-school {
+	.header-wrapper h1 {
+		display: none;
+	}
     .content-wrapper {
-        h1,h2,h3,h4,h5,h6 {
+        h1,h2,h3,h4,h5,h6,h3 a {
             font-family: $lcf-heading-font;
             font-weight: normal;
-            border: 0 none;
-            letter-spacing: 0;
+            letter-spacing: 1px;
         }
         h1 {
-            font-size:emCalc(30px); 
-            padding-bottom:  rhythm(1, 30px);
+            @include font-size(36);
+            text-transform: uppercase;
             margin-bottom: rhythm(4, 30px);
-            background: url(../../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-        }
-        h2 {
-            font-size:emCalc(20px);
-            margin-bottom: rhythm(4, 24px);
-        }
-        .content {
-            margin-top: 40px;
-        }
-        .sidebar {
-            //margin-top: 100px;
-        }
-        .media-block {
-            padding-bottom: 0;
+            letter-spacing: 5px;
         }
     }
 
