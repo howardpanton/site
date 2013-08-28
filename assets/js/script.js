@@ -517,10 +517,10 @@ $(document).ready(function(){
           }
         });
 
-        var slider = _this.data('royalSlider');
-        slider.ev.on('rsAfterContentSet', function(e, object) {
-          resrc.resrcAll();
-        });
+        // var slider = _this.data('royalSlider');
+        // slider.ev.on('rsAfterContentSet', function(e, object) {
+        //   resrc.resrcAll();
+        // });
 
       });
 
