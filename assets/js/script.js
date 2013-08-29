@@ -232,9 +232,9 @@ $(document).ready(function(){
   // }
 
   // use fit text for social media icons in footer
-  if ($('.icon-fit-text').length > 0) {
-    $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
-  }
+  // if ($('.icon-fit-text').length > 0) {
+  //   $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
+  // }
 
   
 
