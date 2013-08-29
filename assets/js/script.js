@@ -1026,19 +1026,15 @@ $(window).load(function(){
     $('.highlight-box-3 ul li').fitHeights();
   }
   
-  if ($('.three-up ul li').length > 0) {
-    $('.three-up ul li').fitHeights();
-  }
-  
-  if ($('.two-up ul li').length > 0) {
+  if ($('body').is('.chelsea, .camberwell, .wimbledon')) {
     $('.two-up ul li').fitHeights();
+    $('.three-up ul li').fitHeights();
   }
 
   if ($('.__gallery').length > 0) {
     $('.__gallery').each( function() {
       $(this).find('li').fitHeights();
     });
-    //$('.__gallery ul li').fitHeights();
   }
 
 });
