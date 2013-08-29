@@ -31,11 +31,19 @@
 					color:$black;
 				}
 			}
+
 			&.menu-heading {
 				@extend %Swiss721BT-Bold;
 				@include font-size(18);
-				padding: rhythm(3, 18px) 0 rhythm(3, 18px) 10px;
+				padding: rhythm(3, 18px) 0 rhythm(3, 18px) 0;
 				border-bottom: 0;
+
+				a {
+					@extend %Swiss721BT-Bold;
+					@include font-size(18);
+					padding: rhythm(3, 18px) 0 rhythm(3, 18px) 12px;
+					border-bottom: 0;
+				}
 			}
 		}
 
@@ -44,7 +52,6 @@
 	a {
 		@extend %Swiss721BT-Light;
 		display: block;
-
 	}
 }
 
@@ -63,13 +70,12 @@
 		background-color: $bg-gray;
 		border-bottom: 1px solid $light-gray;
 		padding-left: 12px;
-		line-height: 24px;
 		a { 
+			@extend %Swiss721BT-Light;
 			width: 100%;
-			// line-height: 24px;
+			line-height: 24px;
 			display: block;
-			padding-top: 12px;
-			padding-bottom: 12px;
+			padding-bottom: rhythm(2, 16px);
 			border-bottom: none;
 		}
 	}
