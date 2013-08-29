@@ -64,10 +64,10 @@ function checkWindowSize() {
   var width = $(window).width(),
   new_class = width > 850 ? 'gDesktop' :
               width > 600 ? 'gTablet' :
-              width < 600 ? 'gmobile' :
+              width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
-  $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
+  $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -131,6 +131,7 @@ function enableSelectBoxes() {
 /////////////////////
 $(document).ready(function(){
 
+  checkWindowSize();
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
@@ -316,39 +317,39 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
-  $(function() {
+  // $(function() {
 
-      var container = $("#container"),
-          pagination = $("#pagination");
+  //     var container = $("#container"),
+  //         pagination = $("#pagination");
 
-      function setPagination () {
-          pagination.jPages({
-              containerID : "container",
-              perPage : 24,
-              direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
-          });
-      };
+  //     function setPagination () {
+  //         pagination.jPages({
+  //             containerID : "container",
+  //             perPage : 24,
+  //             direction : "auto",
+  //             animation : "fadeInUp",
+  //             // callback : function( pages, items ){
+  //             //     items.showing.find("img").trigger("turnPage");
+  //             //     items.oncoming.find("img").trigger("turnPage");
+  //             // }
+  //         });
+  //     };
 
-      function destroyPagination () {
-          pagination.jPages("destroy");
-      };
+  //     function destroyPagination () {
+  //         pagination.jPages("destroy");
+  //     };
 
-      setPagination();
+  //     setPagination();
 
-      $.filtrify("container", "placeHolder", {
-          block : "data-original",
-          callback : function() {
-              destroyPagination();
-              setPagination();
-          }
-      });
+  //     $.filtrify("container", "placeHolder", {
+  //         block : "data-original",
+  //         callback : function() {
+  //             destroyPagination();
+  //             setPagination();
+  //         }
+  //     });
 
-  });
+  // });
 
 
 
@@ -625,7 +626,7 @@ if ($('.dd-menu').length > 0) {
 
 // detect circles-callout component
 
-if ($('.circles-component').length > 0) {
+if ((($('.circles-component').length > 0)) && ($('body').hasClass('gDesktop'))) {
   $.when(
       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
       $.Deferred(function( deferred ){
