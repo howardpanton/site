@@ -273,26 +273,21 @@
 }
 
 aside {
-
-	@include font-size(14);
-	h3 {
-	  @extend .size-h6;
-	  @include padding-leader(1);
-	}
-
 	@extend %d13-d16--within-d5-d16;
 	
 	background-color: $bg-gray;
-	&.no-bg { background-color: $white; }
 	border-left: none;
 	padding: 24px;
 	clear: left;
-	
+	&.no-bg, &.ual-white-bg { 
+		background-color: $white; 
+	}
+
 	@include gs-media(d) {
 		background: $white;
 		border-left: 1px dotted $bg-gray;
-	  padding-left: 23px;
-	  clear: none;
+	  	padding-left: 23px;
+	  	clear: none;
 	}
 
 
