@@ -317,39 +317,39 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
-  // $(function() {
+  $(function() {
 
-  //     var container = $("#container"),
-  //         pagination = $("#pagination");
+      var container = $("#container"),
+          pagination = $("#pagination");
 
-  //     function setPagination () {
-  //         pagination.jPages({
-  //             containerID : "container",
-  //             perPage : 24,
-  //             direction : "auto",
-  //             animation : "fadeInUp",
-  //             // callback : function( pages, items ){
-  //             //     items.showing.find("img").trigger("turnPage");
-  //             //     items.oncoming.find("img").trigger("turnPage");
-  //             // }
-  //         });
-  //     };
+      function setPagination () {
+          pagination.jPages({
+              containerID : "container",
+              perPage : 24,
+              direction : "auto",
+              animation : "fadeInUp",
+              // callback : function( pages, items ){
+              //     items.showing.find("img").trigger("turnPage");
+              //     items.oncoming.find("img").trigger("turnPage");
+              // }
+          });
+      };
 
-  //     function destroyPagination () {
-  //         pagination.jPages("destroy");
-  //     };
+      function destroyPagination () {
+          pagination.jPages("destroy");
+      };
 
-  //     setPagination();
+      setPagination();
 
-  //     $.filtrify("container", "placeHolder", {
-  //         block : "data-original",
-  //         callback : function() {
-  //             destroyPagination();
-  //             setPagination();
-  //         }
-  //     });
+      $.filtrify("container", "placeHolder", {
+          block : "data-original",
+          callback : function() {
+              destroyPagination();
+              setPagination();
+          }
+      });
 
-  // });
+  });
 
 
 
