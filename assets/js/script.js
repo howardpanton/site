@@ -46,12 +46,13 @@ jQuery.fn.extend({
   $( ".study-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
   $('.study-nav .subnav-4').prepend(Link_study_3);
 
-  $( ".student-nav" ).append("<ul class=\"subnav-2 region\">");
+
+  $( ".student-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
   $('.student-nav .subnav-2').prepend(Link_student);
 
-  $( ".alumni-nav" ).append("<ul class=\"subnav-2 region\">");
+  $( ".alumni-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
   $('.alumni-nav .subnav-2').prepend(Link_alumni);
-
+  
 
   $( ".about-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
   $('.about-nav .subnav-2').prepend(Link_about);
