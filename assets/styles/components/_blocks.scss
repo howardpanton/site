@@ -119,6 +119,10 @@
 		line-height: 0;
 	}
 
+	figcaption a {
+		display: inline;
+	}
+
 	&.__with-aside { 
 	/**
 	* Images with aside will run from d5 to d12 
@@ -156,11 +160,35 @@
 			}
 		}
 	}
-
-
-
 }
 
+.__horiz-block {
+	overflow: hidden;
+	@include component-spacing-bottom;
+	@include gs-media(t,min-max) {
+	}
+
+	@include gs-media(d) {
+		figure {
+			@extend %d5-d8--within-d5-d16;
+		}
+		.text {
+			@extend %d9-d16--within-d5-d16;
+		}
+	}
+}
+
+.__quote {
+	border-bottom: 4px solid $black;
+	@include component-spacing-bottom;
+	p {
+		@include font-size(36);
+		@include adjust-leading-to(7, 36px); 	
+		.lcc & {
+			@extend %LeagueGothicRegular;
+		}
+	}
+}
 
 /*------------------------------------*\
     $Page Block Classes
@@ -228,13 +256,6 @@
 			clear: left;
 			@include component-spacing-bottom;
 		}
-		// li:nth-child(2n) {
-		// 	@include gs-span(t, 2, 4, (2, 7));
-		// 	clear: left;
-		// }
-		// li:nth-child(3n) {
-		// 	@include gs-span(t, 5, 7, (2, 7));
-		// }
 	}
 
 	&.l-content-full-width {
@@ -252,12 +273,6 @@
 		}
 	}
 
-	&.__gallery {
-		ul  {
-			clear:left;
-		}
-	}
-
 	.lcf & {
 		text-align: center;
 	}
@@ -269,6 +284,10 @@
 .four-up {
 	@include gs-media(t,min-max) {
 		@extend %t2-t7;
+		.content & {
+			@extend %t-all;
+		}
+		
 			li {
 				@include gs-span(t, 2, 4, (2, 7));
 			}
@@ -300,14 +319,6 @@
 				@include gs-span(d, 13, 16);
 			}
 		}
-	}
-
-	&.__gallery {
-		ul  {
-			clear:left;
-		}
-
-		
 	}
 
 }

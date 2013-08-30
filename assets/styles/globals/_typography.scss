@@ -58,13 +58,6 @@ h1 {
 	.csm & {
 		@extend %LeviathanBlackItalic;
 	}
-}
-
-h2, h3, h4 {
-	@extend %Swiss721BT-Bold;
-}
-
-h1, h2, h3 {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold;		
 	}
@@ -74,10 +67,52 @@ h1, h2, h3 {
 	}
 }
 
+h2, h3, h4 {
+	@extend %Swiss721BT-Bold;
+}
+
 h2, h3 {
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold;		
+	}
   .csm & {
     @extend %BureauGrotBold;
-  }
+  }	
+  .lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	  border-bottom: 4px solid $black;
+	  margin-bottom: 18px;
+	  padding: 0 0 12px 0;
+	}	
+}
+
+h2 {
+  .lcc & {
+	}	
+}
+
+h3 {
+  .lcc & {
+		@include font-size(36);
+	}	
+}
+
+h2 a, h3 a {
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold;		
+	}
+  .csm & {
+    @extend %BureauGrotBold;
+  }	
+ 	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	  border-bottom: none;
+	  &:hover {
+	  	color: $lcc-secondary-pink;
+	  }
+	}
 }
 
 h2 {
@@ -95,13 +130,13 @@ h2 {
 	}
 }
 
-h3 {
+h3, .size-h3 {
 	@include font-size(22);
 	@include adjust-leading-to(5, 22px); 	
 	padding: rhythm(3, 22px) 0;
 }
 
-h4 {
+h4, .size-h4 {
 	@include font-size(18);
 	@include adjust-leading-to(4, 18px); 	
 	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
@@ -136,14 +171,13 @@ ul, ol, dl {
 	}	
 }
 
-	ul li ul, ol li ol {
+ul li ul, ol li ol {
   padding-top: rhythm(2, 16px);
   padding-bottom: 0;
-
   li {
     padding-bottom: rhythm(2, 16px);
   }
- }
+}
 
 p {
 	@include font-size(16);
@@ -158,13 +192,13 @@ aside, .__text {
 		}
 	}
 	h3 {
-		//@extend .size-h6; (I think this is wrong - Al)
+		@extend .size-h4;
 		@include padding-leader(1);
 	}
 }
 
 aside p {
-		@include font-size(14);
+	@include font-size(14);
 }
 
 ol {
@@ -221,14 +255,6 @@ table {
 	thead {
 		@extend .aaa-gray-bg; 
 		@extend .ual-white;
-		th {
-				
-		}
-	}
-	tbody {
-		td {
-
-		}
 	}
 	tr {
 		&:nth-child(odd) { 
@@ -299,174 +325,6 @@ hr {
 	clear: both;
 }
 
-// @include establish-baseline(16px);
-
-
-
-// aside {
-// 	@include font-size(14);
-// 	background: $bg-gray;
-// 	padding: 24px;
-// 	clear: left;
-	
-// 	@include gs-media(d) {
-// 		background: $white;
-// 	  padding: 0;
-// 	  clear: none;
-// 	}
-// }
-
-
-
-// // Set box-sizing rules to all Div's.
-// * {
-//  	@include box-sizing(border-box);
-// }
-
-// // Apply UAL global font to body
-// body {
-// 	font-family: $ual-global-font-stack;
-// 	font-size: emCalc(16px);
-// }
-
-// // Global link colors
-// a {
-// 	color: $black;
-// 	text-decoration: none;
-// 	padding-bottom: 1px;
-// 	border-bottom: 1px dotted $black;
-	
-// 	&:hover {
-// 		color: $aaa-gray;
-// 		padding-bottom: 1px;
-// 		border-bottom: 1px solid $black;
-// 	}
-
-// 	.hide-descriptive-text {
-// 		height: 1px;
-// 		width: 1px;
-// 		position: absolute;
-// 		overflow: hidden;
-// 		top: -10px;	
-// 	}
-
-// }
-
-
-
-// p, ol, ul { 
-// 	@include adjust-leading-to(4, 16px); 
-// 	padding: rhythm(1, 16px) 0 rhythm(2, 16px) 0; 	  
-// 	// @media screen and (min-width: 75em) {
-// 	// 	font-size: emCalc(18px) ; // 18  
-// 	// 	@include adjust-leading-to(5, 18px); 
-// 	// 	padding: rhythm(1, 18px) 0 rhythm(2, 18px) 0; 	
-// 	// }
-
-// }
-
-// .square-box {
-// 	li {
-// 		list-style-type: none;
-// 		background: url('http://artslondon.github.io/beta/assets/img/new/ul-bullet.png') no-repeat top left;
-// 		padding: rhythm(1, 16px) 0 rhythm(1, 16px) rhythm(4, 16px); 	
-// 	}
-// }
-
-// // default unordered list
-// ul {
-// 	li {
-// 		padding: rhythm(1, 16px) 0; 
-// 		&.with-icon {
-// 			padding-left: rhythm(8, 16px);
-// 		}	
-// 	}
-// }
-
-// // default ordered list
-// ol {
-// 	margin-left: rhythm(4, 16px);
-// 	li {
-// 		list-style-type: decimal;
-// 		padding: rhythm(1, 16px) 0; 	
-// 	}
-// }
-
-// // ordered list with big numbers
-// ol.large-li-numbers {
-//   counter-reset: list-counter;
-// 	margin-left: 0;
-	
-// 	> li { 
-// 		margin-bottom: 24px;
-// 	  list-style-type: none;
-// 		padding: 0; 	
-// 		span {
-// 			padding-left: rhythm(2, 16px);
-// 		}
-// 	}    
-//     > li:before {
-//       content: counter(list-counter);
-//       counter-increment: list-counter;
-//       @include adjust-font-size-to(24px);
-//       font-weight: bold;
-//       line-height: 30px;
-//   	}
-// }
-
-// figure {
-// 	position: relative;
-// 	a {
-// 		@include no-border;
-// 		&:hover {
-// 			@include no-border;
-// 		}
-// 	}
-// }
-
-// table {
-// 	@include adjust-leading-to(4, 16px); 
-// 	margin-bottom: rhythm(4, 24px); 
-
-// 	width: 100%;
-
-// 	caption {
-// 		font-size: emCalc(24px);
-// 		padding-top: rhythm(4, 24px); 
-// 		padding-bottom: rhythm(4, 24px); 
-// 	}
-
-// 	tr:nth-child(odd) {
-// 		background: $bg-gray;
-// 	}
-// 	tr:nth-child(even) {
-// 		background: $white;
-// 	}
-// 	th, td {
-// 		padding: rhythm(2, 16px); 
-
-// 	}
-// 	&.course-data {
-// 		th {
-// 			padding-left: 0;
-// 		}
-// 		td {
-// 			padding-right: 0;
-// 		}
-// 	}
-	
-// }
-
-
-// p.leader {
-// 	font-size: emCalc(18px);
-// 	@include gs-media(d) {
-// 		font-size: emCalc(22px);
-// 		@include adjust-leading-to(6, 22px); 
-// 	}
-// }
-
-
 // // // Custom Web Fonts
 
 // // .Swiss721BT-Light { font-family: Swiss721BT-Light; }
@@ -489,6 +347,7 @@ hr {
 // // // CSM
 // // .BureauGrotBold { font-family: BureauGrotBold; }
 
+
 .icon { font-family: "entypo"; }
 .icon-social { font-family: "entypo-social"; }
 
@@ -499,49 +358,52 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-    .content-wrapper, .header-wrapper {
-		h1,h2,h3,h4,h5,h6 {
-			@extend %Swiss721BT-Black;
+	h1,h2,h3,h3 a {
+		@extend %Swiss721BT-Black;
+	}
+	h4,h5,h6 {
+	   @extend %Swiss721BT-Bold;
+	}
+	h2, &.graduate-school h1 {
+		margin-bottom: rhythm(4, 24px);
+	}
+	h2,h3 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		span, a {
+			border-bottom: 1px solid black;
 		}
-		h4,h5,h6 {
-		   font-family: "Swiss721BT-Bold";
-		}
-		h1,h2 {
-			background: url(../img/lcf/lcf-title-underline.gif) bottom center no-repeat;
-		}
-		h2,.call-to-action h3 {
-			@include font-size(20);
-			text-transform: uppercase;
-			letter-spacing: 2px;
-		}
-		h2 {
-		  	margin-bottom: rhythm(4, 24px);
-		  
-		  .ual-black-bg & {
-		  	background-image: url(../img/lcf/lcf-title-underline-white.gif);
-		  }
-		}
+	}
+	.box-text h3 a {
+		border-color: $white;
+	}
+	h2 {
+		letter-spacing: 4px;
+	}
+	.college-footer .size-h2 {
+		@include font-size(24);
+   		@include margin-trailer(4);
+   		padding-bottom: 0;
+   
+	}
+	.call-to-action h3 {
+		@include font-size(20);
+	}
+
+
+    // centered headings
+    .content h1, .content h2, &.home h2, .call-to-action h3 {
+        text-align: center;
     }
 
+
     .content {
-        h1,h2,.call-to-action h3 {
-            text-align: center;
-        }
-        .text-block {
-        	h3, h4 {
+        .text-block, .l-content {
+        	h2, h3, h4 {
         		text-align: left;
          	}
         }
      }
-    
-    /* figcaption, .flex-video .caption {
-    //     padding: 0 10px;
-    //     color: $ual-secondary;
-    //     font-family: $lcf-heading-font;
-    //     a {
-    //        color: $ual-secondary; 
-    //     }
-    // }*/
 }
 
 
@@ -557,12 +419,17 @@ b, strong, h2, h3, h4 {
             font-weight: normal;
             letter-spacing: 1px;
         }
+        h1, h2 {
+        	background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
+        }
         h1 {
             @include font-size(36);
             text-transform: uppercase;
             margin-bottom: rhythm(4, 30px);
             letter-spacing: 5px;
         }
+        h2 {
+        	@include font-size(20);
+        }
     }
-
 }

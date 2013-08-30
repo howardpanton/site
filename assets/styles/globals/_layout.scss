@@ -154,6 +154,12 @@
 	}
 }
 
+%d5-d8--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 5,8, (5, 16));
+	}
+}
+
 %d5-d9--within-d5-d16 { //
 	@include gs-media (d) {
 		@include gs-span(d, 5,9, (5, 16));
@@ -163,6 +169,12 @@
 %d5-d10--within-d5-d16 { //
 	@include gs-media (d) {
 		@include gs-span(d, 5,10, (5, 16));
+	}
+}
+
+%d9-d16--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 9,16, (5, 16));
 	}
 }
 
@@ -246,6 +258,10 @@
 	@extend %t5-t7--within-t2-d7;
 }
 
+.l-content-d3-d14 {
+	@extend %d3-d14;
+}
+
 .l-forms {
 	@extend %d5-d10--within-d5-d16;
 }
@@ -273,26 +289,22 @@
 }
 
 aside {
-
-	@include font-size(14);
-	h3 {
-	  @extend .size-h6;
-	  @include padding-leader(1);
-	}
-
 	@extend %d13-d16--within-d5-d16;
+	@include component-spacing-bottom;
 	
 	background-color: $bg-gray;
-	&.no-bg { background-color: $white; }
 	border-left: none;
 	padding: 24px;
 	clear: left;
-	
+	&.no-bg { 
+		background-color: $white; 
+	}
+
 	@include gs-media(d) {
 		background: $white;
 		border-left: 1px dotted $bg-gray;
-	  padding-left: 23px;
-	  clear: none;
+	  	padding-left: 23px;
+	  	clear: none;
 	}
 
 

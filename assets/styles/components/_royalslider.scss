@@ -1,9 +1,3 @@
-@import "globals/gridset";
-@import "globals/variables";
-@import	"globals/mixins";
-@import	"globals/colors";
-
-
 /* v1.0.5 */
 /* Core RS CSS file. 95% of time you shouldn't change anything here. */
 .royalSlider {
@@ -101,10 +95,6 @@
 	transition:visibility 0s linear 0.3s,opacity 0.3s linear;
 }
 
-
-.rsGCaption {
-	width: 100%;
-}
 
 /* Fullscreen options, very important ^^ */
 .royalSlider.rsFullscreen {
@@ -711,7 +701,7 @@ img.rsImg {
 .rsDefault .rsPreloader {
 	width:20px;
 	height:20px;
-	background-image:url(../img/royalslider/preloaders/preloader-white.gif);
+	background-image:url(http://beta.arts.ac.uk/media/beta/beta-assets/img/preloader-white.gif);
 
 	left:50%;
 	top:50%;
@@ -764,6 +754,7 @@ img.rsImg {
 	bottom: 5%;
 	font-size: 16px;
 	a {
+		display: block;
 		padding: rhythm(2, 16px);
 		color: $white;
 		&:hover {
@@ -818,7 +809,7 @@ img.rsImg {
 *
 ****************/
 
-.d3-d14 {
+.slider-3-14 {
 	@extend %d3-d14;
 }
 

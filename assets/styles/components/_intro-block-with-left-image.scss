@@ -1,15 +1,22 @@
 // Feature with left image, as used on Graduate School page and LCF home page
 .intro-block-with-left-image {
 
-    @extend %t2-t7; 
-
-    figcaption {
-        text-align: center;
+    figure {
+    	figcaption, a {
+	        text-align: center;
+	        font-family: $lcf-heading-font;
+	        color: $aaa-gray;
+	    }
+	    a {
+        	font-family: $lcf-heading-font;
+        	font-style: italic;
+        	color: $aaa-gray;
+        }
     }
 
     .leader {
         @include gs-media(d,min-max) {
-            margin-left: -(gs-width(d, 5, 6, (5,16), true));
+            //margin-left: -(gs-width(d, 5, 6, (5,16), true));
         }
     }
 }

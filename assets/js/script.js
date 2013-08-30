@@ -1,4 +1,3 @@
-
 // --------------------------------------------------
 // function to allow scroll to an element on the page
 //
@@ -65,10 +64,10 @@ function checkWindowSize() {
   var width = $(window).width(),
   new_class = width > 850 ? 'gDesktop' :
               width > 600 ? 'gTablet' :
-              width < 600 ? 'gmobile' :
+              width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
-  $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
+  $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -106,12 +105,12 @@ function enableSelectBoxes() {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
-        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59239;');
+        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
       else
       {
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
-         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
     });
 
@@ -121,7 +120,7 @@ function enableSelectBoxes() {
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
       var _test = 'the select option is :' + $(this).attr('data-sb-value');
       $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
-      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('&#59236;');
+      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       $(this).parent().parent().scrollToMe();
     });
   });       
@@ -132,6 +131,7 @@ function enableSelectBoxes() {
 /////////////////////
 $(document).ready(function(){
 
+  checkWindowSize();
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
@@ -161,16 +161,30 @@ $(document).ready(function(){
    
 
   // sidebar script (populate mobile and tablet menu)
-  if ($('.sidebar').length > 0) {
-
+  var _sb_lth = $('.sidebar').length;
+  var _has_heading = $('.sidebar').find('.menu-heading').length;
+  //&& _has_heading > 0
+  if ((_sb_lth > 0) ) {
     var _no_of_li_items = $(".sidebar li").size();
-    
+
     // If there's more than one item in the left sidebar, then build the mobile sidebar
-    if (_no_of_li_items > 1 ) {
+    if (_no_of_li_items > 1) {
       var _menuHtml = $('.sidebar').html();
       var _sideBarTitle = $('.sidebar li').first();
       var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
-      var _mobMenuContent = _mobMenuButton + _menuHtml;
+      var _mobMenuContent;
+
+
+      if (_has_heading > 0) {
+        _mobMenuContent = _mobMenuButton + _menuHtml;
+      }
+      else {
+        _mobMenuContent = _menuHtml;
+      }
+
+
+
+       
       
       // create mobile sidebar div and add it to the main content div
       $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
@@ -184,28 +198,39 @@ $(document).ready(function(){
         
         if (_clicked.hasClass('active')) {
           _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-          _clicked.html('&#9776;').removeClass('active');
+          _clicked.html('☰').removeClass('active');
         }
         else {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
         // update the menu button and set class to active
-        _clicked.html('&#10060;').addClass('active');
+        _clicked.html('❌').addClass('active');
         }
       });
 
       // check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
-      if(_sideBarTitle.text() == 'In This Section') {
-        
+      if (_sideBarTitle.text().toLowerCase() == 'in this section') {
+      
         // hide "In This Section" in the sidebar dropdown
         $('#mobile-sidebar li').first().remove(); 
+      }
+      // if not, it must be a college - so replace text with "college homepage"
+      else {
+        $('#mobile-sidebar li a').first().text('College Homepage');
       }
     }
   } // end if $(.sidebar) > 0
 
 
-
-
-
+// LazyLoading with ReSRC.it images
+  if ($('.resrc').length > 0) {
+    $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.review-1.0.0.min.js', function() {
+      $('.resrc').review({
+          callback: function() {
+            resrc.resrc(this);
+        }
+      });
+    });
+  }
 
 
   // check for selectboxes on the page
@@ -272,146 +297,20 @@ $(document).ready(function(){
    
   }
 
-  //////////////////////
-  // MIXITUP FOR SHORT COURSES 
-  /////////////////////
-
-      /* 
-      * We would normally recommend that all JavaScript is kept in a seperate .js file,
-      *   but we have included it in the document head for convenience.
-      */
+ 
+  // NICE IMAGE LOADING
+  
+  /* 
+  * Not part of MixItUp, but this is a great lightweight way 
+  *   to gracefully fade-in images with CSS3 after they have loaded
+  */
+  
+  function imgLoaded(img){  
+    $(img).parent().addClass('loaded');
+  };
       
-      // NICE IMAGE LOADING
-      
-      /* 
-      * Not part of MixItUp, but this is a great lightweight way 
-      *   to gracefully fade-in images with CSS3 after they have loaded
-      */
-      
-      function imgLoaded(img){  
-        $(img).parent().addClass('loaded');
-      };
-      
-      // ON DOCUMENT READY:
-    
-      $(function(){
-        
-        // INSTANTIATE MIXITUP
 
-        $.when(
-            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery-ui.sortable.min.js" ),
-            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.ui.touch-punch.min.js" ),
-            $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mixitup.min.js" ),
-            $.Deferred(function( deferred ){
-                $( deferred.resolve );
-            })
-        ).done(function(){
 
-          $('#Parks').mixitup({
-            layoutMode: 'list', // Start in list mode (display: block) by default
-            listClass: 'list', // Container class for when in list mode
-            gridClass: 'grid', // Container class for when in grid mode
-            effects: ['fade','blur'], // List of effects 
-            listEffects: ['fade','rotateX'] // List of effects ONLY for list mode
-
-          });
-
-        });
-        
-        // HANDLE LAYOUT CHANGES
-        
-        // Bind layout buttons to toList and toGrid methods:
-        
-        $('#ToList').on('click',function(){
-          $('.button').removeClass('active');
-          $(this).addClass('active');
-          $('#Parks').mixitup('toList');
-        });
-
-        $('#ToGrid').on('click',function(){
-          $('.button').removeClass('active');
-          $(this).addClass('active');
-          $('#Parks').mixitup('toGrid');
-        });
-        
-        // HANDLE MULTI-DIMENSIONAL CHECKBOX FILTERING
-        
-        /*  
-        * The desired behaviour of multi-dimensional filtering can differ greatly 
-        * from project to project. MixItUp's built in filter button handlers are best
-        * suited to simple filter operations, so we will need to build our own handlers
-        * for this demo to achieve the precise behaviour we need.
-        */
-        
-        var $filters = $('#Filters').find('li'),
-          dimensions = {
-            subject: 'all', // Create string for first dimension
-            session: 'all', // Create string for second dimension
-            interest: 'all' // Create string for third dimension
-          };
-          
-        // Bind checkbox click handlers:
-        
-        $filters.on('click',function(){
-          var $t = $(this),
-            dimension = $t.attr('data-dimension'),
-            filter = $t.attr('data-filter'),
-            filterString = dimensions[dimension];
-            
-          if(filter == 'all'){
-            // If "all"
-            if(!$t.hasClass('active')){
-              // if unchecked, check "all" and uncheck all other active filters
-              $t.addClass('active').siblings().removeClass('active');
-              // Replace entire string with "all"
-              filterString = 'all'; 
-            } else {
-              // Uncheck
-              $t.removeClass('active');
-              // Emtpy string
-              filterString = '';
-            }
-          } else {
-            // Else, uncheck "all"
-            $t.siblings('[data-filter="all"]').removeClass('active');
-            // Remove "all" from string
-            filterString = filterString.replace('all','');
-            if(!$t.hasClass('active')){
-              // Check checkbox
-              $t.addClass('active');
-              // Append filter to string
-              filterString = filterString == '' ? filter : filterString+' '+filter;
-            } else {
-              // Uncheck
-              $t.removeClass('active');
-              // Remove filter and preceeding space from string with RegEx
-              var re = new RegExp('(\\s|^)'+filter);
-              filterString = filterString.replace(re,'');
-            };
-          };
-          
-          // Set demension with filterString
-          dimensions[dimension] = filterString;
-          
-          // We now have two strings containing the filter arguments for each dimension:  
-          // console.info('dimension 1: '+dimensions.region);
-          console.info('dimension 1: '+dimensions.subject);
-          console.info('dimension 2: '+dimensions.session);
-          console.info('dimension 3: '+dimensions.interest);
-          
-          /*
-          * We then send these strings to MixItUp using the filter method. We can send as
-          * many dimensions to MixitUp as we need using an array as the second argument
-          * of the "filter" method. Each dimension must be a space seperated string.
-          *
-          * In this case, MixItUp will show elements using OR logic within each dimension and
-          * AND logic between dimensions. At least one dimension must pass for the element to show.
-          */
-          
-          $('#Parks').mixitup('filter',[dimensions.subject, dimensions.session, dimensions.interest])      
-        });
-
-      });
 
   ////////////////////
   //  Stick div to top of browser on scroll 
@@ -445,6 +344,39 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
+  $(function() {
+
+      var container = $("#container"),
+          pagination = $("#pagination");
+
+      function setPagination () {
+          pagination.jPages({
+              containerID : "container",
+              perPage : 24,
+              direction : "auto",
+              animation : "fadeInUp",
+              // callback : function( pages, items ){
+              //     items.showing.find("img").trigger("turnPage");
+              //     items.oncoming.find("img").trigger("turnPage");
+              // }
+          });
+      };
+
+      function destroyPagination () {
+          pagination.jPages("destroy");
+      };
+
+      setPagination();
+
+      $.filtrify("container", "placeHolder", {
+          block : "data-original",
+          callback : function() {
+              destroyPagination();
+              setPagination();
+          }
+      });
+
+  });
 
 
 
@@ -674,24 +606,6 @@ if ($('.accordion').length > 0) {
 
     });
 }
-  
-
-
-// detect vertical accordion component
-if ($('#va-accordion').length > 0) {
-  $.when(
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
-    $.Deferred(function( deferred ){
-      $( deferred.resolve );
-    })
-  ).done(function(){
-  //place your code here, the scripts are all loaded
-    $('#va-accordion').vaccordion();
-  }); 
-}
-
 
 
 
@@ -704,13 +618,13 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon').html("&#59236;");
+          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon').html("&#59239;");
+          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
@@ -721,7 +635,7 @@ if ($('.dd-menu').length > 0) {
 
 // detect circles-callout component
 
-if ($('.circles-component').length > 0) {
+if ((($('.circles-component').length > 0)) && ($('body').hasClass('gDesktop'))) {
   $.when(
       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
       $.Deferred(function( deferred ){
@@ -850,13 +764,8 @@ if ($('.js-lightbox').length > 0) {
     });
 }
 
-  // detect expandable search button
-  if ($('#sb-search').length > 0) {
-    new UISearch( document.getElementById( 'sb-search' ) );
-  }
 
-  // make videos adapt responsively
-  //$('.video-container').fitVids();
+
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -881,6 +790,9 @@ if ($('.js-lightbox').length > 0) {
     $(parent).find(".show-more").show();
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
+
+
+
 
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
@@ -940,11 +852,33 @@ if ($('video').length > 0) {
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
+// $('.content a[href$=".html"]').parent().addClass('external');
+
+
+  // Creating custom :external selector
+  $.expr[':'].external = function(obj){
+      return (obj.hostname != location.hostname);
+  };
+
+  // Add 'external' CSS class to all external links
+  $('a:external.button-link').addClass('external').each(function() {
+    $(this).attr("title", $(this).attr("title") + "(external link)");
+});
+  $('.content ul li a:external').parent().addClass('external').each(function() {
+    $(this).attr("title", $(this).attr("title") + "(external link)");
+});
+
+
 
 $('#debug').hide();
 $('.debug-toggle').click(function(e) {
   $('#debug').toggle();
   e.preventDefault();
+});
+
+
+$('.lcf.home').find('h2').each( function() {
+  $(this).wrapInner('<span />');
 });
 
 
@@ -1027,46 +961,16 @@ $(window).load(function(){
     $('.highlight-box-3 ul li').fitHeights();
   }
   
-  if ($('.three-up ul li').length > 0) {
-    $('.three-up ul li').fitHeights();
-  }
-  
-  if ($('.two-up ul li').length > 0) {
+  if ($('body').is('.chelsea, .camberwell, .wimbledon')) {
     $('.two-up ul li').fitHeights();
+    $('.three-up ul li').fitHeights();
   }
 
   if ($('.__gallery').length > 0) {
     $('.__gallery').each( function() {
       $(this).find('li').fitHeights();
     });
-    //$('.__gallery ul li').fitHeights();
   }
 
 });
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
-
-
-
-// jquery jpanel slide from left menu for docs page 
-
-/**
-  *
-  * jPanelMenu 1.3.0 (http://jpanelmenu.com)
-  * By Anthony Colangelo (http://acolangelo.com)
-  *
-* */
-(function(e){e.jPanelMenu=function(t){if(typeof t=="undefined"||t==null)t={};var n={options:e.extend({menu:"#menu",trigger:".menu-trigger",excludedPanelContent:"style, script",direction:"left",openPosition:"250px",animated:!0,closeOnContentClick:!0,keyboardShortcuts:[{code:27,open:!1,close:!0},{code:37,open:!1,close:!0},{code:39,open:!0,close:!0},{code:77,open:!0,close:!0}],duration:150,openDuration:t.duration||150,closeDuration:t.duration||150,easing:"ease-in-out",openEasing:t.easing||"ease-in-out",closeEasing:t.easing||"ease-in-out",before:function(){},beforeOpen:function(){},beforeClose:function(){},after:function(){},afterOpen:function(){},afterClose:function(){},beforeOn:function(){},afterOn:function(){},beforeOff:function(){},afterOff:function(){}},t),settings:{transitionsSupported:"WebkitTransition"in document.body.style||"MozTransition"in document.body.style||"msTransition"in document.body.style||"OTransition"in document.body.style||"Transition"in document.body.style,shiftFixedChildren:!1,panelPosition:"relative",positionUnits:"px"},menu:"#jPanelMenu-menu",panel:".jPanelMenu-panel",fixedChildren:[],timeouts:{},clearTimeouts:function(){clearTimeout(n.timeouts.open);clearTimeout(n.timeouts.afterOpen);clearTimeout(n.timeouts.afterClose)},setPositionUnits:function(){var e=!1,t=["%","px","em"];for(unitID in t){var r=t[unitID];if(n.options.openPosition.toString().substr(-r.length)==r){e=!0;n.settings.positionUnits=r}}e||(n.options.openPosition=parseInt(n.options.openPosition)+n.settings.positionUnits)},checkFixedChildren:function(){n.disableTransitions();var t={position:e(n.panel).css("position")};t[n.options.direction]=e(n.panel).css(n.options.direction)=="auto"?0:e(n.panel).css(n.options.direction);e(n.panel).find("> *").each(function(){e(this).css("position")=="fixed"&&e(this).css(n.options.direction)=="auto"&&n.fixedChildren.push(this)});if(n.fixedChildren.length>0){var r={position:"relative"};r[n.options.direction]="1px";n.setPanelStyle(r);parseInt(e(n.fixedChildren[0]).offset().left)==0&&(n.settings.shiftFixedChildren=!0)}n.setPanelStyle(t)},setjPanelMenuStyles:function(){var t="#fff",r=e("html").css("background-color"),i=e("body").css("background-color");i!="transparent"&&i!="rgba(0, 0, 0, 0)"?t=i:r!="transparent"&&r!="rgba(0, 0, 0, 0)"?t=r:t="#fff";e("#jPanelMenu-style-master").length==0&&e("body").append('<style id="jPanelMenu-style-master">body{width:100%}.jPanelMenu,body{overflow-x:hidden}#jPanelMenu-menu{display:block;position:fixed;top:0;'+n.options.direction+":0;height:100%;z-index:-1;overflow-x:hidden;overflow-y:scroll;-webkit-overflow-scrolling:touch}.jPanelMenu-panel{position:static;"+n.options.direction+":0;top:0;z-index:2;width:100%;min-height:100%;background:"+t+"}</style>")},setMenuState:function(t){var n=t?"open":"closed";e("body").attr("data-menu-position",n)},getMenuState:function(){return e("body").attr("data-menu-position")},menuIsOpen:function(){return n.getMenuState()=="open"?!0:!1},setMenuStyle:function(t){e(n.menu).css(t)},setPanelStyle:function(t){e(n.panel).css(t)},showMenu:function(){n.setMenuStyle({display:"block"});n.setMenuStyle({"z-index":"1"})},hideMenu:function(){n.setMenuStyle({"z-index":"-1"});n.setMenuStyle({display:"none"})},enableTransitions:function(t,r){var i=t/1e3,s=n.getCSSEasingFunction(r);n.disableTransitions();e("body").append('<style id="jPanelMenu-style-transitions">.jPanelMenu-panel{-webkit-transition: all '+i+"s "+s+"; -moz-transition: all "+i+"s "+s+"; -o-transition: all "+i+"s "+s+"; transition: all "+i+"s "+s+";}</style>")},disableTransitions:function(){e("#jPanelMenu-style-transitions").remove()},enableFixedTransitions:function(t,r,i,s){var o=i/1e3,u=n.getCSSEasingFunction(s);n.disableFixedTransitions(r);e("body").append('<style id="jPanelMenu-style-fixed-'+r+'">'+t+"{-webkit-transition: all "+o+"s "+u+"; -moz-transition: all "+o+"s "+u+"; -o-transition: all "+o+"s "+u+"; transition: all "+o+"s "+u+";}</style>")},disableFixedTransitions:function(t){e("#jPanelMenu-style-fixed-"+t).remove()},getCSSEasingFunction:function(e){switch(e){case"linear":return e;case"ease":return e;case"ease-in":return e;case"ease-out":return e;case"ease-in-out":return e;default:return"ease-in-out"}},getJSEasingFunction:function(e){switch(e){case"linear":return e;default:return"swing"}},openMenu:function(t){if(typeof t=="undefined"||t==null)t=n.options.animated;n.clearTimeouts();n.options.before();n.options.beforeOpen();n.setMenuState(!0);n.setPanelStyle({position:"relative"});n.showMenu();var r={none:t?!1:!0,transitions:t&&n.settings.transitionsSupported?!0:!1};if(r.transitions||r.none){r.none&&n.disableTransitions();r.transitions&&n.enableTransitions(n.options.openDuration,n.options.openEasing);var i={};i[n.options.direction]=n.options.openPosition;n.setPanelStyle(i);n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t=e(this).prop("tagName").toLowerCase()+" "+e(this).attr("class"),i=t.replace(" ","."),t=t.replace(" ","-");r.none&&n.disableFixedTransitions(t);r.transitions&&n.enableFixedTransitions(i,t,n.options.openDuration,n.options.openEasing);var s={};s[n.options.direction]=n.options.openPosition;e(this).css(s)});n.timeouts.afterOpen=setTimeout(function(){n.disableTransitions();n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t=e(this).prop("tagName").toLowerCase()+" "+e(this).attr("class"),t=t.replace(" ","-");n.disableFixedTransitions(t)});n.options.after();n.options.afterOpen();n.initiateContentClickListeners()},n.options.openDuration)}else{var s=n.getJSEasingFunction(n.options.openEasing),o={};o[n.options.direction]=n.options.openPosition;e(n.panel).stop().animate(o,n.options.openDuration,s,function(){n.options.after();n.options.afterOpen();n.initiateContentClickListeners()});n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t={};t[n.options.direction]=n.options.openPosition;e(this).stop().animate(t,n.options.openDuration,s)})}},closeMenu:function(t){if(typeof t=="undefined"||t==null)t=n.options.animated;n.clearTimeouts();n.options.before();n.options.beforeClose();n.setMenuState(!1);var r={none:t?!1:!0,transitions:t&&n.settings.transitionsSupported?!0:!1};if(r.transitions||r.none){r.none&&n.disableTransitions();r.transitions&&n.enableTransitions(n.options.closeDuration,n.options.closeEasing);var i={};i[n.options.direction]=0+n.settings.positionUnits;n.setPanelStyle(i);n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t=e(this).prop("tagName").toLowerCase()+" "+e(this).attr("class"),i=t.replace(" ","."),t=t.replace(" ","-");r.none&&n.disableFixedTransitions(t);r.transitions&&n.enableFixedTransitions(i,t,n.options.closeDuration,n.options.closeEasing);var s={};s[n.options.direction]=0+n.settings.positionUnits;e(this).css(s)});n.timeouts.afterClose=setTimeout(function(){n.setPanelStyle({position:n.settings.panelPosition});n.disableTransitions();n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t=e(this).prop("tagName").toLowerCase()+" "+e(this).attr("class"),t=t.replace(" ","-");n.disableFixedTransitions(t)});n.hideMenu();n.options.after();n.options.afterClose();n.destroyContentClickListeners()},n.options.closeDuration)}else{var s=n.getJSEasingFunction(n.options.closeEasing),o={};o[n.options.direction]=0+n.settings.positionUnits;e(n.panel).stop().animate(o,n.options.closeDuration,s,function(){n.setPanelStyle({position:n.settings.panelPosition});n.hideMenu();n.options.after();n.options.afterClose();n.destroyContentClickListeners()});n.settings.shiftFixedChildren&&e(n.fixedChildren).each(function(){var t={};t[n.options.direction]=0+n.settings.positionUnits;e(this).stop().animate(t,n.options.closeDuration,s)})}},triggerMenu:function(e){n.menuIsOpen()?n.closeMenu(e):n.openMenu(e)},initiateClickListeners:function(){e(document).on("click",n.options.trigger,function(){n.triggerMenu(n.options.animated);return!1})},destroyClickListeners:function(){e(document).off("click",n.options.trigger,null)},initiateContentClickListeners:function(){if(!n.options.closeOnContentClick)return!1;e(document).on("click",n.panel,function(e){n.menuIsOpen()&&n.closeMenu(n.options.animated)});e(document).on("touchend",n.panel,function(e){n.menuIsOpen()&&n.closeMenu(n.options.animated)})},destroyContentClickListeners:function(){if(!n.options.closeOnContentClick)return!1;e(document).off("click",n.panel,null);e(document).off("touchend",n.panel,null)},initiateKeyboardListeners:function(){var t=["input","textarea"];e(document).on("keydown",function(r){var i=e(r.target),s=!1;e.each(t,function(){i.is(this.toString())&&(s=!0)});if(s)return!0;for(mapping in n.options.keyboardShortcuts)if(r.which==n.options.keyboardShortcuts[mapping].code){var o=n.options.keyboardShortcuts[mapping];o.open&&o.close?n.triggerMenu(n.options.animated):o.open&&!o.close&&!n.menuIsOpen()?n.openMenu(n.options.animated):!o.open&&o.close&&n.menuIsOpen()&&n.closeMenu(n.options.animated);return!1}})},destroyKeyboardListeners:function(){e(document).off("keydown",null)},setupMarkup:function(){e("html").addClass("jPanelMenu");e("body > *").not(n.menu+", "+n.options.excludedPanelContent).wrapAll('<div class="'+n.panel.replace(".","")+'"/>');e(n.options.menu).clone().attr("id",n.menu.replace("#","")).insertAfter("body > "+n.panel)},resetMarkup:function(){e("html").removeClass("jPanelMenu");e("body > "+n.panel+" > *").unwrap();e(n.menu).remove()},init:function(){n.options.beforeOn();n.initiateClickListeners();Object.prototype.toString.call(n.options.keyboardShortcuts)==="[object Array]"&&n.initiateKeyboardListeners();n.setjPanelMenuStyles();n.setMenuState(!1);n.setupMarkup();n.setMenuStyle({width:n.options.openPosition});n.checkFixedChildren();n.setPositionUnits();n.closeMenu(!1);n.options.afterOn()},destroy:function(){n.options.beforeOff();n.closeMenu();n.destroyClickListeners();Object.prototype.toString.call(n.options.keyboardShortcuts)==="[object Array]"&&n.destroyKeyboardListeners();n.resetMarkup();var t={};t[n.options.direction]="auto";e(n.fixedChildren).each(function(){e(this).css(t)});n.fixedChildren=[];n.options.afterOff()}};return{on:n.init,off:n.destroy,trigger:n.triggerMenu,open:n.openMenu,close:n.closeMenu,isOpen:n.menuIsOpen,menu:n.menu,getMenu:function(){return e(n.menu)},panel:n.panel,getPanel:function(){return e(n.panel)}}}})(jQuery);
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
 

@@ -138,7 +138,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 </div>
 </header> <!-- end .ual-header -->
 
-  {% if page.section != "course finder" and page.section != "home" %}
+  {% if page.section != "course finder" and page.section != "college home" %}
     
     <div class="header-panel bg-gray-bg">
       <div class="header-wrapper">
@@ -194,6 +194,13 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
   -->
 
 
+  <!-- Development scripts, not for production -->
+  <script src='{{ site.url }}/assets/js/dev/gridset-overlay.js' type='text/javascript'></script>
+  <script src='{{ site.url }}/assets/js/dev/hashgrid.js' type='text/javascript'></script>
+
+  <script src='{{ site.url }}assets/js/components/jPages.min.js'></script>
+  <script src='{{ site.url }}assets/js/components/filtrify.min.js'></script>
+
 
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
@@ -205,7 +212,7 @@ grunticon( [ "{{ site.url }}/assets/img/svg/icons.data.svg.css", "{{ site.url }}
 
   <!-- Background video -->
   <script src='{{ site.url }}/assets/js/libs/bg-video.js'></script>
-
+  
   <!-- fastClick -->
   <script src='{{ site.url }}/assets/js/libs/fastclick.js' type='text/javascript'></script>
 
