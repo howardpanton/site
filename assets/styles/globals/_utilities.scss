@@ -489,27 +489,19 @@ a.img:hover { filter: grayscale(100%);
   @include adjust-leading-to(14, 78px);
 }
 .size-h1 {
-  font-size: emCalc(54px); 
+  @include font-size(54); 
   @include adjust-leading-to(10, 54px);
 }
 .size-h2 {
-  font-size: emCalc(36px); 
+  @include font-size(36);
   @include adjust-leading-to(7, 36px);
 }
-.size-h3 {
-  font-size: emCalc(24px);
-  @include adjust-leading-to(5, 24px); 
-}
-.size-h4 {
-  font-size: emCalc(18px); 
-  @include adjust-leading-to(4, 18px);
-}
 .size-h5 {
-  font-size: emCalc(16px); 
+  @include font-size(16); 
   @include adjust-leading-to(4, 16px);
 }
 .size-h6 {
-  font-size: emCalc(14px); 
+  @include font-size(14);
   @include adjust-leading-to(4, 14px);
 }
 
