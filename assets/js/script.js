@@ -221,13 +221,18 @@ $(document).ready(function(){
   } // end if $(.sidebar) > 0
 
 
-  // LazyLoading with ReSRC.it images
-  $('.resrc').review({
-      callback: function() {
+  // LazyLoading with ReSRC.it <http://ReSRC.it> images
+  if ($('.resrc').length > 0) {
+    $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.review-1.0.0.min.js', function() {
+      $('.resrc').review({
+        callback: function() {
         resrc.resrc(this);
-    }
-  });
+        }
+      });
+    });
+  }
 
+  
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
@@ -601,21 +606,22 @@ if ($('.accordion').length > 0) {
 }
   
 
+// REMOVED AS IT WAS DECIDED BY LCC THAT THEY DIDNT WANT TO USE IT 29 AUGUST 2013
 
-// detect vertical accordion component
-if ($('#va-accordion').length > 0) {
-  $.when(
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
-    $.Deferred(function( deferred ){
-      $( deferred.resolve );
-    })
-  ).done(function(){
-  //place your code here, the scripts are all loaded
-    $('#va-accordion').vaccordion();
-  }); 
-}
+// // detect vertical accordion component
+// if ($('#va-accordion').length > 0) {
+//   $.when(
+//     $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
+//     $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
+//     $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
+//     $.Deferred(function( deferred ){
+//       $( deferred.resolve );
+//     })
+//   ).done(function(){
+//   //place your code here, the scripts are all loaded
+//     $('#va-accordion').vaccordion();
+//   }); 
+// }
 
 
 
@@ -802,6 +808,9 @@ if ($('.js-lightbox').length > 0) {
     $(parent).find(".show-more").show();
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
+
+
+
 
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
