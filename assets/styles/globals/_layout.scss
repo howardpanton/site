@@ -99,6 +99,18 @@
 	}
 }
 
+%d1-d8 {
+	@include gs-media (d) {
+		@include gs-span(d, 1, 8);
+	}
+}
+
+%d3-d14 { // used on ual homepage
+	@include gs-media (d) {
+		@include gs-span(d, 3, 14);
+	}
+}
+
 %d5-d8 {
 	@include gs-media (d) {
 		@include gs-span(d, 5, 8);
@@ -133,12 +145,6 @@
 %d5-d12 {
 	@include gs-media (d) {
 		@include gs-span(d, 5,12);
-	}
-}
-
-%d3-d14 {
-	@include gs-media (d) {
-		@include gs-span(d, 3,14);
 	}
 }
 
@@ -269,6 +275,19 @@
 .l-filter {
 	@extend %d13-d16--within-d5-d16; // short courses filter
 }
+
+.l-content-d1-d8 {
+	@extend %d1-d8; // used on UAL homepage
+}
+
+.l-content-d9-d12 {
+	@extend %d9-d12; // used on UAL homepage
+}
+
+.l-content-d13-d16 {
+	@extend %d13-d16; // used on UAL homepage
+}
+
 
 /*------------------------------------*\
     $Page Layout Classes

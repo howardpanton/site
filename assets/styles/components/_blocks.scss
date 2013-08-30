@@ -194,6 +194,28 @@
     $Page Block Classes
 \*------------------------------------*/
 
+// two-up-full - used specifically for the UAL homepage
+.two-up-full {
+	li {
+		background-color: $white;
+		padding-bottom: 0;
+		h3 {
+			padding: 0 18px 18px 18px;
+		}
+		p {
+			padding: 0 18px 24px 18px;
+		}
+	}
+	@include gs-media(d) {
+		li {
+			@include gs-span(d, 1, 8);
+		}
+		li:nth-child(2n) {
+			@include gs-span(d, 9, 16);
+		}
+	}
+}
+
 // two-up - core styles
 // 
 .two-up {
@@ -277,6 +299,32 @@
 		text-align: center;
 	}
 
+}
+
+// four-up-full - used specifically for the UAL homepage
+// 
+.four-up-full {
+	li {
+		background-color: $white;
+		padding-bottom: 0;
+		h3 {
+			padding: 0 18px 18px 18px;
+		}
+	}
+	@include gs-media(d) {
+		li {
+			@include gs-span(d, 1, 4);
+		}
+		li:nth-child(2n) {
+			@include gs-span(d, 5, 8);
+		}
+		li:nth-child(3n) {
+			@include gs-span(d, 9, 12);
+		}
+		li:nth-child(4n) {
+			@include gs-span(d, 13, 16);
+		}
+	}
 }
 
 // four-up - core styles

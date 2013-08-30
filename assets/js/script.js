@@ -959,6 +959,11 @@ $(window).load(function(){
     $('.two-up ul li').fitHeights();
     $('.three-up ul li').fitHeights();
   }
+  
+  if ($('body').is('.ual')) {
+    $('.two-up-full ul li').fitHeights();
+    $('.four-up-full ul li').fitHeights();
+  }
 
   if ($('.__gallery').length > 0) {
     $('.__gallery').each( function() {
