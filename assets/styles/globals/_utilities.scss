@@ -484,6 +484,10 @@ a.img:hover { filter: grayscale(100%);
   top: -10px; 
 }
 
+.size-big {
+  font-size: emCalc(78px); 
+  @include adjust-leading-to(14, 78px);
+}
 .size-h1 {
   @include font-size(54); 
   @include adjust-leading-to(10, 54px);

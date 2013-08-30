@@ -97,9 +97,14 @@ ul.tabs li.active {
   .lcc-tabs & { 
     border: 12px solid $black;
     border-bottom: none;
+    @extend %LeagueGothicRegular;
+    text-transform: uppercase;
+    text-align: center;
     li {
+      @include font-size(36);
       border-bottom: none;
-      padding: 12px 46px 12px 12px;
+      // padding: 12px 46px 12px 12px;
+      padding: 12px;
       width: 33.33%;
       margin-right: 0;
       &:hover {

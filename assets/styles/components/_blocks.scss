@@ -160,11 +160,35 @@
 			}
 		}
 	}
-
-
-
 }
 
+.__horiz-block {
+	overflow: hidden;
+	@include component-spacing-bottom;
+	@include gs-media(t,min-max) {
+	}
+
+	@include gs-media(d) {
+		figure {
+			@extend %d5-d8--within-d5-d16;
+		}
+		.text {
+			@extend %d9-d16--within-d5-d16;
+		}
+	}
+}
+
+.__quote {
+	border-bottom: 4px solid $black;
+	@include component-spacing-bottom;
+	p {
+		@include font-size(36);
+		@include adjust-leading-to(7, 36px); 	
+		.lcc & {
+			@extend %LeagueGothicRegular;
+		}
+	}
+}
 
 /*------------------------------------*\
     $Page Block Classes
