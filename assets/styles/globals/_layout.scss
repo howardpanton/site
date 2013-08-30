@@ -246,6 +246,10 @@
 	@extend %t5-t7--within-t2-d7;
 }
 
+.l-content-d3-d14 {
+	@extend %d3-d14;
+}
+
 .l-forms {
 	@extend %d5-d10--within-d5-d16;
 }
@@ -274,12 +278,13 @@
 
 aside {
 	@extend %d13-d16--within-d5-d16;
+	@include component-spacing-bottom;
 	
 	background-color: $bg-gray;
 	border-left: none;
 	padding: 24px;
 	clear: left;
-	&.no-bg, &.ual-white-bg { 
+	&.no-bg { 
 		background-color: $white; 
 	}
 
