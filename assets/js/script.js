@@ -64,10 +64,10 @@ function checkWindowSize() {
   var width = $(window).width(),
   new_class = width > 850 ? 'gDesktop' :
               width > 600 ? 'gTablet' :
-              width < 600 ? 'gmobile' :
+              width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
-  $(document.body).removeClass('gDesktop gTablet gmobile').addClass(new_class);
+  $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -131,6 +131,7 @@ function enableSelectBoxes() {
 /////////////////////
 $(document).ready(function(){
 
+  checkWindowSize();
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
@@ -231,6 +232,7 @@ $(document).ready(function(){
     });
   }
 
+
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
@@ -295,7 +297,20 @@ $(document).ready(function(){
    
   }
 
+ 
+  // NICE IMAGE LOADING
   
+  /* 
+  * Not part of MixItUp, but this is a great lightweight way 
+  *   to gracefully fade-in images with CSS3 after they have loaded
+  */
+  
+  function imgLoaded(img){  
+    $(img).parent().addClass('loaded');
+  };
+      
+
+
 
   ////////////////////
   //  Stick div to top of browser on scroll 
@@ -329,6 +344,39 @@ $(document).ready(function(){
   //   moveScroller();
   // });
 
+  $(function() {
+
+      var container = $("#container"),
+          pagination = $("#pagination");
+
+      function setPagination () {
+          pagination.jPages({
+              containerID : "container",
+              perPage : 24,
+              direction : "auto",
+              animation : "fadeInUp",
+              // callback : function( pages, items ){
+              //     items.showing.find("img").trigger("turnPage");
+              //     items.oncoming.find("img").trigger("turnPage");
+              // }
+          });
+      };
+
+      function destroyPagination () {
+          pagination.jPages("destroy");
+      };
+
+      setPagination();
+
+      $.filtrify("container", "placeHolder", {
+          block : "data-original",
+          callback : function() {
+              destroyPagination();
+              setPagination();
+          }
+      });
+
+  });
 
 
 
@@ -558,24 +606,6 @@ if ($('.accordion').length > 0) {
 
     });
 }
-  
-
-
-// detect vertical accordion component
-if ($('#va-accordion').length > 0) {
-  $.when(
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.mousewheel.js" ),
-    $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.vaccordion.js" ),
-    $.Deferred(function( deferred ){
-      $( deferred.resolve );
-    })
-  ).done(function(){
-  //place your code here, the scripts are all loaded
-    $('#va-accordion').vaccordion();
-  }); 
-}
-
 
 
 
@@ -605,7 +635,7 @@ if ($('.dd-menu').length > 0) {
 
 // detect circles-callout component
 
-if ($('.circles-component').length > 0) {
+if ((($('.circles-component').length > 0)) && ($('body').hasClass('gDesktop'))) {
   $.when(
       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
       $.Deferred(function( deferred ){
@@ -761,6 +791,9 @@ if ($('.js-lightbox').length > 0) {
     parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
   });
 
+
+
+
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
   //---------------------------------------
@@ -819,6 +852,23 @@ if ($('video').length > 0) {
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
+// $('.content a[href$=".html"]').parent().addClass('external');
+
+
+  // Creating custom :external selector
+  $.expr[':'].external = function(obj){
+      return (obj.hostname != location.hostname);
+  };
+
+  // Add 'external' CSS class to all external links
+  $('a:external.button-link').addClass('external').each(function() {
+    $(this).attr("title", $(this).attr("title") + "(external link)");
+});
+  $('.content ul li a:external').parent().addClass('external').each(function() {
+    $(this).attr("title", $(this).attr("title") + "(external link)");
+});
+
+
 
 $('#debug').hide();
 $('.debug-toggle').click(function(e) {

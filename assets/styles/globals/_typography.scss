@@ -58,13 +58,6 @@ h1 {
 	.csm & {
 		@extend %LeviathanBlackItalic;
 	}
-}
-
-h2, h3, h4 {
-	@extend %Swiss721BT-Bold;
-}
-
-h1, h2, h3 {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold;		
 	}
@@ -74,10 +67,52 @@ h1, h2, h3 {
 	}
 }
 
+h2, h3, h4 {
+	@extend %Swiss721BT-Bold;
+}
+
 h2, h3 {
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold;		
+	}
   .csm & {
     @extend %BureauGrotBold;
-  }
+  }	
+  .lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	  border-bottom: 4px solid $black;
+	  margin-bottom: 18px;
+	  padding: 0 0 12px 0;
+	}	
+}
+
+h2 {
+  .lcc & {
+	}	
+}
+
+h3 {
+  .lcc & {
+		@include font-size(36);
+	}	
+}
+
+h2 a, h3 a {
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold;		
+	}
+  .csm & {
+    @extend %BureauGrotBold;
+  }	
+ 	.lcc & {
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	  border-bottom: none;
+	  &:hover {
+	  	color: $lcc-secondary-pink;
+	  }
+	}
 }
 
 h2 {
@@ -369,15 +404,6 @@ b, strong, h2, h3, h4 {
          	}
         }
      }
-    
-    /* figcaption, .flex-video .caption {
-    //     padding: 0 10px;
-    //     color: $ual-secondary;
-    //     font-family: $lcf-heading-font;
-    //     a {
-    //        color: $ual-secondary; 
-    //     }
-    // }*/
 }
 
 
