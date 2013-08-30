@@ -388,6 +388,9 @@ b, strong, h2, h3, h4 {
 	}
 	.call-to-action h3 {
 		@include font-size(20);
+		a {
+			border: 0 none;
+		}
 	}
 
 
@@ -414,7 +417,7 @@ b, strong, h2, h3, h4 {
 		display: none;
 	}
     .content-wrapper {
-        h1,h2,h3,h4,h5,h6,h3 a {
+        h1,h2,h3,h4,h5,h6,.call-to-action h3 a {
             font-family: $lcf-heading-font;
             font-weight: normal;
             letter-spacing: 1px;
