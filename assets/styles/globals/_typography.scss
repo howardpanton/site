@@ -220,14 +220,6 @@ table {
 	thead {
 		@extend .aaa-gray-bg; 
 		@extend .ual-white;
-		th {
-				
-		}
-	}
-	tbody {
-		td {
-
-		}
 	}
 	tr {
 		&:nth-child(odd) { 
@@ -331,33 +323,46 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-    .content-wrapper, .header-wrapper {
-		h1,h2,h3,h4,h5,h6 {
-			@extend %Swiss721BT-Black;
+	h1,h2,h3,h3 a {
+		@extend %Swiss721BT-Black;
+	}
+	h4,h5,h6 {
+	   @extend %Swiss721BT-Bold;
+	}
+	h2, &.graduate-school h1 {
+		margin-bottom: rhythm(4, 24px);
+	}
+	h2,h3 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		span, a {
+			border-bottom: 1px solid black;
 		}
-		h4,h5,h6 {
-		   font-family: "Swiss721BT-Bold";
-		}
-		h1,h2 {
-			background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
-		}
-		h2,.call-to-action h3 {
-			@include font-size(20);
-			text-transform: uppercase;
-			letter-spacing: 2px;
-		}
-		h2 {
-		  	margin-bottom: rhythm(4, 24px);
-		  	.ual-black-bg & {
-		  		background-image: url(../img/lcf/lcf-title-underline-white.gif);
-		  	}
-		}
+	}
+	.box-text h3 a {
+		border-color: $white;
+	}
+	h2 {
+		letter-spacing: 4px;
+	}
+	.college-footer .size-h2 {
+		@include font-size(24);
+   		@include margin-trailer(4);
+   		padding-bottom: 0;
+   
+	}
+	.call-to-action h3 {
+		@include font-size(20);
+	}
+
+
+    // centered headings
+    .content h1, .content h2, &.home h2, .call-to-action h3 {
+        text-align: center;
     }
 
+
     .content {
-        h1,h2,.call-to-action h3 {
-            text-align: center;
-        }
         .text-block, .l-content {
         	h2, h3, h4 {
         		text-align: left;
@@ -388,11 +393,17 @@ b, strong, h2, h3, h4 {
             font-weight: normal;
             letter-spacing: 1px;
         }
+        h1, h2 {
+        	background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
+        }
         h1 {
             @include font-size(36);
             text-transform: uppercase;
             margin-bottom: rhythm(4, 30px);
             letter-spacing: 5px;
+        }
+        h2 {
+        	@include font-size(20);
         }
     }
 }
