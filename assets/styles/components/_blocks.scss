@@ -373,3 +373,37 @@
 	}
 
 }
+
+
+
+// COLLEGE SPECIFIC MEDIA BLOCK STYLING
+.two-up, .three-up {
+	
+	// CSM specific styling for media blocks
+	.csm & {
+		li {
+			h3, p {
+				padding: 0 18px 18px 18px;
+			}
+			figure {
+				img {
+					border-bottom: 2px solid $csm-primary;
+					&:hover {
+						filter: grayscale(100%);
+						-webkit-filter: grayscale(100%);
+						-moz-filter: grayscale(100%);
+						-ms-filter: grayscale(100%);
+						-o-filter: grayscale(100%);					
+					}
+				}
+			}
+			a:hover {
+				color: $white;
+			}
+			&:hover {
+				background-color: $csm-primary;
+				color: $white;
+			}
+		}
+	}
+}
