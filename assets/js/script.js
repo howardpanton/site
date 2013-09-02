@@ -221,12 +221,12 @@ $(document).ready(function(){
   } // end if $(.sidebar) > 0
 
 
-  // LazyLoading with ReSRC.it <http://ReSRC.it> images
+// LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
     $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.review-1.0.0.min.js', function() {
       $('.resrc').review({
-        callback: function() {
-        resrc.resrc(this);
+          callback: function() {
+            resrc.resrc(this);
         }
       });
     });
@@ -296,18 +296,20 @@ $(document).ready(function(){
       });
    
   }
+
  
-      // NICE IMAGE LOADING
+  // NICE IMAGE LOADING
+  
+  /* 
+  * Not part of MixItUp, but this is a great lightweight way 
+  *   to gracefully fade-in images with CSS3 after they have loaded
+  */
+  
+  function imgLoaded(img){  
+    $(img).parent().addClass('loaded');
+  };
       
-      /* 
-      * Not part of MixItUp, but this is a great lightweight way 
-      *   to gracefully fade-in images with CSS3 after they have loaded
-      */
-      
-      function imgLoaded(img){  
-        $(img).parent().addClass('loaded');
-      };
-      
+
 
 
   ////////////////////
@@ -763,8 +765,7 @@ if ($('.js-lightbox').length > 0) {
 }
 
 
-  // make videos adapt responsively
-  //$('.video-container').fitVids();
+
 
   // show/hide the relevant buttons for browsers that have JS enabled
   $(".expanded-content").hide();
@@ -876,6 +877,11 @@ $('.debug-toggle').click(function(e) {
 });
 
 
+$('.lcf.home').find('h2').each( function() {
+  $(this).wrapInner('<span />');
+});
+
+
 }); // end document ready
 
 
@@ -961,8 +967,10 @@ $(window).load(function(){
   }
   
   if ($('body').is('.ual')) {
-    $('.two-up-full ul li').fitHeights();
-    $('.four-up-full ul li').fitHeights();
+    $('.cta .two-up-full ul li').fitHeights();
+    $('.st-cp .two-up-full ul li').fitHeights();
+    $('.news .four-up-full ul li').fitHeights();
+    $('.fe .four-up-full ul li').fitHeights();
   }
 
   if ($('.__gallery').length > 0) {
