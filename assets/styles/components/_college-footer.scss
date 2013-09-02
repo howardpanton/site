@@ -28,18 +28,20 @@
   }
 
   .lcf & {
+    @include padding-leader(4);
+    @include padding-trailer(6);
     background-color: $black;
-    border-bottom: 1px solid $bg-gray;
+    border-bottom: 1px dotted $aaa-gray;
   }
 
   .vcard {
       margin-top: 0;
       padding: 0;
       // college level styling for vCards in college footer
-      .lcc &, .lcf &, .csm &, .chelsea &, .camberwell &, .wimbledon & {
+      .college & {
         border-top: 0;
         .fn, .phone, .email, .title, .org, .url, .blogurl, .twitter, .facebook, .linkedin {
-          background-color: transparent;
+          background: none;
           padding: 0;
           a {
             border-bottom: none;
@@ -118,8 +120,7 @@
     }
 
     .lcf & {
-       @include margin-trailer(2);
-       
+      border-bottom: 1px solid $white;
     }
 
     .csm & {
