@@ -17,6 +17,11 @@
 
 	figcaption, .rsCaption {
 		@extend .bg-gray-bg;
+		.csm & {
+			background-color: $csm-primary;
+			color: $white;
+			padding: 6px 0 6px 6px;
+		}
 	}
 }
 
@@ -74,7 +79,7 @@
 
 .__media {
 	h2 {
-		width: 100%;
+		// width: 100%;
 		@include gs-media(t,min-max) {
 			.camberwell &, .chelsea &, .wimbledon & {
 				width: 47.28217%;
@@ -381,6 +386,9 @@
 	
 	// CSM specific styling for media blocks
 	.csm & {
+		h2 {
+			width: 50%;
+		}
 		li {
 			h3, p {
 				padding: 0 18px 18px 18px;
