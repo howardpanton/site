@@ -135,27 +135,17 @@ $(document).ready(function(){
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
-
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
-
-    // $.when(
-    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-    //       $.Deferred(function( deferred ){
-    //           $( deferred.resolve );
-    //       })
-    //   ).done(function(){
-    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
-    //   });
 
     // build mobile breadcrumbs from copy of desktop breadcrumbs, 
     // add class to hide them on desktop & then insert before the first footer on the page  
     
-    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
-    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    _ual_footer.prepend(_mobileBreadCrumbs);
+    // var _mobileBreadCrumbs = $('.breadcrumbs').clone();
+    // var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
+    // _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
+    // //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
+    // _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
@@ -182,10 +172,6 @@ $(document).ready(function(){
         _mobMenuContent = _menuHtml;
       }
 
-
-
-       
-      
       // create mobile sidebar div and add it to the main content div
       $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
@@ -231,7 +217,6 @@ $(document).ready(function(){
       });
     });
   }
-
 
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
