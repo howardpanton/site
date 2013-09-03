@@ -513,20 +513,31 @@ $(document).ready(function(){
 
   // Show image credits button fixed to the right of the screen on Desktop only
   
-  if ( ($('.credits').length > 0) && ($('body').hasClass('gDesktop'))) {
-    $('.credits-btn').addClass("show");
-    $('.show-credits').click(function(event) {
-      event.preventDefault();
-      // $('.credits').toggle();
-      var c = $(this);
-      if (c.hasClass('active') ) {
-        c.removeClass('active').html("Show Credits");
-        $('.credits').fadeOut();
-      } else {
-        c.addClass('active').html("Hide Credits");
-        $('.credits').fadeIn();
-      }
-    });
+  if ($('.credits').length > 0) {
+
+    //  
+    if ($('body').hasClass('gDesktop')) {
+      $('.credits-btn').addClass("show");
+      
+      $('.show-credits').click(function(event) {
+        event.preventDefault();
+      
+        var c = $(this);
+        if (c.hasClass('active') ) {
+          c.removeClass('active').html("Show Credits");
+          $('.credits').fadeOut();
+        } else {
+          c.addClass('active').html("Hide Credits");
+          $('.credits').fadeIn();
+        }
+      });
+    }
+
+    // show image credits by default on tablet and mobile
+    else {
+      $('.credits').show();
+    }
+    
   }
 
 
