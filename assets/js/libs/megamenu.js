@@ -43,7 +43,7 @@
                 menuItemElement = $(menuItem).add(menuItemFlyOut);
                 menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
 
-                // to remove the #_ at the end of URL
+                // fix to be able to remove the #_ at the end of each link URL (found in the forum for the megaMenu)
                 // $(menuItemLink).click(function(event) {
                 //     event.preventDefault();
                 //     window.location.hash = this.hash;
@@ -51,7 +51,6 @@
                 // });    
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
-
 
                     if ($(window).width() < 960) {
                         $(menuDropDown).css({'top':'auto'}).hide();
@@ -63,10 +62,9 @@
                         megaMenuDropDownPosition();
                     }
 
-
                     $(menuButton).children('a').hammer().on('tap', function (event) {
                         //event.preventDefault();
-                        $(menuButton).toggleClass('megamenu_button_active')
+                        //$(menuButton).toggleClass('megamenu_button_active')
                         $(menuItem).not(":eq(0)").toggle(0);
                     });
 
@@ -83,14 +81,6 @@
                         var $thisParentItem = $this.closest(menuItem);
                         $thisParentItem.toggleClass('active noactive')
                             .find(menuDropDown).toggle(0);
-                        
-                        $thisParentItem.find('.js-mob-exp-icon').toggle(
-                            function() {
-                                $(this).html('&#59235;');
-                            }, function() {
-                                $(this).html('&#59232;');
-                            });
-                        
                         
                         // No chaining here, the horizontal and vertical
                         // versions don't use the exact same structure.
@@ -200,8 +190,7 @@
 
                                 // confirm("clicked node was:" + _clickedNode);
                                 // only handle the closing and hiding of dropdown menu if clicking a link
-                                if ($(event.target).hasClass("megamenu_drop") || 
-                                      $(event.target).hasClass("js-mob-exp-icon"))  {
+                                if ($(event.target).hasClass("megamenu_drop"))  {
                                    
                                     // check if another list item is already open
                                     if ($this.siblings().hasClass('active')) {
@@ -218,10 +207,8 @@
                                         
                                         if ($this.hasClass('active') ){
                                             dd.slideDown();
-                                            $this.find('.js-mob-exp-icon').html('&#59235;');
                                         }
                                         else {
-                                            $this.find('.js-mob-exp-icon').html('&#59232;');
                                             dd.slideUp();
                                         }
                                       
