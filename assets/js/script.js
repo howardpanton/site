@@ -985,6 +985,13 @@ $(window).load(function(){
     $('.two-up ul li').fitHeights();
     $('.three-up ul li').fitHeights();
   }
+  
+  if ($('body').is('.ual')) {
+    $('.cta .two-up-full ul li').fitHeights();
+    $('.st-cp .two-up-full ul li').fitHeights();
+    $('.news .four-up-full ul li').fitHeights();
+    $('.fe .four-up-full ul li').fitHeights();
+  }
 
   if ($('.__gallery').length > 0) {
     $('.__gallery').each( function() {
