@@ -278,17 +278,15 @@ img.rsImg {
 
 
 /* Background */
-.rsDefault,
-.rsDefault .rsOverflow,
-.rsDefault .rsSlide,
-.rsDefault .rsVideoFrameHolder,
-.rsDefault .rsThumbs {
+.rsDefault {
 	@extend .white-bg;
 }
 
 .rsDefault.slider-12, .rsDefault.slider-8 {
 	@extend .bg-gray-bg;
 }
+
+
 
 /***************
 *
@@ -814,6 +812,9 @@ img.rsImg {
 
 .slider-3-14 {
 	@extend %d3-d14;
+	.rsDefault {
+		@extend .ual-black-bg;
+	}
 }
 
 .box-text {
