@@ -283,9 +283,12 @@ img.rsImg {
 .rsDefault .rsSlide,
 .rsDefault .rsVideoFrameHolder,
 .rsDefault .rsThumbs {
-	background: $white;
+	@extend .white-bg;
 }
 
+.rsDefault.slider-12, .rsDefault.slider-8 {
+	@extend .bg-gray-bg;
+}
 
 /***************
 *
