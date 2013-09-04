@@ -138,24 +138,6 @@ $(document).ready(function(){
 
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
-
-    // $.when(
-    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-    //       $.Deferred(function( deferred ){
-    //           $( deferred.resolve );
-    //       })
-    //   ).done(function(){
-    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
-    //   });
-
-    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
-    // add class to hide them on desktop & then insert before the first footer on the page  
-    
-    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
-    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
@@ -223,7 +205,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.review-1.0.0.min.js', function() {
+    $.getScript('<t4 type="media" id="229132" formatter="path/*"/>', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -239,30 +221,6 @@ $(document).ready(function(){
     enableSelectBoxes();
   
   }
-
-  // check for fitText classes
-  // if ($('#icon-fit-text').length > 0) {
-    
-  //   //load fitText library
-  //   $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-
-  //       // use fitText on elements with a fit-text class
-  //       $('#icon-fit-text').fitText();
-  //   });
-  
-  // }
-
-  // use fit text for social media icons in footer
-  // if ($('.icon-fit-text').length > 0) {
-  //   $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
-  // }
-
-  
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
@@ -310,46 +268,10 @@ $(document).ready(function(){
   };
       
 
-
-
-  ////////////////////
-  //  Stick div to top of browser on scroll 
-  ///////////////////
-
-  // function moveScroller() {
-  //   var move = function() {
-  //     var st = $(window).scrollTop();
-  //     var ot = $(".l-short-courses-list").offset().top; 
-  //     var s = $(".grid");
-  //     if(st > ot) {
-  //       s.css({
-  //         position: "fixed",
-  //         top: "0px",
-  //         bottom: "25%"
-  //       });
-  //     } else {
-  //       if(st <= ot) {
-  //         s.css({
-  //           position: "relative",
-  //           top: ""
-  //         });
-  //       }
-  //     }
-  //   };
-  //   $(window).scroll(move);
-  //   move();
-  // }
-
-  // $(function() {
-  //   moveScroller();
-  // });
-  // 
-  // 
-
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.getScript( '<t4 type="media" id="229132" formatter="path/*"/>' ),
+      $.getScript( '<t4 type="media" id="229135" formatter="path/*"/>' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -446,7 +368,7 @@ if ($('#container').length > 0) {
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://artslondon.github.io/beta/assets/js/components/jquery.bxslider.min.js', function() {
+    $.getScript('<t4 type="media" id="229138" formatter="path/*"/>', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -497,7 +419,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.royalslider.min.js', function() {
+    $.getScript('<t4 type="media" id="229139" formatter="path/*"/>', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -569,9 +491,9 @@ if ($('#container').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.accordion.js" ),
-        $.getScript( "http://artslondon.github.io/beta/assets/js/components/jquery.easing.1.3.js" ),
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
+        $.getScript( '<t4 type="media" id="229144" formatter="path/*"/>' ),
+        $.getScript( '<t4 type="media" id="229145" formatter="path/*"/>' ),
+        $.getScript( '<t4 type="media" id="229146" formatter="path/*"/>' ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -653,7 +575,7 @@ if ($('.dd-menu').length > 0) {
 
 if ((($('.circles-component').length > 0)) && ($('body').hasClass('gDesktop'))) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/libs/skrollr.min.js" ),
+      $.getScript( '<t4 type="media" id="229148" formatter="path/*"/>' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -690,7 +612,7 @@ if ($('.search-filters').length > 0) {
 if ($('#showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+  $.getScript('<t4 type="media" id="229150" formatter="path/*"/>', function() {
 
     var feedUrl = $('#showtime-json').data('url');
     // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
@@ -757,7 +679,7 @@ if ($('#showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
+    $.getScript('<t4 type="media" id="229150" formatter="path/*"/>', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -855,7 +777,7 @@ if ($('.js-lightbox').length > 0) {
 
 if ($('video').length > 0) {
 
-  $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
+  $.getScript('<t4 type="media" id="229154" formatter="path/*"/>', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
       pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
