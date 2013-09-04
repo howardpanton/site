@@ -85,7 +85,7 @@ h2, h3 {
 	  text-transform: uppercase;
 	  border-bottom: 4px solid $black;
 	  margin-bottom: 18px;
-	  padding: 0 0 12px 0;
+	  //padding: 0 0 12px 0;
 	}	
 }
 
@@ -328,28 +328,16 @@ hr {
 	clear: both;
 }
 
-// // // Custom Web Fonts
 
-// // .Swiss721BT-Light { font-family: Swiss721BT-Light; }
-// // .Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
-// // .Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
-// // .Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
-// // .Swiss721BT-Black { font-family: Swiss721BT-Black; }
-// // .Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
+// left and right padding for text elements on mobile 
+// added to prevent them from going right to the edge of the screen on mobile
 
-// // // CCW
-// // .BrandonText-Bold { font-family: BrandonText-Bold; }
-// // .BrandonText-Regular { font-family: BrandonText-Regular; }
-
-// // // LCC
-// // .LeagueGothicRegular { font-family: LeagueGothicRegular; }
-// // .LeagueGothicItalic { font-family: LeagueGothicItalic; }
-// // .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
-// // .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
-
-// // // CSM
-// // .BureauGrotBold { font-family: BureauGrotBold; }
-
+@include gs-media(m) {
+  h1,h2,h3,h4,h5, p {
+    padding-left: rhythm(2, 16px);
+    padding-right: rhythm(2, 16px);
+  }
+} 
 
 .icon { font-family: "entypo"; }
 .icon-social { font-family: "entypo-social"; }
