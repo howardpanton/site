@@ -859,6 +859,8 @@ if ($('.js-lightbox').length > 0) {
 
 if ($('video').length > 0) {
 
+  $('.__media').fitVids();
+
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
