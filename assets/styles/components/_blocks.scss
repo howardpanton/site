@@ -66,6 +66,7 @@
 		.lcf & { // for courses landing page
 			@include component-spacing-bottom;
 		}
+
 	}
 
 	
@@ -100,7 +101,6 @@
 	}
 
 	li {
-		@include component-spacing-bottom;
 		// college specific coloring
 		.camberwell &, .chelsea &, .wimbledon & {
 			padding-bottom: 0;
@@ -145,11 +145,11 @@
 				@include gs-span(d, 5,12, (5, 16));
 			}
 		}
-		.__text {
-			@include gs-media (d) {
-				@include gs-span(d, 5,12, (5, 13));
-			}
-		}
+		// .__text {
+		// 	@include gs-media (d) {
+		// 		@include gs-span(d, 5,12, (5, 13));
+		// 	}
+		// }
 	}
 
 	&.__highlight {
