@@ -361,16 +361,22 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-	h1,h2,h3,h3 a {
+	h1,h2 a,h3,h3 a {
 		@extend %Swiss721BT-Black;
 	}
+	h1 {
+		@include font-size(48);
+	}
+	.search-results-list h3 a, 
+	.accordion h3,
+	.dd-menu h3,
 	h4,h5,h6 {
 	   @extend %Swiss721BT-Bold;
 	}
-	h2, &.graduate-school h1 {
+	.l-content-full-width h2, .intro-block-with-left-image h2, &.graduate-school h1 {
 		margin-bottom: rhythm(4, 24px);
 	}
-	h2,h3 {
+	h2, .__media.block h3, .footer-block h3 {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		span, a {
