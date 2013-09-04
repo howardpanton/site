@@ -84,14 +84,6 @@ var waitForFinalEvent = (function () {
 })();
 
 
-// fastclick library: https://github.com/ftlabs/fastclick
-// window.addEventListener('load', function() {
-//     FastClick.attach(document.body);
-// }, false);
-
-
-
-
 
 // enables UAL themed select boxes
 function enableSelectBoxes() {
@@ -135,27 +127,9 @@ $(document).ready(function(){
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
-
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
 
-    // $.when(
-    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-    //       $.Deferred(function( deferred ){
-    //           $( deferred.resolve );
-    //       })
-    //   ).done(function(){
-    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
-    //   });
-
-    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
-    // add class to hide them on desktop & then insert before the first footer on the page  
-    
-    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
-    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
@@ -182,10 +156,6 @@ $(document).ready(function(){
         _mobMenuContent = _menuHtml;
       }
 
-
-
-       
-      
       // create mobile sidebar div and add it to the main content div
       $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
@@ -232,37 +202,12 @@ $(document).ready(function(){
     });
   }
 
-
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
     enableSelectBoxes();
   
   }
-
-  // check for fitText classes
-  // if ($('#icon-fit-text').length > 0) {
-    
-  //   //load fitText library
-  //   $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-
-  //       // use fitText on elements with a fit-text class
-  //       $('#icon-fit-text').fitText();
-  //   });
-  
-  // }
-
-  // use fit text for social media icons in footer
-  // if ($('.icon-fit-text').length > 0) {
-  //   $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
-  // }
-
-  
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
@@ -312,39 +257,6 @@ $(document).ready(function(){
 
 
 
-  ////////////////////
-  //  Stick div to top of browser on scroll 
-  ///////////////////
-
-  // function moveScroller() {
-  //   var move = function() {
-  //     var st = $(window).scrollTop();
-  //     var ot = $(".l-short-courses-list").offset().top; 
-  //     var s = $(".grid");
-  //     if(st > ot) {
-  //       s.css({
-  //         position: "fixed",
-  //         top: "0px",
-  //         bottom: "25%"
-  //       });
-  //     } else {
-  //       if(st <= ot) {
-  //         s.css({
-  //           position: "relative",
-  //           top: ""
-  //         });
-  //       }
-  //     }
-  //   };
-  //   $(window).scroll(move);
-  //   move();
-  // }
-
-  // $(function() {
-  //   moveScroller();
-  // });
-  // 
-  // 
 
 if ($('#container').length > 0) {
   $.when(
@@ -373,25 +285,10 @@ if ($('#container').length > 0) {
           });
       };
 
-      function destroyPagination () {
-          pagination.jPages("destroy");
-      };
-
-      setPagination();
-
-      $.filtrify("container", "placeHolder", {
-          block : "data-original",
-          callback : function() {
-              destroyPagination();
-              setPagination();
-          }
-      });
-
   });
   });
 
 }
-
 
 
 
@@ -542,26 +439,33 @@ if ($('#container').length > 0) {
   /////// accreditation
   ///////////////////////
 
-  // $(".accreditation").hide();
-
-    // detect search filters on page
-
-     //allow expand and close for search filters
+  // Show image credits button fixed to the right of the screen on Desktop only
   
   if ($('.credits').length > 0) {
-    $('.credits-btn').addClass("show");
-    $('.show-credits').click(function(event) {
-      event.preventDefault();
-      // $('.credits').toggle();
-      var c = $(this);
-      if (c.hasClass('active') ) {
-        c.removeClass('active').html("Show Credits");
-        $('.credits').fadeOut();
-      } else {
-        c.addClass('active').html("Hide Credits");
-        $('.credits').fadeIn();
-      }
-    });
+
+    //  
+    if ($('body').hasClass('gDesktop')) {
+      $('.credits-btn').addClass("show");
+      
+      $('.show-credits').click(function(event) {
+        event.preventDefault();
+      
+        var c = $(this);
+        if (c.hasClass('active') ) {
+          c.removeClass('active').html("Show Credits");
+          $('.credits').fadeOut();
+        } else {
+          c.addClass('active').html("Hide Credits");
+          $('.credits').fadeIn();
+        }
+      });
+    }
+
+    // show image credits by default on tablet and mobile
+    else {
+      $('.credits').show();
+    }
+    
   }
 
 

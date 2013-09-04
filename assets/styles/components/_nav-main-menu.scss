@@ -53,22 +53,17 @@
       background-color: $dark-gray;
     }
   }
-
-  
-  
-  
-  .menu-plus {
-    @extend %icon;
-    @include font-size(48);
-    float: right;
-    color: $white;
-    text-align: center;
-    line-height: 48px;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-  }
-
+  // .menu-plus {
+  //   @extend %icon;
+  //   @include font-size(48);
+  //   float: right;
+  //   color: $white;
+  //   text-align: center;
+  //   line-height: 48px;
+  //   width: 48px;
+  //   height: 48px;
+  //   cursor: pointer;
+  // }
 }
 
 // float the search icon on desktop to the right of the screen
@@ -86,8 +81,33 @@
   padding: 12px 15px 12px 15px;
 }
 
-.megamenu > li .megamenu_drop {
-  // padding-right:30px;
+
+// add down arrow to the right of each dropdown link on tablet & mobile
+.megamenu_drop:after {
+  content: "";
+  font-family: "entypo" !important;
+  @include font-size(48);
+  position: absolute;
+  right: 0;
+  color: $white;
+  text-align: center;
+  line-height: 48px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  
+  // hide arrows on desktop
+  @include gs-media(d) {
+    display: none;
+  }
+
+}
+
+// switch to an up arrow icon when the menu is expanded on tablet & mobile
+.megamenu > li.active {
+  a.megamenu_drop:after {
+    content: ""; // &#59235 (entypo up arrow)
+  }
 }
 
 .megamenu li.megamenu_button {
@@ -117,8 +137,8 @@
 
 
 // mobile tablet view "hamburger" icon active
-.megamenu_button_active {
-  background-color: $dark-gray;
+li.megamenu_button_active {
+  background-color: $dark-gray !important;
 }
     
 // /*  _______________________________________________
@@ -391,7 +411,7 @@
         @extend %Swiss721BT-Light;
         // padding-left: 0.75em; 
         // padding-right: 0.75em;
-        padding: 6px 0.75em; 
+        padding: 6px 12px; 
         line-height: 36px;
 
         @include gs-media(d) { 
@@ -404,7 +424,6 @@
         &:hover {
           @include gs-media(d) { background-color : $dark-gray; }
         }
-
       }
   
       //site search icon on main nav
