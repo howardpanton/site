@@ -246,8 +246,22 @@
 	@extend %d5-d16--within-d5-d16;
 }
 
-.l-content {
+.l-content { 
 	@extend %d5-d12--within-d5-d16;
+	h2 {
+		.csm & {
+			border-top: 2px solid $csm-primary;
+		}
+		.camberwell & {
+			border-top: 10px solid $ccw-blue;
+		}
+		.chelsea & {
+			border-top: 10px solid $ccw-salmon;
+		}
+		.wimbledon & {
+			border-top: 10px solid $ccw-green;
+		}	
+	}
 }
 
 .l-content-d5-d9 { // content left

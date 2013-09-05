@@ -270,7 +270,7 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( '<t4 type="media" id="229132" formatter="path/*"/>' ),
+      $.getScript( '<t4 type="media" id="229134" formatter="path/*"/>' ),
       $.getScript( '<t4 type="media" id="229135" formatter="path/*"/>' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
