@@ -377,27 +377,25 @@ li.megamenu_button_active {
 
 .top-bar{
     position: relative;
-    > ul {
-     
-    }
-    
-    li {
+    > ul { }
 
+    // style for each dropdown list menu item on tab/mobile
+    li {
       display:block;
       float:left;
       width:100%;
       text-align:left;
-      border-bottom: 1px solid $black;
+      // border-bottom: 1px solid $black;
     
     li:last-of-type {
-      border-bottom: 0;
+      // border-bottom: 0;
     }
       @include gs-media(d) {
         list-style:none; 
         padding:0;
         width:auto; 
         font-weight: 300;
-        border-bottom: 0;
+        // border-bottom: 0;
       }
 
       &:hover { background-color: $dark-gray; }   
