@@ -90,9 +90,6 @@ var waitForFinalEvent = (function () {
 // }, false);
 
 
-
-
-
 // enables UAL themed select boxes
 function enableSelectBoxes() {
   
@@ -137,15 +134,6 @@ $(document).ready(function(){
   if ($('.breadcrumbs').length > 0) {
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
-
-    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
-    // add class to hide them on desktop & then insert before the first footer on the page  
-    
-    // var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    // var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
-    // _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    // //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    // _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
@@ -161,7 +149,7 @@ $(document).ready(function(){
     if (_no_of_li_items > 1) {
       var _menuHtml = $('.sidebar').html();
       var _sideBarTitle = $('.sidebar li').first();
-      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
+      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon icon-menu-1"></a>';
       var _mobMenuContent;
 
 
@@ -225,28 +213,6 @@ $(document).ready(function(){
   
   }
 
-  // check for fitText classes
-  // if ($('#icon-fit-text').length > 0) {
-    
-  //   //load fitText library
-  //   $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-
-  //       // use fitText on elements with a fit-text class
-  //       $('#icon-fit-text').fitText();
-  //   });
-  
-  // }
-
-  // use fit text for social media icons in footer
-  // if ($('.icon-fit-text').length > 0) {
-  //   $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
-  // }
-
   
 
   // check for regular blockquotes on the page - 
@@ -293,77 +259,37 @@ $(document).ready(function(){
   function imgLoaded(img){  
     $(img).parent().addClass('loaded');
   };
-      
+    
 
+if ($('#container').length > 0) {
+  $.when(
+      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
+      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.Deferred(function( deferred ){
+          $( deferred.resolve );
+      })
+  ).done(function(){
+    // initialise skrollr to handle movement of the circles
+      $(function() {
 
+      var container = $("#container"),
+          pagination = $("#pagination");
 
-  ////////////////////
-  //  Stick div to top of browser on scroll 
-  ///////////////////
-
-  // function moveScroller() {
-  //   var move = function() {
-  //     var st = $(window).scrollTop();
-  //     var ot = $(".l-short-courses-list").offset().top; 
-  //     var s = $(".grid");
-  //     if(st > ot) {
-  //       s.css({
-  //         position: "fixed",
-  //         top: "0px",
-  //         bottom: "25%"
-  //       });
-  //     } else {
-  //       if(st <= ot) {
-  //         s.css({
-  //           position: "relative",
-  //           top: ""
-  //         });
-  //       }
-  //     }
-  //   };
-  //   $(window).scroll(move);
-  //   move();
-  // }
-
-  // $(function() {
-  //   moveScroller();
-  // });
-
-  // $(function() {
-
-  //     var container = $("#container"),
-  //         pagination = $("#pagination");
-
-  //     function setPagination () {
-  //         pagination.jPages({
-  //             containerID : "container",
-  //             perPage : 24,
-  //             direction : "auto",
-  //             animation : "fadeInUp",
-  //             // callback : function( pages, items ){
-  //             //     items.showing.find("img").trigger("turnPage");
-  //             //     items.oncoming.find("img").trigger("turnPage");
-  //             // }
-  //         });
-  //     };
-
-  //     function destroyPagination () {
-  //         pagination.jPages("destroy");
-  //     };
-
-  //     setPagination();
-
-  //     $.filtrify("container", "placeHolder", {
-  //         block : "data-original",
-  //         callback : function() {
-  //             destroyPagination();
-  //             setPagination();
-  //         }
-  //     });
-
-  // });
-
-
+      function setPagination () {
+          pagination.jPages({
+              containerID : "container",
+              perPage : 24,
+              direction : "auto",
+              animation : "fadeInUp",
+              // callback : function( pages, items ){
+              //     items.showing.find("img").trigger("turnPage");
+              //     items.oncoming.find("img").trigger("turnPage");
+              // }
+          });
+      };
+  });
+  });
+}
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
