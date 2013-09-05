@@ -177,7 +177,7 @@ p {
 	@include font-size(16);
 }
 
-aside, .__text {
+aside, .l-content {
 	ul {
 		li {
 			padding-left: 9px;
@@ -263,7 +263,8 @@ table {
 
 figure {
 	position: relative; // for credits
-	margin-bottom: rhythm(3, 14px);
+	// margin-bottom: rhythm(3, 14px);
+	line-height: 0;
 	a {
 		@extend %Swiss721BT-Light;
 		color: $black;
