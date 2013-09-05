@@ -395,12 +395,15 @@
 			width: 50%;
 		}
 		li {
-			h3, p {
+			h3 {
+				padding: 18px;
+			}
+			p {
 				padding: 0 18px 18px 18px;
 			}
 			figure {
 				img {
-					border-bottom: 2px solid $csm-primary;
+					// border-bottom: 2px solid $csm-primary;
 					&:hover {
 						filter: grayscale(100%);
 						-webkit-filter: grayscale(100%);
@@ -410,12 +413,16 @@
 					}
 				}
 			}
-			a:hover {
-				color: $white;
-			}
 			&:hover {
 				background-color: $csm-primary;
 				color: $white;
+				h3 a {
+					color: $white;
+					border-bottom: 1px dotted $white;
+					&:hover {
+						border-bottom: 1px solid $white;
+					}
+				}
 			}
 		}
 	}

@@ -121,11 +121,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  */
 @font-face {
   font-family: "BureauGrotBold";
-  src: url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-bold.woff') format('woff'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-bold.ttf') format('truetype');
+  src: url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-text-bold.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-text-bold.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-text-bold.woff') format('woff'), url('http://artslondon.github.io/beta//media/beta/beta-assets/fonts/bureau-grot-text-bold.ttf') format('truetype');
 }
 
 /* line 19, ../../../../assets/styles/font-face/_bureau-grot.scss */
-.csm .footer-block h3 {
+.csm h3, .csm .footer-block h3 {
   font-family: BureauGrotBold;
 }
 
@@ -1190,38 +1190,30 @@ h1, .size-h1 {
 }
 
 /* line 80, ../../../../assets/styles/globals/_typography.scss */
+.csm h2 {
+  font-family: "Leviathan A", "Leviathan B";
+  font-weight: 800;
+  font-style: italic;
+}
+/* line 83, ../../../../assets/styles/globals/_typography.scss */
 .lcc h2 {
   font-size: 54px;
   font-size: 3.375rem;
   text-transform: uppercase;
 }
 
-/* line 89, ../../../../assets/styles/globals/_typography.scss */
+/* line 94, ../../../../assets/styles/globals/_typography.scss */
 .lcc h3 {
   font-size: 36px;
   font-size: 2.25rem;
   line-height: 1.16667em;
-  padding: 0.5em 0 0.5em 0;
+  padding: 0.5em 0 0.16667em 0;
   text-transform: uppercase;
   border-bottom: 4px solid black;
   margin-bottom: 18px;
 }
 
-/* line 113, ../../../../assets/styles/globals/_typography.scss */
-.csm h2, .csm h3 {
-  font-family: "Leviathan A", "Leviathan B";
-  font-weight: 800;
-  font-style: italic;
-}
-
-/* line 125, ../../../../assets/styles/globals/_typography.scss */
-.csm h2 a, .csm h3 a {
-  font-family: "Leviathan A", "Leviathan B";
-  font-weight: 800;
-  font-style: italic;
-}
-
-/* line 139, ../../../../assets/styles/globals/_typography.scss */
+/* line 144, ../../../../assets/styles/globals/_typography.scss */
 h2, .size-h2 {
   font-size: 36px;
   font-size: 2.25rem;
@@ -1229,7 +1221,7 @@ h2, .size-h2 {
   padding: 0.5em 0 0.5em 0;
 }
 
-/* line 145, ../../../../assets/styles/globals/_typography.scss */
+/* line 150, ../../../../assets/styles/globals/_typography.scss */
 h3, .size-h3, .search-results-info p, .lower-search-results-info p {
   font-size: 22px;
   font-size: 1.375rem;
@@ -1237,7 +1229,7 @@ h3, .size-h3, .search-results-info p, .lower-search-results-info p {
   padding: 0.81818em 0;
 }
 
-/* line 151, ../../../../assets/styles/globals/_typography.scss */
+/* line 156, ../../../../assets/styles/globals/_typography.scss */
 h4, .size-h4, .filter-module h3, .lower-search-results-info p, .dd-heading {
   font-size: 18px;
   font-size: 1.125rem;
@@ -1245,7 +1237,7 @@ h4, .size-h4, .filter-module h3, .lower-search-results-info p, .dd-heading {
   padding: 0.66667em 0 1em 0;
 }
 
-/* line 158, ../../../../assets/styles/globals/_typography.scss */
+/* line 163, ../../../../assets/styles/globals/_typography.scss */
 .lcc .size-big {
   font-size: 54px;
   font-size: 3.375rem;
@@ -1255,19 +1247,19 @@ h4, .size-h4, .filter-module h3, .lower-search-results-info p, .dd-heading {
   margin-bottom: 18px;
 }
 
-/* line 167, ../../../../assets/styles/globals/_typography.scss */
+/* line 172, ../../../../assets/styles/globals/_typography.scss */
 h5 {
   font-size: 16px;
   font-size: 1rem;
 }
 
-/* line 171, ../../../../assets/styles/globals/_typography.scss */
+/* line 176, ../../../../assets/styles/globals/_typography.scss */
 h6 {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
-/* line 175, ../../../../assets/styles/globals/_typography.scss */
+/* line 180, ../../../../assets/styles/globals/_typography.scss */
 p {
   font-size: 16px;
   font-size: 1rem;
@@ -1275,17 +1267,17 @@ p {
   padding-bottom: 1.125em;
 }
 
-/* line 181, ../../../../assets/styles/globals/_typography.scss */
+/* line 186, ../../../../assets/styles/globals/_typography.scss */
 nav ul {
   margin-left: 0;
   list-style-type: none;
 }
 
-/* line 186, ../../../../assets/styles/globals/_typography.scss */
+/* line 191, ../../../../assets/styles/globals/_typography.scss */
 ul, ol, dl {
   margin-bottom: 1.125em;
 }
-/* line 189, ../../../../assets/styles/globals/_typography.scss */
+/* line 194, ../../../../assets/styles/globals/_typography.scss */
 ul li, ol li, dl li {
   font-size: 16px;
   font-size: 1rem;
@@ -1293,42 +1285,42 @@ ul li, ol li, dl li {
   padding-bottom: 0.75em;
 }
 
-/* line 196, ../../../../assets/styles/globals/_typography.scss */
+/* line 201, ../../../../assets/styles/globals/_typography.scss */
 ul li ul, ol li ol {
   padding-top: 0.75em;
   padding-bottom: 0;
 }
-/* line 199, ../../../../assets/styles/globals/_typography.scss */
+/* line 204, ../../../../assets/styles/globals/_typography.scss */
 ul li ul li, ol li ol li {
   padding-bottom: 0.75em;
 }
 
-/* line 204, ../../../../assets/styles/globals/_typography.scss */
+/* line 209, ../../../../assets/styles/globals/_typography.scss */
 p {
   font-size: 16px;
   font-size: 1rem;
 }
 
-/* line 210, ../../../../assets/styles/globals/_typography.scss */
+/* line 215, ../../../../assets/styles/globals/_typography.scss */
 aside ul li, .l-content ul li {
   padding-left: 9px;
   margin-left: 16px;
   list-style-type: square;
 }
 
-/* line 222, ../../../../assets/styles/globals/_typography.scss */
+/* line 227, ../../../../assets/styles/globals/_typography.scss */
 aside p {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
-/* line 226, ../../../../assets/styles/globals/_typography.scss */
+/* line 231, ../../../../assets/styles/globals/_typography.scss */
 ol {
   margin-left: 1.5em;
   list-style-type: decimal-leading-zero;
 }
 
-/* line 242, ../../../../assets/styles/globals/_typography.scss */
+/* line 247, ../../../../assets/styles/globals/_typography.scss */
 code {
   background: #e9e9e9;
   font-size: 12px;
@@ -1336,18 +1328,18 @@ code {
   padding: 0.5em;
 }
 
-/* line 249, ../../../../assets/styles/globals/_typography.scss */
+/* line 254, ../../../../assets/styles/globals/_typography.scss */
 dl {
   line-height: 1.5em;
   padding-bottom: 0.375em;
 }
-/* line 255, ../../../../assets/styles/globals/_typography.scss */
+/* line 260, ../../../../assets/styles/globals/_typography.scss */
 dl dd {
   padding-bottom: 0.75em;
   padding-left: 1.5em;
 }
 
-/* line 261, ../../../../assets/styles/globals/_typography.scss */
+/* line 266, ../../../../assets/styles/globals/_typography.scss */
 table {
   width: 100%;
   font-size: 14px;
@@ -1356,54 +1348,54 @@ table {
   padding-bottom: 0.85714em;
   margin-bottom: 1.28571em;
 }
-/* line 267, ../../../../assets/styles/globals/_typography.scss */
+/* line 272, ../../../../assets/styles/globals/_typography.scss */
 table th, table td {
   padding-top: 0.42857em;
   padding-right: 0.42857em;
   padding-bottom: 0.42857em;
   padding-left: 0.85714em;
 }
-/* line 273, ../../../../assets/styles/globals/_typography.scss */
+/* line 278, ../../../../assets/styles/globals/_typography.scss */
 table th {
   text-align: left;
   vertical-align: top;
 }
 
-/* line 292, ../../../../assets/styles/globals/_typography.scss */
+/* line 297, ../../../../assets/styles/globals/_typography.scss */
 figure {
   position: relative;
   line-height: 0;
 }
-/* line 296, ../../../../assets/styles/globals/_typography.scss */
+/* line 301, ../../../../assets/styles/globals/_typography.scss */
 figure a {
   color: black;
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: 0;
 }
-/* line 302, ../../../../assets/styles/globals/_typography.scss */
+/* line 307, ../../../../assets/styles/globals/_typography.scss */
 figure a:hover {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 309, ../../../../assets/styles/globals/_typography.scss */
+/* line 314, ../../../../assets/styles/globals/_typography.scss */
 figcaption, .rsCaption {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.28571em;
 }
-/* line 313, ../../../../assets/styles/globals/_typography.scss */
+/* line 318, ../../../../assets/styles/globals/_typography.scss */
 figcaption span, .rsCaption span {
   display: block;
   padding: 8px 12px 6px 12px;
 }
-/* line 316, ../../../../assets/styles/globals/_typography.scss */
+/* line 321, ../../../../assets/styles/globals/_typography.scss */
 figcaption span p, .rsCaption span p {
   padding-bottom: 0;
 }
 
-/* line 324, ../../../../assets/styles/globals/_typography.scss */
+/* line 329, ../../../../assets/styles/globals/_typography.scss */
 blockquote, .tab_container .tab-content-caption-block blockquote {
   position: relative;
   font-size: 16px;
@@ -1414,7 +1406,7 @@ blockquote, .tab_container .tab-content-caption-block blockquote {
   padding-left: 68px;
   padding-right: 18%;
 }
-/* line 326, ../../../../assets/styles/globals/_typography.scss */
+/* line 331, ../../../../assets/styles/globals/_typography.scss */
 blockquote span, .tab_container .tab-content-caption-block blockquote span {
   position: absolute;
   top: 0px;
@@ -1423,77 +1415,77 @@ blockquote span, .tab_container .tab-content-caption-block blockquote span {
   background-position: top left;
 }
 
-/* line 347, ../../../../assets/styles/globals/_typography.scss */
+/* line 352, ../../../../assets/styles/globals/_typography.scss */
 hr {
   clear: both;
 }
 
-/* line 384, ../../../../assets/styles/globals/_typography.scss */
+/* line 389, ../../../../assets/styles/globals/_typography.scss */
 .lcf h1 {
   font-size: 48px;
   font-size: 3rem;
 }
-/* line 393, ../../../../assets/styles/globals/_typography.scss */
+/* line 398, ../../../../assets/styles/globals/_typography.scss */
 .lcf .l-content-full-width h2, .lcf .intro-block-with-left-image h2, .lcf.graduate-school h1 {
   margin-bottom: 1em;
 }
-/* line 396, ../../../../assets/styles/globals/_typography.scss */
+/* line 401, ../../../../assets/styles/globals/_typography.scss */
 .lcf h2, .lcf .__media.block h3, .lcf .footer-block h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 399, ../../../../assets/styles/globals/_typography.scss */
+/* line 404, ../../../../assets/styles/globals/_typography.scss */
 .lcf h2 span, .lcf h2 a, .lcf .__media.block h3 span, .lcf .__media.block h3 a, .lcf .footer-block h3 span, .lcf .footer-block h3 a {
   border-bottom: 1px solid black;
 }
-/* line 403, ../../../../assets/styles/globals/_typography.scss */
+/* line 408, ../../../../assets/styles/globals/_typography.scss */
 .lcf .box-text h3 a {
   border-color: white;
 }
-/* line 406, ../../../../assets/styles/globals/_typography.scss */
+/* line 411, ../../../../assets/styles/globals/_typography.scss */
 .lcf h2 {
   letter-spacing: 4px;
 }
-/* line 409, ../../../../assets/styles/globals/_typography.scss */
+/* line 414, ../../../../assets/styles/globals/_typography.scss */
 .lcf .college-footer .size-h2 {
   font-size: 24px;
   font-size: 1.5rem;
   margin-bottom: 1.5em;
   padding-bottom: 0;
 }
-/* line 415, ../../../../assets/styles/globals/_typography.scss */
+/* line 420, ../../../../assets/styles/globals/_typography.scss */
 .lcf .call-to-action h3 {
   font-size: 20px;
   font-size: 1.25rem;
 }
-/* line 417, ../../../../assets/styles/globals/_typography.scss */
+/* line 422, ../../../../assets/styles/globals/_typography.scss */
 .lcf .call-to-action h3 a {
   border: 0 none;
 }
-/* line 424, ../../../../assets/styles/globals/_typography.scss */
+/* line 429, ../../../../assets/styles/globals/_typography.scss */
 .lcf .content h1, .lcf .content h2, .lcf.home h2, .lcf .call-to-action h3 {
   text-align: center;
 }
-/* line 431, ../../../../assets/styles/globals/_typography.scss */
+/* line 436, ../../../../assets/styles/globals/_typography.scss */
 .lcf .content .text-block h2, .lcf .content .text-block h3, .lcf .content .text-block h4, .lcf .content .l-content h2, .lcf .content .l-content h3, .lcf .content .l-content h4 {
   text-align: left;
 }
 
-/* line 442, ../../../../assets/styles/globals/_typography.scss */
+/* line 447, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .header-wrapper h1, .graduate-school .dd-menu-dropdown-wrapper h1 {
   display: none;
 }
-/* line 446, ../../../../assets/styles/globals/_typography.scss */
+/* line 451, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1, .graduate-school .content-wrapper h2, .graduate-school .content-wrapper h3, .graduate-school .content-wrapper h4, .graduate-school .content-wrapper h5, .graduate-school .content-wrapper h6, .graduate-school .content-wrapper .call-to-action h3 a {
   font-family: Times, serif;
   font-weight: normal;
   letter-spacing: 1px;
 }
-/* line 451, ../../../../assets/styles/globals/_typography.scss */
+/* line 456, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1, .graduate-school .content-wrapper h2 {
   background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
 }
-/* line 454, ../../../../assets/styles/globals/_typography.scss */
+/* line 459, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1 {
   font-size: 36px;
   font-size: 2.25rem;
@@ -1501,7 +1493,7 @@ hr {
   margin-bottom: 0.8em;
   letter-spacing: 5px;
 }
-/* line 460, ../../../../assets/styles/globals/_typography.scss */
+/* line 465, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h2 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -6238,16 +6230,20 @@ li:last-child {
 }
 
 /* line 3, ../../../../assets/styles/components/_images.scss */
+.csm img {
+  border-bottom: 2px solid #d10000;
+}
+/* line 6, ../../../../assets/styles/components/_images.scss */
 .lcc img {
   border: 4px solid black;
 }
-/* line 7, ../../../../assets/styles/components/_images.scss */
+/* line 10, ../../../../assets/styles/components/_images.scss */
 a img {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-/* line 15, ../../../../assets/styles/components/_images.scss */
+/* line 18, ../../../../assets/styles/components/_images.scss */
 .resrc {
   width: 100%;
 }
@@ -6959,14 +6955,14 @@ a img {
   width: 50%;
 }
 /* line 398, ../../../../assets/styles/components/_blocks.scss */
-.csm .two-up li h3, .csm .two-up li p, .csm .three-up li h3, .csm .three-up li p {
+.csm .two-up li h3, .csm .three-up li h3 {
+  padding: 18px;
+}
+/* line 401, ../../../../assets/styles/components/_blocks.scss */
+.csm .two-up li p, .csm .three-up li p {
   padding: 0 18px 18px 18px;
 }
-/* line 402, ../../../../assets/styles/components/_blocks.scss */
-.csm .two-up li figure img, .csm .three-up li figure img {
-  border-bottom: 2px solid #d10000;
-}
-/* line 404, ../../../../assets/styles/components/_blocks.scss */
+/* line 407, ../../../../assets/styles/components/_blocks.scss */
 .csm .two-up li figure img:hover, .csm .three-up li figure img:hover {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
@@ -6974,22 +6970,27 @@ a img {
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
 }
-/* line 413, ../../../../assets/styles/components/_blocks.scss */
-.csm .two-up li a:hover, .csm .three-up li a:hover {
-  color: white;
-}
 /* line 416, ../../../../assets/styles/components/_blocks.scss */
 .csm .two-up li:hover, .csm .three-up li:hover {
   background-color: #d10000;
   color: white;
 }
+/* line 419, ../../../../assets/styles/components/_blocks.scss */
+.csm .two-up li:hover h3 a, .csm .three-up li:hover h3 a {
+  color: white;
+  border-bottom: 1px dotted white;
+}
+/* line 422, ../../../../assets/styles/components/_blocks.scss */
+.csm .two-up li:hover h3 a:hover, .csm .three-up li:hover h3 a:hover {
+  border-bottom: 1px solid white;
+}
 
-/* line 426, ../../../../assets/styles/components/_blocks.scss */
+/* line 433, ../../../../assets/styles/components/_blocks.scss */
 .lcc .__gallery h3 {
   border-bottom: none;
   line-height: 16px;
 }
-/* line 429, ../../../../assets/styles/components/_blocks.scss */
+/* line 436, ../../../../assets/styles/components/_blocks.scss */
 .lcc .__gallery h3 a {
   text-transform: none;
   font-size: 16px;
