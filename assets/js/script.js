@@ -149,7 +149,7 @@ $(document).ready(function(){
     if (_no_of_li_items > 1) {
       var _menuHtml = $('.sidebar').html();
       var _sideBarTitle = $('.sidebar li').first();
-      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon icon-menu-1"></a>';
+      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar"></a>';
       var _mobMenuContent;
 
 
@@ -172,12 +172,12 @@ $(document).ready(function(){
         
         if (_clicked.hasClass('active')) {
           _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-          _clicked.html('☰').removeClass('active');
+          _clicked.removeClass('active');
         }
         else {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
         // update the menu button and set class to active
-        _clicked.html('❌').addClass('active');
+        _clicked.addClass('active');
         }
       });
 
