@@ -53,11 +53,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-%icon { font-family: "fontello"; }
-%icon-social { font-family: "fontello"; }
-
-.icon { font-family: "fontello"; }
-.icon-social { font-family: "fontello"; }
 
 
 
@@ -116,23 +111,3 @@
 .icon-battery:before { content: '\e820'; } /* '' */
 .icon-search:before { content: '\e82b'; } /* '' */
 .icon-link:before { content: '\e82c'; } /* '' */
-
-
-
-li.download {
-padding-left: 0px;
-margin-left: 0px;
-list-style-type: none;
-}
-
-
-.download:before {
-    @extend %icon-base;
-    color: green !important;
-    content: "\e808";
-}
-
-.external:after {
-    @extend %icon-base;
-    content: "\e828";
-}

@@ -424,3 +424,29 @@ b, strong, h2, h3, h4 {
         }
     }
 }
+
+
+// text elements with icons applied
+
+
+%icon { font-family: "fontello"; }
+%icon-social { font-family: "fontello"; }
+
+.icon { font-family: "fontello"; }
+.icon-social { font-family: "fontello"; }
+
+
+li.download {
+  padding-left: 0px;
+  margin-left: 0px;
+  list-style-type: none;
+  a:before {
+    @extend %icon;
+    content: "\e808";
+  }
+}
+
+.external a:after {
+    @extend %icon;
+    content: "\e828";
+}
