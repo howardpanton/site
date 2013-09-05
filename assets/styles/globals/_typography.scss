@@ -427,9 +427,9 @@ b, strong, h2, h3, h4 {
     }
 }
 
-
+// --------------------------------
 // text elements with icons applied
-
+// --------------------------------
 
 %icon { font-family: "fontello"; }
 %icon-social { font-family: "fontello"; }
@@ -437,7 +437,7 @@ b, strong, h2, h3, h4 {
 .icon { font-family: "fontello"; }
 .icon-social { font-family: "fontello"; }
 
-
+// add a PDF icon to links to a PDF download
 li.download {
   padding-left: 0px;
   margin-left: 0px;
@@ -448,7 +448,49 @@ li.download {
   }
 }
 
+// icon to any external links
 .external a:after {
     @extend %icon;
     content: "\e828";
 }
+
+
+// social media links icons 
+
+.facebook-link:before, .twitter-link:before, 
+.flickr-link:before, .youtube-link:before,
+.pinterest-link:before, .vimeo-link:before,
+.tumblr-link:before, .linkedIn-link:before,
+.gplus-link:before, .github-link:before {
+  @extend %icon;
+  min-width: 1.3em;
+  display: inline-block;
+  text-align: left;
+  //padding-right: rhythm(2, 16px);
+  border-bottom: 0;
+}
+
+.facebook-link:before { content: '\e816'; }
+
+.twitter-link:before { content: '\e817'; }
+
+.flickr-link:before { content: '\e819'; }
+
+.youtube-link:before { content: '\e835'; }
+
+.linkedIn-link:before { content: '\e832'; }
+
+.tumblr-link:before { content: '\e830'; }
+
+.vimeo-link:before { content: '\e81b'; }
+
+.pinterest-link:before { content: '\e82e'; }
+
+.gplus-link:before { content: '\e834'; }
+
+.github-link:before { content: '\e81d'; }
+
+
+
+
+
