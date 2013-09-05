@@ -55,11 +55,11 @@ if (strpos($video_url,"vimeo") !== false) {
               
               if ($video_type == "youtube") { ?>
               
-              <iframe src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
+              <iframe class="video-embed" src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
           
               <?php } else { // Vimeo embed ?>
 
-              <iframe src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <iframe class="video-embed" src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               
               <?php } 
               
