@@ -774,6 +774,14 @@ if ($('.js-lightbox').length > 0) {
 
 // End tabs to accordion 
 
+// FitVids for Media Blocks
+
+if ($('.__media').length > 0) {
+  $.getScript('<t4 type="media" id="229707" formatter="javascript/*"/>', function() {
+    $('.__media').fitVids();
+  });
+}
+
 
 if ($('video').length > 0) {
 
