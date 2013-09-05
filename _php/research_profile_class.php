@@ -1,4 +1,3 @@
-<!-- Research Profile Class -->
 <?php
 // check whether class exists
 if(class_exists('Profile') != true) 

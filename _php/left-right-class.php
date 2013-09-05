@@ -1,4 +1,3 @@
-<!-- Left or Right Class -->
 <?php
 // check whether class exists
 if(class_exists('LeftRight') != true) 

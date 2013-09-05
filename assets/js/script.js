@@ -84,14 +84,6 @@ var waitForFinalEvent = (function () {
 })();
 
 
-// fastclick library: https://github.com/ftlabs/fastclick
-// window.addEventListener('load', function() {
-//     FastClick.attach(document.body);
-// }, false);
-
-
-
-
 
 // enables UAL themed select boxes
 function enableSelectBoxes() {
@@ -135,27 +127,9 @@ $(document).ready(function(){
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
-
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
 
-    // $.when(
-    //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.nicescroll.js" ),
-    //       $.Deferred(function( deferred ){
-    //           $( deferred.resolve );
-    //       })
-    //   ).done(function(){
-    //     $('.breadcrumbs').niceScroll({horizrailenabled:true});
-    //   });
-
-    // build mobile breadcrumbs from copy of desktop breadcrumbs, 
-    // add class to hide them on desktop & then insert before the first footer on the page  
-    
-    var _mobileBreadCrumbs = $('.breadcrumbs').clone();
-    var _ual_footer = $('.global-footer').find('.footer-wrapper').first();
-    _mobileBreadCrumbs.removeClass('t-hide m-hide').addClass('d-hide');
-    //_mobileBreadCrumbs.wrap('<div class="footer-wrapper" />');
-    _ual_footer.prepend(_mobileBreadCrumbs);
   }
 
    
@@ -182,10 +156,6 @@ $(document).ready(function(){
         _mobMenuContent = _menuHtml;
       }
 
-
-
-       
-      
       // create mobile sidebar div and add it to the main content div
       $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
@@ -232,37 +202,12 @@ $(document).ready(function(){
     });
   }
 
-
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
     enableSelectBoxes();
   
   }
-
-  // check for fitText classes
-  // if ($('#icon-fit-text').length > 0) {
-    
-  //   //load fitText library
-  //   $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery.fittext.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-
-  //       // use fitText on elements with a fit-text class
-  //       $('#icon-fit-text').fitText();
-  //   });
-  
-  // }
-
-  // use fit text for social media icons in footer
-  // if ($('.icon-fit-text').length > 0) {
-  //   $('.icon-fit-text').fitText(0.1,{ maxFontSize: '120px' });
-  // }
-
-  
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
@@ -312,39 +257,17 @@ $(document).ready(function(){
 
 
 
-  ////////////////////
-  //  Stick div to top of browser on scroll 
-  ///////////////////
 
-  // function moveScroller() {
-  //   var move = function() {
-  //     var st = $(window).scrollTop();
-  //     var ot = $(".l-short-courses-list").offset().top; 
-  //     var s = $(".grid");
-  //     if(st > ot) {
-  //       s.css({
-  //         position: "fixed",
-  //         top: "0px",
-  //         bottom: "25%"
-  //       });
-  //     } else {
-  //       if(st <= ot) {
-  //         s.css({
-  //           position: "relative",
-  //           top: ""
-  //         });
-  //       }
-  //     }
-  //   };
-  //   $(window).scroll(move);
-  //   move();
-  // }
-
-  // $(function() {
-  //   moveScroller();
-  // });
-
-  $(function() {
+if ($('#container').length > 0) {
+  $.when(
+      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
+      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.Deferred(function( deferred ){
+          $( deferred.resolve );
+      })
+  ).done(function(){
+    // initialise skrollr to handle movement of the circles
+      $(function() {
 
       var container = $("#container"),
           pagination = $("#pagination");
@@ -362,21 +285,11 @@ $(document).ready(function(){
           });
       };
 
-      function destroyPagination () {
-          pagination.jPages("destroy");
-      };
-
-      setPagination();
-
-      $.filtrify("container", "placeHolder", {
-          block : "data-original",
-          callback : function() {
-              destroyPagination();
-              setPagination();
-          }
-      });
-
   });
+  });
+
+}
+
 
 
 
@@ -526,26 +439,33 @@ $(document).ready(function(){
   /////// accreditation
   ///////////////////////
 
-  // $(".accreditation").hide();
-
-    // detect search filters on page
-
-     //allow expand and close for search filters
+  // Show image credits button fixed to the right of the screen on Desktop only
   
   if ($('.credits').length > 0) {
-    $('.credits-btn').addClass("show");
-    $('.show-credits').click(function(event) {
-      event.preventDefault();
-      // $('.credits').toggle();
-      var c = $(this);
-      if (c.hasClass('active') ) {
-        c.removeClass('active').html("Show Credits");
-        $('.credits').fadeOut();
-      } else {
-        c.addClass('active').html("Hide Credits");
-        $('.credits').fadeIn();
-      }
-    });
+
+    //  
+    if ($('body').hasClass('gDesktop')) {
+      $('.credits-btn').addClass("show");
+      
+      $('.show-credits').click(function(event) {
+        event.preventDefault();
+      
+        var c = $(this);
+        if (c.hasClass('active') ) {
+          c.removeClass('active').html("Show Credits");
+          $('.credits').fadeOut();
+        } else {
+          c.addClass('active').html("Hide Credits");
+          $('.credits').fadeIn();
+        }
+      });
+    }
+
+    // show image credits by default on tablet and mobile
+    else {
+      $('.credits').show();
+    }
+    
   }
 
 
@@ -671,87 +591,67 @@ if ($('.search-filters').length > 0) {
 
 
 // Showtime JSON loader
-if ($('.showtime-json').length){
+if ($('#showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/magnific-lightbox.js', function() {
 
-   var outputNode = $('.showtime-json');
-
-   outputNode.each( function(key, value) {
-
-      _node = this;
-
-      var feedUrl = $(_node).data('url');
-      // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
-      var limit = $(_node).data('limit');
-
-
-      $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
-           
-         var string = '';
-         var media = '';
-         var studentName = '';
-         var profileUrl = '';
-         var counter = 0;
-                 
-         if (data.data.Student) { // this is a single Showtime profile
-           profileUrl = data.data.Student.Student.profileurl;
-           studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
-           media = data.data.Student.Media;
-         } 
-         
-         if (data.data.Profiles) { // this is a group of objects in Showtime
-           media = data.data.Profiles;
-         }
-
-         $.each(media, function(i, item) {
-
-               if (counter < limit) {
-
-                  profileImg = item.thumb.split('gallery');
-                  item.profileImg = profileImg[0] + 'profile.jpg';
-                  item.zoomImg = profileImg[0] + 'screen.jpg';
-                  
-                  if (item.profileName) { //group
-                     profileUrl = 'http://showtime.arts.ac.uk/' + item.profileName;
-                     studentName = item.fullName;
-                  }
-
-                  string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
-
-                  //console.log(key);
-
-                  $(_node).eq(key).append(string); 
-
-                 counter++;
-
-               } else {
-                 return false;
-               }
-
-         }); // end each loop
-         
-         $('.zoom').magnificPopup({ 
-           type: 'image',
-           image: {
-             titleSrc: function(item) {
-               return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
-             }
-           },
-           gallery: {
-             enabled: true,
-             navigateByImgClick: true,
-             preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-           } 
-         });
-
-      }); // end getJSON loop
+    var feedUrl = $('#showtime-json').data('url');
+    // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
+    var limit = $('#showtime-json').data('limit');
     
-   }); // end each loop
-    
-    
+    $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
+        
+      var outputNode = $('#showtime-json');
+      var string = '';
+      var media = '';
+      var counter = 0;
+              
+      if (data.data.Student) { // this is a single Showtime profile
+        var profileUrl = data.data.Student.Student.profileurl;
+        var studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
+        media = data.data.Student.Media;
+      } 
+      
+      if (data.data.Profiles) { // this is a group of objects in Showtime
+        media = data.data.Profiles;
+      }
 
+      $.each(media, function(i, item) {
+
+            if (counter < limit) {
+
+              profileImg = item.thumb.split('gallery');
+              item.profileImg = profileImg[0] + 'profile.jpg';
+              item.zoomImg = profileImg[0] + 'screen.jpg';
+      
+              string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
+            
+              outputNode.append(string); 
+
+              counter++;
+
+            } else {
+              return false;
+            }
+
+      }); // end each loop
+      
+      $('.zoom').magnificPopup({ 
+        type: 'image',
+        image: {
+          titleSrc: function(item) {
+            return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+          }
+        },
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        } 
+      });
+
+    }); // end getJSON loop
 
   }); // end getScript loop
   
