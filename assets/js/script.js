@@ -767,7 +767,6 @@ if ($('video').length > 0) {
 
 }
 
-
 // add icons to social media links inside .l-content
 $('.l-content a[href*="facebook"]').addClass('facebook-link');
 

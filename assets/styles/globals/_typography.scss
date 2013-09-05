@@ -450,12 +450,12 @@ li.download {
 // icon to any external links
 .external:after {
     @extend %icon;
-    min-width: 1.3em; 
+    min-width: 1.5em; 
     text-align: right;
+    vertical-align: middle;
     display: inline-block;
-    content: "\e828";
+    content: '\e837';
 }
-
 
 // social media links icons 
 
@@ -465,12 +465,24 @@ li.download {
 .tumblr-link:before, .linkedIn-link:before,
 .gplus-link:before, .github-link:before {
   @extend %icon;
-  min-width: 1.3em;
+  min-width: 1.5em;
   display: inline-block;
   text-align: left;
-  //padding-right: rhythm(2, 16px);
   border-bottom: 0;
+  text-decoration: none;
 }
+
+// disable the external link icon for social media links
+.facebook-link:after, .twitter-link:after, 
+.flickr-link:after, .youtube-link:after,
+.pinterest-link:after, .vimeo-link:after,
+.tumblr-link:after, .linkedIn-link:after,
+.gplus-link:after, .github-link:after {
+  .external & { 
+    display: none !important; // to hide the external link icon
+  }
+}
+
 
 .facebook-link:before { content: '\e816'; }
 
