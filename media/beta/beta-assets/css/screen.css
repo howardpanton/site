@@ -1494,7 +1494,7 @@ li.download a:before, .external:after, .facebook-link:before, .twitter-link:befo
 .flickr-link:before, .youtube-link:before,
 .pinterest-link:before, .vimeo-link:before,
 .tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
+.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after, .pagination .page-prev a, .pagination .page-next a {
   font-family: "fontello";
 }
 
@@ -1617,9 +1617,12 @@ li.download a:before {
   height: 96px;
   display: block;
   background-position: 0% 0%;
+  position: absolute;
+  top: 16px;
+  left: 12px;
 }
 
-/* line 8, ../../../../assets/styles/globals/_logos.scss */
+/* line 11, ../../../../assets/styles/globals/_logos.scss */
 .ual-logo-tab-mobile .icon-ual-mobile, .docs-logo .icon-ual-mobile, .style-guide .ual-logo-tab-mobile, .style-guide .docs-logo, .ual-logo-tab-mobile .logo-ual-mobile {
   width: 54px;
   height: 36px;
@@ -1630,32 +1633,32 @@ li.download a:before {
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 18, ../../../../assets/styles/globals/_logos.scss */
+  /* line 21, ../../../../assets/styles/globals/_logos.scss */
   .ual-logo-tab-mobile, .docs-logo {
     display: none;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 23, ../../../../assets/styles/globals/_logos.scss */
+  /* line 26, ../../../../assets/styles/globals/_logos.scss */
   .style-guide .ual-logo-tab-mobile, .style-guide .docs-logo {
     display: block;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 32, ../../../../assets/styles/globals/_logos.scss */
+  /* line 35, ../../../../assets/styles/globals/_logos.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 32, ../../../../assets/styles/globals/_logos.scss */
+  /* line 35, ../../../../assets/styles/globals/_logos.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
-/* line 45, ../../../../assets/styles/globals/_logos.scss */
+/* line 48, ../../../../assets/styles/globals/_logos.scss */
 .logo {
   display: block;
   float: left;
@@ -1666,14 +1669,14 @@ li.download a:before {
   padding-bottom: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 45, ../../../../assets/styles/globals/_logos.scss */
+  /* line 48, ../../../../assets/styles/globals/_logos.scss */
   .logo {
     margin-bottom: 0px;
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 45, ../../../../assets/styles/globals/_logos.scss */
+  /* line 48, ../../../../assets/styles/globals/_logos.scss */
   .logo {
     clear: both;
     display: block;
@@ -1683,11 +1686,11 @@ li.download a:before {
     margin-bottom: 0px;
   }
 }
-/* line 91, ../../../../assets/styles/globals/_logos.scss */
+/* line 94, ../../../../assets/styles/globals/_logos.scss */
 .logo img {
   max-width: none;
 }
-/* line 95, ../../../../assets/styles/globals/_logos.scss */
+/* line 98, ../../../../assets/styles/globals/_logos.scss */
 .service-manual .logo {
   display: block;
   float: left;
