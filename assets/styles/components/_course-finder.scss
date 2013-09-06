@@ -50,6 +50,48 @@
   margin-bottom: 24px;
   border: 6px solid white;
   height: 60px;
+
+  .icon-search,
+  .search-submit  {
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 48px;
+    @include font-size(16);
+    text-align: center;
+    cursor: pointer;
+    // @include gs-media(d, min-max) {
+    //   height: 36px;
+    //   // width: 36px;
+    //   min-width: gs-width(d, 16, 16, (1, 16), true) + 1;
+    //   line-height: 36px;
+    // }
+  }
+
+  .icon-search {
+    @extend %icon;
+    color: $white;
+    background-color: $black;
+    z-index: 90;
+    @include font-size(24);
+    speak: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    @include gs-media(d, min-max) {
+      @include font-size(24);
+    }
+
+  }
+
+  .icon-search:hover {
+    background-color: $dark-gray;
+  }
 }
 
 .course-search-form, .site-search-form {
@@ -401,51 +443,9 @@ input, .search-result-module, .search-input-wrap {
 .lower-search-again-box {
   clear: left;
   @include margin-leader(4);
-
-
-  .icon-search,
-  .search-submit  {
-    width: 48px;
-    height: 48px;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    line-height: 48px;
-    @include font-size(16);
-    text-align: center;
-    cursor: pointer;
-    // @include gs-media(d, min-max) {
-    //   height: 36px;
-    //   // width: 36px;
-    //   min-width: gs-width(d, 16, 16, (1, 16), true) + 1;
-    //   line-height: 36px;
-    // }
-  }
-
-  .icon-search {
-    @extend %icon;
-    color: $white;
-    background-color: $black;
-    z-index: 90;
-    @include font-size(24);
-    speak: none;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    @include gs-media(d, min-max) {
-      @include font-size(24);
-    }
-
-  }
-
-  .icon-search:hover {
-    background-color: $dark-gray;
-  }
-
 }
+
+
 
 .enrolment-type, .result-file-type { 
   width: 32%;
