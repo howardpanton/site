@@ -30,7 +30,7 @@ body {
 // Global link colors
 
 a {
-	@extend %Swiss721BT-Roman;
+	// @extend %Swiss721BT-Roman;
 	color: $black;
 	text-decoration: none;
 	padding-bottom: 1px;
@@ -39,19 +39,27 @@ a {
 		color: $aaa-gray;
 		padding-bottom: 1px;
 		border-bottom: 1px dotted $black;
+		.lcc & {
+			color: $lcc-secondary-pink;
+		}
 	}
-	h2 & {
-		@extend %Swiss721BT-Bold;
-	}
+	// h2 & {
+	// 	@extend %Swiss721BT-Bold;
+	// }
 	h3 & {
-		@extend %Swiss721BT-Bold;
+		.lcc & {
+			border-bottom: none;
+		}
 	}
-	h4 & {
-		@extend %Swiss721BT-Bold;
+	// h4 & {
+	// 	@extend %Swiss721BT-Bold;
+	// }
+	.size-big & {
+		border-bottom: none;
 	}
 }
 
-h1 {
+h1, .size-h1 {
 	@include font-size(54);
 	@include adjust-leading-to(10, 54px); 	
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
@@ -68,6 +76,37 @@ h1 {
 	}
 }
 
+h2 {
+	.csm & {
+		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
+	}
+	.lcc & {
+		@include font-size(54);
+		@extend %LeagueGothicRegular;
+	  text-transform: uppercase;
+	}	
+}
+
+h3 {
+	.csm & {
+    @extend %BureauGrotBold;
+	}
+	.lcc & {
+		@include font-size(36);
+		@include adjust-leading-to(7, 36px); 	
+		@extend %LeagueGothicRegular;
+		padding: rhythm(3, 36px) 0 rhythm(1, 36px) 0;
+	  text-transform: uppercase;
+	  border-bottom: 4px solid $black;
+	  margin-bottom: 18px;
+	}	
+}
+
+
+
+
+
+
 h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
 }
@@ -76,49 +115,33 @@ h2, h3 {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold;		
 	}
-  .csm & {
-		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-    // @extend %BureauGrotBold;
-  }	
-  .lcc & {
-		@extend %LeagueGothicRegular;
-	  text-transform: uppercase;
-	  border-bottom: 4px solid $black;
-	  margin-bottom: 18px;
-	  padding: 0 0 12px 0;
-	}	
+  // .csm & {
+		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
+  //   // @extend %BureauGrotBold;
+  // }	
 }
 
-h2 {
-  .lcc & {
-	}	
-}
 
-h3 {
-  .lcc & {
-		@include font-size(36);
-	}	
-}
 
 h2 a, h3 a {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold;		
 	}
-  .csm & {
-		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-    // @extend %BureauGrotBold;
-  }	
- 	.lcc & {
-		@extend %LeagueGothicRegular;
-	  text-transform: uppercase;
-	  border-bottom: none;
-	  &:hover {
-	  	color: $lcc-secondary-pink;
-	  }
-	}
+  // .csm & {
+		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
+  //   // @extend %BureauGrotBold;
+  // }	
+ // 	.lcc & {
+	// 	@extend %LeagueGothicRegular;
+	//   text-transform: uppercase;
+	//   border-bottom: none;
+	//   &:hover {
+	//   	color: $lcc-secondary-pink;
+	//   }
+	// }
 }
 
-h2 {
+h2, .size-h2 {
 	@include font-size(36);
 	@include adjust-leading-to(7, 36px); 	
 	padding: rhythm(3, 36px) 0 rhythm(3, 36px) 0;
@@ -134,6 +157,16 @@ h4, .size-h4 {
 	@include font-size(18);
 	@include adjust-leading-to(4, 18px); 	
 	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
+}
+
+.size-big {
+	.lcc & {
+		@include font-size(54); 
+		border-top: none;
+	  border-bottom: 4px solid $black;
+	  padding-bottom: 18px;
+	  margin-bottom: 18px;
+	}
 }
 
 h5 {
@@ -177,7 +210,7 @@ p {
 	@include font-size(16);
 }
 
-aside, .__text {
+aside, .l-content {
 	ul {
 		li {
 			padding-left: 9px;
@@ -185,10 +218,10 @@ aside, .__text {
 			list-style-type: square;
 		}
 	}
-	h3 {
-		@extend .size-h4;
-		@include padding-leader(1);
-	}
+	// h3 {
+	// 	@extend .size-h4;
+	// 	@include padding-leader(1);
+	// }
 }
 
 aside p {
@@ -263,7 +296,8 @@ table {
 
 figure {
 	position: relative; // for credits
-	margin-bottom: rhythm(3, 14px);
+	// margin-bottom: rhythm(3, 14px);
+	line-height: 0;
 	a {
 		@extend %Swiss721BT-Light;
 		color: $black;
@@ -319,35 +353,11 @@ hr {
 	clear: both;
 }
 
-// // // Custom Web Fonts
-
-// // .Swiss721BT-Light { font-family: Swiss721BT-Light; }
-// // .Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
-// // .Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
-// // .Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
-// // .Swiss721BT-Black { font-family: Swiss721BT-Black; }
-// // .Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
-
-// // // CCW
-// // .BrandonText-Bold { font-family: BrandonText-Bold; }
-// // .BrandonText-Regular { font-family: BrandonText-Regular; }
-
-// // // LCC
-// // .LeagueGothicRegular { font-family: LeagueGothicRegular; }
-// // .LeagueGothicItalic { font-family: LeagueGothicItalic; }
-// // .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
-// // .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
-
-// // // CSM
-// // .BureauGrotBold { font-family: BureauGrotBold; }
-
-
-// LCF Variants 
-
 b, strong, h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
 }
 
+// LCF Variants 
 .lcf {
 	h1,h2 a,h3,h3 a {
 		@extend %Swiss721BT-Black;
@@ -355,7 +365,8 @@ b, strong, h2, h3, h4 {
 	h1 {
 		@include font-size(48);
 	}
-	.search-results-list h3 a, 
+	.search-results-list h3 a,
+	.__gallery h3 a, 
 	.accordion h3,
 	.dd-menu h3,
 	h4,h5,h6 {
@@ -390,7 +401,6 @@ b, strong, h2, h3, h4 {
 		}
 	}
 
-
     // centered headings
     .content h1, .content h2, &.home h2, .call-to-action h3 {
         text-align: center;
@@ -407,8 +417,7 @@ b, strong, h2, h3, h4 {
 }
 
 
-// // GRADUATE SCHOOL
-
+// GRADUATE SCHOOL
 .graduate-school {
 	.header-wrapper h1 {
 		display: none;
