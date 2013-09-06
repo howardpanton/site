@@ -67,8 +67,11 @@ if (strpos($video_url,"vimeo") !== false) {
 
               <video src="<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;" controls="control" preload="none"></video>
 
-          <?php } // end if has video url
-          } // end if is video
+            <?php } // end if has video url ?>
+
+            <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<div class=&quot;caption&quot;><span>$value</span></div>" />
+
+          <?php } // end if is video
 
           // check that an image has been uploaded
           if ($media_type == "image" && $media_file_url != "") {
@@ -84,7 +87,7 @@ if (strpos($video_url,"vimeo") !== false) {
               <img data-src="http://app.resrc.it/http://beta.arts.ac.uk<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
 
             <?php } ?>
-    
+
             <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<figcaption><span>$value</span></figcaption> " />
             
             <t4 type="content" name="Image Credit" output="selective-output" modifiers="" format="<div class=&quot;credits&quot;>$value</div>"  />
