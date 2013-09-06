@@ -1,45 +1,21 @@
 // Video Component styling
-
-
-// styles to handle aspect ratio for responsive videos
-.intrinsicRatio {
-	position:relative;
-	overflow:visible;
-	height:0;
+video {
+	max-width: 100%;
+	height: auto;
 }
 
-.ratio16to9 {
-	padding-bottom:56.25%;
+iframe,
+embed,
+object {
+	max-width: 100%;
 }
 
-
-.intrinsicRatio div,
-.intrinsicRatio object,
-.intrinsicRatio embed {
-	// position:absolute !important;
-	/* Everything following breaks iPhone and iPad(!) */
-	/*
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:teal;
-	*/
-}
-
-
-
-
-// hide the JW player logo image
-
-#vid-player_logo {
-	visibility: hidden !important;
-	opacity: 0 !important;
+.video-embed {
+	@include component-spacing-bottom;
 }
 
 
 // Media Element CSS
-
 .mejs-container {
 	position: relative;
 	background: #000;
