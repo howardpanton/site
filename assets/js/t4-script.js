@@ -13,6 +13,15 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
+$(".date").each( function(i, element) {
+  
+  dateString = this.textContent;
+  var idx = dateString.indexOf(",");
+  var t = dateString.substr(idx + 2, 11);
+
+  $(this).text(t);
+  
+});
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
