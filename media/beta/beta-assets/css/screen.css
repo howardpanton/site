@@ -1426,7 +1426,7 @@ hr {
   font-size: 3rem;
 }
 /* line 398, ../../../../assets/styles/globals/_typography.scss */
-.lcf .l-content-full-width h2, .lcf .intro-block-with-left-image h2, .lcf.graduate-school h1 {
+.lcf .l-content-full-width h2, .lcf #container h2, .lcf .intro-block-with-left-image h2, .lcf.graduate-school h1 {
   margin-bottom: 1em;
 }
 /* line 401, ../../../../assets/styles/globals/_typography.scss */
@@ -3453,7 +3453,7 @@ a.img:hover {
 @media only screen and (min-width: 960px) {
   /* line 90, ../../../../assets/styles/globals/_layout.scss */
   .row, .megamenu .dropdown_12columns .small-text-link,
-  .megamenu .dropdown_fullwidth .small-text-link, .submenu > div, footer .copyright, .l-full-width, .four-up.l-content-full-width {
+  .megamenu .dropdown_fullwidth .small-text-link, .submenu > div, footer .copyright, .l-full-width, .four-up.l-content-full-width, .four-up#container {
     clear: both;
     display: block;
     float: left;
@@ -3552,7 +3552,7 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 157, ../../../../assets/styles/globals/_layout.scss */
-  .l-content-full-width, .two-up.l-content-full-width, .two-up.l-content-half-width, .three-up.l-content-full-width {
+  .l-content-full-width, #container, .two-up.l-content-full-width, .two-up#container, .two-up.l-content-half-width, .three-up.l-content-full-width, .three-up#container {
     display: block;
     float: left;
     margin-left: 0%;
@@ -3669,7 +3669,7 @@ a.img:hover {
 }
 
 /* line 245, ../../../../assets/styles/globals/_layout.scss */
-.l-content-full-width {
+.l-content-full-width, #container {
   margin-bottom: 3em;
 }
 
@@ -6750,7 +6750,7 @@ a img {
 }
 @media only screen and (min-width: 960px) {
   /* line 256, ../../../../assets/styles/components/_blocks.scss */
-  .two-up.l-content-full-width li {
+  .two-up.l-content-full-width li, .two-up#container li {
     display: block;
     float: left;
     margin-left: 0%;
@@ -6758,7 +6758,7 @@ a img {
     width: 48.31199%;
   }
   /* line 259, ../../../../assets/styles/components/_blocks.scss */
-  .two-up.l-content-full-width li:nth-child(2n) {
+  .two-up.l-content-full-width li:nth-child(2n), .two-up#container li:nth-child(2n) {
     display: block;
     float: left;
     margin-left: 51.68801%;
@@ -6803,7 +6803,7 @@ a img {
 }
 @media only screen and (min-width: 960px) {
   /* line 296, ../../../../assets/styles/components/_blocks.scss */
-  .three-up.l-content-full-width li {
+  .three-up.l-content-full-width li, .three-up#container li {
     display: block;
     float: left;
     margin-left: 0%;
@@ -6811,7 +6811,7 @@ a img {
     width: 31.08265%;
   }
   /* line 299, ../../../../assets/styles/components/_blocks.scss */
-  .three-up.l-content-full-width li:nth-child(2n) {
+  .three-up.l-content-full-width li:nth-child(2n), .three-up#container li:nth-child(2n) {
     display: block;
     float: left;
     margin-left: 34.45868%;
@@ -6819,7 +6819,7 @@ a img {
     width: 31.08265%;
   }
   /* line 302, ../../../../assets/styles/components/_blocks.scss */
-  .three-up.l-content-full-width li:nth-child(3n) {
+  .three-up.l-content-full-width li:nth-child(3n), .three-up#container li:nth-child(3n) {
     display: block;
     float: left;
     margin-left: 68.91735%;
@@ -6917,7 +6917,7 @@ a img {
 }
 @media only screen and (min-width: 960px) {
   /* line 370, ../../../../assets/styles/components/_blocks.scss */
-  .four-up.l-content-full-width li {
+  .four-up.l-content-full-width li, .four-up#container li {
     display: block;
     float: left;
     margin-left: 0%;
@@ -6925,7 +6925,7 @@ a img {
     width: 23.39636%;
   }
   /* line 373, ../../../../assets/styles/components/_blocks.scss */
-  .four-up.l-content-full-width li:nth-child(2n) {
+  .four-up.l-content-full-width li:nth-child(2n), .four-up#container li:nth-child(2n) {
     display: block;
     float: left;
     margin-left: 25.89636%;
@@ -6933,7 +6933,7 @@ a img {
     width: 23.01718%;
   }
   /* line 376, ../../../../assets/styles/components/_blocks.scss */
-  .four-up.l-content-full-width li:nth-child(3n) {
+  .four-up.l-content-full-width li:nth-child(3n), .four-up#container li:nth-child(3n) {
     display: block;
     float: left;
     margin-left: 51.41355%;
@@ -6941,7 +6941,7 @@ a img {
     width: 23.01718%;
   }
   /* line 379, ../../../../assets/styles/components/_blocks.scss */
-  .four-up.l-content-full-width li:nth-child(4n) {
+  .four-up.l-content-full-width li:nth-child(4n), .four-up#container li:nth-child(4n) {
     display: block;
     float: left;
     margin-left: 76.93073%;
@@ -11099,20 +11099,22 @@ ul.ft-menu {
 
 /* line 31, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin-right: 30px;
-  background: none !important;
-  position: relative !important;
+  display: block;
+  width: 100%;
+  background-color: #e9e9e9;
+  margin-bottom: 1px;
+  text-transform: capitalize;
 }
 
-/* line 40, ../../../../assets/styles/components/_filtrify.scss */
+/* line 45, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label {
   cursor: pointer;
+  display: inline-block;
+  padding: 12px;
+  width: 100%;
 }
 
-/* line 43, ../../../../assets/styles/components/_filtrify.scss */
+/* line 51, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:before {
   /*    font-family: "FiltrifyRegular"; 
       content: "t"; */
@@ -11122,43 +11124,41 @@ ul.ft-menu > li.ft-field > span.ft-label:before {
   width: 20px;
 }
 
-/* line 51, ../../../../assets/styles/components/_filtrify.scss */
+/* line 59, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:after {
   font-size: 80%;
   content: " \25bc";
+  float: right;
 }
 
-/* line 55, ../../../../assets/styles/components/_filtrify.scss */
+/* line 64, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
-  content: "T";
+  content: " \2605";
   color: #2D3743;
 }
+/* line 67, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
+  color: #d10000;
+}
 
-/* line 59, ../../../../assets/styles/components/_filtrify.scss */
+/* line 71, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after {
   content: " \25b2";
 }
 
-/* line 63, ../../../../assets/styles/components/_filtrify.scss */
+/* line 75, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel {
-  position: absolute;
-  min-width: 200px;
-  background-clip: padding-box;
-  border: 5px solid #333333;
   /*	border: 5px solid rgba(0, 0, 0, 0.3);
   	-webkit-border-radius: 3px;
   	-moz-border-radius: 3px;
   	border-radius: 3px;*/
   top: 100%;
-  margin-top: 15px;
-  left: 50%;
   /*	margin-left: -105px;
   */
   z-index: 9999;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* line 80, ../../../../assets/styles/components/_filtrify.scss */
+/* line 92, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel:before,
 ul.ft-menu > li.ft-field > div.ft-panel:after {
   position: absolute;
@@ -11168,149 +11168,60 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
   left: 10%;
 }
 
-/* line 87, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel:before {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #333333;
-  /*	border-bottom: 10px solid rgba(0, 0, 0, 0.3);
-  */
-  top: -15px;
-  margin-left: -10px;
-}
-
-/* line 95, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel:after {
-  content: " ";
-  height: 0;
-  width: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #f5f3ee;
-  top: -8px;
-  margin-left: -8px;
-}
-
-/* line 106, ../../../../assets/styles/components/_filtrify.scss */
+/* line 118, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
-  padding: 10px 10px 0 10px;
-  background: #F5F3EE;
+  background: #a7a9ac;
+  font-size: 13px;
 }
-
-/* line 110, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
-  font-size: 10px;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin: 1px;
-  cursor: pointer;
-  padding: 0px 5px 1px 5px;
+/* line 121, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
+  background-color: #d10000;
   color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border: 1px solid #057ed0;
-  border: 1px solid rgba(5, 126, 208, 0.7);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  background: #019AD2;
-  background: -webkit-linear-gradient(#33bcef, #019ad2);
-  background: -moz-linear-gradient(#33bcef, #019ad2);
-  background: -o-linear-gradient(#33bcef, #019ad2);
-  background: -ms-linear-gradient(#33bcef, #019ad2);
-  background: linear-gradient(#33bcef, #019ad2);
 }
 
-/* line 135, ../../../../assets/styles/components/_filtrify.scss */
+/* line 126, ../../../../assets/styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-bottom: 1px dotted white;
+  color: white;
+}
+
+/* line 152, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
   content: " \00D7";
   color: white;
 }
 
-/* line 139, ../../../../assets/styles/components/_filtrify.scss */
+/* line 156, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
-  background: #33BCEF;
-  background: -webkit-linear-gradient(#019ad2, #33bcef);
-  background: -moz-linear-gradient(#019ad2, #33bcef);
-  background: -o-linear-gradient(#019ad2, #33bcef);
-  background: -ms-linear-gradient(#019ad2, #33bcef);
-  background: linear-gradient(#019ad2, #33bcef);
+  background: #282828;
 }
 
-/* line 148, ../../../../assets/styles/components/_filtrify.scss */
+/* line 165, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search {
-  padding: 10px;
-  background: #F5F3EE;
-  background: -webkit-linear-gradient(#f5f3ee, #d0cdc9);
-  background: -moz-linear-gradient(#f5f3ee, #d0cdc9);
-  background: -o-linear-gradient(#f5f3ee, #d0cdc9);
-  background: -ms-linear-gradient(#f5f3ee, #d0cdc9);
-  background: linear-gradient(#f5f3ee, #d0cdc9);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#F5F3EE", EndColorStr="#D0CDC9");
+  display: none;
 }
 
-/* line 158, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search:before {
-  font: normal normal 12px "FiltrifyRegular";
-  content: "s";
-  position: absolute;
-  width: 20px;
-  bottom: 15px;
-  left: 18px;
-  color: #BBB;
-  text-shadow: none;
-  z-index: 1;
-}
-
-/* line 169, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search > input {
-  outline: none;
-  display: block;
-  width: 140px;
-  padding: 4px 10px 4px 25px;
-  color: gray;
-  background: white;
-  -webkit-border-radius: 13px;
-  -moz-border-radius: 13px;
-  border-radius: 13px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(0, 0, 0, 0.3);
-}
-
-/* line 182, ../../../../assets/styles/components/_filtrify.scss */
+/* line 200, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   position: relative !important;
-  max-height: 200px !important;
-  border-top: 1px solid #33373d;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
 }
 
-/* line 190, ../../../../assets/styles/components/_filtrify.scss */
+/* line 208, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
-  font-size: 12px;
-  display: block;
-  border-bottom: 1px solid #33373d;
-  box-shadow: inset 0 1px 0 0 #878e98;
-  display: block;
-  font-weight: bold;
+  font-size: 13px;
+  border-bottom: 1px solid #373737;
   color: white;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-  padding: 8px 35px 8px 15px;
+  padding: 12px 31px 12px 12px;
   cursor: pointer;
-  background: #616975;
-  background: -webkit-linear-gradient(#727a86, #505864);
-  background: -moz-linear-gradient(#727a86, #505864);
-  background: -o-linear-gradient(#727a86, #505864);
-  background: -ms-linear-gradient(#727a86, #505864);
-  background: linear-gradient(#727a86, #505864);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#727a86", EndColorStr="#505864");
+  background: black;
 }
 
-/* line 209, ../../../../assets/styles/components/_filtrify.scss */
+/* line 227, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   content: attr(data-count);
   font-size: 11px;
@@ -11328,70 +11239,49 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
-}
-
-/* line 228, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
-  border-bottom: 1px solid #103c56;
-  box-shadow: inset 0px 1px 0px 0px #6ad2ef;
-  background: #35AFE3;
-  background: -webkit-linear-gradient(#45c7eb, #2698db);
-  background: -moz-linear-gradient(#45c7eb, #2698db);
-  background: -o-linear-gradient(#45c7eb, #2698db);
-  background: -ms-linear-gradient(#45c7eb, #2698db);
-  background: linear-gradient(#45c7eb, #2698db);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#45c7eb", EndColorStr="#2698db");
-}
-
-/* line 239, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:active {
-  background: -webkit-linear-gradient(#2698db, #45c7eb);
-  background: -moz-linear-gradient(#2698db, #45c7eb);
-  background: -o-linear-gradient(#2698db, #45c7eb);
-  background: -ms-linear-gradient(#2698db, #45c7eb);
-  background: linear-gradient(#2698db, #45c7eb);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#2698DB", EndColorStr="#45C7EB");
 }
 
 /* line 247, ../../../../assets/styles/components/_filtrify.scss */
-ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
-  background: #2173A1;
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
+  background: #373737;
 }
 
-/* line 251, ../../../../assets/styles/components/_filtrify.scss */
+/* line 266, ../../../../assets/styles/components/_filtrify.scss */
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
+  background: white;
+}
+/* line 268, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
+  background-color: #d10000;
+}
+
+/* line 273, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
   font-size: 11px;
   padding: 10px 15px;
   color: white;
-  background: #555555;
-  background: -webkit-linear-gradient(#555555, #333333);
-  background: -moz-linear-gradient(#555555, #333333);
-  background: -o-linear-gradient(#555555, #333333);
-  background: -ms-linear-gradient(#555555, #333333);
-  background: linear-gradient(#555555, #333333);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#555555", EndColorStr="#333333");
+  background: white;
 }
 
 /* REQUIRED! */
-/* line 265, ../../../../assets/styles/components/_filtrify.scss */
+/* line 287, ../../../../assets/styles/components/_filtrify.scss */
 .ft-hidden {
   display: none !important;
 }
 
 /* Custom webkit scrollbars */
-/* line 269, ../../../../assets/styles/components/_filtrify.scss */
+/* line 291, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar {
   width: 10px;
 }
 
-/* line 272, ../../../../assets/styles/components/_filtrify.scss */
+/* line 294, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   background: #DDD;
 }
 
-/* line 276, ../../../../assets/styles/components/_filtrify.scss */
+/* line 298, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
@@ -11406,9 +11296,10 @@ div#pagination {
   margin-bottom: 2.125em;
   text-align: center;
   position: relative;
+  clear: left;
 }
 
-/* line 10, ../../../../assets/styles/components/_jPages.scss */
+/* line 11, ../../../../assets/styles/components/_jPages.scss */
 div#pagination > a {
   /*	margin: 0 10px;
   	color: black;
@@ -11424,18 +11315,18 @@ div#pagination > a {
   cursor: pointer;
 }
 
-/* line 25, ../../../../assets/styles/components/_jPages.scss */
+/* line 26, ../../../../assets/styles/components/_jPages.scss */
 div#pagination > a:hover {
   border-top: 1px solid black;
 }
 
-/* line 29, ../../../../assets/styles/components/_jPages.scss */
+/* line 30, ../../../../assets/styles/components/_jPages.scss */
 div#pagination a.jp-previous {
   margin-left: 0;
   cursor: pointer;
 }
 
-/* line 37, ../../../../assets/styles/components/_jPages.scss */
+/* line 38, ../../../../assets/styles/components/_jPages.scss */
 div#pagination > a.jp-current,
 div#pagination > a.jp-current:hover,
 div#pagination > a.jp-disabled,
@@ -11444,25 +11335,49 @@ div#pagination > a.jp-disabled:hover {
   cursor: default !important;
 }
 
-/* line 42, ../../../../assets/styles/components/_jPages.scss */
+/* line 43, ../../../../assets/styles/components/_jPages.scss */
 div#pagination > span {
   margin: 0 5px;
   color: green;
 }
 
-/* line 47, ../../../../assets/styles/components/_jPages.scss */
-#container {
-  width: 100%;
-}
-
 /* line 50, ../../../../assets/styles/components/_jPages.scss */
 #container li {
-  width: 25%;
-  border: 1px solid white;
+  display: inline-block;
   background-color: #e9e9e9;
-  float: left;
-  height: 120px;
+  margin-bottom: 1px;
   padding: 12px;
+  width: 100%;
+}
+/* line 56, ../../../../assets/styles/components/_jPages.scss */
+#container li a {
+  border-bottom: none;
+  display: block;
+}
+/* line 61, ../../../../assets/styles/components/_jPages.scss */
+.csm #container li:hover {
+  background-color: #d10000;
+}
+/* line 63, ../../../../assets/styles/components/_jPages.scss */
+.csm #container li:hover a {
+  color: white;
+}
+@media only screen and (min-width: 960px) {
+  /* line 72, ../../../../assets/styles/components/_jPages.scss */
+  #container li {
+    display: inline-block;
+    width: 33%;
+    float: left;
+    margin-right: 1px;
+    height: 100px;
+    padding: 0;
+  }
+  /* line 79, ../../../../assets/styles/components/_jPages.scss */
+  #container li a {
+    padding: 12px;
+    display: block;
+    height: 100px;
+  }
 }
 
 /*------------------------------------*\
