@@ -559,10 +559,20 @@ input, .search-result-module, .search-input-wrap {
 // used for exclamation mark icon and question mark icon on no results found page
 .warning-icon {
   @extend %icon;
-  @include font-size(120);
+  @include font-size(90);
   line-height: 120px;
   padding: 24px;
   color: $aaa-gray;
+  &:after {
+    content: '\e839';
+  }
+}
+
+.question-icon {
+  @extend .warning-icon;
+  &:after {
+    content: '\e838';
+  }
 }
 
 
