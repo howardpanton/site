@@ -833,7 +833,7 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').each( function() {
+$('.lcf.home, .lcf .__media').find('h2').each( function() {
   $(this).wrapInner('<span />');
 });
 

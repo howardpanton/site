@@ -800,7 +800,7 @@ if ($('.js-lightbox').length > 0) {
 // FitVids for Media Blocks
 
 if ($('.__media').length > 0) {
-  $.getScript('<t4 type="media" id="229707" formatter="javascript/*"/>', function() {
+  $.getScript('<t4 type="media" id="229707" formatter="path/*"/>', function() {
     $('.__media').fitVids();
   });
 }
@@ -869,7 +869,7 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').each( function() {
+$('.lcf.home, .lcf .__media').find('h2').each( function() {
   $(this).wrapInner('<span />');
 });
 
