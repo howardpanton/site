@@ -2662,31 +2662,31 @@ input[type="checkbox"]:disabled + label {
 }
 
 /* line 929, ../../../../assets/styles/globals/_forms.scss */
-input.submit-btn {
+input.submit-btn, input.summon-search-submit {
   border-width: 0;
   border-radius: 0;
   display: block;
 }
 
-/* line 936, ../../../../assets/styles/globals/_forms.scss */
-input.submit-btn:hover {
+/* line 940, ../../../../assets/styles/globals/_forms.scss */
+input.submit-btn:hover, input.summon-search-submit:hover {
   background-color: #333;
   cursor: pointer;
 }
 
-/* line 941, ../../../../assets/styles/globals/_forms.scss */
-input.submit-btn:disabled, input.submit-btn:disabled:hover {
+/* line 945, ../../../../assets/styles/globals/_forms.scss */
+input.submit-btn:disabled, input.summon-search-submit:disabled, input.submit-btn:disabled:hover, input.summon-search-submit:disabled:hover {
   color: #757575;
   background-color: #e9e9e9;
   cursor: default;
 }
 
-/* line 950, ../../../../assets/styles/globals/_forms.scss */
+/* line 954, ../../../../assets/styles/globals/_forms.scss */
 .search-with-icon-wrap {
   position: relative;
 }
 
-/* line 952, ../../../../assets/styles/globals/_forms.scss */
+/* line 956, ../../../../assets/styles/globals/_forms.scss */
 input[type="search"] {
   height: 42px;
   padding: 6px 6px;
@@ -2696,7 +2696,7 @@ input[type="search"] {
   background-color: #e9e9e9;
 }
 
-/* line 961, ../../../../assets/styles/globals/_forms.scss */
+/* line 965, ../../../../assets/styles/globals/_forms.scss */
 .with-search-icon {
   position: absolute;
   left: 6px;
@@ -2705,14 +2705,26 @@ input[type="search"] {
   background-repeat: no-repeat;
 }
 
-/* line 974, ../../../../assets/styles/globals/_forms.scss */
+/* line 977, ../../../../assets/styles/globals/_forms.scss */
+#s3546bfd02ccd01303445441ea15a6074 a {
+  color: black !important;
+  top: 10px;
+  position: relative;
+}
+
+/* line 983, ../../../../assets/styles/globals/_forms.scss */
+form.summon-search-widget, form.library-search {
+  padding-left: 0;
+}
+
+/* line 990, ../../../../assets/styles/globals/_forms.scss */
 textarea {
   border-color: rgba(0, 0, 0, 0);
   border-width: 6px;
   border-style: solid;
   padding: 12px;
 }
-/* line 980, ../../../../assets/styles/globals/_forms.scss */
+/* line 996, ../../../../assets/styles/globals/_forms.scss */
 textarea:focus {
   border-color: #c8c8c8;
   border-width: 6px;
@@ -5957,7 +5969,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 1, ../../../../assets/styles/components/_button-link.scss */
-.button-link, input.submit-btn, .megamenu .dropdown_12columns .go-search-button,
+.button-link, input.submit-btn, input.summon-search-submit, .megamenu .dropdown_12columns .go-search-button,
 .megamenu .dropdown_fullwidth .go-search-button {
   font-size: 14px;
   font-size: 0.875rem;
@@ -5976,7 +5988,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 20, ../../../../assets/styles/components/_button-link.scss */
-.button-link:hover, input.submit-btn:hover, .megamenu .dropdown_12columns .go-search-button:hover,
+.button-link:hover, input.submit-btn:hover, input.summon-search-submit:hover, .megamenu .dropdown_12columns .go-search-button:hover,
 .megamenu .dropdown_fullwidth .go-search-button:hover {
   background-color: #757575;
   color: white;
@@ -5987,14 +5999,14 @@ input[type="text"].sb-search-input {
   border-bottom: none;
 }
 /* line 30, ../../../../assets/styles/components/_button-link.scss */
-.csm .button-link:hover, .csm input.submit-btn:hover, .csm .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .csm .go-search-button:hover,
+.csm .button-link:hover, .csm input.submit-btn:hover, .csm input.summon-search-submit:hover, .csm .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .csm .go-search-button:hover,
 .csm .megamenu .dropdown_fullwidth .go-search-button:hover,
 .megamenu .dropdown_fullwidth .csm .go-search-button:hover {
   background-color: #d10000;
   color: black;
 }
 /* line 34, ../../../../assets/styles/components/_button-link.scss */
-.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .lcc .go-search-button:hover,
+.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc input.summon-search-submit:hover, .lcc .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .lcc .go-search-button:hover,
 .lcc .megamenu .dropdown_fullwidth .go-search-button:hover,
 .megamenu .dropdown_fullwidth .lcc .go-search-button:hover {
   background-color: #e5006e;
@@ -6021,7 +6033,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 65, ../../../../assets/styles/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .megamenu .dropdown_12columns .icon.go-search-button, .megamenu .dropdown_12columns .m-menu-btn-toggle span.go-search-button, .m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.m-menu-btn-toggle span.go-search-button, a.m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.search span.go-search-button, a.search .megamenu .dropdown_12columns span.go-search-button,
+.button-link.icon, input.icon.submit-btn, input.icon.summon-search-submit, .megamenu .dropdown_12columns .icon.go-search-button, .megamenu .dropdown_12columns .m-menu-btn-toggle span.go-search-button, .m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.m-menu-btn-toggle span.go-search-button, a.m-menu-btn-toggle .megamenu .dropdown_12columns span.go-search-button, .megamenu .dropdown_12columns a.search span.go-search-button, a.search .megamenu .dropdown_12columns span.go-search-button,
 .megamenu .dropdown_fullwidth .icon.go-search-button,
 .megamenu .dropdown_fullwidth .m-menu-btn-toggle span.go-search-button,
 .m-menu-btn-toggle .megamenu .dropdown_fullwidth span.go-search-button,
@@ -11633,14 +11645,14 @@ ul.tabs li.active {
   border: none;
 }
 /* line 152, ../../../../assets/styles/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs .megamenu .dropdown_12columns .go-search-button, .megamenu .dropdown_12columns .tab_container.lcc-tabs .go-search-button,
+.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs input.summon-search-submit, .tab_container.lcc-tabs .megamenu .dropdown_12columns .go-search-button, .megamenu .dropdown_12columns .tab_container.lcc-tabs .go-search-button,
 .tab_container.lcc-tabs .megamenu .dropdown_fullwidth .go-search-button,
 .megamenu .dropdown_fullwidth .tab_container.lcc-tabs .go-search-button {
   background-color: white;
   color: black;
 }
 /* line 155, ../../../../assets/styles/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .tab_container.lcc-tabs .go-search-button:hover,
+.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs input.summon-search-submit:hover, .tab_container.lcc-tabs .megamenu .dropdown_12columns .go-search-button:hover, .megamenu .dropdown_12columns .tab_container.lcc-tabs .go-search-button:hover,
 .tab_container.lcc-tabs .megamenu .dropdown_fullwidth .go-search-button:hover,
 .megamenu .dropdown_fullwidth .tab_container.lcc-tabs .go-search-button:hover {
   background-color: #28e598;
