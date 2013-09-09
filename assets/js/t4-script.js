@@ -13,15 +13,6 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-$(".date").each( function(i, element) {
-  
-  dateString = this.textContent;
-  var idx = dateString.indexOf(",");
-  var t = dateString.substr(idx + 2, 11);
-
-  $(this).text(t);
-  
-});
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -473,40 +464,26 @@ if ($('#container').length > 0) {
   /////// accreditation
   ///////////////////////
 
-  // Show image credits button fixed to the right of the screen on Desktop only
+  // $(".accreditation").hide();
+
+    // detect search filters on page
+
+     //allow expand and close for search filters
   
   if ($('.credits').length > 0) {
-
-    $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      //  
-      if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
-        
-        $('.show-credits').click(function(event) {
-          event.preventDefault();
-        
-          var c = $(this);
-          if (c.hasClass('active') ) {
-            c.removeClass('active').html("Show Credits");
-            $('.credits').fadeOut();
-          } else {
-            c.addClass('active').html("Hide Credits");
-            $('.credits').fadeIn();
-          }
-        });
-      }
-
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
+    $('.credits-btn').addClass("show");
+    $('.show-credits').click(function(event) {
+      event.preventDefault();
+      // $('.credits').toggle();
+      var c = $(this);
+      if (c.hasClass('active') ) {
+        c.removeClass('active').html("Show Credits");
+        $('.credits').fadeOut();
+      } else {
+        c.addClass('active').html("Hide Credits");
+        $('.credits').fadeIn();
       }
     });
-    
   }
 
 
@@ -797,6 +774,7 @@ if ($('.js-lightbox').length > 0) {
 
 // End tabs to accordion 
 
+
 // FitVids for Media Blocks
 
 if ($('.__media').length > 0) {
@@ -818,29 +796,6 @@ if ($('video').length > 0) {
   });
 
 }
-
-
-// add icons to social media links inside .l-content
-$('.l-content a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."]').addClass('github-link');
-
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');

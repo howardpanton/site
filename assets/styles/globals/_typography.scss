@@ -13,9 +13,7 @@
 html {
   overflow-y: scroll;
 	overflow-x: hidden;
-  -webkit-font-smoothing: subpixel-antialiased; // need to test if this sorts the swiss font issue on ipad / iOS
 }
-
 
 // Set box-sizing rules to all Div's.
 * {
@@ -26,7 +24,6 @@ html {
 body {
 	font-family: $ual-global-font-stack;
 	overflow-x: hidden;
-	text-rendering: optimizeLegibility; 
 	@include font-size(16);
 }
 
@@ -207,7 +204,6 @@ ul li ul, ol li ol {
   li {
     padding-bottom: rhythm(2, 16px);
   }
-
 }
 
 p {
@@ -357,32 +353,43 @@ hr {
 	clear: both;
 }
 
+// // // Custom Web Fonts
+
+// // .Swiss721BT-Light { font-family: Swiss721BT-Light; }
+// // .Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
+// // .Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
+// // .Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
+// // .Swiss721BT-Black { font-family: Swiss721BT-Black; }
+// // .Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
+
+// // // CCW
+// // .BrandonText-Bold { font-family: BrandonText-Bold; }
+// // .BrandonText-Regular { font-family: BrandonText-Regular; }
+
+// // // LCC
+// // .LeagueGothicRegular { font-family: LeagueGothicRegular; }
+// // .LeagueGothicItalic { font-family: LeagueGothicItalic; }
+// // .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
+// // .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
+
+// // // CSM
+// // .BureauGrotBold { font-family: BureauGrotBold; }
 
 
-// left and right padding for text elements on mobile 
-// added to prevent them from going right to the edge of the screen on mobile
-
-@include gs-media(m) {
-  h1,h2,h3,h4,h5, p {
-    padding-left: rhythm(2, 16px);
-    padding-right: rhythm(2, 16px);
-  }
-} 
+// LCF Variants 
 
 b, strong, h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
 }
 
-// LCF Variants 
 .lcf {
-	h1,h2,h2 a,h3,h3 a {
+	h1,h2 a,h3,h3 a {
 		@extend %Swiss721BT-Black;
 	}
 	h1 {
 		@include font-size(48);
 	}
-	.search-results-list h3 a,
-	.__gallery h3 a, 
+	.search-results-list h3 a, 
 	.accordion h3,
 	.dd-menu h3,
 	h4,h5,h6 {
@@ -417,6 +424,7 @@ b, strong, h2, h3, h4 {
 		}
 	}
 
+
     // centered headings
     .content h1, .content h2, &.home h2, .call-to-action h3 {
         text-align: center;
@@ -433,7 +441,8 @@ b, strong, h2, h3, h4 {
 }
 
 
-// GRADUATE SCHOOL
+// // GRADUATE SCHOOL
+
 .graduate-school {
 	.header-wrapper h1 {
 		display: none;
@@ -458,88 +467,3 @@ b, strong, h2, h3, h4 {
         }
     }
 }
-
-// --------------------------------
-// text elements with icons applied
-// --------------------------------
-
-%icon { font-family: "fontello"; }
-%icon-social { font-family: "fontello"; }
-
-.icon { font-family: "fontello"; }
-.icon-social { font-family: "fontello"; }
-
-// add a PDF icon to links to a PDF download
-li.download {
-  padding-left: 0px;
-  margin-left: 0px;
-  list-style-type: none;
-  a:before {
-    @extend %icon;
-    min-width: 1.3em; 
-    display: inline-block;
-    content: "\e808";
-  }
-}
-
-// icon to any external links
-.external:after {
-    @extend %icon;
-    min-width: 1.5em; 
-    text-align: right;
-    vertical-align: middle;
-    display: inline-block;
-    content: '\e837';
-}
-
-// social media links icons 
-
-.facebook-link:before, .twitter-link:before, 
-.flickr-link:before, .youtube-link:before,
-.pinterest-link:before, .vimeo-link:before,
-.tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before {
-  @extend %icon;
-  min-width: 1.5em;
-  display: inline-block;
-  text-align: left;
-  border-bottom: 0;
-  text-decoration: none;
-}
-
-// disable the external link icon for social media links
-.facebook-link:after, .twitter-link:after, 
-.flickr-link:after, .youtube-link:after,
-.pinterest-link:after, .vimeo-link:after,
-.tumblr-link:after, .linkedIn-link:after,
-.gplus-link:after, .github-link:after {
-  .external & { 
-    display: none !important; // to hide the external link icon
-  }
-}
-
-
-.facebook-link:before { content: '\e816'; }
-
-.twitter-link:before { content: '\e817'; }
-
-.flickr-link:before { content: '\e819'; }
-
-.youtube-link:before { content: '\e835'; }
-
-.linkedIn-link:before { content: '\e832'; }
-
-.tumblr-link:before { content: '\e830'; }
-
-.vimeo-link:before { content: '\e81b'; }
-
-.pinterest-link:before { content: '\e82e'; }
-
-.gplus-link:before { content: '\e834'; }
-
-.github-link:before { content: '\e81d'; }
-
-
-
-
-

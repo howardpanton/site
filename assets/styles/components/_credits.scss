@@ -1,8 +1,13 @@
 .credits-btn {
 	display: none;
 	position: fixed;
-	right: -1.8em;  // we need to set a negative position because the elements position is calculated before the rotation happens
+	right: 0;
 	top: 50%;
+	-webkit-transform: rotate(-90deg);   
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 	z-index: 1;
 }
 .credits {
