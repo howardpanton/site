@@ -813,6 +813,13 @@ legend + .control-group {
 // checkbox and radio button styling 
 // default: boxes appear to the right of the label
 // add class "before-label" to make the checkbox or radio button appear before the label
+
+// remove default iphone border radius
+input {
+   -webkit-appearance: none;
+   @include border-radius(0); 
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
