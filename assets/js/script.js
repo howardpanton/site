@@ -772,7 +772,8 @@ if ($('video').length > 0) {
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
-      pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
 
