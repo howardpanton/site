@@ -14,20 +14,30 @@
         border-top: 1px solid white;
         border-bottom: 0 !important; // to override the sidebar dotted border on bottom of li
         padding-left: 18px;
+        padding-bottom: 0;
+        list-style-type: none;
+        margin-left: 0;
       }
       li a {
         display: block; 
         width: 100%;
-        @include padding-leader(2);
-        @include padding-trailer(2);
+        // @include padding-leader(2);
+        // @include padding-trailer(2);
+        padding: 10px 12px;
+        line-height:20px;
         border-bottom: 0; 
         @extend %Swiss721BT-Light;
         @include font-size(14);
         font-weight: normal;
       }
+      li a:hover {
+        background: $aaa-gray;
+        color: $white;
+      }
    }
    &.active {
     /* ul { display: block; }*/
+
    }
 }
 
@@ -40,7 +50,12 @@
   h3 {
       @include font-size(14);
       padding: 12px 18px;
-      @extend %Swiss721BT-Light;
+      @extend %Swiss721BT-Bold-important;
+  }
+
+  h3:hover {
+    background-color: $black;
+    color: $white;
   }
   
  .dd-menu-arrow, .select-box-arrow {
@@ -53,22 +68,40 @@
       width: 43px;
       height: 43px;
 
-          
       span.icon {
-        @include font-size(24);
-        text-align: center;
+        position: relative;
+        @include font-size(20);
         vertical-align: middle;
         padding-top: 12px;
         padding-left: 5px;
         display: block;
+        height: 43px;
+        width: 43px;
+
+        &:before {
+          position: absolute;
+          top: 18px;
+          left: 12px;
+          content: '\e803'; // down arrow
+          // padding-left: 12px;
+          // margin-top: 18px;
+          height: 43px;
+          width: 43px;
+        }
+        
+        .dd-menu.active & {
+          &:before {
+            content: '\e806'; // up arrow
+          }
+        }
+
       }
     } 
-  
 }
 
-.dd-menu.siblings {
-  ul li {
-    padding-left: 0;
-  }
-}
+// .dd-menu.siblings {
+//   ul li {
+//     padding-left: 0;
+//   }
+// }
 
