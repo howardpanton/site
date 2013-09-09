@@ -124,6 +124,10 @@
 		}
 	}
 
+	figure {
+		@include component-spacing-bottom(4);
+	}
+
 	figure a {
 		display: block;
 		line-height: 0;
@@ -274,9 +278,6 @@
 		}
 	}
 
-	.lcf & {
-		text-align: center;
-	}
 }
 
 // three-up - core styles
@@ -303,10 +304,6 @@
 				@include gs-span(d, 13, 16, (5, 16));
 			}
 		}
-	}
-
-	.lcf & {
-		text-align: center;
 	}
 
 }

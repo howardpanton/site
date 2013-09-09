@@ -35,5 +35,4 @@ if ($current_section_title != $old_section_title) {
 <?php 
   $old_section_title = $current_section_title; 
 }
-
 ?>
