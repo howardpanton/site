@@ -82,16 +82,16 @@
 }
 
 
-// add plus to the right of each dropdown link on tablet & mobile
-.megamenu_drop:after { 
-  content: "\e80b"; // fontello plus icon
-  font-family: "fontello" !important;
-  @include font-size(18);
+// add down arrow to the right of each dropdown link on tablet & mobile
+.megamenu_drop:after {
+  content: "";
+  font-family: "entypo" !important;
+  @include font-size(48);
   position: absolute;
   right: 0;
   color: $white;
   text-align: center;
-  line-height: 36px;
+  line-height: 48px;
   width: 48px;
   height: 48px;
   cursor: pointer;
@@ -103,10 +103,10 @@
 
 }
 
-// switch to a minus icon when the menu is expanded on tablet & mobile
+// switch to an up arrow icon when the menu is expanded on tablet & mobile
 .megamenu > li.active {
   a.megamenu_drop:after {
-    content: "\e810"; // fontello minus icon
+    content: ""; // &#59235 (entypo up arrow)
   }
 }
 
@@ -118,7 +118,6 @@
   width: 48px;
   height: 48px;
   background-color: $black;
-  border-bottom: 0;
   // border-right: 1px solid $aaa-gray;
   @include prefixer(transition, $transition-bg);
   a {
@@ -358,14 +357,14 @@ li.megamenu_button_active {
   margin: 0;
   width: 100%;
   span {
-    //@extend .icon;
+    @extend .icon;
     display: block;
     margin: 0;
     position: absolute;
-    top: 9px;
-    left: 11px;
+    top: 6px;
+    left: 12px;
     padding: 0;
-    @include font-size(20);
+    @include font-size(56);
 
   }
   // when menu button has been clicked and is active
@@ -377,27 +376,32 @@ li.megamenu_button_active {
 
 .top-bar{
     position: relative;
-    > ul { }
-
-    // style for each dropdown list menu item on tab/mobile
-    li {
-      display:block;
-      width:100%;
-      text-align:left;
-      // border-bottom: 1px solid $black;
-    
-    li:last-of-type {
-      // border-bottom: 0;
+    > ul {
+     
     }
-      @include gs-media(d) {
-        list-style:none; 
-        padding:0;
-        width:auto; 
-        font-weight: 300;
-        // border-bottom: 0;
-      }
+    
+    li {
+      list-style:none; 
+      padding:0;
+      width:auto; 
+      font-weight: 300;
 
       &:hover { background-color: $dark-gray; }   
+
+      @include gs-media(t, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
+
+      }
+      
+      @include gs-media(m, min-max) {
+        display:block;
+        float:left;
+        width:100%;
+        text-align:left;
+      }
 
       > a {
         display: block;
@@ -424,12 +428,12 @@ li.megamenu_button_active {
   
       //site search icon on main nav
       > a.search-icon {
-        font-family: "fontello" !important;
+        font-family: "entypo" !important;
         vertical-align: middle;
         color: $white;
-        @include font-size(16);
+        @include font-size(42);
         @include gs-media(d, min-max) {
-          @include font-size(16);
+          @include font-size(36);
           min-width: gs-width(d, 16, 16, (1, 16), true);
           text-align: center;
           
@@ -438,6 +442,182 @@ li.megamenu_button_active {
 
       .menu-active { background-color: $dark-gray !important; }
     }
+}
+
+// styles applied to the plus / minus icon on menu
+.menu-open-closed-icon{
+  float: right; 
+  color: white; 
+  font-weight: normal; 
+  width: 36px; 
+  height: 36px; 
+  margin-top: 6px; 
+  @include font-size(30);
+  border-left: 1px dotted $dark-gray; 
+  padding-left: 12px;
+}
+
+.ual-banner-menu {
+ @include clearfix();
+  padding-left: 6px;
+  display: none;
+
+  @include gs-media(d) {
+    display: block;
+    @include clearfix();
+    height: 108px;
+    background-color: black;
+    padding-left: 0px;
+    @include padding-leader(2);
+  }
+ 
+}
+
+.mobile-menu { 
+  float: right;
+  height: 48px;
+  margin-bottom: 0;
+  padding-top:0;
+  
+  ul {
+    padding-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    height: 48px;
+    min-width: 48px;
+    border-right: 1px solid #444;
+    float: left;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-align: right;
+    }
+  }
+  
+  li:last-child {
+    border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    a {
+      text-align: center;
+    }
+  }
+
+  .menu-active{
+    background-color: $dark-gray;
+  }
+  
+  @include gs-media(d) { display: none; }
+
+}
+
+// titles that appear in the mega menu dropdown
+.dd-heading {
+  @extend .size-h4;
+  padding-left: 12px;
+  text-transform: capitalize !important;
+  @extend .m-hide;
+  @extend .t-hide;
+  a {
+    @extend %Swiss721BT-Light-important;  // to keep UAL branding on college pages
+    color: $white !important; // to keep UAL branding on college pages
+  }
+}
+
+
+.ual-logo-tab-mobile { 
+  padding-left: 12px;
+  float: left;
+  @include gs-media(d) { display: none; }
+  
+  .logo-ual-mobile{
+    @extend %mobile-logo;
+  }
+}
+
+.ual-logo-desktop {
+  
+  padding-left: 12px;
+  
+  @include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+
+  .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
+  .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
+  .logo-ual-camberwell {
+    @extend %desktop-logo;
+  }
+
+}
+
+.submenu {
+  @extend .dark-gray;
+  
+  @include gs-media(d) { @include gs-span(d, all); }
+  
+  @include gs-media(t, min-max) { 
+    padding: 0, 6px 6px 6px; 
+
+  }
+
+  @include gs-media(m, min-max) { 
+    padding: 0, 6px 6px 6px; 
+  }
+  
+  > div {
+    @extend .row;
+    overflow:hidden;
+    @include gs-media(d) { @include padding-trailer(6); }
+    
+    @include gs-media(t, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+    @include gs-media(m, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+
+  li {
+    list-style:none;  
+    width:100%; 
+    display:block; 
+    float:left; 
+    border-bottom: dotted 1px $white;
+
+    &:hover {
+       border-bottom: 1px 1px $white;
+     }
+
+    @include gs-media(t, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+    @include gs-media(m, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+  }
+
+.sub-inner-menu {
+    background-color: $soft-black;
+      
+    @include gs-media(t, min-max) { 
+      padding-left: 12px;
+    }
+
+    @include gs-media(m, min-max) { 
+      padding-left:12px;
+    }
+
+  }
+
 }
 
 .top-bar {
@@ -534,180 +714,6 @@ li.megamenu_button_active {
   }
 }
 
-// styles applied to the plus / minus icon on menu
-.menu-open-closed-icon{
-  float: right; 
-  color: white; 
-  font-weight: normal; 
-  width: 36px; 
-  height: 36px; 
-  margin-top: 6px; 
-  @include font-size(30);
-  border-left: 1px dotted $dark-gray; 
-  padding-left: 12px;
-}
-
-.ual-banner-menu {
- @include clearfix();
-  padding-left: 6px;
-  display: none;
-
-  @include gs-media(d) {
-    display: block;
-    @include clearfix();
-    height: 108px;
-    background-color: black;
-    padding-left: 0px;
-    @include padding-leader(2);
-  }
- 
-}
-
-.mobile-menu { 
-  float: right;
-  height: 48px;
-  margin-bottom: 0;
-  padding-top:0;
-  
-  ul {
-    padding-bottom: 0;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
-    height: 48px;
-    min-width: 48px;
-    border-right: 1px solid #444;
-    float: left;
-    a {
-      display: block;
-      height: 100%;
-      width: 100%;
-      text-align: right;
-    }
-  }
-  
-  li:last-child {
-    border-right: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    a {
-      text-align: center;
-    }
-  }
-
-  .menu-active{
-    background-color: $dark-gray;
-  }
-  
-  @include gs-media(d) { display: none; }
-
-}
-
-// titles that appear in the mega menu dropdown
-.dd-heading {
-  @extend .size-h4;
-  padding-left: 12px;
-  text-transform: capitalize !important;
-  @extend .m-hide;
-  @extend .t-hide;
-  a {
-    @extend %Swiss721BT-Light-important;  // to keep UAL branding on college pages
-    color: $white !important; // to keep UAL branding on college pages
-  }
-}
-
-.ual-logo-tab-mobile { 
-  padding-left: 12px;
-  float: left;
-  @include gs-media(d) { display: none; }
-  
-  .logo-ual-mobile{
-    @extend %mobile-logo;
-  }
-}
-
-.ual-logo-desktop {
-  
-  padding-left: 12px;
-  
-  @include gs-media(t, min-max) { display: none; }
-
-  @include gs-media(m, min-max) { display: none; }
-
-  .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
-  .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
-  .logo-ual-camberwell {
-    @extend %desktop-logo;
-  }
-
-}
-
-.submenu {
-  @extend .dark-gray;
-  
-  @include gs-media(d) { @include gs-span(d, all); }
-  
-  @include gs-media(t, min-max) { 
-    padding: 0, 6px 6px 6px; 
-
-  }
-
-  @include gs-media(m, min-max) { 
-    padding: 0, 6px 6px 6px; 
-  }
-  
-  > div {
-    @extend .row;
-    overflow:hidden;
-    @include gs-media(d) { @include padding-trailer(6); }
-    
-    @include gs-media(t, min-max) {
-      padding-bottom:0;
-      margin-bottom:0;
-    }
-    @include gs-media(m, min-max) {
-      padding-bottom:0;
-      margin-bottom:0;
-    }
-  }
-
-  li {
-    list-style:none;  
-    width:100%; 
-    display:block; 
-    float:left; 
-    border-bottom: dotted 1px $white;
-
-    &:hover {
-       border-bottom: 1px 1px $white;
-     }
-
-    @include gs-media(t, min-max) {
-      line-height:42px;
-      border-bottom:none;
-    }
-    @include gs-media(m, min-max) {
-      line-height:42px;
-      border-bottom:none;
-    }
-  }
-
-.sub-inner-menu {
-    background-color: $soft-black;
-      
-    @include gs-media(t, min-max) { 
-      padding-left: 12px;
-    }
-
-    @include gs-media(m, min-max) { 
-      padding-left:12px;
-    }
-
-  }
-
-}
 
 
 .site-search-input, .course-finder-txt-input {
