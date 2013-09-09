@@ -15,7 +15,7 @@
 
 .block {
 
-	figcaption, .rsCaption {
+	figcaption, .rsCaption, .caption {
 		@extend .bg-gray-bg;
 		.csm & {
 			background-color: $csm-primary;
@@ -122,6 +122,10 @@
 			padding-left: 18px;
 			padding-right: 18px;
 		}
+	}
+
+	figure {
+		@include component-spacing-bottom(4);
 	}
 
 	figure a {
@@ -274,9 +278,6 @@
 		}
 	}
 
-	.lcf & {
-		text-align: center;
-	}
 }
 
 // three-up - core styles
@@ -303,10 +304,6 @@
 				@include gs-span(d, 13, 16, (5, 16));
 			}
 		}
-	}
-
-	.lcf & {
-		text-align: center;
 	}
 
 }

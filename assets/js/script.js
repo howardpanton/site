@@ -772,7 +772,8 @@ if ($('video').length > 0) {
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
-      pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
 
@@ -833,9 +834,10 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').each( function() {
-  $(this).wrapInner('<span />');
-});
+$('.lcf.home').find('h2').wrapInner('<span />');
+
+$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+
 
 
 }); // end document ready
