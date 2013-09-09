@@ -833,9 +833,10 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home, .lcf .__media').find('h2').each( function() {
-  $(this).wrapInner('<span />');
-});
+$('.lcf.home').find('h2').wrapInner('<span />');
+
+$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+
 
 
 }); // end document ready
