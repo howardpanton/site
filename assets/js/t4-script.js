@@ -287,11 +287,7 @@ if ($('#container').length > 0) {
               containerID : "container",
               perPage : 24,
               direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
+              animation : "fadeInUp"
           });
       };
 
@@ -309,10 +305,14 @@ if ($('#container').length > 0) {
           }
       });
 
-  });
+
+
+      });
   });
 
 }
+
+// $('.ft-menu li:first').appendTo('ul.ft-menu');
 
 
 
