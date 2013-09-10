@@ -13,6 +13,15 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
+$(".date").each( function(i, element) {
+  
+  dateString = this.textContent;
+  var idx = dateString.indexOf(",");
+  var t = dateString.substr(idx + 2, 11);
+
+  $(this).text(t);
+  
+});
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -83,8 +92,6 @@ var waitForFinalEvent = (function () {
   };
 })();
 
-
-
 // enables UAL themed select boxes
 function enableSelectBoxes() {
   
@@ -129,7 +136,6 @@ $(document).ready(function(){
   if ($('.breadcrumbs').length > 0) {
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
-
   }
 
    
@@ -145,7 +151,7 @@ $(document).ready(function(){
     if (_no_of_li_items > 1) {
       var _menuHtml = $('.sidebar').html();
       var _sideBarTitle = $('.sidebar li').first();
-      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar icon">≡</a>';
+      var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar"></a>';
       var _mobMenuContent;
 
 
@@ -168,12 +174,12 @@ $(document).ready(function(){
         
         if (_clicked.hasClass('active')) {
           _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-          _clicked.html('☰').removeClass('active');
+          _clicked.removeClass('active');
         }
         else {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
         // update the menu button and set class to active
-        _clicked.html('❌').addClass('active');
+        _clicked.addClass('active');
         }
       });
 
@@ -253,10 +259,6 @@ $(document).ready(function(){
   function imgLoaded(img){  
     $(img).parent().addClass('loaded');
   };
-      
-
-
-
 
 if ($('#container').length > 0) {
   $.when(
@@ -284,14 +286,9 @@ if ($('#container').length > 0) {
               // }
           });
       };
-
   });
   });
-
 }
-
-
-
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
@@ -416,6 +413,7 @@ if ($('#container').length > 0) {
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
           globalCaption: true, 
+          keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
             pauseOnHover: true
@@ -443,28 +441,35 @@ if ($('#container').length > 0) {
   
   if ($('.credits').length > 0) {
 
-    //  
-    if ($('body').hasClass('gDesktop')) {
-      $('.credits-btn').addClass("show");
-      
-      $('.show-credits').click(function(event) {
-        event.preventDefault();
-      
-        var c = $(this);
-        if (c.hasClass('active') ) {
-          c.removeClass('active').html("Show Credits");
-          $('.credits').fadeOut();
-        } else {
-          c.addClass('active').html("Hide Credits");
-          $('.credits').fadeIn();
-        }
-      });
-    }
+    $.when(
+        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function(){
+      //  
+      if ($('body').hasClass('gDesktop')) {
+        $('.credits-btn').addClass("show").rotate({angle:-90});
+        
+        $('.show-credits').click(function(event) {
+          event.preventDefault();
+        
+          var c = $(this);
+          if (c.hasClass('active') ) {
+            c.removeClass('active').html("Show Credits");
+            $('.credits').fadeOut();
+          } else {
+            c.addClass('active').html("Hide Credits");
+            $('.credits').fadeIn();
+          }
+        });
+      }
 
-    // show image credits by default on tablet and mobile
-    else {
-      $('.credits').show();
-    }
+      // show image credits by default on tablet and mobile
+      else {
+        $('.credits').show();
+      }
+    });
     
   }
 
@@ -756,10 +761,14 @@ if ($('.js-lightbox').length > 0) {
 
 // End tabs to accordion 
 
+if ($('.__media').length > 0) {
+  $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.fitvids.js', function() {
+    $('.__media').fitVids();
+  });
+}
+
 
 if ($('video').length > 0) {
-
-  $('.__media').fitVids();
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
@@ -773,10 +782,36 @@ if ($('video').length > 0) {
 
 }
 
+// add icons to social media links inside .l-content
+$('.l-content a[href*="facebook"]').addClass('facebook-link');
+
+$('.l-content a[href*="twitter"]').addClass('twitter-link');
+
+$('.l-content a[href*="flickr"]').addClass('flickr-link');
+
+$('.l-content a[href*="youtube"]').addClass('youtube-link');
+
+$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
+
+$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
+
+$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
+
+$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
+
+$('.l-content a[href*="plus.google"]').addClass('gplus-link');
+
+$('.l-content a[href*="github."]').addClass('github-link');
+
+
+
+
+
+
+
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
 // $('.content a[href$=".html"]').parent().addClass('external');
-
 
   // Creating custom :external selector
   $.expr[':'].external = function(obj){
@@ -800,9 +835,9 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').wrapInner('<span />');
+$('.lcf').find('h2').wrapInner('<span />');
 
-$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+//$('.lcf').find('.__media').find('h2').wrapInner('<span />');
 
 
 
@@ -904,4 +939,3 @@ $(window).load(function(){
   }
 
 });
-

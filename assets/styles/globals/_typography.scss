@@ -384,7 +384,8 @@ b, strong, h2, h3, h4 {
 }
 
 .lcf {
-	h1,h2 a,h3,h3 a {
+	// Swiss Black
+	h1,h2,h2 a,h3,h3 a {
 		@extend %Swiss721BT-Black;
 	}
 	h1 {
@@ -393,10 +394,18 @@ b, strong, h2, h3, h4 {
 	.search-results-list h3 a, 
 	.accordion h3,
 	.dd-menu h3,
+	.boxout h3,
+	.__gallery h3 a,
 	h4,h5,h6 {
 	   @extend %Swiss721BT-Bold;
 	}
-	&.home h2, .l-content-full-width h2, .__gallery h2, .intro-block-with-left-image h2, &.graduate-school h1 {
+	// Bottom margin
+	&.home h2, 
+	.l-content-full-width h2, 
+	.__gallery h2, 
+	.intro-block-with-left-image h2, 
+	&.graduate-school h1,
+	&.graduate-school h2 {
 		margin-bottom: rhythm(4, 24px);
 	}
 	h2, .__media.block h3, .footer-block h3 {
@@ -418,19 +427,19 @@ b, strong, h2, h3, h4 {
    		padding-bottom: 0;
    
 	}
-	.call-to-action h3 {
-		@include font-size(20);
-		a {
-			border: 0 none;
-		}
-	}
 
 
     // centered headings
-    .content h1, .l-content-full-width h2, &.home h2, .call-to-action h3 {
+    .l-content-full-width.two-up, 
+    .three-up, 
+    .content h1, 
+    &.home h2,
+    .content .four-up h2, 
+    .content .four-up h3,
+    .call-to-action h3,
+    &.graduate-school h2 {
         text-align: center;
     }
-
 
     .content {
         .text-block, .l-content {
@@ -449,7 +458,7 @@ b, strong, h2, h3, h4 {
 		display: none;
 	}
     .content-wrapper {
-        h1,h2,h3,h4,h5,h6,.call-to-action h3 a {
+        h1,h2,.call-to-action h3 a {
             font-family: $lcf-heading-font;
             font-weight: normal;
             letter-spacing: 1px;
@@ -467,4 +476,8 @@ b, strong, h2, h3, h4 {
         	@include font-size(20);
         }
     }
+    .call-to-action h3 {
+		@include font-size(20);
+		text-transform: uppercase;
+	}
 }
