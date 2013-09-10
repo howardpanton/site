@@ -2,10 +2,10 @@
 require 'compass'
 
 # Set this to the root of your project when deployed:
-http_path = "http://artslondon.github.io/beta/"
-css_dir = "assets/css"
+http_path = "http://beta.arts.ac.uk"
+css_dir = "media/beta/beta-assets/css"
 sass_dir = "assets/styles"
-fonts_dir = "/media/beta/beta-assets/fonts"
+fonts_dir = "media/beta/beta-assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 

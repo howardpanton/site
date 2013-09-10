@@ -17,13 +17,13 @@ template: true
 				<div class="l-content-full-width  block  __media  ">
 					<div class="row">
 
-						<video src="" style="width:100%;height:100%;" controls="control" preload="none">
+						<div class="video-container">
+						<!--<video src="" style="width:100%;height:100%;" controls="control" preload="none">
 		                    <source src="http://www.youtube.com/watch?v=Q0xTFhGCFww" type="video/youtube" />
-
-		                </video>
-<!-- 		                <iframe src="//www.youtube.com/embed/D3OyDhU7CdA" frameborder="0" allowfullscreen></iframe> 
- -->		                <!--<iframe class="video-embed" src="//player.vimeo.com/video/39905762" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>    -->  
-
+		                </video>-->
+		                <iframe src="//www.youtube.com/embed/D3OyDhU7CdA" frameborder="0" allowfullscreen></iframe> 
+		                <!--<iframe class="video-embed" src="//player.vimeo.com/video/39905762" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>    -->  
+		            	</div>
 
 		            </div>
 		        </div>
@@ -37,6 +37,12 @@ template: true
 			    <p><a href="{{ site.url }}content/colleges/lcf/people/teaching-staff/" class="button-link" title="View all"><span class="hide-descriptive-text">Follow this link to go to more information about</span>View all</a></p>
 			  </div>
 			</div>
+			
+		</div> <!-- end main-content -->	
+
+		<!-- media galleries -->
+		{% include components/_media-gallery-4-up.html %}
+
 
 			<div class="row">
 				<div class="two-up">
