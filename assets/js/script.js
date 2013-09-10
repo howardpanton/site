@@ -829,9 +829,14 @@ if ($('.js-lightbox').length > 0) {
 // End tabs to accordion 
 
 
-if ($('video').length > 0) {
+if ($('.__media').length > 0) {
+  $.getScript('http://artslondon.github.io/beta/assets/js/libs/jquery.fitvids.js', function() {
+    $('.__media').fitVids();
+  });
+}
 
-  $('.__media').fitVids();
+
+if ($('video').length > 0) {
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
