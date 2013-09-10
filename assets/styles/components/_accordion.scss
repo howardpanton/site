@@ -1,54 +1,54 @@
 /* Flexible Slide-to-top Accordion Style*/
 
 .accordion {
-	clear: left;
+  clear: left;
 }
 
 .accordion-list {
-	li:first-child {
-		border-top: none;
-	}		
-	.st-content {
-  	padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
-  	background-color: $white;
+  li:first-child {
+    border-top: none;
+  }   
+  .st-content {
+    padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
+    background-color: $white;
 
-  	table {
-  		@include font-size(16);
-  		
+    table {
+      @include font-size(16);
+      
       p {  
         @extend %d5-d12--within-d5-d16;
         display: block;
         float: none; 
         clear: left;
-  			@include font-size(16);
-  		}
+        @include font-size(16);
+      }
 
-			th {
-				@extend %Swiss721BT-Bold;
-				width: 25%;
-			}
-			
+      th {
+        @extend %Swiss721BT-Bold;
+        width: 25%;
+      }
+      
       tr {
-				&:nth-child(even) { background-color: $white; }
-			}
+        &:nth-child(even) { background-color: $white; }
+      }
 
-			td p{
-				padding: 0;
-			}
-		}
+      td p{
+        padding: 0;
+      }
+    }
 
 
-	}
+  }
 }
 
 
 .accordion-list-item {
-	
+  
   //height: 58px; // needs to match a line-height
-	overflow: hidden;
-	background-color: $bg-gray;
-	margin-bottom: 1px;
-	padding: 0;
+  overflow: hidden;
+  background-color: $bg-gray;
+  margin-bottom: 1px;
+  padding: 0;
 
   p, ul {
     @extend %d5-d12--within-d5-d16;
@@ -56,32 +56,31 @@
     clear: left;
   }
 
-	.accordion-list-anchor {
-		line-height: 58px; // needs to match li height
-		display: block;
-		position: relative;
-		outline:none;
-		border-bottom: none;
-		margin-left: rhythm(4, 24px);
-		padding-right: rhythm(8, 24px);
-
+  .accordion-list-anchor {
+    line-height: 58px; // needs to match li height
+    display: block;
+    position: relative;
+    outline:none;
+    border-bottom: none;
+    margin-left: rhythm(4, 24px);
+    padding-right: rhythm(8, 24px);
+    
     h3 {
       padding-top: 1em;
     }
+    .st-arrow {
 
-		.st-arrow {
-
-				@include font-size(18);
-				position: absolute;
-				top: 11px;
-				right: 6px;
-				opacity:1;
-				line-height:36px;
-				width:36px;
+        @include font-size(18);
+        position: absolute;
+        top: 11px;
+        right: 6px;
+        opacity:1;
+        line-height:36px;
+        width:36px;
         text-align: center;
-				//@include default-transition();
-		} 
-	}
+        //@include default-transition();
+    } 
+  }
 }
 
 .accordion-list-item .st-content {
@@ -124,4 +123,3 @@
     }
   }
 }
-

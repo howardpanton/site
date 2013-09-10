@@ -313,7 +313,10 @@ img.rsImg {
 .rsDefault.rsHor .rsArrowLeft { left: 0; top: 0; }
 .rsDefault.rsHor .rsArrowRight { right: 0; top:0; }
 
-.rsDefault .rsArrowIcn {		
+.rsDefault .rsArrowIcn {
+	@include gs-media(m) {
+		display: none;
+	}		
 	width: 32px;
 	height: 32px;
 	top: 50%;

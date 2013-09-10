@@ -1,7 +1,6 @@
 .credits-btn {
-	display: none;
 	position: fixed;
-	right: 0;
+	right: -38px;
 	top: 50%;
 	-webkit-transform: rotate(-90deg);   
 	-moz-transform: rotate(-90deg);
@@ -9,7 +8,27 @@
 	-o-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 	z-index: 1;
+	font-size: 14px;
+	.show-credits {
+		border: 1px solid black;
+		padding: 12px;
+		display: block;
+		height: 34px;
+		width: 108px;
+		text-align: center;
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+		padding-top: 14px;
+		background-color: white;
+	}	
+	a.active {
+		background-color: $black;
+		color: $white;
+	}
 }
+
 .credits {
 	display: none; 
 	position: absolute;

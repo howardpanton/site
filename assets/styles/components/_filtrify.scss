@@ -40,6 +40,10 @@ ul.ft-menu > li.ft-field {
 	// margin-right: 30px;
 	// background: none !important;
 	// position: relative !important; 
+
+	&:last-child {
+		margin-top: 48px;
+	}		
 }
 
 ul.ft-menu > li.ft-field > span.ft-label { 
@@ -64,8 +68,21 @@ ul.ft-menu > li.ft-field > span.ft-label:after {
 ul.ft-menu > li.ft-field > span.ft-label.ft-active:before { 
     content: " \2605"; 
     color: #2D3743; 
+
+    .camberwell & {
+    	color: $ccw-blue;
+    }
     .csm & {
     	color: $csm-primary;
+    }
+    .chelsea & {
+    	color: $ccw-salmon;
+    }
+    .lcf & {
+    	color: $mid-gray;
+    }
+    .wimbledon & {
+    	color: $ccw-green;
     }
 }
 ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after { 
@@ -118,10 +135,33 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
 	background: $logo-gray;
 	font-size: 13px;
+	.camberwell & {
+		background-color: $ccw-blue;
+		color: $white;
+	}
+
 	.csm & {
 		background-color: $csm-primary;
 		color: $white;
 	}
+
+	.chelsea & {
+		background-color: $ccw-salmon;
+		color: $white;
+	}
+	.lcc & {
+		background-color: $lcc-primary-yellow;
+		color: $black;
+	}
+	.lcf & {
+		background-color: $mid-gray;
+		color: $white;
+	}
+	.wimbledon & {
+		background-color: $ccw-green;
+		color: $white;
+	}
+
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
 	// font-size: 10px;
@@ -132,7 +172,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
 	cursor: pointer;
 	padding: 6px 12px;
 	border-bottom: 1px dotted $white;	
-	color: $white;
+	// color: $white;
 	// text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
 	// border: 1px solid #057ED0;
 	// border: 1px solid rgba(5, 126, 208, 0.7);
@@ -151,7 +191,8 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
 	content: " \00D7";
-	color: $white;
+	// color: $white;
+
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
 	background: $soft-black;
@@ -265,9 +306,27 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:active {
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
 	background: $white;
-	.csm & {
-		background-color: $csm-primary;
-	}
+
+  .camberwell & {
+  	background-color: $ccw-blue;
+  }
+  .csm & {
+  	background-color: $csm-primary;
+  }
+  .chelsea & {
+  	background-color: $ccw-salmon;
+  }
+  .lcc & {
+  	background-color: $lcc-primary-yellow;
+  	color: $black;
+  }
+  .lcf & {
+  	background-color: $mid-gray;
+  }
+  .wimbledon & {
+  	background-color: $ccw-green;
+  }
+
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {

@@ -277,18 +277,32 @@ if ($('#container').length > 0) {
               containerID : "container",
               perPage : 24,
               direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
+              animation : "fadeInUp"
           });
       };
 
-  });
+      function destroyPagination () {
+          pagination.jPages("destroy");
+      };
+
+      setPagination();
+
+      $.filtrify("container", "placeHolder", {
+          block : "data-original",
+          callback : function() {
+              destroyPagination();
+              setPagination();
+          }
+      });
+
+
+
+      });
   });
 
 }
+
+// $('.ft-menu li:first').appendTo('ul.ft-menu');
 
 
 
@@ -439,9 +453,7 @@ if ($('#container').length > 0) {
   /////// accreditation
   ///////////////////////
 
-  // Show image credits button fixed to the right of the screen on Desktop only
-  
-  if ($('.credits').length > 0) {
+  // $(".accreditation").hide();
 
     //  
     if ($('body').hasClass('gDesktop')) {
@@ -466,7 +478,6 @@ if ($('#container').length > 0) {
       $('.credits').show();
     }
     
-  }
 
 
 // detect accordion component
@@ -755,6 +766,7 @@ if ($('.js-lightbox').length > 0) {
     }
 
 // End tabs to accordion 
+
 
 // FitVids for Media Blocks
 

@@ -165,12 +165,12 @@ $(document).ready(function(){
         
         if (_clicked.hasClass('active')) {
           _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
-          _clicked.removeClass('active');
+          _clicked.html('☰').removeClass('active');
         }
         else {
         _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
         // update the menu button and set class to active
-        _clicked.addClass('active');
+        _clicked.html('❌').addClass('active');
         }
       });
 
@@ -836,7 +836,10 @@ if ($('.__media').length > 0) {
 }
 
 
+
 if ($('video').length > 0) {
+
+  $('.__media').fitVids();
 
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
@@ -852,6 +855,7 @@ if ($('video').length > 0) {
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
+
 
 
   // Creating custom :external selector

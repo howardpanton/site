@@ -20,6 +20,7 @@ footer {
   }
 }
 
+
 .footer-links {
   ul { 
     margin-bottom: 0;
@@ -85,6 +86,9 @@ footer {
 
 }
 
+ 
+  
+
 .social-links {
   @extend %d13-d16;
 
@@ -96,10 +100,7 @@ footer {
     line-height: rhythm(8, 16px);
     padding: 0;
     padding-left: 12px;
-    margin-bottom: 0;
-    font-style: normal !important;
-    font-weight: normal !important; // this is added to prevent overrides from college stylin' innit
-    letter-spacing: normal !important; // prevent LCF letter spacing on global footer
+    text-transform: capitalize !important;
     @include gs-media (d) {
       line-height: rhythm(6, 16px);
       padding-left: 0;
@@ -164,17 +165,34 @@ footer {
 
 .footer-ico {
   @extend %icon-social;
-  @include font-size(24);
+  @include font-size(54);
   line-height: 54px;
   @include gs-media (d) {
-    @include font-size(18);
+    @include font-size(36);
     line-height: 36px;
   }
 
   width: rhythm(6, 16px);
+  
   color: $white;
   
 }
+
+.youtube {
+  @extend %icon;
+  
+  @include font-size(54);
+  line-height: 54px;
+  @include gs-media (d) {
+    @include font-size(36);
+    line-height: 36px;
+  }
+  width: rhythm(6, 16px);
+  
+  
+
+}
+
 
 
 // the back to top button which appears 
