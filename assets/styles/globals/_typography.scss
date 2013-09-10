@@ -39,7 +39,7 @@ a {
 		color: $aaa-gray;
 		padding-bottom: 1px;
 		border-bottom: 1px dotted $black;
-		.lcc & {
+		.lcc h2 & , .lcc h3 & {
 			color: $lcc-secondary-pink;
 		}
 	}
@@ -395,7 +395,7 @@ b, strong, h2, h3, h4 {
 	h4,h5,h6 {
 	   @extend %Swiss721BT-Bold;
 	}
-	&.home h2, .l-content-full-width h2, .intro-block-with-left-image h2, &.graduate-school h1 {
+	&.home h2, .l-content-full-width h2, .__gallery h2, .intro-block-with-left-image h2, &.graduate-school h1 {
 		margin-bottom: rhythm(4, 24px);
 	}
 	h2, .__media.block h3, .footer-block h3 {
@@ -426,7 +426,7 @@ b, strong, h2, h3, h4 {
 
 
     // centered headings
-    .content h1, .content h2, &.home h2, .call-to-action h3 {
+    .content h1, .l-content-full-width h2, &.home h2, .call-to-action h3 {
         text-align: center;
     }
 

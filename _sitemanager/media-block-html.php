@@ -50,16 +50,19 @@ if (strpos($video_url,"vimeo") !== false) {
           <div class="l-content">
           <?php } ?>  
 
-          <?php if ($media_type == "video") {
-            if ($video_url != "") { // this is an embed of some kind
+          <?php if ($media_type == "video") { ?>
+
+            <div class="video-container">
+
+            <?php if ($video_url != "") { // this is an embed of some kind
               
               if ($video_type == "youtube") { ?>
               
-              <iframe class="video-embed" src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
+              <iframe src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
           
               <?php } else { // Vimeo embed ?>
 
-              <iframe class="video-embed" src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <iframe src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               
               <?php } 
               
@@ -70,6 +73,8 @@ if (strpos($video_url,"vimeo") !== false) {
             <?php } // end if has video url ?>
 
             <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<div class=&quot;caption&quot;><span>$value</span></div>" />
+
+            </div><!-- .video-container -->
 
           <?php } // end if is video
 

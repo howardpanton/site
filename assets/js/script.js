@@ -270,20 +270,31 @@ if ($('#container').length > 0) {
       $(function() {
 
       var container = $("#container"),
-          pagination = $("#pagination");
+        pagination = $("#pagination");
 
-      function setPagination () {
-          pagination.jPages({
-              containerID : "container",
-              perPage : 24,
-              direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
-          });
-      };
+    function setPagination () {
+        pagination.jPages({
+            containerID : "container",
+            perPage : 24,
+            direction : "auto",
+            animation : "fadeInUp"
+            }
+        });
+    };
+
+    function destroyPagination () {
+        pagination.jPages("destroy");
+    };
+
+    setPagination();
+
+    $.filtrify("container", "placeHolder", {
+        block : "data-original",
+        callback : function() {
+            destroyPagination();
+            setPagination();
+        }
+    });
 
   });
   });
@@ -764,7 +775,8 @@ if ($('video').length > 0) {
   $.getScript('http://artslondon.github.io/beta/assets/js/libs/mediaelement-and-player.min.js', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
-      pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
 
@@ -799,9 +811,10 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home, .lcf .__media').find('h2').each( function() {
-  $(this).wrapInner('<span />');
-});
+$('.lcf.home').find('h2').wrapInner('<span />');
+
+$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+
 
 
 }); // end document ready
