@@ -104,12 +104,10 @@ function enableSelectBoxes() {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
-        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
       else
       {
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
-         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
     });
 
@@ -119,7 +117,6 @@ function enableSelectBoxes() {
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
       var _test = 'the select option is :' + $(this).attr('data-sb-value');
       $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
-      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       $(this).parent().parent().scrollToMe();
     });
   });       
@@ -292,13 +289,16 @@ if ($('#container').length > 0) {
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
+
+  // only show the back to top button if browsing in desktop view
+  if ($('body').hasClass('gDesktop')) {
     if ($(this).scrollTop() > 450) {
       $('.back-to-top').fadeIn(200);
     } else {
       $('.back-to-top').fadeOut(200);
     }
+  }
   });
-
 
   // scroll to the top of the page when the button is clicked
   $('.back-to-top').click(function(e){
@@ -432,12 +432,11 @@ if ($('#container').length > 0) {
   }
 
 
-  ///////////////////////
-  /////// accreditation
-  ///////////////////////
+  /////////////////////////////////
+  /////// image accreditation 
+  /////////////////////////////////
 
-  // Show image credits button fixed to the right of the screen on Desktop only
-  
+  // Show image credits button fixed to the right of the screen on desktop and tablet only
   if ($('.credits').length > 0) {
 
     $.when(
@@ -445,14 +444,13 @@ if ($('#container').length > 0) {
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
-    ).done(function(){
-      //  
-      if ($('body').hasClass('gDesktop')) {
+    ).done(function() {
+      
+      if (!$('body').hasClass('gMobile')) {
         $('.credits-btn').addClass("show").rotate({angle:-90});
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
-        
           var c = $(this);
           if (c.hasClass('active') ) {
             c.removeClass('active').html("Show Credits");
@@ -463,14 +461,73 @@ if ($('#container').length > 0) {
           }
         });
       }
-
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
-      }
     });
     
   }
+
+
+
+// //detect accordion component
+// if ($('.accordion').length > 0) {
+
+//     // $.when(
+//     //     $.getScript( "http://artslondon.github.io/beta/assets/js/components/accordion-test.js" ),
+//     //     $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
+//     //     $.Deferred(function( deferred ){
+//     //         $( deferred.resolve );
+//     //     })
+//     // ).done(function(){
+//     //     $('.accordion-list-item').each(function( index ) {
+//     //        accordion($(this));
+//     //     });
+       
+//     //     // //call to widget trigger1
+//     //     // accordion('#trigger1');
+//     //     // //call to widget trigger2
+//     //     // accordion('#trigger2');
+//     //     // //call to widget trigger3
+//     //     // accordion('#trigger3');
+
+//         });
+
+//     function resetSpinners() {
+//       // check if there are any other open accordion items, and close them if so
+//       $( ".accordion-list-item" ).each(function (e) {
+//         var _li_item = $(this); 
+//         if ( _li_item.hasClass('st-open') ) {
+//             _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"], });
+//         }
+//       });
+//     }
+
+//     $(".accordion-list-anchor").on("click", ".size-h4", function(event){
+//         event.preventDefault();
+//         var circle = ($(this).next('.st-arrow'));
+//         var accordion = ($(this).parent().parent());
+//         var elem = ($(this).parent().next('.st-content'));
+//               resetSpinners();
+//               // $(this).scrollToMe(); // scroll to the clicked elem
+//               if (!elem.is(':visible'))  {
+//                 circle.rotate({animateTo:135});
+//                } else {
+//                 circle.rotate({animateTo:0, center: ["50%", "50%"], });
+//               };
+//     });
+
+//     $(".st-arrow").on("click", function(e){
+//       e.preventDefault();
+//       resetSpinners();
+//       var _icon = $(this);
+//       var _st = $(this).parent().parent();
+
+//       if (!_st.hasClass('st-open'))  {
+//         _icon.rotate({animateTo:135});
+//       } else {
+//         _icon.rotate({animateTo:0, center: ["50%", "50%"], });
+//       };
+
+//     });
+// }
 
 
 // detect accordion component
@@ -542,13 +599,11 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
@@ -809,7 +864,6 @@ $('.l-content a[href*="github."]').addClass('github-link');
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
-// $('.content a[href$=".html"]').parent().addClass('external');
 
   // Creating custom :external selector
   $.expr[':'].external = function(obj){
