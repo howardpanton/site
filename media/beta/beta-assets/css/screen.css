@@ -6210,19 +6210,34 @@ li:last-child {
 
 /* line 1, ../../../../assets/styles/components/_credits.scss */
 .credits-btn {
-  display: none;
   position: fixed;
-  right: 0;
+  right: -38px;
   top: 50%;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
+  z-index: 1;
+  font-size: 14px;
+}
+/* line 7, ../../../../assets/styles/components/_credits.scss */
+.credits-btn .show-credits {
+  border: 1px solid black;
+  padding: 12px;
+  display: block;
+  height: 34px;
+  width: 108px;
+  text-align: center;
+  -webkit-transform: rotate(90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  z-index: 1;
+  padding-top: 14px;
+  background-color: white;
+}
+/* line 21, ../../../../assets/styles/components/_credits.scss */
+.credits-btn a.active {
+  background-color: black;
+  color: white;
 }
 
-/* line 13, ../../../../assets/styles/components/_credits.scss */
+/* line 27, ../../../../assets/styles/components/_credits.scss */
 .credits {
   display: none;
   position: absolute;
