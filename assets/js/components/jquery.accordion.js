@@ -150,8 +150,8 @@
 				});
 				
 				// scroll to current
-				if( instance._isOpened() )
-				instance._scroll();
+				// if( instance._isOpened() )
+				// //instance._scroll();
 				
 			});
 			
@@ -172,11 +172,12 @@
 				? ( this.current = -1, $content.stop(true, true).fadeOut( this.options.speed ), $item.removeClass( 'st-open' ).stop().animate({
 					height	: $item.data( 'originalHeight' )
 				}, this.options.speed, this.options.easing ) )
-				
 				: ( this.current = $item.index(), $content.stop(true, true).fadeIn( this.options.speed ), $item.addClass( 'st-open' ).stop().animate({
 					height	: $item.data( 'originalHeight' ) + $content.outerHeight( true )
-				}, this.options.speed, this.options.easing ), this._scroll( this ) )
+				}, this.options.speed, this.options.easing ))
 		
+		// this._scroll( this )
+
 		},
 		// scrolls to current item or last opened item if current is -1
 		_scroll				: function( instance ) {
@@ -184,10 +185,10 @@
 			var instance	= instance || this, current;
 			
 			( instance.current !== -1 ) ? current = instance.current : current = instance.$el.find('li.st-open:last').index();
-			
-			$('html, body').stop().animate({
-				scrollTop	: ( instance.options.oneOpenedItem ) ? instance.$items.eq( current ).data( 'offsetTop' ) : instance.$items.eq( current ).offset().top
-			}, instance.options.scrollSpeed, instance.options.scrollEasing );
+			console.log('the scroll function ran');
+			// $('html, body').stop().animate({
+			// 	scrollTop	: ( instance.options.oneOpenedItem ) ? instance.$items.eq( current ).data( 'offsetTop' ) : instance.$items.eq( current ).offset().top
+			// }, instance.options.scrollSpeed, instance.options.scrollEasing );
 		
 		}
 	};
