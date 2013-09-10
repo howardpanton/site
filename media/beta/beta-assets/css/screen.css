@@ -1463,7 +1463,7 @@ hr {
   margin-bottom: 1.5em;
   padding-bottom: 0;
 }
-/* line 436, ../../../../assets/styles/globals/_typography.scss */
+/* line 437, ../../../../assets/styles/globals/_typography.scss */
 .lcf .l-content-full-width.two-up, .lcf .two-up#container,
 .lcf .three-up,
 .lcf .content h1, .lcf.home h2,
@@ -1471,26 +1471,26 @@ hr {
 .lcf .call-to-action h3, .lcf.graduate-school h2 {
   text-align: center;
 }
-/* line 443, ../../../../assets/styles/globals/_typography.scss */
+/* line 444, ../../../../assets/styles/globals/_typography.scss */
 .lcf .content .text-block h2, .lcf .content .text-block h3, .lcf .content .text-block h4, .lcf .content .l-content h2, .lcf .content .l-content h3, .lcf .content .l-content h4 {
   text-align: left;
 }
 
-/* line 454, ../../../../assets/styles/globals/_typography.scss */
+/* line 455, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .header-wrapper h1, .graduate-school .dd-menu-dropdown-wrapper h1 {
   display: none;
 }
-/* line 458, ../../../../assets/styles/globals/_typography.scss */
+/* line 459, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1, .graduate-school .content-wrapper h2, .graduate-school .content-wrapper .call-to-action h3 a {
   font-family: Times, serif;
   font-weight: normal;
   letter-spacing: 1px;
 }
-/* line 463, ../../../../assets/styles/globals/_typography.scss */
+/* line 464, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1, .graduate-school .content-wrapper h2 {
   background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
 }
-/* line 466, ../../../../assets/styles/globals/_typography.scss */
+/* line 467, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h1 {
   font-size: 36px;
   font-size: 2.25rem;
@@ -1498,12 +1498,12 @@ hr {
   margin-bottom: 0.8em;
   letter-spacing: 5px;
 }
-/* line 472, ../../../../assets/styles/globals/_typography.scss */
+/* line 473, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .content-wrapper h2 {
   font-size: 20px;
   font-size: 1.25rem;
 }
-/* line 476, ../../../../assets/styles/globals/_typography.scss */
+/* line 477, ../../../../assets/styles/globals/_typography.scss */
 .graduate-school .call-to-action h3 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -12141,25 +12141,39 @@ img.mfp-img {
   padding-top: 0;
 }
 
-/* line 2, ../../../../assets/styles/components/_video.scss */
-video {
-  max-width: 100%;
-  height: auto;
+/* line 5, ../../../../assets/styles/components/_video.scss */
+.intrinsicRatio {
+  position: relative;
+  overflow: visible;
+  height: 0;
 }
 
-/* line 9, ../../../../assets/styles/components/_video.scss */
-iframe,
-embed,
-object {
-  max-width: 100%;
+/* line 11, ../../../../assets/styles/components/_video.scss */
+.ratio16to9 {
+  padding-bottom: 56.25%;
 }
 
-/* line 13, ../../../../assets/styles/components/_video.scss */
-.video-container {
-  margin-bottom: 1.5em;
+/* line 18, ../../../../assets/styles/components/_video.scss */
+.intrinsicRatio div,
+.intrinsicRatio object,
+.intrinsicRatio embed {
+  /* Everything following breaks iPhone and iPad(!) */
+  /*
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:teal;
+  */
 }
 
-/* line 19, ../../../../assets/styles/components/_video.scss */
+/* line 32, ../../../../assets/styles/components/_video.scss */
+#vid-player_logo {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* line 41, ../../../../assets/styles/components/_video.scss */
 .mejs-container {
   position: relative;
   background: #000;
@@ -12169,12 +12183,12 @@ object {
   text-indent: 0;
 }
 
-/* line 28, ../../../../assets/styles/components/_video.scss */
+/* line 50, ../../../../assets/styles/components/_video.scss */
 .me-plugin {
   position: absolute;
 }
 
-/* line 32, ../../../../assets/styles/components/_video.scss */
+/* line 54, ../../../../assets/styles/components/_video.scss */
 .mejs-embed, .mejs-embed body {
   width: 100%;
   height: 100%;
@@ -12184,13 +12198,13 @@ object {
   overflow: hidden;
 }
 
-/* line 41, ../../../../assets/styles/components/_video.scss */
+/* line 63, ../../../../assets/styles/components/_video.scss */
 .mejs-fullscreen {
   /* set it to not show scroll bars so 100% will work */
   overflow: hidden !important;
 }
 
-/* line 46, ../../../../assets/styles/components/_video.scss */
+/* line 68, ../../../../assets/styles/components/_video.scss */
 .mejs-container-fullscreen {
   position: fixed;
   left: 0;
@@ -12201,27 +12215,27 @@ object {
   z-index: 1000;
 }
 
-/* line 56, ../../../../assets/styles/components/_video.scss */
+/* line 78, ../../../../assets/styles/components/_video.scss */
 .mejs-container-fullscreen .mejs-mediaelement,
 .mejs-container-fullscreen video {
   width: 100%;
   height: 100%;
 }
 
-/* line 61, ../../../../assets/styles/components/_video.scss */
+/* line 83, ../../../../assets/styles/components/_video.scss */
 .mejs-clear {
   clear: both;
 }
 
 /* Start: LAYERS */
-/* line 66, ../../../../assets/styles/components/_video.scss */
+/* line 88, ../../../../assets/styles/components/_video.scss */
 .mejs-background {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 72, ../../../../assets/styles/components/_video.scss */
+/* line 94, ../../../../assets/styles/components/_video.scss */
 .mejs-mediaelement {
   position: absolute;
   top: 0;
@@ -12230,7 +12244,7 @@ object {
   height: 100%;
 }
 
-/* line 80, ../../../../assets/styles/components/_video.scss */
+/* line 102, ../../../../assets/styles/components/_video.scss */
 .mejs-poster {
   position: absolute;
   top: 0;
@@ -12240,31 +12254,31 @@ object {
   background-repeat: no-repeat;
 }
 
-/* line 88, ../../../../assets/styles/components/_video.scss */
+/* line 110, ../../../../assets/styles/components/_video.scss */
 :root .mejs-poster img {
   display: none;
 }
 
-/* line 92, ../../../../assets/styles/components/_video.scss */
+/* line 114, ../../../../assets/styles/components/_video.scss */
 .mejs-poster img {
   border: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 98, ../../../../assets/styles/components/_video.scss */
+/* line 120, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 104, ../../../../assets/styles/components/_video.scss */
+/* line 126, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay-play {
   cursor: pointer;
 }
 
-/* line 108, ../../../../assets/styles/components/_video.scss */
+/* line 130, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay-button {
   position: absolute;
   top: 50%;
@@ -12275,17 +12289,17 @@ object {
   background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/bigplay.svg) no-repeat;
 }
 
-/* line 118, ../../../../assets/styles/components/_video.scss */
+/* line 140, ../../../../assets/styles/components/_video.scss */
 .no-svg .mejs-overlay-button {
   background-image: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/bigplay.png);
 }
 
-/* line 122, ../../../../assets/styles/components/_video.scss */
+/* line 144, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay:hover .mejs-overlay-button {
   background-position: 0 -100px;
 }
 
-/* line 126, ../../../../assets/styles/components/_video.scss */
+/* line 148, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay-loading {
   position: absolute;
   top: 50%;
@@ -12304,7 +12318,7 @@ object {
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
-/* line 144, ../../../../assets/styles/components/_video.scss */
+/* line 166, ../../../../assets/styles/components/_video.scss */
 .mejs-overlay-loading span {
   display: block;
   width: 80px;
@@ -12314,7 +12328,7 @@ object {
 
 /* End: LAYERS */
 /* Start: CONTROL BAR */
-/* line 154, ../../../../assets/styles/components/_video.scss */
+/* line 176, ../../../../assets/styles/components/_video.scss */
 .mejs-container .mejs-controls {
   position: absolute;
   list-style-type: none;
@@ -12334,7 +12348,7 @@ object {
   width: 100%;
 }
 
-/* line 172, ../../../../assets/styles/components/_video.scss */
+/* line 194, ../../../../assets/styles/components/_video.scss */
 .mejs-container .mejs-controls div {
   list-style-type: none;
   background-image: none;
@@ -12350,7 +12364,7 @@ object {
   border: 0;
 }
 
-/* line 187, ../../../../assets/styles/components/_video.scss */
+/* line 209, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-button button {
   cursor: pointer;
   display: block;
@@ -12366,20 +12380,20 @@ object {
   background: transparent url(http://beta.arts.ac.uk/media/beta/beta-assets/img/controls.svg) no-repeat;
 }
 
-/* line 202, ../../../../assets/styles/components/_video.scss */
+/* line 224, ../../../../assets/styles/components/_video.scss */
 .no-svg .mejs-controls .mejs-button button {
   background-image: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/controls.png);
 }
 
 /* :focus for accessibility */
-/* line 207, ../../../../assets/styles/components/_video.scss */
+/* line 229, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-button button:focus {
   outline: solid 1px yellow;
 }
 
 /* End: CONTROL BAR */
 /* Start: Time (Current / Duration) */
-/* line 214, ../../../../assets/styles/components/_video.scss */
+/* line 236, ../../../../assets/styles/components/_video.scss */
 .mejs-container .mejs-controls .mejs-time {
   color: #fff;
   display: block;
@@ -12393,7 +12407,7 @@ object {
   box-sizing: content-box;
 }
 
-/* line 227, ../../../../assets/styles/components/_video.scss */
+/* line 249, ../../../../assets/styles/components/_video.scss */
 .mejs-container .mejs-controls .mejs-time span {
   color: #fff;
   font-size: 11px;
@@ -12406,30 +12420,30 @@ object {
 
 /* End: Time (Current / Duration) */
 /* Start: Play/Pause/Stop */
-/* line 239, ../../../../assets/styles/components/_video.scss */
+/* line 261, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-play button {
   background-position: 0 0;
 }
 
-/* line 243, ../../../../assets/styles/components/_video.scss */
+/* line 265, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-pause button {
   background-position: 0 -16px;
 }
 
-/* line 247, ../../../../assets/styles/components/_video.scss */
+/* line 269, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-stop button {
   background-position: -112px 0;
 }
 
 /* Start: Play/Pause/Stop */
 /* Start: Progress Bar */
-/* line 253, ../../../../assets/styles/components/_video.scss */
+/* line 275, ../../../../assets/styles/components/_video.scss */
 .mejs-controls div.mejs-time-rail {
   width: 200px;
   padding-top: 5px;
 }
 
-/* line 258, ../../../../assets/styles/components/_video.scss */
+/* line 280, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail span {
   display: block;
   position: absolute;
@@ -12441,7 +12455,7 @@ object {
   cursor: pointer;
 }
 
-/* line 269, ../../../../assets/styles/components/_video.scss */
+/* line 291, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-total {
   margin: 5px;
   background: #333;
@@ -12454,7 +12468,7 @@ object {
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
-/* line 281, ../../../../assets/styles/components/_video.scss */
+/* line 303, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-buffering {
   width: 100%;
   background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -12475,66 +12489,66 @@ object {
 }
 
 @-webkit-keyframes buffering-stripes {
-  /* line 300, ../../../../assets/styles/components/_video.scss */
+  /* line 322, ../../../../assets/styles/components/_video.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 300, ../../../../assets/styles/components/_video.scss */
+  /* line 322, ../../../../assets/styles/components/_video.scss */
   to {
     background-position: 30px 0;
   }
 }
 
 @-moz-keyframes buffering-stripes {
-  /* line 301, ../../../../assets/styles/components/_video.scss */
+  /* line 323, ../../../../assets/styles/components/_video.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 301, ../../../../assets/styles/components/_video.scss */
+  /* line 323, ../../../../assets/styles/components/_video.scss */
   to {
     background-position: 30px 0;
   }
 }
 
 @-ms-keyframes buffering-stripes {
-  /* line 302, ../../../../assets/styles/components/_video.scss */
+  /* line 324, ../../../../assets/styles/components/_video.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 302, ../../../../assets/styles/components/_video.scss */
+  /* line 324, ../../../../assets/styles/components/_video.scss */
   to {
     background-position: 30px 0;
   }
 }
 
 @-o-keyframes buffering-stripes {
-  /* line 303, ../../../../assets/styles/components/_video.scss */
+  /* line 325, ../../../../assets/styles/components/_video.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 303, ../../../../assets/styles/components/_video.scss */
+  /* line 325, ../../../../assets/styles/components/_video.scss */
   to {
     background-position: 30px 0;
   }
 }
 
 @keyframes buffering-stripes {
-  /* line 304, ../../../../assets/styles/components/_video.scss */
+  /* line 326, ../../../../assets/styles/components/_video.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 304, ../../../../assets/styles/components/_video.scss */
+  /* line 326, ../../../../assets/styles/components/_video.scss */
   to {
     background-position: 30px 0;
   }
 }
 
-/* line 306, ../../../../assets/styles/components/_video.scss */
+/* line 328, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
   background: #3caac8;
   background: rgba(60, 170, 200, 0.8);
@@ -12547,7 +12561,7 @@ object {
   width: 0;
 }
 
-/* line 318, ../../../../assets/styles/components/_video.scss */
+/* line 340, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-current {
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
@@ -12560,7 +12574,7 @@ object {
   width: 0;
 }
 
-/* line 330, ../../../../assets/styles/components/_video.scss */
+/* line 352, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-handle {
   display: none;
   position: absolute;
@@ -12576,7 +12590,7 @@ object {
   text-align: center;
 }
 
-/* line 345, ../../../../assets/styles/components/_video.scss */
+/* line 367, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-float {
   position: absolute;
   display: none;
@@ -12590,7 +12604,7 @@ object {
   color: #111;
 }
 
-/* line 358, ../../../../assets/styles/components/_video.scss */
+/* line 380, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
   margin: 2px;
   width: 30px;
@@ -12599,7 +12613,7 @@ object {
   left: 0;
 }
 
-/* line 366, ../../../../assets/styles/components/_video.scss */
+/* line 388, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-time-rail .mejs-time-float-corner {
   position: absolute;
   display: block;
@@ -12615,17 +12629,17 @@ object {
   left: 13px;
 }
 
-/* line 381, ../../../../assets/styles/components/_video.scss */
+/* line 403, ../../../../assets/styles/components/_video.scss */
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float {
   width: 48px;
 }
 
-/* line 385, ../../../../assets/styles/components/_video.scss */
+/* line 407, ../../../../assets/styles/components/_video.scss */
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-current {
   width: 44px;
 }
 
-/* line 389, ../../../../assets/styles/components/_video.scss */
+/* line 411, ../../../../assets/styles/components/_video.scss */
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-corner {
   left: 18px;
 }
@@ -12637,34 +12651,34 @@ object {
 */
 /* End: Progress Bar */
 /* Start: Fullscreen */
-/* line 401, ../../../../assets/styles/components/_video.scss */
+/* line 423, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-fullscreen-button button {
   background-position: -32px 0;
 }
 
-/* line 405, ../../../../assets/styles/components/_video.scss */
+/* line 427, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-unfullscreen button {
   background-position: -32px -16px;
 }
 
 /* End: Fullscreen */
 /* Start: Mute/Volume */
-/* line 415, ../../../../assets/styles/components/_video.scss */
+/* line 437, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-mute button {
   background-position: -16px -16px;
 }
 
-/* line 419, ../../../../assets/styles/components/_video.scss */
+/* line 441, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-unmute button {
   background-position: -16px 0;
 }
 
-/* line 423, ../../../../assets/styles/components/_video.scss */
+/* line 445, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button {
   position: relative;
 }
 
-/* line 427, ../../../../assets/styles/components/_video.scss */
+/* line 449, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button .mejs-volume-slider {
   display: none;
   height: 115px;
@@ -12681,7 +12695,7 @@ object {
   margin: 0;
 }
 
-/* line 443, ../../../../assets/styles/components/_video.scss */
+/* line 465, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button:hover {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
@@ -12693,7 +12707,7 @@ object {
 	display: block;
 }
 */
-/* line 455, ../../../../assets/styles/components/_video.scss */
+/* line 477, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-total {
   position: absolute;
   left: 11px;
@@ -12705,7 +12719,7 @@ object {
   margin: 0;
 }
 
-/* line 466, ../../../../assets/styles/components/_video.scss */
+/* line 488, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current {
   position: absolute;
   left: 11px;
@@ -12717,7 +12731,7 @@ object {
   margin: 0;
 }
 
-/* line 477, ../../../../assets/styles/components/_video.scss */
+/* line 499, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-handle {
   position: absolute;
   left: 4px;
@@ -12734,14 +12748,14 @@ object {
 }
 
 /* horizontal version */
-/* line 493, ../../../../assets/styles/components/_video.scss */
+/* line 515, ../../../../assets/styles/components/_video.scss */
 .mejs-controls div.mejs-horizontal-volume-slider {
   height: 26px;
   width: 60px;
   position: relative;
 }
 
-/* line 499, ../../../../assets/styles/components/_video.scss */
+/* line 521, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
   position: absolute;
   left: 0;
@@ -12764,7 +12778,7 @@ object {
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
-/* line 521, ../../../../assets/styles/components/_video.scss */
+/* line 543, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
   position: absolute;
   left: 0;
@@ -12787,24 +12801,24 @@ object {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(200, 200, 200, 0.8));
 }
 
-/* line 543, ../../../../assets/styles/components/_video.scss */
+/* line 565, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
   display: none;
 }
 
 /* End: Mute/Volume */
 /* Start: Track (Captions and Chapters) */
-/* line 550, ../../../../assets/styles/components/_video.scss */
+/* line 572, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button {
   position: relative;
 }
 
-/* line 554, ../../../../assets/styles/components/_video.scss */
+/* line 576, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button button {
   background-position: -48px 0;
 }
 
-/* line 557, ../../../../assets/styles/components/_video.scss */
+/* line 579, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-selector {
   visibility: hidden;
   position: absolute;
@@ -12827,7 +12841,7 @@ object {
 	visibility: visible;
 }
 */
-/* line 580, ../../../../assets/styles/components/_video.scss */
+/* line 602, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul {
   margin: 0;
   padding: 0;
@@ -12836,7 +12850,7 @@ object {
   overflow: hidden;
 }
 
-/* line 588, ../../../../assets/styles/components/_video.scss */
+/* line 610, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
@@ -12846,14 +12860,14 @@ object {
   overflow: hidden;
 }
 
-/* line 597, ../../../../assets/styles/components/_video.scss */
+/* line 619, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li input {
   clear: both;
   float: left;
   margin: 3px 3px 0 5px;
 }
 
-/* line 603, ../../../../assets/styles/components/_video.scss */
+/* line 625, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li label {
   width: 100px;
   float: left;
@@ -12863,13 +12877,13 @@ object {
   font-size: 10px;
 }
 
-/* line 612, ../../../../assets/styles/components/_video.scss */
+/* line 634, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-captions-button .mejs-captions-translations {
   font-size: 10px;
   margin: 0 0 5px 0;
 }
 
-/* line 617, ../../../../assets/styles/components/_video.scss */
+/* line 639, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters {
   position: absolute;
   top: 0;
@@ -12879,7 +12893,7 @@ object {
   z-index: 1;
 }
 
-/* line 626, ../../../../assets/styles/components/_video.scss */
+/* line 648, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter {
   position: absolute;
   float: left;
@@ -12896,7 +12910,7 @@ object {
   border: 0;
 }
 
-/* line 642, ../../../../assets/styles/components/_video.scss */
+/* line 664, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter .mejs-chapter-block {
   font-size: 11px;
   color: #fff;
@@ -12907,12 +12921,12 @@ object {
   cursor: pointer;
 }
 
-/* line 652, ../../../../assets/styles/components/_video.scss */
+/* line 674, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter .mejs-chapter-block-last {
   border-right: none;
 }
 
-/* line 656, ../../../../assets/styles/components/_video.scss */
+/* line 678, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
@@ -12925,7 +12939,7 @@ object {
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
 
-/* line 668, ../../../../assets/styles/components/_video.scss */
+/* line 690, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title {
   font-size: 12px;
   font-weight: bold;
@@ -12936,7 +12950,7 @@ object {
   line-height: 12px;
 }
 
-/* line 678, ../../../../assets/styles/components/_video.scss */
+/* line 700, ../../../../assets/styles/components/_video.scss */
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan {
   font-size: 12px;
   line-height: 12px;
@@ -12946,7 +12960,7 @@ object {
   text-overflow: ellipsis;
 }
 
-/* line 687, ../../../../assets/styles/components/_video.scss */
+/* line 709, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-layer {
   position: absolute;
   bottom: 0;
@@ -12957,19 +12971,19 @@ object {
   color: #fff;
 }
 
-/* line 697, ../../../../assets/styles/components/_video.scss */
+/* line 719, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-layer a {
   color: #fff;
   text-decoration: underline;
 }
 
-/* line 702, ../../../../assets/styles/components/_video.scss */
+/* line 724, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-layer[lang=ar] {
   font-size: 20px;
   font-weight: normal;
 }
 
-/* line 707, ../../../../assets/styles/components/_video.scss */
+/* line 729, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-position {
   position: absolute;
   width: 100%;
@@ -12977,12 +12991,12 @@ object {
   left: 0;
 }
 
-/* line 714, ../../../../assets/styles/components/_video.scss */
+/* line 736, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-position-hover {
   bottom: 45px;
 }
 
-/* line 718, ../../../../assets/styles/components/_video.scss */
+/* line 740, ../../../../assets/styles/components/_video.scss */
 .mejs-captions-text {
   padding: 3px 5px;
   background: url(http://beta.arts.ac.uk/media/beta/beta-assets/img/background.png);
@@ -12991,13 +13005,13 @@ object {
 
 /* End: Track (Captions and Chapters) */
 /* Start: Error */
-/* line 730, ../../../../assets/styles/components/_video.scss */
+/* line 752, ../../../../assets/styles/components/_video.scss */
 .me-cannotplay a {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 735, ../../../../assets/styles/components/_video.scss */
+/* line 757, ../../../../assets/styles/components/_video.scss */
 .me-cannotplay span {
   padding: 15px;
   display: block;
@@ -13005,38 +13019,38 @@ object {
 
 /* End: Error */
 /* Start: Loop */
-/* line 743, ../../../../assets/styles/components/_video.scss */
+/* line 765, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-loop-off button {
   background-position: -64px -16px;
 }
 
-/* line 747, ../../../../assets/styles/components/_video.scss */
+/* line 769, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-loop-on button {
   background-position: -64px 0;
 }
 
 /* End: Loop */
 /* Start: backlight */
-/* line 754, ../../../../assets/styles/components/_video.scss */
+/* line 776, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-backlight-off button {
   background-position: -80px -16px;
 }
 
-/* line 758, ../../../../assets/styles/components/_video.scss */
+/* line 780, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-backlight-on button {
   background-position: -80px 0;
 }
 
 /* End: backlight */
 /* Start: Picture Controls */
-/* line 764, ../../../../assets/styles/components/_video.scss */
+/* line 786, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-picturecontrols-button {
   background-position: -96px 0;
 }
 
 /* End: Picture Controls */
 /* context menu */
-/* line 771, ../../../../assets/styles/components/_video.scss */
+/* line 793, ../../../../assets/styles/components/_video.scss */
 .mejs-contextmenu {
   position: absolute;
   width: 150px;
@@ -13050,7 +13064,7 @@ object {
   /* make sure it shows on fullscreen */
 }
 
-/* line 782, ../../../../assets/styles/components/_video.scss */
+/* line 804, ../../../../assets/styles/components/_video.scss */
 .mejs-contextmenu .mejs-contextmenu-separator {
   height: 1px;
   font-size: 0;
@@ -13058,7 +13072,7 @@ object {
   background: #333;
 }
 
-/* line 789, ../../../../assets/styles/components/_video.scss */
+/* line 811, ../../../../assets/styles/components/_video.scss */
 .mejs-contextmenu .mejs-contextmenu-item {
   font-family: Helvetica, Arial;
   font-size: 12px;
@@ -13067,24 +13081,24 @@ object {
   color: #333;
 }
 
-/* line 796, ../../../../assets/styles/components/_video.scss */
+/* line 818, ../../../../assets/styles/components/_video.scss */
 .mejs-contextmenu .mejs-contextmenu-item:hover {
   background: #2C7C91;
   color: #fff;
 }
 
 /* Start: Source Chooser */
-/* line 802, ../../../../assets/styles/components/_video.scss */
+/* line 824, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button {
   position: relative;
 }
 
-/* line 806, ../../../../assets/styles/components/_video.scss */
+/* line 828, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button button {
   background-position: -128px 0;
 }
 
-/* line 810, ../../../../assets/styles/components/_video.scss */
+/* line 832, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector {
   visibility: hidden;
   position: absolute;
@@ -13102,7 +13116,7 @@ object {
   border-radius: 0;
 }
 
-/* line 827, ../../../../assets/styles/components/_video.scss */
+/* line 849, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul {
   margin: 0;
   padding: 0;
@@ -13111,7 +13125,7 @@ object {
   overflow: hidden;
 }
 
-/* line 835, ../../../../assets/styles/components/_video.scss */
+/* line 857, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
@@ -13121,14 +13135,14 @@ object {
   overflow: hidden;
 }
 
-/* line 844, ../../../../assets/styles/components/_video.scss */
+/* line 866, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li input {
   clear: both;
   float: left;
   margin: 3px 3px 0 5px;
 }
 
-/* line 850, ../../../../assets/styles/components/_video.scss */
+/* line 872, ../../../../assets/styles/components/_video.scss */
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li label {
   width: 100px;
   float: left;
@@ -13140,7 +13154,7 @@ object {
 
 /* End: Source Chooser */
 /* Start: Postroll */
-/* line 861, ../../../../assets/styles/components/_video.scss */
+/* line 883, ../../../../assets/styles/components/_video.scss */
 .mejs-postroll-layer {
   position: absolute;
   bottom: 0;
@@ -13153,13 +13167,13 @@ object {
   overflow: hidden;
 }
 
-/* line 872, ../../../../assets/styles/components/_video.scss */
+/* line 894, ../../../../assets/styles/components/_video.scss */
 .mejs-postroll-layer-content {
   width: 100%;
   height: 100%;
 }
 
-/* line 876, ../../../../assets/styles/components/_video.scss */
+/* line 898, ../../../../assets/styles/components/_video.scss */
 .mejs-postroll-close {
   position: absolute;
   right: 0;
@@ -13174,25 +13188,25 @@ object {
 
 /* End: Postroll */
 /* LCF Channel */
-/* line 892, ../../../../assets/styles/components/_video.scss */
+/* line 914, ../../../../assets/styles/components/_video.scss */
 #channel-splash {
   height: 480px;
 }
-/* line 894, ../../../../assets/styles/components/_video.scss */
+/* line 916, ../../../../assets/styles/components/_video.scss */
 #channel-splash .video-container {
   height: 480px;
   overflow: hidden;
   position: relative;
   text-align: center;
 }
-/* line 900, ../../../../assets/styles/components/_video.scss */
+/* line 922, ../../../../assets/styles/components/_video.scss */
 #channel-splash .message {
   margin-top: 100px;
   z-index: 2;
   color: #fff;
 }
 
-/* line 907, ../../../../assets/styles/components/_video.scss */
+/* line 929, ../../../../assets/styles/components/_video.scss */
 .background-video {
   min-width: 100%;
   left: 50%;
