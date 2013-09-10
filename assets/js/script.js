@@ -413,6 +413,7 @@ if ($('#container').length > 0) {
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
           globalCaption: true, 
+          keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
             pauseOnHover: true
@@ -834,9 +835,9 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').wrapInner('<span />');
+$('.lcf').find('h2').wrapInner('<span />');
 
-$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+//$('.lcf').find('.__media').find('h2').wrapInner('<span />');
 
 
 
