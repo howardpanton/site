@@ -13,15 +13,6 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-$(".date").each( function(i, element) {
-  
-  dateString = this.textContent;
-  var idx = dateString.indexOf(",");
-  var t = dateString.substr(idx + 2, 11);
-
-  $(this).text(t);
-  
-});
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -93,14 +84,6 @@ var waitForFinalEvent = (function () {
 })();
 
 
-// fastclick library: https://github.com/ftlabs/fastclick
-// window.addEventListener('load', function() {
-//     FastClick.attach(document.body);
-// }, false);
-
-
-
-
 
 // enables UAL themed select boxes
 function enableSelectBoxes() {
@@ -144,9 +127,9 @@ $(document).ready(function(){
 
   // detect and handle breadcrumbs
   if ($('.breadcrumbs').length > 0) {
-
     var d = $('.breadcrumbs').find('a');
     d.last().hide();
+
   }
 
    
@@ -173,10 +156,6 @@ $(document).ready(function(){
         _mobMenuContent = _menuHtml;
       }
 
-
-
-       
-      
       // create mobile sidebar div and add it to the main content div
       $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
 
@@ -222,7 +201,6 @@ $(document).ready(function(){
       });
     });
   }
-
 
   // check for selectboxes on the page
   if ($('.select-box').length > 0) {
@@ -277,6 +255,9 @@ $(document).ready(function(){
   };
       
 
+
+
+
 if ($('#container').length > 0) {
   $.when(
       $.getScript( '<t4 type="media" id="229134" formatter="path/*"/>' ),
@@ -304,25 +285,10 @@ if ($('#container').length > 0) {
           });
       };
 
-      function destroyPagination () {
-          pagination.jPages("destroy");
-      };
-
-      setPagination();
-
-      $.filtrify("container", "placeHolder", {
-          block : "data-original",
-          callback : function() {
-              destroyPagination();
-              setPagination();
-          }
-      });
-
   });
   });
 
 }
-
 
 
 
@@ -477,35 +443,28 @@ if ($('#container').length > 0) {
   
   if ($('.credits').length > 0) {
 
-    $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      //  
-      if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
-        
-        $('.show-credits').click(function(event) {
-          event.preventDefault();
-        
-          var c = $(this);
-          if (c.hasClass('active') ) {
-            c.removeClass('active').html("Show Credits");
-            $('.credits').fadeOut();
-          } else {
-            c.addClass('active').html("Hide Credits");
-            $('.credits').fadeIn();
-          }
-        });
-      }
+    //  
+    if ($('body').hasClass('gDesktop')) {
+      $('.credits-btn').addClass("show");
+      
+      $('.show-credits').click(function(event) {
+        event.preventDefault();
+      
+        var c = $(this);
+        if (c.hasClass('active') ) {
+          c.removeClass('active').html("Show Credits");
+          $('.credits').fadeOut();
+        } else {
+          c.addClass('active').html("Hide Credits");
+          $('.credits').fadeIn();
+        }
+      });
+    }
 
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
-      }
-    });
+    // show image credits by default on tablet and mobile
+    else {
+      $('.credits').show();
+    }
     
   }
 
@@ -514,7 +473,7 @@ if ($('#container').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( '<t4 type="media" id="229144" formatter="path/*"/>' ),
+        $.getScript('<t4 type="media" id="229144" formatter="path/*"/>' ),
         $.getScript( '<t4 type="media" id="229145" formatter="path/*"/>' ),
         $.getScript( '<t4 type="media" id="229146" formatter="path/*"/>' ),
         $.Deferred(function( deferred ){
@@ -579,13 +538,13 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon').html("");
+          //_d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon').html("");
+         // _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
@@ -805,12 +764,14 @@ if ($('.__media').length > 0) {
   });
 }
 
-
 if ($('video').length > 0) {
+
+  $('.__media').fitVids();
 
   $.getScript('<t4 type="media" id="229154" formatter="path/*"/>', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
+      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
       pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
@@ -818,29 +779,6 @@ if ($('video').length > 0) {
   });
 
 }
-
-
-// add icons to social media links inside .l-content
-$('.l-content a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."]').addClass('github-link');
-
 
 // Add download class to PDF links
 $('a[href$=".pdf"]').parent().addClass('download');
@@ -872,6 +810,7 @@ $('.debug-toggle').click(function(e) {
 $('.lcf.home').find('h2').wrapInner('<span />');
 
 $('.lcf').find('.__media').find('h2').wrapInner('<span />');
+
 
 
 }); // end document ready
