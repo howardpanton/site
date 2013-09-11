@@ -57,6 +57,10 @@ ul.tabs li.active {
   @include margin-trailer(2);
   .tab_content {
     display: block;
+    @include gs-media(t, max) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
     // @include margin-leader(2);
   }
   .tab-content-caption-block {
@@ -98,7 +102,7 @@ ul.tabs li.active {
   }
   .d_active {
     border-bottom: 1px solid black;
-    
+
     .lcc-tabs & {
       border-bottom: 0;
     }
