@@ -226,7 +226,8 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
           menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
           menu_responsive:1 // 1 = Responsive, 0 = Not responsive
       });
-});
+      $('body').addClass('menu-loaded');
+  });
 </script>  
   </body>
 
