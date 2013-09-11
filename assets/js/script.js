@@ -15,10 +15,18 @@ jQuery.fn.extend({
 
 $(".date").each( function(i, element) {
   
-  dateString = this.textContent;
-  var idx = dateString.indexOf(",");
-  var t = dateString.substr(idx + 2, 11);
-
+  var t = "",
+  dateString = this.textContent,
+  idx = dateString.indexOf(",");
+  
+  // if date string contains a comma, find the date bit
+  if (idx > 0) {
+    t = dateString.substr(idx + 2, 11);
+  // otherwise use what's there  
+  } else {
+    t = dateString;
+  }
+  
   $(this).text(t);
   
 });
