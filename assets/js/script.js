@@ -876,10 +876,10 @@ $('a[href$=".pdf"]').parent().addClass('download');
   };
 
   // Add 'external' CSS class to all external links
-  $('a:external.button-link').addClass('external').each(function() {
+  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  $('.content ul li a:external').parent().addClass('external').each(function() {
+  $('.l-content ul li a:external').parent().addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
 
