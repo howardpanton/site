@@ -449,7 +449,7 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
+        //$('.credits-btn').addClass("show").rotate({angle:-90});
         
         $('.show-credits').click(function(event) {
           event.preventDefault();

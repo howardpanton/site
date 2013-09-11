@@ -626,7 +626,7 @@ function environment() {
   <head>
 <!-- Add section name tag -->
     <?php 
-	$title = "Beta Home"; 
+	$title = "Alternative Photographic Printing"; 
 	if (!empty($title)) {
   
   	echo "<title>" . $title.  " - University of Arts London</title>";
@@ -646,22 +646,22 @@ function environment() {
     <meta content='on' http-equiv='cleartype'>
     <meta content='University of Arts London, Web Team' name='author'>
     <!-- Meta description tag -->
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis." />
+    <meta name="description" content="Short course in Alternative Photographic Printing from Camberwell College of Arts London." />
 
     
-<!-- For all browsers old file <link rel="stylesheet" type="text/css" media="screen" href="http://beta.arts.ac.uk/media/beta/beta-assets/screen.css" />-->
+<!-- For all browsers old file <link rel="stylesheet" type="text/css" media="screen" href="/media/beta/beta-assets/screen.css" />-->
     
 <!-- screen.css -->
     
-<link rel="stylesheet" type="text/css" media="screen" href="http://beta.arts.ac.uk/media/beta/beta-assets/css/screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/media/beta/beta-assets/css/screen.css" />
    
 <!-- fonts.css -->
-<link rel="stylesheet" type="text/css" media="" href="http://beta.arts.ac.uk/media/beta/beta-assets/fonts.css" />
+<link rel="stylesheet" type="text/css" media="" href="/media/beta/beta-assets/fonts.css" />
     
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7258632/627802/css/fonts.css" />
     
 <!-- royalslider.css -->
-<!--<link rel="stylesheet" type="text/css" media="" href="http://beta.arts.ac.uk/media/beta/beta-assets/css/royalslider.css" />-->
+<!--<link rel="stylesheet" type="text/css" media="" href="/media/beta/beta-assets/css/royalslider.css" />-->
     
 <!-- Debug CSS -->
 <!--<link rel='stylesheet' href='http://artslondon.github.io/beta/assets/css/debug.css'>-->
@@ -689,8 +689,8 @@ grunticon( [ "http://artslondon.github.io/beta/assets/css/logos/logos.data.svg.c
 <?php 
 // By default, sections have H1 headings
 $header = true;
-$currentSectionID = "33986";
-$levelThreeID = "";
+$currentSectionID = "44830";
+$levelThreeID = "35288";
 
 // Turn off the header on main home page and College landing pages
 switch ($currentSectionID) {
@@ -1076,9 +1076,9 @@ if ($header != false) { ?>
 <div class="header-panel bg-gray-bg">
     <div class="header-wrapper">
   <div class="row">
-          <!-- navigation object : Breadcrumbs --><div class="breadcrumbs"><a href="/">Beta Home</a></div>
+          <!-- navigation object : Breadcrumbs --><div class="breadcrumbs"><a href="/">Beta Home</a><a href="/camberwell/courses/">Courses</a><a href="/camberwell/courses/short-courses/">Short Courses</a><a href="/camberwell/courses/short-courses/browse-short-courses/">Browse Short Courses</a><a href="/camberwell/courses/short-courses/browse-short-courses/search-by-subject/">Search By Subject</a><a href="/camberwell/courses/short-courses/browse-short-courses/search-by-subject/../photography/">Photography</a><a href="/camberwell/courses/short-courses/browse-short-courses/search-by-subject/../photography/alternative-photographic-printing/">Alternative Photographic Printing</a></div>
     <div class="page-title">
-      <h1><!-- navigation object : Section name -->Beta Home</h1>
+      <h1><!-- navigation object : Section name -->Alternative Photographic Printing</h1>
     </div>
   </div>  
     </div>
@@ -1089,7 +1089,7 @@ if ($header != false) { ?>
 <!--<div class="content-wrapper">
   <div class="row">
     <div class="d5-d16">
-      <h1>Beta Home</h1>
+      <h1>Alternative Photographic Printing</h1>
     </div>
   </div>
   </div>-->
@@ -1097,206 +1097,7 @@ if ($header != false) { ?>
 <div class="content-wrapper">
 
   <!-- Home page slider include -->
-  <?php 
-
-// we use these variables to check what type of slider is being created, and then output correctly
-$slider_container_state = 'open';
-$selected_width = 'full-grid-overflow';
-
-
-if ($slider_container_state == 'open') { // open the slider 
-
-  if ($selected_width == 'slider-8') { ?>
-
-    <div class="row">
-      <div class="l-content">
-
-  <?php } ?>
-
-        <div class="row slider-container <?php if ($selected_width == "full-grid-overflow") { echo "overflow"; } ?>">
-          <!--  optional slider heading -->
-            
-          <?php if ($selected_width == "slider-3-14") { ?><div class="slider-3-14"> <?php } ?>
-          <div class="royalSlider rsDefault block <?php if ($selected_width != "slider-3-14") { echo $selected_width; } ?>" data-slider-auto-play="" <?php 
-            switch ($selected_width) {
-              case "slider-12":
-                echo "data-slider-item-width='948' data-slider-item-height='474'";
-                break;
-              case "slider-8":
-                echo "data-slider-item-width='653' data-slider-item-height='327'";
-                break;
-              case "full-grid-width":
-                echo "data-slider-item-width='1280' data-slider-item-height='480'";
-                break;
-              case "full-grid-overflow":
-                echo "data-slider-item-width='1280' data-slider-item-height='480'";
-                break;
-              case "slider-3-14":
-                echo "data-slider-item-width='948' data-slider-item-height='830'";
-                break;  
-              default:
-                echo "";
-            } ?>> 
-              
-<?php } else { // close the slider ?>        
-          
-          </div> 
-          <?php if ($selected_width == "slider-3-14") { ?></div><?php } ?>
-        </div><!-- end row div -->
-
-  <?php if ($selected_width == 'slider-8') { ?>
-
-      </div>
-    </div>
-
-  <?php }  
-} ?><?php 
-$retina_switch = "retina";
-?>
-
-<figure>
-
-  <?php if (environment() != 'live') { ?>
-
-    <img src="http://beta.arts.ac.uk/media/beta/slide-1.jpg" alt="Order a prospectus" class="rsImg" />
-
-  <?php } else { ?>
-    
-    <img data-src="http://app.resrc.it/http://beta.arts.ac.uk/media/beta/slide-1.jpg" alt="Order a prospectus" class="rsImg resrc" />
-
-  <?php }
   
-  $call_to_action_switch = "Order a Prospectus";
-
-  if ($call_to_action_switch != "") { ?>
-
-    <div class="call-to-action">
-      <a href="/study-at-ual/" title="">Order a Prospectus</a>
-    </div>
-
-  <?php } ?>
-
-  <div class="credits">Image credits</div>
-  
-  <figcaption class="rsCaption"></figcaption>
-  
-</figure>
-<?php 
-$retina_switch = "retina";
-?>
-
-<figure>
-
-  <?php if (environment() != 'live') { ?>
-
-    <img src="http://beta.arts.ac.uk/media/beta/slide-2.jpg" alt="Top 10 reasons to study here" class="rsImg" />
-
-  <?php } else { ?>
-    
-    <img data-src="http://app.resrc.it/http://beta.arts.ac.uk/media/beta/slide-2.jpg" alt="Top 10 reasons to study here" class="rsImg resrc" />
-
-  <?php }
-  
-  $call_to_action_switch = "Reasons to study here";
-
-  if ($call_to_action_switch != "") { ?>
-
-    <div class="call-to-action">
-      <a href="/study-at-ual/" title="">Reasons to study here</a>
-    </div>
-
-  <?php } ?>
-
-  <div class="credits">Image credits</div>
-  
-  <figcaption class="rsCaption"></figcaption>
-  
-</figure>
-<?php 
-$retina_switch = "retina";
-?>
-
-<figure>
-
-  <?php if (environment() != 'live') { ?>
-
-    <img src="http://beta.arts.ac.uk/media/beta/slide-3.jpg" alt="Apply now" class="rsImg" />
-
-  <?php } else { ?>
-    
-    <img data-src="http://app.resrc.it/http://beta.arts.ac.uk/media/beta/slide-3.jpg" alt="Apply now" class="rsImg resrc" />
-
-  <?php }
-  
-  $call_to_action_switch = "Apply Now";
-
-  if ($call_to_action_switch != "") { ?>
-
-    <div class="call-to-action">
-      <a href="/study-at-ual/apply/" title="">Apply Now</a>
-    </div>
-
-  <?php } ?>
-
-  <div class="credits">Image credit</div>
-  
-  <figcaption class="rsCaption"></figcaption>
-  
-</figure>
-<?php 
-
-// we use these variables to check what type of slider is being created, and then output correctly
-$slider_container_state = 'close';
-$selected_width = 'slider-12';
-
-
-if ($slider_container_state == 'open') { // open the slider 
-
-  if ($selected_width == 'slider-8') { ?>
-
-    <div class="row">
-      <div class="l-content">
-
-  <?php } ?>
-
-        <div class="row slider-container <?php if ($selected_width == "full-grid-overflow") { echo "overflow"; } ?>">
-          <!--  optional slider heading -->
-            
-          <?php if ($selected_width == "slider-3-14") { ?><div class="slider-3-14"> <?php } ?>
-          <div class="royalSlider rsDefault block <?php if ($selected_width != "slider-3-14") { echo $selected_width; } ?>" data-slider-auto-play="" <?php 
-            switch ($selected_width) {
-              case "slider-12":
-                echo "data-slider-item-width='948' data-slider-item-height='474'";
-                break;
-              case "slider-8":
-                echo "data-slider-item-width='653' data-slider-item-height='327'";
-                break;
-              case "full-grid-width":
-                echo "data-slider-item-width='1280' data-slider-item-height='480'";
-                break;
-              case "full-grid-overflow":
-                echo "data-slider-item-width='1280' data-slider-item-height='480'";
-                break;
-              case "slider-3-14":
-                echo "data-slider-item-width='948' data-slider-item-height='830'";
-                break;  
-              default:
-                echo "";
-            } ?>> 
-              
-<?php } else { // close the slider ?>        
-          
-          </div> 
-          <?php if ($selected_width == "slider-3-14") { ?></div><?php } ?>
-        </div><!-- end row div -->
-
-  <?php if ($selected_width == 'slider-8') { ?>
-
-      </div>
-    </div>
-
-  <?php }  
-} ?>
   
   <?php 
 
@@ -1316,7 +1117,7 @@ if ($slider_container_state == 'open') { // open the slider
 			<?php if ($navDropdown !== TRUE) { ?>
 	        <ul>
 	          <li class="menu-heading"><?php echo $menuHeading; ?></li>
-	          <li><a href="/study-at-ual/">Study At UAL</a></li><li><a href="/student-jobs-and-careers/">Student Jobs &amp; Careers</a></li><li><a href="/alumni-and-friends/">Alumni &amp; Friends</a></li><li><a href="/research/">Research</a></li><li><a href="/business-and-innovation/">Business &amp; Innovation</a></li><li><a href="/about-ual/">About UAL</a></li><li><a href="/fashion/">London College of Fashion</a></li><li><a href="/camberwell/">Camberwell College of Art</a></li><li><a href="/csm/">Central Saint Martins</a></li><li><a href="/chelsea/">Chelsea College of Art</a></li><li><a href="/lcc/">London College of Communication</a></li><li><a href="/wimbledon/">Wimbledon College of Art</a></li>
+	          
 	        </ul>
 			<?php } ?>
 	        <?php } 
@@ -1337,13 +1138,669 @@ if ($slider_container_state == 'open') { // open the slider
       </nav>
       <div role="main" class="content">
 
-  <?php } ?>		</div>
+  <?php } ?><?php if (!isset($shortEnv)) { $shortEnv = FALSE; } ?>
+<?php if ($shortEnv == TRUE) { 
+$test = new ShortCourse('ALTERNl7oC','');
+$r = $test->returnXml();
+$title = $test->title();
+$t = $test->dates();
+$c = $test->datesChildren();
+$tutors = $test->getTutors();
+$description = $test->Truncate($test->description(), 300);
+$desc_accordion = $test->description_acc();
+$materials_accordion = $test->materials();
+
+?>
+
+<div class="row">
+  <div class="l-content  block  __text  __with-aside">
+     <div class="text">
+        <!-- Return description from XML file -->
+      <p class="leader"><?php echo $description; ?></p>
+ 	<!-- Return optionla tutor information, will need to add a conditional element in site manager -->
+ 	<p class="tutor">
+  	<strong>Taught by: </strong>
+  		<?php echo $tutors ; ?>
+ 	</p>
+    </div>
+   </div>
+</div>
+<!-- Slider navigation object here -->
+
+<div class="row">
+  <div class="accordion">
+     <div id="st-accordion" class="st-accordion">
+        <ul class="accordion-list">
+
+        <!-- navigation object : Accordion item --><li class="accordion-list-item">
+  <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon circled-plus">⊕</div></a>
+  <div class="st-content">
+<?php echo $desc_accordion ; ?>
+  </div>  
+</li><li class="accordion-list-item">
+  <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon circled-plus">⊕</div></a>
+    <div class="st-content">
+                    <?php echo $materials_accordion ; ?>
+                    
+    </div>
+</li>
+
+        </ul>
+      </div>
+  </div>
+</div> 
+
+<!-- Table Acordion -->
+
+      <div class="row">
+        <div class="l-content-full-width block table-responsive">
+      <h2>Details for booking</h2>
+  <table class="table" >
+  <tr>
+    <th>Date</th>
+    <th>Day of Week</th>
+    <th>Time</th>
+    <th>Duration</th>
+
+    <th>Cost</th>
+    <th>Status</th>
+    <th>Location</th>
+    <th>Action</th>
+  </tr>
+<?php 
+if (!empty ($t)) {
+foreach($c as $date) {
+
+if(strtolower($date["status"]) != "cancelled") {
+
+  $date["value"]; ?>
+  
+    <tr>
+<td ><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
+    <td ><?php echo $date["dayofweek"];?></td>
+    <td ><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
+    <td ><?php echo $date["duration"];?></td>
+    <td >&#163;<?php echo round($date["cost"],0);?></td>
+    <td ><?php echo $date["status"];?></td>
+    <td ><ol><li>
+
+
+<?php 
+    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+      echo "<!--";
+    }
+    ?>
+
+<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
+    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuelat[0]['lat'];
+    ?>,<?php 
+    $venuelong = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuelong[0]['long'];
+    ?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+
+
+<?php 
+    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+    echo "-->";
+    }
+    ?>
+
+<?php        
+    $venuename = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuename[0]['name'];
+    
+    ?>
+
+<?php 
+    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+      echo "<!--";
+    }
+    ?>
+    
+</a>
+
+<?php 
+    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+    echo "-->";
+    }
+    ?>
+
+</li></ol></td>
+
+  <?php 
+    if ( $date["bookable"] == 'false' ) {
+      echo "<!--";
+    }
+    ?>
+
+                                                    
+    <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
+
+<?php 
+    if ( $date["bookable"] == 'false' ) {
+      echo "-->";
+    }
+    ?>
+
+</tr>
+
+  <?php
+  }
+} 
+
+
+?>
+</table>
+<br />
+<p>Alternative Dates and Times<br />
+Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
+or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
+
+            <?php 
+
+    } // End of CSM dates box
+    ?>
+
+      </div>
+            </div>
+
+<?php } else { ?>
+<style>
+  iframe#basket {
+width: 170px;
+}
+</style>
+<!-- Updated: Nov 1st -->
+<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
+<div id="basketmessage"><div id="close" style="text-align:right;"><a onclick="hideBasketMessage();return false;" href="#">x</a></div><br /><h2>1 Course was added to your basket </h2><p><br />[Course Name]<br />[Course Date], [Course Time]<br />[Course Venue], £[Course Cost]</p><p>Your place is not confirmed until you’ve completed your booking</p><br />
+<a onclick="hideBasketMessage();return false;" href="#">Add another course</a><div style="display: inline; margin-left: 30px; margin-right: 30px;">&nbsp;</div><a onclick="openBasket();return false;" href="#">Book now</a></div>
+<br class="clear" />
+<?php
+
+if(isset($_GET['errors'])){
+	ini_set('display_errors',1); 
+	ini_set('error_reporting', E_ALL); 
+	error_reporting(E_ALL);
+}
+
+function courseDatesCache($courseids="", $companyid=""){
+
+    $cache_file = "/web/sites/t4shortcoursecache/ci-".$courseids."-".$companyid.".txt";
+    $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
+    
+    // TRY AND GET THE LIVE DATA
+    // --------------------------------------
+    $ch = curl_init("http://arts.accessplanit.com/accessplan/config/arts/handlers/coursedates.ashx?courseids=".$courseids."&companyid=".$companyid);
+    curl_setopt($ch, CURLOPT_PROXY, 'wwwcache.arts.ac.uk:3128');  curl_setopt($ch, CURLOPT_FAILONERROR,1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1); curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+    $retValue = curl_exec($ch); curl_close($ch);
+    
+    if (!empty($retValue)) {
+        // IF the LIVE data was returned. 
+        if ((!file_exists($cache_file)) OR (!empty($_GET['cacheupdate'])) OR (@filesize($cache_file) <= 10) OR ((filemtime($cache_file) < (strtotime($cache_outofdate))))) {
+            // IF no cache exists OR forced update OR cache file is emmpty OR cachefile is out of date (as defiend by $cache_outofdate), UPDATE IT.
+            $writeDat = @file_put_contents($cache_file, $retValue);
+            echo '<!-- DEBUG: Cache file was successfully updated -->'; // echo '<!-- DEBUG: Cache file was successfully updated (' . $cache_file . ') -->';
+        }
+        
+        // Return LIVE data
+        return $retValue;
+        
+    } else {
+        // ELSE no live data was returned. Try read it from the cache
+        if ((@file_exists($cache_file)) AND (filesize($cache_file) > 10)) {
+            // As long as the cache file is populated, return that.
+            echo '<!-- DEBUG: cache update failed, read old information from cache (' . $cache_file . ') -->';
+            $retValue = @file_get_contents($cache_file);
+            
+            // As long as it is not empty, return cache data
+            if (!empty($retValue)) {
+                return $retValue;
+            }
+        }
+        
+        // Return Error message (No LIVE data or populated CACHE data)
+        echo '<!-- DEBUG: Unable to update file and no cache available -->';
+        return '<courses><course courseid="ERR0R" label="Error loading information"><materials>&lt;P&gt;There was an error loading course information&lt;/P&gt;</materials><description>&lt;P&gt;There was an error loading course information.&lt;/P&gt;</description><dates></dates></course><tutors></tutors><venues></venues></courses>';
+    }
+}
+
+$xml = @simplexml_load_string(courseDatesCache('ALTERNl7oC', ''));
+
+?>
+	<ul id="tab-buttons" class="mootabs_title">
+    <li title="glance"><a href="#glance">At a Glance</a></li>
+    <li title="materials"><a href="#materials">Materials</a></li>
+          
+          	<?php 
+	$csm = ('');
+		if ( $csm <> 'csm' ) {
+			?>
+    <li title="course-booking"><a href="#course-booking">Dates &amp; Prices</a></li>
+          	<?php 	
+			}  // End of Dates and Prices tab
+			?>
+</ul>
+
+<div id="glance" class="course-tab mootabs_panel section-">
+
+<div id="course-info-wide">
+    <h3><?php echo $xml->course["label"];?></h3>
+
+          	<?php 
+	$csm = ('');
+		if ( $csm == 'csm' ) {
+if (!empty ($xml->tutors)) {
+	echo "<p class=\"bio\"><strong>";
+	$a = 1;
+	foreach($xml->tutors->children() as $tutor) {
+		$tutor["value"];
+		if ( $a <> 1 ) {echo ", ";} 
+		$a = $a+1;
+		echo $tutor["name"]; 
+	} // End of For each tutor
+		echo "</strong></p>";
+} //End of if not empty
+} //End of Tutors for CSM
+?>
+
+          	<?php 
+	$csm = ('');
+		if ( $csm <> 'csm' ) {
+?>
+
+	<div class="course-image section-solid-">
+        <img  src="/camberwell/courses/short-courses/browse-short-courses/search-by-subject/../photography/alternative-photographic-printing/Alternative-printing.jpg"  width="110"  height="110"  alt=""  />
+    </div>    
+          	<?php 	
+} //End of Image
+?>
+
+    <div id="glancecontent" class="course-tab-content">
+<?php echo $xml->course->description;?>
+
+
+
+          	<?php 
+	$csm = ('');
+		if ( $csm == 'csm' ) {
+if (!empty ($xml->tutors)) {
+
+
+foreach($xml->tutors->children() as $tutor) {
+	$tutor["value"]; 
+	
+	if (strncasecmp($tutor->description,"<p>",3)<>0) {
+		echo "<p class=\"bio\">";
+	} // End If
+	?>
+
+<strong><?php echo $tutor->description;?></strong>
+
+	<?php
+	if (strncasecmp($tutor->description,"<p>",3)<>0) {
+		echo "</p>";
+	} // End If
+
+} // End of For each tutor
+} //End of if not empty
+} //End of Tutors for CSM
+?>
+
+	   <?php 
+	$csm = ('');
+		if ( $csm == 'csm' ) {
+			// Dates box generated on At a Glance tab for CSM
+			?>
+		
+	<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
+	<tr>
+		<th style="text-align: left;">Date</th>
+		<th style="text-align: left;">Day of Week</th>
+		<th style="text-align: left;">Time</th>
+		<th>Duration</th>
+
+		<th>Cost</th>
+		<th>Status</th>
+		<th style="text-align: left;">Location</th>
+		<th>Action</th>
+	</tr>
+<?php 
+if (!empty ($xml->course->dates)) {
+foreach($xml->course->dates->children() as $date) {
+
+if(strtolower($date["status"]) != "cancelled") {
+
+	$date["value"]; ?>
+	
+		<tr>
+<td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
+		<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
+		<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
+		<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
+		<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
+		<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
+		<td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
+
+
+<?php 
+		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		if ( $venuelat[0]['lat'] == '0' ) {
+			echo "<!--";
+		}
+		?>
+
+<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
+		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		echo $venuelat[0]['lat'];
+		?>,<?php 
+		$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		echo $venuelong[0]['long'];
+		?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+
+
+<?php 
+		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		if ( $venuelat[0]['lat'] == '0' ) {
+		echo "-->";
+		}
+		?>
+
+<?php        
+		$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		echo $venuename[0]['name'];
+		
+		?>
+
+<?php 
+		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		if ( $venuelat[0]['lat'] == '0' ) {
+			echo "<!--";
+		}
+		?>
+		
+</a>
+
+<?php 
+		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+		if ( $venuelat[0]['lat'] == '0' ) {
+		echo "-->";
+		}
+		?>
+
+</li></ol></td>
+
+	<?php 
+		if ( $date["bookable"] == 'false' ) {
+			echo "<!--";
+		}
+		?>
+
+																										
+		<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
+
+<?php 
+		if ( $date["bookable"] == 'false' ) {
+			echo "-->";
+		}
+		?>
+
+</tr>
+
+	<?php
+	}
+} 
+}
+
+?>
+</table>
+<br />
+<p>Alternative Dates and Times<br />
+Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
+or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
+
+          	<?php 
+
+		} // End of CSM dates box
+		?>
+
+
+    </div>
+</div><!-- course-info -->
+</div><!-- glance -->
+<div id="materials" class="course-tab mootabs_panel section-">
+<div id="materialscontent" class="course-tab-wrapper">
+<?php echo $xml->course->materials;?>
+</div>
+</div><!--materials -->
+
+	<?php 
+	$csm = ('');
+		if ( $csm <> 'csm' ) {
+			// Dates content generated for non-CSM courses
+		?>
+		
+			<div id="course-booking" class="course-tab mootabs_panel section-">
+				<div id="booking" class="course-tab-wrapper">        
+				
+				
+				<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
+				<tr>
+					<th style="text-align: left;">Date</th>
+					<th style="text-align: left;">Day of Week</th>
+					<th style="text-align: left;">Time</th>
+					<th>Duration</th>
+
+					<th>Cost</th>
+					<th>Status</th>
+					<th style="text-align: left;">Location</th>
+					<th>Action</th>
+				</tr>
+			<?php 
+			if (!empty ($xml->course->dates)) {
+			foreach($xml->course->dates->children() as $date) {
+
+			if(strtolower($date["status"]) != "cancelled") {
+
+				// $date["value"]; 
+				?>
+				
+					<tr>
+			<td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
+					<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
+					<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
+					<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
+					<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
+					<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
+					<td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
+
+			<?php 
+					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					if ( $venuelat[0]['lat'] == '0' ) {
+						echo "<!--";
+					}
+					?>
+
+			<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
+					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					echo $venuelat[0]['lat'];
+					?>,<?php 
+					$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					echo $venuelong[0]['long'];
+					?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+
+			<?php 
+					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					if ( $venuelat[0]['lat'] == '0' ) {
+					echo "-->";
+					}
+					?>
+
+			<?php        
+					$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					echo $venuename[0]['name'];
+					
+					?>
+
+			<?php 
+					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					if ( $venuelat[0]['lat'] == '0' ) {
+						echo "<!--";
+					}
+					?>
+
+			</a>
+
+			<?php 
+					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+					if ( $venuelat[0]['lat'] == '0' ) {
+					echo "-->";
+					}
+					?>
+
+			</li></ol></td>
+
+				<?php 
+					if ( $date["bookable"] == 'false' ) {
+						echo "<!--";
+					}
+					?>
+
+					<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
+				
+
+			<?php 
+					if ( $date["bookable"] == 'false' ) {
+						echo "-->";
+					}
+					?>
+					
+
+			</tr>
+
+				<?php
+				}
+			}
+			}
+
+			?>
+			</table>
+
+			</div>
+			</div>
+
+          	<?php 
+
+		} // End of non-CSM dates box
+		?>
+<?php } ?>		</div>
 	</div>
 </div>
 
 
 
-<!-- navigation object : College Footer Include -->
+<!-- navigation object : College Footer Include --><?php 
+$icon_1_type = "facebook"; 
+$icon_2_type = "twitter"; 
+$icon_3_type = "flickr"; 
+
+$icon_1_url = "https://www.facebook.com/CamberwellUAL"; 
+$icon_2_url = "https://twitter.com/CamberwellUAL"; 
+$icon_3_url = "http://www.flickr.com/photos/camberwell-ual/"; 
+
+$icon_array = array(
+  array(
+    "type" => $icon_1_type,
+    "url" => $icon_1_url,
+    ),
+  array(
+    "type" => $icon_2_type,
+    "url" => $icon_2_url
+    ),
+  array(
+    "type" => $icon_3_type,
+    "url" => $icon_3_url
+    )
+  );
+?>
+
+<footer class="college-footer row ">
+  <div class="footer-wrapper">
+    <div class="footer-block left">
+                  
+      <h3 class='size-h2'>Contact</h3>
+      <!-- see http://html5doctor.com/microformats/ -->
+      <ul class="vcard">
+        <li class="no-bullet">
+          <a class="fn org url" href="/camberwell/" title="Contact information for Camberwell College of Art"><span class="organization-name">Camberwell College of Art</span></a>
+        </li>
+        <li>
+        <span class="adr">
+          <span class="street-address">45 - 65 Peckham Road</span>, 
+          <span class="region">London</span> <span class="postal-code">SE5 8UF</span> <span class='country'>UK</span>
+          <br>
+        </span>
+        </li>
+        <li><span class="tel">Telephone: <span class="value">+44 (0)20 7514 6302</span></span></li>
+        <li><a href="info@camberwell.arts.ac.uk">info@camberwell.arts.ac.uk</a></li>
+      </ul>
+    </div>
+    <div class="footer-block middle">
+      <h3 class='size-h2'>Order a prospectus</h3>
+      <p><span>Camberwell, Chelsea and Wimbledon&nbsp;</span><span>2014-15</span>&nbsp;prospectus:</p>
+<ul class="no-bullet">
+<li><a href="/media/beta/beta-colleges/beta-camberwell/documents/Camberwell-Chelsea-Wimbledon-2014-15-prospectus.pdf">Download [PDF, 69.8 MB]</a></li>
+<li>Request a hard copy</li>
+</ul>
+<p><span>Chelsea, Camberwell and Wimbledon short course brochure:</span></p>
+<ul class="no-bullet">
+<li><a href="/media/beta/beta-colleges/beta-camberwell/documents/Camberwell-Chelsea-Wimbledon-Short-Course-brochure-2013-2014.pdf">Download [PDF, 4.9 MB]</a></li>
+<li>Request a hard copy</li>
+</ul>
+    </div>
+    <div class="footer-block right">
+      <h3 class='size-h2'>Follow</h3>
+        <ul class="icons no-bullet">
+          <?php foreach( $icon_array as $icon ) { 
+          
+            if ($icon['url'] == "") { continue; }
+          
+            switch ($icon['type']) {
+              case "facebook":
+                $icon_classname = "icon-facebook-circled";
+                //$icon_ascii = "0xe815";
+                break;
+              case "twitter":
+                $icon_classname = "icon-twitter-circled";    
+                //$icon_ascii = "0xe831";                
+                break;
+              case "flickr":
+                $icon_classname = "icon-flickr-circled";   
+                break;
+              case "youtube":
+                $icon_classname = "icon-youtube";
+                break;
+              case "full-grid-width": // what's this ?
+                //$icon_ascii = "&#62211;"; 
+              break;
+
+            } ?>
+            <li>
+              <a href="<?php echo $icon['url']; ?>" class="<?php echo $icon['type']; ?>">
+                <span class="<?php echo $icon_classname; ?>"></span>
+              </a>
+            </li>
+          <?php
+          } ?> 
+        </ul>
+    </div>
+  </div>
+</footer>
 <!-- navigation object : Main Footer Include --><!-- start footer -->
 <footer class='global-footer row'>
   <div class="footer-wrapper">
@@ -1423,10 +1880,10 @@ if ($slider_container_state == 'open') { // open the slider
           <li>Channel base description: This channel is used to publish the BETA UAL Website.</li>
           <li>Channel base id: 18</li>
           <li>Channel base name: Beta UAL Website</li>
-          <li>Page created : Tue 10 Sep 2013 03:32:19</li>
-          <li>Page modified : Tue 10 Sep 2013 03:32:19</li>
+          <li>Page created : Thu 15 Aug 2013 11:20:22</li>
+          <li>Page modified : Mon 19 Aug 2013 01:25:39</li>
           <?php $i = 0; ?>
-          <li>Section id : 33986</li>
+          <li>Section id : 44830</li>
       </ul>
         <!-- end debug -->
     </div>
@@ -1455,34 +1912,70 @@ if ($slider_container_state == 'open') { // open the slider
 
 
 <!-- Fastclick js -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/fastclick.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/fastclick.js"></script>
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-	<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/respond.js"></script>
+	<script type="text/javascript" src="/media/beta/beta-assets/respond.js"></script>
 <![endif]-->
 
 
 <!-- jquery.fitvids-ck.js -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/js/jquery.fitvids-ck.js"></script>
  
 <!-- reView script - used for LazyLoading with ReSRC.it -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/jquery.review-1.0.0.min.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/jquery.review-1.0.0.min.js"></script>
 
 
 <!-- navigation object : Javascript include -->
+<script>
+jQuery(document).ready(function($) {
 
+// initialise tabs with history functionality
+$("#tab-buttons").tabs(".course-tab", { history: true });
+
+// re-position the old course links list to the bottom of the right sidebar
+$('.links').prepend($('#move-links').html());
+	
+if ($('#main-course-image').find('.item').length < 2) {
+    $('#paginate, #main-course-image .nextPage, #main-course-image .prevPage').hide();
+} else {	
+    var api = $("#main-course-image .scrollable").scrollable({ size: 1, clickable: false, api: true });
+			
+    // insert the pagination counter
+    var printIndex = api.getIndex() + 1;
+    $('#paginate').append(printIndex + " / " + api.getSize());
+			
+    // update the pagination counter onSeek
+    api.onSeek(function(e, index) {
+	var printIndex = index + 1;
+	$('#paginate').empty().append(printIndex + " / " + this.getSize());
+    });
+}
+
+// initialise mini scrollables - revealing the arrows if there is overflow
+var mini = $('.mini');
+		
+mini.each( function(i) {
+	if ($(this).find('.item').length > 2) {
+		$(this).parent().find('.next').removeClass('disabled');
+		$(this).scrollable();
+	}
+});
+
+});
+</script>
   
 
 
 <!-- Mega Menu Plugins -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/megamenu_plugins.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/js/megamenu_plugins.js"></script>
 <!-- Mega Menu Script -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/megamenu-ck.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/js/megamenu-ck.js"></script>
 
 <!-- Scripts -->
-<!-- <script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/script.js"></script> -->
+<!-- <script type="text/javascript" src="/media/beta/beta-assets/script.js"></script> -->
 
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/t4-script-ck.js"></script>
+<script type="text/javascript" src="/media/beta/beta-assets/js/t4-script-ck.js"></script>
 
   <script>
   $(document).ready(function($){

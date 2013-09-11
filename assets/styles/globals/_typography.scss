@@ -459,7 +459,7 @@ b, strong, h2, h3, h4 {
 		display: none;
 	}
     .content-wrapper {
-        h1,h2,.call-to-action h3 a {
+        h1,h2,.call-to-action h3 {
             font-family: $lcf-heading-font;
             font-weight: normal;
             letter-spacing: 1px;
@@ -475,6 +475,9 @@ b, strong, h2, h3, h4 {
         }
         h2 {
         	@include font-size(20);
+        	span {
+        		border: 0 none;
+        	}
         }
     }
     .call-to-action h3 {
