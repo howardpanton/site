@@ -15,7 +15,8 @@
 	a {
 		min-width: 36px;
 		text-align: center;
-		@include font-size(14);
+		font-size: 14px;
+		font-size: remCalc(14);
 		border-top: 1px solid $light-gray;
 		border-bottom: none;
 		padding: rhythm(2, 14px) rhythm(3, 14px); 	
@@ -50,24 +51,25 @@
 			padding-top:9px;
 
 			// padding-top: 6px;
+
 		}
 	}
 
-	a.left-arrow:after, a.right-arrow:after {
-    position: absolute;
-    left: rhythm(3, 14px); 
-    top: rhythm(1, 14px);
-    color: $black;
-  }
+	// .page-number-links {
+	// 	@extend %m2-m3;
+	// 	@extend %t4-t5--within-t2-d7;
 
-  a.left-arrow:after {
-    content: '\e802';
-  }
+	// }
 
-  a.right-arrow:after {
-    content: '\e800';
-  }
-	
+	// .m-left-side-buttons {
+	// 	@extend %m1;
+	// 	@extend %t2-t3--within-t2-d7;
+	// }
+
+	// .m-right-side-buttons {
+	// 	@extend %m4;
+	// 	@extend %t6-t7--within-t2-d7;
+	// }
 
 }
 

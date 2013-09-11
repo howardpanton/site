@@ -1,14 +1,14 @@
 footer {
   @extend .panel;
-	margin-top: 0;
-	margin-bottom: 0;
-	@include padding-leader(6);
+  margin-top: 0;
+  margin-bottom: 0;
+  @include padding-leader(6);
   @include padding-trailer(2);
   background-color: $black;
   clear: left;
   color: $white;
   
-	.copyright {
+  .copyright {
     @extend .row;
     clear: left;
     @include margin-leader(2);
@@ -16,8 +16,8 @@ footer {
       @include font-size(12);
       padding-left: 12px;
     }
-		
-	}
+    
+  }
 }
 
 .footer-links {
@@ -180,21 +180,20 @@ footer {
 // the back to top button which appears 
 // after scrolling down the page
 a.back-to-top {
-	position: fixed;
-	right: .75em;
-	bottom: 0;
-	@include font-size(14);
-	background-color: $white;
-	padding: 1.125em .75em 1.125em .75em;
-	color: black;
-	padding-bottom: 1px;
-	border-bottom: 1px dotted black;
-	text-decoration: none;
+  position: fixed;
+  right: .75em;
+  bottom: 0;
+  @include font-size(14);
+  background-color: $white;
+  padding: 1.125em .75em 1.125em .75em;
+  color: black;
+  padding-bottom: 1px;
+  border-bottom: 1px dotted black;
+  text-decoration: none;
 
-		&:hover {
-			// border-bottom: 1px solid black;
-			color: $light-gray;
-			text-decoration: none;
-		}
+    &:hover {
+      // border-bottom: 1px solid black;
+      color: $light-gray;
+      text-decoration: none;
+    }
 }
-

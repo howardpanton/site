@@ -15,13 +15,8 @@
 
 .block {
 
-	figcaption, .rsCaption {
+	figcaption, .rsCaption, .caption {
 		@extend .bg-gray-bg;
-		.csm & {
-			background-color: $csm-primary;
-			color: $white;
-			padding: 6px 0 6px 6px;
-		}
 	}
 }
 
@@ -243,6 +238,7 @@
 		@include gs-media(d) {
 			li {
 				@include gs-span(d, 5, 8, (5, 12));
+				padding-left: 0;
 			}
 			li:nth-child(2n) {
 				@include gs-span(d, 9, 12, (5, 12));
@@ -274,9 +270,6 @@
 		}
 	}
 
-	.lcf & {
-		text-align: center;
-	}
 }
 
 // three-up - core styles
@@ -303,10 +296,6 @@
 				@include gs-span(d, 13, 16, (5, 16));
 			}
 		}
-	}
-
-	.lcf & {
-		text-align: center;
 	}
 
 }
@@ -440,4 +429,8 @@
 			}
 		}
 	}
+}
+
+.lcf .__media figure {
+	@include component-spacing-bottom(4);
 }

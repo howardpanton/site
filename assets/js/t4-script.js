@@ -296,11 +296,7 @@ if ($('#container').length > 0) {
               containerID : "container",
               perPage : 24,
               direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
+              animation : "fadeInUp"
           });
       };
 
@@ -318,10 +314,13 @@ if ($('#container').length > 0) {
           }
       });
 
+
   });
   });
 
 }
+
+// $('.ft-menu li:first').appendTo('ul.ft-menu');
 
 
 
@@ -473,6 +472,7 @@ if ($('#container').length > 0) {
   /////// accreditation
   ///////////////////////
 
+
   // Show image credits button fixed to the right of the screen on Desktop only
   
   if ($('.credits').length > 0) {
@@ -508,6 +508,7 @@ if ($('#container').length > 0) {
     });
     
   }
+
 
 
 // detect accordion component
@@ -800,7 +801,7 @@ if ($('.js-lightbox').length > 0) {
 // FitVids for Media Blocks
 
 if ($('.__media').length > 0) {
-  $.getScript('<t4 type="media" id="229707" formatter="javascript/*"/>', function() {
+  $.getScript('<t4 type="media" id="229707" formatter="path/*"/>', function() {
     $('.__media').fitVids();
   });
 }
@@ -811,7 +812,7 @@ if ($('video').length > 0) {
   $.getScript('<t4 type="media" id="229154" formatter="path/*"/>', function() {
 
     $('video:not(.no-mejs)').mediaelementplayer({
-      pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
 
@@ -869,9 +870,9 @@ $('.debug-toggle').click(function(e) {
 });
 
 
-$('.lcf.home').find('h2').each( function() {
-  $(this).wrapInner('<span />');
-});
+$('.lcf.home').find('h2').wrapInner('<span />');
+
+$('.lcf').find('.__media').find('h2').wrapInner('<span />');
 
 
 }); // end document ready
@@ -972,4 +973,3 @@ $(window).load(function(){
   }
 
 });
-

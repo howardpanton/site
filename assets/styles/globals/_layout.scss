@@ -249,7 +249,10 @@
 
 .l-content { 
 	@extend %d5-d12--within-d5-d16;
-	@include component-spacing-bottom;
+	//@include component-spacing-bottom;
+	.l-content-full-width & {
+		margin-bottom: 0;
+	}
 	h2 {
 		.csm & {
 			border-top: 2px solid $csm-primary;

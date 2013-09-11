@@ -50,16 +50,19 @@ if (strpos($video_url,"vimeo") !== false) {
           <div class="l-content">
           <?php } ?>  
 
-          <?php if ($media_type == "video") {
-            if ($video_url != "") { // this is an embed of some kind
+          <?php if ($media_type == "video") { ?>
+
+            <div class="video-container">
+
+            <?php if ($video_url != "") { // this is an embed of some kind
               
               if ($video_type == "youtube") { ?>
               
-              <iframe class="video-embed" src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
+              <iframe src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
           
               <?php } else { // Vimeo embed ?>
 
-              <iframe class="video-embed" src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <iframe src="//player.vimeo.com/video/<?php echo $video_id; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               
               <?php } 
               
@@ -67,8 +70,13 @@ if (strpos($video_url,"vimeo") !== false) {
 
               <video src="<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;" controls="control" preload="none"></video>
 
-          <?php } // end if has video url
-          } // end if is video
+            <?php } // end if has video url ?>
+
+            <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<div class=&quot;caption&quot;><span>$value</span></div>" />
+
+            </div><!-- .video-container -->
+
+          <?php } // end if is video
 
           // check that an image has been uploaded
           if ($media_type == "image" && $media_file_url != "") {
@@ -84,7 +92,7 @@ if (strpos($video_url,"vimeo") !== false) {
               <img data-src="http://app.resrc.it/http://beta.arts.ac.uk<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
 
             <?php } ?>
-    
+
             <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<figcaption><span>$value</span></figcaption> " />
             
             <t4 type="content" name="Image Credit" output="selective-output" modifiers="" format="<div class=&quot;credits&quot;>$value</div>"  />

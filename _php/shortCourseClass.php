@@ -1,5 +1,8 @@
 <?php 
 
+	if(class_exists('ShortCourse') != true) 
+	{
+
 	class ShortCourse {
 		
 		public $xml;
@@ -23,7 +26,7 @@
 		
 		public function courseDatesCache($courseids="", $companyid=""){
 
-		    $cache_file = "/t4shortcoursecache/ci-".$courseids."-".$companyid.".txt";
+		    $cache_file = "/web/sites/t4www/www.arts.ac.uk/ci-".$courseids."-".$companyid.".txt";
 		    $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
 		    
 		    // TRY AND GET THE LIVE DATA
@@ -84,6 +87,12 @@
 			$description = strip_tags($this->xml->course->description);
 			return $description;
 		}
+
+		public function description_acc() {
+			$description_acc = $this->xml->course->description;
+			return $description_acc;
+		}
+		
 		
 		public function materials() {
 			$materials = strip_tags($this->xml->course->materials);
@@ -93,7 +102,7 @@
 		public function title() {
 			$title = $this->xml->xpath('/courses/course/@label');
 			foreach ($title as $key => $value) {
-				echo $value;
+				return $value;
 			} 
 		}
 
@@ -105,6 +114,19 @@
 		public function datesChildren() {
 			$datesChildren = $this->xml->course->dates->children();
 			return $datesChildren;
+		}
+
+		public function getTutors() {
+			 if (!empty ($this->xml->tutors)) {
+				$a = 1;
+				foreach($this->xml->tutors->children() as $tutor) {
+					$tutor["value"];
+					if ( $a <> 1 ) {echo ", ";} 
+					$a = $a+1;
+					return $tutor["name"]; 
+				} // End of For each tutor
+
+			} //End of if not empty
 		}
 		
 		public function Truncate($string, $length, $stopanywhere = false) {
@@ -124,112 +146,5 @@
 		}
 	
 }
-
-$test = new ShortCourse('INTROD9Ww6','LCF');
-$r = $test->returnXml();
-$t = $test->dates();
-$c = $test->datesChildren();
-$test->title();
-//echo $test->description();
-//echo $test->returnXml()->course->dates;
-//$title = $this->xml->xpath('/courses/course/@label');
-//var_dump($c);
-
-
-if (!empty ($t)) {
-foreach($c as $date) {
-
-if(strtolower($date["status"]) != "cancelled") {
-
-	$date["value"]; ?>
-	
-		<tr>
-<td ><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-		<td ><?php echo $date["dayofweek"];?></td>
-		<td ><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-		<td ><?php echo $date["duration"];?></td>
-		<td >&#163;<?php echo round($date["cost"],0);?></td>
-		<td ><?php echo $date["status"];?></td>
-		<td ><ol><li>
-
-
-<?php 
-		$venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
-
-<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-		$venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelat[0]['lat'];
-		?>,<?php 
-		$venuelong = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelong[0]['long'];
-		?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
-
-
-<?php 
-		$venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
-
-<?php        
-		$venuename = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuename[0]['name'];
-		
-		?>
-
-<?php 
-		$venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
-		
-</a>
-
-<?php 
-		$venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
-
-</li></ol></td>
-
-	<?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "<!--";
-		}
-		?>
-
-																										
-		<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
-
-<?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "-->";
-		}
-		?>
-
-</tr>
-
-	<?php
-	}
-} 
-
-
+}
 ?>
-</table>
-<br />
-<p>Alternative Dates and Times<br />
-Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
-or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
-
-          	<?php 
-
-		} // End of CSM dates box
-		?>
