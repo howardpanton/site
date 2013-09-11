@@ -313,24 +313,27 @@ img.rsImg {
 .rsDefault.rsHor .rsArrowLeft { left: 0; top: 0; }
 .rsDefault.rsHor .rsArrowRight { right: 0; top:0; }
 
-.rsDefault .rsArrowIcn {		
+.rsDefault .rsArrowIcn {
+	@include gs-media(m) {
+		display: none;
+	}		
 	width: 32px;
 	height: 32px;
 	top: 50%;
 	left: 50%;
 	margin-top:-16px;	
 	margin-left: -16px;
-
 	position: absolute;	
 	cursor: pointer;	
 	background: url('http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png');
-
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
 	*background-color: #000;
-	
-	border-radius: 2px;
+	// border-radius: 2px;  we aren't using any border radius in our designs
 }
+
+
+
 .rsDefault .rsArrowIcn:hover {
 	background-color: rgba(0,0,0,0.9);
 }

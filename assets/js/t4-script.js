@@ -296,11 +296,7 @@ if ($('#container').length > 0) {
               containerID : "container",
               perPage : 24,
               direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
+              animation : "fadeInUp"
           });
       };
 
@@ -318,10 +314,13 @@ if ($('#container').length > 0) {
           }
       });
 
+
   });
   });
 
 }
+
+// $('.ft-menu li:first').appendTo('ul.ft-menu');
 
 
 
@@ -473,6 +472,7 @@ if ($('#container').length > 0) {
   /////// accreditation
   ///////////////////////
 
+
   // Show image credits button fixed to the right of the screen on Desktop only
   
   if ($('.credits').length > 0) {
@@ -508,6 +508,7 @@ if ($('#container').length > 0) {
     });
     
   }
+
 
 
 // detect accordion component
