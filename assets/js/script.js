@@ -699,30 +699,28 @@ if ($('.js-lightbox').length > 0) {
 
 
 
+// show/hide the relevant buttons for browsers that have JS enabled
+$(".expanded-content").hide();
+$(".show-more").show();
 
-  // show/hide the relevant buttons for browsers that have JS enabled
-  $(".expanded-content").hide();
-  $(".show-more").show();
-  
-  // handle "Show More" button click
-  $(".show-more").click(function(e){
-    e.preventDefault();  
-    var _clicked = $(this);
-    var parent = _clicked.closest(".expandable-content"); 
-    $(".expanded-content",parent).slideDown(); 
-    _clicked.hide();
-  });
+// handle "Show More" button click
+$(".show-more").click(function(e){
+  e.preventDefault(); 
+  var _clicked = $(this);
+  _clicked.closest(".expandable-content").find(".expanded-content").slideDown(); 
+  _clicked.hide();
+});
 
-  // handle "Show Less" button click
-  $(".hide-content").click(function(e){
-    e.preventDefault();  
-    var _clicked = $(this);
+// handle "Show Less" button click
+$(".hide-content").click(function(e){
+  e.preventDefault();  
+  var _clicked = $(this);
 
-    var parent = _clicked.closest(".expandable-content"); 
-    $(".expanded-content",parent).hide();
-    $(parent).find(".show-more").show();
-    parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
-  });
+  var parent = _clicked.closest(".expandable-content"); 
+  $(".expanded-content",parent).hide();
+  $(parent).find(".show-more").show();
+  parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
+});
 
 
 
