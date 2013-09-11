@@ -301,6 +301,8 @@ if ($('#container').length > 0) {
 
 }
 
+// $('.ft-menu li:first').appendTo('ul.ft-menu');
+
 
 
 
