@@ -449,7 +449,7 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        //$('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show").rotate({angle:-90});
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
@@ -940,3 +940,24 @@ $(window).load(function(){
 
 });
 
+
+// add icons to social media links inside .l-content and aside
+$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
+
+$('.l-content a[href*="twitter"], aside a[href*="twitter"]').addClass('twitter-link');
+
+$('.l-content a[href*="flickr"], aside a[href*="flickr"]').addClass('flickr-link');
+
+$('.l-content a[href*="youtube"], aside a[href*="youtube"]').addClass('youtube-link');
+
+$('.l-content a[href*="linkedin"], aside a[href*="linkedin"]').addClass('linkedIn-link');
+
+$('.l-content a[href*="tumblr"], aside a[href*="tumblr"]').addClass('tumblr-link');
+
+$('.l-content a[href*="vimeo"], aside a[href*="vimeo"]').addClass('vimeo-link');
+
+$('.l-content a[href*="pinterest"], aside a[href*="pinterest"]').addClass('pinterest-link');
+
+$('.l-content a[href*="plus.google"], aside a[href*="plus.google"]').addClass('gplus-link');
+
+$('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-link');
