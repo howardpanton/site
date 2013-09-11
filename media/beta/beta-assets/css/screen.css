@@ -4480,7 +4480,6 @@ input, .search-result-module, .search-input-wrap {
 /* line 305, ../../../../assets/styles/components/_course-finder.scss */
 .course-title h3, .search-title h3 {
   text-decoration: none;
-  font-size: 18px;
   margin-top: 0;
   padding-bottom: 1px;
 }
@@ -6240,7 +6239,7 @@ input[type="text"].sb-search-input {
   border-bottom: 1px dotted #c8c8c8;
   padding-bottom: 0;
 }
-/* line 20, ../../../../assets/styles/components/_sidebar.scss */
+/* line 19, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li a {
   font-size: 14px;
   font-size: 0.875rem;
@@ -6250,19 +6249,23 @@ input[type="text"].sb-search-input {
   line-height: 20px;
   border-bottom: 0;
 }
-/* line 27, ../../../../assets/styles/components/_sidebar.scss */
+/* line 26, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li a:hover {
   background-color: #e9e9e9;
   color: black;
 }
-/* line 34, ../../../../assets/styles/components/_sidebar.scss */
+/* line 32, ../../../../assets/styles/components/_sidebar.scss */
+.sidebar ul li.ft-field {
+  border-bottom: none;
+}
+/* line 36, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 24px;
   border-bottom: 0;
 }
-/* line 39, ../../../../assets/styles/components/_sidebar.scss */
+/* line 41, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading a {
   font-size: 18px;
   font-size: 1.125rem;
@@ -6270,16 +6273,16 @@ input[type="text"].sb-search-input {
   padding: 0 0 0.66667em 12px;
   border-bottom: 0;
 }
-/* line 46, ../../../../assets/styles/components/_sidebar.scss */
+/* line 48, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading a:hover {
   background-color: white;
 }
-/* line 49, ../../../../assets/styles/components/_sidebar.scss */
+/* line 51, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar a {
   display: block;
 }
 
-/* line 55, ../../../../assets/styles/components/_sidebar.scss */
+/* line 57, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar {
   *zoom: 1;
   position: relative;
@@ -6289,7 +6292,7 @@ input[type="text"].sb-search-input {
   margin-bottom: 18px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 55, ../../../../assets/styles/components/_sidebar.scss */
+  /* line 57, ../../../../assets/styles/components/_sidebar.scss */
   .mobile-sidebar {
     display: none;
   }
@@ -6303,17 +6306,17 @@ input[type="text"].sb-search-input {
 .mobile-sidebar:after {
   clear: both;
 }
-/* line 63, ../../../../assets/styles/components/_sidebar.scss */
+/* line 65, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar nav, .mobile-sidebar ul {
   display: none;
 }
-/* line 65, ../../../../assets/styles/components/_sidebar.scss */
+/* line 67, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar ul li {
   background-color: #e9e9e9;
   border-bottom: 1px solid #c8c8c8;
   padding: 0;
 }
-/* line 70, ../../../../assets/styles/components/_sidebar.scss */
+/* line 72, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar ul li a {
   width: 100%;
   line-height: 24px;
@@ -6321,37 +6324,37 @@ input[type="text"].sb-search-input {
   padding: 12px;
   border-bottom: none;
 }
-/* line 80, ../../../../assets/styles/components/_sidebar.scss */
+/* line 82, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar .mob-sb-dd-title {
   position: absolute;
   top: 24px;
   left: 12px;
 }
 
-/* line 89, ../../../../assets/styles/components/_sidebar.scss */
+/* line 91, ../../../../assets/styles/components/_sidebar.scss */
 .currentbranch0 a {
   color: #757575;
   border-bottom: 0;
 }
-/* line 92, ../../../../assets/styles/components/_sidebar.scss */
+/* line 94, ../../../../assets/styles/components/_sidebar.scss */
 .currentbranch0 a:hover {
   border-bottom: 0;
 }
 
-/* line 98, ../../../../assets/styles/components/_sidebar.scss */
+/* line 100, ../../../../assets/styles/components/_sidebar.scss */
 .multilevel-linkul-0 {
   font-size: 14px;
   font-size: 0.875rem;
   margin-left: 24px;
   padding: 0;
 }
-/* line 103, ../../../../assets/styles/components/_sidebar.scss */
+/* line 105, ../../../../assets/styles/components/_sidebar.scss */
 .multilevel-linkul-0 li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 110, ../../../../assets/styles/components/_sidebar.scss */
+/* line 112, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar {
   display: block;
   width: 100%;
@@ -6363,13 +6366,13 @@ input[type="text"].sb-search-input {
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 120, ../../../../assets/styles/components/_sidebar.scss */
+/* line 122, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar:after {
   font-size: 16px;
   font-size: 1rem;
   content: '\e836';
 }
-/* line 126, ../../../../assets/styles/components/_sidebar.scss */
+/* line 128, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar.active:after {
   content: '\e82a';
 }
@@ -11358,8 +11361,20 @@ ul.ft-menu > li.ft-field {
   margin-bottom: 1px;
   text-transform: capitalize;
 }
+/* line 44, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field:nth-of-type(1), .csm ul.ft-menu > li.ft-field:nth-of-type(2) {
+  margin-bottom: 24px;
+}
+/* line 47, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field:nth-of-type(2):after {
+  content: "Filter By Discipline";
+  font-size: 18px;
+  background-color: white;
+  display: block;
+  padding: 18px 12px 0 12px;
+}
 
-/* line 45, ../../../../assets/styles/components/_filtrify.scss */
+/* line 57, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label {
   cursor: pointer;
   display: inline-block;
@@ -11367,7 +11382,7 @@ ul.ft-menu > li.ft-field > span.ft-label {
   width: 100%;
 }
 
-/* line 51, ../../../../assets/styles/components/_filtrify.scss */
+/* line 63, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:before {
   /*    font-family: "FiltrifyRegular"; 
       content: "t"; */
@@ -11377,29 +11392,29 @@ ul.ft-menu > li.ft-field > span.ft-label:before {
   width: 20px;
 }
 
-/* line 59, ../../../../assets/styles/components/_filtrify.scss */
+/* line 71, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:after {
   font-size: 80%;
   content: " \25bc";
   float: right;
 }
 
-/* line 64, ../../../../assets/styles/components/_filtrify.scss */
+/* line 76, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
   content: " \2605";
   color: #2D3743;
 }
-/* line 67, ../../../../assets/styles/components/_filtrify.scss */
+/* line 79, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
   color: #d10000;
 }
 
-/* line 71, ../../../../assets/styles/components/_filtrify.scss */
+/* line 83, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after {
   content: " \25b2";
 }
 
-/* line 75, ../../../../assets/styles/components/_filtrify.scss */
+/* line 87, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel {
   /*	border: 5px solid rgba(0, 0, 0, 0.3);
   	-webkit-border-radius: 3px;
@@ -11411,7 +11426,7 @@ ul.ft-menu > li.ft-field > div.ft-panel {
   z-index: 9999;
 }
 
-/* line 92, ../../../../assets/styles/components/_filtrify.scss */
+/* line 104, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel:before,
 ul.ft-menu > li.ft-field > div.ft-panel:after {
   position: absolute;
@@ -11421,18 +11436,18 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
   left: 10%;
 }
 
-/* line 118, ../../../../assets/styles/components/_filtrify.scss */
+/* line 130, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
   background: #a7a9ac;
   font-size: 13px;
 }
-/* line 121, ../../../../assets/styles/components/_filtrify.scss */
+/* line 133, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
   background-color: #d10000;
   color: white;
 }
 
-/* line 126, ../../../../assets/styles/components/_filtrify.scss */
+/* line 138, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
   cursor: pointer;
   padding: 6px 12px;
@@ -11440,23 +11455,23 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
   color: white;
 }
 
-/* line 152, ../../../../assets/styles/components/_filtrify.scss */
+/* line 164, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
   content: " \00D7";
   color: white;
 }
 
-/* line 156, ../../../../assets/styles/components/_filtrify.scss */
+/* line 168, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
   background: #282828;
 }
 
-/* line 165, ../../../../assets/styles/components/_filtrify.scss */
+/* line 177, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search {
   display: none;
 }
 
-/* line 200, ../../../../assets/styles/components/_filtrify.scss */
+/* line 212, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   position: relative !important;
   overflow-x: hidden;
@@ -11464,7 +11479,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   width: 100%;
 }
 
-/* line 208, ../../../../assets/styles/components/_filtrify.scss */
+/* line 220, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
   font-size: 13px;
   border-bottom: 1px solid #373737;
@@ -11474,7 +11489,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
   background: black;
 }
 
-/* line 227, ../../../../assets/styles/components/_filtrify.scss */
+/* line 239, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   content: attr(data-count);
   font-size: 11px;
@@ -11494,21 +11509,21 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   border-radius: 8px;
 }
 
-/* line 247, ../../../../assets/styles/components/_filtrify.scss */
+/* line 259, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
   background: #373737;
 }
 
-/* line 266, ../../../../assets/styles/components/_filtrify.scss */
+/* line 278, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
   background: white;
 }
-/* line 268, ../../../../assets/styles/components/_filtrify.scss */
+/* line 280, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
   background-color: #d10000;
 }
 
-/* line 273, ../../../../assets/styles/components/_filtrify.scss */
+/* line 285, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
   font-size: 11px;
   padding: 10px 15px;
@@ -11517,24 +11532,24 @@ ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
 }
 
 /* REQUIRED! */
-/* line 287, ../../../../assets/styles/components/_filtrify.scss */
+/* line 299, ../../../../assets/styles/components/_filtrify.scss */
 .ft-hidden {
   display: none !important;
 }
 
 /* Custom webkit scrollbars */
-/* line 291, ../../../../assets/styles/components/_filtrify.scss */
+/* line 303, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar {
   width: 10px;
 }
 
-/* line 294, ../../../../assets/styles/components/_filtrify.scss */
+/* line 306, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   background: #DDD;
 }
 
-/* line 298, ../../../../assets/styles/components/_filtrify.scss */
+/* line 310, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
