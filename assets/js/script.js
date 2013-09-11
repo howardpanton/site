@@ -835,26 +835,26 @@ if ($('video').length > 0) {
 
 }
 
-// add icons to social media links inside .l-content
-$('.l-content a[href*="facebook"]').addClass('facebook-link');
+// add icons to social media links inside .l-content and aside
+$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
 
-$('.l-content a[href*="twitter"]').addClass('twitter-link');
+$('.l-content a[href*="twitter"], aside a[href*="facebook"]').addClass('twitter-link');
 
-$('.l-content a[href*="flickr"]').addClass('flickr-link');
+$('.l-content a[href*="flickr"], aside a[href*="facebook"]').addClass('flickr-link');
 
-$('.l-content a[href*="youtube"]').addClass('youtube-link');
+$('.l-content a[href*="youtube"], aside a[href*="facebook"]').addClass('youtube-link');
 
-$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
+$('.l-content a[href*="linkedin"], aside a[href*="facebook"]').addClass('linkedIn-link');
 
-$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
+$('.l-content a[href*="tumblr"], aside a[href*="facebook"]').addClass('tumblr-link');
 
-$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
+$('.l-content a[href*="vimeo"], aside a[href*="facebook"]').addClass('vimeo-link');
 
-$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
+$('.l-content a[href*="pinterest"], aside a[href*="facebook"]').addClass('pinterest-link');
 
-$('.l-content a[href*="plus.google"]').addClass('gplus-link');
+$('.l-content a[href*="plus.google"], aside a[href*="facebook"]').addClass('gplus-link');
 
-$('.l-content a[href*="github."]').addClass('github-link');
+$('.l-content a[href*="github."], aside a[href*="facebook"]').addClass('github-link');
 
 
 
