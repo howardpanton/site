@@ -37,6 +37,11 @@
 		min-width: 36px;
 	}
 
+	@include gs-media(m, min-max) {
+		.page-prev, .page-next, 
+		.go-first, .go-last { display: none;}
+	}
+
 	.page-prev, .page-next {
 		a { 
 			@extend %icon;

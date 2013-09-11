@@ -17,11 +17,6 @@
 
 	figcaption, .rsCaption, .caption {
 		@extend .bg-gray-bg;
-		.csm & {
-			background-color: $csm-primary;
-			color: $white;
-			padding: 6px 0 6px 6px;
-		}
 	}
 }
 
@@ -122,10 +117,6 @@
 			padding-left: 18px;
 			padding-right: 18px;
 		}
-	}
-
-	figure {
-		@include component-spacing-bottom(4);
 	}
 
 	figure a {
@@ -247,6 +238,7 @@
 		@include gs-media(d) {
 			li {
 				@include gs-span(d, 5, 8, (5, 12));
+				padding-left: 0;
 			}
 			li:nth-child(2n) {
 				@include gs-span(d, 9, 12, (5, 12));
@@ -437,4 +429,8 @@
 			}
 		}
 	}
+}
+
+.lcf .__media figure {
+	@include component-spacing-bottom(4);
 }

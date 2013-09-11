@@ -38,15 +38,13 @@
       margin-top: 0;
       padding: 0;
       // college level styling for vCards in college footer
-      .college & {
-        border-top: 0;
-        .fn, .phone, .email, .title, .org, .url, .blogurl, .twitter, .facebook, .linkedin {
-          background: none;
-          padding: 0;
-          a {
-            border-bottom: none;
-          } 
-        }
+      border-top: 0;
+      .fn, .phone, .email, .title, .org, .url, .blogurl, .twitter, .facebook, .linkedin {
+        background: none;
+        padding: 0;
+        a {
+          border-bottom: none;
+        } 
       }
   }
   .vcard li {
@@ -140,8 +138,6 @@
     
   }  
   
-  // we may want to use fit text here with entypo 
-  // to set font size as a percentage
   .icons {
     li {
       display: inline-block;
@@ -161,11 +157,10 @@
       a span {
         @extend %icon-social;
         color: $white;
-        //line-height: 54px;
+        line-height: 54px;
         width: 100%;
         display: block;
-        //@include font-size(76);
-        font-size: 1em; // set in px so that fitText can work
+        @include font-size(42);
 
         .csm & {
           color: $black;
@@ -221,6 +216,3 @@
   }
   
 }
-
-
-  
