@@ -1,9 +1,9 @@
 <?php
 // check whether class exists
-if(class_exists('Profile') != true) 
+if(class_exists('AZ') != true) 
 {
 
-	class Profile {
+	class AZ {
 
 		public $array; // profiles content array
 
@@ -29,6 +29,7 @@ if(class_exists('Profile') != true)
 		 */
 		public function split_name($name) {
 
+			$name = trim($name);
 			$pos = strrpos($name, ' ');
 
 			if ($pos === false) {
@@ -96,12 +97,12 @@ if(class_exists('Profile') != true)
 		public function do_item_loop($item) {
 		?>
 			<li class="row">
-				<figure>
+				<!--<figure>
 					<a href="<?php echo $item['section_link']; ?>" title=""><img src="http://placehold.it/300x300&text=THUMBNAIL" alt="Image Alt"></a>
-				</figure>
+				</figure>-->
 				<div class="text">
 					<h3 class="size-h5"><a href="<?php echo $item['section_link']; ?>" title=""><?php echo $item['title']; ?></a></h3>
-					<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla turpis, ullamcorper congue pharetra sit amet, varius sit amet diam. Sed bibendum porttitor mattis. Phasellus nisl mi, gravida in porta nec, hendrerit quis arcu. (max XX words)</p>-->
+					<?php if ($item['teaser'] != '') { echo "<p>" . $item['teaser'] . "</p>"; } ?>
 				</div>
 			</li>
 		<?php 	
@@ -118,56 +119,57 @@ if(class_exists('Profile') != true)
 
 			$sorted = $this->alpha_sort_array($enhanced, 'surname');
 
+			echo '<pre>';
+			var_dump($sorted);
+			echo '</pre>';
+
 			?>
 			<div class="row">
 				
-					<?php	
-					$temp_letter = '';
-					$counter = 1;
-					$item_count = sizeof($sorted);
+				<?php	
+				$temp_letter = '';
+				$counter = 1;
+				$item_count = sizeof($sorted);
 
-					foreach ($sorted as $item) { 
+				foreach ($sorted as $item) { 
 
-						if ( $item['letter'] != $temp_letter ) { 
+					if ( $item['letter'] != $temp_letter ) { 
 
-							if ($counter > 1) { ?>	
+						if ($counter > 1) { ?>	
 
-										</ul>
-									</div><!-- .l-content -->
-								</div><!-- .row -->	
+									</ul>
+								</div><!-- .l-content -->
+							</div><!-- .row -->	
 
-							<?php } ?>
+						<?php } ?>
 
-								<div class="row  az-group" data-group="<?php echo $item['letter']; ?>">
-									<h2 class="az-letter"><?php echo $item['letter']; ?></h2>
-									<div class="image-list-with-text-content  l-content">
-										<ul>
+							<div class="row  az-group" data-group="<?php echo $item['letter']; ?>">
+								<h2 class="az-letter"><?php echo $item['letter']; ?></h2>
+								<div class="image-list-with-text-content">
+									<ul>
 
-						<?php }
+					<?php }
 
-						$this->do_item_loop($item);
+					$this->do_item_loop($item);
 
-						if ($counter == $item_count) { ?>
+					if ($counter == $item_count) { ?>
 
-										</ul>
-									</div><!-- .l-content -->
-								</div><!-- .row -->	
-						<?php
-						}
+									</ul>
+								</div><!-- .l-content -->
+							</div><!-- .row -->	
+					<?php
+					}
 
-						$temp_letter = $item['letter'];
-						$counter++;
+					$temp_letter = $item['letter'];
+					$counter++;
 
-					} // end foreach ?>
+				} // end foreach ?>
 
 			</div><!-- .row -->
 		<?php
 		} 
 
-	} // Profile Class declaration
-
-	
-
+	} // AZ Class declaration
 
 } // end check if class_exists
 

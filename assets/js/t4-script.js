@@ -260,7 +260,6 @@ $(document).ready(function(){
     $(img).parent().addClass('loaded');
   };
 
-
 if ($('#container').length > 0) {
   $.when(
       $.getScript( '<t4 type="media" id="229134" formatter="path/*"/>' ),
@@ -292,16 +291,16 @@ if ($('#container').length > 0) {
         pagination.jPages("destroy");
     };
 
-    setPagination();
+      setPagination();
 
-    $.filtrify("container", "placeHolder", {
+      $.filtrify("container", "placeHolder", {
         block : "data-original",
         callback : function() {
             destroyPagination();
             setPagination();
-        }
+            }
+      });
     });
-  });
   });
 }
 
