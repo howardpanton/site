@@ -68,7 +68,7 @@ if (strpos($video_url,"vimeo") !== false) {
               
             } else { // this is an MP4 ?>
 
-              <video src="<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;" controls="control" preload="none"></video>
+              <video src="<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;"></video>
 
             <?php } // end if has video url ?>
 
@@ -102,7 +102,7 @@ if (strpos($video_url,"vimeo") !== false) {
 
           <div class="__text">      
 
-            <t4 type="content" name="Title" output="selective-output" modifiers="" format="<h2>$value</h2>" />
+            <t4 type="content" name="Title" output="selective-output" modifiers="" format="<h3>$value</h3>" />
             
             <t4 type="content" name="Teaser Text" output="selective-output" modifiers="" format="<p class=&quot;leader&quot;>$value</p>" />
                 
