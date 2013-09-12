@@ -41,7 +41,8 @@ $icon_array = array(
         </span>
         </li>
         <t4 type="content" name="Telephone number" output="selective-output" modifiers="" format="<li><span class=&quot;tel&quot;>Telephone: <span class=&quot;value&quot;>$value</span></span></li>"  />
-        <li><a href="<t4 type="content" name="Email Address" output="normal" modifiers=""  />"><t4 type="content" name="Email Address" output="normal" modifiers=""  /></a></li>
+        <t4 type="content" name="Email Address" output="selective-output" modifiers="" format="<li><a href=&quot;$value&quot;>$value</a></li>" />
+        <t4 type="content" name="Contact Section Link" output="selective-output" modifiers="nav_sections" format="<li>$value</li>" />
       </ul>
     </div>
     <div class="footer-block middle">
