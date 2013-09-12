@@ -270,8 +270,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/filtrify.min.js' ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -310,6 +310,11 @@ if ($('#container').length > 0) {
     });
   });
   });
+
+  if(!$("body").hasClass("gDesktop")) {
+    $("#placeHolder").prependTo(".content");
+  }
+
 }
 
   // fade in button when user scrolls down the page
