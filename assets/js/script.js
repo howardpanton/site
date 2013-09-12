@@ -270,8 +270,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/filtrify.min.js' ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -282,20 +282,39 @@ if ($('#container').length > 0) {
       var container = $("#container"),
           pagination = $("#pagination");
 
-      function setPagination () {
-          pagination.jPages({
-              containerID : "container",
-              perPage : 24,
-              direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
-          });
-      };
+  function setPagination () {
+        pagination.jPages({
+            containerID : "container",
+            perPage : 24,
+            midRange : 1,
+            previous : "←",
+            next : "→",
+            direction : "auto",
+            animation : "fadeInUp"
+ 
+        });
+    };
+
+    function destroyPagination () {
+        pagination.jPages("destroy");
+    };
+
+    setPagination();
+
+    $.filtrify("container", "placeHolder", {
+        block : "data-original",
+        callback : function() {
+            destroyPagination();
+            setPagination();
+        }
+    });
   });
   });
+
+  if(!$("body").hasClass("gDesktop")) {
+    $("#placeHolder").prependTo(".content");
+  }
+
 }
 
   // fade in button when user scrolls down the page
@@ -456,7 +475,7 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        //$('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show").rotate({angle:-90});
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
@@ -956,3 +975,24 @@ $(window).load(function(){
 
 });
 
+
+// add icons to social media links inside .l-content and aside
+$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
+
+$('.l-content a[href*="twitter"], aside a[href*="twitter"]').addClass('twitter-link');
+
+$('.l-content a[href*="flickr"], aside a[href*="flickr"]').addClass('flickr-link');
+
+$('.l-content a[href*="youtube"], aside a[href*="youtube"]').addClass('youtube-link');
+
+$('.l-content a[href*="linkedin"], aside a[href*="linkedin"]').addClass('linkedIn-link');
+
+$('.l-content a[href*="tumblr"], aside a[href*="tumblr"]').addClass('tumblr-link');
+
+$('.l-content a[href*="vimeo"], aside a[href*="vimeo"]').addClass('vimeo-link');
+
+$('.l-content a[href*="pinterest"], aside a[href*="pinterest"]').addClass('pinterest-link');
+
+$('.l-content a[href*="plus.google"], aside a[href*="plus.google"]').addClass('gplus-link');
+
+$('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-link');
