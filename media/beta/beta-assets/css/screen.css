@@ -3921,6 +3921,12 @@ aside.no-bg {
   clear: left;
 }
 
+/* line 353, ../../../../assets/styles/globals/_layout.scss */
+.slider-container {
+  padding-top: 6px;
+  margin-bottom: 3em;
+}
+
 /* line 6, ../../../../assets/styles/globals/_icons.scss */
 .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span {
   width: 36px;
@@ -7285,28 +7291,23 @@ a img {
  */
 /** RESET AND LAYOUT
 ===================================*/
-/* line 19, ../../../../assets/styles/components/_bxslider.scss */
-.slider-container {
-  margin-bottom: 3em;
-}
-
-/* line 23, ../../../../assets/styles/components/_bxslider.scss */
+/* line 17, ../../../../assets/styles/components/_bxslider.scss */
 .slider-full-width {
   max-width: 100%;
 }
 
-/* line 28, ../../../../assets/styles/components/_bxslider.scss */
+/* line 22, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper {
   position: relative;
   margin: 0 auto;
   padding: 0;
   *zoom: 1;
 }
-/* line 33, ../../../../assets/styles/components/_bxslider.scss */
+/* line 27, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper ul, .bx-wrapper li {
   padding: 0;
 }
-/* line 36, ../../../../assets/styles/components/_bxslider.scss */
+/* line 30, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper img {
   width: 100%;
   display: block;
@@ -7314,7 +7315,7 @@ a img {
 
 /** THEME
 ===================================*/
-/* line 55, ../../../../assets/styles/components/_bxslider.scss */
+/* line 49, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -7323,7 +7324,7 @@ a img {
 }
 
 /* LOADER */
-/* line 63, ../../../../assets/styles/components/_bxslider.scss */
+/* line 57, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-loading {
   min-height: 50px;
   background: url(http://artslondon.github.io/beta/assets/img/bxSlider/bx_loader.gif) center center no-repeat white;
@@ -7336,7 +7337,7 @@ a img {
 }
 
 /* PAGER */
-/* line 76, ../../../../assets/styles/components/_bxslider.scss */
+/* line 70, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager {
   text-align: center;
   font-size: .85em;
@@ -7346,7 +7347,7 @@ a img {
   padding-top: 20px;
 }
 
-/* line 86, ../../../../assets/styles/components/_bxslider.scss */
+/* line 80, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
@@ -7354,7 +7355,7 @@ a img {
   *display: inline;
 }
 
-/* line 92, ../../../../assets/styles/components/_bxslider.scss */
+/* line 86, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
   text-indent: -9999px;
@@ -7368,36 +7369,35 @@ a img {
   border-radius: 5px;
 }
 
-/* line 106, ../../../../assets/styles/components/_bxslider.scss */
+/* line 100, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #000;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
-/* line 112, ../../../../assets/styles/components/_bxslider.scss */
+/* line 105, ../../../../assets/styles/components/_bxslider.scss */
+.bx-wrapper .bx-prev, .bx-wrapper .bx-next {
+  background: url("http://beta.arts.ac.uk/media/beta/beta-assets/img/rs-default.png");
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  *background-color: #000;
+  background-repeat: no-repeat;
+}
+
+/* line 113, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-prev {
   left: 10px;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat 0 -32px;
+  background-position: -64px -32px;
 }
 
-/* line 117, ../../../../assets/styles/components/_bxslider.scss */
+/* line 119, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-next {
   right: 10px;
-  background: url(http://artslondon.github.io/beta/assets/img/bxSlider/controls.png) no-repeat -43px -32px;
+  background-position: -64px -64px;
 }
 
-/* line 122, ../../../../assets/styles/components/_bxslider.scss */
-.bx-wrapper .bx-prev:hover {
-  background-position: 0 0;
-}
-
-/* line 126, ../../../../assets/styles/components/_bxslider.scss */
-.bx-wrapper .bx-next:hover {
-  background-position: -43px 0;
-}
-
-/* line 130, ../../../../assets/styles/components/_bxslider.scss */
+/* line 124, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
@@ -7410,18 +7410,18 @@ a img {
   border-bottom: none;
 }
 
-/* line 142, ../../../../assets/styles/components/_bxslider.scss */
+/* line 136, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
 }
 
 /* AUTO CONTROLS (START / STOP) */
-/* line 148, ../../../../assets/styles/components/_bxslider.scss */
+/* line 142, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto {
   text-align: center;
 }
 
-/* line 152, ../../../../assets/styles/components/_bxslider.scss */
+/* line 146, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start {
   display: block;
   text-indent: -9999px;
@@ -7432,13 +7432,13 @@ a img {
   margin: 0 3px;
 }
 
-/* line 163, ../../../../assets/styles/components/_bxslider.scss */
+/* line 157, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
   background-position: -86px 0;
 }
 
-/* line 167, ../../../../assets/styles/components/_bxslider.scss */
+/* line 161, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop {
   display: block;
   text-indent: -9999px;
@@ -7449,27 +7449,27 @@ a img {
   margin: 0 3px;
 }
 
-/* line 178, ../../../../assets/styles/components/_bxslider.scss */
+/* line 172, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
   background-position: -86px -33px;
 }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-/* line 184, ../../../../assets/styles/components/_bxslider.scss */
+/* line 178, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   text-align: left;
   width: 80%;
 }
 
-/* line 189, ../../../../assets/styles/components/_bxslider.scss */
+/* line 183, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
   right: 0;
   width: 35px;
 }
 
 /* IMAGE CAPTIONS */
-/* line 196, ../../../../assets/styles/components/_bxslider.scss */
+/* line 190, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption {
   position: absolute;
   bottom: 0;
@@ -7479,12 +7479,30 @@ a img {
   width: 100%;
 }
 
-/* line 205, ../../../../assets/styles/components/_bxslider.scss */
+/* line 199, ../../../../assets/styles/components/_bxslider.scss */
 .bx-wrapper .bx-caption span {
   color: #fff;
   display: block;
   font-size: .85em;
   padding: 10px;
+}
+
+/* AZ list */
+/* line 208, ../../../../assets/styles/components/_bxslider.scss */
+.a-to-z {
+  margin-bottom: 3em;
+}
+/* line 210, ../../../../assets/styles/components/_bxslider.scss */
+.a-to-z .bx-wrapper {
+  text-align: center;
+}
+/* line 212, ../../../../assets/styles/components/_bxslider.scss */
+.a-to-z .bx-wrapper .bx-prev {
+  left: -48px;
+}
+/* line 215, ../../../../assets/styles/components/_bxslider.scss */
+.a-to-z .bx-wrapper .bx-next {
+  right: -48px;
 }
 
 /* v1.0.5 */
@@ -8445,9 +8463,11 @@ img.rsImg {
 *  10. Special slider for LCF home page
 *
 ****************/
-/* line 823, ../../../../assets/styles/components/_royalslider.scss */
-.box-text {
-  width: 65%;
+@media only screen and (min-width: 960px) {
+  /* line 823, ../../../../assets/styles/components/_royalslider.scss */
+  .box-text {
+    width: 70%;
+  }
 }
 
 /* line 2, ../../../../assets/styles/components/_boxout.scss */
