@@ -402,7 +402,7 @@ h2, h3, h4, strong, b, dl dt, .lcf .search-results-list h3 a,
 .flickr-link:before, .youtube-link:before,
 .pinterest-link:before, .vimeo-link:before,
 .tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
+.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -1574,7 +1574,7 @@ hr {
 .flickr-link:before, .youtube-link:before,
 .pinterest-link:before, .vimeo-link:before,
 .tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
+.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -4532,20 +4532,19 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 375, ../../../../assets/styles/components/_course-finder.scss */
+/* line 371, ../../../../assets/styles/components/_course-finder.scss */
 .course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 380, ../../../../assets/styles/components/_course-finder.scss */
+/* line 376, ../../../../assets/styles/components/_course-finder.scss */
 .course-title h3, .search-title h3 {
   text-decoration: none;
-  font-size: 18px;
   margin-top: 0;
   padding: 0 0 1px 0;
 }
-/* line 385, ../../../../assets/styles/components/_course-finder.scss */
+/* line 381, ../../../../assets/styles/components/_course-finder.scss */
 .course-title h3 a, .search-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -4556,37 +4555,37 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 375, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 371, ../../../../assets/styles/components/_course-finder.scss */
   .course-title, .search-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 397, ../../../../assets/styles/components/_course-finder.scss */
+/* line 393, ../../../../assets/styles/components/_course-finder.scss */
 .course-description, .search-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 402, ../../../../assets/styles/components/_course-finder.scss */
+/* line 398, ../../../../assets/styles/components/_course-finder.scss */
 .course-description p, .search-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 397, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 393, ../../../../assets/styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 397, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 393, ../../../../assets/styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 416, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 412, ../../../../assets/styles/components/_course-finder.scss */
   .course-description p, .search-description p {
     padding-left: 0;
     padding-right: 0;
@@ -4595,7 +4594,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 426, ../../../../assets/styles/components/_course-finder.scss */
+/* line 422, ../../../../assets/styles/components/_course-finder.scss */
 .search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -4605,24 +4604,64 @@ input, .search-result-module, .search-input-wrap {
   min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 426, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 422, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 438, ../../../../assets/styles/components/_course-finder.scss */
+/* line 434, ../../../../assets/styles/components/_course-finder.scss */
 .site-search-results-lower-wrap {
   right: 0;
 }
 
-/* line 443, ../../../../assets/styles/components/_course-finder.scss */
+/* line 439, ../../../../assets/styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
+/* line 445, ../../../../assets/styles/components/_course-finder.scss */
+.lower-search-again-box .icon-search,
+.lower-search-again-box .search-submit {
+  width: 48px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 48px;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 466, ../../../../assets/styles/components/_course-finder.scss */
+.lower-search-again-box .icon-search {
+  color: white;
+  background-color: black;
+  z-index: 90;
+  font-size: 24px;
+  font-size: 1.5rem;
+  speak: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media only screen and (min-width: 960px) {
+  /* line 466, ../../../../assets/styles/components/_course-finder.scss */
+  .lower-search-again-box .icon-search {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+/* line 482, ../../../../assets/styles/components/_course-finder.scss */
+.lower-search-again-box .icon-search:hover {
+  background-color: #373737;
+}
 
-/* line 450, ../../../../assets/styles/components/_course-finder.scss */
+/* line 490, ../../../../assets/styles/components/_course-finder.scss */
 .enrolment-type, .result-file-type {
   width: 32%;
   float: left;
@@ -4630,7 +4669,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: 0.875rem;
 }
 @media only screen and (max-width: 599px) {
-  /* line 450, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 490, ../../../../assets/styles/components/_course-finder.scss */
   .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
@@ -4639,13 +4678,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 461, ../../../../assets/styles/components/_course-finder.scss */
+/* line 501, ../../../../assets/styles/components/_course-finder.scss */
 .site-search-section-name {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
-/* line 465, ../../../../assets/styles/components/_course-finder.scss */
+/* line 505, ../../../../assets/styles/components/_course-finder.scss */
 .college-name {
   position: absolute;
   left: 32%;
@@ -4655,7 +4694,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 465, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 505, ../../../../assets/styles/components/_course-finder.scss */
   .college-name {
     position: static;
     width: 100%;
@@ -4666,7 +4705,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 480, ../../../../assets/styles/components/_course-finder.scss */
+/* line 520, ../../../../assets/styles/components/_course-finder.scss */
 .result-url {
   position: absolute;
   left: 32%;
@@ -4685,7 +4724,7 @@ input, .search-result-module, .search-input-wrap {
   hyphens: auto;
 }
 @media only screen and (max-width: 599px) {
-  /* line 480, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 520, ../../../../assets/styles/components/_course-finder.scss */
   .result-url {
     display: none;
     width: 100%;
@@ -4697,13 +4736,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 507, ../../../../assets/styles/components/_course-finder.scss */
+/* line 547, ../../../../assets/styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 512, ../../../../assets/styles/components/_course-finder.scss */
+/* line 552, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -4715,16 +4754,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 523, ../../../../assets/styles/components/_course-finder.scss */
+/* line 563, ../../../../assets/styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete, .dd-menu-dropdown-wrapper .ui-autocomplete {
   background-color: #373737;
 }
-/* line 525, ../../../../assets/styles/components/_course-finder.scss */
+/* line 565, ../../../../assets/styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a, .dd-menu-dropdown-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 531, ../../../../assets/styles/components/_course-finder.scss */
+/* line 571, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e9e9e9;
@@ -4732,14 +4771,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 535, ../../../../assets/styles/components/_course-finder.scss */
+/* line 575, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 541, ../../../../assets/styles/components/_course-finder.scss */
+/* line 581, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -4750,14 +4789,14 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 553, ../../../../assets/styles/components/_course-finder.scss */
+/* line 593, ../../../../assets/styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 560, ../../../../assets/styles/components/_course-finder.scss */
+/* line 600, ../../../../assets/styles/components/_course-finder.scss */
 .warning-icon, .question-icon {
   font-size: 90px;
   font-size: 5.625rem;
@@ -4765,17 +4804,17 @@ input, .search-result-module, .search-input-wrap {
   padding: 24px;
   color: #757575;
 }
-/* line 566, ../../../../assets/styles/components/_course-finder.scss */
+/* line 606, ../../../../assets/styles/components/_course-finder.scss */
 .warning-icon:after, .question-icon:after {
   content: '\e839';
 }
 
-/* line 573, ../../../../assets/styles/components/_course-finder.scss */
+/* line 613, ../../../../assets/styles/components/_course-finder.scss */
 .question-icon:after {
   content: '\e838';
 }
 
-/* line 579, ../../../../assets/styles/components/_course-finder.scss */
+/* line 619, ../../../../assets/styles/components/_course-finder.scss */
 form.d-search-input-form {
   margin: 0;
   padding: 0;
@@ -6322,7 +6361,7 @@ input[type="text"].sb-search-input {
   border-bottom: 1px dotted #c8c8c8;
   padding-bottom: 0;
 }
-/* line 20, ../../../../assets/styles/components/_sidebar.scss */
+/* line 19, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li a {
   font-size: 14px;
   font-size: 0.875rem;
@@ -6332,19 +6371,23 @@ input[type="text"].sb-search-input {
   line-height: 20px;
   border-bottom: 0;
 }
-/* line 27, ../../../../assets/styles/components/_sidebar.scss */
+/* line 26, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li a:hover {
   background-color: #e9e9e9;
   color: black;
 }
-/* line 34, ../../../../assets/styles/components/_sidebar.scss */
+/* line 32, ../../../../assets/styles/components/_sidebar.scss */
+.sidebar ul li.ft-field {
+  border-bottom: none;
+}
+/* line 36, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 24px;
   border-bottom: 0;
 }
-/* line 39, ../../../../assets/styles/components/_sidebar.scss */
+/* line 41, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading a {
   font-size: 18px;
   font-size: 1.125rem;
@@ -6352,16 +6395,16 @@ input[type="text"].sb-search-input {
   padding: 0 0 0.66667em 12px;
   border-bottom: 0;
 }
-/* line 46, ../../../../assets/styles/components/_sidebar.scss */
+/* line 48, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar ul li.menu-heading a:hover {
   background-color: white;
 }
-/* line 49, ../../../../assets/styles/components/_sidebar.scss */
+/* line 51, ../../../../assets/styles/components/_sidebar.scss */
 .sidebar a {
   display: block;
 }
 
-/* line 55, ../../../../assets/styles/components/_sidebar.scss */
+/* line 57, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar {
   *zoom: 1;
   position: relative;
@@ -6371,7 +6414,7 @@ input[type="text"].sb-search-input {
   margin-bottom: 18px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 55, ../../../../assets/styles/components/_sidebar.scss */
+  /* line 57, ../../../../assets/styles/components/_sidebar.scss */
   .mobile-sidebar {
     display: none;
   }
@@ -6385,17 +6428,17 @@ input[type="text"].sb-search-input {
 .mobile-sidebar:after {
   clear: both;
 }
-/* line 63, ../../../../assets/styles/components/_sidebar.scss */
+/* line 65, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar nav, .mobile-sidebar ul {
   display: none;
 }
-/* line 65, ../../../../assets/styles/components/_sidebar.scss */
+/* line 67, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar ul li {
   background-color: #e9e9e9;
   border-bottom: 1px solid #c8c8c8;
   padding: 0;
 }
-/* line 70, ../../../../assets/styles/components/_sidebar.scss */
+/* line 72, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar ul li a {
   width: 100%;
   line-height: 24px;
@@ -6403,37 +6446,37 @@ input[type="text"].sb-search-input {
   padding: 12px;
   border-bottom: none;
 }
-/* line 80, ../../../../assets/styles/components/_sidebar.scss */
+/* line 82, ../../../../assets/styles/components/_sidebar.scss */
 .mobile-sidebar .mob-sb-dd-title {
   position: absolute;
   top: 24px;
   left: 12px;
 }
 
-/* line 89, ../../../../assets/styles/components/_sidebar.scss */
+/* line 91, ../../../../assets/styles/components/_sidebar.scss */
 .currentbranch0 a {
   color: #757575;
   border-bottom: 0;
 }
-/* line 92, ../../../../assets/styles/components/_sidebar.scss */
+/* line 94, ../../../../assets/styles/components/_sidebar.scss */
 .currentbranch0 a:hover {
   border-bottom: 0;
 }
 
-/* line 98, ../../../../assets/styles/components/_sidebar.scss */
+/* line 100, ../../../../assets/styles/components/_sidebar.scss */
 .multilevel-linkul-0 {
   font-size: 14px;
   font-size: 0.875rem;
   margin-left: 24px;
   padding: 0;
 }
-/* line 103, ../../../../assets/styles/components/_sidebar.scss */
+/* line 105, ../../../../assets/styles/components/_sidebar.scss */
 .multilevel-linkul-0 li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 110, ../../../../assets/styles/components/_sidebar.scss */
+/* line 112, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar {
   display: block;
   width: 100%;
@@ -6445,13 +6488,13 @@ input[type="text"].sb-search-input {
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 120, ../../../../assets/styles/components/_sidebar.scss */
+/* line 122, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar:after {
   font-size: 16px;
   font-size: 1rem;
   content: '\e836';
 }
-/* line 126, ../../../../assets/styles/components/_sidebar.scss */
+/* line 128, ../../../../assets/styles/components/_sidebar.scss */
 .show-mob-sidebar.active:after {
   content: '\e82a';
 }
@@ -6481,13 +6524,14 @@ input[type="text"].sb-search-input {
 
 /* line 1, ../../../../assets/styles/components/_credits.scss */
 .credits-btn {
+  display: none;
   position: fixed;
   right: -38px;
   top: 50%;
   z-index: 1;
   font-size: 14px;
 }
-/* line 7, ../../../../assets/styles/components/_credits.scss */
+/* line 8, ../../../../assets/styles/components/_credits.scss */
 .credits-btn .show-credits {
   border: 1px solid black;
   padding: 12px;
@@ -6502,13 +6546,13 @@ input[type="text"].sb-search-input {
   padding-top: 14px;
   background-color: white;
 }
-/* line 21, ../../../../assets/styles/components/_credits.scss */
+/* line 22, ../../../../assets/styles/components/_credits.scss */
 .credits-btn a.active {
   background-color: black;
   color: white;
 }
 
-/* line 27, ../../../../assets/styles/components/_credits.scss */
+/* line 28, ../../../../assets/styles/components/_credits.scss */
 .credits {
   display: none;
   position: absolute;
@@ -8876,7 +8920,7 @@ img.rsImg {
     padding: 0;
   }
   /* line 59, ../../../../assets/styles/components/_feature-wall.scss */
-  .__feature-wall li:nth-of-type(2), .__feature-wall li:nth-of-type(3) {
+  .__feature-wall li:nth-child(3), .__feature-wall li:nth-child(6) {
     width: 50%;
     float: left;
   }
@@ -10539,7 +10583,11 @@ a.back-to-top:hover {
 .accordion-list-item .accordion-list-anchor h3 {
   padding-top: 1em;
 }
-/* line 71, ../../../../assets/styles/components/_accordion.scss */
+/* line 70, ../../../../assets/styles/components/_accordion.scss */
+.lcc .accordion-list-item .accordion-list-anchor h3 {
+  border-bottom: none;
+}
+/* line 74, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .accordion-list-anchor .st-arrow {
   font-size: 18px;
   font-size: 1.125rem;
@@ -10552,11 +10600,11 @@ a.back-to-top:hover {
   text-align: center;
 }
 
-/* line 87, ../../../../assets/styles/components/_accordion.scss */
+/* line 90, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content ul, .accordion-list-item .st-content ol, .accordion-list-item .st-content dl {
   margin-bottom: 1.125em;
 }
-/* line 90, ../../../../assets/styles/components/_accordion.scss */
+/* line 93, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content ul li, .accordion-list-item .st-content ol li, .accordion-list-item .st-content dl li {
   font-size: 16px;
   font-size: 1rem;
@@ -10565,26 +10613,26 @@ a.back-to-top:hover {
   line-height: 1.5em;
   padding-bottom: 0.75em;
 }
-/* line 100, ../../../../assets/styles/components/_accordion.scss */
+/* line 103, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content ul li ul, .accordion-list-item .st-content ol li ol {
   padding-top: 0.75em;
   padding-bottom: 0;
 }
-/* line 104, ../../../../assets/styles/components/_accordion.scss */
+/* line 107, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content ul li ul li, .accordion-list-item .st-content ol li ol li {
   padding-bottom: 0.75em;
 }
-/* line 109, ../../../../assets/styles/components/_accordion.scss */
+/* line 112, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content ol {
   margin-left: 1.5em;
   list-style-type: decimal-leading-zero;
 }
-/* line 114, ../../../../assets/styles/components/_accordion.scss */
+/* line 117, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content dl {
   line-height: 1.5em;
   padding-bottom: 0.375em;
 }
-/* line 120, ../../../../assets/styles/components/_accordion.scss */
+/* line 123, ../../../../assets/styles/components/_accordion.scss */
 .accordion-list-item .st-content dl dd {
   padding-bottom: 0.75em;
   padding-left: 1.5em;
@@ -10937,9 +10985,15 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
 /* line 1, ../../../../assets/styles/components/_a-to-z.scss */
 .az-group {
   position: relative;
+  border-top: 1px solid #c8c8c8;
+}
+/* line 4, ../../../../assets/styles/components/_a-to-z.scss */
+.az-group ul li {
+  margin-left: 0;
+  padding-left: 0;
 }
 
-/* line 5, ../../../../assets/styles/components/_a-to-z.scss */
+/* line 10, ../../../../assets/styles/components/_a-to-z.scss */
 .az-letter {
   position: absolute;
   top: 0;
@@ -11418,8 +11472,23 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
 }
 
 /* icons font-face */
+/* line 13, ../../../../assets/styles/components/_filtrify.scss */
+#placeHolder {
+  margin-bottom: 24px;
+}
+@media only screen and (max-width: 959px) {
+  /* line 16, ../../../../assets/styles/components/_filtrify.scss */
+  #placeHolder:after {
+    content: "Courses";
+    font-size: 24px;
+    background-color: white;
+    display: block;
+    padding: 24px 12px 0 12px;
+  }
+}
+
 /* reset */
-/* line 16, ../../../../assets/styles/components/_filtrify.scss */
+/* line 28, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu,
 ul.ft-menu * {
   margin: 0;
@@ -11428,15 +11497,14 @@ ul.ft-menu * {
   line-height: 1;
   position: relative;
   text-align: left;
-  font: normal normal 100% sans-serif;
 }
 
-/* line 27, ../../../../assets/styles/components/_filtrify.scss */
+/* line 38, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu {
   list-style: none;
 }
 
-/* line 31, ../../../../assets/styles/components/_filtrify.scss */
+/* line 42, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field {
   display: block;
   width: 100%;
@@ -11444,8 +11512,20 @@ ul.ft-menu > li.ft-field {
   margin-bottom: 1px;
   text-transform: capitalize;
 }
+/* line 55, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field:nth-of-type(1) {
+  margin-bottom: 24px;
+}
+/* line 57, ../../../../assets/styles/components/_filtrify.scss */
+.csm ul.ft-menu > li.ft-field:nth-of-type(1):after {
+  content: "Filter By Discipline";
+  font-size: 24px;
+  background-color: white;
+  display: block;
+  padding: 18px 12px 0 12px;
+}
 
-/* line 45, ../../../../assets/styles/components/_filtrify.scss */
+/* line 76, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label {
   cursor: pointer;
   display: inline-block;
@@ -11453,7 +11533,7 @@ ul.ft-menu > li.ft-field > span.ft-label {
   width: 100%;
 }
 
-/* line 51, ../../../../assets/styles/components/_filtrify.scss */
+/* line 82, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:before {
   /*    font-family: "FiltrifyRegular"; 
       content: "t"; */
@@ -11463,29 +11543,29 @@ ul.ft-menu > li.ft-field > span.ft-label:before {
   width: 20px;
 }
 
-/* line 59, ../../../../assets/styles/components/_filtrify.scss */
+/* line 90, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label:after {
   font-size: 80%;
   content: " \25bc";
   float: right;
 }
 
-/* line 64, ../../../../assets/styles/components/_filtrify.scss */
+/* line 95, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
   content: " \2605";
   color: #2D3743;
 }
-/* line 67, ../../../../assets/styles/components/_filtrify.scss */
+/* line 98, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
   color: #d10000;
 }
 
-/* line 71, ../../../../assets/styles/components/_filtrify.scss */
+/* line 102, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after {
   content: " \25b2";
 }
 
-/* line 75, ../../../../assets/styles/components/_filtrify.scss */
+/* line 106, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel {
   /*	border: 5px solid rgba(0, 0, 0, 0.3);
   	-webkit-border-radius: 3px;
@@ -11497,7 +11577,7 @@ ul.ft-menu > li.ft-field > div.ft-panel {
   z-index: 9999;
 }
 
-/* line 92, ../../../../assets/styles/components/_filtrify.scss */
+/* line 123, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel:before,
 ul.ft-menu > li.ft-field > div.ft-panel:after {
   position: absolute;
@@ -11507,42 +11587,43 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
   left: 10%;
 }
 
-/* line 118, ../../../../assets/styles/components/_filtrify.scss */
+/* line 149, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
   background: #a7a9ac;
   font-size: 13px;
 }
-/* line 121, ../../../../assets/styles/components/_filtrify.scss */
+/* line 152, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
   background-color: #d10000;
   color: white;
 }
 
-/* line 126, ../../../../assets/styles/components/_filtrify.scss */
+/* line 157, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
+  font-size: 13px;
   cursor: pointer;
   padding: 6px 12px;
   border-bottom: 1px dotted white;
   color: white;
 }
 
-/* line 152, ../../../../assets/styles/components/_filtrify.scss */
+/* line 184, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
   content: " \00D7";
   color: white;
 }
 
-/* line 156, ../../../../assets/styles/components/_filtrify.scss */
+/* line 188, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
   background: #282828;
 }
 
-/* line 165, ../../../../assets/styles/components/_filtrify.scss */
+/* line 197, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search {
   display: none;
 }
 
-/* line 200, ../../../../assets/styles/components/_filtrify.scss */
+/* line 232, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   position: relative !important;
   overflow-x: hidden;
@@ -11550,7 +11631,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   width: 100%;
 }
 
-/* line 208, ../../../../assets/styles/components/_filtrify.scss */
+/* line 240, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
   font-size: 13px;
   border-bottom: 1px solid #373737;
@@ -11560,7 +11641,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
   background: black;
 }
 
-/* line 227, ../../../../assets/styles/components/_filtrify.scss */
+/* line 259, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   content: attr(data-count);
   font-size: 11px;
@@ -11580,21 +11661,21 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   border-radius: 8px;
 }
 
-/* line 247, ../../../../assets/styles/components/_filtrify.scss */
+/* line 279, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
   background: #373737;
 }
 
-/* line 266, ../../../../assets/styles/components/_filtrify.scss */
+/* line 298, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
   background: white;
 }
-/* line 268, ../../../../assets/styles/components/_filtrify.scss */
+/* line 300, ../../../../assets/styles/components/_filtrify.scss */
 .csm ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
   background-color: #d10000;
 }
 
-/* line 273, ../../../../assets/styles/components/_filtrify.scss */
+/* line 305, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
   font-size: 11px;
   padding: 10px 15px;
@@ -11603,24 +11684,24 @@ ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
 }
 
 /* REQUIRED! */
-/* line 287, ../../../../assets/styles/components/_filtrify.scss */
+/* line 319, ../../../../assets/styles/components/_filtrify.scss */
 .ft-hidden {
   display: none !important;
 }
 
 /* Custom webkit scrollbars */
-/* line 291, ../../../../assets/styles/components/_filtrify.scss */
+/* line 323, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar {
   width: 10px;
 }
 
-/* line 294, ../../../../assets/styles/components/_filtrify.scss */
+/* line 326, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   background: #DDD;
 }
 
-/* line 298, ../../../../assets/styles/components/_filtrify.scss */
+/* line 330, ../../../../assets/styles/components/_filtrify.scss */
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);

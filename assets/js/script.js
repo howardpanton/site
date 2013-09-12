@@ -15,10 +15,18 @@ jQuery.fn.extend({
 
 $(".date").each( function(i, element) {
   
-  dateString = this.textContent;
-  var idx = dateString.indexOf(",");
-  var t = dateString.substr(idx + 2, 11);
-
+  var t = "",
+  dateString = this.textContent,
+  idx = dateString.indexOf(",");
+  
+  // if date string contains a comma, find the date bit
+  if (idx > 0) {
+    t = dateString.substr(idx + 2, 11);
+  // otherwise use what's there  
+  } else {
+    t = dateString;
+  }
+  
   $(this).text(t);
   
 });
@@ -264,8 +272,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/filtrify.min.js' ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -276,20 +284,39 @@ if ($('#container').length > 0) {
       var container = $("#container"),
           pagination = $("#pagination");
 
-      function setPagination () {
-          pagination.jPages({
-              containerID : "container",
-              perPage : 24,
-              direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
-          });
-      };
+  function setPagination () {
+        pagination.jPages({
+            containerID : "container",
+            perPage : 24,
+            midRange : 1,
+            previous : "←",
+            next : "→",
+            direction : "auto",
+            animation : "fadeInUp"
+ 
+        });
+    };
+
+    function destroyPagination () {
+        pagination.jPages("destroy");
+    };
+
+    setPagination();
+
+    $.filtrify("container", "placeHolder", {
+        block : "data-original",
+        callback : function() {
+            destroyPagination();
+            setPagination();
+        }
+    });
   });
   });
+
+  if(!$("body").hasClass("gDesktop")) {
+    $("#placeHolder").prependTo(".content");
+  }
+
 }
 
   // fade in button when user scrolls down the page
@@ -451,7 +478,7 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        //$('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show").rotate({angle:-90});
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
@@ -693,30 +720,28 @@ if ($('.js-lightbox').length > 0) {
 
 
 
+// show/hide the relevant buttons for browsers that have JS enabled
+$(".expanded-content").hide();
+$(".show-more").show();
 
-  // show/hide the relevant buttons for browsers that have JS enabled
-  $(".expanded-content").hide();
-  $(".show-more").show();
-  
-  // handle "Show More" button click
-  $(".show-more").click(function(e){
-    e.preventDefault();  
-    var _clicked = $(this);
-    var parent = _clicked.closest(".expandable-content"); 
-    $(".expanded-content",parent).slideDown(); 
-    _clicked.hide();
-  });
+// handle "Show More" button click
+$(".show-more").click(function(e){
+  e.preventDefault(); 
+  var _clicked = $(this);
+  _clicked.closest(".expandable-content").find(".expanded-content").slideDown(); 
+  _clicked.hide();
+});
 
-  // handle "Show Less" button click
-  $(".hide-content").click(function(e){
-    e.preventDefault();  
-    var _clicked = $(this);
+// handle "Show Less" button click
+$(".hide-content").click(function(e){
+  e.preventDefault();  
+  var _clicked = $(this);
 
-    var parent = _clicked.closest(".expandable-content"); 
-    $(".expanded-content",parent).hide();
-    $(parent).find(".show-more").show();
-    parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
-  });
+  var parent = _clicked.closest(".expandable-content"); 
+  $(".expanded-content",parent).hide();
+  $(parent).find(".show-more").show();
+  parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
+});
 
 
 
@@ -810,7 +835,18 @@ $('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-lin
 
 
 
-
+// KIS WIDGET
+if ($('.kis-widget').length > 0) {
+  (function (d) {
+  "use strict";
+  var widgetScript = d.createElement('script'); 
+  widgetScript.id = 'unistats-widget-script';
+      widgetScript.src = '//widget.unistats.ac.uk/js/unistats.widget.js';
+  var scriptTags = d.getElementsByTagName('script')[0];
+  if (d.getElementById('unistats-widget-script')) {  return; } 
+  scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
+  } (document));
+}
 
 
 
@@ -945,3 +981,24 @@ $(window).load(function(){
 
 });
 
+
+// add icons to social media links inside .l-content and aside
+$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
+
+$('.l-content a[href*="twitter"], aside a[href*="twitter"]').addClass('twitter-link');
+
+$('.l-content a[href*="flickr"], aside a[href*="flickr"]').addClass('flickr-link');
+
+$('.l-content a[href*="youtube"], aside a[href*="youtube"]').addClass('youtube-link');
+
+$('.l-content a[href*="linkedin"], aside a[href*="linkedin"]').addClass('linkedIn-link');
+
+$('.l-content a[href*="tumblr"], aside a[href*="tumblr"]').addClass('tumblr-link');
+
+$('.l-content a[href*="vimeo"], aside a[href*="vimeo"]').addClass('vimeo-link');
+
+$('.l-content a[href*="pinterest"], aside a[href*="pinterest"]').addClass('pinterest-link');
+
+$('.l-content a[href*="plus.google"], aside a[href*="plus.google"]').addClass('gplus-link');
+
+$('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-link');
