@@ -25,21 +25,41 @@ if(class_exists('AZ') != true)
 
 
 		/**
-		 * [split_name - extract the Surname from title field]
+		 * [get_first_word - extract the first_word from title field]
 		 */
-		public function split_name($name) {
+		public function get_first_word($name) {
 
 			$name = trim($name);
 			$pos = strrpos($name, ' ');
 
 			if ($pos === false) {
-				$surname = $name;
+				$first_word = $name;
 			}
 
-			$firstname = substr($name, 0, $pos + 1);
-			$surname = substr($name, $pos);
+			$first_word = substr($name, 0, $pos + 1);
 			
-			return trim($surname);
+			//return trim($first_word);
+			return trim($first_word);
+			
+		}
+
+
+		/**
+		 * [get_last_word - extract the last_word from title field]
+		 */
+		public function get_last_word($name) {
+
+			$name = trim($name);
+			$pos = strrpos($name, ' ');
+
+			if ($pos === false) {
+				$last_word = $name;
+			}
+
+			$last_word = substr($name, $pos);
+			
+			//return trim($first_word);
+			return trim($last_word);
 			
 		}
 
@@ -77,12 +97,18 @@ if(class_exists('AZ') != true)
 
 			foreach($this->array as $item){ 
 
-				$surname = $this->split_name($item['title']);
+				$first_word = $this->get_first_word($item['title']);
+				$last_word = $this->get_last_word($item['title']);
+
+				//echo $this->get_first_word($item['title']);
+				//echo $this->get_last_word($item['title']);
 
 				foreach($item as $key=>$value){ 
 					$enhancedItemArray[$key] = $value;
-					$enhancedItemArray['surname'] = $surname;
-					$enhancedItemArray['letter'] = $surname[0];
+					$enhancedItemArray['first_word'] = $first_word;
+					$enhancedItemArray['last_word'] = $last_word;
+					$enhancedItemArray['first_word_letter'] = $first_word[0];
+					$enhancedItemArray['last_word_letter'] = $last_word[0];
 				}
 
 				$enhancedArray[] = $enhancedItemArray;
@@ -113,17 +139,36 @@ if(class_exists('AZ') != true)
 		/**
 		 * [do_output output the content for the blocks]
 		 */
-		public function do_output() {
+		public function do_output($orderby) {
 			
 			$enhanced = $this->enhance_arrays();
 
-			$sorted = $this->alpha_sort_array($enhanced, 'surname');
+			$sorted = $this->alpha_sort_array($enhanced, $orderby);
 
-			echo '<pre>';
-			var_dump($sorted);
-			echo '</pre>';
-
+			// pump out A-Z letter scroll
+			if ($orderby == 'first_word') { 
+				$letter = 'first_word_letter'; 
+			} else {
+				$letter = 'last_word_letter'; 
+			}
 			?>
+			
+			<div class="row">
+				<div class="a-to-z">
+					<ul class="js-carousel" data-carousel-item-width="48" data-carousel-item-margin="12" data-carousel-min-items="6"> 
+					<?php		
+					$temp_letter = '';
+					foreach ($sorted as $item) { 
+						if ( $item['last_word_letter'] != $temp_letter ) {
+							echo '<li class="slide"><a href="#'.$item[$letter].'">'.$item[$letter].'</a></li>'; 
+						}
+						$temp_letter = $item[$letter];
+					}
+					?>
+					</ul>
+				</div>
+			</div>
+				
 			<div class="row">
 				
 				<?php	
@@ -133,7 +178,7 @@ if(class_exists('AZ') != true)
 
 				foreach ($sorted as $item) { 
 
-					if ( $item['letter'] != $temp_letter ) { 
+					if ( $item[$letter] != $temp_letter ) { 
 
 						if ($counter > 1) { ?>	
 
@@ -143,8 +188,8 @@ if(class_exists('AZ') != true)
 
 						<?php } ?>
 
-							<div class="row  az-group" data-group="<?php echo $item['letter']; ?>">
-								<h2 class="az-letter"><?php echo $item['letter']; ?></h2>
+							<div class="row  az-group" id="<?php echo $item[$letter]; ?>" data-group="<?php echo $item[$letter]; ?>">
+								<h2 class="az-letter"><?php echo $item[$letter]; ?></h2>
 								<div class="image-list-with-text-content">
 									<ul>
 
@@ -160,7 +205,7 @@ if(class_exists('AZ') != true)
 					<?php
 					}
 
-					$temp_letter = $item['letter'];
+					$temp_letter = $item[$letter];
 					$counter++;
 
 				} // end foreach ?>

@@ -770,7 +770,7 @@ if ($('video').length > 0) {
 
   $.getScript('<t4 type="media" id="229154" formatter="path/*"/>', function() {
 
-    $('video:not(.no-mejs)').mediaelementplayer({
+    $('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
       pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
