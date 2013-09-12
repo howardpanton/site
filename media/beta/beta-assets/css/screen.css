@@ -263,7 +263,7 @@ figure a, figcaption, .rsCaption, .caption, .top-bar li > a, .top-bar .feature p
 }
 
 /* line 69, ../../../../assets/styles/font-face/_swiss-721.scss */
-.megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
+.search-pagination-btns a.view-all, .lower-search-pagination-btns a.view-all, .megamenu li .dropdown_container h2 a, .megamenu li .dropdown_container a,
 .megamenu li .dropdown_fullwidth h2 a,
 .megamenu li .dropdown_fullwidth a,
 .megamenu li .dropdown_multilevel h2 a,
@@ -402,7 +402,7 @@ h2, h3, h4, strong, b, dl dt, .lcf .search-results-list h3 a,
 .flickr-link:before, .youtube-link:before,
 .pinterest-link:before, .vimeo-link:before,
 .tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before, .icon, a.search span, .warning-icon, .sb-icon-search, .show-mob-sidebar:after, .pagination .page-prev a, .pagination .page-next a {
+.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -412,7 +412,7 @@ h2, h3, h4, strong, b, dl dt, .lcf .search-results-list h3 a,
 }
 
 /* line 57, ../../../../assets/styles/font-face/_fontello-embedded.scss */
-.icon, a.search span {
+.icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span {
   font-family: "fontello";
 }
 
@@ -1158,7 +1158,7 @@ li.download {
     $CORE
 \*------------------------------------*/
 /* line 6, ../../../../assets/styles/globals/_icons.scss */
-.icon, a.search span {
+.icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span {
   width: 36px;
   height: 36px;
   background-position: 0% 0%;
@@ -1290,7 +1290,7 @@ h3, .size-h3, .search-results-info p, .lower-search-results-info p {
 }
 
 /* line 157, ../../../../assets/styles/globals/_typography.scss */
-h4, .size-h4, .filter-module h3, .lower-search-results-info p, .dd-heading {
+h4, .size-h4, .filter-module h3, .dd-heading {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333em;
@@ -1574,7 +1574,7 @@ hr {
 .flickr-link:before, .youtube-link:before,
 .pinterest-link:before, .vimeo-link:before,
 .tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before, .icon, a.search span, .warning-icon, .sb-icon-search, .show-mob-sidebar:after, .pagination .page-prev a, .pagination .page-next a {
+.gplus-link:before, .github-link:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -1584,7 +1584,7 @@ hr {
 }
 
 /* line 496, ../../../../assets/styles/globals/_typography.scss */
-.icon, a.search span {
+.icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span {
   font-family: "fontello";
 }
 
@@ -3927,7 +3927,7 @@ aside.no-bg {
 }
 
 /* line 6, ../../../../assets/styles/globals/_icons.scss */
-.icon, a.search span {
+.icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span {
   width: 36px;
   height: 36px;
   background-position: 0% 0%;
@@ -4137,18 +4137,18 @@ li.filter-link-only.active > a {
   padding-top: 0;
 }
 
-/* line 20, ../../../../assets/styles/components/_course-finder.scss */
+/* line 21, ../../../../assets/styles/components/_course-finder.scss */
 .search-results-list {
   margin-left: 0;
   clear: left;
 }
 
-/* line 25, ../../../../assets/styles/components/_course-finder.scss */
+/* line 26, ../../../../assets/styles/components/_course-finder.scss */
 .search-results-list > li {
   list-style: none;
 }
 
-/* line 29, ../../../../assets/styles/components/_course-finder.scss */
+/* line 30, ../../../../assets/styles/components/_course-finder.scss */
 .search-button {
   height: 70px;
   width: 70px;
@@ -4156,7 +4156,7 @@ li.filter-link-only.active > a {
   background-color: black;
 }
 
-/* line 37, ../../../../assets/styles/components/_course-finder.scss */
+/* line 38, ../../../../assets/styles/components/_course-finder.scss */
 .course-details > h3, .search-details > h3 {
   color: black;
   font-weight: bold;
@@ -4164,27 +4164,67 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 
-/* line 43, ../../../../assets/styles/components/_course-finder.scss */
+/* line 44, ../../../../assets/styles/components/_course-finder.scss */
 .search-results input:focus {
   outline: none;
 }
 
-/* line 47, ../../../../assets/styles/components/_course-finder.scss */
+/* line 48, ../../../../assets/styles/components/_course-finder.scss */
 .search-input-wrap {
   background: white;
   margin-bottom: 24px;
   border: 6px solid white;
   height: 60px;
 }
+/* line 55, ../../../../assets/styles/components/_course-finder.scss */
+.search-input-wrap .icon-search,
+.search-input-wrap .search-submit {
+  width: 48px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 48px;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 76, ../../../../assets/styles/components/_course-finder.scss */
+.search-input-wrap .icon-search {
+  color: white;
+  background-color: black;
+  z-index: 90;
+  font-size: 24px;
+  font-size: 1.5rem;
+  speak: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media only screen and (min-width: 960px) {
+  /* line 76, ../../../../assets/styles/components/_course-finder.scss */
+  .search-input-wrap .icon-search {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+/* line 92, ../../../../assets/styles/components/_course-finder.scss */
+.search-input-wrap .icon-search:hover {
+  background-color: #373737;
+}
 
-/* line 54, ../../../../assets/styles/components/_course-finder.scss */
+/* line 97, ../../../../assets/styles/components/_course-finder.scss */
 .course-search-form, .site-search-form {
   position: relative;
   width: 100%;
   margin-bottom: 0;
   padding: 0;
 }
-/* line 59, ../../../../assets/styles/components/_course-finder.scss */
+/* line 102, ../../../../assets/styles/components/_course-finder.scss */
 .course-search-form input, .site-search-form input {
   margin-left: 0;
   margin-bottom: 0;
@@ -4192,13 +4232,13 @@ li.filter-link-only.active > a {
   height: 48px;
 }
 @media only screen and (min-width: 960px) {
-  /* line 66, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 109, ../../../../assets/styles/components/_course-finder.scss */
   .course-search-form input, .site-search-form input {
     padding-left: 12px;
   }
 }
 
-/* line 72, ../../../../assets/styles/components/_course-finder.scss */
+/* line 115, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input, .site-search-results-input {
   -webkit-transition: all 300ms ease-out;
   -moz-transition: all 300ms ease-out;
@@ -4219,7 +4259,7 @@ li.filter-link-only.active > a {
   line-height: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 72, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 115, ../../../../assets/styles/components/_course-finder.scss */
   .course-finder-input, .site-search-results-input {
     margin-left: 12px;
     font-size: 0.875em;
@@ -4227,7 +4267,7 @@ li.filter-link-only.active > a {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 72, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 115, ../../../../assets/styles/components/_course-finder.scss */
   .course-finder-input, .site-search-results-input {
     max-width: 90%;
     width: 90%;
@@ -4237,44 +4277,44 @@ li.filter-link-only.active > a {
     line-height: 1.5em;
   }
 }
-/* line 96, ../../../../assets/styles/components/_course-finder.scss */
+/* line 139, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input::-webkit-input-placeholder, .site-search-results-input::-webkit-input-placeholder {
   color: #c8c8c8;
 }
-/* line 100, ../../../../assets/styles/components/_course-finder.scss */
+/* line 143, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:-moz-placeholder, .site-search-results-input:-moz-placeholder {
   /* Firefox 18- */
   color: #c8c8c8;
 }
-/* line 104, ../../../../assets/styles/components/_course-finder.scss */
+/* line 147, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input::-moz-placeholder, .site-search-results-input::-moz-placeholder {
   /* Firefox 19+ */
   color: #c8c8c8;
 }
-/* line 108, ../../../../assets/styles/components/_course-finder.scss */
+/* line 151, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:-ms-input-placeholder, .site-search-results-input:-ms-input-placeholder {
   color: #c8c8c8;
 }
-/* line 113, ../../../../assets/styles/components/_course-finder.scss */
+/* line 156, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:focus::-webkit-input-placeholder, .site-search-results-input:focus::-webkit-input-placeholder {
   color: #757575;
 }
-/* line 116, ../../../../assets/styles/components/_course-finder.scss */
+/* line 159, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:focus:-moz-placeholder, .site-search-results-input:focus:-moz-placeholder {
   /* Firefox 18- */
   color: #757575;
 }
-/* line 119, ../../../../assets/styles/components/_course-finder.scss */
+/* line 162, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:focus::-moz-placeholder, .site-search-results-input:focus::-moz-placeholder {
   /* Firefox 19+ */
   color: #757575;
 }
-/* line 122, ../../../../assets/styles/components/_course-finder.scss */
+/* line 165, ../../../../assets/styles/components/_course-finder.scss */
 .course-finder-input:focus:-ms-input-placeholder, .site-search-results-input:focus:-ms-input-placeholder {
   color: #757575;
 }
 
-/* line 128, ../../../../assets/styles/components/_course-finder.scss */
+/* line 171, ../../../../assets/styles/components/_course-finder.scss */
 .search-link {
   position: absolute;
   top: 0;
@@ -4284,16 +4324,12 @@ li.filter-link-only.active > a {
   height: 48px;
   width: 48px;
 }
-/* line 136, ../../../../assets/styles/components/_course-finder.scss */
-.search-link img {
-  margin-top: -3px;
-}
-/* line 139, ../../../../assets/styles/components/_course-finder.scss */
+/* line 179, ../../../../assets/styles/components/_course-finder.scss */
 .search-link a {
   border-bottom: 0;
 }
 
-/* line 145, ../../../../assets/styles/components/_course-finder.scss */
+/* line 186, ../../../../assets/styles/components/_course-finder.scss */
 input, .search-result-module, .search-input-wrap {
   -webkit-transition: -webkit-box-shadow 450ms;
   -moz-transition: -moz-box-shadow 450ms;
@@ -4302,17 +4338,17 @@ input, .search-result-module, .search-input-wrap {
   border: 6px solid rgba(0, 0, 0, 0);
 }
 
-/* line 153, ../../../../assets/styles/components/_course-finder.scss */
+/* line 194, ../../../../assets/styles/components/_course-finder.scss */
 .search-gray-border, .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   border: 6px solid #c8c8c8;
 }
 
-/* line 157, ../../../../assets/styles/components/_course-finder.scss */
+/* line 198, ../../../../assets/styles/components/_course-finder.scss */
 .search-bg-gray-border, .search-input-wrap, .search-result-module, .search-result-module:focus {
   border: 6px solid #e9e9e9;
 }
 
-/* line 173, ../../../../assets/styles/components/_course-finder.scss */
+/* line 214, ../../../../assets/styles/components/_course-finder.scss */
 .search-result-module {
   position: relative;
   background-color: #e9e9e9;
@@ -4322,40 +4358,40 @@ input, .search-result-module, .search-input-wrap {
   padding-bottom: 60px;
   margin-bottom: 1.5em;
 }
-/* line 182, ../../../../assets/styles/components/_course-finder.scss */
+/* line 223, ../../../../assets/styles/components/_course-finder.scss */
 .search-result-module h3 {
   padding-top: 0;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 188, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 228, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 188, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 228, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 60px;
     position: relative;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 188, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 228, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-summary {
     min-height: 120px;
     margin-bottom: 1.125em;
   }
 }
 
-/* line 212, ../../../../assets/styles/components/_course-finder.scss */
+/* line 252, ../../../../assets/styles/components/_course-finder.scss */
 .search-results-info p, .lower-search-results-info p {
   font-weight: 300;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 210, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 250, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -4363,13 +4399,13 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 71.71974%;
   }
-  /* line 221, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 261, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 2px;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 210, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 250, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-info, .lower-search-results-info {
     display: block;
     float: left;
@@ -4377,20 +4413,25 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 48.19132%;
   }
-  /* line 226, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 266, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 230, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 270, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-info p, .lower-search-results-info p {
     padding-top: 0;
   }
 }
 
+/* line 277, ../../../../assets/styles/components/_course-finder.scss */
+.lower-search-results-info p {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
 @media only screen and (min-width: 960px) {
-  /* line 235, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 275, ../../../../assets/styles/components/_course-finder.scss */
   .lower-search-results-info {
     display: block;
     float: left;
@@ -4398,35 +4439,70 @@ input, .search-result-module, .search-input-wrap {
     margin-right: -100%;
     width: 52.86624%;
     position: relative;
+    padding-top: 18px;
   }
 }
 
-/* line 248, ../../../../assets/styles/components/_course-finder.scss */
-.search-pagination-btns {
-  padding: 12px;
+/* line 290, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns, .lower-search-pagination-btns {
   text-align: right;
 }
-/* line 251, ../../../../assets/styles/components/_course-finder.scss */
-.search-pagination-btns a {
+/* line 293, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a, .lower-search-pagination-btns a {
+  display: inline-block;
+  position: relative;
+  min-width: 2em;
+}
+/* line 297, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a::first-of-type, .lower-search-pagination-btns a::first-of-type {
   margin-right: 1px;
 }
+/* line 305, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a.left-arrow:after, .lower-search-pagination-btns a.left-arrow:after, .search-pagination-btns a.right-arrow:after, .lower-search-pagination-btns a.right-arrow:after {
+  position: absolute;
+  left: 0.85714em;
+  top: 0.64286em;
+}
+/* line 311, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a.left-arrow:after, .lower-search-pagination-btns a.left-arrow:after {
+  content: '\e802';
+}
+/* line 315, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a.right-arrow:after, .lower-search-pagination-btns a.right-arrow:after {
+  content: '\e800';
+}
+/* line 322, ../../../../assets/styles/components/_course-finder.scss */
+.search-pagination-btns a.view-all, .lower-search-pagination-btns a.view-all {
+  font-size: 16px;
+  font-size: 1rem;
+  min-width: 5em;
+  width: auto;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  line-height: 36px;
+  text-decoration: none;
+  border-bottom: 0;
+}
 @media only screen and (min-width: 960px) {
-  /* line 248, ../../../../assets/styles/components/_course-finder.scss */
-  .search-pagination-btns {
+  /* line 322, ../../../../assets/styles/components/_course-finder.scss */
+  .search-pagination-btns a.view-all, .lower-search-pagination-btns a.view-all {
+    height: 36px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  /* line 290, ../../../../assets/styles/components/_course-finder.scss */
+  .search-pagination-btns, .lower-search-pagination-btns {
     display: block;
     float: left;
-    margin-left: 75.41402%;
+    margin-left: 65.98727%;
     margin-right: -100%;
-    width: 24.58598%;
-    position: absolute;
-    top: 0.75em;
+    width: 34.01273%;
     margin-bottom: 0.75em;
-    padding: 12px 0;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 248, ../../../../assets/styles/components/_course-finder.scss */
-  .search-pagination-btns {
+  /* line 290, ../../../../assets/styles/components/_course-finder.scss */
+  .search-pagination-btns, .lower-search-pagination-btns {
     display: block;
     float: left;
     margin-left: 52.19132%;
@@ -4437,60 +4513,39 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 248, ../../../../assets/styles/components/_course-finder.scss */
-  .search-pagination-btns {
+  /* line 290, ../../../../assets/styles/components/_course-finder.scss */
+  .search-pagination-btns, .lower-search-pagination-btns {
     text-align: left;
     margin-top: 0.85714em;
   }
 }
 
-/* line 276, ../../../../assets/styles/components/_course-finder.scss */
-.lower-search-pagination-btns a {
-  margin-right: 1px;
-}
-/* line 278, ../../../../assets/styles/components/_course-finder.scss */
-.lower-search-pagination-btns a:first-child {
-  padding-top: 16px;
-}
-/* line 281, ../../../../assets/styles/components/_course-finder.scss */
-.lower-search-pagination-btns a:first-child:hover {
-  padding-top: 16px;
-}
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 274, ../../../../assets/styles/components/_course-finder.scss */
-  .lower-search-pagination-btns {
-    margin-top: 6px;
-    text-align: right;
-  }
-}
 @media only screen and (min-width: 960px) {
-  /* line 274, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 358, ../../../../assets/styles/components/_course-finder.scss */
   .lower-search-pagination-btns {
     display: block;
     float: left;
-    margin-left: 56.56051%;
+    margin-left: 65.98727%;
     margin-right: -100%;
-    width: 43.43949%;
-    text-align: right;
+    width: 34.01273%;
     position: absolute;
-    top: 12px;
   }
 }
 
-/* line 300, ../../../../assets/styles/components/_course-finder.scss */
+/* line 375, ../../../../assets/styles/components/_course-finder.scss */
 .course-title, .search-title {
   display: block;
   width: 32%;
   float: left;
 }
-/* line 305, ../../../../assets/styles/components/_course-finder.scss */
+/* line 380, ../../../../assets/styles/components/_course-finder.scss */
 .course-title h3, .search-title h3 {
   text-decoration: none;
   font-size: 18px;
   margin-top: 0;
-  padding-bottom: 1px;
+  padding: 0 0 1px 0;
 }
-/* line 310, ../../../../assets/styles/components/_course-finder.scss */
+/* line 385, ../../../../assets/styles/components/_course-finder.scss */
 .course-title h3 a, .search-title h3 a {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -4501,44 +4556,46 @@ input, .search-result-module, .search-input-wrap {
   text-decoration: none;
 }
 @media only screen and (max-width: 599px) {
-  /* line 300, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 375, ../../../../assets/styles/components/_course-finder.scss */
   .course-title, .search-title {
     width: 100%;
     clear: left;
   }
 }
 
-/* line 322, ../../../../assets/styles/components/_course-finder.scss */
+/* line 397, ../../../../assets/styles/components/_course-finder.scss */
 .course-description, .search-description {
   width: 60%;
   float: left;
   margin-left: 18px;
 }
-/* line 327, ../../../../assets/styles/components/_course-finder.scss */
+/* line 402, ../../../../assets/styles/components/_course-finder.scss */
 .course-description p, .search-description p {
   padding-top: 0;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 322, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 397, ../../../../assets/styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 64%;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 322, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 397, ../../../../assets/styles/components/_course-finder.scss */
   .course-description, .search-description {
     width: 100%;
     clear: left;
     margin-left: 0;
   }
-  /* line 340, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 416, ../../../../assets/styles/components/_course-finder.scss */
   .course-description p, .search-description p {
+    padding-left: 0;
+    padding-right: 0;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 }
 
-/* line 348, ../../../../assets/styles/components/_course-finder.scss */
+/* line 426, ../../../../assets/styles/components/_course-finder.scss */
 .search-results-lower-wrap, .site-search-results-lower-wrap {
   position: absolute;
   bottom: 20px;
@@ -4548,24 +4605,24 @@ input, .search-result-module, .search-input-wrap {
   min-height: 18px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 348, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 426, ../../../../assets/styles/components/_course-finder.scss */
   .search-results-lower-wrap, .site-search-results-lower-wrap {
     font-size: 0.875em;
   }
 }
 
-/* line 360, ../../../../assets/styles/components/_course-finder.scss */
+/* line 438, ../../../../assets/styles/components/_course-finder.scss */
 .site-search-results-lower-wrap {
   right: 0;
 }
 
-/* line 365, ../../../../assets/styles/components/_course-finder.scss */
+/* line 443, ../../../../assets/styles/components/_course-finder.scss */
 .lower-search-again-box {
   clear: left;
   margin-top: 1.5em;
 }
 
-/* line 370, ../../../../assets/styles/components/_course-finder.scss */
+/* line 450, ../../../../assets/styles/components/_course-finder.scss */
 .enrolment-type, .result-file-type {
   width: 32%;
   float: left;
@@ -4573,7 +4630,7 @@ input, .search-result-module, .search-input-wrap {
   font-size: 0.875rem;
 }
 @media only screen and (max-width: 599px) {
-  /* line 370, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 450, ../../../../assets/styles/components/_course-finder.scss */
   .enrolment-type, .result-file-type {
     width: 100%;
     clear: left;
@@ -4582,13 +4639,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 381, ../../../../assets/styles/components/_course-finder.scss */
+/* line 461, ../../../../assets/styles/components/_course-finder.scss */
 .site-search-section-name {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
-/* line 385, ../../../../assets/styles/components/_course-finder.scss */
+/* line 465, ../../../../assets/styles/components/_course-finder.scss */
 .college-name {
   position: absolute;
   left: 32%;
@@ -4598,7 +4655,7 @@ input, .search-result-module, .search-input-wrap {
   margin-left: 10px;
 }
 @media only screen and (max-width: 599px) {
-  /* line 385, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 465, ../../../../assets/styles/components/_course-finder.scss */
   .college-name {
     position: static;
     width: 100%;
@@ -4609,7 +4666,7 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 400, ../../../../assets/styles/components/_course-finder.scss */
+/* line 480, ../../../../assets/styles/components/_course-finder.scss */
 .result-url {
   position: absolute;
   left: 32%;
@@ -4619,11 +4676,18 @@ input, .search-result-module, .search-input-wrap {
   font-size: 14px;
   font-size: 0.875rem;
   margin-left: 10px;
-  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 @media only screen and (max-width: 599px) {
-  /* line 400, ../../../../assets/styles/components/_course-finder.scss */
+  /* line 480, ../../../../assets/styles/components/_course-finder.scss */
   .result-url {
+    display: none;
     width: 100%;
     margin-right: 0;
     clear: left;
@@ -4633,13 +4697,13 @@ input, .search-result-module, .search-input-wrap {
   }
 }
 
-/* line 420, ../../../../assets/styles/components/_course-finder.scss */
+/* line 507, ../../../../assets/styles/components/_course-finder.scss */
 .no-results-found {
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 425, ../../../../assets/styles/components/_course-finder.scss */
+/* line 512, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete {
   z-index: 1000;
   float: left;
@@ -4651,16 +4715,16 @@ input, .search-result-module, .search-input-wrap {
   background-color: #ffffff;
   padding-left: 18px;
 }
-/* line 436, ../../../../assets/styles/components/_course-finder.scss */
+/* line 523, ../../../../assets/styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete, .dd-menu-dropdown-wrapper .ui-autocomplete {
   background-color: #373737;
 }
-/* line 438, ../../../../assets/styles/components/_course-finder.scss */
+/* line 525, ../../../../assets/styles/components/_course-finder.scss */
 .header-wrapper .ui-autocomplete li a, .dd-menu-dropdown-wrapper .ui-autocomplete li a {
   color: white;
   font-size: 1.5em;
 }
-/* line 444, ../../../../assets/styles/components/_course-finder.scss */
+/* line 531, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete li {
   border-width: 0 0 1px 0;
   border-bottom: 1px dotted #e9e9e9;
@@ -4668,14 +4732,14 @@ input, .search-result-module, .search-input-wrap {
   -webkit-border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
   border-image: url("../img/dashline_border_img.png") 0 0 1 0 repeat;
 }
-/* line 448, ../../../../assets/styles/components/_course-finder.scss */
+/* line 535, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all {
   display: block;
   clear: both;
   white-space: nowrap;
   border-bottom: 0;
 }
-/* line 454, ../../../../assets/styles/components/_course-finder.scss */
+/* line 541, ../../../../assets/styles/components/_course-finder.scss */
 .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
   color: #282828;
   text-decoration: none;
@@ -4686,23 +4750,32 @@ input, .search-result-module, .search-input-wrap {
   background-image: none;
 }
 
-/* line 466, ../../../../assets/styles/components/_course-finder.scss */
+/* line 553, ../../../../assets/styles/components/_course-finder.scss */
 .ui-helper-hidden-accessible {
   display: none !important;
   position: relative;
   top: -20px;
 }
 
-/* line 473, ../../../../assets/styles/components/_course-finder.scss */
-.warning-icon {
-  font-size: 120px;
-  font-size: 7.5rem;
+/* line 560, ../../../../assets/styles/components/_course-finder.scss */
+.warning-icon, .question-icon {
+  font-size: 90px;
+  font-size: 5.625rem;
   line-height: 120px;
   padding: 24px;
   color: #757575;
 }
+/* line 566, ../../../../assets/styles/components/_course-finder.scss */
+.warning-icon:after, .question-icon:after {
+  content: '\e839';
+}
 
-/* line 482, ../../../../assets/styles/components/_course-finder.scss */
+/* line 573, ../../../../assets/styles/components/_course-finder.scss */
+.question-icon:after {
+  content: '\e838';
+}
+
+/* line 579, ../../../../assets/styles/components/_course-finder.scss */
 form.d-search-input-form {
   margin: 0;
   padding: 0;
@@ -4921,6 +4994,9 @@ li.megamenu_button_active {
   position: absolute;
   right: 0;
   top: 0;
+  border-top-width: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
   text-align: center;
 }
 @media only screen and (min-width: 960px) {
@@ -4930,7 +5006,7 @@ li.megamenu_button_active {
     height: 36px;
   }
 }
-/* line 227, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 232, ../../../../assets/styles/components/_nav-main-menu.scss */
 .megamenu .go-search-button a {
   color: white;
   border-bottom: 0;
@@ -4939,59 +5015,59 @@ li.megamenu_button_active {
   text-align: center;
   text-decoration: none;
 }
-/* line 235, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 240, ../../../../assets/styles/components/_nav-main-menu.scss */
 .megamenu .go-search-button a:hover {
   color: white;
 }
 
-/* line 241, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 246, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth {
   padding-top: 0.75em;
   padding-bottom: 0.75em;
   background-color: #373737;
 }
 @media only screen and (min-width: 960px) {
-  /* line 241, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 246, ../../../../assets/styles/components/_nav-main-menu.scss */
   .dropdown_fullwidth {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
   }
 }
-/* line 252, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 257, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li {
   border-top: 1px dotted #757575;
   border-bottom: 0;
   padding-bottom: 0;
 }
-/* line 256, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 261, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li:first-child {
   border-top: 0;
 }
-/* line 260, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 265, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth li:last-child {
   border-bottom: 1px dotted #757575;
 }
 @media only screen and (min-width: 960px) {
-  /* line 266, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 271, ../../../../assets/styles/components/_nav-main-menu.scss */
   .dropdown_fullwidth li:first-child {
     border-top: 1px dotted #757575;
   }
 }
-/* line 271, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 276, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dropdown_fullwidth ul > li > a {
   color: #282828;
   padding-top: 0.375em;
   padding-bottom: 0.375em;
 }
 @media only screen and (min-width: 960px) {
-  /* line 271, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 276, ../../../../assets/styles/components/_nav-main-menu.scss */
   .dropdown_fullwidth ul > li > a {
     color: white;
   }
 }
 
 @media only screen and (max-width: 959px) {
-  /* line 286, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 291, ../../../../assets/styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper {
     width: 100%;
     max-width: 100%;
@@ -4999,31 +5075,31 @@ li.megamenu_button_active {
     padding-right: 0;
   }
 }
-/* line 296, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 301, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dd-menu-dropdown-wrapper ul > li {
   background-color: #c8c8c8;
 }
 @media only screen and (min-width: 960px) {
-  /* line 296, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 301, ../../../../assets/styles/components/_nav-main-menu.scss */
   .dd-menu-dropdown-wrapper ul > li {
     background-color: #373737;
   }
 }
 
-/* line 304, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 309, ../../../../assets/styles/components/_nav-main-menu.scss */
 .menu-contain-wrap {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-/* line 310, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 315, ../../../../assets/styles/components/_nav-main-menu.scss */
 .main-menu {
   width: 100%;
   display: block;
   background: black;
 }
-/* line 317, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 322, ../../../../assets/styles/components/_nav-main-menu.scss */
 .main-menu ul {
   display: block;
   height: 100%;
@@ -5034,36 +5110,36 @@ li.megamenu_button_active {
   background: black;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 317, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 322, ../../../../assets/styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 317, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 322, ../../../../assets/styles/components/_nav-main-menu.scss */
   .main-menu ul {
     display: block;
   }
 }
-/* line 336, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 341, ../../../../assets/styles/components/_nav-main-menu.scss */
 .main-menu .dropdown-arrow {
   display: none;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 342, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 347, ../../../../assets/styles/components/_nav-main-menu.scss */
   .m-nav-menu-wrap {
     display: none;
   }
 }
-/* line 346, ../../../../assets/styles/components/_nav-main-menu.scss */
-.m-nav-menu-wrap .icon, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
+/* line 351, ../../../../assets/styles/components/_nav-main-menu.scss */
+.m-nav-menu-wrap .icon, .m-nav-menu-wrap .search-pagination-btns a.left-arrow, .search-pagination-btns .m-nav-menu-wrap a.left-arrow, .m-nav-menu-wrap .lower-search-pagination-btns a.left-arrow, .lower-search-pagination-btns .m-nav-menu-wrap a.left-arrow, .m-nav-menu-wrap .search-pagination-btns a.right-arrow, .search-pagination-btns .m-nav-menu-wrap a.right-arrow, .m-nav-menu-wrap .lower-search-pagination-btns a.right-arrow, .lower-search-pagination-btns .m-nav-menu-wrap a.right-arrow, .m-nav-menu-wrap a.search span, a.search .m-nav-menu-wrap span {
   font-size: 48px;
   font-size: 3rem;
   line-height: 48px;
 }
 
-/* line 354, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 359, ../../../../assets/styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle, a.m-menu-btn-toggle {
   color: white;
   padding-top: 12px;
@@ -5077,7 +5153,7 @@ li.megamenu_button_active {
   margin: 0;
   width: 100%;
 }
-/* line 365, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 370, ../../../../assets/styles/components/_nav-main-menu.scss */
 .m-menu-btn-toggle span, a.m-menu-btn-toggle span {
   display: block;
   margin: 0;
@@ -5089,17 +5165,17 @@ li.megamenu_button_active {
   font-size: 1.25rem;
 }
 @media only screen and (min-width: 960px) {
-  /* line 354, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 359, ../../../../assets/styles/components/_nav-main-menu.scss */
   .m-menu-btn-toggle, a.m-menu-btn-toggle {
     display: none !important;
   }
 }
 
-/* line 383, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 388, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar {
   position: relative;
 }
-/* line 386, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 391, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar li {
   display: block;
   width: 100%;
@@ -5107,7 +5183,7 @@ li.megamenu_button_active {
   padding-bottom: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 386, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 391, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar li {
     list-style: none;
     padding: 0;
@@ -5115,11 +5191,11 @@ li.megamenu_button_active {
     font-weight: 300;
   }
 }
-/* line 410, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 415, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar li:hover {
   background-color: #373737;
 }
-/* line 412, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 417, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar li > a {
   display: block;
   height: 100%;
@@ -5131,7 +5207,7 @@ li.megamenu_button_active {
   border-bottom: none;
 }
 @media only screen and (min-width: 960px) {
-  /* line 412, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 417, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar li > a {
     font-size: 13px;
     font-size: 0.8125rem;
@@ -5140,12 +5216,12 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 430, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 435, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar li > a:hover {
     background-color: #373737;
   }
 }
-/* line 436, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 441, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar li > a.search-icon {
   font-family: "fontello" !important;
   vertical-align: middle;
@@ -5154,7 +5230,7 @@ li.megamenu_button_active {
   font-size: 1rem;
 }
 @media only screen and (min-width: 960px) {
-  /* line 436, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 441, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar li > a.search-icon {
     font-size: 16px;
     font-size: 1rem;
@@ -5162,13 +5238,13 @@ li.megamenu_button_active {
     text-align: center;
   }
 }
-/* line 449, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 454, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar li .menu-active {
   background-color: #373737 !important;
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 455, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 460, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     display: block;
     float: left;
@@ -5178,7 +5254,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 455, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 460, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-1 {
     width: 100%;
     padding-bottom: 0;
@@ -5186,7 +5262,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 468, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 473, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     display: block;
     float: left;
@@ -5196,7 +5272,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 468, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 473, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -5205,7 +5281,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 468, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 473, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-2 {
     width: 100%;
     clear: left;
@@ -5214,7 +5290,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 485, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 490, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     display: block;
     float: left;
@@ -5224,7 +5300,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 485, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 490, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -5233,7 +5309,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 485, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 490, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-3 {
     width: 100%;
     clear: left;
@@ -5242,7 +5318,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 502, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 507, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     display: block;
     float: left;
@@ -5252,7 +5328,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 502, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 507, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -5261,7 +5337,7 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 502, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 507, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar .subnav-4 {
     width: 100%;
     clear: left;
@@ -5270,14 +5346,14 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (max-width: 959px) {
-  /* line 520, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 525, ../../../../assets/styles/components/_nav-main-menu.scss */
   .top-bar ul.subnav-1, .top-bar ul.subnav-2, .top-bar ul.subnav-3, .top-bar ul.subnav-4 {
     padding-top: 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 }
-/* line 531, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 536, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar .feature {
   display: block;
   float: left;
@@ -5288,12 +5364,12 @@ li.megamenu_button_active {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 535, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 540, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar .feature p {
   padding-top: 0.75em;
   padding-bottom: 0;
 }
-/* line 543, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 548, ../../../../assets/styles/components/_nav-main-menu.scss */
 .top-bar .feature-image {
   display: block;
   float: left;
@@ -5302,7 +5378,7 @@ li.megamenu_button_active {
   width: 23.01718%;
 }
 
-/* line 549, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 554, ../../../../assets/styles/components/_nav-main-menu.scss */
 .menu-open-closed-icon {
   float: right;
   color: white;
@@ -5316,7 +5392,7 @@ li.megamenu_button_active {
   padding-left: 12px;
 }
 
-/* line 561, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 566, ../../../../assets/styles/components/_nav-main-menu.scss */
 .ual-banner-menu {
   *zoom: 1;
   padding-left: 6px;
@@ -5332,7 +5408,7 @@ li.megamenu_button_active {
   clear: both;
 }
 @media only screen and (min-width: 960px) {
-  /* line 561, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 566, ../../../../assets/styles/components/_nav-main-menu.scss */
   .ual-banner-menu {
     display: block;
     *zoom: 1;
@@ -5352,18 +5428,18 @@ li.megamenu_button_active {
   }
 }
 
-/* line 577, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 582, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top: 0;
 }
-/* line 583, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 588, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu ul {
   padding-bottom: 0;
 }
-/* line 587, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 592, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu li {
   list-style: none;
   display: inline-block;
@@ -5372,76 +5448,76 @@ li.megamenu_button_active {
   border-right: 1px solid #444;
   float: left;
 }
-/* line 594, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 599, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu li a {
   display: block;
   height: 100%;
   width: 100%;
   text-align: right;
 }
-/* line 602, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 607, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child {
   border-right: none;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 606, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 611, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu li:last-child a {
   text-align: center;
 }
-/* line 611, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 616, ../../../../assets/styles/components/_nav-main-menu.scss */
 .mobile-menu .menu-active {
   background-color: #373737;
 }
 @media only screen and (min-width: 960px) {
-  /* line 577, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 582, ../../../../assets/styles/components/_nav-main-menu.scss */
   .mobile-menu {
     display: none;
   }
 }
 
-/* line 620, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 625, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dd-heading {
   padding-left: 12px;
   text-transform: capitalize !important;
 }
-/* line 626, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 631, ../../../../assets/styles/components/_nav-main-menu.scss */
 .dd-heading a {
   color: white !important;
 }
 
-/* line 632, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 637, ../../../../assets/styles/components/_nav-main-menu.scss */
 .ual-logo-tab-mobile {
   padding-left: 12px;
   float: left;
 }
 @media only screen and (min-width: 960px) {
-  /* line 632, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 637, ../../../../assets/styles/components/_nav-main-menu.scss */
   .ual-logo-tab-mobile {
     display: none;
   }
 }
 
-/* line 642, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 647, ../../../../assets/styles/components/_nav-main-menu.scss */
 .ual-logo-desktop {
   min-height: 130px;
   padding-left: 12px;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 642, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 647, ../../../../assets/styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 642, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 647, ../../../../assets/styles/components/_nav-main-menu.scss */
   .ual-logo-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  /* line 658, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 663, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu {
     clear: both;
     display: block;
@@ -5451,42 +5527,42 @@ li.megamenu_button_active {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 658, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 663, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 658, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 663, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu {
     padding: 0, 6px 6px 6px;
   }
 }
-/* line 672, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 677, ../../../../assets/styles/components/_nav-main-menu.scss */
 .submenu > div {
   overflow: hidden;
 }
 @media only screen and (min-width: 960px) {
-  /* line 672, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 677, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 2.25em;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 672, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 677, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 672, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 677, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu > div {
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-/* line 687, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 692, ../../../../assets/styles/components/_nav-main-menu.scss */
 .submenu li {
   list-style: none;
   width: 100%;
@@ -5494,42 +5570,42 @@ li.megamenu_button_active {
   float: left;
   border-bottom: dotted 1px white;
 }
-/* line 694, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 699, ../../../../assets/styles/components/_nav-main-menu.scss */
 .submenu li:hover {
   border-bottom: 1px 1px white;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 687, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 692, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 687, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 692, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu li {
     line-height: 42px;
     border-bottom: none;
   }
 }
-/* line 708, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 713, ../../../../assets/styles/components/_nav-main-menu.scss */
 .submenu .sub-inner-menu {
   background-color: #282828;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 708, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 713, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 708, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 713, ../../../../assets/styles/components/_nav-main-menu.scss */
   .submenu .sub-inner-menu {
     padding-left: 12px;
   }
 }
 
-/* line 723, ../../../../assets/styles/components/_nav-main-menu.scss */
+/* line 728, ../../../../assets/styles/components/_nav-main-menu.scss */
 .site-search-input, .course-finder-txt-input {
   color: #757575;
   width: 100%;
@@ -5541,7 +5617,7 @@ li.megamenu_button_active {
   border-radius: 0;
 }
 @media only screen and (min-width: 960px) {
-  /* line 723, ../../../../assets/styles/components/_nav-main-menu.scss */
+  /* line 728, ../../../../assets/styles/components/_nav-main-menu.scss */
   .site-search-input, .course-finder-txt-input {
     height: 24px;
   }
@@ -6137,7 +6213,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 1, ../../../../assets/styles/components/_button-link.scss */
-.button-link, input.submit-btn, .megamenu .go-search-button {
+.button-link, input.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, .megamenu .go-search-button {
   font-size: 14px;
   font-size: 0.875rem;
   background-color: black;
@@ -6155,7 +6231,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 20, ../../../../assets/styles/components/_button-link.scss */
-.button-link:hover, input.submit-btn:hover, .megamenu .go-search-button:hover {
+.button-link:hover, input.submit-btn:hover, .search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns a.left-arrow:hover, .search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns a.right-arrow:hover, .megamenu .go-search-button:hover {
   background-color: #757575;
   color: white;
   text-decoration: none;
@@ -6165,12 +6241,12 @@ input[type="text"].sb-search-input {
   border-bottom: none;
 }
 /* line 30, ../../../../assets/styles/components/_button-link.scss */
-.csm .button-link:hover, .csm input.submit-btn:hover, .csm .megamenu .go-search-button:hover, .megamenu .csm .go-search-button:hover {
+.csm .button-link:hover, .csm input.submit-btn:hover, .csm .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .csm a.left-arrow:hover, .csm .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .csm a.left-arrow:hover, .csm .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .csm a.right-arrow:hover, .csm .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .csm a.right-arrow:hover, .csm .megamenu .go-search-button:hover, .megamenu .csm .go-search-button:hover {
   background-color: #d10000;
   color: black;
 }
 /* line 34, ../../../../assets/styles/components/_button-link.scss */
-.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc .megamenu .go-search-button:hover, .megamenu .lcc .go-search-button:hover {
+.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .lcc a.left-arrow:hover, .lcc .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .lcc a.left-arrow:hover, .lcc .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .lcc a.right-arrow:hover, .lcc .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .lcc a.right-arrow:hover, .lcc .megamenu .go-search-button:hover, .megamenu .lcc .go-search-button:hover {
   background-color: #e5006e;
   color: white;
 }
@@ -6195,7 +6271,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 65, ../../../../assets/styles/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .megamenu .icon.go-search-button, .megamenu a.search span.go-search-button, a.search .megamenu span.go-search-button, a.search span.button-link {
+.button-link.icon, input.icon.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, .megamenu .icon.go-search-button, .megamenu .search-pagination-btns a.go-search-button.left-arrow, .search-pagination-btns .megamenu a.go-search-button.left-arrow, .megamenu .lower-search-pagination-btns a.go-search-button.left-arrow, .lower-search-pagination-btns .megamenu a.go-search-button.left-arrow, .megamenu .search-pagination-btns a.go-search-button.right-arrow, .search-pagination-btns .megamenu a.go-search-button.right-arrow, .megamenu .lower-search-pagination-btns a.go-search-button.right-arrow, .lower-search-pagination-btns .megamenu a.go-search-button.right-arrow, .megamenu a.search span.go-search-button, a.search .megamenu span.go-search-button, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
@@ -10534,34 +10610,27 @@ a.back-to-top:hover {
   min-width: 36px;
   text-align: center;
   font-size: 14px;
-  font-size: remCalc(14);
+  font-size: 0.875rem;
   border-top: 1px solid #c8c8c8;
   border-bottom: none;
   padding: 0.85714em 1.28571em;
 }
-/* line 24, ../../../../assets/styles/components/_pagination.scss */
+/* line 23, ../../../../assets/styles/components/_pagination.scss */
 .pagination a:hover {
   border-bottom: none;
   padding: 0.85714em 1.28571em;
   border-top: 1px solid black;
 }
-/* line 30, ../../../../assets/styles/components/_pagination.scss */
+/* line 29, ../../../../assets/styles/components/_pagination.scss */
 .pagination a.active {
   border-top: 1px solid black;
 }
-/* line 35, ../../../../assets/styles/components/_pagination.scss */
+/* line 34, ../../../../assets/styles/components/_pagination.scss */
 .pagination .page-prev, .pagination .page-next, .pagination .go-first, .pagination .go-last {
   display: inline-block;
   min-width: 36px;
 }
-@media only screen and (max-width: 599px) {
-  /* line 42, ../../../../assets/styles/components/_pagination.scss */
-  .pagination .page-prev, .pagination .page-next,
-  .pagination .go-first, .pagination .go-last {
-    display: none;
-  }
-}
-/* line 46, ../../../../assets/styles/components/_pagination.scss */
+/* line 40, ../../../../assets/styles/components/_pagination.scss */
 .pagination .page-prev a, .pagination .page-next a {
   font-size: 16px;
   font-size: 1rem;
@@ -10569,15 +10638,30 @@ a.back-to-top:hover {
   position: relative;
   padding-top: 9px;
 }
+/* line 50, ../../../../assets/styles/components/_pagination.scss */
+.pagination a.left-arrow:after, .pagination a.right-arrow:after {
+  position: absolute;
+  left: 1.28571em;
+  top: 0.42857em;
+  color: black;
+}
+/* line 57, ../../../../assets/styles/components/_pagination.scss */
+.pagination a.left-arrow:after {
+  content: '\e802';
+}
+/* line 61, ../../../../assets/styles/components/_pagination.scss */
+.pagination a.right-arrow:after {
+  content: '\e800';
+}
 
-/* line 81, ../../../../assets/styles/components/_pagination.scss */
+/* line 73, ../../../../assets/styles/components/_pagination.scss */
 .holder {
   margin-top: 1.125em;
   margin-bottom: 1.125em;
   text-align: center;
 }
 
-/* line 87, ../../../../assets/styles/components/_pagination.scss */
+/* line 79, ../../../../assets/styles/components/_pagination.scss */
 .holder a {
   min-width: 36px;
   text-align: center;
@@ -10588,31 +10672,31 @@ a.back-to-top:hover {
   padding: 0.85714em 1.28571em;
 }
 
-/* line 97, ../../../../assets/styles/components/_pagination.scss */
+/* line 89, ../../../../assets/styles/components/_pagination.scss */
 .holder a:hover {
   border-bottom: none;
   padding: 0.85714em 1.28571em;
   border-top: 1px solid black;
 }
 
-/* line 107, ../../../../assets/styles/components/_pagination.scss */
+/* line 99, ../../../../assets/styles/components/_pagination.scss */
 .holder a.jp-current, a.jp-current:hover {
   border-top: 1px solid black;
 }
 
-/* line 111, ../../../../assets/styles/components/_pagination.scss */
+/* line 103, ../../../../assets/styles/components/_pagination.scss */
 .holder a.jp-disabled, a.jp-disabled:hover {
   color: #c8c8c8;
 }
 
-/* line 116, ../../../../assets/styles/components/_pagination.scss */
+/* line 108, ../../../../assets/styles/components/_pagination.scss */
 .holder a.jp-current, a.jp-current:hover,
 .holder a.jp-disabled, a.jp-disabled:hover {
   cursor: default;
   background: none;
 }
 
-/* line 121, ../../../../assets/styles/components/_pagination.scss */
+/* line 113, ../../../../assets/styles/components/_pagination.scss */
 .holder span {
   margin: 0 5px;
 }
@@ -11862,12 +11946,12 @@ ul.tabs li.active {
   border: none;
 }
 /* line 170, ../../../../assets/styles/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs .megamenu .go-search-button, .megamenu .tab_container.lcc-tabs .go-search-button {
+.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .megamenu .go-search-button, .megamenu .tab_container.lcc-tabs .go-search-button {
   background-color: white;
   color: black;
 }
 /* line 173, ../../../../assets/styles/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs .megamenu .go-search-button:hover, .megamenu .tab_container.lcc-tabs .go-search-button:hover {
+.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .megamenu .go-search-button:hover, .megamenu .tab_container.lcc-tabs .go-search-button:hover {
   background-color: #28e598;
   color: black;
 }

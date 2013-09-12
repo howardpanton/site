@@ -5,16 +5,17 @@
 }
 
 .search-results {
-	@extend %d5-d16;
+  @extend %d5-d16;
   
   h2 {
     padding-top: 0;
   }
-	h3 {
-		@include adjust-font-size-to (18px);
-		margin-top: 0;
+  h3 {
+    @include adjust-font-size-to (18px);
+    margin-top: 0;
     padding-top: 0;
-	}
+  }
+
 }
 
 .search-results-list {
@@ -23,21 +24,21 @@
 }
 
 .search-results-list > li {
-	list-style: none;
+  list-style: none;
 }
 
 .search-button {
-	height: 70px;
-	width: 70px;
-	float:left;
-	background-color: black;
+  height: 70px;
+  width: 70px;
+  float:left;
+  background-color: black;
 }
 
 // main course / search title in search results list
 .course-details > h3, .search-details > h3 {
-	color: black;
-	font-weight: bold;
-	@include adjust-font-size-to (16px);
+  color: black;
+  font-weight: bold;
+  @include adjust-font-size-to (16px);
 }
 
 .search-results input:focus {
@@ -49,6 +50,48 @@
   margin-bottom: 24px;
   border: 6px solid white;
   height: 60px;
+
+  .icon-search,
+  .search-submit  {
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 48px;
+    @include font-size(16);
+    text-align: center;
+    cursor: pointer;
+    // @include gs-media(d, min-max) {
+    //   height: 36px;
+    //   // width: 36px;
+    //   min-width: gs-width(d, 16, 16, (1, 16), true) + 1;
+    //   line-height: 36px;
+    // }
+  }
+
+  .icon-search {
+    @extend %icon;
+    color: $white;
+    background-color: $black;
+    z-index: 90;
+    @include font-size(24);
+    speak: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    @include gs-media(d, min-max) {
+      @include font-size(24);
+    }
+
+  }
+
+  .icon-search:hover {
+    background-color: $dark-gray;
+  }
 }
 
 .course-search-form, .site-search-form {
@@ -70,13 +113,13 @@
 }
 
 .course-finder-input, .site-search-results-input {
-	@include single-transition();
+  @include single-transition();
   @include border-image-dot();
-	height: 48px;
+  height: 48px;
   width: 100%;
   margin-bottom: 0;
-	border: none;
-	margin-left: 12px;
+  border: none;
+  margin-left: 12px;
   background-color: rgba(255,255,255, 0);
   box-shadow: none !important;
   @include adjust-font-size-to (16px);
@@ -133,20 +176,18 @@
   background-color: black;
   height:48px;
   width: 48px; 
-  img {
-     margin-top: -3px; 
-  }
   a {
     border-bottom: 0;
   }
 }
 
 
+
 input, .search-result-module, .search-input-wrap {
-	-webkit-transition: -webkit-box-shadow 450ms;
-	-moz-transition: -moz-box-shadow 450ms;
-	-o-transition: -o-box-shadow 450ms;
-	transition: border 450ms ease;
+  -webkit-transition: -webkit-box-shadow 450ms;
+  -moz-transition: -moz-box-shadow 450ms;
+  -o-transition: -o-box-shadow 450ms;
+  transition: border 450ms ease;
   border: 6px solid rgba(0,0,0,0);
 }
 
@@ -183,7 +224,6 @@ input, .search-result-module, .search-input-wrap {
     padding-top: 0;
   }
 }
-
 
 .search-results-summary {
   
@@ -234,29 +274,73 @@ input, .search-result-module, .search-input-wrap {
 
 .lower-search-results-info {
   @extend .search-results-info;
-  p { 
-    @extend .size-h4; 
+  p {
+    @include font-size(18);
+    
   }
   @include gs-media (d,min-max) {
     @include gs-span(d,6,11,(6,16));
     position: relative;
+    padding-top: 18px;
   }
 
 }
 
 
 .search-pagination-btns {
-    padding: 12px;
+
     text-align: right;
-    a { margin-right: 1px; }
+    a { 
+      display: inline-block;
+      position: relative;
+      min-width: 2em;
+      &::first-of-type {
+        margin-right: 1px; 
+      }
+
+      &.left-arrow, &.right-arrow {
+        @extend .button-link;
+        @extend .icon;
+      }
+      &.left-arrow:after, &.right-arrow:after {
+        position: absolute;
+        left: rhythm(2, 14px); 
+        top: rhythm(1.5, 14px);
+      }
+
+      &.left-arrow:after {
+        content: '\e802';
+      }
+
+      &.right-arrow:after {
+        content: '\e800';
+      }
+      
+
+    }
+  
+    a.view-all {
+      @extend %Swiss721BT-Light-important;
+      @include font-size(16);
+      min-width: 5em;
+      width: auto;
+      padding-right: 12px;
+      padding-bottom: 6px;
+      line-height: 36px;
+      text-decoration: none;
+      border-bottom: 0;
+      @include gs-media (d) {
+        height: 36px;
+      }
+
+    }
 
     @include gs-media (d,min-max) {
-      @include gs-span(d,14,16,(6,16));
-      position: absolute;
-      top: emCalc(12px);
+      @include gs-span(d,13,16,(6,16));
+      // position: absolute;
+      // top: 0;
       // margin-right: rhythm(3, 14px);
       @include margin-trailer(2);
-      padding: 12px 0;
     }
 
     @include gs-media (t,min-max) {
@@ -272,27 +356,18 @@ input, .search-result-module, .search-input-wrap {
   }
 
 .lower-search-pagination-btns {
- 
-  a { 
-    margin-right: 1px; 
-    &:first-child {
-      padding-top: 16px;
-    }
-    &:first-child:hover{
-      padding-top: 16px;
-    }
-  }
+  @extend .search-pagination-btns;
   
+  
+
   @include gs-media (t, min-max) {
-    margin-top: 6px;
-    text-align: right;
+    // text-align: right;
   }
 
   @include gs-media (d) {
-      @include gs-span(d,12,16,(6,16));
-      text-align: right;
+      @include gs-span(d,13,16,(6,16));
+      // text-align: right;
       position: absolute;
-      top: 12px;
   }
 
 }
@@ -306,7 +381,7 @@ input, .search-result-module, .search-input-wrap {
     text-decoration: none;
     font-size: 18px;
     margin-top: 0;
-    padding-bottom: 1px;
+    padding: 0 0 1px 0;
     a { 
       @include hyphenation;
       text-decoration: none; }
@@ -325,6 +400,7 @@ input, .search-result-module, .search-input-wrap {
   float: left;
   margin-left: 18px;
   p {
+    
     padding-top: 0;
   }
 
@@ -338,6 +414,8 @@ input, .search-result-module, .search-input-wrap {
     margin-left: 0;
 
     p {
+      padding-left: 0;
+      padding-right: 0;
       @include margin-leader(4);
       @include margin-trailer(4);
     }
@@ -362,10 +440,12 @@ input, .search-result-module, .search-input-wrap {
   right: 0;
 }
 
-.lower-search-again-box{
+.lower-search-again-box {
   clear: left;
   @include margin-leader(4);
 }
+
+
 
 .enrolment-type, .result-file-type { 
   width: 32%;
@@ -405,9 +485,16 @@ input, .search-result-module, .search-input-wrap {
   float: right;
   @include font-size(14);
   margin-left: 10px;
-  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
   
   @include gs-media (m,min-max) {
+    display: none; // need to find a mobile solution for this
     width: 100%;
     margin-right: 0;
     clear: left;
@@ -472,10 +559,20 @@ input, .search-result-module, .search-input-wrap {
 // used for exclamation mark icon and question mark icon on no results found page
 .warning-icon {
   @extend %icon;
-  @include font-size(120);
+  @include font-size(90);
   line-height: 120px;
   padding: 24px;
   color: $aaa-gray;
+  &:after {
+    content: '\e839';
+  }
+}
+
+.question-icon {
+  @extend .warning-icon;
+  &:after {
+    content: '\e838';
+  }
 }
 
 
@@ -484,6 +581,5 @@ form.d-search-input-form {
   padding: 0;
 
 }
-
 
 
