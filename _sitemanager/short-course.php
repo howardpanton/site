@@ -1,7 +1,8 @@
 <?php
 if (!isset($shortEnv)) { $shortEnv = FALSE; }
 if ($shortEnv == TRUE) { 
-$test = new ShortCourse('<t4 type="content" name="Course ID" output="normal" modifiers=""  />','<t4 type="navigation" id="149"/>');$r = $test->returnXml();
+$test = new ShortCourse('<t4 type="content" name="Course ID" output="normal" modifiers=""  />','<t4 type="navigation" id="149"/>');
+$r = $test->returnXml();
 $title = $test->title();
 $t = $test->dates();
 $c = $test->datesChildren();
@@ -11,7 +12,7 @@ $materials_accordion = $test->materials();
 
 // tutors data
 $tutors = $test->getTutors();
-$tutor_info = "<t4 type="content" name="Show tutor info?" output="normal" modifiers="" />";
+$tutor_info = '<t4 type="content" name="Hide tutor info?" output="normal" modifiers="" />';
 ?>
 
 <div class="row">
@@ -21,7 +22,7 @@ $tutor_info = "<t4 type="content" name="Show tutor info?" output="normal" modifi
       <p class="leader"><?php echo $description; ?></p>
 
       	<?php // Return optional tutor information, will need to add a conditional element in site manager
-      	if ($tutor_info == "yes" && $tutors != "") { ?>
+      	if ($tutor_info != "yes" && $tutors != "") { ?>
 	 	<p class="tutor">
 	  	<strong>Taught by: </strong>
 	  		<?php echo $tutors; ?>
@@ -31,7 +32,9 @@ $tutor_info = "<t4 type="content" name="Show tutor info?" output="normal" modifi
     </div>
    </div>
 </div>
+
 <!-- Slider navigation object here -->
+<t4 type="navigation" id="4509" />
 
 <div class="row">
   <div class="accordion">
