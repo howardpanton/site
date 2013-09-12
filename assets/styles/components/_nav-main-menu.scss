@@ -219,11 +219,16 @@ li.megamenu_button_active {
     position: absolute;
     right: 0;
     top: 0;
+    border-top-width: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
     text-align: center;
     @include gs-media(d) {
       min-width: gs-width(d, 16, 16, (1,16), true);
       height: 36px;
     }
+    
+
     a {
       color: $white;
       border-bottom: 0;
