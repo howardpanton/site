@@ -262,8 +262,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/filtrify.min.js" ),
-      $.getScript( "http://artslondon.github.io/beta/assets/js/components/jPages.min.js" ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/filtrify.min.js' ),
+      $.getScript( 'http://artslondon.github.io/beta/assets/js/components/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -274,20 +274,39 @@ if ($('#container').length > 0) {
       var container = $("#container"),
           pagination = $("#pagination");
 
-      function setPagination () {
-          pagination.jPages({
-              containerID : "container",
-              perPage : 24,
-              direction : "auto",
-              animation : "fadeInUp",
-              // callback : function( pages, items ){
-              //     items.showing.find("img").trigger("turnPage");
-              //     items.oncoming.find("img").trigger("turnPage");
-              // }
-          });
-      };
+  function setPagination () {
+        pagination.jPages({
+            containerID : "container",
+            perPage : 24,
+            midRange : 1,
+            previous : "←",
+            next : "→",
+            direction : "auto",
+            animation : "fadeInUp"
+ 
+        });
+    };
+
+    function destroyPagination () {
+        pagination.jPages("destroy");
+    };
+
+    setPagination();
+
+    $.filtrify("container", "placeHolder", {
+        block : "data-original",
+        callback : function() {
+            destroyPagination();
+            setPagination();
+        }
+    });
   });
   });
+
+  if(!$("body").hasClass("gDesktop")) {
+    $("#placeHolder").prependTo(".content");
+  }
+
 }
 
   // fade in button when user scrolls down the page
