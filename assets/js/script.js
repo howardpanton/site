@@ -376,7 +376,6 @@ if ($('#container').length > 0) {
           controls: _controlsOpt,
           captions: true,
           pager: _pagerOpt,
-          video: true,
           onSliderLoad: function(currentIndex) {
             if (_this.data('counter')) {
               $(_this).closest('.bx-wrapper').find('.bx-controls').prepend('<div class="bx-counter"><span class="bx-index">' + (currentIndex+1) + '</span>/<span class="bx-total">' + _this.getSlideCount() + '</span></div>');
