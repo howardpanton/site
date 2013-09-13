@@ -10,7 +10,6 @@
   $aside_text = "<t4 type="content" name="Aside Text" output="normal" modifiers="htmlentities" />";
   $feed_text = "<t4 type="content" name="Add Feed to Aside" output="normal" modifiers=""  />";
 
-
   if ($image_or_video == "video" || $video_url != "") {
     $media_type = "video";
   } else {
@@ -73,7 +72,7 @@
                 
               } else { // this is an MP4 ?>
 
-                <video src="http://beta.arts.ac.uk<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;"></video>
+                <video src="<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;"></video>
 
               <?php } // end if has video url ?>
 
