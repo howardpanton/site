@@ -146,7 +146,8 @@ $(document).ready(function(){
     d.last().hide();
   }
 
-   
+  // to remove all breadcrumb items after the fifth on short course pages
+  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
 
   // sidebar script (populate mobile and tablet menu)
   var _sb_lth = $('.sidebar').length;
