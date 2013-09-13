@@ -843,9 +843,10 @@ $('a[href$=".pdf"]').parent().addClass('download');
   $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  $('.l-content ul li a:external').parent().addClass('external').each(function() {
-    $(this).attr("title", $(this).attr("title") + "(external link)");
-});
+  
+//   $('.l-content ul li a:external').parent().addClass('external').each(function() {
+//     $(this).attr("title", $(this).attr("title") + "(external link)");
+// });
 
 
 
