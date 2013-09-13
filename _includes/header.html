@@ -15,7 +15,6 @@
       <!-- Course Finder -->          
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" needsclick>Course Finder</a><!-- Begin Item -->
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
@@ -23,7 +22,8 @@
           <div class="d-course-finder-menu-panel row">
             <div class="row relative">
               <form class="d-search-input-form">
-              <input class="course-finder-txt-input" type="text" placeholder="Search for a course here">
+              <label class="hidden" for="cf-search">Search Again</label>
+              <input id="cf-search" class="course-finder-txt-input" type="text" placeholder="Search for a course here">
               <input type="submit" name="submit-course-search" class="go-search-button" value="Go"/>
               </form>
             </div>
@@ -38,7 +38,6 @@
       <!-- Colleges --> 
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Colleges</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
@@ -73,7 +72,6 @@
       <!-- Study at UAL --> 
       <!-- menu button -->
       <li>
-       <!--  <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Study at UAL</a>
         <!-- dropdown -->
             <div class="dropdown_fullwidth"> 
@@ -110,7 +108,6 @@
       <!-- Research --> 
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Research</a>
         <!-- dropdown -->
             <div class="dropdown_fullwidth"> 
@@ -132,13 +129,6 @@
                                 </li>
                             </ul>
                         </div>
-            <!-- <div class="feature-image m-hide t-hide" >
-              <a href="#" title="Link title">
-                <figure>
-                  <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
-                </figure>
-              </a>
-            </div> -->
                     </div>
                 </div>
             </div><!-- End dropdown --> 
@@ -148,7 +138,6 @@
       <!-- Student Jobs & Careers --> 
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Student Jobs &amp; Careers </a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth">  
@@ -173,13 +162,6 @@
                   </li>
                 </ul>
               </div>
-              <!-- <div class="feature-image m-hide t-hide" >
-                <a href="#" title="Link title">
-                  <figure>
-                    <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
-                  </figure>
-                </a>
-              </div> -->
           </div>
           </div>
         </div><!-- End dropdown --> 
@@ -189,7 +171,6 @@
       <!-- Alumni & Friends --> 
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Alumni &amp; Friends</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"> 
@@ -221,7 +202,6 @@
       <!-- Business & Innovation --> 
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
         <a href="#_" class="megamenu_drop needsclick" title="">Industry Links</a>
         <!-- dropdown -->
         <div class="dropdown_fullwidth"> 
@@ -293,13 +273,6 @@
                 <li><a href='' title=''>Contact UAL</a></li>
               </ul>
             </div>
-            <!-- <div class="feature-image m-hide t-hide" >
-              <a href="#" title="Link title">
-                <figure>
-                  <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
-                </figure>
-              </a>
-            </div> -->
           </div>
           </div>
         </div><!-- End dropdown --> 
@@ -309,8 +282,7 @@
       <!-- Site Search -->          
       <!-- menu button -->
       <li>
-        <!-- <div class="d-hide js-mob-exp-icon menu-plus">&#59232;</div> -->
-        <a href="#_" class="megamenu_drop search-icon needsclick">&#128269;</a>
+        <a href="#_" class="megamenu_drop search-icon icon-search needsclick"></a>
         <!-- Begin Item -->
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
@@ -318,8 +290,9 @@
           <div class="d-course-finder-menu-panel row">
             <div class="row relative">
               <form class="d-search-input-form">
-              <input class="course-finder-txt-input" type="text" placeholder="Enter your search here">
-              <input type="submit" name="submit-site-search" class="go-search-button" value="Search"/>
+                <label class="hidden" for="site-search">Search Again</label>
+                <input id="site-search" class="course-finder-txt-input" type="text" placeholder="Enter your search here">
+                <input type="submit" name="submit-site-search" class="go-search-button" value="Search"/>
               </form>
             </div>
           </div> 
