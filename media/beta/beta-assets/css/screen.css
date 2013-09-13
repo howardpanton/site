@@ -401,13 +401,14 @@ h2, h3, h4, strong, b, dl dt, .lcf .search-results-list h3 a,
 .l-content ul.download a:before, .l-content .external:after, aside .external:after, .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
 .l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
 .l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
-.l-content a[href*="youtube"]:before, aside a[href*="youtube"],
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
 .l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
 .l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before,
 .l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
 .l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
 .l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
-.l-content a[href*="github."]:before, aside a[href*="github"]:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
+.l-content a[href*="github."]:before, aside a[href*="github"]:before,
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -1564,13 +1565,14 @@ hr {
 .l-content ul.download a:before, .l-content .external:after, aside .external:after, .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
 .l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
 .l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
-.l-content a[href*="youtube"]:before, aside a[href*="youtube"],
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
 .l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
 .l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before,
 .l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
 .l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
 .l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
-.l-content a[href*="github."]:before, aside a[href*="github"]:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
+.l-content a[href*="github."]:before, aside a[href*="github"]:before,
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before, .icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span, .search-input-wrap .icon-search, .lower-search-again-box .icon-search, .warning-icon, .question-icon, .sb-icon-search, .show-mob-sidebar:after {
   font-family: "fontello";
 }
 
@@ -1614,17 +1616,18 @@ hr {
   content: '\e837';
 }
 
-/* line 572, ../../../../assets/styles/globals/_typography.scss */
+/* line 573, ../../../../assets/styles/globals/_typography.scss */
 .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
 .l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
 .l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
-.l-content a[href*="youtube"]:before, aside a[href*="youtube"],
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
 .l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
 .l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before,
 .l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
 .l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
 .l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
-.l-content a[href*="github."]:before, aside a[href*="github"]:before {
+.l-content a[href*="github."]:before, aside a[href*="github"]:before,
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before {
   min-width: 1.5em;
   display: inline-block;
   text-align: left;
@@ -1632,9 +1635,59 @@ hr {
   text-decoration: none;
 }
 
-/* line 582, ../../../../assets/styles/globals/_typography.scss */
-.facebook-link:before {
+/* line 583, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before {
   content: '\e816';
+}
+
+/* line 585, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before {
+  content: '\e817';
+}
+
+/* line 587, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before {
+  content: '\e819';
+}
+
+/* line 589, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before {
+  content: '\e835';
+}
+
+/* line 591, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before {
+  content: '\e832';
+}
+
+/* line 593, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before {
+  content: '\e830';
+}
+
+/* line 595, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before {
+  content: '\e81b';
+}
+
+/* line 597, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before {
+  content: '\e82e';
+}
+
+/* line 599, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before {
+  content: '\e81d';
+}
+
+/* line 601, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href*="github."]:before, aside a[href*="github"]:before {
+  content: '\e81d';
+}
+
+/* line 603, ../../../../assets/styles/globals/_typography.scss */
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before {
+  content: '\e811';
 }
 
 /* line 1, ../../../../assets/styles/globals/_logos.scss */
