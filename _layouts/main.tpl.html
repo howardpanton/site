@@ -36,6 +36,9 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
 
   <link rel='stylesheet' href='{{ site.url }}/media/beta/beta-assets/css/screen.css'>
 
+  <!-- screen.css live on beta.arts.ac.uk -->
+  <!-- <link rel='stylesheet' href='http://beta.arts.ac.uk/media/beta/beta-assets/css/screen.css'> -->
+
   <link rel='stylesheet' href='{{ site.url }}/assets/css/debug.css'>
 
    
@@ -90,6 +93,7 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
   <div class="row">  
     <div class="ual-banner-menu">
       <h1 class="hide-text">UAL: University of the Arts London</h1>
+      <a href="#skip-to-home" id="skip-link" class="skip-to-content" title="skip to main page content">Skip to main page content</a>
       <div class="ual-logo-desktop">
         {% case page.college %}
         {% when "csm" %}

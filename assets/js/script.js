@@ -1,9 +1,11 @@
-// --------------------------------------------------
-// function to allow scroll to an element on the page
-//
-// example:  $('some-div').scrollToMe();  
-//
-//
+//*-----------------------------------------*\
+    //* University of the Arts London
+    //* Script.js
+    //* Authors: Howard Panton, Matt Wisbey,
+    // Pete Richardson, Alastair Mucklow
+    // Updated Monday 16th September 2013
+//\*-----------------------------------------*/
+
 
 jQuery.fn.extend({
   scrollToMe: function () {
@@ -142,6 +144,22 @@ $(document).ready(function(){
 
   // to remove all breadcrumb items after the fifth on short course pages
   $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
+
+
+  // Accessible skip-to-content link:  
+  // Enable a link to the page title if one exists.
+  // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
+
+  if ( $('.page-title').length > 0) {
+    $('.page-title').first().attr('id', 'skip-to-here');
+  }
+  else {
+    $('.content-wrapper').first().attr('id', 'skip-to-here');
+  }
+   
+//////////////////////
+// MOBILE SIDEBAR SCRIPT (populate mobile and tablet menu)
+/////////////////////
 
 
   var _sb_lth = $('.sidebar').length;
@@ -314,10 +332,12 @@ if ($('#container').length > 0) {
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 450) {
-      $('.back-to-top').fadeIn(200);
-    } else {
-      $('.back-to-top').fadeOut(200);
+    if($("body").hasClass("gDesktop")) {
+      if ($(this).scrollTop() > 450) {
+        $('.back-to-top').fadeIn(200);
+      } else {
+        $('.back-to-top').fadeOut(200);
+      }
     }
   });
 
@@ -462,13 +482,8 @@ if ($('#container').length > 0) {
   
   if ($('.credits').length > 0) {
 
-    $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      //  
+
+      //only show credits on desktop 
       if ($('body').hasClass('gDesktop')) {
         $('.credits-btn').addClass("show");
         
@@ -477,20 +492,15 @@ if ($('#container').length > 0) {
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active').html("Show Credits");
+            c.removeClass('active').attr('title','Hide image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').html("Hide Credits");
+            c.addClass('active').attr('title','Show image credits');;
             $('.credits').fadeIn();
           }
         });
       }
-
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
-      }
-    });
+  
     
   }
 
@@ -842,9 +852,10 @@ $('a[href$=".pdf"]').parent().addClass('download');
   $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  $('.l-content ul li a:external').parent().addClass('external').each(function() {
-    $(this).attr("title", $(this).attr("title") + "(external link)");
-});
+
+//   $('.l-content ul li a:external').parent().addClass('external').each(function() {
+//     $(this).attr("title", $(this).attr("title") + "(external link)");
+// });
 
 
 
