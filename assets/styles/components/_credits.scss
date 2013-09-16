@@ -1,7 +1,7 @@
 .credits-btn {
 	display: none;
 	position: fixed;
-	right: -12px;
+	right: 0;
 	top: 40%;
 	z-index: 500;
 	font-size: 14px;
@@ -11,25 +11,29 @@
 	&:hover {
 		@include single-transition(all, 200ms, linear);
 		@include prefixer ("opacity", 1);
-		right: 0px;
-		top: 40%;
 	}
 	
 	a.show-credits {
 		border: 1px solid $bg-gray;
 		border-right: none;
-		padding: 6px 6px 12px 6px;
-		height: 36px;
+		padding: 10px 6px;
 		display: block;
 		text-align: center;
 		background-color: white;
-		li span {
-			display: block; 
+		ul {
+			margin-bottom: 0; // override global default paddings & margin on ul
+			padding-bottom: 0;
 		}
-		&:hover, &:active, span:hover {
+
+		span:before {
+			display: block; 
+			padding-right: 6px;
+		}
+		&:hover, &:active {
 			background-color: $black;
-			border: 1px solid $black;
 			color: $white;
+			border: 1px solid $black;
+			border-right: none;
 		}
 		// li:nth-of-type(2) span:before {
 		// 	margin-left: 1px; // to align the picture icon with the other two icons
