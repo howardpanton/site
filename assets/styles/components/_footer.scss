@@ -179,21 +179,39 @@ footer {
 
 // the back to top button which appears 
 // after scrolling down the page
-a.back-to-top {
+
+.back-to-top {
   position: fixed;
+  display: none; // hidden at start by default
   right: .75em;
   bottom: 0;
-  @include font-size(14);
-  background-color: $white;
-  padding: 1.125em .75em 1.125em .75em;
-  color: black;
-  padding-bottom: 1px;
-  border-bottom: 1px dotted black;
+  min-height: 18px;
   text-decoration: none;
-
-    &:hover {
-      // border-bottom: 1px solid black;
-      color: $light-gray;
-      text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
+  
+  a { 
+    @include font-size(14); 
+    color: $black;
+    background-color: $white;
+    padding: 12px .75em 12px .75em;
+    border-bottom: 0;
+    span {
+      
     }
-}
+  }
+
+  a:hover {
+    color: $white !important;
+    background-color: $black;
+    @include single-transition(all, 200ms, linear);
+    color: $light-gray;
+    text-decoration: none;
+    cursor: pointer;
+    span {
+      
+    }
+  }
+}  
+    
