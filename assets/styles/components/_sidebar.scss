@@ -58,7 +58,7 @@
 	@include gs-media (d) { display: none; }
 	@include clearfix();
 	position: relative;
-	display: block;
+	display: none; // hide sidebar - double sidebar temp bug fix
 	@include font-size(16);
 	margin-bottom: 18px;
 	
@@ -77,12 +77,20 @@
 			padding: 12px;
 			border-bottom: none;
 		}
+		// hide external link icons in mobile menu
+		&.external:after { 
+			display: none;
+		}
 	}
 
 	.mob-sb-dd-title {
 		position: absolute;
 		top: 24px;
 		left: 12px;
+	}
+
+	&:first-child {
+		display: block; // only show the first mobile sidebar on any page
 	}
 
 }
