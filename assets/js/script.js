@@ -144,7 +144,6 @@ $(document).ready(function(){
   $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
 
 
-  // sidebar script (populate mobile and tablet menu)
   var _sb_lth = $('.sidebar').length;
   var _has_heading = $('.sidebar').find('.menu-heading').length;
   //&& _has_heading > 0
@@ -754,7 +753,8 @@ $(".hide-content").click(function(e){
 
       $(".tab_content").hide();
       $(".tab_content:first").show();
-      
+      // update icon for first tab item (it's opened on start by default)
+      $(".tab_drawer_heading:first").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
       /* if in tab mode */
       $("ul.tabs li").click(function() {
 
@@ -773,12 +773,14 @@ $(".hide-content").click(function(e){
       /* if in drawer mode */
       $(".tab_drawer_heading").click(function() {
 
+        // close any open tabs on click and reset to a down icon
         $(".tab_content").hide();
+
         var d_activeTab = $(this).attr("rel"); 
         $("#"+d_activeTab).show();
 
-        $(".tab_drawer_heading").removeClass("d_active");
-          $(this).addClass("d_active");
+        $(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
+          $(this).addClass("d_active").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
 
         $("ul.tabs li").removeClass("active");
         $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
@@ -809,26 +811,6 @@ if ($('video').length > 0) {
 
 }
 
-// add icons to social media links inside .l-content
-$('.l-content a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."]').addClass('github-link');
 
 
 
@@ -857,10 +839,10 @@ $('a[href$=".pdf"]').parent().addClass('download');
   };
 
   // Add 'external' CSS class to all external links
-  $('a:external.button-link').addClass('external').each(function() {
+  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  $('.content ul li a:external').parent().addClass('external').each(function() {
+  $('.l-content ul li a:external').parent().addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
 
@@ -978,24 +960,3 @@ $(window).load(function(){
 
 });
 
-
-// add icons to social media links inside .l-content and aside
-$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"], aside a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"], aside a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"], aside a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"], aside a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"], aside a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"], aside a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"], aside a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"], aside a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-link');

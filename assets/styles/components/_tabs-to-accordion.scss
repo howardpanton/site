@@ -58,6 +58,10 @@ ul.tabs li.active {
   @include margin-trailer(2);
   .tab_content {
     display: block;
+    @include gs-media(t, max) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
     // @include margin-leader(2);
   }
   .tab-content-caption-block {
@@ -77,7 +81,10 @@ ul.tabs li.active {
     }
   }
   .tab_drawer_heading {
+    @extend %Swiss721BT-Roman ;
     margin: 0;
+    @include margin-trailer(2);
+    @include padding-leader(2);
     display: block;
     cursor: pointer;
     -webkit-touch-callout: none;
@@ -86,12 +93,21 @@ ul.tabs li.active {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
+    border-bottom: 1px solid $bg-gray;
     @include gs-media (d, min-max) {
       display: none; 
     }
+    .lcc-tabs & {
+       border-bottom: 0;
+    }
   }
   .d_active {
+    border-bottom: 1px solid black;
+
+    .lcc-tabs & {
+      border-bottom: 0;
+    }
+
   }
 
 }

@@ -523,50 +523,88 @@ b, strong, h2, h3, h4 {
 
 // social media links icons 
 
-.facebook-link:before, .twitter-link:before, 
-.flickr-link:before, .youtube-link:before,
-.pinterest-link:before, .vimeo-link:before,
-.tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before {
-  @extend %icon;
-  min-width: 1.5em;
-  display: inline-block;
-  text-align: left;
-  border-bottom: 0;
-  text-decoration: none;
+// .facebook-link:before, .twitter-link:before, 
+// .flickr-link:before, .youtube-link:before,
+// .pinterest-link:before, .vimeo-link:before,
+// .tumblr-link:before, .linkedIn-link:before,
+// .gplus-link:before, .github-link:before, .email-link:before {
+//   @extend %icon;
+//   min-width: 1.5em;
+//   display: inline-block;
+//   text-align: left;
+//   border-bottom: 0;
+//   text-decoration: none;
+// }
+
+
+// .facebook-link:before { content: '\e816'; }
+
+// .twitter-link:before { content: '\e817'; }
+
+// .flickr-link:before { content: '\e819'; }
+
+// .youtube-link:before { content: '\e835'; }
+
+// .linkedIn-link:before { content: '\e832'; }
+
+// .tumblr-link:before { content: '\e830'; }
+
+// .vimeo-link:before { content: '\e81b'; }
+
+// .pinterest-link:before { content: '\e82e'; }
+
+// .gplus-link:before { content: '\e834'; }
+
+// .github-link:before { content: '\e81d'; }
+
+// .email-link:before { content: '\e811'; }
+
+
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
+.l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
+.l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
+.l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before, 
+.l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
+.l-content a[href*="github."]:before, aside a[href*="github"]:before,
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before {
+	@extend %icon;
+	min-width: 1.5em;
+	display: inline-block;
+	text-align: left;
+	border-bottom: 0;
+	text-decoration: none;
 }
 
-// disable the external link icon for social media links
-.facebook-link:after, .twitter-link:after, 
-.flickr-link:after, .youtube-link:after,
-.pinterest-link:after, .vimeo-link:after,
-.tumblr-link:after, .linkedIn-link:after,
-.gplus-link:after, .github-link:after {
-  .external & { 
-    display: none !important; // to hide the external link icon
-  }
-}
+
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before { content: '\e816'; }
+
+.l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before { content: '\e817'; }
+
+.l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before { content: '\e819'; }
+
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before { content: '\e835'; }
+
+.l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before { content: '\e832'; }
+
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before { content: '\e830'; }
+
+.l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before { content: '\e81b'; }
+
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before { content: '\e82e'; }
+
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before { content: '\e81d'; }
+
+.l-content a[href*="github."]:before, aside a[href*="github"]:before { content: '\e81d'; }
+
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; } 
 
 
-.facebook-link:before { content: '\e816'; }
 
-.twitter-link:before { content: '\e817'; }
 
-.flickr-link:before { content: '\e819'; }
-
-.youtube-link:before { content: '\e835'; }
-
-.linkedIn-link:before { content: '\e832'; }
-
-.tumblr-link:before { content: '\e830'; }
-
-.vimeo-link:before { content: '\e81b'; }
-
-.pinterest-link:before { content: '\e82e'; }
-
-.gplus-link:before { content: '\e834'; }
-
-.github-link:before { content: '\e81d'; }
 
 
 

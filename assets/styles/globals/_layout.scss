@@ -249,6 +249,12 @@
 
 .l-content { 
 	@extend %d5-d12--within-d5-d16;
+
+	@include gs-media(m) {
+		p, h1, h2, h3, h4, ul, ol
+		padding-left:12px;
+		padding-right:12px;
+	}
 	//@include component-spacing-bottom;
 	.l-content-full-width & {
 		margin-bottom: 0;

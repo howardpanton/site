@@ -89,6 +89,7 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
 <div class="header-wrapper">
   <div class="row">  
     <div class="ual-banner-menu">
+      <h1 class="hide-text">UAL: University of the Arts London</h1>
       <div class="ual-logo-desktop">
         {% case page.college %}
         {% when "csm" %}
@@ -220,7 +221,8 @@ grunticon( [ "{{ site.url }}/assets/css/logos/logos.data.svg.css", "{{ site.url 
           menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
           menu_responsive:1 // 1 = Responsive, 0 = Not responsive
       });
-});
+      $('body').addClass('menu-loaded');
+  });
 </script>  
   </body>
 
