@@ -395,6 +395,7 @@ if ($('#container').length > 0) {
           controls: _controlsOpt,
           captions: true,
           pager: _pagerOpt,
+          video: true,
           onSliderLoad: function(currentIndex) {
             if (_this.data('counter')) {
               $(_this).closest('.bx-wrapper').find('.bx-controls').prepend('<div class="bx-counter"><span class="bx-index">' + (currentIndex+1) + '</span>/<span class="bx-total">' + _this.getSlideCount() + '</span></div>');
@@ -468,7 +469,7 @@ if ($('#container').length > 0) {
   if ($('.credits').length > 0) {
 
     $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -504,9 +505,9 @@ if ($('#container').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -780,9 +781,9 @@ if ($('.__media').length > 0) {
 
 if ($('video').length > 0) {
 
-  $.getScript('https://raw.github.com/johndyer/mediaelement/master/build/mediaelement-and-player.js', function() {
+  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/mediaelement-and-player.min.js', function() {
 
-    $('video').mediaelementplayer({
+    $('video:not(.no-mejs)').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
       pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });

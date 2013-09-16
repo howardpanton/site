@@ -45,7 +45,7 @@ $tutor_description = $test->getTutorsBiography();
     
 <!-- screen.css -->
     
-<link rel="stylesheet" type="text/css" media="screen" href="http://artslondon.github.io/beta/media/beta/beta-assets/css/screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="http://beta.arts.ac.uk/media/beta/beta-assets/css/screen.css" />
    
 <!-- fonts.css -->
 <link rel="stylesheet" type="text/css" media="" href="http://beta.arts.ac.uk/media/beta/beta-assets/fonts.css" />
@@ -897,7 +897,6 @@ data-size= "small" style="min-height: 430px"></div>
 
   <a href="#" class="back-to-top"><span>&uarr;</span> back to top</a>
 </footer>
-<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
 <div id="basketmessage" class="PopupDiv" ><div id="close" style="text-align:right;"><a onclick="hideBasketMessage();return false;" href="#">x</a></div><br><h2>1 Course was added to your basket </h2><p><br>Architectural Portfolio - (Christmas)<br>09/12/2013 - 13/12/2013, 10:00 - 16:00<br>Venue to be confirmed, £410</p><p>Your place is not confirmed until you’ve completed your booking</p><br>
 <a onclick="hideBasketMessage();return false;" href="#">Add another course</a><div style="display: inline; margin-left: 30px; margin-right: 30px;">&nbsp;</div><a onclick="openBasket();return false;" href="#">Book now</a></div>
 <footer class="row white-bg hide">
@@ -969,10 +968,7 @@ data-size= "small" style="min-height: 430px"></div>
 <!-- <script type="text/javascript" src="/media/beta/beta-assets/script.js"></script> -->
 
 <script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/script-1.js"></script>
-
-<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/popup.js"></script>
-
-
+<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/website.js">  </script>
   <script>
   $(document).ready(function($){
       $('.megamenu').megaMenuCompleteSet({
@@ -986,7 +982,10 @@ data-size= "small" style="min-height: 430px"></div>
 </script>  
 </body>
 </html>
+
 <?php } else { ?>
+
+
   <style>
   iframe#basket {
 width: 170px;

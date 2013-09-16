@@ -17,7 +17,7 @@ output_style = :compressed
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://artslondon.github.io/beta/assets/img"
+http_images_path = "http://beta.arts.ac.uk"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
