@@ -321,10 +321,12 @@ if ($('#container').length > 0) {
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 450) {
-      $('.back-to-top').fadeIn(200);
-    } else {
-      $('.back-to-top').fadeOut(200);
+    if($("body").hasClass("gDesktop")) {
+      if ($(this).scrollTop() > 450) {
+        $('.back-to-top').fadeIn(200);
+      } else {
+        $('.back-to-top').fadeOut(200);
+      }
     }
   });
 
@@ -478,25 +480,20 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show");
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active').html("Show Credits");
+            c.removeClass('active');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').html("Hide Credits");
+            c.addClass('active');
             $('.credits').fadeIn();
           }
         });
-      }
-
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
       }
     });
     
@@ -843,7 +840,7 @@ $('a[href$=".pdf"]').parent().addClass('download');
   $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  
+
 //   $('.l-content ul li a:external').parent().addClass('external').each(function() {
 //     $(this).attr("title", $(this).attr("title") + "(external link)");
 // });
