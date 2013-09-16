@@ -30,13 +30,13 @@ if(class_exists('AZ') != true)
 		public function get_first_word($name) {
 
 			$name = trim($name);
-			$pos = strrpos($name, ' ');
+			$pos = strpos($name, ' ');
 
 			if ($pos === false) {
 				$first_word = $name;
 			}
 
-			$first_word = substr($name, 0, $pos + 1);
+			$first_word = substr($name, 0, $pos);
 			
 			//return trim($first_word);
 			return trim($first_word);
@@ -72,6 +72,7 @@ if(class_exists('AZ') != true)
 			$sortArray = array(); 
 
 			foreach($array as $item){ 
+
 			    foreach($item as $key=>$value){ 
 			        if(!isset($sortArray[$key])){ 
 			            $sortArray[$key] = array(); 
@@ -159,7 +160,7 @@ if(class_exists('AZ') != true)
 					<?php		
 					$temp_letter = '';
 					foreach ($sorted as $item) { 
-						if ( $item['last_word_letter'] != $temp_letter ) {
+						if ( $item[$letter] != $temp_letter ) {
 							echo '<li class="slide"><a href="#'.$item[$letter].'">'.$item[$letter].'</a></li>'; 
 						}
 						$temp_letter = $item[$letter];
