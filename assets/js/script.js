@@ -124,7 +124,7 @@ function enableSelectBoxes() {
       $(this).parent().css('display','none');
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
       var _test = 'the select option is :' + $(this).attr('data-sb-value');
-      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
+      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a'));
       $(this).parent().parent().scrollToMe();
     });
   });       
