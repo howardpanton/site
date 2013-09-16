@@ -484,13 +484,7 @@ if ($('#container').length > 0) {
   
   if ($('.credits').length > 0) {
 
-    $.when(
-        $.getScript( "http://artslondon.github.io/beta/assets/js/libs/jquery-rotate.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      //  
+      //only show credits on desktop  
       if ($('body').hasClass('gDesktop')) {
         $('.credits-btn').addClass("show");
         
@@ -507,7 +501,7 @@ if ($('#container').length > 0) {
           }
         });
       }
-    });
+  
     
   }
 
