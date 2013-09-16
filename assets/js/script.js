@@ -146,6 +146,18 @@ $(document).ready(function(){
     d.last().hide();
   }
 
+
+
+  // Accessible skip-to-content link:  
+  // Enable a link to the page title if one exists.
+  // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
+
+  if ( $('.page-title').length > 0) {
+    $('.page-title').first().attr('id', 'skip-to-here');
+  }
+  else {
+    $('.content-wrapper').first().attr('id', 'skip-to-here');
+  }
    
 //////////////////////
 // MOBILE SIDEBAR SCRIPT (populate mobile and tablet menu)
@@ -487,10 +499,10 @@ if ($('#container').length > 0) {
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active');
+            c.removeClass('active').attr('title','Hide image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active');
+            c.addClass('active').attr('title','Show image credits');;
             $('.credits').fadeIn();
           }
         });
