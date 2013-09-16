@@ -112,12 +112,10 @@ function enableSelectBoxes() {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
-        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
       else
       {
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
-         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
     });
 
@@ -127,7 +125,6 @@ function enableSelectBoxes() {
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
       var _test = 'the select option is :' + $(this).attr('data-sb-value');
       $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
-      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       $(this).parent().parent().scrollToMe();
     });
   });       
@@ -143,7 +140,9 @@ $(document).ready(function(){
   // detect and handle breadcrumbs
   $('.breadcrumbs').find('a').last().hide();
 
-  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
+  // to remove all breadcrumb items after the fifth on short course pages
+  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
+
 
   // sidebar script (populate mobile and tablet menu)
   var _sb_lth = $('.sidebar').length;
@@ -472,7 +471,7 @@ if ($('#container').length > 0) {
     ).done(function(){
       //  
       if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show");
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
@@ -566,13 +565,13 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon').html("");
+          _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon').html("");
+          _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });

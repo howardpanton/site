@@ -1,46 +1,27 @@
-.top-stories {
-	.stories {
-		.story {
-			margin-bottom: 24px;
-		}
-	}
+
+.lcc.college.home aside {
+	background-color: $bg-gray;
 	.stories-list {
-		background: $bg-gray;
-		padding: 0 24px;
-		.date {
-			font-size: 36px;
-			font-weight: bold;
-			padding: 0;	
-			.lcc & {
-				@extend %LeagueGothicRegular;
-				color: $lcc-green;
-			}		
-		}	
-	}
-
-	@include gs-media(t, min-max) {
-		@include gs-span(t, 2, 7);
-		.stories {
-			width: gs-width(t, 2, 5, (2, 7), true);
-			@include gs-float(t, left, (2, 7));
+		h3 {
+			padding-bottom: 0;
+			padding-top: 0;
 		}
-		.stories-list {
-			width: gs-width(t, 6, 7, (2, 7), true);
-			@include gs-float(t, left, (2, 7));
-			margin-right: 0;
-		}
-	}
-
-	@include gs-media(d) {
-		@include gs-span(d, 5, 16, (5, 16));
-		.stories {
-			width: gs-width(d, 5, 12, (5, 16), true);
-			@include gs-float(d, left, (5, 16));
-		}
-		.stories-list {
-			width: gs-width(d, 13, 16, (5, 16), true);
-			@include gs-float(d, left, (5, 16));
-			margin-right: 0;
+		ul {
+			margin-bottom: 0;
+			li {
+				list-style-type: none;
+				margin-left: 0;
+				padding-left: 0;
+				.date {
+					@extend %LeagueGothicRegular;
+					font-size: 36px;
+					color: $lcc-green;
+					padding-bottom: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
 		}
 	}
 }
