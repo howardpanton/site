@@ -840,7 +840,7 @@ if ($('.kis-widget').length > 0) {
 
 
 // Add download class to PDF links
-$('a[href$=".pdf"]').parent().addClass('download');
+$('a[href$=".pdf"]').addClass('download');
 // $('.content a[href$=".html"]').parent().addClass('external');
 
   // Creating custom :external selector
