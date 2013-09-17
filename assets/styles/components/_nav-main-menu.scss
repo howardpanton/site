@@ -195,9 +195,9 @@ li.megamenu_button_active {
 
   .small-text-link {
     @extend .row;
-    @include margin-leader(1);
-    margin-bottom: -6px;
-    
+    position: absolute;
+    bottom: -18px;
+    left: 0;
     a {
       color: $white;
       display: inline-block;
@@ -221,8 +221,7 @@ li.megamenu_button_active {
     right: 0;
     top: 0;
     border-top-width: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin: 0;
     text-align: center;
     @include gs-media(d) {
       min-width: gs-width(d, 16, 16, (1,16), true);
@@ -327,17 +326,15 @@ li.megamenu_button_active {
     margin: 0; 
     margin-left: -0.5em;
     padding: 0; 
-    background: black;
-    
+    background: $black;
     @include gs-media(t, min-max) {
-    display:block;
-     }
+      display:block;
+    }
     
     @include gs-media(m, min-max) {
-    display:block;
-     }
+      display:block;
+    }
   }
-
   
   .dropdown-arrow {
     display: none;
@@ -725,13 +722,28 @@ li.megamenu_button_active {
   }
 }
 
+
+
+// set height for course finder dropdown form
+.dropdown_fullwidth .d-search-input-form:first-of-type { 
+  min-height: 48px;
+}
+// set height for site search dropdown form
+.dropdown_fullwidth .d-search-input-form {
+  min-height: 42px; // height for site search
+}
+
+
+
+
 .site-search-input, .course-finder-txt-input {
  
   color: $aaa-gray;
   width: 100%;
   height: 48px;
   position: absolute;
-  top: 0px;
+  top: 0;
+  left: 0;
   @include border-radius(0); 
   @include gs-media(d) {
     height: 24px;
