@@ -14,4 +14,16 @@ function environment() {
 	return $environment;
 }
 
+function siteURL() {
+	$siteURL = 'http';
+	if ($_SERVER["HTTPS"] == "on") {$siteURL .= "s";}
+		$siteURL .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$siteURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+	} else {
+		$siteURL .= $_SERVER["SERVER_NAME"];
+	}
+	return $siteURL;
+}
+
 ?>
