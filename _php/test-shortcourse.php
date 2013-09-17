@@ -1,4 +1,3 @@
-bash: /etc/profile.d/rvm.sh: No such file or directory
     
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -546,8 +545,7 @@ John Princes Street
 <!-- insert nav object for gallery -->
 
 
-<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
-<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/popup.js"></script>
+
 <div id="basketmessage"><div id="close" style="text-align:right;"><a onclick="hideBasketMessage();return false;" href="#">x</a></div><br /><h2>1 Course was added to your basket </h2><p><br />[Course Name]<br />[Course Date], [Course Time]<br />[Course Venue], £[Course Cost]</p><p>Your place is not confirmed until you’ve completed your booking</p><br />
 <a onclick="hideBasketMessage();return false;" href="#">Add another course</a><div style="display: inline; margin-left: 30px; margin-right: 30px;">&nbsp;</div><a onclick="openBasket();return false;" href="#">Book now</a></div>
 
@@ -763,8 +761,9 @@ mini.each( function(i) {
 <script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/megamenu-ck.js"></script>
 
 <!-- Scripts -->
-<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/script.js"></script>
-<!--<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/script-1.js"></script>-->
+  <!-- Scripts -->
+  <script src='http://artslondon.github.io/beta/assets/js/script.js' type='text/javascript'></script>
+
   <script>
   $(document).ready(function($){
       $('.megamenu').megaMenuCompleteSet({
@@ -775,6 +774,8 @@ mini.each( function(i) {
       });
 });
 </script>  
+<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
+<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/popup.js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
