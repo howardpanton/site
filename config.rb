@@ -7,7 +7,7 @@ css_dir = "/media/beta/beta-assets/css"
 sass_dir = "assets/styles"
 fonts_dir = "/media/beta/beta-assets/fonts"
 javascripts_dir = "assets/js"
-images_dir = "assets/img/"
+images_dir = "/media/beta/beta-assets/img/"
 
 
 # You can select your preferred output style here (can be overridden via the command line):

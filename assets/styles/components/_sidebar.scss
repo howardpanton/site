@@ -55,7 +55,6 @@
 }
 
 .mobile-sidebar {
-	@include gs-media (d) { display: none; }
 	@include clearfix();
 	position: relative;
 	display: none; // hide sidebar - double sidebar temp bug fix
@@ -91,6 +90,10 @@
 
 	&:first-child {
 		display: block; // only show the first mobile sidebar on any page
+	}
+
+		@include gs-media(d) { 
+		display: none; 
 	}
 
 }
