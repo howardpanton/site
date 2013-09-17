@@ -3,20 +3,22 @@ require 'compass'
 
 # Set this to the root of your project when deployed:
 http_path = "http://ual-beta.s3.amazonaws.com/"
-css_dir = "media/beta/beta-assets/css"
+css_dir = "/media/beta/beta-assets/css"
 sass_dir = "assets/styles"
+#fonts_dir = "/media/beta/beta-assets/fonts"
 fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
-images_dir = "assets/img/"
+images_dir = "/media/beta/beta-assets/img/"
+
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compressed
+output_style = :expanded
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://beta.arts.ac.uk"
+http_images_path = "http://artslondon.github.io/beta/assets/img"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
