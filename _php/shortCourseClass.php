@@ -95,7 +95,7 @@
 		
 		
 		public function materials() {
-			$materials = $this->xml->course->materials;
+			$materials = strip_tags($this->xml->course->materials);
 			return $materials;
 		}
 		
@@ -108,12 +108,7 @@
 
 		public function dates() {
 			$dates = $this->xml->course->dates;
-			$array = get_object_vars($dates);
-			if (empty($array)) {
-				return FALSE;
-				} else {
-					return $array;
-			}
+			return $dates;
 		}
 		
 		public function datesChildren() {
@@ -133,16 +128,6 @@
 
 			} //End of if not empty
 		}
-
-		public function getTutorsBiography() {
-			$TutorsBiography = $this->xml->tutors->tutor->description;
-			if (empty($TutorsBiography)) {
-				return FALSE;
-			} else {
-				return $TutorsBiography;
-			}
-		}
-		
 		
 		public function Truncate($string, $length, $stopanywhere = false) {
 		    //truncates a string to a certain char length, stopping on a word if not specified otherwise.
