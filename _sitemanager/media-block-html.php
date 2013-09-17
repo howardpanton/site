@@ -87,7 +87,7 @@
             ?>
 
             <figure>
-              <?php if ($environment != "live") { ?>
+              <?php if (environment() != "live") { ?>
 
                 <img src="<t4 type="content" name="Media" output="normal" modifiers="medialibrary" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" />
 
