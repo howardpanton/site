@@ -5,7 +5,7 @@ require 'compass'
 http_path = "http://artslondon.github.io/beta/"
 css_dir = "media/beta/beta-assets/css"
 sass_dir = "assets/styles"
-fonts_dir = "assets/fonts"
+fonts_dir = "media/beta/beta-assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 

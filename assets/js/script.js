@@ -121,12 +121,10 @@ function enableSelectBoxes() {
       event.preventDefault();
       if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
-        $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
       else
       {
         $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
-         $(this).parent().children('div.select-box-arrow').children('span.js-select-box-icon').html('');
       }
     });
 
@@ -135,14 +133,14 @@ function enableSelectBoxes() {
       $(this).parent().css('display','none');
       $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
       var _test = 'the select option is :' + $(this).attr('data-sb-value');
-      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a').html());
-      $(this).parent().parent().children('div').children('div.select-box-arrow').children('span.js-select-box-icon').html('');
+      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a'));
       $(this).parent().parent().scrollToMe();
     });
   });       
 }
 
-//////////////////////
+
+/////////////////////
 // ON DOCUMENT READY 
 /////////////////////
 $(document).ready(function(){
@@ -150,14 +148,28 @@ $(document).ready(function(){
   checkWindowSize();
 
   // detect and handle breadcrumbs
-  if ($('.breadcrumbs').length > 0) {
-    var d = $('.breadcrumbs').find('a');
-    d.last().hide();
+  $('.breadcrumbs').find('a').last().hide();
+
+  // to remove all breadcrumb items after the fifth on short course pages
+  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
+
+
+  // Accessible skip-to-content link:  
+  // Enable a link to the page title if one exists.
+  // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
+
+  if ( $('.page-title').length > 0) {
+    $('.page-title').first().attr('id', 'skip-to-here');
   }
-
+  else {
+    $('.content-wrapper').first().attr('id', 'skip-to-here');
+  }
    
+//////////////////////
+// MOBILE SIDEBAR SCRIPT (populate mobile and tablet menu)
+/////////////////////
 
-  // sidebar script (populate mobile and tablet menu)
+
   var _sb_lth = $('.sidebar').length;
   var _has_heading = $('.sidebar').find('.menu-heading').length;
   //&& _has_heading > 0
@@ -180,7 +192,7 @@ $(document).ready(function(){
       }
 
       // create mobile sidebar div and add it to the main content div
-      $('<div id="mobile-sidebar" class="d-hide mobile-sidebar"></div>').prependTo('.content');
+      $('<div id="mobile-sidebar" class="mobile-sidebar d-hide"></div>').prependTo('.content');
 
       // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
       $('#mobile-sidebar').html(_mobMenuContent);
@@ -211,7 +223,7 @@ $(document).ready(function(){
         $('#mobile-sidebar li a').first().text('College Homepage');
       }
     }
-  } // end if $(.sidebar) > 0
+  } // end
 
 
 // LazyLoading with ReSRC.it images
@@ -476,37 +488,28 @@ if ($('#container').length > 0) {
   
   if ($('.credits').length > 0) {
 
-    $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
-    ).done(function(){
-      //  
+
+      //only show credits on desktop 
       if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show").rotate({angle:-90});
+        $('.credits-btn').addClass("show");
         
         $('.show-credits').click(function(event) {
           event.preventDefault();
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active').html("Show Credits");
+            c.removeClass('active').attr('title','Hide image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').html("Hide Credits");
+            c.addClass('active').attr('title','Show image credits');;
             $('.credits').fadeIn();
           }
         });
       }
-
-      // show image credits by default on tablet and mobile
-      else {
-        $('.credits').show();
-      }
-    });
+  
     
   }
+
 
 
 // detect accordion component
@@ -533,7 +536,7 @@ if ($('.accordion').length > 0) {
       $( ".accordion-list-item" ).each(function (e) {
         var _li_item = $(this); 
         if ( _li_item.hasClass('st-open') ) {
-            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"], });
+            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
         }
       });
     }
@@ -801,28 +804,6 @@ if ($('video').length > 0) {
 
 }
 
-// add icons to social media links inside .l-content
-$('.l-content a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."]').addClass('github-link');
-
-
 
 // KIS WIDGET
 if ($('.kis-widget').length > 0) {
@@ -970,24 +951,3 @@ $(window).load(function(){
 
 });
 
-
-// add icons to social media links inside .l-content and aside
-$('.l-content a[href*="facebook"], aside a[href*="facebook"]').addClass('facebook-link');
-
-$('.l-content a[href*="twitter"], aside a[href*="twitter"]').addClass('twitter-link');
-
-$('.l-content a[href*="flickr"], aside a[href*="flickr"]').addClass('flickr-link');
-
-$('.l-content a[href*="youtube"], aside a[href*="youtube"]').addClass('youtube-link');
-
-$('.l-content a[href*="linkedin"], aside a[href*="linkedin"]').addClass('linkedIn-link');
-
-$('.l-content a[href*="tumblr"], aside a[href*="tumblr"]').addClass('tumblr-link');
-
-$('.l-content a[href*="vimeo"], aside a[href*="vimeo"]').addClass('vimeo-link');
-
-$('.l-content a[href*="pinterest"], aside a[href*="pinterest"]').addClass('pinterest-link');
-
-$('.l-content a[href*="plus.google"], aside a[href*="plus.google"]').addClass('gplus-link');
-
-$('.l-content a[href*="github."], aside a[href*="github"]').addClass('github-link');
