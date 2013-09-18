@@ -1,7 +1,3 @@
-<?php 
-$retina_switch = "<t4 type="content" name="Retina?" output="normal" modifiers="" />";
-?>
-
 <figure>
 
   <?php if (environment() != 'live') { ?>
