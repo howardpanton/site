@@ -1,9 +1,10 @@
-// --------------------------------------------------
-// function to allow scroll to an element on the page
-//
-// example:  $('some-div').scrollToMe();  
-//
-//
+// *-----------------------------------------*\
+//     * University of the Arts London
+//     * Script.js
+//     * Authors: Howard Panton, Matt Wisbey,
+//     Pete Richardson, Alastair Mucklow
+//     Updated Wednesday 18th September 2013 23:25pm
+// \*-----------------------------------------*/
 
 jQuery.fn.extend({
   scrollToMe: function () {
