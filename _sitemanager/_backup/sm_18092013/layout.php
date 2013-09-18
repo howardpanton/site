@@ -36,12 +36,12 @@
     <!-- Meta description tag -->
     <t4 type="meta" id="6"/>
     
-    
-<!-- screen.css -->
-    
+<!-- The fav icons -->
+<link rel="shortcut icon" href="http://www.beta.arts.ac.uk/new_favicon.ico" />
+
+<!-- screen.css -->    
 <t4 type="media" id="228747" formatter="css/*"/>
 
-   
 <!-- fonts.css -->
 <t4 type="media" id="217530" formatter="css/*"/>
     
@@ -247,100 +247,3 @@ if ($header != false) { ?>
       <div role="main" class="content">
 
   <?php } ?>
-
-  <!-- Content start -->
-
-      </div>
-  </div>
-</div>
-
-
-
-<!-- navigation object : College Footer Include --><t4 type="navigation" id="4209"/>
-<!-- navigation object : Main Footer Include --><t4 type="navigation" id="4109"/>
-
-<footer class="row white-bg hide">
-    <div class="footer-wrapper">
-        <a href="#" class="open-close debug-toggle"><span>↓</span> Open Debug panel</a>
-        <!-- debug -->
-        <ul id="debug">
-          <li>Channel base uri: <t4 type="channel" output="site-root"/></li>
-          <li>Channel base description: <t4 type="channel" output="description"/></li>
-          <li>Channel base id: <t4 type="channel" output="id"/></li>
-          <li>Channel base name: <t4 type="channel" output="name"/></li>
-          <li>Page created : <t4 type="navigation" id="3369"/></li>
-          <li>Page modified : <t4 type="navigation" id="3389"/></li>
-          <?php $i = 0; ?><t4 type="navigation" id="3569"/>
-          <li>Section id : <t4 type="navigation" id="3409"/></li>
-      </ul>
-        <!-- end debug -->
-    </div>
-
-</footer>
-<div class="credits-btn"><a href="#" class="show-credits">Show Credits</a></div>
-<!-- Include js scripts -->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script>
-    Modernizr.Detectizr.detect({detectScreen:false});
-</script>
-<!--<script src="http://use.resrc.it/js/resrc-0.6.1.min.js"></script>-->
-
-<t4 type="media" id="233940" formatter="javascript/*"/>
-
-<!-- Fastclick js -->
-<t4 type="media" id="222095" formatter="javascript/*"/>
-
-<!-- jquery.fitvids-ck.js -->
-<t4 type="media" id="229707" formatter="javascript/*"/>
- 
-<!-- reView script - used for LazyLoading with ReSRC.it -->
-<t4 type="media" id="229132" formatter="javascript/*"/>
-
-
-<!-- navigation object : Javascript include 
-<t4 type="navigation" id="3289"/>-->
-  
-
-
-<!-- Mega Menu Plugins -->
-<t4 type="media" id="231368" formatter="javascript/*"/>
-<!-- Mega Menu Script -->
-<t4 type="media" id="231373" formatter="javascript/*"/>
-
-<!-- Scripts -->
-<t4 type="media" id="209056" formatter="javascript/*"/>
-<!--<t4 type="media" id="229129" formatter="javascript/*"/>-->
-  <script>
-  $(document).ready(function($){
-      $('.megamenu').megaMenuCompleteSet({
-          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-      });
-});
-</script>  
-<?php
-if (!isset($shortCourse)) { $shortCourse = FALSE; }
-if ($shortCourse == TRUE) { ?>
-<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
-<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/popup.js"></script>
-<?php } ?>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-32658704-1']);
-  _gaq.push(['_setDomainName', 'arts.ac.uk']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</body>
-</html>
