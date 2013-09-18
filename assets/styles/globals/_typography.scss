@@ -71,7 +71,8 @@ h1, .size-h1 {
 		@extend %BrandonText-Bold;		
 	}
 	.lcc & {
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
 }
@@ -83,7 +84,8 @@ h2 {
 	.lcc & {
 		@include font-size(54);
 		border-top: 4px solid $black;
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}	
 }
@@ -95,7 +97,8 @@ h3 {
 	.lcc & {
 		@include font-size(36);
 		@include adjust-leading-to(7, 36px); 	
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 		padding: rhythm(3, 36px) 0 rhythm(1, 36px) 0;
 	  text-transform: uppercase;
 	  border-bottom: 4px solid $black;

@@ -180,7 +180,7 @@ $(document).ready(function(){
       }
 
       // create mobile sidebar div and add it to the main content div
-      $('<div id="mobile-sidebar" class="mobile-sidebar"></div>').prependTo('.content');
+      $('<div id="mobile-sidebar" class="d-hide mobile-sidebar"></div>').prependTo('.content');
 
       // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
       $('#mobile-sidebar').html(_mobMenuContent);
