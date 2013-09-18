@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Wednesday 18th September 2013 23:25pm
+//     Updated Thursday 19th September 2013 00.00pm
 // \*-----------------------------------------*/
 
 jQuery.fn.extend({
