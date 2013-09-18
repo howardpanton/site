@@ -89,8 +89,8 @@ $(".date").each( function(i, element) {
 
 function checkWindowSize() {
   var width = $(window).width(),
-  new_class = width > 850 ? 'gDesktop' :
-              width > 600 ? 'gTablet' :
+  new_class = width > 959 ? 'gDesktop' :
+              width > 599 ? 'gTablet' :
               width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
@@ -499,10 +499,10 @@ if ($('#container').length > 0) {
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active').attr('title','Hide image credits');
+            c.removeClass('active').attr('title','Show image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').attr('title','Show image credits');;
+            c.addClass('active').attr('title','Hide image credits');;
             $('.credits').fadeIn();
           }
         });
@@ -510,7 +510,6 @@ if ($('#container').length > 0) {
   
     
   }
-
 
 
 // detect accordion component
