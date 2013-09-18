@@ -3,6 +3,7 @@
   - Media Block
   - Text Block
   - Text Block with Aside
+  - Panorama: HTML
   
 -->  
 
