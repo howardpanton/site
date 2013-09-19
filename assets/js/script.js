@@ -16,8 +16,19 @@ jQuery.fn.extend({
 
 $(".date").each( function(i, element) {
   
-  str = $( this ).text();
-  $(this).text(str.substring(5,16));
+  var t = "",
+  dateString = this.textContent,
+  idx = dateString.indexOf(",");
+  
+  // if date string contains a comma, find the date bit
+  if (idx > 0) {
+    t = dateString.substr(idx + 2, 11);
+  // otherwise use what's there  
+  } else {
+    t = dateString;
+  }
+  
+  $(this).text(t);
   
 });
 
@@ -330,10 +341,12 @@ if ($('#container').length > 0) {
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
+    if($("body").hasClass("gDesktop")) {
     if ($(this).scrollTop() > 450) {
       $('.back-to-top').fadeIn(200);
     } else {
       $('.back-to-top').fadeOut(200);
+      }
     }
   });
 
@@ -570,13 +583,13 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon').html("");
+          _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon').html("");
+          _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
@@ -609,67 +622,88 @@ if ($('.search-filters').length > 0) {
 
 
 // Showtime JSON loader
-if ($('#showtime-json').length){
+if ($('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
   $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
 
-    var feedUrl = $('#showtime-json').data('url');
-    // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
-    var limit = $('#showtime-json').data('limit');
-    
-    $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
-        
-      var outputNode = $('#showtime-json');
-      var string = '';
-      var media = '';
-      var counter = 0;
-              
-      if (data.data.Student) { // this is a single Showtime profile
-        var profileUrl = data.data.Student.Student.profileurl;
-        var studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
-        media = data.data.Student.Media;
-      } 
+    var outputNode = $('.showtime-json');
+
+    $.each(outputNode, function(i) {
       
-      if (data.data.Profiles) { // this is a group of objects in Showtime
-        media = data.data.Profiles;
-      }
+      var _node = '';  
+      _node = $(this);
 
-      $.each(media, function(i, item) {
+      var feedUrl = _node.data('url');
+      // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
+      var limit = _node.data('limit');
 
-            if (counter < limit) {
 
+      $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
+           
+         var string = '';
+         var media = '';
+         var studentName = '';
+         var profileUrl = '';
+         var counter = 0;
+                 
+         if (data.data.Student) { // this is a single Showtime profile
+           profileUrl = data.data.Student.Student.profileurl;
+           studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
+           media = data.data.Student.Media;
+         } 
+         
+         if (data.data.Profiles) { // this is a group of objects in Showtime
+           media = data.data.Profiles;
+         }
+        
+        $.each(media, function(i, item) {
+
+          if (counter < limit) {
+
+            //if (item.type == 'video' || item.type == 'publication') {
+            //  item.profileImg = 'http://app.resrc.it/http://beta.arts.ac.uk/media/beta/beta-colleges/beta-lcf/images/placeholder-lcf-580-4.jpg';
+            //} else {
               profileImg = item.thumb.split('gallery');
               item.profileImg = profileImg[0] + 'profile.jpg';
               item.zoomImg = profileImg[0] + 'screen.jpg';
-      
-              string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
-            
-              outputNode.append(string); 
+            //}
 
-              counter++;
-
-            } else {
-              return false;
+            if (item.profileName) { //group
+              profileUrl = 'http://showtime.arts.ac.uk/' + item.profileName;
+              studentName = item.fullName;
             }
+           
+           string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + studentName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
 
-      }); // end each loop
-      
-      $('.zoom').magnificPopup({ 
-        type: 'image',
-        image: {
-          titleSrc: function(item) {
-            return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+            
+           _node.append(string); 
+
+           counter++;
+
+          } else {
+           return false;
           }
-        },
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-        } 
-      });
 
-    }); // end getJSON loop
+        }); // end each loop
+         
+        $('.zoom').magnificPopup({ 
+          type: 'image',
+          image: {
+            titleSrc: function(item) {
+              return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+            }
+          },
+          gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+          } 
+        });
+
+      }); // end getJSON loop
+
+    }); // end each loop
 
   }); // end getScript loop
   
@@ -738,7 +772,8 @@ $(".hide-content").click(function(e){
 
       $(".tab_content").hide();
       $(".tab_content:first").show();
-      
+      // update icon for first tab item (it's opened on start by default)
+      $(".tab_drawer_heading:first").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
       /* if in tab mode */
       $("ul.tabs li").click(function() {
 
@@ -757,12 +792,14 @@ $(".hide-content").click(function(e){
       /* if in drawer mode */
       $(".tab_drawer_heading").click(function() {
 
+        // close any open tabs on click and reset to a down icon
         $(".tab_content").hide();
+
         var d_activeTab = $(this).attr("rel"); 
         $("#"+d_activeTab).show();
 
-        $(".tab_drawer_heading").removeClass("d_active");
-          $(this).addClass("d_active");
+        $(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
+          $(this).addClass("d_active").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
 
         $("ul.tabs li").removeClass("active");
         $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
@@ -810,7 +847,7 @@ if ($('.kis-widget').length > 0) {
 
 
 // Add download class to PDF links
-$('a[href$=".pdf"]').parent().addClass('download');
+$('a[href$=".pdf"]').addClass('download');
 // $('.content a[href$=".html"]').parent().addClass('external');
 
   // Creating custom :external selector
@@ -819,12 +856,12 @@ $('a[href$=".pdf"]').parent().addClass('download');
   };
 
   // Add 'external' CSS class to all external links
-  $('a:external.button-link').addClass('external').each(function() {
+  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-  $('.content ul li a:external').parent().addClass('external').each(function() {
-    $(this).attr("title", $(this).attr("title") + "(external link)");
-});
+//   $('.l-content ul li a:external').parent().addClass('external').each(function() {
+//     $(this).attr("title", $(this).attr("title") + "(external link)");
+// });
 
 
 
