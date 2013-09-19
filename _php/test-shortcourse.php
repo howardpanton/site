@@ -1,363 +1,393 @@
-<?php $shortEnv = TRUE ; ?>
-<?php 
-
-  class ShortCourse {
     
-    public $xml;
-    public $courseIds;
-    public $companyId;
-
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+  <!--> <html lang="en"> <!--
+<![endif]-->
+  <head>
+<!-- Add section name tag -->
+    <title>Introduction to Illustrator for fashion - University of Arts London</title>    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='University of Arts London, Web Team' name='author'>
+    <!-- Meta description tag -->
     
-    /**
-     * [__construct This returns the courseId and companyId in the object]
-     *
-     * @param string  $courseIds [set the courseID for the SimpleXML Object]
-     * @param string  $companyId [set the companyID for the SimpleXml Object]
-     */
-    public function __construct( $courseIds = "", $companyId = "" ) {
-      // 'INTROD9Ww6'
-      $this->courseIds = $courseIds;
-      // 'LCF', 'CSM'  
-      $this->companyId = $companyId;
-
-    }
     
-    public function courseDatesCache($courseids="", $companyid=""){
+    
+<!-- screen.css -->
+    
+<link rel="stylesheet" type="text/css" media="screen" href="http://beta.arts.ac.uk/media/beta/beta-assets/css/screen.css" />
 
-        $cache_file = "/t4shortcoursecache/ci-".$courseids."-".$companyid.".txt";
-        $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
+   
+<!-- fonts.css -->
+<link rel="stylesheet" type="text/css" media="" href="http://beta.arts.ac.uk/media/beta/beta-assets/fonts.css" />
+    
+<link rel="stylesheet" type="text/css" href="//cloud.typography.com/7258632/627802/css/fonts.css" />
+    
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+    <script src='http://beta.arts.ac.uk/media/beta/beta-assets/js/selectivizr-min.js'></script>
+    <script src="http://beta.arts.ac.uk/media/beta/beta-assets/js/html5shiv.js"></script>
+    <script src ='http://beta.arts.ac.uk/media/beta/beta-assets/js/respond.src.js'></script>
+<![endif]-->
+    
+<!-- JavaScript -->
+   <script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/modernizr-2.6.2-min.js"></script>
+   <script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/detectizr.min.js"></script> 
+    
+    <script> Modernizr.Detectizr.detect({detectScreen:false}); </script>
+    
+    <!-- load icon files for logos and icons -->
+     <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "http://beta.arts.ac.uk/media/beta/beta-assets/css/logos/logos.data.svg.css", "http://beta.arts.ac.uk/media/beta/beta-assets/css/logos/logos.data.png.css", "http://beta.arts.ac.uk/media/beta/beta-assets/css/logos/logos.fallback.css" ] );
+  </script>
+  <noscript><link href="http://beta.arts.ac.uk/media/beta/beta-assets/css/logos/logos.fallback.css" rel="stylesheet"></noscript>
+       
+  </head>
+
+
+<body class="lcf college   browse-sc">
+ <div class="ual-black-bg cf">
+<div class="header-wrapper">
+  <div class="row">  
+      <div class="ual-banner-menu">
         
-        // TRY AND GET THE LIVE DATA
-        // --------------------------------------
-        $ch = curl_init("http://arts.accessplanit.com/accessplan/config/arts/handlers/coursedates.ashx?courseids=".$courseids."&companyid=".$companyid);
-        curl_setopt($ch, CURLOPT_PROXY, 'wwwcache.arts.ac.uk:3128');  curl_setopt($ch, CURLOPT_FAILONERROR,1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1); curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-        $retValue = curl_exec($ch); curl_close($ch);
+        <div class="ual-logo-tab-mobile">
+          <a href="/" title="Navigate back to the UAL homepage"><div class="logo-ual-mobile"></div></a>
+        </div>
+        <div class="ual-logo-desktop">
+          <div class="logo-ual-lcf college"></div>
+        </div> 
+
+      <nav class="college-link-menu">
+        <ul>
+          <li class="col-link-ual"><a href="/">University Home</a></li>
+            <li class="col-link-camberwell"><a href="/camberwell/">Camberwell</a></li>
+            <li class="col-link-csm"><a href="/csm/">CSM</a></li>
+            <li class="col-link-chelsea"><a href="/chelsea/">Chelsea</a></li>
+            <li class="col-link-lcc"><a href="/lcc/">LCC</a></li>
+            <li class="col-link-lcf"><a href="/fashion/">LCF</a></li>
+            <li class="col-link-wimbledon"><a href="/wimbledon/">Wimbledon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+<div class="row">  
+<!-- navigation object : Main navigation include -->
+<nav class="main-nav-wrapper" id="global-nav" role="navigation">
+    <div class="megamenu_container top-bar">        
+        <a href="#">
+            <div class="ual-logo-tab-mobile">
+                <div class="logo-ual-mobile"></div>
+            </div>
+        </a>
+    <ul class="megamenu">
+      <!-- mobile menu button  -->
+        <li class="megamenu_button">
+            <a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a>
+        </li> 
+      <!-- Course Finder -->          
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick">Course Finder</a><!-- Begin Item -->
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth"><!-- Begin Item Container -->
+            <div class="dd-menu-dropdown-wrapper">
+                <div class="d-course-finder-menu-panel row">
+                    <div class="row relative">
+                        <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
+                            <input  accesskey="q" value="" class="course-finder-txt-input" type="text" required placeholder="Search for a course here" name="query">
+                            <input type="hidden" value="simple" name="form">
+                            <input type="hidden" value="courses" name="collection">
+                            <input type="submit" name="submit-course-search" class="go-search-button" value="Go"/>
+                            <div class="small-text-link"><a href="" >view all courses</a></div>
+                        </form>
+                    </div>
+                 </div> 
+            </div>    
+        </div><!-- End Item Container --> 
+      </li><!-- End Item -->
+      <!-- End Course Finder -->
+
+      <!-- Colleges --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">Colleges</a>
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth"><!-- Begin Item Container -->
+            <div class="dd-menu-dropdown-wrapper">
+                <div class="region college-nav">  
+                    <ul class="subnav-1 region">
+                        <li>
+                           <a href="/camberwell/" title="Visit Camberwell">Camberwell College of Art</a>
+                        </li>
+                        <li>
+                          <a href="/csm/" title="Visit Central Saint Martins">Central Saint Martins (CSM)</a>
+                        </li>
+                        <li>
+                       <a href="/chelsea/" title="Visit Chelsea">Chelsea College of Art</a>
+                        </li>
+                        <li>
+                      <a href="/lcc/" title="Visit London College of Communication">London College of Communication (LCC)</a>
+                        </li>
+                        <li>
+                       <a href="/fashion/" title="Visit London College of Fashion">London College of Fashion (LCF)</a>
+                        </li>
+                        <li>
+                       <a href="/wimbledon/" title="Visit Wimbledon">Wimbledon College of Art</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- End Item Container --> 
+      </li>
+      <!-- End Colleges -->
+
+      <!-- Study at UAL --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">Study at UAL</a>
+        <!-- dropdown -->
+            <div class="dropdown_fullwidth"> 
+                <div class="dd-menu-dropdown-wrapper study-nav">
+                    <ul class="subnav-1 no-pad-top region">
+                        <li class="no-border-top"><a href="/study-at-ual/" title="Study at UAL">Study at UAL</a></li>
+                        <li><a href="/study-at-ual/courses/">Courses</a></li><li><a href="/study-at-ual/international/">International</a></li><li><a href="/study-at-ual/open-days/">Open Days</a></li><li><a href="/study-at-ual/apply/">Apply</a></li><li><a href="/study-at-ual/enrol/">Enrol</a></li><li><a href="/study-at-ual/tuitions-fees/">Tuition Fees</a></li><li><a href="/study-at-ual/scholarships-bursaries-and-loans/">Scholarships, Bursaries &amp; Loans</a></li><li><a href="/study-at-ual/financial-advice/">Financial Advice</a></li><li><a href="/study-at-ual/student-support/">Student Support</a></li><li><a href="/study-at-ual/library-services/">Library Services</a></li><li><a href="/study-at-ual/learning-and-teaching/">Learning &amp; Teaching</a></li><li><a href="/study-at-ual/term-dates/">Term Dates</a></li><li><a href="/study-at-ual/academic-regulations/">Academic Regulations</a></li><li><a href="/study-at-ual/accommodation/">Accommodation</a></li><li><a href="/study-at-ual/students-union/">Students' Union</a></li><li><a href="/study-at-ual/facilities/">Facilities</a></li><li><a href="/study-at-ual/widening-participation/">Widening Participation</a></li>
+                    </ul>
+                </div>
+            </div><!-- End dropdown --> 
+      </li>
+      <!-- End Study at UAL -->
+
+
+      <!-- Research --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">Research</a>
+        <!-- dropdown -->
+            <div class="dropdown_fullwidth"> 
+                <div class="dd-menu-dropdown-wrapper">
+                    <div class="row region">
+                        <div class="sub-inner-menu research-nav">
+                            <ul class="subnav-1 no-pad-top region" >
+                                <li class="no-border-top"><a href="/research/" title="Research">Research</a></li>
+                                <li><a href="/research/research-environment/">Research Environment</a></li><li><a href="/research/research-degrees/">Research Degrees</a></li><li><a href="/research/research-staff/">Research Staff</a></li><li><a href="/research/research-projects/">Research Projects</a></li><li><a href="/research/ual-research-centres/">UAL Research Centres</a></li>
+                            </ul>
+                        </div>
+            <!-- <div class="feature-image m-hide t-hide" >
+              <a href="#" title="Link title">
+                <figure>
+                  <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
+                </figure>
+              </a>
+            </div> -->
+                    </div>
+                </div>
+            </div><!-- End dropdown --> 
+
+      </li>
+      <!-- End Research -->
+
+
+      <!-- Student Jobs & Careers --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">Student Jobs &amp; Careers </a>
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth">  
+          <div class="dd-menu-dropdown-wrapper">
+          <div class="row region">
+              <div class="sub-inner-menu student-nav">
+                <ul class="subnav-1  no-pad-top region" >
+                    <li class="no-border-top"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers" >Student Jobs &amp; Careers</a></li>
+                    <li><a href="/student-jobs-and-careers/opportunities/">Opportunities</a></li><li><a href="/student-jobs-and-careers/events/">Events</a></li><li><a href="/student-jobs-and-careers/finding-work/">Finding Work</a></li><li><a href="/student-jobs-and-careers/resources/">Resources</a></li><li><a href="/student-jobs-and-careers/about-see/">About SEE</a></li>
+                </ul>
+              </div>
+          </div>
+          </div>
+        </div><!-- End dropdown --> 
+      </li>
+      <!-- End Student Jobs & Careers -->
+
+
+      <!-- Alumni & Friends --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">Alumni &amp; Friends</a>
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth"> 
+          <div class="dd-menu-dropdown-wrapper">
+          <div class="row region">
+            <div class="sub-inner-menu alumni-nav">
+              <ul class="subnav-1 region  no-pad-top region">
+                <li class="no-border-top"><a href="/alumni-and-friends/" title="Alumni &amp; Friends">Alumni &amp; Friends</a></li>
+                <li><a href="/alumni-and-friends/get-involved/">Get Involved</a></li><li><a href="/alumni-and-friends/inspiring-alumni/">Inspiring Alumni</a></li><li><a href="/alumni-and-friends/support-and-donate/">Support &amp; Donate</a></li><li><a href="/alumni-and-friends/benefits/">Benefits</a></li><li><a href="/alumni-and-friends/events-gallery/">Events Gallery</a></li>
+              </ul>
+            </div>
+
+          </div>
+          </div>
+        </div><!-- End dropdown --> 
+      </li>
+      <!-- End Alumni & Friends -->
+
+
+      <!-- Business & Innovation --> 
+<!-- menu button -->
+<li>
+  <a href="#" class="megamenu_drop needsclick" title="">Industry Links</a>
+  <!-- dropdown -->
+  <div class="dropdown_fullwidth"> 
+    <div class="dd-menu-dropdown-wrapper">
+      <div class="row region">
+        <div class="sub-inner-menu industry-nav">
+          <ul class="subnav-1 no-pad-top region" >
+            <li><a href="/camberwell/business-and-innovation/">Camberwell Business &amp; Innovation</a></li><li><a href="/csm/business-and-innovation/">CSM Business &amp; Innovation</a></li><li><a href="/chelsea/business-and-innovation/">Chelsea Business &amp; Innovation</a></li><li><a href="/student-jobs-and-careers/events/event-partners/">Event Partners</a></li><li><a href="/lcc/business-and-innovation/">LCC Business &amp; Innovation</a></li><li><a href="/fashion/business-and-innovation/">LCF Business &amp; Innovation</a></li><li><a href="/wimbledon/business-and-innovation/">Wimbledon Business &amp; Innovation</a></li><li><a href="/student-jobs-and-careers/finding-work/information-for-employers/">Information for Employers</a></li>
+          </ul>
+        </div>
+        <div class="feature m-hide t-hide" >
+          <p>
+Have you got a business problem? Do you need fresh ideas and talent? Businesses worldwide work with our students and staff to develop new products, reach new markets & find new staff.
+          </p>
+        </div> 
+      </div>
+    </div>
+  </div><!-- End dropdown --> 
+</li>
+<!-- End Business & Innovation -->
         
-        if (!empty($retValue)) {
-            // IF the LIVE data was returned. 
-            if ((!file_exists($cache_file)) OR (!empty($_GET['cacheupdate'])) OR (@filesize($cache_file) <= 10) OR ((filemtime($cache_file) < (strtotime($cache_outofdate))))) {
-                // IF no cache exists OR forced update OR cache file is emmpty OR cachefile is out of date (as defiend by $cache_outofdate), UPDATE IT.
-                $writeDat = @file_put_contents($cache_file, $retValue);
-                echo '<!-- DEBUG: Cache file was successfully updated -->'; // echo '<!-- DEBUG: Cache file was successfully updated (' . $cache_file . ') -->';
-            }
-            
-            // Return LIVE data
-            return $retValue;
-            
-        } else {
-            // ELSE no live data was returned. Try read it from the cache
-            if ((@file_exists($cache_file)) AND (filesize($cache_file) > 10)) {
-                // As long as the cache file is populated, return that.
-                echo '<!-- DEBUG: cache update failed, read old information from cache (' . $cache_file . ') -->';
-                $retValue = @file_get_contents($cache_file);
-                
-                // As long as it is not empty, return cache data
-                if (!empty($retValue)) {
-                    return $retValue;
-                }
-            }
-            
-            // Return Error message (No LIVE data or populated CACHE data)
-            echo '<!-- DEBUG: Unable to update file and no cache available -->';
-            return '<courses><course courseid="ERR0R" label="Error loading information"><materials>&lt;P&gt;There was an error loading course information&lt;/P&gt;</materials><description>&lt;P&gt;There was an error loading course information.&lt;/P&gt;</description><dates></dates></course><tutors></tutors><venues></venues></courses>';
-        }
-    }
-    
-    public function returnXml() {
+      <!-- About UAL --> 
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick" title="">About UAL</a>
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth"> 
+          <div class="dd-menu-dropdown-wrapper">
+          <div class="row region">
+           
+            <div class="sub-inner-menu about-nav">
+              <ul class="subnav-1 no-pad-top region" >
+                    <li class="no-border-top"><a href="/about-ual/" title="About UAL">About UAL</a></li>
+                    <li><a href="/about-ual/news/">News</a></li><li><a href="/about-ual/events-and-calendar/">Events &amp; Calendar</a></li><li><a href="/about-ual/collections-and-galleries/">Collections &amp; Galleries</a></li><li><a href="/about-ual/ual-showroom/">UAL Showroom</a></li><li><a href="/about-ual/work-at-ual/">Work At UAL</a></li><li><a href="/about-ual/support-our-creative-future/">Support Our Creative Future</a></li><li><a href="/about-ual/strategy-governance/">Strategy &amp; Governance</a></li><li><a href="/about-ual/press-office/">Press Office</a></li><li><a href="/about-ual/awarding-body/">UAL Awarding Body</a></li><li><a href="/about-ual/diversity/">Diversity</a></li><li><a href="/about-ual/departments/">Departments</a></li><li><a href="/about-ual/contact-ual/">Contact UAL</a></li><li><a href="/about-ual/give-to-ual/">Give to UAL</a></li>
+              </ul>
+            </div>
+            <!-- <div class="feature-image m-hide t-hide" >
+              <a href="#" title="Link title">
+                <figure>
+                  <img src="http://placehold.it/300x200&text=4+cols" alt="Image Alt">
+                </figure>
+              </a>
+            </div> -->
+          </div>
+          </div>
+        </div><!-- End dropdown --> 
+      </li>
+      <!-- End About UAL -->
+      <!-- Site Search -->          
+      <!-- menu button -->
+      <li>
+        <a href="#" class="megamenu_drop needsclick search-icon icon-search"></a>
+        <!-- Begin Item -->
+        <!-- dropdown -->
+        <div class="dropdown_fullwidth"><!-- Begin Item Container -->
+          <div class="dd-menu-dropdown-wrapper">
+          <div class="d-course-finder-menu-panel row">
+            <div class="row relative">
+              <form class="d-search-input-form"  method="" action="http://search.arts.ac.uk/s/search.html">
+              <input class="course-finder-txt-input" type="text" accesskey="q" value="" name="query" placeholder="Enter your search here">
+                <input type="hidden" value="simple" name="form">
+                <input type="hidden" value="courses" name="collection">
+                   <input type="submit" name="submit-site-search" class="go-search-button" value="Search"/>
+              </form>
+            </div>
+          </div> 
+          </div>    
+        </div><!-- End Item Container --> 
+      </li><!-- End Item -->
+      <!-- End Site Search -->
       
-      $this->xml = @simplexml_load_string($this->courseDatesCache($this->courseIds, $this->companyId));
-      $result = $this->xml;
-      return $this->xml;
-      
-    }
-    
-    public function returnErrors() {
-      
-      if(isset($_GET['errors'])){
-        ini_set('display_errors',1); 
-        ini_set('error_reporting', E_ALL); 
-        error_reporting(E_ALL);
-      }
-    }
-    
-    public function description() {
-      $description = strip_tags($this->xml->course->description);
-      return $description;
-    }
-    
-    public function materials() {
-      $materials = strip_tags($this->xml->course->materials);
-      return $materials;
-    }
-    
-    public function title() {
-      $title = $this->xml->xpath('/courses/course/@label');
-      foreach ($title as $key => $value) {
-        echo $value;
-      } 
-    }
-
-    public function dates() {
-      $dates = $this->xml->course->dates;
-      return $dates;
-    }
-    
-    public function datesChildren() {
-      $datesChildren = $this->xml->course->dates->children();
-      return $datesChildren;
-    }
-    
-    public function Truncate($string, $length, $stopanywhere = false) {
-        //truncates a string to a certain char length, stopping on a word if not specified otherwise.
-        if (strlen($string) > $length) {
-            //limit hit!
-            $string = substr($string,0,($length -3));
-            if ($stopanywhere) {
-                //stop anywhere
-                $string .= '...';
-            } else{
-                //stop on a word.
-                $string = substr($string,0,strrpos($string,' ')).'...';
-            }
-        }
-        return $string;
-    }
+      </ul>
+      <!-- End expandable search button -->  
+  </div>
   
-}
-
-$test = new ShortCourse('INTROD9Ww6','LCF');
-$r = $test->returnXml();
-$t = $test->dates();
-$c = $test->datesChildren();
-$test->title();
-//echo $test->description();
-//echo $test->returnXml()->course->dates;
-//$title = $this->xml->xpath('/courses/course/@label');
-//var_dump($c);
-
-
-if (!empty ($t)) {
-foreach($c as $date) {
-
-if(strtolower($date["status"]) != "cancelled") {
-
-  $date["value"]; ?>
-  
-    <tr>
-<td ><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-    <td ><?php echo $date["dayofweek"];?></td>
-    <td ><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-    <td ><?php echo $date["duration"];?></td>
-    <td >&#163;<?php echo round($date["cost"],0);?></td>
-    <td ><?php echo $date["status"];?></td>
-    <td ><ol><li>
-
-
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-      echo "<!--";
-    }
-    ?>
-
-<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuelat[0]['lat'];
-    ?>,<?php 
-    $venuelong = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuelong[0]['long'];
-    ?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
-
-
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-    echo "-->";
-    }
-    ?>
-
-<?php        
-    $venuename = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuename[0]['name'];
-    
-    ?>
-
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-      echo "<!--";
-    }
-    ?>
-    
-</a>
-
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-    echo "-->";
-    }
-    ?>
-
-</li></ol></td>
-
-  <?php 
-    if ( $date["bookable"] == 'false' ) {
-      echo "<!--";
-    }
-    ?>
-
-                                                    
-    <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
-
-<?php 
-    if ( $date["bookable"] == 'false' ) {
-      echo "-->";
-    }
-    ?>
-
-</tr>
-
-  <?php
-  }
-} 
-
-
-?>
-</table>
-<br />
-<p>Alternative Dates and Times<br />
-Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
-or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
-
-            <?php 
-
-    } // End of CSM dates box
-    ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <title>Introduction to footwear design  - London College of Fashion</title>
-
-     
-      <!-- Common Metadata Tags -->
-      
-     <meta name="publisher" content="University of the Arts London" />
-      <meta name="format" content="text/html" />
-      <meta name="distribution" content="global" />
-      <meta name="robots" content="all" />
-
-      <meta http-equiv="imagetoolbar" content="no" />
-
-
-      <link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/html.css" />
-      <link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/custom.css" />
-      <link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/gallery-complex.css" />
-     <link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/t4fixes.css" /><!-- T4 Fixes -->
-      <!-- navigation object : CSS Selector --><link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/theme-purple.css" />
-      <!-- table.css --><link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/table.css" />
-      <!-- ualgrid.css --><link rel="stylesheet" type="text/css" media="screen" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/ualgrid.css" />
-      <!-- print.css --><link rel="stylesheet" type="text/css" media="print" href="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/css/print.css" />
+</nav>
+</div>
+</div>
+</div>
  
-     
-
-     
-    <!-- navigation object : Analytics Code -->    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-182294-6']);
-        _gaq.push(['_trackPageview']);
-    
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
-   </head>
-   <body id="table" class="purple">
-      <div id="wrapper" class="container_16">
-         <div id="logo"><a href="/"><!-- navigation object : Logo --><img src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/images/purple.gif" /></a></div>
-         <div id="guides"></div>
-         <h1 class="aa">University of the Arts London</h1>
-         <h2 class="aa">Home</h2>
-         <a href="#nav-sub" class="aa">Skip primary navigation</a>
-         <!-- navigation object : Accessibility Links -->
-         <ul id="nav-main" class="nav">
-            <li><a accesskey="h" href="http://www.arts.ac.uk/">University Home</a></li>
-         </ul>
-
-         <a href="#content" class="aa">Skip secondary navigation</a>
-         <!-- navigation object : College Top Navigation Column 2 --><ul id="nav-sub" class="nav"><li><a href="/">Home</a></li><li><a href="/about/">About Us</a></li><li><span class="currentbranch0"><a href="/courses/">Courses</a></span></li><li><a href="/prospective-students/">Prospective Students</a></li><li><a href="http://blogs.fashion.arts.ac.uk/snapshot/">News</a></li><li><a href="http://newsevents.arts.ac.uk/lcf/events/">Events</a></li><li><a href="/showcase/">Showcase</a></li><li><a href="/research/">Research</a></li><li><a href="/international/">International</a></li><li><a href="/business-innovation/">Business and Innovation</a></li><li><a href="/alumni/">Alumni</a></li></ul>
-         <!-- navigation object : College Top Navigation Column 3 --><ul id="nav-popup" class="nav"><li><a href="/courses/../courses-by-level/">Courses by level</a></li><li><a href="/courses/../courses-by-subject/">Courses by subject</a></li><li><span class="currentbranch0"><a href="/courses/../short-courses/">Short Courses</a></span></li><li><a href="/courses/../study-abroad/">Study Abroad</a></li><li><a href="/courses/flexible/">Flexible Learning</a></li><li><a href="http://www.arts.ac.uk/enquiry-form/">Course Enquiry</a></li></ul>
-         <!-- navigation object : Way Finder --><div id="wayfinder">
-   <ul class="thumbs">
-      <li id="wayfinder2" class="item purple" title="London College of Fashion"><a href="http://www.fashion.arts.ac.uk/" onClick="javascript:urchinTracker('/wayfinder/LCF');" id="link2"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_lcf.jpg" alt="" /></a></li>
-      <li id="wayfinder1" class="item green" title="London College of Communication"><a href="http://www.lcc.arts.ac.uk/" onClick="javascript:urchinTracker('/wayfinder/LCC');" id="link1"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_lcc.jpg" alt="" /></a></li>
-      <li id="wayfinder0" class="item red" title="Central Saint Martins College of Arts and Design"><a href="http://www.csm.arts.ac.uk/" onClick="javascript:urchinTracker('/wayfinder/CSM');" id="link0"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_csm.jpg" alt="" /></a></li>
-   </ul>
-   <ul class="thumbs">
-      <li id="wayfinder5" class="item gold" title="Wimbledon College of Art"><a href="http://www.wimbledon.arts.ac.uk" onClick="javascript:urchinTracker('/wayfinder/Wimb');" id="link5"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_wimb.jpg" alt="" /></a></li>
-      <li id="wayfinder4" class="item orange" title="Chelsea College of Art and Design"><a href="http://www.chelsea.arts.ac.uk/" onClick="javascript:urchinTracker('/wayfinder/Chelsea');" id="link4"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_chel.jpg" alt="" /></a></li>
-      <li id="wayfinder3" class="item blue" title="Camberwell College of Arts"><a href="http://www.camberwell.arts.ac.uk/" onClick="javascript:urchinTracker('/wayfinder/Camb');" id="link3"><img src="http://www.arts.ac.ukhttp://www.arts.ac.uk/media/way/way_camb.jpg" alt="" /></a></li>
-   </ul>
-   <div id="wayfinder-caption"><!-- caption --></div>
+<div class="header-panel bg-gray-bg">
+    <div class="header-wrapper">
+  <div class="row">
+          <!-- navigation object : Breadcrumbs --><div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/fashion/">London College of Fashion</a><a href="/fashion/courses/">Courses</a><a href="/fashion/courses/short-courses/">Short Courses</a><a href="/fashion/courses/short-courses/browse-short-courses/">Browse Short Courses</a><a href="/fashion/courses/short-courses/browse-short-courses/by-subject/">Courses by subject</a><a href="/fashion/courses/short-courses/browse-short-courses/by-subject/digital-fashion/">Digital fashion</a><a href="/fashion/courses/short-courses/browse-short-courses/by-subject/digital-fashion/introduction-to-illustrator-for-fashion/">Introduction to Illustrator for fashion</a></div>
+    <div class="page-title">
+      <h1><!-- navigation object : Section name -->Introduction to Illustrator for fashion</h1>
+    </div>
+  </div>  
+    </div>
 </div>
 
-         <div id="content" class="aa"></div>
-         <div id="main-content">
-            <div id="breadcrumb-trail">
-               <ul>
-                  <!-- navigation object : Breadcrumb --><li><a href="/">London College of Fashion</a></li><li><a href="/courses/">Courses</a></li><li><a href="/courses/../short-courses/">Short Courses</a></li><li><a href="/courses/../short-courses/by-subject/">Courses by subject</a></li><li><a href="/courses/../short-courses/by-subject/footwear/">Footwear</a></li><li>Introduction to footwear design </li>
-               </ul>
-            </div>
-            <div id="content-col" class="course-page">
-               <h1><!-- navigation object : Name of Current Section -->Introduction to footwear design </h1>
-               <div id="inner-left">
-                  <!-- navigation object : Above Left Nav -->
-                  <!-- navigation object : All content in the text/menu format -->
-                  <!-- navigation object : Below Left Nav Inherits -->
-<div id="nav-inpage"><h4>Useful Information</h4>
-<ul>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses" href="/courses/../short-courses/">Short course homepage</a></li>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses &amp;raquo; Contact us &amp;amp; information &amp;raquo; How to book" href="/courses/../short-courses/usefulinformation/how-to-book/">How to book</a></li>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses &amp;raquo; Useful information &amp;raquo; Request a brochure" href="/courses/../short-courses/usefulinformation/../lcf-short-courses-brochure/">Request a brochure</a></li>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses &amp;raquo; Contact us &amp;amp; information &amp;raquo; General information" href="/courses/../short-courses/usefulinformation/usefulinformation/">Useful information</a></li>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses &amp;raquo; A-Z index of short courses" href="/courses/../short-courses/a-z/">A-Z list of short courses</a></li>
-<li><a title="Home &amp;raquo; arts.ac.uk &amp;raquo; University Home &amp;raquo; London College of Fashion &amp;raquo; Courses &amp;raquo; Short Courses &amp;raquo; Contact us &amp;amp; information &amp;raquo; Contact us" href="/courses/../short-courses/contact/">Contact us</a></li>
-</ul></div>
-               </div>
-<div id="inner-right">
-<!-- navigation object : Left Offset -->
-<?php if (!isset($shortEnv)) { $shortEnv = FALSE; } ?>
-<?php if ($shortEnv == TRUE) { 
-$test = new ShortCourse('FOOTWEoB95','lcf');
-$r = $test->returnXml();
-$title = $test->title();
-$t = $test->dates();
-$c = $test->datesChildren();
-$tutors = $test->getTutors();
-$description = $test->Truncate($test->description(), 300);
-$desc_accordion = $test->description_acc();
-$materials_accordion = $test->materials();
+ <!-- section name -->
+<!--<div class="content-wrapper">
+  <div class="row">
+    <div class="d5-d16">
+      <h1>Introduction to Illustrator for fashion</h1>
+    </div>
+  </div>
+  </div>-->
+<!-- Add banner here -->
+<div class="content-wrapper">
 
-?>
+  <!-- Home page slider include -->
+  
+  
+    
+    <div class="row">
+      
+      <nav role="navigation" class="sidebar">
 
+
+                    <!-- navigation object : Left navigation -->
+      <!-- navigation object : Include Course Dropdown -->
+      
+                <ul>
+            <li class="menu-heading"><a href="/fashion" title="London College of Fashion">London College of Fashion</a></li>
+            
+          </ul>
+                      
+      </nav>
+      <div role="main" class="content">
+
+  <!-- DEBUG: Cache file was successfully updated -->
 <div class="row">
   <div class="l-content  block  __text  __with-aside">
-     <div class="text">
         <!-- Return description from XML file -->
-      <p class="leader"><?php echo $description; ?></p>
- 	<!-- Return optionla tutor information, will need to add a conditional element in site manager -->
- 	<p class="tutor">
-  	<strong>Taught by: </strong>
-  		<?php echo $tutors ; ?>
- 	</p>
-    </div>
+      <p class="leader">This introductory course to Adobe's Illustrator programme will give you a strong grounding in the tools and features of the programme, progressing to teaching you how to produce vector flat design drawings of garments and accessories for spec sheets. Emphasis will be placed on learning to use...</p>
+
+            <p class="tutor">
+      <strong>Taught by: </strong>
+        Kenny Macleod   </p>
+    
    </div>
+     <aside>
+        <h4>My Account</h4>
+          <iframe id="basket" name="basket" frameborder="0" src="http://arts.accessplanit.com/accessplan/pid-/config/arts/pages/integrationmenu.aspx">
+              <p>Your browser does not support iframes.</p>
+          </iframe>
+  </aside>   
 </div>
 <!-- Slider navigation object here -->
 
@@ -366,23 +396,37 @@ $materials_accordion = $test->materials();
      <div id="st-accordion" class="st-accordion">
         <ul class="accordion-list">
 
-        <!-- navigation object : Accordion item --><li class="accordion-list-item">
-  <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon circled-plus">⊕</div></a>
+        <!-- navigation object : Accordion item -->
+        <li class="accordion-list-item">
+  <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon icon-plus-circled"></div></a>
   <div class="st-content">
-<?php echo $desc_accordion ; ?>
-  </div>  
-</li><li class="accordion-list-item">
-  <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon circled-plus">⊕</div></a>
+<P>This introductory course to Adobe's Illustrator programme will give you a strong grounding in the tools and features of the programme, progressing to teaching you how to produce vector flat design drawings of garments and accessories for spec sheets. Emphasis will be placed on learning to use the pen tool to draw designs freehand and also to trace hand-drawn designs and scanned surface textile designs and photographs. You will also learn how to use the colour tools to create customised colour harmony palettes and design ranges in multiple colourways. Finally you will arrange your designs with text annotations in a spec sheet and export them in PDF and other formats for distribution.</P>
+<H4>The course will include:</H4>
+<UL>
+<LI>Introduction to the work area, toolbox and palettes
+<LI>Vector graphics including paths, fills and strokes
+<LI>Using the selection and shape tools
+<LI>Using the pen tool for lines and curves
+<LI>Tracing scanned hand-drawn fashion designs, surface pattern designs and photographs of garments
+<LI>Sketching garment flats
+<LI>Using layers to organise designs more efficiently
+<LI>Adding, subtracting and intersecting vector shapes using the pathfinder palette
+<LI>Creating customised colour palettes for swatches and pattern tiles
+<LI>Using the text tool to annotate final designs</LI></UL>
+<H4>Level:</H4>
+<P>This is a fast paced course and requires students to be fully computer literate.</P>  </div>  
+</li>
+<li class="accordion-list-item">
+  <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon icon-plus-circled"></div></a>
     <div class="st-content">
-                    <?php echo $materials_accordion ; ?>
-                    
+        <P>Notebook, pen, blank CD-Rs/USB memory stick (to save your work), images or examples of your own designs (optional).</P>           
     </div>
 </li>
 
         </ul>
       </div>
   </div>
-</div> 
+</div>
 
 <!-- Table Acordion -->
 
@@ -401,550 +445,277 @@ $materials_accordion = $test->materials();
     <th>Location</th>
     <th>Action</th>
   </tr>
-<?php 
-if (!empty ($t)) {
-foreach($c as $date) {
-
-if(strtolower($date["status"]) != "cancelled") {
-
-  $date["value"]; ?>
   
     <tr>
-<td ><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-    <td ><?php echo $date["dayofweek"];?></td>
-    <td ><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-    <td ><?php echo $date["duration"];?></td>
-    <td >&#163;<?php echo round($date["cost"],0);?></td>
-    <td ><?php echo $date["status"];?></td>
+<td >05/10/2013 - 26/10/2013</td>
+    <td >Saturday</td>
+    <td >10:00 - 16:00</td>
+    <td >4 Weeks</td>
+    <td >&#163;325</td>
+    <td >Available</td>
     <td ><ol><li>
 
 
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-      echo "<!--";
-    }
-    ?>
-
-<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuelat[0]['lat'];
-    ?>,<?php 
-    $venuelong = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuelong[0]['long'];
-    ?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+<!--
+<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=0,0&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
 
 
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-    echo "-->";
-    }
-    ?>
-
-<?php        
-    $venuename = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    echo $venuename[0]['name'];
-    
-    ?>
-
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-      echo "<!--";
-    }
-    ?>
-    
+-->
+John Princes Street
+<!--    
 </a>
 
-<?php 
-    $venuelat = $r->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-    if ( $venuelat[0]['lat'] == '0' ) {
-    echo "-->";
-    }
-    ?>
-
+-->
 </li></ol></td>
 
-  <?php 
-    if ( $date["bookable"] == 'false' ) {
-      echo "<!--";
-    }
-    ?>
-
+  
                                                     
-    <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
+ <td ><a onclick="addToBasket(, '', ' - ', ' - ', '0', 'John Princes Street');return false;" href="#">Add to Basket</a></td>
 
-<?php 
-    if ( $date["bookable"] == 'false' ) {
-      echo "-->";
-    }
-    ?>
 
 </tr>
 
-  <?php
-  }
-} 
+    
+    <tr>
+<td >09/02/2014 - 02/03/2014</td>
+    <td >Saturday</td>
+    <td >10:00 - 16:00</td>
+    <td >4 Weeks</td>
+    <td >&#163;325</td>
+    <td >Available</td>
+    <td ><ol><li>
 
 
-?>
-</table>
-<br />
-<p>Alternative Dates and Times<br />
-Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
-or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
+<!--
+<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=0,0&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
 
-            <?php 
 
-    } // End of CSM dates box
-    ?>
+-->
+John Princes Street
+<!--    
+</a>
 
+-->
+</li></ol></td>
+
+  
+                                                    
+ <td ><a onclick="addToBasket(, '', ' - ', ' - ', '0', 'John Princes Street');return false;" href="#">Add to Basket</a></td>
+
+
+</tr>
+
+  </table>
+            
       </div>
             </div>
 
-<?php } else { ?>
-<style>
-  iframe#basket {
-width: 170px;
-}
-</style>
-<!-- Updated: Nov 1st -->
-<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
+
+<!-- insert nav object for related links (like Downloads list) -->
+</div>  
+</div>
+</div>  
+</div>  
+<div class="panel">
+    <div class="content-wrapper">
+      <div class="row">
+          <div class="content">
+            <div class="row">
+          <div class="l-content  block  __text  __with-aside">
+                  <h2>Short Course Links</h2>
+                  <p><a href="/fashion/courses/short-courses/">Short Courses</a></p>
+<p><a href="/fashion/courses/short-courses/core-information/">Short course information</a></p>
+<p><a href="/fashion/courses/short-courses/request-a-brochure/">Request a brochure</a></p>
+<p><a href="/fashion/courses/short-courses/mailing-list/">Join our mailing list</a></p>
+                </div>
+                <aside>
+                                    <!-- KIS Widget -->
+                  
+                </aside>
+              </div>
+          </div>
+      </div>
+    </div><!-- .content-wrapper -->
+</div><!-- .panel -->
+<div class="content-wrapper">
+  <div class="row">
+      <div class="content">
+         
+
+<!-- insert nav object for gallery -->
+
+
+
 <div id="basketmessage"><div id="close" style="text-align:right;"><a onclick="hideBasketMessage();return false;" href="#">x</a></div><br /><h2>1 Course was added to your basket </h2><p><br />[Course Name]<br />[Course Date], [Course Time]<br />[Course Venue], £[Course Cost]</p><p>Your place is not confirmed until you’ve completed your booking</p><br />
 <a onclick="hideBasketMessage();return false;" href="#">Add another course</a><div style="display: inline; margin-left: 30px; margin-right: 30px;">&nbsp;</div><a onclick="openBasket();return false;" href="#">Book now</a></div>
-<br class="clear" />
-<?php
-
-if(isset($_GET['errors'])){
-	ini_set('display_errors',1); 
-	ini_set('error_reporting', E_ALL); 
-	error_reporting(E_ALL);
-}
-
-function courseDatesCache($courseids="", $companyid=""){
-
-    $cache_file = "/web/sites/t4shortcoursecache/ci-".$courseids."-".$companyid.".txt";
-    $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
-    
-    // TRY AND GET THE LIVE DATA
-    // --------------------------------------
-    $ch = curl_init("http://arts.accessplanit.com/accessplan/config/arts/handlers/coursedates.ashx?courseids=".$courseids."&companyid=".$companyid);
-    curl_setopt($ch, CURLOPT_PROXY, 'wwwcache.arts.ac.uk:3128');  curl_setopt($ch, CURLOPT_FAILONERROR,1);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1); curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-    $retValue = curl_exec($ch); curl_close($ch);
-    
-    if (!empty($retValue)) {
-        // IF the LIVE data was returned. 
-        if ((!file_exists($cache_file)) OR (!empty($_GET['cacheupdate'])) OR (@filesize($cache_file) <= 10) OR ((filemtime($cache_file) < (strtotime($cache_outofdate))))) {
-            // IF no cache exists OR forced update OR cache file is emmpty OR cachefile is out of date (as defiend by $cache_outofdate), UPDATE IT.
-            $writeDat = @file_put_contents($cache_file, $retValue);
-            echo '<!-- DEBUG: Cache file was successfully updated -->'; // echo '<!-- DEBUG: Cache file was successfully updated (' . $cache_file . ') -->';
-        }
-        
-        // Return LIVE data
-        return $retValue;
-        
-    } else {
-        // ELSE no live data was returned. Try read it from the cache
-        if ((@file_exists($cache_file)) AND (filesize($cache_file) > 10)) {
-            // As long as the cache file is populated, return that.
-            echo '<!-- DEBUG: cache update failed, read old information from cache (' . $cache_file . ') -->';
-            $retValue = @file_get_contents($cache_file);
-            
-            // As long as it is not empty, return cache data
-            if (!empty($retValue)) {
-                return $retValue;
-            }
-        }
-        
-        // Return Error message (No LIVE data or populated CACHE data)
-        echo '<!-- DEBUG: Unable to update file and no cache available -->';
-        return '<courses><course courseid="ERR0R" label="Error loading information"><materials>&lt;P&gt;There was an error loading course information&lt;/P&gt;</materials><description>&lt;P&gt;There was an error loading course information.&lt;/P&gt;</description><dates></dates></course><tutors></tutors><venues></venues></courses>';
-    }
-}
-
-$xml = @simplexml_load_string(courseDatesCache('FOOTWEoB95', 'lcf'));
-
-?>
-	<ul id="tab-buttons" class="mootabs_title">
-    <li title="glance"><a href="#glance">At a Glance</a></li>
-    <li title="materials"><a href="#materials">Materials</a></li>
-          
-          	<?php 
-	$csm = ('lcf');
-		if ( $csm <> 'csm' ) {
-			?>
-    <li title="course-booking"><a href="#course-booking">Dates &amp; Prices</a></li>
-          	<?php 	
-			}  // End of Dates and Prices tab
-			?>
-</ul>
-
-<div id="glance" class="course-tab mootabs_panel section-purple">
-
-<div id="course-info-wide">
-    <h3><?php echo $xml->course["label"];?></h3>
-
-          	<?php 
-	$csm = ('lcf');
-		if ( $csm == 'csm' ) {
-if (!empty ($xml->tutors)) {
-	echo "<p class=\"bio\"><strong>";
-	$a = 1;
-	foreach($xml->tutors->children() as $tutor) {
-		$tutor["value"];
-		if ( $a <> 1 ) {echo ", ";} 
-		$a = $a+1;
-		echo $tutor["name"]; 
-	} // End of For each tutor
-		echo "</strong></p>";
-} //End of if not empty
-} //End of Tutors for CSM
-?>
-
-          	<?php 
-	$csm = ('lcf');
-		if ( $csm <> 'csm' ) {
-?>
-
-	<div class="course-image section-solid-purple">
-        <img  src="/courses/../short-courses/by-subject/footwear/footwear-design/short_courses_shoedesign_rdax_110x110_100.jpg"  width="110"  height="110"  alt=""  />
-    </div>    
-          	<?php 	
-} //End of Image
-?>
-
-    <div id="glancecontent" class="course-tab-content">
-<?php echo $xml->course->description;?>
-
-
-
-          	<?php 
-	$csm = ('lcf');
-		if ( $csm == 'csm' ) {
-if (!empty ($xml->tutors)) {
-
-
-foreach($xml->tutors->children() as $tutor) {
-	$tutor["value"]; 
-	
-	if (strncasecmp($tutor->description,"<p>",3)<>0) {
-		echo "<p class=\"bio\">";
-	} // End If
-	?>
-
-<strong><?php echo $tutor->description;?></strong>
-
-	<?php
-	if (strncasecmp($tutor->description,"<p>",3)<>0) {
-		echo "</p>";
-	} // End If
-
-} // End of For each tutor
-} //End of if not empty
-} //End of Tutors for CSM
-?>
-
-	   <?php 
-	$csm = ('lcf');
-		if ( $csm == 'csm' ) {
-			// Dates box generated on At a Glance tab for CSM
-			?>
-		
-	<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
-	<tr>
-		<th style="text-align: left;">Date</th>
-		<th style="text-align: left;">Day of Week</th>
-		<th style="text-align: left;">Time</th>
-		<th>Duration</th>
-
-		<th>Cost</th>
-		<th>Status</th>
-		<th style="text-align: left;">Location</th>
-		<th>Action</th>
-	</tr>
-<?php 
-if (!empty ($xml->course->dates)) {
-foreach($xml->course->dates->children() as $date) {
-
-if(strtolower($date["status"]) != "cancelled") {
-
-	$date["value"]; ?>
-	
-		<tr>
-<td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-		<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
-		<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-		<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
-		<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
-		<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
-		<td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
-
-
-<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
-
-<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelat[0]['lat'];
-		?>,<?php 
-		$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelong[0]['long'];
-		?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
-
-
-<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
-
-<?php        
-		$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuename[0]['name'];
-		
-		?>
-
-<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
-		
-</a>
-
-<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
-
-</li></ol></td>
-
-	<?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "<!--";
-		}
-		?>
-
-																										
-		<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
-
-<?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "-->";
-		}
-		?>
-
-</tr>
-
-	<?php
-	}
-} 
-}
-
-?>
-</table>
-<br />
-<p>Alternative Dates and Times<br />
-Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
-or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
-
-          	<?php 
-
-		} // End of CSM dates box
-		?>
-
 
     </div>
-</div><!-- course-info -->
-</div><!-- glance -->
-<div id="materials" class="course-tab mootabs_panel section-purple">
-<div id="materialscontent" class="course-tab-wrapper">
-<?php echo $xml->course->materials;?>
+  </div>
 </div>
-</div><!--materials -->
 
-	<?php 
-	$csm = ('lcf');
-		if ( $csm <> 'csm' ) {
-			// Dates content generated for non-CSM courses
-		?>
-		
-			<div id="course-booking" class="course-tab mootabs_panel section-purple">
-				<div id="booking" class="course-tab-wrapper">        
-				
-				
-				<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
-				<tr>
-					<th style="text-align: left;">Date</th>
-					<th style="text-align: left;">Day of Week</th>
-					<th style="text-align: left;">Time</th>
-					<th>Duration</th>
 
-					<th>Cost</th>
-					<th>Status</th>
-					<th style="text-align: left;">Location</th>
-					<th>Action</th>
-				</tr>
-			<?php 
-			if (!empty ($xml->course->dates)) {
-			foreach($xml->course->dates->children() as $date) {
 
-			if(strtolower($date["status"]) != "cancelled") {
+<!-- navigation object : College Footer Include -->
+<footer class="college-footer row ">
+  <div class="footer-wrapper">
+    <div class="footer-block left">
+                  
+      <h3 class='size-h2'>Get In Touch</h3>
+      <!-- see http://html5doctor.com/microformats/ -->
+      <ul class="vcard">
+        <li class="no-bullet">
+          <a class="fn org url" href="/fashion/" title="Contact information for London College of Fashion"><span class="organization-name">London College of Fashion</span></a>
+        </li>
+        <li>
+        <span class="adr">
+          <span class="street-address">20 John Prince's Street</span>, 
+          <span class="region">London</span> <span class="postal-code">W1G 0BJ</span> 
+          <br>
+        </span>
+        </li>
+        
+        
+        
+      </ul>
+    </div>
+    <div class="footer-block middle">
+      <h3 class='size-h2'>Short Courses </h3>
+      <p>+44 (0)20 7514 7552</p>
+<p>shortcourses@fashion.arts.ac.uk</p>
+    </div>
+    <div class="footer-block right">
+      <h3 class='size-h2'>We're Social</h3>
+        <ul class="icons no-bullet">
+                      <li>
+              <a href="https://www.facebook.com/LCFstudyabroad" class="facebook">
+                <span class="icon-facebook-circled"></span>
+              </a>
+            </li>
+                      <li>
+              <a href="http://www.youtube.com/watch?v=WsaWeoT-tIo" class="youtube">
+                <span class="icon-youtube"></span>
+              </a>
+            </li>
+           
+        </ul>
+    </div>
+  </div>
+</footer>
+<!-- navigation object : Main Footer Include --><!-- start footer -->
+<footer class='global-footer row'>
+  <div class="footer-wrapper">
+    <div class="row">
+      <div class='footer-links'>
+        <ul class='footer-col-1'>
+          <li>
+            <a href=''>Accessibility</a>
+          </li>
+          <li>
+            <a href='/about-ual/strategy-governance/public-information/freedom-of-information/'>Freedom of Information</a>
+          </li>
+          <li>
+            <a href='/privacy-and-cookies/'>Privacy &amp; Cookies</a>
+          </li>
+          <li>
+            <a href='/disclaimer/'>Disclaimer</a>
+          </li>
+        </ul>
 
-				// $date["value"]; 
-				?>
-				
-					<tr>
-			<td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-					<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
-					<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-					<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
-					<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
-					<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
-					<td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
+        <ul class='footer-col-2'>
+          <li>
+            <a href='/about-ual/strategy-governance/public-information/charitable-status/'>Charitable Status</a>
+          </li>
+          <li>
+            <a href='/about-ual/support-our-creative-future/'>Give to UAL</a>
+          </li>
+          <li>
+            <a href='/about-ual/work-at-ual/'>Work at UAL</a>
+          </li>
+          <li>
+            <a href=''>Feedback</a>
+          </li>
+        </ul>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-						echo "<!--";
-					}
-					?>
+        <ul class='footer-col-3'>
+          <li>
+            <a href='http://showtime.arts.ac.uk/'>Showtime</a>
+          </li>
+          <li>
+            <a href='http://my.arts.ac.uk/'>MyArts Staff</a>
+          </li>
+          <li>
+            <a href='http://my.arts.ac.uk/student/'>MyArts Student</a>
+          </li>
+          <li>
+            <a href='http://www.suarts.org/'>Students' Union</a>
+          </li>
+        </ul>
 
-			<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuelat[0]['lat'];
-					?>,<?php 
-					$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuelong[0]['long'];
-					?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+        <ul class="social-links">
+          <h3>Connect with UAL:</h3>
+          <li><a href="https://twitter.com/UniArtsLondon" title="UAL on Twitter"><span class="footer-ico icon-twitter"></span></a></li> 
+          <li><a href="https://www.facebook.com/UniversityoftheArtsLondon" title="UAL on Facebook"><span class="footer-ico icon-facebook"></span></a></li>
+          <li><a href="http://www.youtube.com/user/universityartslondon" title="UAL on YouTube"><span class="footer-ico icon-youtube"></span></a></li>
+          <li><a href="#" title="UAL on Flickr"><span class="footer-ico icon-flickr"></span></a></li>
+        </ul>
+      </div>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-					echo "-->";
-					}
-					?>
 
-			<?php        
-					$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuename[0]['name'];
-					
-					?>
+      
+      <div class="row">
+        <div class='copyright'>
+          <p>&copy; 
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Europe/London' for 'BST/1.0/DST' instead in /private/var/folders/8c/9snd39g11jjgs99v2ytw3wfc0000gp/T/CodeRunner/Untitled 9.php on line 1963
+2013 University of the Arts London All Rights Reserved</p>
+        </div>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-						echo "<!--";
-					}
-					?>
+      </div>
+    </div>
+  </div>
 
-			</a>
+  <a href="#" class="back-to-top"><span>&uarr;</span> back to top</a>
+</footer>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-					echo "-->";
-					}
-					?>
+<footer class="row white-bg hide">
+    <div class="footer-wrapper">
+        <a href="#" class="open-close debug-toggle"><span>↓</span> Open Debug panel</a>
+        <!-- debug -->
+        <ul id="debug">
+          <li>Channel base uri: /</li>
+          <li>Channel base description: This channel is used to publish the BETA UAL Website.</li>
+          <li>Channel base id: 18</li>
+          <li>Channel base name: Beta UAL Website</li>
+          <li>Page created : Thu 15 Aug 2013 10:52:14</li>
+          <li>Page modified : Thu 12 Sep 2013 04:36:23</li>
+                    <li>Section id : 44625</li>
+      </ul>
+        <!-- end debug -->
+    </div>
 
-			</li></ol></td>
+</footer>
+<div class="credits-btn"><a href="#" class="show-credits">Show Credits</a></div>
+<!-- Include js scripts -->
 
-				<?php 
-					if ( $date["bookable"] == 'false' ) {
-						echo "<!--";
-					}
-					?>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>
+    Modernizr.Detectizr.detect({detectScreen:false});
+</script>
+<!--<script src="http://use.resrc.it/js/resrc-0.6.1.min.js"></script>-->
 
-					<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
-				
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/resrc-0.6.1.min.js"></script>
 
-			<?php 
-					if ( $date["bookable"] == 'false' ) {
-						echo "-->";
-					}
-					?>
-					
+<!-- Fastclick js -->
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/fastclick.js"></script>
 
-			</tr>
+<!-- jquery.fitvids-ck.js -->
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js"></script>
+ 
+<!-- reView script - used for LazyLoading with ReSRC.it -->
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js"></script>
 
-				<?php
-				}
-			}
-			}
 
-			?>
-			</table>
-
-			</div>
-			</div>
-
-          	<?php 
-
-		} // End of non-CSM dates box
-		?>
-<?php } ?>            </div><!-- navigation object : Left Image Inline Float -->
-</div>
-            <div id="side-bar">
-               <!-- navigation object : Site Search --><div id="site-search">
-   <!-- Google CSE Search Box Begins -->
-   <h4>Site Search</h4>
-   <form id="cse-search-box" action="http://www.fashion.arts.ac.uk/site-search/" class="bodycopy">
-      <input type="hidden" name="cx" value="017699431643206132718:st9hhvy4ehc" />
-      <input type="hidden" name="cof" value="FORID:11" />
-      <input type="hidden" name="ie" value="UTF-8" />
-      <input name="q" type="text" />
-      <p><input type="image" class="rollbtn" src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/images/btn-go.gif" alt="Go" name="submit-image" /></p>
-      <!-- rollover button <img src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/images/btn-go-over.gif" alt="" style="width : 35px; height : 18px;    " />-->
-   </form>
-   <!-- Google CSE Search Box Ends -->
-</div>
-               <!-- navigation object : Related Links --><div id="related-links">
-<h4>Related links</h4>
-<ul class="side-panel">
-<li><a href="/courses/../short-courses/by-subject/footwear/footwear-design-2/">Footwear design 2</a></li><li><a href="/courses/../short-courses/gallery/footwearpatterncuttinggallery/">Shoe making: gallery </a></li><li><a href="/courses/../short-courses/gallery/footwear-jewellery-accessories/">Footwear, jewellery and accessories: video</a></li><li><a href="/courses/../short-courses/usefulinformation/studenttestimonials/mimifootweardesign/"></a></li><li><a href="/courses/../short-courses/usefulinformation/shortcourseaccommodationoptions/">Short Course Accommodation </a></li><li><a href="/courses/../short-courses/usefulinformation/immigrationguidanceforoverseasstudents/">Immigration information for Non-EU/EEA students</a></li><li><a href="/courses/../short-courses/by-subject/footwear/footwearpatterncutting/">Footwear pattern cutting</a></li></ul>
-</div>
-               <!-- navigation object : Social Links -->
-               <!-- navigation object : below_search_box_inherits --><div>
-<h4>My Account</h4>
-                <iframe id="basket" name="basket" frameborder="0" src="http://arts.accessplanit.com/accessplan/pid-lcf/config/arts/pages/integrationmenu.aspx">
-                    <p>Your browser does not support iframes.</p>
-                </iframe>
-</div>
-            </div>
-         </div>
-         <!-- navigation object : Footer Boxes -->
-         <!-- navigation object : Footer Links --><ul id="footer">
-  <li><a href="/about/contact/"><span>Contact Us</span></a></li>
-   <li><a href="/about/locations/"><span>Find Us</span></a></li> 
-   <li><a href="http://www.arts.ac.uk/accessibility/"><span>Accessibility</span></a></li>
-   <!--<li><a href="http://www.fashion.arts.ac.uk/sitemap-en.xml"><span>Sitemap</span></a></li>-->
-   <li><a href="http://www.fashion.arts.ac.uk/brochure/"><span>Prospectus?</span></a></li>
-</ul>
-         <div class="grid_16"><p class="copyright"><!-- navigation object : Copyright text -->&copy; 2013 University of the Arts London All Rights Reserved.
-<!-- this <?php echo date(‘Y’); ?> does not work --></p></div>
-      </div><!-- #wrapper -->
-   </body>
-    <!-- navigation object : Google-hosted jQuery --> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<!-- Jquery cookie -->
-<script type="text/javascript" src="http://www.arts.ac.uk/media/artsacukstyleassets/component-library/javascript/jquery.cookie.js"></script>
-		
-    <!-- wayfinder.js --><script type="text/javascript" src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/js/wayfinder.js"></script>
-    <!-- jQuery Tools --><script type="text/javascript" src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/js/jquery.tools.min.js"></script>
-    <!-- common.js --><script type="text/javascript" src="http://www.arts.ac.uk/media/artsacukstyleassets/styleassets/js/jquery.common.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-
-    <!-- navigation object : Inline javascript --><script>
+<!-- navigation object : Javascript include 
+<script>
 jQuery(document).ready(function($) {
 
 // initialise tabs with history functionality
@@ -952,233 +723,72 @@ $("#tab-buttons").tabs(".course-tab", { history: true });
 
 // re-position the old course links list to the bottom of the right sidebar
 $('.links').prepend($('#move-links').html());
-	
+  
 if ($('#main-course-image').find('.item').length < 2) {
     $('#paginate, #main-course-image .nextPage, #main-course-image .prevPage').hide();
-} else {	
+} else {  
     var api = $("#main-course-image .scrollable").scrollable({ size: 1, clickable: false, api: true });
-			
+      
     // insert the pagination counter
     var printIndex = api.getIndex() + 1;
     $('#paginate').append(printIndex + " / " + api.getSize());
-			
+      
     // update the pagination counter onSeek
     api.onSeek(function(e, index) {
-	var printIndex = index + 1;
-	$('#paginate').empty().append(printIndex + " / " + this.getSize());
+  var printIndex = index + 1;
+  $('#paginate').empty().append(printIndex + " / " + this.getSize());
     });
 }
 
 // initialise mini scrollables - revealing the arrows if there is overflow
 var mini = $('.mini');
-		
+    
 mini.each( function(i) {
-	if ($(this).find('.item').length > 2) {
-		$(this).parent().find('.next').removeClass('disabled');
-		$(this).scrollable();
-	}
+  if ($(this).find('.item').length > 2) {
+    $(this).parent().find('.next').removeClass('disabled');
+    $(this).scrollable();
+  }
 });
 
 });
-</script>
-    <!-- navigation object : Section javascript -->
+</script>-->
+  
 
-<!-- navigation object : course_search_nav_item --><style type="text/css">
-/* STYLES FOR BLACK BAR AT THE TOP OF THE PAGE */
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  .container {
-    margin-top: 18px;
-  }
- #topbar {
-    background: #000;
-    position: relative;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 24px;
-  }
 
-#findernav {
-display: block;
-overflow: hidden;
-}
+<!-- Mega Menu Plugins -->
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/megamenu_plugins.js"></script>
+<!-- Mega Menu Script -->
+<script type="text/javascript" src="http://beta.arts.ac.uk/media/beta/beta-assets/js/megamenu-ck.js"></script>
 
-#wrapper {
-margin-top:18px;
-}
+<!-- Scripts -->
+  <!-- Scripts -->
+  <script src='http://artslondon.github.io/beta/assets/js/script.js' type='text/javascript'></script>
 
- body.ual #topbar {
-    background: #000;
-    position: relative;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 25px;
-  }
-   #topbar #global {
-    width: 940px;
-    margin: 0 auto;
-  }
-   #topbar #global a {
-    color: #fff;
-   background: transparent;
-   text-decoration: none;
-   font-size: 14px;
-  }
-   #topbar #global li {
-    list-style-type: none;
-    display: inline;
-    color: #fff;
-    margin-left: 25px;
-    line-height: 25px;
-    float: right;
-  }
-
-  #topbar #global li a#open.inactive {
-    background-image: url(http://www.arts.ac.uk/css/bootstrap/images/arrow-down-white.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    padding-right: 24px;
-
-  }
-  #topbar #global li a#open.inactive:hover {
-    background-image: url(http://www.arts.ac.uk/css/bootstrap/images/arrow-down-blue.jpg);
-    color: #00b3ff;
-  }
-  #topbar #global li a#close.active {
-    background-image: url(http://www.arts.ac.uk/css/bootstrap/images/arrow-up-blue.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    padding-right: 24px;
-    color: #00b3ff;
-  }
-  #topbar #global li a#close.active:hover {
-    background-image: url(http://www.arts.ac.uk/css/bootstrap/images/arrow-up-white.jpg);
-    color: #fff;
-  }
-
-   #topbar #topnav {
-    float: right;
-  }
-    div#coursebgfilter {
-    display:none;
-    position:fixed;
-    _position:absolute; /* hack for internet explorer 6*/
-    height:100% !important;
-    width:100%;
-    top:22px;
-    left:0;
-    background:#000000;
-    z-index:9999;
-  }
-   #finder {
-    width: 100%;
-    position: absolute;
-    top:24px;
-    left:0px;
-    z-index: 99999;
-  }
-   #finder #cfiframe {
-    width: 100%;
-    height: 530px;
-  }  
-   #finder object {
-    width: 100%;
-    height: 530px;
-  }  
-</style><!--[if lt IE 9]>
-  <script type="text/javascript">
-
-  // for IE browsers
-  var coursefinderHTML= "<div id='topbar'>"
-    + "<div id='global'>"
-    + "<ul id='findernav'>"
-    + "<li><a title='Open course finder' class='inactive' href='http://www.arts.ac.uk/course-finder/index.php'>Course finder</a></li>"
-    + "</ul>"
-    + "</div>"
-    + "</div>";
-
-    jQuery("body").prepend(coursefinderHTML);
-  </script>
-<![endif]-->
-
-<!--[if !IE]><!-->
-
+  <script>
+  $(document).ready(function($){
+      $('.megamenu').megaMenuCompleteSet({
+          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+      });
+});
+</script>  
+<script type="text/javascript" src="https://arts.accessplanit.com/accessplan/config/arts/scripts/website.js"></script>
+<script type="text/javascript" src="http://arts.accessplanit.com/accessplan/config/arts/scripts/popup.js"></script>
 <script type="text/javascript">
 
-    // for all other browsers
-    var coursefinderHTML= "<div id='topbar'>"
-      + "<div id='global'>"
-      + "<ul id='findernav'>"
-      + "<li><a id='open' title='Open course finder' class='inactive' href='#'>Course finder</a><a id='close' title='Close course finder' class='active' href='#'>Course finder</a></li>"
-      + "</ul>"
-      + "</div>"
-      + "</div>"
-      + "<div id='finder'>"
-      + "<iframe src='http://www.arts.ac.uk/course-finder/index.php' frameborder='0' id='cfiframe'></iframe>"
-      + "</div>"
-      + "<div id='coursebgfilter'></div>";
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32658704-1']);
+  _gaq.push(['_setDomainName', 'arts.ac.uk']);
+  _gaq.push(['_trackPageview']);
 
-      jQuery("body").prepend(coursefinderHTML);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-<!--<![endif]-->
-
-
-
-<script type="text/javascript">
-
-
-// hide the course finder and close link
-jQuery('#finder').hide();
-jQuery('#close').hide();
-
-// enable popup
-function enablePopup(){
-    jQuery("#coursebgfilter").fadeIn("slow");
-    jQuery("#finder").fadeIn("slow");
-  }
-
-// disable popup 
-function disablePopup(){
-    jQuery("#coursebgfilter").fadeOut("slow");
-    jQuery("#finder").fadeOut("slow");
-  }
-
-// hide open link, show iframe and, show close link
-jQuery("#open").click(function () {
-      jQuery(this).hide();
-      jQuery('#close').show();
-      jQuery("#coursebgfilter").css({
-      "opacity": "0.8"
-    });
-    enablePopup();
-});
-
-jQuery("#openfrompage").click(function () {
-      // jQuery(this).hide();
-      // jQuery('#close').show();
-      jQuery("#coursebgfilter").css({
-      "opacity": "0.8"
-    });
-    enablePopup();
-});
-
-// hide close link, hide iframe and, show open link
-jQuery("#close").click(function () {
-    jQuery(this).hide();
-    jQuery('#open').show();
-    disablePopup();
-});
-
-// hide iframe 
-jQuery("#coursebgfilter").click(function () {
-      jQuery('#open').show();
-      jQuery('#close').hide();
-    disablePopup();
-});
-</script>
-
+</body>
 </html>

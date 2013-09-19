@@ -3,9 +3,9 @@ require 'compass'
 
 # Set this to the root of your project when deployed:
 http_path = "http://artslondon.github.io/beta/"
-css_dir = "/media/beta/beta-assets/css"
+css_dir = "media/beta/beta-assets/css"
 sass_dir = "assets/styles"
-fonts_dir = "/media/beta/beta-assets/fonts"
+fonts_dir = "media/beta/beta-assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
@@ -17,7 +17,7 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://artslondon.github.io/beta/assets/img"
+http_images_path = "http://beta.arts.ac.uk"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 

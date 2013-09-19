@@ -10,14 +10,13 @@
 //   @include gs-media(d) { display:block; }
 // }
 
-
 .megamenu_container {
   width:100%;
   height: 48px;
   *height: 46px;
   margin:0 auto;
   position: relative;
-  z-index:99999;
+  z-index: 500;  // this should be set to less than the magnific popup background div
   @include gs-media(d) {
     height: rhythm(6, 16px);
     @include padding-leader(2);
@@ -196,12 +195,14 @@ li.megamenu_button_active {
 
   .small-text-link {
     @extend .row;
-    @include margin-leader(1);
-    margin-bottom: -6px;
-    
+    position: absolute;
+    bottom: -18px;
+    left: 0;
     a {
       color: $white;
+      display: inline-block;
       @include font-size(12);
+      margin-top: 12px;
       margin-left: 12px;
       line-height: 16px;
       border-bottom: 0;
@@ -211,7 +212,6 @@ li.megamenu_button_active {
       border-bottom: 1px dotted $white;
     }
     
-
   }
   
   .go-search-button {
@@ -219,11 +219,14 @@ li.megamenu_button_active {
     position: absolute;
     right: 0;
     top: 0;
+    border-top-width: 0px;
+    margin: 0;
     text-align: center;
     @include gs-media(d) {
       min-width: gs-width(d, 16, 16, (1,16), true);
       height: 36px;
     }
+
     a {
       color: $white;
       border-bottom: 0;
@@ -321,17 +324,15 @@ li.megamenu_button_active {
     margin: 0; 
     margin-left: -0.5em;
     padding: 0; 
-    background: black;
-    
+    background: $black;
     @include gs-media(t, min-max) {
-    display:block;
-     }
+      display:block;
+    }
     
     @include gs-media(m, min-max) {
-    display:block;
-     }
+      display:block;
+    }
   }
-
   
   .dropdown-arrow {
     display: none;
@@ -382,8 +383,6 @@ li.megamenu_button_active {
 
 .top-bar{
     position: relative;
-    > ul { }
-
     // style for each dropdown list menu item on tab/mobile
     li {
       display:block;
@@ -392,9 +391,6 @@ li.megamenu_button_active {
       padding-bottom:0;
       // border-bottom: 1px solid $black;
     
-    li:last-of-type {
-      // border-bottom: 0;
-    }
       @include gs-media(d) {
         list-style:none; 
         padding:0;
@@ -402,6 +398,15 @@ li.megamenu_button_active {
         font-weight: 300;
         // border-bottom: 0;
       }
+      
+      // @include gs-media(t, max) {
+      //   li:nth-child(n+2) {
+      //     display: none;
+      //     .menu-loaded & {
+      //       display: block;
+      //     }
+      //   }
+      // }
 
       &:hover { background-color: $dark-gray; }   
 
@@ -713,16 +718,53 @@ li.megamenu_button_active {
     }
 
   }
-
 }
+
+
+
+// set height for course finder dropdown form
+.dropdown_fullwidth .d-search-input-form:first-of-type { 
+  min-height: 48px;
+}
+// set height for site search dropdown form
+.dropdown_fullwidth .d-search-input-form {
+  min-height: 42px; // height for site search
+}
+
+
+
 
 .site-search-input, .course-finder-txt-input {
  
   color: $aaa-gray;
   width: 100%;
   height: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
   @include border-radius(0); 
   @include gs-media(d) {
     height: 24px;
   }
+}
+
+
+// skip to content link for accessibility
+a.skip-to-content, a.skip-to-content:hover, a.skip-to-content:visited 
+{ 
+  position:absolute; 
+  left:0px; 
+  top:-500px; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  padding-left: 6px;
+  @include font-size(12);
+} 
+
+a.skip-to-content:active, a.skip-to-content:focus 
+{ 
+  position:static; 
+  width:auto; 
+  height:auto; 
 }

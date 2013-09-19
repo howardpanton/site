@@ -269,6 +269,13 @@
 	}
 }
 
+	@include gs-media(m) {
+			p, h1, h2, h3, h4, ul, ol, dl, table {
+			padding-left:12px;
+			padding-right:12px;
+		}
+	}
+
 .l-content-d5-d9 { // content left
 	@extend %d5-d9--within-d5-d16;
 }
@@ -353,4 +360,10 @@ aside {
 .slider-container {
 	padding-top: 6px;
 	@include component-spacing-bottom;
+	.ual.home & {
+		margin-bottom: 6px;
+	}
+	.csm.home & {
+		margin-bottom: 0;
+	}
 }

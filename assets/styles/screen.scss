@@ -3,6 +3,7 @@
 		//*	CSS stylesheet
 		//*	Authors: Howard Panton, Matt Wisbey,
 		// Pete Richardson, Alastair Mucklow
+		// Updated Thursday 19th September 2013 00.32pm
 \*-----------------------------------------*/
 
 /*------------------------------------*\
@@ -34,10 +35,11 @@
 // in our page layouts
 //
 @import "font-face/brandon-text",
-		"font-face/bureau-grot",
-		"font-face/league-gothic", 
-		"font-face/swiss-721",
-		"font-face/_fontello-embedded";
+				"font-face/bureau-grot",
+				"font-face/league-gothic", 
+				"font-face/alternate-gothic", 
+				"font-face/swiss-721",
+				"font-face/fontello-embedded";
 
 
 /*------------------------------------*\
@@ -60,25 +62,16 @@
 	
 
 /*------------------------------------*\
-    $SPRITES
-\*------------------------------------*/
-
-$ico-sprite-dimensions: true;
-//@import "globals/retina-sprites"; 
-@import "../img/sprite/ui-icons/*.png";
-@include all-ui-icons-sprites(true);
-
-
-/*------------------------------------*\
     $CORE
 \*------------------------------------*/
 
 @import	"globals/icons",
-				"globals/typography", 
-				"globals/logos",
-				"globals/logos.fallback",
-				"globals/forms",
-				"globals/utilities";
+		"globals/sprites",
+		"globals/typography", 
+		"globals/logos",
+		"globals/logos.fallback",
+		"globals/forms",
+		"globals/utilities";
 
 
 /*------------------------------------*\
@@ -155,7 +148,8 @@ $ico-sprite-dimensions: true;
 		"components/highlight-blocks",
 		"components/vcards",
 		"components/a-to-z",
-		"components/embed";
+		"components/embed",
+		"components/tables";
 
 
 // Short Courses

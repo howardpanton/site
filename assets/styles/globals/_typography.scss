@@ -71,7 +71,8 @@ h1, .size-h1 {
 		@extend %BrandonText-Bold;		
 	}
 	.lcc & {
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}
 }
@@ -83,7 +84,8 @@ h2 {
 	.lcc & {
 		@include font-size(54);
 		border-top: 4px solid $black;
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	}	
 }
@@ -95,7 +97,8 @@ h3 {
 	.lcc & {
 		@include font-size(36);
 		@include adjust-leading-to(7, 36px); 	
-		@extend %LeagueGothicRegular;
+		@extend %AlternateGothic;
+		// @extend %LeagueGothicRegular;
 		padding: rhythm(3, 36px) 0 rhythm(1, 36px) 0;
 	  text-transform: uppercase;
 	  border-bottom: 4px solid $black;
@@ -326,7 +329,6 @@ figcaption, .rsCaption, .caption {
 	
 }
 
-
 %blockquote {
   position: relative;
   span { 
@@ -353,30 +355,6 @@ blockquote {
 hr {
 	clear: both;
 }
-
-// // // Custom Web Fonts
-
-// // .Swiss721BT-Light { font-family: Swiss721BT-Light; }
-// // .Swiss721BT-Roman { font-family: Swiss721BT-Roman; }
-// // .Swiss721BT-Italic { font-family: Swiss721BT-Italic; }
-// // .Swiss721BT-Bold { font-family: Swiss721BT-Bold; }
-// // .Swiss721BT-Black { font-family: Swiss721BT-Black; }
-// // .Swiss721BT-Medium { font-family: Swiss721BT-Medium; }
-
-// // // CCW
-// // .BrandonText-Bold { font-family: BrandonText-Bold; }
-// // .BrandonText-Regular { font-family: BrandonText-Regular; }
-
-
-// // // LCC
-// // .LeagueGothicRegular { font-family: LeagueGothicRegular; }
-// // .LeagueGothicItalic { font-family: LeagueGothicItalic; }
-// // .LeagueGothicCondensedRegular { font-family: LeagueGothicCondensedRegular; }
-// // .LeagueGothicCondensedItalic { font-family: LeagueGothicCondensedItalic; }
-
-// // // CSM
-// // .BureauGrotBold { font-family: BureauGrotBold; }
-
 
 // LCF Variants 
 
@@ -522,51 +500,51 @@ b, strong, h2, h3, h4 {
 }
 
 // social media links icons 
-
-.facebook-link:before, .twitter-link:before, 
-.flickr-link:before, .youtube-link:before,
-.pinterest-link:before, .vimeo-link:before,
-.tumblr-link:before, .linkedIn-link:before,
-.gplus-link:before, .github-link:before {
-  @extend %icon;
-  min-width: 1.5em;
-  display: inline-block;
-  text-align: left;
-  border-bottom: 0;
-  text-decoration: none;
-}
-
-// disable the external link icon for social media links
-.facebook-link:after, .twitter-link:after, 
-.flickr-link:after, .youtube-link:after,
-.pinterest-link:after, .vimeo-link:after,
-.tumblr-link:after, .linkedIn-link:after,
-.gplus-link:after, .github-link:after {
-  .external & { 
-    display: none !important; // to hide the external link icon
-  }
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
+.l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
+.l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
+.l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before, 
+.l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
+.l-content a[href*="github."]:before, aside a[href*="github"]:before,
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before {
+	@extend %icon;
+	min-width: 1.5em;
+	display: inline-block;
+	text-align: left;
+	border-bottom: 0;
+	text-decoration: none;
 }
 
 
-.facebook-link:before { content: '\e816'; }
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before { content: '\e816'; }
 
-.twitter-link:before { content: '\e817'; }
+.l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before { content: '\e817'; }
 
-.flickr-link:before { content: '\e819'; }
+.l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before { content: '\e819'; }
 
-.youtube-link:before { content: '\e835'; }
+.l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before { content: '\e835'; }
 
-.linkedIn-link:before { content: '\e832'; }
+.l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before { content: '\e832'; }
 
-.tumblr-link:before { content: '\e830'; }
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before { content: '\e830'; }
 
-.vimeo-link:before { content: '\e81b'; }
+.l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before { content: '\e81b'; }
 
-.pinterest-link:before { content: '\e82e'; }
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before { content: '\e82e'; }
 
-.gplus-link:before { content: '\e834'; }
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before { content: '\e81d'; }
 
-.github-link:before { content: '\e81d'; }
+.l-content a[href*="github."]:before, aside a[href*="github"]:before { content: '\e81d'; }
+
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; } 
+
+
+
+
 
 
 
