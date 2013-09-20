@@ -12,8 +12,8 @@ $thumbnail = "<t4 type="content" name="Gallery thumbnail" output="normal" modifi
 
 		<?php } else { // otherwise generate a resrc'd image crop ?>
 
-			<img data-src="http://app.resrc.it/C=W300,H300,XOF50,YOF20/http://beta.arts.ac.uk<t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="resrc" />
-
+            <img data-src="http://app.resrc.it/S=W600/C=W300,H300,XOF50,YOF20/http://beta.arts.ac.uk<t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="resrc" />
+		
 		<?php } ?>
 
 		</a>

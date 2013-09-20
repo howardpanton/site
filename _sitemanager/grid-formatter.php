@@ -1,3 +1,12 @@
+<!-- Used in:
+
+  - Media Block
+  - Text Block
+  - Text Block with Aside
+  - Panorama: HTML
+  
+-->  
+
 <?php 
 // formatter for displaying list children at a parent level, in a content grid
 if (!isset($old_section_title)) { $old_section_title = ''; }
@@ -16,10 +25,10 @@ if ($current_section_title != $old_section_title) {
   <a class="no-border" href="<t4 type="navigation" id="21"/>" title="">
     <?php // if user has specified a thumbnail, use that 
     if ($thumbnail_media_path != '') { ?>
-      <img class="m-hide" src="<?php echo $thumbnail_media_path; ?>" alt="">
+      <figure><img class="m-hide" src="<?php echo $thumbnail_media_path; ?>" alt=""></figure>
     <?php } // otherwise, if an image has been uploaded to the main image field, display that using resrc.it
     elseif ($media_path != '' && $image_or_video == 'image') { ?>
-      <img class="m-hide resrc" data-src="http://app.resrc.it/C=W300,H300,XOF50,YOF20/http://beta.arts.ac.uk<?php echo $media_path; ?>" alt="">
+      <figure><img class="m-hide resrc" data-src="http://app.resrc.it/S=W600/C=W300,H300,XOF50,YOF20/http://beta.arts.ac.uk<?php echo $media_path; ?>" alt=""></figure>
     <?php } // finally, if no other image is available, display a placeholder
     else { ?>
       <t4 type="navigation" id="4309" />
@@ -35,4 +44,5 @@ if ($current_section_title != $old_section_title) {
 <?php 
   $old_section_title = $current_section_title; 
 }
+
 ?>

@@ -9,44 +9,84 @@ $c = $test->datesChildren();
 $description = $test->Truncate($test->description(), 300);
 $desc_accordion = $test->description_acc();
 $materials_accordion = $test->materials();
+$shortCourse = TRUE;
 
 // tutors data
 $tutors = $test->getTutors();
-$tutor_info = '<t4 type="content" name="Hide tutor info?" output="normal" modifiers="" />';
+$tutor_description = $test->getTutorsBiography();
+$tutor_switch = '<t4 type="content" name="Hide tutor info?" output="normal" modifiers=""  />';
+
+$pid_check = $test->companyId ;
+switch ($pid_check) {
+	case 'LCC':
+		$pid = 'lcc';
+		break;
+	case 'CSM':
+		$pid = 'csm';
+		break;
+	case 'LCF':
+		$pid = 'lcf';
+		break;
+	case 'CHELSEA':
+		$pid = 'chelsea';
+		break;
+	case 'WIMB':
+		$pid = 'wimb';
+		break;
+	case 'CAMB':
+		$pid = 'camb';
+		break;
+	default:
+		$pid = '';
+		break;
+}
 ?>
 
 <div class="row">
   <div class="l-content  block  __text  __with-aside">
-     <div class="text">
         <!-- Return description from XML file -->
       <p class="leader"><?php echo $description; ?></p>
 
       	<?php // Return optional tutor information, will need to add a conditional element in site manager
-      	if ($tutor_info != "yes" && $tutors != "") { ?>
+      	if ($tutor_switch != "yes" && $tutors != "") { ?>
 	 	<p class="tutor">
 	  	<strong>Taught by: </strong>
 	  		<?php echo $tutors; ?>
 	 	</p>
 	 	<?php } ?>
 
-    </div>
    </div>
+     <aside>
+        <h4>My Account</h4>
+          <iframe id="basket" name="basket" frameborder="0" src="http://arts.accessplanit.com/accessplan/pid-<?php echo $pid ; ?>/config/arts/pages/integrationmenu.aspx">
+              <p>Your browser does not support iframes.</p>
+          </iframe>
+  </aside>   
 </div>
-
 <!-- Slider navigation object here -->
-<t4 type="navigation" id="4509" />
 
 <div class="row">
   <div class="accordion">
      <div id="st-accordion" class="st-accordion">
         <ul class="accordion-list">
 
-        <!-- navigation object : Accordion item --><li class="accordion-list-item">
+        <!-- navigation object : Accordion item -->
+        <li class="accordion-list-item">
   <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon icon-plus-circled"></div></a>
   <div class="st-content">
 <?php echo $desc_accordion ; ?>
   </div>  
-</li><li class="accordion-list-item">
+</li>
+<?php if ($tutor_description != FALSE) : ?>
+
+          <li class="accordion-list-item">
+          <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Tutor information</h3><div class="st-arrow icon-plus-circled"></div></a>
+            <div class="st-content">
+              <?php echo $tutor_description ; ?>
+          </div>  
+        </li>
+<?php endif ?>
+<li class="accordion-list-item">
   <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon icon-plus-circled"></div></a>
     <div class="st-content">
         <?php echo $materials_accordion ; ?>           
@@ -90,7 +130,7 @@ if(strtolower($date["status"]) != "cancelled") {
     <td ><?php echo $date["duration"];?></td>
     <td >&#163;<?php echo round($date["cost"],0);?></td>
     <td ><?php echo $date["status"];?></td>
-    <td ><ol><li>
+    <td >
 
 
 <?php 
@@ -138,7 +178,7 @@ if(strtolower($date["status"]) != "cancelled") {
     }
     ?>
 
-</li></ol></td>
+</td>
 
   <?php 
     if ( $date["bookable"] == 'false' ) {
@@ -147,7 +187,7 @@ if(strtolower($date["status"]) != "cancelled") {
     ?>
 
                                                     
-    <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
+ <td ><a onclick="addToBasket(<?php  echo $t['date']['coursedateid'];?>, '<?php  echo addslashes($r["course"]["label"]);?>', '<?php  echo $t['date']['startdate'];?> - <?php echo $t['date']['enddate'];?>', '<?php  echo $t['date']['starttime'];?> - <?php  echo $t['date']['endtime'];?>', '<?php  echo round($t['date']['cost'],0);?>', '<?php  echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
 
 <?php 
     if ( $date["bookable"] == 'false' ) {
@@ -164,11 +204,12 @@ if(strtolower($date["status"]) != "cancelled") {
 
 ?>
 </table>
-<br />
-<p>Alternative Dates and Times<br />
+<?php if ($test->companyId == "CSM") : ?>
+  <p>Alternative Dates and Times<br />
 Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
 or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
 
+<?php endif ?>
             <?php 
 
     } // End of CSM dates box
@@ -183,6 +224,9 @@ or there are no dates showing for this session, then please <a href="http://www.
 
 <!-- insert nav object for gallery -->
 <t4 type="navigation" id="4429" />
+
+<div id="basketmessage"><div id="close" style="text-align:right;"><a onclick="hideBasketMessage();return false;" href="#">x</a></div><br /><h2>1 Course was added to your basket </h2><p><br />[Course Name]<br />[Course Date], [Course Time]<br />[Course Venue], £[Course Cost]</p><p>Your place is not confirmed until you’ve completed your booking</p><br />
+<a onclick="hideBasketMessage();return false;" href="#">Add another course</a><div style="display: inline; margin-left: 30px; margin-right: 30px;">&nbsp;</div><a onclick="openBasket();return false;" href="#">Book now</a></div>
 
 <?php // run the normal old-style output
 } else { ?>
