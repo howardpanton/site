@@ -93,7 +93,7 @@
 
               <?php } else { ?>
     
-                <img data-src="http://app.resrc.it/http://beta.arts.ac.uk<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
+                <img data-src="http://app.resrc.it/o=80/<?php echo siteURL(); ?><t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
 
               <?php } ?>
 
