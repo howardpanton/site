@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 20th Septemeber 2013 13:34
+//     Updated Thursday 19th September 2013 05:51pm
 // \*-----------------------------------------*/
 
 jQuery.fn.extend({
@@ -14,34 +14,23 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-
-// add indexOf for IE8 compatibility
-if (!Array.prototype.indexOf) {
-    Array.prototype.indexOf = function (elt /*, from*/) {
-        var len = this.length >>> 0;
-        var from = Number(arguments[1]) || 0;
-        from = (from < 0) ? Math.ceil(from) : Math.floor(from);
-        if (from < 0) from += len;
-
-        for (; from < len; from++) {
-            if (from in this && this[from] === elt) return from;
-        }
-        return -1;
-    };
-}
-
-
-
-$(".date").each(function (i, element) {
+$(".date").each( function(i, element) {
   
-  str = $( this ).text();
-  if (str.indexOf(",") != -1) {
-    $(this).text(str.substring(5,16));
+  var t = "",
+  dateString = this.textContent,
+  idx = dateString.indexOf(",");
+  
+  // if date string contains a comma, find the date bit
+  if (idx > 0) {
+    t = dateString.substr(idx + 2, 11);
+  // otherwise use what's there  
+  } else {
+    t = dateString;
   }
-
+  
+  $(this).text(t);
+  
 });
-
-
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -240,7 +229,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js', function() {
+    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -303,8 +292,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( 'http://www.arts.ac.uk/media/beta/beta-assets/js/filtrify.min.js' ),
-      $.getScript( 'http://www.arts.ac.uk/media/beta/beta-assets/js/jPages.min.js' ),
+      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/filtrify.min.js' ),
+      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -352,12 +341,10 @@ if ($('#container').length > 0) {
 
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
-    if($("body").hasClass("gDesktop")) {
     if ($(this).scrollTop() > 450) {
       $('.back-to-top').fadeIn(200);
     } else {
       $('.back-to-top').fadeOut(200);
-      }
     }
   });
 
@@ -402,7 +389,7 @@ if ($('#container').length > 0) {
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -452,7 +439,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -529,9 +516,9 @@ if ($('.credits').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://www.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -594,13 +581,13 @@ if ($('.dd-menu').length > 0) {
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
-          _d_menu.find('.js-dd-menu-icon');
+          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
             _d_menu.removeClass('active');
          });
        }
        else { 
-          _d_menu.find('.js-dd-menu-icon');
+          _d_menu.find('.js-dd-menu-icon').html("");
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
@@ -633,88 +620,67 @@ if ($('.search-filters').length > 0) {
 
 
 // Showtime JSON loader
-if ($('.showtime-json').length){
+if ($('#showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
 
-    var outputNode = $('.showtime-json');
-
-    $.each(outputNode, function(i) {
-      
-      var _node = '';  
-      _node = $(this);
-
-      var feedUrl = _node.data('url');
-      // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
-      var limit = _node.data('limit');
-
-
-      $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
-           
-         var string = '';
-         var media = '';
-         var studentName = '';
-         var profileUrl = '';
-         var counter = 0;
-                 
-         if (data.data.Student) { // this is a single Showtime profile
-           profileUrl = data.data.Student.Student.profileurl;
-           studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
-           media = data.data.Student.Media;
-         } 
-         
-         if (data.data.Profiles) { // this is a group of objects in Showtime
-           media = data.data.Profiles;
-         }
+    var feedUrl = $('#showtime-json').data('url');
+    // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
+    var limit = $('#showtime-json').data('limit');
+    
+    $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
         
-        $.each(media, function(i, item) {
+      var outputNode = $('#showtime-json');
+      var string = '';
+      var media = '';
+      var counter = 0;
+              
+      if (data.data.Student) { // this is a single Showtime profile
+        var profileUrl = data.data.Student.Student.profileurl;
+        var studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
+        media = data.data.Student.Media;
+      } 
+      
+      if (data.data.Profiles) { // this is a group of objects in Showtime
+        media = data.data.Profiles;
+      }
 
-          if (counter < limit) {
+      $.each(media, function(i, item) {
 
-            //if (item.type == 'video' || item.type == 'publication') {
-            //  item.profileImg = 'http://app.resrc.it/http://www.arts.ac.uk/media/beta/beta-colleges/beta-lcf/images/placeholder-lcf-580-4.jpg';
-            //} else {
+            if (counter < limit) {
+
               profileImg = item.thumb.split('gallery');
               item.profileImg = profileImg[0] + 'profile.jpg';
               item.zoomImg = profileImg[0] + 'screen.jpg';
-            //}
-
-            if (item.profileName) { //group
-              profileUrl = 'http://showtime.arts.ac.uk/' + item.profileName;
-              studentName = item.fullName;
-            }
-           
-           string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + studentName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
-
+      
+              string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + item.fullName + '" data-profile-url="http://showtime.arts.ac.uk/' + item.profileName + '" style="background-image: url('+item.profileImg+')"></a></li>';
             
-           _node.append(string); 
+              outputNode.append(string); 
 
-           counter++;
+              counter++;
 
-          } else {
-           return false;
-          }
-
-        }); // end each loop
-         
-        $('.zoom').magnificPopup({ 
-          type: 'image',
-          image: {
-            titleSrc: function(item) {
-              return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+            } else {
+              return false;
             }
-          },
-          gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-          } 
-        });
 
-      }); // end getJSON loop
+      }); // end each loop
+      
+      $('.zoom').magnificPopup({ 
+        type: 'image',
+        image: {
+          titleSrc: function(item) {
+            return item.el.attr('title') + ' - <a class="no-border" href="' + item.el.data('profile-url') + '">View profile</a>';
+          }
+        },
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        } 
+      });
 
-    }); // end each loop
+    }); // end getJSON loop
 
   }); // end getScript loop
   
@@ -724,7 +690,7 @@ if ($('.showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -783,8 +749,7 @@ $(".hide-content").click(function(e){
 
       $(".tab_content").hide();
       $(".tab_content:first").show();
-      // update icon for first tab item (it's opened on start by default)
-      $(".tab_drawer_heading:first").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
+      
       /* if in tab mode */
       $("ul.tabs li").click(function() {
 
@@ -803,14 +768,12 @@ $(".hide-content").click(function(e){
       /* if in drawer mode */
       $(".tab_drawer_heading").click(function() {
 
-        // close any open tabs on click and reset to a down icon
         $(".tab_content").hide();
-
         var d_activeTab = $(this).attr("rel"); 
         $("#"+d_activeTab).show();
 
-        $(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
-          $(this).addClass("d_active").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
+        $(".tab_drawer_heading").removeClass("d_active");
+          $(this).addClass("d_active");
 
         $("ul.tabs li").removeClass("active");
         $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
@@ -821,7 +784,7 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  $.getScript('http://www.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js', function() {
+  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
@@ -833,7 +796,7 @@ if ($('video').length > 0) {
 
     $('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
-      pluginPath: 'http://www.arts.ac.uk/media/beta/beta-assets/plugins/'
+      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
 
 
@@ -858,7 +821,8 @@ if ($('.kis-widget').length > 0) {
 
 
 // Add download class to PDF links
-$('a[href$=".pdf"]').addClass('download');
+$('a[href$=".pdf"]').parent().addClass('download');
+// $('.content a[href$=".html"]').parent().addClass('external');
 
   // Creating custom :external selector
   $.expr[':'].external = function(obj){
@@ -866,10 +830,12 @@ $('a[href$=".pdf"]').addClass('download');
   };
 
   // Add 'external' CSS class to all external links
-  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
+  $('a:external.button-link').addClass('external').each(function() {
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
-
+  $('.content ul li a:external').parent().addClass('external').each(function() {
+    $(this).attr("title", $(this).attr("title") + "(external link)");
+});
 
 
 

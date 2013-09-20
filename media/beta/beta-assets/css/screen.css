@@ -1,9 +1,10 @@
+@charset "UTF-8";
 		 /*-----------------------------------------*\
     //*	University of the Arts London
 		//*	CSS stylesheet
 		//*	Authors: Howard Panton, Matt Wisbey,
 		// Pete Richardson, Alastair Mucklow
-		// Updated Thursday 19th September 2013 00.32pm
+		// Updated Friday 20th September 2013 13:35pm
 \*-----------------------------------------*/
 /*------------------------------------*\
     $CONTENTS
@@ -19,7 +20,7 @@
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
-/* line 17, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,45 +42,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -223,11 +224,14 @@ questions: http://www.webtype.com
  * ^h1 ^h2
  */
 @font-face {
-  font-family: "AlternateGothic";
-  src: url('http://artslondon.github.io/beta/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.eot') format('embedded-opentype'), url('http://artslondon.github.io/beta/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.eot?#iefix') format('embedded-opentype'), url('http://artslondon.github.io/beta/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.woff') format('woff'), url('http://artslondon.github.io/beta/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.ttf') format('truetype'), url('http://artslondon.github.io/beta/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.svg#AlternateGothic') format('svg');
+  font-family: 'AlternateGothic';
+  src: url("http://www.arts.ac.uk/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.eot");
+  src: url("http://www.arts.ac.uk/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.eot?#iefix") format("embedded-opentype"), url("http://www.arts.ac.uk/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.woff") format("woff"), url("http://www.arts.ac.uk/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.ttf") format("truetype"), url("http://www.arts.ac.uk/media/beta/beta-assets/fonts/alternategothicef-noone-webfont.svg#AlternateGothic") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* line 20, ../../../../assets/styles/font-face/_alternate-gothic.scss */
+/* line 33, ../../../../assets/styles/font-face/_alternate-gothic.scss */
 .lcc h1, .lcc .size-h1, .lcc h2, .lcc h3, .lcc .footer-block h3, .lcc .__quote p, .lcc.college.home aside .stories-list ul li .date, .lcc-tabs .tabs {
   font-family: AlternateGothic;
 }
@@ -1085,7 +1089,7 @@ li.download {
 /* line 12, ../../../../assets/styles/globals/_sprites.scss */
 .ui-icons-sprite, .form-ico, input[type="checkbox"] + label:after,
 input[type="radio"] + label:after, input[type="checkbox"].before-label + label:before,
-input[type="radio"].before-label + label:before, .with-search-icon, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, .ui-icons-dashline_border_img, .ui-icons-grey-search, .with-search-icon, .with-search-icon, .ui-icons-quote_marks, blockquote span, blockquote span, .tab_container .tab-content-caption-block blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, .form-ico, input[type="checkbox"] + label:after,
+input[type="radio"].before-label + label:before, .with-search-icon, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, .ui-icons-dashline_border_img, .ui-icons-grey-search, .with-search-icon, .with-search-icon, .ui-icons-quote_marks, blockquote span, .tab_container .tab-content-caption-block blockquote span, blockquote span, .tab_container .tab-content-caption-block blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, .form-ico, input[type="checkbox"] + label:after,
 input[type="radio"] + label:after, input[type="checkbox"].before-label + label:before,
 input[type="radio"].before-label + label:before {
   background: url("http://beta.arts.ac.uk/media/beta/beta-assets/img/ui-icons-se254defc3f.png") no-repeat;
@@ -1155,7 +1159,7 @@ input[type="radio"].before-label + label:before {
 }
 
 /* line 70, ../../../../assets/styles/globals/_sprites.scss */
-.ui-icons-quote_marks, blockquote span, blockquote span, .tab_container .tab-content-caption-block blockquote span {
+.ui-icons-quote_marks, blockquote span, .tab_container .tab-content-caption-block blockquote span, blockquote span, .tab_container .tab-content-caption-block blockquote span {
   background-position: 0 -72px;
   height: 44px;
   width: 64px;
@@ -1204,12 +1208,12 @@ input[type="radio"].before-label + label:before {
  * RESET...............Set our reset defaults
  * FONT-FACE...........Import brand font files
  */
-/* line 61, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 100%;
 }
 
-/* line 64, ../../../../../../../.rvm/gems/ruby-1.8.7-p371/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 16px;
   line-height: 0.375em;
@@ -1271,7 +1275,7 @@ h1, .size-h1 {
 }
 /* line 66, ../../../../assets/styles/globals/_typography.scss */
 .csm h1, .csm .size-h1 {
-  font-family: 'Leviathan A', 'Leviathan B';
+  font-family: "Leviathan A", "Leviathan B";
   font-weight: 800;
   font-style: italic;
 }
@@ -1285,7 +1289,7 @@ h1, .size-h1 {
 
 /* line 83, ../../../../assets/styles/globals/_typography.scss */
 .csm h2 {
-  font-family: 'Leviathan A', 'Leviathan B';
+  font-family: "Leviathan A", "Leviathan B";
   font-weight: 800;
   font-style: italic;
 }
@@ -1831,49 +1835,49 @@ hr {
 
 /* line 1, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-camberwell {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-camberwell.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-camberwell.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 5, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-chelsea {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-chelsea.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-chelsea.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 9, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-csm {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-csm.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-csm.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 13, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-lcc {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-lcc.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-lcc.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 17, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-lcf {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-lcf.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-lcf.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 21, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-mobile {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-mobile.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-mobile.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 25, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual-wimbledon {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual-wimbledon.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual-wimbledon.png?1377085031');
   background-repeat: no-repeat;
 }
 
 /* line 29, ../../../../assets/styles/globals/_logos.fallback.scss */
 .icon-ual {
-  background-image: url('http://beta.arts.ac.uk/logos/png/ual.png?1377175137');
+  background-image: url('http://beta.arts.ac.uk/logos/png/ual.png?1377085031');
   background-repeat: no-repeat;
 }
 
@@ -2078,7 +2082,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2481,7 +2485,7 @@ select:focus:invalid {
   text-align: center;
   text-shadow: 0 1px 0 white;
   background-color: #c8c8c8;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 /* line 567, ../../../../assets/styles/globals/_forms.scss */
 .input-append .add-on,
@@ -3811,7 +3815,7 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 157, ../../../../assets/styles/globals/_layout.scss */
-  .l-content-full-width, #container, .two-up.l-content-full-width, .two-up.l-content-half-width, .three-up.l-content-full-width {
+  .l-content-full-width, #container, .two-up.l-content-full-width, .two-up#container, .two-up.l-content-half-width, .three-up.l-content-full-width, .three-up#container {
     display: block;
     float: left;
     margin-left: 0%;
@@ -5570,7 +5574,7 @@ li.megamenu_button_active {
   display: inline-block;
   height: 48px;
   min-width: 48px;
-  border-right: 1px solid #444;
+  border-right: 1px solid #444444;
   float: left;
 }
 /* line 596, ../../../../assets/styles/components/_nav-main-menu.scss */
@@ -6155,7 +6159,7 @@ a.course:before {
 
 /* line 134, ../../../../assets/styles/components/_search-buttons.scss */
 .search-btn-separator {
-  border-right: 1px solid #444;
+  border-right: 1px solid #444444;
 }
 
 /* line 5, ../../../../assets/styles/components/_expandable-search-input.scss */
@@ -6430,7 +6434,7 @@ input[type="text"].sb-search-input {
 }
 
 /* line 65, ../../../../assets/styles/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, .megamenu .icon.go-search-button, .megamenu a.search span.go-search-button, a.search .megamenu span.go-search-button, a.search span.button-link {
+.button-link.icon, input.icon.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, .megamenu .icon.go-search-button, .megamenu .search-pagination-btns a.go-search-button.left-arrow, .search-pagination-btns .megamenu a.go-search-button.left-arrow, .megamenu .lower-search-pagination-btns a.go-search-button.left-arrow, .lower-search-pagination-btns .megamenu a.go-search-button.left-arrow, .megamenu .search-pagination-btns a.go-search-button.right-arrow, .search-pagination-btns .megamenu a.go-search-button.right-arrow, .megamenu .lower-search-pagination-btns a.go-search-button.right-arrow, .lower-search-pagination-btns .megamenu a.go-search-button.right-arrow, .megamenu a.search span.go-search-button, a.search .megamenu span.go-search-button, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
@@ -7489,15 +7493,18 @@ a img {
 .lcc .__gallery h3 {
   border-bottom: none;
   line-height: 16px;
+  word-spacing: 0;
 }
-/* line 435, ../../../../assets/styles/components/_blocks.scss */
+/* line 436, ../../../../assets/styles/components/_blocks.scss */
 .lcc .__gallery h3 a {
   text-transform: none;
   font-size: 16px;
   font-size: 1rem;
+  line-height: 1.5em;
+  display: block;
 }
 
-/* line 444, ../../../../assets/styles/components/_blocks.scss */
+/* line 447, ../../../../assets/styles/components/_blocks.scss */
 .lcf .__media figure, .lcf .__media .video-container {
   margin-bottom: 1.5em;
 }
@@ -7698,7 +7705,7 @@ a img {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666666 \9;
+  background: #666\9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%;
 }
@@ -7838,10 +7845,10 @@ a img {
 .rsHidden {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -moz-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -o-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
 }
 
 /* Fullscreen options, very important ^^ */
@@ -8402,15 +8409,15 @@ img.rsImg {
   color: #333;
   padding: 5px 13px 6px;
   min-width: 72px;
-  border: 1px solid #D9D9DD;
-  border-right: 1px solid #f5f5f5;
+  border: 1px solid #d9d9dd;
+  border-right: 1px solid whitesmoke;
   text-decoration: none;
   background-color: #FFF;
   background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: -moz-linear-gradient(top, #fefefe, #f4f4f4);
   background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
-  -webkit-box-shadow: inset 1px 0 0 #fff;
-  box-shadow: inset 1px 0 0 #fff;
+  -webkit-box-shadow: inset 1px 0 0 white;
+  box-shadow: inset 1px 0 0 white;
   *display: inline;
   *zoom: 1;
 }
@@ -8434,7 +8441,7 @@ img.rsImg {
 
 /* line 568, ../../../../assets/styles/components/_royalslider.scss */
 .rsDefault .rsTab:active {
-  border: 1px solid #D9D9DD;
+  border: 1px solid #d9d9dd;
   background-color: #f4f4f4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
 }
@@ -8442,7 +8449,7 @@ img.rsImg {
 /* line 573, ../../../../assets/styles/components/_royalslider.scss */
 .rsDefault .rsTab.rsNavSelected {
   color: #FFF;
-  border: 1px solid #999;
+  border: 1px solid #999999;
   text-shadow: 1px 1px #838383;
   box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
   background: #ACACAC;
@@ -9936,7 +9943,7 @@ footer .copyright p {
   font-size: 0.875rem;
   color: black;
   background-color: white;
-  padding: 12px .75em 12px .75em;
+  padding: 12px 0.75em 12px 0.75em;
   border-bottom: 0;
 }
 /* line 205, ../../../../assets/styles/components/_footer.scss */
@@ -10196,10 +10203,10 @@ footer .copyright p {
   /* Safari 1.x */
   opacity: 0.5;
   /* Good browsers */
-  transition: all .5s ease-out;
-  -webkit-transition: all .5s ease-out;
-  -moz-transition: all .5s ease-out;
-  -o-transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
 /* line 204, ../../../../assets/styles/components/_carousel.scss */
 .carousel .control:hover {
@@ -11394,7 +11401,7 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   height: 10px;
   top: 1px;
   margin-left: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -11746,11 +11753,11 @@ ul.ft-menu > li.ft-field {
   text-transform: capitalize;
 }
 /* line 55, ../../../../assets/styles/components/_filtrify.scss */
-.csm ul.ft-menu > li.ft-field:nth-of-type(1) {
+.csm ul.ft-menu > li.ft-field:nth-child(1) {
   margin-bottom: 24px;
 }
 /* line 57, ../../../../assets/styles/components/_filtrify.scss */
-.csm ul.ft-menu > li.ft-field:nth-of-type(1):after {
+.csm ul.ft-menu > li.ft-field:nth-child(1):after {
   content: "Filter By Discipline";
   font-size: 24px;
   background-color: white;
@@ -12653,7 +12660,7 @@ button::-moz-focus-inner {
 /* line 346, ../../../../assets/styles/components/_magnific-popup.scss */
 .mfp-arrow-left:after,
 .mfp-arrow-left .mfp-a {
-  border-right: 17px solid #FFF;
+  border-right: 17px solid white;
   margin-left: 31px;
 }
 /* line 351, ../../../../assets/styles/components/_magnific-popup.scss */
@@ -12670,7 +12677,7 @@ button::-moz-focus-inner {
 /* line 360, ../../../../assets/styles/components/_magnific-popup.scss */
 .mfp-arrow-right:after,
 .mfp-arrow-right .mfp-a {
-  border-left: 17px solid #FFF;
+  border-left: 17px solid white;
   margin-left: 39px;
 }
 /* line 365, ../../../../assets/styles/components/_magnific-popup.scss */
@@ -13356,7 +13363,7 @@ img.mfp-img {
   -moz-border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
-  border: solid 2px #333;
+  border: solid 2px #333333;
   top: -2px;
   text-align: center;
 }
@@ -13368,7 +13375,7 @@ img.mfp-img {
   background: #eee;
   width: 36px;
   height: 17px;
-  border: solid 1px #333;
+  border: solid 1px #333333;
   top: -26px;
   margin-left: -18px;
   text-align: center;
@@ -13391,8 +13398,8 @@ img.mfp-img {
   width: 0;
   height: 0;
   line-height: 0;
-  border: solid 5px #eee;
-  border-color: #eee transparent transparent transparent;
+  border: solid 5px #eeeeee;
+  border-color: #eeeeee transparent transparent transparent;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -13659,7 +13666,7 @@ img.mfp-img {
   position: absolute;
   top: 0;
   left: 0;
-  -xborder-right: solid 1px #fff;
+  -xborder-right: solid 1px white;
   width: 10000px;
   z-index: 1;
 }
@@ -13687,8 +13694,8 @@ img.mfp-img {
   color: #fff;
   padding: 5px;
   display: block;
-  border-right: solid 1px #333;
-  border-bottom: solid 1px #333;
+  border-right: solid 1px #333333;
+  border-bottom: solid 1px #333333;
   cursor: pointer;
 }
 
@@ -13830,7 +13837,7 @@ img.mfp-img {
   top: 0;
   left: 0;
   background: #fff;
-  border: solid 1px #999;
+  border: solid 1px #999999;
   z-index: 1001;
   /* make sure it shows on fullscreen */
 }
@@ -14044,19 +14051,16 @@ img.mfp-img {
 .lcc .dd-menu-heading h3, .lcc .select-box-heading h3 {
   text-transform: none !important;
   word-spacing: 2px;
-  border-bottom: 5px solid #e9e9e9;
+  border-bottom: none;
+  line-height: 1.375;
   margin-bottom: 0;
 }
-/* line 59, ../../../../assets/styles/components/_dropdown.scss */
-.lcc .dd-menu-heading h3:hover, .lcc .select-box-heading h3:hover {
-  border-bottom: 5px solid black;
-}
-/* line 65, ../../../../assets/styles/components/_dropdown.scss */
+/* line 63, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu-heading h3:hover, .select-box-heading h3:hover {
   background-color: black;
   color: white;
 }
-/* line 70, ../../../../assets/styles/components/_dropdown.scss */
+/* line 68, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu-heading .dd-menu-arrow, .dd-menu-heading .select-box-arrow, .select-box-heading .dd-menu-arrow, .select-box-heading .select-box-arrow {
   background-color: black;
   color: white;
@@ -14067,7 +14071,7 @@ img.mfp-img {
   width: 43px;
   height: 43px;
 }
-/* line 80, ../../../../assets/styles/components/_dropdown.scss */
+/* line 78, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu-heading .dd-menu-arrow span.icon, .dd-menu-heading .dd-menu-arrow a.search span, a.search .dd-menu-heading .dd-menu-arrow span, .dd-menu-heading .select-box-arrow span.icon, .dd-menu-heading .select-box-arrow a.search span, a.search .dd-menu-heading .select-box-arrow span, .select-box-heading .dd-menu-arrow span.icon, .select-box-heading .dd-menu-arrow a.search span, a.search .select-box-heading .dd-menu-arrow span, .select-box-heading .select-box-arrow span.icon, .select-box-heading .select-box-arrow a.search span, a.search .select-box-heading .select-box-arrow span {
   position: relative;
   font-size: 20px;
@@ -14081,7 +14085,7 @@ img.mfp-img {
   margin-left: -14px;
   margin-top: -7px;
 }
-/* line 93, ../../../../assets/styles/components/_dropdown.scss */
+/* line 91, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu-heading .dd-menu-arrow span.icon:before, .dd-menu-heading .dd-menu-arrow a.search span:before, a.search .dd-menu-heading .dd-menu-arrow span:before, .dd-menu-heading .select-box-arrow span.icon:before, .dd-menu-heading .select-box-arrow a.search span:before, a.search .dd-menu-heading .select-box-arrow span:before, .select-box-heading .dd-menu-arrow span.icon:before, .select-box-heading .dd-menu-arrow a.search span:before, a.search .select-box-heading .dd-menu-arrow span:before, .select-box-heading .select-box-arrow span.icon:before, .select-box-heading .select-box-arrow a.search span:before, a.search .select-box-heading .select-box-arrow span:before {
   position: absolute;
   top: 18px;
@@ -14090,12 +14094,12 @@ img.mfp-img {
   height: 43px;
   width: 43px;
 }
-/* line 105, ../../../../assets/styles/components/_dropdown.scss */
+/* line 103, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu.active .dd-menu-heading .dd-menu-arrow span.icon:before, .dd-menu.active .dd-menu-heading .dd-menu-arrow a.search span:before, a.search .dd-menu.active .dd-menu-heading .dd-menu-arrow span:before, .dd-menu.active .dd-menu-heading .select-box-arrow span.icon:before, .dd-menu.active .dd-menu-heading .select-box-arrow a.search span:before, a.search .dd-menu.active .dd-menu-heading .select-box-arrow span:before, .dd-menu.active .select-box-heading .dd-menu-arrow span.icon:before, .dd-menu.active .select-box-heading .dd-menu-arrow a.search span:before, a.search .dd-menu.active .select-box-heading .dd-menu-arrow span:before, .dd-menu.active .select-box-heading .select-box-arrow span.icon:before, .dd-menu.active .select-box-heading .select-box-arrow a.search span:before, a.search .dd-menu.active .select-box-heading .select-box-arrow span:before {
   content: '\e806';
 }
 
-/* line 116, ../../../../assets/styles/components/_dropdown.scss */
+/* line 114, ../../../../assets/styles/components/_dropdown.scss */
 .dd-menu.siblings ul li {
   padding-left: 0;
 }
@@ -14117,7 +14121,7 @@ img.mfp-img {
 /* line 12, ../../../../assets/styles/globals/_debug.scss */
 #grid div.horiz {
   height: 24px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   margin: 0;
   padding: 0;
 }
