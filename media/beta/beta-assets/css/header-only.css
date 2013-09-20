@@ -836,7 +836,8 @@ hr {
   content: '\e811';
 }
 
-/* line 1, ../../../../assets/styles/globals/_logos.scss */
+/* Print full logo file here because we're modifying it */
+/* line 11, ../../../../assets/styles/header-only.scss */
 .ual-logo-desktop .icon-ual, .ual-logo-desktop .icon-ual-wimbledon, .ual-logo-desktop .icon-ual-lcf,
 .ual-logo-desktop .icon-ual-lcc, .ual-logo-desktop .icon-ual-csm, .ual-logo-desktop .icon-ual-chelsea,
 .ual-logo-desktop .icon-ual-camberwell {
@@ -849,43 +850,20 @@ hr {
   left: 12px;
 }
 
-/* line 11, ../../../../assets/styles/globals/_logos.scss */
-.ual-logo-tab-mobile .icon-ual-mobile, .docs-logo .icon-ual-mobile, .style-guide .ual-logo-tab-mobile, .style-guide .docs-logo {
-  width: 54px;
-  height: 36px;
-  display: block;
-  background-position: 0% 0%;
-  margin-top: 0.375em;
-  margin-bottom: 0.375em;
-}
-
 @media only screen and (min-width: 960px) {
-  /* line 21, ../../../../assets/styles/globals/_logos.scss */
+  /* line 21, ../../../../assets/styles/header-only.scss */
   .ual-logo-tab-mobile, .docs-logo {
     display: none;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 26, ../../../../assets/styles/globals/_logos.scss */
+  /* line 26, ../../../../assets/styles/header-only.scss */
   .style-guide .ual-logo-tab-mobile, .style-guide .docs-logo {
     display: block;
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 35, ../../../../assets/styles/globals/_logos.scss */
-  .ual-logo-desktop {
-    display: none;
-  }
-}
-@media only screen and (max-width: 599px) {
-  /* line 35, ../../../../assets/styles/globals/_logos.scss */
-  .ual-logo-desktop {
-    display: none;
-  }
-}
-
-/* line 48, ../../../../assets/styles/globals/_logos.scss */
+/* line 45, ../../../../assets/styles/header-only.scss */
 .logo {
   display: block;
   float: left;
@@ -896,14 +874,14 @@ hr {
   padding-bottom: 1.5em;
 }
 @media only screen and (min-width: 600px) and (max-width: 959px) {
-  /* line 48, ../../../../assets/styles/globals/_logos.scss */
+  /* line 45, ../../../../assets/styles/header-only.scss */
   .logo {
     margin-bottom: 0px;
     padding-left: 12px;
   }
 }
 @media only screen and (max-width: 599px) {
-  /* line 48, ../../../../assets/styles/globals/_logos.scss */
+  /* line 45, ../../../../assets/styles/header-only.scss */
   .logo {
     clear: both;
     display: block;
@@ -913,11 +891,11 @@ hr {
     margin-bottom: 0px;
   }
 }
-/* line 94, ../../../../assets/styles/globals/_logos.scss */
+/* line 62, ../../../../assets/styles/header-only.scss */
 .logo img {
   max-width: none;
 }
-/* line 98, ../../../../assets/styles/globals/_logos.scss */
+/* line 66, ../../../../assets/styles/header-only.scss */
 .service-manual .logo {
   display: block;
   float: left;
@@ -926,6 +904,7 @@ hr {
   width: 4.25848%;
 }
 
+/* end full logo file */
 /* line 5, ../../../../assets/styles/globals/_utilities.scss */
 .relative {
   position: relative;
@@ -1987,57 +1966,39 @@ aside.no-bg {
   border-bottom: dotted 1px white;
 }
 
-/* line 1, ../../../../assets/styles/components/_breadcrumbs.scss */
+/* Print full breadcrumbs file here because we're modifying it */
+/* line 80, ../../../../assets/styles/header-only.scss */
 .breadcrumbs {
   width: 100%;
   background-color: #e9e9e9;
   padding-top: 10px;
-  margin-bottom: 0.75em;
+  margin-bottom: 0em;
+  display: inline-block;
+  padding-left: 2px;
 }
-/* line 6, ../../../../assets/styles/components/_breadcrumbs.scss */
+/* line 87, ../../../../assets/styles/header-only.scss */
 .breadcrumbs a {
   display: inline-block;
   padding-right: 18px;
   padding-bottom: 6px;
-  padding-left: 6px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAX0lEQVR42qXSMRHAIBBEUQRQICECERA5kYKEnKLjfpWO3ZkUfwvmDQ20iFjVk5ntFHBUr8KMhRkLMxZmLMxYmJG46hye8FVldTs3UnfQ4MxCZCESSLz1v9+j0QenQrQBXBAW7noKn+MAAAAASUVORK5CYII=);
   background-repeat: no-repeat;
   background-position: right 0px;
   color: #373737;
-  line-height: 1.5em;
-  font-size: 14px;
-  font-size: 0.875rem;
-  margin-top: 0.375em;
   border-bottom: none;
   word-wrap: break-word;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 18px;
+  background-position: right 0px;
+  margin-top: 0em;
 }
-@media only screen and (min-width: 960px) {
-  /* line 1, ../../../../assets/styles/components/_breadcrumbs.scss */
-  .breadcrumbs {
-    clear: both;
-    display: block;
-    float: left;
-    margin-left: 0;
-    width: 100%;
-    margin-bottom: 0em;
-    display: inline-block;
-    padding-left: 2px;
-    background-color: #e9e9e9;
-  }
-  /* line 36, ../../../../assets/styles/components/_breadcrumbs.scss */
-  .breadcrumbs a {
-    font-size: 13px;
-    font-size: 0.8125rem;
-    line-height: 18px;
-    background-position: right 0px;
-    margin-top: 0em;
-  }
-  /* line 41, ../../../../assets/styles/components/_breadcrumbs.scss */
-  .breadcrumbs a:first-child {
-    padding-left: 0;
-  }
+/* line 102, ../../../../assets/styles/header-only.scss */
+.breadcrumbs a:first-child {
+  padding-left: 0;
 }
 
+/* end full breadcrumbs file */
 /* line 1, ../../../../assets/styles/components/_panels.scss */
 .panel {
   width: 100%;
@@ -2114,13 +2075,7 @@ aside.no-bg {
   clear: both;
 }
 
-/* line 16, ../../../../assets/styles/header-only.scss */
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-/* line 21, ../../../../assets/styles/header-only.scss */
+/* line 112, ../../../../assets/styles/header-only.scss */
 a {
   color: #FFF;
   text-decoration: none;
@@ -2128,26 +2083,26 @@ a {
   border-bottom: 1px dotted #FFF;
 }
 
-/* line 28, ../../../../assets/styles/header-only.scss */
+/* line 119, ../../../../assets/styles/header-only.scss */
 .ual-banner-menu {
   padding-top: 0.75em;
 }
 
-/* line 32, ../../../../assets/styles/header-only.scss */
+/* line 123, ../../../../assets/styles/header-only.scss */
 .college-link-menu {
   position: absolute;
   top: 10px;
   right: 0;
   font-size: 14px;
 }
-/* line 37, ../../../../assets/styles/header-only.scss */
+/* line 128, ../../../../assets/styles/header-only.scss */
 .college-link-menu ul {
   list-style-type: none;
   padding-top: 6px;
   margin-left: 0;
 }
 
-/* line 44, ../../../../assets/styles/header-only.scss */
+/* line 135, ../../../../assets/styles/header-only.scss */
 .logo-ual {
   width: 270px;
   height: 96px;
