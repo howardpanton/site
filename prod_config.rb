@@ -2,7 +2,11 @@
 require 'compass'
 
 # Set this to the root of your project when deployed:
-http_path = "http://beta.arts.ac.uk"
+#  Edit path to www.arts.ac.uk
+http_path = "http://www.arts.ac.uk"
+
+
+
 css_dir = "media/beta/beta-assets/css"
 sass_dir = "assets/styles"
 fonts_dir = "media/beta/beta-assets/fonts"
@@ -10,6 +14,7 @@ javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
 
+# Run the commmand below
 # compass compile -c prod_config.rb --force
 # 
 # You can select your preferred output style here (can be overridden via the command line):
@@ -19,7 +24,8 @@ output_style = :compressed
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://beta.arts.ac.uk"
+#  Edit path to www.arts.ac.uk
+http_images_path = "http://www.arts.ac.uk"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
