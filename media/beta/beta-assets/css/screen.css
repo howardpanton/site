@@ -1412,7 +1412,7 @@ aside ul li, .l-content ul li {
 }
 
 /* line 237, ../../../../assets/styles/globals/_typography.scss */
-aside p {
+aside p, aside li {
   font-size: 14px;
   font-size: 0.875rem;
 }
@@ -6725,21 +6725,25 @@ input[type="text"].sb-search-input {
 .csm img {
   border-bottom: 2px solid #d10000;
 }
-/* line 7, ../../../../assets/styles/components/_images.scss */
+/* line 6, ../../../../assets/styles/components/_images.scss */
 .csm.college.home img {
   border-bottom: 0px;
 }
-/* line 10, ../../../../assets/styles/components/_images.scss */
+/* line 9, ../../../../assets/styles/components/_images.scss */
 .lcc img {
   border: 4px solid black;
 }
-/* line 14, ../../../../assets/styles/components/_images.scss */
+/* line 12, ../../../../assets/styles/components/_images.scss */
+img .lcc .royalSlider {
+  border: 0 none;
+}
+/* line 15, ../../../../assets/styles/components/_images.scss */
 a img {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-/* line 22, ../../../../assets/styles/components/_images.scss */
+/* line 23, ../../../../assets/styles/components/_images.scss */
 .resrc {
   width: 100%;
 }
@@ -7501,7 +7505,7 @@ a img {
 }
 
 /* line 447, ../../../../assets/styles/components/_blocks.scss */
-.lcf .__media figure {
+.lcf .__media figure, .lcf .__media .video-container {
   margin-bottom: 1.5em;
 }
 
@@ -11171,6 +11175,26 @@ ul.vcard .fn a, ul.vcard .phone a, ul.vcard .email a, ul.vcard .title a, ul.vcar
   display: block;
 }
 
+/* line 1, ../../../../assets/styles/components/_embed.scss */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 11, ../../../../assets/styles/components/_embed.scss */
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* The important stuff */
 /* line 114, ../../../../assets/styles/components/_tables.scss */
 .table-container {
@@ -11729,11 +11753,11 @@ ul.ft-menu > li.ft-field {
   text-transform: capitalize;
 }
 /* line 55, ../../../../assets/styles/components/_filtrify.scss */
-.csm ul.ft-menu > li.ft-field:nth-of-type(1) {
+.csm ul.ft-menu > li.ft-field:nth-child(1) {
   margin-bottom: 24px;
 }
 /* line 57, ../../../../assets/styles/components/_filtrify.scss */
-.csm ul.ft-menu > li.ft-field:nth-of-type(1):after {
+.csm ul.ft-menu > li.ft-field:nth-child(1):after {
   content: "Filter By Discipline";
   font-size: 24px;
   background-color: white;

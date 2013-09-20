@@ -1,5 +1,6 @@
 <?php 
 
+// detect environment - either cms or live
 function environment() {
 	
 	// get the value of the server uri
@@ -14,6 +15,15 @@ function environment() {
 	return $environment;
 }
 
+// set global optimisation factor for resrc.it images (not yet implemented)
+function get_img_opt() {
+
+	$opt = '60';
+	return $opt;
+
+}
+
+// print base URL
 function siteURL() {
 	$siteURL = 'http';
 	if ($_SERVER["HTTPS"] == "on") {$siteURL .= "s";}

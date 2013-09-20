@@ -8,20 +8,34 @@ template: true
 <div class="content-wrapper">
 
 	<div class="row">
-		<div class="content">
-			<div class="text-block-aside">
-				<div class="text">
-					<h2>Take a tour</h2>
-					<ul>
-						<li><a href="pages/1102.html" title="">Tour 1</a></li>
-						<li><a href="pages/1111.html" title="">Tour 2</a></li>
-						<li><a href="pages/1125.html" title="">Tour 3</a></li>
-						<li><a href="pages/1155.html" title="">Tour 4</a></li>
-					</ul>	
-				</div>
-				
-			</div>	
-		</div>		
-	</div>
+		<nav class="sidebar">
+			{% include _lcf_navigation.html %}		
+		</nav>	
 
+		<div role="main" class="content">
+
+			<div class="row">
+						<div class="text-block-aside">
+							<div class="text">
+								<h2>Take a tour</h2>
+								<ul>
+									<li><a href="pages/1102.html" title="">Tour 1</a></li>
+									<li><a href="pages/lcf-2.html" title="">Tour 2</a></li>
+									<li><a href="pages/1125.html" title="">Tour 3</a></li>
+									<li><a href="pages/1155.html" title="">Tour 4</a></li>
+								</ul>	
+							</div>
+						</div>
+			</div>
+			<div class="row">			
+				<div class="l-content-full-width  block  block-item">
+					<div class="embed-container">
+						<iframe src="http://beta.arts.ac.uk/csm/about-csm/facilities/virtual-tours/canteen/" scrolling="no" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
 </div>
