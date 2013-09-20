@@ -51,6 +51,15 @@
       @include font-size(14);
       padding: 12px 18px;
       @extend %Swiss721BT-Bold-important;
+      .lcc & {
+        text-transform: none !important;
+        word-spacing: 2px; 
+        border-bottom: 5px solid $bg-gray;
+        margin-bottom: 0;
+        &:hover {
+          border-bottom: 5px solid $black;
+        }
+      }
   }
 
   h3:hover {

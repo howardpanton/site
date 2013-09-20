@@ -29,7 +29,10 @@
   &:last-child li.active { 
     ul { border-bottom: 0; }
   }
-
+  
+  &:first-of-type {
+    @include padding-leader(2);
+  }
   h3 {
       @extend .size-h4;
       @extend %Swiss721BT-Medium;
