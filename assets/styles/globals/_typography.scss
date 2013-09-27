@@ -481,19 +481,31 @@ b, strong, h2, h3, h4 {
 .icon-social { font-family: "fontello"; }
 
 // add a PDF icon to links to a PDF download
-.l-content ul.download,  {
-  padding-left: 0px;
-  margin-left: 0px;
-  list-style-type: none;
-  a:before {
-    @extend %icon;
-    @include font-size(16);
-    min-width: 1.3em; 
-    display: inline-block;
-    content: '\e808';
-    padding-right: 0;
-  }
-}
+// .l-content ul.download,  {
+//   padding-left: 0px;
+//   margin-left: 0px;
+//   list-style-type: none;
+//   a:before {
+//     @extend %icon;
+//     @include font-size(16);
+//     min-width: 1.3em; 
+//     display: inline-block;
+//     content: '\e808';
+//     padding-right: 0;
+//   }
+// }
+
+// // positioning for download link icons
+// .download:before {
+// 	min-width: 1.5em;
+// 	padding-right: 0.65em;
+// 	margin-left: 1px;
+// }
+
+// // hide external link after download links
+// .download.external:after, .download.external.button-link:after {
+// 	display: none;
+// }
 
 // add icon to any external links within l-content or aside
 .l-content .external:after, aside .external:after{
@@ -525,7 +537,6 @@ b, strong, h2, h3, h4 {
 	text-decoration: none;
 }
 
-
 .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before { content: '\e816'; }
 
 .l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before { content: '\e817'; }
@@ -542,13 +553,54 @@ b, strong, h2, h3, h4 {
 
 .l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before { content: '\e82e'; }
 
-.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before { content: '\e81d'; }
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before { content: '\e834'; }
 
 .l-content a[href*="github."]:before, aside a[href*="github"]:before { content: '\e81d'; }
 
 .l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; } 
 
+// pdf and doc link icons
+.l-content a[href$=".pdf"]:before, .l-content a[href$=".doc"]:before, 
+aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
+	content: '\e808';
+	min-width: 1.5em;
+	padding-right: 0.65em;
+	margin-left: 1px;
+}
+// icon alignment tweaks
+.l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before {
+	margin-right: -5px;
+	margin-left: 3px;
+}
+// icon alignment tweaks
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before,
+.l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before {
+	margin-right: -3px;
+	margin-left: 2px;
+}
+// icon alignment tweaks
+.l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before {
+	margin-right: -1px;
+	margin-left: 1px;
+}
 
+
+// don't show external link icon on links with social media icons
+.l-content a[href*="facebook"].external:after, aside a[href*="facebook"].external:after,
+.l-content a[href*="twitter"].external:after, aside a[href*="twitter"].external:after,
+.l-content a[href*="flickr"].external:after, aside a[href*="flickr"].external:after,
+.l-content a[href*="youtube"].external:after, aside a[href*="youtube"].external:after,
+.l-content a[href*="linkedin"].external:after, aside a[href*="linkedin"].external:after,
+.l-content a[href*="tumblr"].external:after, aside a[href*="tumblr"].external:after,
+.l-content a[href*="vimeo"].external:after, aside a[href*="vimeo"].external:after,
+.l-content a[href*="pinterest"].external:after, aside a[href*="pinterest"].external:after,
+.l-content a[href*="plus.google"].external:after, aside a[href*="plus.google"].external:after,
+.l-content a[href*="github."].external:after, aside a[href*="github"].external:after,
+.l-content a[href^="mailto"].external:after, aside a[href^="mailto"].external:after,
+.l-content a[href$=".pdf"]:after, .l-content a[href$=".doc"]:after, 
+aside a[href$=".pdf"]:after, aside a[href$=".doc"]:after  {
+	display: none;
+}
 
 
 
