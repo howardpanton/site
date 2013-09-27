@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 20th September 2013 14:38pm
+//     Updated Thursday 19th September 2013 15:46pm
 // \*-----------------------------------------*/
 
 jQuery.fn.extend({
@@ -15,30 +15,11 @@ jQuery.fn.extend({
 // --------------------------------------------------
 
 
-// add indexOf for IE8 compatibility
-if (!Array.prototype.indexOf) {
-    Array.prototype.indexOf = function (elt /*, from*/) {
-        var len = this.length >>> 0;
-        var from = Number(arguments[1]) || 0;
-        from = (from < 0) ? Math.ceil(from) : Math.floor(from);
-        if (from < 0) from += len;
-
-        for (; from < len; from++) {
-            if (from in this && this[from] === elt) return from;
-        }
-        return -1;
-    };
-}
-
-
-
 $(".date").each(function (i, element) {
   
   str = $( this ).text();
-  if (str.indexOf(",") != -1) {
-    $(this).text(str.substring(5,16));
-  }
 
+  $(this).text(str.substring(5,16));
 });
 
 
