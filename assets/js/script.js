@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 20th September 2013 14:38pm
+//     Updated Tuesday 1st October 2013 15:55pm
 // \*-----------------------------------------*/
 
 jQuery.fn.extend({
@@ -11,6 +11,10 @@ jQuery.fn.extend({
   var x = jQuery(this).offset().top - 100;
   jQuery('html,body').animate({scrollTop: x}, 500);
 }});
+
+$.ajaxSetup({
+  cache: true
+});
 
 // --------------------------------------------------
 
@@ -239,7 +243,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.review-1.0.0.min.js', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -302,8 +306,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/filtrify.min.js' ),
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/jPages.min.js' ),
+      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/filtrify.min.js' ),
+      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -367,41 +371,11 @@ if ($('#container').length > 0) {
     $('html, body').animate({scrollTop: 0}, 300);
   });
 
-
-
-  // detect megamenu 
-
-  // if ($('.megamenu_container').length > 0) {
-
-  //     $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu.js" ),
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-  //             $('.megamenu').megaMenuCompleteSet({
-  //             menu_speed_show : 300, // Time (in milliseconds) to show a drop down
-  //             menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
-  //             menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
-  //             menu_effect : 'click_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-  //             menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-  //             menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-  //             menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-  //             });
-  //   });
-
-
-  // }
-
-  
-
-
   // detect slider component
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -451,7 +425,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -479,11 +453,6 @@ if ($('#container').length > 0) {
             pauseOnHover: true
           }
         });
-
-        // var slider = _this.data('royalSlider');
-        // slider.ev.on('rsAfterContentSet', function(e, object) {
-        //   resrc.resrcAll();
-        // });
 
       });
 
@@ -528,9 +497,9 @@ if ($('.credits').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -635,7 +604,7 @@ if ($('.search-filters').length > 0) {
 if ($('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
     var outputNode = $('.showtime-json');
 
@@ -723,7 +692,7 @@ if ($('.showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -820,7 +789,7 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
@@ -828,7 +797,7 @@ if ($('.__media').length > 0) {
 
 if ($('video').length > 0) {
 
-  $.getScript('https://raw.github.com/johndyer/mediaelement/master/build/mediaelement-and-player.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/mediaelement-and-player.js', function() {
 
     $('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
@@ -881,52 +850,9 @@ $('.debug-toggle').click(function(e) {
 
 $('.lcf').find('h2').wrapInner('<span />');
 
-//$('.lcf').find('.__media').find('h2').wrapInner('<span />');
-
-
-
 }); // end document ready
 
 
-
- // // Add download class to PDF links
- //  var pdf = $('a[href$=".pdf"]');
-
- //  if ( pdf.length > 0 && pdf.parent("li").length > 0) {
- //    pdf.closest("li").addClass('download');
- //  }
-
-
- 
-
-
-
-////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
-
-/* 
-jQuery.fitHeights by Paravel™
-
-Author: Dave Rupert
-Author URL: http://daverupert.com/
-Based on: https://github.com/filamentgroup/jQuery-Equal-Heights 
-
-//  example initialise code
-//
-//   $(window).load(function(){
-//      // $(groupOfItems).fitHeights(); 
-//      $('ul li').fitHeights();
-//    });
-*/
 (function(){
   
   $.fn.fitHeights = function() {

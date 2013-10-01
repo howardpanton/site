@@ -3,13 +3,13 @@ require 'compass'
 
 # Set this to the root of your project when deployed:
 #  Edit path to www.arts.ac.uk
-http_path = "http://www.arts.ac.uk"
+http_path = "http://dcdgag63wc396.cloudfront.net"
 
 
 
-css_dir = "media/beta/beta-assets/css"
+css_dir = "assets/css"
 sass_dir = "assets/styles"
-fonts_dir = "media/beta/beta-assets/fonts"
+fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
 images_dir = "assets/img/"
 
@@ -25,7 +25,7 @@ output_style = :compressed
 #relative_assets = true
 
 #  Edit path to www.arts.ac.uk
-http_images_path = "http://www.arts.ac.uk"
+http_images_path = "http://dcdgag63wc396.cloudfront.net"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
