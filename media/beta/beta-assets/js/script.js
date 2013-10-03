@@ -1,11 +1,10 @@
-//*-----------------------------------------*\
-    //* University of the Arts London
-    //* Script.js
-    //* Authors: Howard Panton, Matt Wisbey,
-    // Pete Richardson, Alastair Mucklow
-    // Updated Monday 16th September 2013
-//\*-----------------------------------------*/
-
+// *-----------------------------------------*\
+//     * University of the Arts London
+//     * Script.js
+//     * Authors: Howard Panton, Matt Wisbey,
+//     Pete Richardson, Alastair Mucklow
+//     Updated Friday 20th September 2013 14:38pm
+// \*-----------------------------------------*/
 
 jQuery.fn.extend({
   scrollToMe: function () {
@@ -15,23 +14,33 @@ jQuery.fn.extend({
 
 // --------------------------------------------------
 
-$(".date").each( function(i, element) {
+
+// add indexOf for IE8 compatibility
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (elt /*, from*/) {
+        var len = this.length >>> 0;
+        var from = Number(arguments[1]) || 0;
+        from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+        if (from < 0) from += len;
+
+        for (; from < len; from++) {
+            if (from in this && this[from] === elt) return from;
+        }
+        return -1;
+    };
+}
+
+
+
+$(".date").each(function (i, element) {
   
-  var t = "",
-  dateString = this.textContent,
-  idx = dateString.indexOf(",");
-  
-  // if date string contains a comma, find the date bit
-  if (idx > 0) {
-    t = dateString.substr(idx + 2, 11);
-  // otherwise use what's there  
-  } else {
-    t = dateString;
+  str = $( this ).text();
+  if (str.indexOf(",") != -1) {
+    $(this).text(str.substring(5,16));
   }
-  
-  $(this).text(t);
-  
+
 });
+
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -40,8 +49,10 @@ $(".date").each( function(i, element) {
   var Link_study_3 = $(".study-nav").find("li").slice(16, 19);
   var Link_student = $(".student-nav").find("li").slice(3, 4);
   var Link_alumni = $(".alumni-nav").find("li").slice(4, 6);
-  var Link_about = $(".about-nav").find("li").slice(5, 9);
-  var Link_about_1 = $(".about-nav").find("li").slice(9, 11);
+  var Link_about = $(".about-nav").find("li").slice(6, 11);
+  var Link_about_1 = $(".about-nav").find("li").slice(11, 16);
+  var Link_about_2 = $(".about-nav").find("li").slice(16, 19);
+  var Link_industry = $('.industry-nav').find("li").slice(4,7);
 
 
   Link_col.remove();
@@ -52,6 +63,8 @@ $(".date").each( function(i, element) {
   Link_alumni.remove();
   Link_about.remove();
   Link_about_1.remove();
+  Link_about_2.remove();
+  Link_industry.remove();
   //console.log(Link_study_3);
 
   $( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
@@ -78,11 +91,16 @@ $(".date").each( function(i, element) {
   $( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
   $('.about-nav .subnav-3').prepend(Link_about_1);
 
+    $( ".about-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
+  $('.about-nav .subnav-4').prepend(Link_about_2);
+
+  $( ".industry-nav" ).append("<ul class=\"subnav-2 no-pad-top region\">");
+  $('.industry-nav .subnav-2').prepend(Link_industry);
 
 function checkWindowSize() {
   var width = $(window).width(),
-  new_class = width > 850 ? 'gDesktop' :
-              width > 600 ? 'gTablet' :
+  new_class = width > 959 ? 'gDesktop' :
+              width > 599 ? 'gTablet' :
               width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
@@ -132,7 +150,8 @@ function enableSelectBoxes() {
   });       
 }
 
-//////////////////////
+
+/////////////////////
 // ON DOCUMENT READY 
 /////////////////////
 $(document).ready(function(){
@@ -215,7 +234,7 @@ $(document).ready(function(){
         $('#mobile-sidebar li a').first().text('College Homepage');
       }
     }
-  } // end if $(.sidebar) > 0
+  } // end
 
 
 // LazyLoading with ReSRC.it images
@@ -300,8 +319,8 @@ if ($('#container').length > 0) {
             containerID : "container",
             perPage : 24,
             midRange : 1,
-            previous : "←",
-            next : "→",
+            previous : "â†",
+            next : "â†’",
             direction : "auto",
             animation : "fadeInUp"
  
@@ -333,10 +352,10 @@ if ($('#container').length > 0) {
   // fade in button when user scrolls down the page
   $(window).scroll(function() {
     if($("body").hasClass("gDesktop")) {
-      if ($(this).scrollTop() > 450) {
-        $('.back-to-top').fadeIn(200);
-      } else {
-        $('.back-to-top').fadeOut(200);
+    if ($(this).scrollTop() > 450) {
+      $('.back-to-top').fadeIn(200);
+    } else {
+      $('.back-to-top').fadeOut(200);
       }
     }
   });
@@ -480,7 +499,7 @@ if ($('#container').length > 0) {
 
   // Show image credits button fixed to the right of the screen on Desktop only
   
-  if ($('.credits').length > 0) {
+if ($('.credits').length > 0) {
 
 
       //only show credits on desktop 
@@ -492,10 +511,10 @@ if ($('#container').length > 0) {
         
           var c = $(this);
           if (c.hasClass('active') ) {
-            c.removeClass('active').attr('title','Hide image credits');
+            c.removeClass('active').attr('title','Show image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').attr('title','Show image credits');;
+            c.addClass('active').attr('title','Hide image credits');;
             $('.credits').fadeIn();
           }
         });
@@ -529,7 +548,7 @@ if ($('.accordion').length > 0) {
       $( ".accordion-list-item" ).each(function (e) {
         var _li_item = $(this); 
         if ( _li_item.hasClass('st-open') ) {
-            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"], });
+            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
         }
       });
     }
@@ -822,8 +841,6 @@ if ($('video').length > 0) {
 }
 
 
-
-
 // KIS WIDGET
 if ($('.kis-widget').length > 0) {
   (function (d) {
@@ -838,11 +855,6 @@ if ($('.kis-widget').length > 0) {
 }
 
 
-
-// Add download class to PDF links
-$('a[href$=".pdf"]').addClass('download');
-// $('.content a[href$=".html"]').parent().addClass('external');
-
   // Creating custom :external selector
   $.expr[':'].external = function(obj){
       return (obj.hostname != location.hostname);
@@ -853,9 +865,6 @@ $('a[href$=".pdf"]').addClass('download');
     $(this).attr("title", $(this).attr("title") + "(external link)");
 });
 
-//   $('.l-content ul li a:external').parent().addClass('external').each(function() {
-//     $(this).attr("title", $(this).attr("title") + "(external link)");
-// });
 
 
 
@@ -901,7 +910,7 @@ $('.lcf').find('h2').wrapInner('<span />');
 
 
 /* 
-jQuery.fitHeights by Paravel™
+jQuery.fitHeights by Paravelâ„¢
 
 Author: Dave Rupert
 Author URL: http://daverupert.com/
@@ -970,4 +979,3 @@ $(window).load(function(){
   }
 
 });
-

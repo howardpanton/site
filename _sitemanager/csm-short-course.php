@@ -12,31 +12,32 @@ $materials_accordion = $test->materials();
 $shortCourse = TRUE;
 
 // tutors data
+
 $tutors = $test->getTutors();
 $tutor_description = $test->getTutorsBiography();
 $pid_check = $test->companyId ;
 switch ($pid_check) {
-	case 'LCC':
-		$pid = 'lcc';
-		break;
-	case 'CSM':
-		$pid = 'csm';
-		break;
-	case 'LCF':
-		$pid = 'lcf';
-		break;
-	case 'CHELSEA':
-		$pid = 'chelsea';
-		break;
-	case 'WIMB':
-		$pid = 'wimb';
-		break;
-	case 'CAMB':
-		$pid = 'camb';
-		break;
-	default:
-		$pid = '';
-		break;
+  case 'LCC':
+    $pid = 'lcc';
+    break;
+  case 'CSM':
+    $pid = 'csm';
+    break;
+  case 'LCF':
+    $pid = 'lcf';
+    break;
+  case 'CHELSEA':
+    $pid = 'chelsea';
+    break;
+  case 'WIMB':
+    $pid = 'wimb';
+    break;
+  case 'CAMB':
+    $pid = 'camb';
+    break;
+  default:
+    $pid = '';
+    break;
 }
 ?>
 
@@ -44,15 +45,7 @@ switch ($pid_check) {
   <div class="l-content  block  __text  __with-aside">
         <!-- Return description from XML file -->
       <p class="leader"><?php echo $description; ?></p>
-
-      	<?php // Return optional tutor information, will need to add a conditional element in site manager
-      	if ($tutors != "") { ?>
-	 	<p class="tutor">
-	  	<strong>Taught by: </strong>
-	  		<?php echo $tutors; ?>
-	 	</p>
-	 	<?php } ?>
-
+         <?php $test->getTutors(); ?>
    </div>
      <aside>
         <h4>My Account</h4>
@@ -105,7 +98,7 @@ switch ($pid_check) {
 <?php 
 if (!empty ($t)) { ?>
          <div class="table-container">
-	  <table class="data-table" >
+    <table class="data-table" >
   <tr>
     <th>Date</th>
     <th>Day of Week</th>
@@ -187,7 +180,7 @@ if(strtolower($date["status"]) != "cancelled") {
     ?>
 
                                                     
-						<td ><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($title);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
+            <td ><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($title);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
 <?php 
     if ( $date["bookable"] == 'false' ) {
       echo "-->";
@@ -204,10 +197,10 @@ if(strtolower($date["status"]) != "cancelled") {
 ?>
 </table>
           </div>
-<?php if ($test->companyId == "CSM") : ?>
+<?php if ($test->companyId == "csm") : ?>
   <p>Alternative Dates and Times<br />
 Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
-or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
+or there are no dates showing for this session, then please <a href="http://www.arts.ac.uk/csm/courses/short-courses/browse-short-courses/">choose an alternative session</a>.</p>
 
 <?php endif ?>
             <?php 
@@ -215,7 +208,7 @@ or there are no dates showing for this session, then please <a href="http://www.
     } // End of CSM dates box
 
     else {
-    	echo "<p>There are no dates available please contact the college for any future dates.</p>";
+      echo "<p>There are no dates available please contact the college for any future dates.</p>";
     }
     ?>
 
@@ -248,9 +241,9 @@ width: 170px;
 <?php
 
 if(isset($_GET['errors'])){
-	ini_set('display_errors',1); 
-	ini_set('error_reporting', E_ALL); 
-	error_reporting(E_ALL);
+  ini_set('display_errors',1); 
+  ini_set('error_reporting', E_ALL); 
+  error_reporting(E_ALL);
 }
 
 function courseDatesCache($courseids="", $companyid=""){
@@ -298,18 +291,18 @@ function courseDatesCache($courseids="", $companyid=""){
 $xml = @simplexml_load_string(courseDatesCache('<t4 type="content" name="Course ID" output="normal" modifiers="htmlentities"  />', '<t4 type="navigation" id="149"/>'));
 
 ?>
-	<ul id="tab-buttons" class="mootabs_title">
+  <ul id="tab-buttons" class="mootabs_title">
     <li title="glance"><a href="#glance">At a Glance</a></li>
     <li title="materials"><a href="#materials">Materials</a></li>
           
-          	<?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm <> 'csm' ) {
-			?>
+            <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm <> 'csm' ) {
+      ?>
     <li title="course-booking"><a href="#course-booking">Dates &amp; Prices</a></li>
-          	<?php 	
-			}  // End of Dates and Prices tab
-			?>
+            <?php   
+      }  // End of Dates and Prices tab
+      ?>
 </ul>
 
 <div id="glance" class="course-tab mootabs_panel section-<t4 type="navigation" id="143"/>">
@@ -317,32 +310,32 @@ $xml = @simplexml_load_string(courseDatesCache('<t4 type="content" name="Course 
 <div id="course-info-wide">
     <h3><?php echo $xml->course["label"];?></h3>
 
-          	<?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm == 'csm' ) {
+            <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm == 'csm' ) {
 if (!empty ($xml->tutors)) {
-	echo "<p class=\"bio\"><strong>";
-	$a = 1;
-	foreach($xml->tutors->children() as $tutor) {
-		$tutor["value"];
-		if ( $a <> 1 ) {echo ", ";} 
-		$a = $a+1;
-		echo $tutor["name"]; 
-	} // End of For each tutor
-		echo "</strong></p>";
+  echo "<p class=\"bio\"><strong>";
+  $a = 1;
+  foreach($xml->tutors->children() as $tutor) {
+    $tutor["value"];
+    if ( $a <> 1 ) {echo ", ";} 
+    $a = $a+1;
+    echo $tutor["name"]; 
+  } // End of For each tutor
+    echo "</strong></p>";
 } //End of if not empty
 } //End of Tutors for CSM
 ?>
 
-          	<?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm <> 'csm' ) {
+            <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm <> 'csm' ) {
 ?>
 
-	<div class="course-image section-solid-<t4 type="navigation" id="143"/>">
+  <div class="course-image section-solid-<t4 type="navigation" id="143"/>">
         <t4 type="content" name="Image" output="image" modifiers=""  />
     </div>    
-          	<?php 	
+            <?php   
 } //End of Image
 ?>
 
@@ -351,134 +344,134 @@ if (!empty ($xml->tutors)) {
 
 <t4 type="content" name="Additional Description" output="normal" modifiers="medialibrary, nav_sections"  />
 
-          	<?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm == 'csm' ) {
+            <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm == 'csm' ) {
 if (!empty ($xml->tutors)) {
 
 
 foreach($xml->tutors->children() as $tutor) {
-	$tutor["value"]; 
-	
-	if (strncasecmp($tutor->description,"<p>",3)<>0) {
-		echo "<p class=\"bio\">";
-	} // End If
-	?>
+  $tutor["value"]; 
+  
+  if (strncasecmp($tutor->description,"<p>",3)<>0) {
+    echo "<p class=\"bio\">";
+  } // End If
+  ?>
 
 <strong><?php echo $tutor->description;?></strong>
 
-	<?php
-	if (strncasecmp($tutor->description,"<p>",3)<>0) {
-		echo "</p>";
-	} // End If
+  <?php
+  if (strncasecmp($tutor->description,"<p>",3)<>0) {
+    echo "</p>";
+  } // End If
 
 } // End of For each tutor
 } //End of if not empty
 } //End of Tutors for CSM
 ?>
 
-	   <?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm == 'csm' ) {
-			// Dates box generated on At a Glance tab for CSM
-			?>
-		
-	<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
-	<tr>
-		<th style="text-align: left;">Date</th>
-		<th style="text-align: left;">Day of Week</th>
-		<th style="text-align: left;">Time</th>
-		<th>Duration</th>
+     <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm == 'csm' ) {
+      // Dates box generated on At a Glance tab for CSM
+      ?>
+    
+  <table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
+  <tr>
+    <th style="text-align: left;">Date</th>
+    <th style="text-align: left;">Day of Week</th>
+    <th style="text-align: left;">Time</th>
+    <th>Duration</th>
 
-		<th>Cost</th>
-		<th>Status</th>
-		<th style="text-align: left;">Location</th>
-		<th>Action</th>
-	</tr>
+    <th>Cost</th>
+    <th>Status</th>
+    <th style="text-align: left;">Location</th>
+    <th>Action</th>
+  </tr>
 <?php 
 if (!empty ($xml->course->dates)) {
 foreach($xml->course->dates->children() as $date) {
 
 if(strtolower($date["status"]) != "cancelled") {
 
-	$date["value"]; ?>
-	
-		<tr>
+  $date["value"]; ?>
+  
+    <tr>
 <td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-		<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
-		<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-		<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
-		<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
-		<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
-		<td style="text-align:left;vertical-align:top;">
+    <td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
+    <td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
+    <td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
+    <td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
+    <td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
+    <td style="text-align:left;vertical-align:top;">
 
 
 <?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
+    $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+      echo "<!--";
+    }
+    ?>
 
 <a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelat[0]['lat'];
-		?>,<?php 
-		$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuelong[0]['long'];
-		?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+    $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuelat[0]['lat'];
+    ?>,<?php 
+    $venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuelong[0]['long'];
+    ?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
 
 
 <?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
+    $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+    echo "-->";
+    }
+    ?>
 
 <?php        
-		$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		echo $venuename[0]['name'];
-		
-		?>
+    $venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    echo $venuename[0]['name'];
+    
+    ?>
 
 <?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-			echo "<!--";
-		}
-		?>
-		
+    $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+      echo "<!--";
+    }
+    ?>
+    
 </a>
 
 <?php 
-		$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-		if ( $venuelat[0]['lat'] == '0' ) {
-		echo "-->";
-		}
-		?>
+    $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+    if ( $venuelat[0]['lat'] == '0' ) {
+    echo "-->";
+    }
+    ?>
 
 </td>
 
-	<?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "<!--";
-		}
-		?>
+  <?php 
+    if ( $date["bookable"] == 'false' ) {
+      echo "<!--";
+    }
+    ?>
 
-																										
-		<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
+                                                    
+    <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']);?>');return false;" href="#">Add to Basket</a></td>
 
 <?php 
-		if ( $date["bookable"] == 'false' ) {
-			echo "-->";
-		}
-		?>
+    if ( $date["bookable"] == 'false' ) {
+      echo "-->";
+    }
+    ?>
 
 </tr>
 
-	<?php
-	}
+  <?php
+  }
 } 
 }
 
@@ -489,10 +482,10 @@ if(strtolower($date["status"]) != "cancelled") {
 Many of our courses are repeated throughout the year. If the above dates is not suitable for you, 
 or there are no dates showing for this session, then please <a href="http://www.csm.arts.ac.uk/shortcourses/by-session.htm">choose an alternative session</a>.</p>
 
-          	<?php 
+            <?php 
 
-		} // End of CSM dates box
-		?>
+    } // End of CSM dates box
+    ?>
 
 
     </div>
@@ -504,123 +497,123 @@ or there are no dates showing for this session, then please <a href="http://www.
 </div>
 </div><!--materials -->
 
-	<?php 
-	$csm = ('<t4 type="navigation" id="149"/>');
-		if ( $csm <> 'csm' ) {
-			// Dates content generated for non-CSM courses
-		?>
-		
-			<div id="course-booking" class="course-tab mootabs_panel section-<t4 type="navigation" id="143"/>">
-				<div id="booking" class="course-tab-wrapper">        
-				
-				
-				<table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
-				<tr>
-					<th style="text-align: left;">Date</th>
-					<th style="text-align: left;">Day of Week</th>
-					<th style="text-align: left;">Time</th>
-					<th>Duration</th>
+  <?php 
+  $csm = ('<t4 type="navigation" id="149"/>');
+    if ( $csm <> 'csm' ) {
+      // Dates content generated for non-CSM courses
+    ?>
+    
+      <div id="course-booking" class="course-tab mootabs_panel section-<t4 type="navigation" id="143"/>">
+        <div id="booking" class="course-tab-wrapper">        
+        
+        
+        <table id="ualQuickDatesTable" class="detailGrid" cellpadding="2" border="0">
+        <tr>
+          <th style="text-align: left;">Date</th>
+          <th style="text-align: left;">Day of Week</th>
+          <th style="text-align: left;">Time</th>
+          <th>Duration</th>
 
-					<th>Cost</th>
-					<th>Status</th>
-					<th style="text-align: left;">Location</th>
-					<th>Action</th>
-				</tr>
-			<?php 
-			if (!empty ($xml->course->dates)) {
-			foreach($xml->course->dates->children() as $date) {
+          <th>Cost</th>
+          <th>Status</th>
+          <th style="text-align: left;">Location</th>
+          <th>Action</th>
+        </tr>
+      <?php 
+      if (!empty ($xml->course->dates)) {
+      foreach($xml->course->dates->children() as $date) {
 
-			if(strtolower($date["status"]) != "cancelled") {
+      if(strtolower($date["status"]) != "cancelled") {
 
-				// $date["value"]; 
-				?>
-				
-					<tr>
-			<td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
-					<td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
-					<td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
-					<td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
-					<td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
-					<td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
-					<td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
+        // $date["value"]; 
+        ?>
+        
+          <tr>
+      <td style="text-align:left;vertical-align:top;"><?php echo $date["startdate"];?> - <?php echo $date["enddate"];?></td>
+          <td style="text-align:left;vertical-align:top;"><?php echo $date["dayofweek"];?></td>
+          <td style="text-align:left;vertical-align:top;"><?php echo $date["starttime"];?> - <?php echo $date["endtime"];?></td>
+          <td style="text-align:center;vertical-align:top;"><?php echo $date["duration"];?></td>
+          <td style="text-align:center;vertical-align:top;">&#163;<?php echo round($date["cost"],0);?></td>
+          <td style="text-align:center;vertical-align:top;"><?php echo $date["status"];?></td>
+          <td style="text-align:left;vertical-align:top;"><ol style="list-style: none; margin: 0; padding: 0;"><li>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-						echo "<!--";
-					}
-					?>
+      <?php 
+          $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          if ( $venuelat[0]['lat'] == '0' ) {
+            echo "<!--";
+          }
+          ?>
 
-			<a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuelat[0]['lat'];
-					?>,<?php 
-					$venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuelong[0]['long'];
-					?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
+      <a href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=<?php 
+          $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          echo $venuelat[0]['lat'];
+          ?>,<?php 
+          $venuelong = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          echo $venuelong[0]['long'];
+          ?>&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16">
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-					echo "-->";
-					}
-					?>
+      <?php 
+          $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          if ( $venuelat[0]['lat'] == '0' ) {
+          echo "-->";
+          }
+          ?>
 
-			<?php        
-					$venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					echo $venuename[0]['name'];
-					
-					?>
+      <?php        
+          $venuename = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          echo $venuename[0]['name'];
+          
+          ?>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-						echo "<!--";
-					}
-					?>
+      <?php 
+          $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          if ( $venuelat[0]['lat'] == '0' ) {
+            echo "<!--";
+          }
+          ?>
 
-			</a>
+      </a>
 
-			<?php 
-					$venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
-					if ( $venuelat[0]['lat'] == '0' ) {
-					echo "-->";
-					}
-					?>
+      <?php 
+          $venuelat = $xml->xpath('//venue[@venueid="'.$date["venueid"].'"]');
+          if ( $venuelat[0]['lat'] == '0' ) {
+          echo "-->";
+          }
+          ?>
 
-			</li></ol></td>
+      </li></ol></td>
 
-				<?php 
-					if ( $date["bookable"] == 'false' ) {
-						echo "<!--";
-					}
-					?>
+        <?php 
+          if ( $date["bookable"] == 'false' ) {
+            echo "<!--";
+          }
+          ?>
 
-					<td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
-				
+          <td style="text-align:center;vertical-align:top;"><a onclick="addToBasket(<?php echo $date["coursedateid"];?>, '<?php echo addslashes($xml->course["label"]);?>', '<?php echo $date["startdate"];?> - <?php echo $date["enddate"];?>', '<?php echo $date["starttime"];?> - <?php echo $date["endtime"];?>', '<?php echo round($date["cost"],0);?>', '<?php echo addslashes($venuename[0]['name']); ?>');return false;" href="#">Add to Basket</a></td>
+        
 
-			<?php 
-					if ( $date["bookable"] == 'false' ) {
-						echo "-->";
-					}
-					?>
-					
+      <?php 
+          if ( $date["bookable"] == 'false' ) {
+            echo "-->";
+          }
+          ?>
+          
 
-			</tr>
+      </tr>
 
-				<?php
-				}
-			}
-			}
+        <?php
+        }
+      }
+      }
 
-			?>
-			</table>
+      ?>
+      </table>
 
-			</div>
-			</div>
+      </div>
+      </div>
 
-          	<?php 
+            <?php 
 
-		} // End of non-CSM dates box
-		?>
+    } // End of non-CSM dates box
+    ?>
 <?php } ?>
