@@ -16,7 +16,7 @@ $.ajaxSetup({
   cache: true
 });
 
-// --------------------------------------------------
+// -------------------------------------------------
 
 
 // add indexOf for IE8 compatibility
@@ -166,9 +166,7 @@ $(document).ready(function(){
   $('.breadcrumbs').find('a').last().hide();
 
   // to remove all breadcrumb items after the fifth on short course pages
-  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
-
-
+  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
   // Accessible skip-to-content link:  
   // Enable a link to the page title if one exists.
   // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
@@ -231,7 +229,7 @@ $(document).ready(function(){
       if (_sideBarTitle.text().toLowerCase() == 'in this section') {
       
         // hide "In This Section" in the sidebar dropdown
-        $('#mobile-sidebar li').first().remove(); 
+        $('#mobile-sidebar li').first().remove();
       }
       // if not, it must be a college - so replace text with "college homepage"
       else {
@@ -302,7 +300,7 @@ $(document).ready(function(){
   
   function imgLoaded(img){  
     $(img).parent().addClass('loaded');
-  };
+  }
 
 if ($('#container').length > 0) {
   $.when(
@@ -329,11 +327,11 @@ if ($('#container').length > 0) {
             animation : "fadeInUp"
  
         });
-    };
+    }
 
     function destroyPagination () {
         pagination.jPages("destroy");
-    };
+    }
 
     setPagination();
 
@@ -434,7 +432,7 @@ if ($('#container').length > 0) {
         // get the individual slide width and height from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the dimensions to sensible defaults
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 930;
         var _itemHeight = (_this.data('slider-item-height') > 0) ? _this.data('slider-item-height') : 465;
-        var _itemAutoPlay = (_this.data('slider-auto-play') == true) ? _this.data('slider-auto-play') : false;
+        var _itemAutoPlay = (_this.data('slider-auto-play') === true) ? _this.data('slider-auto-play') : false;
 
         _this.royalSlider({
           arrowsNav: true,
@@ -446,7 +444,7 @@ if ($('#container').length > 0) {
           autoScaleSliderWidth: _itemWidth,
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
-          globalCaption: true, 
+          globalCaption: true,
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
@@ -483,7 +481,7 @@ if ($('.credits').length > 0) {
             c.removeClass('active').attr('title','Show image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').attr('title','Hide image credits');;
+            c.addClass('active').attr('title','Hide image credits');
             $('.credits').fadeIn();
           }
         });
@@ -533,7 +531,7 @@ if ($('.accordion').length > 0) {
                 circle.rotate({animateTo:135});
                } else {
                 circle.rotate({animateTo:0, center: ["50%", "50%"], });
-              };
+              }
     });
 
     $(".st-arrow").on("click", function(e){
@@ -546,7 +544,7 @@ if ($('.accordion').length > 0) {
         _icon.rotate({animateTo:135});
       } else {
         _icon.rotate({animateTo:0, center: ["50%", "50%"], });
-      };
+      }
 
     });
 }
@@ -573,7 +571,7 @@ if ($('.dd-menu').length > 0) {
             _d_menu.addClass('active');
          });
        }
-    });       
+     });       
 }
 
 
