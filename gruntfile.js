@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       your_target: {
           files: [
               {
-                  root: __dirname
+                  root: "."
                 , src:  '_site/assets'
                 , dest: 'assets/'
                 , gzip: true
@@ -103,7 +103,6 @@ module.exports = function(grunt) {
       },
     },
 
-
     // make a zipfile of the /downloads/ directory
     compress: {
       main: {
@@ -119,7 +118,7 @@ module.exports = function(grunt) {
     // cleanup temporary files after concat and build
     clean: {
       build: {
-        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', 'package.json', 'gruntfile.js','prod_config.rb' ]
+        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb' ]
       }
     },
 
@@ -134,7 +133,7 @@ module.exports = function(grunt) {
       /* watch and see if our javascript files change */
       js: {
         files: ['assets/js/script.js', 'assets/js/*.js'],
-        tasks: ['jshint', 'concat:dist', 'uglify', 'exec:build', 'compress:main', 'clean:build', 's3-sync']
+        tasks: ['jshint', 'concat:dist', 'uglify', 'exec:build', 'compress:main', 'clean:build', 's3-sync:your_target']
       }
       
     }
