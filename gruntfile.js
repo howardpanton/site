@@ -4,39 +4,33 @@ module.exports = function(grunt) {
     
     pkg: grunt.file.readJSON('package.json'),
     // we store the grunt-aws.json outside of our repo so that it never gets pushed to git
-    aws: grunt.file.readJSON('grunt-aws.json'),
+    aws: grunt.file.readJSON('grunt-aws.json'), // Read the file
 
-    // sync our assets with amazon s3 after build
-    's3-sync': {
+    aws_s3: {
       options: {
-          key: '<%= aws.key %>'
-        , secret: '<%= aws.secret %>'
-        , bucket: '<%= aws.bucket %>'
+        accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
+        secretAccessKey: '<%= aws.AWSSecretKey %>', // You can also use env variables
+        region: 'eu-west-1',
+        uploadConcurrency: 5,
+         // 5 simultaneous uploads
+        downloadConcurrency: 5 // 5 simultaneous downloads
       },
-      your_target: {
-          files: [
-              {
-                  root: "."
-                , src:  '_site/assets'
-                , dest: 'assets/'
-                , gzip: true
-              }
-              // {
-              //     root: 'dist'
-              //   , src: ['dist/**', '!dist/img/**']  // Don't compress images!
-              //   , dest: '/<%= pkg.version %>/'
-              //   , gzip: true
-              //   , compressionLevel: 9  // Max compression
-              // },
-              // {
-              //     root: __dirname
-              //   , src:  'Gruntfile.js'
-              //   , dest: 'Gruntfile.js'
-              // }
-          ]
+      staging: {
+        options: {
+          bucket: 'ual-staging',
+          differential: true, // Only uploads the files that have changed
+          params: {
+            ContentEncoding: 'gzip',
+            CacheControl: '3000'
+          }
+        },
+        
+        files: [
+          {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+        ]
       },
     },
-
     compass: {
       dev: {
         options: {
@@ -81,8 +75,7 @@ module.exports = function(grunt) {
 
       my_target: {
         files: {
-          //'test/assets/js/script.js': ['assets/js/script.js']
-          'temp/script-minified.js': ['temp/combined.js']
+          'assets/js/script.js': ['temp/combined.js']
 
         }
       }
@@ -91,8 +84,21 @@ module.exports = function(grunt) {
     // build jekyll
     exec: {
         build: {
-          cmd: 'jekyll build --destination _site/'
+          cmd: 'rm -rf _site/; jekyll build --destination _site/',
+        },
+        gzip: {
+           cmd: 'gzip -9 _site/assets/css/*.css',
+        },
+        mv_screen: {
+           cmd: 'mv _site/assets/css/screen.css.gz _site/assets/css/screen.css',
+        },
+        mv_docs: {
+           cmd: 'mv _site/assets/css/docs.css.gz _site/assets/css/docs.css',
+        },
+        mv_header: {
+           cmd: 'mv _site/assets/css/header-only.css.gz _site/assets/css/header-only.css',
         }
+
     },
   
     // copy /style-guide to /download folder
@@ -126,15 +132,36 @@ module.exports = function(grunt) {
     watch: {
 
       sass: {
-        files: ['assets/styles/**/*.scss'],
-        tasks: ['compass:dev', 'exec:build', 'compress:main', 'clean:build']
+        files: ['assets/styles/**/*.scss','assets/js/*.js'],
+        tasks: ['compass:dev', 
+                'concat:dist', 
+                'uglify', 
+                'compress:main', 
+                'clean:build', 
+                'exec:build', 
+                'exec:gzip', 
+                'exec:mv_header',
+                'exec:mv_screen',
+                'exec:mv_docs',
+                'aws_s3:staging']
+
       },
 
       /* watch and see if our javascript files change */
-      js: {
-        files: ['assets/js/script.js', 'assets/js/*.js'],
-        tasks: ['jshint', 'concat:dist', 'uglify', 'exec:build', 'compress:main', 'clean:build', 's3-sync:your_target']
-      }
+      // js: {
+      //   files: ['assets/js/script.js', 'assets/js/*.js'],
+      //   tasks: ['jshint', 
+      //           'concat:dist', 
+      //           'uglify',  
+      //           'compress:main', 
+      //           'clean:build', 
+      //           'exec:build', 
+      //           'exec:gzip',
+      //           'exec:mv_header',
+      //           'exec:mv_screen',
+      //           'exec:mv_docs', 
+      //           'aws_s3:staging']
+      // }
       
     }
 
@@ -152,7 +179,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-s3-sync');
+  grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');

@@ -2,7 +2,7 @@
 require 'compass'
 
 # Set this to the root of your project when deployed:
-http_path = "http://artslondon.github.io/beta/"
+http_path = "http://dcdgag63wc396.cloudfront.net"
 css_dir = "assets/css"
 sass_dir = "assets/styles"
 fonts_dir = "assets/fonts"
@@ -12,12 +12,12 @@ images_dir = "assets/img/"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :expanded
+output_style = :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://beta.arts.ac.uk"
+http_images_path = "http://dcdgag63wc396.cloudfront.net"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
