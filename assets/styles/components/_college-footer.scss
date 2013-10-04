@@ -36,7 +36,10 @@
 
   .vcard {
       margin-top: 0;
-      padding: 0;
+      
+      @include gs-media(d) {
+        padding: 0;
+      }
       // college level styling for vCards in college footer
       border-top: 0;
       .fn, .phone, .email, .title, .org, .url, .blogurl, .twitter, .facebook, .linkedin {
@@ -104,9 +107,12 @@
 
   h3 {
     @include margin-trailer(3);
-    
+    padding-left: 12px;
+    padding-right: 12px;
     @include gs-media(d) {
       @include margin-trailer(6);
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .lcc & {
@@ -115,6 +121,11 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       border-bottom: 6px solid $lcc-primary-yellow;
+      @include gs-media(t, max) {
+        padding-left:  10px;
+        padding-right: 10px;
+      }
+
       @include margin-trailer(2);
       
     }
@@ -141,17 +152,26 @@
   }  
   
   .icons {
+
     li {
       display: inline-block;
       float: left;
-      width: gs-width(d, 11, 12, (11,16), true);
+      $icon-w: (gs-width(d, 11, 12, (11,16), true) -24px);
+      padding-left: 12px;
+      padding-right: 12px;
+      @include gs-media(d) {
+        $icon-w: gs-width(d, 11, 12, (11,16), true);
+         padding-left: 0;
+         padding-right: 0;
+      }
+      width: $icon-w;
       margin-right: gs-gutter(d, (11,16), true);
       text-align: left;
+
       a {
         border: none;
         width:100%;
         display:block;
-
       }
       a:hover{
         border-bottom: 0;
