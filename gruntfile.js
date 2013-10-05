@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
-            CacheControl: '3000'
+            CacheControl: '30000000000'  // how many days do we want to set this too?
           }
         },
         
@@ -31,10 +31,35 @@ module.exports = function(grunt) {
         ]
       },
     },
+
+    invalidate_cloudfront: {
+      options: {
+        key: '<%= aws.AWSAccessKeyId %>',
+        secret: '<%= aws.AWSSecretKey %>',
+        distribution: '<%= aws.AWSDist %>'
+      },
+      production: {
+        files: [{
+          expand: true,
+          cwd: 'assets/.',
+          src: ['**/*'],
+          filter: 'isFile',
+          dest: ''
+        }]
+      }
+    },
+
     compass: {
-      dev: {
+      production: {
         options: {
-          config: 'config.rb',
+          config: 'config_live.rb',
+          force: true
+        }
+      },
+
+      local: {
+        options: {
+          config: 'config_local.rb',
           force: true
         }
       }
@@ -81,13 +106,16 @@ module.exports = function(grunt) {
       }
     },
 
-    // build jekyll
+    // terminal commands to execute with grunt
     exec: {
         build: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/',
         },
-        gzip: {
+        gzipcss: {
            cmd: 'gzip -9 _site/assets/css/*.css',
+        },
+        gzipjs: {
+           cmd: 'gzip -9 _site/assets/js/script.js',
         },
         mv_screen: {
            cmd: 'mv _site/assets/css/screen.css.gz _site/assets/css/screen.css',
@@ -97,6 +125,9 @@ module.exports = function(grunt) {
         },
         mv_header: {
            cmd: 'mv _site/assets/css/header-only.css.gz _site/assets/css/header-only.css',
+        },
+        mv_scriptjs: {
+           cmd: 'mv _site/assets/js/script.js.gz _site/assets/js/script.js',
         }
 
     },
@@ -123,46 +154,26 @@ module.exports = function(grunt) {
 
     // cleanup temporary files after concat and build
     clean: {
-      build: {
+      afterbuild: {
         src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb' ]
       }
+
+
     },
 
     // need to setup Amazon S3 sync here https://npmjs.org/package/grunt-s3-sync
     watch: {
 
-      sass: {
+      sass_js: {
         files: ['assets/styles/**/*.scss','assets/js/*.js'],
-        tasks: ['compass:dev', 
-                'concat:dist', 
-                'uglify', 
-                'compress:main', 
-                'clean:build', 
-                'exec:build', 
-                'exec:gzip', 
-                'exec:mv_header',
-                'exec:mv_screen',
-                'exec:mv_docs',
-                'aws_s3:staging']
+        tasks: ['compass:dev',
+                'concat:dist',
+                'uglify',
+                'clean:build',
+                'exec:build',
+                ]
 
-      },
-
-      /* watch and see if our javascript files change */
-      // js: {
-      //   files: ['assets/js/script.js', 'assets/js/*.js'],
-      //   tasks: ['jshint', 
-      //           'concat:dist', 
-      //           'uglify',  
-      //           'compress:main', 
-      //           'clean:build', 
-      //           'exec:build', 
-      //           'exec:gzip',
-      //           'exec:mv_header',
-      //           'exec:mv_screen',
-      //           'exec:mv_docs', 
-      //           'aws_s3:staging']
-      // }
-      
+      },      
     }
 
   });
@@ -180,6 +191,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-aws-s3');
+  grunt.loadNpmTasks('grunt-invalidate-cloudfront');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -192,20 +204,44 @@ module.exports = function(grunt) {
 
   // default grunt watch task
   // To run type: 'grunt' 
-  grunt.registerTask('default', 'watch');
+  grunt.registerTask('default', 'watch:sass_js');
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
   grunt.registerTask('testjs', 'jshint');
 
   // build for production. 
-  // To run type: 'grunt buildprod'
-  grunt.registerTask('buildprod', 'jshint');
+  // To run type: 'grunt buildlive'
+  grunt.registerTask('buildlive', ['compass:production',
+                                    'concat:dist',
+                                    'uglify',
+                                    'compress:main',
+                                    'exec:build',
+                                    'clean:afterbuild',
+                                    'exec:gzipcss',
+                                    'exec:gzipjs',
+                                    'exec:mv_header',
+                                    'exec:mv_screen',
+                                    'exec:mv_docs',
+                                    'exec:mv_scriptjs',
+                                    'aws_s3:staging',
+                                    'invalidate_cloudfront:production'
+                                    ]);
 
-  // build for github
+  // build for local github 
   // To run type: 'grunt buildlocal'
-  grunt.registerTask('buildlocal', 'jshint');
+  grunt.registerTask('buildlocal', ['jshint',
+                                    'compass:local',
+                                    'exec:build',
+                                    'clean:afterbuild'
+                                    ]);
 
 
+  // grunt task to push to gitHub 
+
+
+
+  // invalidate cloudfront -- we might want to keep this as a separate step?
+  grunt.registerTask('invalidateCloudFront', 'invalidate_cloudfront:production');
 
 };
