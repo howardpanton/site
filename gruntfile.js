@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 
       my_target: {
         files: {
-          'assets/js/script.js': ['temp/combined.js']
+          'assets/js/script-min.js': ['temp/combined.js']
 
         }
       }
@@ -225,6 +225,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-bower-task');
 
 
 
@@ -271,7 +272,7 @@ module.exports = function(grunt) {
   grunt.registerTask('buildlocal', ['jshint',
                                     'compass:local',
                                     'exec:build',
-                                    'clean:afterbuild'
+                                    'clean:build'
                                     ]);
 
 
