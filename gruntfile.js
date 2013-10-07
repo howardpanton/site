@@ -30,6 +30,22 @@ module.exports = function(grunt) {
           {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
         ]
       },
+
+      live: {
+        options: {
+          bucket: 'ual-live',
+          differential: true, // Only uploads the files that have changed
+          params: {
+            ContentEncoding: 'gzip',
+            CacheControl: '30000000000'  // how many days do we want to set this too?
+          }
+        },
+        
+        files: [
+          {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+        ]
+      },
     },
 
     invalidate_cloudfront: {
@@ -37,6 +53,23 @@ module.exports = function(grunt) {
         key: '<%= aws.AWSAccessKeyId %>',
         secret: '<%= aws.AWSSecretKey %>',
         distribution: '<%= aws.AWSDist %>'
+      },
+      production: {
+        files: [{
+          expand: true,
+          cwd: 'assets/.',
+          src: ['**/*'],
+          filter: 'isFile',
+          dest: ''
+        }]
+      }
+    },
+
+    invalidate_cloudfront_staging: {
+      options: {
+        key: '<%= aws.AWSAccessKeyId %>',
+        secret: '<%= aws.AWSSecretKey %>',
+        distribution: '<%= aws.AWSStage %>'
       },
       production: {
         files: [{
@@ -110,26 +143,7 @@ module.exports = function(grunt) {
     exec: {
         build: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/',
-        },
-        gzipcss: {
-           cmd: 'gzip -9 _site/assets/css/*.css',
-        },
-        gzipjs: {
-           cmd: 'gzip -9 _site/assets/js/script.js',
-        },
-        mv_screen: {
-           cmd: 'mv _site/assets/css/screen.css.gz _site/assets/css/screen.css',
-        },
-        mv_docs: {
-           cmd: 'mv _site/assets/css/docs.css.gz _site/assets/css/docs.css',
-        },
-        mv_header: {
-           cmd: 'mv _site/assets/css/header-only.css.gz _site/assets/css/header-only.css',
-        },
-        mv_scriptjs: {
-           cmd: 'mv _site/assets/js/script.js.gz _site/assets/js/script.js',
         }
-
     },
   
     // copy /style-guide to /download folder
@@ -149,12 +163,28 @@ module.exports = function(grunt) {
         files: [
           {src: ['download/**'], dest: ''}
         ]
+      },
+      css: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true, src: ['_site/assets/css/*.css'], dest: '_site/assets/css/', ext: '.css'}
+        ]
+      },
+      js: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true, src: ['_site/assets/js/script.js'], dest: '_site/assets/js/', ext: '.js'}
+        ]
       }
     },
 
     // cleanup temporary files after concat and build
     clean: {
-      afterbuild: {
+      build: {
         src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb' ]
       }
 
@@ -166,7 +196,7 @@ module.exports = function(grunt) {
 
       sass_js: {
         files: ['assets/styles/**/*.scss','assets/js/*.js'],
-        tasks: ['compass:dev',
+        tasks: ['compass:local',
                 'concat:dist',
                 'uglify',
                 'clean:build',
@@ -217,15 +247,23 @@ module.exports = function(grunt) {
                                     'uglify',
                                     'compress:main',
                                     'exec:build',
-                                    'clean:afterbuild',
-                                    'exec:gzipcss',
-                                    'exec:gzipjs',
-                                    'exec:mv_header',
-                                    'exec:mv_screen',
-                                    'exec:mv_docs',
-                                    'exec:mv_scriptjs',
-                                    'aws_s3:staging',
+                                    'clean:buildlivebuild',
+                                    'compress:css',
+                                    'compress:js',
+                                    'aws_s3:live',
                                     'invalidate_cloudfront:production'
+                                    ]);
+
+  grunt.registerTask('buildstaging', ['compass:production',
+                                    'concat:dist',
+                                    'uglify',
+                                    'compress:main',
+                                    'exec:build',
+                                    'clean:buildlivebuild',
+                                    'compress:css',
+                                    'compress:js',
+                                    'aws_s3:staging',
+                                    'invalidate_cloudfront:staging'
                                     ]);
 
   // build for local github 
