@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         
         files: [
           {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         ]
       },
 
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         
         files: [
           {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         ]
       },
     },
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
       options: {
         key: '<%= aws.AWSAccessKeyId %>',
         secret: '<%= aws.AWSSecretKey %>',
-        distribution: '<%= aws.AWSDist %>'
+        distribution: '<%= aws.AWSStaging %>'
       },
       production: {
         files: [{
@@ -65,22 +65,22 @@ module.exports = function(grunt) {
       }
     },
 
-    invalidate_cloudfront_staging: {
-      options: {
-        key: '<%= aws.AWSAccessKeyId %>',
-        secret: '<%= aws.AWSSecretKey %>',
-        distribution: '<%= aws.AWSStage %>'
-      },
-      production: {
-        files: [{
-          expand: true,
-          cwd: 'assets/.',
-          src: ['**/*'],
-          filter: 'isFile',
-          dest: ''
-        }]
-      }
-    },
+    // invalidate_cloudfront_staging: {
+    //   options: {
+    //     key: '<%= aws.AWSAccessKeyId %>',
+    //     secret: '<%= aws.AWSSecretKey %>',
+    //     distribution: '<%= aws.AWSStage %>'
+    //   },
+    //   production: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: 'assets/.',
+    //       src: ['**/*'],
+    //       filter: 'isFile',
+    //       dest: ''
+    //     }]
+    //   }
+    // },
 
     compass: {
       production: {
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
         separator: '',
       },
 
-      dist: {
+    dist: {
         src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/megamenu_plugins.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
         dest: 'temp/combined.js',
       },
@@ -152,9 +152,16 @@ module.exports = function(grunt) {
         src: '_site/style-guide',
         dest: '_site/download/style-guide/',
       },
+
+      minified_assets: {
+        files: [
+          {expand: true, flatten: true, src: ['temp/js/**'], dest: '_site/assets/js/', filter: 'isFile'}, // flattens results to a single level
+          {expand: true, flatten: true, src: ['temp/css/**'], dest: '_site/assets/css/', filter: 'isFile'}
+        ]
+      }
     },
 
-    // make a zipfile of the /downloads/ directory
+
     compress: {
       main: {
         options: {
@@ -169,15 +176,25 @@ module.exports = function(grunt) {
           mode: 'gzip'
         },
         files: [
-          {expand: true, src: ['_site/assets/css/*.css'], dest: '_site/assets/css/', ext: '.css'}
+          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
         ]
       },
+
+      libs: {
+         options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true,  src: ['assets/js/libs/*.js'], dest: 'gz', ext: '.js'}
+        ]
+      },
+
       js: {
         options: {
           mode: 'gzip'
         },
         files: [
-          {expand: true, src: ['_site/assets/js/script.js'], dest: '_site/assets/js/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
         ]
       }
     },
@@ -185,7 +202,7 @@ module.exports = function(grunt) {
     // cleanup temporary files after concat and build
     clean: {
       build: {
-        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb' ]
+        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb']
       }
 
 
@@ -203,7 +220,7 @@ module.exports = function(grunt) {
                 'exec:build',
                 ]
 
-      },      
+      },   
     }
 
   });
@@ -216,6 +233,7 @@ module.exports = function(grunt) {
   // load npmTasks as listed in package.json
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -227,11 +245,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-bower-task');
 
-
-
-
   // Register Grunt Tasks
-
 
   // default grunt watch task
   // To run type: 'grunt' 
@@ -241,6 +255,10 @@ module.exports = function(grunt) {
   // To run type: 'grunt testjs'
   grunt.registerTask('testjs', 'jshint');
 
+
+  //compress script libraries
+  grunt.registerTask('compress_libs', 'compress:libs');
+
   // build for production. 
   // To run type: 'grunt buildlive'
   grunt.registerTask('buildlive', ['compass:production',
@@ -248,9 +266,10 @@ module.exports = function(grunt) {
                                     'uglify',
                                     'compress:main',
                                     'exec:build',
-                                    'clean:buildlivebuild',
                                     'compress:css',
                                     'compress:js',
+                                    'copy:minified_assets',
+                                    'clean:build',
                                     'aws_s3:live',
                                     'invalidate_cloudfront:production'
                                     ]);
@@ -260,11 +279,12 @@ module.exports = function(grunt) {
                                     'uglify',
                                     'compress:main',
                                     'exec:build',
-                                    'clean:buildlivebuild',
                                     'compress:css',
                                     'compress:js',
+                                    'copy:minified_assets',
+                                    'clean:build',
                                     'aws_s3:staging',
-                                    'invalidate_cloudfront:staging'
+                                    'invalidate_cloudfront:production'
                                     ]);
 
   // build for local github 

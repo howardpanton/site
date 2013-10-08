@@ -3,8 +3,14 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 20th September 2013 14:38pm
+//     Updated Tuesday 08 October 2013 14:49pm
 // \*-----------------------------------------*/
+
+// enable caching for GetScript calls
+$.ajaxSetup({
+  cache: true
+});
+
 
 jQuery.fn.extend({
   scrollToMe: function () {
@@ -239,7 +245,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.review.min.js', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -302,8 +308,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/filtrify.min.js' ),
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/jPages.min.js' ),
+      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/filtrify.min.js' ),
+      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -401,7 +407,7 @@ if ($('#container').length > 0) {
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -451,7 +457,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -523,14 +529,23 @@ if ($('.credits').length > 0) {
     
   }
 
+function resetSpinners() {
+      // check if there are any other open accordion items, and close them if so
+      $( ".accordion-list-item" ).each(function (e) {
+        var _li_item = $(this);
+        if ( _li_item.hasClass('st-open') ) {
+            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
+        }
+      });
+    }
 
 // detect accordion component
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -542,16 +557,6 @@ if ($('.accordion').length > 0) {
         });
 
     });
-
-    function resetSpinners() {
-      // check if there are any other open accordion items, and close them if so
-      $( ".accordion-list-item" ).each(function (e) {
-        var _li_item = $(this); 
-        if ( _li_item.hasClass('st-open') ) {
-            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
-        }
-      });
-    }
 
     $(".accordion-list-anchor").on("click", ".size-h4", function(event){
         event.preventDefault();
@@ -635,7 +640,7 @@ if ($('.search-filters').length > 0) {
 if ($('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox.js', function() {
 
     var outputNode = $('.showtime-json');
 
@@ -723,7 +728,7 @@ if ($('.showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -820,7 +825,7 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
@@ -828,7 +833,7 @@ if ($('.__media').length > 0) {
 
 if ($('video').length > 0) {
 
-  $.getScript('https://raw.github.com/johndyer/mediaelement/master/build/mediaelement-and-player.js', function() {
+  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/media-element.min.js', function() {
 
     $('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
