@@ -26,7 +26,7 @@
 		
 		public function courseDatesCache($courseids="", $companyid=""){
 
-		    $cache_file = "/web/sites/t4www/www.arts.ac.uk/ci-".$courseids."-".$companyid.".txt";
+		    $cache_file = "/web/sites/t4shortcoursecache/ci-".$courseids."-".$companyid.".txt";
 		    $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
 		    
 		    // TRY AND GET THE LIVE DATA
