@@ -48,39 +48,17 @@ module.exports = function(grunt) {
       },
     },
 
-    invalidate_cloudfront: {
-      options: {
-        key: '<%= aws.AWSAccessKeyId %>',
-        secret: '<%= aws.AWSSecretKey %>',
-        distribution: '<%= aws.AWSStaging %>'
-      },
-      production: {
-        files: [{
-          expand: true,
-          cwd: 'assets/.',
-          src: ['**/*'],
-          filter: 'isFile',
-          dest: ''
-        }]
+    // invalidate cloudfront (clear cache) 
+    cloudfront_clear: {
+      invalidateIndex: {
+        resourcePaths: ["/assets/", "/assets"],
+        secret_key: "<%= aws.AWSSecretKey %>",
+        access_key: "<%= aws.AWSAccessKeyId %>",
+        dist: "<%= aws.AWSStaging %>"
       }
     },
 
-    // invalidate_cloudfront_staging: {
-    //   options: {
-    //     key: '<%= aws.AWSAccessKeyId %>',
-    //     secret: '<%= aws.AWSSecretKey %>',
-    //     distribution: '<%= aws.AWSStage %>'
-    //   },
-    //   production: {
-    //     files: [{
-    //       expand: true,
-    //       cwd: 'assets/.',
-    //       src: ['**/*'],
-    //       filter: 'isFile',
-    //       dest: ''
-    //     }]
-    //   }
-    // },
+    
 
     compass: {
       production: {
@@ -239,11 +217,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-aws-s3');
-  grunt.loadNpmTasks('grunt-invalidate-cloudfront');
+  grunt.loadNpmTasks('grunt-cloudfront-clear');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-newer');
 
   // Register Grunt Tasks
 
@@ -253,7 +232,7 @@ module.exports = function(grunt) {
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
-  grunt.registerTask('testjs', 'jshint');
+  grunt.registerTask('testjs', 'newer:jshint');
 
 
   //compress script libraries
@@ -263,7 +242,7 @@ module.exports = function(grunt) {
   // To run type: 'grunt buildlive'
   grunt.registerTask('buildlive', ['compass:production',
                                     'concat:dist',
-                                    'uglify',
+                                    'any-newer:uglify',
                                     'compress:main',
                                     'exec:build',
                                     'compress:css',
@@ -276,7 +255,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('buildstaging', ['compass:production',
                                     'concat:dist',
-                                    'uglify',
+                                    'any-newer:uglify',
                                     'compress:main',
                                     'exec:build',
                                     'compress:css',
@@ -284,12 +263,12 @@ module.exports = function(grunt) {
                                     'copy:minified_assets',
                                     'clean:build',
                                     'aws_s3:staging',
-                                    'invalidate_cloudfront:production'
+                                    'cloudfront_clear'
                                     ]);
 
   // build for local github 
   // To run type: 'grunt buildlocal'
-  grunt.registerTask('buildlocal', ['jshint',
+  grunt.registerTask('buildlocal', ['newer:jshint',
                                     'compass:local',
                                     'exec:build',
                                     'clean:build'
