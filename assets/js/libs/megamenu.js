@@ -53,7 +53,7 @@
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
-                    if ($(window).width() < 960) {
+                    if ($(window).innerWidth() < 960) {
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
