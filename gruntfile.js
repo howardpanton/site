@@ -117,6 +117,12 @@ module.exports = function(grunt) {
           'assets/js/script-min.js': ['temp/combined.js']
 
         }
+      },
+
+      audio: {
+        files: {
+          'assets/js/libs/audio-min.js': ['assets/js/libs/audioplayer.js']
+        }
       }
     },
 
@@ -176,7 +182,7 @@ module.exports = function(grunt) {
           mode: 'gzip'
         },
         files: [
-          {expand: true,  src: ['assets/js/libs/*.js'], dest: 'gz', ext: '.js'}
+          {expand: true,  src: ['assets/js/libs/audio-min.js'], dest: 'gz', ext: '.js'}
         ]
       },
 
@@ -297,6 +303,10 @@ module.exports = function(grunt) {
   grunt.registerTask('gzipfonts', ['any-newer:compress:fonts',
                                    'copy:minified_fonts'
                                     ]);
+
+
+  grunt.registerTask('compressaudiojs', ['uglify:audio', 'compress:libs']);
+  
 
   // grunt task to push to gitHub 
 
