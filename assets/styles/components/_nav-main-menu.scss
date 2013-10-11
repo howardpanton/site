@@ -134,12 +134,6 @@
 .megamenu li.megamenu_right a {
   margin-right:5px;
 }
-
-
-// mobile tablet view "hamburger" icon active
-li.megamenu_button_active {
-  background-color: $dark-gray !important;
-}
     
 // /*  _______________________________________________
 
@@ -163,10 +157,12 @@ li.megamenu_button_active {
     @include font-size(14);
 
   }
-  li > a:hover {
-    background-color: $black;
-    color: $white;
-  } 
+  @include gs-media(d) {
+    li > a:hover {
+      background-color: $black;
+      color: $white;
+    } 
+  }
 }
 
 .megamenu li .dropdown_right {
