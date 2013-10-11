@@ -245,7 +245,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.review.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.review.min.js', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -308,8 +308,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/filtrify.min.js' ),
-      $.getScript( 'http://dcdgag63wc396.cloudfront.net/assets/js/jPages.min.js' ),
+      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js' ),
+      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -407,7 +407,7 @@ if ($('#container').length > 0) {
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -457,7 +457,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -543,9 +543,9 @@ function resetSpinners() {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://dcdgag63wc396.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -640,7 +640,7 @@ if ($('.search-filters').length > 0) {
 if ($('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox.js', function() {
+  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox.js', function() {
 
     var outputNode = $('.showtime-json');
 
@@ -728,7 +728,7 @@ if ($('.showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -775,6 +775,25 @@ $(".hide-content").click(function(e){
   $(parent).find(".show-more").show();
   parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
 });
+
+
+  //---------------------------------------
+  //  Audio Player - based on code from http://bit.ly/12I3B79
+  //---------------------------------------
+
+
+  if ($('audio').length > 0) {
+
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js', function() {
+
+        $('audio').each(function() {
+          $(this).audioPlayer();
+        });
+
+    });
+
+
+  }
 
 
 
@@ -825,7 +844,7 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
+  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
@@ -833,7 +852,7 @@ if ($('.__media').length > 0) {
 
 if ($('video').length > 0) {
 
-  $.getScript('http://dcdgag63wc396.cloudfront.net/assets/js/media-element.min.js', function() {
+  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/media-element.min.js', function() {
 
     $('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
