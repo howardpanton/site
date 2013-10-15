@@ -41,15 +41,15 @@
                     menuItemFlyOutDropDown = $(menuItemFlyOut).find('.dropdown_flyout_level'),
                     menuButton = $('.megamenu_button');
 
-                menuItemElement = $(menuItem).add(menuItemFlyOut);
-                menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
+                var menuItemElement = $(menuItem).add(menuItemFlyOut);
+                var menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
 
                 // fix to be able to remove the #_ at the end of each link URL (found in the forum for the megaMenu)
                 // this should fix the jump to top of page when search icon is clicked on the menu in mobile view
                 $(menuItemLink).click(function(event) {
                     event.preventDefault();
                     window.location.hash = this.hash;
-                });    
+                });
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
@@ -143,18 +143,12 @@
 
                     switch (settings.menu_effect) {
 
-                        case 'open_close_fade':
-                        var menuEffectShow = 'fadeToggle',
-                            menuEffectHide = 'fadeOut';
-                            break;
+                       
                         case 'open_close_slide':
                         var menuEffectShow = 'slideDown',
                             menuEffectHide = 'fadeOut';
                             break;
-                        case 'open_close_toggle':
-                        var menuEffectShow = 'toggle',
-                            menuEffectHide = 'fadeOut';
-                            break;
+                       
 
                     }
                     
@@ -332,7 +326,7 @@
         if ((_innerW < 960) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
-                'left':'0', 
+                'left':'0',
                 'top':'auto',
                 'width': _innerW
                 }).hide();
