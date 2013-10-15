@@ -26,14 +26,15 @@ module.exports = function(grunt) {
         },
         
         files: [
+          {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
           {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         ]
       },
 
       live: {
         options: {
-          bucket: 'ual-live',
+          bucket: 'arts-live',
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
@@ -42,45 +43,25 @@ module.exports = function(grunt) {
         },
         
         files: [
+          {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
           {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+          // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
+          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         ]
       },
     },
 
-    invalidate_cloudfront: {
-      options: {
-        key: '<%= aws.AWSAccessKeyId %>',
-        secret: '<%= aws.AWSSecretKey %>',
-        distribution: '<%= aws.AWSDist %>'
-      },
-      production: {
-        files: [{
-          expand: true,
-          cwd: 'assets/.',
-          src: ['**/*'],
-          filter: 'isFile',
-          dest: ''
-        }]
+    // invalidate cloudfront (clear cache) 
+    cloudfront_clear: {
+      invalidateIndex: {
+        resourcePaths: ["/assets/", "/assets"],
+        secret_key: "<%= aws.AWSSecretKey %>",
+        access_key: "<%= aws.AWSAccessKeyId %>",
+        dist: "<%= aws.AWSLive %>"
       }
     },
 
-    invalidate_cloudfront_staging: {
-      options: {
-        key: '<%= aws.AWSAccessKeyId %>',
-        secret: '<%= aws.AWSSecretKey %>',
-        distribution: '<%= aws.AWSStage %>'
-      },
-      production: {
-        files: [{
-          expand: true,
-          cwd: 'assets/.',
-          src: ['**/*'],
-          filter: 'isFile',
-          dest: ''
-        }]
-      }
-    },
+    
 
     compass: {
       production: {
@@ -117,7 +98,7 @@ module.exports = function(grunt) {
         separator: '',
       },
 
-      dist: {
+    dist: {
         src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/megamenu_plugins.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
         dest: 'temp/combined.js',
       },
@@ -133,7 +114,7 @@ module.exports = function(grunt) {
 
       my_target: {
         files: {
-          'assets/js/script.js': ['temp/combined.js']
+          'assets/js/script-min.js': ['temp/combined.js']
 
         }
       }
@@ -143,7 +124,12 @@ module.exports = function(grunt) {
     exec: {
         build: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/',
+        },
+        buildlocal: {
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
         }
+
+
     },
   
     // copy /style-guide to /download folder
@@ -152,9 +138,21 @@ module.exports = function(grunt) {
         src: '_site/style-guide',
         dest: '_site/download/style-guide/',
       },
+
+      minified_assets: {
+        files: [
+          {expand: true, flatten: true, src: ['temp/js/**'], dest: '_site/assets/js/', filter: 'isFile'}, // flattens results to a single level
+          {expand: true, flatten: true, src: ['temp/css/**'], dest: '_site/assets/css/', filter: 'isFile'}
+        ]
+      },
+
+      minified_fonts: {
+        files: [
+          {expand: true, flatten: true, src: ['temp/fonts/**'], dest: '_site/assets/fonts/', filter: 'isFile'}
+        ]
+      }
     },
 
-    // make a zipfile of the /downloads/ directory
     compress: {
       main: {
         options: {
@@ -169,15 +167,37 @@ module.exports = function(grunt) {
           mode: 'gzip'
         },
         files: [
-          {expand: true, src: ['_site/assets/css/*.css'], dest: '_site/assets/css/', ext: '.css'}
+          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
         ]
       },
+
+      libs: {
+         options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true,  src: ['assets/js/libs/*.js'], dest: 'gz', ext: '.js'}
+        ]
+      },
+
       js: {
         options: {
           mode: 'gzip'
         },
         files: [
-          {expand: true, src: ['_site/assets/js/script.js'], dest: '_site/assets/js/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
+        ]
+      },
+
+      fonts: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true, flatten: true, src: ['_site/assets/fonts/*.eot'], dest: 'temp/fonts/', ext: '.eot'},
+          {expand: true, flatten: true, src: ['_site/assets/fonts/*.svg'], dest: 'temp/fonts/', ext: '.svg'},
+          {expand: true, flatten: true, src: ['_site/assets/fonts/*.ttf'], dest: 'temp/fonts/', ext: '.ttf'},
+          {expand: true, flatten: true, src: ['_site/assets/fonts/*.woff'], dest: 'temp/fonts/', ext: '.woff'}
         ]
       }
     },
@@ -185,15 +205,12 @@ module.exports = function(grunt) {
     // cleanup temporary files after concat and build
     clean: {
       build: {
-        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb' ]
+        src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb']
       }
-
-
     },
 
     // need to setup Amazon S3 sync here https://npmjs.org/package/grunt-s3-sync
     watch: {
-
       sass_js: {
         files: ['assets/styles/**/*.scss','assets/js/*.js'],
         tasks: ['compass:local',
@@ -202,10 +219,8 @@ module.exports = function(grunt) {
                 'clean:build',
                 'exec:build',
                 ]
-
-      },      
+      },
     }
-
   });
 
   // * Note
@@ -216,21 +231,20 @@ module.exports = function(grunt) {
   // load npmTasks as listed in package.json
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-aws-s3');
-  grunt.loadNpmTasks('grunt-invalidate-cloudfront');
+  grunt.loadNpmTasks('grunt-cloudfront-clear');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');
-
-
-
+  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-newer');
 
   // Register Grunt Tasks
-
 
   // default grunt watch task
   // To run type: 'grunt' 
@@ -238,48 +252,53 @@ module.exports = function(grunt) {
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
-  grunt.registerTask('testjs', 'jshint');
+  grunt.registerTask('testjs', 'newer:jshint');
+
+
+  //compress script libraries
+  grunt.registerTask('compress_libs', 'compress:libs');
 
   // build for production. 
   // To run type: 'grunt buildlive'
   grunt.registerTask('buildlive', ['compass:production',
                                     'concat:dist',
-                                    'uglify',
+                                    'any-newer:uglify',
                                     'compress:main',
                                     'exec:build',
-                                    'clean:buildlivebuild',
                                     'compress:css',
                                     'compress:js',
-                                    'aws_s3:live',
-                                    'invalidate_cloudfront:production'
+                                    'copy:minified_assets',
+                                    'clean:build',
+                                    'any-newer:aws_s3:live',
+                                    'cloudfront_clear'
                                     ]);
 
   grunt.registerTask('buildstaging', ['compass:production',
                                     'concat:dist',
-                                    'uglify',
+                                    'any-newer:uglify',
                                     'compress:main',
                                     'exec:build',
-                                    'clean:buildlivebuild',
                                     'compress:css',
                                     'compress:js',
+                                    'copy:minified_assets',
+                                    'clean:build',
                                     'aws_s3:staging',
-                                    'invalidate_cloudfront:staging'
+                                    'cloudfront_clear'
                                     ]);
 
   // build for local github 
   // To run type: 'grunt buildlocal'
-  grunt.registerTask('buildlocal', ['jshint',
+  grunt.registerTask('buildlocal', ['newer:jshint',
                                     'compass:local',
-                                    'exec:build',
-                                    'clean:afterbuild'
+                                    'exec:buildlocal',
+                                    'clean:build'
                                     ]);
-
+  // gzip fonts
+  grunt.registerTask('gzipfonts', ['any-newer:compress:fonts',
+                                   'copy:minified_fonts'
+                                    ]);
 
   // grunt task to push to gitHub 
 
-
-
-  // invalidate cloudfront -- we might want to keep this as a separate step?
-  grunt.registerTask('invalidateCloudFront', 'invalidate_cloudfront:production');
 
 };
