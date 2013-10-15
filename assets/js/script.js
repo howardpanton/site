@@ -7,7 +7,7 @@
 // \*-----------------------------------------*/
 
 // enable caching for GetScript calls
-$.ajaxSetup({
+jQuery.ajaxSetup({
   cache: true
 });
 
@@ -38,27 +38,27 @@ if (!Array.prototype.indexOf) {
 
 
 
-$(".date").each(function (i, element) {
+jQuery(".date").each(function (i, element) {
   
-  str = $( this ).text();
+  str = jQuery( this ).text();
   if (str.indexOf(",") != -1) {
-    $(this).text(str.substring(5,16));
+    jQuery(this).text(str.substring(5,16));
   }
 
 });
 
 
 
-  var Link_col = $(".college-nav").find("li").slice(3, 6);
-  var Link_study_1 = $(".study-nav").find("li").slice(6, 11);
-  var Link_study_2 = $(".study-nav").find("li").slice(11, 16);
-  var Link_study_3 = $(".study-nav").find("li").slice(16, 19);
-  var Link_student = $(".student-nav").find("li").slice(3, 4);
-  var Link_alumni = $(".alumni-nav").find("li").slice(4, 6);
-  var Link_about = $(".about-nav").find("li").slice(6, 11);
-  var Link_about_1 = $(".about-nav").find("li").slice(11, 16);
-  var Link_about_2 = $(".about-nav").find("li").slice(16, 19);
-  var Link_industry = $('.industry-nav').find("li").slice(4,7);
+  var Link_col = jQuery(".college-nav").find("li").slice(3, 6);
+  var Link_study_1 = jQuery(".study-nav").find("li").slice(6, 11);
+  var Link_study_2 = jQuery(".study-nav").find("li").slice(11, 16);
+  var Link_study_3 = jQuery(".study-nav").find("li").slice(16, 19);
+  var Link_student = jQuery(".student-nav").find("li").slice(3, 4);
+  var Link_alumni = jQuery(".alumni-nav").find("li").slice(4, 6);
+  var Link_about = jQuery(".about-nav").find("li").slice(6, 11);
+  var Link_about_1 = jQuery(".about-nav").find("li").slice(11, 16);
+  var Link_about_2 = jQuery(".about-nav").find("li").slice(16, 19);
+  var Link_industry = jQuery('.industry-nav').find("li").slice(4,7);
 
 
   Link_col.remove();
@@ -73,44 +73,44 @@ $(".date").each(function (i, element) {
   Link_industry.remove();
   //console.log(Link_study_3);
 
-  $( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
-  $('.college-nav .subnav-2').prepend(Link_col);
+  jQuery( ".college-nav" ).append("<ul class=\"subnav-2 region\">");
+  jQuery('.college-nav .subnav-2').prepend(Link_col);
 
-  $( ".study-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
-  $('.study-nav .subnav-2').prepend(Link_study_1);
-  $( ".study-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
-  $('.study-nav .subnav-3').prepend(Link_study_2);
-  $( ".study-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
-  $('.study-nav .subnav-4').prepend(Link_study_3);
+  jQuery( ".study-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
+  jQuery('.study-nav .subnav-2').prepend(Link_study_1);
+  jQuery( ".study-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
+  jQuery('.study-nav .subnav-3').prepend(Link_study_2);
+  jQuery( ".study-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
+  jQuery('.study-nav .subnav-4').prepend(Link_study_3);
 
 
-  $( ".student-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
-  $('.student-nav .subnav-2').prepend(Link_student);
+  jQuery( ".student-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
+  jQuery('.student-nav .subnav-2').prepend(Link_student);
 
-  $( ".alumni-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
-  $('.alumni-nav .subnav-2').prepend(Link_alumni);
+  jQuery( ".alumni-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
+  jQuery('.alumni-nav .subnav-2').prepend(Link_alumni);
   
 
-  $( ".about-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
-  $('.about-nav .subnav-2').prepend(Link_about);
+  jQuery( ".about-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
+  jQuery('.about-nav .subnav-2').prepend(Link_about);
 
-  $( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
-  $('.about-nav .subnav-3').prepend(Link_about_1);
+  jQuery( ".about-nav" ).append("<ul class=\"subnav-3 pad-top-6x region\">");
+  jQuery('.about-nav .subnav-3').prepend(Link_about_1);
 
-    $( ".about-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
-  $('.about-nav .subnav-4').prepend(Link_about_2);
+    jQuery( ".about-nav" ).append("<ul class=\"subnav-4 pad-top-6x region\">");
+  jQuery('.about-nav .subnav-4').prepend(Link_about_2);
 
-  $( ".industry-nav" ).append("<ul class=\"subnav-2 no-pad-top region\">");
-  $('.industry-nav .subnav-2').prepend(Link_industry);
+  jQuery( ".industry-nav" ).append("<ul class=\"subnav-2 no-pad-top region\">");
+  jQuery('.industry-nav .subnav-2').prepend(Link_industry);
 
 function checkWindowSize() {
-  var width = $(window).width(),
+  var width = jQuery(window).width(),
   new_class = width > 959 ? 'gDesktop' :
               width > 599 ? 'gTablet' :
               width < 600 ? 'gMobile' :
               width > 1289 ? 'gDesktop' : '';
 
-  $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
+  jQuery(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
 }
 
 var waitForFinalEvent = (function () {
@@ -129,57 +129,57 @@ var waitForFinalEvent = (function () {
 // enables UAL themed select boxes
 function enableSelectBoxes() {
   
-  $('.js-select-box').each(function() {
-    var _start_val = $(this).children('ul.js-select-box-list').children('li.select-box-option:first').children('a').html();
-    $(this).children('div').children('h3.selected').html(_start_val);
-    $('input.js-select-box-value').attr('value',$(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
+  jQuery('.js-select-box').each(function() {
+    var _start_val = jQuery(this).children('ul.js-select-box-list').children('li.select-box-option:first').children('a').html();
+    jQuery(this).children('div').children('h3.selected').html(_start_val);
+    jQuery('input.js-select-box-value').attr('value',jQuery(this).children('ul.js-select-box-list').children('li.select-box-option:first').attr('data-sb-value'));
 
-    $(this).children('div').children('h3.selected,div.select-box-arrow').click(function(event) {
+    jQuery(this).children('div').children('h3.selected,div.select-box-arrow').click(function(event) {
       event.preventDefault();
-      if($(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
-        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
+      if(jQuery(this).parent().parent().children('ul.js-select-box-list').css('display') == 'none'){
+        jQuery(this).parent().parent().children('ul.js-select-box-list').css('display', 'block');
       }
       else
       {
-        $(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
+        jQuery(this).parent().parent().children('ul.js-select-box-list').css('display', 'none');
       }
     });
 
-    $(this).find('li.select-box-option').click(function(event){
+    jQuery(this).find('li.select-box-option').click(function(event){
       event.preventDefault();
-      $(this).parent().css('display','none');
-      $('input.js-select-box-value').attr('value',$(this).attr('data-sb-value'));
-      var _test = 'the select option is :' + $(this).attr('data-sb-value');
-      $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a'));
-      $(this).parent().parent().scrollToMe();
+      jQuery(this).parent().css('display','none');
+      jQuery('input.js-select-box-value').attr('value',jQuery(this).attr('data-sb-value'));
+      var _test = 'the select option is :' + jQuery(this).attr('data-sb-value');
+      jQuery(this).parent().parent().children('div').children('h3.selected').html(jQuery(this).children('a'));
+      jQuery(this).parent().parent().scrollToMe();
     });
-  });  
+  });
 }
 
 
 /////////////////////
 // ON DOCUMENT READY 
 /////////////////////
-$(document).ready(function(){
+jQuery(document).ready(function(){
 
   checkWindowSize();
 
   // detect and handle breadcrumbs
-  $('.breadcrumbs').find('a').last().hide();
+  jQuery('.breadcrumbs').find('a').last().hide();
 
   // to remove all breadcrumb items after the fifth on short course pages
-  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
+  jQuery('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
 
 
   // Accessible skip-to-content link:  
   // Enable a link to the page title if one exists.
   // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
 
-  if ( $('.page-title').length > 0) {
-    $('.page-title').first().attr('id', 'skip-to-here');
+  if ( jQuery('.page-title').length > 0) {
+    jQuery('.page-title').first().attr('id', 'skip-to-here');
   }
   else {
-    $('.content-wrapper').first().attr('id', 'skip-to-here');
+    jQuery('.content-wrapper').first().attr('id', 'skip-to-here');
   }
    
 //////////////////////
@@ -187,16 +187,16 @@ $(document).ready(function(){
 /////////////////////
 
 
-  var _sb_lth = $('.sidebar').length;
-  var _has_heading = $('.sidebar').find('.menu-heading').length;
+  var _sb_lth = jQuery('.sidebar').length;
+  var _has_heading = jQuery('.sidebar').find('.menu-heading').length;
   //&& _has_heading > 0
   if ((_sb_lth > 0) ) {
-    var _no_of_li_items = $(".sidebar li").size();
+    var _no_of_li_items = jQuery(".sidebar li").size();
 
     // If there's more than one item in the left sidebar, then build the mobile sidebar
     if (_no_of_li_items > 1) {
-      var _menuHtml = $('.sidebar').html();
-      var _sideBarTitle = $('.sidebar li').first();
+      var _menuHtml = jQuery('.sidebar').html();
+      var _sideBarTitle = jQuery('.sidebar li').first();
       var _mobMenuButton = "<div class='mob-sb-dd-title'>" + _sideBarTitle.text() + "</div>" + '<a href="#" class="show-mob-sidebar"></a>';
       var _mobMenuContent;
 
@@ -209,21 +209,21 @@ $(document).ready(function(){
       }
 
       // create mobile sidebar div and add it to the main content div
-      $('<div id="mobile-sidebar" class="mobile-sidebar d-hide"></div>').prependTo('.content');
+      jQuery('<div id="mobile-sidebar" class="mobile-sidebar d-hide"></div>').prependTo('.content');
 
       // populate the mobile menu with the same content as the desktop sidebar nav & add menu button
-      $('#mobile-sidebar').html(_mobMenuContent);
+      jQuery('#mobile-sidebar').html(_mobMenuContent);
 
-      $('.show-mob-sidebar').click(function(e) {
+      jQuery('.show-mob-sidebar').click(function(e) {
         e.preventDefault();
-        _clicked = $(this);
+        _clicked = jQuery(this);
         
         if (_clicked.hasClass('active')) {
-          _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
+          _clicked.closest(jQuery('#mobile-sidebar')).find(jQuery('ul')).slideUp();
           _clicked.removeClass('active');
         }
         else {
-        _clicked.closest($('#mobile-sidebar')).find($('ul')).slideDown();
+        _clicked.closest(jQuery('#mobile-sidebar')).find(jQuery('ul')).slideDown();
         // update the menu button and set class to active
         _clicked.addClass('active');
         }
@@ -233,20 +233,20 @@ $(document).ready(function(){
       if (_sideBarTitle.text().toLowerCase() == 'in this section') {
       
         // hide "In This Section" in the sidebar dropdown
-        $('#mobile-sidebar li').first().remove(); 
+        jQuery('#mobile-sidebar li').first().remove();
       }
       // if not, it must be a college - so replace text with "college homepage"
       else {
-        $('#mobile-sidebar li a').first().text('College Homepage');
+        jQuery('#mobile-sidebar li a').first().text('College Homepage');
       }
     }
   } // end
 
 
 // LazyLoading with ReSRC.it images
-  if ($('.resrc').length > 0) {
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.review.min.js', function() {
-      $('.resrc').review({
+  if (jQuery('.resrc').length > 0) {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.review.min.js', function() {
+      jQuery('.resrc').review({
           callback: function() {
             resrc.resrc(this);
         }
@@ -255,7 +255,7 @@ $(document).ready(function(){
   }
 
   // check for selectboxes on the page
-  if ($('.select-box').length > 0) {
+  if (jQuery('.select-box').length > 0) {
     // enable custom styled selectboxes
     enableSelectBoxes();
   
@@ -263,10 +263,10 @@ $(document).ready(function(){
 
   // check for regular blockquotes on the page - 
   // we insert a span at the beginning of the element to show a background image sprite 
-  if ($('blockquote').length > 0 ) {
+  if (jQuery('blockquote').length > 0 ) {
     
-    $('blockquote').each(function() {
-        $(this).prepend('<span></span>');
+    jQuery('blockquote').each(function() {
+        jQuery(this).prepend('<span></span>');
     });
 
 
@@ -275,10 +275,10 @@ $(document).ready(function(){
 
   // check for large blockquotes on the page - 
   // - insert a span at the beginning to show large blockquote img (sprite)
-  if ($('.pull-quote').length > 0) {
+  if (jQuery('.pull-quote').length > 0) {
 
-    $('.pull-quote').each(function() {
-      $(this).prepend('<span></span>');
+    jQuery('.pull-quote').each(function() {
+      jQuery(this).prepend('<span></span>');
     });
 
 
@@ -286,10 +286,10 @@ $(document).ready(function(){
 
 
   // focus highlighting for course search and site search input box
-  if ($('.search-input-wrap').length > 0) {
+  if (jQuery('.search-input-wrap').length > 0) {
 
-      $('#finder-search-input').focus(function () {
-        $('#finder-search-input').parent().parent().addClass('search-gray-border');
+      jQuery('#finder-search-input').focus(function () {
+        jQuery('#finder-search-input').parent().parent().addClass('search-gray-border');
       });
    
   }
@@ -302,23 +302,23 @@ $(document).ready(function(){
   *   to gracefully fade-in images with CSS3 after they have loaded
   */
   
-  function imgLoaded(img){  
-    $(img).parent().addClass('loaded');
+  function imgLoaded(img){
+    jQuery(img).parent().addClass('loaded');
   }
 
-if ($('#container').length > 0) {
-  $.when(
-      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js' ),
-      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js' ),
-      $.Deferred(function( deferred ){
-          $( deferred.resolve );
+if (jQuery('#container').length > 0) {
+  jQuery.when(
+      jQuery.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js' ),
+      jQuery.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js' ),
+      jQuery.Deferred(function( deferred ){
+          jQuery( deferred.resolve );
       })
   ).done(function(){
     // initialise skrollr to handle movement of the circles
-      $(function() {
+      jQuery(function() {
 
-      var container = $("#container"),
-          pagination = $("#pagination");
+      var container = jQuery("#container"),
+          pagination = jQuery("#pagination");
 
   function setPagination () {
         pagination.jPages({
@@ -339,7 +339,7 @@ if ($('#container').length > 0) {
 
     setPagination();
 
-    $.filtrify("container", "placeHolder", {
+    jQuery.filtrify("container", "placeHolder", {
         block : "data-original",
         callback : function() {
             destroyPagination();
@@ -349,69 +349,39 @@ if ($('#container').length > 0) {
   });
   });
 
-  if(!$("body").hasClass("gDesktop")) {
-    $("#placeHolder").prependTo(".content");
+  if(!jQuery("body").hasClass("gDesktop")) {
+    jQuery("#placeHolder").prependTo(".content");
   }
 
 }
 
   // fade in button when user scrolls down the page
-  $(window).scroll(function() {
-    if($("body").hasClass("gDesktop")) {
-    if ($(this).scrollTop() > 450) {
-      $('.back-to-top').fadeIn(200);
+  jQuery(window).scroll(function() {
+    if(jQuery("body").hasClass("gDesktop")) {
+    if (jQuery(this).scrollTop() > 450) {
+      jQuery('.back-to-top').fadeIn(200);
     } else {
-      $('.back-to-top').fadeOut(200);
+      jQuery('.back-to-top').fadeOut(200);
       }
     }
   });
 
 
   // scroll to the top of the page when the button is clicked
-  $('.back-to-top').click(function(e){
+  jQuery('.back-to-top').click(function(e){
     e.preventDefault();
-    $('html, body').animate({scrollTop: 0}, 300);
+    jQuery('html, body').animate({scrollTop: 0}, 300);
   });
-
-
-
-  // detect megamenu 
-
-  // if ($('.megamenu_container').length > 0) {
-
-  //     $.when(
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu.js" ),
-  //       $.getScript( "http://artslondon.github.io/beta/assets/js/libs/megamenu_plugins.js" ),
-  //       $.Deferred(function( deferred ){
-  //           $( deferred.resolve );
-  //       })
-  //   ).done(function(){
-  //             $('.megamenu').megaMenuCompleteSet({
-  //             menu_speed_show : 300, // Time (in milliseconds) to show a drop down
-  //             menu_speed_hide : 200, // Time (in milliseconds) to hide a drop down
-  //             menu_speed_delay : 200, // Time (in milliseconds) before showing a drop down
-  //             menu_effect : 'click_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-  //             menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-  //             menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-  //             menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-  //             });
-  //   });
-
-
-  // }
-
   
-
-
   // detect slider component
   
-  if ($('.js-carousel').length > 0) {
+  if (jQuery('.js-carousel').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
 
-      $.each($('.js-carousel'), function() {
+      jQuery.each(jQuery('.js-carousel'), function() {
 
-        var _this = $(this);
+        var _this = jQuery(this);
         var _wrapper = _this.closest('.bx-wrapper'); // the .bx-wrapper container div
 
         // get the individual slide width from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the width to 0 - i.e. max-width
@@ -437,12 +407,12 @@ if ($('#container').length > 0) {
           pager: _pagerOpt,
           onSliderLoad: function(currentIndex) {
             if (_this.data('counter')) {
-              $(_this).closest('.bx-wrapper').find('.bx-controls').prepend('<div class="bx-counter"><span class="bx-index">' + (currentIndex+1) + '</span>/<span class="bx-total">' + _this.getSlideCount() + '</span></div>');
+              jQuery(_this).closest('.bx-wrapper').find('.bx-controls').prepend('<div class="bx-counter"><span class="bx-index">' + (currentIndex+1) + '</span>/<span class="bx-total">' + _this.getSlideCount() + '</span></div>');
             }
           },
-          onSlideAfter: function($slideElement, oldIndex, newIndex) {
+          onSlideAfter: function(jQueryslideElement, oldIndex, newIndex) {
             if (_this.data('counter')) {
-              $(_this).closest('.bx-wrapper').find('.bx-index').text(newIndex+1);
+              jQuery(_this).closest('.bx-wrapper').find('.bx-index').text(newIndex+1);
             }
           }
         });
@@ -451,17 +421,14 @@ if ($('#container').length > 0) {
 
   }
   
-
-
-
   // detect slider component
-  if ($('.royalSlider').length > 0) {
+  if (jQuery('.royalSlider').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
-      $.each($('.royalSlider'), function() {
+      jQuery.each(jQuery('.royalSlider'), function() {
 
-        var _this = $(this);
+        var _this = jQuery(this);
 
         // get the individual slide width and height from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the dimensions to sensible defaults
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 930;
@@ -478,18 +445,13 @@ if ($('#container').length > 0) {
           autoScaleSliderWidth: _itemWidth,
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
-          globalCaption: true, 
+          globalCaption: true,
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
             pauseOnHover: true
           }
         });
-
-        // var slider = _this.data('royalSlider');
-        // slider.ev.on('rsAfterContentSet', function(e, object) {
-        //   resrc.resrcAll();
-        // });
 
       });
 
@@ -505,34 +467,33 @@ if ($('#container').length > 0) {
 
   // Show image credits button fixed to the right of the screen on Desktop only
   
-if ($('.credits').length > 0) {
+if (jQuery('.credits').length > 0) {
 
 
       //only show credits on desktop 
-      if ($('body').hasClass('gDesktop')) {
-        $('.credits-btn').addClass("show");
+      if (jQuery('body').hasClass('gDesktop')) {
+        jQuery('.credits-btn').addClass("show");
         
-        $('.show-credits').click(function(event) {
+        jQuery('.show-credits').click(function(event) {
           event.preventDefault();
         
-          var c = $(this);
+          var c = jQuery(this);
           if (c.hasClass('active') ) {
             c.removeClass('active').attr('title','Show image credits');
-            $('.credits').fadeOut();
+            jQuery('.credits').fadeOut();
           } else {
             c.addClass('active').attr('title','Hide image credits');
-            $('.credits').fadeIn();
+            jQuery('.credits').fadeIn();
           }
         });
       }
   
-    
   }
 
 function resetSpinners() {
       // check if there are any other open accordion items, and close them if so
-      $( ".accordion-list-item" ).each(function (e) {
-        var _li_item = $(this);
+      jQuery( ".accordion-list-item" ).each(function (e) {
+        var _li_item = jQuery(this);
         if ( _li_item.hasClass('st-open') ) {
             _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
         }
@@ -540,31 +501,31 @@ function resetSpinners() {
     }
 
 // detect accordion component
-if ($('.accordion').length > 0) {
+if (jQuery('.accordion').length > 0) {
 
-    $.when(
-        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
+    jQuery.when(
+        jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
+        jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
+        jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
+        jQuery.Deferred(function( deferred ){
+            jQuery( deferred.resolve );
         })
     ).done(function(){
 
         //place your code here, the scripts are all loaded
-        $('#st-accordion').accordion({
+        jQuery('#st-accordion').accordion({
             oneOpenedItem: true
         });
 
     });
 
-    $(".accordion-list-anchor").on("click", ".size-h4", function(event){
+    jQuery(".accordion-list-anchor").on("click", ".size-h4", function(event){
         event.preventDefault();
-        var circle = ($(this).next('.st-arrow'));
-        var accordion = ($(this).parent().parent());
-        var elem = ($(this).parent().next('.st-content'));
+        var circle = (jQuery(this).next('.st-arrow'));
+        var accordion = (jQuery(this).parent().parent());
+        var elem = (jQuery(this).parent().next('.st-content'));
               resetSpinners();
-              // $(this).scrollToMe(); // scroll to the clicked elem
+              // jQuery(this).scrollToMe(); // scroll to the clicked elem
               if (!elem.is(':visible'))  {
                 circle.rotate({animateTo:135});
                } else {
@@ -572,11 +533,11 @@ if ($('.accordion').length > 0) {
               }
     });
 
-    $(".st-arrow").on("click", function(e){
+    jQuery(".st-arrow").on("click", function(e){
       e.preventDefault();
       resetSpinners();
-      var _icon = $(this);
-      var _st = $(this).parent().parent();
+      var _icon = jQuery(this);
+      var _st = jQuery(this).parent().parent();
 
       if (!_st.hasClass('st-open'))  {
         _icon.rotate({animateTo:135});
@@ -590,11 +551,11 @@ if ($('.accordion').length > 0) {
 
 
 // detect dropdown menu button used in forms or in page for drop menus
-if ($('.dd-menu').length > 0) {
+if (jQuery('.dd-menu').length > 0) {
 
-    $(".js-dd-menu").click(function (event){
+    jQuery(".js-dd-menu").click(function (event){
        event.preventDefault();
-       var _d = $(this);
+       var _d = jQuery(this);
        var _d_menu = _d.parent();
        
        if (_d_menu.hasClass('active')) {
@@ -603,27 +564,24 @@ if ($('.dd-menu').length > 0) {
             _d_menu.removeClass('active');
          });
        }
-       else { 
+       else {
           _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
        }
-    });       
+    });
 }
 
-
-
-
 // detect search filters on page
-if ($('.search-filters').length > 0) {
+if (jQuery('.search-filters').length > 0) {
    //allow expand and close for search filters
-  $('.filter-heading').click(function(event) {
+  jQuery('.filter-heading').click(function(event) {
     event.preventDefault();
-    var c = $(this);
+    var c = jQuery(this);
     
     //process click event if the heading is not set to not-active
-    if (!c.hasClass('not-active')){ 
+    if (!c.hasClass('not-active')){
 
       if (c.parent().hasClass('active') ) {
         c.parent().removeClass('active');
@@ -635,26 +593,25 @@ if ($('.search-filters').length > 0) {
   });
 }
 
-
 // Showtime JSON loader
-if ($('.showtime-json').length){
+if (jQuery('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox.js', function() {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox.js', function() {
 
-    var outputNode = $('.showtime-json');
+    var outputNode = jQuery('.showtime-json');
 
-    $.each(outputNode, function(i) {
+    jQuery.each(outputNode, function(i) {
       
       var _node = '';  
-      _node = $(this);
+      _node = jQuery(this);
 
       var feedUrl = _node.data('url');
       // set a feed limit (this only works for Profiles, for Student we have to set the limit via a counter)
       var limit = _node.data('limit');
 
 
-      $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
+      jQuery.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
            
          var string = '';
          var media = '';
@@ -666,23 +623,18 @@ if ($('.showtime-json').length){
            profileUrl = data.data.Student.Student.profileurl;
            studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
            media = data.data.Student.Media;
-         } 
+         }
          
          if (data.data.Profiles) { // this is a group of objects in Showtime
            media = data.data.Profiles;
          }
         
-        $.each(media, function(i, item) {
+        jQuery.each(media, function(i, item) {
 
           if (counter < limit) {
-
-            //if (item.type == 'video' || item.type == 'publication') {
-            //  item.profileImg = 'http://app.resrc.it/http://beta.arts.ac.uk/media/beta/beta-colleges/beta-lcf/images/placeholder-lcf-580-4.jpg';
-            //} else {
               profileImg = item.thumb.split('gallery');
               item.profileImg = profileImg[0] + 'profile.jpg';
               item.zoomImg = profileImg[0] + 'screen.jpg';
-            //}
 
             if (item.profileName) { //group
               profileUrl = 'http://showtime.arts.ac.uk/' + item.profileName;
@@ -692,7 +644,7 @@ if ($('.showtime-json').length){
            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + studentName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
 
             
-           _node.append(string); 
+           _node.append(string);
 
            counter++;
 
@@ -702,7 +654,7 @@ if ($('.showtime-json').length){
 
         }); // end each loop
          
-        $('.zoom').magnificPopup({ 
+        jQuery('.zoom').magnificPopup({
           type: 'image',
           image: {
             titleSrc: function(item) {
@@ -713,7 +665,7 @@ if ($('.showtime-json').length){
             enabled: true,
             navigateByImgClick: true,
             preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-          } 
+          }
         });
 
       }); // end getJSON loop
@@ -726,13 +678,13 @@ if ($('.showtime-json').length){
 
 
 // detect lightbox component
-if ($('.js-lightbox').length > 0) {
+if (jQuery('.js-lightbox').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
-        $('.js-lightbox').each(function() {
-          $(this).magnificPopup({
+        jQuery('.js-lightbox').each(function() {
+          jQuery(this).magnificPopup({
             delegate: 'a',
             type: 'image',
             tLoading: 'Loading image #%curr%...',
@@ -754,25 +706,25 @@ if ($('.js-lightbox').length > 0) {
 
 
 // show/hide the relevant buttons for browsers that have JS enabled
-$(".expanded-content").hide();
-$(".show-more").show();
+jQuery(".expanded-content").hide();
+jQuery(".show-more").show();
 
 // handle "Show More" button click
-$(".show-more").click(function(e){
-  e.preventDefault(); 
-  var _clicked = $(this);
-  _clicked.closest(".expandable-content").find(".expanded-content").slideDown(); 
+jQuery(".show-more").click(function(e){
+  e.preventDefault();
+  var _clicked = jQuery(this);
+  _clicked.closest(".expandable-content").find(".expanded-content").slideDown();
   _clicked.hide();
 });
 
 // handle "Show Less" button click
-$(".hide-content").click(function(e){
-  e.preventDefault();  
-  var _clicked = $(this);
+jQuery(".hide-content").click(function(e){
+  e.preventDefault();
+  var _clicked = jQuery(this);
 
-  var parent = _clicked.closest(".expandable-content"); 
-  $(".expanded-content",parent).hide();
-  $(parent).find(".show-more").show();
+  var parent = _clicked.closest(".expandable-content");
+  jQuery(".expanded-content",parent).hide();
+  jQuery(parent).find(".show-more").show();
   parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
 });
 
@@ -782,12 +734,12 @@ $(".hide-content").click(function(e){
   //---------------------------------------
 
 
-  if ($('audio').length > 0) {
+  if (jQuery('audio').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js', function() {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js', function() {
 
-        $('audio').each(function() {
-          $(this).audioPlayer();
+        jQuery('audio').each(function() {
+          jQuery(this).audioPlayer();
         });
 
     });
@@ -795,66 +747,63 @@ $(".hide-content").click(function(e){
 
   }
 
-
-
-
   //---------------------------------------
   //  Tabs on desktop, accordion on mobile
   //---------------------------------------
 
-  if ($('.tabs-container').length > 0) {
+  if (jQuery('.tabs-container').length > 0) {
 
-      $(".tab_content").hide();
-      $(".tab_content:first").show();
+      jQuery(".tab_content").hide();
+      jQuery(".tab_content:first").show();
       // update icon for first tab item (it's opened on start by default)
-      $(".tab_drawer_heading:first").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
+      jQuery(".tab_drawer_heading:first").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
       /* if in tab mode */
-      $("ul.tabs li").click(function() {
+      jQuery("ul.tabs li").click(function() {
 
-        $(".tab_content").hide();
-        var activeTab = $(this).attr("rel"); 
-        $("#"+activeTab).show();    
+        jQuery(".tab_content").hide();
+        var activeTab = jQuery(this).attr("rel");
+        jQuery("#"+activeTab).show();
 
-        $("ul.tabs li").removeClass("active");
-        $(this).addClass("active");
+        jQuery("ul.tabs li").removeClass("active");
+        jQuery(this).addClass("active");
 
-        $(".tab_drawer_heading").removeClass("d_active");
-        $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+        jQuery(".tab_drawer_heading").removeClass("d_active");
+        jQuery(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
 
       });
 
       /* if in drawer mode */
-      $(".tab_drawer_heading").click(function() {
+      jQuery(".tab_drawer_heading").click(function() {
 
         // close any open tabs on click and reset to a down icon
-        $(".tab_content").hide();
+        jQuery(".tab_content").hide();
 
-        var d_activeTab = $(this).attr("rel"); 
-        $("#"+d_activeTab).show();
+        var d_activeTab = jQuery(this).attr("rel");
+        jQuery("#"+d_activeTab).show();
 
-        $(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
-          $(this).addClass("d_active").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
+        jQuery(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
+          jQuery(this).addClass("d_active").children('span').removeClass('icon-plus').addClass('icon-right-open-mini');
 
-        $("ul.tabs li").removeClass("active");
-        $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
-        $(this).scrollToMe();
+        jQuery("ul.tabs li").removeClass("active");
+        jQuery("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+        jQuery(this).scrollToMe();
       });
     }
 
 // End tabs to accordion 
 
-if ($('.__media').length > 0) {
-  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
-    $('.__media').fitVids();
+if (jQuery('.__media').length > 0) {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
+    jQuery('.__media').fitVids();
   });
 }
 
 
-if ($('video').length > 0) {
+if (jQuery('video').length > 0) {
 
-  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/media-element.min.js', function() {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/media-element.min.js', function() {
 
-    $('video').mediaelementplayer({
+    jQuery('video').mediaelementplayer({
       //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
       pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
     });
@@ -866,14 +815,14 @@ if ($('video').length > 0) {
 
 
 // KIS WIDGET
-if ($('.kis-widget').length > 0) {
+if (jQuery('.kis-widget').length > 0) {
   (function (d) {
   "use strict";
-  var widgetScript = d.createElement('script'); 
+  var widgetScript = d.createElement('script');
   widgetScript.id = 'unistats-widget-script';
       widgetScript.src = '//widget.unistats.ac.uk/js/unistats.widget.js';
   var scriptTags = d.getElementsByTagName('script')[0];
-  if (d.getElementById('unistats-widget-script')) {  return; } 
+  if (d.getElementById('unistats-widget-script')) {  return; }
   scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
   } (document));
 }
@@ -881,60 +830,36 @@ if ($('.kis-widget').length > 0) {
 
 
 // Add download class to PDF links
-$('a[href$=".pdf"]').addClass('download');
+jQuery('a[hrefjQuery=".pdf"]').addClass('download');
 
   // Creating custom :external selector
-  $.expr[':'].external = function(obj){
+  jQuery.expr[':'].external = function(obj){
       return (obj.hostname != location.hostname);
   };
 
   // Add 'external' CSS class to all external links
-  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
-    $(this).attr("title", $(this).attr("title") + "(external link)");
+  jQuery('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
+    jQuery(this).attr("title", jQuery(this).attr("title") + "(external link)");
 });
 
 
 
 
-$('#debug').hide();
-$('.debug-toggle').click(function(e) {
-  $('#debug').toggle();
+jQuery('#debug').hide();
+jQuery('.debug-toggle').click(function(e) {
+  jQuery('#debug').toggle();
   e.preventDefault();
 });
 
 
-$('.lcf').find('h2').wrapInner('<span />');
+jQuery('.lcf').find('h2').wrapInner('<span />');
 
-//$('.lcf').find('.__media').find('h2').wrapInner('<span />');
+//jQuery('.lcf').find('.__media').find('h2').wrapInner('<span />');
 
 
 
 }); // end document ready
 
-
-
- // // Add download class to PDF links
- //  var pdf = $('a[href$=".pdf"]');
-
- //  if ( pdf.length > 0 && pdf.parent("li").length > 0) {
- //    pdf.closest("li").addClass('download');
- //  }
-
-
- 
-
-
-
-////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
 
 
 /* 
@@ -946,16 +871,16 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 //  example initialise code
 //
-//   $(window).load(function(){
-//      // $(groupOfItems).fitHeights(); 
-//      $('ul li').fitHeights();
+//   jQuery(window).load(function(){
+//      // jQuery(groupOfItems).fitHeights(); 
+//      jQuery('ul li').fitHeights();
 //    });
 */
 (function(){
   
-  $.fn.fitHeights = function() {
+  jQuery.fn.fitHeights = function() {
     
-    var items = $(this);
+    var items = jQuery(this);
     function setHeights() {
       
       var currentTallest = 0;
@@ -966,60 +891,60 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
       
       items.each(function(){
         
-        if( $(this).height() > currentTallest ) { currentTallest = $(this).height(); }
+        if( jQuery(this).height() > currentTallest ) { currentTallest = jQuery(this).height(); }
       });
       items.css({ 'min-height' : currentTallest });
     }
     
     setHeights();
-    $(window).on('resize', setHeights);
+    jQuery(window).on('resize', setHeights);
     return this;
   };
 })(jQuery);
 
 // initialise
-$(window).load(function(){
+jQuery(window).load(function(){
   
-  if ($('.related-content').length > 0) {
-    $('.related-content ul li').fitHeights();
+  if (jQuery('.related-content').length > 0) {
+    jQuery('.related-content ul li').fitHeights();
   }
 
-  if ($('.highlight-box-3').length > 0) {
-    $('.highlight-box-3 ul li').fitHeights();
+  if (jQuery('.highlight-box-3').length > 0) {
+    jQuery('.highlight-box-3 ul li').fitHeights();
   }
   
-  if ($('body').is('.chelsea, .camberwell, .wimbledon')) {
-    $('.two-up ul li').fitHeights();
-    $('.three-up ul li').fitHeights();
+  if (jQuery('body').is('.chelsea, .camberwell, .wimbledon')) {
+    jQuery('.two-up ul li').fitHeights();
+    jQuery('.three-up ul li').fitHeights();
   }
   
-  if ($('body').is('.ual')) {
-    $('.cta .two-up-full ul li').fitHeights();
-    $('.st-cp .two-up-full ul li').fitHeights();
-    $('.news .four-up-full ul li').fitHeights();
-    $('.fe .four-up-full ul li').fitHeights();
+  if (jQuery('body').is('.ual')) {
+    jQuery('.cta .two-up-full ul li').fitHeights();
+    jQuery('.st-cp .two-up-full ul li').fitHeights();
+    jQuery('.news .four-up-full ul li').fitHeights();
+    jQuery('.fe .four-up-full ul li').fitHeights();
   }
 
-  if ($('.__gallery').length > 0) {
-    $('.__gallery').each( function() {
-      $(this).find('li').fitHeights();
+  if (jQuery('.__gallery').length > 0) {
+    jQuery('.__gallery').each( function() {
+      jQuery(this).find('li').fitHeights();
     });
   }
 
 });
 
 
-// Fix iOS re-orient problem when changing from portrait to landscape mode
-// The script below will make sure that the screen width is updated correctly 
-window.document.addEventListener('orientationchange', function() {
-  var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
-  var viewportmeta = document.querySelector('meta[name="viewport"]');
-  if (iOS && viewportmeta) {
-    if (viewportmeta.content.match(/width=device-width/)) {
-      viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
-    }
-    viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
-  }
-  // If you want to hide the address bar on orientation change, uncomment the next line
-  window.scrollTo(0, 0); 
-}, false);
+// // Fix iOS re-orient problem when changing from portrait to landscape mode
+// // The script below will make sure that the screen width is updated correctly 
+// window.document.addEventListener('orientationchange', function() {
+//   var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+//   var viewportmeta = document.querySelector('meta[name="viewport"]');
+//   if (iOS && viewportmeta) {
+//     if (viewportmeta.content.match(/width=device-width/)) {
+//       viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
+//     }
+//     viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
+//   }
+//   // If you want to hide the address bar on orientation change, uncomment the next line
+//   window.scrollTo(0, 0);
+// }, false);
