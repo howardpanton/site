@@ -52,18 +52,14 @@
       background-color: $dark-gray;
     }
   }
-  // .menu-plus {
-  //   @extend %icon;
-  //   @include font-size(48);
-  //   float: right;
-  //   color: $white;
-  //   text-align: center;
-  //   line-height: 48px;
-  //   width: 48px;
-  //   height: 48px;
-  //   cursor: pointer;
-  // }
 }
+
+// hide all but first list item (to prevent FOUC before javascript loads)
+// we need to show first list item because it is the mobile menu trigger button
+.megamenu > li + li {
+   visibility: hidden;
+}
+
 
 // float the search icon on desktop to the right of the screen
 .megamenu > li:last-child {
@@ -71,6 +67,8 @@
     float: right;
   }
 }
+
+
 
 .megamenu > li > a {
   @include font-size(14);
@@ -110,7 +108,6 @@
 }
 
 .megamenu li.megamenu_button {
-  display: none;
   position: absolute;
   right: 0;
   top: 0;
@@ -118,6 +115,9 @@
   height: 48px;
   background-color: $black;
   border-bottom: 0;
+  @include gs-media (d) {
+    display: none;
+  }
   // border-right: 1px solid $aaa-gray;
   @include prefixer(transition, $transition-bg);
   a {
@@ -155,8 +155,14 @@
   h2 a, a {
     @extend %Swiss721BT-Light-important;
     @include font-size(14);
-
   }
+  
+  li > a:hover {
+     background-color: $bg-gray;
+     color: $black;
+  }
+
+
   @include gs-media(d) {
     li > a:hover {
       background-color: $black;
@@ -395,15 +401,6 @@
         font-weight: 300;
         // border-bottom: 0;
       }
-      
-      // @include gs-media(t, max) {
-      //   li:nth-child(n+2) {
-      //     display: none;
-      //     .menu-loaded & {
-      //       display: block;
-      //     }
-      //   }
-      // }
 
       &:hover { background-color: $dark-gray; }   
 
