@@ -818,10 +818,19 @@ img.rsImg {
 	.rsDefault {
 		@extend .ual-black-bg;
 	}
+	/*.rsOverflow, .rsSlide {
+		overflow-y: visible;
+	}*/
 }
 
 .box-text {
+	@include gs-media (t) {
+		width: 85%;	
+	}
 	@include gs-media (d) {
-		width: 70%;	
+		width: 80%;	
+		padding-top: 25px;
 	}
 }
+
+

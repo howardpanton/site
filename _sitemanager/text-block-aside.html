@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="l-content  block  __text  __with-aside">
+        	<div class="text">
+  			<t4 type="content" name="Heading" output="selective-output" modifiers="" format="<h2>$value</h2>"  />
+                  	<t4 type="content" name="Intro paragraph" output="selective-output" modifiers="" format="<p class=&quot;leader&quot;>$value</p>" />
+			<t4 type="content" name="Main text" output="normal" modifiers="nav_sections"  />
+		</div>
+   	</div>
+
+   	<?php 
+   	$aside_text = "<t4 type="content" name="Aside" output="normal" modifiers="htmlentities"  />";
+   	if ($aside_text != "") { 
+   	?>
+  	<aside class="<t4 type="content" name="Background color (Aside)" output="normal" modifiers=""  />">
+		<t4 type="content" name="Aside" output="normal" modifiers="nav_sections"  />
+	</aside>
+	<?php } ?>
+</div>
