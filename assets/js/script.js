@@ -738,6 +738,9 @@ if ($('.js-lightbox').length > 0) {
               preload: [0,1] // Will preload 0 - before current, and 1 after the current image
             },
             image: {
+              titleSrc: function(item) {
+                return item.el.find('span').text();
+              },
               tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
             }
           });
