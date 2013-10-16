@@ -1,0 +1,21 @@
+.lcf.home {
+	.news-feed {
+		li {
+			@include component-spacing-bottom;
+		}
+
+		@include gs-media(t,min-max) {
+			@include gs-span (t,2,7);
+		}
+
+		@include gs-media(d) {
+
+			figure {
+				@include gs-span(d, 9, 14, (3, 14));
+			}
+			.text {
+				@include gs-span(d, 3, 8, (3, 14));
+			}
+		}
+	}
+}
