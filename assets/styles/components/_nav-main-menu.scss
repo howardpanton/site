@@ -145,11 +145,7 @@
 .megamenu li .dropdown_multilevel {
   position: absolute;
   margin:0;
-  //padding:12px;
-  //left:-9999em;
-  //top:-9999em;
   display: none;
-  // zoom:1;
   z-index:99998;
   float: left;
   h2 a, a {
@@ -157,11 +153,11 @@
     @include font-size(14);
   }
   
+  // set no hover color for dropdown 
   li > a:hover {
      background-color: $bg-gray;
      color: $black;
   }
-
 
   @include gs-media(d) {
     li > a:hover {
