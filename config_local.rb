@@ -29,3 +29,5 @@ http_images_path = "http://artslondon.github.io"
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
 #sass_options = {:debug_info => true}
+
+# To set this file to serve as the default config file for Compass, run compass compile -c config_local.rb --force
