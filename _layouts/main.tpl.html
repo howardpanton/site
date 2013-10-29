@@ -51,9 +51,9 @@
      <script>
   /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
 window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-grunticon( [ "{{site.url}}/assets/css/logos.data.svg.min.css", "{{site.url}}/assets/css/logos.data.png.min.css", "{{site.url}}/assets/css/logos.fallback.min.css" ] );
+grunticon( [ "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.data.svg.min.css", "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.data.png.min.css", "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" ] );
   </script>
-  <noscript><link href="{{site.url}}/assets/css/logos.fallback.min.css" rel="stylesheet"></noscript>
+  <noscript><link href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" rel="stylesheet"></noscript>
   </head>
 
 
@@ -161,22 +161,42 @@ grunticon( [ "{{site.url}}/assets/css/logos.data.svg.min.css", "{{site.url}}/ass
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
+
+<!-- script to prevent FOUC for megamenu-->
+<script>
+    // hide all but the first megamenu list item at start (the first .megamenu list item is the toggle menu button)
+    $('.megamenu > li + li').css('visibility','hidden');
+    $('.top-bar').css('overflow', 'hidden');
+    window.confirm("overflow set to hidden on .top-bar");
+</script>
+
 <script src="http://use.resrc.it/"></script>
 
 <!-- Scripts -->
-<script type="text/javascript" src="{{site.url}}/assets/js/script-min.js"></script>
+<!-- live script.js -->
+ <!-- <script type="text/javascript" src="{{site.url}}/assets/js/script-min.js"></script> -->
 
- <script src='{{site.url}}/assets/js/debug.js' type='text/javascript'></script>
+<!-- dev script.js -->
+<script type="text/javascript" src="{{site.url}}/assets/js/script-expanded.js"></script>
 
-  <script>
+
+<script src='{{site.url}}/assets/js/dev/debug.js' type='text/javascript'></script>
+
+<script>
   $(document).ready(function($){
+
       $('.megamenu').megaMenuCompleteSet({
           menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
           menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
           menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
           menu_responsive:1 // 1 = Responsive, 0 = Not responsive
       });
-});
+      
+      // FOUC Fix - unhide the list items after the megamenu script has run
+      $('.megamenu > li + li').css('visibility','visible');
+      $('.top-bar').css('overflow', 'visible');
+      window.confirm("overflow set to visible on .top-bar");
+  });
 
   // $('.swatch').swatchify();
 
@@ -193,7 +213,6 @@ grunticon( [ "{{site.url}}/assets/css/logos.data.svg.min.css", "{{site.url}}/ass
   //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   // })();
-
 </script>
 </body>
 </html>
