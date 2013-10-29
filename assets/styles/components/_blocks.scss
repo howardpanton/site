@@ -300,6 +300,19 @@
 		}
 	}
 
+	// three up link list component
+	.link-list-item { 
+		@include padding-leader(2); 
+		border-bottom: 1px dotted black;
+	}
+
+	@include gs-media(d) {
+		/* clear float for multiples of 3 link list items on desktop*/
+		// .link-list-item:nth-child(4), .link-list-item:nth-child(7), .link-list-item:nth-child(10) 
+   			
+		li.link-list-item:nth-child(3n+1) { clear: left; }
+
+	}
 }
 
 // four-up-full - used specifically for the UAL homepage
