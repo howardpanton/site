@@ -2679,7 +2679,7 @@ Hammer.gestures.Release = {
         // get width of page -- used to set the width of the menu dropdowns a
         var _innerW = $('body').innerWidth();
 
-        confirm("the page width is:" + _innerW);
+        // confirm("the page width is:" + _innerW);
         if ((_innerW < 960) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
@@ -2748,7 +2748,7 @@ Hammer.gestures.Release = {
 
 
 
-;// *-----------------------------------------*\
+// *-----------------------------------------*\
 //     * University of the Arts London
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
@@ -2797,6 +2797,18 @@ jQuery(".date").each(function (i, element) {
 
 });
 
+
+// position prev and next navigation buttons for OwlCarousel
+function positionOwlCarouselNav() {
+  // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
+  var maxImgHeight = Math.max.apply(null, jQuery(".owl-carousel img.lazyOwl").map(function() {
+      return $(this).height();
+  }));
+  // calculate slider controls position from top of slider container
+  var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
+  // set position of slider nav buttons from top 
+  jQuery(".owl-prev, .owl-next").css("top", distFromTop);
+}
 
 
   var Link_col = jQuery(".college-nav").find("li").slice(3, 6);
@@ -3205,11 +3217,49 @@ if (jQuery('#container').length > 0) {
 
       });
 
-
-
     });
   }
 
+
+ 
+
+
+// Owl slider (research profiles)
+if (jQuery('.owl-carousel').length > 0) {
+
+  jQuery.getScript( "http://artslondon.github.io/beta/assets/js/libs/owl.carousel.js" , function() {
+     jQuery('.owl-carousel').each(function() {
+        jQuery(this).owlCarousel({
+        itemsDesktop : [1280, 3], // items between 1000px and 901px
+        itemsTablet: [959, 2], // items between 
+        itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
+        lazyLoad : true,
+        pagination: false,
+        navigation : true,
+        navigationText : ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"],
+        afterAction : function(elem){
+          positionOwlCarouselNav();
+        },
+
+        afterUpdate: function(elem){
+          positionOwlCarouselNav();
+        },
+      });
+
+    });
+
+     // get number of items in each owl-carousel and output pagination to each item in the carousel
+    jQuery(".owl-carousel").each(function() {
+        var total_items = jQuery('.item', this).length;
+        // console.log("the number of items is: " + total_items);
+        jQuery(".item-description", this).append(function(i) {
+            return $("<span />", {text: i+1 + ' of ' + total_items });
+         });
+
+    });
+
+  });
+}
 
   ///////////////////////
   /////// accreditation
@@ -3498,6 +3548,25 @@ jQuery(".hide-content").click(function(e){
   }
 
   //---------------------------------------
+  //  Google Maps  
+  //---------------------------------------
+
+  if (jQuery('#map_canvas').length > 0) {
+
+
+    // if accomodation map
+    if (jQuery('.accomodation-map').length > 0) {
+
+        jQuery.getScript('http://artslondon.github.io/beta/assets/js/maps/accomodation.js', function() {
+
+          window.onload = loadMap();
+
+        });
+    }
+
+  }
+
+  //---------------------------------------
   //  Tabs on desktop, accordion on mobile
   //---------------------------------------
 
@@ -3543,7 +3612,7 @@ jQuery(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if (jQuery('.__media').length > 0) {
-  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids.min.js', function() {
     jQuery('.__media').fitVids();
   });
 }
@@ -3679,6 +3748,10 @@ jQuery(window).load(function(){
     jQuery('.__gallery').each( function() {
       jQuery(this).find('li').fitHeights();
     });
+  }
+
+  if (jQuery('.owl-carousel').length > 0) {
+		positionOwlCarouselNav(); 
   }
 
 });
