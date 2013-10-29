@@ -1,0 +1,52 @@
+---
+layout: main.tpl
+college: ual
+template: true
+title: podcast test
+---
+
+<div class="content-wrapper">
+  <div class="row">
+    <nav class="sidebar">
+      {% include _lcf_navigation.html %}    
+    </nav>  
+
+    <div role="main" class="content">
+      <div class="row">
+        <audio controls class="podcast-control">
+          <source src="http://www.arts.ac.uk/media/beta/DISABILITYEDIT%281%29.mp3" type="audio/mpeg"/>
+          <source src="http://www.arts.ac.uk/media/beta/disability-podcast.ogg" type="audio/ogg"/>
+         <!--  <object type="application/x-shockwave-flash" data="media/OriginalMusicPlayer.swf" width="225" height="86"> 
+           <param name="movie" value="http://www.arts.ac.uk/media/OriginalMusicPlayer.swf"/>
+           <param name="FlashVars" value="mediaPath=http://www.arts.ac.uk/media/beta/DISABILITYEDIT(1).mp3" /> 
+          </object>  -->
+       
+        </audio>
+      </div> 
+      <div class="row">
+        <p>   
+          <a href='http://www.arts.ac.uk/media/beta/DISABILITYEDIT%281%29.mp3'>Download file</a>
+        </p>
+      </div>
+
+      <h2>and another</h2>
+      <div class="row">
+        <audio preload="auto" controls class="podcast-control">
+          <source src="http://www.arts.ac.uk/media/beta/DISABILITYEDIT%281%29.mp3" type="audio/mpeg"/>
+          <source src="http://www.arts.ac.uk/media/beta/disability-podcast.ogg" type="audio/ogg"/>
+         <!--  <object type="application/x-shockwave-flash" data="media/OriginalMusicPlayer.swf" width="225" height="86"> 
+           <param name="movie" value="http://www.arts.ac.uk/media/OriginalMusicPlayer.swf"/>
+           <param name="FlashVars" value="mediaPath=http://www.arts.ac.uk/media/beta/DISABILITYEDIT(1).mp3" /> 
+          </object>  -->
+       
+        </audio>
+      </div> 
+      <div class="row">
+        <p>   
+          <a href='http://www.arts.ac.uk/media/beta/DISABILITYEDIT(1).mp3'>Download file</a>
+        </p>
+      </div>
+    </div>   
+  </div><!-- .row -->
+</div><!-- .content-wrapper -->
+  

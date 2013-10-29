@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 
     jshint: {
       // define the files to lint
-      files: ['assets/js/script.js'],
+      files: ['_site/assets/js/script.js'],
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
           // more options here if you want to override JSHint defaults
@@ -95,11 +95,11 @@ module.exports = function(grunt) {
 
     concat: {
       options: {
-        separator: '',
+        separator: ';',
       },
 
     dist: {
-        src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/megamenu_plugins.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
+        src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/hoverintent.js','assets/js/libs/hammer.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
         dest: 'temp/combined.js',
       },
     },
@@ -116,6 +116,12 @@ module.exports = function(grunt) {
         files: {
           'assets/js/script-min.js': ['temp/combined.js']
 
+        }
+      },
+
+      audio: {
+        files: {
+          'assets/js/libs/audio-min.js': ['assets/js/libs/audioplayer.js']
         }
       }
     },
@@ -176,7 +182,7 @@ module.exports = function(grunt) {
           mode: 'gzip'
         },
         files: [
-          {expand: true,  src: ['assets/js/libs/*.js'], dest: 'gz', ext: '.js'}
+          {expand: true,  src: ['assets/js/libs/audio-min.js'], dest: 'gz', ext: '.js'}
         ]
       },
 
@@ -260,7 +266,7 @@ module.exports = function(grunt) {
 
   // build for production. 
   // To run type: 'grunt buildlive'
-  grunt.registerTask('buildlive', ['compass:production',
+  grunt.registerTask('buildlive', [ 'compass:production',
                                     'concat:dist',
                                     'any-newer:uglify',
                                     'compress:main',
@@ -291,12 +297,19 @@ module.exports = function(grunt) {
   grunt.registerTask('buildlocal', ['newer:jshint',
                                     'compass:local',
                                     'exec:buildlocal',
-                                    'clean:build'
+                                    //'clean:build'
                                     ]);
+
+  // combine script assets
+  grunt.registerTask('concat_js', ['concat:dist']);
+
   // gzip fonts
   grunt.registerTask('gzipfonts', ['any-newer:compress:fonts',
                                    'copy:minified_fonts'
                                     ]);
+
+  grunt.registerTask('compressaudiojs', ['uglify:audio', 'compress:libs']);
+  
 
   // grunt task to push to gitHub 
 
