@@ -95,7 +95,7 @@
 		
 		
 		public function materials() {
-			$materials = strip_tags($this->xml->course->materials);
+			$materials = $this->xml->course->materials;
 			return $materials;
 		}
 		
@@ -108,7 +108,12 @@
 
 		public function dates() {
 			$dates = $this->xml->course->dates;
-			return $dates;
+			$array = get_object_vars($dates);
+			if (empty($array)) {
+				return FALSE;
+				} else {
+					return $array;
+			}
 		}
 		
 		public function datesChildren() {
@@ -117,17 +122,31 @@
 		}
 
 		public function getTutors() {
-			 if (!empty ($this->xml->tutors)) {
+			$tutors = $this->xml->tutors->children();
+			if (empty($tutors)) {
+				return FALSE;
+			} else {
 				$a = 1;
+				echo "<p class=\"tutor\"><strong>Taught by: </strong>";
 				foreach($this->xml->tutors->children() as $tutor) {
 					$tutor["value"];
 					if ( $a <> 1 ) {echo ", ";} 
 					$a = $a+1;
-					return $tutor["name"]; 
+					echo $tutor["name"]; 
 				} // End of For each tutor
-
-			} //End of if not empty
+				echo "</p>";
+			}
 		}
+
+		public function getTutorsBiography() {
+			$TutorsBiography = $this->xml->tutors->tutor->description;
+			if (empty($TutorsBiography)) {
+				return FALSE;
+			} else {
+				return $TutorsBiography;
+			}
+		}
+		
 		
 		public function Truncate($string, $length, $stopanywhere = false) {
 		    //truncates a string to a certain char length, stopping on a word if not specified otherwise.
