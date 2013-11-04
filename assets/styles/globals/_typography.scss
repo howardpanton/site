@@ -509,6 +509,10 @@ b, strong, h2, h3, h4 {
 //   }
 // }
 
+// styling for PDF link lists 
+// (remove default list icons in aside)
+
+
 // // positioning for download link icons
 // .download:before {
 // 	min-width: 1.5em;
@@ -517,8 +521,8 @@ b, strong, h2, h3, h4 {
 // }
 
 // // hide external link after download links
-// .download.external:after, .download.external.button-link:after {
-// 	display: none;
+// .download.external:after, .download.external.button-link:after { 
+//  	display: none; 
 // }
 
 // add icon to any external links within l-content or aside
@@ -576,11 +580,19 @@ b, strong, h2, h3, h4 {
 // pdf and doc link icons
 .l-content a[href$=".pdf"]:before, .l-content a[href$=".doc"]:before, 
 aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
+	font-family: "fontello";
 	content: '\e808';
 	min-width: 1.5em;
 	padding-right: 0.65em;
 	margin-left: 1px;
 }
+
+// adjust position of pdf icon for download lists
+aside li a[href$=".pdf"]:before, .l-content li a[href$=".pdf"]:before {
+	margin-left: -1.3em;
+}
+
+
 // icon alignment tweaks
 .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before {
 	margin-right: -5px;
