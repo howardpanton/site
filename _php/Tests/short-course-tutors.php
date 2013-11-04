@@ -659,14 +659,24 @@ if(class_exists('AZ') != true)
 		}
 
 		public function getTutorsBiography() {
-			$TutorsBiography = $this->xml->tutors->tutor->description;
-			if (empty($TutorsBiography)) {
+			$tutors = $this->xml->tutors->children();
+			if (empty($tutors)) {
 				return FALSE;
 			} else {
-				return $TutorsBiography;
+				$a = 1;
+
+				echo '<li class="accordion-list-item"><a class="accordion-list-anchor" href="#"><h3 class="size-h4">Tutor information</h3><div class="st-arrow icon-plus-circled"></div></a>
+            <div class="st-content">';
+	
+				foreach($this->xml->tutors->children() as $tutor) {
+
+					echo "<p>" . $tutor->description . "</p>"; 
+				} // End of For each tutor
+
+				echo '</div></li>';
 			}
 		}
-		
+
 		
 		public function Truncate($string, $length, $stopanywhere = false) {
 		    //truncates a string to a certain char length, stopping on a word if not specified otherwise.
@@ -1264,15 +1274,9 @@ switch ($pid_check) {
 <?php echo $desc_accordion ; ?>
   </div>  
 </li>
-<?php if ($tutor_description != FALSE) : ?>
 
-          <li class="accordion-list-item">
-          <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Tutor information</h3><div class="st-arrow icon-plus-circled"></div></a>
-            <div class="st-content">
-              <?php echo $tutor_description ; ?>
-          </div>  
-        </li>
-<?php endif ?>
+               <?php $test->getTutorsBiography(); ?>
+
 <li class="accordion-list-item">
   <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon icon-plus-circled"></div></a>
     <div class="st-content">
