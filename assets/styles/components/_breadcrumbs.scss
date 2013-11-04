@@ -20,12 +20,12 @@
     word-wrap:break-word;
   }
 
-  // a:after {
-  //   @extend %icon;
-  //   content: "U+E766";
-  //   color: $aaa-gray;
-  //   vertical-align: middle;
-  // }
+  .page-title {
+    @include gs-media (m) {
+      margin-right:1em;
+    }
+  }
+
 
 @include gs-media (d) {
     @include gs-span(d, all);
