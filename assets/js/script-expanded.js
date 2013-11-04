@@ -2797,6 +2797,10 @@ jQuery(".date").each(function (i, element) {
 
 });
 
+// toggle site search on mobile & tablet menu 
+$('.m-site-search-link').click(function(e) {
+	$('.m-site-search-block').toggleClass('show');
+});
 
 // position prev and next navigation buttons for OwlCarousel
 function positionOwlCarouselNav() {
@@ -3646,10 +3650,8 @@ if (jQuery('.kis-widget').length > 0) {
   } (document));
 }
 
-
-
-// Add download class to PDF links
-jQuery('a[hrefjQuery=".pdf"]').addClass('download');
+// add class to remove standard list bullets for PDF download lists
+$('aside li a[href$=".pdf"], .l-content li a[href$=".pdf"]').parent().addClass('no-bullet');
 
   // Creating custom :external selector
   jQuery.expr[':'].external = function(obj){
@@ -3751,7 +3753,7 @@ jQuery(window).load(function(){
   }
 
   if (jQuery('.owl-carousel').length > 0) {
-		positionOwlCarouselNav(); 
+  	positionOwlCarouselNav(); 
   }
 
 });
