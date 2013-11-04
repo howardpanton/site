@@ -8,6 +8,9 @@
 (function ($) {
 
     var settings = {
+        menu_speed_show:200, // Time (in milliseconds) to show a drop down
+        menu_speed_hide:100, // Time (in milliseconds) to hide a drop down
+        menu_speed_delay:0, // Time (in milliseconds) before showing a drop down
         menu_effect:'click_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', 'click_fade', 'click_slide', 'open_close_fade', 'open_close_slide'
         menu_click_outside:0, // Clicks outside the drop down close it (1 = true, 0 = false)
         menu_show_onload:0, // Drop down to show on page load (type the number of the drop down, 0 for none)
@@ -27,9 +30,7 @@
 
             settings = $.extend(1, settings, options);
 
-
             return this.each(function () {
-
 
                 var megaMenu = $(this),
                     menuItem = $(megaMenu).children('li'),
@@ -40,19 +41,19 @@
                     menuItemFlyOutDropDown = $(menuItemFlyOut).find('.dropdown_flyout_level'),
                     menuButton = $('.megamenu_button');
 
-                menuItemElement = $(menuItem).add(menuItemFlyOut);
-                menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
+                var menuItemElement = $(menuItem).add(menuItemFlyOut);
+                var menuDropDownElement = $(menuDropDown).add(menuItemFlyOutDropDown);
 
                 // fix to be able to remove the #_ at the end of each link URL (found in the forum for the megaMenu)
-                // $(menuItemLink).click(function(event) {
-                //     event.preventDefault();
-                //     window.location.hash = this.hash;
-    
-                // });    
+                // this should fix the jump to top of page when search icon is clicked on the menu in mobile view
+                $(menuItemLink).click(function(event) {
+                    event.preventDefault();
+                    window.location.hash = this.hash;
+                });
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
-                    if ($(window).width() < 960) {
+                    if ($(window).innerWidth() < 960) {
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -63,8 +64,6 @@
                     }
 
                     $(menuButton).children('a').hammer().on('tap', function (event) {
-                        //event.preventDefault();
-                        //$(menuButton).toggleClass('megamenu_button_active')
                         $(menuItem).not(":eq(0)").toggle(0);
                     });
 
@@ -116,9 +115,7 @@
 
                     return;
 
-
                 } else {
-
 
                     megaMenuDropDownPosition();
 
@@ -146,18 +143,12 @@
 
                     switch (settings.menu_effect) {
 
-                        case 'open_close_fade':
-                        var menuEffectShow = 'fadeToggle',
-                            menuEffectHide = 'fadeOut';
-                            break;
+                       
                         case 'open_close_slide':
                         var menuEffectShow = 'slideDown',
                             menuEffectHide = 'fadeOut';
                             break;
-                        case 'open_close_toggle':
-                        var menuEffectShow = 'toggle',
-                            menuEffectHide = 'fadeOut';
-                            break;
+                       
 
                     }
                     
@@ -237,11 +228,7 @@
 
 
                     }
-                
-
                 }
-
-
             }); // End each
 
         },
@@ -250,7 +237,6 @@
             settings = $.extend(1, settings, options);
         }
     };
-
 
     $.fn.megaMenuCompleteSet = function (method) {
 
@@ -304,7 +290,6 @@
 
     }
 
-
     function megaMenuOut() {
     
         var $this = $(this),
@@ -328,7 +313,6 @@
 
     }
 
-
     function megaMenuDropDownPosition() {
 
         // This part uses CSS so the drop downs remain opened when using the effects
@@ -342,7 +326,7 @@
         if ((_innerW < 960) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
-                'left':'0', 
+                'left':'0',
                 'top':'auto',
                 'width': _innerW
                 }).hide();
@@ -361,15 +345,7 @@
             // get x-position (distance from left side of screen) of navigation
             x_pos = _nav_wrap.getBoundingClientRect().left;
 
-            // console.log("global nav position is: ");
-            // console.log(x_pos, y_pos, w);
-
-            // console.log("inner width is: " + _innerW);
-            // console.log("window width is: " + _winW);
-
-
-            // set negative left margin to push 
-            // menu dropdown to the left edge of the screen
+            // set negative left margin to push the menu dropdown to the left edge of the screen
             var _l_margin = ("-" + x_pos + "px");
 
             $('.dropdown_fullwidth').css({

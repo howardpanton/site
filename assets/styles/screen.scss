@@ -3,7 +3,7 @@
 		//*	CSS stylesheet
 		//*	Authors: Howard Panton, Matt Wisbey,
 		// Pete Richardson, Alastair Mucklow
-		// Updated Friday 20th September 2013 13:35pm
+		// Updated Monday 4th November 2013 13:54pm
 \*-----------------------------------------*/
 
 /*------------------------------------*\
@@ -35,11 +35,11 @@
 // in our page layouts
 //
 @import "font-face/brandon-text",
-				"font-face/bureau-grot",
-				"font-face/league-gothic", 
-				"font-face/alternate-gothic", 
-				"font-face/swiss-721",
-				"font-face/fontello-embedded";
+		"font-face/bureau-grot",
+		"font-face/league-gothic", 
+		"font-face/alternate-gothic",
+		"font-face/swiss-721",
+		"font-face/fontello-embedded";
 
 
 /*------------------------------------*\
@@ -65,7 +65,9 @@
     $CORE
 \*------------------------------------*/
 
-@import	"globals/icons",
+@import	"plugins/retina-sprites/retina",
+		"plugins/retina-sprites/sprite",
+		"globals/icons",
 		"globals/sprites",
 		"globals/typography", 
 		"globals/logos",
@@ -99,7 +101,7 @@
 
 // Search
 @import "components/search-buttons",
-				"components/expandable-search-input"; 
+		"components/expandable-search-input"; 
 
 // Breadcrumbs
 @import "components/breadcrumbs";
@@ -149,6 +151,7 @@
 		"components/vcards",
 		"components/a-to-z",
 		"components/embed",
+		"components/audio",
 		"components/tables";
 
 
@@ -162,6 +165,8 @@
 
 // ** - LCF - **
 @import "components/intro-block-with-left-image";
+@import "components/lcf-home-news";
+@import "components/lcf-block-matrix";
 
 // Javascript components
 
