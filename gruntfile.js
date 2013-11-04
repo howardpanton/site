@@ -3,7 +3,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.initConfig({
     
     pkg: grunt.file.readJSON('package.json'),
-    // we store the grunt-aws.json outside of our repo so that it never gets pushed to git
+    // we store the grunt-aws.json outside of our repo so that it never gets pushed to git 
     aws: grunt.file.readJSON('grunt-aws.json'), // Read the file
 
     aws_s3: {
@@ -14,22 +14,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         uploadConcurrency: 5,
          // 5 simultaneous uploads
         downloadConcurrency: 5 // 5 simultaneous downloads
-      },
-      staging: {
-        options: {
-          bucket: 'ual-staging',
-          differential: true, // Only uploads the files that have changed
-          params: {
-            ContentEncoding: 'gzip',
-            CacheControl: '30000000000'  // how many days do we want to set this too?
-          }
-        },
-        
-        files: [
-          {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
-        ]
       },
 
       live: {
@@ -42,12 +26,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           }
         },
         
-        files: [
-          {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-          // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-          {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
-        ]
+      files: [
+        {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+      ]
       },
     },
 
@@ -93,6 +77,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
+
     htmlhint: {
       build: {
           options: {
@@ -110,9 +95,28 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
+
+    csslint: {
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ['_site/assets/css/*.css']
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ['_site/assets/css/*.css']
+      }
+    },
+
+
+    // Task to concatenate script files 
+    // - files will be combined starting with the first file in the list
     concat: {
       options: {
-        separator: ';',
+        separator: '',
       },
 
     dist: {
@@ -256,20 +260,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // This will install all the plugins that you need for this project to your machine (see below)
 
   // load npmTasks as listed in package.json
-  // grunt.loadNpmTasks('grunt-contrib-jshint');
-  // grunt.loadNpmTasks('grunt-contrib-concat');
-  // grunt.loadNpmTasks('grunt-contrib-copy');
-  // grunt.loadNpmTasks('grunt-contrib-compass');
-  // grunt.loadNpmTasks('grunt-contrib-watch');
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('grunt-jekyll');
-  // grunt.loadNpmTasks('grunt-aws-s3');
-  // grunt.loadNpmTasks('grunt-cloudfront-clear');
-  // grunt.loadNpmTasks('grunt-exec');
-  // grunt.loadNpmTasks('grunt-contrib-compress');
-  // grunt.loadNpmTasks('grunt-contrib-clean');
-  // grunt.loadNpmTasks('grunt-bower-task');
-  // grunt.loadNpmTasks('grunt-newer');
+
 
   // Register Grunt Tasks
 
@@ -290,6 +281,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   // build for production. 
   // To run type: 'grunt buildlive'
+
   grunt.registerTask('buildlive', [ 'compass:production',
                                     'concat:dist',
                                     'any-newer:uglify',
@@ -301,27 +293,13 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'clean:build',
                                     'any-newer:aws_s3:live',
                                     'cloudfront_clear'
-                                    ]);
-
-  grunt.registerTask('buildstaging', ['compass:production',
-                                    'concat:dist',
-                                    'any-newer:uglify',
-                                    'compress:main',
-                                    'exec:build',
-                                    'compress:css',
-                                    'compress:js',
-                                    'copy:minified_assets',
-                                    'clean:build',
-                                    'aws_s3:staging',
-                                    'cloudfront_clear'
-                                    ]);
+                                  ]);
 
   // build for local github 
   // To run type: 'grunt buildlocal'
-  grunt.registerTask('buildlocal', ['newer:jshint',
-                                    'compass:local',
-                                    'exec:buildlocal',
-                                    'watch:html'
+  grunt.registerTask('buildlocal', ['compass:local',
+                                    'exec:buildlocal'
+                                    //'newer:jshint'
                                     ]);
 
   // combine script assets
@@ -330,12 +308,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // gzip fonts
   grunt.registerTask('gzipfonts', ['any-newer:compress:fonts',
                                    'copy:minified_fonts'
-                                    ]);
+                                  ]);
 
   grunt.registerTask('compressaudiojs', ['uglify:audio', 'compress:libs']);
   
 
-  // grunt task to push to gitHub 
+  // maybe add grunt task to push to gitHub ?
 
 
 };

@@ -738,7 +738,7 @@ if (typeof define !== 'undefined' && define.amd) {
 } else {
 	window.FastClick = FastClick;
 }
-/**
+;/**
  * jQuery ReVIEW
  * An ultra lightweight jQuery / Zepto plugin for lazy loading elements
  * https://github.com/resrcit/ReVIEW
@@ -790,7 +790,7 @@ if (typeof define !== 'undefined' && define.amd) {
         reviewElement();
         return this;
     };
-})(window.jQuery || window.Zepto);/*!
+})(window.jQuery || window.Zepto);;/*!
  * hoverIntent r7 // 2013.03.11 // jQuery 1.9.1+
  * http://cherne.net/brian/resources/jquery.hoverIntent.html
  *
@@ -905,7 +905,7 @@ if (typeof define !== 'undefined' && define.amd) {
         return this.on({'mouseenter.hoverIntent':handleHover,'mouseleave.hoverIntent':handleHover}, cfg.selector);
     };
 })(jQuery);
-/*! Hammer.JS - v1.0.6dev - 2013-09-26
+;/*! Hammer.JS - v1.0.6dev - 2013-09-26
  * http://eightmedia.github.com/hammer.js
  *
  * Copyright (c) 2013 Jorik Tangelder <j.tangelder@gmail.com>;
@@ -2357,7 +2357,7 @@ Hammer.gestures.Release = {
         window.Hammer = Hammer;
     }
 
-})(this);// Item Name : Responsive Mega Menu Complete Set
+})(this);;// Item Name : Responsive Mega Menu Complete Set
 // Item URI : http://codecanyon.net/item/mega-menu-complete-set/152825
 // Author URI : http://codecanyon.net/user/Pixelworkshop/
 // Version : 3.3
@@ -2478,9 +2478,6 @@ Hammer.gestures.Release = {
 
                     megaMenuDropDownPosition();
 
-                    $(window).resize(function() {
-                        megaMenuDropDownPosition();
-                    });
                     // mobile menu icon show hide menu
                     $(menuButton).children('a').click(function () {
 
@@ -2682,6 +2679,7 @@ Hammer.gestures.Release = {
         // get width of page -- used to set the width of the menu dropdowns a
         var _innerW = $('body').innerWidth();
 
+        // confirm("the page width is:" + _innerW);
         if ((_innerW < 960) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
@@ -2727,7 +2725,30 @@ Hammer.gestures.Release = {
     }
 
 
-})(jQuery);// *-----------------------------------------*\
+    // --------------------------------------------------
+    // Window resize function with delay to improve performance
+
+    var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
+    function resizeFunction() {
+        megaMenuDropDownPosition(); // calculate the position of the megamenu
+    }
+
+    // On resize, run the function and reset the timeout
+    // 250 is the delay in milliseconds. Change as you see fit.
+    $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeFunction, 250);
+    });
+
+    resizeFunction();
+
+
+})(jQuery);
+
+
+
+// *-----------------------------------------*\
 //     * University of the Arts London
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
@@ -2776,6 +2797,18 @@ jQuery(".date").each(function (i, element) {
 
 });
 
+
+// position prev and next navigation buttons for OwlCarousel
+function positionOwlCarouselNav() {
+  // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
+  var maxImgHeight = Math.max.apply(null, jQuery(".owl-carousel img.lazyOwl").map(function() {
+      return $(this).height();
+  }));
+  // calculate slider controls position from top of slider container
+  var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
+  // set position of slider nav buttons from top 
+  jQuery(".owl-prev, .owl-next").css("top", distFromTop);
+}
 
 
   var Link_col = jQuery(".college-nav").find("li").slice(3, 6);
@@ -2945,7 +2978,7 @@ jQuery(document).ready(function(){
 
       jQuery('.show-mob-sidebar').click(function(e) {
         e.preventDefault();
-        var _clicked = jQuery(this);
+        _clicked = jQuery(this);
         
         if (_clicked.hasClass('active')) {
           _clicked.closest(jQuery('#mobile-sidebar')).find(jQuery('ul')).slideUp();
@@ -3153,7 +3186,7 @@ if (jQuery('#container').length > 0) {
   // detect slider component
   if (jQuery('.royalSlider').length > 0) {
 
-    jQuery.getScript('https://s3-eu-west-1.amazonaws.com/arts-live/assets/js/jquery.royalslider.min.js', function() {
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
       jQuery.each(jQuery('.royalSlider'), function() {
 
@@ -3184,11 +3217,49 @@ if (jQuery('#container').length > 0) {
 
       });
 
-
-
     });
   }
 
+
+ 
+
+
+// Owl slider (research profiles)
+if (jQuery('.owl-carousel').length > 0) {
+
+  jQuery.getScript( "http://artslondon.github.io/beta/assets/js/libs/owl.carousel.js" , function() {
+     jQuery('.owl-carousel').each(function() {
+        jQuery(this).owlCarousel({
+        itemsDesktop : [1280, 3], // items between 1000px and 901px
+        itemsTablet: [959, 2], // items between 
+        itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
+        lazyLoad : true,
+        pagination: false,
+        navigation : true,
+        navigationText : ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"],
+        afterAction : function(elem){
+          positionOwlCarouselNav();
+        },
+
+        afterUpdate: function(elem){
+          positionOwlCarouselNav();
+        },
+      });
+
+    });
+
+     // get number of items in each owl-carousel and output pagination to each item in the carousel
+    jQuery(".owl-carousel").each(function() {
+        var total_items = jQuery('.item', this).length;
+        // console.log("the number of items is: " + total_items);
+        jQuery(".item-description", this).append(function(i) {
+            return $("<span />", {text: i+1 + ' of ' + total_items });
+         });
+
+    });
+
+  });
+}
 
   ///////////////////////
   /////// accreditation
@@ -3477,6 +3548,25 @@ jQuery(".hide-content").click(function(e){
   }
 
   //---------------------------------------
+  //  Google Maps  
+  //---------------------------------------
+
+  if (jQuery('#map_canvas').length > 0) {
+
+
+    // if accomodation map
+    if (jQuery('.accomodation-map').length > 0) {
+
+        jQuery.getScript('http://artslondon.github.io/beta/assets/js/maps/accomodation.js', function() {
+
+          window.onload = loadMap();
+
+        });
+    }
+
+  }
+
+  //---------------------------------------
   //  Tabs on desktop, accordion on mobile
   //---------------------------------------
 
@@ -3660,5 +3750,24 @@ jQuery(window).load(function(){
     });
   }
 
+  if (jQuery('.owl-carousel').length > 0) {
+		positionOwlCarouselNav(); 
+  }
+
 });
 
+
+// // Fix iOS re-orient problem when changing from portrait to landscape mode
+// // The script below will make sure that the screen width is updated correctly 
+// window.document.addEventListener('orientationchange', function() {
+//   var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+//   var viewportmeta = document.querySelector('meta[name="viewport"]');
+//   if (iOS && viewportmeta) {
+//     if (viewportmeta.content.match(/width=device-width/)) {
+//       viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
+//     }
+//     viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
+//   }
+//   // If you want to hide the address bar on orientation change, uncomment the next line
+//   window.scrollTo(0, 0);
+// }, false);
