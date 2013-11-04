@@ -7,9 +7,24 @@
         </a>
     <ul class="megamenu">
       <!-- mobile menu button  -->
-        <li class="megamenu_button">
-            <a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a>
-        </li> 
+      <li class="megamenu_button">
+          <a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a>
+      </li> 
+
+      <!-- Site Search - mobile & tablet view only --> 
+      <li class="d-hide">
+        <div class="m-site-search-menu-panel row">
+          <div class="row relative">
+            <form class="d-search-input-form"  method="" action="http://search.arts.ac.uk/s/search.html">
+            <input class="course-finder-txt-input" type="text" required accesskey="q" value="" name="query" placeholder="Enter your search here">
+              <input type="hidden" value="simple" name="form">
+              <input type="hidden" value="website" name="collection">
+                 <input type="submit" name="submit-site-search" class="go-search-button" value="Search"/>
+            </form>
+          </div>
+        </div> 
+      </li>
+        
       <!-- Course Finder -->          
       <!-- menu button -->
       <li>
@@ -17,7 +32,7 @@
         <!-- dropdown -->
         <div class="dropdown_fullwidth"><!-- Begin Item Container -->
             <div class="dd-menu-dropdown-wrapper">
-                <div class="d-course-finder-menu-panel row">
+                <div class="d-course-finder-menu-panel pad-bottom-4x row">
                     <div class="row relative">
                         <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
                             <input  accesskey="q" value="" class="course-finder-txt-input" type="text"  placeholder="Search for a course here" name="query">
@@ -206,13 +221,15 @@ Businesses worldwide work with us to find creative solutions, discover fresh ide
         </div><!-- End dropdown --> 
       </li>
       <!-- End About UAL -->
-      <!-- Site Search -->          
-      <!-- menu button -->
-      <li>
+     
+      <!-- Site Search (desktop view only ) -->          
+    
+      <li class="m-hide t-hide">
         <a href="#" class="megamenu_drop needsclick search-icon icon-search"></a>
-        <!-- Begin Item -->
+ 
         <!-- dropdown -->
-        <div class="dropdown_fullwidth"><!-- Begin Item Container -->
+        <div class="dropdown_fullwidth">
+          <!-- Begin Item Container -->
           <div class="dd-menu-dropdown-wrapper">
           <div class="d-course-finder-menu-panel row">
             <div class="row relative">
