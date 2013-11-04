@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.initConfig({
     
     pkg: grunt.file.readJSON('package.json'),
@@ -90,6 +90,23 @@ module.exports = function(grunt) {
           console: true,
           module: true
         }
+      }
+    },
+
+    htmlhint: {
+      build: {
+          options: {
+              'tag-pair': true,
+              'tagname-lowercase': true,
+              'attr-lowercase': true,
+              'attr-value-double-quotes': true,
+              'doctype-first': true,
+              'spec-char-escape': true,
+              'id-unique': true,
+              'head-script-disabled': true,
+              'style-disabled': true
+          },
+          src: ['index.html']
       }
     },
 
@@ -226,6 +243,10 @@ module.exports = function(grunt) {
                 'exec:build',
                 ]
       },
+      html: {
+        files: ['_site/**'],
+        tasks: ['htmlhint']
+      },
     }
   });
 
@@ -235,20 +256,20 @@ module.exports = function(grunt) {
   // This will install all the plugins that you need for this project to your machine (see below)
 
   // load npmTasks as listed in package.json
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-aws-s3');
-  grunt.loadNpmTasks('grunt-cloudfront-clear');
-  grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-bower-task');
-  grunt.loadNpmTasks('grunt-newer');
+  // grunt.loadNpmTasks('grunt-contrib-jshint');
+  // grunt.loadNpmTasks('grunt-contrib-concat');
+  // grunt.loadNpmTasks('grunt-contrib-copy');
+  // grunt.loadNpmTasks('grunt-contrib-compass');
+  // grunt.loadNpmTasks('grunt-contrib-watch');
+  // grunt.loadNpmTasks('grunt-contrib-uglify');
+  // grunt.loadNpmTasks('grunt-jekyll');
+  // grunt.loadNpmTasks('grunt-aws-s3');
+  // grunt.loadNpmTasks('grunt-cloudfront-clear');
+  // grunt.loadNpmTasks('grunt-exec');
+  // grunt.loadNpmTasks('grunt-contrib-compress');
+  // grunt.loadNpmTasks('grunt-contrib-clean');
+  // grunt.loadNpmTasks('grunt-bower-task');
+  // grunt.loadNpmTasks('grunt-newer');
 
   // Register Grunt Tasks
 
@@ -259,6 +280,9 @@ module.exports = function(grunt) {
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
   grunt.registerTask('testjs', 'newer:jshint');
+
+
+  grunt.registerTask('testHTML', 'watch:html');
 
 
   //compress script libraries
@@ -297,7 +321,7 @@ module.exports = function(grunt) {
   grunt.registerTask('buildlocal', ['newer:jshint',
                                     'compass:local',
                                     'exec:buildlocal',
-                                    //'clean:build'
+                                    'watch:html'
                                     ]);
 
   // combine script assets
