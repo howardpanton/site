@@ -2797,6 +2797,10 @@ jQuery(".date").each(function (i, element) {
 
 });
 
+// toggle site search on mobile & tablet menu 
+$('.m-site-search-link').click(function(e) {
+	$('.m-site-search-block').toggleClass('show');
+});
 
 // position prev and next navigation buttons for OwlCarousel
 function positionOwlCarouselNav() {
