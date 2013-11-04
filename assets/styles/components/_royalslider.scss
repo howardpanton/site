@@ -754,6 +754,7 @@ img.rsImg {
 	z-index: 100;
 	position: absolute;
 	bottom: 0;
+	right: 0;
 	background-color: $black;
 	@include font-size(14);
 	a {
@@ -774,7 +775,8 @@ img.rsImg {
 	}
 
 	@include gs-media (m) {
-		width: 100%;
+		width: 50%;
+		height: auto;
 	}
 
 	@include gs-media (t,min-max) {
