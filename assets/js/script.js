@@ -75,6 +75,11 @@ $(".date").each(function (i, element) {
 });
 
 
+// toggle site search on mobile & tablet menu
+$('.m-site-search-link').click(function(e) {
+	$('.m-site-search').toggleClass('show');
+}
+
 // position prev and next navigation buttons for OwlCarousel
 function positionOwlCarouselNav() {
   // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
@@ -1040,16 +1045,16 @@ $(window).load(function(){
 
 // // Fix iOS re-orient problem when changing from portrait to landscape mode
 // The script below will make sure that the screen width is updated correctly 
-window.document.addEventListener('orientationchange', function() {
-  var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
-  var viewportmeta = document.querySelector('meta[name="viewport"]');
-  if (iOS && viewportmeta) {
-    if (viewportmeta.content.match(/width=device-width/)) {
-      viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
-    }
-    viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
-  }
-  // If you want to hide the address bar on orientation change, uncomment the next line
-  window.scrollTo(0, 0);
-}, false);
+// window.document.addEventListener('orientationchange', function() {
+//   var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+//   var viewportmeta = document.querySelector('meta[name="viewport"]');
+//   if (iOS && viewportmeta) {
+//     if (viewportmeta.content.match(/width=device-width/)) {
+//       viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
+//     }
+//     viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
+//   }
+//   // If you want to hide the address bar on orientation change, uncomment the next line
+//   window.scrollTo(0, 0);
+// }, false);
 

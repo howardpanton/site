@@ -212,7 +212,7 @@
     
   }
   
-  .go-search-button {
+.go-search-button {
     @extend .button-link;
     position: absolute;
     right: 0;
@@ -220,6 +220,7 @@
     border-top-width: 0px;
     margin: 0;
     text-align: center;
+    min-width: 60px;
     @include gs-media(d) {
       min-width: gs-width(d, 16, 16, (1,16), true);
       height: 36px;
@@ -423,7 +424,7 @@
         }
       }
   
-      //site search icon on main nav
+      //site search icon on main nav (desktop view)
       > a.search-icon {
         font-family: "fontello" !important;
         vertical-align: middle;
@@ -711,6 +712,44 @@
 }
 
 
+// search icon link for mobile and tablet (appears to the left of the main menu dropdown icon)
+.m-site-search-link { 
+  display: block;
+  position: absolute;
+  right: 48px;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  font-family: "fontello" !important;
+  line-height: 36px;
+  padding: 6px 12px;
+  border-bottom: none;
+  vertical-align: middle;
+  color: $white;
+  @include font-size(20);
+  
+  &:hover {
+    color: $white;
+    background-color: $dark-gray;
+  }
+
+  span {
+    margin-left: -2px;   // shift the search icon a little to the left to align within the box
+  }
+
+}
+
+
+//styling for the mobile and tablet site search dropdown (separate from main nav menu)
+.m-site-search-block {
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  display: none; // the dropdown is closed initially - triggered by the search icon button on mobile
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  background-color: $dark-gray;
+}
 
 // set height for course finder dropdown form
 .dropdown_fullwidth .d-search-input-form:first-of-type { 
