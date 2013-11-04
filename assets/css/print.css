@@ -1,0 +1,29 @@
+/* Remove unwanted elements */
+#header, #nav, .noprint, #global-nav, .college-link-menu, .breadcrumbs, .dd-menu, .slider-container, .college-footer, .credits-btn, .global-footer, #skip-link, .debug-toggle, .tabs-container, .sidebar ul
+{
+display: none;
+}
+
+/* Ensure the content spans the full width */
+#container, #container2, .content
+{
+width: 100%; margin: 0; float: none;
+}
+
+/* Change text colour to black (useful for light text on a dark background) */
+
+/* Improve colour contrast of links */
+a:link, a:visited
+{
+color: #781351
+}
+
+.accordion-list-item {
+	list-style: none;
+}
+
+@media print {
+    .st-content, .tab_content {
+        display: block !important;
+    }
+}
