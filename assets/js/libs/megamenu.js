@@ -8,7 +8,7 @@
 (function ($) {
 
     var settings = {
-        menu_speed_show:200, // Time (in milliseconds) to show a drop down
+        menu_speed_show:100, // Time (in milliseconds) to show a drop down
         menu_speed_hide:100, // Time (in milliseconds) to hide a drop down
         menu_speed_delay:0, // Time (in milliseconds) before showing a drop down
         menu_effect:'click_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', 'click_fade', 'click_slide', 'open_close_fade', 'open_close_slide'
@@ -65,6 +65,9 @@
 
                     $(menuButton).children('a').hammer().on('tap', function (event) {
                         $(menuItem).not(":eq(0)").toggle(0);
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                       
                     });
 
                     $(menuItemElement).toggleClass('noactive');
@@ -119,12 +122,13 @@
 
                     megaMenuDropDownPosition();
 
-                    // mobile menu icon show hide menu
+                    // mobile menu icon show hide menu (main menu toggle on mobile & tablet view)
                     $(menuButton).children('a').click(function () {
-
                         $(menuButton).toggleClass('megamenu_button_active');
                         $(menuItem).not(":eq(0)").toggle(0);
-
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                        $('.m-site-search-link').removeClass('dark-gray-bg');
                     });
 
                     if (settings.menu_click_outside === 1) {
@@ -372,6 +376,7 @@
     var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
     function resizeFunction() {
+        $('.megamenu li+li').hide(); // hide the menu on window resize
         megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
     }
 
@@ -388,7 +393,7 @@
         megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
         
         // confirm the new orientation number
-        confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
+        // confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
 
     }, false);
 
