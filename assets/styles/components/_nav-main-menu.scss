@@ -136,7 +136,6 @@
 }
     
 // /*  _______________________________________________
-
 //     02 MEGA MENU CONTAINERS
 //     _______________________________________________  */
 
@@ -151,6 +150,31 @@
   h2 a, a {
     @extend %Swiss721BT-Light-important;
     @include font-size(14);
+  }
+
+  
+
+  // add a min height to the dropdown 
+  // so that the other menu links are not visible when the dropdown is expanded
+  // in mobile and tablet menu only
+  &.full-height {
+    @include gs-media(t, max) {
+      min-height: 480px;
+    }
+  }
+  
+  &.fix-to-top {
+    @include gs-media(t, max) {
+      top: 84px; // shift the course finder dropdown to align under the title
+    }
+  }
+
+  // add left and right padding to the dropdown container by adding this class to the dropdown div
+  &.pad-sides {
+    @include gs-media(t, max) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
   
   // set no hover color for dropdown 
@@ -184,6 +208,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    height: 36px;
     border-top-width: 0px;
     margin: 0;
     text-align: center;
@@ -235,6 +260,10 @@
       margin-left: 12px;
       line-height: 16px;
       border-bottom: 0;
+
+      @include gs-media(t, max) {
+         margin-left: 0;
+      }
     }
 
     a:hover {
@@ -293,10 +322,11 @@
 // used in the mega menu to keep the dropdowns "within a content wrapper" on desktop
 .dd-menu-dropdown-wrapper {
   @extend .header-wrapper;
-
+  
   @include gs-media(t, max) {
     width: 100%;
     max-width: 100%;
+    min-width: 0; // remove min width for dropdowns on mobile
     padding-left: 0;
     padding-right: 0;
   }
@@ -736,6 +766,7 @@
   &:hover {
     color: $white;
     background-color: $dark-gray;
+    border-bottom: none;
   }
 
   span {
@@ -750,17 +781,22 @@
   position: absolute;
   top: 48px;
   width: 100%;
-  min-height: 500px;
+  //min-height: 500px;
   z-index: 99999;
   display: none; // the dropdown is closed initially - triggered by the search icon button on mobile
   @include padding-leader(2);
   @include padding-trailer(2);
+  padding-left: 12px;
+  padding-right: 12px;
   background-color: $dark-gray;
 }
 // add padding for search inputs on mobile
 form.d-search-input-form {
-  @include gs-media(t, max) {
-    padding: 0 12px;
+  // @include gs-media(t, max) {
+  //   padding: 0 12px;
+  // }
+  @include gs-media(m) {
+    padding: 0;
   }
 }
 
