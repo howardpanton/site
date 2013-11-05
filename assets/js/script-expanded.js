@@ -3653,6 +3653,9 @@ if (jQuery('.kis-widget').length > 0) {
 // add class to remove standard list bullets for PDF download lists
 $('aside li a[href$=".pdf"], .l-content li a[href$=".pdf"]').parent().addClass('no-bullet');
 
+// add class to remove standard list bullets for DOC download lists
+$('aside li a[href$=".doc"], .l-content li a[href$=".doc"]').parent().addClass('no-bullet');
+
   // Creating custom :external selector
   jQuery.expr[':'].external = function(obj){
       return (obj.hostname != location.hostname);
@@ -3758,6 +3761,14 @@ jQuery(window).load(function(){
 
 });
 
+
+// Check to see whether Aside has content if not remove
+var k = $('aside.kiswidget');
+
+if ($(k).html().trim()) {
+} else {
+   k.remove();
+}
 
 // // Fix iOS re-orient problem when changing from portrait to landscape mode
 // // The script below will make sure that the screen width is updated correctly 

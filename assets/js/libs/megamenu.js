@@ -320,8 +320,7 @@
         // get width of page -- used to set the width of the megamenu dropdowns
         var _innerW = $('body').innerWidth();
 
-        confirm("the page width is:" + _innerW);
-        if ((_innerW < 960) && (settings.menu_responsive === 1)) {
+        if ((_innerW < 945) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
                 'left':'0',
