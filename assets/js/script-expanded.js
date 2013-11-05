@@ -41,7 +41,6 @@ function FastClick(layer) {
 	/**
 	 * The element being tracked for a click.
 	 *
-	 * @type EventTarget
 	 */
 	this.targetElement = null;
 
@@ -2412,7 +2411,8 @@ Hammer.gestures.Release = {
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
-                    if ($(window).innerWidth() < 960) {
+                    if ($(window).width() < 960) {
+                    	console.log("load mobile nav");
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -2577,7 +2577,6 @@ Hammer.gestures.Release = {
                                     .click(function (event) {
                                         event.stopPropagation();
                                     });
-
                             });
 
                             break;
@@ -2679,8 +2678,8 @@ Hammer.gestures.Release = {
         // get width of page -- used to set the width of the menu dropdowns a
         var _innerW = $('body').innerWidth();
 
-        // confirm("the page width is:" + _innerW);
-        if ((_innerW < 960) && (settings.menu_responsive === 1)) {
+        // we use 945 instead of 960 as a value to compare to allow for 15px sidebar
+        if ((_innerW < 945) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
                 'left':'0',
