@@ -91,7 +91,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
               'head-script-disabled': true,
               'style-disabled': true
           },
-          src: ['index.html']
+          src: ['_site/tests/*.html']
       }
     },
 
@@ -110,6 +110,23 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         src: ['_site/assets/css/*.css']
       }
     },
+
+    // minify css & and add banner at the top of the file to show the last update
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: '_site/assets/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: '_site/assets/css/',
+        ext: '.css',
+        options: {
+          banner: '//* Updated: <%= grunt.template.today("dd-mm-yyyy") %> *',
+          report: 'gzip'
+        },
+      }
+    },
+
+    
 
 
     // Task to concatenate script files 
@@ -149,8 +166,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
     // terminal commands to execute with grunt
     exec: {
-        build: {
-          cmd: 'rm -rf _site/; jekyll build --destination _site/',
+        buildlive: {
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_live.yml',
         },
         buildlocal: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
@@ -189,14 +206,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           {src: ['download/**'], dest: ''}
         ]
       },
-      css: {
-        options: {
-          mode: 'gzip'
-        },
-        files: [
-          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
-        ]
-      },
 
       libs: {
          options: {
@@ -213,6 +222,15 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         files: [
           {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
+        ]
+      },
+
+      css: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
         ]
       },
 
@@ -273,7 +291,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.registerTask('testjs', 'newer:jshint');
 
 
-  grunt.registerTask('testHTML', 'watch:html');
+  grunt.registerTask('testHTML', 'htmlhint');
 
 
   //compress script libraries
@@ -286,11 +304,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'concat:dist',
                                     'any-newer:uglify',
                                     'compress:main',
-                                    'exec:build',
+                                    'exec:buildlive',
+                                    'cssmin:minify',
                                     'compress:css',
                                     'compress:js',
                                     'copy:minified_assets',
-                                    'clean:build',
+                                    // 'clean:build',
                                     'any-newer:aws_s3:live',
                                     'cloudfront_clear'
                                   ]);
