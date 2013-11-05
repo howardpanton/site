@@ -176,43 +176,10 @@
   width: 100%;
 }
 
-.megamenu {
-  .mobile-site-search-wrap{
-    padding:12px
-  }
 
-  .course-finder-txt-input, .site-search-txt-input {
-    background-color: $bg-gray;
-    margin-bottom: 0;
-    border: 0;
-    height: 36px;
-    @include gs-media(d) {
-      padding-left: 12px;
-    }
-  }
+.megamenu_container {
 
-  .small-text-link {
-    @extend .row;
-    position: absolute;
-    bottom: -18px;
-    left: 0;
-    a {
-      color: $white;
-      display: inline-block;
-      @include font-size(12);
-      margin-top: 12px;
-      margin-left: 12px;
-      line-height: 16px;
-      border-bottom: 0;
-    }
-
-    a:hover {
-      border-bottom: 1px dotted $white;
-    }
-    
-  }
-  
-.go-search-button {
+  .go-search-button {
     @extend .button-link;
     position: absolute;
     right: 0;
@@ -239,6 +206,44 @@
       background-color: $aaa-gray !important;
     }
   }
+
+  .course-finder-txt-input, .site-search-txt-input {
+      background-color: $bg-gray;
+      margin-bottom: 0;
+      border: 0;
+      height: 36px;
+      @include gs-media(d) {
+        padding-left: 12px;
+      }
+    }
+}
+
+.megamenu {
+  .mobile-site-search-wrap{
+    padding:12px
+  }
+  .small-text-link {
+    @extend .row;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    a {
+      color: $white;
+      display: inline-block;
+      @include font-size(12);
+      margin-top: 12px;
+      margin-left: 12px;
+      line-height: 16px;
+      border-bottom: 0;
+    }
+
+    a:hover {
+      border-bottom: 1px dotted $white;
+    }
+    
+  }
+  
+
 }
 
 .dropdown_fullwidth {
@@ -722,11 +727,11 @@
   height: 48px;
   font-family: "fontello" !important;
   line-height: 36px;
-  padding: 6px 12px;
+  padding: 7px 12px 6px 12px;
   border-bottom: none;
   vertical-align: middle;
   color: $white;
-  @include font-size(20);
+  @include font-size(21);  // search icon appears slightly smaller than menu icon so size is bumped up by 1 to compensate
   
   &:hover {
     color: $white;
@@ -745,10 +750,18 @@
   position: absolute;
   top: 48px;
   width: 100%;
+  min-height: 500px;
+  z-index: 99999;
   display: none; // the dropdown is closed initially - triggered by the search icon button on mobile
   @include padding-leader(2);
   @include padding-trailer(2);
   background-color: $dark-gray;
+}
+// add padding for search inputs on mobile
+form.d-search-input-form {
+  @include gs-media(t, max) {
+    padding: 0 12px;
+  }
 }
 
 // set height for course finder dropdown form

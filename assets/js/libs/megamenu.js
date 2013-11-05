@@ -52,8 +52,8 @@
                 });
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
-
-                    if ($(window).innerWidth() < 960) {
+                    // if less than 945 width (960 - 15 px for scrollbar - equals 945)
+                    if ($(window).width() < 960) {
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -320,8 +320,8 @@
         // get width of page -- used to set the width of the megamenu dropdowns
         var _innerW = $('body').innerWidth();
 
-        confirm("the page width is:" + _innerW);
-        if ((_innerW < 960) && (settings.menu_responsive === 1)) {
+        // we use 945 instead of 960 as a value to allow for 15px sidebar
+        if ((_innerW < 945) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
                 'left':'0',
