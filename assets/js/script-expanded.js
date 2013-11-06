@@ -3663,7 +3663,7 @@ $('aside li a[href$=".doc"], .l-content li a[href$=".doc"]').parent().addClass('
 
   // Add 'external' CSS class to all external links
   jQuery('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
-    jQuery(this).attr("title", jQuery(this).attr("title") + "(external link)");
+    jQuery(this).attr("title", jQuery(this).attr("title") + " - external link");
 });
 
 

@@ -38,7 +38,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     // invalidate cloudfront (clear cache) 
     cloudfront_clear: {
       invalidateIndex: {
-        resourcePaths: ["/assets/", "/assets"],
+        resourcePaths: ["/assets/css/screen.css", "/assets/js/script-min.js"],
         secret_key: "<%= aws.AWSSecretKey %>",
         access_key: "<%= aws.AWSAccessKeyId %>",
         dist: "<%= aws.AWSLive %>"
@@ -120,13 +120,11 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         dest: '_site/assets/css/',
         ext: '.css',
         options: {
-          banner: '//* Updated: <%= grunt.template.today("dd-mm-yyyy") %> *',
+          banner: '/* Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */',
           report: 'gzip'
         },
       }
     },
-
-    
 
 
     // Task to concatenate script files 
@@ -147,7 +145,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         mangle: false,  // mangle will not change/minify variable and function names
         report: 'gzip',
         // the banner that is inserted at the top of the output
-        banner: '/*!Updated: <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        banner: '/*!Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */\n'
       },
 
       my_target: {
@@ -171,6 +169,9 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         buildlocal: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
+        },
+        version: {
+          cmd: 'mv _site/assets/css/screen.css  _site/assets/css/screen.css?version=$(date +"%Y%m%d%H%M"); mv _site/assets/js/script.js  _site/assets/js/script.js?version=$(date +"%Y%m%d%H%M"); rm -rf _site/assets/css/screen.css; rm -rf  _site/assets/js/script.js',
         }
 
 
@@ -309,7 +310,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'compress:css',
                                     'compress:js',
                                     'copy:minified_assets',
-                                    // 'clean:build',
+                                    'clean:build',
                                     'any-newer:aws_s3:live',
                                     'cloudfront_clear'
                                   ]);
