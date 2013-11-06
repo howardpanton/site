@@ -27,7 +27,34 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         
       files: [
-        {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
+        {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+      ]
+      },
+      staging: {
+        options: {
+          bucket: 'arts-staging',
+          differential: true, // Only uploads the files that have changed
+          params: {
+            ContentEncoding: 'gzip',
+            CacheControl: '30000000000'  // how many days do we want to set this too?
+          }
+        },
+        
+      files: [
+        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
@@ -51,6 +78,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       production: {
         options: {
           config: 'config_live.rb',
+          force: true
+        }
+      },
+      staging: {
+        options: {
+          config: 'config_staging.rb',
           force: true
         }
       },
@@ -166,6 +199,9 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     exec: {
         buildlive: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_live.yml',
+        },
+        buildstaging: {
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_staging.yml',
         },
         buildlocal: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
@@ -312,6 +348,20 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'copy:minified_assets',
                                     'clean:build',
                                     'any-newer:aws_s3:live',
+                                    'cloudfront_clear'
+                                  ]);
+
+  grunt.registerTask('buildstaging', [ 'compass:staging',
+                                    'concat:dist',
+                                    'any-newer:uglify',
+                                    'compress:main',
+                                    'exec:buildstaging',
+                                    'cssmin:minify',
+                                    'compress:css',
+                                    'compress:js',
+                                    'copy:minified_assets',
+                                    'clean:build',
+                                    'any-newer:aws_s3:staging',
                                     'cloudfront_clear'
                                   ]);
 
