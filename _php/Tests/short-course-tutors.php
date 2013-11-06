@@ -1219,8 +1219,6 @@ $shortCourse = TRUE;
 
 // tutors data
 
-
-$tutor_description = $test->getTutorsBiography();
 $pid_check = $test->companyId ;
 switch ($pid_check) {
   case 'LCC':

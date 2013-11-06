@@ -8,13 +8,17 @@
 /**
  * ^h2 ^h3
  */
-@include font-face("BureauGrotBold", 
-    font-files(
-        "bureau-grot-text-bold.eot", 
-        "bureau-grot-text-bold.eot?#iefix", 
-        "bureau-grot-text-bold.woff", 
-        "bureau-grot-text-bold.ttf"
-        ));
+
+@font-face {
+	font-family: 'BureauGrotBold';
+	src: url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/bureau-grot-text-bold.eot');
+	src: url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/bureau-grot-text-bold.eot?#iefix') format('embedded-opentype'),
+	url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/bureau-grot-text-bold.woff') format('woff'),
+	url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/bureau-grot-text-bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 %BureauGrotBold { font-family: BureauGrotBold; }
 
