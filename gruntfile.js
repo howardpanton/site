@@ -27,7 +27,34 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         
       files: [
-        {expand: true, cwd: '_site/assets/img', src: ['**'], dest: 'assets/img/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
+        {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+      ]
+      },
+      staging: {
+        options: {
+          bucket: 'arts-staging',
+          differential: true, // Only uploads the files that have changed
+          params: {
+            ContentEncoding: 'gzip',
+            CacheControl: '30000000000'  // how many days do we want to set this too?
+          }
+        },
+        
+      files: [
+        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
@@ -38,7 +65,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     // invalidate cloudfront (clear cache) 
     cloudfront_clear: {
       invalidateIndex: {
-        resourcePaths: ["/assets/", "/assets"],
+        resourcePaths: ["/assets/css/screen.css", "/assets/js/script-min.js"],
         secret_key: "<%= aws.AWSSecretKey %>",
         access_key: "<%= aws.AWSAccessKeyId %>",
         dist: "<%= aws.AWSLive %>"
@@ -51,6 +78,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       production: {
         options: {
           config: 'config_live.rb',
+          force: true
+        }
+      },
+      staging: {
+        options: {
+          config: 'config_staging.rb',
           force: true
         }
       },
@@ -91,7 +124,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
               'head-script-disabled': true,
               'style-disabled': true
           },
-          src: ['index.html']
+          src: ['_site/tests/*.html']
       }
     },
 
@@ -108,6 +141,21 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           import: false
         },
         src: ['_site/assets/css/*.css']
+      }
+    },
+
+    // minify css & and add banner at the top of the file to show the last update
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: '_site/assets/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: '_site/assets/css/',
+        ext: '.css',
+        options: {
+          banner: '/* Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */',
+          report: 'gzip'
+        },
       }
     },
 
@@ -130,7 +178,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         mangle: false,  // mangle will not change/minify variable and function names
         report: 'gzip',
         // the banner that is inserted at the top of the output
-        banner: '/*!Updated: <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        banner: '/*!Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */\n'
       },
 
       my_target: {
@@ -149,11 +197,17 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
     // terminal commands to execute with grunt
     exec: {
-        build: {
-          cmd: 'rm -rf _site/; jekyll build --destination _site/',
+        buildlive: {
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_live.yml',
+        },
+        buildstaging: {
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_staging.yml',
         },
         buildlocal: {
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
+        },
+        version: {
+          cmd: 'mv _site/assets/css/screen.css  _site/assets/css/screen.css?version=$(date +"%Y%m%d%H%M"); mv _site/assets/js/script.js  _site/assets/js/script.js?version=$(date +"%Y%m%d%H%M"); rm -rf _site/assets/css/screen.css; rm -rf  _site/assets/js/script.js',
         }
 
 
@@ -189,14 +243,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           {src: ['download/**'], dest: ''}
         ]
       },
-      css: {
-        options: {
-          mode: 'gzip'
-        },
-        files: [
-          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
-        ]
-      },
 
       libs: {
          options: {
@@ -213,6 +259,15 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         files: [
           {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
+        ]
+      },
+
+      css: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          {expand: true, flatten: true, src: ['_site/assets/css/*.css'], dest: 'temp/css/', ext: '.css'}
         ]
       },
 
@@ -273,7 +328,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.registerTask('testjs', 'newer:jshint');
 
 
-  grunt.registerTask('testHTML', 'watch:html');
+  grunt.registerTask('testHTML', 'htmlhint');
 
 
   //compress script libraries
@@ -286,12 +341,27 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'concat:dist',
                                     'any-newer:uglify',
                                     'compress:main',
-                                    'exec:build',
+                                    'exec:buildlive',
+                                    'cssmin:minify',
                                     'compress:css',
                                     'compress:js',
                                     'copy:minified_assets',
                                     'clean:build',
                                     'any-newer:aws_s3:live',
+                                    'cloudfront_clear'
+                                  ]);
+
+  grunt.registerTask('buildstaging', [ 'compass:staging',
+                                    'concat:dist',
+                                    'any-newer:uglify',
+                                    'compress:main',
+                                    'exec:buildstaging',
+                                    'cssmin:minify',
+                                    'compress:css',
+                                    'compress:js',
+                                    'copy:minified_assets',
+                                    'clean:build',
+                                    'any-newer:aws_s3:staging',
                                     'cloudfront_clear'
                                   ]);
 

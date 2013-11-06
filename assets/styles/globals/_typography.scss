@@ -15,7 +15,6 @@
 // in the file that they will be extended from
 @import "font-face/brandon-text",
 		"font-face/bureau-grot",
-		"font-face/league-gothic", 
 		"font-face/alternate-gothic",
 		"font-face/swiss-721",
 		"font-face/fontello-embedded",
@@ -234,7 +233,7 @@ p {
 	@include font-size(16);
 }
 
-aside, .l-content {
+.l-content {
 	ul {
 		li {
 			padding-left: 9px;
@@ -588,7 +587,7 @@ aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
 }
 
 // adjust position of pdf icon for download lists
-aside li a[href$=".pdf"]:before, .l-content li a[href$=".pdf"]:before {
+aside li a[href$=".pdf"]:before, .l-content li a[href$=".pdf"]:before, aside li a[href$=".doc"]:before, .l-content li a[href$=".doc"]:before {
 	margin-left: -1.3em;
 }
 
