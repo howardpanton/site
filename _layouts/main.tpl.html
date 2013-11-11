@@ -181,11 +181,37 @@
 <!-- dev script.js -->
 <script type="text/javascript" src="{{site.url}}/assets/js/script-expanded.js"></script>
 
-
-<script src='{{site.url}}/assets/js/dev/debug.js' type='text/javascript'></script>
-
 <script>
+
+// Creates associative array (object) of query params
+var QueryParameters = (function()
+{
+    var result = {};
+
+    if (window.location.search)
+    {
+        // split up the query string and store in an associative array
+        var params = window.location.search.slice(1).split("&");
+        for (var i = 0; i < params.length; i++)
+        {
+            var tmp = params[i].split("=");
+            result[tmp[0]] = unescape(tmp[1]);
+        }
+    }
+
+    return result;
+}());
+
+
+      if (QueryParameters["debug"]) {
+        document.write('<link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/assets/css/debug.css">');
+        document.write('<script src="{{ site.url }}/assets/js/debug.js"><\/script>');
+      }
+
+
+
   $(document).ready(function($){
+
 
       $('.megamenu').megaMenuCompleteSet({
           menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
