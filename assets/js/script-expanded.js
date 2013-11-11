@@ -2737,7 +2737,7 @@ Hammer.gestures.Release = {
     var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
     function resizeFunction() {
-		$('.megamenu li+li').hide(); // hide the menu on window resize
+		$('.megamenu > li+li').hide(); // hide the menu on window resize
         megaMenuDropDownPosition(); // calculate the position of the megamenu
     }
 
@@ -2808,7 +2808,7 @@ $('.m-site-search-link').click(function(e) {
 	$('.m-site-search-block').toggleClass('show');
 	
 	// make sure that the main menu dropdowns also closed if site search is clicked
-	$('.megamenu li+li').hide();
+	$('.megamenu > li+li').hide();
 	$('.megamenu_button').removeClass('dark-gray-bg');
 
 });
