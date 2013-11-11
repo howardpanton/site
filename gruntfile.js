@@ -71,9 +71,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         dist: "<%= aws.AWSLive %>"
       }
     },
-
     
-
     compass: {
       production: {
         options: {
@@ -109,7 +107,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         }
       }
     },
-
 
     htmlhint: {
       build: {
@@ -208,6 +205,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         version: {
           cmd: 'mv _site/assets/css/screen.css  _site/assets/css/screen.css?version=$(date +"%Y%m%d%H%M"); mv _site/assets/js/script.js  _site/assets/js/script.js?version=$(date +"%Y%m%d%H%M"); rm -rf _site/assets/css/screen.css; rm -rf  _site/assets/js/script.js',
+        },
+        compasswatch: {
+          cmd: 'compass watch',
+        },
+        jekyllwatch: {
+          cmd: 'jekyll build -w',
         }
 
 
@@ -290,23 +293,45 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb']
       }
     },
-
-    // need to setup Amazon S3 sync here https://npmjs.org/package/grunt-s3-sync
+    
+    // watch files and run compass and jekyll build if files are changed
     watch: {
-      sass_js: {
-        files: ['assets/styles/**/*.scss','assets/js/*.js'],
-        tasks: ['compass:local',
-                'concat:dist',
-                'uglify',
-                'clean:build',
-                'exec:build',
-                ]
+      
+      scripts: {
+        files: ['assets/styles/**/*.scss'],
+        tasks: ['compass:local'],
+        options: {
+          debounceDelay: 250,
+          spawn: false,
+          interrupt: true,
+        },
       },
-      html: {
-        files: ['_site/**'],
-        tasks: ['htmlhint']
-      },
+
+     
+
+      // sassjs: {
+      //   files: ['assets/styles/**/*.scss','assets/js/*.js'],
+      //   tasks: ['compass:local',
+      //           'exec:buildlocal'
+      //          ]
+      // },
+      // html: {
+      //   files: ['_site/**'],
+      //   tasks: ['htmlhint']
+      // },
+     
+    },
+
+    // run watch tasks concurrently
+    concurrent: {
+      target: {
+        jekyllandcompass: ['exec:compasswatch', 'exec:jekyllwatch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
     }
+
   });
 
   // * Note
@@ -314,14 +339,13 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // you need to run 'npm install' from inside the root /beta folder.
   // This will install all the plugins that you need for this project to your machine (see below)
 
-  // load npmTasks as listed in package.json
-
-
   // Register Grunt Tasks
 
   // default grunt watch task
-  // To run type: 'grunt' 
-  grunt.registerTask('default', 'watch:sass_js');
+  // To run type: 'grunt' or 'grunt watch'
+  grunt.registerTask('default', 'watch');
+
+  grunt.registerTask('watch', 'watch');
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
@@ -368,9 +392,11 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // build for local github 
   // To run type: 'grunt buildlocal'
   grunt.registerTask('buildlocal', ['compass:local',
-                                    'exec:buildlocal'
+                                    'exec:buildlocal',
                                     //'newer:jshint'
                                     ]);
+
+ 
 
   // combine script assets
   grunt.registerTask('concat_js', ['concat:dist']);
@@ -382,8 +408,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('compressaudiojs', ['uglify:audio', 'compress:libs']);
   
-
-  // maybe add grunt task to push to gitHub ?
 
 
 };
