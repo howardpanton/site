@@ -79,7 +79,7 @@ $(".date").each(function (i, element) {
 $('.m-site-search-link').click(function(e) {
 	$(this).toggleClass('dark-gray-bg');
 	$('.m-site-search').toggleClass('show');
-	$('.megamenu li+li').hide();
+	$('.megamenu > li+li').hide();
 }
 });
 

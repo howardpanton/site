@@ -376,7 +376,7 @@
     var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
     function resizeFunction() {
-        $('.megamenu li+li').hide(); // hide the menu on window resize
+        $('.megamenu > li+li').hide(); // hide the menu on window resize
         megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
     }
 
