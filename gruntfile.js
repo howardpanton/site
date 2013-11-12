@@ -35,7 +35,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+        // {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-expanded.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
       staging: {
@@ -58,6 +59,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-expanded.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
     },
@@ -261,7 +263,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           mode: 'gzip'
         },
         files: [
-          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'},
+          {expand: true, flatten: true, src: ['_site/assets/js/script-expanded.js'], dest: 'temp/js/', ext: '.js'}
         ]
       },
 
