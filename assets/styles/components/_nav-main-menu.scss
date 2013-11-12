@@ -42,7 +42,7 @@
   background-color: $dark-gray; 
   @include prefixer(transition, $transition-bg);
 
-  display:none; // hidemenu on mobile at start  
+  display: none; // hidemenu on mobile at start  
 
   @include gs-media(d) {
     background-color: $black; 
@@ -56,9 +56,9 @@
 
 // hide all but first list item (to prevent FOUC before javascript loads)
 // we need to show first list item because it is the mobile menu trigger button
-.megamenu > li + li {
-   visibility: hidden;
-}
+// .megamenu > li + li {
+//    visibility: hidden;
+// }
 
 
 // float the search icon on desktop to the right of the screen
@@ -145,11 +145,7 @@
 .megamenu li .dropdown_multilevel {
   position: absolute;
   margin:0;
-  //padding:12px;
-  //left:-9999em;
-  //top:-9999em;
   display: none;
-  // zoom:1;
   z-index:99998;
   float: left;
   h2 a, a {
@@ -157,11 +153,11 @@
     @include font-size(14);
   }
   
+  // set no hover color for dropdown 
   li > a:hover {
      background-color: $bg-gray;
      color: $black;
   }
-
 
   @include gs-media(d) {
     li > a:hover {

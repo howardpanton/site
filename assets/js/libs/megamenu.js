@@ -119,9 +119,6 @@
 
                     megaMenuDropDownPosition();
 
-                    $(window).resize(function() {
-                        megaMenuDropDownPosition();
-                    });
                     // mobile menu icon show hide menu
                     $(menuButton).children('a').click(function () {
 
@@ -320,9 +317,10 @@
         // Without those top and left values, the drop downs would be hidden
         // when not hovered.
 
-        // get width of page -- used to set the width of the menu dropdowns a
+        // get width of page -- used to set the width of the megamenu dropdowns
         var _innerW = $('body').innerWidth();
 
+        confirm("the page width is:" + _innerW);
         if ((_innerW < 960) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
@@ -368,4 +366,36 @@
     }
 
 
+    // --------------------------------------------------
+    // Window resize function with delay to improve performance
+
+    var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
+    function resizeFunction() {
+        megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
+    }
+
+    // On resize, run the function and reset the timeout
+    // 250 is the delay in milliseconds. Change as you see fit.
+    $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeFunction, 250);
+    });
+
+    // Listen for orientation changes on mobile devices. (http://davidwalsh.name/orientation-change)
+    window.addEventListener("orientationchange", function() {
+        // when iOS device is rotated
+        megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
+        
+        // confirm the new orientation number
+        confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
+
+    }, false);
+
+    resizeFunction();
+
+
 })(jQuery);
+
+
+
