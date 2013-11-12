@@ -957,8 +957,6 @@ $(this).attr("title", $(this).attr("title") + "(external link)");
 });
 
 
-
-
 $('#debug').hide();
 $('.debug-toggle').click(function(e) {
   $('#debug').toggle();
@@ -974,7 +972,7 @@ $('.lcf').find('h2').wrapInner('<span />');
 
 }); // end document ready
 
-
+// test comment to see if git is still tracking this file
 
 /* 
 jQuery.fitHeights by Paravel™
