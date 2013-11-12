@@ -41,7 +41,6 @@ function FastClick(layer) {
 	/**
 	 * The element being tracked for a click.
 	 *
-	 * @type EventTarget
 	 */
 	this.targetElement = null;
 
@@ -2412,7 +2411,8 @@ Hammer.gestures.Release = {
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
 
-                    if ($(window).innerWidth() < 960) {
+                    if ($(window).width() < 960) {
+                    	console.log("load mobile nav");
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -2424,6 +2424,10 @@ Hammer.gestures.Release = {
 
                     $(menuButton).children('a').hammer().on('tap', function (event) {
                         $(menuItem).not(":eq(0)").toggle(0);
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                        // $('.m-site-search-link').removeClass('dark-gray-bg');
+                     
                     });
 
                     $(menuItemElement).toggleClass('noactive');
@@ -2483,7 +2487,10 @@ Hammer.gestures.Release = {
 
                         $(menuButton).toggleClass('megamenu_button_active');
                         $(menuItem).not(":eq(0)").toggle(0);
-
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                        // $('.m-site-search-link').removeClass('dark-gray-bg');
+                        
                     });
 
                     if (settings.menu_click_outside === 1) {
@@ -2577,7 +2584,6 @@ Hammer.gestures.Release = {
                                     .click(function (event) {
                                         event.stopPropagation();
                                     });
-
                             });
 
                             break;
@@ -2679,8 +2685,8 @@ Hammer.gestures.Release = {
         // get width of page -- used to set the width of the menu dropdowns a
         var _innerW = $('body').innerWidth();
 
-        // confirm("the page width is:" + _innerW);
-        if ((_innerW < 960) && (settings.menu_responsive === 1)) {
+        // we use 945 instead of 960 as a value to compare to allow for 15px sidebar
+        if ((_innerW < 945) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
                 'left':'0',
@@ -2731,6 +2737,7 @@ Hammer.gestures.Release = {
     var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
     function resizeFunction() {
+		$('.megamenu li+li').hide(); // hide the menu on window resize
         megaMenuDropDownPosition(); // calculate the position of the megamenu
     }
 
@@ -2789,17 +2796,21 @@ if (!Array.prototype.indexOf) {
 
 
 jQuery(".date").each(function (i, element) {
-  
   str = jQuery( this ).text();
   if (str.indexOf(",") != -1) {
     jQuery(this).text(str.substring(5,16));
   }
-
 });
 
 // toggle site search on mobile & tablet menu 
 $('.m-site-search-link').click(function(e) {
+	// $(this).toggleClass('dark-gray-bg');
 	$('.m-site-search-block').toggleClass('show');
+	
+	// make sure that the main menu dropdowns also closed if site search is clicked
+	$('.megamenu li+li').hide();
+	
+
 });
 
 // position prev and next navigation buttons for OwlCarousel
