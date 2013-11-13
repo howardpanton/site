@@ -8,7 +8,7 @@
 (function ($) {
 
     var settings = {
-        menu_speed_show:200, // Time (in milliseconds) to show a drop down
+        menu_speed_show:100, // Time (in milliseconds) to show a drop down
         menu_speed_hide:100, // Time (in milliseconds) to hide a drop down
         menu_speed_delay:0, // Time (in milliseconds) before showing a drop down
         menu_effect:'click_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', 'click_fade', 'click_slide', 'open_close_fade', 'open_close_slide'
@@ -52,8 +52,8 @@
                 });
 
                 if (("ontouchstart" in document.documentElement) && (settings.menu_responsive === 1)) {
-
-                    if ($(window).innerWidth() < 960) {
+                    // if less than 945 width (960 - 15 px for scrollbar - equals 945)
+                    if ($(window).width() < 960) {
                         $(menuDropDown).css({'top':'auto'}).hide();
                         $(menuItemFlyOutDropDown).css({'left':'0', 'top':'0'}).hide();
                         $(menuItem).hide(0);
@@ -65,6 +65,9 @@
 
                     $(menuButton).children('a').hammer().on('tap', function (event) {
                         $(menuItem).not(":eq(0)").toggle(0);
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                       
                     });
 
                     $(menuItemElement).toggleClass('noactive');
@@ -119,12 +122,13 @@
 
                     megaMenuDropDownPosition();
 
-                    // mobile menu icon show hide menu
+                    // mobile menu icon show hide menu (main menu toggle on mobile & tablet view)
                     $(menuButton).children('a').click(function () {
-
                         $(menuButton).toggleClass('megamenu_button_active');
                         $(menuItem).not(":eq(0)").toggle(0);
-
+                        // hide site search when menu icon is clicked
+                        $('.m-site-search-block').removeClass('show');
+                        $('.m-site-search-link').removeClass('dark-gray-bg');
                     });
 
                     if (settings.menu_click_outside === 1) {
@@ -320,7 +324,7 @@
         // get width of page -- used to set the width of the megamenu dropdowns
         var _innerW = $('body').innerWidth();
 
-
+        // we use 945 instead of 960 as a value to allow for 15px sidebar
         if ((_innerW < 945) && (settings.menu_responsive === 1)) {
             $('.megamenu').children('li').hide(0);
             $('.dropdown_container, .dropdown_fullwidth').css({
@@ -372,6 +376,7 @@
     var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
     function resizeFunction() {
+        $('.megamenu > li+li').hide(); // hide the menu on window resize
         megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
     }
 
@@ -388,7 +393,7 @@
         megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
         
         // confirm the new orientation number
-        confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
+        // confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
 
     }, false);
 
