@@ -36,7 +36,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
         // {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-expanded.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
       staging: {
@@ -67,7 +67,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     // invalidate cloudfront (clear cache) 
     cloudfront_clear: {
       invalidateIndex: {
-        resourcePaths: ["/assets/css/screen.css", "/assets/js/script-min.js"],
+        resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
         secret_key: "<%= aws.AWSSecretKey %>",
         access_key: "<%= aws.AWSAccessKeyId %>",
         dist: "<%= aws.AWSLive %>"
@@ -264,7 +264,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
         files: [
           {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'},
-          {expand: true, flatten: true, src: ['_site/assets/js/script-expanded.js'], dest: 'temp/js/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-expanded.js'], dest: 'temp/js/', ext: '.js'},
+          {expand: true, flatten: true, src: ['_site/assets/js/t4/script.js'], dest: 'temp/js/t4/', ext: '.js'}
         ]
       },
 
@@ -365,8 +366,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // To run type: 'grunt buildlive'
 
   grunt.registerTask('buildlive', [ 'compass:production',
-                                    'concat:dist',
-                                    'any-newer:uglify',
+                                    //'concat:dist',
+                                    //'any-newer:uglify',
                                     'compress:main',
                                     'exec:buildlive',
                                     'cssmin:minify',
