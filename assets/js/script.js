@@ -75,10 +75,6 @@ $(".date").each(function (i, element) {
 });
 
 
-// toggle site search on mobile & tablet menu
-$('.m-site-search-link').click(function(e) {
-	$('.m-site-search').toggleClass('show');
-});
 
 // position prev and next navigation buttons for OwlCarousel
 function positionOwlCarouselNav() {
@@ -207,6 +203,16 @@ function enableSelectBoxes() {
 $(document).ready(function(){
 
   checkWindowSize();
+
+
+  // toggle site search on mobile & tablet menu
+	$('.m-site-search-link').click(function(e) {
+		e.preventDefault();
+		// $(this).toggleClass('dark-gray-bg');
+		$('.m-site-search').toggleClass('show');
+		$('.megamenu > li+li').hide();
+	});
+
 
   // detect and handle breadcrumbs
   $('.breadcrumbs').find('a').last().hide();
@@ -951,8 +957,6 @@ $(this).attr("title", $(this).attr("title") + "(external link)");
 });
 
 
-
-
 $('#debug').hide();
 $('.debug-toggle').click(function(e) {
   $('#debug').toggle();
@@ -968,7 +972,7 @@ $('.lcf').find('h2').wrapInner('<span />');
 
 }); // end document ready
 
-
+// test comment to see if git is still tracking this file
 
 /* 
 jQuery.fitHeights by Paravel™

@@ -174,11 +174,12 @@
 <script src="http://use.resrc.it/"></script>
 
 <!-- Scripts -->
+
 <!-- live script.js -->
  <!-- <script type="text/javascript" src="{{site.url}}/assets/js/script-min.js"></script> -->
 
 <!-- dev script.js -->
-<script type="text/javascript" src="{{site.url}}/assets/js/script-min.js"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/script-expanded.js"></script>
 
 <script>
 
@@ -222,6 +223,7 @@ var QueryParameters = (function()
       // FOUC Fix - unhide the list items after the megamenu script has run
       $('.megamenu > li + li').css('visibility','visible');
       $('.top-bar').css('overflow', 'visible');
+
   });
 
   // UNcomment to add Google Tracking
