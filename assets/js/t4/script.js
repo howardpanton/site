@@ -3,8 +3,29 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 20th September 2013 14:38pm
+//     Updated Tuesday 12th November 2013 14:38pm
 // \*-----------------------------------------*/
+
+// To Test
+// 
+// enable caching for GetScript calls
+jQuery.ajaxSetup({
+  cache: true
+});
+
+// position prev and next navigation buttons for OwlCarousel
+function positionOwlCarouselNav() {
+  // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
+  var maxImgHeight = Math.max.apply(null, $(".owl-carousel img.lazyOwl").map(function() {
+      return $(this).height();
+  }));
+  // calculate slider controls position from top of slider container
+  var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
+  // set position of slider nav buttons from top 
+  $(".owl-prev, .owl-next").css("top", distFromTop);
+}
+
+
 
 jQuery.fn.extend({
   scrollToMe: function () {
@@ -239,7 +260,7 @@ $(document).ready(function(){
 
 // LazyLoading with ReSRC.it images
   if ($('.resrc').length > 0) {
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.review-1.0.0.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.review.min.js', function() {
       $('.resrc').review({
           callback: function() {
             resrc.resrc(this);
@@ -302,8 +323,8 @@ $(document).ready(function(){
 
 if ($('#container').length > 0) {
   $.when(
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/filtrify.min.js' ),
-      $.getScript( 'http://beta.arts.ac.uk/media/beta/beta-assets/js/jPages.min.js' ),
+      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js' ),
+      $.getScript( 'http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js' ),
       $.Deferred(function( deferred ){
           $( deferred.resolve );
       })
@@ -401,7 +422,7 @@ if ($('#container').length > 0) {
   
   if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 
@@ -451,7 +472,7 @@ if ($('#container').length > 0) {
   // detect slider component
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 
@@ -493,6 +514,44 @@ if ($('#container').length > 0) {
   }
 
 
+// Owl slider (research profiles)
+if ($('.owl-carousel').length > 0) {
+
+  jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js" , function() {
+     $('.owl-carousel').each(function() {
+        $(this).owlCarousel({
+        itemsDesktop : [1280, 3], // items between 1000px and 901px
+        itemsTablet: [959, 2], // items between 
+        itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
+        lazyLoad : true,
+        pagination: false,
+        navigation : true,
+        navigationText : ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"],
+        afterAction : function(elem){
+          positionOwlCarouselNav();
+        },
+
+        afterUpdate: function(elem){
+          positionOwlCarouselNav();
+        },
+      });
+
+    });
+
+     // get number of items in each owl-carousel and output pagination to each item in the carousel
+    $(".owl-carousel").each(function() {
+        var total_items = $('.item', this).length;
+        // console.log("the number of items is: " + total_items);
+        $(".item-description", this).append(function(i) {
+            return $("<span />", {text: i+1 + ' of ' + total_items });
+         });
+
+    });
+
+  });
+}
+
+
   ///////////////////////
   /////// accreditation
   ///////////////////////
@@ -518,9 +577,7 @@ if ($('.credits').length > 0) {
             $('.credits').fadeIn();
           }
         });
-      }
-  
-    
+      }    
   }
 
 
@@ -528,9 +585,9 @@ if ($('.credits').length > 0) {
 if ($('.accordion').length > 0) {
 
     $.when(
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.accordion-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.easing.1.3-ck.js" ),
-        $.getScript( "http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery-rotate-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
+        $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
         $.Deferred(function( deferred ){
             $( deferred.resolve );
         })
@@ -635,7 +692,7 @@ if ($('.search-filters').length > 0) {
 if ($('.showtime-json').length){
 
   // with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
     var outputNode = $('.showtime-json');
 
@@ -723,7 +780,7 @@ if ($('.showtime-json').length){
 // detect lightbox component
 if ($('.js-lightbox').length > 0) {
 
-    $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/magnific-lightbox-ck.js', function() {
+    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
 
         // initialise the magnific lightbox
         $('.js-lightbox').each(function() {
@@ -820,11 +877,30 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  $.getScript('http://beta.arts.ac.uk/media/beta/beta-assets/js/jquery.fitvids-ck.js', function() {
+  $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
 
+
+  //---------------------------------------
+  //  Audio Player - based on code from http://bit.ly/12I3B79
+  //---------------------------------------
+
+
+  if ($('audio').length > 0) {
+
+    jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js', function() {
+
+        $('audio').each(function() {
+          $(this).audioPlayer();
+        });
+
+    });
+
+
+  }
+  
 
 if ($('video').length > 0) {
 
@@ -856,20 +932,21 @@ if ($('.kis-widget').length > 0) {
 
 
 
-// Add download class to PDF links
-$('a[href$=".pdf"]').addClass('download');
+// add class to remove standard list bullets for PDF download lists
+$('aside li a[href$=".pdf"], .l-content li a[href$=".pdf"]').parent().addClass('no-bullet');
 
-  // Creating custom :external selector
-  $.expr[':'].external = function(obj){
-      return (obj.hostname != location.hostname);
-  };
+// add class to remove standard list bullets for DOC download lists
+$('aside li a[href$=".doc"], .l-content li a[href$=".doc"]').parent().addClass('no-bullet');
 
-  // Add 'external' CSS class to all external links
-  $('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
-    $(this).attr("title", $(this).attr("title") + "(external link)");
+// Creating custom :external selector
+jQuery.expr[':'].external = function(obj){
+  return (obj.hostname != location.hostname);
+};
+
+// Add 'external' CSS class to all external links
+$('.l-content a:external.button-link, aside a:external').addClass('external').each(function() {
+$(this).attr("title", $(this).attr("title") + "(external link)");
 });
-
-
 
 
 $('#debug').hide();
