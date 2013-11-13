@@ -906,7 +906,7 @@ $(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if ($('.__media').length > 0) {
-  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids.min.js', function() {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     $('.__media').fitVids();
   });
 }
