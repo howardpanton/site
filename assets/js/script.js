@@ -518,9 +518,11 @@ if ($('.owl-carousel').length > 0) {
   jQuery.getScript( "http://artslondon.github.io/beta/assets/js/libs/owl.carousel.js" , function() {
      $('.owl-carousel').each(function() {
         $(this).owlCarousel({
-        itemsDesktop : [1280, 3], // items between 1000px and 901px
-        itemsTablet: [959, 2], // items between 
-        itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items : 3,	
+        itemsDesktop : [1280, 3], // desktop
+        itemsTablet: [959, 2], // tablet
+        itemsMobile : [599, 1], // mobile
         lazyLoad : true,
         pagination: false,
         navigation : true,

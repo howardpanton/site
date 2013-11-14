@@ -89,15 +89,21 @@ echo '<!-- DEBUG: returnXML successful -->';
 		}
 		
 		public function do_item_loop($item) { 
+			
 		$image = $item->children('media', true);
-		$image_link = $image['content'];		
-		$image_src = "http://ualresearchonline.arts.ac.uk".$image->content->attributes();
-		$bg_img = "<div class=\"center-cropped\" style=\"background-image: url(".$image_src.")\"><img src=".$image_src." /></div>";
+		
+		if (!empty($image)) {
+			$image_link = $image['content'];				$image_src = "http://ualresearchonline.arts.ac.uk".$image->content->attributes();
+		} else {
+			$image_src = "http://app.resrc.it/o=60/http://www.arts.ac.uk/media/placeholder-images/research-580x580.jpg";
+		}
+				
+		$bg_img = "<div class=\"center-cropped\" style=\"background-image: url(".$image_src.")\"><img class=\"lazyOwl\" src=".$image_src." /></div>";
 		$desc = $item->description;
 		
-		
-			echo "<div class=\"owl-item\">";	
+			echo "<div class=\"item\">";	
 			echo $bg_img; 
+			echo "<div class=\"item-description\">";
 			echo "<h4><a href=\"";
 			if ($item->link != '') { echo $item->link; } 
 			echo "\">";
@@ -110,7 +116,7 @@ echo '<!-- DEBUG: returnXML successful -->';
 			{
 				echo $value;
 			}
-			echo "</p></div>";
+			echo "</p></div></div>";
 		}
 
 		public function do_output() {
@@ -136,10 +142,17 @@ echo '<!-- DEBUG: returnXML successful -->';
 
 	}
 	
-	$test = new ResearchOutputs('Helen','Storey');
-	$test->returnXml();
-	$test->do_output();
 
 
 ?>
 
+
+
+<?php
+
+$test = new ResearchOutputs('William','Raban');
+//$test = new ResearchOutputs('<t4 type="content" name="Firstname" output="normal" modifiers=""  />','<t4 type="content" name="Lastname" output="normal" modifiers=""  />');
+$test->returnXml();
+$test->do_output();
+
+?>
