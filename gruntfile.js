@@ -96,6 +96,19 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
+    // Jekyl task to watch files (uses _config_local.yml)
+    jekyll: {                             // Task
+        options: {                          // Universal options
+            src : '<%= app %>'
+        },
+        dist: {                             // Target
+          options: {                        // Target options
+            dest: '<%= dist %>',
+            config: '_config_local.yml',
+            watch: true          }
+        },
+    },
+
     jshint: {
       // define the files to lint
       files: ['_site/assets/js/script.js'],
@@ -311,13 +324,26 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
       },
 
-     
+      sass: {
+        files: ['assets/styles/**/*.scss'],
+        tasks: ['compass:local'],
+      },
+
+      jekyll: {
+        files: ['*.html'],
+        tasks: ['jekyll'],
+      },
 
       // sassjs: {
       //   files: ['assets/styles/**/*.scss','assets/js/*.js'],
       //   tasks: ['compass:local',
       //           'exec:buildlocal'
-      //          ]
+      //          ],
+      //   options: {
+      //     debounceDelay: 250,
+      //     spawn: false,
+      //     interrupt: true,
+      //   },
       // },
       // html: {
       //   files: ['_site/**'],
@@ -325,15 +351,26 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       // },
      
     },
-
     // run watch tasks concurrently
+    // concurrent: {
+    //   target: {
+    //     jekyllandcompass: ['watch:sass', 'watch:jekyll'],
+    //     options: {
+    //       logConcurrentOutput: true
+    //     }
+    //   }
+    // }
+
     concurrent: {
-      target: {
-        jekyllandcompass: ['exec:compasswatch', 'exec:jekyllwatch'],
-        options: {
-          logConcurrentOutput: true
-        }
+      options: {
+        logConcurrentOutput: true
+      },
+      watchlocal: {
+        tasks: ['watch:jekyll']
       }
+      // dev: {
+      //   tasks: ["watch:B", "watch:C"]
+      // }
     }
 
   });
@@ -349,7 +386,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // To run type: 'grunt' or 'grunt watch'
   grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('watch', 'watch');
+  grunt.registerTask('watch', 'concurrent:watchlocal');
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
@@ -380,8 +417,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                   ]);
 
   grunt.registerTask('buildstaging', [ 'compass:staging',
-                                    'concat:dist',
-                                    'any-newer:uglify',
+                                    //'concat:dist',
+                                    //'any-newer:uglify',
                                     'compress:main',
                                     'exec:buildstaging',
                                     'cssmin:minify',
@@ -390,7 +427,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                     'copy:minified_assets',
                                     'clean:build',
                                     'any-newer:aws_s3:staging',
-                                    'cloudfront_clear'
+                                    // 'cloudfront_clear'
                                   ]);
 
   // build for local github 
