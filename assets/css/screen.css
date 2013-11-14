@@ -5274,7 +5274,7 @@ a.img:hover {
 
 @media only screen and (min-width: 960px) {
   /* line 151, ../styles/globals/_layout.scss */
-  .l-content, .l-list, .two-up.l-content, .accordion-list .st-content table p, .accordion-list-item p, .accordion-list-item ul {
+  .l-content, .l-list, .two-up.l-content, .accordion-list .st-content table p, .accordion-list-item p, .accordion-list-item ul, .accordion.research-profile {
     display: block;
     float: left;
     margin-left: 0%;
@@ -12484,6 +12484,30 @@ footer .copyright p {
    temporarily resize the width of the accordion on this page to content width for desktop 
    we could modify the component globally and add the l-content class to the outer container
 */
+/* line 148, ../styles/components/_accordion.scss */
+.accordion.research-profile {
+  clear: left;
+}
+/* line 157, ../styles/components/_accordion.scss */
+.accordion.research-profile .st-content p,
+.accordion.research-profile .st-content h3,
+.accordion.research-profile .st-content h4,
+.accordion.research-profile .st-content blockquote {
+  width: 100%;
+}
+/* line 161, ../styles/components/_accordion.scss */
+.accordion.research-profile .accordion-list-item {
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px dotted black;
+  margin-bottom: 1px;
+  padding: 0;
+}
+/* line 168, ../styles/components/_accordion.scss */
+.accordion.research-profile .accordion-list li:first-child {
+  border-top: 1px dotted black;
+}
+
 /* line 2, ../styles/components/_pagination.scss */
 .pagination {
   margin-top: 1.125em;

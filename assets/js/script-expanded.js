@@ -3776,11 +3776,13 @@ jQuery(window).load(function(){
 
 
 // Check to see whether Aside has content if not remove
-var k = $('aside.kiswidget');
+if ($('aside.kiswidget').length > 0) {
+	var k = $('aside.kiswidget');
 
-if ($(k).html().trim()) {
-} else {
-   k.remove();
+	if ($(k).html().trim()) {
+	} else {
+		k.remove();
+	}
 }
 
 // // Fix iOS re-orient problem when changing from portrait to landscape mode
