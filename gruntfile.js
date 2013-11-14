@@ -34,8 +34,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
@@ -57,9 +55,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-expanded.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
     },
@@ -90,10 +86,23 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
       local: {
         options: {
-          config: 'config_local.rb',
+          config: 'config.rb',
           force: true
         }
       }
+    },
+
+    // Jekyl task to watch files (uses _config_local.yml)
+    jekyll: {                             // Task
+        options: {                          // Universal options
+            src : '<%= app %>'
+        },
+        dist: {                             // Target
+          options: {                        // Target options
+            dest: '<%= dist %>',
+            config: '_config_local.yml',
+            watch: true          }
+        },
     },
 
     jshint: {
@@ -311,13 +320,26 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         },
       },
 
-     
+      sass: {
+        files: ['assets/styles/**/*.scss'],
+        tasks: ['compass:local'],
+      },
+
+      jekyll: {
+        files: ['*.html'],
+        tasks: ['jekyll'],
+      },
 
       // sassjs: {
       //   files: ['assets/styles/**/*.scss','assets/js/*.js'],
       //   tasks: ['compass:local',
       //           'exec:buildlocal'
-      //          ]
+      //          ],
+      //   options: {
+      //     debounceDelay: 250,
+      //     spawn: false,
+      //     interrupt: true,
+      //   },
       // },
       // html: {
       //   files: ['_site/**'],
@@ -325,15 +347,26 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       // },
      
     },
-
     // run watch tasks concurrently
+    // concurrent: {
+    //   target: {
+    //     jekyllandcompass: ['watch:sass', 'watch:jekyll'],
+    //     options: {
+    //       logConcurrentOutput: true
+    //     }
+    //   }
+    // }
+
     concurrent: {
-      target: {
-        jekyllandcompass: ['exec:compasswatch', 'exec:jekyllwatch'],
-        options: {
-          logConcurrentOutput: true
-        }
+      options: {
+        logConcurrentOutput: true
+      },
+      watchlocal: {
+        tasks: ['watch:jekyll']
       }
+      // dev: {
+      //   tasks: ["watch:B", "watch:C"]
+      // }
     }
 
   });
@@ -349,7 +382,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // To run type: 'grunt' or 'grunt watch'
   grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('watch', 'watch');
+  grunt.registerTask('watch', 'concurrent:watchlocal');
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
@@ -380,17 +413,17 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                   ]);
 
   grunt.registerTask('buildstaging', [ 'compass:staging',
-                                    'concat:dist',
-                                    'any-newer:uglify',
+                                    //'concat:dist',
+                                    //'any-newer:uglify',
                                     'compress:main',
                                     'exec:buildstaging',
                                     'cssmin:minify',
                                     'compress:css',
                                     'compress:js',
                                     'copy:minified_assets',
-                                    'clean:build',
+                                    // 'clean:build',
                                     'any-newer:aws_s3:staging',
-                                    'cloudfront_clear'
+                                    // 'cloudfront_clear'
                                   ]);
 
   // build for local github 
