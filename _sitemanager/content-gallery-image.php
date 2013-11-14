@@ -8,10 +8,10 @@ $thumbnail = "<t4 type="content" name="Gallery thumbnail" output="normal" modifi
 		<?php // if the user has uploaded a thumbnail, use that
 		if ($thumbnail != '') { ?>
 			
-			<img src="<?php echo $thumbnail; ?>" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="m-hide">
+			<img src="<?php echo $thumbnail; ?>" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />">
 		<?php } else { // otherwise generate a resrc'd image crop ?>
 
-                          <img data-src="http://app.resrc.it/S=W600/C=W300,H300,XOF50,YOF20/o=60/<?php echo siteURL(); ?><t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="resrc m-hide" />
+                          <img data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/<?php echo siteURL(); ?><t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="resrc" />
 		<?php } ?>
 
 		</a>
@@ -21,7 +21,7 @@ $thumbnail = "<t4 type="content" name="Gallery thumbnail" output="normal" modifi
 			<?php // if the user has uploaded a thumbnail, use that
 			if ($thumbnail != '') { ?>
 
-				<img src="<?php echo $thumbnail; ?>" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" class="m-hide">
+				<img src="<?php echo $thumbnail; ?>" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />">
 			
 			<?php } else { // otherwise use a placeholder ?>
 
