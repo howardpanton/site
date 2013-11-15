@@ -67,11 +67,28 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     // invalidate cloudfront (clear cache) 
     cloudfront_clear: {
       invalidateIndex: {
-        resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
+        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", ],
+        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", "/assets/js/script.js", "/assets/js/t4/script-expanded.js", ],
+        resourcePaths: ["/assets/css/**/*.*", "/assets/js/t4/*.js", "/assets/js/*.js" ],
         secret_key: "<%= aws.AWSSecretKey %>",
         access_key: "<%= aws.AWSAccessKeyId %>",
-        dist: "<%= aws.AWSLive %>"
+        dist: "<%= aws.AWSStaging %>"
+        // dist: "<%= aws.AWSLive %>"
       }
+      
+      // testing out separate invalidate tasks -- for some reason the code below doesn't work ???
+      // invalidateLive: {
+      //   resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
+      //   secret_key: "<%= aws.AWSSecretKey %>",
+      //   access_key: "<%= aws.AWSAccessKeyId %>",
+      //   dist: "<%= aws.AWSSLive %>"
+      // }
+      // invalidateStaging: {
+      //   resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
+      //   secret_key: "<%= aws.AWSSecretKey %>",
+      //   access_key: "<%= aws.AWSAccessKeyId %>",
+      //   dist: "<%= aws.AWSStaging %>"
+      // }
     },
     
     compass: {
@@ -90,7 +107,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
       local: {
         options: {
-          config: 'config_local.rb',
+          config: 'config.rb',
           force: true
         }
       }
@@ -105,7 +122,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           options: {                        // Target options
             dest: '<%= dist %>',
             config: '_config_local.yml',
-            watch: true          }
+            watch: true 
+          }
         },
     },
 
@@ -140,7 +158,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
-
     csslint: {
       strict: {
         options: {
@@ -171,6 +188,68 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
+    // task that prompts and requests an input from user
+    prompt: {
+
+      ask_build_type: {
+        options: {
+          questions: [
+            {
+              config: 'buildtype',
+              type: 'list',
+              message: '\n\nUAL Website Build Task \nSelect build type:',
+              default: 'local', // default value if nothing is entered
+              choices: ['local','staging','live']
+            }
+          ]
+        }
+      },
+
+      confirm_live_build: {
+        options: {
+          questions: [
+            {
+              config: 'optionselected', // this is the name the boolean answer is stored in
+              type: 'confirm',
+              message: 'Are you sure you want to BUILD and UPLOAD asset files to the ** LIVE UAL bucket **?\n(this will affect the live website)',
+              default: false
+            }
+          ]
+        }
+      },
+
+      confirm_staging_build: {
+        options: {
+          questions: [
+            {
+              config: 'optionselected', // this is the name the boolean answer is stored in
+              type: 'confirm',
+              message: 'BUILD and UPLOAD asset files to ** STAGING bucket ** ?',
+              default: false
+            }
+          ]
+        }
+      }
+
+      // buildDest: {
+      //   options: {
+      //     questions: [
+      //       {
+      //         config: 'mochacli.options.reporter',
+      //         type: 'list',
+      //         message: 'Would you like to build locally or build to staging?',
+      //         default: 'local',
+      //         choices: ['local', 'staging']
+      //       }
+      //     ]
+      //   }
+      // },
+    },
+
+
+    
+
+
 
     // Task to concatenate script files 
     // - files will be combined starting with the first file in the list
@@ -178,8 +257,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       options: {
         separator: '',
       },
-
-    dist: {
+      dist: {
         src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/hoverintent.js','assets/js/libs/hammer.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
         dest: 'temp/combined.js',
       },
@@ -227,8 +305,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         jekyllwatch: {
           cmd: 'jekyll build -w',
         }
-
-
     },
   
     // copy /style-guide to /download folder
@@ -304,6 +380,19 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
+
+    asciify: { 
+      banner:{
+        text: 'ual',
+
+        // Add the awesome to the console, and use the best font.
+        options:{ 
+          font:'banner3',
+          log:true
+        }
+      }
+    },
+
     // cleanup temporary files after concat and build
     clean: {
       build: {
@@ -351,15 +440,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       // },
      
     },
-    // run watch tasks concurrently
-    // concurrent: {
-    //   target: {
-    //     jekyllandcompass: ['watch:sass', 'watch:jekyll'],
-    //     options: {
-    //       logConcurrentOutput: true
-    //     }
-    //   }
-    // }
+   
 
     concurrent: {
       options: {
@@ -396,59 +477,110 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.registerTask('testHTML', 'htmlhint');
 
 
-  //compress script libraries
+  // compress script libraries
   grunt.registerTask('compress_libs', 'compress:libs');
 
-  // build for production. 
-  // To run type: 'grunt buildlive'
 
-  grunt.registerTask('buildlive', [ 'compass:production',
-                                    //'concat:dist',
-                                    //'any-newer:uglify',
-                                    'compress:main',
-                                    'exec:buildlive',
-                                    'cssmin:minify',
-                                    'compress:css',
-                                    'compress:js',
-                                    'copy:minified_assets',
-                                    'clean:build',
-                                    'any-newer:aws_s3:live',
-                                    'cloudfront_clear'
-                                  ]);
+  // 
+  grunt.registerTask('build', [ 'asciify',
+                                'prompt:ask_build_type',
+                                'handle_build_type'
+                              ]);
 
-  grunt.registerTask('buildstaging', [ 'compass:staging',
-                                    //'concat:dist',
-                                    //'any-newer:uglify',
-                                    'compress:main',
-                                    'exec:buildstaging',
-                                    'cssmin:minify',
-                                    'compress:css',
-                                    'compress:js',
-                                    'copy:minified_assets',
-                                    'clean:build',
-                                    'any-newer:aws_s3:staging',
-                                    // 'cloudfront_clear'
-                                  ]);
+
+   
+  grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] ); 
+                                    
+  // Do live build
+  grunt.registerTask('go_build_live', [ 'compass:production',
+                                        //'concat:dist',
+                                        //'any-newer:uglify',
+                                        'compress:main',
+                                        'exec:buildlive',
+                                        'cssmin:minify',
+                                        'compress:css',
+                                        'compress:js',
+                                        'copy:minified_assets',
+                                        'clean:build',
+                                        'any-newer:aws_s3:live',
+                                        'cloudfront_clear'
+                                      ]);
+  // build staging tasks
+  grunt.registerTask('buildstaging', ['prompt:confirm_staging_build', 'confirm_staging_build']);
+
+  grunt.registerTask('go_build_staging', [ 'compass:staging',
+                                        //'concat:dist',
+                                        //'any-newer:uglify',
+                                        'compress:main',
+                                        'exec:buildstaging',
+                                        'cssmin:minify',
+                                        'compress:css',
+                                        'compress:js',
+                                        'copy:minified_assets',
+                                        'clean:build',
+                                        'any-newer:aws_s3:staging',
+                                        'cloudfront_clear' ]);
+
 
   // build for local github 
   // To run type: 'grunt buildlocal'
-  grunt.registerTask('buildlocal', ['compass:local',
-                                    'exec:buildlocal',
-                                    //'newer:jshint'
+  grunt.registerTask('buildlocal', [ 'compass:local',
+                                     'exec:buildlocal',
+                                     //'newer:jshint'
                                     ]);
-
- 
 
   // combine script assets
   grunt.registerTask('concat_js', ['concat:dist']);
 
-  // gzip fonts
-  grunt.registerTask('gzipfonts', ['any-newer:compress:fonts',
-                                   'copy:minified_fonts'
-                                  ]);
+ 
+  grunt.registerTask('handle_build_type', 'runs build task based on the option user selects', function() {
+    
+    var buildtype = grunt.config('buildtype');
+    switch (buildtype) {
+      case 'local':
+        grunt.log.writeln('Building files for local testing in GitHub....');
+        grunt.task.run(['buildlocal']);
+        break;
+      case 'staging':
+        grunt.task.run('buildstaging');
+        break;
+      case 'live':
+        // grunt.task.run('buildlive');
+        grunt.log.writeln('We haven\'t tested this yet... try build staging first');
+        grunt.task.run(['build']);  // go back to question prompt
+        break;
+      default:
+        grunt.task.run(['buildlocal']);
+        break;
+    }
 
-  grunt.registerTask('compressaudiojs', ['uglify:audio', 'compress:libs']);
+  });
+
+  grunt.registerTask('confirm_staging_build', 'Build runs if user selected YES from the prompt task', function() {
+    
+    var buildconfirmed = grunt.config('optionselected');  // get boolean value user selected from prompt:confirm_staging_build task
+    if (buildconfirmed) {
+         grunt.log.writeln('you selected YES... \n Building & uploading to staging bucket...');
+         grunt.task.run(['go_build_staging']);
+    }
+    else {
+       grunt.log.writeln('You selected NO..... Exiting without making changes.');
+    }
   
+  });
 
+  
+  grunt.registerTask('confirm_live_build', 'Build only runs if user selected YES from the prompt task', function() {
+
+    var buildconfirmed = grunt.config('optionselected');  // get boolean value user selected from prompt:confirm_live_build task
+    if (buildconfirmed) {
+         grunt.log.writeln('you selected YES... \n Now building and uploading to artslive bucket...');
+         grunt.task.run(['go_build_live']);
+    }
+    else {
+       grunt.log.writeln('You selected NO..... Exiting without making changes.');
+    }
+   
+  });
 
 };
