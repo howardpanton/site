@@ -3,9 +3,7 @@ beta
 
 UAL beta website
 
-# title [![Build Status][build]][build-link]
-[build]: https://travis-ci.org/artslondon/repo.png?branch=gh-pages
-[build-link]: https://travis-ci.org/artslondon/beta
+[![Build Status](https://travis-ci.org/artslondon/beta.png?branch=gh-pages)](https://travis-ci.org/artslondon/beta)
 
 This is the repo for the new [www.arts.ac.uk](www.arts.ac.uk) website.
 The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundation 4.0](http://foundation.zurb.com/), plus a pick-and-mix of extra components.
