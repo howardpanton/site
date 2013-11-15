@@ -520,6 +520,8 @@ if ($('.owl-carousel').length > 0) {
   jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js" , function() {
      $('.owl-carousel').each(function() {
         $(this).owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items : 3,
         itemsDesktop : [1280, 3], // items between 1000px and 901px
         itemsTablet: [959, 2], // items between 
         itemsMobile : [599, 1], // itemsMobile disabled - inherit from items

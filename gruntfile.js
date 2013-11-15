@@ -34,8 +34,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
@@ -57,9 +55,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/fonts', src: ['**'], dest: 'assets/fonts/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-expanded.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
       ]
       },
     },
@@ -480,7 +476,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // compress script libraries
   grunt.registerTask('compress_libs', 'compress:libs');
 
-
   // 
   grunt.registerTask('build', [ 'asciify',
                                 'prompt:ask_build_type',
@@ -520,7 +515,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                         'clean:build',
                                         'any-newer:aws_s3:staging',
                                         'cloudfront_clear' ]);
-
 
   // build for local github 
   // To run type: 'grunt buildlocal'
