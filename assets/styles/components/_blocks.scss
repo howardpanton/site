@@ -221,10 +221,6 @@
 	}
 	// styling for IE 8 
 	&.ie {
-		@include gs-media(d) {
-		li {
-			@include gs-span(d, 1, 8);
-		}
 		li+li {
 			@include gs-span(d, 9, 16);
 		}
@@ -358,7 +354,7 @@
 }
 
 // four-up-full - used specifically for the UAL homepage
-// 
+ 
 .four-up-full {
 	li {
 		background-color: $white;
@@ -410,7 +406,7 @@
 }
 
 // four-up - core styles
-// 
+ 
 .four-up {
 	@include gs-media(t,min-max) {
 		@extend %t2-t7;
