@@ -219,6 +219,16 @@
 			@include gs-span(d, 9, 16);
 		}
 	}
+	// styling for IE 8 
+	&.ie {
+		@include gs-media(d) {
+		li {
+			@include gs-span(d, 1, 8);
+		}
+		li+li {
+			@include gs-span(d, 9, 16);
+		}
+	}
 }
 
 // two-up - core styles
@@ -246,6 +256,14 @@
 		}
 	}
 
+	&.ie .l-content {
+		@include gs-media(d) {
+			li+li {
+				@include gs-span(d, 9, 12, (5, 12));
+			}
+		}
+	}
+
 	&.l-content-full-width {
 		@extend %d5-d16--within-d5-d16;
 		@include gs-media(d) {
@@ -258,6 +276,14 @@
 		}
 	}
 
+	&.ie .l-content-full-width {
+		@include gs-media(d) {
+			li+li {
+				@include gs-span(d, 11, 16, (5, 16));
+			}
+		}
+	}
+
 	&.l-content-half-width {
 		@extend %d5-d16--within-d5-d16;
 		@include gs-media(d) {
@@ -265,6 +291,14 @@
 				@include gs-span(d, 5, 10, (5, 16));
 			}
 			ul:nth-child(2n) {
+				@include gs-span(d, 11, 16, (5, 16));
+			}
+		}
+	}
+
+	&.ie .l-content-half-width {
+		@include gs-media(d) {
+			ul+ul {
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
@@ -298,6 +332,18 @@
 		}
 	}
 
+	&.ie .l-content-full-width {
+		
+		@include gs-media(d) {
+			li+li {
+				@include gs-span(d, 9, 12, (5, 16));
+			}
+			li+li+li {
+				@include gs-span(d, 13, 16, (5, 16));
+			}
+		}
+	}
+
 	// three up link list component
 	.link-list-item { 
 		@include padding-leader(2); 
@@ -305,9 +351,7 @@
 	}
 
 	@include gs-media(d) {
-		/* clear float for multiples of 3 link list items on desktop*/
-		// .link-list-item:nth-child(4), .link-list-item:nth-child(7), .link-list-item:nth-child(10) 
-   			
+		/* clear float for multiples of 3 link list items on desktop*/ 
 		li.link-list-item:nth-child(3n+1) { clear: left; }
 
 	}
@@ -348,6 +392,21 @@
 			@include gs-span(d, 13, 16);
 		}
 	}
+	&.ie {
+		@include gs-media(d) {
+			li+li {
+				@include gs-span(d, 5, 8);
+			}
+			li+li+li {
+				@include gs-span(d, 9, 12);
+			}
+			li+li+li+li {
+				@include gs-span(d, 13, 16);
+			}
+		}
+	}
+
+
 }
 
 // four-up - core styles
@@ -359,20 +418,33 @@
 			@extend %t-all;
 		}
 		
-			li {
-				@include gs-span(t, 2, 4, (2, 7));
-			}
-			li:nth-child(2n) {
-				@include gs-span(t, 5, 7, (2, 7));
-			}
-			li:nth-child(3n) {
-				@include gs-span(t, 2, 4, (2, 7));
-				clear: left;
-			}
-			li:nth-child(4n) {
-				@include gs-span(t, 5, 7, (2, 7));
-			}
+		li {
+			@include gs-span(t, 2, 4, (2, 7));
 		}
+		li:nth-child(2n) {
+			@include gs-span(t, 5, 7, (2, 7));
+		}
+		li:nth-child(3n) {
+			@include gs-span(t, 2, 4, (2, 7));
+			clear: left;
+		}
+		li:nth-child(4n) {
+			@include gs-span(t, 5, 7, (2, 7));
+		}
+	}
+
+	&.ie {
+		li+li {
+			@include gs-span(t, 5, 7, (2, 7));
+		}
+		li+li+li {
+			@include gs-span(t, 2, 4, (2, 7));
+			clear: left;
+		}
+		li+li+li+li {
+			@include gs-span(t, 5, 7, (2, 7));
+		}
+	}
 
 	&.l-content-full-width {
 		@include gs-media(d) {
@@ -387,6 +459,20 @@
 				@include gs-span(d, 9, 12);
 			}
 			li:nth-child(4n) {
+				@include gs-span(d, 13, 16);
+			}
+		}
+	}
+
+	&.ie .l-content-full-width {
+		@include gs-media(d) {
+			li+li {
+				@include gs-span(d, 5, 8);
+			}
+			li+li+li {
+				@include gs-span(d, 9, 12);
+			}
+			li+li+li+li {
 				@include gs-span(d, 13, 16);
 			}
 		}
