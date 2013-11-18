@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-	if(class_exists('ResearchOutputs') != true) {
+	
 
 	class ResearchOutputs {
 		
@@ -18,8 +18,6 @@
 		public function __construct( $firstName = "", $lastName = "" ) {
 			$this->firstName = $firstName;
 			$this->lastName = $lastName;
-
-			$this->array = $array;
 			
 			$this->url = "http://ualresearchonline.arts.ac.uk/cgi/search/advanced/export_kultur_MediaRSS2.xml?screen=Public%3A%3AEPrintSearch&_action_export=1&output=MediaRSS2&exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Cbestoutputs%3Abestoutputs%3AALL%3AEQ%3ATRUE%7Ccreators_name%3Acreators_name%3AALL%3AIN%3A".$lastName."%2C+".$firstName."%7C-%7Ceprint_status%3Aeprint_status%3AALL%3AEQ%3Aarchive%7Cmetadata_visibility%3Ametadata_visibility%3AALL%3AEX%3Ashow&n=";
 			$t = $this->url;
@@ -30,7 +28,7 @@
 		}
 				
 		public function outputsDatesCache($firstName="", $lastName=""){
-		    $cache_file = "cache/output-".$firstName."-".$lastName.".txt";
+		    $cache_file = "/web/sites/t4www/www.arts.ac.uk/output-".$firstName."-".$lastName.".txt";
 		    $cache_outofdate = "-1 day"; // Minimum interval to update the cache file    
 		    
 		    // TRY AND GET THE LIVE DATA
@@ -71,14 +69,14 @@
 		}
 		
 		public function returnXml() {
-			echo '<!-- DEBUG: start returnXML -->';
+echo '<!-- DEBUG: start returnXML -->';
 			$this->xml = @simplexml_load_string($this->outputsDatesCache($this->firstName, $this->lastName));
 			$result = $this->xml;
 			
 //			echo $this->url;
 //			var_dump($this->xml);
 
-			echo '<!-- DEBUG: returnXML was successfull -->';
+echo '<!-- DEBUG: returnXML successful -->';
 			return $this->xml;
 		}
 		
@@ -91,17 +89,26 @@
 		}
 		
 		public function do_item_loop($item) { 
+			
 		$image = $item->children('media', true);
-		$image_link = $image['content'];		
-		$image_src = "http://ualresearchonline.arts.ac.uk".$image->content->attributes();
-		$bg_img = "<div class=\"center-cropped\" style=\"background-image: url(".$image_src.")\"><img src=".$image_src." /></div>";
+		
+		if (!empty($image)) {
+			$image_link = $image['content'];				$image_src = "http://ualresearchonline.arts.ac.uk".$image->content->attributes();
+		} else {
+			$image_src = "http://app.resrc.it/o=60/http://www.arts.ac.uk/media/placeholder-images/research-580x580.jpg";
+		}
+				
+		$bg_img = "<div class=\"center-cropped\" style=\"background-image: url(".$image_src.")\"><img class=\"lazyOwl\" src=".$image_src." /></div>";
 		$desc = $item->description;
 		
-		?>
-			<div class='owl-item'>	
-			<?php echo($bg_img); ?>
-			<h4><a href="<?php if ($item->link != '') { echo $item->link; } ?>"><?php if ($item->title != '') { echo $item->title; } ?></a></h4>
-			<p><?php 
+			echo "<div class=\"item\">";	
+			echo $bg_img; 
+			echo "<div class=\"item-description\">";
+			echo "<h4><a href=\"";
+			if ($item->link != '') { echo $item->link; } 
+			echo "\">";
+			if ($item->title != '') { echo $item->title; } 
+			echo "</a></h4><p>";
 			// try to match our pattern
 			preg_match_all("/\([1-2][0-9][0-9][0-9]\)/", $desc, $matches);
 			// loop through the matches with foreach
@@ -109,22 +116,42 @@
 			{
 				echo $value;
 			}
-			?></p>
-			</div>
-		<?php
+			echo "</p></div></div>";
 		}
 
 		public function do_output() {
+			
 			$xml = $this->xml;
+
+			if (!empty($xml)) {
+
+				echo "<h2>Research Outputs</h2>";
+				echo "<div class=\"row\">";
+				echo "<div class=\"owl-carousel research-outputs\">";
+
 				foreach( $xml->channel->item as $item ) 
 				{ 
 					$this->do_item_loop($item); 
 				} 
-			}
-		}
-	}
+				echo "</div></div>";
 
-$test = new ResearchOutputs("Helen", "Storey");
+			}
+
+			
+		}
+
+	}
+	
+
+
+?>
+
+
+
+<?php
+
+$test = new ResearchOutputs('William','Raban');
+//$test = new ResearchOutputs('<t4 type="content" name="Firstname" output="normal" modifiers=""  />','<t4 type="content" name="Lastname" output="normal" modifiers=""  />');
 $test->returnXml();
 $test->do_output();
 

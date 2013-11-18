@@ -33,6 +33,9 @@ var waitForFinalEvent=function(){var timers={};return function(callback,ms,uniqu
 //     Updated Tuesday 08 October 2013 14:49pm
 // \*-----------------------------------------*/
 
+
+// test invalidation comment
+
 // enable caching for GetScript calls
 jQuery.ajaxSetup({
   cache: true
@@ -514,10 +517,12 @@ if ($('#container').length > 0) {
 
 // Owl slider (research profiles)
 if ($('.owl-carousel').length > 0) {
-
-  jQuery.getScript( "http://artslondon.github.io/beta/assets/js/libs/owl.carousel.js" , function() {
+	// test comment for invalidation
+  jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js" , function() {
      $('.owl-carousel').each(function() {
         $(this).owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        items : 3,
         itemsDesktop : [1280, 3], // items between 1000px and 901px
         itemsTablet: [959, 2], // items between 
         itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
@@ -539,7 +544,6 @@ if ($('.owl-carousel').length > 0) {
      // get number of items in each owl-carousel and output pagination to each item in the carousel
     $(".owl-carousel").each(function() {
         var total_items = $('.item', this).length;
-        // console.log("the number of items is: " + total_items);
         $(".item-description", this).append(function(i) {
             return $("<span />", {text: i+1 + ' of ' + total_items });
          });
