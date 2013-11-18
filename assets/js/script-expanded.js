@@ -3241,15 +3241,15 @@ if (jQuery('#container').length > 0) {
 
 // Owl slider (research profiles)
 if (jQuery('.owl-carousel').length > 0) {
-
-  jQuery.getScript( "http://artslondon.github.io/beta/assets/js/libs/owl.carousel.js" , function() {
+   // test comment for invalidation 22
+  jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js" , function() {
      jQuery('.owl-carousel').each(function() {
         jQuery(this).owlCarousel({
         autoPlay: 3000, //Set AutoPlay to 3 seconds
         items : 3,	
-        itemsDesktop : [1280, 3], // desktop
-        itemsTablet: [959, 2], // tablet
-        itemsMobile : [599, 1], // mobile
+        itemsDesktop : [1280, 3], // items between 1000px and 901px
+        itemsTablet: [959, 2], // items between 
+        itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
         lazyLoad : true,
         pagination: false,
         navigation : true,
@@ -3265,14 +3265,13 @@ if (jQuery('.owl-carousel').length > 0) {
 
     });
 
-     // get number of items in each owl-carousel and output pagination to each item in the carousel
+    // get number of items in each owl-carousel and output pagination to each item in the carousel
     jQuery(".owl-carousel").each(function() {
         var total_items = jQuery('.item', this).length;
         // console.log("the number of items is: " + total_items);
         jQuery(".item-description", this).append(function(i) {
-            return $("<span />", {text: i+1 + ' of ' + total_items });
+             return $("<span />", {text: i+1 + ' of ' + total_items });
          });
-
     });
 
   });
