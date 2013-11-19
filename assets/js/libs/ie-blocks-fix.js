@@ -2,16 +2,27 @@
 // lack of CSS support nth-child() problem : use jquery .eq() selector instead
 
 // Note: jquery .eq() selector starts from 0
-// So .eq(1) would select the second instance of the node on the page
+// So .eq(1) would select the second instance of an element on the page
 
 
 (function( $ ){
 	
 	$(document).ready(function($){
+		
 		var isMob = $(document.body).hasClass("gMobile");
 		var isTab = $(document.body).hasClass("gTablet");
 		var isDesk = $(document.body).hasClass("gDesktop");
 		
+		// *------------------------------------------*\
+		//     Styles applied to all screen widths
+		// \*-----------------------------------------*/
+
+		// jquery filter(:even) is zero based, so this will select odd rows of the table
+		$( "table tr").filter(":even").css({"background-color": "#e9e9e9" });
+		$( ".accordion-list .st-content table tr").filter(":odd").css({"background-color": "white" });
+	
+		// filtrify styles .csm ul.ft-menu > li.ft-field
+		$( ".csm ul.ft-menu > li.ft-field").eq(0).css( { "margin-bottom": "24px" });
 
 		// *------------------------------------------*\
 		//     Mobile View 
@@ -26,8 +37,6 @@
 			// 		});
 			// });
 			// 
-			
-		
 
 		} //end isMob
 
@@ -38,42 +47,42 @@
 		if (isTab) {
 			// two-up - core styles - Tablet View
 			$( ".two-up li").eq(1).css( { 
-																		 "display": "block",
-																		 "float": "left",
-																		 "margin-left": "52.71783%",
-																		 "margin-right": "-100%",
-								    								 "width": "47.28217%" 
-								 									});
+										 "display": "block",
+										 "float": "left",
+										 "margin-left": "52.71783%",
+										 "margin-right": "-100%",
+	    								 "width": "47.28217%" 
+	 									});
 
 			// Tablet - .four-up li(2n) {
 			$(".four-up li").eq(1).css( {
-																	"display": "block",
-																	"float": "left",
-																	"margin-left": "52.71783%",
-																	"margin-right": "-100%",
-																	"width": "47.28217%" 
-																	});
+										"display": "block",
+										"float": "left",
+										"margin-left": "52.71783%",
+										"margin-right": "-100%",
+										"width": "47.28217%" 
+										});
 
 			
 			// Tablet - .four-up li(3n) {
 			$(".four-up li").eq(2).css( {
-																	"display": "block",
-																	"float": "left",
-																	"margin-left": "0%",
-																	"margin-right": "-100%",
-																	"width": "47.28217%",
-																	"clear": "left"
-																	});
+										"display": "block",
+										"float": "left",
+										"margin-left": "0%",
+										"margin-right": "-100%",
+										"width": "47.28217%",
+										"clear": "left"
+										});
 
 			// Tablet - .four-up li(4n) {
 			$(".four-up li").eq(3).css( {"display": "block",
-																	"float": "left",
-																	"margin-left": "52.71783%",
-																	"margin-right": "-100%",
-																	"width": "47.28217%",
-																	"clear": "left"
-																	});
-
+										 "float": "left",
+										 "margin-left": "52.71783%",
+										 "margin-right": "-100%",
+										 "width": "47.28217%",
+										 "clear": "left"
+										});
+			$(".four-up li").filter(":odd").css( { "margin-right": "0" });
 
 
 			// Lists
@@ -95,9 +104,6 @@
 
 		} //end isTabView
 
-
-
-
 		// *------------------------------------------*\
 		//     Desktop Styling fixes
 		// \*-----------------------------------------*/
@@ -105,20 +111,20 @@
 		if (isDesk) {
 			// Desktop View - two-up-full  
 			$( ".two-up-full li").eq(1).css( { 
-																				 "display": "block",
-																				 "float": "left",
-																				 "margin-left": "51.41355%",
-																				 "margin-right": "-100%",
-  									    								 "width": "48.53437%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "51.41355%",
+																			"margin-right": "-100%",
+  									    							"width": "48.53437%" 
   									 									});
 
 			// Desktop View - two-up.l-content  
 			$( ".two-up.l-content li").eq(1).css( { 
-																							"display": "block",
-																							"float": "left",
-																							"margin-left": "52.57549%",
-																							"margin-right": "-100%",
-  									    											"width": "47.42451%" 
+																					"display": "block",
+																					"float": "left",
+																					"margin-left": "52.57549%",
+																					"margin-right": "-100%",
+  									    									"width": "47.42451%" 
   									 											});
 			// Desktop View - .two-up.l-content-full-width, .two-up#container 
 			$( ".two-up.l-content-full-width li, .two-up#container li").eq(1).css( { 
@@ -156,14 +162,13 @@
 				  									    											"width": "31.08265%" 
 																											});
 
-
 			// Desktop - .four-up-full li(2) {
 			$(".four-up-full li").eq(1).css( {
 																			"display": "block",
-																	    "float": "left",
-																	    "margin-left": "25.89636%",
-																	    "margin-right": "-100%",
-																	    "width": "23.01718%"
+																			"float": "left",
+																			"margin-left": "25.89636%",
+																			"margin-right": "-100%",
+																			"width": "23.01718%"
 			});
 
 			// Desktop - .four-up-full li(3)
@@ -218,8 +223,7 @@
 					});
 			});
 
-			// Lightbox galleries
-			
+			// Lightbox galleries			
 			$(".__gallery.three-up").each(function(i) {
 					$(this).each('.li', function(indexInArray, valueOfElement){
 	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
@@ -231,7 +235,6 @@
 	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
 					});
 			});
-
 
 			// CSM feature Wall 
 			$(".__feature-wall li").eq(2).css( {
@@ -258,6 +261,7 @@
 	  																											"margin-left": "0",
 	  																											"margin-right": "0"
 	  																									  });
+
 	  	// highlight block 3up
 	  	$(".highlight-block-3-up li").eq(2).css( { "margin-right": "0" });
     
@@ -278,12 +282,12 @@
 			// College Footer icons
 			$(".footer-block .icons li").eq(2).css( { "margin-right": "0" });
 
+			// two-column-text  
+			$(".two-column-text li").filter(":odd").css( { "margin-right": "0" });
+
 		} //end isDeskView
-		
-
-
-
-	});
+	
+	}); // end documentReady
 
 })( jQuery );
 
