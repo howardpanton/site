@@ -58,12 +58,8 @@
 
               <div class="video-container">
 
-              <?php if ($media_file_url != "") { // this is an MP4 ?>
-
-                <video src="<?php if (environment() == "live") { echo siteURL(); } ?><t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;"></video>
-
-              <?php } else { // this is an embed of some kind 
-
+              <?php if ($video_url != "") { // this is an embed of some kind
+                
                 if ($video_type == "youtube") { ?>
                 
                 <iframe src="//www.youtube.com/embed/<?php echo $video_id; ?>" frameborder="0" allowfullscreen></iframe>            
@@ -74,7 +70,11 @@
                 
                 <?php } 
                 
-              } // end if media file url ?>
+              } else { // this is an MP4 ?>
+
+                <video src="<?php if (environment() == 'live') { echo siteURL(); } ?><t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" style="width:100%;height:100%;"></video>
+
+              <?php } // end if has video url ?>
 
               <t4 type="content" name="Image Caption" output="selective-output" modifiers="" format="<div class=&quot;caption&quot;><span>$value</span></div>" />
 
@@ -87,13 +87,12 @@
             ?>
 
             <figure>
-              <?php if ($environment != "live") { ?>
-
+              <?php if (environment() != "live") { ?>
                 <img src="<t4 type="content" name="Media" output="normal" modifiers="medialibrary" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" />
 
               <?php } else { ?>
     
-                <img data-src="http://app.resrc.it/http://beta.arts.ac.uk<t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
+                <img data-src="http://app.resrc.it/o=80/<?php echo siteURL(); ?><t4 type="content" name="Media" output="normal" modifiers="" formatter="image/path" />" alt="<t4 type="content" name="Image ALT text" output="normal" modifiers="" />" class="rsImg resrc" />
 
               <?php } ?>
 
