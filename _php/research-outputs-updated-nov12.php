@@ -108,15 +108,16 @@ echo '<!-- DEBUG: returnXML successful -->';
 			if ($item->link != '') { echo $item->link; } 
 			echo "\">";
 			if ($item->title != '') { echo $item->title; } 
-			echo "</a></h4><p>";
+
 			// try to match our pattern
 			preg_match_all("/\([1-2][0-9][0-9][0-9]\)/", $desc, $matches);
 			// loop through the matches with foreach
 			foreach($matches[0] as $value)
 			{
-				echo $value;
+				echo " " .$value;
 			}
-			echo "</p></div></div>";
+			
+			echo "</a></h4></div></div>";
 		}
 
 		public function do_output() {
@@ -150,7 +151,7 @@ echo '<!-- DEBUG: returnXML successful -->';
 
 <?php
 
-$test = new ResearchOutputs('William','Raban');
+$test = new ResearchOutputs('Caroline','Evans');
 //$test = new ResearchOutputs('<t4 type="content" name="Firstname" output="normal" modifiers=""  />','<t4 type="content" name="Lastname" output="normal" modifiers=""  />');
 $test->returnXml();
 $test->do_output();
