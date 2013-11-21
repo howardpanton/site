@@ -28,9 +28,9 @@ html {
 	overflow-x: hidden;
 }
 
-// Set box-sizing rules to all Div's.
+// Set box-sizing rules to all elements
 * {
- 	@include box-sizing(border-box);
+ 	@include box-sizing;
 }
 
 // Apply UAL global font to body
@@ -408,7 +408,11 @@ b, strong, h2, h3, h4 {
 	.intro-block-with-left-image h2 {
 		margin-bottom: rhythm(2, 24px);
 	}
-	h2, .__media.block h3, .news-feed h3, .footer-block h3 {
+	h2, 
+	.__media.block h3, 
+	.news-feed h3, 
+	.whats-on h3,
+	.footer-block h3 {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		span, a {
@@ -459,7 +463,7 @@ b, strong, h2, h3, h4 {
 	}
     .content-wrapper {
         h1,h2,.call-to-action h3 {
-            font-family: $lcf-heading-font;
+            font-family: $lcf-serif-font;
             font-weight: normal;
             letter-spacing: 1px;
         }
