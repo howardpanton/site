@@ -41,12 +41,6 @@
 
 
 
-
-@mixin box-sizing($bs) {
-  $bs: unquote($bs);
-  @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official); }
-
-
 // Retina images. 
 // Use with care - http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
 // -------------------------------------------------------
