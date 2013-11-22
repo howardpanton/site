@@ -147,6 +147,13 @@
 
 .accordion.research-profile{
    clear: left;
+   
+   @extend %m-all;
+
+   @include gs-media(t, min-max) {
+      @extend %t-all;
+   }
+
    @include gs-media(d) {
       @extend %d5-d12--within-d5-d16;
    }
