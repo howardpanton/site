@@ -1,8 +1,8 @@
-Nov 22 2013
+Nov 22 2013 - Merged changes / updates 
 ====
 
-Merged updates from Al
-
+From Al
+------------
 
 **class.Block.inc** Removed unused file in /php folder
 
@@ -55,6 +55,10 @@ Merged updates from Al
 **content/colleges/lcf/world/index/html** - Added new world map page for LCF
 
 **_sitemanager/short-course.php** - added tutors conditional to accordion tab
+
+
+Updates for Research Staff Profiles
+------------
 
 
 
