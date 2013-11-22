@@ -290,7 +290,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_staging.yml',
         },
         buildlocal: {
-          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config.yml',
         },
         version: {
           cmd: 'mv _site/assets/css/screen.css  _site/assets/css/screen.css?version=$(date +"%Y%m%d%H%M"); mv _site/assets/js/script.js  _site/assets/js/script.js?version=$(date +"%Y%m%d%H%M"); rm -rf _site/assets/css/screen.css; rm -rf  _site/assets/js/script.js',
@@ -376,10 +376,9 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
-
     asciify: { 
       banner:{
-        text: 'ual',
+        text: 'artsdevlondon',
 
         // Add the awesome to the console, and use the best font.
         options:{ 
