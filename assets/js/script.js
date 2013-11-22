@@ -79,17 +79,18 @@ $(".date").each(function (i, element) {
 
 
 
-// position prev and next navigation buttons for OwlCarousel
-function positionOwlCarouselNav() {
-  // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
-  var maxImgHeight = Math.max.apply(null, $(".owl-carousel img.lazyOwl").map(function() {
-      return $(this).height();
-  }));
-  // calculate slider controls position from top of slider container
-  var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
-  // set position of slider nav buttons from top 
-  $(".owl-prev, .owl-next").css("top", distFromTop);
-}
+// Position prev and next navigation buttons for OwlCarousel
+// We are not currently using this function, but we may want to use this once we have done the design review
+// function positionOwlCarouselNav() {
+//   // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
+//   // var maxImgHeight = Math.max.apply(null, jQuery(".owl-carousel img.lazyOwl").map(function() {
+//   //     return $(this).height();
+//   // }));
+//   // // calculate slider controls position from top of slider container
+//   // var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
+//   // // set position of slider nav buttons from top 
+//   // jQuery(".owl-prev, .owl-next").css("top", distFromTop);
+// }
 
 
   var Link_col = $(".college-nav").find("li").slice(3, 6);
@@ -529,14 +530,14 @@ if ($('.owl-carousel').length > 0) {
         lazyLoad : true,
         pagination: false,
         navigation : true,
-        navigationText : ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"],
-        afterAction : function(elem){
-          positionOwlCarouselNav();
-        },
+        navigationText : ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"]
+        // afterAction : function(elem){
+        //   positionOwlCarouselNav();
+        // },
 
-        afterUpdate: function(elem){
-          positionOwlCarouselNav();
-        },
+        // afterUpdate: function(elem){
+        //   positionOwlCarouselNav();
+        // },
       });
 
     });
