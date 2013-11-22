@@ -61,6 +61,15 @@ Updates for Research Staff Profiles
 ------------
 
 
+** _accordion.scss ** - updated styling for research outputs (spans 8 columns on desktop)
+
+** _owl-carousel.scss ** - updated name of component to owl-carousel instead of owl slider in github, update path to slider img assets on cloudfront
+
+** gruntfile.js ** - updates to build (staging & live) & revert to using _config.yml in buildlocal task
+
+** _php/research-outputs-updated-nov21.php ** - research outputs carousel class (backed up in github)
+
+
 
 
 
