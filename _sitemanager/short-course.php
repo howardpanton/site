@@ -40,9 +40,7 @@ $materials_accordion = $test->materials();
 $shortCourse = TRUE;
 
 // tutors data
-$tutors = $test->getTutors();
-$tutor_description = $test->getTutorsBiography();
-$tutors = count($test->getTutors());
+
 $tutor_switch = '<t4 type="content" name="Hide tutor info?" output="normal" modifiers=""  />';
 
 $pid_check = $test->companyId ;
@@ -77,12 +75,11 @@ switch ($pid_check) {
       <p class="leader"><?php echo $description; ?></p>
 
         <?php // Return optional tutor information, will need to add a conditional element in site manager
-        if ($tutor_switch != "yes" && $tutors != "") { ?>
-    <p class="tutor">
-      <strong>Taught by: </strong>
-        <?php $test->getTutors(); ?>
-    </p>
-    <?php } ?>
+        if ($tutor_switch != "yes") { 
+
+        $test->getTutors(); 
+
+     	} ?>
 
    </div>
      <aside>
@@ -92,7 +89,6 @@ switch ($pid_check) {
           </iframe>
   </aside>   
 </div>
-<!-- Slider navigation object here -->
 
 <div class="row">
   <div class="accordion">
@@ -101,31 +97,28 @@ switch ($pid_check) {
 
         <!-- navigation object : Accordion item -->
         <li class="accordion-list-item">
-  <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon icon-plus-circled"></div></a>
-  <div class="st-content">
-<?php echo $desc_accordion ; ?>
-  </div>  
-</li>
-<?php if ($tutor_description != FALSE) : ?>
-
-          <li class="accordion-list-item">
-          <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Tutor information</h3><div class="st-arrow icon-plus-circled"></div></a>
-            <div class="st-content">
-              <?php echo $tutor_description ; ?>
-          </div>  
-        </li>
-<?php endif ?>
-<li class="accordion-list-item">
-  <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon icon-plus-circled"></div></a>
-    <div class="st-content">
-        <?php echo $materials_accordion ; ?>           
-    </div>
-</li>
+		  <a class="accordion-list-anchor" href="#"><h3 class="size-h4">Description</h3><div class="st-arrow icon icon-plus-circled"></div></a>
+		  <div class="st-content">
+		<?php echo $desc_accordion ; ?>
+		  </div>  
+		</li>
+		<?php 
+		  if ($tutor_switch != "yes") { 
+		  	$test->getTutorsBiography(); 
+		  }
+		?>
+		<li class="accordion-list-item">
+		  <a class="accordion-list-anchor" href=""><h3 class="size-h4">Materials</h3><div class="st-arrow icon icon-plus-circled"></div></a>
+		    <div class="st-content">
+		        <?php echo $materials_accordion ; ?>           
+		    </div>
+		</li>
 
         </ul>
       </div>
   </div>
 </div>
+
 
 <!-- Table Acordion -->
 
