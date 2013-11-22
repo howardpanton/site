@@ -1,12 +1,14 @@
 <!-- Used in:
-
-  - Media Block
-  - Text Block
-  - Text Block with Aside
-  - Panorama: HTML
-  
+-
+- Media Block
+- Text Block
+- Text Block with Aside
+- Panorama: HTML
+-  
+- See also:
+- Content Gallery Image (which uses the same code in a text/html formatter)
+-
 -->  
-
 <?php 
 // formatter for displaying list children at a parent level, in a content grid
 if (!isset($old_section_title)) { $old_section_title = ''; }
@@ -25,10 +27,10 @@ if ($current_section_title != $old_section_title) {
   <a class="no-border" href="<t4 type="navigation" id="21"/>" title="">
     <?php // if user has specified a thumbnail, use that 
     if ($thumbnail_media_path != '') { ?>
-      <figure><img class="m-hide" src="<?php echo $thumbnail_media_path; ?>" alt=""></figure>
+      <figure><img class="m-hide resrc" data-src="http://app.resrc.it/<?php if (environment() == 'live') { echo siteURL(); } ?><?php echo $thumbnail_media_path; ?>"></figure>
     <?php } // otherwise, if an image has been uploaded to the main image field, display that using resrc.it
     elseif ($media_path != '' && $image_or_video == 'image') { ?>
-      <figure><img class="m-hide resrc" data-src="http://app.resrc.it/S=W600/C=W300,H300,XOF50,YOF20/http://beta.arts.ac.uk<?php echo $media_path; ?>" alt=""></figure>
+      <figure><img class="m-hide resrc" data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/<?php if (environment() == 'live') { echo siteURL(); } ?><?php echo $media_path; ?>"></figure>
     <?php } // finally, if no other image is available, display a placeholder
     else { ?>
       <t4 type="navigation" id="4309" />
