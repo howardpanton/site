@@ -22,7 +22,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
-            CacheControl: '30000000000'  // how many days do we want to set this too?
+            CacheControl: '30000000000'
           }
         },
         
@@ -34,7 +34,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
       staging: {
@@ -43,7 +43,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
-            CacheControl: '30000000000'  // how many days do we want to set this too?
+            CacheControl: '30000000000'
           }
         },
         
@@ -55,7 +55,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/js', src: ['script.js'], dest: 'assets/js/t4/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
