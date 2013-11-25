@@ -7,6 +7,10 @@ class-home: docs
 breadcrumb: Page Layout 
 ---
 
+
+<!-- carousel slider -->
+{% include components/_carousel-landscape.html %}
+
 <div class="content-wrapper">
 	<div class="row">
 
@@ -58,7 +62,10 @@ breadcrumb: Page Layout
 
 			<!-- LCC homepage tabs to accordion -->
 			{% include components/_tabs-to-accordion.html %}
-			
+
+			<!-- image block -->
+			{% include components/_image-block.html %}
+
 			<!-- image list with text - feature -->
 			{% include components/_image-list-with-text-feature.html %}
 
@@ -106,6 +113,12 @@ breadcrumb: Page Layout
 	{% include components/_events-listing.html %}
 </div>
 
+<!-- image gallery -->
+<div class="panel dark-gray-bg">
+	<div class="content-wrapper">
+		{% include components/_gallery-lightbox-showtime.html %}
+	</div>
+</div>
 
 <!-- map block -->
 <div class="panel bg-gray-bg">
