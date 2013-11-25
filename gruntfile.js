@@ -55,7 +55,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
+        // {expand: true, cwd: '_site/assets/js', src: ['script.js'], dest: 'assets/js/t4/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
     },
@@ -72,19 +73,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         // dist: "<%= aws.AWSLive %>"
       }
       
-      // testing out separate invalidate tasks -- for some reason the code below doesn't work ???
-      // invalidateLive: {
-      //   resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
-      //   secret_key: "<%= aws.AWSSecretKey %>",
-      //   access_key: "<%= aws.AWSAccessKeyId %>",
-      //   dist: "<%= aws.AWSSLive %>"
-      // }
-      // invalidateStaging: {
-      //   resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js"],
-      //   secret_key: "<%= aws.AWSSecretKey %>",
-      //   access_key: "<%= aws.AWSAccessKeyId %>",
-      //   dist: "<%= aws.AWSStaging %>"
-      // }
     },
     
     compass: {
@@ -226,25 +214,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           ]
         }
       }
-
-      // buildDest: {
-      //   options: {
-      //     questions: [
-      //       {
-      //         config: 'mochacli.options.reporter',
-      //         type: 'list',
-      //         message: 'Would you like to build locally or build to staging?',
-      //         default: 'local',
-      //         choices: ['local', 'staging']
-      //       }
-      //     ]
-      //   }
-      // },
     },
-
-
-    
-
 
 
     // Task to concatenate script files 
@@ -255,30 +225,23 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       },
       dist: {
         src: ['assets/js/libs/fastclick.js', 'assets/js/libs/jquery.review.js', 'assets/js/libs/hoverintent.js','assets/js/libs/hammer.js', 'assets/js/libs/megamenu.js', 'assets/js/script.js'],
-        dest: 'temp/combined.js',
+        dest: 'temp/js/combined.js',
       },
     },
 
     uglify: {
       options: {
         mangle: false,  // mangle will not change/minify variable and function names
-        report: 'gzip',
         // the banner that is inserted at the top of the output
         banner: '/*!Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */\n'
       },
 
       my_target: {
         files: {
-          'assets/js/script-min.js': ['temp/combined.js']
-
+          'assets/js/script-min.js': ['temp/js/combined.js']
         }
       },
 
-      audio: {
-        files: {
-          'assets/js/libs/audio-min.js': ['assets/js/libs/audioplayer.js']
-        }
-      }
     },
 
     // terminal commands to execute with grunt
@@ -290,7 +253,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_staging.yml',
         },
         buildlocal: {
-          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config_local.yml',
+          cmd: 'rm -rf _site/; jekyll build --destination _site/ --config _config.yml',
         },
         version: {
           cmd: 'mv _site/assets/css/screen.css  _site/assets/css/screen.css?version=$(date +"%Y%m%d%H%M"); mv _site/assets/js/script.js  _site/assets/js/script.js?version=$(date +"%Y%m%d%H%M"); rm -rf _site/assets/css/screen.css; rm -rf  _site/assets/js/script.js',
@@ -312,7 +275,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
       minified_assets: {
         files: [
-          {expand: true, flatten: true, src: ['temp/js/**'], dest: '_site/assets/js/', filter: 'isFile'}, // flattens results to a single level
+          {expand: true, flatten: true, src: ['temp/js/**'], dest: '_site/assets/js/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['temp/js/t4/**'], dest: '_site/assets/js/', filter: 'isFile'}, // flattens results to a single level
           {expand: true, flatten: true, src: ['temp/css/**'], dest: '_site/assets/css/', filter: 'isFile'}
         ]
       },
@@ -334,23 +298,13 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         ]
       },
 
-      libs: {
-         options: {
-          mode: 'gzip'
-        },
-        files: [
-          {expand: true,  src: ['assets/js/libs/audio-min.js'], dest: 'gz', ext: '.js'}
-        ]
-      },
-
       js: {
         options: {
           mode: 'gzip'
         },
         files: [
-          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'},
-          {expand: true, flatten: true, src: ['_site/assets/js/script-expanded.js'], dest: 'temp/js/', ext: '.js'},
-          {expand: true, flatten: true, src: ['_site/assets/js/t4/script.js'], dest: 'temp/js/t4/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
+          // {expand: true, flatten: true, src: ['temp/js/combined.js'], dest: 'temp/js/', ext: '.js'}
         ]
       },
 
@@ -376,13 +330,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
       }
     },
 
-
-    asciify: { 
+    asciify: {
       banner:{
-        text: 'ual',
+        text: 'artsdevlondon',
 
         // Add the awesome to the console, and use the best font.
-        options:{ 
+        options:{
           font:'banner3',
           log:true
         }
@@ -418,22 +371,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         files: ['*.html'],
         tasks: ['jekyll'],
       },
-
-      // sassjs: {
-      //   files: ['assets/styles/**/*.scss','assets/js/*.js'],
-      //   tasks: ['compass:local',
-      //           'exec:buildlocal'
-      //          ],
-      //   options: {
-      //     debounceDelay: 250,
-      //     spawn: false,
-      //     interrupt: true,
-      //   },
-      // },
-      // html: {
-      //   files: ['_site/**'],
-      //   tasks: ['htmlhint']
-      // },
      
     },
    
@@ -482,14 +419,12 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                 'handle_build_type'
                               ]);
 
-
-   
   grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] ); 
                                     
   // Do live build
   grunt.registerTask('go_build_live', [ 'compass:production',
-                                        //'concat:dist',
-                                        //'any-newer:uglify',
+                                        'concat:dist',
+                                        'any-newer:uglify',
                                         'compress:main',
                                         'exec:buildlive',
                                         'cssmin:minify',
@@ -504,17 +439,17 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.registerTask('buildstaging', ['prompt:confirm_staging_build', 'confirm_staging_build']);
 
   grunt.registerTask('go_build_staging', [ 'compass:staging',
-                                        //'concat:dist',
-                                        //'any-newer:uglify',
-                                        'compress:main',
-                                        'exec:buildstaging',
-                                        'cssmin:minify',
-                                        'compress:css',
-                                        'compress:js',
-                                        'copy:minified_assets',
-                                        'clean:build',
-                                        'any-newer:aws_s3:staging',
-                                        'cloudfront_clear' ]);
+                                          'concat:dist',
+                                           'any-newer:uglify',
+                                          'compress:main',
+                                          'exec:buildstaging',
+                                          'cssmin:minify',
+                                          'compress:css',
+                                          'compress:js',
+                                          'copy:minified_assets',
+                                          'clean:build',
+                                          'any-newer:aws_s3:staging',
+                                          'cloudfront_clear' ]);
 
   // build for local github 
   // To run type: 'grunt buildlocal'

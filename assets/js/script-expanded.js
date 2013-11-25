@@ -2814,16 +2814,16 @@ $('.m-site-search-link').click(function(e) {
 });
 
 // position prev and next navigation buttons for OwlCarousel
-function positionOwlCarouselNav() {
-  // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
-  var maxImgHeight = Math.max.apply(null, jQuery(".owl-carousel img.lazyOwl").map(function() {
-      return $(this).height();
-  }));
-  // calculate slider controls position from top of slider container
-  var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
-  // set position of slider nav buttons from top 
-  jQuery(".owl-prev, .owl-next").css("top", distFromTop);
-}
+// function positionOwlCarouselNav() {
+//   // getMax height of images in carousel  // currently this will only work on one instance of owlCarousel
+//   var maxImgHeight = Math.max.apply(null, jQuery(".owl-carousel img.lazyOwl").map(function() {
+//       return $(this).height();
+//   }));
+//   // calculate slider controls position from top of slider container
+//   var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
+//   // set position of slider nav buttons from top 
+//   jQuery(".owl-prev, .owl-next").css("top", distFromTop);
+// }
 
 
   var Link_col = jQuery(".college-nav").find("li").slice(3, 6);
@@ -3628,7 +3628,7 @@ jQuery(".hide-content").click(function(e){
 // End tabs to accordion 
 
 if (jQuery('.__media').length > 0) {
-  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids.min.js', function() {
+  jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
     jQuery('.__media').fitVids();
   });
 }

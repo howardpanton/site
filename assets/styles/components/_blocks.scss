@@ -219,12 +219,6 @@
 			@include gs-span(d, 9, 16);
 		}
 	}
-	// styling for IE 8 
-	&.ie {
-		li+li {
-			@include gs-span(d, 9, 16);
-		}
-	}
 }
 
 // two-up - core styles
@@ -237,6 +231,7 @@
 		li:nth-child(2n) {
 			@include gs-span(t, 5, 7, (2, 7));
 		}
+
 	}
 
 	&.l-content {
@@ -247,14 +242,6 @@
 				padding-left: 0;
 			}
 			li:nth-child(2n) {
-				@include gs-span(d, 9, 12, (5, 12));
-			}
-		}
-	}
-
-	&.ie .l-content {
-		@include gs-media(d) {
-			li+li {
 				@include gs-span(d, 9, 12, (5, 12));
 			}
 		}
@@ -272,14 +259,6 @@
 		}
 	}
 
-	&.ie .l-content-full-width {
-		@include gs-media(d) {
-			li+li {
-				@include gs-span(d, 11, 16, (5, 16));
-			}
-		}
-	}
-
 	&.l-content-half-width {
 		@extend %d5-d16--within-d5-d16;
 		@include gs-media(d) {
@@ -287,14 +266,6 @@
 				@include gs-span(d, 5, 10, (5, 16));
 			}
 			ul:nth-child(2n) {
-				@include gs-span(d, 11, 16, (5, 16));
-			}
-		}
-	}
-
-	&.ie .l-content-half-width {
-		@include gs-media(d) {
-			ul+ul {
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
@@ -328,17 +299,6 @@
 		}
 	}
 
-	&.ie .l-content-full-width {
-		
-		@include gs-media(d) {
-			li+li {
-				@include gs-span(d, 9, 12, (5, 16));
-			}
-			li+li+li {
-				@include gs-span(d, 13, 16, (5, 16));
-			}
-		}
-	}
 
 	// three up link list component
 	.link-list-item { 
@@ -388,20 +348,6 @@
 			@include gs-span(d, 13, 16);
 		}
 	}
-	&.ie {
-		@include gs-media(d) {
-			li+li {
-				@include gs-span(d, 5, 8);
-			}
-			li+li+li {
-				@include gs-span(d, 9, 12);
-			}
-			li+li+li+li {
-				@include gs-span(d, 13, 16);
-			}
-		}
-	}
-
 
 }
 
@@ -429,18 +375,6 @@
 		}
 	}
 
-	&.ie {
-		li+li {
-			@include gs-span(t, 5, 7, (2, 7));
-		}
-		li+li+li {
-			@include gs-span(t, 2, 4, (2, 7));
-			clear: left;
-		}
-		li+li+li+li {
-			@include gs-span(t, 5, 7, (2, 7));
-		}
-	}
 
 	&.l-content-full-width {
 		@include gs-media(d) {
@@ -455,20 +389,6 @@
 				@include gs-span(d, 9, 12);
 			}
 			li:nth-child(4n) {
-				@include gs-span(d, 13, 16);
-			}
-		}
-	}
-
-	&.ie .l-content-full-width {
-		@include gs-media(d) {
-			li+li {
-				@include gs-span(d, 5, 8);
-			}
-			li+li+li {
-				@include gs-span(d, 9, 12);
-			}
-			li+li+li+li {
 				@include gs-span(d, 13, 16);
 			}
 		}

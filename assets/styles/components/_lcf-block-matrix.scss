@@ -1,9 +1,22 @@
-// feature wall used for CSM homepage
+// LCF What's On Matrix
 .whats-on { 
-	margin-top: 1px;
+
+	@include component-spacing-bottom;
+
+	.column, .event-item {
+		float: left;
+	}
+	.event-item {
+		text-align: center;
+	}
+	.event-date {
+		font-family: $lcf-serif-font;
+	}
+	
 	padding-bottom: 48px;
 	figure {
 		margin-bottom: 0;
+		
 	}
 	iframe, img {
 		width: 100%;
@@ -21,43 +34,42 @@
 		padding: 12px;
 		@include adjust-leading-to(4, 24px); 	
 	} 
-	li {
-		color: $white;
-		padding: 0;
-		margin: 0; 
-		line-height: 0;
-	}
+
 
 	@include gs-media (t,min-max) {
 		@include gs-span(t, 2, 7);
+
+		.column, .column-large .event-item {
+			@extend %t-all;
+		}
+
+		.event-item {
+			@include component-spacing-bottom(4);
+			@include gs-span(t, 2, 4, (2, 7));
+			&:nth-child(2n) {
+				@include gs-span(t, 5, 7, (2, 7));
+			}
+		}
+
+		.event-date {
+			padding: 4px 0;
+		}
 
 	}
 
 	@include gs-media (d) {
 		@include gs-span(d, all);
 
-		li {
+		.column {
 			width: 33.3%;
-			margin: 0;
-			padding: 0;
-			line-height: 0;
-			a img:hover {
-				filter: grayscale(100%);
-				-webkit-filter: grayscale(100%);
-				-moz-filter: grayscale(100%);
-				-ms-filter: grayscale(100%);
-				-o-filter: grayscale(100%);
-				-webkit-transition: all ease 0.4s;
-				-moz-transition: all ease 0.4s;
-				-o-transition: all ease 0.4s;
-				transition: all ease 0.4s;		
+			&.bordered {
+				border-right: 1px solid $white;
 			}
-			ul {
-				margin: 0;
-				padding: 0;
-			}
-
 		}	
+
+		.event-item.bordered {
+			border-bottom: 1px solid $white;
+		}
 	}
 }
 
