@@ -218,9 +218,27 @@
 
 			// Desktop - Research Profiles link list
 			$('.link-list').each(function(i) { 
-					$(this).each('.link-list-item', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 4) === 0) { $(this).css('clear', 'left'); }
-					});
+				console.log('link list found');
+
+					// find the number of list items
+					var n = $(this).find('li');
+					
+					var sequenceToCheck = [4,7,10,13,16,19,22,25];
+
+					for (var i = 0; i < n.length; i++) { 
+						// don't check the first list item
+						// if (i > 0) {
+							//console.log(n[i]); 
+							if ( ($.inArray(i,sequenceToCheck)) != -1) {
+								$(this).find("li").eq( i ).css( "background-color", "red" );
+							}
+							// n[i].css('background-color', 'left');
+							// console.log('W is equal to:' + w);
+							// w.css('background-color', 'left');
+							// w.hide();
+							 
+						// }
+					}
 			});
 
 			// Lightbox galleries			
