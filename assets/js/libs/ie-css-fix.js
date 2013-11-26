@@ -218,40 +218,16 @@
 
 			// Desktop - Research Profiles link list
 			$('.link-list').each(function(i) { 
-				console.log('link list found');
-
-					// find the number of list items
-					var n = $(this).find('li');
-					
-					var sequenceToCheck = [4,7,10,13,16,19,22,25];
-
-					for (var i = 0; i < n.length; i++) { 
-						// don't check the first list item
-						// if (i > 0) {
-							//console.log(n[i]); 
-							if ( ($.inArray(i,sequenceToCheck)) != -1) {
-								$(this).find("li").eq( i ).css( "background-color", "red" );
-							}
-							// n[i].css('background-color', 'left');
-							// console.log('W is equal to:' + w);
-							// w.css('background-color', 'left');
-							// w.hide();
-							 
-						// }
-					}
+					$(this).children('li:nth-child(3n)').next().css('clear','left');
 			});
 
 			// Lightbox galleries			
 			$(".__gallery.three-up").each(function(i) {
-					$(this).each('.li', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
-					});
+	    			$(this).children('li:nth-child(3n)').css('margin-right','0');
 			});
 
 			$(".__gallery.four-up").each(function(i) {
-					$(this).each('.li', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
-					});
+					$(this).children('li:nth-child(4n)').css('margin-right','0');
 			});
 
 			// CSM feature Wall 
