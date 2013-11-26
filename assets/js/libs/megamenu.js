@@ -388,14 +388,14 @@
     });
 
     // Listen for orientation changes on mobile devices. (http://davidwalsh.name/orientation-change)
-    window.addEventListener("orientationchange", function() {
-        // when iOS device is rotated
-        megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
+    // window.addEventListener("orientationchange", function() {
+    //     // when iOS device is rotated
+    //     megaMenuDropDownPosition(); // calculate and update the position & width of the megamenu
         
-        // confirm the new orientation number
-        // confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
+    //     // confirm the new orientation number
+    //     // confirm("mobile device was rotated, the window.orientation is now: " + window.orientation);
 
-    }, false);
+    // }, false);
 
     resizeFunction();
 
