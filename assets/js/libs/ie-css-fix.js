@@ -5,10 +5,22 @@
 // So .eq(1) would select the second instance of an element on the page
 
 
-(function( $ ){
+// (function( $ ){
 	
-	$(document).ready(function($){
+// 	$(document).ready(function($){
 		
+		function checkWindowSize() {
+		  var width = $(window).width(),
+		  new_class = width > 959 ? 'gDesktop' :
+		              width > 599 ? 'gTablet' :
+		              width < 600 ? 'gMobile' :
+		              width > 1289 ? 'gDesktop' : '';
+
+		  $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_class);
+		}
+
+		checkWindowSize();
+
 		var isMob = $(document.body).hasClass("gMobile");
 		var isTab = $(document.body).hasClass("gTablet");
 		var isDesk = $(document.body).hasClass("gDesktop");
@@ -51,7 +63,7 @@
 										 "float": "left",
 										 "margin-left": "52.71783%",
 										 "margin-right": "-100%",
-	    								 "width": "47.28217%" 
+	    							 "width": "47.28217%" 
 	 									});
 
 			// Tablet - .four-up li(2n) {
@@ -120,95 +132,158 @@
 
 			// Desktop View - two-up.l-content  
 			$( ".two-up.l-content li").eq(1).css( { 
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "52.57549%",
-																			"margin-right": "-100%",
-								    									"width": "47.42451%" 
-  									 											});
+												"display": "block",
+												"float": "left",
+												"margin-left": "52.57549%",
+												"margin-right": "-100%",
+	    									"width": "47.42451%" 
+			 											});
+			
 			// Desktop View - .two-up.l-content-full-width, .two-up#container 
-			$( ".two-up.l-content-full-width li, .two-up#container li").eq(1).css( { 
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "51.68801%",
-																			"margin-right": "-100%",
-						    											"width": "48.31199%" 
-  									 											});
+			$( ".two-up.l-content-full-width li").eq(1).css( { 
+													"display": "block",
+													"float": "left",
+													"margin-left": "51.68801%",
+													"margin-right": "-100%",
+    												"width": "48.31199%" 
+				 											});
+
+			$(".two-up#container li").eq(1).css( {
+										"display": "block",
+										"float": "left",
+										"margin-left": "51.68801%",
+										"margin-right": "-100%",
+										"width": "48.31199%" 
+	 											});
 
 			// Desktop View - .two-up.l-content-half-width 
 			$( ".two-up.l-content-half-width ul").eq(1).css( { 
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "51.68801%",
-																			"margin-right": "-100%",
-						    											"width": "48.31199%" 
-																											});
+														"display": "block",
+														"float": "left",
+														"margin-left": "51.68801%",
+														"margin-right": "-100%",
+	    											"width": "48.31199%"
+														});
 
-			// Desktop - .three-up.l-content-full-width li, .three-up#container li 
-			$( ".three-up.l-content-full-width li, .three-up#container li").eq(1).css( { 
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "34.45868%",
-																			"margin-right": "-100%",
-						    											"width": "31.08265%" 
-																											});
+			// Desktop - .three-up.l-content-full-width li
+			$( ".three-up.l-content-full-width li:eq(1),.three-up.l-content-full-width li:eq(4),.three-up.l-content-full-width li:eq(7),.three-up.l-content-full-width li:eq(10),.three-up.l-content-full-width li:eq(13)")
+														.css( {
+																	"display": "block",
+																	"float": "left",
+																	"margin-left": "34.45868%",
+																	"margin-right": "-100%",
+																	"width": "31.08265%"
+																});
 
-			// Desktop - .three-up.l-content-full-width li, .three-up#container li 
-			$( ".three-up.l-content-full-width li, .three-up#container li").eq(2).css( { 
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "68.91735%",
-																			"margin-right": "-100%",
-						    											"width": "31.08265%" 
-																											});
+			// Desktop - .three-up.l-content-full-width li
+			$( ".three-up.l-content-full-width li:eq(2),.three-up.l-content-full-width li:eq(5),.three-up.l-content-full-width li:eq(8),.three-up.l-content-full-width li:eq(11),.three-up.l-content-full-width li:eq(14)")
+													.css( {
+														"display": "block",
+														"float": "left",
+														"margin-left": "68.91735%",
+														"margin-right": "-100%",
+														"width": "31.08265%"
+													});
+
+			// Desktop - .three-up#container li		2nd									
+			$( ".three-up#container li:eq(1),.three-up#container li:eq(4),.three-up#container li:eq(7),.three-up#container li:eq(10),.three-up#container li:eq(13)")
+													.css( {
+														"display": "block",
+														"float": "left",
+														"margin-left": "34.45868%",
+														"margin-right": "-100%",
+	    											"width": "31.08265%"
+													});
+
+			// Desktop - .three-up#container li  3rd
+			$( ".three-up#container li:eq(2),.three-up#container li:eq(5),.three-up#container li:eq(8),.three-up#container li:eq(11),.three-up#container li:eq(14)")
+										.css( {
+												"display": "block",
+												"float": "left",
+												"margin-left": "68.91735%",
+												"margin-right": "-100%",
+												"width": "31.08265%" 
+											});
+			
+
+			
+
+			
 
 			// Desktop - .four-up-full li(2) {
 			$(".four-up-full li").eq(1).css( {
-																			"display": "block",
-																			"float": "left",
-																			"margin-left": "25.89636%",
-																			"margin-right": "-100%",
-																			"width": "23.01718%"
-			});
+										"display": "block",
+										"float": "left",
+										"margin-left": "25.89636%",
+										"margin-right": "-100%",
+										"width": "23.01718%"
+										});
 
 			// Desktop - .four-up-full li(3)
 			$(".four-up-full li").eq(2).css( {
-																			"display": "block",
+										"display": "block",
+									    "float": "left",
+									    "margin-left": "51.41355%",
+									    "margin-right": "-100%",
+									    "width": "23.01718%"
+										});
+
+			// Desktop - .four-up-full li(4)
+			$(".four-up-full li").eq(3).css( {
+										"display": "block",
+									    "float": "left",
+									    "margin-left": "76.93073%",
+									    "margin-right": "-100%",
+									    "width": "23.01718%"
+										});
+
+			// Desktop .four-up.l-content-full-width li (2n)
+			$(".four-up.l-content-full-width li").eq(1).css( {
+								 					"display": "block",
+												    "float": "left",
+												    "margin-left": "25.89636%",
+												    "margin-right": "-100%",
+												    "width": "23.01718%"
+													});
+
+			// Desktop  .four-up#container li (2n)
+			$(".four-up#container li").eq(1).css( {
+						 					"display": "block",
+										    "float": "left",
+										    "margin-left": "25.89636%",
+										    "margin-right": "-100%",
+										    "width": "23.01718%"
+											});
+
+			// Desktop .four-up.l-content-full-width li (3n)
+			$(".four-up.l-content-full-width li").eq(2).css( {
+														 					"display": "block",
 																	    "float": "left",
 																	    "margin-left": "51.41355%",
 																	    "margin-right": "-100%",
 																	    "width": "23.01718%"
 			});
 
-			// Desktop - .four-up-full li(4)
-			$(".four-up-full li").eq(3).css( {
-																			"display": "block",
+			// Desktop  .four-up#container li (3n)
+			$(".four-up#container li").eq(2).css( {
+														 					"display": "block",
+																	    "float": "left",
+																	    "margin-left": "51.41355%",
+																	    "margin-right": "-100%",
+																	    "width": "23.01718%"
+			});
+
+			// Desktop .four-up.l-content-full-width li (4n)
+			$(".four-up.l-content-full-width li").eq(3).css( {
+														 					"display": "block",
 																	    "float": "left",
 																	    "margin-left": "76.93073%",
 																	    "margin-right": "-100%",
 																	    "width": "23.01718%"
 			});
 
-			// Desktop .four-up.l-content-full-width li, .four-up#container li (2n)
-			$(".four-up.l-content-full-width li, .four-up#container li").eq(1).css( {
-														 					"display": "block",
-																	    "float": "left",
-																	    "margin-left": "25.89636%",
-																	    "margin-right": "-100%",
-																	    "width": "23.01718%"
-			});
-
-			// Desktop .four-up.l-content-full-width li, .four-up#container li (3n)
-			$(".four-up.l-content-full-width li, .four-up#container li").eq(2).css( {
-														 					"display": "block",
-																	    "float": "left",
-																	    "margin-left": "51.41355%",
-																	    "margin-right": "-100%",
-																	    "width": "23.01718%"
-			});
-
-			// Desktop .four-up.l-content-full-width li, .four-up#container li (4n)
-			$(".four-up.l-content-full-width li, .four-up#container li").eq(3).css( {
+			// Desktop  .four-up#container li (4n)
+			$(".four-up#container li").eq(3).css( {
 														 					"display": "block",
 																	    "float": "left",
 																	    "margin-left": "76.93073%",
@@ -218,40 +293,16 @@
 
 			// Desktop - Research Profiles link list
 			$('.link-list').each(function(i) { 
-				console.log('link list found');
-
-					// find the number of list items
-					var n = $(this).find('li');
-					
-					var sequenceToCheck = [4,7,10,13,16,19,22,25];
-
-					for (var i = 0; i < n.length; i++) { 
-						// don't check the first list item
-						// if (i > 0) {
-							//console.log(n[i]); 
-							if ( ($.inArray(i,sequenceToCheck)) != -1) {
-								$(this).find("li").eq( i ).css( "background-color", "red" );
-							}
-							// n[i].css('background-color', 'left');
-							// console.log('W is equal to:' + w);
-							// w.css('background-color', 'left');
-							// w.hide();
-							 
-						// }
-					}
+					$(this).children('li:nth-child(3n)').next().css('clear','left');
 			});
 
 			// Lightbox galleries			
 			$(".__gallery.three-up").each(function(i) {
-					$(this).each('.li', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
-					});
+	    			$(this).children('li:nth-child(3n)').css('margin-right','0');
 			});
 
 			$(".__gallery.four-up").each(function(i) {
-					$(this).each('.li', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 3) === 0) { $(this).css('margin-right', '0'); }
-					});
+					$(this).children('li:nth-child(4n)').css('margin-right','0');
 			});
 
 			// CSM feature Wall 
@@ -279,8 +330,8 @@
 																			"float": "left",
 																			"margin-left": "0",
 																			"margin-right": "0"
-	  																									  });
-
+																		  });
+	  
 	  	// highlight block 3up
 	  	$(".highlight-block-3-up li").eq(2).css( { "margin-right": "0" });
     
@@ -306,9 +357,9 @@
 
 		} //end isDeskView
 	
-	}); // end documentReady
+// 	}); // end documentReady
 
-})( jQuery );
+// })( jQuery );
 
 
 
