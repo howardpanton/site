@@ -3,10 +3,9 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Monday 25th November 2013 2:40pm
+//     Updated Tuesday 27th November 2013 10:41am
 // \*-----------------------------------------*/
 
-// To Test
 // 
 // enable caching for GetScript calls
 jQuery.ajaxSetup({
@@ -351,8 +350,8 @@ if ($('#container').length > 0) {
             containerID : "container",
             perPage : 24,
             midRange : 1,
-            previous : "&larr;",
-            next : "&rarr;",
+            previous : "â†",
+            next : "â†’",
             direction : "auto",
             animation : "fadeInUp"
  
@@ -589,7 +588,7 @@ if ($('.credits').length > 0) {
             $('.credits').fadeIn();
           }
         });
-      }  
+      }
   }
 
 
@@ -659,13 +658,13 @@ if ($('.dd-menu').length > 0) {
             _d_menu.removeClass('active');
          });
        }
-       else { 
+       else {
           _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideDown('fast', function() {
             _d_menu.addClass('active');
          });
        }
-    });       
+    });
 }
 
 
@@ -679,7 +678,7 @@ if ($('.search-filters').length > 0) {
     var c = $(this);
     
     //process click event if the heading is not set to not-active
-    if (!c.hasClass('not-active')){ 
+    if (!c.hasClass('not-active')){
 
       if (c.parent().hasClass('active') ) {
         c.parent().removeClass('active');
@@ -692,6 +691,7 @@ if ($('.search-filters').length > 0) {
 }
 
 
+
 // Showtime JSON loader
 if ($('.showtime-json').length){
 
@@ -702,7 +702,7 @@ if ($('.showtime-json').length){
 
     $.each(outputNode, function(i) {
       
-      var _node = '';  
+      var _node = '';
       _node = $(this);
 
       var feedUrl = _node.data('url');
@@ -722,7 +722,7 @@ if ($('.showtime-json').length){
            profileUrl = data.data.Student.Student.profileurl;
            studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
            media = data.data.Student.Media;
-         } 
+         }
          
          if (data.data.Profiles) { // this is a group of objects in Showtime
            media = data.data.Profiles;
@@ -747,8 +747,8 @@ if ($('.showtime-json').length){
            
            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + studentName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
 
-            
-           _node.append(string); 
+          
+           _node.append(string);
 
            counter++;
 
@@ -758,7 +758,7 @@ if ($('.showtime-json').length){
 
         }); // end each loop
          
-        $('.zoom').magnificPopup({ 
+        $('.zoom').magnificPopup({
           type: 'image',
           image: {
             titleSrc: function(item) {
@@ -769,7 +769,7 @@ if ($('.showtime-json').length){
             enabled: true,
             navigateByImgClick: true,
             preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-          } 
+          }
         });
 
       }); // end getJSON loop
@@ -815,18 +815,18 @@ $(".show-more").show();
 
 // handle "Show More" button click
 $(".show-more").click(function(e){
-  e.preventDefault(); 
+  e.preventDefault();
   var _clicked = $(this);
-  _clicked.closest(".expandable-content").find(".expanded-content").slideDown(); 
+  _clicked.closest(".expandable-content").find(".expanded-content").slideDown();
   _clicked.hide();
 });
 
 // handle "Show Less" button click
 $(".hide-content").click(function(e){
-  e.preventDefault();  
+  e.preventDefault();
   var _clicked = $(this);
 
-  var parent = _clicked.closest(".expandable-content"); 
+  var parent = _clicked.closest(".expandable-content");
   $(".expanded-content",parent).hide();
   $(parent).find(".show-more").show();
   parent.scrollToMe(); // make sure the that page scrolls back after hiding the expanded content
@@ -849,8 +849,8 @@ $(".hide-content").click(function(e){
       $("ul.tabs li").click(function() {
 
         $(".tab_content").hide();
-        var activeTab = $(this).attr("rel"); 
-        $("#"+activeTab).show();    
+        var activeTab = $(this).attr("rel");
+        $("#"+activeTab).show();
 
         $("ul.tabs li").removeClass("active");
         $(this).addClass("active");
@@ -866,7 +866,7 @@ $(".hide-content").click(function(e){
         // close any open tabs on click and reset to a down icon
         $(".tab_content").hide();
 
-        var d_activeTab = $(this).attr("rel"); 
+        var d_activeTab = $(this).attr("rel");
         $("#"+d_activeTab).show();
 
         $(".tab_drawer_heading").removeClass('d_active').children('span').removeClass('icon-right-open-mini').addClass('icon-plus');
@@ -925,11 +925,11 @@ if ($('video').length > 0) {
 if ($('.kis-widget').length > 0) {
   (function (d) {
   "use strict";
-  var widgetScript = d.createElement('script'); 
+  var widgetScript = d.createElement('script');
   widgetScript.id = 'unistats-widget-script';
       widgetScript.src = '//widget.unistats.ac.uk/js/unistats.widget.js';
   var scriptTags = d.getElementsByTagName('script')[0];
-  if (d.getElementById('unistats-widget-script')) {  return; } 
+  if (d.getElementById('unistats-widget-script')) {  return; }
   scriptTags.parentNode.insertBefore(widgetScript, scriptTags);
   } (document));
 }

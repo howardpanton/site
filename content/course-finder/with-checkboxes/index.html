@@ -148,11 +148,30 @@ title: Course Finder Results Page
   
  
 
-{% include components/_search-filters.html %}
+{% include components/_search-filters-short-courses.html %}
 
        
  
 
   </div>
 </div>
+
+
+<!-- temporary JS to show functionality of filters on short courses -->
+<script>
+
+$('#short-course-toggle').click(function(event) {
+    event.preventDefault();
+    var c = $(this);
+    
+    if (c.hasClass('active') ) {
+      c.removeClass('active');
+    }
+    else {
+      c.addClass('active');
+    }
+});
+
+
+</script>
   
