@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Tuesday 27th November 2013 10:41am
+//     Updated Tuesday 27 November 2013 14:58
 // \*-----------------------------------------*/
 
 // 
@@ -350,8 +350,8 @@ if ($('#container').length > 0) {
             containerID : "container",
             perPage : 24,
             midRange : 1,
-            previous : "â†",
-            next : "â†’",
+            previous : "←",
+            next : "→",
             direction : "auto",
             animation : "fadeInUp"
  
