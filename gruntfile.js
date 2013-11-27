@@ -22,7 +22,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
-            CacheControl: '30000000000'  // how many days do we want to set this too?
+            CacheControl: '30000000000'
           }
         },
         
@@ -34,7 +34,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['t4/script.js'], dest: 'assets/js/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
       staging: {
@@ -43,7 +43,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           differential: true, // Only uploads the files that have changed
           params: {
             ContentEncoding: 'gzip',
-            CacheControl: '30000000000'  // how many days do we want to set this too?
+            CacheControl: '30000000000'
           }
         },
         
@@ -55,8 +55,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        // {expand: true, cwd: '_site/assets/js', src: ['script.js'], dest: 'assets/js/t4/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
+        {expand: true, cwd: '_site/assets/js', src: ['combined.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
     },
@@ -303,8 +303,8 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           mode: 'gzip'
         },
         files: [
-          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'}
-          // {expand: true, flatten: true, src: ['temp/js/combined.js'], dest: 'temp/js/', ext: '.js'}
+          {expand: true, flatten: true, src: ['_site/assets/js/script-min.js'], dest: 'temp/js/', ext: '.js'},
+
         ]
       },
 
@@ -438,16 +438,16 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // build staging tasks
   grunt.registerTask('buildstaging', ['prompt:confirm_staging_build', 'confirm_staging_build']);
 
-  grunt.registerTask('go_build_staging', [ 'compass:staging',
+  grunt.registerTask('go_build_staging', ['compass:staging',
                                           'concat:dist',
-                                           'any-newer:uglify',
+                                          'any-newer:uglify',
                                           'compress:main',
                                           'exec:buildstaging',
                                           'cssmin:minify',
                                           'compress:css',
                                           'compress:js',
                                           'copy:minified_assets',
-                                          'clean:build',
+                                          //'clean:build',
                                           'any-newer:aws_s3:staging',
                                           'cloudfront_clear' ]);
 
