@@ -3,7 +3,7 @@
 //     * Script.js
 //     * Authors: Howard Panton, Matt Wisbey,
 //     Pete Richardson, Alastair Mucklow
-//     Updated Friday 22nd November 2013 12:22pm
+//     Updated Monday 25th November 2013 2:40pm
 // \*-----------------------------------------*/
 
 // To Test
@@ -39,7 +39,7 @@ jQuery.fn.extend({
 // add indexOf for IE8 compatibility
 if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function (elt /*, from*/) {
-        var len = this.length >>> 0;
+        var len = +this.length || 0;
         var from = Number(arguments[1]) || 0;
         from = (from < 0) ? Math.ceil(from) : Math.floor(from);
         if (from < 0) from += len;
@@ -168,7 +168,18 @@ function enableSelectBoxes() {
       $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a'));
       $(this).parent().parent().scrollToMe();
     });
-  });       
+  });      
+}
+
+
+function resetSpinners() {
+  // check if there are any other open accordion items, and close them if so
+  $( ".accordion-list-item" ).each(function (e) {
+    var _li_item = $(this);
+    if ( _li_item.hasClass('st-open') ) {
+        _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
+    }
+  });
 }
 
 
@@ -183,7 +194,7 @@ $(document).ready(function(){
   $('.breadcrumbs').find('a').last().hide();
 
   // to remove all breadcrumb items after the fifth on short course pages
-  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();   
+  $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
 
 
   // Accessible skip-to-content link:  
@@ -248,7 +259,7 @@ $(document).ready(function(){
       if (_sideBarTitle.text().toLowerCase() == 'in this section') {
       
         // hide "In This Section" in the sidebar dropdown
-        $('#mobile-sidebar li').first().remove(); 
+        $('#mobile-sidebar li').first().remove();
       }
       // if not, it must be a college - so replace text with "college homepage"
       else {
@@ -317,9 +328,9 @@ $(document).ready(function(){
   *   to gracefully fade-in images with CSS3 after they have loaded
   */
   
-  function imgLoaded(img){  
+  function imgLoaded(img){
     $(img).parent().addClass('loaded');
-  };
+  }
 
 if ($('#container').length > 0) {
   $.when(
@@ -340,17 +351,17 @@ if ($('#container').length > 0) {
             containerID : "container",
             perPage : 24,
             midRange : 1,
-            previous : "â†",
-            next : "â†’",
+            previous : "&larr;",
+            next : "&rarr;",
             direction : "auto",
             animation : "fadeInUp"
  
         });
-    };
+    }
 
     function destroyPagination () {
         pagination.jPages("destroy");
-    };
+    }
 
     setPagination();
 
@@ -481,7 +492,7 @@ if ($('#container').length > 0) {
         // get the individual slide width and height from the data-slider-item-width value in the HTML. If there's nothing set in the data-attribute, set the dimensions to sensible defaults
         var _itemWidth = (_this.data('slider-item-width') > 0) ? _this.data('slider-item-width') : 930;
         var _itemHeight = (_this.data('slider-item-height') > 0) ? _this.data('slider-item-height') : 465;
-        var _itemAutoPlay = (_this.data('slider-auto-play') == true) ? _this.data('slider-auto-play') : false;
+        var _itemAutoPlay = (_this.data('slider-auto-play') === true) ? _this.data('slider-auto-play') : false;
 
         _this.royalSlider({
           arrowsNav: true,
@@ -493,7 +504,7 @@ if ($('#container').length > 0) {
           autoScaleSliderWidth: _itemWidth,
           autoScaleSliderHeight: _itemHeight,
           imageScalePadding: 0,
-          globalCaption: true, 
+          globalCaption: true,
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
@@ -574,11 +585,11 @@ if ($('.credits').length > 0) {
             c.removeClass('active').attr('title','Show image credits');
             $('.credits').fadeOut();
           } else {
-            c.addClass('active').attr('title','Hide image credits');;
+            c.addClass('active').attr('title','Hide image credits');
             $('.credits').fadeIn();
           }
         });
-      }    
+      }  
   }
 
 
@@ -601,15 +612,7 @@ if ($('.accordion').length > 0) {
 
     });
 
-    function resetSpinners() {
-      // check if there are any other open accordion items, and close them if so
-      $( ".accordion-list-item" ).each(function (e) {
-        var _li_item = $(this); 
-        if ( _li_item.hasClass('st-open') ) {
-            _li_item.find('.st-arrow').rotate({animateTo:0, center: ["50%", "50%"] });
-        }
-      });
-    }
+  
 
     $(".accordion-list-anchor").on("click", ".size-h4", function(event){
         event.preventDefault();
@@ -621,8 +624,8 @@ if ($('.accordion').length > 0) {
               if (!elem.is(':visible'))  {
                 circle.rotate({animateTo:135});
                } else {
-                circle.rotate({animateTo:0, center: ["50%", "50%"], });
-              };
+                circle.rotate({animateTo:0, center: ["50%", "50%"] });
+              }
     });
 
     $(".st-arrow").on("click", function(e){
@@ -634,8 +637,8 @@ if ($('.accordion').length > 0) {
       if (!_st.hasClass('st-open'))  {
         _icon.rotate({animateTo:135});
       } else {
-        _icon.rotate({animateTo:0, center: ["50%", "50%"], });
-      };
+        _icon.rotate({animateTo:0, center: ["50%", "50%"] });
+      }
 
     });
 }

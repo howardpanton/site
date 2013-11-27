@@ -120,46 +120,46 @@
 
 			// Desktop View - two-up.l-content  
 			$( ".two-up.l-content li").eq(1).css( { 
-																					"display": "block",
-																					"float": "left",
-																					"margin-left": "52.57549%",
-																					"margin-right": "-100%",
-  									    									"width": "47.42451%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "52.57549%",
+																			"margin-right": "-100%",
+								    									"width": "47.42451%" 
   									 											});
 			// Desktop View - .two-up.l-content-full-width, .two-up#container 
 			$( ".two-up.l-content-full-width li, .two-up#container li").eq(1).css( { 
-																							"display": "block",
-																							"float": "left",
-																							"margin-left": "51.68801%",
-																							"margin-right": "-100%",
-  									    											"width": "48.31199%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "51.68801%",
+																			"margin-right": "-100%",
+						    											"width": "48.31199%" 
   									 											});
 
 			// Desktop View - .two-up.l-content-half-width 
 			$( ".two-up.l-content-half-width ul").eq(1).css( { 
-																											"display": "block",
-																											"float": "left",
-																											"margin-left": "51.68801%",
-																											"margin-right": "-100%",
-				  									    											"width": "48.31199%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "51.68801%",
+																			"margin-right": "-100%",
+						    											"width": "48.31199%" 
 																											});
 
 			// Desktop - .three-up.l-content-full-width li, .three-up#container li 
 			$( ".three-up.l-content-full-width li, .three-up#container li").eq(1).css( { 
-																											"display": "block",
-																											"float": "left",
-																											"margin-left": "34.45868%",
-																											"margin-right": "-100%",
-				  									    											"width": "31.08265%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "34.45868%",
+																			"margin-right": "-100%",
+						    											"width": "31.08265%" 
 																											});
 
 			// Desktop - .three-up.l-content-full-width li, .three-up#container li 
 			$( ".three-up.l-content-full-width li, .three-up#container li").eq(2).css( { 
-																											"display": "block",
-																											"float": "left",
-																											"margin-left": "68.91735%",
-																											"margin-right": "-100%",
-				  									    											"width": "31.08265%" 
+																			"display": "block",
+																			"float": "left",
+																			"margin-left": "68.91735%",
+																			"margin-right": "-100%",
+						    											"width": "31.08265%" 
 																											});
 
 			// Desktop - .four-up-full li(2) {
@@ -191,36 +191,54 @@
 
 			// Desktop .four-up.l-content-full-width li, .four-up#container li (2n)
 			$(".four-up.l-content-full-width li, .four-up#container li").eq(1).css( {
-																							 					"display": "block",
-																										    "float": "left",
-																										    "margin-left": "25.89636%",
-																										    "margin-right": "-100%",
-																										    "width": "23.01718%"
+														 					"display": "block",
+																	    "float": "left",
+																	    "margin-left": "25.89636%",
+																	    "margin-right": "-100%",
+																	    "width": "23.01718%"
 			});
 
 			// Desktop .four-up.l-content-full-width li, .four-up#container li (3n)
 			$(".four-up.l-content-full-width li, .four-up#container li").eq(2).css( {
-																							 					"display": "block",
-																										    "float": "left",
-																										    "margin-left": "51.41355%",
-																										    "margin-right": "-100%",
-																										    "width": "23.01718%"
+														 					"display": "block",
+																	    "float": "left",
+																	    "margin-left": "51.41355%",
+																	    "margin-right": "-100%",
+																	    "width": "23.01718%"
 			});
 
 			// Desktop .four-up.l-content-full-width li, .four-up#container li (4n)
 			$(".four-up.l-content-full-width li, .four-up#container li").eq(3).css( {
-																							 					"display": "block",
-																										    "float": "left",
-																										    "margin-left": "76.93073%",
-																										    "margin-right": "-100%",
-																										    "width": "23.01718%"
+														 					"display": "block",
+																	    "float": "left",
+																	    "margin-left": "76.93073%",
+																	    "margin-right": "-100%",
+																	    "width": "23.01718%"
 			});
 
 			// Desktop - Research Profiles link list
 			$('.link-list').each(function(i) { 
-					$(this).each('.link-list-item', function(indexInArray, valueOfElement){
-	    			if ((indexInArray % 4) === 0) { $(this).css('clear', 'left'); }
-					});
+				console.log('link list found');
+
+					// find the number of list items
+					var n = $(this).find('li');
+					
+					var sequenceToCheck = [4,7,10,13,16,19,22,25];
+
+					for (var i = 0; i < n.length; i++) { 
+						// don't check the first list item
+						// if (i > 0) {
+							//console.log(n[i]); 
+							if ( ($.inArray(i,sequenceToCheck)) != -1) {
+								$(this).find("li").eq( i ).css( "background-color", "red" );
+							}
+							// n[i].css('background-color', 'left');
+							// console.log('W is equal to:' + w);
+							// w.css('background-color', 'left');
+							// w.hide();
+							 
+						// }
+					}
 			});
 
 			// Lightbox galleries			
@@ -255,11 +273,12 @@
 			$(".highlight-block-2-up li").eq(1).css( { "margin-right": "0" });
 
 			// highlight homepage block 2up
-	  	$(".highlight-homepage-block-2-up li").eq(1).css( { "width": "48.55966%",
-	  																											"clear": "none",
-	  																											"float": "left",
-	  																											"margin-left": "0",
-	  																											"margin-right": "0"
+	  	$(".highlight-homepage-block-2-up li").eq(1).css( { 
+	  																	"width": "48.55966%",
+																			"clear": "none",
+																			"float": "left",
+																			"margin-left": "0",
+																			"margin-right": "0"
 	  																									  });
 
 	  	// highlight block 3up
