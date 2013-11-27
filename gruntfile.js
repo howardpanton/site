@@ -106,7 +106,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           options: {                        // Target options
             dest: '<%= dist %>',
             config: '_config_local.yml',
-            watch: true 
+            watch: true
           }
         },
     },
@@ -419,7 +419,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                 'handle_build_type'
                               ]);
 
-  grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] ); 
+  grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] );
                                     
   // Do live build
   grunt.registerTask('go_build_live', [ 'compass:production',
