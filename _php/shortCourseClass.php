@@ -83,6 +83,11 @@
 			}
 		}
 		
+		public function getCourseID() {
+			$courseID = strip_tags($this->courseIds);
+			return $courseID;
+		}
+				
 		public function description() {
 			$description = strip_tags($this->xml->course->description);
 			return $description;
