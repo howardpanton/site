@@ -56,7 +56,6 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
         {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
         {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['combined.js'], dest: 'assets/js/t4/', action: 'upload'},
       ]
       },
     },
@@ -64,13 +63,10 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     // invalidate cloudfront (clear cache) 
     cloudfront_clear: {
       invalidateIndex: {
-        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", ],
-        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", "/assets/js/script.js", "/assets/js/t4/script-expanded.js", ],
         resourcePaths: ["/assets/css/**/*.*", "/assets/js/t4/*.js", "/assets/js/*.js" ],
         secret_key: "<%= aws.AWSSecretKey %>",
         access_key: "<%= aws.AWSAccessKeyId %>",
         dist: "<%= aws.AWSStaging %>"
-        // dist: "<%= aws.AWSLive %>"
       }
       
     },
