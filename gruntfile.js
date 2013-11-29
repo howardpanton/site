@@ -1,103 +1,168 @@
-module.exports = function(grunt) {
-require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-  grunt.initConfig({
-    
-    pkg: grunt.file.readJSON('package.json'),
-    // we store the grunt-aws.json outside of our repo so that it never gets pushed to git 
-    aws: grunt.file.readJSON('grunt-aws.json'), // Read the file
+// Generated on 2013-11-21 using generator-ember 0.7.1
+'use strict';
+var LIVERELOAD_PORT = 36729;
+var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
 
-    aws_s3: {
-      options: {
-        accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
-        secretAccessKey: '<%= aws.AWSSecretKey %>', // You can also use env variables
-        region: 'eu-west-1',
-        uploadConcurrency: 5,
-         // 5 simultaneous uploads
-        downloadConcurrency: 5 // 5 simultaneous downloads
-      },
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to match all subfolders:
+// 'test/spec/**/*.js'
 
-      live: {
-        options: {
-          bucket: 'arts-live',
-          differential: true, // Only uploads the files that have changed
-          params: {
-            ContentEncoding: 'gzip',
-            CacheControl: '30000000000'
-          }
+module.exports = function (grunt) {
+    // show elapsed time at the end
+    require('time-grunt')(grunt);
+    // load all grunt tasks
+    require('load-grunt-tasks')(grunt);
+
+    // configurable paths
+    var ualConfig = {
+        app: '_site',
+        dist: '_site'
+    };
+
+
+    grunt.initConfig({
+
+        ual: ualConfig,
+
+        watch: {
+
+            sass: {
+                files: ['assets/styles/**/*.scss'],
+                tasks: ['compass:local']
+            },
+            jekyll: {
+                files: ['*.html'],
+                tasks: ['jekyll']
+            },
+            livereload: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    '<%= ual.app %>/assets/js/*.js',
+                    '<%= ual.app %>/*.html',
+                    '<%= ual.app %>/assets/styles/{,*/}*.css',
+                    '<%= ual.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                ]
+            }
         },
-        
-      files: [
-        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
-        {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
-      ]
-      },
-      staging: {
-        options: {
-          bucket: 'arts-staging',
-          differential: true, // Only uploads the files that have changed
-          params: {
-            ContentEncoding: 'gzip',
-            CacheControl: '30000000000'
-          }
-        },
-        
-      files: [
-        {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
-        {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
-        {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
-        {expand: true, cwd: '_site/assets/js', src: ['combined.js'], dest: 'assets/js/t4/', action: 'upload'},
-      ]
-      },
-    },
 
-    // invalidate cloudfront (clear cache) 
+        connect: {
+            options: {
+                port: 36729,
+                // change this to '0.0.0.0' to access the server from outside
+                hostname: 'localhost'
+            },
+            livereload: {
+                options: {
+                    middleware: function (connect) {
+                        return [
+                            lrSnippet,
+                            mountFolder(connect, ualConfig.app)
+                        ];
+                    }
+                }
+            },
+        },
+        open: {
+            server: {
+                path: 'http://localhost:<%= connect.options.port %>'
+            }
+        },
+
+        aws_s3: {
+            options: {
+                accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
+                secretAccessKey: '<%= aws.AWSSecretKey %>', // You can also use env variables
+                region: 'eu-west-1',
+                uploadConcurrency: 5,
+                // 5 simultaneous uploads
+                downloadConcurrency: 5 // 5 simultaneous downloads
+            },
+
+            live: {
+                options: {
+                    bucket: 'arts-live',
+                    differential: true, // Only uploads the files that have changed
+                    params: {
+                        ContentEncoding: 'gzip',
+                        CacheControl: '30000000000'
+                    }
+                },
+
+                files: [
+                    {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
+                ]
+            },
+            staging: {
+                options: {
+                    bucket: 'arts-staging',
+                    differential: true, // Only uploads the files that have changed
+                    params: {
+                        ContentEncoding: 'gzip',
+                        CacheControl: '30000000000'
+                    }
+                },
+
+                files: [
+                    {expand: true, cwd: '_site/assets/img/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
+                    {expand: true, cwd: '_site/assets/js', src: ['combined.js'], dest: 'assets/js/t4/', action: 'upload'},
+                ]
+            },
+        },
+
+    // invalidate cloudfront (clear cache)
     cloudfront_clear: {
-      invalidateIndex: {
-        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", ],
-        // resourcePaths: ["/assets/css/screen.css", "/assets/js/t4/script.js", "/assets/js/script.js", "/assets/js/t4/script-expanded.js", ],
-        resourcePaths: ["/assets/css/**/*.*", "/assets/js/t4/*.js", "/assets/js/*.js" ],
-        secret_key: "<%= aws.AWSSecretKey %>",
-        access_key: "<%= aws.AWSAccessKeyId %>",
-        dist: "<%= aws.AWSStaging %>"
-        // dist: "<%= aws.AWSLive %>"
-      }
-      
+        invalidateIndex: {
+            resourcePaths: ["/assets/css/**/*.*", "/assets/js/t4/*.js", "/assets/js/*.js" ],
+            secret_key: "<%= aws.AWSSecretKey %>",
+            access_key: "<%= aws.AWSAccessKeyId %>",
+            dist: "<%= aws.AWSLive %>"
+        }
+
     },
-    
+
     compass: {
-      production: {
-        options: {
-          config: 'config_live.rb',
-          force: true
+        production: {
+            options: {
+                config: 'config_live.rb',
+                force: true
+            }
+        },
+        staging: {
+            options: {
+                config: 'config_staging.rb',
+                force: true
+            }
+        },
+        local: {
+            options: {
+                config: 'config.rb',
+                force: true
+            }
         }
-      },
-      staging: {
-        options: {
-          config: 'config_staging.rb',
-          force: true
-        }
-      },
-
-      local: {
-        options: {
-          config: 'config.rb',
-          force: true
-        }
-      }
     },
 
-    // Jekyl task to watch files (uses _config_local.yml)
+    // Jekyll task to watch files (uses _config_local.yml)
     jekyll: {                             // Task
         options: {                          // Universal options
             src : '<%= app %>'
@@ -105,7 +170,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         dist: {                             // Target
           options: {                        // Target options
             dest: '<%= dist %>',
-            config: '_config_local.yml',
+            config: '_config.yml',
             watch: true
           }
         },
@@ -217,7 +282,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     },
 
 
-    // Task to concatenate script files 
+    // Task to concatenate script files
     // - files will be combined starting with the first file in the list
     concat: {
       options: {
@@ -265,7 +330,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
           cmd: 'jekyll build -w',
         }
     },
-  
+
     // copy /style-guide to /download folder
     copy: {
       style_guide: {
@@ -348,46 +413,16 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
         src: ['temp', '_site/node_modules', '_site/temp', '_site/ual-beta.sublime-workspace', '_site/package.json', '_site/gruntfile.js','_site/prod_config.rb']
       }
     },
-    
-    // watch files and run compass and jekyll build if files are changed
-    watch: {
-      
-      scripts: {
-        files: ['assets/styles/**/*.scss'],
-        tasks: ['compass:local'],
-        options: {
-          debounceDelay: 250,
-          spawn: false,
-          interrupt: true,
-        },
-      },
-
-      sass: {
-        files: ['assets/styles/**/*.scss'],
-        tasks: ['compass:local'],
-      },
-
-      jekyll: {
-        files: ['*.html'],
-        tasks: ['jekyll'],
-      },
-     
-    },
-   
 
     concurrent: {
-      options: {
-        logConcurrentOutput: true
-      },
-      watchlocal: {
-        tasks: ['watch:jekyll']
+    local: ['watch:sass','watch:jekyll', 'watch:livereload'],
+        options: {
+          logConcurrentOutput: true
       }
-      // dev: {
-      //   tasks: ["watch:B", "watch:C"]
-      // }
-    }
-
+    },
   });
+
+
 
   // * Note
   // when running for the first time on your machine,
@@ -400,7 +435,17 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // To run type: 'grunt' or 'grunt watch'
   grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('watch', 'concurrent:watchlocal');
+  grunt.registerTask('server', function (target) {
+
+        grunt.task.run([
+        'clean:build',
+        'connect:livereload',
+        'open:server',
+        'watch'
+        ]);
+    });
+
+
 
   // test Javascript (script.js)
   // To run type: 'grunt testjs'
@@ -413,14 +458,14 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // compress script libraries
   grunt.registerTask('compress_libs', 'compress:libs');
 
-  // 
+  //
   grunt.registerTask('build', [ 'asciify',
                                 'prompt:ask_build_type',
                                 'handle_build_type'
                               ]);
 
   grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] );
-                                    
+
   // Do live build
   grunt.registerTask('go_build_live', [ 'compass:production',
                                         'concat:dist',
@@ -451,7 +496,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
                                           'any-newer:aws_s3:staging',
                                           'cloudfront_clear' ]);
 
-  // build for local github 
+  // build for local github
   // To run type: 'grunt buildlocal'
   grunt.registerTask('buildlocal', [ 'compass:local',
                                      'exec:buildlocal',
@@ -461,9 +506,9 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   // combine script assets
   grunt.registerTask('concat_js', ['concat:dist']);
 
- 
+
   grunt.registerTask('handle_build_type', 'runs build task based on the option user selects', function() {
-    
+
     var buildtype = grunt.config('buildtype');
     switch (buildtype) {
       case 'local':
@@ -486,7 +531,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   });
 
   grunt.registerTask('confirm_staging_build', 'Build runs if user selected YES from the prompt task', function() {
-    
+
     var buildconfirmed = grunt.config('optionselected');  // get boolean value user selected from prompt:confirm_staging_build task
     if (buildconfirmed) {
          grunt.log.writeln('you selected YES... \n Building & uploading to staging bucket...');
@@ -495,10 +540,10 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     else {
        grunt.log.writeln('You selected NO..... Exiting without making changes.');
     }
-  
+
   });
 
-  
+
   grunt.registerTask('confirm_live_build', 'Build only runs if user selected YES from the prompt task', function() {
 
     var buildconfirmed = grunt.config('optionselected');  // get boolean value user selected from prompt:confirm_live_build task
@@ -509,7 +554,7 @@ require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     else {
        grunt.log.writeln('You selected NO..... Exiting without making changes.');
     }
-   
+
   });
 
 };
