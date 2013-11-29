@@ -27,6 +27,9 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
+        // we store the grunt-aws.json outside of our repo so that it never gets pushed to git 
+        aws: grunt.file.readJSON('grunt-aws.json'), // Read the file
+        
         ual: ualConfig,
 
         watch: {
@@ -125,7 +128,6 @@ module.exports = function (grunt) {
                     {expand: true, cwd: '_site/assets/img/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
                     {expand: true, cwd: '_site/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
                     {expand: true, cwd: '_site/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
-                    {expand: true, cwd: '_site/assets/js', src: ['combined.js'], dest: 'assets/js/t4/', action: 'upload'},
                 ]
             },
         },
@@ -493,14 +495,13 @@ module.exports = function (grunt) {
                                           'compress:js',
                                           'copy:minified_assets',
                                           //'clean:build',
-                                          'any-newer:aws_s3:staging',
-                                          'cloudfront_clear' ]);
+                                          'any-newer:aws_s3:staging'
+                                         ]);
 
   // build for local github
   // To run type: 'grunt buildlocal'
   grunt.registerTask('buildlocal', [ 'compass:local',
                                      'exec:buildlocal',
-                                     //'newer:jshint'
                                     ]);
 
   // combine script assets
@@ -519,9 +520,8 @@ module.exports = function (grunt) {
         grunt.task.run('buildstaging');
         break;
       case 'live':
-        // grunt.task.run('buildlive');
-        grunt.log.writeln('We haven\'t tested this yet... try build staging first');
-        grunt.task.run(['build']);  // go back to question prompt
+        grunt.task.run('buildlive');
+        //grunt.task.run(['build']);  // go back to question prompt
         break;
       default:
         grunt.task.run(['buildlocal']);
