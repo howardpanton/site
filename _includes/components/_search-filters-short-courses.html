@@ -4,14 +4,14 @@
     
     <div class="short-course-filters">
       <div class="filter-module active">
-        <h3 class="filter-heading">College</h3>
+        <h3 class="filter-heading">Colleges</h3>
         <ul>
-          <li>
+          <!-- <li>
             <input type = "checkbox"
             id = "sc-all-colleges"
             value = "#" class="before-label" checked="checked"/> 
             <label for = "sc-all-colleges">All Colleges (200)</label>
-          </li>
+          </li> -->
           <li>
             <input type = "checkbox"
             id = "camberwell"
@@ -50,16 +50,83 @@
           </li>
         </ul>
       </div>
+      
+      <div class="filter-module">
+        <h3 class="filter-heading size-h4">Course Level</h3>
+        <ul> 
+          <!-- <li>
+            <input type = "checkbox"
+             id = "sc-all-levels"
+             value = "#" class="before-label" checked="checked"/>
+            <label for = "sc-all-levels">All levels (20)</label>
+          </li> -->
+          <li>
+            <input type = "checkbox"
+             id = "undergraduate"
+             value = "#" class="before-label"/>
+            <label for = "undergraduate">Undergraduate</label>
+          </li>
+          <li>
+            <input type = "checkbox"
+             id = "postgraduate"
+             value = "#" class="before-label"/>
+            <label for = "postgraduate">Postgraduate (20)</label>
+          </li>
+          <li>
+            <input type = "checkbox"
+             id = "foundation"
+             value = "#" class="before-label"/>
+            <label for = "foundation">Foundation (20)</label>
+          </li>
+          <li id="sc-toggle-trigger">
+            <input type = "checkbox"
+             id = "short-courses"
+             value = "#" class="before-label"/>
+            <label for = "short-courses">Short Courses (20)</label>
+          </li>
+        </ul>
+      </div>
 
+       <div id="sc-toggle-mode" class="filter-module">
+      <h3 class="filter-heading">Mode</h3>
+      <ul>
+      <!--  <li>
+          <input type = "checkbox"
+           id = "all-modes"
+           value = "#" class="before-label" checked="checked"/>
+          <label for = "all-modes">All Modes (10)</label>
+        </li> -->
+        <li>
+          <input type = "checkbox"
+           id = "full-time"
+           value = "#" class="before-label"/>
+          <label for = "full-time">Full-time (10)</label>
+        </li>
+        <li>
+           <input type = "checkbox"
+           id = "part-time"
+           value = "#" class="before-label"/>
+          <label for = "part-time">Part-time (10)</label>
+        </li>
+        <li>
+           <input type = "checkbox"
+           id = "online"
+           value = "#" class="before-label"/>
+          <label for = "online">Online (10)</label>
+        </li>
+      </ul>
+    </div>
+
+  <div class="sc-filters-wrap hide">
       <div class="filter-module">
         <h3 class="filter-heading size-h4">Programme Type</h3>
         <ul> 
-          <li>
+         <!--  <li>
             <input type = "checkbox"
              id = "sc-all-prog-types"
              value = "#" class="before-label" checked="checked"/>
             <label for = "sc-all-prog-types">All Programme Types (20)</label>
-          </li>
+          </li> -->
           <li id="short-course-toggle">
             <input type = "checkbox"
              id = "short-courses"
@@ -112,15 +179,15 @@
       </div>
 
       <div class="filter-module">
-        <h3 class="filter-heading size-h4">Course Level</h3>
+        <h3 class="filter-heading size-h4">Skill Level</h3>
         <ul> 
-          <li>
+         <!--  <li>
             <input type = "checkbox"
-             id = "sc-all-levels"
+             id = "sc-all-skill-levels"
              value = "#" class="before-label" checked="checked"/>
-            <label for = "sc-all-levels">All levels (20)</label>
-          </li>
-          <li>
+            <label for = "sc-all-skill-levels">All Skill levels (20)</label>
+          </li> -->
+          <li id="short-course-toggle">
             <input type = "checkbox"
              id = "beginners"
              value = "#" class="before-label"/>
@@ -129,7 +196,7 @@
           <li>
             <input type = "checkbox"
              id = "intermediate"
-             value = "#" class="before-label"/>
+             value = "#" class="before-label" />
             <label for = "intermediate">Intermediate (20)</label>
           </li>
           <li>
@@ -141,14 +208,15 @@
           <li>
             <input type = "checkbox"
              id = "conditional"
-             value = "#" class="before-label"/>
+             value = "#" class="before-label" />
             <label for = "conditional">Conditional (20)</label>
           </li>
         </ul>
       </div>
 
+
       <div class="filter-module">   
-        <h3 class="filter-heading size-h4">Preferred Month of Start</h3>
+        <h3 class="filter-heading size-h4">Month of Start</h3>
         <ul> 
           <li>
             <input type = "checkbox"
@@ -207,38 +275,8 @@
         </ul>
       </div>
 
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Preferred Time of Day</h3>
-        <ul> 
-          <li>
-            <input type = "checkbox"
-             id = "morning"
-             value = "#" class="before-label"/>
-            <label for = "morning">Morning (20)</label>
-          </li>
-          <li>
-            <input type = "checkbox"
-             id = "afternoon"
-             value = "#" class="before-label"/>
-            <label for = "afternoon">Afternoon (20)</label>
-          </li>
-          <li>
-            <input type = "checkbox"
-             id = "evening"
-             value = "#" class="before-label"/>
-            <label for = "evening">Evening (20)</label>
-          </li>
-          <li>
-            <input type = "checkbox"
-             id = "full-day"
-             value = "#" class="before-label"/>
-            <label for = "full-day">Full Day (20)</label>
-          </li>
-        </ul>
-      </div>
-
-      <div class="filter-module">
-        <h3 class="filter-heading size-h4">Day(s) Best For You</h3>
+       <div class="filter-module">
+        <h3 class="filter-heading size-h4">Preferred Dates</h3>
         <ul> 
           <li>
             <input type = "checkbox"
@@ -292,25 +330,57 @@
       </div>
 
       <div class="filter-module">
-        <h3 class="filter-heading size-h4">Course Length</h3>
+        <h3 class="filter-heading size-h4">Time of Day</h3>
+        <ul> 
+          <li>
+            <input type = "checkbox"
+             id = "morning"
+             value = "#" class="before-label"/>
+            <label for = "morning">Morning (20)</label>
+          </li>
+          <li>
+            <input type = "checkbox"
+             id = "afternoon"
+             value = "#" class="before-label"/>
+            <label for = "afternoon">Afternoon (20)</label>
+          </li>
+          <li>
+            <input type = "checkbox"
+             id = "evening"
+             value = "#" class="before-label"/>
+            <label for = "evening">Evening (20)</label>
+          </li>
+          <li>
+            <input type = "checkbox"
+             id = "full-day"
+             value = "#" class="before-label"/>
+            <label for = "full-day">Full Day (20)</label>
+          </li>
+        </ul>
+      </div>
+
+     
+
+      <div class="filter-module">
+        <h3 class="filter-heading size-h4">Course Duration</h3>
         <ul> 
           <li>
             <input type = "checkbox"
              id = "part-time"
              value = "#" class="before-label"/>
-            <label for = "part-time">Part Time (over several weeks)</label>
+            <label for = "part-time">Over several weeks</label>
           </li>
           <li>
             <input type = "checkbox"
              id = "full-time"
              value = "#" class="before-label"/>
-            <label for = "full-time">Full Time - up to 5 days</label>
+            <label for = "full-time">Up to 5 days</label>
           </li>
           <li>
             <input type = "checkbox"
              id = "full-time-six-or-more"
              value = "#" class="before-label"/>
-            <label for = "full-time-six-or-more">Full Time - 6 days or more</label>
+            <label for = "full-time-six-or-more">6 days or more</label>
           </li>
         </ul>
       </div>
@@ -502,21 +572,21 @@
         <ul> 
           <li>
             <input type = "checkbox"
-             id = "courses-with-spaces"
-             value = "#" class="before-label" checked="checked"/>
-            <label for = "courses-with-spaces">Only Courses With Spaces</label>
-          </li>
-          <li>
-            <input type = "checkbox"
              id = "all-courses"
              value = "#" class="before-label"/>
             <label for = "all-courses">All Courses</label>
           </li>
+          <li>
+            <input type = "checkbox"
+             id = "courses-with-spaces"
+             value = "#" class="before-label" checked="checked"/>
+            <label for = "courses-with-spaces">Courses With Spaces</label>
+          </li>
         </ul>
       </div>
     </div>
-
-    <h2 class="size-h3">Filter results by:</h2>
+  </div>
+    <!-- <h2 class="size-h3">Filter results by:</h2>
     <div class="filter-module not-active">
       <h3 class="filter-heading not-active">Colleges</h3>
       <ul>
@@ -641,7 +711,7 @@
           <label for = "online">Online (10)</label>
         </li>
       </ul>
-    </div>
+    </div> -->
   </form>
 </nav>
 
