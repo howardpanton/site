@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]>
+  <!--> <html lang="en"> <!--
+<![endif]-->
+<head>
+<!-- Add section name tag -->
+  <title>University of the Arts London - University of Arts London</title>    <meta charset='utf-8'>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible"'>
+  <meta content='on' http-equiv='cleartype'>
+  <meta content='University of Arts London, Web Team' name='author'>
+  <!-- Meta description tag -->
+  <meta name="description" content="Europe's leading arts and design university" />
+  <link rel="dns-prefetch" href="//d27lwoqz7s24cy.cloudfront.net">
+  <link rel="dns-prefetch" href="//s3.amazonaws.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//app.resrc.it">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <!-- The fav icons -->
+  <link rel="shortcut icon" href="{{site.url}}/assets/img/favicon.ico" />
+
+  <!-- screen.css -->
+  <link rel="stylesheet" type="text/css" media="screen" href="{{site.url}}/assets/css/screen.css" />
+
+  <!-- Print styles -->
+  <link rel="stylesheet" href="{{site.url}}/assets/css/print.css" type="text/css" media="print" />
+  <!-- CSM College font -->
+  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7258632/627802/css/fonts.css" />
+
+  <!-- Load Modernizr inline -->
+  <script>function loadScript(e,t){var n,r,i;r=!1,n=document.createElement("script"),n.type="text/javascript",n.src=e,null==t&&(t=function(){}),n.onload=n.onreadystatechange=function(){var e=this.readyState;if(!(r||e&&"complete"!=e&&"loaded"!=e)){r=!0;try{t()}catch(n){}}},i=document.getElementsByTagName("script")[0],i.parentNode.insertBefore(n,i)}window.Modernizr=function(e,t,n){function r(e){m.cssText=e}function i(e,t){return r(b.join(e+";")+(t||""))}function s(e,t){return typeof e===t}function o(e,t){return!!~(""+e).indexOf(t)}function u(e,t){for(var r in e){var i=e[r];if(!o(i,"-")&&m[i]!==n)return t=="pfx"?i:!0}return!1}function a(e,t,r){for(var i in e){var o=t[e[i]];if(o!==n)return r===!1?e[i]:s(o,"function")?o.bind(r||t):o}return!1}function f(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+E.join(r+" ")+r).split(" ");return s(t,"string")||s(t,"undefined")?u(i,t):(i=(e+" "+S.join(r+" ")+r).split(" "),a(i,t,n))}var l="2.6.2",c={},h=!0,p=t.documentElement,d="modernizr",v=t.createElement(d),m=v.style,g,y={}.toString,b=" -webkit- -moz- -o- -ms- ".split(" "),w="Webkit Moz O ms",E=w.split(" "),S=w.toLowerCase().split(" "),x={svg:"http://www.w3.org/2000/svg"},T={},N={},C={},k=[],L=k.slice,A,O=function(e,n,r,i){var s,o,u,a,f=t.createElement("div"),l=t.body,c=l||t.createElement("body");if(parseInt(r,10))while(r--)u=t.createElement("div"),u.id=i?i[r]:d+(r+1),f.appendChild(u);return s=["&#173;",'<style id="s',d,'">',e,"</style>"].join(""),f.id=d,(l?f:c).innerHTML+=s,c.appendChild(f),l||(c.style.background="",c.style.overflow="hidden",a=p.style.overflow,p.style.overflow="hidden",p.appendChild(c)),o=n(f,e),l?f.parentNode.removeChild(f):(c.parentNode.removeChild(c),p.style.overflow=a),!!o},M={}.hasOwnProperty,_;!s(M,"undefined")&&!s(M.call,"undefined")?_=function(e,t){return M.call(e,t)}:_=function(e,t){return t in e&&s(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(e){var t=this;if(typeof t!="function")throw new TypeError;var n=L.call(arguments,1),r=function(){if(this instanceof r){var i=function(){};i.prototype=t.prototype;var s=new i,o=t.apply(s,n.concat(L.call(arguments)));return Object(o)===o?o:s}return t.apply(e,n.concat(L.call(arguments)))};return r}),T.touch=function(){var n;return"ontouchstart"in e||e.DocumentTouch&&t instanceof DocumentTouch?n=!0:O(["@media (",b.join("touch-enabled),("),d,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(e){n=e.offsetTop===9}),n},T.csstransforms=function(){return!!f("transform")},T.svg=function(){return!!t.createElementNS&&!!t.createElementNS(x.svg,"svg").createSVGRect};for(var D in T)_(T,D)&&(A=D.toLowerCase(),c[A]=T[D](),k.push((c[A]?"":"no-")+A));return c.addTest=function(e,t){if(typeof e=="object")for(var r in e)_(e,r)&&c.addTest(r,e[r]);else{e=e.toLowerCase();if(c[e]!==n)return c;t=typeof t=="function"?t():t,typeof h!="undefined"&&h&&(p.className+=" "+(t?"":"no-")+e),c[e]=t}return c},r(""),v=g=null,c._version=l,c._prefixes=b,c._domPrefixes=S,c._cssomPrefixes=E,c.testProp=function(e){return u([e])},c.testAllProps=f,c.testStyles=O,p.className=p.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(h?" js "+k.join(" "):""),c}(this,this.document),Modernizr.addTest("fullscreen",function(){for(var e=0;e<Modernizr._domPrefixes.length;e++)if(document[Modernizr._domPrefixes[e].toLowerCase()+"CancelFullScreen"])return!0;return!!document.cancelFullScreen||!1});Modernizr.addTest("hidpi",function(){if(window.matchMedia){var e=window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");if(e&&e.matches)return!0}});
+  </script>
+
+  <!-- load icon files for logos and icons -->
+  <script>
+  /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+  window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+  grunticon( [ "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.data.svg.min.css", "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.data.png.min.css", "http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" ] );
+  </script>
+
+  <!-- Load fallback for older browsers -->
+  <noscript><link href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" rel="stylesheet"></noscript>
+
+   <!-- Respond.js proxy on CDN -->
+  <link href="http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+
+  <!-- Respond.js files on your origin server -->
+  <link href="{{site.url}}/assets/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+  <script type="text/javascript" src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond.src.js"></script>
+  <script type="text/javascript" src="{{site.url}}/assets/js/respond.proxy.js"></script>
+</head>
+
+<body class='{{ page.college }} {{ page.section }}'>
+{% if page.template == true %}
+
+<div class="ual-black-bg cf">
+<div class="header-wrapper">
+  <div class="row">
+    <div class="ual-banner-menu">
+      <h1 class="hide-text">UAL: University of the Arts London</h1>
+      <a href="#skip-to-home" id="skip-link" class="skip-to-content" title="skip to main page content">Skip to main page content</a>
+      <div class="ual-logo-desktop">
+        {% case page.college %}
+        {% when "csm" %}
+          <div class="logo-ual-csm"></div>
+        {% when "lcc" %}
+          <div class="logo-ual-lcc"></div>
+        {% when "lcf" %}
+          <div class="logo-ual-lcf"></div>
+        {% when "chelsea" %}
+          <div class="logo-ual-chelsea"></div>
+        {% when "camberwell" %}
+          <div class="logo-ual-camberwell"></div>
+        {% when "wimbledon" %}
+          <div class="logo-ual-wimbledon"></div>
+        {% else %}
+          <div class="logo-ual"></div>
+        {% endcase %}
+      </div>
+    </div>
+      {% if page.class-home != "docs" %}
+        <nav class="college-link-menu">
+          <ul>
+            <li class="col-link-ual"><a href="http://www.arts.ac.uk/">UAL</a></li>
+              <li class="col-link-camberwell"><a href="http://www.arts.ac.uk/camberwell/">Camberwell</a></li>
+              <li class="col-link-csm"><a href="http://www.arts.ac.uk/csm/">CSM</a></li>
+              <li class="col-link-chelsea"><a href="http://www.arts.ac.uk/chelsea/">Chelsea</a></li>
+              <li class="col-link-lcc"><a href="http://www.arts.ac.uk/lcc/">LCC</a></li>
+              <li class="col-link-lcf"><a href="http://www.arts.ac.uk/fashion/">LCF</a></li>
+              <li class="col-link-wimbledon"><a href="http://www.arts.ac.uk/wimbledon/">Wimbledon</a></li>
+          </ul>
+        </nav>
+      {% endif %}
+  </div>
+  <div class="row">
+  {% include header.html %}
+  </div>
+</div>
+</div> <!-- end .ual-header -->
+
+  {% if page.section != "course finder" and page.section != "home" %}
+
+    <div class="header-panel bg-gray-bg">
+      <div class="header-wrapper">
+          <div class="row">
+            <!-- breadcrumbs -->
+            {% if page.college == "lcf" %}
+              {% include _lcf_breadcrumb.html %}
+            {% else if page.college == "lcc" %}
+              {% include _lcc_breadcrumb.html %}
+            {% else if page.college == "ual" %}
+              {% include _breadcrumb.html %}
+            {% endif %}
+          </div>
+          <div class="row">
+
+            {% if page.section != "graduate-school" %}
+                <!-- main page title -->
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+          </div>
+      </div>
+    </div><!-- .header-panel -->
+  {% endif %}
+
+{% endif %}
+<div class="content-wrapper">
+  <div class="row">
+    <nav class="sidebar">
+      {% include _lcf_navigation.html %}   nav here    </nav>
+
+    <div role="main" class="content">
+      <div class="row">
+
+     {{ content }}
+
+      </div>
+
+
+
+    </div>
+  </div><!-- .row -->
+</div><!-- .content-wrapper -->
+
+
+
+ {% case page.college %}
+    {% when "csm" %}
+      {% include _csm_footer.html %}
+    {% when "lcc" %}
+      {% include _lcc_footer.html %}
+    {% when "lcf" %}
+      {% include _lcf_footer.html %}
+    {% when "chelsea" %}
+      {% include _chelsea_footer.html %}
+    {% when "camberwell" %}
+      {% include _camberwell_footer.html %}
+    {% when "wimbledon" %}
+      {% include _wimbledon_footer.html %}
+    {% else %}
+
+  {% endcase %}
+
+  {% if page.template == true %}
+      {% include _global_footer.html %}
+  {% endif %}
+
+
+<div class="credits-btn"><a href="#" class="show-credits"><span class="icon-picture"></span></a></div>
+<!-- Include js scripts -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+{% if page.college == "lcf" %}
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/maps/lcf-map-init.js"></script>
+{% endif %}
+
+<!-- script to prevent FOUC for megamenu-->
+<script>
+    // hide all but the first megamenu list item at start (the first .megamenu list item is the toggle menu button)
+    $('.megamenu > li + li').css('visibility','hidden');
+    $('.top-bar').css('overflow', 'hidden');
+</script>
+
+<script src="http://use.resrc.it/"></script>
+
+<!-- Scripts -->
+
+<!-- live script.js -->
+ <!-- <script type="text/javascript" src="{{site.url}}/assets/js/script-min.js"></script> -->
+
+<!-- dev script.js -->
+<script type="text/javascript" src="{{site.url}}/assets/js/script-expanded.js"></script>
+
+
+
+<script>
+
+// Creates associative array (object) of query params
+var QueryParameters = (function()
+{
+    var result = {};
+
+    if (window.location.search)
+    {
+        // split up the query string and store in an associative array
+        var params = window.location.search.slice(1).split("&");
+        for (var i = 0; i < params.length; i++)
+        {
+            var tmp = params[i].split("=");
+            result[tmp[0]] = unescape(tmp[1]);
+        }
+    }
+
+    return result;
+}());
+
+
+      if (QueryParameters["debug"]) {
+        document.write('<link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/assets/css/debug.css">');
+        document.write('<script src="{{ site.url }}/assets/js/debug.js"><\/script>');
+      }
+
+
+
+  $(document).ready(function($){
+
+
+      $('.megamenu').megaMenuCompleteSet({
+          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+      });
+
+      // FOUC Fix - unhide the list items after the megamenu script has run
+      $('.megamenu > li + li').css('visibility','visible');
+      $('.top-bar').css('overflow', 'visible');
+
+  });
+
+  // UNcomment to add Google Tracking
+  // var _gaq = _gaq || [];
+  // _gaq.push(['_setAccount', 'UA-32658704-1']);
+  // _gaq.push(['_setDomainName', 'arts.ac.uk']);
+  // _gaq.push(['_trackPageview']);
+
+  // (function() {
+  //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  // })();
+</script>
+</body>
+</html>
