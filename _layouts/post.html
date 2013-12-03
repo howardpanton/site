@@ -134,7 +134,25 @@
   {% endif %}
 
 {% endif %}
-{{ content }}
+<div class="content-wrapper">
+  <div class="row">
+    <nav class="sidebar">
+      {% include _lcf_navigation.html %}   nav here    </nav>
+
+    <div role="main" class="content">
+      <div class="row">
+
+     {{ content }}
+
+      </div>
+
+
+
+    </div>
+  </div><!-- .row -->
+</div><!-- .content-wrapper -->
+
+
 
  {% case page.college %}
     {% when "csm" %}
