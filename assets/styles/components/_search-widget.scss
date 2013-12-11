@@ -3,9 +3,9 @@
   position: relative;
   height: 36px;
   padding: 10px;
-  @include margin-leader(24);
-  @include margin-trailer(36);   
   background-color: $dark-gray;
+  @include margin-leader(24);
+  @include margin-trailer(36);
   @include border-radius(2px);
 }
 
@@ -13,8 +13,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 85%;  // this may need to be set larger on wider inputs 
-  border: 0; 
+  width: 85%;  // this may need to be set larger on wider inputs
+  border: 0;
   padding-top: 0px;
   padding-left: 10px;
   margin-bottom: 0px;
@@ -24,9 +24,9 @@
 }
 
 .search-icon-btn {
-  position: absolute;
   display: block;
   height: 36px;
+  position: absolute;
   right: 0;
   top: 0;
   color: white;
@@ -34,21 +34,21 @@
   border-bottom: 0;
   @include transition-property(background-color);
   @include transition-duration(0.2s);
-  @include font-size(16); 
-  
+  @include font-size(16);
+
   &:hover {
     background-color: $bg-gray;
     border-bottom: 0;
   }
-  
-  &:hover .icon-search { 
+
+  &:hover .icon-search {
     color: black;
     border-bottom: 0;
   }
 }
 
 .search-icon-btn .icon-search {
-  color: white; 
+  color: white;
   border-bottom: 0;
   @include transition-property(background-color);
   @include transition-duration(0.2s);
