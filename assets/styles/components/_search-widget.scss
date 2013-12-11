@@ -4,8 +4,10 @@
   height: 36px;
   padding: 10px;
   background-color: $dark-gray;
-  @include margin-leader(24);
-  @include margin-trailer(36);
+  margin-top: 24px;
+  margin-bottom: 36px;
+  //@include margin-leader(24);
+  //@include margin-trailer(36);
   @include border-radius(2px);
 }
 
@@ -34,7 +36,7 @@
   border-bottom: 0;
   @include transition-property(background-color);
   @include transition-duration(0.2s);
-  @include font-size(16);
+  @include font-size(22);
 
   &:hover {
     background-color: $bg-gray;
