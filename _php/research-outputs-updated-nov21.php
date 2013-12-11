@@ -123,8 +123,9 @@ echo '<!-- DEBUG: returnXML successful -->';
 		public function do_output() {
 			
 			$xml = $this->xml;
+//			var_dump($xml);
 
-			if (!empty($xml)) {
+			if (!empty($xml->channel->item)) {
 
 				echo "<h2>Research Outputs</h2>";
 				echo "<div class=\"row\">";

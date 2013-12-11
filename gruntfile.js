@@ -56,7 +56,7 @@ module.exports = function (grunt) {
             },
             // jekyll watch
             jekyll: {
-                files: ['*.html', '*.md', '!node_modules'],
+                files: ['*/**/*.html', '*.html', '*.md', '!node_modules'],
                 tasks: ['jekyll']
             },
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
                      debounceDelay: 4000
                 },
                 files: [
-                    '_site/index.html'
+                    '_site/**/*.html' 
                 ]
             }
         },
