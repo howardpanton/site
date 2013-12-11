@@ -1,14 +1,14 @@
 // *--------------------------------------------*\
-//      ARTSLONDONDEV 
-//      Grunt File     
-//      
+//      ARTSLONDONDEV
+//      Grunt File
+//
 //      Updated: Friday 29 November 2013 17:00
-//    
+//
 // *--------------------------------------------*/
 
 
 'use strict';
-var LIVERELOAD_PORT = 36729;
+var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -36,10 +36,10 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
-        //  We store our AWS connection settings in a grunt-aws.json file which is 
-        //  listed in the .gitignore file so that it never gets pushed to GitHub 
+        //  We store our AWS connection settings in a grunt-aws.json file which is
+        //  listed in the .gitignore file so that it never gets pushed to GitHub
         aws: grunt.file.readJSON('grunt-aws.json'),
-        
+
         ual: ualConfig,
 
 
@@ -51,43 +51,42 @@ module.exports = function (grunt) {
 
             // compass watch
             sass: {
-                files: ['assets/styles/**/*.scss'],
+                files: ['assets/styles/**/*.scss',  '!node_modules'],
                 tasks: ['compass:local']
             },
             // jekyll watch
             jekyll: {
-                files: ['*.html'],
+                files: ['*.html', '*.md', '!node_modules'],
                 tasks: ['jekyll']
             },
 
-            // files to watch for livereload 
+            // files to watch for livereload
             // set to our _site folder so it picks up compiled file changes after sass and jekyll have run
             livereload: {
                 options: {
-                    livereload: LIVERELOAD_PORT
+                    livereload: '<%= connect.options.livereload %>',
+                    vent: ['changed'],
+                     debounceDelay: 4000
                 },
                 files: [
-                    '<%= ual.app %>/assets/js/*.js',
-                    '<%= ual.app %>/*.html',
-                    '<%= ual.app %>/assets/styles/{,*/}*.css',
-                    '<%= ual.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '_site/index.html'
                 ]
             }
         },
 
         // *---------------------------------------------------------------*\
         //  connect : grunt-contrib-connect plugin
-        //            Starts a grunt server to preview files in the browser        
+        //            Starts a grunt server to preview files in the browser
         // *---------------------------------------------------------------*/
         connect: {
 
             options: {
-                port: 36729,
+                port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
-            
-            // the livereload task puts script at the bottom of each file to handle the livereloading in the browser 
+
+            // the livereload task puts script at the bottom of each file to handle the livereloading in the browser
             // it uses the lrSnippet settings which we set at the top of this file.
             livereload: {
                 options: {
@@ -111,7 +110,7 @@ module.exports = function (grunt) {
 
 
         // *---------------------------------------------------------------*\
-        //  aws_s3 :  uploads files to amazonS3     
+        //  aws_s3 :  uploads files to amazonS3
         // *---------------------------------------------------------------*/
         aws_s3: {
             options: {
@@ -167,10 +166,10 @@ module.exports = function (grunt) {
             },
         },
 
-   
+
     // *---------------------------------------------------------------*\
-    //  Invalidate cloudfront:  (clear cache on ual-live bucket) 
-    //                      - this runs at the end of the buildlive task  
+    //  Invalidate cloudfront:  (clear cache on ual-live bucket)
+    //                      - this runs at the end of the buildlive task
     // *---------------------------------------------------------------*/
     cloudfront_clear: {
         invalidateIndex: {
@@ -183,7 +182,7 @@ module.exports = function (grunt) {
     },
 
     // *---------------------------------------------------------------*\
-    //  Compass:  (grunt-contrib-compass plugin) 
+    //  Compass:  (grunt-contrib-compass plugin)
     //            This task uses different compass config files for each build type
     //            to set correct file paths in css
     // *---------------------------------------------------------------*\
@@ -217,17 +216,18 @@ module.exports = function (grunt) {
           options: {                        // Target options
             dest: '<%= dist %>',
             config: '_config.yml',
+            exlude: ['Gemfile', 'node_modules', 'temp', 'grunt-aws.json', 'styles', 'config.rb', 'config_live.rb', 'config_local.rb', 'config_staging.rb', 'gruntfile.js', 'package.json', 'Gemfile.lock', 'Guardfile', 'README.md', 'Rakefile', 'old_gruntfile'],
             watch: true
           }
         },
     },
 
-   
 
 
-  
+
+
     // *---------------------------------------------------------------*\
-    //  cssmin : minify css & and add a banner at the top of the file to show when last updated          
+    //  cssmin : minify css & and add a banner at the top of the file to show when last updated
     // *---------------------------------------------------------------*/
     cssmin: {
       minify: {
@@ -246,11 +246,11 @@ module.exports = function (grunt) {
 
 
 
-   
+
     // *---------------------------------------------------------------*\
-    //  Prompt : (grunt-prompt plugin) 
-    //           Task that prompts and requests an input from user, 
-    //           then executes tasks based on what the user selected.       
+    //  Prompt : (grunt-prompt plugin)
+    //           Task that prompts and requests an input from user,
+    //           then executes tasks based on what the user selected.
     // *---------------------------------------------------------------*/
     prompt: {
 
@@ -261,7 +261,7 @@ module.exports = function (grunt) {
               config: 'buildtype',
               type: 'list',
               message: '\n\nUAL Website Build Task \nSelect build type:',
-              default: 'local', 
+              default: 'local',
               choices: ['local','staging','live']
             }
           ]
@@ -272,7 +272,7 @@ module.exports = function (grunt) {
         options: {
           questions: [
             {
-              config: 'optionselected', 
+              config: 'optionselected',
               type: 'confirm',
               message: 'Are you sure you want to BUILD and UPLOAD asset files to the ** LIVE UAL bucket **?\n(this will affect the live website)',
               default: false
@@ -285,7 +285,7 @@ module.exports = function (grunt) {
         options: {
           questions: [
             {
-              config: 'optionselected', 
+              config: 'optionselected',
               type: 'confirm',
               message: 'BUILD and UPLOAD asset files to ** STAGING bucket ** ?',
               default: false
@@ -297,7 +297,7 @@ module.exports = function (grunt) {
 
     // *---------------------------------------------------------------*\
     //  concat : A task to comobine script files into one file.
-    //           we use this to combine our scripts into one script file (combined.js) - 
+    //           we use this to combine our scripts into one script file (combined.js) -
     //           This file then gets minified, compressed and renamed to script-min.js with other tasks (see compress & uglify tasks)
     // *---------------------------------------------------------------*/
 
@@ -314,11 +314,11 @@ module.exports = function (grunt) {
 
     // *--------------------------------------------------------------------------------------------------*\
     //  Uglify: (Grunt-contrib-uglify plugin)
-    //          
-    //          We use this task to minify js, rename combined.js to script-min.js 
+    //
+    //          We use this task to minify js, rename combined.js to script-min.js
     //          and add a banner to show when last updated.
     // *--------------------------------------------------------------------------------------------------*/
-    
+
     uglify: {
       options: {
         mangle: false,  // mangle will not change/minify variable and function names
@@ -353,7 +353,7 @@ module.exports = function (grunt) {
         }
     },
 
-    // copy /style-guide to /download folder for 
+    // copy /style-guide to /download folder for
     copy: {
       style_guide: {
         src: '_site/style-guide',
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
 
 
     // *--------------------------------------------------------------------------------*\
-    //  concurrent: This allows tasks to at the same time. 
+    //  concurrent: This allows tasks to at the same time.
     //  We use this to do compass watch and jekyll watch at the same time
     // *--------------------------------------------------------------------------------*/
 
@@ -457,14 +457,14 @@ module.exports = function (grunt) {
           logConcurrentOutput: true
         },
         local: ['watch:sass','watch:jekyll', 'watch:livereload']
-        
+
     },
 });
 
 
-    
 
-   
+
+
 
 
     // *--------------------------------------------------------------------------------*\
@@ -474,17 +474,17 @@ module.exports = function (grunt) {
     // *--------------------------------------------------------------------------------*/
 
     // *--------------------------------------------------------------------------------*\
-    //         == Default grunt watch task == 
-    //     
-    //         To run type: 'grunt server' which will set up a server, 
+    //         == Default grunt watch task ==
+    //
+    //         To run type: 'grunt server' which will set up a server,
     //                       and run compass watch and jekyll watch
-    //                   
+    //
     // *--------------------------------------------------------------------------------*/
-    
+
     grunt.registerTask('server', function (target) {
 
         grunt.task.run([
-        'clean:build',
+        'clean',
         'connect:livereload',
         'open:server',
         'watch'
@@ -493,12 +493,12 @@ module.exports = function (grunt) {
 
 
     // *--------------------------------------------------------------------------------*\
-    //         ==  Build task == 
-    //     
+    //         ==  Build task ==
+    //
     //         To run type: 'grunt build' and select your build type (local, staging, live)
-    //                   
+    //
     // *--------------------------------------------------------------------------------*/
-    
+
     grunt.registerTask('build', [ 'asciify',
                                 'prompt:ask_build_type',
                                 'handle_build_type'
@@ -506,7 +506,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('buildlive', [ 'prompt:confirm_live_build', 'confirm_live_build'] );
 
-    // Do live build 
+    // Do live build
     grunt.registerTask('go_build_live', [ 'compass:production',
                                         'concat:dist',
                                         'any-newer:uglify',
@@ -592,8 +592,8 @@ module.exports = function (grunt) {
 
 
 // *-----------------------------------------*\
-//  
-//     TO DO TASKS & not currently being used 
+//
+//     TO DO TASKS & not currently being used
 // *-----------------------------------------*/
 
 
