@@ -7,7 +7,7 @@
 		.map {
 	    width: gs-width(d, 5, 10, (5,16), true);
       @include gs-float(d, left, (5,16));
-			padding-top: rhythm(4, 16px); 	
+			padding-top: rhythm(4, 16px);
     }
 		.map-info {
 	    width: gs-width(d, 11, 16, (5,16), true);
@@ -15,4 +15,12 @@
       margin-right: 0;
 		}
 	}
+}
+
+// Google maps styling overrides
+.gmnoprint img {
+    max-width: none !important;
+}
+.gm-style img {
+  max-width: none !important;
 }
