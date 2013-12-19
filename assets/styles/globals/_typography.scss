@@ -11,7 +11,7 @@
     $FONT-FACE
 \*------------------------------------*/
 
-// to prevent an extend error in sass, these files need to be imported into  
+// to prevent an extend error in sass, these files need to be imported into
 // in the file that they will be extended from
 @import "font-face/brandon-text",
 		"font-face/bureau-grot",
@@ -74,14 +74,14 @@ a {
 
 h1, .size-h1 {
 	@include font-size(54);
-	@include adjust-leading-to(10, 54px); 	
+	@include adjust-leading-to(10, 54px);
 	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
 	.csm & {
 		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
 		// @extend %LeviathanBlackItalic;
 	}
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold;
 	}
 	.lcc & {
 		@extend %AlternateGothic;
@@ -103,7 +103,7 @@ h2 {
 		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	  word-spacing: -6px;
-	}	
+	}
 }
 
 h3 {
@@ -112,7 +112,7 @@ h3 {
 	}
 	.lcc & {
 		@include font-size(42);
-		@include adjust-leading-to(7, 42px); 	
+		@include adjust-leading-to(7, 42px);
 		@extend %AlternateGothic;
 		// @extend %LeagueGothicRegular;
 		padding: rhythm(3, 36px) 0 rhythm(1, 42px) 0;
@@ -120,7 +120,7 @@ h3 {
 	  border-bottom: 4px solid $black;
 	  margin-bottom: 18px;
 	  word-spacing: -4px;
-	}	
+	}
 }
 
 
@@ -134,24 +134,24 @@ h2, h3, h4 {
 
 h2, h3 {
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold;
 	}
   // .csm & {
 		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
   //   // @extend %BureauGrotBold;
-  // }	
+  // }
 }
 
 
 
 h2 a, h3 a {
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold;
 	}
   // .csm & {
 		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
   //   // @extend %BureauGrotBold;
-  // }	
+  // }
  // 	.lcc & {
 	// 	@extend %LeagueGothicRegular;
 	//   text-transform: uppercase;
@@ -164,25 +164,25 @@ h2 a, h3 a {
 
 h2, .size-h2 {
 	@include font-size(36);
-	@include adjust-leading-to(7, 36px); 	
+	@include adjust-leading-to(7, 36px);
 	padding: rhythm(3, 36px) 0 rhythm(3, 36px) 0;
 }
 
 h3, .size-h3 {
 	@include font-size(22);
-	@include adjust-leading-to(5, 22px); 	
+	@include adjust-leading-to(5, 22px);
 	padding: rhythm(3, 22px) 0;
 }
 
 h4, .size-h4 {
 	@include font-size(18);
-	@include adjust-leading-to(4, 18px); 	
+	@include adjust-leading-to(4, 18px);
 	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
 }
 
 .size-big {
 	.lcc & {
-		@include font-size(60); 
+		@include font-size(60);
 		border-top: none;
 	  border-bottom: 4px solid $black;
 	  padding-bottom: 18px;
@@ -202,13 +202,16 @@ h6 {
 
 p {
 	@include font-size(16);
-	@include adjust-leading-to(4, 16px); 	
+	@include adjust-leading-to(4, 16px);
 	padding-bottom: rhythm(3, 16px);
 }
 
+// added for small p text in google maps
+p.small { @include font-size(14); }
+
 nav ul {
 	margin-left: 0;
-	list-style-type: none;	
+	list-style-type: none;
 }
 
 ul, ol, dl {
@@ -216,9 +219,9 @@ ul, ol, dl {
 
 	li {
 		@include font-size(16);
-		@include adjust-leading-to(4, 16px); 	
+		@include adjust-leading-to(4, 16px);
 		padding-bottom: rhythm(2, 16px);
-	}	
+	}
 }
 
 ul li ul, ol li ol {
@@ -255,7 +258,7 @@ ol {
 	margin-left: rhythm(5, 16px);
 	list-style-type: decimal-leading-zero;
 	li {
-		
+
 	}
 }
 
@@ -275,7 +278,7 @@ code {
 }
 
 dl {
-	@include adjust-leading-to(4, 16px); 
+	@include adjust-leading-to(4, 16px);
 	padding-bottom: rhythm(1, 16px);
 	dt {
 		@extend %Swiss721BT-Bold;
@@ -289,7 +292,7 @@ dl {
 table {
 	width: 100%;
 	@include font-size(14);
-	@include adjust-leading-to(4, 14px); 	
+	@include adjust-leading-to(4, 14px);
 	padding-bottom: rhythm(2, 14px);
 	margin-bottom: rhythm(3, 14px);
 	th, td {
@@ -303,11 +306,11 @@ table {
 		vertical-align: top;
 	}
 	thead {
-		@extend .aaa-gray-bg; 
+		@extend .aaa-gray-bg;
 		@extend .ual-white;
 	}
 	tr {
-		&:nth-child(odd) { 
+		&:nth-child(odd) {
 		}
 		&:nth-child(even) {
 			@extend .bg-gray-bg;
@@ -337,7 +340,7 @@ figure {
 figcaption, .rsCaption, .caption {
 	@extend %Swiss721BT-Light;
 	@include font-size(14);
-	@include adjust-leading-to(3, 14px); 	
+	@include adjust-leading-to(3, 14px);
 	span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
 		display: block;
 		padding: 8px 12px 6px 12px;
@@ -345,22 +348,22 @@ figcaption, .rsCaption, .caption {
 			padding-bottom: 0;
 		}
 	}
-	
+
 }
 
 %blockquote {
   position: relative;
-  span { 
+  span {
     @extend .ui-icons-quote_marks;
     position: absolute;
     top: 0px;
     left: 0px;
     background-repeat: no-repeat;
-    background-position: top left; 
+    background-position: top left;
   }
-  
+
   @include font-size(16);
-  @include adjust-leading-to(4, 16px);  
+  @include adjust-leading-to(4, 16px);
   margin-top: rhythm(2, 16px);
   padding-bottom: rhythm(2, 16px);
   padding-left: 68px;
@@ -375,7 +378,7 @@ hr {
 	clear: both;
 }
 
-// LCF Variants 
+// LCF Variants
 
 b, strong, h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
@@ -389,7 +392,7 @@ b, strong, h2, h3, h4 {
 	h1 {
 		@include font-size(48);
 	}
-	.search-results-list h3 a, 
+	.search-results-list h3 a,
 	.accordion h3,
 	.dd-menu h3,
 	.boxout h3,
@@ -398,9 +401,9 @@ b, strong, h2, h3, h4 {
 	   @extend %Swiss721BT-Bold;
 	}
 	// Bottom margin
-	&.home h2, 
-	.l-content-full-width h2, 
-	.__gallery h2,  
+	&.home h2,
+	.l-content-full-width h2,
+	.__gallery h2,
 	&.graduate-school h1,
 	&.graduate-school h2 {
 		margin-bottom: rhythm(4, 24px);
@@ -408,9 +411,9 @@ b, strong, h2, h3, h4 {
 	.intro-block-with-left-image h2 {
 		margin-bottom: rhythm(2, 24px);
 	}
-	h2, 
-	.__media.block h3, 
-	.news-feed h3, 
+	h2,
+	.__media.block h3,
+	.news-feed h3,
 	.whats-on h3,
 	.footer-block h3 {
 		text-transform: uppercase;
@@ -429,16 +432,16 @@ b, strong, h2, h3, h4 {
 		@include font-size(24);
    		@include margin-trailer(4);
    		padding-bottom: 0;
-   
+
 	}
 
 
     // centered headings
-    .l-content-full-width.two-up, 
-    .three-up, 
-    .content h1, 
+    .l-content-full-width.two-up,
+    .three-up,
+    .content h1,
     &.home h2,
-    .content .four-up h2, 
+    .content .four-up h2,
     .content .four-up h3,
     .call-to-action h3,
     &.graduate-school h2 {
@@ -507,14 +510,14 @@ b, strong, h2, h3, h4 {
 //   a:before {
 //     @extend %icon;
 //     @include font-size(16);
-//     min-width: 1.3em; 
+//     min-width: 1.3em;
 //     display: inline-block;
 //     content: '\e808';
 //     padding-right: 0;
 //   }
 // }
 
-// styling for PDF link lists 
+// styling for PDF link lists
 // (remove default list icons in aside)
 
 
@@ -526,27 +529,27 @@ b, strong, h2, h3, h4 {
 // }
 
 // // hide external link after download links
-// .download.external:after, .download.external.button-link:after { 
-//  	display: none; 
+// .download.external:after, .download.external.button-link:after {
+//  	display: none;
 // }
 
 // add icon to any external links within l-content or aside
 .l-content .external:after, aside .external:after{
     @extend %icon;
-    min-width: 1.5em; 
+    min-width: 1.5em;
     text-align: right;
     vertical-align: middle;
     display: inline-block;
     content: '\e837';
 }
 
-// social media links icons 
+// social media links icons
 .l-content a[href*="facebook"]:before, aside a[href*="facebook"]:before,
 .l-content a[href*="twitter"]:before, aside a[href*="twitter"]:before,
 .l-content a[href*="flickr"]:before, aside a[href*="flickr"]:before,
 .l-content a[href*="youtube"]:before, aside a[href*="youtube"]:before,
 .l-content a[href*="linkedin"]:before, aside a[href*="linkedin"]:before,
-.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before, 
+.l-content a[href*="tumblr"]:before, aside a[href*="tumblr"]:before,
 .l-content a[href*="vimeo"]:before, aside a[href*="vimeo"]:before,
 .l-content a[href*="pinterest"]:before, aside a[href*="pinterest"]:before,
 .l-content a[href*="plus.google"]:before, aside a[href*="plus.google"]:before,
@@ -580,10 +583,10 @@ b, strong, h2, h3, h4 {
 
 .l-content a[href*="github."]:before, aside a[href*="github"]:before { content: '\e81d'; }
 
-.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; } 
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; }
 
 // pdf and doc link icons
-.l-content a[href$=".pdf"]:before, .l-content a[href$=".doc"]:before, 
+.l-content a[href$=".pdf"]:before, .l-content a[href$=".doc"]:before,
 aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
 	font-family: "fontello";
 	content: '\e808';
@@ -628,7 +631,7 @@ aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
 .l-content a[href*="plus.google"].external:after, aside a[href*="plus.google"].external:after,
 .l-content a[href*="github."].external:after, aside a[href*="github"].external:after,
 .l-content a[href^="mailto"].external:after, aside a[href^="mailto"].external:after,
-.l-content a[href$=".pdf"]:after, .l-content a[href$=".doc"]:after, 
+.l-content a[href$=".pdf"]:after, .l-content a[href$=".doc"]:after,
 aside a[href$=".pdf"]:after, aside a[href$=".doc"]:after  {
 	display: none;
 }
