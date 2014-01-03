@@ -912,7 +912,6 @@
 
 /* LCF Channel */
 #channel-splash {
-	height: 480px;
 	.video-container {
 		height: 480px;
 		overflow: hidden;
@@ -924,13 +923,19 @@
 		z-index: 2;
 		color: #fff;
 	}
+	h1 {
+		font-size: 112px;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
 }
 
 .background-video {
 	min-width: 100%;
 	left: 50%;
-	top: 60%;
+	top: 50%;
 	position: absolute;
 	z-index: -1;
+	background-color: $black;
 }
 
