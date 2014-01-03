@@ -60,7 +60,7 @@
   <script type="text/javascript" src="{{site.url}}/assets/js/respond.proxy.js"></script>
 </head>
 
-<body class='{{ page.college }} {{ page.section }}'>
+<body class='{{ page.college }} {{ page.section }}' {% if page.section == "home map" %} onload="initialize()"{% endif %} >
 {% if page.template == true %}
 
 <div class="ual-black-bg cf">
@@ -165,6 +165,8 @@
 
 {% if page.college == "lcf" %}
 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/maps/lcf-partner-markers.js"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/maps/lcf-erasmus-markers.js"></script>
 <script type="text/javascript" src="{{site.url}}/assets/js/maps/lcf-map-init.js"></script>
 {% endif %}
 
@@ -176,8 +178,9 @@
 <script type="text/javascript" src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js"></script> 
 
 <!-- Al's background-video experiment -->
-<script type="text/javascript" src="{{site.url}}/assets/js/libs/bg-video.js"></script>
-
+{% if page.title == "LCF Channel" %}
+  <script type="text/javascript" src="{{site.url}}/assets/js/libs/bg-video.js"></script>
+{% endif %}
 
 <!-- live script.js 
 <script src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/script-min.js'></script>-->
@@ -217,20 +220,20 @@ var QueryParameters = (function()
 
 
 
-  $(document).ready(function($){
+  // $(document).ready(function($){
 
-      $('.megamenu').megaMenuCompleteSet({
-          menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-          menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-          menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-          menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-      });
+  //     $('.megamenu').megaMenuCompleteSet({
+  //         menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+  //         menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+  //         menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+  //         menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+  //     });
 
-      // FOUC Fix - unhide the list items after the megamenu script has run
-      $('.megamenu > li + li').css('visibility','visible');
-      $('.top-bar').css('overflow', 'visible');
+  //     // FOUC Fix - unhide the list items after the megamenu script has run
+  //     $('.megamenu > li + li').css('visibility','visible');
+  //     $('.top-bar').css('overflow', 'visible');
 
-  });
+  // });
 
   // UNcomment to add Google Tracking
   // var _gaq = _gaq || [];
