@@ -1,0 +1,32 @@
+---
+layout: main.tpl
+college: ual
+section: home
+title: Search Widget Test
+template: true
+---
+
+<div class="content-wrapper">
+
+    <div class="row">
+    <nav class="sidebar">
+        <ul class="no-bullet">
+            <li class="menu-heading">Sidebar</li>
+            <li>Text Here</li>
+            <li>Text Here</li>
+            <li>Text Here</li>
+            <li>Text Here</li>
+            <li>Text Here</li>
+        </ul>
+
+        <div class="row">
+            {% include components/_search-widget.html %}
+        </div>
+
+    </nav>
+
+    <div role="main" class="content">
+    {% include components/_search-widget.html %}
+    </div>
+    </div>
+</div>
