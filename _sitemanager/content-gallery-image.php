@@ -4,7 +4,7 @@ $thumbnail = "<t4 type="content" name="Gallery thumbnail" output="normal" modifi
 ?>
 <li>
 	<?php if ($image_type == 'lightbox') { ?>
-		<a class="no-border" href="http://app.resrc.it/s=w930/o=60/<?php echo siteURL(); ?><t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" title="<t4 type="content" name="Image ALT text" output="normal" modifiers=""  />" >
+		<a class="no-border" href="http://app.resrc.it/s=w930/o=60/<?php echo siteURL(); ?><t4 type="content" name="Gallery lightbox image" output="normal" modifiers="" formatter="image/path" />" title="<t4 type="content" name="Image caption" output="normal" modifiers=""  />">
 			<figure>
 			<?php // if the user has uploaded a thumbnail, use that
 			if ($thumbnail != '') { ?>
