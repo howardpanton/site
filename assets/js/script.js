@@ -507,7 +507,9 @@ if ($('#container').length > 0) {
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
-            pauseOnHover: true
+            pauseOnHover: true,
+            stopAtAction: true,
+            delay: 3000
           }
         });
 
