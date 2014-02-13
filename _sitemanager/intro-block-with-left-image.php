@@ -28,7 +28,7 @@ $optional_feed = "<t4 type="content" name="Optional Feed URI" output="normal" mo
 					<img src="http://app.resrc.it/<?php echo siteURL(); ?><t4 type="content" name="Image" output="normal" modifiers=""  formatter="image/path" />" alt="<t4 type="content" name="Image alt" output="normal" modifiers="striptags,htmlentities" />" />
 					<?php } ?>
 					  
-					<t4 type="content" name="Image Credits" output="selective-output" modifiers="" format="<div class=&quot;credits&quot;>$value</div>" />
+					<t4 type="content" name="Image Credit" output="selective-output" modifiers="" format="<div class=&quot;credits&quot;>$value</div>" />
 					<figcaption><t4 type="content" name="Image caption" output="normal" modifiers="nav_sections" /></figcaption>
 				</figure>
 			</div>
