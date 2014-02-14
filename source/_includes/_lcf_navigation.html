@@ -1,0 +1,16 @@
+<ul class="no-bullet">
+	<li class="menu-heading">London College of Fashion</li>
+	{% for page in site.pages %}
+		{% if page.layout != nil %}
+			{% if page.college == 'lcf' %}
+				<li>
+					<a href="{{ site.url }}{{ page.url | remove: 'index.html' }}"> {{ page.title }}</a>
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</ul>	
+
+
+
+    

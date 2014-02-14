@@ -1,0 +1,142 @@
+.exp-search-wrap {
+
+}
+
+.sb-search {
+	position: absolute;
+	top: 0;
+	right: 0;
+	// margin-top: 10px;
+	width: 0%;
+	min-width: 48px;
+	height: 48px;
+	float: right;
+	overflow: hidden;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+	max-width: 80%;
+	@include gs-media(d) {
+   	max-width: 100%;
+   	min-width: gs-width(d, 16, 16, (1, 16), true);
+		height: 36px;
+		@include margin-leader(2);
+  }
+
+  form {
+  	height: 48px;
+  	margin-bottom: 0;
+  }
+}
+
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: -2px;
+	border: 0;
+	outline: none;
+	background: $white;
+	width: 100%;
+	// height: 48px;
+	margin: 0;
+	z-index: 10;
+	padding: 20px 65px 20px 20px;
+	font-family: inherit;
+	font-size: 24px;
+	color: $aaa-gray;
+
+	&::-webkit-input-placeholder {
+		color: $aaa-gray; 
+	}
+
+	&:-moz-placeholder {
+		color: $aaa-gray; 
+	}
+
+	&::-moz-placeholder {
+		color: $aaa-gray; 
+	}
+
+	&:-ms-input-placeholder {
+		color: $aaa-gray; 
+	}
+}
+
+input[type="text"].sb-search-input {
+	height: 48px;
+	@include gs-media(d, min-max) {
+		height: 36px;
+		margin-bottom: 0;
+	}
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+	width: 48px;
+	height: 48px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 48px;
+	text-align: center;
+	cursor: pointer;
+	@include gs-media(d, min-max) {
+		height: 36px;
+		// width: 36px;
+		min-width: gs-width(d, 16, 16, (1, 16), true) + 1;
+		line-height: 36px;
+	}
+}
+
+.sb-search-submit {
+	background: $white; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.sb-icon-search {
+	@extend %icon;
+	color: #fff;
+	background-color: black;
+	z-index: 90;
+	@include font-size(42);
+	speak: none;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	@include gs-media(d, min-max) {
+		@include font-size(36);
+  }
+
+}
+
+.sb-icon-search:hover {
+	background-color: $dark-gray;
+}
+
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search {
+	width: 100%;
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background-color: $dark-gray;
+	color: $white;
+	z-index: 11;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}

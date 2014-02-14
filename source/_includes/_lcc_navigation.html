@@ -1,0 +1,17 @@
+<!-- <h3 class="menu-heading">Test title text only</h3> -->
+<ul class="no-bullet">
+  <!-- <li><a href="#">In This Section</a></li> -->
+	{% for page in site.pages %}
+		{% if page.layout != nil %}
+			{% if page.college == 'lcc' %}
+        <li>
+					<a href="{{ site.url }}{{ page.url | remove: 'index.html' }}"> {{ page.title }}</a>
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %} 
+</ul>	
+
+
+
+    

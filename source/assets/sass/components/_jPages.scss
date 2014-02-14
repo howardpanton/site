@@ -1,0 +1,126 @@
+div#pagination {
+/*	margin-top: 30px;
+*/
+margin-top: 2.125em;
+margin-bottom: 2.125em;
+text-align: center;
+position: relative;
+clear: left;
+}
+
+div#pagination > a {
+/*	margin: 0 10px;
+	color: black;
+	text-decoration: none;*/
+
+min-width: 36px;
+text-align: center;
+@include font-size(14);
+border-top: 1px solid #c8c8c8;
+border-bottom: none;
+padding: 0.85714em 1.28571em;
+margin: 0.25em;
+cursor: pointer;
+
+}
+div#pagination > a:hover {
+	border-top: 1px solid black;
+}
+
+div#pagination a.jp-previous {
+    margin-left: 0;
+    cursor: pointer;
+}
+
+div#pagination > a.jp-current, 
+div#pagination > a.jp-current:hover,
+div#pagination > a.jp-disabled, 
+div#pagination > a.jp-disabled:hover { 
+	border-top: 1px solid black;
+  cursor: default !important;
+}
+
+div#pagination > span { 
+    margin: 0 5px; 
+    color: green;
+}
+
+#container {
+	@extend .l-content-full-width;
+	li {
+		display: inline-block;
+		background-color: $bg-gray;
+		margin-bottom: 1px;
+		padding: 12px;
+		width: 100%;
+		a {
+			border-bottom: none;
+			display: block;
+		}
+		&:hover {
+
+			.camberwell & {
+				background-color: $ccw-blue;
+				a {
+					color: $white;
+				}
+			}
+			.csm & {
+				background-color: $csm-primary;
+				a {
+					color: $white;
+				}
+			}
+
+			.chelsea & {
+				background-color: $ccw-salmon;
+				a {
+					color: $white;
+				}
+			}
+			.lcc & {
+				background-color: $lcc-primary-yellow;
+				a {
+					color: $black;
+				}
+			}
+			.lcf & {
+				background-color: $mid-gray;
+				a {
+					color: $white;
+				}
+			}
+			.wimbledon & {
+				background-color: $ccw-green;
+				a {
+					color: $white;
+				}
+			}
+		}
+	}
+	@include gs-media(t, min-max) {
+	}
+	@include gs-media(d) {
+		li {
+			display: inline-block;
+			width:33%;
+			float: left;
+			margin-right: 1px;
+			height: 100px;
+			padding: 0;
+			a {
+				padding: 12px;
+				display: block;
+				height: 100px;
+			}
+		}
+	}
+}
+// #container li {
+// 	width: 25%;
+// 	border: 1px solid white;
+// 	background-color: #e9e9e9;
+// 	float: left;
+// 	height: 120px;
+// 	padding: 12px;
+// }

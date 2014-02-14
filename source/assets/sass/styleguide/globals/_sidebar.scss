@@ -1,0 +1,38 @@
+nav {
+	.sidebar & {
+		background-color: $white; // added to remove the demo background color
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style-type: none;
+			margin-left: 0;
+			border-bottom: 1px dotted $white240;
+			padding-bottom: 0;
+			@include transition(all 0.4s);
+			&:nth-of-type(1) {
+				border-top: 1px dotted $white240;
+			}
+			&:hover {
+				background-color: $white240;
+			}
+		}
+		a, .menu-heading {
+			font-family: Swiss721BT-Light;
+			display: block;
+			border-bottom: 0;
+			margin-bottom: 0;
+			@include font-size(14);
+			@include line-height(20);
+			padding: 10px 12px;
+			@include transition(all 0.4s);
+			color: $black; 
+		}
+		.menu-heading:after {
+			content: "\f0c9";
+			font-family: FontAwesome;
+			padding-left: 12px;
+		}
+	}
+}

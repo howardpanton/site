@@ -1,0 +1,83 @@
+// Lightbox galleries
+.__gallery {
+	ul  {
+		clear:left;
+
+		@include gs-media(m) {
+			padding-left:0px;
+			padding-right:0px;
+		}
+	}
+	li {
+		padding: 0;
+		margin-bottom: 24px;	
+		list-style-type: none !important;
+	}
+
+	// needs making responsive
+	.showtime-json a {
+		float: left;
+		width: 100%; 
+  		background-position: top;
+  		background-size: cover;
+	}
+
+	&.three-up {
+
+		li:nth-child(3n) {
+			margin-right: 0;
+		}
+		@include gs-media(t,min-max) {
+			li {
+	      		width: gs-width(t, 2, 3, (2,7), true);
+	      		@include gs-float(t, left, (2,7));
+			}
+		}
+
+		@include gs-media(d,min-max) {
+			@include gs-span(d, 5, 16, (5, 16));
+			li {
+	      		width: gs-width(d, 5, 8, (5,16), true);
+	      		@include gs-float(d, left, (5,16));
+			}
+		}
+
+		// needs making responsive
+		.showtime-json a {
+	  		height: 290px;
+		}
+	}
+
+	&.four-up {
+
+		li:nth-child(4n) {
+			margin-right: 0;
+		}
+		@include gs-media(t,min-max) {
+			li {
+	      		@include gs-float(t, left, (2,7));
+	      		&:nth-child(even) {
+							margin-right: 0;
+						}
+				}
+		}
+
+		@include gs-media(d,min-max) {
+			@include gs-span(d, 5, 16, (5, 16));
+			li {
+	      		width: gs-width(d, 5, 7, (5,16), true);
+	      		@include gs-float(d, left, (5,16));
+			}
+
+		}
+
+		// needs making responsive
+		.showtime-json a {
+	  		height: 200px;
+		}
+	}
+
+	.external:after {
+		display: none;
+	}
+}

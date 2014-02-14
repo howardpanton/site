@@ -1,0 +1,217 @@
+footer {
+  @extend .panel;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include padding-leader(6);
+  @include padding-trailer(2);
+  background-color: $black;
+  clear: left;
+  color: $white;
+  
+  .copyright {
+    @extend .row;
+    clear: left;
+    @include margin-leader(2);
+    p {
+      @include font-size(12);
+      padding-left: 12px;
+    }
+    
+  }
+}
+
+.footer-links {
+  ul { 
+    margin-bottom: 0;
+    @include gs-media (d) {
+      margin-bottom: rhythm(3, 16px);
+    }
+  }
+
+  ul li {
+    border-bottom: 1px dotted $aaa-gray;
+    padding-bottom: 0;
+
+    a {
+      @extend %Swiss721BT-Light;
+      @include font-size(14);
+      line-height: rhythm(8, 16px);
+      @include gs-media (d) {
+        line-height: rhythm(6, 16px);
+      }
+      padding-left: 12px;
+      display: block;
+      color: $white;
+    }
+  }
+
+  ul li:first-child {
+    border-top: 1px dotted $aaa-gray;
+  }
+
+  ul li:last-child {
+    border-bottom: 0;
+    @include gs-media (d) {
+      border-bottom: 1px dotted $aaa-gray;
+    } 
+  }
+}
+
+.footer-col-1 {
+  @extend %d1-d4;
+}
+
+.footer-col-2 {
+   @extend %d5-d8;
+}
+
+.footer-col-3 {
+  @extend %d9-d12;
+  
+  ul{
+    @include margin-trailer(3);
+    @include gs-media (d) {
+      margin-bottom: 0;
+    }
+  }
+  
+
+  li:last-child{
+    border-bottom: 1px dotted $aaa-gray !important;
+    @include gs-media (d) {
+      border-bottom: 0;
+    } 
+  }
+
+}
+
+.social-links {
+  @extend %d13-d16;
+
+  // title for social links in footer
+  h3 {
+    @extend %Swiss721BT-Light-important;
+    @include margin-leader(2);
+    @include font-size(14);
+    line-height: rhythm(8, 16px);
+    padding: 0;
+    padding-left: 12px;
+    margin-bottom: 0;
+    font-style: normal !important;
+    font-weight: normal !important; // this is added to prevent overrides from college stylin' innit
+    letter-spacing: normal !important; // prevent LCF letter spacing on global footer
+    @include gs-media (d) {
+      line-height: rhythm(6, 16px);
+      padding-left: 0;
+      margin-top: 0;
+    }
+  }
+  
+  ul { clear: left; }
+
+  li {
+    border: none !important;
+    display: inline-block;
+    a {
+      display: block;
+      line-height: 48px;
+      border-bottom: 0;
+      padding-right: 36px;
+      @include gs-media (d) {
+        line-height: 36px;
+        padding-left: 0;
+        padding-right: 18px;
+      }
+    }
+    a:first-child {
+      @include gs-media (d) {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  @include gs-media (m, min-max) {
+    // position the social links on grid for tablet and mobile
+    li a { padding-right: 0}
+
+    li:nth-of-type(1){
+      width: gs-width(m, 1, 1, (1, 4), true);
+      @include gs-span(m, 1);
+      // @include gs-span(t, 1);
+    }
+
+    li:nth-of-type(2){
+      width: gs-width(m, 2, 2, (1, 4), true);
+      @include gs-span(m, 2);
+      // @include gs-span(t, 2);
+    }
+
+    li:nth-of-type(3){
+      width: gs-width(m, 3, 3, (1, 4), true);
+      @include gs-span(m, 3);
+      // @include gs-span(t, 3);
+    }
+
+    li:nth-of-type(4){
+      width: gs-width(m, 4, 4, (1, 4), true);
+      @include gs-span(m, 4);
+      // @include gs-span(t, 4);
+      a{color: red;}
+    }
+
+  }
+}
+
+.footer-ico {
+  @extend %icon-social;
+  @include font-size(24);
+  line-height: 54px;
+  @include gs-media (d) {
+    @include font-size(18);
+    line-height: 36px;
+  }
+
+  width: rhythm(6, 16px);
+  color: $white;
+  
+}
+
+
+// the back to top button which appears 
+// after scrolling down the page
+
+.back-to-top {
+  position: fixed;
+  display: none; // hidden at start by default
+  right: .75em;
+  bottom: 0;
+  min-height: 18px;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
+  
+  a { 
+    @include font-size(14); 
+    color: $black;
+    background-color: $white;
+    padding: 12px .75em 12px .75em;
+    border-bottom: 0;
+    span {
+      
+    }
+  }
+
+  a:hover {
+    color: $white !important;
+    background-color: $black;
+    @include single-transition(all, 200ms, linear);
+    color: $light-gray;
+    text-decoration: none;
+    cursor: pointer;
+    span {
+      
+    }
+  }
+}  
+    

@@ -1,0 +1,29 @@
+.events-listing {
+	li {
+		padding: 0;
+		background: $bg-gray;
+		clear: both;
+		margin-bottom: rhythm(8, 16px);
+		max-height: 294px;
+		min-height: 294px;
+		.text p {
+			padding: rhythm(4, 16px) rhythm(4, 16px) 0 rhythm(4, 16px);
+		}
+	}
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+		li {
+	     width: gs-width(t, 2, 4, (2,7), true);
+	     @include gs-float(t, left, (2,7));
+		}
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 1, 12);
+		li {
+      figure {
+				width: gs-width(d, 1, 4, (1,12), true);
+				@include gs-float(d, left, (1,12));
+      }
+		}
+	}
+}

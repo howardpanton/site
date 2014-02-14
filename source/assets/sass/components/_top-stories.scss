@@ -1,0 +1,29 @@
+
+.lcc.college.home aside {
+	background-color: $bg-gray;
+	.stories-list {
+		h3 {
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+		ul {
+			margin-bottom: 0;
+			li {
+				list-style-type: none;
+				margin-left: 0;
+				padding-left: 0;
+				.date {
+					@extend %AlternateGothic;
+					// @extend %LeagueGothicRegular;
+					font-size: 36px;
+					color: $lcc-green;
+					padding-bottom: 0;
+					word-spacing: -4px;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+.button-link {
+  @include font-size(14);
+  background-color: $black;
+  color: $white;
+  padding: rhythm(1, 14px) rhythm(2, 14px);
+  border-bottom: 0;
+  display:inline-block;
+  // margin-top:12px;
+	//margin: rhythm(4, 14px) 0 rhythm(3, 14px) 0; 	
+	//padding: rhythm(2, 14px) rhythm(3, 14px); 	
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+.button-link:hover, %button-link:hover{
+  background-color: $aaa-gray;
+  color: $white;
+  text-decoration: none;
+  cursor: pointer;
+  padding: rhythm(1, 14px) rhythm(2, 14px);
+  display:inline-block;
+  // margin-top:12px;
+  border-bottom: none;
+
+  .csm & {
+    background-color: $csm-primary;
+    color: $black;
+  }
+  .lcc & {
+    background-color: $lcc-secondary-pink;
+    color: $white;
+  }
+
+}
+// .button-link:active {
+//   background: #2E5481;
+//   border: solid 1px #203E5F;
+// }
+
+
+.button {
+	text-align: center;
+	padding:0;
+	border: none;
+	line-height: 1.5;
+	background-color: $soft-black;
+	color: white;
+	padding: 20px 40px 20px 40px;
+
+	&:hover {
+		padding: 0;
+		border: none;
+		line-height: 1.5;
+		padding: 20px 40px 20px 40px;
+		background-color: $aaa-gray;
+	}
+}
+
+
+.button-link.icon {
+  padding-top: emCalc(6px);
+  padding-bottom: emCalc(6px);
+  @include font-size(24);
+}
+
+.lcf .view-all {
+  text-align: center;
+} 

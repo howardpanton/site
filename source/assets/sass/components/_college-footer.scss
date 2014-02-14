@@ -1,0 +1,240 @@
+// College Footer
+.college-footer {
+  @include padding-trailer(4);
+  background-color: $dark-gray;
+  padding-top: 0;
+
+  // custom styling per college 
+  .camberwell &, .chelsea &, .wimbledon & {
+   
+  }
+
+  .csm & {
+    background-color: $white;
+    color: $black;
+  }
+
+  .lcc & {
+    @include padding-trailer(2);
+    border-bottom: 0;
+
+    // .icons {
+    //   li {
+    //     width: gs-width(d, 13, 13, (13,16), true);
+    //     margin-right: gs-gutter(d, (13,16), true);
+    //   }
+    // }
+    
+  }
+
+  .lcf & {
+    @include padding-leader(4);
+    @include padding-trailer(6);
+    background-color: $black;
+    border-bottom: 1px dotted $aaa-gray;
+  }
+
+  .vcard {
+      margin-top: 0;
+      
+      @include gs-media(d) {
+        padding: 0;
+      }
+      // college level styling for vCards in college footer
+      border-top: 0;
+      .fn, .phone, .email, .title, .org, .url, .blogurl, .twitter, .facebook, .linkedin {
+        background: none;
+        padding: 0;
+        a {
+          border-bottom: none;
+        } 
+      }
+  }
+  .vcard li {
+      padding-left: 0;
+  }
+
+  
+
+  .social-icons {
+    li {
+      display: inline-block;
+      width: 60px;
+    }    
+    a {
+      position: absolute;
+      text-indent: -999em;
+      border: 0;
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+
+.footer-block {
+  @extend %Swiss721BT-Light;
+  @include font-size(14);
+  
+  a, li, p {
+    @extend %Swiss721BT-Light;
+    @include font-size(14);
+  }
+
+  a {
+    color: $white;
+    border-bottom: 1px dotted $white;
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+
+    .csm &, {
+      color: $black;
+      border-bottom: 1px dotted $soft-black;
+      &:hover {
+        border-bottom: 1px solid $soft-black;
+      }
+    }
+
+    .lcf & {
+      border-bottom: 1px dotted $aaa-gray;
+      &:hover {
+        border-bottom: 1px solid $aaa-gray;
+      }
+    }
+  }
+
+  h3 {
+    @include margin-trailer(3);
+    padding-left: 12px;
+    padding-right: 12px;
+    @include gs-media(d) {
+      @include margin-trailer(6);
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .lcc & {
+      @extend %AlternateGothic;
+      // @extend %LeagueGothicRegular;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      border-bottom: 6px solid $lcc-primary-yellow;
+      @include gs-media(t, max) {
+        padding-left:  10px;
+        padding-right: 10px;
+      }
+
+      @include margin-trailer(2);
+      
+    }
+
+    .lcf & {
+      border-bottom: 1px solid $white;
+    }
+
+    .csm & {
+      @extend %BureauGrotBold;  // need to update with lev font
+      @include margin-leader(6);
+      margin-bottom: 0;
+      border-top: 6px solid $csm-primary;
+    }
+
+    .chelsea &, .camberwell &, .wimbledon & {
+      @extend %BrandonText-Bold; 
+      border-top: 6px solid $white;
+      @include margin-leader(3);
+      @include margin-trailer(1);
+    }
+    
+    
+  }  
+  
+  .icons {
+
+    li {
+      display: inline-block;
+      float: left;
+      $icon-w: (gs-width(d, 11, 12, (11,16), true) -24px);
+      padding-left: 12px;
+      padding-right: 12px;
+      @include gs-media(d) {
+        $icon-w: gs-width(d, 11, 12, (11,16), true);
+         padding-left: 0;
+         padding-right: 0;
+      }
+      width: $icon-w;
+      margin-right: gs-gutter(d, (11,16), true);
+      text-align: left;
+
+      a {
+        border: none;
+        width:100%;
+        display:block;
+      }
+      a:hover{
+        border-bottom: 0;
+      }
+      a span {
+        @extend %icon-social;
+        color: $white;
+        line-height: 54px;
+        width: 100%;
+        display: block;
+        @include font-size(42);
+
+        .csm & {
+          color: $black;
+        }
+      }
+
+    }
+    li:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  
+  // mobile & tablet footer column widths
+  &.left {
+    width: 100%;
+  }
+  &.middle {
+    clear: left;
+    width: 100%;
+  }
+  &.right {
+    width: 100%;
+    clear: left;
+    margin-right: 0;
+  }
+  
+  // desktop footer columns 
+  @include gs-media(d) {
+    @include gs-float(d, left, (1,16));
+
+    // LEFT SIDE FOOTER COL
+    &.left {
+      width: gs-width(d, 1, 4, (1,16), true);
+    }
+    
+    // MIDDLE FOOTER COL
+    &.middle {
+      clear: none;
+      width: gs-width(d, 5, 12, (1,16), true);
+      /*.lcf & {
+        border-left: 1px dotted $mid-gray;
+        border-right: 1px dotted $mid-gray;
+        padding: 0 rhythm(4, 16px);
+      }*/
+    }
+
+    // RIGHT SIDE FOOTER COL
+    &.right {
+      clear: none;
+      width: gs-width(d, 13, 16, (1,16), true);
+      margin-right: 0;
+    }
+  }
+  
+}

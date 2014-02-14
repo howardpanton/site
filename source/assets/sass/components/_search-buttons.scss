@@ -1,0 +1,136 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// As a rule of thumb, don't nest further than 3 levels deep
+// -------------------------------------------------------------
+
+// This is a good example!
+// .styleguide-format {
+//   border: 1px solid #0f0;
+//   color: #000;
+//   background: rgba(0,0,0,0.5);
+// }
+
+// ::Layout styles 
+	// ::Media queries 
+
+%button {
+			background: black;
+			color: white;
+			border: none;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			padding-left:10px;
+}
+
+.search-buttons {
+	width: 92.5%;
+	max-width: 1260px;
+	margin: 0 auto;
+	position: relative;
+	font-size:13px;
+
+	.primary-buttons {
+		position: absolute;
+		top: -38px;
+		right: 0px;
+
+		button.search {
+		@extend %button;
+		padding-top: 14px;
+		&:after {
+			content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJhJREFUeNqEUgENgDAMW1AwCUhAAlKQcAk4QMIlXAISwMElIGHsSR8WPk6TZsn2bU13IoWIsDIqL3lwKBfyoIXJPE7KFczIRa/pQNPs1CIal3ehINAHsDE3TdQBpBZwzQ30jxNxessbO5u2Rk117cfZ5E6CU2zyszlFoI61Yk4giJdru5FStu44csBPYQzyD90xg42adAswAOcBBSvq2TL4AAAAAElFTkSuQmCC);
+			padding-left: 8px;
+			padding-right:4px;
+			}
+		}
+		button.course {
+		@extend %button;
+			&:after {
+				content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAYAAABPwleqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpiZACC////OzAQDy4wMjJ+gPP+kwbgFjEhmejISAAgWw8yhImBfLCfBV0Eh/9R/QkFLNhMxCLmCMQHCGpG9xs+MOpsejqbkhSGYrMB0L9ka+5noBcA5U0WIqIJJ0DPoyR5GiDAALJGW+SRoOYRAAAAAElFTkSuQmCC);
+				padding-left: 8px;
+				padding-right:4px;
+				}
+		}
+
+		// button.menu-button-toggle {
+		// @extend %button;
+		// 	&:after {
+		// 		padding-left: 8px;
+		// 		padding-right:4px;
+		// 		}
+		// }
+	}
+}
+
+a.search {
+	color: white;
+	border: none;
+	// padding:10px;
+	// padding-top: 8px;
+	padding: 0;
+	font-size: 14px;
+	font-weight: lighter;
+	span {
+		@extend .icon;
+		display: block;
+	}
+
+	// &:before {
+	// 	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJhJREFUeNqEUgENgDAMW1AwCUhAAlKQcAk4QMIlXAISwMElIGHsSR8WPk6TZsn2bU13IoWIsDIqL3lwKBfyoIXJPE7KFczIRa/pQNPs1CIal3ehINAHsDE3TdQBpBZwzQ30jxNxessbO5u2Rk117cfZ5E6CU2zyszlFoI61Yk4giJdru5FStu44csBPYQzyD90xg42adAswAOcBBSvq2TL4AAAAAElFTkSuQmCC);
+	// 	padding-right: 6px;
+	// 	padding-left: 6px;
+	// }
+	// @include gs-media(t, min-max) { 
+	// 	padding-top: 12px;
+	// }
+
+	// @include gs-media(m, min-max) {
+	// 	padding-top: 12px;
+	// }
+
+
+}
+
+
+
+a.course {
+	color: white;
+	border: none;
+	padding:10px;
+	padding-top: 8px;
+	margin-right: 6px;
+	font-size: 14px;
+	font-weight: bold;
+	
+	&:before {
+	 	//content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAYAAABPwleqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpiZACC////OzAQDy4wMjJ+gPP+kwbgFjEhmejISAAgWw8yhImBfLCfBV0Eh/9R/QkFLNhMxCLmCMQHCGpG9xs+MOpsejqbkhSGYrMB0L9ka+5noBcA5U0WIqIJJ0DPoyR5GiDAALJGW+SRoOYRAAAAAElFTkSuQmCC);
+	 	padding-right:5px;
+	}
+
+	@include gs-media(t, min-max) {
+		margin-right: 0;
+		padding-top: 12px;
+		font-weight: 300;
+
+		&:before {
+			// content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAYAAABPwleqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpiZACC////OzAQDy4wMjJ+gPP+kwbgFjEhmejISAAgWw8yhImBfLCfBV0Eh/9R/QkFLNhMxCLmCMQHCGpG9xs+MOpsejqbkhSGYrMB0L9ka+5noBcA5U0WIqIJJ0DPoyR5GiDAALJGW+SRoOYRAAAAAElFTkSuQmCC);
+			padding-right:5px;
+		}
+	}
+
+	@include gs-media(m, min-max) {
+		margin-right: 0;
+		padding-top: 12px;
+		font-weight: 300;
+		&:before {
+			// content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAYAAABPwleqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpiZACC////OzAQDy4wMjJ+gPP+kwbgFjEhmejISAAgWw8yhImBfLCfBV0Eh/9R/QkFLNhMxCLmCMQHCGpG9xs+MOpsejqbkhSGYrMB0L9ka+5noBcA5U0WIqIJJ0DPoyR5GiDAALJGW+SRoOYRAAAAAElFTkSuQmCC);
+			padding-right:5px;
+		}
+	}
+
+}
+
+.search-btn-separator {
+	border-right: 1px solid #444;
+}

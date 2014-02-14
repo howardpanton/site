@@ -1,0 +1,35 @@
+// Feature with left image, as used on Graduate School page and LCF home page
+.intro-block-with-left-image {
+
+    @include component-spacing-bottom;
+
+    figure {
+
+    	figcaption, a {
+	        text-align: center;
+	        font-family: $lcf-serif-font;
+	        color: $aaa-gray;
+	    }
+	    a {
+        	font-style: italic;
+        }
+    }
+
+    .home & {
+        @extend %d7-d16--within-d5-d16;
+
+        header, .left-col {
+            @include gs-media (d) {
+                @include gs-span(d, 7,11, (7, 16));
+            }
+        }
+        .right-col {
+            @include gs-media (d) {
+                @include gs-span(d, 12,16, (7, 16));
+            }
+            
+        }
+
+    }
+
+}

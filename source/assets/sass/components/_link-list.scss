@@ -1,0 +1,24 @@
+// Research Profiles link lists (3cols)
+
+// core styles for three-up declared in _blocks.scss
+.three-up {
+	// three up link list component
+	.link-list-item { 
+		@include padding-leader(2); 
+		@include margin-trailer(2);
+		border-bottom: 1px dotted black;
+
+		a { margin-left: 12px; }
+	}
+}
+
+@include gs-media(d) {
+	/* clear float for multiples of 3 link list items on desktop*/
+	// .link-list-item:nth-child(4), .link-list-item:nth-child(7), .link-list-item:nth-child(10) 	
+	.three-up li.link-list-item:nth-child(3n+1) { clear: left; }
+	
+	.three-up .link-list-item a { 
+		margin-left: 0; 
+		padding-left: 0;
+	}
+}

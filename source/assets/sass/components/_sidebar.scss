@@ -1,0 +1,147 @@
+// in page left side navigation
+.sidebar {
+	float: left;
+	@include font-size(16);
+	@include gs-media (d) {
+		@include gs-span(d,1,4);
+			@include font-size(14);
+	}
+
+	@include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+
+	ul {
+		margin-left: 0;
+		li {
+			border-bottom:1px dotted $light-gray;
+  			padding-bottom: 0;
+			a {
+				@include font-size(14);
+				padding: 10px 12px;  
+				list-style-type: none;
+				margin-left: 0;
+				line-height:20px;	
+				border-bottom: 0;
+				&:hover {
+					background-color:$bg-gray;
+					color:$black;
+				}
+			}
+		}
+		li.ft-field {
+			border-bottom:none;
+		}
+
+		li.menu-heading {
+			@extend %Swiss721BT-Bold;
+			@include font-size(18);
+			line-height: 24px;
+			border-bottom: 0;
+			padding: 0 0 rhythm(2, 18px) 12px;
+			a {
+				@extend %Swiss721BT-Bold;
+				@include font-size(18);
+				line-height: 24px;
+				border-bottom: 0;
+				padding: 0;
+			}
+			a:hover { background-color: $white; }
+
+			//add extra top margin to menu-heading for CSM
+			.csm.home & { @include gs-media(d) { margin-top: 18px; } }
+		}
+	}
+	a {
+		@extend %Swiss721BT-Light;
+		display: block;
+	}
+}
+
+.mobile-sidebar {
+	@include clearfix();
+	position: relative;
+	display: none; // hide sidebar - double sidebar temp bug fix
+	@include font-size(16);
+	margin-bottom: 18px;
+	
+	nav, ul { display: none; }
+
+	ul li {
+		//padding: rhythm(3, 16px) 0;
+		background-color: $bg-gray;
+		border-bottom: 1px solid $light-gray;
+		padding: 0;
+		a { 
+			@extend %Swiss721BT-Light;
+			width: 100%;
+			line-height: 24px;
+			display: block;
+			padding: 12px;
+			border-bottom: none;
+		}
+		// hide external link icons in mobile menu
+		&.external:after { 
+			display: none;
+		}
+	}
+
+	.mob-sb-dd-title {
+		position: absolute;
+		top: 24px;
+		left: 12px;
+	}
+
+	&:first-child {
+		display: block; // only show the first mobile sidebar on any page
+	}
+
+		@include gs-media(d) { 
+		display: none; 
+	}
+
+}
+
+// this is the class that site manager adds to the current branch for the side menu
+.currentbranch0 a {
+	color: $aaa-gray;
+	border-bottom: 0;
+	&:hover {
+		border-bottom: 0;
+	}
+}
+
+
+.multilevel-linkul-0 {
+	@include font-size(14);
+	margin-left: 24px;
+  padding: 0; 
+
+	li:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+// the mobile sidebar menu button class
+.show-mob-sidebar {
+	display:block;
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid $light-gray;
+	text-align: right;
+	padding-right: 12px;
+	@include font-size(36);
+	
+	&:after {
+		@extend %icon;
+		@include font-size(16);
+		content: '\e836';
+	}
+
+	&.active:after{
+		content: '\e82a'; // need to 
+	}
+}
+

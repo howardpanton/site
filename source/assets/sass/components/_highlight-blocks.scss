@@ -1,0 +1,143 @@
+.highlight-block-2-up, .highlight-block-3-up, .highlight-homepage-block-2-up, .highlight-homepage-block-4-up {
+	li {
+		background: $bg-gray;
+		padding: 0;
+		&:hover {
+			filter: grayscale(100%);
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			-ms-filter: grayscale(100%);
+			-o-filter: grayscale(100%);
+			-webkit-transition: all ease 0.2s;
+			-moz-transition: all ease 0.2s;
+			-o-transition: all ease 0.2s;
+			transition: all ease 0.2s;
+			background: $black;
+			h3 {
+				color: $white;
+			}
+		}
+	}	
+}
+
+.highlight-block {
+	.wrapper {
+		background: $bg-gray;
+		&:hover {
+			filter: grayscale(100%);
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			-ms-filter: grayscale(100%);
+			-o-filter: grayscale(100%);
+			-webkit-transition: all ease 0.2s;
+			-moz-transition: all ease 0.2s;
+			-o-transition: all ease 0.2s;
+			transition: all ease 0.2s;
+			background: $black;
+			h3 {
+				color: $white;
+			}
+		}
+	}
+	@include gs-media(t,min-max) {
+		@include gs-span(t, 2, 7);
+	}
+	@include gs-media(d) {
+@include gs-span(d, all);
+	}
+}
+
+.highlight-block-2-up {
+	@include gs-media(t,min-max) {
+		@include gs-span(t, 2, 7);
+		li {
+	    width: gs-width(t, 2, 4, (2, 7), true);
+	    @include gs-float(t, left, (2, 7)); 
+	    &:nth-of-type(2) {
+	    	margin-right: 0;
+	    }
+		}
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+		li {
+	    width: gs-width(d, 5, 10, (5, 16), true);
+	    @include gs-float(d, left, (5, 16)); 
+	    &:nth-of-type(2) {
+	    	margin-right: 0;
+	    }
+		}
+	}	
+}
+
+.highlight-homepage-block-2-up {
+	@include gs-media(t,min-max) {
+		@include gs-span(t, 2, 7);
+		li {
+	    width: gs-width(t, 2, 4, (2, 7), true);
+	    @include gs-float(t, left, (2, 7)); 
+	    &:nth-of-type(2) {
+	    	margin-right: 0;
+	    }
+		}
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 1, 16, (1, 16));
+		li {
+	    width: gs-width(d, 1, 8, (1, 16), true);
+	    @include gs-float(d, left, (1, 16)); 
+			&:nth-of-type(2) {
+				width: gs-width(d, 9, 16, (1, 16), true);
+				@include gs-float(d, left, (1, 16));
+				margin-right: 0;
+			}
+		}
+	}	
+}
+
+.highlight-block-3-up {	
+	@include gs-media(t,min-max) {
+		@include gs-span(t, 2, 7);
+		li {
+	    width: gs-width(t, 2, 3, (2, 7), true);
+	    @include gs-float(t, left, (2, 7)); 
+	    &:nth-of-type(3) {
+	    	margin-right: 0;
+	    }
+		}
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+		li {
+	    width: gs-width(d, 5, 8, (5, 16), true);
+	    @include gs-float(d, left, (5, 16)); 
+	    &:nth-of-type(3) {
+	    	margin-right: 0;
+	    }
+		}
+	}	
+}
+
+
+// .four-up {
+
+//   @include gs-media(t,min-max) {
+//     @include gs-span(t,2,7);
+//     li {
+//       width: gs-width(t, 2, 3, (2,7), true);
+//       @include gs-float(t, left, (2,7));
+//       &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+//   @include gs-media(d) {
+//     @include gs-span(d, all);
+//     li {    
+//       width: gs-width(d, 1, 4, false, true);
+//       &:nth-of-type(4), &:nth-of-type(8), &:nth-of-type(12), &:nth-of-type(16) {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+// }

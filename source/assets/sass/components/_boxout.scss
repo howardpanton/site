@@ -1,0 +1,46 @@
+// boxout styles
+.boxout {
+	@include component-spacing-bottom; 
+	padding-top: rhythm(4, 16px); 
+
+	h2, h3 {
+		padding-left: 24px; 
+	}
+	ul, ol {
+		padding: 0 rhythm(4, 16px) rhythm(4, 16px) rhythm(4, 16px); 
+	}
+
+	li {
+		list-style: square;
+	}
+	p {
+		padding: 0 rhythm(4, 16px) rhythm(4, 16px) rhythm(4, 16px); 
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 12, (5, 16));
+	}
+}
+
+
+.span4-boxout-aside {
+    @extend .boxout;
+
+
+    @include gs-media(t,min-max) {
+        @include gs-span(t,2,7);
+    }
+    
+    @include gs-media(d) {
+        @include gs-span(d, 13, 16, (5, 16));
+    }
+	
+	// LCC custom styling for boxout-aside
+    .lcc &{
+		
+    }
+
+}

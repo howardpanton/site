@@ -1,0 +1,238 @@
+body {
+    font-family: Swiss721BT-Light;    
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid $even-lighter-gray;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    display: block;
+}
+
+h1, .h1 {
+    font-family: Swiss721BT-Light;    
+    @include font-size(36);
+    @include line-height(40);
+    padding: 12px 0; 
+    margin: 0;
+    .camberwell &, .chelsea &, .wimbledon & {
+        font-family: BrandonText-Bold;    
+    }
+    .csm & {
+        font-family: $Leviathan-Italic; 
+        font-style: italic;
+    }
+    .lcc & {
+        font-family: AlternateGothic;    
+        @include font-size(46);
+        @include line-height(42);
+        padding: 14px 0 12px; 
+        text-transform: uppercase;
+        word-spacing: -3px;
+        font-weight: normal;
+    }
+    .lcf & {
+        font-family: Swiss721BT-Black;    
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+}
+
+h2, .h2 {
+    font-family: Swiss721BT-Bold;
+    @include font-size(26);
+    @include line-height(32);
+    padding: 12px 0; 
+    .camberwell &, .chelsea &, .wimbledon & {
+        font-family: BrandonText-Bold;    
+        margin:12px 0 0;
+    }
+    .camberwell & {
+        border-top: 6px solid $camberwell-blue;
+    }
+    .chelsea & {
+        border-top: 6px solid $chelsea-red;
+    }
+    .wimbledon & {
+        border-top: 6px solid $wimbledon-green;
+    }
+    .csm & {
+        font-family: $Leviathan-Italic; 
+        font-style: italic;
+    }
+    .lcc & {
+        font-family: AlternateGothic;    
+        @include font-size(40);
+        @include line-height(36);
+        padding: 16px 0 12px; 
+        text-transform: uppercase;
+        word-spacing: -3px;
+        border-top: 3px solid black;
+        margin: 12px 0 0;
+        font-weight: normal;
+    }
+    .lcf & {
+        font-family: Swiss721BT-Black;    
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    // &:nth-of-type(1n+2) {
+    //     margin-top: 32px;
+    // }
+}
+
+h3, .h3 {
+    font-family: Swiss721BT-Bold;
+    @include font-size(22);
+    @include line-height(28);
+    padding: 12px 0;
+    .camberwell &, .chelsea &, .wimbledon & {
+        font-family: BrandonText-Bold;    
+    }
+    .csm & {
+        font-family: BureauGrot-Bold; 
+    }
+    .lcc & {
+        font-family: AlternateGothic;    
+        @include font-size(34);
+        @include line-height(30);
+        text-transform: uppercase;
+        word-spacing: -3px;
+        margin: 0;
+        font-weight: normal;    
+    }
+    .lcf & {
+        font-family: Swiss721BT-Black;    
+        letter-spacing: 1px;    
+    }
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+    font-family: Swiss721BT-Bold;
+    @include font-size(18);
+    @include line-height(24);
+    padding: 12px 0 0;
+    .ccw & {
+        font-family: BrandonText-Bold;    
+    }
+    .csm & {
+        font-family: BureauGrot-Bold; 
+    }
+}
+
+p {
+    @include font-size(16);
+    @include line-height(24);
+    padding: 12px 0 16px; 
+    &.lead {
+        @include font-size(20);
+        @include line-height(26); 
+        padding: 12px 0 18px;
+    }
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px dotted $black;
+    font-family: Swiss721BT-Roman;
+    .__header &, .__footer & {
+        color: $gray;
+        font-family: BureauGrot-Bold;  
+        &:hover {
+            border-bottom: 1px solid $gray;
+        }
+    }
+    &:hover {
+        color: $gray;
+        padding-bottom: 1px;
+        border-bottom: 1px solid $black;
+    }
+}
+
+ul {
+    font-family: Swiss721BT-Light;
+    @include font-size(16);
+    @include line-height(24);
+    padding: 0 0 16px 0;
+    margin: 0 0 16px;
+    aside & {
+        @include font-size(14);
+        @include line-height(20);
+    }
+    li {
+        list-style: circle;
+        padding-bottom: 6px;
+        margin-left: 20px;
+        a {
+            margin-bottom: 9px;
+        }    
+    }
+    &.link-list {
+        li {
+            list-style-type: none;
+            margin-left: 0;
+        }
+    }
+}
+
+blockquote {
+    p:nth-of-type(2) {
+        @include font-size(14);
+        @include line-height(20);
+    }
+    em {
+        font-family: Swiss721BT-Italic;   
+    }
+}
+
+aside {
+    position: relative;
+    h1, h2, h3, h4, h5, h6 {
+        @include font-size(16);         
+        @include line-height(20);
+        padding-top: 0;
+        .lcc &, .lcf & {
+            font-family: Swiss721BT-Bold;
+            @include font-size(16);         
+            @include line-height(20);
+            text-transform: none;
+            letter-spacing: 0;    
+       }    
+    }
+    p {
+        @include font-size(14);
+        @include line-height(20);
+    }
+}
+
+strong {
+    font-family: Swiss721BT-Bold;
+}
+
+.cbp-spmenu {
+    font-family: Swiss721BT-Light;    
+    @include font-size(14);         
+    @include line-height(20);   
+    a {
+        font-family: Swiss721BT-Light;     
+    }
+}
+
+@include media($tablet) {
+    h1, h2, h3, h4, h5, h5, p, ul, ol {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+@include media($mobile) {
+    h1, h2, h3, h4, h5, h5, p, ul, ol {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}

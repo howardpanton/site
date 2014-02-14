@@ -1,0 +1,16 @@
+.pull-quote {
+	position: relative;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend .ui-icons-quote_marks_big;
+    background-repeat: none;
+  }
+	padding-bottom: rhythm(6, 22px);
+	padding-left: 82px;	
+  @include font-size(22);
+	margin-top: rhythm(2, 22px);
+
+	@include adjust-leading-to(5, 22px); 	
+}

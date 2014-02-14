@@ -1,0 +1,183 @@
+/* Flexible Slide-to-top Accordion Style*/
+
+.accordion {
+  clear: left;
+}
+
+.accordion-list {
+
+  @include gs-media(m) {
+    padding-left:0px;
+    padding-right:0px;
+  }
+  
+  li:first-child {
+    border-top: none;
+  }   
+  .st-content {
+    padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
+    background-color: $white;
+
+    table {
+      @include font-size(16);
+      
+      p {  
+        @extend %d5-d12--within-d5-d16;
+        display: block;
+        float: none; 
+        clear: left;
+        @include font-size(16);
+      }
+
+      th {
+        @extend %Swiss721BT-Bold;
+        width: 25%;
+      }
+      
+      tr {
+        &:nth-child(even) { background-color: $white; }
+      }
+
+      td p{
+        padding: 0;
+      }
+    }
+
+
+  }
+}
+
+
+.accordion-list-item {
+  //height: 58px; // needs to match a line-height
+  overflow: hidden;
+  background-color: $bg-gray;
+  margin-bottom: 1px;
+  padding: 0;
+
+  p, ul {
+    @extend %d5-d12--within-d5-d16;
+    float: none; 
+    clear: left;
+  }
+
+  .accordion-list-anchor {
+    line-height: 58px; // needs to match li height
+    display: block;
+    position: relative;
+    outline:none;
+    border-bottom: none;
+    margin-left: rhythm(4, 24px);
+    padding-right: rhythm(8, 24px);
+    
+    h3 {
+      padding-top: 1em;
+      .lcc & {
+        border-bottom: none;
+        font-size: 42px;
+        line-height: 40px;
+        margin: 0;
+        padding: 14px 0 8px 0;
+      }
+    }
+    .st-arrow {
+
+        @include font-size(18);
+        position: absolute;
+        top: 11px;
+        right: 6px;
+        opacity:1;
+        line-height:36px;
+        width:36px;
+        text-align: center;
+        //@include default-transition();
+    } 
+  }
+}
+
+.accordion-list-item .st-content {
+  ul, ol, dl {
+    margin-bottom: rhythm(3, 16px);
+
+    li {
+
+        @include font-size(16);
+        margin-left: 16px;
+        list-style-type: square;
+        @include adjust-leading-to(4, 16px);  
+        padding-bottom: rhythm(2, 16px);
+    }
+  } 
+
+  ul li ul, ol li ol {
+    padding-top: rhythm(2, 16px);
+    padding-bottom: 0;
+
+    li {
+      padding-bottom: rhythm(2, 16px);
+    }
+  }
+
+  ol {
+    margin-left: rhythm(4, 16px);
+    list-style-type: decimal-leading-zero;
+  }
+
+  dl {
+    @include adjust-leading-to(4, 16px); 
+    padding-bottom: rhythm(1, 16px);
+    dt {
+      @extend %Swiss721BT-Bold;
+    }
+    dd {
+      padding-bottom: rhythm(2, 16px);
+      padding-left: rhythm(4, 16px);
+    }
+  }
+}
+
+
+// Research Profiles Accordion Styles
+
+
+/* 
+   temporarily resize the width of the accordion on this page to content width for desktop 
+   we could modify the component globally and add the l-content class to the outer container
+*/
+
+.accordion.research-profile{
+   clear: left;
+   
+   @extend %m-all;
+
+   @include gs-media(t, min-max) {
+      @extend %t-all;
+   }
+
+   @include gs-media(d) {
+      @extend %d5-d12--within-d5-d16;
+   }
+
+   .st-content p, 
+   .st-content h3,  
+   .st-content h4, 
+   .st-content blockquote {
+      width: 100%;
+   }
+
+   .accordion-list-item {
+    overflow: hidden;
+    background-color: $white;
+    border-bottom: 1px dotted black;
+    margin-bottom: 1px;
+    padding: 0;
+    }
+    .accordion-list li:first-child {
+    border-top: 1px dotted black;
+    }
+
+}
+
+ 
+ 
+

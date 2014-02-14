@@ -1,0 +1,80 @@
+// image lists with text
+.image-list-with-text {
+	@include component-spacing-bottom;
+	ul {
+		padding-top: 0;
+
+		li {
+			overflow:hidden;
+		}
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span (t,2,7);
+		figure {
+			width: gs-width(t, 2, 3, (2,7), true);
+			@include gs-float(t, left, (2,7));
+		}
+		.text {
+			width: gs-width(t, 4, 7, (2,7), true);
+			@include gs-float(t, left, (2,7));
+			margin-right: 0;
+		}
+	}
+
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+		figure {
+			width: gs-width(d, 5, 8, (5,16), true);
+			@include gs-float(d, left, (5,16));
+		}
+		.text {
+			width: gs-width(d, 9, 16, (5,16), true);
+			@include gs-float(d, left, (5,16));
+			margin-right: 0;
+		}
+	}
+
+	.lcf .content-wrapper & {
+		h3 {
+			text-align: left;
+			padding-top: 0;
+		}
+	}
+}
+
+.image-list-with-text-content {
+	@include component-spacing-bottom;
+	ul {
+		padding-top: 0;
+	}
+	li {
+
+	}
+
+	@include gs-media(t,min-max) {
+		//@include gs-span (t,2,7);
+		figure {
+			width: gs-width(t, 2, 3, (2,7), true);
+			@include gs-float(t, left, (2,7));
+		}
+		.text {
+			width: gs-width(t, 4, 7, (2,7), true);
+			@include gs-float(t, left, (2,7));
+			margin-right: 0;
+		}
+	}
+
+	@include gs-media(d) {
+		//@include gs-span(d, 5, 12, (5, 16));
+		figure {
+			width: gs-width(d, 5, 6, (5,12), true);
+			@include gs-float(d, left, (5,12));
+		}
+		.text {
+			width: gs-width(d, 7, 12, (5,12), true);
+			@include gs-float(d, left, (5,12));
+			margin-right: 0;
+		}
+	}
+}

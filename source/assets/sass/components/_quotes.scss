@@ -1,0 +1,51 @@
+.block-quote, .block-quote-with-image {
+	@include component-spacing-bottom;
+	margin-bottom: rhythm(6, 16px);
+	
+	blockquote {
+		background: $bg-gray;
+		padding: rhythm(4, 16px);
+		p {
+			padding: 0;
+		}
+		.quote-credit {
+			// @extend %Swiss721BT-bold;
+			@include adjust-leading-to(6, 16px);
+		}
+	}
+
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+	}
+	@include gs-media(d,min-max) {
+		@include gs-span(d, 5, 12, (5, 16));
+	}
+}
+
+.block-quote-with-image {
+	@include gs-media(t,min-max) {
+		@include gs-span(t,2,7);
+		figure {
+			width: gs-width(t, 2, 2, (2,7), true);
+			@include gs-float(t, left, (2,7));	
+		}
+		blockquote {
+			width: gs-width(t, 3, 7, (2,7), true);
+			@include gs-float(t, left, (2,7));	
+			margin-right: 0;
+		}
+	}	
+
+	@include gs-media(d) {
+		@include gs-span(d, 5, 14, (5, 16));
+		figure {
+			width: gs-width(d, 5, 6, (5,14), true);
+			@include gs-float(d, left, (5,14));	
+		}
+		blockquote {
+			width: gs-width(d, 7, 14, (5,14), true);
+			@include gs-float(d, left, (5,14));	
+			margin-right: 0;
+		}	
+	}
+}

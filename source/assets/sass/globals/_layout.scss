@@ -1,0 +1,376 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
+ */
+
+
+/*------------------------------------*\
+    $Gridset Layout Classes
+\*------------------------------------*/
+
+
+// Mobile Layouts
+
+%m-all {
+	@include gs-media (m) {
+		@include gs-span(m, all);
+	}
+}
+
+%m1 {
+	@include gs-media (m) {
+		@include gs-span(m, 1);
+	}
+}
+
+%m2-m3 {
+	@include gs-media (m) {
+		@include gs-span(m, 2, 3);
+	}
+}
+
+%m4 {
+	@include gs-media (m) {
+		@include gs-span(m, 4);
+	}
+}
+
+
+
+// Tablet Layouts
+
+%t-all {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, all);
+	}
+}
+
+%t2-t7 {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 2, 7);
+	}
+}
+
+%t2-t3--within-t2-d7  {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 2, 3, (2,7));
+	}
+}
+
+%t2-t4--within-t2-d7  {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 2, 4, (2,7));
+	}
+}
+
+%t5-t7--within-t2-d7  {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 5, 7, (2,7));
+	}
+}
+
+%t4-t5--within-t2-d7 {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 4, 5, (2,7));
+	}
+}
+
+%t6-t7--within-t2-d7 {
+	@include gs-media (t, min-max) {
+		@include gs-span(t, 6, 7, (2,7));
+	}
+}
+
+// Desktop Layouts
+
+%d-all {
+	@include gs-media (d) {
+		@include gs-span(d, all);
+	}
+}
+
+%d1-d4 {
+	@include gs-media (d) {
+		@include gs-span(d, 1, 4);
+	}
+}
+
+%d1-d8 {
+	@include gs-media (d) {
+		@include gs-span(d, 1, 8);
+	}
+}
+
+%d3-d14 { // used on ual homepage
+	@include gs-media (d) {
+		@include gs-span(d, 3, 14);
+	}
+}
+
+%d5-d8 {
+	@include gs-media (d) {
+		@include gs-span(d, 5, 8);
+	}
+}
+
+%d9-d12 {
+	@include gs-media (d) {
+		@include gs-span(d, 9, 12);
+	}
+}
+
+%d13-d16 {
+	@include gs-media (d) {
+		@include gs-span(d, 13, 16);
+	}
+}
+
+%d5-d16 {
+	@include gs-media (d) {
+		@include gs-span(d, 5,16);
+	}
+}
+
+// used for site search and course search results pages 
+%d6-d16 {
+	@include gs-media (d) {
+		@include gs-span(d, 5,16);
+	}
+}
+
+%d5-d12 {
+	@include gs-media (d) {
+		@include gs-span(d, 5,12);
+	}
+}
+
+%d5-d12--within-d5-d16 { // used for content
+	@include gs-media (d) {
+		@include gs-span(d, 5,12, (5, 16));
+	}
+}
+
+%d5-d16--within-d5-d16 {
+	@include gs-media (d) {
+	 	@include gs-span(d, 5,16, (5, 16));
+	}
+}
+
+%d5-d8--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 5,8, (5, 16));
+	}
+}
+
+%d5-d9--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 5,9, (5, 16));
+	}
+}
+
+%d5-d10--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 5,10, (5, 16));
+	}
+}
+
+%d7-d16--within-d5-d16 { // LCF intro block with left image, home page only
+	@include gs-media (d) {
+		@include gs-span(d, 7,16, (5, 16));
+	}
+}
+
+%d9-d16--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 9,16, (5, 16));
+	}
+}
+
+%d11-d16--within-d5-d16 { //
+	@include gs-media (d) {
+		@include gs-span(d, 11,16, (5, 16));
+	}
+}
+
+%d13-d16--within-d5-d16 { // used for asides
+	@include gs-media (d) {
+		@include gs-span(d, 13,16, (5, 16));
+	}
+}
+
+%d6-d16--within-d6-d16 { // course finder
+	@include gs-media (d) {
+		@include gs-span(d, 6,16, (6,16));
+	}
+}
+
+
+
+/*------------------------------------*\
+    $Global Layout Classes
+\*------------------------------------*/
+
+
+.content-wrapper, .header-wrapper, .footer-wrapper {
+	width: 92.5%;
+	max-width: 1280px;
+	margin: 0 auto;
+	min-width: 320px;
+	clear: both;
+}
+
+.header-wrapper { 
+	position: relative; 
+	width: 100%; 
+	@include gs-media(d) {
+		width: 92.5%;
+	}
+}
+
+.content-wrapper img {
+	max-width: 100%;
+	height: auto;
+}
+
+.row {
+	@extend %t-all;
+	@extend %d-all;
+}
+
+.l-full-width {
+	@extend %t-all;
+	@extend %d-all;
+}
+
+.l-content-full-width {
+	@extend %d5-d16--within-d5-d16;
+	@include component-spacing-bottom;
+	.csm.home & {
+		margin-bottom: 0;
+	}
+}
+
+.l-content { 
+	@extend %d5-d12--within-d5-d16;
+	//@include component-spacing-bottom;
+	.l-content-full-width & {
+		margin-bottom: 0;
+	}
+	h2 {
+		.csm & {
+			border-top: 2px solid $csm-primary;
+		}
+		.camberwell & {
+			border-top: 10px solid $ccw-blue;
+		}
+		.chelsea & {
+			border-top: 10px solid $ccw-salmon;
+		}
+		.wimbledon & {
+			border-top: 10px solid $ccw-green;
+		}	
+	}
+}
+
+	@include gs-media(m) {
+			p, h1, h2, h3, h4, ul, ol, dl, table {
+			padding-left:12px;
+			padding-right:12px;
+		}
+	}
+
+.l-content-d5-d9 { // content left
+	@extend %d5-d9--within-d5-d16;
+}
+
+.l-content-d5-d10 { // content left
+	@extend %d5-d10--within-d5-d16;
+	@extend %t2-t4--within-t2-d7;
+}
+
+.l-content-d11-d16 { // content right
+	@extend %d11-d16--within-d5-d16;
+	@extend %t5-t7--within-t2-d7;
+}
+
+.l-content-d3-d14 {
+	@extend %d3-d14;
+}
+
+.l-forms {
+	@extend %d5-d10--within-d5-d16;
+}
+
+.l-list {
+	@extend %d5-d12--within-d5-d16; // short course list
+}
+
+.l-filter {
+	@extend %d13-d16--within-d5-d16; // short courses filter
+}
+
+.l-content-d1-d8 {
+	@extend %d1-d8; // used on UAL homepage
+}
+
+.l-content-d9-d12 {
+	@extend %d9-d12; // used on UAL homepage
+}
+
+.l-content-d13-d16 {
+	@extend %d13-d16; // used on UAL homepage
+}
+
+
+/*------------------------------------*\
+    $Page Layout Classes
+\*------------------------------------*/
+
+
+.content {
+	@extend %t2-t7;
+	@extend %d5-d16;
+}
+
+.sidebar {
+	@extend %d1-d4;
+}
+
+aside {
+	@extend %d13-d16--within-d5-d16;
+	@include component-spacing-bottom;
+	
+	background-color: $bg-gray;
+	border-left: none;
+	padding: 24px;
+	clear: left;
+	&.no-bg { 
+		background-color: $white; 
+	}
+
+	@include gs-media(d) {
+		background: $white;
+		border-left: 1px dotted $bg-gray;
+	  	padding-left: 23px;
+	  	clear: none;
+	}
+}
+
+// style for gist embed
+.gist { clear: left; }
+
+// styles for slider width and alignment 
+.slider-container {
+	padding-top: 6px;
+	@include component-spacing-bottom;
+	.ual.home & {
+		margin-bottom: 6px;
+	}
+	.csm.home & {
+		margin-bottom: 0;
+	}
+}

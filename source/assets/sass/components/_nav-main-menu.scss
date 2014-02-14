@@ -1,0 +1,850 @@
+// /*  _______________________________________________
+//
+//     01 MEGA MENU BAR
+//     _______________________________________________  */
+
+// TEMP hide debug panel
+
+// button.debug-view {
+//   display:none;
+//   @include gs-media(d) { display:block; }
+// }
+
+.megamenu_container {
+  width:100%;
+  height: 48px;
+  *height: 46px;
+  margin:0 auto;
+  position: relative;
+  z-index: 500;  // this should be set to less than the magnific popup background div
+  @include gs-media(d) {
+    height: rhythm(6, 16px);
+    @include padding-leader(2);
+  }
+}
+
+.megamenu {
+  list-style:none;
+  padding:0;
+  position:relative; /* For IE7 */
+  margin:0;
+  @include font-size(14);
+  @include gs-media(d) {
+    // margin-left: -12px;  // this is to align the first menu item with the main UAL logo on desktop
+  }
+}
+
+.megamenu > li {
+  float:left;
+  margin: 0;
+  padding-bottom: 0;
+  border:none;
+  background-color: $dark-gray; 
+  @include prefixer(transition, $transition-bg);
+
+  display: none; // hidemenu on mobile at start  
+
+  @include gs-media(d) {
+    background-color: $black; 
+    display: inline-block; // show menu items on desktop
+
+    &.active {
+      background-color: $dark-gray;
+    }
+  }
+}
+
+// hide all but first list item (to prevent FOUC before javascript loads)
+// we need to show first list item because it is the mobile menu trigger button
+// .megamenu > li + li {
+//    visibility: hidden;
+// }
+
+
+// float the search icon on desktop to the right of the screen
+.megamenu > li:last-child {
+  @include gs-media(d) {
+    float: right;
+  }
+}
+
+
+
+.megamenu > li > a {
+  @include font-size(14);
+  outline:0;
+  text-decoration:none;
+  display:block;
+  padding: 12px 15px 12px 15px;
+}
+
+
+// add plus to the right of each dropdown link on tablet & mobile
+.megamenu_drop:after { 
+  content: "\e80b"; // fontello plus icon
+  font-family: "fontello" !important;
+  @include font-size(18);
+  position: absolute;
+  right: 0;
+  color: $white;
+  text-align: center;
+  line-height: 36px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  
+  // hide arrows on desktop
+  @include gs-media(d) {
+    display: none;
+  }
+
+}
+
+// switch to a minus icon when the menu is expanded on tablet & mobile
+.megamenu > li.active {
+  a.megamenu_drop:after {
+    content: "\e810"; // fontello minus icon
+  }
+}
+
+.megamenu li.megamenu_button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  background-color: $black;
+  border-bottom: 0;
+  @include gs-media (d) {
+    display: none;
+  }
+  // border-right: 1px solid $aaa-gray;
+  @include prefixer(transition, $transition-bg);
+  a {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Right aligned menu item */
+.megamenu li.megamenu_right {
+  float:right;
+  margin-right:-1px;
+}
+.megamenu li.megamenu_right a {
+  margin-right:5px;
+}
+    
+// /*  _______________________________________________
+//     02 MEGA MENU CONTAINERS
+//     _______________________________________________  */
+
+.megamenu li .dropdown_container,
+.megamenu li .dropdown_fullwidth,
+.megamenu li .dropdown_multilevel {
+  position: absolute;
+  margin:0;
+  display: none;
+  z-index:99998;
+  float: left;
+  h2 a, a {
+    @extend %Swiss721BT-Light-important;
+    @include font-size(14);
+  }
+
+  
+
+  // add a min height to the dropdown 
+  // so that the other menu links are not visible when the dropdown is expanded
+  // in mobile and tablet menu only
+  &.full-height {
+    @include gs-media(t, max) {
+      min-height: 480px;
+    }
+  }
+  
+  &.fix-to-top {
+    @include gs-media(t, max) {
+      top: 84px; // shift the course finder dropdown to align under the title
+    }
+  }
+
+  // add left and right padding to the dropdown container by adding this class to the dropdown div
+  &.pad-sides {
+    @include gs-media(t, max) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  
+  // set no hover color for dropdown 
+  li > a:hover {
+     background-color: $light-gray;
+     color: $black;
+  }
+
+  @include gs-media(d) {
+    li > a:hover {
+      background-color: $black;
+      color: $white;
+    } 
+  }
+}
+
+.megamenu li .dropdown_right {
+  right:0;
+}
+
+.megamenu .dropdown_12columns,
+.megamenu .dropdown_fullwidth {
+  width: 100%;
+}
+
+
+.megamenu_container {
+
+  .go-search-button {
+    @extend .button-link;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 36px;
+    border-top-width: 0px;
+    margin: 0;
+    text-align: center;
+    min-width: 60px;
+    @include gs-media(d) {
+      min-width: gs-width(d, 16, 16, (1,16), true);
+      height: 36px;
+    }
+
+    a {
+      color: $white;
+      border-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      background-color: $aaa-gray !important;
+    }
+  }
+
+  .course-finder-txt-input, .site-search-txt-input {
+      background-color: $bg-gray;
+      margin-bottom: 0;
+      border: 0;
+      height: 36px;
+      @include gs-media(d) {
+        padding-left: 12px;
+      }
+    }
+}
+
+.megamenu {
+  .mobile-site-search-wrap{
+    padding:12px
+  }
+  .small-text-link {
+    @extend .row;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    a {
+      color: $white;
+      display: inline-block;
+      @include font-size(12);
+      margin-top: 12px;
+      margin-left: 12px;
+      line-height: 16px;
+      border-bottom: 0;
+
+      @include gs-media(t, max) {
+         margin-left: 0;
+      }
+    }
+
+    a:hover {
+      border-bottom: 1px dotted $white;
+    }
+    
+  }
+  
+
+}
+
+.dropdown_fullwidth {
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  
+  @include gs-media(d) {
+    @include padding-leader(4);
+    @include padding-trailer(4);
+  }
+  //box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+  background-color: $dark-gray;
+  
+  li {
+    border-top: 1px dotted $aaa-gray;
+    border-bottom: 0;
+    padding-bottom: 0;
+    &:first-child {
+      border-top: 0;
+    }
+    
+    &:last-child {
+      border-bottom: 1px dotted $aaa-gray;
+    }
+  }
+
+  @include gs-media(d) {
+    li:first-child {
+      border-top: 1px dotted $aaa-gray;
+    }
+  }
+
+  ul > li > a {
+    color: $soft-black;
+    @include gs-media(d) {
+      color: $white;
+    }
+    @include padding-leader(1);
+    @include padding-trailer(1);
+  }
+}
+
+
+
+// ----------------------------------------
+
+// used in the mega menu to keep the dropdowns "within a content wrapper" on desktop
+.dd-menu-dropdown-wrapper {
+  @extend .header-wrapper;
+  
+  @include gs-media(t, max) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; // remove min width for dropdowns on mobile
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  ul > li {
+    background-color: $light-gray;
+    @include gs-media(d) {
+      background-color: $dark-gray;
+    }
+  }
+}
+
+.menu-contain-wrap{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.main-menu {
+
+  width:100%; 
+  display:block; 
+  // overflow:hidden;  
+  background: $black;
+
+  ul {
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    margin: 0; 
+    margin-left: -0.5em;
+    padding: 0; 
+    background: $black;
+    @include gs-media(t, min-max) {
+      display:block;
+    }
+    
+    @include gs-media(m, min-max) {
+      display:block;
+    }
+  }
+  
+  .dropdown-arrow {
+    display: none;
+  }
+}
+
+
+.m-nav-menu-wrap {
+  @include gs-media(d, min-max) {
+    display: none;
+  }
+  .icon {
+    @include font-size(48);
+    line-height: 48px;
+  }
+}
+
+
+// button that shows hides the main menu on tablet/mobile
+.m-menu-btn-toggle, a.m-menu-btn-toggle {
+  color: $white;
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: none;
+  @include font-size(36);
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  span {
+    //@extend .icon;
+    display: block;
+    margin: 0;
+    position: absolute;
+    top: 9px;
+    left: 11px;
+    padding: 0;
+    @include font-size(20);
+
+  }
+  // when menu button has been clicked and is active
+  .megamenu_button_active & {
+    // color: $black;
+  }
+  @include gs-media(d, min-max) { display: none !important; }
+}
+
+.top-bar{
+    position: relative;
+    // style for each dropdown list menu item on tab/mobile
+    li {
+      display:block;
+      width:100%;
+      text-align:left;
+      padding-bottom:0;
+      // border-bottom: 1px solid $black;
+    
+      @include gs-media(d) {
+        list-style:none; 
+        padding:0;
+        width:auto; 
+        font-weight: 300;
+        // border-bottom: 0;
+      }
+
+      &:hover { background-color: $dark-gray; }   
+
+      > a {
+        display: block;
+        height: 100%;
+        color: white;  
+        @include font-size(16);
+        @extend %Swiss721BT-Light;
+        // padding-left: 0.75em; 
+        // padding-right: 0.75em;
+        padding: 6px 12px; 
+        line-height: 36px;
+
+        @include gs-media(d) { 
+          // @extend %Swiss721BT-Roman;
+          @include font-size(13); 
+          line-height: 24px;
+          padding: 6px 12px;
+        }
+        border-bottom:none; 
+        &:hover {
+          @include gs-media(d) { background-color : $dark-gray; }
+        }
+      }
+  
+      //site search icon on main nav (desktop view)
+      > a.search-icon {
+        font-family: "fontello" !important;
+        vertical-align: middle;
+        color: $white;
+        @include font-size(16);
+        @include gs-media(d, min-max) {
+          @include font-size(16);
+          min-width: gs-width(d, 16, 16, (1, 16), true);
+          text-align: center;
+          
+        }
+      }
+
+      .menu-active { background-color: $dark-gray !important; }
+    }
+}
+
+.top-bar {
+  
+  .subnav-1 {
+    @include gs-media(d) {
+    @include gs-span(d, 1,4);
+    }
+    @include gs-media(t, min-max) {
+      width:100%;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+
+
+  }
+
+  .subnav-2 {
+      @include gs-media(d) {
+      @include gs-span(d, 5,8);
+    }
+      @include gs-media(t, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+      @include gs-media(m, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+  .subnav-3 {
+      @include gs-media(d) {
+      @include gs-span(d, 9,12);
+    }
+      @include gs-media(t, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+      @include gs-media(m, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+  .subnav-4 {
+      @include gs-media(d) {
+      @include gs-span(d, 13, 16);
+    }
+      @include gs-media(t, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+      @include gs-media(m, min-max) {
+      width:100%;
+      clear:left;
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+
+  ul.subnav-1, ul.subnav-2, ul.subnav-3, ul.subnav-4{
+    // remove top padding on lists in tablet and mobile
+    @include gs-media(t, max) {
+       padding-top: 0;
+       margin-top: 0;
+       margin-bottom: 0;
+    }
+    
+   
+  }
+
+  .feature {
+      @include gs-span(d, 9,16);
+      color:white; 
+      @include font-size(22);
+      p {
+        @extend .leader;
+        @include padding-leader(2);
+        @extend %Swiss721BT-Light;
+        padding-bottom: 0;
+      }
+  }
+
+  .feature-image { 
+      @include gs-span(d, 13,16);
+  }
+}
+
+// styles applied to the plus / minus icon on menu
+.menu-open-closed-icon{
+  float: right; 
+  color: white; 
+  font-weight: normal; 
+  width: 36px; 
+  height: 36px; 
+  margin-top: 6px; 
+  @include font-size(30);
+  border-left: 1px dotted $dark-gray; 
+  padding-left: 12px;
+}
+
+.ual-banner-menu {
+ @include clearfix();
+  padding-left: 6px;
+  display: none;
+
+  @include gs-media(d) {
+    display: block;
+    @include clearfix();
+    height: 108px;
+    background-color: black;
+    padding-left: 0px;
+    @include padding-leader(2);
+  }
+ 
+}
+
+.mobile-menu { 
+  float: right;
+  height: 48px;
+  margin-bottom: 0;
+  padding-top:0;
+  
+  ul {
+    padding-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    height: 48px;
+    min-width: 48px;
+    border-right: 1px solid #444;
+    float: left;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-align: right;
+    }
+  }
+  
+  li:last-child {
+    border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    a {
+      text-align: center;
+    }
+  }
+
+  .menu-active{
+    background-color: $dark-gray;
+  }
+  
+  @include gs-media(d) { display: none; }
+
+}
+
+// titles that appear in the mega menu dropdown
+.dd-heading {
+  @extend .size-h4;
+  padding-left: 12px;
+  text-transform: capitalize !important;
+  @extend .m-hide;
+  @extend .t-hide;
+  a {
+    @extend %Swiss721BT-Light-important;  // to keep UAL branding on college pages
+    color: $white !important; // to keep UAL branding on college pages
+  }
+}
+
+.ual-logo-tab-mobile { 
+  padding-left: 12px;
+  float: left;
+  @include gs-media(d) { display: none; }
+  
+  .logo-ual-mobile{
+    @extend %mobile-logo;
+  }
+}
+
+.ual-logo-desktop {
+  min-height: 130px;
+  padding-left: 12px;
+  
+  @include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+
+  .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
+  .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
+  .logo-ual-camberwell {
+    @extend %desktop-logo;
+  }
+
+}
+
+.submenu {
+  @extend .dark-gray;
+  
+  @include gs-media(d) { @include gs-span(d, all); }
+  
+  @include gs-media(t, min-max) { 
+    padding: 0, 6px 6px 6px; 
+
+  }
+
+  @include gs-media(m, min-max) { 
+    padding: 0, 6px 6px 6px; 
+  }
+  
+  > div {
+    @extend .row;
+    overflow:hidden;
+    @include gs-media(d) { @include padding-trailer(6); }
+    
+    @include gs-media(t, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+    @include gs-media(m, min-max) {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+  }
+
+  li {
+    list-style:none;  
+    width:100%; 
+    display:block; 
+    float:left; 
+    border-bottom: dotted 1px $white;
+
+    &:hover {
+       border-bottom: 1px 1px $white;
+     }
+
+    @include gs-media(t, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+    @include gs-media(m, min-max) {
+      line-height:42px;
+      border-bottom:none;
+    }
+  }
+
+.sub-inner-menu {
+    background-color: $soft-black;
+      
+    @include gs-media(t, min-max) { 
+      padding-left: 12px;
+    }
+
+    @include gs-media(m, min-max) { 
+      padding-left:12px;
+    }
+
+  }
+}
+
+
+// search icon link for mobile and tablet (appears to the left of the main menu dropdown icon)
+.m-site-search-link { 
+  display: block;
+  position: absolute;
+  right: 48px;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  font-family: "fontello" !important;
+  line-height: 36px;
+  padding: 7px 12px 6px 12px;
+  border-bottom: none;
+  vertical-align: middle;
+  color: $white;
+  @include font-size(21);  // search icon appears slightly smaller than menu icon so size is bumped up by 1 to compensate
+  
+  &:hover {
+    color: $white;
+    background-color: $dark-gray;
+    border-bottom: none;
+  }
+
+  span {
+    margin-left: -2px;   // shift the search icon a little to the left to align within the box
+  }
+
+}
+
+
+//styling for the mobile and tablet site search dropdown (separate from main nav menu)
+.m-site-search-block {
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  //min-height: 500px;
+  z-index: 99999;
+  display: none; // the dropdown is closed initially - triggered by the search icon button on mobile
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: $dark-gray;
+}
+// add padding for search inputs on mobile
+form.d-search-input-form {
+  // @include gs-media(t, max) {
+  //   padding: 0 12px;
+  // }
+  @include gs-media(m) {
+    padding: 0;
+  }
+}
+
+// set height for course finder dropdown form
+.dropdown_fullwidth .d-search-input-form:first-of-type { 
+  min-height: 48px;
+}
+// set height for site search dropdown form
+.dropdown_fullwidth .d-search-input-form {
+  min-height: 42px; // height for site search
+}
+
+
+.m-site-search-menu-panel {
+  @include padding-trailer(4);
+}
+
+.site-search-input, .course-finder-txt-input {
+ 
+  color: $aaa-gray;
+  width: 100%;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include border-radius(0); 
+  @include gs-media(d) {
+    height: 24px;
+  }
+}
+
+
+// skip to content link for accessibility
+a.skip-to-content, a.skip-to-content:hover, a.skip-to-content:visited 
+{ 
+  position:absolute; 
+  left:0px; 
+  top:-500px; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  padding-left: 6px;
+  @include font-size(12);
+} 
+
+a.skip-to-content:active, a.skip-to-content:focus 
+{ 
+  position:static; 
+  width:auto; 
+  height:auto; 
+}

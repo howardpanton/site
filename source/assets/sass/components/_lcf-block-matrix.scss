@@ -1,0 +1,75 @@
+// LCF What's On Matrix
+.whats-on { 
+
+	@include component-spacing-bottom;
+
+	.column, .event-item {
+		float: left;
+	}
+	.event-item {
+		text-align: center;
+	}
+	.event-date {
+		font-family: $lcf-serif-font;
+	}
+	
+	padding-bottom: 48px;
+	figure {
+		margin-bottom: 0;
+		
+	}
+	iframe, img {
+		width: 100%;
+	}
+	a {
+		border-bottom: none;
+		display: block;
+		line-height: 0;
+		padding-bottom: 0;
+	}
+	a > li {
+		@include font-size(24);
+		margin-bottom: 1px;
+		margin-top: 1px;
+		padding: 12px;
+		@include adjust-leading-to(4, 24px); 	
+	} 
+
+
+	@include gs-media (t,min-max) {
+		@include gs-span(t, 2, 7);
+
+		.column, .column-large .event-item {
+			@extend %t-all;
+		}
+
+		.event-item {
+			@include component-spacing-bottom(4);
+			@include gs-span(t, 2, 4, (2, 7));
+			&:nth-child(2n) {
+				@include gs-span(t, 5, 7, (2, 7));
+			}
+		}
+
+		.event-date {
+			padding: 4px 0;
+		}
+
+	}
+
+	@include gs-media (d) {
+		@include gs-span(d, all);
+
+		.column {
+			width: 33.3%;
+			&.bordered {
+				border-right: 1px solid $white;
+			}
+		}	
+
+		.event-item.bordered {
+			border-bottom: 1px solid $white;
+		}
+	}
+}
+

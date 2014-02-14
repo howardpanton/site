@@ -1,0 +1,182 @@
+/*------------------------------------*\
+    $TABS TO ACCORDION
+\*------------------------------------*/
+
+.tabs-container {
+  width: 100%;
+  .tabs {
+    @include gs-media (m) {
+      display: none;
+    } 
+    @include gs-media (t, min-max) {
+      display: none;
+    } 
+    margin: 0;
+    padding: 0 0 0 0;
+    float: left;
+    list-style: none;
+    width: 100%;
+    li {
+      float: left;
+      margin: 0;
+      cursor: pointer;
+      height: auto;
+      position: relative;
+      word-wrap: break-word;
+      // width: 33.333333%;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      transition-duration: 0.2s; 
+      border-bottom: 1px solid $bg-gray;
+      padding-left: rhythm(2, 16px);
+      padding-right: rhythm(2, 16px);
+      margin-right: rhythm(1, 16px);
+      list-style:none;
+
+      &:hover {
+        border-bottom: 1px solid $black;
+      }
+      &:first-child {
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+ul.tabs li.active {
+  border-bottom: 1px solid $black;
+  display: block;
+}
+
+.tab_container {
+	clear: both;
+	float: left;
+	width: 100%;
+  @include margin-trailer(2);
+  .tab_content {
+    display: block;
+    @include gs-media(t, max) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    // @include margin-leader(2);
+  }
+  .tab-content-caption-block {
+    @extend .cf;
+    width: 100%;
+    figure {
+      margin-bottom: 0;
+    }
+    ul li {
+      padding-left: 9px;
+      margin-left: 16px;
+      list-style-type: square;
+    }
+
+    blockquote {
+      @extend %blockquote;
+    }
+  }
+  .tab_drawer_heading {
+    @extend %Swiss721BT-Roman ;
+    margin: 0;
+    @include margin-trailer(2);
+    @include padding-leader(2);
+    display: block;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 1px solid $bg-gray;
+    @include gs-media (d, min-max) {
+      display: none; 
+    }
+    .lcc-tabs & {
+       border-bottom: 0;
+    }
+  }
+  .d_active {
+    border-bottom: 1px solid black;
+
+    .lcc-tabs & {
+      border-bottom: 0;
+    }
+
+  }
+
+}
+
+
+// lcc styling 
+.tabs {
+  .lcc-tabs & { 
+    border: 12px solid $black;
+    border-bottom: none;
+    @extend %AlternateGothic; 
+    // @extend %LeagueGothicRegular;    
+    text-transform: uppercase;
+    text-align: center;
+    li {
+      @include font-size(36);
+      border-bottom: none;
+      // padding: 12px 46px 12px 12px;
+      padding: 12px;
+      width: 33.33%;
+      margin-right: 0;
+      &:hover {
+        border-bottom: none;
+        background-color: $lcc-green;
+      }
+    }
+    li + li {
+      border-left: 1px solid $black;
+      border-right: 1px solid $black;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+}
+ul.tabs li.active {
+  .lcc-tabs & {
+    border-bottom: none;
+    display: block;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: center bottom;  
+    background-color: $bg-gray;
+  }
+}
+.tab_container {
+   &.lcc-tabs {   
+    background-color: $black;
+    color: $white;
+    padding: 12px;
+    h3 {
+      padding: 0 0 12px 0;
+      margin-bottom: 24px;
+      @include font-size(36);
+      letter-spacing: 1px;
+      border-bottom: 2px solid $lcc-green;
+    }
+    img {
+      border: none;
+    }
+    .button-link {
+      background-color: $white;
+      color: $black;
+      &:hover {
+        background-color: $lcc-green;
+        color: $black;
+      }
+    }
+  }
+}  
+
+
+

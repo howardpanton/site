@@ -1,0 +1,59 @@
+// Download Link Styling
+
+
+// single download link list 
+.download-link { 
+		color: $soft-black; 
+		@include adjust-font-size-to(16px); 
+		font-weight: bold; 
+		padding: emCalc(12px) 0 emCalc(12px) 0;
+		border:  1px dotted #c8c8c8;
+		text-align: center;
+		margin-bottom: emCalc(6px);
+		/*-webkit-transition: border 450ms ease;
+		-moz-transition: border 450ms ease;
+		-o-transition: border 450ms ease;
+		-ms-transition: border 450ms ease;
+		transition: border 450ms ease;*/  // needs work to get the transition working
+		cursor: pointer;
+	
+	span { 
+		font-weight: 300;
+		@include adjust-font-size-to(14px); 
+	}
+
+	&:hover {
+		border:  4px solid $light-gray;
+		padding: emCalc(9px) 0 emCalc(9px) 0;
+	}
+}
+
+// for more than one download link in a ul list
+.download-link-list {
+	
+	li {
+		color: $soft-black; 
+		@include adjust-font-size-to(16px); 
+		font-weight: bold; 
+		padding: emCalc(12px) 0 emCalc(12px) 0;
+		border:  1px dotted #c8c8c8;
+		text-align: center;
+		margin-bottom: emCalc(6px);
+		/*-webkit-transition: border 450ms ease;
+		-moz-transition: border 450ms ease;
+		-o-transition: border 450ms ease;
+		-ms-transition: border 450ms ease;
+		transition: border 450ms ease;*/  // needs work to get the transition working
+		cursor: pointer;
+
+		span { 
+			font-weight: 300;
+			@include adjust-font-size-to(14px); 
+		}
+
+		&:hover {
+			border:  4px solid $light-gray;
+			padding: emCalc(9px) 0 emCalc(9px) 0;
+		}
+	}
+}

@@ -1,0 +1,102 @@
+%desktop-logo{
+    width: 270px;
+    height: 96px;
+    display: block;
+    background-position: 0% 0%;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+    
+%mobile-logo {
+  width: 54px;
+  height: 36px;
+  display: block;
+  background-position: 0% 0%;
+  @include margin-leader(1);
+  @include margin-trailer(1);
+}
+
+
+.ual-logo-tab-mobile, .docs-logo { 
+  @include gs-media(d) { display: none; }
+  .icon-ual-mobile {
+    @extend %mobile-logo;
+  }
+  .style-guide & {
+    @extend %mobile-logo;
+    @include gs-media(d) { 
+      display: block; 
+
+    }
+  }
+}
+
+.ual-logo-desktop {
+  
+  .icon-ual, .icon-ual-wimbledon, .icon-ual-lcf, 
+  .icon-ual-lcc, .icon-ual-csm, .icon-ual-chelsea,
+  .icon-ual-camberwell  {
+    @extend %desktop-logo;
+  }
+
+  @include gs-media(t, min-max) { display: none; }
+
+  @include gs-media(m, min-max) { display: none; }
+}
+
+.logo {
+  @include gs-span(d, 1,4);
+  @include padding-leader(6);
+  @include padding-trailer(4); 
+  @include gs-media(t, min-max) {
+    margin-bottom:0px;
+    padding-left: 12px;
+  }
+  @include gs-media(m, min-max) {
+    // padding-left: 12px;
+    // padding-top: 12px;
+  @include gs-span(m, all);
+    margin-bottom:0px;
+    // padding-top: 12px;
+
+
+  .ual & {
+    
+  }
+
+  .camberwell & {
+    
+  }
+
+  .chelsea & {
+    
+  }
+
+  .lcc & {
+    
+  }
+
+  .lcf & {
+    
+  }
+
+  .csm & {
+    
+  }
+
+  .wimbledon & {
+
+  }
+
+  }
+
+  img {
+    max-width:none;
+  }
+
+  .service-manual & {
+    @include gs-span(d, 1);
+  }
+}
+

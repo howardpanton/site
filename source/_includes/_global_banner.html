@@ -1,0 +1,47 @@
+
+<div class="ual-black-bg cf">
+<div class="main-nav-wrapper">
+  <div class="row">  
+    <div class="ual-banner-menu">
+      <div class="logo">
+        <img alt="" class="ual-logo-tab-mobile" src="{{ site.url }}/assets/img/ual-logo-small.png">
+      </div>  
+
+      {% if page.class-home != "docs" %} 
+      <!-- Mobile & tablet main navigation links (hidden on desktop) -->
+      <nav class="d-hide">
+        <ul id="mob-tab-menu" >       
+
+          <li>
+            <a id="m-course-finder-btn" href="#" class="course">Course Finder</a>
+          </li>
+          <li>
+            <a id="m-search-btn" href="#" class="search">
+              <span class="icon">🔍</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" id="main-menu-btn" class="m-menu-btn-toggle">
+              <span id="menu-icon-indicator" class="icon docs-menu-toggle">☰</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+      <nav class="college-link-menu">
+        <ul>
+          <li><a href="/">UAL</a></li>
+            <li><a href="{{ site.url }}content/colleges/camberwell/">Camberwell</a></li>
+            <li><a href="{{ site.url }}content/colleges/csm/">CSM</a></li>
+            <li><a href="{{ site.url }}content/colleges/chelsea/">Chelsea</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcc/">LCC</a></li>
+            <li><a href="{{ site.url }}content/colleges/lcf/">LCF</a></li>
+            <li><a href="{{ site.url }}content/colleges/wimbledon/">Wimbledon</a></li>
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+</div>

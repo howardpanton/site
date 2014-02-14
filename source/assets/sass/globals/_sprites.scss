@@ -1,0 +1,159 @@
+/*------------------------------------*\
+    $SPRITES
+\*------------------------------------*/
+
+// use this to re-build sprites and sprite classes with compass
+//$ico-sprite-dimensions: true;
+//@import "globals/retina-sprites"; 
+// @import "/sprite/ui-icons/*.png";
+// @include all-ui-icons-sprites(true);
+
+// These should go in a separate file in an actual project
+
+// Optional:
+// Set this variable to `1` if you have to support IE8 and use RespondJS.
+// Note: this also requires Modernizr's check for 'css-mediaqueries'
+$retina-support-respondjs: 1; 
+
+// Optional:
+// Default spacing for all sprites is set to 2px,
+// use this variable if you want to change it.
+$retina-sprite-spacing: 10px;
+
+$retina-sprite-display: inline-block-legacy;
+
+// The first sprite is used as default,
+// so you don't have to pass the name to the `retina-sprite` mixin
+@include retina-sprite-add(ui-icons, "sprite/ui-icons/*.png", "sprite/ui-icons-2x/*.png");
+
+// checkboxes
+
+.ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before {
+  @include retina-sprite(checkbox-un-checked, ui-icons);
+}
+
+.ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before {
+  @include retina-sprite(checkbox-checked, ui-icons);
+}
+
+.ui-icons-checkbox-checked-disabled {
+  @include retina-sprite(checkbox-checked-disabled, ui-icons);
+}
+.ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before {
+  @include retina-sprite(checkbox-un-checked-disabled, ui-icons);
+}
+
+// radio buttons
+
+.ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before {
+  @include retina-sprite(radio-un-selected, ui-icons);
+}
+
+.ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before {
+  @include retina-sprite(radio-selected, ui-icons);
+}
+
+.ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before {
+  @include retina-sprite(radio-un-selected-disabled, ui-icons);
+}
+
+.ui-icons-radio-selected-disabled {
+   @include retina-sprite(radio-selected-disabled, ui-icons);
+}
+
+// blockquotes
+
+.ui-icons-quote_marks, blockquote span, .tab_container .tab-content-caption-block blockquote span {
+  @include retina-sprite(quote_marks, ui-icons);
+}
+
+.ui-icons-quote_marks_big, .pull-quote span {
+  @include retina-sprite(quote_marks_big, ui-icons);
+}
+
+// gray search icon
+
+// .ui-icons-grey-search, .with-search-icon {
+//   @include retina-sprite(gray_search);
+// }
+
+
+
+// backup from original sprites css
+
+// .ui-icons-sprite, .ui-icons-cf-selected, .ui-icons-cf-unselected-disabled, .ui-icons-cf-unselected, .ui-icons-checkbox-checked-disabled, .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before, .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before, .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before, .ui-icons-dashline_border_img, .ui-icons-grey-search, .with-search-icon, .ui-icons-quote_marks, blockquote span, .tab_container .tab-content-caption-block blockquote span, .ui-icons-quote_marks_big, .pull-quote span, .ui-icons-radio-selected-disabled, .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before, .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before, .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before, .form-ico {
+//   background: url('http://dcdgag63wc396.cloudfront.net/assets/img/ui-icons-se254defc3f.png') no-repeat;
+// }
+
+
+// .ui-icons-checkbox-checked-disabled {
+//   background-position: 0 -212px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-checkbox-checked, input[type="checkbox"]:checked + label:after, input[type="checkbox"].before-label:checked + label:before {
+//   background-position: 0 -228px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-checkbox-un-checked-disabled, input[type="checkbox"]:disabled + label:after, input[type="checkbox"].before-label:disabled + label:before {
+//   background-position: 0 -260px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-checkbox-un-checked, input[type="checkbox"] + label:after, input[type="checkbox"].before-label + label:before {
+//   background-position: 0 -244px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-dashline_border_img {
+//   background-position: 0 -276px;
+//   height: 1px;
+//   width: 4px;
+// }
+
+// .ui-icons-grey-search, .with-search-icon {
+//   background-position: 0 -277px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-quote_marks, blockquote span, .tab_container .tab-content-caption-block blockquote span {
+//   background-position: 0 -72px;
+//   height: 44px;
+//   width: 64px;
+// }
+
+// .ui-icons-quote_marks_big, .pull-quote span {
+//   background-position: 0 0;
+//   height: 56px;
+//   width: 78px;
+// }
+
+// .ui-icons-radio-selected-disabled {
+//   background-position: 0 -116px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-radio-selected, input[type="radio"]:checked + label:after, input[type="radio"].before-label:checked + label:before {
+//   background-position: 0 -180px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-radio-un-selected-disabled, input[type="radio"]:disabled + label:after, input[type="radio"].before-label:disabled + label:before {
+//   background-position: 0 -148px;
+//   height: 16px;
+//   width: 16px;
+// }
+
+// .ui-icons-radio-un-selected, input[type="radio"] + label:after, input[type="radio"].before-label + label:before {
+//   background-position: 0 -196px;
+//   height: 16px;
+//   width: 16px;
+// }

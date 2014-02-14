@@ -1,0 +1,12 @@
+
+<div class="breadcrumbs">
+	<a href="{{ site.url }}content/" title="#">Home</a>
+	<a href="{{ site.url }}content/colleges/" title="#">Colleges</a>
+   <a href="{{ site.url }}content/colleges/" title="#">Test breadcrumb for longer pages</a>
+  <a href="{{ site.url }}content/colleges/" title="#">Test breadcrumb for longer pages</a>
+  <a href="{{ site.url }}content/colleges/" title="#">another test to see what long breadcrumbs look like</a>
+	{% if page.breadcrumb  %}
+	<a href="{{ site.url }}docs/{{page.breadcrumb-link}}">{{page.breadcrumb}}</a>
+	{% endif %}
+</div>  
+

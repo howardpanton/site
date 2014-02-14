@@ -1,0 +1,164 @@
+.search-filters {
+  
+  h2 { padding-top: 0; }
+
+  @include gs-media(d, min-max) {
+    @include gs-span(d,1,4);
+    float: left;
+  }
+
+  @include gs-media(t, min-max) {
+    @include gs-span(t,2,7);
+    clear:left;
+  }
+
+  @include gs-media(m, min-max) {
+    @include gs-span(m,all);
+  }
+
+  form {
+    padding: 0;
+  }
+}
+
+.filter-module {
+  
+  // border-left: 1px solid $light-gray;
+  // border-right: 1px solid $light-gray;
+
+  &:last-child li.active { 
+    ul { border-bottom: 0; }
+  }
+  
+  &:first-of-type {
+    @include padding-leader(2);
+  }
+  h3 {
+      @extend .size-h4;
+      @extend %Swiss721BT-Medium;
+      padding: 12px 18px 12px 18px;
+      background-color: $black;
+      color: $white;
+      font-size: emCalc(14px);
+      display: block;
+      clear: left;
+      border-bottom: 1px solid $dark-gray;
+      &:hover{
+        cursor: pointer;
+      }
+
+      &.not-active {
+        color: #444;
+        cursor: default;
+      }
+  }
+
+  ul { 
+    padding-top: 0; 
+    padding-bottom: 0;
+    display: none;
+    clear: left;
+    margin-bottom:0px;
+    li {
+        background-color: $bg-gray;
+        margin-left: 0;
+        padding-left: 18px;
+        @include border-image-dot(1px, $light-gray);
+        @include padding-leader(1);
+        @include padding-trailer(1);
+        &:last-child { border-bottom: 0; } 
+        
+        a { 
+          padding: 0 30px 0 18px;
+          border-bottom: 0; 
+          color: $aaa-gray;
+          font-size: emCalc(14px);
+          font-weight: 300;
+          height: 100%;
+          display: block;
+        }
+        
+        input[type="checkbox"] { 
+          float: right;
+          margin-left: 18px;
+          margin-right: 18px;
+          margin-top: 6px;
+        }
+        input[type="checkbox"]:hover {
+          cursor: pointer;
+        }
+          
+        input[type="checkbox"]:checked + label{
+          color: $black;
+        }
+
+        input[type="checkbox"]:disabled + label{
+          opacity: 0.5;
+          @include opacity(50);
+        } 
+
+        label {  
+          cursor: pointer; 
+          color: $aaa-gray;
+          font-size: emCalc(14px);
+          font-weight: 300;
+          width: 100%;
+          display: block;
+          @include padding-leader(1);
+        }
+        
+        }
+
+    li.active {
+      > a { 
+        color: $black;
+      }
+    }
+
+
+  }
+
+  label {
+    margin-bottom: 0; 
+  }
+
+  // divs inside filter module are hidden by default
+  div { display: none}  
+
+  &.active { 
+    border-bottom: 0;
+    ul { display: block; }
+    div { display: block; }
+  }
+
+}
+
+li.filter-link-only {
+
+    // background-color: white !important;
+    // // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-unselected.png") !important;
+    // // background-repeat: no-repeat;
+    // // background-position: 95% 50%;
+    @include border-image-dot();
+
+    a { 
+       color: $soft-black !important;
+       font-weight: 300;
+    }
+    
+    &:last-child { border-bottom: 0; } 
+    
+    &.active {
+      // background-image: url("http://artslondon.github.io/beta/assets/img/sprite/ui-icons/placehold-search-filter-cross.png") !important;
+      // background-repeat: no-repeat;
+      // background-position: 95% 50%;
+      > a { 
+        color: $black;
+        font-weight: bold;
+      }
+    }
+}
+
+.short-course-filters {
+  @include margin-trailer (4);
+}

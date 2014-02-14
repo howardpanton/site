@@ -1,0 +1,28 @@
+.related-content {
+
+	li {
+		background: $white;
+		padding: 0;
+		margin-bottom: 18px;
+	}
+	figure {
+		margin-bottom: 0;
+	}
+	.text {
+		padding: 0 18px;
+	}
+
+	@include gs-media(d) {
+		li {
+			margin-bottom: 0;
+		}
+		li:hover {
+			filter: grayscale(100%);
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			-ms-filter: grayscale(100%);
+			-o-filter: grayscale(100%);
+		}
+	}
+
+}

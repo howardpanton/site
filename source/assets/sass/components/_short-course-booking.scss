@@ -1,0 +1,28 @@
+
+.short-course-booking {
+	clear: left;
+	@include gs-media(t,min-max) {
+		@include gs-span(t, 2, 7);
+	}
+	@include gs-media(d) {
+		@include gs-span(d, 5, 16, (5, 16));
+	}	
+	.course-details {
+		@include gs-media(t,min-max) {
+			@include gs-span(t, 2, 5, (2, 7));
+		}
+		@include gs-media(d) {
+			@include gs-span(d, 5, 12, (5, 16));
+		}	
+	}
+
+	.book {
+		
+		@include gs-media(t,min-max) {
+			@include gs-span(t, 6, 7, (2, 7));
+		}
+		@include gs-media(d) {
+			@include gs-span(d, 13, 16, (5, 16));
+		}	
+	}
+}

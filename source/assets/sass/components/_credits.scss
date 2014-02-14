@@ -1,0 +1,60 @@
+.credits-btn {
+	display: none;
+	position: fixed;
+	right: 0;
+	top: 40%;
+	z-index: 500;
+	font-size: 14px;
+	@include single-transition(all, 200ms, linear);
+  @include prefixer ("opacity", 0.6);
+	
+	&:hover {
+		@include single-transition(all, 200ms, linear);
+		@include prefixer ("opacity", 1);
+	}
+	
+	a.show-credits {
+		border: 1px solid $bg-gray;
+		border-right: none;
+		padding: 10px 6px;
+		display: block;
+		text-align: center;
+		background-color: white;
+		ul {
+			margin-bottom: 0; // override global default paddings & margin on ul
+			padding-bottom: 0;
+		}
+
+		span:before {
+			display: block; 
+			padding-right: 6px;
+		}
+		&:hover, &:active {
+			background-color: $black;
+			color: $white;
+			border: 1px solid $black;
+			border-right: none;
+		}
+		// li:nth-of-type(2) span:before {
+		// 	margin-left: 1px; // to align the picture icon with the other two icons
+		// }
+	}
+
+
+}
+
+
+
+// styling for the image credit that appears over an image
+.credits {
+	display: none; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: emCalc(14px);
+	background: $black;
+	color: $white;
+	line-height: 24px;
+	padding: 5px 10px;
+	opacity: 0.6;
+}

@@ -1,0 +1,115 @@
+// Pagination styling
+.pagination {
+	@include margin-leader(3);
+	@include margin-trailer(3);
+	text-align: center;
+	position: relative;
+	
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+		}
+	}
+
+	a {
+		min-width: 36px;
+		text-align: center;
+		@include font-size(14);
+		border-top: 1px solid $light-gray;
+		border-bottom: none;
+		padding: rhythm(2, 14px) rhythm(3, 14px); 	
+		
+		&:hover {
+			border-bottom: none;
+			padding: rhythm(2, 14px) rhythm(3, 14px); 
+			border-top: 1px solid $black;
+		}
+
+		&.active {
+			border-top: 1px solid $black;
+		}
+	}
+
+	.page-prev, .page-next, .go-first, .go-last {
+		display: inline-block;
+		min-width: 36px;
+	}
+
+	.page-prev, .page-next {
+		a { 
+			//@extend .icon;
+			@include font-size(16);
+			line-height: 24px;
+			position: relative;
+			padding-top:9px;
+			// padding-top: 6px;
+		}
+	}
+
+	a.left-arrow:after, a.right-arrow:after {
+    position: absolute;
+    left: rhythm(3, 14px); 
+    top: rhythm(1, 14px);
+    color: $black;
+  }
+
+  a.left-arrow:after {
+    content: '\e802';
+  }
+
+  a.right-arrow:after {
+    content: '\e800';
+  }
+	
+
+}
+
+
+
+
+// styles for jPages based pagination (using default classnames from the library)
+
+.holder {
+	@include margin-leader(3);
+	@include margin-trailer(3);
+	text-align: center;
+}
+
+.holder a {
+	min-width: 36px;
+	text-align: center;
+	font-size: 14px;
+	font-size: remCalc(14);
+	border-top: 1px solid $light-gray;
+	border-bottom: none;
+	padding: rhythm(2, 14px) rhythm(3, 14px);
+}
+
+.holder a:hover {
+	border-bottom: none;
+	padding: rhythm(2, 14px) rhythm(3, 14px); 
+	border-top: 1px solid $black;
+	
+}
+
+// .holder a.jp-previous { margin-right: 15px; }
+// .holder a.jp-next { margin-left: 15px; }
+
+.holder a.jp-current, a.jp-current:hover { 
+	border-top: 1px solid $black;
+}
+
+.holder a.jp-disabled, a.jp-disabled:hover {
+	color: $light-gray;
+}
+
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+	cursor: default; 
+	background: none;
+}
+
+.holder span { margin: 0 5px; }
+
+

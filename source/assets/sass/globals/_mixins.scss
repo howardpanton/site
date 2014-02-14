@@ -1,0 +1,432 @@
+
+// this mixin will convert any type of color passed in (variable, hex, html named) 
+// and also a value for opacity. 
+// The mixin will convert to rgba color for the background with the opacity applied
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+// A mixin to create a visual circle using border radius of half the size of the element
+// which will make it appear as a circle
+// TO USE: pass in a size, color for the background and an opacity.
+// Note: define the width in your own class to match the width you pass in to this circle mixin
+
+@mixin circle ($color, $opacity: 0.5) {
+  
+  // -webkit-border-radius: ($size/2);
+  // -moz-border-radius: ($size/2);
+  // border-radius: ($size/2);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  @include background-opacity($color, $opacity);
+  // background-color: $color;
+}
+
+@mixin image-2x($image, $width, $height) {
+    @media
+        (-moz-min-device-pixel-ratio: 2),
+        (-o-min-device-pixel-ratio: 2/1),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-device-pixel-ratio: 2),
+        (min-resolution: 1.3dppx) {
+
+        // on retina, use image that's scaled by 2
+        background-image: url($image);
+        background-size: 100%;
+    }
+}
+
+
+
+// Retina images. 
+// Use with care - http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+// -------------------------------------------------------
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+// We use this to control border radius.
+@mixin radius($radius:$global-radius) {
+  @if $radius {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+  }
+}
+
+// We use this to create equal side border radius on elements.
+@mixin side-radius($side, $radius) {
+  @if $side == left {
+    -webkit-border-radius: $radius 0 0 $radius;
+    border-radius: $radius 0 0 $radius;
+  }
+  @else if $side == right {
+    -webkit-border-radius: 0 $radius $radius 0;
+    border-radius: 0 $radius $radius 0;
+  }
+  @else if $side == top {
+    -webkit-border-radius: $radius $radius 0 0;
+    border-radius: $radius $radius 0 0;
+  }
+  @else if $side == bottom {
+    -webkit-border-radius: 0 0 $radius $radius;
+    border-radius: 0 0 $radius $radius;
+  }
+}
+
+// We can control whether or not we have inset shadows edges.
+@mixin inset-shadow($active:true) {
+  -webkit-box-shadow: $shiny-edge-size $shiny-edge-color inset;
+  box-shadow: $shiny-edge-size $shiny-edge-color inset;
+
+  @if $active { &:active {
+    -webkit-box-shadow: $shiny-edge-size $shiny-edge-active-color inset;
+    box-shadow: $shiny-edge-size $shiny-edge-active-color inset; } }
+}
+
+// We use this to add transitions to elements
+@mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
+  -webkit-transition: $property $speed $ease;
+  -moz-transition: $property $speed $ease;
+  transition: $property $speed $ease;
+}
+
+// We use this to add box-sizing across browser prefixes
+@mixin box-sizing($type:border-box) {
+  -moz-box-sizing: $type;
+  -webkit-box-sizing: $type;
+  box-sizing: $type;
+}
+
+// We use this to create equalateral triangles
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid $triangle-size;
+  @if ($triangle-direction == top) {
+    border-color: $triangle-color transparent transparent transparent;
+  }
+  @if ($triangle-direction == bottom) {
+    border-color: transparent transparent $triangle-color transparent;
+  }
+  @if ($triangle-direction == left) {
+    border-color: transparent transparent transparent $triangle-color;
+  }
+  @if ($triangle-direction == right) {
+    border-color: transparent $triangle-color transparent transparent;
+  }
+}
+
+// This mixin sets up the styling for typography headers with a solid overline above the type  (used throughout the UAL website)
+// Default colors are set, but these can be overridden by passing in your own colors or size for the header font, top-border, border-height, 
+// and padding between the top-border and the heading text.
+
+// Notes: the default width is 100% but this can be also be overridden
+//        the padding top should be specified by the number of baselines you want of padding to be added
+
+// Default Styles:  black border at the top, border-height of 1 baseline (6px) and 1 baseline of padding at the top, 36px font-size, 100% width 
+@mixin with-border-top ( $border-color: black, $border-height: 6px, $padding-top: 1, $font-size: 36px, $text-color: black, $width: 100%) { 
+  
+  @include padding-leader($padding-top); // add top padding  
+  border-top: solid $border-height $border-color; // set top border 
+  color: $text-color;
+  @include adjust-font-size-to($font-size); 
+  width: $width;
+}
+
+// A mixin for dotted border-image on bottom of element
+@mixin border-image-dot ( $border-thickness: 1px, $border-color: $bg-gray ) {
+  border-width: 0 0 $border-thickness 0;
+  border-bottom: $border-thickness dotted $border-color;
+}
+
+// We use this to do clear floats
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+// ------------------------------------------------------
+
+//************************************************************************//
+// Prefixer Mixin - let's us add the browser specific prefixes for new(ish) CCS3 styles
+// useful for cross browser support for Border Radius, Flex-Box etc. 
+// Example: @include prefixer(border-radius, $radii, webkit ms spec);
+//************************************************************************//
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+@mixin prefixer ($property, $value, $prefixes: webkit moz ms o) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+@mixin disable-prefix-for-all() {
+  $prefix-for-webkit:    false;
+  $prefix-for-mozilla:   false;
+  $prefix-for-microsoft: false;
+  $prefix-for-opera:     false;
+  $prefix-for-spec:      false;
+}
+
+// ---- Mixins for FlexBox
+//  This mixin adds the vendor prefixes when using flex-box for layouts
+//
+
+// This mixing lets us use a custom shorthand notation for flexbox
+@mixin box($orient: inline-axis, $pack: start, $align: stretch) {
+  @include display-box;
+  @include box-orient($orient);
+  @include box-pack($pack);
+  @include box-align($align);
+}
+
+@mixin display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+@mixin box-orient($orient: inline-axis) {
+// horizontal|vertical|inline-axis|block-axis|inherit
+  @include prefixer(box-orient, $orient, webkit moz spec);
+}
+
+@mixin box-pack($pack: start) {
+// start|end|center|justify
+  @include prefixer(box-pack, $pack, webkit moz spec);
+}
+
+@mixin box-align($align: stretch) {
+// start|end|center|baseline|stretch
+  @include prefixer(box-align, $align, webkit moz spec);
+}
+
+@mixin box-direction($direction: normal) {
+// normal|reverse|inherit
+  @include prefixer(box-direction, $direction, webkit moz spec);
+}
+
+@mixin box-lines($lines: single) {
+// single|multiple
+  @include prefixer(box-lines, $lines, webkit moz spec);
+}
+
+@mixin box-ordinal-group($int: 1) {
+  @include prefixer(box-ordinal-group, $int, webkit moz spec);
+}
+
+@mixin box-flex($value: 0.0) {
+  @include prefixer(box-flex, $value, webkit moz spec);
+}
+
+@mixin box-flex-group($int: 1) {
+  @include prefixer(box-flex-group, $int, webkit moz spec);
+}
+
+
+//************************************************************************//
+// New Flexbox 2012 Spec
+// http://dev.w3.org/csswg/css3-flexbox/
+//************************************************************************//
+@mixin display($value) {
+//  flex | inline-flex
+  @if $value == "flex" {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+  }
+
+  @elseif $value == "inline-flex" {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: flex;
+  }
+
+  @else {
+    display: $value;
+  }
+}
+
+@mixin flex($value) {
+  @include prefixer(flex, $value, webkit moz spec);
+}
+
+@mixin flex-direction($value: row) {
+//  row | row-reverse | column | column-reverse
+  @include prefixer(flex-direction, $value, webkit moz spec);
+}
+
+@mixin flex-wrap($value: nowrap) {
+// nowrap | wrap | wrap-reverse
+  @include prefixer(flex-wrap, $value, webkit moz spec);
+}
+@mixin flex-flow($value) {
+// flex-direction || flex-wrap
+  @include prefixer(flex-flow, $value, webkit moz spec);
+}
+
+@mixin order($int: 0) {
+  @include prefixer(order, $int, webkit moz spec);
+}
+
+@mixin flex-grow($number: 0) {
+  @include prefixer(flex-grow, $number, webkit moz spec);
+}
+
+@mixin flex-shrink($number: 1) {
+  @include prefixer(flex-shrink, $number, webkit moz spec);
+}
+
+@mixin flex-basis($width: auto) {
+  @include prefixer(flex-basis, $width, webkit moz spec);
+}
+
+@mixin justify-content ($value: flex-start) {
+// flex-start | flex-end | center | space-between | space-around
+  @include prefixer(justify-content, $value, webkit moz spec)
+}
+
+@mixin align-items($value: stretch) {
+// flex-start | flex-end | center | baseline | stretch
+  @include prefixer(align-items, $value, webkit moz spec)
+}
+
+@mixin align-self($value: auto) {
+// auto | flex-start | flex-end | center | baseline | stretch
+  @include prefixer(align-self, $value, webkit moz spec)
+}
+
+@mixin align-content($value: stretch) {
+// flex-start | flex-end | center | space-between | space-around | stretch
+  @include prefixer(align-content, $value, webkit moz spec)
+}
+
+@mixin component-spacing-bottom($spacing: 8 ) {
+  //padding-bottom: rhythm(4, 16px); - no, this will add padding inside certain components (like boxouts)
+  margin-bottom: rhythm($spacing, 16px);
+}
+
+@mixin no-border {
+  border: none;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin default-transition() {
+  transition: all 0.4s ease-in-out;
+}
+
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $base-font-size * 1em;
+}
+
+
+// This style sheet uses rem values with a pixel fallback.
+// The rem values are calculated per the examples below:
+
+// 12 / 16 =  0.75rem
+// 14 / 16 =  0.875rem
+// 16 / 16 =  1rem
+// 18 / 16 =  1.125rem
+// 20 / 16 =  1.25rem
+// 24 / 16 =  1.5rem
+// 30 / 16 =  1.875rem
+// 36 / 16 =  2.25rem
+// 42 / 16 =  2.625rem
+// 48 / 16 =  3rem
+
+
+$pixelBase : 16;
+@mixin font-size($sizeValue: 1.6){
+  font-size: ($sizeValue * 10) + px;
+  font-size: (($sizeValue * 10) / $pixelBase)  + rem;
+}
+ 
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: 16px;
+@mixin rem($property, $px-values) {
+// Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+// Print the first line in pixel values
+  #{$property}: $px-values;
+// If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; }
+  @else {
+  // Create an empty list that we can dump values into
+    $rem-values: unquote("");
+    @each $value in $px-values {
+    // If the value is zero or a string or a color, return unchanged input
+      @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+        $rem-values: append($rem-values, $value); }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); } }
+  // Return the property and its list of converted values
+    #{$property}: $rem-values; } }
+@mixin font-size($font-size){
+    font-size:$font-size +px;
+    font-size:$font-size / $base-font-size-no-px  +rem;
+}
+
+

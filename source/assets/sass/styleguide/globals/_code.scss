@@ -1,0 +1,35 @@
+pre {
+	overflow-x: auto;
+	margin: 0 0 1em;
+	background: #383a3f;
+	color: #abe0ff;
+	font-size: 1em;
+	.html {
+	}
+	.css {
+	}
+	.js {
+	}
+}
+
+pre, xmp, plaintext, listing {
+	display: block;
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre;
+	margin: 1em 0px;
+}
+
+pre:before {
+	float: left;
+	background: #202124;
+	color: #969696;
+	content: attr(data-type);
+	font-weight: bold;
+}
+pre code, pre:before {
+	padding: .5em .8em;
+}
+code {
+	display: inline-block;
+	font-family: "Courier New", Courier, monospace;
+}

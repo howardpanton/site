@@ -1,0 +1,42 @@
+.student-stories {
+	.expandable-content-block {
+		.name {
+			// @extend %Swiss721BT-bold;
+		}
+
+
+		@include gs-media(t, min-max) {
+			@include gs-span(t, 2, 7);
+			figure {
+				width: gs-width(t, 2, 3, (2, 7), true);
+				@include gs-float(t, left, (2, 7));
+			}			
+			aside {
+				li {
+					display: inline;
+					margin-right: 24px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		@include gs-media(d) {
+			@include gs-span(d, 5, 16, (5, 16));
+			figure {
+				width: gs-width(d, 5, 6, (5, 16), true);
+				@include gs-float(d, left, (5, 16));
+			}
+			.story {
+				width: gs-width(d, 7, 12, (5, 16), true);
+				@include gs-float(d, left, (5, 16));
+			}	
+			aside {
+				width: gs-width(d, 13, 16, (5, 16), true);
+				@include gs-float(d, left, (5, 16));
+				margin-right: 0;
+			}	
+		}		
+	}
+}

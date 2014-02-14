@@ -1,0 +1,498 @@
+// UTILITY CLASSES
+// ---------------
+
+// Positioning
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.affix {
+  position: fixed;
+  top:80px;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.nav-fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Centering text and center-aligning elements
+.centered {
+  text-align: center;
+}
+.alignright {
+	text-align: right;
+}
+.alignleft {
+	text-align: left;
+}
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Borders
+.border-top {
+  border-top: 1px solid ;
+}
+.border-bottom {
+  border-bottom: 1px solid;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid #c8c8c8;
+}
+.with-border {
+  border: 1px solid;
+}
+
+
+// no borders
+
+.no-border, .no-borders, %no-border, %no-borders {
+  border: 0;
+
+  &:hover {
+    border: none;
+  }
+}
+
+.no-border-top {
+  border-top: none !important;
+  
+  &:hover {
+    border: none;
+  }
+}
+.no-border-bottom {
+  border-bottom: 0;
+  
+  &:hover {
+    border: none;
+  }
+}
+.no-border-right {
+  border-right: 0;
+
+  &:hover {
+    border: none;
+  }
+}
+.no-border-left {
+  border-left: 0;
+  
+  &:hover {
+    border: none;
+  }
+}
+
+
+
+
+.rhythm-2 {
+  @include padding-leader(2);
+  @include padding-trailer(2);
+}
+
+.rhythm-3 {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+}
+
+.rhythm-6 {
+  @include padding-leader(6);
+  @include padding-trailer(6);
+}
+
+.rhythm-8 {
+  @include padding-leader(8);
+  @include padding-trailer(8);
+}
+
+.rhythm-margin-top {
+  @include margin-leader(3);
+}
+
+.rhythm-margin-bottom {
+  @include margin-trailer(4);
+}
+
+.rhythm-margin-top {
+  @include margin-leader(4);
+}
+
+.margin-bottom-x4 {
+  @include margin-trailer(4);
+}
+
+.margin-bottom-x8 {
+  @include margin-trailer(8);
+}
+
+.margin-bottom-x12 {
+  @include margin-trailer(12);
+}
+
+.margin-bottom-x16 {
+  @include margin-trailer(16);
+}
+
+// Quick margins
+.add-top {
+  margin-top: 20px;
+}
+.add-bottom {
+  margin-bottom: 20px;
+}
+
+
+// classes remove margins
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.adjust-margin-nav {
+  margin-top: 68px;
+}
+
+
+// no underline (removes styling for both text underline and border bottom)
+.no-underline {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+// Toggling content
+.hide {
+  display: none !important;
+}
+.show, .block {
+  display: block !important;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// Formatting
+.no-bullet {
+  list-style: none !important;
+  // margin: 0;
+  padding: 0;
+}
+
+.no-bullet li {
+  list-style: none;
+  // margin: 0;
+  padding: 0;
+}
+// display inline - 
+.display-inline {
+  display: inline-block;
+  
+  li {
+    display: inline-block;
+  }
+}
+
+// image desaturate
+
+a.img:hover { filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+}
+
+
+// Padding
+
+.no-pad { padding: 0; }
+
+.no-pad-top { padding-top: 0; }
+
+.no-pad-bottom { padding-bottom: 0; }
+
+.no-pad-left { padding-left: 0; }
+
+.no-pad-right { padding-right: 0; }
+
+.pad-lr-p75em {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+// apply top padding with ryhthm 
+
+.pad-top-1x { @include padding-leader(1); }
+
+.pad-top-2x { @include padding-leader(2); }
+
+.pad-top-3x { @include padding-leader(3); }
+
+.pad-top-4x { @include padding-leader(4); }
+
+.pad-top-5x { @include padding-leader(5); }
+
+.pad-top-6x { @include padding-leader(6); }
+
+.pad-top-7x { @include padding-leader(7); }
+
+.pad-top-8x { @include padding-leader(8); }
+
+.pad-top-9x { @include padding-leader(9); }
+
+.pad-top-10x { @include padding-leader(10); }
+
+.pad-top-11x { @include padding-leader(11); }
+
+.pad-top-12x { @include padding-leader(12); }
+
+
+
+.pad-bottom-1x { @include padding-trailer(1); }
+
+.pad-bottom-2x { @include padding-trailer(2); }
+
+.pad-bottom-3x { @include padding-trailer(3); }
+
+.pad-bottom-4x { @include padding-trailer(4); }
+
+.pad-bottom-5x { @include padding-trailer(5); }
+
+.pad-bottom-6x { @include padding-trailer(6); }
+
+.pad-bottom-7x { @include padding-trailer(7); }
+
+.pad-bottom-8x { @include padding-trailer(8); }
+
+
+.pad-left-2x { padding-left: emCalc(12px); }
+
+// apply margin with ryhthm 
+
+.margin-top-1x { @include margin-leader(1); }
+
+.margin-top-2x { @include margin-leader(2); }
+
+.margin-top-3x { @include margin-leader(3); }
+
+.margin-top-4x { @include margin-leader(4); }
+
+.margin-top-5x { @include margin-leader(5); }
+
+.margin-top-6x { @include margin-leader(6); }
+
+
+.margin-bottom-1x { @include margin-trailer(1); }
+
+.margin-bottom-2x { @include margin-trailer(2); }
+
+.margin-bottom-3x { @include margin-trailer(3); }
+
+.margin-bottom-4x { @include margin-trailer(4); }
+
+.margin-bottom-5x { @include margin-trailer(5); }
+
+.margin-bottom-6x { @include margin-trailer(6); }
+
+.margin-bottom-7x { @include margin-trailer(7); }
+
+.margin-bottom-8x { @include margin-trailer(8); }
+
+.margin-bottom-9x { @include margin-trailer(9); }
+
+.margin-bottom-10x { @include margin-trailer(10); }
+
+.margin-bottom-11x { @include margin-trailer(11); }
+
+.margin-bottom-12x { @include margin-trailer(12); }
+
+// Clearing floats
+.clearfix {
+    @include clearfix;
+}
+
+.clear-left { clear: left; }
+
+.clear-right { clear: right; }
+
+.clear-all, .clear-both { clear: both; }  
+
+
+// Accessible & invisible text
+.hide-text {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+
+
+/* ::State styles */
+/* ------------------------------------------------------------ */
+
+.is-hidden {
+  display: none;
+}
+
+.is-shown, .is-block {
+  display: block;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.ajust-margin-top {
+  margin-top:0px;
+}
+
+.nav-ajust-margin-top {
+  margin-top:68px;
+}
+
+@include gs-media(m, min-max) {
+
+  .is-removed-mobile {
+    visibility: visible;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  .is-hidden-mobile {
+    display:none;
+  }
+
+}
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+
+// Use clearfix if you need general clearfixing
+.clearfix { 
+  @include clearfix; 
+}
+
+.cf { 
+  zoom: 1; 
+}
+.cf:before,
+.cf:after { 
+  content: ""; 
+  display: table; 
+}
+.cf:after { 
+  clear: both; 
+}
+
+
+/* Media on panel */
+/* ------------------------------------------------------------ */
+
+.media-on-panel {
+  span {
+    margin:-5px 0px 12px 0px;
+  }
+}
+
+// use this to prevent long URLs or titles from extending
+// beyond their div container (it will auto insert)
+// PS: we can also use @include hyphenation; (built-in compass function)
+%word-wrap-hyphen, .word-wrap-hyphen {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.hide-descriptive-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px; 
+}
+
+
+
+.icon {
+  @extend %icon !optional; 
+}
+.icon-social { 
+  @extend %icon-social !optional; 
+}
+

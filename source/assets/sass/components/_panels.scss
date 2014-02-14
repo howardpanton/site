@@ -1,0 +1,66 @@
+.panel {
+	width: 100%;
+	float: left;
+	padding: rhythm(8, 16px) 0;
+	clear: both;
+	.ual.home & {
+		padding-top: 4em;
+		padding-bottom: 1em;	
+		margin-bottom: 6px;	
+	}
+}
+
+.header-panel {
+	width: 100%;
+	float: left;
+	margin-bottom: rhythm(4, 16px);
+	clear: both;
+	border-left: 10px solid $bg-gray;
+	background: $bg-gray;
+	
+	
+	h1 {
+		color: $black;
+
+		@include font-size(36);
+		padding: rhythm(2, 36px) rhythm(1, 36px) rhythm(2, 36px) rhythm(1, 36px);
+		
+		@include gs-media(d) {
+    		@include font-size(54);
+    		padding: rhythm(2, 54px) 0 rhythm(2, 54px) 0;
+  		}	
+
+	}
+	// custom variation for colleges namespace
+	.home & {
+		margin: 0;
+		padding: 0;
+	}
+	.camberwell & {
+		border-left: 10px solid  $ccw-blue ;
+	}
+	.csm & {
+		border-left: 10px solid $csm-primary;
+	}
+	.chelsea & {
+		border-left: 10px solid $ccw-salmon;
+	}
+	.lcc & {
+		border-left: 10px solid $lcc-primary-yellow;
+	}
+	.lcf & {
+		border-left: 10px solid $logo-gray;
+	}
+	.wimbledon & {
+		border-left: 10px solid $ccw-green;
+	}
+}
+
+.footer-panel {
+	width: 100%;
+	float: left;
+	margin-top: rhythm(4, 16px);
+	margin-bottom: rhythm(4, 16px);
+	clear: both;
+}
+

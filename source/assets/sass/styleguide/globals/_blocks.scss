@@ -1,0 +1,112 @@
+.__blocks {
+	ul, li {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		background-color: $blue5;
+		color: $white;
+	}
+} 
+
+.__two-up {
+	li {
+		@include media($desktop) {
+			@include span-columns(6 of 12);
+			@include omega(2n);
+		}
+		@include media($tablet) {
+			@include span-columns(6 of 12);
+			@include omega(2n);
+		}
+	}
+	&.__content {
+		li {
+			@include media($desktop) {
+				@include span-columns(4 of 8);
+				@include omega(2n);
+			}
+			@include media($tablet) {
+				@include span-columns(4 of 8);
+				@include omega(2n);
+			}
+			@include media($mobile) {
+				@include span-columns(4 of 4);
+				@include omega(2n);
+			}
+		}
+	}
+}
+
+.__three-up {
+	li {
+		@include media($desktop) {
+			@include span-columns(4 of 12);
+			@include omega(3n);
+		}
+		@include media($tablet) {
+			@include span-columns(4 of 12);
+			@include omega(3n);
+		}
+	}
+}
+
+.__four-up {
+	li {
+		@include media($desktop) {
+			@include span-columns(3 of 12);
+			@include omega(4n);
+		}
+		@include media($tablet) {
+			@include span-columns(3 of 12);
+			@include omega(4n);
+		}
+	}
+	&.__content {
+		li {
+			@include media($desktop) {
+				@include span-columns(2 of 8);
+				@include omega(4n);
+			}
+			@include media($tablet) {
+				@include span-columns(2 of 8);
+				@include omega(4n);
+			}
+			@include media($mobile) {
+				@include span-columns(2 of 4);
+				@include omega(2n);
+			}
+		}
+	}
+}
+
+.__six-up {
+	li {
+		@include media($desktop) {
+			@include span-columns(2 of 12);
+			@include omega(6n);
+		}
+		@include media($tablet) {
+			@include span-columns(2 of 12);
+			@include omega(6n);
+		}
+	}
+}
+
+.__two-up, .__three-up {
+	li {
+		@include media($mobile) {
+			@include span-columns(4 of 4);
+			@include omega(1n);
+		}
+	}
+}
+
+.__four-up, .__six-up {
+	li {
+		@include media($mobile) {
+			@include span-columns(2 of 4);
+			@include omega(2n);
+		}
+	}
+}

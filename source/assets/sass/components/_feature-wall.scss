@@ -1,0 +1,69 @@
+// feature wall used for CSM homepage
+.__feature-wall { 
+	margin-top: 1px;
+	padding-bottom: 48px;
+	figure {
+		margin-bottom: 0;
+	}
+	iframe, img {
+		width: 100%;
+	}
+	a {
+		border-bottom: none;
+		display: block;
+		line-height: 0;
+		padding-bottom: 0;
+	}
+	a > li {
+		@include font-size(24);
+		margin-bottom: 1px;
+		margin-top: 1px;
+		padding: 12px;
+		@include adjust-leading-to(4, 24px); 	
+	} 
+	li {
+		background-color: $csm-primary;
+		color: $white;
+		padding: 0;
+		margin: 0; 
+		line-height: 0;
+	}
+
+	@include gs-media (t,min-max) {
+		@include gs-span(t, 2, 7);
+
+	}
+
+	@include gs-media (d) {
+		@include gs-span(d, all);
+
+		li {
+			margin: 0;
+			padding: 0;
+			line-height: 0;
+			a img:hover {
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				-ms-filter: grayscale(100%);
+				-o-filter: grayscale(100%);
+				-webkit-transition: all ease 0.4s;
+				-moz-transition: all ease 0.4s;
+				-o-transition: all ease 0.4s;
+				transition: all ease 0.4s;		
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+			&:nth-child(3), &:nth-child(6) {
+				width: 50%;
+				float: left;
+			}  
+			&:last-child {
+				clear: left;
+			}
+		}	
+	}
+}
+
