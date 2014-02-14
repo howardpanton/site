@@ -507,7 +507,9 @@ if ($('#container').length > 0) {
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
-            pauseOnHover: true
+            pauseOnHover: true,
+            stopAtAction: true,
+            delay: 3000
           }
         });
 
@@ -910,11 +912,12 @@ if ($('video').length > 0) {
 
   $.getScript('https://raw.github.com/johndyer/mediaelement/master/build/mediaelement-and-player.js', function() {
 
-    $('video').mediaelementplayer({
-      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
-      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
-    });
-
+    if (!$('video').hasClass('no-mejs')) {
+      $('video').mediaelementplayer({
+        //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+        pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
+      });
+    }
 
   });
 
