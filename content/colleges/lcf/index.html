@@ -7,44 +7,7 @@ template: true
 ---
 
 <div class="content-wrapper">
-
-	<!--<div class="row slider-container">
-		<div class="royalSlider contentSlider rsDefault  block" data-slider-item-width="1280" data-slider-item-height="480">
-			<figure>
-	        	<img class="rsImg" src="{{ site.url }}//assets/img/lcf/ba13-catwalk1280-480.jpg" alt="some alt text" data-rsvideo="http://www.youtube.com/watch?v=CrEq3QWQgvo" />
-	        	<div class="rsCaption"></div>
-	    	</figure>
-	    	<figure>
-	        	<img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-2.jpg" alt="some alt text" />
-	        	<figcaption class="rsCaption"><span>1280 x 480</span></figcaption>
-	    	</figure>
-	    	<figure>
-	        	<img class="rsImg" src="{{ site.url }}//assets/img/lcf/lcf-slide-ba13-2.jpg" alt="no caption test alt" />
-	        	<figcaption class="rsCaption"></figcaption>
-	    	</figure>
-		</div>
-	</div>--><!-- .slider-container -->
-
-
-	<div class="row">
-		<nav class="sidebar">
-			{% include _lcf_navigation.html %}		
-		</nav>	
-
-		<div class="content">
-			{% include components/_intro-block-with-left-image.html %}
-		</div>
-	</div><!-- .row -->
-
-	<div class="row">
-		<div class="l-content-full-width  __media">
 			<h2>What's On</h2>
-			<figure><img src="{{ site.url }}//assets/img/lcf/lcf-whats-on.jpg"></figure>
-		</div>
-	</div>	
-
-	<div class="row">
-		<div class="whats-on">
 			<div class="column bordered">
 				<div class="event-item bordered">
 					<h3 class="d-hide">The Art of Deconstructing the Bizarre</h3>
@@ -94,11 +57,11 @@ template: true
 	      				</a>
 	      			</figure>
 		      		<p class="event-date d-hide">16.10.13 - 21.10.13</p>
-	      		</div>      			
+	      		</div>
       		</div>
       	</div>
 	</div>
-	
+
 	<div class="row">
 		<div>
 			<h2>News</h2>
@@ -120,6 +83,7 @@ template: true
 				<li class="row">
 					<figure>
 						<a href="" title=""><img src="{{ site.url }}//assets/img/lcf/lcf-news-2.jpg" alt="Image Alt"></a>
+						<div class="credits">Fashion: <a href="#">Hollie White</a></div>
 					</figure>
 					<div class="text">
 						<h3><a href="" title="">News Title</a></h3>
@@ -137,26 +101,77 @@ template: true
 	    			<figure><img src="{{ site.url }}//assets/img/lcf/lcf-showcase1.jpg" /></figure>
 	    			<div class="box-text aligncenter centered">
 						<h3><a href="">Film Series</a></h3>
-						<p class="m-hide">LCF, Sophie Countess of Wessex and Kurt Geiger welcomed London&rsquo;s fashion industry elite to Mansion House to invest in the fashion talent of the future. The Fashion Matters Gala, a grand dinner followed by an exclusive auction, raised money for Cordwainers courses at LCF and celebrated 125 years of Cordwainers at the College. Read more on the&nbsp;<a href="http://blogs.arts.ac.uk/fashion/2013/09/09/a-glittering-gala-for-the-future-of-fashion/">LCF News blog &gt;</a></p>
+						<p class="t-hide m-hide">LCF, Sophie Countess of Wessex and Kurt Geiger welcomed London&rsquo;s fashion industry elite to Mansion House to invest in the fashion talent of the future. The Fashion Matters Gala, a grand dinner followed by an exclusive auction, raised money for Cordwainers courses at LCF and celebrated 125 years of Cordwainers at the College. Read more on the&nbsp;<a href="http://blogs.arts.ac.uk/fashion/2013/09/09/a-glittering-gala-for-the-future-of-fashion/">LCF News blog &gt;</a></p>
 
 					</div>
+					<div class="credits">Fashion: <a href="#">Hollie White</a></div>
 	    		</div>
 				<div class="slide">
-					<figure><img src="{{ site.url }}//assets/img/lcf/lcf-showcase2.jpg" /></figure>
+					<figure>
+						<img data-src="http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/hollie-white948-609.jpg" alt="Work by MA Fashion Footwear student Hollie White" class="resrc" />
+						<div class="credits">Fashion: Hollie White</div>
+					</figure>
 					<div class="box-text aligncenter centered">
-						<h3>Catwalk Shows</h3>
-						<p class="m-hide">We have an awesome selection of catwalk shows that may contain some nudity.</p>
+						<h3>
+							<a href="http://showtime.arts.ac.uk/holliewhite">Showtime: Hollie White</a>
+						</h3>
+						<p class="t-hide m-hide">
+							Showtime is the University's portfolio showcase, where students and alumni can display their work. Hollie White&nbsp;is studying&nbsp;
+							<a href="/fashion/courses/graduate-school/design-and-technology/ma-fashion-footwear/">MA Fashion Footwear</a>
+							. She uses waste materials to create luxury accessories.
+						</p>
+					</div>
+				</div>
+				<div class="slide">
+					<figure>
+						<img data-src="http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/hannah-sian-beagley-pr948-609.jpg" alt="" class="resrc" />
+
+					</figure>
+					<div class="box-text aligncenter centered">
+						<h3>
+							<a href="/fashion/courses/undergraduate/ba-strategic-communication-for-fashion/">Featured: BA (Hons) Strategic Communication for Fashion</a>
+						</h3>
+						<p class="t-hide m-hide">
+							Learn the skills for a career in public relations and branding so you can become a strategic communicator in the fast-moving world of international fashion. Here we see coursework by&nbsp;
+							<a href="http://showtime.arts.ac.uk/HannahBeagley">Hannah Sian Beagley</a>
+							, analysing how a competition searching for new music talent could be 'sold in' to various publications.
+							<a href="/fashion/courses/undergraduate/ba-strategic-communication-for-fashion/">Read more&nbsp;&rarr;</a>
+						</p>
+					</div>
+				</div>
+				<div class="slide">
+					<figure>
+						<img data-src="http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/nassia-matsa948-609.jpg" alt="" class="resrc" />
+
+					</figure>
+					<div class="box-text aligncenter centered">
+						<h3>
+							<a href="/fashion/people/alumni/profiles/nassia-matsa/">Alumni profile: Nassia Matsa, this_is_hardcore</a>
+						</h3>
+						<p class="t-hide m-hide">
+							Nassia studied
+							<a href="/fashion/courses/graduate-school/media-and-communications/ma-fashion-journalism/">MA Fashion Journalism</a>
+							at LCF. Her punk recipe zine FAQ FOOD won social enterprise funding and she is working with city law firm Simmons &amp; Simmons to launch publishing company this_is_hardcore.
+						</p>
+					</div>
+				</div>
+				<div class="slide">
+					<figure>
+						<img data-src="http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/ma13-exhibition948-609_3.jpg" alt="" class="resrc" />
+
+					</figure>
+					<div class="box-text aligncenter centered">
+						<h3>
+							<a href="/fashion/channel/">LCF Channel: MA13 Exhibition Film</a>
+						</h3>
+						<p class="t-hide m-hide">
+							As we look towards the MA14 Season, watch a short film following the set-up of the MA13 Exhibition at Victoria House Basement in February 2013.
+						</p>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 
-	<div class="row">
-		<div class="media-block">
-			<h2>Explore</h2>
-			<figure><img src="{{ site.url }}//assets/img/lcf/lcf-gallery.jpg"></figure>
-		</div>
-	</div>	
 
 </div><!-- .content-wrapper -->

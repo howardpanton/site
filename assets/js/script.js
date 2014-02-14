@@ -6,7 +6,7 @@
 //     Updated Tuesday 27 November 2013 14:58
 // \*-----------------------------------------*/
 
-// 
+//
 // enable caching for GetScript calls
 jQuery.ajaxSetup({
   cache: true
@@ -20,7 +20,7 @@ jQuery.ajaxSetup({
 //   }));
 //   // calculate slider controls position from top of slider container
 //   var distFromTop = ( ((maxImgHeight / 2) - 16) + 12);  // 16px is half height of navcontrol buttons , 12px is top margin
-//   // set position of slider nav buttons from top 
+//   // set position of slider nav buttons from top
 //   $(".owl-prev, .owl-next").css("top", distFromTop);
 // }
 
@@ -53,7 +53,7 @@ if (!Array.prototype.indexOf) {
 
 
 $(".date").each(function (i, element) {
-  
+
   str = $( this ).text();
   if (str.indexOf(",") != -1) {
     $(this).text(str.substring(5,16));
@@ -103,7 +103,7 @@ $(".date").each(function (i, element) {
 
   $( ".alumni-nav" ).append("<ul class=\"subnav-2 region pad-top-6x region\">");
   $('.alumni-nav .subnav-2').prepend(Link_alumni);
-  
+
 
   $( ".about-nav" ).append("<ul class=\"subnav-2 pad-top-6x region\">");
   $('.about-nav .subnav-2').prepend(Link_about);
@@ -142,7 +142,7 @@ var waitForFinalEvent = (function () {
 
 // enables UAL themed select boxes
 function enableSelectBoxes() {
-  
+
   $('.js-select-box').each(function() {
     var _start_val = $(this).children('ul.js-select-box-list').children('li.select-box-option:first').children('a').html();
     $(this).children('div').children('h3.selected').html(_start_val);
@@ -167,7 +167,7 @@ function enableSelectBoxes() {
       $(this).parent().parent().children('div').children('h3.selected').html($(this).children('a'));
       $(this).parent().parent().scrollToMe();
     });
-  });      
+  });
 }
 
 
@@ -183,7 +183,7 @@ function resetSpinners() {
 
 
 /////////////////////
-// ON DOCUMENT READY 
+// ON DOCUMENT READY
 /////////////////////
 $(document).ready(function(){
 
@@ -196,7 +196,7 @@ $(document).ready(function(){
   $('.browse-sc').find('.breadcrumbs').find('a:gt(4)').remove();
 
 
-  // Accessible skip-to-content link:  
+  // Accessible skip-to-content link:
   // Enable a link to the page title if one exists.
   // If not, then enable a link to the first content-wrapper div to skip the main navigation on screen readerss
 
@@ -206,7 +206,7 @@ $(document).ready(function(){
   else {
     $('.content-wrapper').first().attr('id', 'skip-to-here');
   }
-   
+
 //////////////////////
 // MOBILE SIDEBAR SCRIPT (populate mobile and tablet menu)
 /////////////////////
@@ -242,7 +242,7 @@ $(document).ready(function(){
       $('.show-mob-sidebar').click(function(e) {
         e.preventDefault();
         _clicked = $(this);
-        
+
         if (_clicked.hasClass('active')) {
           _clicked.closest($('#mobile-sidebar')).find($('ul')).slideUp();
           _clicked.removeClass('active');
@@ -256,7 +256,7 @@ $(document).ready(function(){
 
       // check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
       if (_sideBarTitle.text().toLowerCase() == 'in this section') {
-      
+
         // hide "In This Section" in the sidebar dropdown
         $('#mobile-sidebar li').first().remove();
       }
@@ -283,22 +283,22 @@ $(document).ready(function(){
   if ($('.select-box').length > 0) {
     // enable custom styled selectboxes
     enableSelectBoxes();
-  
+
   }
 
-  // check for regular blockquotes on the page - 
-  // we insert a span at the beginning of the element to show a background image sprite 
+  // check for regular blockquotes on the page -
+  // we insert a span at the beginning of the element to show a background image sprite
   if ($('blockquote').length > 0 ) {
-    
+
     $('blockquote').each(function() {
         $(this).prepend('<span></span>');
     });
 
 
-  
+
   }
 
-  // check for large blockquotes on the page - 
+  // check for large blockquotes on the page -
   // - insert a span at the beginning to show large blockquote img (sprite)
   if ($('.pull-quote').length > 0) {
 
@@ -316,17 +316,17 @@ $(document).ready(function(){
       $('#finder-search-input').focus(function () {
         $('#finder-search-input').parent().parent().addClass('search-gray-border');
       });
-   
+
   }
 
- 
+
   // NICE IMAGE LOADING
-  
-  /* 
-  * Not part of MixItUp, but this is a great lightweight way 
+
+  /*
+  * Not part of MixItUp, but this is a great lightweight way
   *   to gracefully fade-in images with CSS3 after they have loaded
   */
-  
+
   function imgLoaded(img){
     $(img).parent().addClass('loaded');
   }
@@ -354,7 +354,7 @@ if ($('#container').length > 0) {
             next : "→",
             direction : "auto",
             animation : "fadeInUp"
- 
+
         });
     }
 
@@ -400,7 +400,7 @@ if ($('#container').length > 0) {
 
 
 
-  // detect megamenu 
+  // detect megamenu
 
   // if ($('.megamenu_container').length > 0) {
 
@@ -425,11 +425,11 @@ if ($('#container').length > 0) {
 
   // }
 
-  
+
 
 
   // detect slider component
-  
+
   if ($('.js-carousel').length > 0) {
 
     $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
@@ -445,12 +445,12 @@ if ($('#container').length > 0) {
         var _itemMinSlides = (_this.data('carousel-min-slides') > 0) ? _this.data('carousel-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
         var _itemMargin = (_this.data('carousel-item-margin') > 0) ? _this.data('carousel-item-margin') : 0;
-        // slider instances always show next/prev controls, unless data-controls is false          
+        // slider instances always show next/prev controls, unless data-controls is false
         var _controlsOpt = true;
         _controlsOpt = _this.data('controls');
-        // slider instances do not show a pager, unless data-pager is true          
+        // slider instances do not show a pager, unless data-pager is true
         var _pagerOpt = (_this.data('pager')) ? _this.data('pager') : false;
-        
+
         _this.bxSlider({
           slideWidth: _itemWidth,
           minSlides: _itemMinSlides,
@@ -475,7 +475,7 @@ if ($('#container').length > 0) {
     });
 
   }
-  
+
 
 
 
@@ -507,7 +507,9 @@ if ($('#container').length > 0) {
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
-            pauseOnHover: true
+            pauseOnHover: true,
+            stopAtAction: true,
+            delay: 3000
           }
         });
 
@@ -532,7 +534,7 @@ if ($('.owl-carousel').length > 0) {
         $(this).owlCarousel({
         items: 3,
         itemsDesktop : [1280, 3], // items between 1000px and 901px
-        itemsTablet: [959, 2], // items between 
+        itemsTablet: [959, 2], // items between
         itemsMobile : [599, 1], // itemsMobile disabled - inherit from items
         lazyLoad : true,
         pagination: false,
@@ -568,17 +570,17 @@ if ($('.owl-carousel').length > 0) {
   ///////////////////////
 
   // Show image credits button fixed to the right of the screen on Desktop only
-  
+
 if ($('.credits').length > 0) {
 
 
-      //only show credits on desktop 
+      //only show credits on desktop
       if ($('body').hasClass('gDesktop')) {
         $('.credits-btn').addClass("show");
-        
+
         $('.show-credits').click(function(event) {
           event.preventDefault();
-        
+
           var c = $(this);
           if (c.hasClass('active') ) {
             c.removeClass('active').attr('title','Show image credits');
@@ -611,7 +613,7 @@ if ($('.accordion').length > 0) {
 
     });
 
-  
+
 
     $(".accordion-list-anchor").on("click", ".size-h4", function(event){
         event.preventDefault();
@@ -651,7 +653,7 @@ if ($('.dd-menu').length > 0) {
        event.preventDefault();
        var _d = $(this);
        var _d_menu = _d.parent();
-       
+
        if (_d_menu.hasClass('active')) {
           _d_menu.find('.js-dd-menu-icon');
           _d_menu.find('.js-dd-menu-list').slideUp('fast', function() {
@@ -676,7 +678,7 @@ if ($('.search-filters').length > 0) {
   $('.filter-heading').click(function(event) {
     event.preventDefault();
     var c = $(this);
-    
+
     //process click event if the heading is not set to not-active
     if (!c.hasClass('not-active')){
 
@@ -701,7 +703,7 @@ if ($('.showtime-json').length){
     var outputNode = $('.showtime-json');
 
     $.each(outputNode, function(i) {
-      
+
       var _node = '';
       _node = $(this);
 
@@ -711,23 +713,23 @@ if ($('.showtime-json').length){
 
 
       $.getJSON( feedUrl + '&limit=' + limit + '&callback=?', function(data) {
-           
+
          var string = '';
          var media = '';
          var studentName = '';
          var profileUrl = '';
          var counter = 0;
-                 
+
          if (data.data.Student) { // this is a single Showtime profile
            profileUrl = data.data.Student.Student.profileurl;
            studentName = data.data.Student.Student.firstName + ' ' + data.data.Student.Student.lastName;
            media = data.data.Student.Media;
          }
-         
+
          if (data.data.Profiles) { // this is a group of objects in Showtime
            media = data.data.Profiles;
          }
-        
+
         $.each(media, function(i, item) {
 
           if (counter < limit) {
@@ -744,10 +746,10 @@ if ($('.showtime-json').length){
               profileUrl = 'http://showtime.arts.ac.uk/' + item.profileName;
               studentName = item.fullName;
             }
-           
+
            string = '<li><a class="zoom no-border" href= "' + item.zoomImg + '" title="' + studentName + '" data-profile-url="' + profileUrl + '" style="background-image: url('+item.profileImg+')"></a></li>';
 
-          
+
            _node.append(string);
 
            counter++;
@@ -757,7 +759,7 @@ if ($('.showtime-json').length){
           }
 
         }); // end each loop
-         
+
         $('.zoom').magnificPopup({
           type: 'image',
           image: {
@@ -777,7 +779,7 @@ if ($('.showtime-json').length){
     }); // end each loop
 
   }); // end getScript loop
-  
+
 }
 
 
@@ -878,7 +880,7 @@ $(".hide-content").click(function(e){
       });
     }
 
-// End tabs to accordion 
+// End tabs to accordion
 
 if ($('.__media').length > 0) {
   $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js', function() {
@@ -894,6 +896,7 @@ if ($('.__media').length > 0) {
 
   if ($('audio').length > 0) {
 
+
     jQuery.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js', function() {
 
         $('audio').each(function() {
@@ -904,17 +907,18 @@ if ($('.__media').length > 0) {
 
 
   }
-  
+
 
 if ($('video').length > 0) {
 
   $.getScript('https://raw.github.com/johndyer/mediaelement/master/build/mediaelement-and-player.js', function() {
 
-    $('video').mediaelementplayer({
-      //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
-      pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
-    });
-
+    if (!$('video').hasClass('no-mejs')) {
+      $('video').mediaelementplayer({
+        //pluginPath: 'http://artslondon.github.io/beta/assets/js/libs/'
+        pluginPath: 'http://beta.arts.ac.uk/media/beta/beta-assets/plugins/'
+      });
+    }
 
   });
 
@@ -978,7 +982,7 @@ $('.lcf').find('h2').wrapInner('<span />');
  //  }
 
 
- 
+
 
 
 
@@ -994,40 +998,40 @@ $('.lcf').find('h2').wrapInner('<span />');
 //////////////////////////////////////////////////////////////////////////
 
 
-/* 
+/*
 jQuery.fitHeights by Paravelâ„¢
 
 Author: Dave Rupert
 Author URL: http://daverupert.com/
-Based on: https://github.com/filamentgroup/jQuery-Equal-Heights 
+Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 //  example initialise code
 //
 //   $(window).load(function(){
-//      // $(groupOfItems).fitHeights(); 
+//      // $(groupOfItems).fitHeights();
 //      $('ul li').fitHeights();
 //    });
 */
 (function(){
-  
+
   $.fn.fitHeights = function() {
-    
+
     var items = $(this);
     function setHeights() {
-      
+
       var currentTallest = 0;
-  
+
       items.css({ 'min-height' : currentTallest });  // unset min-height to get actual new height
 
       // right now this causes a noticeable shift in height on resize. workarounds?
-      
+
       items.each(function(){
-        
+
         if( $(this).height() > currentTallest ) { currentTallest = $(this).height(); }
       });
       items.css({ 'min-height' : currentTallest });
     }
-    
+
     setHeights();
     $(window).on('resize', setHeights);
     return this;
@@ -1036,7 +1040,7 @@ Based on: https://github.com/filamentgroup/jQuery-Equal-Heights
 
 // initialise
 $(window).load(function(){
-  
+
   if ($('.related-content').length > 0) {
     $('.related-content ul li').fitHeights();
   }
@@ -1044,12 +1048,12 @@ $(window).load(function(){
   if ($('.highlight-box-3').length > 0) {
     $('.highlight-box-3 ul li').fitHeights();
   }
-  
+
   if ($('body').is('.chelsea, .camberwell, .wimbledon')) {
     $('.two-up ul li').fitHeights();
     $('.three-up ul li').fitHeights();
   }
-  
+
   if ($('body').is('.ual')) {
     $('.cta .two-up-full ul li').fitHeights();
     $('.st-cp .two-up-full ul li').fitHeights();

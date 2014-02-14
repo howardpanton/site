@@ -1,5 +1,5 @@
 ---
-layout: main.tpl
+layout: lcf.tpl
 college: lcf
 section: home
 title: LCF Channel
@@ -8,19 +8,19 @@ template: true
 
 
 
-	<div id="channel-splash" class="row">
-		<div id="videoContainer" class="video-container">
+	<div id="channel-splash" class="row slider-container" >
+		<div id="videoContainer" class="video-container" >
 			<div class="content-wrapper">
 
 				<div class="message">
-					<h1>LCF Channel.</h1>
-					<a class="button-link" href="#">Explore</a>
+					<h1>Channel</h1>
+					<p><a class="button-link" href="#"><span class="hide-descriptive-text">Explore</span>Explore</a></p>
 				</div><!-- end container -->
 
 			</div><!-- .content-wrapper -->
 			<div id="background_patternOverlay"></div>
 			<video id="backgroundVideo" class="background-video no-mejs" width="100%" height="100%;" onended="this.play()" autoplay loop>
-				<source src="https://s3-eu-west-1.amazonaws.com/lcfvideo/BAHONS2012.mp4" type="video/mp4">
+				<source src="https://s3-eu-west-1.amazonaws.com/lcfvideo/BA_Edit_12test.mp4" type="video/mp4">
 				<!--<source src="http://atfirstsightfilms.com/wp-content/themes/AtFirstSightFilms/images/video/test.webm" type="video/webm">
 				<source src="http://atfirstsightfilms.com/wp-content/themes/AtFirstSightFilms/images/video/test.ogv" type="video/ogv">
 				<img src="http://atfirstsightfilms.com/wp-content/themes/AtFirstSightFilms/images/video/fallback.jpg" width="100%" height="100%" alt="" />--> <!-- Image fallback -->
@@ -30,58 +30,15 @@ template: true
 
 <div class="content-wrapper">
 	<div class="row">
-		<div class="l-content-full-width  block  __media  four-up">
-			<h2>Media block (4 up)</h2>
-			<ul>
-				<li>
-					<figure class="feature">
-						<a href="" title=""><img src="http://placehold.it/1000x500&text=img" alt="Image Alt"></a>
-							<div class="credits">This would be the credits, if applicable</div>
-							<figcaption>
-								This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)
-							</figcaption>	
-						</figure>
-							<h3><a href="" title="">Title</a></h3>
-								<p>Quisque fermentum eros sit amet odio suscipit, sit amet porta mi pharetra. In hac habitasse platea dictumst. Nulla facilisi. Morbi interdum fermentum faucibus.</p>
-								<p><a href="#" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Optional button</a></p>
-				</li>
-				<li>
-						<figure class="feature">
-						<a href="" title=""><img src="http://placehold.it/1000x500&text=img" alt="Image Alt"></a>
-							<div class="credits">This would be the credits, if applicable</div>
-							<figcaption>
-								This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)
-							</figcaption>	
-						</figure>
-							<h3><a href="" title="">Title</a></h3>
-								<p>Quisque fermentum eros sit amet odio suscipit, sit amet porta mi pharetra. In hac habitasse platea dictumst. Nulla facilisi. Morbi interdum fermentum faucibus.</p>
-								<p><a href="#" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Optional button</a></p>
-				</li>
-				<li>
-						<figure class="feature">
-						<a href="" title=""><img src="http://placehold.it/1000x500&text=img" alt="Image Alt"></a>
-							<div class="credits">This would be the credits, if applicable</div>
-							<figcaption>
-								This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)
-							</figcaption>	
-						</figure>
-							<h3><a href="" title="">Title</a></h3>
-								<p>Quisque fermentum eros sit amet odio suscipit, sit amet porta mi pharetra. In hac habitasse platea dictumst. Nulla facilisi. Morbi interdum fermentum faucibus.</p>
-								<p><a href="#" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Optional button</a></p>
-				</li>
-				<li>
-						<figure class="feature">
-						<a href="" title=""><img src="http://placehold.it/1000x500&text=img" alt="Image Alt"></a>
-							<div class="credits">This would be the credits, if applicable</div>
-							<figcaption>
-								This is a information for the image above, it can be either accreditation or a caption. This should not run more than 2 lines. (optional)
-							</figcaption>	
-						</figure>
-							<h3><a href="" title="">Title</a></h3>
-								<p>Quisque fermentum eros sit amet odio suscipit, sit amet porta mi pharetra. In hac habitasse platea dictumst. Nulla facilisi. Morbi interdum fermentum faucibus.</p>
-								<p><a href="#" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Optional button</a></p>
-				</li>
-			</ul>
-		</div> <!-- end image-block-2-up -->
+		<nav class="sidebar">
+			{% include _lcf_navigation.html %}		
+		</nav>
+		<div role="main" class="content">
+			
+			<!-- media block -->
+			{% include components/_media-block-3-up.html %}
+
+
+		</div> <!-- end .content -->
 	</div><!-- .row -->
 </div><!-- .content-wrapper -->

@@ -1,5 +1,6 @@
 /* ///Custom HTML5 Video Script hand-coded by Grant Geard https://github.com/grantgeard /// */
 
+
 (function (window, undefined) {
 
 	"use strict";
@@ -29,6 +30,8 @@
 
 	resizeVideo = function resizeVideo() {
 
+		console.log('resizeVideo running');
+
 		// Set size
 		videoElm.style.width = video.width + "px";
 		videoElm.style.height = video.height + "px";
@@ -39,6 +42,8 @@
 	};
 
 	measure = function measure() {
+
+
 
 		// Get current dimensions
 		container.dimensions.height = container.elm.offsetHeight;
@@ -93,14 +98,14 @@
 
 			// Check for canvas support
 			// Set target to HTML5 video or Flash
-			if (Modernizr.canvas) {
+			//if (Modernizr.canvas) {
 				console.log('supports canvas');
 				videoElm = document.getElementById("backgroundVideo");
-			} else {
-				container = document.getElementById("backgroundVideo");
-				objElm = container.getElementsByTagName("OBJECT");
-				videoElm = objElm[0];
-			}
+			// } else {
+			// 	container = document.getElementById("backgroundVideo");
+			// 	objElm = container.getElementsByTagName("OBJECT");
+			// 	videoElm = objElm[0];
+			// }
 		}());
 
 		// Resize the video with window
@@ -109,5 +114,7 @@
 		});
 
 		measure();
+
 	}());
+
 }(window));

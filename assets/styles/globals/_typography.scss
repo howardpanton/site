@@ -352,22 +352,19 @@ figcaption, .rsCaption, .caption {
 }
 
 %blockquote {
-  position: relative;
-  span {
-    @extend .ui-icons-quote_marks;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-
-  @include font-size(16);
-  @include adjust-leading-to(4, 16px);
-  margin-top: rhythm(2, 16px);
-  padding-bottom: rhythm(2, 16px);
-  padding-left: 68px;
-  padding-right: 18%;
+  	position: relative;
+	span {
+		@extend .ui-icons-quote_marks;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+	@include font-size(16);
+	@include adjust-leading-to(4, 16px);
+	padding-bottom: rhythm(2, 16px);
+	padding-left: 68px;
 }
 
 blockquote {
@@ -465,7 +462,8 @@ b, strong, h2, h3, h4 {
 		display: none;
 	}
     .content-wrapper {
-        h1,h2,.call-to-action h3 {
+
+        h1,h2,h2 a,.call-to-action h3 {
             font-family: $lcf-serif-font;
             font-weight: normal;
             letter-spacing: 1px;
@@ -481,7 +479,7 @@ b, strong, h2, h3, h4 {
         }
         h2 {
         	@include font-size(20);
-        	span {
+        	span, a {
         		border: 0 none;
         	}
         }
