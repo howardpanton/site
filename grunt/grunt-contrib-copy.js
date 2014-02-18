@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         gzipped_css: {
             files: [
                 // {expand: true, flatten: true, src:  dest: 'build/assets/css/', filter: 'isFile'},
-                {expand: true, flatten: true, src: '.tmp/assets/css/gzip/*.min.css', dest: 'build/assets/css/', filter: 'isFile'},
+                {expand: true, flatten: true, src: '.tmp/assets/css/gzip/*.css', dest: 'build/assets/css/', filter: 'isFile'},
             ]
         },
         js: {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         },
         gzipped_js: {
             files: [
-                {expand: true, flatten: true, src: ['.tmp/assets/js/gzip/*.min.js'], dest: 'build/assets/js/', filter: 'isFile'},
+                {expand: true, flatten: true, src: ['.tmp/assets/js/gzip/*.js'], dest: 'build/assets/js/', filter: 'isFile'},
                 {expand: true, flatten: true, src: ['.tmp/assets/js/gzip/ie/*.*'], dest: 'build/assets/js/ie/', filter: 'isFile'}
             ]
         },

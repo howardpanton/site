@@ -61,3 +61,8 @@ showtimeJSONloader = ->
             navigateByImgClick: true
             preload: [0, 1] # Will preload 0 - before current, and 1 after the current image
 
+
+$(document).ready ->
+    if $(".showtime-json").length > 0
+        showtimeJSONloader()
+
