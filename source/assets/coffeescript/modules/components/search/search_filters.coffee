@@ -21,3 +21,5 @@ searchFilters = ->
           c.parent().removeClass "active"
         else
           c.parent().addClass "active"
+
+

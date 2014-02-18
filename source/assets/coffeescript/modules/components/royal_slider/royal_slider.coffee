@@ -1,12 +1,12 @@
 #
 #    -------------------------------------------------------------
-#        checkForSlider()
+#        initSlider()
 #
 #        detect slider component (royalSlider)
 #    -------------------------------------------------------------
 #
-checkForSlider = ->
-  if $(".royalSlider").length > 0
+initSlider = ->
+
     $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js", ->
       $.each $(".royalSlider"), ->
         _this = $(this)
@@ -30,6 +30,11 @@ checkForSlider = ->
           autoPlay:
             enabled: _itemAutoPlay
             pauseOnHover: true
+
+
+$(document).ready ->
+    if $(".royalSlider").length > 0
+        initSlider()
 
 
 

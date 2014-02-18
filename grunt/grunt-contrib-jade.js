@@ -7,7 +7,7 @@
 module.exports = function(grunt) {
     grunt.config('jade', {
         debug: {
-            
+
             files: [{
                 expand: true,
                 cwd: 'source',
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 bare: true,
                 spawn: false
             }
-         
+
         }
     });
 
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     grunt.event.on('watch', function(action, filepath) {
       grunt.config('jade.debug.src', filepath);
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-jade');
 };
 

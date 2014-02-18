@@ -1,14 +1,29 @@
+#
+#    -------------------------------------------------------------
+#        resetSpinners()
+#
+#        Check if there are any open accordion items,
+#        and reset the arrows to the closed position
+#    -------------------------------------------------------------
+#
+resetSpinners = ->
+  $(".accordion-list-item").each (e) ->
+    _li_item = $(this)
+    if _li_item.hasClass("st-open")
+      _li_item.find(".st-arrow").rotate
+        animateTo: 0
+        center: ["50%", "50%"]
+
 ###
     -------------------------------------------------------------
-        checkForAccordion()
+        initAccordion()
 
         Load accordion script and handle clicks
-        if there is an accordion on the page
     -------------------------------------------------------------
 ###
 
-checkForAccordion = ->
-  if $(".accordion").length > 0
+initAccordion = ->
+
     $.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js"), $.Deferred((deferred) ->
       $ deferred.resolve
     )).done ->
@@ -39,5 +54,15 @@ checkForAccordion = ->
         _icon.rotate
           animateTo: 0
           center: ["50%", "50%"]
+
+
+
+
+$(document).ready ->
+
+    if $(".accordion").length > 0
+        initAccordion()
+
+
 
 
