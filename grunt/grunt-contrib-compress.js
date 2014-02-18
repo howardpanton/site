@@ -19,6 +19,7 @@ module.exports = function(grunt) {
             },
             files: [
                 {expand: true, flatten: true, src: ['.tmp/assets/js/script.min.js'], dest: '.tmp/assets/js/gzip/', ext: '.min.js'},
+                {expand: true, flatten: true, src: ['.tmp/assets/js/script.js'], dest: '.tmp/assets/js/gzip/', ext: '.js'},
                 {expand: true, flatten: true, src: ['source/assets/amazon-s3/js/ie/*.js'], dest: '.tmp/assets/js/gzip/ie/', ext: '.js'},
                 {expand: true, flatten: true, src: ['source/assets/amazon-s3/js/ie/*.html'], dest: '.tmp/assets/js/gzip/ie/', ext: '.html'}
             ]
@@ -29,7 +30,8 @@ module.exports = function(grunt) {
                 mode: 'gzip'
             },
             files: [
-                {expand: true, flatten: true, src: ['.tmp/assets/css/*.css', 'source/assets/css/*.css'], dest: '.tmp/assets/css/gzip/', ext: '.min.css'}
+                {expand: true, flatten: true, src: ['.tmp/assets/css/*.css'], dest: '.tmp/assets/css/gzip/', ext: '.min.css'},
+                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'} 
             ]
         },
 

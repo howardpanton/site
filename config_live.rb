@@ -3,11 +3,11 @@ require 'compass'
 
 # Set this to the root of your project when deployed:
 http_path = "http://d27lwoqz7s24cy.cloudfront.net/"
-css_dir = "assets/css"
-sass_dir = "assets/sass"
-fonts_dir = "assets/fonts"
-javascripts_dir = "assets/js"
-images_dir = "assets/img"
+css_dir = "build/assets/css"
+sass_dir = "source/assets/sass"
+fonts_dir = "source/assets/fonts"
+javascripts_dir = "source/assets/js"
+images_dir = "source/assets/img"
 
 
 # You can select your preferred output style here (can be overridden via the command line):
