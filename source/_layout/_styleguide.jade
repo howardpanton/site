@@ -1,0 +1,56 @@
+!!! 5
+// paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+//if lt IE 7
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+    <html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+    <html class="no-js lt-ie9">
+// [if gt IE 8] <!
+html(class="no-js", lang="en")
+    // <![endif]
+    head
+        - var bodyClass = '';
+        - var title = '';
+        block vars        
+
+        title #{title} | uniartslondon
+        // Meta data
+        meta(charset='utf-8')
+        meta(content='width=device-width, initial-scale=1.0', name='viewport')
+        meta(content='IE=edge,chrome=1', http-equiv='X-UA-Compatible"')
+        meta(content='on', http-equiv='cleartype')
+        meta(content='University of Arts London, Web Team', name='author')
+        meta(content='Europe"s leading arts and design university', name='description')
+        // The fav icons
+        // Styles
+        link(rel='stylesheet', type='text/css', media='screen', href='../assets/css/styleguide.css')
+        link(rel='stylesheet', type='text/css', media='screen', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
+        // Print styles
+        //- link(rel='stylesheet', type='text/css', media='print', href='')
+        // Scripts
+        //- script(type='text/javascript', src='')
+
+        <!-- IE 8 or below -->      
+        <!--[if (lt IE 9) & (!IEMobile)]>
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js')
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js')
+        <![endif]-->
+
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js')
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+
+        body(class='#{bodyClass}').cbp-spmenu-push
+            div#menus
+                include ../_includes/_push-menu-left
+                include ../_includes/_push-menu-right
+            div.outer-container
+                //- include ../_includes/_pull-menu-top
+                //- include ../_includes/_pull-menu-bottom
+                block content
+            // Scripts
+            script(type='text/javascript', src='http://code.jquery.com/jquery-1.10.1.min.js')
+            //- classie is used for the slide in menu
+            script(type='text/javascript', src='../assets/javascript/plugin.classie.js')
+            block scripts
+            script(type='text/javascript', src='../assets/javascript/script.js')            

@@ -21,13 +21,6 @@
 *.zip
 *.scssc
 
-# Node / Grunt #
-############
-
-_site/grunt-aws.json
-grunt-aws.json
-node-modules/*
-
 # Logs and databases #
 ######################
 *.log
@@ -45,33 +38,17 @@ Icon?
 # SASS, Jekyll, Hammer output #
 ######################
 .sass-cache/*
-_site/
 build/*
-Gemfile.lock
-Guardfile
-assets/config.rb
-assets/styles/components/config.rb
-assets/styles/config.rb
+node_modules/*
+.tmp/*
+
+# Amazon S3 settings #
+######################
+grunt/config/grunt-aws.json
+grunt/config/config.json
+grunt-aws.json
 
 # Text editors #
 ######################
-_site/bootstrap.sublime-project
-_site/bootstrap.sublime-workspace
-bootstrap.sublime-project
-bootstrap.sublime-workspace
-beta.sublime-project
-beta.sublime-workspace
-ual-beta.sublime-project
-ual-beta.sublime-workspace
-
-# Gems, Guard #
-######################
-Gemfile.lock
-Guardfile
-
-assets/img/sprite/ui-icons-s3fd643362c.png
-grunt-aws.json
-node_modules/*
-
-
-
+.sublime-project
+.sublime-workspace

@@ -1,0 +1,83 @@
+form {
+	legend {
+
+	}
+}
+
+ol.form {
+	label, input, textarea, select, button {
+		display: block;
+	}	
+	input {
+		&.search_input {
+			float: left;
+			width: 80%;
+			max-width: 290px;
+		}
+	}
+	label {
+		padding: 12px 0 6px;
+		margin-top: 12px;
+	}
+
+	.field_xxsmall {
+		width: 30px;
+		min-width: 30px; 
+	}
+	.field_xsmall {
+		width: 60px;
+		min-width: 60px; 
+	}
+	.field_small {
+		width: 90px;
+		min-width: 90px; 
+	}
+	.field_medium {
+		width: 180px;
+		min-width: 180px; 
+	}
+	.field_large {
+		width: 360px;
+		min-width: 360px; 
+	}
+	.field_xlarge {
+		width: 390px;
+		min-width: 390px; 
+	}
+	.field_xxlarge {
+		width: 420px;
+		min-width: 420px; 
+	}
+	.field_full {
+		width: 100%;
+		min-width: 100%; 
+	}
+}
+
+button, input, select, textarea {
+	margin: 0 0 18px 0;
+	padding: 4px 6px;
+	border: 1px solid $even-lighter-gray;
+	@include border-radius(0);
+	background: $even-lighter-gray;
+	color: $dark-gray;
+	vertical-align: baseline;
+}
+
+input:focus, select:focus, textarea:focus {
+	border-color: $even-darker-gray;
+	outline: 0;
+}
+
+button {
+	&.button_search {
+		background-color: $black;
+		border: 2px solid $black;
+		color: $white;
+		&:hover {
+			background-color: $even-darker-gray;
+			border: 2px solid $even-darker-gray;
+			cursor: pointer;
+		}
+	}
+}

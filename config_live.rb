@@ -2,22 +2,22 @@
 require 'compass'
 
 # Set this to the root of your project when deployed:
-http_path = "http://d27lwoqz7s24cy.cloudfront.net" 
+http_path = "http://d27lwoqz7s24cy.cloudfront.net/"
 css_dir = "assets/css"
-sass_dir = "assets/styles"
+sass_dir = "assets/sass"
 fonts_dir = "assets/fonts"
 javascripts_dir = "assets/js"
-images_dir = "assets/img/"
+images_dir = "assets/img"
 
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compressed
+output_style = :expanded
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://d27lwoqz7s24cy.cloudfront.net"
+http_images_path = "http://d27lwoqz7s24cy.cloudfront.net/"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 
