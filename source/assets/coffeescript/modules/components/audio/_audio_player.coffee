@@ -13,7 +13,7 @@ initAudio = ->
       $("audio").each ->
         $(this).audioPlayer()
 
-(document).ready ->
+$(document).ready ->
     if $("audio").length > 0
         initAudio()
 
