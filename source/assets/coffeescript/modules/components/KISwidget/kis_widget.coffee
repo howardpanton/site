@@ -6,7 +6,6 @@
 #    -------------------------------------------------------------
 #
 kisWidget = ->
-  if $(".kis-widget").length > 0
     ((d) ->
       "use strict"
       widgetScript = d.createElement("script")
@@ -16,3 +15,8 @@ kisWidget = ->
       return  if d.getElementById("unistats-widget-script")
       scriptTags.parentNode.insertBefore widgetScript, scriptTags
     ) document
+
+
+$(document).ready ->
+    if $(".kis-widget").length > 0
+        kisWidget()
