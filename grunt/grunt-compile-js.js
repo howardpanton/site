@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                         'concat:libs_and_built_scriptjs',
                         'prompt:checkJS',
                         'confirm_js_hint',
-                        'exec:compressjs',
+                        'exec:minifyjs',
                         'usebanner',
                         'copy:js'
                         ]);

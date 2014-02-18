@@ -5,8 +5,8 @@
 module.exports = function(grunt) {
     grunt.config('exec', {
 
-        compressjs: {
-            cmd: 'rm -rf .temp/assets/js/script.min.js ; java -jar grunt/src/yui/yuicompressor-2.4.8.jar --nomunge --preserve-semi .tmp/assets/js/script.js > .tmp/assets/js/script.min.js',
+        minifyjs: {
+            cmd: 'rm -rf .temp/assets/js/script.min.js ; java -jar grunt/src/yuicompressor-2.4.8.jar --nomunge --preserve-semi .tmp/assets/js/script.js > .tmp/assets/js/script.min.js',
         },
 
         editPost: {

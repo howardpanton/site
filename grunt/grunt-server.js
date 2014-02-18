@@ -19,6 +19,7 @@ module.exports = function(grunt) {
             // 'newer:copy:js',
             'compilejs',
             'compilecss',
+            'copy:oldstyleguide',
             // 'newer:copy:css',
             //'clean',
             'concurrent:server',

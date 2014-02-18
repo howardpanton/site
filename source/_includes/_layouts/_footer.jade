@@ -1,0 +1,122 @@
+footer.global-footer.row
+    .footer-wrapper
+        .row
+          .footer-links
+            ul.footer-col-1
+              li
+                a(href='/accessibility/') Accessibility
+              li
+                a(href='/about-ual/strategy-governance/public-information/freedom-of-information/') Freedom of Information
+              li
+                a(href='/privacy-and-cookies/') Privacy & Cookies
+              li
+                a(href='/disclaimer/') Disclaimer
+            ul.footer-col-2
+              li
+                a(href='/about-ual/strategy-governance/public-information/charitable-status/') Charitable Status
+              li
+                a(href='/about-ual/support-our-creative-future/') Give to UAL
+              li
+                a(href='/about-ual/work-at-ual/') Work at UAL
+              li
+                a(href='/feedback-form/') Feedback
+            ul.footer-col-3
+              li
+                a(href='http://showtime.arts.ac.uk/') Showtime
+              li
+                a(href='http://my.arts.ac.uk/') MyArts Staff
+              li
+                a(href='http://my.arts.ac.uk/student/') MyArts Student
+              li
+                a(href='http://www.suarts.org/') Students' Union
+            ul.social-links
+              h3 Connect with UAL:
+              li
+                a(href='https://twitter.com/UniArtsLondon', title='UAL on Twitter')
+                  span.footer-ico.icon-twitter
+              li
+                a(href='https://www.facebook.com/UniversityoftheArtsLondon', title='UAL on Facebook')
+                  span.footer-ico.icon-facebook
+              li
+                a(href='http://www.youtube.com/user/universityartslondon', title='UAL on YouTube')
+                  span.footer-ico.icon-youtube
+              //- <li><a href="#" title="UAL on Flickr"><span class="footer-ico icon-flickr"></span></a></li>
+          .row
+            .copyright
+              p © 2014 University of the Arts London All Rights Reserved
+      a.back-to-top(href='#')
+        span ↑
+        | back to top
+    footer.row.white-bg.hide
+      .footer-wrapper
+        a.open-close.debug-toggle(href='#')
+          span ↓
+          | Open Debug panel
+        //- debug
+        ul#debug
+          li Channel base uri: /
+          li Channel base description: This channel is used to publish the UAL website.
+          li Channel base id: 18
+          li Channel base name: UAL Website
+          li Page created : Mon 16 Sep 2013 03:29:06
+          li Page modified : Fri 7 Feb 2014 11:56:13
+          li Section id : 33986
+        //- end debug
+    .credits-btn
+      a.show-credits(href='#')
+        span.icon-picture
+    //-Include js scripts
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    //-script to pull google maps
+    //-if (lt IE 9) & (!IEMobile)
+      script(src='http://s3-eu-west-1.amazonaws.com/arts-staging/assets/js/ie/ie-css-fix-gz.js')
+    script(src='http://use.resrc.it/')
+    //-    Respond.js proxy on CDN
+    //- link#respond-proxy(href='http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond-proxy.html', rel='respond-proxy')
+    //-Respond.js files on your origin server
+    //-link#respond-redirect(href='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.gif', rel='respond-redirect')
+    //-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond.src.js')
+    //- script(type='text/javascript', src='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.js')
+    //-Mega Menu Plugins
+    script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js')
+    //-script(src='http://localhost:9000/assets/js/script.js')
+    script(src='http://localhost:9000/assets/js/script.js')
+    script
+      // Creates associative array (object) of query params
+      var QueryParameters = (function()
+      {
+      var result = {};
+      if (window.location.search)
+      {
+      // split up the query string and store in an associative array
+      var params = window.location.search.slice(1).split("&");
+      for (var i = 0; i < params.length; i++)
+      {
+      var tmp = params[i].split("=");
+      result[tmp[0]] = unescape(tmp[1]);
+      }
+      }
+      return result;
+      }());
+      if (QueryParameters["debug"]) {
+      document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
+      document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
+      }
+      $(document).ready(function($){
+      $('.megamenu').megaMenuCompleteSet({
+      menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+      menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+      menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+      menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+      });
+      });
+    script(type='text/javascript')
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32658704-1']);
+      _gaq.push(['_setDomainName', 'arts.ac.uk']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

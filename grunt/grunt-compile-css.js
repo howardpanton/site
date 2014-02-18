@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 	        grunt.task.run([
 	                        'compass:' + deployTo,
 	                        'cssmin:minify',
+	                        'copy:image_assets',
 	                        'copy:css',
 
 	                        ]);
@@ -21,6 +22,7 @@ module.exports = function(grunt) {
 	    	grunt.task.run([
 	                        'compass:server',
 	                        'cssmin:minify',
+	                        'copy:image_assets',
 	                        'copy:css',
 
 	                        ]);

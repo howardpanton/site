@@ -6,7 +6,7 @@
 module.exports = function(grunt) {
     grunt.config('cloudfront_clear', {
         invalidateIndex: {
-            resourcePaths: ["/assets/css/**/*.*", "/assets/js/t4/*.js", "/assets/js/*.js" ],
+            resourcePaths: ["/assets/css/**/*.css", "/assets/js/**/*.js", "/assets/js/*.js" ],
             secret_key: "<%= aws.AWSSecretKey %>",
             access_key: "<%= aws.AWSAccessKeyId %>",
             dist: "<%= aws.AWSLive %>"
