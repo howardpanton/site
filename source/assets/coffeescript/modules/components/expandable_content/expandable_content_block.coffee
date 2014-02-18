@@ -5,8 +5,8 @@
 #        detect and handle expandable content blocks
 #    -------------------------------------------------------------
 #
-expandableContentBlocks = ->
-  if $(".expanded-content").length > 0
+expCB = ->
+
     $(".expanded-content").hide()
     $(".show-more").show()
 
@@ -17,7 +17,6 @@ expandableContentBlocks = ->
       _clicked.closest(".expandable-content").find(".expanded-content").slideDown()
       _clicked.hide()
 
-
     # handle "Show Less" button click
     $(".hide-content").click (e) ->
       e.preventDefault()
@@ -26,3 +25,9 @@ expandableContentBlocks = ->
       $(".expanded-content", parent).hide()
       $(parent).find(".show-more").show()
       parent.scrollToMe() # make sure the that page scrolls back after hiding the expanded content
+
+
+$(document).ready ->
+
+   if $(".expanded-content").length > 0
+        expCB()

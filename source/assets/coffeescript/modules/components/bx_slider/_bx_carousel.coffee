@@ -42,7 +42,6 @@ initCarousel = ->
               onSlideAfter: ($slideElement, oldIndex, newIndex) ->
                 $(_this).closest(".bx-wrapper").find(".bx-index").text newIndex + 1  if _this.data("counter")
 
-
 $(document).ready ->
     if $(".js-carousel").length > 0
-        initSlider()
+        initCarousel()
