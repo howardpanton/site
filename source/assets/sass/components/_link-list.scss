@@ -3,8 +3,8 @@
 // core styles for three-up declared in _blocks.scss
 .three-up {
 	// three up link list component
-	.link-list-item { 
-		@include padding-leader(2); 
+	.link-list-item {
+		@include padding-leader(2);
 		@include margin-trailer(2);
 		border-bottom: 1px dotted black;
 
@@ -14,11 +14,25 @@
 
 @include gs-media(d) {
 	/* clear float for multiples of 3 link list items on desktop*/
-	// .link-list-item:nth-child(4), .link-list-item:nth-child(7), .link-list-item:nth-child(10) 	
-	.three-up li.link-list-item:nth-child(3n+1) { clear: left; }
-	
-	.three-up .link-list-item a { 
-		margin-left: 0; 
+	// .link-list-item:nth-child(4), .link-list-item:nth-child(7), .link-list-item:nth-child(10)
+	.three-up {
+
+        .link-list-item:nth-child(3n+1) { clear: left; }
+
+        .link-list-item:nth-child(4), .link-list-item:nth-child(10),
+        .link-list-item:nth-child(16) {
+          margin-left: 0 !important;
+        }
+
+        .link-list-item:nth-child(5), .link-list-item:nth-child(11),
+        .link-list-item:nth-child(17) {
+          margin-left: 34.45868% !important;
+        }
+    }
+
+
+	.three-up .link-list-item a {
+		margin-left: 0;
 		padding-left: 0;
 	}
 }

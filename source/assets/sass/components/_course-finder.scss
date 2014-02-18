@@ -6,7 +6,7 @@
 
 .search-results {
   @extend %d5-d16;
-
+  
   h2 {
     padding-top: 0;
   }
@@ -99,14 +99,14 @@
   width:100%;
   margin-bottom: 0;
   padding:0;
-  input {
-    margin-left: 0;
+  input { 
+    margin-left: 0; 
     margin-bottom: 0;
     padding-left: 6px;
     height: 48px;
   }
   @include gs-media(d) {
-     input {
+     input { 
          padding-left: 12px;
      }
   }
@@ -137,41 +137,41 @@
   }
 
   &::-webkit-input-placeholder {
-   color: $light-gray;
+   color: $light-gray; 
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-   color: $light-gray;
+   color: $light-gray; 
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-   color: $light-gray;
+   color: $light-gray;   
   }
-
-  &:-ms-input-placeholder {
-   color: $light-gray;
+  
+  &:-ms-input-placeholder {  
+   color: $light-gray;   
   }
-
+  
   &:focus {
     &::-webkit-input-placeholder {
-     color: $aaa-gray;
+     color: $aaa-gray; 
     }
     &:-moz-placeholder { /* Firefox 18- */
-     color: $aaa-gray;
+     color: $aaa-gray; 
     }
     &::-moz-placeholder {  /* Firefox 19+ */
-     color: $aaa-gray;
+     color: $aaa-gray;   
     }
-    &:-ms-input-placeholder {
-     color: $aaa-gray;
+    &:-ms-input-placeholder {  
+     color: $aaa-gray;   
     }
   }
 }
 
 .search-again-submit {
-  font-family: 'fontello';
-  color: $white;
-  @include font-size(20);
+  font-family: 'fontello'; 
+  color: $white; 
+  @include font-size(20); 
   line-height: 20px;
 }
 
@@ -182,7 +182,7 @@
   display: block;
   background-color: black;
   height:48px;
-  width: 48px;
+  width: 48px; 
   a {
     border-bottom: 0;
   }
@@ -209,13 +209,13 @@ input, .search-result-module, .search-input-wrap {
 
 .search-input-wrap, .search-input-wrap, .search-result-module, .search-result-module:focus {
   @extend .search-bg-gray-border;
-
+  
 }
 
 
 .search-input-wrap:hover, .search-input-wrap:focus, .search-result-module:hover, .search-result-module:focus {
   @extend .search-gray-border;
-
+  
 }
 
 .search-result-module {
@@ -233,14 +233,14 @@ input, .search-result-module, .search-input-wrap {
 }
 
 .search-results-summary {
-
+  
   @extend %d6-d16--within-d6-d16;
-
+  
   @include gs-media (d, min-max) {
     min-height: 60px;
     position: relative;
   }
-
+  
   @include gs-media (t, min-max) {
     min-height: 60px;
     position: relative;
@@ -255,7 +255,7 @@ input, .search-result-module, .search-input-wrap {
 
 
 .search-results-info {
-
+  
   p {
     @extend .size-h3;
     font-weight: 300;
@@ -283,7 +283,7 @@ input, .search-result-module, .search-input-wrap {
   @extend .search-results-info;
   p {
     @include font-size(18);
-
+    
   }
   @include gs-media (d,min-max) {
     @include gs-span(d,6,11,(6,16));
@@ -297,12 +297,12 @@ input, .search-result-module, .search-input-wrap {
 .search-pagination-btns {
 
     text-align: right;
-    a {
+    a { 
       display: inline-block;
       position: relative;
       min-width: 2em;
       &::first-of-type {
-        margin-right: 1px;
+        margin-right: 1px; 
       }
 
       &.left-arrow, &.right-arrow {
@@ -311,7 +311,7 @@ input, .search-result-module, .search-input-wrap {
       }
       &.left-arrow:after, &.right-arrow:after {
         position: absolute;
-        left: rhythm(2, 14px);
+        left: rhythm(2, 14px); 
         top: rhythm(1.5, 14px);
       }
 
@@ -322,10 +322,10 @@ input, .search-result-module, .search-input-wrap {
       &.right-arrow:after {
         content: '\e800';
       }
-
+      
 
     }
-
+  
     a.view-all {
       @extend %Swiss721BT-Light-important;
       @include font-size(16);
@@ -379,32 +379,31 @@ input, .search-result-module, .search-input-wrap {
   display: block;
   width: 32%;
   float: left;
-
+  
   h3 {
     text-decoration: none;
     // font-size: 18px;
     margin-top: 0;
     padding: 0 0 1px 0;
-    a {
-        @include hyphenation;
-        text-decoration: none;
-    }
+    a { 
+      @include hyphenation;
+      text-decoration: none; }
   }
-
+  
   @include gs-media (m,min-max) {
     width: 100%;
     clear:left;
-  }
+  }  
 
-
+  
 }
 .course-description, .search-description {
-
+  
   width: 60%;
   float: left;
   margin-left: 18px;
   p {
-
+    
     padding-top: 0;
   }
 
@@ -423,8 +422,8 @@ input, .search-result-module, .search-input-wrap {
       @include margin-leader(4);
       @include margin-trailer(4);
     }
-
-  }
+  
+  }  
 }
 
 .search-results-lower-wrap {
@@ -495,7 +494,7 @@ input, .search-result-module, .search-input-wrap {
 
 
 
-.enrolment-type, .result-file-type {
+.enrolment-type, .result-file-type { 
   width: 32%;
   float: left;
   @include font-size(14);
@@ -513,7 +512,7 @@ input, .search-result-module, .search-input-wrap {
 .college-name {
   position: absolute;
   left: 32%;
-  width: 60%;
+  width: 60%; 
   @include font-size(14);
   margin-left: 10px;
   @include gs-media (m,min-max) {
@@ -528,7 +527,7 @@ input, .search-result-module, .search-input-wrap {
 .result-url {
   position: absolute;
   left: 32%;
-  width: 60%;
+  width: 60%;  
   margin-left: 10px;
   float: right;
   @include font-size(14);
@@ -540,7 +539,7 @@ input, .search-result-module, .search-input-wrap {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-
+  
   @include gs-media (m,min-max) {
     display: none; // need to find a mobile solution for this
     width: 100%;
@@ -549,7 +548,7 @@ input, .search-result-module, .search-input-wrap {
     @include font-size(14);
     margin-left: 0;
   }
-
+    
 }
 
 .no-results-found {
@@ -585,7 +584,7 @@ input, .search-result-module, .search-input-wrap {
     clear: both;
     white-space: nowrap;
     border-bottom: 0;
-
+ 
     &.ui-state-hover, &.ui-state-active {
       color: $soft-black;
       text-decoration: none;
