@@ -1,7 +1,7 @@
 beta
 ====
 
-UAL beta website
+University of the Arts London website
 
 [![Build Status](https://travis-ci.org/artslondon/beta.png?branch=gh-pages)](https://travis-ci.org/artslondon/beta)
 
