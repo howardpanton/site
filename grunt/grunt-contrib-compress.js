@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             },
             files: [
                 {expand: true, flatten: true, src: ['.tmp/assets/css/*.css'], dest: '.tmp/assets/css/gzip/', ext: '.min.css'},
-                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'} 
+                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'}
             ]
         },
 
@@ -40,10 +40,10 @@ module.exports = function(grunt) {
                 mode: 'gzip'
             },
             files: [
-                // {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.jpg'], dest: '.tmp/assets/images/gzip/', ext: '.jpg'},
-                // {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.svg'], dest: '.tmp/assets/images/gzip/', ext: '.svg'},
-                // {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.png'], dest: '.tmp/assets/images/gzip/', ext: '.png'},
-                // {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.gif'], dest: '.tmp/assets/images/gzip/', ext: '.gif'},
+                {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.jpg'], dest: '.tmp/assets/images/gzip/', ext: '.jpg'},
+                {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.svg'], dest: '.tmp/assets/images/gzip/', ext: '.svg'},
+                {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.png'], dest: '.tmp/assets/images/gzip/', ext: '.png'},
+                {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['**/*.gif'], dest: '.tmp/assets/images/gzip/', ext: '.gif'},
                 {expand: true, cwd: 'build/assets/images/', flatten: false, src: ['favicon.ico'], dest: '.tmp/assets/images/gzip/', ext: '.ico'}
             ]
         }
