@@ -16,7 +16,8 @@ module.exports = function(grunt) {
         },
         editPrototype: {
             cmd: function(foldername) {
-                  return 'sublime source/prototypes/' + foldername + '/index.jade';
+                  //return 'sublime source/prototypes/' + foldername + '/index.jade';
+                  return 'open -a /Applications/Sublime Text.app "gruntfile.js"';
                 }
         }
 
