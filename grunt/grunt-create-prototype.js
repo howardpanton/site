@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         grunt.file.write('source/prototypes/' + file_name + '/index.jade', header_content);
 
         // open file for editing in Sublime Text
-        var execString = 'exec:editPrototype:' + file_name;
+        var execString = 'open:dev';
         grunt.task.run(execString);
 
 
