@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             },
 
             files: [
-                {expand: true, cwd: 'build/assets/images/', src: ['favicon.ico'], dest: 'assets/img/', action: 'upload'},
+                {expand: true, cwd: 'build/assets/images/', src: ['**'], dest: 'assets/img/', action: 'upload'},
                 {expand: true, cwd: 'build/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
                 {expand: true, cwd: 'build/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
             ]
