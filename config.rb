@@ -17,6 +17,7 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
+
 http_images_path = "http://localhost:9000/"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true

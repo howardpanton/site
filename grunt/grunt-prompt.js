@@ -146,8 +146,8 @@ module.exports = function(grunt) {
                                 { name: 'CSM', value: 'csm' },
                                 { name: 'Chelsea', value: 'csm' },
                                 { name: 'LCC', value: 'lcc' },
-                                { name: 'lcf', value: 'lcf' },
-                                { name: 'wimbledon', value: 'wimbledon' }
+                                { name: 'LCF', value: 'lcf' },
+                                { name: 'Wimbledon', value: 'wimbledon' }
                         ],
                         default: 'ual'
                     }
