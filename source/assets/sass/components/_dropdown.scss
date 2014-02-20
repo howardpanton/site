@@ -1,12 +1,12 @@
 //
-// Dropdown menu button 
+// Dropdown menu button
 // & UAL styled select box styles
 //
 
 .dd-menu, .select-box {
    max-width: 650px;
    clear: left;
-   @include margin-trailer(2);   
+   @include margin-trailer(2);
    ul {
       display: none; // hide list on page load
       li {
@@ -19,13 +19,13 @@
         margin-left: 0;
       }
       li a {
-        display: block; 
+        display: block;
         width: 100%;
         // @include padding-leader(2);
         // @include padding-trailer(2);
         padding: 10px 12px;
         line-height:20px;
-        border-bottom: 0; 
+        border-bottom: 0;
         @extend %Swiss721BT-Light;
         @include font-size(14);
         font-weight: normal;
@@ -53,7 +53,7 @@
       @extend %Swiss721BT-Bold-important;
       .lcc & {
         text-transform: none !important;
-        word-spacing: 2px; 
+        word-spacing: 2px;
         border-bottom:none;
         line-height:1.375;
         margin-bottom: 0;
@@ -64,7 +64,7 @@
     background-color: $black;
     color: $white;
   }
-  
+
  .dd-menu-arrow, .select-box-arrow {
       background-color: $black;
       color: white;
@@ -85,7 +85,7 @@
         height: 43px;
         width: 43px;
 
-        margin-left: -14px;
+        margin-left: -16px;
         margin-top: -7px;
 
         &:before {
@@ -98,7 +98,7 @@
           height: 43px;
           width: 43px;
         }
-        
+
         .dd-menu.active & {
           &:before {
             content: '\e806'; // up arrow
@@ -106,7 +106,7 @@
         }
 
       }
-    } 
+    }
 }
 
 
