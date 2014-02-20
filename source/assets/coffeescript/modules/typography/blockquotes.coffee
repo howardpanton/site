@@ -6,12 +6,10 @@
     -------------------------------------------------------------
 ###
 
-jQuery ->
-
-  if $("blockquote").length > 0
+if $("blockquote").length > 0
     $("blockquote").each () ->
-      $(this).prepend('<span></span>')
+        $(this).prepend('<span></span>')
 
-  if $(".pull-quote").length > 0
+if $(".pull-quote").length > 0
     $(".pull-quote").each () ->
-      $(this).prepend('<span></span>')
+        $(this).prepend('<span></span>')

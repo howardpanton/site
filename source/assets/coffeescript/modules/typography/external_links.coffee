@@ -9,12 +9,14 @@
 #
 externalLinks = ->
 
-  # create :external selector
-  jQuery.expr[":"].external = (obj) ->
-    obj.hostname isnt location.hostname
+    # create :external selector
+    jQuery.expr[":"].external = (obj) ->
+        obj.hostname isnt location.hostname
+
+    # Add external class to links
+    $(".l-content a:external.button-link, aside a:external").addClass("external").each ->
+        $(this).attr "title", $(this).attr("title") + "(external link)"
 
 
-  # Add external class to links
-  $(".l-content a:external.button-link, aside a:external").addClass("external").each ->
-    $(this).attr "title", $(this).attr("title") + "(external link)"
-
+$(document).ready ->
+    externalLinks()

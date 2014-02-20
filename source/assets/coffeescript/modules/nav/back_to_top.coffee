@@ -37,7 +37,8 @@ backToTop = ->
     $("back-to-top").click (event) ->
         event.preventDefault()
         $("html, body").animate
-        scrollTop: 0 300
+          scrollTop: 0
+        , 300
 
 $(document).ready ->
     backToTop()

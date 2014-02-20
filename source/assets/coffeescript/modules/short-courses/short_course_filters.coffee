@@ -14,26 +14,26 @@ shortCourseFilters = ->
         $ ->
             setPagination = ->
                 pagination.jPages
-                containerID: "container"
-                perPage: 24
-                midRange: 1
-                previous: "←"
-                next: "→"
-                direction: "auto"
-                animation: "fadeInUp"
+                    containerID: "container"
+                    perPage: 24
+                    midRange: 1
+                    previous: "←"
+                    next: "→"
+                    direction: "auto"
+                    animation: "fadeInUp"
 
             destroyPagination = ->
                 pagination.jPages "destroy"
                 container = $("#container")
                 pagination = $("#pagination")
-                setPagination()
-                $.filtrify "container", "placeHolder",
+
+            setPagination()
+
+            $.filtrify "container", "placeHolder",
                 block: "data-original"
                 callback: ->
                     destroyPagination()
                     setPagination()
-
-
 
     $("#placeHolder").prependTo ".content"  unless $("body").hasClass("gDesktop")
 

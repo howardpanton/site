@@ -7,7 +7,7 @@
 ###
 
 enableSelectBoxes = ->
-    $(".js-select-box").each ->
+    $("#js-select-box").each ->
 
         _start_val = $(this).children("ul.js-select-box-list").children("li.select-box-option:first").children("a").html()
 
