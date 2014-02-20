@@ -39,6 +39,15 @@ module.exports = function(grunt) {
             }
             ]
         },
+      sprite: {
+            src: ['.tmp/assets/css/screen.css'],
+            overwrite: true, // overwrite matched source files
+            replacements: [{
+              from: "source/assets/",
+              to: "assets/"
+            }
+            ]
+        },
         reset: {
             src: ['source/_layout/_base.jade'],
             overwrite: true, // overwrite matched source files
@@ -55,3 +64,4 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-text-replace');
 };
+
