@@ -21,3 +21,8 @@ checkWindowSize = ->
 
   # remove any existing body class and add the new_body_class
   $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_body_class)
+
+
+$(document).ready ->
+    checkWindowSize()
+

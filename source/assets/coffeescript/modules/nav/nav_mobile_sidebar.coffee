@@ -5,6 +5,7 @@
 #      Creates a mobile and tablet version of the left sidebar menu
 #    -------------------------------------------------------------
 #
+
 buildMobileSidebar = ->
   _sb_lth = $(".sidebar").length
   _has_heading = $(".sidebar").find(".menu-heading").length
@@ -41,7 +42,6 @@ buildMobileSidebar = ->
           # update the menu button and set class to active
           _clicked.addClass "active"
 
-
       # check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
       if _sideBarTitle.text().toLowerCase() is "in this section"
 
@@ -51,3 +51,8 @@ buildMobileSidebar = ->
       # if not, it must be a college - so replace text with "college homepage"
       else
         $("#mobile-sidebar li a").first().text "College Homepage"
+
+$(document).ready ->
+
+    buildMobileSidebar()
+
