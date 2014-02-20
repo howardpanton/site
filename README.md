@@ -32,8 +32,8 @@ At this point you should fork the artslondon repo into your own github account.
 
 You should see:
 
--- origin	https://github.com/artslondon/beta.git (fetch)  
--- origin	https://github.com/artslondon/beta.git (push)  
+-- origin    https://github.com/artslondon/beta.git (fetch)  
+-- origin   https://github.com/artslondon/beta.git (push)  
 
 **Update remote**
 
@@ -57,10 +57,10 @@ You should see:
 
 `git remote -v`
 
--- origin	https://github.com/artslondon/beta.git (fetch)  
--- origin	https://github.com/artslondon/beta.git (push)  
--- source	https://github.com/yourusername/beta.git (fetch)  
--- source	https://github.com/yourusername/beta.git (push)  
+-- origin   https://github.com/artslondon/beta.git (fetch)  
+-- origin   https://github.com/artslondon/beta.git (push)  
+-- source   https://github.com/yourusername/beta.git (fetch)  
+-- source   https://github.com/yourusername/beta.git (push)  
 
 
 ### Fork & pull process
@@ -85,34 +85,40 @@ Make changes, commit them, then push changes to your own remote:
 Now you can make a pull request via github.com.
 
 
-## Javascript libraries used & descriptions 
-
-A list of all libraries that are used on the UAL website. Please add to this list each time you add a new script to the Assets folder.
+# Getting set up to use UAL grunt tasks
 
 
-### [Modernizr](http://modernizr.com)
+### To-do's before setup
 
-** used in _____ pages **
+* If you haven't already, install grunt on your machine following the steps here: [http://gruntjs.com/installing-grunt](http://gruntjs.com/installing-grunt)
 
-Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser. 
-Used to provide fallback for browsers which don't support some of the latest features.
+* make sure you have cloned the arts.ac.uk repo from github (see instructions for Github setup above)
 
-How it works
-Modernizr runs quickly on page load to detect features; it then creates a JavaScript object with the results, and adds classes to the html element for you to key your CSS on. Modernizr supports dozens of tests, and optionally includes YepNope.js for conditional loading of external .js and .css resources.
+## 1. Copy grunt setup files from shared folder in dropbox
+ After you have cloned the arts.ac.uk repo from github, download the grunt config files from the **UAL Shared** folder in Dropbox. If you do not have access to the UAL Shared folder in dropbox, email someone from the web team and ask them to send you the files. 
+ 
+Once you have downloaded the files, copy them inside the **/grunt/** folder within the arts.ac.uk repo.
+Your updated grunt folder should now have **grunt/config** and **grunt/src/** folders and setup files inside it.
 
-
-### [fitVids.js](http://fitvidsjs.com)
-
-** used in _____ pages **
-
-For fluid width video embeds - use to make videos responsive
+* **Note:** it is important that you **do not copy the grunt-aws.json file to any folder other than inside grunt/config/** - this is to prevent the file being pushed into github, avoiding exposing the security settings for amazon s3.
 
 
-### [Selectivizr](http://selectivizr.com)
+## 2. Run npm install locally
 
-** used in _____ pages **
 
-Selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8. Simply include the script in your pages and selectivizr will do the rest.
+Install node modules required for the grunt tasks to your machine by running `npm install` within the root of the arts.ac.uk folder. *if you get errors when running this task, you may need to put `sudo` in front of the command above. eg/ `sudo npm install`
+
+
+## 3. Run grunt in terminal
+
+After you have installed grunt on your machine, added the config files from dropbox and ran npm install to install dependencies. 
+* you can run the UAL grunt tasks by typing: `grunt` in terminal in the root of arts.ac.uk  
+
+
+
+
+
+
 
 
 
