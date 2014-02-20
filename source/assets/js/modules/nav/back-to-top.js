@@ -19,6 +19,7 @@ function backToTop() {
         }
       }
     });
+
     $(window).scroll(checkScroll());
     return $("back-to-top").click(function(event) {
       event.preventDefault();
