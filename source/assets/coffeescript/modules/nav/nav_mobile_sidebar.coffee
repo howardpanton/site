@@ -53,6 +53,5 @@ buildMobileSidebar = ->
         $("#mobile-sidebar li a").first().text "College Homepage"
 
 $(document).ready ->
-
     buildMobileSidebar()
 

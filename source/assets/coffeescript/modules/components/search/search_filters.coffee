@@ -7,9 +7,6 @@
 #
 searchFilters = ->
 
-  # detect search filters on page
-  if $(".search-filters").length > 0
-
     #allow expand and close for search filters
     $(".filter-heading").click (event) ->
       event.preventDefault()
@@ -22,4 +19,8 @@ searchFilters = ->
         else
           c.parent().addClass "active"
 
+$(document).ready ->
+    # detect search filters on page
+    if $(".search-filters").length > 0
+        searchFilters()
 

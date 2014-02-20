@@ -11,10 +11,10 @@
 #
 
 skipToContent = ->
-  if $(".page-title").length > 0
-    $(".page-title").first().attr "id", "skip-to-here"
-  else
-    $(".content-wrapper").first().attr "id", "skip-to-here"
+    if $(".page-title").length > 0
+        $(".page-title").first().attr "id", "skip-to-here"
+    else
+        $(".content-wrapper").first().attr "id", "skip-to-here"
 
 $(document).ready ->
     skipToContent()

@@ -25,19 +25,20 @@
 #   $("html, body").animate({scrollTop: 0}, 300)
 
 backToTop = ->
-  jQuery ->
     checkScroll() ->
-      if $("body").hasClass("gDesktop")
-        if $(this).scrollTop() > 450
-          $(".back-to-top").fadeIn 200
-        else
-          $(".back-to-top").fadeOut 200
+        if $("body").hasClass("gDesktop")
+            if $(this).scrollTop() > 450
+                $(".back-to-top").fadeIn 200
+            else
+                $(".back-to-top").fadeOut 200
 
     $(window).scroll checkScroll()
+
     $("back-to-top").click (event) ->
-      event.preventDefault()
-      $("html, body").animate
-        scrollTop: 0
-      , 300
-  return
+        event.preventDefault()
+        $("html, body").animate
+        scrollTop: 0 300
+
+$(document).ready ->
+    backToTop()
 

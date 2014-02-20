@@ -7,6 +7,10 @@
 #    -------------------------------------------------------------
 #
 searchFocusHighlight = ->
-  if $(".search-input-wrap").length > 0
+
     $("#finder-search-input").focus ->
-      $("#finder-search-input").parent().parent().addClass "search-gray-border"
+        $("#finder-search-input").parent().parent().addClass "search-gray-border"
+
+$(document).ready ->
+    if $(".search-input-wrap").length > 0
+        searchFocusHighlight()

@@ -1,14 +1,12 @@
 #
 #    -------------------------------------------------------------
-#        checkForLightbox()
+#        initLightbox()
 #
 #        detect and show magnific lightbox
 #    -------------------------------------------------------------
 #
-checkForLightbox = ->
+initLightbox = ->
 
-  # detect lightbox component
-  if $(".js-lightbox").length > 0
     $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js", ->
       $(".js-lightbox").each ->
         $(this).magnificPopup
@@ -24,5 +22,10 @@ checkForLightbox = ->
           image:
             tError: "<a href=\"%url%\">The image #%curr%</a> could not be loaded."
 
+
+$(document).ready ->
+    # detect lightbox component
+    if $(".js-lightbox").length > 0
+        initLightbox()
 
 
