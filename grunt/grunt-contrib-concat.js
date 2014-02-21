@@ -26,6 +26,11 @@ module.exports = function(grunt) {
             src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
             dest: '.tmp/assets/js/script.min.js',
             nonull: true,
+        },
+        hammerjsUnMin: {
+            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.js'],
+            dest: '.tmp/assets/js/script.js',
+            nonull: true,
         }
 
     });
