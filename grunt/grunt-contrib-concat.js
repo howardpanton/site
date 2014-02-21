@@ -18,8 +18,8 @@ module.exports = function(grunt) {
             nonull: true,
         },
         libs_and_built_scriptjs: {
-            src: ['.tmp/assets/js/compiled.plugins.js', '.tmp/assets/js/script.min.js'],
-            dest: '.tmp/assets/js/script.min.js',
+            src: ['.tmp/assets/js/compiled.plugins.js', '.tmp/assets/js/compiled.modules.js'],
+            dest: '.tmp/assets/js/script.js',
             nonull: true,
         },
         hammerjs: {

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
     grunt.log.writeln(path_to_open);
 
-    if (path_to_open.length < 1) { path_to_open = "http://localhost:9000/";}
+    if (path_to_open.length < 1) { path_to_open = "http://localhost:9000/"; }
 
     grunt.config('open', {
 
@@ -28,8 +28,6 @@ module.exports = function(grunt) {
         }
 
     });
-
-
 
     grunt.loadNpmTasks('grunt-open');
 
