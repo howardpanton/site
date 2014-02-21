@@ -11,22 +11,22 @@ module.exports = function(grunt) {
             stripBanners: true,
             process:true,
         },
-        // dist: {
-        //     src: ['.tmp/assets/js/libs/fastclick.js', '.tmp/assets/js/libs/jquery.review.js', '.tmp/assets/js/libs/hoverintent.js','.tmp/assets/js/libs/hammer.js', '.tmp/assets/js/libs/megamenu-dev.js' , '.tmp/assets/js/.tmp/assets/js/built_script.js'],
-        //     dest: '.tmp/assets/js/combined.js',
-        //     nonull: true,
-        // },
 
         jslibs: {
-            src: ['source/assets/js/plugins/classie.js','source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/hammerjs.js', 'source/assets/js/plugins/megamenu.js'],
+            src: ['source/assets/js/plugins/classie.js','source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/megamenu.js'],
             dest: '.tmp/assets/js/compiled.plugins.js',
             nonull: true,
         },
         libs_and_built_scriptjs: {
-            src: ['.tmp/assets/js/compiled.plugins.js', '.tmp/assets/js/compiled.modules.js'],
-            dest: '.tmp/assets/js/script.js',
+            src: ['.tmp/assets/js/compiled.plugins.js', '.tmp/assets/js/script.min.js'],
+            dest: '.tmp/assets/js/script.min.js',
             nonull: true,
         },
+        hammerjs: {
+            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
+            dest: '.tmp/assets/js/script.min.js',
+            nonull: true,
+        }
 
     });
     grunt.loadNpmTasks('grunt-contrib-concat');

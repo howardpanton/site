@@ -15,6 +15,7 @@ module.exports = function(grunt) {
                         'prompt:checkJS',
                         'confirm_js_hint',
                         'exec:minifyjs',
+                        'concat:hammerjs',
                         'usebanner',
                         'copy:js'
                         ]);

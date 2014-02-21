@@ -9,19 +9,6 @@ module.exports = function(grunt) {
 
     // Do live build
     grunt.registerTask('go_build_live', [
-                                            // 'concat:dist',
-                                            // 'newer:exec:compress',
-                                            // 'usebanner',
-                                            // 'compress:main',
-                                            // 'exec:buildlive',
-                                            // 'cssmin:minify',
-                                            // 'compress:css',
-                                            // 'compress:js',
-                                            // 'copy:minified_assets',
-                                            // 'clean:build',
-                                            // 'newer:aws_s3:live',
-                                            // 'cloudfront_clear',
-                                            // 'sass:local',
                                             'replace:spritePath',
                                             'gzip_assets',
                                             'aws_s3:live',

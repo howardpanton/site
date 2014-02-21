@@ -5,7 +5,7 @@
 module.exports = function(grunt) {
     grunt.config('asciify', {
         banner:{
-            text: 'artsdev',
+            text: 'klunge',
             options:{
                 font:'banner3',
                 log:true
