@@ -39,7 +39,7 @@ module.exports = function(grunt) {
             }
             ]
         },
-      sprite: {
+      spritePath: {
             src: ['.tmp/assets/css/screen.css'],
             overwrite: true, // overwrite matched source files
             replacements: [{

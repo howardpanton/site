@@ -76,23 +76,20 @@
       height: 43px;
 
       span.icon {
-        position: relative;
-        @include font-size(20);
+        position: absolute;
+        top: 10px;
+        left: -5px;
+        @include font-size(24);
         vertical-align: middle;
-        // padding-top: 12px;
-        // padding-left: 5px;
         display: block;
 
-        // margin-left: -16px;
-        // margin-top: -7px;
-
+        .js-select-box & {
+            top: 18px;
+            left: 11px;
+        }
         &:before {
           position: absolute;
-          // top: 18px;
-          // left: 12px;
           content: '\e803'; // down arrow
-          // padding-left: 12px;
-          // margin-top: 18px;
           height: 43px;
           width: 43px;
         }

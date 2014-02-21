@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                                             // 'newer:aws_s3:live',
                                             // 'cloudfront_clear',
                                             // 'sass:local',
-                                            'gzip_assets', 
+                                            'replace:spritePath',
+                                            'gzip_assets',
                                             'aws_s3:live',
                                             'cloudfront_clear'
                                       ]);
