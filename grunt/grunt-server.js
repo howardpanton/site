@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             //'clean',
             'concurrent:server',
             'connect:livereload',
-            'open',
+            'open:root',
             'watch'
         ]);
     });
