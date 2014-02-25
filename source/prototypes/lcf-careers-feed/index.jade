@@ -1,80 +1,106 @@
 extends ../../_layout/_base
 block vars
 	- var bodyClass = "lcf";
-	- var Title = "lcf-careers-feed";
+	- var Title = "LCF Careers Feed";
 	- var Sidebar = true;
 	- var Banner = true;
 block content
 
+	.content-wrapper
+		.row
+			nav.sidebar
+				ul.no-bullet
+					li.menu-heading: London College of Fashion
+			.content(role='main')
+				.row
+					.l-content-full-width.block.__media
+						.row
+							.video-container
+								iframe(src='//www.youtube.com/embed/T1sLWW9PC-A', frameborder='0', allowfullscreen='allowfullscreen')
+							.__text
+				.row
+					.l-content.block.__text.__with-aside
+						.text
+							p.leader
+								| LCF Careers provides a comprehensive career management service supporting our students to become informed and self-reliant individuals able to plan and manage their own careers.
+							p We enrich your student experience through:
+							ul
+								li Careers information and industry knowledge
+								li Personal guidance
+								li Connecting students with industry opportunities
+					aside.ual-white-bg
+						h4 Get in touch
+						p
+							strong Email:
+								a(href='mailto:lcfcareers@fashion.arts.ac.uk') lcfcareers@fashion.arts.ac.uk
+						p
+							strong Phone:
+								| 020 7514 7571
+						p
+							strong Twitter:
+								a(href='http://www.twitter.com/lcfcareers') @lcfcareers
+						p
+							| Or find us on the second floor of our
+							a(href='/fashion/about/find-us/john-princes-street/') John Prince's Street
+								| site, room 213.
+				.row
+					.l-content-full-width.block.__media.two-up
+						ul
+							li
+								figure.feature
+									a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='')
+										img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-students1112-696.jpg', alt='Image Alt')
+								h3
+									a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='For students: Supporting Talent') For students: Supporting Talent
+								p
+									| Our talent team will support you with careers advice, and provides a point of contact for you during work experience and work placements.
+							li
+								figure.feature
+									a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='')
+										img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-businesses1112-696.jpg', alt='Image Alt')
+								h3
+									a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='For business: Accessing Talent') For business: Accessing Talent
+								p
+									| Our client team takes a personalised approach to industry requirements. We will scope out your opportunity, working with you to provide a variety of services to meet your needs.
+				.row
+					.l-content-full-width
+						h2 Latest Jobs
+						#lcf-jobs	
 
-.row
-	.l-content-full-width
-		h2 Latest Jobs
-		.table-container
-			table.data-table
-				tbody
-					tr.head
-						td Title
-						td Location
-						td Salary
-						td Closing date
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1293') Product Development 
-						td East London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1312') House of Holland - DESIGN STUDIO INTERNSHIP
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1313') House of Holland TEXTILE INTERNSHIP 
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1322') Studio Assistant - WESTCOTT DESIGN
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1325') SALES/MARKETING INTERN Roksanda Ilincic 
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1355') ERDEM Sampling Intern 
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1361') Costume Assistant Intern
-						td Greater London
-						td Negotiable
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1376') Antipodium Studio Assistant Internship
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1377') Studio Assistant Percival
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
-					tr
-						td
-					  		a(href='http://my.lcffirstmove.co.uk/jobs/1383') Production Intern - Aitor Throup
-						td Greater London
-						td Travel and Expenses
-						td 10 Dec
+	.panel.bg-gray-bg
+		.content-wrapper
+			.row
+				.related-content.l-content-full-width.block.__media.four-up
+					ul
+						li
+							a(href='http://blogs.arts.ac.uk/fashion/tag/inside-the-industry/', title='A series of thought-provoking debates, talks and workshops with inspiring speakers from across the industry.')
+								figure.m-hide.t-hide
+									img.resrc(data-src='http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/nick-knight-colin-mcdowell656-411.jpg', alt='Read more about ')
+								.text
+									h3 Inside the Industry
+									p
+										| A series of thought-provoking debates, talks and workshops with inspiring speakers from across the industry.
+						li
+							a(href='http://blogs.arts.ac.uk/fashion/tag/careers/', title='Get the latest from LCF Careers, including the Graduate Fair and Bootcamps.')
+								figure.m-hide.t-hide
+									img.resrc(data-src='http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/grad-fair656-411.jpg', alt='Read more about ')
+								.text
+									h3 LCF Careers on the LCF News blog
+									p Get the latest from LCF Careers, including the Graduate Fair and Bootcamps.
+						li
+							a(href='/fashion/business-and-innovation/for-students-and-graduates/', title='Get advice about business planning and resources, as well as information about funding.')
+								figure.m-hide.t-hide
+									img.resrc(data-src='http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/lcf-business-and-innovation/digital-fashion-1112-696.jpg', alt='Read more about ')
+								.text
+									h3 Business & Innovation
+									p
+										| Get advice about business planning and resources, as well as information about funding.
+						li
+							a(href='/fashion/people/alumni/', title='Our graduates are running the international fashion industry. They hold influential positions ranging from magazine editors to fashion designers.')
+								figure.m-hide.t-hide
+									img.resrc(data-src='http://app.resrc.it/http://www.arts.ac.uk/media/arts/colleges/lcf/lcf-people/alumni/lily-marpaung1112-696.jpg', alt='Read more about ')
+								.text
+									h3 LCF Alumni
+									p
+										| Our graduates are running the international fashion industry. They hold influential positions ranging from magazine editors to fashion designers.
+		
