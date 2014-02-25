@@ -103,13 +103,20 @@ Your updated grunt folder should now have **grunt/config** and **grunt/src/** fo
 * **Note:** it is important that you **do not copy the grunt-aws.json file to any folder other than inside grunt/config/** - this is to prevent the file being pushed into github, avoiding exposing the security settings for amazon s3.
 
 
-## 2. Run npm install locally
+## 3. Install java runtime 
+
+http://www.java.com/en/download/faq/java_mac.xml
+
+This is needed to run the YUI compressor - used for javascript minification
+
+
+## 3. Run npm install locally
 
 
 Install node modules required for the grunt tasks to your machine by running `npm install` within the root of the arts.ac.uk folder. *if you get errors when running this task, you may need to put `sudo` in front of the command above. eg/ `sudo npm install`
 
 
-## 3. Run grunt in terminal
+## 4. Run grunt in terminal
 
 After you have installed grunt on your machine, added the config files from dropbox and ran npm install to install dependencies. 
 * you can run the UAL grunt tasks by typing: `grunt` in terminal in the root of arts.ac.uk  
