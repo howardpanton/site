@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                                             'replace:spritePath',
 								    		'gzip_assets',
 								    		'aws_s3:staging',
-                                            'cloudfront_clear:staging'
+                                            'cloudfront_clear'
 								    	]);
 };
 

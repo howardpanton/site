@@ -10,6 +10,16 @@ module.exports = function(grunt) {
         var deployTo = grunt.config('deployTo');
         var buildFileType = grunt.config('buildFileType');
 
+        if (deployTo === "staging") {
+            grunt.option("AWS_id", grunt.config.get('AWS_staging_id'));
+        }
+        if (deployTo === "live") {
+            grunt.option("AWS_id",  grunt.config.get('AWS_live_id'));
+        }
+
+
+        grunt.log.writeln("Setting up AWS path to: " + grunt.option("AWS_id"));
+
         // build files first
 
         switch (buildFileType) {
