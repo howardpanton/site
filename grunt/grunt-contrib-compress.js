@@ -48,18 +48,6 @@ module.exports = function(grunt) {
             ]
         }
 
-        // fonts: {
-        //     options: {
-        //         mode: 'gzip'
-        //     },
-        //     files: [
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.eot'], dest: 'temp/fonts/', ext: '.eot'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.svg'], dest: 'temp/fonts/', ext: '.svg'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.ttf'], dest: 'temp/fonts/', ext: '.ttf'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.woff'], dest: 'temp/fonts/', ext: '.woff'}
-        //     ]
-        // }
-
 
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
