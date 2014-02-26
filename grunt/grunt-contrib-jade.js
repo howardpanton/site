@@ -30,9 +30,9 @@ module.exports = function(grunt) {
 
 
     // on watch events configure jade:debug to only run on changed file
-    grunt.event.on('watch', function(action, filepath) {
-      grunt.config('jade.debug.src', filepath);
-    });
+    // grunt.event.on('watch', function(action, filepath) {
+    //   grunt.config('jade.debug.src', filepath);
+    // });
 
     grunt.loadNpmTasks('grunt-contrib-jade');
 };

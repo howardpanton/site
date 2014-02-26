@@ -10,13 +10,10 @@ module.exports = function(grunt) {
         var deployTo = grunt.config('deployTo');
         var buildFileType = grunt.config('buildFileType');
 
-        grunt.log.writeln('deploy varible is set to: ' +  deployTo);
+        // build files first
 
-
-        // build files first 
-     
         switch (buildFileType) {
-            
+
             case 'css-only':
                 grunt.task.run('compilecss');
             break;
@@ -24,7 +21,7 @@ module.exports = function(grunt) {
             case 'js-only':
                 grunt.task.run('compilejs');
             break;
-            
+
             case 'js-and-css':
                 grunt.task.run(['compilecss', 'compilejs']);
             break;
@@ -36,24 +33,23 @@ module.exports = function(grunt) {
 
         // then deploy to selected destination
         switch (deployTo) {
-            
+
             case 'staging':
                 grunt.log.writeln('Running build staging....');
                 grunt.task.run('buildstaging');
             break;
-            
+
             case 'live':
                 grunt.log.writeln('Running build live....');
+
                 //grunt.task.run('buildlive');
+
             break;
-            
+
             default:
             break;
 
         }
-
-
-
 
     });
 

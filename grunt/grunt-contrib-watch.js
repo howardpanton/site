@@ -18,23 +18,19 @@ module.exports = function(grunt) {
         },
         compass: {
             files: ['source/assets/sass/**/*.scss'],
-            tasks: ['compass:server'],
-            options: { livereload: true, spawn: false }
+            tasks: ['compass:server']
         },
         js: {
             files: ['source/assets/coffeescript/**/*.coffee'],
-            tasks: ['coffee', 'copy:js'],
-            options: { livereload: true, spawn: false }
+            tasks: ['coffee', 'copy:js']
         },
         jade: {
             files: ['source/**/*.jade', '!source/**/_*.jade'],
-            tasks: ['jade'],
-            options: { livereload: true, spawn: false }
+            tasks: ['jade']
         },
         copy: {
             files: ['.tmp/assets/css/**/*.css'],
-            tasks: ['copy:css'],
-            options: { livereload: true, spawn: false }
+            tasks: ['copy:css']
         },
   });
     grunt.loadNpmTasks('grunt-contrib-watch');

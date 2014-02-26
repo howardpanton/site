@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         },
         local: {
             src: ['source/_layout/_base.jade'],
-            overwrite: true, // overwrite matched source files
+            overwrite: true,
             replacements: [{
               from: "{{site.url}}",
               to: "http://localhost:9000"
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         },
         github: {
             src: ['source/_layout/_base.jade'],
-            overwrite: true, // overwrite matched source files
+            overwrite: true,
             replacements: [{
               from: "{{site.url}}",
               to: "http://artslondon.github.io/"
@@ -39,9 +39,9 @@ module.exports = function(grunt) {
             }
             ]
         },
-      spritePath: {
-            src: ['.tmp/assets/css/screen.css'],
-            overwrite: true, // overwrite matched source files
+        spritePath: {
+            src: ['.tmp/assets/css/screen.css', '.tmp/assets/css/screen.min.css'],
+            overwrite: true,
             replacements: [{
               from: "source/assets/",
               to: "assets/"
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
         reset: {
             src: ['source/_layout/_base.jade'],
-            overwrite: true, // overwrite matched source files
+            overwrite: true,
             replacements: [{
               from: "http://artslondon.github.io/",
               to: "{{site.url}}"

@@ -6,19 +6,6 @@
 
 module.exports = function(grunt) {
     grunt.config('prompt', {
-        // ask_build_type: {
-        //     options: {
-        //         questions: [
-        //             {
-        //                 config: 'buildtype',
-        //                 type: 'list',
-        //                 message: '\n\nUAL Website Build Task \nSelect build type:',
-        //                 default: 'local',
-        //                 choices: ['local','staging','live']
-        //             }
-        //         ]
-        //     }
-        // },
 
         confirm_live_build: {
             options: {
