@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         },
         js: {
             files: ['source/assets/coffeescript/**/*.coffee'],
-            tasks: ['coffee', 'copy:js']
+            tasks: ['compilejs']
         },
         jade: {
             files: ['source/**/*.jade', '!source/**/_*.jade'],
