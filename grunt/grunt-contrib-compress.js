@@ -31,7 +31,11 @@ module.exports = function(grunt) {
             },
             files: [
                 {expand: true, flatten: true, src: ['.tmp/assets/css/*.css'], dest: '.tmp/assets/css/gzip/', ext: '.min.css'},
-                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'}
+                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.data.png.css'], dest: '.tmp/assets/css/gzip/', ext: '.data.png.min.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.data.svg.css'], dest: '.tmp/assets/css/gzip/', ext: '.data.svg.min.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.fallback.css'], dest: '.tmp/assets/css/gzip/', ext: '.fallback.min.css'}
+
             ]
         },
 
