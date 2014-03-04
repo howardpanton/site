@@ -21,12 +21,10 @@ html(class="no-js", lang="en")
         if  Banner
             include ../_includes/_layouts/_banner
 
-        
         if  Sidebar
             include ../_includes/_layouts/_sidebar
-            
-
-        block content
+        else
+            block content
 
         include ../_includes/_layouts/_footer
 

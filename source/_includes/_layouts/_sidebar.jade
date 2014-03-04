@@ -1,13 +1,18 @@
-- var Title = '';
-block vars
-.header-panel.bg-gray-bg
-  .header-wrapper
-    .row
-      // navigation object : Breadcrumbs
-      .breadcrumbs
-        a(href='/') University of the Arts London
-        a(href='/#{Title}/', style='display: none;') #{Title}
-      #skip-to-here.page-title
-        h1
-          // navigation object : Section name
-          | #{Title}
+div.content-wrapper
+  div.row
+    nav.sidebar(role='navigation')
+      ul
+        li.menu-heading In this section
+        li
+          a(href='#') Sub Menu
+        li
+          a(href='#') Links 
+        li
+          a(href='#') Here
+        li
+          a(href='#') Here
+        li
+          a(href='#') and Here
+    
+    div.content(role='main')
+        block content
