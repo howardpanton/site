@@ -1,0 +1,59 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "A Simple Scripted Map";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+
+	.content-wrapper
+		.row
+			nav.sidebar
+				ul.no-bullet
+					li.menu-heading London College of Fashion
+			.content(role='main')
+				.row
+					.l-content-full-width
+						.row
+							.full-width.map(style='height: 480px;')
+								script
+									var json = [
+									{ 
+										lat: 51.515, 
+										lng: -0.142, 
+										name: "JPS", 
+										content: "20 John Prince's St, London W1G 0BJ, UK" 
+									},
+									{
+										lat: 51.503,
+										lng: -0.227,
+										name: "High Holborn",
+										content: "272 High Holborn, London WC1V 7EY, UK"
+									},
+									{
+										lat: 51.517,
+										lng: -0.116,
+										name: "Lime Grove",
+										content: "40 Lime Grove, White City, London W12 8EA, UK"
+									},
+									{
+										lat: 51.540,
+										lng: -0.055,
+										name: "Mare Street",
+										content: "182 Mare St, University of the Arts London, London E8, UK"
+									},
+									{
+										lat: 51.526,
+										lng: -0.078,
+										name: "Curtain Road",
+										content: "Shoreditch, London EC2A 3AA, UK"
+									},
+									{
+										lat: 51.523,
+										lng: -0.095,
+										name: "Golden lane",
+										content: "Golden lane, London EC1Y 0UU, UK"
+									}
+									];
+								#map-canvas(style='width:100%; height:100%')
+			
