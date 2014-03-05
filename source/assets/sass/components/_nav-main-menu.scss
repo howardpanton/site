@@ -39,13 +39,13 @@
   margin: 0;
   padding-bottom: 0;
   border:none;
-  background-color: $dark-gray; 
+  background-color: $dark-gray;
   @include prefixer(transition, $transition-bg);
 
-  display: none; // hidemenu on mobile at start  
+  display: none; // hidemenu on mobile at start
 
   @include gs-media(d) {
-    background-color: $black; 
+    background-color: $black;
     display: inline-block; // show menu items on desktop
 
     &.active {
@@ -80,7 +80,7 @@
 
 
 // add plus to the right of each dropdown link on tablet & mobile
-.megamenu_drop:after { 
+.megamenu_drop:after {
   content: "\e80b"; // fontello plus icon
   font-family: "fontello" !important;
   @include font-size(18);
@@ -92,7 +92,7 @@
   width: 48px;
   height: 48px;
   cursor: pointer;
-  
+
   // hide arrows on desktop
   @include gs-media(d) {
     display: none;
@@ -134,7 +134,7 @@
 .megamenu li.megamenu_right a {
   margin-right:5px;
 }
-    
+
 // /*  _______________________________________________
 //     02 MEGA MENU CONTAINERS
 //     _______________________________________________  */
@@ -152,9 +152,9 @@
     @include font-size(14);
   }
 
-  
 
-  // add a min height to the dropdown 
+
+  // add a min height to the dropdown
   // so that the other menu links are not visible when the dropdown is expanded
   // in mobile and tablet menu only
   &.full-height {
@@ -162,7 +162,7 @@
       min-height: 480px;
     }
   }
-  
+
   &.fix-to-top {
     @include gs-media(t, max) {
       top: 84px; // shift the course finder dropdown to align under the title
@@ -176,8 +176,8 @@
       padding-right: 12px;
     }
   }
-  
-  // set no hover color for dropdown 
+
+  // set no hover color for dropdown
   li > a:hover {
      background-color: $light-gray;
      color: $black;
@@ -187,7 +187,7 @@
     li > a:hover {
       background-color: $black;
       color: $white;
-    } 
+    }
   }
 }
 
@@ -269,23 +269,23 @@
     a:hover {
       border-bottom: 1px dotted $white;
     }
-    
+
   }
-  
+
 
 }
 
 .dropdown_fullwidth {
   @include padding-leader(2);
   @include padding-trailer(2);
-  
+
   @include gs-media(d) {
     @include padding-leader(4);
     @include padding-trailer(4);
   }
   //box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
   background-color: $dark-gray;
-  
+
   li {
     border-top: 1px dotted $aaa-gray;
     border-bottom: 0;
@@ -293,7 +293,7 @@
     &:first-child {
       border-top: 0;
     }
-    
+
     &:last-child {
       border-bottom: 1px dotted $aaa-gray;
     }
@@ -322,7 +322,7 @@
 // used in the mega menu to keep the dropdowns "within a content wrapper" on desktop
 .dd-menu-dropdown-wrapper {
   @extend .header-wrapper;
-  
+
   @include gs-media(t, max) {
     width: 100%;
     max-width: 100%;
@@ -330,7 +330,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-  
+
   ul > li {
     background-color: $light-gray;
     @include gs-media(d) {
@@ -347,28 +347,28 @@
 
 .main-menu {
 
-  width:100%; 
-  display:block; 
-  // overflow:hidden;  
+  width:100%;
+  display:block;
+  // overflow:hidden;
   background: $black;
 
   ul {
-    display: block; 
-    height: 100%; 
-    width: 100%; 
-    margin: 0; 
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0;
     margin-left: -0.5em;
-    padding: 0; 
+    padding: 0;
     background: $black;
     @include gs-media(t, min-max) {
       display:block;
     }
-    
+
     @include gs-media(m, min-max) {
       display:block;
     }
   }
-  
+
   .dropdown-arrow {
     display: none;
   }
@@ -425,40 +425,40 @@
       text-align:left;
       padding-bottom:0;
       // border-bottom: 1px solid $black;
-    
+
       @include gs-media(d) {
-        list-style:none; 
+        list-style:none;
         padding:0;
-        width:auto; 
+        width:auto;
         font-weight: 300;
         // border-bottom: 0;
       }
 
-      &:hover { background-color: $dark-gray; }   
+      &:hover { background-color: $dark-gray; }
 
       > a {
         display: block;
         height: 100%;
-        color: white;  
+        color: white;
         @include font-size(16);
         @extend %Swiss721BT-Light;
-        // padding-left: 0.75em; 
+        // padding-left: 0.75em;
         // padding-right: 0.75em;
-        padding: 6px 12px; 
+        padding: 6px 12px;
         line-height: 36px;
 
-        @include gs-media(d) { 
+        @include gs-media(d) {
           // @extend %Swiss721BT-Roman;
-          @include font-size(13); 
+          @include font-size(13);
           line-height: 24px;
           padding: 6px 12px;
         }
-        border-bottom:none; 
+        border-bottom:none;
         &:hover {
           @include gs-media(d) { background-color : $dark-gray; }
         }
       }
-  
+
       //site search icon on main nav (desktop view)
       > a.search-icon {
         font-family: "fontello" !important;
@@ -469,7 +469,7 @@
           @include font-size(16);
           min-width: gs-width(d, 16, 16, (1, 16), true);
           text-align: center;
-          
+
         }
       }
 
@@ -478,7 +478,7 @@
 }
 
 .top-bar {
-  
+
   .subnav-1 {
     @include gs-media(d) {
     @include gs-span(d, 1,4);
@@ -551,13 +551,13 @@
        margin-top: 0;
        margin-bottom: 0;
     }
-    
-   
+
+
   }
 
   .feature {
       @include gs-span(d, 9,16);
-      color:white; 
+      color:white;
       @include font-size(22);
       p {
         @extend .leader;
@@ -567,21 +567,21 @@
       }
   }
 
-  .feature-image { 
+  .feature-image {
       @include gs-span(d, 13,16);
   }
 }
 
 // styles applied to the plus / minus icon on menu
 .menu-open-closed-icon{
-  float: right; 
-  color: white; 
-  font-weight: normal; 
-  width: 36px; 
-  height: 36px; 
-  margin-top: 6px; 
+  float: right;
+  color: white;
+  font-weight: normal;
+  width: 36px;
+  height: 36px;
+  margin-top: 6px;
   @include font-size(30);
-  border-left: 1px dotted $dark-gray; 
+  border-left: 1px dotted $dark-gray;
   padding-left: 12px;
 }
 
@@ -598,15 +598,15 @@
     padding-left: 0px;
     @include padding-leader(2);
   }
- 
+
 }
 
-.mobile-menu { 
+.mobile-menu {
   float: right;
   height: 48px;
   margin-bottom: 0;
   padding-top:0;
-  
+
   ul {
     padding-bottom: 0;
   }
@@ -625,7 +625,7 @@
       text-align: right;
     }
   }
-  
+
   li:last-child {
     border-right: none;
     padding-top: 0;
@@ -638,7 +638,7 @@
   .menu-active{
     background-color: $dark-gray;
   }
-  
+
   @include gs-media(d) { display: none; }
 
 }
@@ -656,12 +656,12 @@
   }
 }
 
-.ual-logo-tab-mobile { 
+.ual-logo-tab-mobile {
   padding-left: 12px;
   float: left;
   @include gs-media(d) { display: none; }
-  
-  .logo-ual-mobile{
+
+  .logo-ual-mobile {
     @extend %mobile-logo;
   }
 }
@@ -669,12 +669,12 @@
 .ual-logo-desktop {
   min-height: 130px;
   padding-left: 12px;
-  
+
   @include gs-media(t, min-max) { display: none; }
 
   @include gs-media(m, min-max) { display: none; }
 
-  .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf, 
+  .logo-ual, .logo-ual-wimbledon, .logo-ual-lcf,
   .logo-ual-lcc, .logo-ual-csm, .logo-ual-chelsea,
   .logo-ual-camberwell {
     @extend %desktop-logo;
@@ -684,23 +684,23 @@
 
 .submenu {
   @extend .dark-gray;
-  
+
   @include gs-media(d) { @include gs-span(d, all); }
-  
-  @include gs-media(t, min-max) { 
-    padding: 0, 6px 6px 6px; 
+
+  @include gs-media(t, min-max) {
+    padding: 0, 6px 6px 6px;
 
   }
 
-  @include gs-media(m, min-max) { 
-    padding: 0, 6px 6px 6px; 
+  @include gs-media(m, min-max) {
+    padding: 0, 6px 6px 6px;
   }
-  
+
   > div {
     @extend .row;
     overflow:hidden;
     @include gs-media(d) { @include padding-trailer(6); }
-    
+
     @include gs-media(t, min-max) {
       padding-bottom:0;
       margin-bottom:0;
@@ -712,10 +712,10 @@
   }
 
   li {
-    list-style:none;  
-    width:100%; 
-    display:block; 
-    float:left; 
+    list-style:none;
+    width:100%;
+    display:block;
+    float:left;
     border-bottom: dotted 1px $white;
 
     &:hover {
@@ -734,12 +734,12 @@
 
 .sub-inner-menu {
     background-color: $soft-black;
-      
-    @include gs-media(t, min-max) { 
+
+    @include gs-media(t, min-max) {
       padding-left: 12px;
     }
 
-    @include gs-media(m, min-max) { 
+    @include gs-media(m, min-max) {
       padding-left:12px;
     }
 
@@ -748,7 +748,7 @@
 
 
 // search icon link for mobile and tablet (appears to the left of the main menu dropdown icon)
-.m-site-search-link { 
+.m-site-search-link {
   display: block;
   position: absolute;
   right: 48px;
@@ -762,7 +762,7 @@
   vertical-align: middle;
   color: $white;
   @include font-size(21);  // search icon appears slightly smaller than menu icon so size is bumped up by 1 to compensate
-  
+
   &:hover {
     color: $white;
     background-color: $dark-gray;
@@ -801,7 +801,7 @@ form.d-search-input-form {
 }
 
 // set height for course finder dropdown form
-.dropdown_fullwidth .d-search-input-form:first-of-type { 
+.dropdown_fullwidth .d-search-input-form:first-of-type {
   min-height: 48px;
 }
 // set height for site search dropdown form
@@ -815,14 +815,14 @@ form.d-search-input-form {
 }
 
 .site-search-input, .course-finder-txt-input {
- 
+
   color: $aaa-gray;
   width: 100%;
   height: 48px;
   position: absolute;
   top: 0;
   left: 0;
-  @include border-radius(0); 
+  @include border-radius(0);
   @include gs-media(d) {
     height: 24px;
   }
@@ -830,21 +830,21 @@ form.d-search-input-form {
 
 
 // skip to content link for accessibility
-a.skip-to-content, a.skip-to-content:hover, a.skip-to-content:visited 
-{ 
-  position:absolute; 
-  left:0px; 
-  top:-500px; 
-  width:1px; 
-  height:1px; 
+a.skip-to-content, a.skip-to-content:hover, a.skip-to-content:visited
+{
+  position:absolute;
+  left:0px;
+  top:-500px;
+  width:1px;
+  height:1px;
   overflow:hidden;
   padding-left: 6px;
   @include font-size(12);
-} 
+}
 
-a.skip-to-content:active, a.skip-to-content:focus 
-{ 
-  position:static; 
-  width:auto; 
-  height:auto; 
+a.skip-to-content:active, a.skip-to-content:focus
+{
+  position:static;
+  width:auto;
+  height:auto;
 }

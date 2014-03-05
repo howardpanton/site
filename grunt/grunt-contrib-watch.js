@@ -22,11 +22,11 @@ module.exports = function(grunt) {
         },
         js: {
             files: ['source/assets/coffeescript/**/*.coffee'],
-            tasks: ['coffee', 'copy:js']
+            tasks: ['compilejsNoLint']
         },
         jade: {
             files: ['source/**/*.jade', '!source/**/_*.jade'],
-            tasks: ['jade']
+            tasks: ['newer:jade']
         },
         copy: {
             files: ['.tmp/assets/css/**/*.css'],
@@ -35,4 +35,3 @@ module.exports = function(grunt) {
   });
     grunt.loadNpmTasks('grunt-contrib-watch');
 };
-

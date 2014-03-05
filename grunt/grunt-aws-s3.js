@@ -24,16 +24,12 @@ module.exports = function(grunt) {
                 }
             },
 
-            // files: [
-            //     {expand: true, cwd: 'build/assets/images/bx-slider', src: ['**'], dest: 'assets/img/bx-slider', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/images/logos', src: ['**'], dest: 'assets/img/logos', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/images/mediaelement', src: ['**'], dest: 'assets/img/mediaelement', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/images/royalslider', src: ['**'], dest: 'assets/img/royalslider', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/images/sprite', src: ['**'], dest: 'assets/img/sprite', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/images/svg', src: ['**'], dest: 'assets/img/svg', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
-            //     {expand: true, cwd: 'build/assets/js', src: ['script-min.js'], dest: 'assets/js/t4/', action: 'upload'},
-            // ]
+            files: [
+                {expand: true, cwd: 'build/assets/images/', src: ['**/**'], dest: 'assets/img/', action: 'upload'},
+                {expand: true, cwd: 'build/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
+                {expand: true, cwd: 'build/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+                {expand: true, cwd: 'build/assets/js/ie', src: ['**'], dest: 'assets/js/ie', action: 'upload'}
+            ]
         },
         staging: {
             options: {
@@ -49,6 +45,7 @@ module.exports = function(grunt) {
                 {expand: true, cwd: 'build/assets/images/', src: ['**/**'], dest: 'assets/img/', action: 'upload'},
                 {expand: true, cwd: 'build/assets/css', src: ['**'], dest: 'assets/css/', action: 'upload'},
                 {expand: true, cwd: 'build/assets/js', src: ['**'], dest: 'assets/js/', action: 'upload'},
+                {expand: true, cwd: 'build/assets/js/ie', src: ['**'], dest: 'assets/js/ie', action: 'upload'}
             ]
         },
     });

@@ -112,46 +112,49 @@
 
 /* The important stuff */
 .table-container {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  /* Making it pretty */
-  table { 
-    border-collapse: collapse; 
-    border-spacing: 0; 
-    background-color: white;
-    width: 100%;
-    border: 1px solid #c3c9cc;
-  }
-  thead {
-    @extend .aaa-gray-bg; 
-    @extend .ual-white;
-  }
-  tr {
-    &:nth-child(odd) { 
-    }
-    &:nth-child(even) {
-      @extend .bg-gray-bg;
-    }
-  }
-  th, td {
-    padding-top: rhythm(1, 14px);
-    padding-right: rhythm(1, 14px);
-    padding-bottom: rhythm(1, 14px);
-    padding-left: rhythm(2, 14px);
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    white-space: nowrap;
-  }
-  td {
-    border-top: 1px solid #c3c9cc;
-  }
+  	overflow-y: scroll;
+  	-webkit-overflow-scrolling: touch;
+  	/* Making it pretty */
+  	table { 
+		border-collapse: collapse; 
+		border-spacing: 0; 
+		background-color: white;
+		width: 100%;
+		border: 1px solid #c3c9cc;
+  	}
+  	thead {
+		@extend .aaa-gray-bg; 
+		@extend .ual-white;
+  	}
+  	tr {
+		&:nth-child(even) {
+	  		@extend .bg-gray-bg;
+		}
+  	}
+  	th, td {
+		padding-top: rhythm(1, 14px);
+		padding-right: rhythm(1, 14px);
+		padding-bottom: rhythm(1, 14px);
+		padding-left: rhythm(2, 14px);
+		text-align: left;
+		vertical-align: top;
+  	} 
+  	&.padded {
+  		th, td {
+			padding: 1em;
+  		}
+	}
+  	th {
+		white-space: nowrap;
+  	}
+  	td {
+		border-top: 1px solid #c3c9cc;
+  	}
 }
 
 @media screen and (min-width: 959px) {
   .table-container {
-    overflow: visible;
+	overflow: visible;
   }
 }
 

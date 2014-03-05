@@ -10,21 +10,21 @@
     padding-left:0px;
     padding-right:0px;
   }
-  
+
   li:first-child {
     border-top: none;
-  }   
+  }
   .st-content {
     padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
     background-color: $white;
 
     table {
       @include font-size(16);
-      
-      p {  
+
+      p {
         @extend %d5-d12--within-d5-d16;
         display: block;
-        float: none; 
+        float: none;
         clear: left;
         @include font-size(16);
       }
@@ -33,7 +33,7 @@
         @extend %Swiss721BT-Bold;
         width: 25%;
       }
-      
+
       tr {
         &:nth-child(even) { background-color: $white; }
       }
@@ -57,7 +57,7 @@
 
   p, ul {
     @extend %d5-d12--within-d5-d16;
-    float: none; 
+    float: none;
     clear: left;
   }
 
@@ -69,7 +69,7 @@
     border-bottom: none;
     margin-left: rhythm(4, 24px);
     padding-right: rhythm(8, 24px);
-    
+
     h3 {
       padding-top: 1em;
       .lcc & {
@@ -91,7 +91,7 @@
         width:36px;
         text-align: center;
         //@include default-transition();
-    } 
+    }
   }
 }
 
@@ -104,10 +104,10 @@
         @include font-size(16);
         margin-left: 16px;
         list-style-type: square;
-        @include adjust-leading-to(4, 16px);  
+        @include adjust-leading-to(4, 16px);
         padding-bottom: rhythm(2, 16px);
     }
-  } 
+  }
 
   ul li ul, ol li ol {
     padding-top: rhythm(2, 16px);
@@ -124,7 +124,7 @@
   }
 
   dl {
-    @include adjust-leading-to(4, 16px); 
+    @include adjust-leading-to(4, 16px);
     padding-bottom: rhythm(1, 16px);
     dt {
       @extend %Swiss721BT-Bold;
@@ -140,14 +140,14 @@
 // Research Profiles Accordion Styles
 
 
-/* 
-   temporarily resize the width of the accordion on this page to content width for desktop 
+/*
+   temporarily resize the width of the accordion on this page to content width for desktop
    we could modify the component globally and add the l-content class to the outer container
 */
 
 .accordion.research-profile{
    clear: left;
-   
+
    @extend %m-all;
 
    @include gs-media(t, min-max) {
@@ -158,9 +158,9 @@
       @extend %d5-d12--within-d5-d16;
    }
 
-   .st-content p, 
-   .st-content h3,  
-   .st-content h4, 
+   .st-content p,
+   .st-content h3,
+   .st-content h4,
    .st-content blockquote {
       width: 100%;
    }
@@ -178,6 +178,6 @@
 
 }
 
- 
- 
+
+
 

@@ -52,16 +52,14 @@ module.exports = function (grunt) {
 //
 // *--------------------------------------------------------------------------------*/
 
-    // grunt.registerTask('build', [
-    //                             'replace:github',
-    //                             'coffee',
-    //                             'copy:js',
-    //                             'asciify',
-    //                             'prompt:selectTask',
-    //                             'build_options',
-    //                             'server',
-    //                             'replace:reset'
-    //                             ]);
+    grunt.registerTask('build', [
+                                'replace:github',
+                                'asciify',
+                                'prompt:selectTask',
+                                'build_options',
+                                'server',
+                                'replace:reset'
+                                ]);
 
     grunt.registerTask('default', [
                                 'replace:github',
