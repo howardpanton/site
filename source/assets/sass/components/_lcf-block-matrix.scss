@@ -1,5 +1,5 @@
 // LCF What's On Matrix
-.whats-on { 
+.lcf .whats-on-matrix { 
 
 	@include component-spacing-bottom;
 
@@ -8,15 +8,44 @@
 	}
 	.event-item {
 		text-align: center;
+		position: relative;
+	}
+	.hover-layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		margin: 12px;
+		background-color: $black;
+		color: $white;
+	}
+	.hover-layer-inner {
+		margin: 12px;
+		border: 1px solid $white; 
+	}
+	.hover-contents {
+		margin: auto;
+		padding: 32px;
+	}
+	h3 {
+		padding: 0 0 32px;
+		a {
+			@extend %Swiss721BT-Light !optional;
+			@include font-size(16);
+			color: $white;
+		}
 	}
 	.event-date {
+		@include font-size(20);
 		font-family: $lcf-serif-font;
+		font-style: italic;
 	}
+
+
 	
-	padding-bottom: 48px;
 	figure {
 		margin-bottom: 0;
-		
+		z-index: 0;
 	}
 	iframe, img {
 		width: 100%;
@@ -24,7 +53,6 @@
 	a {
 		border-bottom: none;
 		display: block;
-		line-height: 0;
 		padding-bottom: 0;
 	}
 	a > li {
@@ -63,12 +91,12 @@
 		.column {
 			width: 33.3%;
 			&.bordered {
-				border-right: 1px solid $white;
+				border-right: 2px solid $white;
 			}
 		}	
 
 		.event-item.bordered {
-			border-bottom: 1px solid $white;
+			border-bottom: 2px solid $white;
 		}
 	}
 }
