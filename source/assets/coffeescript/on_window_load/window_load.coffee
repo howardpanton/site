@@ -10,17 +10,12 @@
 window.loadMap = ->
 
     gJson = []
-    mode = "single" # "single" or "multiple"
 
-    # these will need to be removed, all marker data will sit on the view side
-    singleLat = 51.515
-    singleLng = -0.142
+    # create map as per mapConfig object properties set in view
+    initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng)
 
-    initialLocation = new google.maps.LatLng(singleLat, singleLng)
-
-    # mapOptions needs to be configured by the user?
     mapOptions =
-        zoom: 8
+        zoom: mapConfig.zoom,
         center: initialLocation
 
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
@@ -29,7 +24,6 @@ window.loadMap = ->
     # loop through array of marker data
     for i of json
         addMarker json[i], map
-
 
     return 
 # loadMap
