@@ -18,8 +18,8 @@ module.exports = function(grunt) {
         "-W116": false,
         globals: {
             jQuery: true
-        }
-        
+        },
+        reporter: require('jshint-stylish')
     }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
