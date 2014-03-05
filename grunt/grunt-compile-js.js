@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                         'coffee',
                         'concat:jslibs',
                         'concat:libs_and_built_scriptjs',
-                        'prompt:checkJS',
+                        //'prompt:checkJS',
                         'confirm_js_hint',
                         'exec:minifyjs',
                         'concat:hammerjs',
