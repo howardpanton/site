@@ -20,6 +20,17 @@ module.exports = function(grunt) {
                         'usebanner',
                         'copy:js'
                         ]);
+
+    grunt.registerTask( 'compilejsNoLint', [
+                        'coffee',
+                        'concat:jslibs',
+                        'concat:libs_and_built_scriptjs',
+                        'exec:minifyjs',
+                        'concat:hammerjs',
+                        'concat:hammerjsUnMin',
+                        'usebanner',
+                        'copy:js'
+                        ]);
 };
 
 

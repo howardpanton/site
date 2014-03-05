@@ -54,8 +54,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
                                 'replace:github',
-                                'coffee',
-                                'copy:js',
                                 'asciify',
                                 'prompt:selectTask',
                                 'build_options',
