@@ -15,13 +15,9 @@ module.exports = function(grunt) {
 
         grunt.task.run([
             'replace:local',
-            // 'newer:coffee',
-            // 'newer:copy:js',
             'compilejs',
             'compilecss',
             'copy:oldstyleguide',
-            // 'newer:copy:css',
-            //'clean',
             'concurrent:server',
             'connect:livereload',
             'open:root',

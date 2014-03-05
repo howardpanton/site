@@ -31,7 +31,11 @@ module.exports = function(grunt) {
             },
             files: [
                 {expand: true, flatten: true, src: ['.tmp/assets/css/*.css'], dest: '.tmp/assets/css/gzip/', ext: '.min.css'},
-                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'}
+                {expand: true, flatten: true, src: ['.tmp/assets/css/screen.css'], dest: '.tmp/assets/css/gzip/', ext: '.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.data.png.css'], dest: '.tmp/assets/css/gzip/', ext: '.data.png.min.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.data.svg.css'], dest: '.tmp/assets/css/gzip/', ext: '.data.svg.min.css'},
+                {expand: true, flatten: true, src: ['source/assets/img/logos/logos.fallback.css'], dest: '.tmp/assets/css/gzip/', ext: '.fallback.min.css'}
+
             ]
         },
 
@@ -47,18 +51,6 @@ module.exports = function(grunt) {
                 {expand: true, cwd: 'source/assets/img/', flatten: false, src: ['favicon.ico'], dest: '.tmp/assets/images/gzip/', ext: '.ico'}
             ]
         }
-
-        // fonts: {
-        //     options: {
-        //         mode: 'gzip'
-        //     },
-        //     files: [
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.eot'], dest: 'temp/fonts/', ext: '.eot'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.svg'], dest: 'temp/fonts/', ext: '.svg'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.ttf'], dest: 'temp/fonts/', ext: '.ttf'},
-        //         {expand: true, flatten: true, src: ['_site/assets/fonts/*.woff'], dest: 'temp/fonts/', ext: '.woff'}
-        //     ]
-        // }
 
 
     });

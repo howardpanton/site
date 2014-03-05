@@ -36,6 +36,9 @@ module.exports = function (grunt) {
 
     });
 
+    grunt.config.set('AWS_staging_id', '<%= aws.AWSStaging %>');
+    grunt.config.set('AWS_live_id', '<%= aws.AWSLive %>');
+
     // Load per-task config from separate files.
     grunt.loadTasks('grunt');
 
@@ -51,8 +54,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
                                 'replace:github',
-                                'coffee',
-                                'copy:js',
                                 'asciify',
                                 'prompt:selectTask',
                                 'build_options',
