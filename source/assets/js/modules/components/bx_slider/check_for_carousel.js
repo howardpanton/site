@@ -23,6 +23,8 @@ function checkForCarousel() {
         var _itemMinSlides = (_this.data('carousel-min-slides') > 0) ? _this.data('carousel-min-slides') : 0;
         // get the margin between slides from the data-slider-item-margin value in the HTML. If there's nothing set in the data-attribute, set the margin to 0
         var _itemMargin = (_this.data('carousel-item-margin') > 0) ? _this.data('carousel-item-margin') : 0;
+        // move slides by x each time user hits next or previous. Defaults to 1
+        var _moveSlides = = (_this.data('carousel-move-slides') > 0) ? _this.data('carousel-move-slides') : 1;
         // slider instances always show next/prev controls, unless data-controls is false
         var _controlsOpt = true;
         _controlsOpt = _this.data('controls');
@@ -34,7 +36,7 @@ function checkForCarousel() {
           minSlides: _itemMinSlides,
           maxSlides: 10,
           slideMargin: _itemMargin,
-          moveSlides: 1,
+          moveSlides: _moveSlides,
           controls: _controlsOpt,
           captions: true,
           pager: _pagerOpt,
