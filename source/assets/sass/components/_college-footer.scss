@@ -116,7 +116,7 @@
     }
 
     .lcc & {
-      @extend %AlternateGothic;
+      @extend %AlternateGothic !optional;
       // @extend %LeagueGothicRegular;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -135,14 +135,14 @@
     }
 
     .csm & {
-      @extend %BureauGrotBold;  // need to update with lev font
+      @extend %BureauGrotBold !optional;  // need to update with lev font
       @include margin-leader(6);
       margin-bottom: 0;
       border-top: 6px solid $csm-primary;
     }
 
     .chelsea &, .camberwell &, .wimbledon & {
-      @extend %BrandonText-Bold; 
+      @extend %BrandonText-Bold !optional; 
       border-top: 6px solid $white;
       @include margin-leader(3);
       @include margin-trailer(1);

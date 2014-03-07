@@ -5,66 +5,61 @@ block vars
 	- var Sidebar = true;
 	- var Banner = true;
 block content
-	.content-wrapper
+
 		.row
-			nav.sidebar
-				ul.no-bullet
-					li.menu-heading London College of Fashion
-			.content(role='main')
+			.l-content-full-width.block.__media
 				.row
-					.l-content-full-width.block.__media
-						.row
-							.video-container
-								iframe(src='//www.youtube.com/embed/T1sLWW9PC-A', frameborder='0', allowfullscreen='allowfullscreen')
-							.__text
-				.row
-					.l-content.block.__text.__with-aside
-						.text
-							p.leader
-								| LCF Careers provides a comprehensive career management service supporting our students to become informed and self-reliant individuals able to plan and manage their own careers.
-							p We enrich your student experience through:
-							ul
-								li Careers information and industry knowledge
-								li Personal guidance
-								li Connecting students with industry opportunities
-					aside.ual-white-bg
-						h4 Get in touch
+					.video-container
+						iframe(src='//www.youtube.com/embed/T1sLWW9PC-A', frameborder='0', allowfullscreen='allowfullscreen')
+					.__text
+		.row
+			.l-content.block.__text.__with-aside
+				.text
+					p.leader
+						| LCF Careers provides a comprehensive career management service supporting our students to become informed and self-reliant individuals able to plan and manage their own careers.
+					p We enrich your student experience through:
+					ul
+						li Careers information and industry knowledge
+						li Personal guidance
+						li Connecting students with industry opportunities
+			aside.ual-white-bg
+				h4 Get in touch
+				p
+					strong Email:
+						a(href='mailto:lcfcareers@fashion.arts.ac.uk') lcfcareers@fashion.arts.ac.uk
+				p
+					strong Phone:
+						| 020 7514 7571
+				p
+					strong Twitter:
+						a(href='http://www.twitter.com/lcfcareers') @lcfcareers
+				p
+					| Or find us on the second floor of our
+					a(href='/fashion/about/find-us/john-princes-street/') John Prince's Street
+						| site, room 213.
+		.row
+			.l-content-full-width.block.__media.two-up
+				ul
+					li
+						figure.feature
+							a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='')
+								img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-students1112-696.jpg', alt='Image Alt')
+						h3
+							a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='For students: Supporting Talent') For students: Supporting Talent
 						p
-							strong Email:
-								a(href='mailto:lcfcareers@fashion.arts.ac.uk') lcfcareers@fashion.arts.ac.uk
+							| Our talent team will support you with careers advice, and provides a point of contact for you during work experience and work placements.
+					li
+						figure.feature
+							a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='')
+								img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-businesses1112-696.jpg', alt='Image Alt')
+						h3
+							a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='For business: Accessing Talent') For business: Accessing Talent
 						p
-							strong Phone:
-								| 020 7514 7571
-						p
-							strong Twitter:
-								a(href='http://www.twitter.com/lcfcareers') @lcfcareers
-						p
-							| Or find us on the second floor of our
-							a(href='/fashion/about/find-us/john-princes-street/') John Prince's Street
-								| site, room 213.
-				.row
-					.l-content-full-width.block.__media.two-up
-						ul
-							li
-								figure.feature
-									a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='')
-										img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-students1112-696.jpg', alt='Image Alt')
-								h3
-									a(href='/fashion/about/lcf-careers/for-students-supporting-talent/', title='For students: Supporting Talent') For students: Supporting Talent
-								p
-									| Our talent team will support you with careers advice, and provides a point of contact for you during work experience and work placements.
-							li
-								figure.feature
-									a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='')
-										img.resrc(data-src='http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/lcf-careers/careers-businesses1112-696.jpg', alt='Image Alt')
-								h3
-									a(href='/fashion/about/lcf-careers/for-business-accessing-talent/', title='For business: Accessing Talent') For business: Accessing Talent
-								p
-									| Our client team takes a personalised approach to industry requirements. We will scope out your opportunity, working with you to provide a variety of services to meet your needs.
-				.row
-					.l-content-full-width
-						h2 Latest Jobs
-						#lcf-jobs
+							| Our client team takes a personalised approach to industry requirements. We will scope out your opportunity, working with you to provide a variety of services to meet your needs.
+		.row
+			.l-content-full-width
+				h2 Latest Jobs
+				#lcf-jobs
 
 	.panel.bg-gray-bg
 		.content-wrapper
@@ -102,4 +97,4 @@ block content
 									h3 LCF Alumni
 									p
 										| Our graduates are running the international fashion industry. They hold influential positions ranging from magazine editors to fashion designers.
-
+		

@@ -1,39 +1,77 @@
 // LCF What's On Matrix
-.whats-on { 
+.lcf .whats-on-matrix { 
 
 	@include component-spacing-bottom;
 
-	.column, .event-item {
-		float: left;
-	}
-	.event-item {
-		text-align: center;
-	}
-	.event-date {
-		font-family: $lcf-serif-font;
-	}
-	
-	padding-bottom: 48px;
-	figure {
-		margin-bottom: 0;
-		
-	}
-	iframe, img {
-		width: 100%;
-	}
 	a {
 		border-bottom: none;
 		display: block;
-		line-height: 0;
 		padding-bottom: 0;
 	}
-	a > li {
-		@include font-size(24);
-		margin-bottom: 1px;
-		margin-top: 1px;
-		padding: 12px;
-		@include adjust-leading-to(4, 24px); 	
-	} 
+
+	p {
+		padding-bottom: rhythm(2, 16px);
+	}
+
+	h3 {
+		padding: 0;
+		a {
+			@extend %Swiss721BT-Light !optional;
+			@include font-size(16);
+			color: $white;
+		}
+	}
+
+	.column {
+		@extend %m-all;
+	}
+
+	.event-item {
+		text-align: center;
+		position: relative;
+		
+		margin-bottom: 6px;
+	}
+
+	.event-date {
+		@include font-size(20);
+		font-family: $lcf-serif-font;
+		font-style: italic;
+	}
+
+	.hover-layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		.inner {
+			position: absolute;
+			width: 92%;
+			height: 80%;
+			top: 10%;
+			left: 4%;
+			border: 1px solid $white; 
+			overflow: hidden;
+		}
+	}
+
+	.hover-contents {
+		margin: auto;
+		padding: 20px;
+	}
+
+	@include gs-media (m,min-max) {
+		// I don't want these to inherit
+		figure {
+			display: none;
+		}
+		.event-item { 
+			height: 140px; 
+		}
+	}
+
+
 
 
 	@include gs-media (t,min-max) {
@@ -44,15 +82,33 @@
 		}
 
 		.event-item {
-			@include component-spacing-bottom(4);
+			
 			@include gs-span(t, 2, 4, (2, 7));
 			&:nth-child(2n) {
 				@include gs-span(t, 5, 7, (2, 7));
 			}
+
 		}
 
-		.event-date {
-			padding: 4px 0;
+		.hover-layer {
+			position: absolute;
+			top: 4%;
+			left: 3%;
+			z-index: 1;
+			width: 94%;
+			height: 92%;
+			.inner {
+				border: 1px solid $white; 
+				overflow: hidden;
+			}
+		}
+
+		figure {
+			margin-bottom: 0;
+			z-index: 0;
+		}
+		p {
+			//padding-bottom: rhythm(3, 16px);
 		}
 
 	}
@@ -60,15 +116,42 @@
 	@include gs-media (d) {
 		@include gs-span(d, all);
 
+		.column, .event-item {
+			float: left;
+		}
+
+
+		.hover-contents {
+			margin: auto;
+			padding: 32px;
+		}
+		
+
+
+
+
+
+		iframe, img {
+			width: 100%;
+		}
+
+		a > li {
+			@include font-size(24);
+			margin-bottom: 1px;
+			margin-top: 1px;
+			padding: 12px;
+			@include adjust-leading-to(4, 24px); 	
+		} 
+
 		.column {
 			width: 33.3%;
 			&.bordered {
-				border-right: 1px solid $white;
+				border-right: 2px solid $white;
 			}
 		}	
 
 		.event-item.bordered {
-			border-bottom: 1px solid $white;
+			border-bottom: 2px solid $white;
 		}
 	}
 }

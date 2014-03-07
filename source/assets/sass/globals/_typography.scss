@@ -13,12 +13,13 @@
 
 // to prevent an extend error in sass, these files need to be imported into  
 // in the file that they will be extended from
-@import "font-face/brandon-text",
-		"font-face/bureau-grot",
-		"font-face/alternate-gothic",
-		"font-face/swiss-721",
-		"font-face/fontello-embedded",
-		"globals/sprites";
+// @import "font-face/brandon-text",
+// 		"font-face/bureau-grot",
+// 		"font-face/alternate-gothic",
+// 		"font-face/swiss-721",
+// 		"font-face/fontello-embedded",
+// 		"globals/sprites";
+// actually - if you add !optional to the @extend directive, the styles are extended without having to duplicate all the above
 
 @include establish-baseline(16px);
 
@@ -47,7 +48,7 @@ a {
 	color: $black;
 	text-decoration: none;
 	padding-bottom: 1px;
-	border-bottom: 1px dotted $soft-black  ;
+	border-bottom: 1px dotted $soft-black;
 	&:hover {
 		color: $aaa-gray;
 		padding-bottom: 1px;
@@ -81,10 +82,10 @@ h1, .size-h1 {
 		// @extend %LeviathanBlackItalic;
 	}
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold !optional;		
 	}
 	.lcc & {
-		@extend %AlternateGothic;
+		@extend %AlternateGothic !optional;
 		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 		@include font-size(60);
@@ -99,7 +100,7 @@ h2 {
 	.lcc & {
 		@include font-size(54);
 		border-top: 4px solid $black;
-		@extend %AlternateGothic;
+		@extend %AlternateGothic !optional;
 		// @extend %LeagueGothicRegular;
 	  text-transform: uppercase;
 	  word-spacing: -6px;
@@ -108,12 +109,12 @@ h2 {
 
 h3 {
 	.csm & {
-    @extend %BureauGrotBold;
+    @extend %BureauGrotBold !optional;
 	}
 	.lcc & {
 		@include font-size(42);
 		@include adjust-leading-to(7, 42px); 	
-		@extend %AlternateGothic;
+		@extend %AlternateGothic !optional;
 		// @extend %LeagueGothicRegular;
 		padding: rhythm(3, 36px) 0 rhythm(1, 42px) 0;
 	  text-transform: uppercase;
@@ -123,34 +124,27 @@ h3 {
 	}	
 }
 
-
-
-
-
-
 h2, h3, h4 {
 	@extend %Swiss721BT-Bold;
 }
 
 h2, h3 {
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold !optional;		
 	}
   // .csm & {
 		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-  //   // @extend %BureauGrotBold;
+  //   // @extend %BureauGrotBold !optional;
   // }	
 }
 
-
-
 h2 a, h3 a {
 	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold;		
+		@extend %BrandonText-Bold !optional;		
 	}
   // .csm & {
 		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-  //   // @extend %BureauGrotBold;
+  //   // @extend %BureauGrotBold !optional;
   // }	
  // 	.lcc & {
 	// 	@extend %LeagueGothicRegular;
@@ -231,6 +225,12 @@ ul li ul, ol li ol {
 
 p {
 	@include font-size(16);
+}
+
+.leader {
+	@include font-size(22);
+	@include adjust-leading-to(5, 22px);
+	padding-bottom: rhythm(3, 22px);
 }
 
 .l-content {

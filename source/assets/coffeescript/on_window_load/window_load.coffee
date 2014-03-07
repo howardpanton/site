@@ -50,7 +50,7 @@ addMarker = (data, map) ->
         return 
     # addMarker
 
-loadScript = ->
+loadMapsScript = ->
     script = document.createElement("script")
     script.type = "text/javascript"
     script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap"
@@ -79,6 +79,6 @@ $(window).load ->
         $(".__gallery").each ->
             $(this).find("li").fitHeights()
 
-
-    loadScript()
+    if $("#map-canvas").length > 0       
+        loadMapsScript()
 
