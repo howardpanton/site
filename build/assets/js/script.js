@@ -1,4 +1,4 @@
-/*!Updated: 06-03-2014, 3:56:55 PM */
+/*!Updated: 10-03-2014, 4:32:21 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1733,6 +1733,63 @@ if (typeof define !== 'undefined' && define.amd) {
 
   $(document).ready(function() {
     return debugSwitch;
+  });
+
+}).call(this);
+
+(function() {
+  var getEventsFeed;
+
+  getEventsFeed = function() {
+    return $.getJSON("http://ual.events.cs8.force.com/apex/eventsfeed", function(data) {
+      var count, output;
+      console.log("get events feed json");
+      output = "<ul>";
+      count = 5;
+      $.each(data, function(i, item) {
+        var ual_event;
+        if (i < count) {
+          ual_event = data[i];
+          output += "<li>" + ual_event.Event_Programme__c + "</li>";
+        }
+      });
+      output += "</ul>";
+      $("#events-feed").html(output);
+    });
+  };
+
+  $(document).ready(function() {
+    if ($("#events-feed").length > 0) {
+      return getEventsFeed();
+    }
+  });
+
+}).call(this);
+
+(function() {
+  var getNewsFeed;
+
+  getNewsFeed = function() {
+    return $.getJSON("http://newsevents.arts.ac.uk/api/get_recent_posts/?callback=?", function(data) {
+      var count, output;
+      output = "<ul>";
+      count = 5;
+      $.each(data.posts, function(i, item) {
+        var news;
+        if (i < count) {
+          news = data.posts[i];
+          return output += "<li><img src=\"" + news.attachments + "\"> <a href=\"" + news.url + "\" tite=\"" + news.title + "\">" + news.title + "</a></li>";
+        }
+      });
+      output += "</ul>";
+      $("#news-feed").html(output);
+    });
+  };
+
+  $(document).ready(function() {
+    if ($("#news-feed").length > 0) {
+      return getNewsFeed();
+    }
   });
 
 }).call(this);
