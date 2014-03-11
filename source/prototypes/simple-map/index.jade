@@ -19,21 +19,21 @@ block content
 						* initLng = initial latitude for the map center
 						* Note we can set a sensible default for the center e.g. London,
 						* which can be overridden if required
-						*/ 
-						var mapConfig = 
+						*/
+						var mapConfig =
 						{
-							zoom: 10,
-							initLat: 51.515,
-							initLng: -0.142
-						};	
+							zoom: 10, // T4 field
+							initLat: 51.515, // T4 field
+							initLng: -0.142 // T4 field
+						};
 
 						/* A list of markers populated by data in marker content nodes in same section */
 						var json = [
-						{ 
-							lat: 51.515, 
-							lng: -0.142, 
-							name: "JPS", 
-							content: "20 John Prince's St, London W1G 0BJ, UK" 
+						{
+							lat: 51.515,
+							lng: -0.142,
+							name: "JPS",
+							content: "20 John Prince's St, London W1G 0BJ, UK"
 						},
 						{
 							lat: 51.503,
@@ -67,4 +67,3 @@ block content
 						}
 						];
 					#map-canvas(style='width:100%; height:100%')
-			

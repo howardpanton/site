@@ -30,7 +30,8 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-
+        eqeqeq: true,
+        eqnull: true,
         aws: grunt.file.readJSON('grunt/config/grunt-aws.json'),
         fixturesPath: "fixtures"
 

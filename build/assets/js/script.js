@@ -1,4 +1,4 @@
-/*!Updated: 06-03-2014, 3:56:55 PM */
+/*!Updated: 07-03-2014, 10:15:39 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
