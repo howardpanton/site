@@ -1,4 +1,4 @@
-/*!Updated: 10-03-2014, 4:32:21 PM */
+/*!Updated: 11-03-2014, 5:34:35 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1770,18 +1770,30 @@ if (typeof define !== 'undefined' && define.amd) {
   var getNewsFeed;
 
   getNewsFeed = function() {
-    return $.getJSON("http://newsevents.arts.ac.uk/api/get_recent_posts/?callback=?", function(data) {
+    var api_call, blogs_url, csm, lcf;
+    blogs_url = "http://blogs.arts.ac.uk/";
+    api_call = "/api/get_recent_posts/?callback=?&count=5&include=title,url,attachments";
+    lcf = blogs_url + "fashion" + api_call;
+    csm = blogs_url + "csm" + api_call;
+    return $.getJSON(lcf, function(data) {
       var count, output;
-      output = "<ul>";
+      output = "<div class=\"feed-comp\"> <ul class=\"cf\">";
       count = 5;
       $.each(data.posts, function(i, item) {
-        var news;
+        var length, news, short_title, title;
         if (i < count) {
           news = data.posts[i];
-          return output += "<li><img src=\"" + news.attachments + "\"> <a href=\"" + news.url + "\" tite=\"" + news.title + "\">" + news.title + "</a></li>";
+          length = 60;
+          title = news.title;
+          if (title.length > length) {
+            short_title = title.substring(0, length) + "...";
+          } else {
+            short_title = title;
+          }
+          return output += "<li> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + news.attachments[0].url + ")\"> <img src=\"" + news.attachments[0].url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + news.url + "\" tite=\"" + news.title + "\">" + short_title + "</a> </div> </li>";
         }
       });
-      output += "</ul>";
+      output += "</ul></div>";
       $("#news-feed").html(output);
     });
   };
