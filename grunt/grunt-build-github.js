@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 																						'replace:spritePath',
 																						'replace:github',
 																						'copy:prototype_assets',
+																						'jade'
 												]);
 };
 
