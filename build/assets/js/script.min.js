@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*!Updated: 12-03-2014, 10:01:10 AM */
+=======
+/*!Updated: 07-03-2014, 2:31:59 PM */
+>>>>>>> d81e0238eebcef758ad5144e56312c4b9d53985e
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
