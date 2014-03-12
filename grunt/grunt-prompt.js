@@ -68,8 +68,10 @@ module.exports = function(grunt) {
                         message: 'Welcome, what would you like to do?',
                         choices: [
                                     { name: 'Build Locally', value: 'local-build' },
+                                    { name: 'Build for GitHub', value: 'build-github' },
                                     { name: 'Build Prototype' , value: 'prototype'},
                                     { name: 'Build & Deploy', value: 'build-deploy' }
+
                                     // { name: 'Run a test', value: 'test' },
                                     // { name: 'Create a new blog entry', value: 'blog' },
 
@@ -110,6 +112,7 @@ module.exports = function(grunt) {
                         type: 'list',
                         message: 'Deploy to....?',
                         choices: [
+                                    // { name: 'github', value: 'github' },
                                     { name: 'staging', value: 'staging' },
                                     { name: 'live' , value: 'live'}
                         ],
@@ -213,5 +216,3 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-prompt');
 };
-
-
