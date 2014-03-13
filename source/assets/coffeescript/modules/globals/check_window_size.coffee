@@ -6,7 +6,7 @@
 		-------------------------------------------------------------
 ###
 
-checkWindowSize = ->
+@checkWindowSize = ->
 
 	# get screen width
 	width = $(window).width()
@@ -16,14 +16,18 @@ checkWindowSize = ->
 
 	# remove any existing body class and add the new_body_class
 	$(document.body).removeClass("gDesktop gTablet gMobile").addClass new_class
-	console.log("window size is: " + width);
 	return
 
-
-## run function
-checkWindowSize();
-
-
 $(document).ready ->
-		checkWindowSize()
+	checkWindowSize()
 
+
+$(window).resize ->
+	clearTimeout $.data(this, "resizeTimer")
+	$.data this, "resizeTimer", setTimeout(->
+
+		## run checkWindowSize() when window browser is resized
+		checkWindowSize()
+		return
+	, 200)
+	return
