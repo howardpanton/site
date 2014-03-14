@@ -1,12 +1,43 @@
 extends _layout/_base
 block vars
-    - var bodyClass = 'my-page';
-    - var Title = 'page title';
-    - var Sidebar = true;
-    - var Banner = true;
+		- var bodyClass = 'my-page';
+		- var Title = 'hello';
+		- var Sidebar = true;
+		- var Banner = true;
 block content
-    p Hello, World!!! testing pete edit 2 again. bhjg jkhg jk
-    blockquote
-        span
-        p This is a quote
-        p This is the person that said it
+
+		.row
+			.l-content.block.__text
+				h2 Feeds for news and/or events
+				p.leader	This section of the style-guide is used to show examples how feeds from external domains can be displayed on the website.
+				p These example feeds are fed to the page via a JSONP $getJSON JavaScript function. They can be displayed as either a feature width 2-up blocks or as a stacked feed within content.
+
+		.row
+			.l-content-full-width.block.__media.two-up
+				h2 Our students
+				ul
+					li
+						figure.feature
+							a(href="/camberwell/people/students/james-bullimore/", title="")
+								img(data-src="http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/james_bullimore_ba_drawing_1112x696.jpg", alt="", class="resrc", data-resrc-width="339", src="http://app.resrc.it/s=w340,pd1/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/james_bullimore_ba_drawing_1112x696.jpg")
+						h3
+							a(href="/camberwell/people/students/james-bullimore/", title="James Bullimore") James Bullimore
+						p James is a second year BA Drawing student at Camberwell
+					li
+						figure.feature
+							a(href="/camberwell/people/students/rebecca-moss/", title="")
+								img(data-src="http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/rebecca-moss-fix-ba-painting-1112x696.jpg", alt="", class="resrc", data-resrc-width="339", src="http://app.resrc.it/s=w340,pd1/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/rebecca-moss-fix-ba-painting-1112x696.jpg")
+						h3
+							a(href="/camberwell/people/students/rebecca-moss/", title="Rebecca Moss") Rebecca Moss
+						p Rebecca is a third year BA Painting student at Camberwell
+
+
+		.row
+			.l-content-full-width.block.__media
+				.row
+					figure
+						img( data-src="http://app.resrc.it/o=80/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/alumni/kyle-platts-Nobrow-1896x948.jpg", alt="", class="rsImg resrc", data-resrc-width="701", src="http://app.resrc.it/s=w710,pd1/o=80/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/alumni/kyle-platts-Nobrow-1896x948.jpg")
+					.__text
+						p.leader Kyle Platts graduated from Camberwell's BA Illustration course in 2011, having graduated from FdA Illustration in 2010, and now makes his own books as well as working freelance.
+						p
+							a(href="/camberwell/people/camberwell-alumni/kyle-platts/", class="button-link") View Kyle's profile
