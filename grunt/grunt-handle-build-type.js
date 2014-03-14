@@ -53,7 +53,6 @@ module.exports = function(grunt) {
 
 						case 'live':
 								grunt.log.writeln('Running build live....');
-								//grunt.task.run('buildlive');
 						break;
 
 
