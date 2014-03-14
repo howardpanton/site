@@ -5,29 +5,39 @@
 					Used for tablet, desktop, mobile styling
 		-------------------------------------------------------------
 ###
-
-@checkWindowSize = ->
+foo = ""
+checkWindowSize = ->
 
 	# get screen width
+	width = ""
 	width = $(window).width()
-
-	# calc body class name to add based on screen width
-	new_class = (if width > 959 then "gDesktop" else (if width > 599 then "gTablet" else (if 600 > width then "gMobile" else (if width > 1289 then "gDesktop" else ""))))
-
-	# remove any existing body class and add the new_body_class
-	$(document.body).removeClass("gDesktop gTablet gMobile").addClass new_class
-	return
+	foo 	= "gDesktop" if width > 959
+	foo 	= "tablet"  if (width > 599) and (width < 959)
+	foo 	= "mobile"  if width < 599
+	console.log foo
+	# switch width
+	# 	when "desktop"
+	# 		$(document.body).removeClass("gTablet gMobile").addClass "gDesktop"
+	# 	when "tablet"
+	# 		$(document.body).removeClass("gDesktop gMobile").addClass "gTablet"
+	# 	when "mobile"
+	# 		$(document.body).removeClass("gDesktop gTablet").addClass "gMobile"
 
 $(document).ready ->
 	checkWindowSize()
+	$('body').removeClass("gDesktop")
+	console.log(foo)
+	# $('body').addClass foo
 
 
-$(window).resize ->
-	clearTimeout $.data(this, "resizeTimer")
-	$.data this, "resizeTimer", setTimeout(->
+# $(window).resize ->
+# 	clearTimeout $.data(this, "resizeTimer")
+# 	$.data this, "resizeTimer", setTimeout(->
 
-		## run checkWindowSize() when window browser is resized
-		checkWindowSize()
-		return
-	, 200)
-	return
+# 		## run checkWindowSize() when window browser is resized
+# 		checkWindowSize()
+
+# 		imageCredits()
+# 		return
+# 	, 200)
+# 	return
