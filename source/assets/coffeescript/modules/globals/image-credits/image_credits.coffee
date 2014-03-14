@@ -7,10 +7,10 @@
 #    -------------------------------------------------------------
 #
 
-imageCredits = ->
+@imageCredits = ->
 
 		#only show credits on desktop
-		if $("body").hasClass("gDesktop")
+		if $("html").hasClass("desktop")
 
 				$(".credits-btn").addClass "show"
 
@@ -23,7 +23,6 @@ imageCredits = ->
 						else
 								c.addClass("active").attr "title", "Hide image credits"
 								$(".credits").fadeIn()
-
 
 $(document).ready ->
 		if $(".credits").length > 0
