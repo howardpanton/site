@@ -1,0 +1,14 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "Latest news";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+
+		.row
+			.l-content-full-width
+				h2 .l-content-full-width
+				.news-feed-1
+				script.
+					window.getNewsFeed("chelsea",1);
