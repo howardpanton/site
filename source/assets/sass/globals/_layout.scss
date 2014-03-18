@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $CONTENTS
+		$CONTENTS
 \*------------------------------------*/
 /**
  * CONTENTS............You’re reading it!
@@ -9,7 +9,7 @@
 
 
 /*------------------------------------*\
-    $Gridset Layout Classes
+		$Gridset Layout Classes
 \*------------------------------------*/
 
 
@@ -135,7 +135,7 @@
 	}
 }
 
-// used for site search and course search results pages 
+// used for site search and course search results pages
 %d6-d16 {
 	@include gs-media (d) {
 		@include gs-span(d, 5,16);
@@ -156,7 +156,7 @@
 
 %d5-d16--within-d5-d16 {
 	@include gs-media (d) {
-	 	@include gs-span(d, 5,16, (5, 16));
+		@include gs-span(d, 5,16, (5, 16));
 	}
 }
 
@@ -211,23 +211,23 @@
 
 
 /*------------------------------------*\
-    $Global Layout Classes
+		$Global Layout Classes
 \*------------------------------------*/
 
 
 .content-wrapper, .header-wrapper, .footer-wrapper {
-	width: 92.5%;
+	// width: 92.5%;
 	max-width: 1280px;
 	margin: 0 auto;
 	min-width: 320px;
 	clear: both;
 }
 
-.header-wrapper { 
-	position: relative; 
-	width: 100%; 
+.header-wrapper {
+	position: relative;
+	width: 100%;
 	@include gs-media(d) {
-		width: 92.5%;
+		// width: 92.5%;
 	}
 }
 
@@ -246,6 +246,15 @@
 	@extend %d-all;
 }
 
+.l-content, .l-content-full-width {
+	@include gs-media (m,min-max) {
+		h2, h3, h4, h5, h6, p {
+			padding-right: 12px;
+			padding-left: 12px;
+		}
+	}
+}
+
 .l-content-full-width {
 	@extend %d5-d16--within-d5-d16;
 	@include component-spacing-bottom;
@@ -254,7 +263,7 @@
 	}
 }
 
-.l-content { 
+.l-content {
 	@extend %d5-d12--within-d5-d16;
 	//@include component-spacing-bottom;
 	.l-content-full-width & {
@@ -272,14 +281,14 @@
 		}
 		.wimbledon & {
 			border-top: 10px solid $ccw-green;
-		}	
+		}
 	}
 }
 
 	@include gs-media(m) {
 			p, h1, h2, h3, h4, ul, ol, dl, table {
-			padding-left:12px;
-			padding-right:12px;
+			// padding-left:12px;
+			// padding-right:12px;
 		}
 	}
 
@@ -327,7 +336,7 @@
 
 
 /*------------------------------------*\
-    $Page Layout Classes
+		$Page Layout Classes
 \*------------------------------------*/
 
 
@@ -343,27 +352,27 @@
 aside {
 	@extend %d13-d16--within-d5-d16;
 	@include component-spacing-bottom;
-	
+
 	background-color: $bg-gray;
 	border-left: none;
 	padding: 24px;
 	clear: left;
-	&.no-bg { 
-		background-color: $white; 
+	&.no-bg {
+		background-color: $white;
 	}
 
 	@include gs-media(d) {
 		background: $white;
 		border-left: 1px dotted $bg-gray;
-	  	padding-left: 23px;
-	  	clear: none;
+			padding-left: 23px;
+			clear: none;
 	}
 }
 
 // style for gist embed
 .gist { clear: left; }
 
-// styles for slider width and alignment 
+// styles for slider width and alignment
 .slider-container {
 	padding-top: 6px;
 	@include component-spacing-bottom;

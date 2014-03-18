@@ -1,4 +1,4 @@
-/*!Updated: 07-03-2014, 10:15:39 AM */
+/*!Updated: 18-03-2014, 11:52:01 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1626,7 +1626,8 @@ if (typeof define !== 'undefined' && define.amd) {
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
-            pauseOnHover: true
+            pauseOnHover: true,
+            delay: 3000
           }
         });
       });
@@ -1734,6 +1735,41 @@ if (typeof define !== 'undefined' && define.amd) {
   $(document).ready(function() {
     return debugSwitch;
   });
+
+}).call(this);
+
+(function() {
+
+
+}).call(this);
+
+(function() {
+  this.getNewsFeed = function(college, feed_id) {
+    var blog_url, feed_url;
+    feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&count=6&include=title,url,attachments";
+    blog_url = "http://blogs.arts.ac.uk/" + college;
+    return $.getJSON(feed_url, function(data) {
+      var count, output;
+      output = "<div class=\"feed-comp\"> <ul class=\"cf\">";
+      count = 6;
+      $.each(data.posts, function(i, item) {
+        var length, news, short_title, title;
+        if (i < count) {
+          news = data.posts[i];
+          length = 60;
+          title = news.title;
+          if (title.length > length) {
+            short_title = title.substring(0, length) + "...";
+          } else {
+            short_title = title;
+          }
+          return output += "<li> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + news.attachments[0].url + ")\"> <img src=\"" + news.attachments[0].url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + news.url + "\" tite=\"" + news.title + "\">" + short_title + "</a> </div> </li>";
+        }
+      });
+      output += "</ul> <p class=\"view-all\"><a href=\"" + blog_url + "\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p></div>";
+      $(".news-feed-" + feed_id).html(output);
+    });
+  };
 
 }).call(this);
 
@@ -2319,7 +2355,7 @@ if (typeof define !== 'undefined' && define.amd) {
   var addMarker, loadMapsScript;
 
   window.loadMap = function() {
-    var gJson, i, initialLocation, map, mapOptions;
+    var gJson, i, infoWindow, initialLocation, map, mapOptions;
     gJson = [];
     initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
     mapOptions = {
@@ -2327,17 +2363,26 @@ if (typeof define !== 'undefined' && define.amd) {
       center: initialLocation
     };
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    infoWindow = new google.maps.InfoWindow({
+      content: "",
+      maxWidth: 400
+    });
     for (i in json) {
-      addMarker(json[i], map);
+      addMarker(json[i], map, infoWindow);
     }
   };
 
-  addMarker = function(data, map) {
-    var marker;
+  addMarker = function(data, map, infoWindow) {
+    var contentString, marker;
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(data.lat, data.lng),
       map: map,
       title: data.name
+    });
+    contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
+    google.maps.event.addListener(marker, "click", function() {
+      infoWindow.open(map, marker);
+      infoWindow.setContent(contentString);
     });
   };
 

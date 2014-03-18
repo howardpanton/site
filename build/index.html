@@ -318,10 +318,10 @@
       <div class="header-wrapper">
         <div class="row">
           <!-- navigation object : Breadcrumbs-->
-          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/page title/" style="display: none;">page title</a></div>
+          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/hello/" style="display: none;">hello</a></div>
           <div id="skip-to-here" class="page-title">
             <h1>
-              <!-- navigation object : Section name-->page title
+              <!-- navigation object : Section name-->hello
             </h1>
           </div>
         </div>
@@ -332,19 +332,49 @@
         <nav role="navigation" class="sidebar">
           <ul>
             <li class="menu-heading">In this section</li>
-            <li><a href="#">Sub Menu</a></li>
-            <li><a href="#">Links </a></li>
-            <li><a href="#">Here</a></li>
-            <li><a href="#">Here</a></li>
-            <li><a href="#">and Here</a></li>
+            <li><a href="#">Prototype one</a></li>
+            <li><a href="#">Prototype two</a></li>
+            <li><a href="#">Prototype three</a></li>
+            <li><a href="#">Prototype four</a></li>
+            <li><a href="#">Prototype five</a></li>
           </ul>
         </nav>
         <div role="main" class="content">
-          <p>Hello, World!!! testing pete edit 2 again. bhjg jkhg jk</p>
-          <blockquote><span></span>
-            <p>This is a quote</p>
-            <p>This is the person that said it</p>
-          </blockquote>
+          <div class="row">
+            <div class="l-content block __text">
+              <h2>Feeds for news and/or events</h2>
+              <p class="leader">	This section of the style-guide is used to show examples how feeds from external domains can be displayed on the website.</p>
+              <p>These example feeds are fed to the page via a JSONP $getJSON JavaScript function. They can be displayed as either a feature width 2-up blocks or as a stacked feed within content.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="l-content-full-width block __media two-up">
+              <h2>Our students</h2>
+              <ul>
+                <li>
+                  <figure class="feature"><a href="/camberwell/people/students/james-bullimore/" title=""><img data-src="http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/james_bullimore_ba_drawing_1112x696.jpg" alt="" data-resrc-width="339" src="http://app.resrc.it/s=w340,pd1/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/james_bullimore_ba_drawing_1112x696.jpg" class="resrc"></a></figure>
+                  <h3><a href="/camberwell/people/students/james-bullimore/" title="James Bullimore">James Bullimore</a></h3>
+                  <p>James is a second year BA Drawing student at Camberwell</p>
+                </li>
+                <li>
+                  <figure class="feature"><a href="/camberwell/people/students/rebecca-moss/" title=""><img data-src="http://app.resrc.it/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/rebecca-moss-fix-ba-painting-1112x696.jpg" alt="" data-resrc-width="339" src="http://app.resrc.it/s=w340,pd1/o=60/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/students/rebecca-moss-fix-ba-painting-1112x696.jpg" class="resrc"></a></figure>
+                  <h3><a href="/camberwell/people/students/rebecca-moss/" title="Rebecca Moss">Rebecca Moss</a></h3>
+                  <p>Rebecca is a third year BA Painting student at Camberwell</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="l-content-full-width block __media">
+              <div class="row">
+                <figure><img data-src="http://app.resrc.it/o=80/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/alumni/kyle-platts-Nobrow-1896x948.jpg" alt="" data-resrc-width="701" src="http://app.resrc.it/s=w710,pd1/o=80/http://www.arts.ac.uk/media/arts/colleges/camberwell/images/camberwell-people/alumni/kyle-platts-Nobrow-1896x948.jpg" class="rsImg resrc"></figure>
+                <div class="__text">
+                  <p class="leader">Kyle Platts graduated from Camberwell's BA Illustration course in 2011, having graduated from FdA Illustration in 2010, and now makes his own books as well as working freelance.</p>
+                  <p><a href="/camberwell/people/camberwell-alumni/kyle-platts/" class="button-link">View Kyle's profile</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -400,7 +430,7 @@
       <div class="credits-btn"><a href="#" class="show-credits"><span class="icon-picture"></span></a></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script src="http://use.resrc.it/"></script>
-      <script src="http://localhost:9000/assets/js/script.min.js"></script>
+      <script src="http://localhost:9000/assets/js/script.js"></script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {
