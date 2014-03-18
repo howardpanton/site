@@ -31,11 +31,11 @@ module.exports = function(grunt) {
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
-							to: "http://artslondon.github.io/"
+							to: "http://artslondon.github.io/arts.ac.uk/build"
 						},
 						{
 							from: "http://localhost:9000",
-							to: "http://artslondon.github.io/"
+							to: "http://artslondon.github.io/arts.ac.uk/build"
 						}
 						]
 				},
