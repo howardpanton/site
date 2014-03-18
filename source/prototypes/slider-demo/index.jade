@@ -1,0 +1,75 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "Slider demo";
+	- var Sidebar = false;
+	- var Banner = true;
+block content
+
+	.content-wrapper
+		.row.slider-container
+			// optional slider heading
+			.royalSlider.rsDefault.block.full-grid-width(data-slider-auto-play='true', data-slider-item-width='1280', data-slider-item-height='480')
+				figure
+					img.rsImg.resrc(data-src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/fashion-means-business2560-960.jpg', alt='A hand holds a business card that reads "Fashion Means Business"')
+					figcaption.rsCaption
+						span
+							p
+								span.m-hide(style='display: inline; padding-right: 0; padding-left: 0;')
+									| LCF is a member of the Association of Business Schools and more than half of our courses are now non-design.
+								a(href='/fashion/about/fashion-means-business/') Discover why LCF means business →
+				figure
+					img.rsImg.resrc(data-src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/ma14-walk-out1280-480.jpg', alt='The MA14 catwalk show at the Waldorf Hotel.')
+					.call-to-action
+						a(href='/fashion/channel/', title='') Watch again: catwalk live stream
+					.credits Image: Alex Maguire
+					figcaption.rsCaption
+						span
+							p
+							a(href='/fashion/channel/') MA14 takeover on LCF Channel
+							span.m-hide(style='display: inline; padding-left: 0;')
+								| : the
+								a(href='/fashion/courses/graduate-school/') Graduate School
+								| show season, with student profiles and the catwalk live stream replay.
+				figure
+					img.rsImg.resrc(data-src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/gsus-lopez-ephemeral-nature-pt-1280-480.jpg', alt='Still: Ephemeral Nature by Gsus Lopez')
+					.credits Still: Ephemeral Nature by Gsus Lopez, BA (Hons) Fashion Media (Part time)
+					figcaption.rsCaption
+						span
+							p
+								| LCF offer
+								a(href='/fashion/courses/part-time-courses/') part-time undergraduate courses
+								| in fashion design, fashion business, fashion media and fashion visual merchandising and branding.
+								a(href='http://ual.force.com/apex/EventFormPage?id=a0RD000000AAEZKMA5&book=true') Open Evening 30th Apr →
+				figure
+					img.rsImg.resrc(data-src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/ma14-exhibition1280-480.jpg', alt='MA13 exhibition')
+					figcaption.rsCaption
+					span
+						p
+							a(href='/fashion/courses/graduate-school/') The Graduate School
+							| : graduate and postgraduate courses in
+							a(href='/fashion/courses/graduate-school/business-and-management/') Business & Management
+							| ,
+							a(href='/fashion/courses/graduate-school/culture-and-curation/') Culture & Curation
+							| ,
+							a(href='/fashion/courses/graduate-school/design-and-technology/') Design & Tecnology
+							| and
+							a(href='/fashion/courses/graduate-school/media-and-communications/') Media & Communication
+							| .
+				div
+					img.rsImg(src='/media/arts/colleges/lcf/lcf-careers1280-480.jpg', data-rsvideo='http://youtu.be/T1sLWW9PC-A')
+					.rsCaption
+						span
+							p
+								| LCF Careers provides a comprehensive career management service to LCF students and graduates.
+								a(href='/fashion/about/lcf-careers/') Find out more →
+				div
+					img.rsImg(src='/media/arts/colleges/lcf/scholarships1280-480.jpg', data-rsvideo='http://www.youtube.com/watch?v=lwK6ZzGOagY')
+					.rsCaption
+						span
+							p
+								| Scholarships at LCF:
+								span.m-hide(style='display: inline; padding: 0;')
+									| Hear from private and corporate donors currently sponsoring scholarships at LCF and from students who have benefitted.
+								a(href='/fashion/about/fashion-matters/') Read more →
+		// end row div
