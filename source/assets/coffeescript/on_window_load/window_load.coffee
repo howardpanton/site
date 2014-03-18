@@ -20,35 +20,41 @@ window.loadMap = ->
 
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
 
+    # create the InfoWindow object outside of addMarker() to ensure only one window is open at once
+    infoWindow = new google.maps.InfoWindow(
+        content: ""
+        maxWidth: 400
+    )
+
     # console.log(json)
     # loop through array of marker data
     for i of json
-        addMarker json[i], map
-
-    return 
+        addMarker json[i], map, infoWindow
+    
+    return
 # loadMap
 
-addMarker = (data, map) ->
+addMarker = (data, map, infoWindow) ->
   
-        # Create the marker
-        marker = new google.maps.Marker(
-            position: new google.maps.LatLng(data.lat, data.lng)
-            map: map
-            title: data.name
-        )
-  
-        # push the new marker objects into arrays
-        # gJson.push marker  if data is json[i]
+    # Create the marker
+    marker = new google.maps.Marker(
+        position: new google.maps.LatLng(data.lat, data.lng)
+        map: map
+        title: data.name
+    )
 
-        # build the window contents
-        # contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
-        # google.maps.event.addListener marker, "click", ->
-        #     infoWindow.open map, marker
-        #     infoWindow.setContent contentString
-        #     return
+    # push the new marker objects into arrays
+    # gJson.push marker  if data is json[i]
 
-        return 
-    # addMarker
+    # build the window contents
+    contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
+    google.maps.event.addListener marker, "click", ->
+        infoWindow.open map, marker
+        infoWindow.setContent contentString
+        return
+
+    return 
+# addMarker
 
 loadMapsScript = ->
     script = document.createElement("script")

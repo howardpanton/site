@@ -30,6 +30,7 @@ initSlider = ->
           autoPlay:
             enabled: _itemAutoPlay
             pauseOnHover: true
+            delay: 3000
 
 
 $(document).ready ->
