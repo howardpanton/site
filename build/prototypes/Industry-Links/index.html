@@ -509,34 +509,34 @@
       <div class="credits-btn"><a href="#" class="show-credits"><span class="icon-picture"></span></a></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script src="http://use.resrc.it/"></script>
-      <script src="http://localhost:9000/assets/js/script.js"></script>
+      <script src="http://artslondon.github.io/arts.ac.uk/build/assets/js/script.js"></script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {
-            var result = {};
-            if (window.location.search) {
-                // split up the query string and store in an associative array
-                var params = window.location.search.slice(1).split("&");
-                for (var i = 0; i < params.length; i++) {
-                    var tmp = params[i].split("=");
-                    result[tmp[0]] = unescape(tmp[1]);
-                }
+          var result = {};
+          if (window.location.search) {
+            // split up the query string and store in an associative array
+            var params = window.location.search.slice(1).split("&");
+            for (var i = 0; i < params.length; i++) {
+              var tmp = params[i].split("=");
+              result[tmp[0]] = unescape(tmp[1]);
             }
-            return result;
+          }
+          return result;
         }());
         
         if (QueryParameters["debug"]) {
-            //- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
-            document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
+          //- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
+          document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
         }
         
         $(document).ready(function($) {
-            $('.megamenu').megaMenuCompleteSet({
-                menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-                menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-                menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-                menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-            });
+          $('.megamenu').megaMenuCompleteSet({
+            menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+            menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+            menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+            menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+          });
         });
       </script>
     </footer>
