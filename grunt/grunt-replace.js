@@ -5,8 +5,16 @@
 
 module.exports = function(grunt) {
 		grunt.config('replace', {
+				siteurl: {
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
+						overwrite: true, // overwrite matched source files
+						replacements: [{
+							from: "localhost:9000",
+							to: "http://artslondon.github.io/arts.ac.uk/build"
+						}]
+				},
 				local: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_layout/_footer.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
@@ -19,7 +27,7 @@ module.exports = function(grunt) {
 						]
 				},
 				github: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_layout/_footer.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
@@ -41,7 +49,7 @@ module.exports = function(grunt) {
 						]
 				},
 				reset: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_layout/_footer.jade' ],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
 							from: "http://artslondon.github.io/arts.ac.uk/build",
