@@ -28,6 +28,52 @@ block content
 						initLng: -0.082828 // T4 field
 					};
 
+
+					var map_markers_json = [
+						{
+							markerName: "infoMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/info-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "accomMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/accom-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "collegeMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "default_UAL",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						}
+
+					];
+
+
 					/* A list of markers populated by data in marker content nodes in same section */
 					var maps_json = [
 					{
@@ -59,6 +105,11 @@ block content
 						table.data-table
 							tbody
 								tr
+									td Closest College
+									td
+										strong Central Saint Martins
+
+								tr
 									td Train/Tube Station
 									td
 										strong Kings Cross (5min walk)
@@ -77,10 +128,6 @@ block content
 					.table-container
 						table.data-table
 							tbody
-								tr
-									td Closest College
-									td
-										strong Central Saint Martins
 
 								tr
 									td Train Lines
