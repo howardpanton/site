@@ -1,4 +1,4 @@
-/*!Updated: 21-03-2014, 9:55:43 AM */
+/*!Updated: 21-03-2014, 10:00:48 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1626,7 +1626,8 @@ if (typeof define !== 'undefined' && define.amd) {
           keyboardNavEnabled: true,
           autoPlay: {
             enabled: _itemAutoPlay,
-            pauseOnHover: true
+            pauseOnHover: true,
+            delay: 3000
           }
         });
       });
@@ -1797,11 +1798,11 @@ if (typeof define !== 'undefined' && define.amd) {
 
 
 /*
-    -------------------------------------------------------------
-        enableSelectBoxes()
+		-------------------------------------------------------------
+				enableSelectBoxes()
 
-        UAL formatting for select boxes
-    -------------------------------------------------------------
+				UAL formatting for select boxes
+		-------------------------------------------------------------
  */
 
 (function() {
@@ -1832,38 +1833,15 @@ if (typeof define !== 'undefined' && define.amd) {
 
 
 /*
-    -------------------------------------------------------------
-        checkWindowSize() function
-          Adds width classes to <body> tag.
-          Used for tablet, desktop, mobile styling
-    -------------------------------------------------------------
+		-------------------------------------------------------------
+				checkWindowSize() function
+					Adds width classes to <body> tag.
+					Used for tablet, desktop, mobile styling
+		-------------------------------------------------------------
  */
 
 (function() {
-  var checkWindowSize;
 
-  checkWindowSize = function() {
-    var new_body_class, width;
-    width = $(window).width();
-    switch (width) {
-      case width > 959:
-        new_body_class = 'gDesktop';
-        break;
-      case width > 599:
-        new_body_class = 'gTablet';
-        break;
-      case width < 600:
-        new_body_class = 'gMobile';
-        break;
-      default:
-        new_body_class = '';
-    }
-    return $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_body_class);
-  };
-
-  $(document).ready(function() {
-    return checkWindowSize();
-  });
 
 }).call(this);
 
@@ -1909,11 +1887,39 @@ if (typeof define !== 'undefined' && define.amd) {
 
 }).call(this);
 
-(function() {
-  var imageCredits;
 
-  imageCredits = function() {
-    if ($("body").hasClass("gDesktop")) {
+/*
+		-------------------------------------------------------------
+			Javascript hasClass function - can use instead of jquery .hasClass
+
+			Example use:
+
+			JS:
+
+			var element = document.getElementById('element');
+			if ( hasClass(element, "class_one") ) {
+					// Do stuff here
+			}
+
+			Coffeescript:
+
+			element = document.getElementById("element")
+			if hasClass(element, "class_one")
+				console.log "do something here"
+				console.log "do something else here"
+		-------------------------------------------------------------
+ */
+
+(function() {
+  this.hasClass = function(el, clss) {
+    return el.className && new RegExp("(^|\\s)" + clss + "(\\s|$)").test(el.className);
+  };
+
+}).call(this);
+
+(function() {
+  this.imageCredits = function() {
+    if ($("html").hasClass("desktop")) {
       $(".credits-btn").addClass("show");
       return $(".show-credits").click(function(event) {
         var c;
@@ -2009,21 +2015,103 @@ if (typeof define !== 'undefined' && define.amd) {
 
 
 /*
-    -------------------------------------------------------------
-        .back-to-top
-          Scroll to the top of the page
-          when a link with .back-to-top class clicked
+		-------------------------------------------------------------
+				Google maps
+		-------------------------------------------------------------
+ */
 
-          On desktop the button will fade in when the user
-          scrolls down the page
-    -------------------------------------------------------------
+(function() {
+  var markerIcons;
+
+  markerIcons = {};
+
+  this.addMarker = function(data, map, infoWindow) {
+    var contentString, marker;
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(data.lat, data.lng),
+      map: map,
+      title: data.name,
+      icon: markerIcons["accomMarker"]
+    });
+    contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
+    google.maps.event.addListener(marker, "click", function() {
+      infoWindow.open(map, marker);
+      infoWindow.setContent(contentString);
+    });
+  };
+
+  this.setupMarkerIcons = function(data) {
+    var i, icon_name, _results, _this;
+    _results = [];
+    for (i in data) {
+      _this = data[i];
+      icon_name = _this.markerName;
+      _results.push(markerIcons[icon_name] = {
+        url: _this.url,
+        scaledSize: new google.maps.Size(_this.scaledSize_x, _this.scaledSize_y),
+        origin: new google.maps.Point(_this.origin_x, _this.origin_y),
+        anchor: new google.maps.Point(_this.anchor_x, _this.anchor_y)
+      });
+    }
+    return _results;
+  };
+
+  this.loadMap = function() {
+    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _mapCanvas;
+    gJson = [];
+    initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
+    mapOptions = {
+      zoom: mapConfig.zoom,
+      center: initialLocation
+    };
+    mapDiv = document.getElementById("map-canvas");
+    map = new google.maps.Map(mapDiv, mapOptions);
+    infoWindow = new google.maps.InfoWindow({
+      content: "",
+      maxWidth: 400
+    });
+    _mapCanvas = $("#map-canvas");
+    if (_mapCanvas.data("transit-layer") === true) {
+      transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+    }
+    if (_mapCanvas.data("bicycling-layer") === true) {
+      bikeLayer = new google.maps.BicyclingLayer();
+      bikeLayer.setMap(map);
+    }
+    setupMarkerIcons(map_markers_json);
+    for (i in maps_json) {
+      addMarker(maps_json[i], map, infoWindow);
+    }
+  };
+
+  this.loadMapsScript = function() {
+    var script;
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap";
+    document.body.appendChild(script);
+  };
+
+}).call(this);
+
+
+/*
+		-------------------------------------------------------------
+				.back-to-top
+					Scroll to the top of the page
+					when a link with .back-to-top class clicked
+
+					On desktop the button will fade in when the user
+					scrolls down the page
+		-------------------------------------------------------------
  */
 
 (function() {
   var backToTop, checkScrollPos;
 
   checkScrollPos = function() {
-    if ($("body").hasClass("gDesktop")) {
+    if ($("html").hasClass("desktop")) {
       if ($(this).scrollTop() > 450) {
         return $(".back-to-top").fadeIn(200);
       } else {
@@ -2042,9 +2130,7 @@ if (typeof define !== 'undefined' && define.amd) {
     });
   };
 
-  $(document).ready(function() {
-    return backToTop();
-  });
+  $(document).ready(function() {});
 
 }).call(this);
 
@@ -2221,7 +2307,7 @@ if (typeof define !== 'undefined' && define.amd) {
           });
         });
       });
-      if (!$("body").hasClass("gDesktop")) {
+      if (!$("html").hasClass("desktop")) {
         $("#placeHolder").prependTo(".content");
       }
     }
@@ -2374,39 +2460,6 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  var addMarker, loadMapsScript;
-
-  window.loadMap = function() {
-    var gJson, i, initialLocation, map, mapOptions;
-    gJson = [];
-    initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
-    mapOptions = {
-      zoom: mapConfig.zoom,
-      center: initialLocation
-    };
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    for (i in json) {
-      addMarker(json[i], map);
-    }
-  };
-
-  addMarker = function(data, map) {
-    var marker;
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(data.lat, data.lng),
-      map: map,
-      title: data.name
-    });
-  };
-
-  loadMapsScript = function() {
-    var script;
-    script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap";
-    document.body.appendChild(script);
-  };
-
   $(window).load(function() {
     if ($(".related-content").length > 0) {
       $(".related-content ul li").fitHeights();

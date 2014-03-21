@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 				var deployTo = grunt.config('deployTo');
 				var buildFileType = grunt.config('buildFileType');
 
+				// set Amazon cloudfront ID to point to either staging or live bucket
 				if (deployTo === "staging") {
 						grunt.option("AWS_id", grunt.config.get('AWS_staging_id'));
 				}
@@ -53,7 +54,6 @@ module.exports = function(grunt) {
 
 						case 'live':
 								grunt.log.writeln('Running build live....');
-								//grunt.task.run('buildlive');
 						break;
 
 

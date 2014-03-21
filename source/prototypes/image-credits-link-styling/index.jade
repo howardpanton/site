@@ -1,15 +1,15 @@
 extends ../../_layout/_base
 block vars
-    - var bodyClass = "csm";
-    - var Title = "image-credits-link-styling";
-    - var Sidebar = true;
-    - var Banner = true;
+		- var bodyClass = "csm";
+		- var Title = "image-credits-link-styling";
+		- var Sidebar = true;
+		- var Banner = true;
 block content
-    figure
-        img(src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/csm/csm-landing-courses-21.02.2014@2.jpg', alt='Courses')
-        .credits(style='display: block;')
-            | Work by
-            a(href='#showtimelink') &nbsp; Amy Wallace
-            | , photograph by John Sturrock
+		figure
+				img(src='http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/csm/csm-landing-courses-21.02.2014@2.jpg', alt='Courses')
+				.credits()
+						| Work by
+						a(href='#showtimelink') &nbsp; Amy Wallace
+						| , photograph by John Sturrock
 
 

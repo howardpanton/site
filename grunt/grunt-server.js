@@ -7,23 +7,24 @@
 // *--------------------------------------------------------------------------------*/
 
 module.exports = function(grunt) {
-    grunt.registerTask('server', function (target) {
+		grunt.registerTask('server', function (target) {
 
-        // if (target === 'dist') {
-        //     return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-        // }
+				// if (target === 'dist') {
+				//     return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+				// }
 
-        grunt.task.run([
-            'replace:local',
-            'compilejs',
-            'compilecss',
-            'copy:oldstyleguide',
-            'concurrent:server',
-            'connect:livereload',
-            'open:root',
-            'watch'
-        ]);
-    });
+				grunt.task.run([
+						'clean:before_build',
+						'replace:local',
+						'compilejs',
+						'compilecss',
+						'copy:oldstyleguide',
+						'concurrent:server',
+						'connect:livereload',
+						'open:root',
+						'watch'
+				]);
+		});
 
 };
 

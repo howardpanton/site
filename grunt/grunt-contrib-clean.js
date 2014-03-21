@@ -4,11 +4,12 @@
 
 module.exports = function(grunt) {
     grunt.config('clean', {
-            dist: {
+            before_build: {
                 files: [{
                     dot: true,
                     src: [
-                        '.tmp'
+                        '.tmp',
+                        'build'
                     ]
                 }]
             }

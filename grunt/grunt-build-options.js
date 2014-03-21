@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 
 						case 'build-github':
 								grunt.log.writeln('building out for github....');
+								grunt.task.run('clean:before_build');
 								grunt.task.run(['build-github']);
 								grunt.task.run('prompt:buildFileType');
 								grunt.task.run('handle_build_type');
@@ -42,6 +43,7 @@ module.exports = function(grunt) {
 						break;
 
 						case 'build-deploy':
+								grunt.task.run('clean:before_build');
 								grunt.task.run('prompt:buildFileType');
 								grunt.task.run('prompt:deployTo');
 								grunt.task.run('handle_build_type');

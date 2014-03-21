@@ -6,36 +6,36 @@
 module.exports = function(grunt) {
 		grunt.config('replace', {
 				siteurl: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true, // overwrite matched source files
 						replacements: [{
 							from: "localhost:9000",
-							to: "artslondon.github.io/"
+							to: "http://artslondon.github.io/arts.ac.uk/build"
 						}]
 				},
 				local: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
 							to: "http://localhost:9000"
 						},
 						{
-							from: "http://artslondon.github.io/",
+							from: "http://artslondon.github.io/arts.ac.uk/build",
 							to: "http://localhost:9000"
 						}
 						]
 				},
 				github: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
-							to: "http://artslondon.github.io/"
+							to: "http://artslondon.github.io/arts.ac.uk/build"
 						},
 						{
 							from: "http://localhost:9000",
-							to: "http://artslondon.github.io/"
+							to: "http://artslondon.github.io/arts.ac.uk/build"
 						}
 						]
 				},
@@ -49,10 +49,10 @@ module.exports = function(grunt) {
 						]
 				},
 				reset: {
-						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade'],
+						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
-							from: "http://artslondon.github.io/",
+							from: "http://artslondon.github.io/arts.ac.uk/build",
 							to: "{{site.url}}"
 						},
 						{

@@ -6,13 +6,13 @@
 	z-index: 500;
 	font-size: 14px;
 	@include single-transition(all, 200ms, linear);
-  @include prefixer ("opacity", 0.6);
-	
+	@include prefixer ("opacity", 0.6);
+
 	&:hover {
 		@include single-transition(all, 200ms, linear);
 		@include prefixer ("opacity", 1);
 	}
-	
+
 	a.show-credits {
 		border: 1px solid $bg-gray;
 		border-right: none;
@@ -26,7 +26,7 @@
 		}
 
 		span:before {
-			display: block; 
+			display: block;
 			padding-right: 6px;
 		}
 		&:hover, &:active {
@@ -47,7 +47,7 @@
 
 // styling for the image credit that appears over an image
 .credits {
-	display: none; 
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;

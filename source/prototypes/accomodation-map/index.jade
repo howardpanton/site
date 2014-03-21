@@ -1,0 +1,194 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "accomodation-map";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	.row
+		.l-content.block
+			//- .full-width.map(style='height: 480px;')
+			h2 Will Wyatt Court
+	.row
+		.l-content.block
+			.row.google-map(style='height: 480px;')
+				script.
+					/*
+					* An object containing various map config properties.
+					* Zoom = zoom level
+					* initLat = initial latitude for the map center
+					* initLng = initial latitude for the map center
+					* Note we can set a sensible default for the center e.g. London,
+					* which can be overridden if required
+					*/
+					var mapConfig =
+					{
+						zoom: 14, // T4 field
+						initLat: 51.531621, // T4 field
+						initLng: -0.082828 // T4 field
+					};
+
+
+					var map_markers_json = [
+						{
+							markerName: "infoMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/info-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "accomMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/accom-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "collegeMarker",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						},
+						{
+							markerName: "default_UAL",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+							scaledSize_x: 24,
+							scaledSize_y: 24,
+							origin_x: 0,
+							origin_y: 0,
+							anchor_x: 12,
+							anchor_y: 24
+						}
+
+					];
+
+
+					/* A list of markers populated by data in marker content nodes in same section */
+					var maps_json = [
+					{
+						lat: 51.531621,
+						lng: -0.082828,
+						name: "Will Wyatt Court",
+						content: "168 Pitfield St, Hackney, London N1, UK",
+						marker: "accomMarker"
+					}
+					];
+
+				//- (data-slider-auto-play='true', data-slider-item-width='1280', data-slider-item-height='480', style='height: 480px;')
+				//-#map-canvas(style='width:100%; height:100%', data-transit-layer=false, data-bicycling-layer=true)
+				#map-canvas(style='width: 100%; height: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; -webkit-transform: translateZ(0px);', data-transit-layer='true', data-bicycling-layer='true')
+
+		aside.ual-white-bg
+			h3 Address
+			p  168 Pitfield St, Hackney, London N1, UK
+			h3 Telephone
+			p  +44 (123) 1234-1233
+
+
+	.row
+		.l-content.block.two-up
+			ul
+				li
+					h3 Nearest
+					.table-container
+						table.data-table
+							tbody
+								tr
+									td Closest College
+									td
+										strong Central Saint Martins
+
+								tr
+									td Train/Tube Station
+									td
+										strong Kings Cross (5min walk)
+								tr
+									td Supermarket
+									td
+										strong Sainsburys (2min walk)
+
+								tr
+									td Pub
+									td
+										strong The Slug &amp; Lettuce
+
+				li
+					h3 Getting Around
+					.table-container
+						table.data-table
+							tbody
+
+								tr
+									td Train Lines
+									td
+										strong Kings Cross (overground &amp; underground)
+								tr
+									td Bus Routes
+									td
+										strong n24, 34, 23 (2min walk )
+								tr
+									td Car Parking
+									td
+										strong NCP somthing lane (2min walk)
+
+								tr
+									td Bicycle Storage
+									td
+										strong Bike Racks outside building (2min walk)
+
+
+
+
+
+	.row
+		.l-content.block.__text.__with-aside
+				.text
+					h2 Text block with inline table
+					p.leader A basic inline table that can be included within a Text block component.
+					.table-container
+						table.data-table
+							tbody
+								tr
+									th Date
+									th Day of Week
+									th Time
+									th Duration
+									th Cost
+									th Status
+									th Location
+								tr
+									td 30/06/2014 - 04/07/2014
+									td Monday to Friday
+									td 09:00 - 17:00
+									td 1 Week
+									td £840
+									td Available
+									td
+										a(href='http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=51.535617,-0.124967&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16') Granary Square, King's Cross
+								tr
+									td 07/07/2014 - 11/07/2014
+									td Monday to Friday
+									td 09:00 - 17:00
+									td 1 Week
+									td £560
+									td Available
+									td
+										a(href='http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=0,0&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16') NABA, Milan
+
+
+
+
+
+
+

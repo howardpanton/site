@@ -1,28 +1,43 @@
 ###
-    -------------------------------------------------------------
-        checkWindowSize() function
-          Adds width classes to <body> tag.
-          Used for tablet, desktop, mobile styling
-    -------------------------------------------------------------
+		-------------------------------------------------------------
+				checkWindowSize() function
+					Adds width classes to <body> tag.
+					Used for tablet, desktop, mobile styling
+		-------------------------------------------------------------
 ###
+# foo = ""
+# checkWindowSize = ->
 
-checkWindowSize = ->
-    # get screen width
-    width = $(window).width()
+# 	# get screen width
+# 	width = ""
+# 	width = $(window).width()
+# 	foo 	= "gDesktop" if width > 959
+# 	foo 	= "tablet"  if (width > 599) and (width < 959)
+# 	foo 	= "mobile"  if width < 599
+# 	console.log foo
+# 	# switch width
+# 	# 	when "desktop"
+# 	# 		$(document.body).removeClass("gTablet gMobile").addClass "gDesktop"
+# 	# 	when "tablet"
+# 	# 		$(document.body).removeClass("gDesktop gMobile").addClass "gTablet"
+# 	# 	when "mobile"
+# 	# 		$(document.body).removeClass("gDesktop gTablet").addClass "gMobile"
 
-    # calc body class name to add based on screen width
-    #new_body_class = width > 959 ? 'gDesktop' : (width > 599) ? 'gTablet' : (width < 600) ? 'gMobile' : ''
-
-    switch width
-        when (width > 959) then new_body_class = 'gDesktop'
-        when (width > 599) then new_body_class = 'gTablet'
-        when (width < 600) then new_body_class = 'gMobile'
-        else new_body_class = ''
-
-    # remove any existing body class and add the new_body_class
-    $(document.body).removeClass('gDesktop gTablet gMobile').addClass(new_body_class)
+# $(document).ready ->
+# 	checkWindowSize()
+# 	$('body').removeClass("gDesktop")
+# 	console.log(foo)
+# 	# $('body').addClass foo
 
 
-$(document).ready ->
-    checkWindowSize()
+# $(window).resize ->
+# 	clearTimeout $.data(this, "resizeTimer")
+# 	$.data this, "resizeTimer", setTimeout(->
 
+# 		## run checkWindowSize() when window browser is resized
+# 		checkWindowSize()
+
+# 		imageCredits()
+# 		return
+# 	, 200)
+# 	return
