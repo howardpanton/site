@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 						overwrite: true, // overwrite matched source files
 						replacements: [{
 							from: "localhost:9000",
-							to: "http://artslondon.github.io/arts.ac.uk/build"
+							to: "http://artslondon.github.io/site/build"
 						}]
 				},
 				local: {
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 							to: "http://localhost:9000"
 						},
 						{
-							from: "http://artslondon.github.io/arts.ac.uk/build",
+							from: "http://artslondon.github.io/site/build",
 							to: "http://localhost:9000"
 						}
 						]
@@ -31,11 +31,11 @@ module.exports = function(grunt) {
 						overwrite: true,
 						replacements: [{
 							from: "{{site.url}}",
-							to: "http://artslondon.github.io/arts.ac.uk/build"
+							to: "http://artslondon.github.io/site/build"
 						},
 						{
 							from: "http://localhost:9000",
-							to: "http://artslondon.github.io/arts.ac.uk/build"
+							to: "http://artslondon.github.io/site/build"
 						}
 						]
 				},
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 						src: ['source/_layout/_base.jade', 'source/_includes/_layouts/_head.jade', 'source/_includes/_layouts/_footer.jade'],
 						overwrite: true,
 						replacements: [{
-							from: "http://artslondon.github.io/arts.ac.uk/build",
+							from: "http://artslondon.github.io/site/build",
 							to: "{{site.url}}"
 						},
 						{
