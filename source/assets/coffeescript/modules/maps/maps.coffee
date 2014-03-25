@@ -15,8 +15,8 @@ markerIcons = {}
 				position: new google.maps.LatLng(data.lat, data.lng)
 				map: map
 				title: data.name
-				icon: data.marker
-				#icon: markerIcons["collegeMarker"]
+				icon: markerIcons[data.marker]
+				# icon: markerIcons["collegeMarker"]
 
 		)
 
@@ -29,7 +29,6 @@ markerIcons = {}
 				infoWindow.open map, marker
 				infoWindow.setContent contentString
 				return
-
 		return
 
 #setup custom map markers
@@ -84,14 +83,14 @@ markerIcons = {}
 				zoom: mapConfig.zoom,
 				center: initial_location,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				panControl: true,
+				panControl: false,
 				draggable: false,
 				streetViewControl: false,
 				mapTypeControl: false,
 				zoomControl: true,
 				zoomControlOptions:
 					style: google.maps.ZoomControlStyle.SMALL
-					position: google.maps.ControlPosition.LEFT_BOTTOM
+					position: google.maps.ControlPosition.LEFT_TOP
 		else
 			# output desktop settings if no matches found
 			mapOptions =
