@@ -5,22 +5,32 @@
 	@include gs-media(d) {
 		@include gs-span(d, 5, 16, (5, 16));
 		.map {
-	    width: gs-width(d, 5, 10, (5,16), true);
-      @include gs-float(d, left, (5,16));
+			width: gs-width(d, 5, 10, (5,16), true);
+			@include gs-float(d, left, (5,16));
 			padding-top: rhythm(4, 16px);
-    }
+		}
 		.map-info {
-	    width: gs-width(d, 11, 16, (5,16), true);
-      @include gs-float(d, left, (5,16));
-      margin-right: 0;
+			width: gs-width(d, 11, 16, (5,16), true);
+			@include gs-float(d, left, (5,16));
+			margin-right: 0;
 		}
 	}
 }
 
 // Google maps styling overrides
 .gmnoprint img {
-    max-width: none !important;
+	max-width: none !important;
 }
 .gm-style img {
-  max-width: none !important;
+	max-width: none !important;
+}
+
+
+// accommodation maps table data styling
+ul.accommodation-info {
+	li{
+		padding-left: 0;
+		margin-left: 0;
+		list-style-type: none;
+	}
 }
