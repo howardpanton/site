@@ -15,8 +15,8 @@ markerIcons = {}
 				position: new google.maps.LatLng(data.lat, data.lng)
 				map: map
 				title: data.name
-				icon: data.marker
-				#icon: markerIcons["collegeMarker"]
+				# icon: data.marker
+				icon: markerIcons["collegeMarker"]
 
 		)
 
