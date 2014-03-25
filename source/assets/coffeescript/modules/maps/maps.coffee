@@ -15,7 +15,9 @@ markerIcons = {}
 				position: new google.maps.LatLng(data.lat, data.lng)
 				map: map
 				title: data.name
-				icon: markerIcons["accomMarker"]
+				icon: data.marker
+				#icon: markerIcons["collegeMarker"]
+
 		)
 
 		# push the new marker objects into arrays
