@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 						overwrite: true, // overwrite matched source files
 						replacements: [{
 							from: "localhost:9000",
-							to: "http://artslondon.github.io/site/build"
+							to: "http://artslondon.github.io/site"
 						}]
 				},
 				local: {
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 							to: "http://localhost:9000"
 						},
 						{
-							from: "http://artslondon.github.io/site/build",
+							from: "http://artslondon.github.io/site",
 							to: "http://localhost:9000"
 						}
 						]
