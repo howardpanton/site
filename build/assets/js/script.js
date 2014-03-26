@@ -1,4 +1,4 @@
-/*!Updated: 25-03-2014, 12:32:19 PM */
+/*!Updated: 26-03-2014, 10:04:22 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2082,7 +2082,7 @@ if (typeof define !== 'undefined' && define.amd) {
       position: new google.maps.LatLng(data.lat, data.lng),
       map: map,
       title: data.name,
-      icon: markerIcons["accomMarker"]
+      icon: markerIcons["collegeMarker"]
     });
     contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
     google.maps.event.addListener(marker, "click", function() {

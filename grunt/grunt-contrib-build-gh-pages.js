@@ -6,11 +6,11 @@ module.exports = function(grunt) {
 		grunt.config('gh-pages', {
 						'pushToBuild': {
 								options: {
-									base: 'build',
+									base: 'build/',
 									repo: 'https://github.com/artslondon/site.git',
 									branch: 'gh-pages',
 									add: true,
-									message: 'TEST: auto-generated commit message from grunt task',
+									message: 'TEST: Wednesday auto-generated commit message from grunt task',
 									push: true
 								},
 								src: '**/*'
