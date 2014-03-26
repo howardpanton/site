@@ -1,4 +1,4 @@
-/*!Updated: 21-03-2014, 4:08:26 PM */
+/*!Updated: 26-03-2014, 11:24:40 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1833,20 +1833,6 @@ if (typeof define !== 'undefined' && define.amd) {
 
 
 /*
-		-------------------------------------------------------------
-				checkWindowSize() function
-					Adds width classes to <body> tag.
-					Used for tablet, desktop, mobile styling
-		-------------------------------------------------------------
- */
-
-(function() {
-
-
-}).call(this);
-
-
-/*
     -------------------------------------------------------------
        Enable caching of getScript calls
     -------------------------------------------------------------
@@ -1946,6 +1932,71 @@ if (typeof define !== 'undefined' && define.amd) {
 
 
 /*
+		-------------------------------------------------------------
+				checkWindowSize() function
+					Adds width classes to <body> tag.
+					Used for tablet, desktop, mobile styling
+		-------------------------------------------------------------
+ */
+
+(function() {
+  this.checkWindowSize = function() {
+    var _grid_size, _html_tag, _width;
+    _grid_size = "";
+    _width = "";
+    _html_tag = "";
+    $('body').removeClass("gDesktop gTablet gMobile");
+    _html_tag = $('html');
+    _width = $(window).width();
+    if (_width > 959) {
+      _grid_size = "gDesktop";
+    }
+    if ((_width > 599) && (_width < 959)) {
+      _grid_size = "gTablet";
+    }
+    if (_width < 599) {
+      _grid_size = "gMobile";
+    }
+    console.log("screen width is: " + _grid_size);
+    return $('body').addClass(_grid_size);
+  };
+
+
+  /*
+  		-------------------------------------------------------------
+  				getWindowSize()
+  
+  					Returns the current window size that has been added
+  					to the <body> tag
+  
+  					The function will return
+  						"gDesktop", "gTablet" or "gMobile"
+  
+  					The function will return "gDesktop" by default,
+  					if none of the classes above are added to the body class
+  
+  		-------------------------------------------------------------
+   */
+
+  this.getWindowSize = function() {
+    var _body;
+    _body = "";
+    _body = $('body');
+    if (_body.hasClass("gDesktop")) {
+      return "gDesktop";
+    } else if (_body.hasClass("gTablet")) {
+      return "gTablet";
+    } else if (_body.hasClass("gMobile")) {
+      return "gMobile";
+    } else {
+      return "gDesktop";
+    }
+  };
+
+}).call(this);
+
+
+/*
     -------------------------------------------------------------
         add indexOf support for IE8 compatibility
 
@@ -2031,7 +2082,7 @@ if (typeof define !== 'undefined' && define.amd) {
       position: new google.maps.LatLng(data.lat, data.lng),
       map: map,
       title: data.name,
-      icon: markerIcons["accomMarker"]
+      icon: markerIcons["collegeMarker"]
     });
     contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
     google.maps.event.addListener(marker, "click", function() {
@@ -2056,14 +2107,70 @@ if (typeof define !== 'undefined' && define.amd) {
     return _results;
   };
 
+  this.generateMapOptions = function(screen_width, initial_location) {
+    var mapOptions;
+    mapOptions = "";
+    switch (screen_width) {
+      case "gDesktop":
+        console.log("setup Map for desktop");
+        mapOptions = {
+          zoom: mapConfig.zoom,
+          center: initial_location,
+          mapTypeControl: false,
+          streetViewControl: false
+        };
+        break;
+      case "gTablet":
+        console.log("setup Map for tablet");
+        mapOptions = {
+          zoom: mapConfig.zoom,
+          center: initial_location,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeControl: false,
+          draggable: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_TOP
+          },
+          panControl: false,
+          streetViewControl: false
+        };
+        break;
+      case "gMobile":
+        console.log("setup Map for mobile");
+        mapOptions = {
+          zoom: mapConfig.zoom,
+          center: initial_location,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          panControl: true,
+          draggable: false,
+          streetViewControl: false,
+          mapTypeControl: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+          }
+        };
+        break;
+      default:
+        mapOptions = {
+          zoom: mapConfig.zoom,
+          center: initial_location,
+          mapTypeControl: false,
+          streetViewControl: false
+        };
+    }
+    return mapOptions;
+  };
+
   this.loadMap = function() {
-    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _mapCanvas;
+    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _mapCanvas, _screen_width;
     gJson = [];
     initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
-    mapOptions = {
-      zoom: mapConfig.zoom,
-      center: initialLocation
-    };
+    _screen_width = getWindowSize();
+    mapOptions = generateMapOptions(_screen_width, initialLocation);
     mapDiv = document.getElementById("map-canvas");
     map = new google.maps.Map(mapDiv, mapOptions);
     infoWindow = new google.maps.InfoWindow({
@@ -2455,7 +2562,9 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  $(document).ready(function() {});
+  $(document).ready(function() {
+    return checkWindowSize();
+  });
 
 }).call(this);
 
@@ -2485,6 +2594,17 @@ if (typeof define !== 'undefined' && define.amd) {
     if ($("#map-canvas").length > 0) {
       return loadMapsScript();
     }
+  });
+
+}).call(this);
+
+(function() {
+  $(window).resize(function() {
+    clearTimeout($.data(this, "resizeTimer"));
+    $.data(this, "resizeTimer", setTimeout(function() {
+      checkWindowSize();
+      imageCredits();
+    }, 200));
   });
 
 }).call(this);
