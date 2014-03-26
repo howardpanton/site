@@ -112,9 +112,14 @@
 		}
 	}
 
-	figure a {
-		display: block;
-		line-height: 0;
+
+
+	figure {
+
+		a {
+			display: block;
+			line-height: 0;
+		}
 	}
 
 	figcaption a {
@@ -466,9 +471,16 @@
 	}
 }
 
-// .__media figure, .__media .l-content .video-container {
-// 	@include component-spacing-bottom(4);
-// }
+.__media figure{
+	@include component-spacing-bottom(4);
+}
+
+.__media .two-up figure, .__media .three-up figure, .__media .four-up figure{
+	margin-bottom : 0;
+}
+
+
+
 .__media .l-content .video-container {
 	@include component-spacing-bottom(4);
 }
