@@ -6,14 +6,14 @@
 // *---------------------------------------------------------------*\
 
 module.exports = function(grunt) {
-    grunt.config('coffee', {
-        // compile and concat all coffeescript into a single file
-        compile: {
-            files: {
-              '.tmp/assets/js/compiled.modules.js': ['source/assets/coffeescript/modules/**/*.coffee', 'source/assets/coffeescript/on_doc_ready/**/*.coffee', 'source/assets/coffeescript/on_window_load/**/*.coffee']
-            }
-        },
-    });
-    grunt.loadNpmTasks('grunt-contrib-coffee');
+		grunt.config('coffee', {
+				// compile and concat all coffeescript into a single file
+				compile: {
+						files: {
+							'.tmp/assets/js/compiled.modules.js': ['source/assets/coffeescript/modules/**/*.coffee', 'source/assets/coffeescript/on_doc_ready/**/*.coffee', 'source/assets/coffeescript/on_window_load/**/*.coffee', 'source/assets/coffeescript/on_window_resize/**/*.coffee']
+						}
+				},
+		});
+		grunt.loadNpmTasks('grunt-contrib-coffee');
 };
 

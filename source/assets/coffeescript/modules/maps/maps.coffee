@@ -15,7 +15,9 @@ markerIcons = {}
 				position: new google.maps.LatLng(data.lat, data.lng)
 				map: map
 				title: data.name
-				icon: markerIcons["accomMarker"]
+				# icon: data.marker
+				icon: markerIcons["collegeMarker"]
+
 		)
 
 		# push the new marker objects into arrays
@@ -30,7 +32,7 @@ markerIcons = {}
 
 		return
 
-
+#setup custom map markers
 @setupMarkerIcons = (data) ->
 
 	# for each JSON entry in map_markers_json, create a new custom marker image
@@ -46,6 +48,61 @@ markerIcons = {}
 			anchor: new google.maps.Point(_this.anchor_x, _this.anchor_y)
 		}
 
+
+@generateMapOptions = (screen_width, initial_location) ->
+
+	mapOptions = ""
+
+	switch screen_width
+
+		when "gDesktop"
+			console.log "setup Map for desktop"
+			mapOptions =
+				zoom: mapConfig.zoom,
+				center: initial_location,
+				mapTypeControl: false,
+				streetViewControl: false
+
+		when "gTablet"
+			console.log "setup Map for tablet"
+			mapOptions =
+				zoom: mapConfig.zoom,
+				center: initial_location
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				mapTypeControl: false,
+				draggable: false,
+				zoomControl: true,
+				zoomControlOptions:
+					style: google.maps.ZoomControlStyle.SMALL,
+					position: google.maps.ControlPosition.LEFT_TOP,
+				panControl: false,
+				streetViewControl: false
+
+		when "gMobile"
+			console.log "setup Map for mobile"
+			mapOptions =
+				zoom: mapConfig.zoom,
+				center: initial_location,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				panControl: true,
+				draggable: false,
+				streetViewControl: false,
+				mapTypeControl: false,
+				zoomControl: true,
+				zoomControlOptions:
+					style: google.maps.ZoomControlStyle.SMALL
+					position: google.maps.ControlPosition.LEFT_BOTTOM
+		else
+			# output desktop settings if no matches found
+			mapOptions =
+					zoom: mapConfig.zoom,
+					center: initial_location,
+					mapTypeControl: false,
+					streetViewControl: false
+
+	return mapOptions
+
+
 # loadMap - initializes map with settings from JSON and from classnames on the map-canvas element
 @loadMap = ->
 
@@ -54,9 +111,12 @@ markerIcons = {}
 		# create map as per mapConfig object properties set in view
 		initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng)
 
-		mapOptions =
-				zoom: mapConfig.zoom,
-				center: initialLocation
+
+		# get current screen width
+		_screen_width = getWindowSize()
+
+		# generate map options based on desktop, tablet or mobile view
+		mapOptions = generateMapOptions(_screen_width, initialLocation)
 
 		# set up a new google maps object
 		mapDiv = document.getElementById("map-canvas")
