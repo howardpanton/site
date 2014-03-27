@@ -17,7 +17,6 @@ markerIcons = {}
 				title: data.name
 				icon: markerIcons[data.marker]
 				# icon: markerIcons["collegeMarker"]
-
 		)
 
 		# push the new marker objects into arrays
@@ -48,22 +47,20 @@ markerIcons = {}
 		}
 
 
-@generateMapOptions = (screen_width, initial_location) ->
+@generateMapOptions = (_device, initial_location) ->
 
 	mapOptions = ""
 
-	switch screen_width
+	switch _device
 
-		when "gDesktop"
-			console.log "setup Map for desktop"
+		when "desktop"
 			mapOptions =
 				zoom: mapConfig.zoom,
 				center: initial_location,
 				mapTypeControl: false,
 				streetViewControl: false
 
-		when "gTablet"
-			console.log "setup Map for tablet"
+		when "tablet"
 			mapOptions =
 				zoom: mapConfig.zoom,
 				center: initial_location
@@ -77,8 +74,7 @@ markerIcons = {}
 				panControl: false,
 				streetViewControl: false
 
-		when "gMobile"
-			console.log "setup Map for mobile"
+		when "mobile"
 			mapOptions =
 				zoom: mapConfig.zoom,
 				center: initial_location,
@@ -111,11 +107,11 @@ markerIcons = {}
 		initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng)
 
 
-		# get current screen width
-		_screen_width = getWindowSize()
+		# get device type - will return "desktop", "tablet" or "mobile"
+		_device_type = @getDeviceType
 
 		# generate map options based on desktop, tablet or mobile view
-		mapOptions = generateMapOptions(_screen_width, initialLocation)
+		mapOptions = generateMapOptions(_device_type, initialLocation)
 
 		# set up a new google maps object
 		mapDiv = document.getElementById("map-canvas")
@@ -143,12 +139,20 @@ markerIcons = {}
 			bikeLayer = new google.maps.BicyclingLayer()
 			bikeLayer.setMap map
 
+		# TO DO:
+		# Enhancement: Add Markers to the map from JSON data
+		# $.getJSON "http://d27lwoqz7s24cy.cloudfront.net/assets/js/json/ual-map-markers.json?callback=?", (data) ->
+		# $.getJSON "http://localhost:9000/prototypes/accomodation-map/markers.json?callback=?", (data) ->
+		# 	alert "testing"
+		# 	map_markers_json = data
+		# 	console.log data[0]
+		# 	# define custom map markers
+		# 	setupMarkerIcons(map_markers_json)
+		# 	return
 
-
-		# Add Markers to the map from JSON data
-
-		# define custom map markers
+		#grabs markers from json object (currently outputted by t4 component from the content layout)
 		setupMarkerIcons(map_markers_json)
+
 
 		# loop through array of marker data
 		for i of maps_json
