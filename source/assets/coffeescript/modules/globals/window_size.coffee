@@ -24,7 +24,8 @@
 	_grid_size 	= "gDesktop" if _width > 959
 	_grid_size 	= "gTablet"  if (_width > 599) and (_width < 959)
 	_grid_size 	= "gMobile"  if _width < 599
-	console.log "screen width is: " + _grid_size
+
+	# console.log "screen width is: " + _grid_size
 
 	$('body').addClass(_grid_size)
 

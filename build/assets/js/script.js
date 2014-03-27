@@ -1,4 +1,4 @@
-/*!Updated: 25-03-2014, 4:14:05 PM */
+/*!Updated: 27-03-2014, 10:18:01 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1957,7 +1957,6 @@ if (typeof define !== 'undefined' && define.amd) {
     if (_width < 599) {
       _grid_size = "gMobile";
     }
-    console.log("screen width is: " + _grid_size);
     return $('body').addClass(_grid_size);
   };
 
