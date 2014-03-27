@@ -61,4 +61,21 @@
 
 
 
+@getDeviceType = ->
+
+	_html = ""
+	_html = $('html')
+	if (_html.hasClass("desktop"))
+		return "desktop"
+	else if (_html.hasClass("tablet"))
+		return "tablet"
+	else if (_html.hasClass("mobile"))
+		return "mobile"
+	else
+		# return default value if no matches found
+		return "desktop"
+
+
+
+
 
