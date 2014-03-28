@@ -82,4 +82,4 @@ shortCourseFilters = ->
 
 $(document).ready ->
 		if $("#container").length > 0
-				shortCourseFilters
+				shortCourseFilters()
