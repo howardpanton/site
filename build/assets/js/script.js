@@ -1,4 +1,4 @@
-/*!Updated: 27-03-2014, 10:18:01 AM */
+/*!Updated: 28-03-2014, 4:43:46 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1992,6 +1992,21 @@ if (typeof define !== 'undefined' && define.amd) {
     }
   };
 
+  this.getDeviceType = function() {
+    var _html;
+    _html = "";
+    _html = $('html');
+    if (_html.hasClass("desktop")) {
+      return "desktop";
+    } else if (_html.hasClass("tablet")) {
+      return "tablet";
+    } else if (_html.hasClass("mobile")) {
+      return "mobile";
+    } else {
+      return "desktop";
+    }
+  };
+
 }).call(this);
 
 
@@ -2106,12 +2121,11 @@ if (typeof define !== 'undefined' && define.amd) {
     return _results;
   };
 
-  this.generateMapOptions = function(screen_width, initial_location) {
+  this.generateMapOptions = function(_device, initial_location) {
     var mapOptions;
     mapOptions = "";
-    switch (screen_width) {
-      case "gDesktop":
-        console.log("setup Map for desktop");
+    switch (_device) {
+      case "desktop":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
@@ -2119,8 +2133,7 @@ if (typeof define !== 'undefined' && define.amd) {
           streetViewControl: false
         };
         break;
-      case "gTablet":
-        console.log("setup Map for tablet");
+      case "tablet":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
@@ -2136,8 +2149,7 @@ if (typeof define !== 'undefined' && define.amd) {
           streetViewControl: false
         };
         break;
-      case "gMobile":
-        console.log("setup Map for mobile");
+      case "mobile":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
@@ -2165,11 +2177,11 @@ if (typeof define !== 'undefined' && define.amd) {
   };
 
   this.loadMap = function() {
-    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _mapCanvas, _screen_width;
+    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _device_type, _mapCanvas;
     gJson = [];
     initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
-    _screen_width = getWindowSize();
-    mapOptions = generateMapOptions(_screen_width, initialLocation);
+    _device_type = getDeviceType();
+    mapOptions = generateMapOptions(_device_type, initialLocation);
     mapDiv = document.getElementById("map-canvas");
     map = new google.maps.Map(mapDiv, mapOptions);
     infoWindow = new google.maps.InfoWindow({
@@ -2421,7 +2433,7 @@ if (typeof define !== 'undefined' && define.amd) {
 
   $(document).ready(function() {
     if ($("#container").length > 0) {
-      return shortCourseFilters;
+      return shortCourseFilters();
     }
   });
 

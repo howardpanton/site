@@ -108,7 +108,7 @@ markerIcons = {}
 
 
 		# get device type - will return "desktop", "tablet" or "mobile"
-		_device_type = @getDeviceType
+		_device_type = getDeviceType()
 
 		# generate map options based on desktop, tablet or mobile view
 		mapOptions = generateMapOptions(_device_type, initialLocation)

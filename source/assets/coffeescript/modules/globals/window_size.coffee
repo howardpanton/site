@@ -62,7 +62,6 @@
 
 
 @getDeviceType = ->
-
 	_html = ""
 	_html = $('html')
 	if (_html.hasClass("desktop"))
