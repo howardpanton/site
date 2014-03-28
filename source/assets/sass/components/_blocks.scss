@@ -140,6 +140,7 @@
 		// }
 	}
 
+
 	&.__highlight {
 		background: $bg-gray;
 		&:hover {
@@ -265,7 +266,18 @@
 			}
 		}
 	}
+}
 
+// fix for hiding list bullet points in two ups inside media blocks
+.l-content.block.__media.two-up ul li {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+	// ul li {
+	// 	list-style-type: square;
+	// 	padding-left: 12px;
+	// 	margin-left: 0;
+	// }
 }
 
 // three-up - core styles
