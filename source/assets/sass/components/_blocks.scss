@@ -117,7 +117,7 @@
 	figure {
 
 		a {
-			display: block;
+			// display: block;
 			line-height: 0;
 		}
 	}
@@ -486,7 +486,10 @@
 }
 
 .__media figure{
-	@include component-spacing-bottom(4);
+	@include component-spacing-bottom(1);
+	@include gs-media (m,min-max) {
+		margin-bottom: 0;
+	}
 }
 
 .__media .two-up figure, .__media .three-up figure, .__media .four-up figure{
