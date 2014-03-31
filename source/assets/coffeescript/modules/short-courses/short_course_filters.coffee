@@ -38,8 +38,6 @@
 #     $("#placeHolder").prependTo ".content"  unless $("html").hasClass("desktop")
 
 
-
-
 shortCourseFilters = ->
 	if $("#container").length > 0
 		$.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js"), $.Deferred((deferred) ->

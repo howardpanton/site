@@ -16,7 +16,6 @@ markerIcons = {}
 				map: map
 				title: data.name
 				icon: markerIcons[data.marker]
-				# icon: markerIcons["collegeMarker"]
 		)
 
 		# push the new marker objects into arrays
@@ -46,7 +45,7 @@ markerIcons = {}
 			anchor: new google.maps.Point(_this.anchor_x, _this.anchor_y)
 		}
 
-
+# create map options based on which device is viewing the page
 @generateMapOptions = (_device, initial_location) ->
 
 	mapOptions = ""
@@ -104,14 +103,17 @@ markerIcons = {}
 		gJson = []
 
 		# create map as per mapConfig object properties set in view
-		initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng)
-
+		# initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng)
+		initialLocation = { lat: mapConfig.initLat, lng: mapConfig.initLng }
 
 		# get device type - will return "desktop", "tablet" or "mobile"
 		_device_type = getDeviceType()
 
 		# generate map options based on desktop, tablet or mobile view
 		mapOptions = generateMapOptions(_device_type, initialLocation)
+
+		#use the new google maps styling
+		#google.maps.visualRefresh = true;
 
 		# set up a new google maps object
 		mapDiv = document.getElementById("map-canvas")
@@ -150,7 +152,7 @@ markerIcons = {}
 		# 	setupMarkerIcons(map_markers_json)
 		# 	return
 
-		#grabs markers from json object (currently outputted by t4 component from the content layout)
+		# get markers from json object (currently outputted by t4 component from the content layout)
 		setupMarkerIcons(map_markers_json)
 
 

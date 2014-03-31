@@ -1,4 +1,4 @@
-/*!Updated: 28-03-2014, 4:43:46 PM */
+/*!Updated: 31-03-2014, 9:45:24 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2179,7 +2179,10 @@ if (typeof define !== 'undefined' && define.amd) {
   this.loadMap = function() {
     var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _device_type, _mapCanvas;
     gJson = [];
-    initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
+    initialLocation = {
+      lat: mapConfig.initLat,
+      lng: mapConfig.initLng
+    };
     _device_type = getDeviceType();
     mapOptions = generateMapOptions(_device_type, initialLocation);
     mapDiv = document.getElementById("map-canvas");
