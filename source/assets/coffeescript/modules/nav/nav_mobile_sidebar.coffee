@@ -30,17 +30,23 @@ buildMobileSidebar = ->
 
       # populate the mobile menu with the same content as the desktop sidebar nav & add menu button
       $("#mobile-sidebar").html _mobMenuContent
-      $(".show-mob-sidebar").click (e) ->
+
+      $(".mobile-sidebar .js-dd-menu").click (e) ->
         e.preventDefault()
         _clicked = $(this)
-        if _clicked.hasClass("active")
-          _clicked.closest($("#mobile-sidebar")).find($("ul")).slideUp()
-          _clicked.removeClass "active"
-        else
-          _clicked.closest($("#mobile-sidebar")).find($("ul")).slideDown()
+        _dd_menu = _clicked.parent()  # _dd_menu will be <div class=".dd-menu .siblings" >
 
-          # update the menu button and set class to active
-          _clicked.addClass "active"
+        console.log _dd_menu
+
+        if _dd_menu.hasClass("active")
+          _dd_menu.removeClass "active"
+          _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideUp()
+        else
+          # switch the menu button to up arrow and set class to active
+          _dd_menu.addClass "active"
+          _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideDown()
+
+
 
       # check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
       if _sideBarTitle.text().toLowerCase() is "in this section"
