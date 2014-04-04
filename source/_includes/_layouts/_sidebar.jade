@@ -1,18 +1,79 @@
+//- div.content-wrapper
+//-   div.row
+//-     nav.sidebar(role='navigation')
+//-       ul
+//-         li.menu-heading In this section
+//-         li
+//-           a(href='#') Prototype one
+//-         li
+//-           a(href='#') Prototype two
+//-         li
+//-           a(href='#') Prototype three
+//-         li
+//-           a(href='#') Prototype four
+//-         li
+//-           a(href='#') Prototype five
+
+//-     div.content(role='main')
+//-         block content
+
+//-   Sidebar - courses / in this section, dropdown style
+
 div.content-wrapper
   div.row
     nav.sidebar(role='navigation')
-      ul
-        li.menu-heading In this section
-        li
-          a(href='#') Prototype one
-        li
-          a(href='#') Prototype two
-        li
-          a(href='#') Prototype three
-        li
-          a(href='#') Prototype four
-        li
-          a(href='#') Prototype five
+      .dd-menu.siblings
+        .js-dd-menu.dd-menu-heading
+          h3.dd-menu-title In this section
+          .dd-menu-arrow
+            span.js-dd-menu-icon.icon.icon-down-open-big
+        ul.js-dd-menu-list
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/3ds-max-visual-effects-animation/') 3ds Max Visual Effects Animation
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/new-features-in-dreamweaver-and-flash/') Adobe CS6 - Introduction to new features in Dreamweaver and Flash
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-graphic-designers-intermediate/') Adobe Photoshop for Graphic Designers and Illustrators (Intermediate Level)
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-photographers-intermediate/') Adobe Photoshop for Photographers (Intermediate)
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/adobe-photoshop-for--photographers-introduction/') Adobe Photoshop for Photographers (Introduction)
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-photographic-compositing/') Adobe Photoshop For Photographic Compositing
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/after-effects-and-animation-intermediate/') After Effects and Animation (Intermediate)
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/creating-a-portfolio-with-photoshop/') Creating a Professional Online Portfolio using Photoshop and iWeb
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/graphic-illustrations-with-adobe-illustrator/') Fundamentals Of Graphic Illustrations with Adobe Illustrator
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/fundamentals-of-layout-design-with-adobe-indesign/') Fundamentals of Layout Design with Adobe InDesign
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/image-creation-with-adobe-photoshop/') Image Creation Techniques with Adobe Photoshop
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/indesign-intermediate/') InDesign (Intermediate)
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/indesign-for-beginners/') InDesign for Beginners
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/after-effects-and-animation/') Introduction to After Effects and Animation
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/cs6-illustrator-and-photoshop/') Introduction to CS6 Illustrator and Photoshop
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/encore-and-dvd-authorising/') Introduction to Encore and DVD Authoring
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/logic-a-sound-foundation/') Logic - A Sound Foundation
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-adobe-premiere-pro/') Video Editing with Adobe Premiere Pro CS6
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-final-cut-pro/') Video Editing with Final Cut Pro
+          li
+            a(href='/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-final-cut-pro/') Video Editing with Final Cut Pro X
 
     div.content(role='main')
         block content
+
+
+
+
+
+
