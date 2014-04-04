@@ -335,14 +335,34 @@
     <div class="content-wrapper">
       <div class="row">
         <nav role="navigation" class="sidebar">
-          <ul>
-            <li class="menu-heading">In this section</li>
-            <li><a href="#">Prototype one</a></li>
-            <li><a href="#">Prototype two</a></li>
-            <li><a href="#">Prototype three</a></li>
-            <li><a href="#">Prototype four</a></li>
-            <li><a href="#">Prototype five</a></li>
-          </ul>
+          <div class="dd-menu siblings">
+            <div class="js-dd-menu dd-menu-heading">
+              <h3 class="dd-menu-title">In this section</h3>
+              <div class="dd-menu-arrow"><span class="js-dd-menu-icon icon icon-down-open-big"></span></div>
+            </div>
+            <ul class="js-dd-menu-list">
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/3ds-max-visual-effects-animation/">3ds Max Visual Effects Animation</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/new-features-in-dreamweaver-and-flash/">Adobe CS6 - Introduction to new features in Dreamweaver and Flash</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-graphic-designers-intermediate/">Adobe Photoshop for Graphic Designers and Illustrators (Intermediate Level)</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-photographers-intermediate/">Adobe Photoshop for Photographers (Intermediate)</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/adobe-photoshop-for--photographers-introduction/">Adobe Photoshop for Photographers (Introduction)</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/photoshop-for-photographic-compositing/">Adobe Photoshop For Photographic Compositing</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/after-effects-and-animation-intermediate/">After Effects and Animation (Intermediate)</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/creating-a-portfolio-with-photoshop/">Creating a Professional Online Portfolio using Photoshop and iWeb</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/graphic-illustrations-with-adobe-illustrator/">Fundamentals Of Graphic Illustrations with Adobe Illustrator</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/fundamentals-of-layout-design-with-adobe-indesign/">Fundamentals of Layout Design with Adobe InDesign</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/image-creation-with-adobe-photoshop/">Image Creation Techniques with Adobe Photoshop</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/indesign-intermediate/">InDesign (Intermediate)</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/indesign-for-beginners/">InDesign for Beginners</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/after-effects-and-animation/">Introduction to After Effects and Animation</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/cs6-illustrator-and-photoshop/">Introduction to CS6 Illustrator and Photoshop</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/encore-and-dvd-authorising/">Introduction to Encore and DVD Authoring</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/logic-a-sound-foundation/">Logic - A Sound Foundation</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-adobe-premiere-pro/">Video Editing with Adobe Premiere Pro CS6</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-final-cut-pro/">Video Editing with Final Cut Pro</a></li>
+              <li><a href="/lcc/courses/short-courses/browse-short-courses/lcc-short-courses/adobe-creative-suite-and-apple-software/video-editing-with-final-cut-pro/">Video Editing with Final Cut Pro X</a></li>
+            </ul>
+          </div>
         </nav>
         <div role="main" class="content">
           <div class="row">
@@ -403,7 +423,7 @@
                    },
                    {
                     markerName: "default_UAL",
-                    url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+                    url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/default-marker.png",
                     scaledSize_x: 24,
                     scaledSize_y: 24,
                     origin_x: 0,
@@ -417,14 +437,15 @@
                   
                   /* A list of markers populated by data in marker content nodes in same section */
                   var maps_json = [
-                  {
-                   lat: 51.531621,
-                   lng: -0.082828,
-                   name: "Will Wyatt Court",
-                   content: "168 Pitfield St, Hackney, London N1, UK",
-                   marker: "accomMarker"
-                  }
+                   {
+                    lat: 51.531621,
+                    lng: -0.082828,
+                    name: "Will Wyatt Court",
+                    content: "168 Pitfield St, Hackney, London N1, UK",
+                    marker: "default_UAL"
+                   }
                   ];
+                  
                   
                 </script>
                 <div id="map-canvas" style="width: 100%; height: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; -webkit-transform: translateZ(0px);" data-transit-layer="true" data-bicycling-layer="true"></div>

@@ -1,4 +1,4 @@
-/*!Updated: 26-03-2014, 5:12:23 PM */
+/*!Updated: 04-04-2014, 11:16:29 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1992,6 +1992,21 @@ if (typeof define !== 'undefined' && define.amd) {
     }
   };
 
+  this.getDeviceType = function() {
+    var _html;
+    _html = "";
+    _html = $('html');
+    if (_html.hasClass("desktop")) {
+      return "desktop";
+    } else if (_html.hasClass("tablet")) {
+      return "tablet";
+    } else if (_html.hasClass("mobile")) {
+      return "mobile";
+    } else {
+      return "desktop";
+    }
+  };
+
 }).call(this);
 
 
@@ -2081,7 +2096,7 @@ if (typeof define !== 'undefined' && define.amd) {
       position: new google.maps.LatLng(data.lat, data.lng),
       map: map,
       title: data.name,
-      icon: markerIcons["collegeMarker"]
+      icon: markerIcons[data.marker]
     });
     contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
     google.maps.event.addListener(marker, "click", function() {
@@ -2106,12 +2121,11 @@ if (typeof define !== 'undefined' && define.amd) {
     return _results;
   };
 
-  this.generateMapOptions = function(screen_width, initial_location) {
+  this.generateMapOptions = function(_device, initial_location) {
     var mapOptions;
     mapOptions = "";
-    switch (screen_width) {
-      case "gDesktop":
-        console.log("setup Map for desktop");
+    switch (_device) {
+      case "desktop":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
@@ -2119,8 +2133,7 @@ if (typeof define !== 'undefined' && define.amd) {
           streetViewControl: false
         };
         break;
-      case "gTablet":
-        console.log("setup Map for tablet");
+      case "tablet":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
@@ -2136,20 +2149,19 @@ if (typeof define !== 'undefined' && define.amd) {
           streetViewControl: false
         };
         break;
-      case "gMobile":
-        console.log("setup Map for mobile");
+      case "mobile":
         mapOptions = {
           zoom: mapConfig.zoom,
           center: initial_location,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          panControl: true,
+          panControl: false,
           draggable: false,
           streetViewControl: false,
           mapTypeControl: false,
           zoomControl: true,
           zoomControlOptions: {
             style: google.maps.ZoomControlStyle.SMALL,
-            position: google.maps.ControlPosition.LEFT_BOTTOM
+            position: google.maps.ControlPosition.LEFT_TOP
           }
         };
         break;
@@ -2165,11 +2177,14 @@ if (typeof define !== 'undefined' && define.amd) {
   };
 
   this.loadMap = function() {
-    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _mapCanvas, _screen_width;
+    var bikeLayer, gJson, i, infoWindow, initialLocation, map, mapDiv, mapOptions, transitLayer, _device_type, _mapCanvas;
     gJson = [];
-    initialLocation = new google.maps.LatLng(mapConfig.initLat, mapConfig.initLng);
-    _screen_width = getWindowSize();
-    mapOptions = generateMapOptions(_screen_width, initialLocation);
+    initialLocation = {
+      lat: mapConfig.initLat,
+      lng: mapConfig.initLng
+    };
+    _device_type = getDeviceType();
+    mapOptions = generateMapOptions(_device_type, initialLocation);
     mapDiv = document.getElementById("map-canvas");
     map = new google.maps.Map(mapDiv, mapOptions);
     infoWindow = new google.maps.InfoWindow({
@@ -2328,16 +2343,18 @@ if (typeof define !== 'undefined' && define.amd) {
         }
         $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo(".content");
         $("#mobile-sidebar").html(_mobMenuContent);
-        $(".show-mob-sidebar").click(function(e) {
-          var _clicked;
+        $(".mobile-sidebar .js-dd-menu").click(function(e) {
+          var _clicked, _dd_menu;
           e.preventDefault();
           _clicked = $(this);
-          if (_clicked.hasClass("active")) {
-            _clicked.closest($("#mobile-sidebar")).find($("ul")).slideUp();
-            return _clicked.removeClass("active");
+          _dd_menu = _clicked.parent();
+          console.log(_dd_menu);
+          if (_dd_menu.hasClass("active")) {
+            _dd_menu.removeClass("active");
+            return _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideUp();
           } else {
-            _clicked.closest($("#mobile-sidebar")).find($("ul")).slideDown();
-            return _clicked.addClass("active");
+            _dd_menu.addClass("active");
+            return _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideDown();
           }
         });
         if (_sideBarTitle.text().toLowerCase() === "in this section") {
@@ -2421,7 +2438,7 @@ if (typeof define !== 'undefined' && define.amd) {
 
   $(document).ready(function() {
     if ($("#container").length > 0) {
-      return shortCourseFilters;
+      return shortCourseFilters();
     }
   });
 
