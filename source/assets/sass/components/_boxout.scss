@@ -1,6 +1,7 @@
 // boxout styles
-.__boxout {
+.boxout {
 	@include component-spacing-bottom;
+	padding: 16px; // added 4th April 2014
 
 	h2, h3 {
 		padding: 16px 16px 0 16px;
@@ -29,9 +30,8 @@
 	}
 }
 
-
 .span4-boxout-aside {
-		@extend .__boxout;
+		@extend .boxout;
 
 
 		// @include gs-media(t,min-max) {
