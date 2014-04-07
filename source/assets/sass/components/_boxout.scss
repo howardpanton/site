@@ -1,30 +1,19 @@
 // boxout styles
 .boxout {
 	@include component-spacing-bottom;
-	padding: 16px; // added 4th April 2014
+	padding: 24px;
 
-	h2, h3 {
-		padding: 16px 16px 0 16px;
+	h2, h3, h4 {
+		padding-top: 0;
+		padding-left: 0;
 	}
 	ul, ol {
+		padding: 16px;
 	}
-
 	li {
 		list-style: square;
 	}
-	.leader {
-		padding: 0;
-	}
-	.leader {
-		padding: 16px 16px 2px 16px;
-	}
-	p {
-		padding: 16px;
-	}
 
-	// @include gs-media(t,min-max) {
-	// 	@include gs-span(t,2,7);
-	// }
 	@include gs-media(d) {
 		@include gs-span(d, 5, 12, (5, 16));
 	}
@@ -32,8 +21,6 @@
 
 .span4-boxout-aside {
 		@extend .boxout;
-
-
 		// @include gs-media(t,min-max) {
 		// 		@include gs-span(t,2,7);
 		// }
