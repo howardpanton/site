@@ -6,7 +6,6 @@
 	a {
 		border-bottom: none;
 		display: block;
-		padding-bottom: 0;
 	}
 
 	p {
@@ -21,6 +20,10 @@
 			@include font-size(16);
 			color: $white;
 		}
+	}
+
+	figure {
+		overflow: hidden;
 	}
 
 	.event-item {
@@ -111,6 +114,7 @@
 		}
 
 		.hover-layer {
+			display: none;
 			position: absolute;
 			top: 5%;
 			left: 4%;
@@ -138,8 +142,11 @@
 
 		.event-item {
 			position: relative;
-			&.bordered {
-				border-bottom: 2px solid $white;
+			margin-bottom: 2px;
+			&:hover {
+				.hover-layer {
+					display: block;
+				}
 			}
 		}
 
