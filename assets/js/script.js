@@ -1,4 +1,4 @@
-/*!Updated: 04-04-2014, 11:16:29 AM */
+/*!Updated: 10-04-2014, 11:04:36 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2210,7 +2210,7 @@ if (typeof define !== 'undefined' && define.amd) {
     var script;
     script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap";
+    script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBg6p9uTJZjUi3vqZWn07sriYpr5zV3_jg&sensor=false&" + "callback=loadMap";
     document.body.appendChild(script);
   };
 
