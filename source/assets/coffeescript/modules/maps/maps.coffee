@@ -168,7 +168,7 @@ markerIcons = {}
 @loadMapsScript = ->
 		script = document.createElement("script")
 		script.type = "text/javascript"
-		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap"
+		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBg6p9uTJZjUi3vqZWn07sriYpr5zV3_jg&sensor=false&" + "callback=loadMap"
 		document.body.appendChild script
 		return
 
