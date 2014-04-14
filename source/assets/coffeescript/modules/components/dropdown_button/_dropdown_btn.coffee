@@ -11,7 +11,6 @@
   if $(".dd-menu").length > 0
     $(".js-dd-menu").click (event) ->
       event.preventDefault()
-      console.log "dropdown menu clicked"
       _d = $(this)
       _d_menu = _d.parent()
       if _d_menu.hasClass("active")
