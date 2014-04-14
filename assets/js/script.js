@@ -1,4 +1,4 @@
-/*!Updated: 14-04-2014, 3:15:18 PM */
+/*!Updated: 14-04-2014, 3:48:20 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2085,12 +2085,16 @@ if (typeof define !== 'undefined' && define.amd) {
   markerIcons = {};
 
   this.addMarker = function(data, map, infoWindow) {
-    var contentString, marker;
+    var contentString, marker, _markerIcon;
+    _markerIcon = data.marker;
+    if (_markerIcon === "" || (_markerIcon == null)) {
+      _markerIcon = "default_UAL";
+    }
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(data.lat, data.lng),
       map: map,
       title: data.name,
-      icon: markerIcons[data.marker]
+      icon: markerIcons[_markerIcon]
     });
     contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>";
     google.maps.event.addListener(marker, "click", function() {
