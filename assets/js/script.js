@@ -1,4 +1,4 @@
-/*!Updated: 10-04-2014, 11:04:36 AM */
+/*!Updated: 14-04-2014, 12:18:07 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1470,33 +1470,28 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  var initDropdownBtn;
-
-  initDropdownBtn = function() {
-    return $(".js-dd-menu").click(function(event) {
-      var _d, _d_menu;
-      event.preventDefault();
-      _d = $(this);
-      _d_menu = _d.parent();
-      if (_d_menu.hasClass("active")) {
-        _d_menu.find(".js-dd-menu-icon");
-        return _d_menu.find(".js-dd-menu-list").slideUp("fast", function() {
-          return _d_menu.removeClass("active");
-        });
-      } else {
-        _d_menu.find(".js-dd-menu-icon");
-        return _d_menu.find(".js-dd-menu-list").slideDown("fast", function() {
-          return _d_menu.addClass("active");
-        });
-      }
-    });
-  };
-
-  $(document).ready(function() {
+  this.ualDropdownBtn = function() {
     if ($(".dd-menu").length > 0) {
-      return initDropdownBtn();
+      $(".js-dd-menu").click(function(event) {
+        var _d, _d_menu;
+        event.preventDefault();
+        console.log("dropdown menu clicked");
+        _d = $(this);
+        _d_menu = _d.parent();
+        if (_d_menu.hasClass("active")) {
+          _d_menu.find(".js-dd-menu-icon");
+          _d_menu.find(".js-dd-menu-list").slideUp("fast", function() {
+            _d_menu.removeClass("active");
+          });
+        } else {
+          _d_menu.find(".js-dd-menu-icon");
+          _d_menu.find(".js-dd-menu-list").slideDown("fast", function() {
+            _d_menu.addClass("active");
+          });
+        }
+      });
     }
-  });
+  };
 
 }).call(this);
 
@@ -2273,17 +2268,18 @@ if (typeof define !== 'undefined' && define.amd) {
   var formatMainNavDDCols;
 
   formatMainNavDDCols = function() {
-    var Link_about, Link_about_1, Link_about_2, Link_alumni, Link_col, Link_industry, Link_student, Link_study_1, Link_study_2, Link_study_3;
+    var Link_about, Link_about_1, Link_about_2, Link_alumni, Link_col, Link_industry, Link_research, Link_student, Link_study_1, Link_study_2, Link_study_3;
     Link_col = $(".college-nav").find("li").slice(3, 6);
     Link_study_1 = $(".study-nav").find("li").slice(6, 11);
     Link_study_2 = $(".study-nav").find("li").slice(11, 16);
-    Link_study_3 = $(".study-nav").find("li").slice(16, 19);
-    Link_student = $(".student-nav").find("li").slice(3, 4);
+    Link_study_3 = $(".study-nav").find("li").slice(16, 21);
+    Link_student = $(".student-nav").find("li").slice(4, 7);
     Link_alumni = $(".alumni-nav").find("li").slice(4, 6);
-    Link_about = $(".about-nav").find("li").slice(6, 11);
-    Link_about_1 = $(".about-nav").find("li").slice(11, 16);
-    Link_about_2 = $(".about-nav").find("li").slice(16, 19);
+    Link_about = $(".about-nav").find("li").slice(5, 8);
+    Link_about_1 = $(".about-nav").find("li").slice(8, 11);
+    Link_about_2 = $(".about-nav").find("li").slice(11, 17);
     Link_industry = $(".industry-nav").find("li").slice(4, 7);
+    Link_research = $(".research-nav").find("li").slice(3, 7);
     Link_col.remove();
     Link_study_1.remove();
     Link_study_2.remove();
@@ -2294,6 +2290,7 @@ if (typeof define !== 'undefined' && define.amd) {
     Link_about_1.remove();
     Link_about_2.remove();
     Link_industry.remove();
+    Link_research.remove();
     $(".college-nav").append("<ul class=\"subnav-2 region\">");
     $(".college-nav .subnav-2").prepend(Link_col);
     $(".study-nav").append("<ul class=\"subnav-2 pad-top-6x region\">");
@@ -2313,7 +2310,9 @@ if (typeof define !== 'undefined' && define.amd) {
     $(".about-nav").append("<ul class=\"subnav-4 pad-top-6x region\">");
     $(".about-nav .subnav-4").prepend(Link_about_2);
     $(".industry-nav").append("<ul class=\"subnav-2 no-pad-top region\">");
-    return $(".industry-nav .subnav-2").prepend(Link_industry);
+    $(".industry-nav .subnav-2").prepend(Link_industry);
+    $(".research-nav").append("<ul class=\"subnav-2 pad-top-6x region\">");
+    return $(".research-nav .subnav-2").prepend(Link_research);
   };
 
   $(document).ready(function() {
@@ -2343,18 +2342,16 @@ if (typeof define !== 'undefined' && define.amd) {
         }
         $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo(".content");
         $("#mobile-sidebar").html(_mobMenuContent);
-        $(".mobile-sidebar .js-dd-menu").click(function(e) {
-          var _clicked, _dd_menu;
+        $(".show-mob-sidebar").click(function(e) {
+          var _clicked;
           e.preventDefault();
           _clicked = $(this);
-          _dd_menu = _clicked.parent();
-          console.log(_dd_menu);
-          if (_dd_menu.hasClass("active")) {
-            _dd_menu.removeClass("active");
-            return _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideUp();
+          if (_clicked.hasClass("active")) {
+            _clicked.closest($("#mobile-sidebar")).find($("ul")).slideUp();
+            return _clicked.removeClass("active");
           } else {
-            _dd_menu.addClass("active");
-            return _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideDown();
+            _clicked.closest($("#mobile-sidebar")).find($("ul")).slideDown();
+            return _clicked.addClass("active");
           }
         });
         if (_sideBarTitle.text().toLowerCase() === "in this section") {
@@ -2579,7 +2576,8 @@ if (typeof define !== 'undefined' && define.amd) {
 
 (function() {
   $(document).ready(function() {
-    return checkWindowSize();
+    checkWindowSize();
+    return ualDropdownBtn();
   });
 
 }).call(this);
