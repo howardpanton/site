@@ -1,4 +1,4 @@
-/*!Updated: 14-04-2014, 11:17:35 AM */
+/*!Updated: 14-04-2014, 12:10:38 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2268,17 +2268,18 @@ if (typeof define !== 'undefined' && define.amd) {
   var formatMainNavDDCols;
 
   formatMainNavDDCols = function() {
-    var Link_about, Link_about_1, Link_about_2, Link_alumni, Link_col, Link_industry, Link_student, Link_study_1, Link_study_2, Link_study_3;
+    var Link_about, Link_about_1, Link_about_2, Link_alumni, Link_col, Link_industry, Link_research, Link_student, Link_study_1, Link_study_2, Link_study_3;
     Link_col = $(".college-nav").find("li").slice(3, 6);
     Link_study_1 = $(".study-nav").find("li").slice(6, 11);
     Link_study_2 = $(".study-nav").find("li").slice(11, 16);
-    Link_study_3 = $(".study-nav").find("li").slice(16, 19);
-    Link_student = $(".student-nav").find("li").slice(3, 4);
+    Link_study_3 = $(".study-nav").find("li").slice(16, 21);
+    Link_student = $(".student-nav").find("li").slice(4, 7);
     Link_alumni = $(".alumni-nav").find("li").slice(4, 6);
-    Link_about = $(".about-nav").find("li").slice(6, 11);
-    Link_about_1 = $(".about-nav").find("li").slice(11, 16);
-    Link_about_2 = $(".about-nav").find("li").slice(16, 19);
+    Link_about = $(".about-nav").find("li").slice(5, 8);
+    Link_about_1 = $(".about-nav").find("li").slice(8, 11);
+    Link_about_2 = $(".about-nav").find("li").slice(11, 17);
     Link_industry = $(".industry-nav").find("li").slice(4, 7);
+    Link_research = $(".research-nav").find("li").slice(3, 7);
     Link_col.remove();
     Link_study_1.remove();
     Link_study_2.remove();
@@ -2289,6 +2290,7 @@ if (typeof define !== 'undefined' && define.amd) {
     Link_about_1.remove();
     Link_about_2.remove();
     Link_industry.remove();
+    Link_research.remove();
     $(".college-nav").append("<ul class=\"subnav-2 region\">");
     $(".college-nav .subnav-2").prepend(Link_col);
     $(".study-nav").append("<ul class=\"subnav-2 pad-top-6x region\">");
@@ -2308,7 +2310,9 @@ if (typeof define !== 'undefined' && define.amd) {
     $(".about-nav").append("<ul class=\"subnav-4 pad-top-6x region\">");
     $(".about-nav .subnav-4").prepend(Link_about_2);
     $(".industry-nav").append("<ul class=\"subnav-2 no-pad-top region\">");
-    return $(".industry-nav .subnav-2").prepend(Link_industry);
+    $(".industry-nav .subnav-2").prepend(Link_industry);
+    $(".research-nav").append("<ul class=\"subnav-2 pad-top-6x region\">");
+    return $(".research-nav .subnav-2").prepend(Link_research);
   };
 
   $(document).ready(function() {
