@@ -1,30 +1,31 @@
 #
 #    -------------------------------------------------------------
-#        initDropdownBtn()
+#        ualDropdownBtn()
 #
 #        detect dropdown menu button
-#        (used in forms or in page for dropmenus)
+#        (used on course page sidebars, in forms or in page for dropmenus)
 #    -------------------------------------------------------------
 #
 
-initDropdownBtn = ->
-
+@ualDropdownBtn = ->
+  if $(".dd-menu").length > 0
     $(".js-dd-menu").click (event) ->
-        event.preventDefault()
-        _d = $(this)
-        _d_menu = _d.parent()
+      event.preventDefault()
+      console.log "dropdown menu clicked"
+      _d = $(this)
+      _d_menu = _d.parent()
+      if _d_menu.hasClass("active")
+        _d_menu.find ".js-dd-menu-icon"
+        _d_menu.find(".js-dd-menu-list").slideUp "fast", ->
+          _d_menu.removeClass "active"
+          return
 
-        if _d_menu.hasClass("active")
-            _d_menu.find ".js-dd-menu-icon"
-            _d_menu.find(".js-dd-menu-list").slideUp "fast", ->
-                _d_menu.removeClass "active"
+      else
+        _d_menu.find ".js-dd-menu-icon"
+        _d_menu.find(".js-dd-menu-list").slideDown "fast", ->
+          _d_menu.addClass "active"
+          return
 
-        else
-            _d_menu.find ".js-dd-menu-icon"
-            _d_menu.find(".js-dd-menu-list").slideDown "fast", ->
-                _d_menu.addClass "active"
+      return
 
-$(document).ready ->
-
-    if $(".dd-menu").length > 0
-        initDropdownBtn()
+  return
