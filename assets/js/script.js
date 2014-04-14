@@ -1,4 +1,4 @@
-/*!Updated: 14-04-2014, 12:24:36 PM */
+/*!Updated: 14-04-2014, 3:15:18 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1475,7 +1475,6 @@ if (typeof define !== 'undefined' && define.amd) {
       $(".js-dd-menu").click(function(event) {
         var _d, _d_menu;
         event.preventDefault();
-        console.log("dropdown menu clicked");
         _d = $(this);
         _d_menu = _d.parent();
         if (_d_menu.hasClass("active")) {
