@@ -221,6 +221,10 @@
 	margin: 0 auto;
 	min-width: 320px;
 	clear: both;
+	@include gs-media(d) {
+		width: 92.5%;
+		max-width: 1280px;
+	}
 }
 
 .header-wrapper {
@@ -246,7 +250,7 @@
 	@extend %d-all;
 }
 
-.l-content, .l-content-full-width {
+.l-content, .l-content-full-width, .__gallery {
 	@include gs-media (m,min-max) {
 		h2, h3, h4, h5, h6, p {
 			padding-right: 12px;
@@ -352,6 +356,9 @@
 aside {
 	@extend %d13-d16--within-d5-d16;
 	@include component-spacing-bottom;
+	@include gs-media(m,min-max) {
+		padding: 12px;
+	}
 
 	background-color: $bg-gray;
 	border-left: none;
@@ -367,7 +374,12 @@ aside {
 			padding-left: 23px;
 			clear: none;
 	}
+
+	&.bg-gray-bg, &.dark-gray-bg {
+		border: 0 none;
+	}
 }
+
 
 // style for gist embed
 .gist { clear: left; }

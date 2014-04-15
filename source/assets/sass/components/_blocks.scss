@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $CONTENTS
+		$CONTENTS
 \*------------------------------------*/
 /**
  * CONTENTS............You’re reading it!
@@ -7,9 +7,8 @@
  * FONT-FACE...........Import brand font files
  */
 
-
 /*------------------------------------*\
-    $RESET
+		$RESET
 \*------------------------------------*/
 
 
@@ -42,7 +41,7 @@
 }
 
 /*------------------------------------*\
-    $Text
+		$Text
 \*------------------------------------*/
 
 .__text {
@@ -67,7 +66,7 @@
 
 
 /*------------------------------------*\
-    $Media
+		$Media
 \*------------------------------------*/
 
 
@@ -112,9 +111,14 @@
 		}
 	}
 
-	figure a {
-		display: block;
-		line-height: 0;
+
+
+	figure {
+
+		a {
+			// display: block;
+			line-height: 0;
+		}
 	}
 
 	figcaption a {
@@ -139,6 +143,7 @@
 		// 	}
 		// }
 	}
+
 
 	&.__highlight {
 		background: $bg-gray;
@@ -191,7 +196,7 @@
 }
 
 /*------------------------------------*\
-    $Page Block Classes
+		$Page Block Classes
 \*------------------------------------*/
 
 // two-up-full - used specifically for the UAL homepage
@@ -229,6 +234,12 @@
 
 	}
 
+	ul li {
+		padding-left: 0;
+		margin-left: 0;
+		list-style-type: none;
+	}
+
 	&.l-content {
 		@extend %d5-d12--within-d5-d16;
 		@include gs-media(d) {
@@ -264,6 +275,22 @@
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
+	}
+}
+
+// fix for hiding list bullet points in two ups inside media blocks
+.l-content.block.__media.two-up ul li {
+	@include gs-media(m) {
+		list-style-type: none;
+		padding-left: 0;
+		margin-left: 0;
+
+		p {
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+
+
 	}
 
 }
@@ -349,6 +376,14 @@
 // four-up - core styles
 
 .four-up {
+
+	@include gs-media(m,min-max) {
+		@extend %m-all;
+		.content & {
+			@extend %m-all;
+		}
+	}
+
 	@include gs-media(t,min-max) {
 		@extend %t2-t7;
 		.content & {
@@ -427,7 +462,7 @@
 					color: $white;
 					border-bottom: 1px dotted $white;
 					&:hover {
-						border-bottom: 1px solid $white;
+						border-bottwom: 1px solid $white;
 					}
 				}
 			}
@@ -452,6 +487,19 @@
 	}
 }
 
-.__media figure, .__media .l-content .video-container {
+.__media figure{
+	@include component-spacing-bottom(1);
+	@include gs-media (m,min-max) {
+		margin-bottom: 0;
+	}
+}
+
+.__media .two-up figure, .__media .three-up figure, .__media .four-up figure{
+	margin-bottom : 0;
+}
+
+
+
+.__media .l-content .video-container {
 	@include component-spacing-bottom(4);
 }

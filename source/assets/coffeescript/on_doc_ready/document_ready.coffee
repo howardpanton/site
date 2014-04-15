@@ -20,7 +20,7 @@ $(document).ready ->
 	# checkForOwlCarousel()
 	# imageCredits()
 	# checkForAccordion()
-	# btnMenuDropdown()
+	ualDropdownBtn()
 	# searchFilters()
 	# showtimeJSONloader()
 	# checkForLightbox()

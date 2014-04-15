@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 									repo: 'https://github.com/artslondon/site.git',
 									branch: 'gh-pages',
 									add: true,
-									message: 'TEST: Wednesday auto-generated commit message from grunt task',
+									message: 'Auto commit message from grunt task <%= new Date().getTime() %>',
 									push: true
 								},
 								src: '**/*'
