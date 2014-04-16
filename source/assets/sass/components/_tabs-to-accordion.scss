@@ -7,10 +7,10 @@
   .tabs {
     @include gs-media (m) {
       display: none;
-    } 
+    }
     @include gs-media (t, min-max) {
       display: none;
-    } 
+    }
     margin: 0;
     padding: 0 0 0 0;
     float: left;
@@ -26,7 +26,7 @@
       // width: 33.333333%;
       -webkit-transition-duration: 0.2s;
       -moz-transition-duration: 0.2s;
-      transition-duration: 0.2s; 
+      transition-duration: 0.2s;
       border-bottom: 1px solid $bg-gray;
       padding-left: rhythm(2, 16px);
       padding-right: rhythm(2, 16px);
@@ -92,14 +92,24 @@ ul.tabs li.active {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border-bottom: 1px solid $bg-gray;
+    // border-bottom: 1px solid $bg-gray;
     @include gs-media (d, min-max) {
-      display: none; 
+      display: none;
     }
     .lcc-tabs & {
        border-bottom: 0;
     }
+
+    .lcc & {
+    	@include font-size(36);
+    	font-family: AlternateGothic;
+    	text-transform: uppercase;
+    	letter-spacing: 1px;
+			word-spacing: -4px;
+			margin-bottom: 0;
+    }
   }
+
   .d_active {
     border-bottom: 1px solid black;
 
@@ -111,14 +121,13 @@ ul.tabs li.active {
 
 }
 
-
-// lcc styling 
+// lcc styling
 .tabs {
-  .lcc-tabs & { 
+  .lcc-tabs & {
     border: 12px solid $black;
     border-bottom: none;
-    @extend %AlternateGothic !optional; 
-    // @extend %LeagueGothicRegular;    
+    @extend %AlternateGothic !optional;
+    // @extend %LeagueGothicRegular;
     text-transform: uppercase;
     text-align: center;
     li {
@@ -148,12 +157,12 @@ ul.tabs li.active {
     display: block;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAZ0lEQVR42s3LsQ2AIBBGYSobLbVjD+bQaRzHFaisXIIVdAVazhcbEw3KWfmSL+RIfvPLWszotMMKCwS83IomyIm7sBFyx/9LPVJmnDDkhg4R8iDCXYcWK6TABoujGgGiENDAeMgHfgfoFUR0WgkPGQAAAABJRU5ErkJggg==);
     background-repeat: no-repeat;
-    background-position: center bottom;  
+    background-position: center bottom;
     background-color: $bg-gray;
   }
 }
 .tab_container {
-   &.lcc-tabs {   
+   &.lcc-tabs {
     background-color: $black;
     color: $white;
     padding: 12px;
@@ -164,9 +173,26 @@ ul.tabs li.active {
       letter-spacing: 1px;
       border-bottom: 2px solid $lcc-green;
     }
-    img {
+
+		img {
       border: none;
     }
+
+    @include gs-media (m) {
+    	img {
+      	padding: 0 0 12px 0;
+    	}
+
+    	h3 {
+				padding: 0 12px 12px 12px;
+    	}
+
+    }
+
+
+
+
+
     .button-link {
       background-color: $white;
       color: $black;
@@ -176,7 +202,7 @@ ul.tabs li.active {
       }
     }
   }
-}  
+}
 
 
 
