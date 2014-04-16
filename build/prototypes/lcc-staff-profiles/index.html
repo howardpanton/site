@@ -13,9 +13,9 @@
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
     <link rel="dns-prefetch" href="//app.resrc.it">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="shortcut icon" href="http://localhost:9000/assets/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:9000/assets/css/screen.css">
-    <link rel="stylesheet" href="http://localhost:9000/assets/css/print.css" type="text/css" media="print">
+    <link rel="shortcut icon" href="http://artslondon.github.io/site/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://artslondon.github.io/site/assets/css/screen.css">
+    <link rel="stylesheet" href="http://artslondon.github.io/site/assets/css/print.css" type="text/css" media="print">
     <script>
       function loadScript(e,t){var n,r,i;r=!1,n=document.createElement("script"),n.type="text/javascript",n.src=e,null==t&&(t=function(){}),n.onload=n.onreadystatechange=function(){var e=this.readyState;if(!(r||e&&"complete"!=e&&"loaded"!=e)){r=!0;try{t()}catch(n){}}},i=document.getElementsByTagName("script")[0],i.parentNode.insertBefore(n,i)}window.Modernizr=function(e,t,n){function r(e){m.cssText=e}function i(e,t){return r(b.join(e+";")+(t||""))}function s(e,t){return typeof e===t}function o(e,t){return!!~(""+e).indexOf(t)}function u(e,t){for(var r in e){var i=e[r];if(!o(i,"-")&&m[i]!==n)return t=="pfx"?i:!0}return!1}function a(e,t,r){for(var i in e){var o=t[e[i]];if(o!==n)return r===!1?e[i]:s(o,"function")?o.bind(r||t):o}return!1}function f(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+E.join(r+" ")+r).split(" ");return s(t,"string")||s(t,"undefined")?u(i,t):(i=(e+" "+S.join(r+" ")+r).split(" "),a(i,t,n))}var l="2.6.2",c={},h=!0,p=t.documentElement,d="modernizr",v=t.createElement(d),m=v.style,g,y={}.toString,b=" -webkit- -moz- -o- -ms- ".split(" "),w="Webkit Moz O ms",E=w.split(" "),S=w.toLowerCase().split(" "),x={svg:"http://www.w3.org/2000/svg"},T={},N={},C={},k=[],L=k.slice,A,O=function(e,n,r,i){var s,o,u,a,f=t.createElement("div"),l=t.body,c=l||t.createElement("body");if(parseInt(r,10))while(r--)u=t.createElement("div"),u.id=i?i[r]:d+(r+1),f.appendChild(u);return s=["&#173;",'<style id="s',d,'">',e,"</style>"].join(""),f.id=d,(l?f:c).innerHTML+=s,c.appendChild(f),l||(c.style.background="",c.style.overflow="hidden",a=p.style.overflow,p.style.overflow="hidden",p.appendChild(c)),o=n(f,e),l?f.parentNode.removeChild(f):(c.parentNode.removeChild(c),p.style.overflow=a),!!o},M={}.hasOwnProperty,_;!s(M,"undefined")&&!s(M.call,"undefined")?_=function(e,t){return M.call(e,t)}:_=function(e,t){return t in e&&s(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(e){var t=this;if(typeof t!="function")throw new TypeError;var n=L.call(arguments,1),r=function(){if(this instanceof r){var i=function(){};i.prototype=t.prototype;var s=new i,o=t.apply(s,n.concat(L.call(arguments)));return Object(o)===o?o:s}return t.apply(e,n.concat(L.call(arguments)))};return r}),T.touch=function(){var n;return"ontouchstart"in e||e.DocumentTouch&&t instanceof DocumentTouch?n=!0:O(["@media (",b.join("touch-enabled),("),d,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(e){n=e.offsetTop===9}),n},T.csstransforms=function(){return!!f("transform")},T.svg=function(){return!!t.createElementNS&&!!t.createElementNS(x.svg,"svg").createSVGRect};for(var D in T)_(T,D)&&(A=D.toLowerCase(),c[A]=T[D](),k.push((c[A]?"":"no-")+A));return c.addTest=function(e,t){if(typeof e=="object")for(var r in e)_(e,r)&&c.addTest(r,e[r]);else{e=e.toLowerCase();if(c[e]!==n)return c;t=typeof t=="function"?t():t,typeof h!="undefined"&&h&&(p.className+=" "+(t?"":"no-")+e),c[e]=t}return c},r(""),v=g=null,c._version=l,c._prefixes=b,c._domPrefixes=S,c._cssomPrefixes=E,c.testProp=function(e){return u([e])},c.testAllProps=f,c.testStyles=O,p.className=p.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(h?" js "+k.join(" "):""),c}(this,this.document),Modernizr.addTest("fullscreen",function(){for(var e=0;e<Modernizr._domPrefixes.length;e++)if(document[Modernizr._domPrefixes[e].toLowerCase()+"CancelFullScreen"])return!0;return!!document.cancelFullScreen||!1});Modernizr.addTest("hidpi",function(){if(window.matchMedia){var e=window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");if(e&&e.matches)return!0}});
       
@@ -315,32 +315,87 @@
       <div class="header-wrapper">
         <div class="row">
           <!-- navigation object : Breadcrumbs-->
-          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/lcc-lightbox/" style="display: none;">lcc-lightbox</a></div>
+          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/lcc-staff-profiles/" style="display: none;">lcc-staff-profiles</a></div>
           <div id="skip-to-here" class="page-title">
             <h1>
-              <!-- navigation object : Section name-->lcc-lightbox
+              <!-- navigation object : Section name-->lcc-staff-profiles
             </h1>
           </div>
         </div>
       </div>
     </div>
-    <div class="panel bg-gray-bg">
-      <div class="content-wrapper">
-        <div class="row">
-          <div class="content">
-            <div class="row">
-              <div class="__gallery four-up js-lightbox">
-                <h2>Gallery</h2>
-                <ul>
-                  <li style="min-height: 155px;"><a href="http://app.resrc.it/s=w930/o=60/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Cream-of-the-crop_showreel_still_2013_1860px.jpg" title="" class="no-border">
-                      <figure><img data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Cream-of-the-crop_showreel_still_2013_1860px.jpg" alt="" data-resrc-width="155" src="http://app.resrc.it/c=sq/c=w75p,h75p,xof50,yof20/s=w160,pd1/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Cream-of-the-crop_showreel_still_2013_1860px.jpg" class="resrc"></figure></a></li>
-                  <li style="min-height: 155px;"><a href="http://app.resrc.it/s=w930/o=60/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still1_2013_1860px.jpg" title=" " class="no-border">
-                      <figure><img data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still1_2013_1860px.jpg" alt="" data-resrc-width="155" src="http://app.resrc.it/c=sq/c=w75p,h75p,xof50,yof20/s=w160,pd1/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still1_2013_1860px.jpg" class="resrc"></figure></a></li>
-                  <li style="min-height: 155px;"><a href="http://app.resrc.it/s=w930/o=60/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still2_2013_1860px.jpg" title="" class="no-border">
-                      <figure><img data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still2_2013_1860px.jpg" alt="" data-resrc-width="155" src="http://app.resrc.it/c=sq/c=w75p,h75p,xof50,yof20/s=w160,pd1/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Showreel_still2_2013_1860px.jpg" class="resrc"></figure></a></li>
-                  <li style="min-height: 155px;"><a href="http://app.resrc.it/s=w930/o=60/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Flytrap_showreel_still_2013_930px.jpg" title="" class="no-border">
-                      <figure><img data-src="http://app.resrc.it/C=SQ/C=W75P,H75P,XOF50,YOF20/S=W300/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Flytrap_showreel_still_2013_930px.jpg" alt="" data-resrc-width="155" src="http://app.resrc.it/c=sq/c=w75p,h75p,xof50,yof20/s=w160,pd1/http://www.arts.ac.uk/media/arts/colleges/lcc/courses/undergraduate/ba-animation/images/Flytrap_showreel_still_2013_930px.jpg" class="resrc"></figure></a></li>
-                </ul>
+    <div class="content-wrapper">
+      <div class="row">
+        <nav role="navigation" class="sidebar">
+          <ul>
+            <li class="menu-heading">In this section</li>
+            <li><a href="#">Prototype one</a></li>
+            <li><a href="#">Prototype two</a></li>
+            <li><a href="#">Prototype three</a></li>
+            <li><a href="#">Prototype four</a></li>
+            <li><a href="#">Prototype five</a></li>
+          </ul>
+        </nav>
+        <div role="main" class="content">
+          <div class="row">
+            <div class="l-content-full-width">
+              <div class="row">
+                <div class="tabs-container lcc-tabs">
+                  <ul class="tabs">
+                    <li rel="tab1" class="active">ALUMNI</li>
+                    <li rel="tab2">students</li>
+                    <li rel="tab3">Staff</li>
+                  </ul>
+                </div>
+                <div class="tab_container lcc-tabs">
+                  <p rel="tab1" class="tab_drawer_heading">ALUMNI test</p>
+                  <div id="tab1" style="display: block;" class="tab_content">
+                    <div class="tab-content-caption-block">
+                      <div class="l-content-d5-d10">
+                        <h3>Beccy Mccray</h3>
+                        <p><span></span>Beccy McCray graduated from BA (Hons) Graphic and Media Design in 2003. Now a Creative Producer at Nexus, she works primarily on animated and interactive arts and music projects. Her solo projects include a c
+                          ommission for the Olympic Park Legacy Company, Arts Council England and installations shown at the Barbican and Open East Festival.
+                        </p>
+                        <p><a href="/lcc/people/lcc-alumni/" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>View all Alumni Profiles</a></p>
+                      </div>
+                      <div class="l-content-d11-d16">
+                        <figure><img src="http://www.arts.ac.uk/media/arts/colleges/lcc/images/a-homepage/beccy-mccray_portrait-760px.jpg" alt="">
+                          <div class="credits">Image © Beccy Mccray</div>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                  <p rel="tab2" class="tab_drawer_heading">students</p>
+                  <div id="tab2" style="display: none;" class="tab_content">
+                    <div class="tab-content-caption-block">
+                      <div class="l-content-d5-d10">
+                        <figure><img src="http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Hildegard_pic_student_homepage_878px.jpg" alt="">
+                          <div class="credits">Image by Hildegard Titus</div>
+                        </figure>
+                      </div>
+                      <div class="l-content-d11-d16">
+                        <h3>Hildegard Titus</h3>
+                        <p>Hildegard Titus is currently studying BA (Hons) Photojournalism and Documentary Photography at LCC. "The best thing about studying in London is there's always something to do, always somewhere you haven't discovered yet. An activity you have never heard of. Kinds of people you've never met yet."</p>
+                        <p><a href="/lcc/people/students/" class="button-link"></a><span class="hide-descriptive-text">Follow this link to go to more information about</span>See Student Profiles</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p rel="tab3" class="tab_drawer_heading">Staff</p>
+                  <div id="tab3" style="display: none;" class="tab_content">
+                    <div class="tab-content-caption-block">
+                      <div class="l-content-d5-d10">
+                        <h3>SARAH ROBERTS-BOWMAN</h3>
+                        <p>Sarah Roberts-Bowman is Course Leader for MA Public Relations. With over 17 years of PR expertise, Sarah's teaching covers a range of corporate communications and public affairs across business-to-business, startups and non-profit organisations including; BT, Energis, Central London Partnership and Centrepoint, to name but a few.</p>
+                        <p><a href="/lcc/people/" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Staff Profiles</a></p>
+                      </div>
+                      <div class="l-content-d11-d16">
+                        <figure><img src="http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Sarah-Roberts-Bowmen878px.jpg" alt="">
+                          <div class="credits">Image by Alys Tomlinson</div>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -466,7 +521,7 @@
       <div class="credits-btn"><a href="#" class="show-credits"><span class="icon-picture"></span></a></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script src="http://use.resrc.it/"></script>
-      <script src="http://localhost:9000/assets/js/script.js"></script>
+      <script src="http://artslondon.github.io/site/assets/js/script.js"></script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {

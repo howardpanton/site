@@ -1,5 +1,3 @@
-/*!Updated: 14-04-2014, 3:40:27 PM */
-
 @charset "UTF-8";
 /*------------------------------------*\
 		$CONTENTS
@@ -14359,7 +14357,6 @@ ul.tabs li.active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-bottom: 1px solid #e9e9e9;
 }
 @media only screen and (min-width: 960px) {
   /* line 82, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
@@ -14372,22 +14369,32 @@ ul.tabs li.active {
   border-bottom: 0;
 }
 /* line 103, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+.lcc .tab_container .tab_drawer_heading {
+  font-size: 36px;
+  font-size: 2.25rem;
+  font-family: AlternateGothic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: -4px;
+  margin-bottom: 0;
+}
+/* line 113, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container .d_active {
   border-bottom: 1px solid black;
 }
-/* line 106, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 116, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tab_container .d_active {
   border-bottom: 0;
 }
 
-/* line 117, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 126, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tabs {
   border: 12px solid black;
   border-bottom: none;
   text-transform: uppercase;
   text-align: center;
 }
-/* line 124, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 133, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tabs li {
   font-size: 36px;
   font-size: 2.25rem;
@@ -14396,22 +14403,22 @@ ul.tabs li.active {
   width: 33.33%;
   margin-right: 0;
 }
-/* line 131, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 140, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tabs li:hover {
   border-bottom: none;
   background-color: #28e598;
 }
-/* line 136, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 145, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tabs li + li {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-/* line 140, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 149, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs .tabs li:last-child {
   border: none;
 }
 
-/* line 146, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 155, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .lcc-tabs ul.tabs li.active {
   border-bottom: none;
   display: block;
@@ -14421,13 +14428,13 @@ ul.tabs li.active {
   background-color: #e9e9e9;
 }
 
-/* line 156, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 165, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container.lcc-tabs {
   background-color: black;
   color: white;
   padding: 12px;
 }
-/* line 160, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 169, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container.lcc-tabs h3 {
   padding: 0 0 12px 0;
   margin-bottom: 24px;
@@ -14436,16 +14443,26 @@ ul.tabs li.active {
   letter-spacing: 1px;
   border-bottom: 2px solid #28e598;
 }
-/* line 167, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 177, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container.lcc-tabs img {
   border: none;
 }
-/* line 170, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+@media only screen and (max-width: 599px) {
+  /* line 182, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+  .tab_container.lcc-tabs img {
+    padding: 0 0 12px 0;
+  }
+  /* line 186, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+  .tab_container.lcc-tabs h3 {
+    padding: 0 12px 12px 12px;
+  }
+}
+/* line 196, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .megamenu_container .go-search-button, .megamenu_container .tab_container.lcc-tabs .go-search-button {
   background-color: white;
   color: black;
 }
-/* line 173, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
+/* line 199, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
 .tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .megamenu_container .go-search-button:hover, .megamenu_container .tab_container.lcc-tabs .go-search-button:hover {
   background-color: #28e598;
   color: black;
