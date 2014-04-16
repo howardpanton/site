@@ -1,4 +1,4 @@
-/*!Updated: 16-04-2014, 4:52:51 PM */
+/*!Updated: 16-04-2014, 4:59:41 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1398,7 +1398,9 @@ if (typeof define !== 'undefined' && define.amd) {
       $(this).addClass("d_active icon-minus");
       $("ul.tabs li").removeClass("active");
       $("ul.tabs li[rel^='" + d_activeTab + "']").addClass("active");
-      $(this).scrollToMe();
+      $('html, body').animate({
+        'scrollTop': $(this).offset().top
+      }, 'fast', 'linear');
     });
   };
 
@@ -2380,16 +2382,7 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  jQuery.fn.extend({
-    scrollToMe: func(function() {
-      var x;
-      x = void 0;
-      x = jQuery(this).offset().top - 100;
-      return jQuery("html,body").animate({
-        scrollTop: x
-      }, 500);
-    })
-  });
+
 
 }).call(this);
 
