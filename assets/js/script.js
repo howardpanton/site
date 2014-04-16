@@ -1,4 +1,4 @@
-/*!Updated: 14-04-2014, 3:48:20 PM */
+/*!Updated: 16-04-2014, 4:47:51 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1373,6 +1373,12 @@ if (typeof define !== 'undefined' && define.amd) {
   initTabsAccordion = function() {
     $(".tab_content").hide();
     $(".tab_content:first").show();
+    $(".tab_drawer_heading").each(function(i) {
+      var _tab_heading;
+      _tab_heading = $(this);
+      return _tab_heading.addClass("icon-plus");
+    });
+    $(".tab_drawer_heading").first().addClass("icon-minus");
     $("ul.tabs li").click(function() {
       var activeTab;
       $(".tab_content").hide();
@@ -1388,8 +1394,8 @@ if (typeof define !== 'undefined' && define.amd) {
       $(".tab_content").hide();
       d_activeTab = $(this).attr("rel");
       $("#" + d_activeTab).show();
-      $(".tab_drawer_heading").removeClass("d_active");
-      $(this).addClass("d_active");
+      $(".tab_drawer_heading").removeClass("d_active icon-minus");
+      $(this).addClass("d_active icon-minus");
       $("ul.tabs li").removeClass("active");
       $("ul.tabs li[rel^='" + d_activeTab + "']").addClass("active");
     });
