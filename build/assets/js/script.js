@@ -1,4 +1,4 @@
-/*!Updated: 16-04-2014, 4:59:41 PM */
+/*!Updated: 23-04-2014, 2:48:31 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2352,7 +2352,7 @@ if (typeof define !== 'undefined' && define.amd) {
         } else {
           _mobMenuContent = _menuHtml;
         }
-        $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo(".content");
+        $(".content").first().prepend("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>");
         $("#mobile-sidebar").html(_mobMenuContent);
         $(".show-mob-sidebar").click(function(e) {
           var _clicked;

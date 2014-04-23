@@ -30,7 +30,7 @@
       <link href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" rel="stylesheet">
     </noscript>
   </head>
-  <body class="lcc">
+  <body class="ual">
     <script>Modernizr.Detectizr.detect({detectScreen:false});</script>
     <div class="ual-black-bg cf">
       <div class="header-wrapper">
@@ -315,10 +315,10 @@
       <div class="header-wrapper">
         <div class="row">
           <!-- navigation object : Breadcrumbs-->
-          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/lcc-staff-profiles/" style="display: none;">lcc-staff-profiles</a></div>
+          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/A Simple Scripted Map/" style="display: none;">A Simple Scripted Map</a></div>
           <div id="skip-to-here" class="page-title">
             <h1>
-              <!-- navigation object : Section name-->lcc-staff-profiles
+              <!-- navigation object : Section name-->A Simple Scripted Map
             </h1>
           </div>
         </div>
@@ -340,61 +340,113 @@
           <div class="row">
             <div class="l-content-full-width">
               <div class="row">
-                <div class="tabs-container lcc-tabs">
-                  <ul class="tabs">
-                    <li rel="tab1" class="active">ALUMNI</li>
-                    <li rel="tab2">students</li>
-                    <li rel="tab3">Staff</li>
-                  </ul>
-                </div>
-                <div class="tab_container lcc-tabs">
-                  <p rel="tab1" class="tab_drawer_heading">ALUMNI test</p>
-                  <div id="tab1" style="display: block;" class="tab_content">
-                    <div class="tab-content-caption-block">
-                      <div class="l-content-d5-d10">
-                        <h3>Beccy Mccray</h3>
-                        <p><span></span>Beccy McCray graduated from BA (Hons) Graphic and Media Design in 2003. Now a Creative Producer at Nexus, she works primarily on animated and interactive arts and music projects. Her solo projects include a c
-                          ommission for the Olympic Park Legacy Company, Arts Council England and installations shown at the Barbican and Open East Festival.
-                        </p>
-                        <p><a href="/lcc/people/lcc-alumni/" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>View all Alumni Profiles</a></p>
-                      </div>
-                      <div class="l-content-d11-d16">
-                        <figure><img src="http://www.arts.ac.uk/media/arts/colleges/lcc/images/a-homepage/beccy-mccray_portrait-760px.jpg" alt="">
-                          <div class="credits">Image © Beccy Mccray</div>
-                        </figure>
-                      </div>
-                    </div>
-                  </div>
-                  <p rel="tab2" class="tab_drawer_heading">students</p>
-                  <div id="tab2" style="display: none;" class="tab_content">
-                    <div class="tab-content-caption-block">
-                      <div class="l-content-d5-d10">
-                        <figure><img src="http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Hildegard_pic_student_homepage_878px.jpg" alt="">
-                          <div class="credits">Image by Hildegard Titus</div>
-                        </figure>
-                      </div>
-                      <div class="l-content-d11-d16">
-                        <h3>Hildegard Titus</h3>
-                        <p>Hildegard Titus is currently studying BA (Hons) Photojournalism and Documentary Photography at LCC. "The best thing about studying in London is there's always something to do, always somewhere you haven't discovered yet. An activity you have never heard of. Kinds of people you've never met yet."</p>
-                        <p><a href="/lcc/people/students/" class="button-link"></a><span class="hide-descriptive-text">Follow this link to go to more information about</span>See Student Profiles</p>
-                      </div>
-                    </div>
-                  </div>
-                  <p rel="tab3" class="tab_drawer_heading">Staff</p>
-                  <div id="tab3" style="display: none;" class="tab_content">
-                    <div class="tab-content-caption-block">
-                      <div class="l-content-d5-d10">
-                        <h3>SARAH ROBERTS-BOWMAN</h3>
-                        <p>Sarah Roberts-Bowman is Course Leader for MA Public Relations. With over 17 years of PR expertise, Sarah's teaching covers a range of corporate communications and public affairs across business-to-business, startups and non-profit organisations including; BT, Energis, Central London Partnership and Centrepoint, to name but a few.</p>
-                        <p><a href="/lcc/people/" class="button-link"><span class="hide-descriptive-text">Follow this link to go to more information about</span>Staff Profiles</a></p>
-                      </div>
-                      <div class="l-content-d11-d16">
-                        <figure><img src="http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Sarah-Roberts-Bowmen878px.jpg" alt="">
-                          <div class="credits">Image by Alys Tomlinson</div>
-                        </figure>
-                      </div>
-                    </div>
-                  </div>
+                <div style="height: 480px;" class="full-width map">
+                  <script>
+                    /*
+                    * An object containing various map config properties.
+                    * Zoom = zoom level
+                    * initLat = initial latitude for the map center
+                    * initLng = initial latitude for the map center
+                    * Note we can set a sensible default for the center e.g. London,
+                    * which can be overridden if required
+                    */
+                    var mapConfig =
+                    {
+                     zoom: 10, // T4 field
+                     initLat: 51.515, // T4 field
+                     initLng: -0.142 // T4 field
+                    };
+                    
+                    var map_markers_json = [
+                     {
+                      markerName: "infoMarker",
+                      url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/info-marker.png",
+                      scaledSize_x: 24,
+                      scaledSize_y: 24,
+                      origin_x: 0,
+                      origin_y: 0,
+                      anchor_x: 12,
+                      anchor_y: 24
+                     },
+                     {
+                      markerName: "accomMarker",
+                      url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/accom-marker.png",
+                      scaledSize_x: 24,
+                      scaledSize_y: 24,
+                      origin_x: 0,
+                      origin_y: 0,
+                      anchor_x: 12,
+                      anchor_y: 24
+                     },
+                     {
+                      markerName: "collegeMarker",
+                      url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+                      scaledSize_x: 24,
+                      scaledSize_y: 24,
+                      origin_x: 0,
+                      origin_y: 0,
+                      anchor_x: 12,
+                      anchor_y: 24
+                     },
+                     {
+                      markerName: "default_UAL",
+                      url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/default-marker.png",
+                      scaledSize_x: 24,
+                      scaledSize_y: 24,
+                      origin_x: 0,
+                      origin_y: 0,
+                      anchor_x: 12,
+                      anchor_y: 24
+                     }
+                     
+                    ];
+                    /* A list of markers populated by data in marker content nodes in same section */
+                    var maps_json = [
+                    {
+                     lat: 51.515,
+                     lng: -0.142,
+                     name: "JPS",
+                     content: "20 John Prince's St, London W1G 0BJ, UK",
+                     marker: "default_UAL"
+                    },
+                    {
+                     lat: 51.503,
+                     lng: -0.227,
+                     name: "High Holborn",
+                     content: "272 High Holborn, London WC1V 7EY, UK",
+                     marker: "default_UAL"
+                    },
+                    {
+                     lat: 51.517,
+                     lng: -0.116,
+                     name: "Lime Grove",
+                     content: "40 Lime Grove, White City, London W12 8EA, UK",
+                     marker: "default_UAL"
+                    },
+                    {
+                     lat: 51.540,
+                     lng: -0.055,
+                     name: "Mare Street",
+                     content: "182 Mare St, University of the Arts London, London E8, UK",
+                     marker: "default_UAL"
+                    },
+                    {
+                     lat: 51.526,
+                     lng: -0.078,
+                     name: "Curtain Road",
+                     content: "Shoreditch, London EC2A 3AA, UK",
+                     marker: "default_UAL"
+                    },
+                    {
+                     lat: 51.523,
+                     lng: -0.095,
+                     name: "Golden lane",
+                     content: "Golden lane, London EC1Y 0UU, UK",
+                     marker: "default_UAL"
+                    }
+                    ];
+                  </script>
+                  <div id="map-canvas" style="width:100%; height:100%"></div>
                 </div>
               </div>
             </div>
@@ -402,73 +454,6 @@
         </div>
       </div>
     </div>
-    <footer class="college-footer row">
-      <div class="footer-wrapper">
-        <div class="footer-block left">
-          <h3 class="size-h2">Contact Us</h3>
-          <!-- see http://html5doctor.com/microformats/-->
-          <ul class="vcard">
-            <li class="no-bullet"><a href="/lcc/" title="Contact information for London College of Communication" class="fn org url"><span class="organization-name">London College of Communication</span></a></li>
-            <li><span class="adr"><span class="street-address">Elephant & Castle</span>,<span class="region">London</span><span class="postal-code">SE1 6SB</span><br></span></li>
-            <li><span class="tel">Telephone:<span class="value">+44 (0)20 7514 6500</span></span></li>
-            <li><a href="mailto:info@lcc.arts.ac.uk">info@lcc.arts.ac.uk</a></li>
-            <li><a href="/lcc/about-lcc/contact-us/">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-block middle">
-          <h3 class="size-h2">Course guide</h3>
-          <p>Download a copy of our<a href="/media/arts/colleges/lcc/documents/LCC_poster1m3_-25June2013-FINAL.pdf">LCC Course Guide 2013/14 (PDF 294KB)</a><br><br><br></p>
-        </div>
-        <div class="footer-block right">
-          <h3 class="size-h2">Connect</h3>
-          <ul class="icons no-bullet">
-            <li><a href="http://www.facebook.com/londoncollegeofcommunication" class="facebook"><span class="icon-facebook-circled"></span></a></li>
-            <li><a href="http://twitter.com/LCCLondon" class="twitter"><span class="icon-twitter-circled"></span></a></li>
-            <li><a href="http://www.youtube.com/artslondonlcc" class="youtube"><span class="icon-youtube"></span></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <!-- navigation object : Main Footer Include-->
-    <!-- start footer-->
-    <footer class="global-footer row">
-      <div class="footer-wrapper">
-        <div class="row">
-          <div class="footer-links">
-            <ul class="footer-col-1">
-              <li><a href="/accessibility/">Accessibility</a></li>
-              <li><a href="/about-ual/strategy-governance/public-information/freedom-of-information/">Freedom of Information</a></li>
-              <li><a href="/privacy-and-cookies/">Privacy & Cookies</a></li>
-              <li><a href="/disclaimer/">Disclaimer</a></li>
-            </ul>
-            <ul class="footer-col-2">
-              <li><a href="/about-ual/strategy-governance/public-information/charitable-status/">Charitable Status</a></li>
-              <li><a href="/about-ual/support-our-creative-future/">Give to UAL</a></li>
-              <li><a href="/about-ual/work-at-ual/">Work at UAL</a></li>
-              <li><a href="/feedback-form/">Feedback</a></li>
-            </ul>
-            <ul class="footer-col-3">
-              <li><a href="http://showtime.arts.ac.uk/">Showtime</a></li>
-              <li><a href="http://my.arts.ac.uk/">MyArts Staff</a></li>
-              <li><a href="http://my.arts.ac.uk/student/">MyArts Student</a></li>
-              <li><a href="http://www.suarts.org/">Students' Union</a></li>
-            </ul>
-            <ul class="social-links">
-              <h3>Connect with UAL:</h3>
-              <li><a href="https://twitter.com/UniArtsLondon" title="UAL on Twitter"><span class="footer-ico icon-twitter"></span></a></li>
-              <li><a href="https://www.facebook.com/UniversityoftheArtsLondon" title="UAL on Facebook"><span class="footer-ico icon-facebook"></span></a></li>
-              <li><a href="http://www.youtube.com/user/universityartslondon" title="UAL on YouTube"><span class="footer-ico icon-youtube"></span></a></li>
-              <!-- <li><a href="#" title="UAL on Flickr"><span class="footer-ico icon-flickr"></span></a></li>-->
-            </ul>
-          </div>
-          <div class="row">
-            <div class="copyright">
-              <p>© 2014 University of the Arts London All Rights Reserved</p>
-            </div>
-          </div>
-        </div>
-      </div><a href="#" class="back-to-top"><span>↑</span>back to top</a>
-    </footer>
     <footer class="global-footer row">
       <div class="footer-wrapper">
         <div class="row">
