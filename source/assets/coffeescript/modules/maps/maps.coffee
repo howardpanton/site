@@ -9,25 +9,26 @@ markerIcons = {}
 
 # addMarker - adds markers to google maps
 @addMarker = (data, map, infoWindow) ->
+	_markerIcon = data.marker
+	_markerIcon = "default_UAL" if _markerIcon is "" or not _markerIcon?
+	# Create the marker
+	marker = new google.maps.Marker(
+			position: new google.maps.LatLng(data.lat, data.lng)
+			map: map
+			title: data.name
+			icon: markerIcons[_markerIcon]
+	)
 
-		# Create the marker
-		marker = new google.maps.Marker(
-				position: new google.maps.LatLng(data.lat, data.lng)
-				map: map
-				title: data.name
-				icon: markerIcons[data.marker]
-		)
+	# push the new marker objects into arrays
+	# gJson.push marker  if data is json[i]
 
-		# push the new marker objects into arrays
-		# gJson.push marker  if data is json[i]
-
-		# build the window contents
-		contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
-		google.maps.event.addListener marker, "click", ->
-				infoWindow.open map, marker
-				infoWindow.setContent contentString
-				return
-		return
+	# build the window contents
+	contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
+	google.maps.event.addListener marker, "click", ->
+			infoWindow.open map, marker
+			infoWindow.setContent contentString
+			return
+	return
 
 #setup custom map markers
 @setupMarkerIcons = (data) ->
@@ -142,7 +143,7 @@ markerIcons = {}
 			bikeLayer.setMap map
 
 		# TO DO:
-		# Enhancement: Add Markers to the map from JSON data
+		# Enhancement: Add Markers to the map from external JSON data
 		# $.getJSON "http://d27lwoqz7s24cy.cloudfront.net/assets/js/json/ual-map-markers.json?callback=?", (data) ->
 		# $.getJSON "http://localhost:9000/prototypes/accomodation-map/markers.json?callback=?", (data) ->
 		# 	alert "testing"
@@ -168,7 +169,7 @@ markerIcons = {}
 @loadMapsScript = ->
 		script = document.createElement("script")
 		script.type = "text/javascript"
-		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=loadMap"
+		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBg6p9uTJZjUi3vqZWn07sriYpr5zV3_jg&sensor=false&" + "callback=loadMap"
 		document.body.appendChild script
 		return
 

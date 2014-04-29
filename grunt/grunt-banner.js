@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                 linebreak: true
             },
             files: {
-                src: [ '.tmp/assets/js/script.min.js', '.tmp/assets/js/script.js' ]
+                src: [ '.tmp/assets/js/script.min.js', '.tmp/assets/js/script.js', '.tmp/assets/css/screen.css' ]
             }
         }
     });

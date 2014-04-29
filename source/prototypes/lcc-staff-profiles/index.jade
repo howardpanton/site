@@ -1,0 +1,63 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "lcc";
+	- var Title = "lcc-staff-profiles";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	.row
+		.l-content-full-width
+			.row
+				.tabs-container.lcc-tabs
+					ul.tabs
+						li.active(rel='tab1') ALUMNI
+						li(rel='tab2') students
+						li(rel='tab3') Staff
+				.tab_container.lcc-tabs
+					p.tab_drawer_heading(rel='tab1') ALUMNI test
+					#tab1.tab_content(style='display: block;')
+						.tab-content-caption-block
+							.l-content-d5-d10
+								h3 Beccy Mccray
+								p
+									span
+									| Beccy McCray graduated from BA (Hons) Graphic and Media Design in 2003. Now a Creative Producer at Nexus, she works primarily on animated and interactive arts and music projects. Her solo projects include a c
+									| ommission for the Olympic Park Legacy Company, Arts Council England and installations shown at the Barbican and Open East Festival.
+								p
+									a.button-link(href='/lcc/people/lcc-alumni/')
+										span.hide-descriptive-text Follow this link to go to more information about
+										| View all Alumni Profiles
+							.l-content-d11-d16
+								figure
+									img(src='http://www.arts.ac.uk/media/arts/colleges/lcc/images/a-homepage/beccy-mccray_portrait-760px.jpg', alt='')
+									.credits Image © Beccy Mccray
+					p.tab_drawer_heading(rel='tab2') students
+					#tab2.tab_content(style='display: none;')
+						.tab-content-caption-block
+							.l-content-d5-d10
+								figure
+									img(src='http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Hildegard_pic_student_homepage_878px.jpg', alt='')
+									.credits Image by Hildegard Titus
+							.l-content-d11-d16
+								h3 Hildegard Titus
+								p
+									| Hildegard Titus is currently studying BA (Hons) Photojournalism and Documentary Photography at LCC. "The best thing about studying in London is there's always something to do, always somewhere you haven't discovered yet. An activity you have never heard of. Kinds of people you've never met yet."
+								p
+									a.button-link(href='/lcc/people/students/')
+									span.hide-descriptive-text Follow this link to go to more information about
+									| See Student Profiles
+					p.tab_drawer_heading(rel='tab3') Staff
+					#tab3.tab_content(style='display: none;')
+						.tab-content-caption-block
+							.l-content-d5-d10
+								h3 SARAH ROBERTS-BOWMAN
+								p
+									| Sarah Roberts-Bowman is Course Leader for MA Public Relations. With over 17 years of PR expertise, Sarah's teaching covers a range of corporate communications and public affairs across business-to-business, startups and non-profit organisations including; BT, Energis, Central London Partnership and Centrepoint, to name but a few.
+								p
+									a.button-link(href='/lcc/people/')
+										span.hide-descriptive-text Follow this link to go to more information about
+										| Staff Profiles
+							.l-content-d11-d16
+								figure
+									img(src='http://www.arts.ac.uk//media/arts/colleges/lcc/images/a-homepage/Sarah-Roberts-Bowmen878px.jpg', alt='')
+									.credits Image by Alys Tomlinson

@@ -54,4 +54,3 @@ buildMobileSidebar = ->
 
 $(document).ready ->
     buildMobileSidebar()
-

@@ -1,0 +1,105 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "boxout-padding";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+
+	.row
+		.l-content.block.__text.__with-aside
+			.text
+				p
+					| Wimbledon College of Arts works with a range of organisations and individuals in a variety of different ways, including student-sponsored projects and tailor-made business training.
+				p
+					| Our
+					a(href='/wimbledon/business-and-innovation/case-studies/') Case Studies
+					| demonstrate just some of the ways we could work with you.
+		aside.bg-gray-bg
+			h4 Contact Business & Innovation: 
+			p
+				a.external(href='mailto:enterprisecollective@arts.ac.uk?subject=Enquiry:%20Business%20and%20Innovation', title='undefined(external link)') enterprisecollective@arts.ac.uk
+				| +44 (0)20 7514 9300
+				a.external(href='https://twitter.com/ccw_enterprise', title='undefined(external link)') ccw enterprise
+	.row
+		.l-content.block.__text
+			h2 Heading
+
+			p.leader leader text goes in here.
+
+			p
+				| Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam.
+			p
+				| Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.
+			p
+				| Morbi leo risus, porta ac vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+
+	.row
+		.boxout.__text.ual-black-bg
+			h3.no-pad-top Title for Boxout
+			p.leader Leader paragraph text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.
+
+			p
+				| Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam.
+			p
+				| Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+			ul
+				li
+					| The course runs a successful and popular Guest Lecture programme, recent speakers include: Mary Hockaday (Head of the BBC Newsroom), Jennifer Selway (Assistant Editor, Daily Express), Kieran Alger (Editor-in-chief, T3 magazine) and Ben Perreau, (Editorial Director of Global Radio).
+				li
+					| The course focuses on multimedia, multi-platform journalism, teaching a wide range of skills and disciplines and culminates in a final-year project in which students work on the
+					a(href='http://www.artslondonnews.com/', target='_blank', title='Arts London News website') Arts London News
+					| newspaper and website in a fully-equipped multi-media newsroom.
+				li
+					| Teaching staff on the course have experience working in a range of media companies including the BBC, Sky, Yahoo!, AOL, the Evening Standard, Al-Jazeera, Time Out and Metro.
+				li
+					| LCC is situated in the heart of London, on the doorstep of national and international media organisations. This allows us to forge strong links with industry and provides unrivalled opportunities for work experience.
+				li
+					| Graduates of the course have gone on to successful careers in a wide range of leading media businesses including Vogue UK, Guardian, Sky, CNBC, Vice magazine, International Herald Tribune, Metro online, TalkSport and Press Association. And in PR/marketing or content management for companies like Samsung, Transport for London, EasyJet and Donna Karan. Many others have established themselves as freelance writers or have set up their own companies.
+
+	.row
+	.accordion
+		.row
+			#st-accordion.st-accordion
+				ul.accordion-list
+					li.accordion-list-item
+						a.accordion-list-anchor(href="http://", target="_blank")
+							h3.size-h4 Accordion item 1
+							.st-arrow.icon.icon-plus-circled
+						.st-content
+							h3 unordered list
+							ul
+								li Mauris eget quam in justo iaculis ullamcorper.
+								li Curabitur sagittis mauris vitae neque egestas condimentum.
+								li Mauris commodo eros ac leo ullamcorper, sodales ultrices felis vulputate.
+								li Fusce fermentum ante vel odio porttitor ullamcorper.
+
+							h3 ordered list
+							ol
+								li Nullam ultricies lectus eget odio tristique, eget convallis ante sodales.
+								li Aenean dignissim risus a arcu commodo molestie.
+								li Etiam vehicula leo ut vehicula iaculis.
+								li Vivamus dictum nulla et est laoreet rhoncus.
+								li Nunc vitae justo quis augue porta varius.
+								li Quisque non purus et eros vulputate porta.
+					li.accordion-list-item
+						a.accordion-list-anchor(href="http://", target="_blank")
+							h3.size-h4 Accordion item 2
+							.st-arrow.icon.icon-plus-circled
+						.st-content
+							h4 Heading
+							img(data-src="http://app.resrc.it/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/facilities-social-spaces_7.jpg", alt="", class="rsImg resrc", data-resrc-width="523", src="http://app.resrc.it/s=w750,pd1/o=90/http://www.arts.ac.uk/media/arts/colleges/lcf/about-lcf/facilities-social-spaces_7.jpg")
+							p Aliquam diam lectus, elementum quis mauris quis, convallis cursus nunc. Vestibulum suscipit, tellus quis cursus consectetur, erat dolor cursus quam, vitae ornare mauris augue quis leo. Sed vel dictum lectus. Praesent laoreet orci leo, ac imperdiet nisl imperdiet a. Duis auctor suscipit sem. Phasellus non erat eu odio faucibus tincidunt ac sed tellus. Ut vulputate tortor eu tortor vulputate, id suscipit nunc adipiscing. Vivamus quam est, blandit ut blandit et, eleifend ac eros.
+					li.accordion-list-item
+						a.accordion-list-anchor(href="http://", target="_blank")
+							h3.size-h4 Accordion item 3
+							.st-arrow.icon.icon-plus-circled
+						.st-content
+							p Nullam fringilla laoreet metus, quis sollicitudin dui malesuada eget. Nulla consectetur enim turpis, sit amet fringilla est fringilla eu. Donec ultrices rutrum molestie. Suspendisse egestas cursus lacus, a tempor augue tempus id. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+
+
+
+
+
