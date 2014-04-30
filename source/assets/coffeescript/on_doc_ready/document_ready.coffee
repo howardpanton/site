@@ -7,7 +7,7 @@
 $(document).ready ->
 	checkWindowSize()
 	# breadcrumbs()
-	# skipToContent()
+	skipToContent()
 	# buildMobileSidebar()
 	# lazyLoadImgs()
 	# checkForSelectBox()
