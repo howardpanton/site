@@ -1,4 +1,4 @@
-/*!Updated: 28-04-2014, 3:41:24 PM */
+/*!Updated: 30-04-2014, 11:58:14 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -2387,19 +2387,14 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  var skipToContent;
-
-  skipToContent = function() {
+  this.skipToContent = function() {
     if ($(".page-title").length > 0) {
-      return $(".page-title").first().attr("id", "skip-to-here");
+      $(".page-title").first().attr("id", "skip-to-here");
     } else {
-      return $(".content-wrapper").first().attr("id", "skip-to-here");
+      $(".content-wrapper").first().attr("id", "skip-to-here");
     }
+    return true;
   };
-
-  $(document).ready(function() {
-    return skipToContent();
-  });
 
 }).call(this);
 
@@ -2589,6 +2584,7 @@ if (typeof define !== 'undefined' && define.amd) {
 (function() {
   $(document).ready(function() {
     checkWindowSize();
+    skipToContent();
     return ualDropdownBtn();
   });
 
