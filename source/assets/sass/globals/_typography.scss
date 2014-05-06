@@ -142,18 +142,6 @@ h2 a, h3 a {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold !optional;
 	}
-	// .csm & {
-		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-	//   // @extend %BureauGrotBold !optional;
-	// }
- // 	.lcc & {
-	// 	@extend %LeagueGothicRegular;
-	//   text-transform: uppercase;
-	//   border-bottom: none;
-	//   &:hover {
-	//   	color: $lcc-secondary-pink;
-	//   }
-	// }
 }
 
 h2, .size-h2 {
@@ -207,11 +195,6 @@ nav ul {
 
 ul, ol, dl {
 	margin-bottom: rhythm(3, 16px);
-
-	// @include gs-media (m,min-max) {
-	// 	padding-left: 12px;
-	// 	padding-right: 12px;
-	// }
 	li {
 		@include font-size(16);
 		@include adjust-leading-to(4, 16px);
@@ -365,7 +348,13 @@ figcaption, .rsCaption, .caption {
 		p {
 			padding-bottom: 0;
 		}
+		h4 a {
+			@extend %Swiss721BT-Bold;
+
+		}
 	}
+
+
 
 }
 
@@ -601,7 +590,8 @@ b, strong, h2, h3, h4 {
 
 .l-content a[href*="github."]:before, aside a[href*="github"]:before { content: '\e81d'; }
 
-.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before { content: '\e811'; }
+.l-content a[href^="mailto"]:before, aside a[href^="mailto"]:before,
+.l-content a[href^="Mailto"]:before, aside a[href^="Mailto"]:before  { content: '\e811'; }
 
 // pdf and doc link icons
 .l-content a[href$=".pdf"]:before, .l-content a[href$=".doc"]:before,
@@ -649,6 +639,7 @@ aside a[href$=".pdf"]:before, aside a[href$=".doc"]:before {
 .l-content a[href*="plus.google"].external:after, aside a[href*="plus.google"].external:after,
 .l-content a[href*="github."].external:after, aside a[href*="github"].external:after,
 .l-content a[href^="mailto"].external:after, aside a[href^="mailto"].external:after,
+.l-content a[href^="Mailto"].external:after, aside a[href^="Mailto"].external:after,
 .l-content a[href$=".pdf"]:after, .l-content a[href$=".doc"]:after,
 aside a[href$=".pdf"]:after, aside a[href$=".doc"]:after  {
 	display: none;
