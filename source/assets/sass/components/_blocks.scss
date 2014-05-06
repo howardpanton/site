@@ -71,8 +71,8 @@
 
 
 .__media {
+
 	h2 {
-		// width: 100%;
 		@include gs-media(t,min-max) {
 			.camberwell &, .chelsea &, .wimbledon & {
 				width: 47.28217%;
@@ -111,8 +111,6 @@
 		}
 	}
 
-
-
 	figure {
 
 		a {
@@ -123,6 +121,14 @@
 
 	figcaption a {
 		display: inline;
+		padding-bottom: 1px;
+		border-bottom: 1px dotted #282828;
+	}
+
+	figcaption h4 a {
+		@extend %Swiss721BT-Bold;
+		padding-bottom: 1px;
+		border-bottom: 1px dotted #282828;
 	}
 
 	&.__with-aside {
@@ -137,11 +143,6 @@
 				@include gs-span(d, 5,12, (5, 16));
 			}
 		}
-		// .__text {
-		// 	@include gs-media (d) {
-		// 		@include gs-span(d, 5,12, (5, 13));
-		// 	}
-		// }
 	}
 
 
@@ -354,6 +355,12 @@
 			p {
 				padding: 0;
 			}
+			@include gs-media(m) {
+				p, h3 {
+					padding: 12px;
+				}
+			}
+
 		}
 	}
 	@include gs-media(d) {

@@ -26,7 +26,9 @@ buildMobileSidebar = ->
         _mobMenuContent = _menuHtml
 
       # create mobile sidebar div and add it to the main content div
-      $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo ".content"
+      # $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo ".content"
+
+      $(".content").first().prepend("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>")
 
       # populate the mobile menu with the same content as the desktop sidebar nav & add menu button
       $("#mobile-sidebar").html _mobMenuContent
