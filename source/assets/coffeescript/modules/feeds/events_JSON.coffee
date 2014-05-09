@@ -23,6 +23,7 @@
 		return
 
 $(document).ready ->
+
 		# detect events feed component
 		if $(".events-feed").length > 0
 			$.each $(".events-feed"), ->
