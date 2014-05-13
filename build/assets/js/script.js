@@ -1,4 +1,4 @@
-/*!Updated: 08-05-2014, 11:23:40 AM */
+/*!Updated: 13-05-2014, 4:54:14 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1742,47 +1742,61 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  this.getEventsFeed = function() {
-    return $.getJSON("http://events.arts.ac.uk/apex/eventsfeed?callback=?", function(data) {
-      var count, output;
-      output = "<ul class=\"cf\">";
-      count = 6;
-      $.each(data, function(i, item) {
-        var events;
-        if (i < count) {
-          events = data.Events[i];
-          return output += "<li><p>" + events.id + "</p></li>";
-        }
-      });
-      output += "</ul></div>";
-      $(".events-feed").html(output);
-    });
-  };
 
-  $(document).ready(function() {
-    if ($(".events-feed").length > 0) {
-      return $.each($(".events-feed"), function() {
-        return getEventsFeed();
-      });
-    }
-  });
 
 }).call(this);
 
 (function() {
-  this.getEventsFeed = function() {
-    return $.ajax({
+  this.getEventsFeed = function(programme, type, feed_id, count) {
+    var getItemHTML, outputfeedHTML;
+    if (type == null) {
+      type = "";
+    }
+    if (feed_id == null) {
+      feed_id = "";
+    }
+    if (count == null) {
+      count = 6;
+    }
+    if (!type) {
+      type = "";
+    } else {
+      type = "&eventtype=" + type;
+    }
+    if (!programme) {
+      programme = "";
+    } else {
+      programme = "?programme=" + programme;
+    }
+    console.log("sending the following parameters to the feed: ");
+    console.log("programme: " + programme);
+    console.log("type: " + type);
+    console.log("feed_id: " + feed_id);
+    console.log("number of feed items to return: " + count);
+    getItemHTML = function(item) {
+      console.log("the item returned is: " + item.name);
+      console.log("the programme is: " + item.programme);
+      console.log("the image url is: " + item.image_url);
+      return console.log("the start date is: " + item.startdate);
+    };
+    outputfeedHTML = function(feed_data) {
+      var output;
+      output = "<ul class=\"cf\">";
+      $.each(feed_data, function(i, item) {
+        if (i < count) {
+          return getItemHTML(item);
+        }
+      });
+    };
+    $.ajax({
       type: "GET",
-      url: "http://release-ual.cs7.force.com/EventsFeed?filter=university-wide",
+      url: "http://release-ual.cs7.force.com/EventsFeed" + programme + type,
       dataType: "jsonp",
       success: function(feed_data) {
-        console.log("the response is", feed_data);
-        $(".events-feed").append("<p>" + String(feed_data[0].name) + "</p>");
-        $(".events-feed").append("<p>" + String(feed_data[0].programme) + "</p>");
-        $(".events-feed").append("<p>" + String(feed_data[0].startdate) + "</p>");
-        $(".events-feed").append("<img src='http://" + String(feed_data[0].image_url) + "' />");
+        return outputfeedHTML(feed_data);
       }
     });
+    return true;
   };
 
   $(document).ready(function() {
@@ -1790,7 +1804,8 @@ if (typeof define !== 'undefined' && define.amd) {
     feed_data = {};
     if ($(".events-feed").length > 0) {
       return $.each($(".events-feed"), function() {
-        return getEventsFeed();
+        var count, feed_id, programme, type;
+        return getEventsFeed(programme = "university-wide", type = "", feed_id = "", count = 3);
       });
     }
   });
