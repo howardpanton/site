@@ -1,0 +1,34 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "media-block-link-captions";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	.row
+		.l-content-full-width.block.__media
+			.row
+				figure
+					img.rsImg.resrc(data-src='http://app.resrc.it/o=80/http://www.arts.ac.uk/media/arts/colleges/lcf/courses/graduate-school/media-and-communications/chrystel-livolsi1896-948.jpg', alt='', data-resrc-width='699', src='http://app.resrc.it/s=w700,pd1/o=80/http://www.arts.ac.uk/media/arts/colleges/lcf/courses/graduate-school/media-and-communications/chrystel-livolsi1896-948.jpg')
+					figcaption
+						span
+							h4
+								| Some&nbsp;
+								a(href='http://www.arts.ac.uk/fashion/') top alumni&nbsp;
+								| that we want to show off
+							p They are so great, they did these wonderful things, blah blah blah
+				.__text
+	.row
+		.l-content-full-width.block.__media
+			.row
+				.video-container
+					.fluid-width-video-wrapper(style='padding-top: 50%;')
+						iframe#fitvid690947(src='//www.youtube.com/embed/o_Jp3xyXolM', frameborder='0', allowfullscreen='')
+					.caption
+						span
+							h4
+								| Some&nbsp;
+								a(href='http://www.arts.ac.uk/fashion/') top alumni &nbsp;
+								|that we want to show off
+							p They are so great, they did these wonderful things, blah blah blah
+				.__text

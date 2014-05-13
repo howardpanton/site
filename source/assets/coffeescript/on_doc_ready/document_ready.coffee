@@ -7,7 +7,7 @@
 $(document).ready ->
 	checkWindowSize()
 	# breadcrumbs()
-	# skipToContent()
+	skipToContent()
 	# buildMobileSidebar()
 	# lazyLoadImgs()
 	# checkForSelectBox()
@@ -20,7 +20,7 @@ $(document).ready ->
 	# checkForOwlCarousel()
 	# imageCredits()
 	# checkForAccordion()
-	# btnMenuDropdown()
+	ualDropdownBtn()
 	# searchFilters()
 	# showtimeJSONloader()
 	# checkForLightbox()

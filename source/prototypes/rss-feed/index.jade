@@ -1,0 +1,39 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "lcc";
+	- var Title = "rss-feed";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	div.row
+		div.content.rss-feed
+			div#mobile-sidebar.mobile-sidebar.d-hide
+			h2 Latest News
+			ul
+				li
+					div.text
+						p.title
+							a(href='http://blogs.arts.ac.uk/london-college-of-communication/2014/03/07/ba-hons-advertising-student-wins-ual-deans-award-for-study-abroad/') BA (Hons) Advertising student wins UAL Deans’ Award for Study Abroad
+						p.date 07 Mar 2014
+				li
+					div.text
+						p.title
+							a(href='http://blogs.arts.ac.uk/london-college-of-communication/2013/12/11/the-future-of-text-talks-watch-all-the-films-including-father-of-the-internet-vint-cerf-online-now/')
+								| The Future of Text Talks // Watch all the films including ‘father of the internet’ Vint Cerf online now
+						p.date 11 Dec 2013
+				li
+					div.text
+						p.title
+							a(href='http://blogs.arts.ac.uk/london-college-of-communication/2013/10/28/the-future-of-text-a-symposium-on-the-future-of-the-written/') The Future of Text // A symposium on the evolution of writing
+						p.date 28 Oct 2013
+				li
+					div.text
+						p.title
+							a(href='http://blogs.arts.ac.uk/london-college-of-communication/2013/09/18/lcc-graduate-carl-ellis-wins-bbc-three-show-the-insider-to-secure-his-dream-job/')
+								| LCC graduate Carl Ellis wins BBC Three show ‘The Insider’ to secure his dream job
+						p.date 18 Sep 2013
+				li
+					div.text
+						p.title
+							a(href='http://blogs.arts.ac.uk/london-college-of-communication/2013/09/17/advertising-graduate-competes-for-top-job-on-bbc-show-tonight/') LCC Advertising graduate competes for top job on BBC Show tonight
+						p.date 17 Sep 2013

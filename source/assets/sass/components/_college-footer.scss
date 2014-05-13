@@ -4,9 +4,9 @@
   background-color: $dark-gray;
   padding-top: 0;
 
-  // custom styling per college 
+  // custom styling per college
   .camberwell &, .chelsea &, .wimbledon & {
-   
+
   }
 
   .csm & {
@@ -24,7 +24,7 @@
     //     margin-right: gs-gutter(d, (13,16), true);
     //   }
     // }
-    
+
   }
 
   .lcf & {
@@ -36,7 +36,7 @@
 
   .vcard {
       margin-top: 0;
-      
+
       @include gs-media(d) {
         padding: 0;
       }
@@ -47,20 +47,20 @@
         padding: 0;
         a {
           border-bottom: none;
-        } 
+        }
       }
   }
   .vcard li {
       padding-left: 0;
   }
 
-  
+
 
   .social-icons {
     li {
       display: inline-block;
       width: 60px;
-    }    
+    }
     a {
       position: absolute;
       text-indent: -999em;
@@ -76,7 +76,7 @@
 .footer-block {
   @extend %Swiss721BT-Light;
   @include font-size(14);
-  
+
   a, li, p {
     @extend %Swiss721BT-Light;
     @include font-size(14);
@@ -127,7 +127,7 @@
       }
 
       @include margin-trailer(2);
-      
+
     }
 
     .lcf & {
@@ -142,15 +142,15 @@
     }
 
     .chelsea &, .camberwell &, .wimbledon & {
-      @extend %BrandonText-Bold !optional; 
+      @extend %BrandonText-Bold !optional;
       border-top: 6px solid $white;
       @include margin-leader(3);
       @include margin-trailer(1);
     }
-    
-    
-  }  
-  
+
+
+  }
+
   .icons {
 
     li {
@@ -194,7 +194,7 @@
       margin-right: 0;
     }
   }
-  
+
   // mobile & tablet footer column widths
   &.left {
     width: 100%;
@@ -208,8 +208,18 @@
     clear: left;
     margin-right: 0;
   }
-  
-  // desktop footer columns 
+
+	// padding for middle column on mobile
+	&.middle {
+    @include gs-media(m) {
+			p {
+				padding: 0 12px 0 12px;
+			}
+    }
+  }
+
+
+  // desktop footer columns
   @include gs-media(d) {
     @include gs-float(d, left, (1,16));
 
@@ -217,7 +227,7 @@
     &.left {
       width: gs-width(d, 1, 4, (1,16), true);
     }
-    
+
     // MIDDLE FOOTER COL
     &.middle {
       clear: none;
@@ -236,5 +246,5 @@
       margin-right: 0;
     }
   }
-  
+
 }

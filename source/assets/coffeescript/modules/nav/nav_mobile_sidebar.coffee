@@ -26,27 +26,23 @@ buildMobileSidebar = ->
         _mobMenuContent = _menuHtml
 
       # create mobile sidebar div and add it to the main content div
-      $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo ".content"
+      # $("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>").prependTo ".content"
+
+      $(".content").first().prepend("<div id=\"mobile-sidebar\" class=\"mobile-sidebar d-hide\"></div>")
 
       # populate the mobile menu with the same content as the desktop sidebar nav & add menu button
       $("#mobile-sidebar").html _mobMenuContent
-
-      $(".mobile-sidebar .js-dd-menu").click (e) ->
+      $(".show-mob-sidebar").click (e) ->
         e.preventDefault()
         _clicked = $(this)
-        _dd_menu = _clicked.parent()  # _dd_menu will be <div class=".dd-menu .siblings" >
-
-        console.log _dd_menu
-
-        if _dd_menu.hasClass("active")
-          _dd_menu.removeClass "active"
-          _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideUp()
+        if _clicked.hasClass("active")
+          _clicked.closest($("#mobile-sidebar")).find($("ul")).slideUp()
+          _clicked.removeClass "active"
         else
-          # switch the menu button to up arrow and set class to active
-          _dd_menu.addClass "active"
-          _dd_menu.closest($("#mobile-sidebar")).find($("ul")).slideDown()
+          _clicked.closest($("#mobile-sidebar")).find($("ul")).slideDown()
 
-
+          # update the menu button and set class to active
+          _clicked.addClass "active"
 
       # check if first item is "In This Section" which shouldn't be added as a link to the mob sidebar
       if _sideBarTitle.text().toLowerCase() is "in this section"
@@ -60,4 +56,3 @@ buildMobileSidebar = ->
 
 $(document).ready ->
     buildMobileSidebar()
-
