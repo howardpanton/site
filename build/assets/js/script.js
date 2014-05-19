@@ -1,4 +1,4 @@
-/*!Updated: 19-05-2014, 10:17:22 AM */
+/*!Updated: 19-05-2014, 12:11:54 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1765,11 +1765,17 @@ if (typeof define !== 'undefined' && define.amd) {
     }
     eventsTitleLength = 100;
     getItemHTML = function(item) {
-      var event_title, itemHTML;
+      var ev_date, ev_day, ev_month, ev_year, event_title, itemHTML, parts;
       itemHTML = "";
       event_title = item.name;
       event_title = trimTitle(event_title, eventsTitleLength);
-      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "</a> <p class=\"date\">" + item.startdate + "</p> </div> </a> </div> </li>";
+      ev_date = item.startdate;
+      parts = ev_date.split("-", 3);
+      ev_year = parts[0];
+      ev_month = getMonthName(parts[1], "short");
+      ev_day = parts[2];
+      ev_date = ev_day + " " + ev_month + " " + ev_year;
+      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "<p class=\"date\">" + ev_date + "</p></a> </div> </a> </div> </li>";
     };
     outputfeedHTML = function(feed_data) {
       var output;
