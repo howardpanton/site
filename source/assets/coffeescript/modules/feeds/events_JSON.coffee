@@ -78,8 +78,6 @@
 				output += getItemHTML(item)
 
 		output += "</ul></div>"
-
-		console.log "the value of output variable is: " + output
 		$(".events-feed-" + feed_id).html output
 		return
 
