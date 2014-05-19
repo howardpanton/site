@@ -81,7 +81,7 @@ footer.global-footer.row
 				span.icon-picture
 		//-Include js scripts
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
-		//-script to pull google maps
+
 		//-if (lt IE 9) & (!IEMobile)
 			script(src='http://s3-eu-west-1.amazonaws.com/arts-staging/assets/js/ie/ie-css-fix-gz.js')
 		script(src='http://use.resrc.it/')
@@ -94,8 +94,17 @@ footer.global-footer.row
 		//-Mega Menu Plugins
 		//-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js')
 		//-script(src='http://localhost:9000arts.ac.uk/buildarts.ac.uk/build/assets/js/script.js')
+
 		script(src='http://localhost:9000/assets/js/script.js')
 
+		script.
+			window.getEventsFeed(programme = "university-wide", type = "", feed_id = 1, count = 6)
+
+		script.
+			window.getEventsFeed(programme = "university-wide", type = "", feed_id = 2, count = 2)
+
+		script.
+			window.getEventsFeed(programme = "london college of communication", type = "", feed_id = 3, count = 6)
 
 		script.
 				//- Creates associative array (object) of query params

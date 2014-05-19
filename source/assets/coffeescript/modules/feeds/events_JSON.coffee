@@ -19,35 +19,65 @@
 	else
   	programme = "?programme=" + programme
 
-  console.log "sending the following parameters to the feed: "
-  console.log "programme: " + programme
-  console.log "type: " + type
-  console.log "feed_id: " + feed_id
 
-  console.log "number of feed items to return: " + count
 
+  #max number of characters for event title
+  eventsTitleLength = 100
 
   # get HTML for one feed item
   getItemHTML = (item) ->
-  	console.log ("the item returned is: " + item.name)
-  	console.log ("the programme is: " + item.programme)
-  	console.log ("the image url is: " + item.image_url)
-  	console.log ("the start date is: " + item.startdate)
 
-  # build html for feed
+  	itemHTML = ""
+
+
+  	event_title = item.name
+
+  	event_title = trimTitle(event_title, eventsTitleLength)
+
+  	#format the date
+
+
+  	return itemHTML += "
+  							<li>
+  								<div class=\"single-feed-container a\">
+										<a href=\"" + item.event_url + "\">
+
+											<div class=\"feed-image\">
+												<div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\">
+													<img src=\"" + item.image_url + "\">
+												</div>
+											</div>
+
+											<div class=\"title\">
+												<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "</a>
+												<p class=\"date\">" + item.startdate + "</p>
+											</div>
+
+										</a>
+									</div>
+								</li>"
+
+
+
+  # build html for feed component
 	outputfeedHTML = (feed_data) ->
-		output = "<ul class=\"cf\">"
+		output = "<div class=\"feed-comp\">
+								<ul class=\"cf\">"
 
 		$.each feed_data, (i, item) ->
 			if i < count
-				getItemHTML(item)
-		return
+				output += getItemHTML(item)
 
+		output += "</ul></div>"
+
+		console.log "the value of output variable is: " + output
+		$(".events-feed-" + feed_id).html output
+		return
 
 
 	$.ajax
   type: "GET"
-  url: "http://release-ual.cs7.force.com/EventsFeed" + programme  + type
+  url: "http://ual.force.com/eventsfeed" + programme  + type
   dataType: "jsonp"
   success: (feed_data) ->
   	outputfeedHTML(feed_data)
@@ -59,7 +89,7 @@ $(document).ready ->
 		# detect events feed component
 		if $(".events-feed").length > 0
 			$.each $(".events-feed"), ->
-				getEventsFeed(programme = "university-wide", type = "", feed_id = "", count = 3)
+
 
 
 
