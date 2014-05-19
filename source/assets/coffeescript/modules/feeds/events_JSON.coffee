@@ -1,4 +1,4 @@
-# # #
+# #
 # #    -------------------------------------------------------------
 # #        getEventsFeed()
 # #
@@ -19,8 +19,6 @@
 	else
   	programme = "?programme=" + programme
 
-
-
   #max number of characters for event title
   eventsTitleLength = 100
 
@@ -29,13 +27,24 @@
 
   	itemHTML = ""
 
-
   	event_title = item.name
 
+  	# trim title to max 100characters
   	event_title = trimTitle(event_title, eventsTitleLength)
 
   	#format the date
+  	ev_date = item.startdate
 
+  	parts = ev_date.split("-", 3)
+
+  	ev_year = parts[0]
+
+  	# get english month name from date
+  	ev_month = getMonthName(parts[1], "short")
+
+  	ev_day = parts[2]
+
+  	ev_date = ev_day + " " + ev_month + " " + ev_year
 
   	return itemHTML += "
   							<li>
@@ -49,8 +58,8 @@
 											</div>
 
 											<div class=\"title\">
-												<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "</a>
-												<p class=\"date\">" + item.startdate + "</p>
+												<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "
+												<p class=\"date\">" + ev_date + "</p></a>
 											</div>
 
 										</a>
@@ -85,10 +94,12 @@
 
 
 $(document).ready ->
-		feed_data = {}
-		# detect events feed component
-		if $(".events-feed").length > 0
-			$.each $(".events-feed"), ->
+
+	feed_data = {}
+
+	# detect events feed component
+	if $(".events-feed").length > 0
+		$.each $(".events-feed"), ->
 
 
 

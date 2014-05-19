@@ -14,6 +14,15 @@
 		}
 	}
 
+	.single-feed-container .date {
+		 @extend %Swiss721BT-Light;
+		 @include font-size(16);
+		 @include padding-leader(2);
+		 @include gs-media(m) {
+				padding-left: 0;
+		 }
+	}
+
 	.l-content & {
 		@include gs-media(m,min-max) {
 			li:nth-child(4), li:nth-child(5), li:nth-child(6) {
@@ -47,11 +56,13 @@
 	}
 
 	.l-content-full-width & {
+
 		@include gs-media(m,min-max) {
 			li:nth-child(4), li:nth-child(5), li:nth-child(6) {
 				display: none;
 			}
 		}
+
 		@include gs-media(t,min-max) {
 			.center-cropped {
 				height: 121px;
@@ -92,6 +103,7 @@
 				display: none;
 			}
 		}
+
 		@include gs-media(d,min-max) {
 			.center-cropped {
 				height: 200px;
@@ -180,4 +192,9 @@
 			padding-left: 12px;
 		}
 	}
+
+
 }
+
+
+
