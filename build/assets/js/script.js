@@ -1,4 +1,4 @@
-/*!Updated: 13-05-2014, 4:54:14 PM */
+/*!Updated: 19-05-2014, 10:17:22 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -1742,13 +1742,8 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-
-
-}).call(this);
-
-(function() {
   this.getEventsFeed = function(programme, type, feed_id, count) {
-    var getItemHTML, outputfeedHTML;
+    var eventsTitleLength, getItemHTML, outputfeedHTML;
     if (type == null) {
       type = "";
     }
@@ -1768,29 +1763,29 @@ if (typeof define !== 'undefined' && define.amd) {
     } else {
       programme = "?programme=" + programme;
     }
-    console.log("sending the following parameters to the feed: ");
-    console.log("programme: " + programme);
-    console.log("type: " + type);
-    console.log("feed_id: " + feed_id);
-    console.log("number of feed items to return: " + count);
+    eventsTitleLength = 100;
     getItemHTML = function(item) {
-      console.log("the item returned is: " + item.name);
-      console.log("the programme is: " + item.programme);
-      console.log("the image url is: " + item.image_url);
-      return console.log("the start date is: " + item.startdate);
+      var event_title, itemHTML;
+      itemHTML = "";
+      event_title = item.name;
+      event_title = trimTitle(event_title, eventsTitleLength);
+      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "</a> <p class=\"date\">" + item.startdate + "</p> </div> </a> </div> </li>";
     };
     outputfeedHTML = function(feed_data) {
       var output;
-      output = "<ul class=\"cf\">";
+      output = "<div class=\"feed-comp\"> <ul class=\"cf\">";
       $.each(feed_data, function(i, item) {
         if (i < count) {
-          return getItemHTML(item);
+          return output += getItemHTML(item);
         }
       });
+      output += "</ul></div>";
+      console.log("the value of output variable is: " + output);
+      $(".events-feed-" + feed_id).html(output);
     };
     $.ajax({
       type: "GET",
-      url: "http://release-ual.cs7.force.com/EventsFeed" + programme + type,
+      url: "http://ual.force.com/eventsfeed" + programme + type,
       dataType: "jsonp",
       success: function(feed_data) {
         return outputfeedHTML(feed_data);
@@ -1803,10 +1798,7 @@ if (typeof define !== 'undefined' && define.amd) {
     var feed_data;
     feed_data = {};
     if ($(".events-feed").length > 0) {
-      return $.each($(".events-feed"), function() {
-        var count, feed_id, programme, type;
-        return getEventsFeed(programme = "university-wide", type = "", feed_id = "", count = 3);
-      });
+      return $.each($(".events-feed"), function() {});
     }
   });
 
@@ -1899,9 +1891,7 @@ if (typeof define !== 'undefined' && define.amd) {
  */
 
 (function() {
-  var formatDateUAL;
-
-  formatDateUAL = function() {
+  this.formatDateUAL = function() {
     return $(".date").each(function(i, element) {
       var str;
       str = $(this).text();
@@ -1916,6 +1906,44 @@ if (typeof define !== 'undefined' && define.amd) {
       return formatDateUAL();
     }
   });
+
+
+  /*
+      -------------------------------------------------------------
+          getMonthName()
+          returns the name of month as a string for a number is passed in to the function
+  
+          Eg.   getMonthName(4, "short")
+  
+          will return the string "Apr"
+      -------------------------------------------------------------
+   */
+
+  this.getMonthName = function(month_number, format) {
+    var longMonthsInYear, m, month_name, month_num, monthsOfYear, shortMonthsInYear;
+    if (format == null) {
+      format = "short";
+    }
+    month_name = '';
+    monthsOfYear = [];
+    shortMonthsInYear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    longMonthsInYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    switch (format) {
+      case "short":
+        monthsOfYear = shortMonthsInYear;
+        break;
+      case "long":
+        monthsOfYear = longMonthsInYear;
+    }
+    month_num = parseInt(month_number);
+    if ((month_num > 0) && (month_num < 13)) {
+      m = month_num - 1;
+      return monthsOfYear[m];
+    } else {
+      return "";
+    }
+    return month_name;
+  };
 
 }).call(this);
 
@@ -1973,6 +2001,29 @@ if (typeof define !== 'undefined' && define.amd) {
       return imageCredits();
     }
   });
+
+}).call(this);
+
+
+/*
+    -------------------------------------------------------------
+        trimTitle()
+
+        will format a title (string) to max number of characters, specified
+
+				returns a trimmed title with "..." added to the end
+    -------------------------------------------------------------
+ */
+
+(function() {
+  this.trimTitle = function(title, maxLength) {
+    if (title.length > maxLength) {
+      title = title.substring(0, maxLength) + "...";
+    } else {
+      title = title;
+    }
+    return title;
+  };
 
 }).call(this);
 
