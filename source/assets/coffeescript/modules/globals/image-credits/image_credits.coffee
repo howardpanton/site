@@ -19,11 +19,23 @@
 						c = $(this)
 						if c.hasClass("active")
 								c.removeClass("active").attr "title", "Show image credits"
-								$('#image-credits-toggle').tooltipster('content', "Show image credits")
+
+								# update the tooltip message
+								$("#image-credits-toggle").tooltipster "hide", ->
+								  @tooltipster "content", "Show image credits"
+								  return true
+
+								# fade out the image credits which appear over the images
 								$(".credits").fadeOut()
+
 						else
 								c.addClass("active").attr "title", "Hide image credits"
-								$('#image-credits-toggle').tooltipster('content', "Hide image credits");
+
+								$("#image-credits-toggle").tooltipster "hide", ->
+								  @tooltipster "content", "Hide image credits"
+								  return true
+
+								# fade in the image credits
 								$(".credits").fadeIn()
 
 $(document).ready ->
