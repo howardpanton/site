@@ -339,8 +339,20 @@
         <div role="main" class="content">
           <div class="row">
             <div class="l-content-full-width">
-              <h2>Latest Events test</h2>
-              <div class="events-feed"></div>
+              <h2>events feed for university-wide with 6 items</h2>
+              <div class="events-feed-1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="l-content-full-width">
+              <h2>events feed for university-wide with 2 items</h2>
+              <div class="events-feed-2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="l-content-full-width">
+              <h2>events feed for london college of communication with 6 items</h2>
+              <div class="events-feed-3"></div>
             </div>
           </div>
         </div>
@@ -399,6 +411,18 @@
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script src="http://use.resrc.it/"></script>
       <script src="http://artslondon.github.io/site/assets/js/script.js"></script>
+      <script>
+        window.getEventsFeed(programme = "university-wide", type = "", feed_id = 1, count = 6)
+        
+      </script>
+      <script>
+        window.getEventsFeed(programme = "university-wide", type = "", feed_id = 2, count = 2)
+        
+      </script>
+      <script>
+        window.getEventsFeed(programme = "london college of communication", type = "", feed_id = 3, count = 6)
+        
+      </script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {

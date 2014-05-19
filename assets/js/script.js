@@ -1,4 +1,4 @@
-/*!Updated: 19-05-2014, 11:20:49 AM */
+/*!Updated: 19-05-2014, 12:31:29 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -3007,56 +3007,69 @@ if (typeof define !== 'undefined' && define.amd) {
 }).call(this);
 
 (function() {
-  this.getEventsFeed = function() {
-    return $.getJSON("http://events.arts.ac.uk/apex/eventsfeed?callback=?", function(data) {
-      var count, output;
-      output = "<ul class=\"cf\">";
+  this.getEventsFeed = function(programme, type, feed_id, count) {
+    var eventsTitleLength, getItemHTML, outputfeedHTML;
+    if (type == null) {
+      type = "";
+    }
+    if (feed_id == null) {
+      feed_id = "";
+    }
+    if (count == null) {
       count = 6;
-      $.each(data, function(i, item) {
-        var events;
+    }
+    if (!type) {
+      type = "";
+    } else {
+      type = "&eventtype=" + type;
+    }
+    if (!programme) {
+      programme = "";
+    } else {
+      programme = "?programme=" + programme;
+    }
+    eventsTitleLength = 100;
+    getItemHTML = function(item) {
+      var ev_date, ev_day, ev_month, ev_year, event_title, itemHTML, parts;
+      itemHTML = "";
+      event_title = item.name;
+      event_title = trimTitle(event_title, eventsTitleLength);
+      ev_date = item.startdate;
+      parts = ev_date.split("-", 3);
+      ev_year = parts[0];
+      ev_month = getMonthName(parts[1], "short");
+      ev_day = parts[2];
+      ev_date = ev_day + " " + ev_month + " " + ev_year;
+      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "<p class=\"date\">" + ev_date + "</p></a> </div> </a> </div> </li>";
+    };
+    outputfeedHTML = function(feed_data) {
+      var output;
+      output = "<div class=\"feed-comp\"> <ul class=\"cf\">";
+      $.each(feed_data, function(i, item) {
         if (i < count) {
-          events = data.Events[i];
-          return output += "<li><p>" + events.id + "</p></li>";
+          return output += getItemHTML(item);
         }
       });
       output += "</ul></div>";
-      $(".events-feed").html(output);
-    });
-  };
-
-  $(document).ready(function() {
-    if ($(".events-feed").length > 0) {
-      return $.each($(".events-feed"), function() {
-        return getEventsFeed();
-      });
-    }
-  });
-
-}).call(this);
-
-(function() {
-  this.getEventsFeed = function() {
-    return $.ajax({
+      console.log("the value of output variable is: " + output);
+      $(".events-feed-" + feed_id).html(output);
+    };
+    $.ajax({
       type: "GET",
-      url: "http://release-ual.cs7.force.com/EventsFeed?filter=university-wide",
+      url: "http://ual.force.com/eventsfeed" + programme + type,
       dataType: "jsonp",
       success: function(feed_data) {
-        console.log("the response is", feed_data);
-        $(".events-feed").append("<p>" + String(feed_data[0].name) + "</p>");
-        $(".events-feed").append("<p>" + String(feed_data[0].programme) + "</p>");
-        $(".events-feed").append("<p>" + String(feed_data[0].startdate) + "</p>");
-        $(".events-feed").append("<img src='http://" + String(feed_data[0].image_url) + "' />");
+        return outputfeedHTML(feed_data);
       }
     });
+    return true;
   };
 
   $(document).ready(function() {
     var feed_data;
     feed_data = {};
     if ($(".events-feed").length > 0) {
-      return $.each($(".events-feed"), function() {
-        return getEventsFeed();
-      });
+      return $.each($(".events-feed"), function() {});
     }
   });
 
@@ -3149,9 +3162,7 @@ if (typeof define !== 'undefined' && define.amd) {
  */
 
 (function() {
-  var formatDateUAL;
-
-  formatDateUAL = function() {
+  this.formatDateUAL = function() {
     return $(".date").each(function(i, element) {
       var str;
       str = $(this).text();
@@ -3166,6 +3177,44 @@ if (typeof define !== 'undefined' && define.amd) {
       return formatDateUAL();
     }
   });
+
+
+  /*
+      -------------------------------------------------------------
+          getMonthName()
+          returns the name of month as a string for a number is passed in to the function
+  
+          Eg.   getMonthName(4, "short")
+  
+          will return the string "Apr"
+      -------------------------------------------------------------
+   */
+
+  this.getMonthName = function(month_number, format) {
+    var longMonthsInYear, m, month_name, month_num, monthsOfYear, shortMonthsInYear;
+    if (format == null) {
+      format = "short";
+    }
+    month_name = '';
+    monthsOfYear = [];
+    shortMonthsInYear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    longMonthsInYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    switch (format) {
+      case "short":
+        monthsOfYear = shortMonthsInYear;
+        break;
+      case "long":
+        monthsOfYear = longMonthsInYear;
+    }
+    month_num = parseInt(month_number);
+    if ((month_num > 0) && (month_num < 13)) {
+      m = month_num - 1;
+      return monthsOfYear[m];
+    } else {
+      return "";
+    }
+    return month_name;
+  };
 
 }).call(this);
 
@@ -3231,6 +3280,29 @@ if (typeof define !== 'undefined' && define.amd) {
       return imageCredits();
     }
   });
+
+}).call(this);
+
+
+/*
+    -------------------------------------------------------------
+        trimTitle()
+
+        will format a title (string) to max number of characters, specified
+
+				returns a trimmed title with "..." added to the end
+    -------------------------------------------------------------
+ */
+
+(function() {
+  this.trimTitle = function(title, maxLength) {
+    if (title.length > maxLength) {
+      title = title.substring(0, maxLength) + "...";
+    } else {
+      title = title;
+    }
+    return title;
+  };
 
 }).call(this);
 
