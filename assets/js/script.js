@@ -1,4 +1,4 @@
-/*!Updated: 16-05-2014, 12:26:13 PM */
+/*!Updated: 19-05-2014, 11:20:49 AM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -3209,11 +3209,17 @@ if (typeof define !== 'undefined' && define.amd) {
         c = $(this);
         if (c.hasClass("active")) {
           c.removeClass("active").attr("title", "Show image credits");
-          $('#image-credits-toggle').tooltipster('content', "Show image credits");
+          $("#image-credits-toggle").tooltipster("hide", function() {
+            this.tooltipster("content", "Show image credits");
+            return true;
+          });
           return $(".credits").fadeOut();
         } else {
           c.addClass("active").attr("title", "Hide image credits");
-          $('#image-credits-toggle').tooltipster('content', "Hide image credits");
+          $("#image-credits-toggle").tooltipster("hide", function() {
+            this.tooltipster("content", "Hide image credits");
+            return true;
+          });
           return $(".credits").fadeIn();
         }
       });
