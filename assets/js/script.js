@@ -1,4 +1,4 @@
-/*!Updated: 19-05-2014, 12:31:29 PM */
+/*!Updated: 19-05-2014, 3:02:13 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -3030,7 +3030,7 @@ if (typeof define !== 'undefined' && define.amd) {
     }
     eventsTitleLength = 100;
     getItemHTML = function(item) {
-      var ev_date, ev_day, ev_month, ev_year, event_title, itemHTML, parts;
+      var ev_date, ev_day, ev_month, ev_type, ev_year, event_title, itemHTML, parts;
       itemHTML = "";
       event_title = item.name;
       event_title = trimTitle(event_title, eventsTitleLength);
@@ -3040,7 +3040,8 @@ if (typeof define !== 'undefined' && define.amd) {
       ev_month = getMonthName(parts[1], "short");
       ev_day = parts[2];
       ev_date = ev_day + " " + ev_month + " " + ev_year;
-      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "<p class=\"date\">" + ev_date + "</p></a> </div> </a> </div> </li>";
+      ev_type = item.type.replace("_", " ");
+      return itemHTML += "<li> <div class=\"single-feed-container a\"> <a href=\"" + item.event_url + "\"> <div class=\"feed-image\"> <div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\"> <img src=\"" + item.image_url + "\"> </div> </div> <div class=\"title\"> <a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "<p class=\"date\">" + ev_date + ", " + ev_type + "</p></a> </div> </a> </div> </li>";
     };
     outputfeedHTML = function(feed_data) {
       var output;
@@ -3051,7 +3052,6 @@ if (typeof define !== 'undefined' && define.amd) {
         }
       });
       output += "</ul></div>";
-      console.log("the value of output variable is: " + output);
       $(".events-feed-" + feed_id).html(output);
     };
     $.ajax({
