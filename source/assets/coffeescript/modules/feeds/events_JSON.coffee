@@ -44,8 +44,14 @@
 
   	ev_day = parts[2]
 
+  	# re-order the date and save it as a string
   	ev_date = ev_day + " " + ev_month + " " + ev_year
 
+  	# replace "_" or "-" with " " for event type
+  	ev_type = item.type.replace("_", " ");
+
+
+  	# build HTML code for item and return itemHTML variable
   	return itemHTML += "
   							<li>
   								<div class=\"single-feed-container a\">
@@ -59,7 +65,7 @@
 
 											<div class=\"title\">
 												<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "
-												<p class=\"date\">" + ev_date + "</p></a>
+												<p class=\"date\">" + ev_date + ", " + ev_type + "</p></a>
 											</div>
 
 										</a>

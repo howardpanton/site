@@ -14,13 +14,25 @@
 		}
 	}
 
-	.single-feed-container .date {
+	.single-feed-container .date,
+	.single-feed-container .event-type  {
 		 @extend %Swiss721BT-Light;
 		 @include font-size(16);
-		 @include padding-leader(2);
+		 @include padding-leader(1);
+		 @include padding-trailer(0);
 		 @include gs-media(m) {
 				padding-left: 0;
 		 }
+	}
+
+	.single-feed-container .event-type  {
+		padding-top: 0;
+	}
+
+	// show hover state for links below the image when the image has been hovered over
+
+	.single-feed-container a:hover ~ .title a {
+		color: #757575;
 	}
 
 	.l-content & {
