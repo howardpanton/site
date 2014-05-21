@@ -402,6 +402,27 @@
         </div>
       </div>
     </div>
+    <script>
+      function injectScriptTag(script_path) {
+       var element = document.createElement("script");
+       element.src = script_path;
+       document.body.appendChild(element);
+      }
+      
+      function downloadJSAtOnload() {
+       injectScriptTag("http://use.resrc.it/");
+       injectScriptTag("http://artslondon.github.io/site/assets/js/script.js");
+      }
+      
+      
+      if (window.addEventListener)
+       window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+       window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+      
+      
+    </script>
     <footer class="college-footer row">
       <div class="footer-wrapper">
         <div class="footer-block left">
@@ -519,21 +540,6 @@
         </div>
       </footer>
       <div id="image-credits-toggle" title="show image credits" class="credits-btn"><a href="#" class="show-credits tooltip"><span class="icon-picture"></span></a></div>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-      <script src="http://use.resrc.it/"></script>
-      <script src="http://artslondon.github.io/site/assets/js/script.js"></script>
-      <script>
-        window.getEventsFeed(programme = "university-wide", type = "", feed_id = 1, count = 6)
-        
-      </script>
-      <script>
-        window.getEventsFeed(programme = "university-wide", type = "", feed_id = 2, count = 2)
-        
-      </script>
-      <script>
-        window.getEventsFeed(programme = "london college of communication", type = "", feed_id = 3, count = 6)
-        
-      </script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {
@@ -554,14 +560,14 @@
           document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
         }
         
-        $(document).ready(function($) {
-          $('.megamenu').megaMenuCompleteSet({
-            menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-            menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-            menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-            menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-          });
-        });
+        //- $(document).ready(function($) {
+        //- 		$('.megamenu').megaMenuCompleteSet({
+        //- 				menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+        //- 				menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+        //- 				menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+        //- 				menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+        //- 		});
+        //- });
       </script>
     </footer>
   </body>
