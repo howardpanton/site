@@ -1,4 +1,4 @@
-/*!Updated: 19-05-2014, 3:02:13 PM */
+/*!Updated: 20-05-2014, 4:38:56 PM */
 
 /*! Hammer.JS - v1.0.2 - 2013-02-27
  * http://eightmedia.github.com/hammer.js
@@ -3009,6 +3009,9 @@ if (typeof define !== 'undefined' && define.amd) {
 (function() {
   this.getEventsFeed = function(programme, type, feed_id, count) {
     var eventsTitleLength, getItemHTML, outputfeedHTML;
+    if (programme == null) {
+      programme = "University-wide";
+    }
     if (type == null) {
       type = "";
     }
@@ -3018,16 +3021,25 @@ if (typeof define !== 'undefined' && define.amd) {
     if (count == null) {
       count = 6;
     }
-    if (!type) {
-      type = "";
+    if (count === "") {
+      count = 6;
     } else {
-      type = "&eventtype=" + type;
+      count = parseInt(count, 10);
     }
-    if (!programme) {
-      programme = "";
-    } else {
+    if (!(programme === "")) {
       programme = "?programme=" + programme;
+    } else {
+      programme = "?programme=University-wide";
     }
+    if (!((type === "") || (type === "all"))) {
+      type = "&eventtype=" + type;
+    } else {
+      type = "";
+    }
+    console.log("Output for Feed ID: " + feed_id);
+    console.log("type is:" + type);
+    console.log("count is: " + count);
+    console.log("programme is: " + programme);
     eventsTitleLength = 100;
     getItemHTML = function(item) {
       var ev_date, ev_day, ev_month, ev_type, ev_year, event_title, itemHTML, parts;

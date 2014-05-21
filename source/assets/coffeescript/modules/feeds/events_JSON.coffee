@@ -6,18 +6,35 @@
 # #    -------------------------------------------------------------
 # #
 
-@getEventsFeed = (programme, type = "", feed_id = "", count = 6)->
+@getEventsFeed = (programme = "University-wide", type = "", feed_id = "", count = 6)->
 
-	# check if parameters have values, if not, set variable to empty
-	unless type
+	# set counter to 6 as default if blank parameter passed to the function
+	if (count is "")
+		count = 6
+	else
+		count = parseInt(count, 10)
+
+	# check if parameters have values, or if set to "all". If not, set variable to empty
+	unless (programme is "")
+  	programme = ("?programme=" + programme)
+  else
+  	#set to university wide by default
+  	programme = "?programme=University-wide"
+
+  # if (type is not "" and (type is not "all"))
+  unless ((type is "") or (type is "all"))
+  	type = ("&eventtype=" + type)
+  else
   	type = ""
-	else
-  	type = "&eventtype=" + type
 
-  unless programme
-  	programme = ""
-	else
-  	programme = "?programme=" + programme
+
+
+
+  console.log "Output for Feed ID: " + feed_id
+  console.log "type is:" + type
+  console.log "count is: " + count
+  console.log "programme is: " + programme
+
 
   #max number of characters for event title
   eventsTitleLength = 100
@@ -50,27 +67,26 @@
   	# replace "_" or "-" with " " for event type
   	ev_type = item.type.replace("_", " ");
 
-
   	# build HTML code for item and return itemHTML variable
   	return itemHTML += "
-  							<li>
-  								<div class=\"single-feed-container a\">
-										<a href=\"" + item.event_url + "\">
+				<li>
+					<div class=\"single-feed-container a\">
+						<a href=\"" + item.event_url + "\">
 
-											<div class=\"feed-image\">
-												<div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\">
-													<img src=\"" + item.image_url + "\">
-												</div>
-											</div>
+							<div class=\"feed-image\">
+								<div class=\"center-cropped\" style=\"background-image: url(" + item.image_url + ")\">
+									<img src=\"" + item.image_url + "\">
+								</div>
+							</div>
 
-											<div class=\"title\">
-												<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "
-												<p class=\"date\">" + ev_date + ", " + ev_type + "</p></a>
-											</div>
+							<div class=\"title\">
+								<a href=\"" + item.event_url + "\" tite=\"" + item.name + "\">" + event_title + "
+								<p class=\"date\">" + ev_date + ", " + ev_type + "</p></a>
+							</div>
 
-										</a>
-									</div>
-								</li>"
+						</a>
+					</div>
+				</li>"
 
 
 
