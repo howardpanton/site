@@ -76,12 +76,12 @@ footer.global-footer.row
 					li Page modified : Fri 7 Feb 2014 11:56:13
 					li Section id : 33986
 				//- end debug
-		.credits-btn
-			a.show-credits(href='#')
+		#image-credits-toggle.credits-btn(title='show image credits')
+			a.show-credits.tooltip(href='#')
 				span.icon-picture
 		//-Include js scripts
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
-		//-script to pull google maps
+
 		//-if (lt IE 9) & (!IEMobile)
 			script(src='http://s3-eu-west-1.amazonaws.com/arts-staging/assets/js/ie/ie-css-fix-gz.js')
 		script(src='http://use.resrc.it/')
@@ -93,9 +93,17 @@ footer.global-footer.row
 		//- script(type='text/javascript', src='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.js')
 		//-Mega Menu Plugins
 		//-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js')
-		//-script(src='http://localhost:9000arts.ac.uk/buildarts.ac.uk/build/assets/js/script.js')
-		script(src='http://localhost:9000/assets/js/script.js')
+		
+		script(src='{{site.url}}/assets/js/script.js')
 
+		script.
+			window.getEventsFeed(programme = "Chelsea College of Arts", type = "exhibition", feed_id = 1, count = 6)
+
+		script.
+			window.getEventsFeed(programme = "SEE", type = "", feed_id = 2, count = 6)
+
+		script.
+			window.getEventsFeed(programme = "", type = "all", feed_id = 3, count = 6)
 
 		script.
 				//- Creates associative array (object) of query params
