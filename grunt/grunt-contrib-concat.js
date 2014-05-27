@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
 
         jslibs: {
-            src: ['source/assets/js/plugins/classie.js','source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/megamenu.js'],
+            src: ['source/assets/js/plugins/classie.js', 'source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/megamenu.js', 'source/assets/js/plugins/tooltipster.js' ],
             dest: '.tmp/assets/js/compiled.plugins.js',
             nonull: true,
         },
