@@ -6,7 +6,7 @@
 #    -------------------------------------------------------------
 #
 
-@getNewsFeed = (college, feed_id) ->
+@getNewsFeed = (college, feed_id ) ->
 
 	feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&count=6&include=title,url,attachments"
 	blog_url = "http://blogs.arts.ac.uk/" + college
