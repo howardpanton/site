@@ -95,9 +95,10 @@ h1, .size-h1 {
 	}
 	.lcc & {
 		@extend %AlternateGothic !optional;
-		@include font-size(60);
+		@include font-size(46);
 		text-transform: uppercase;
-		word-spacing: -6px;
+		word-spacing: -3px;
+		letter-spacing: normal;
 	}
 
 	.lcf & {
@@ -108,7 +109,7 @@ h1, .size-h1 {
 }
 
 
-
+h2, h3, h4 { @extend %Swiss721BT-Bold; }
 
 h2, .size-h2 {
 	@include font-size(28);
@@ -116,8 +117,11 @@ h2, .size-h2 {
 	@include padding(26, 0, 12, 0);
 	@include margin(0);
 
-
-
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold !optional;
+		@include margin(26, 0 12 0);
+		border-top: 6px solid $ccw-blue;
+	}
 
 	.csm & {
 		font-family: 'Leviathan A', 'Leviathan B';
@@ -126,9 +130,12 @@ h2, .size-h2 {
 	}
 
 	.lcc & {
-		@include font-size(54);
-		border-top: 4px solid $black;
 		@extend %AlternateGothic !optional;
+		@include font-size(40);
+		@include line-height(38);
+		@include padding(16, 0, 12, 0);
+		@include margin(26, 0, 0, 0);
+		border-top: 3px solid $black;
 		text-transform: uppercase;
 		word-spacing: -6px;
 	}
@@ -142,40 +149,31 @@ h2, .size-h2 {
 }
 
 
-
-
-
-h2, h3, h4 {
-	@extend %Swiss721BT-Bold;
-}
-
-h2, h3 {
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-}
-
 h3, .size-h3 {
 	@include font-size(22);
 	@include line-height(28);
 	@include padding(16, 0, 10, 0);
 	@include margin(0);
 
-
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold !optional;
+		@include padding(12, 0, 12, 0);
+	}
 
 	.csm & {
 		@extend %BureauGrotBold !optional;
+
 	}
 
 	.lcc & {
-		@include font-size(42);
-		@include adjust-leading-to(7, 42px);
-		@extend %AlternateGothic !optional;
-		padding: rhythm(3, 36px) 0 rhythm(1, 42px) 0;
+		@include font-size(34);
+		@include line-height(30);
+		@include padding(12, 0, 12, 0);
+		@include margin(0);
 		text-transform: uppercase;
-		border-bottom: 4px solid $black;
-		margin-bottom: 18px;
-		word-spacing: -4px;
+		word-spacing: -3px;
+
+		a { border-bottom: none; }
 	}
 
 	.lcf & {
@@ -188,33 +186,13 @@ h3, .size-h3 {
 }
 
 
-h2 a, h3 a {
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-}
-
-.lcc h3 a { border-bottom: none; }
-
-
-
 h4, .size-h4 {
 	@include font-size(18);
 	@include line-height(24);
 	@include padding(12, 0, 0, 0);
 	@include margin(0);
 
-
-
-	.lcf & {
-		@extend %Swiss721BT-Black;
-		@include font-size(18);
-		@include line-height(24);
-		@include padding(12, 0, 0, 0);
-	}
-
 }
-
 
 h5 {
 	@include font-size(16);
@@ -223,7 +201,6 @@ h5 {
 h6 {
 	@include font-size(14);
 }
-
 
 
 
@@ -239,7 +216,6 @@ p {
 	@include margin(0);
 }
 
-
 // additional paragraph styles
 .leader {
 	@include font-size(20);
@@ -251,7 +227,6 @@ p {
 .last {
 	@include padding(12, 0, 30, 0);
 }
-
 
 .small {
 	@include font-size(14);
@@ -416,9 +391,6 @@ figcaption, .rsCaption, .caption {
 blockquote {
 	@extend %blockquote;
 }
-
-
-
 
 
 /*------------------------------------*\
