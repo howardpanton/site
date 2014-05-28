@@ -21,13 +21,19 @@
 // 		"globals/sprites";
 // actually - if you add !optional to the @extend directive, the styles are extended without having to duplicate all the above
 
+
+/*------------------------------------*\
+		BASE TYPE
+\*------------------------------------*/
+
+
 @include establish-baseline(16px);
 
 // Always show scrollbar to prevent jumps when content is expanded
 html {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	font-size: 16px;
+	font-size: $base-font-size;
 }
 
 // Set box-sizing rules to all elements
@@ -41,7 +47,10 @@ body {
 	overflow-x: hidden;
 }
 
-// GLOBAL LINK STYLING
+
+/*------------------------------------*\
+		GLOBAL LINK STYLING
+\*------------------------------------*/
 
 a {
 	// @extend %Swiss721BT-Roman;
@@ -65,7 +74,10 @@ a {
 }
 
 
-// GLOBAL HEADINGS STYLING
+/*------------------------------------*\
+		HEADINGS
+\*------------------------------------*/
+
 
 h1, .size-h1 {
 
@@ -98,8 +110,6 @@ h2, .size-h2 {
 	@include line-height(34);
 	@include padding(26, 0, 12, 0);
 	@include margin(0);
-
-	// padding: emCalc(26px) 0 emCalc(12px);
 
 	.csm & {
 		font-family: 'Leviathan A', 'Leviathan B';
@@ -154,8 +164,6 @@ h3, .size-h3 {
 
 
 
-
-
 h2 a, h3 a {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold !optional;
@@ -175,10 +183,6 @@ h4, .size-h4 {
 }
 
 
-
-
-
-
 h5 {
 	@include font-size(16);
 }
@@ -187,48 +191,49 @@ h6 {
 	@include font-size(14);
 }
 
-p {
-	@include font-size(16);
-	line-height: emCalc(24px);
 
-	padding-bottom: rhythm(3, 16px);
-}
 
-nav ul {
-	margin-left: 0;
-	list-style-type: none;
-}
 
-ul, ol, dl {
-	margin-bottom: rhythm(3, 16px);
-	li {
-		@include font-size(16);
-		@include adjust-leading-to(4, 16px);
-		padding-bottom: rhythm(2, 16px);
-	}
-}
-
-ul li ul, ol li ol, ol li ul, ul li ol {
-	padding-top: rhythm(2, 16px);
-	padding-bottom: 0;
-	margin-bottom: 0;
-	li {
-		padding-bottom: rhythm(2, 16px);
-	}
-}
-
+/*------------------------------------*\
+		DEFAULT PARAGRAPH STYLES
+\*------------------------------------*/
 
 p {
-	@include font-size(16);
-	line-height: emCalc(24px);
-	padding: emCalc(24px) 0 12px 0;
-}
-
-.leader {
 	@extend %Swiss721BT-Light;
+	@include font-size(16);
+	@include line-height(24);
+	@include padding(12, 0, 18, 0);
+	@include margin(0);
+}
+
+
+// additional paragraph styles
+.leader {
 	@include font-size(20);
-	line-height: 30px;
-	padding: emCalc(24px) 0 emCalc(12px);
+	@include line-height(30);
+	@include padding(24, 0, 12, 0);
+	@include margin(0);
+}
+
+.last {
+	@include padding(12, 0, 30, 0);
+}
+
+
+.small {
+	@include font-size(14);
+	@include line-height(21);
+	@include padding(8, 0, 14, 0);
+	@include margin(0);
+}
+
+.para-uppercase {
+	@extend %Swiss721BT-Roman;
+	@include font-size(12);
+	@include line-height(18);
+	@include padding(8, 0, 14, 0);
+	@include margin(0);
+	text-transform: uppercase;
 }
 
 .l-content {
@@ -241,31 +246,18 @@ p {
 	}
 }
 
+
+/*------------------------------------*\
+		ASIDES
+\*------------------------------------*/
+
 aside p, aside li {
 	@include font-size(14);
+	@include line-height(21);
 }
 
-ol {
-	margin-left: rhythm(5, 16px);
-	list-style-type: decimal-leading-zero;
-	li {
 
-	}
-}
-
-@include gs-media (m,min-max) {
-	.l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
-		padding-left: 12px;
-		padding-right: 12px;
-	}
-	.block {
-		ul, ol {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-	}
-}
-
+// PRESENTATIONAL TEXT STYLES
 
 strong, b,{
 	@extend %Swiss721BT-Bold;
@@ -282,17 +274,14 @@ code {
 	padding: rhythm(1, 12px);
 }
 
-dl {
-	@include adjust-leading-to(4, 16px);
-	padding-bottom: rhythm(1, 16px);
-	dt {
-		@extend %Swiss721BT-Bold;
-	}
-	dd {
-		padding-bottom: rhythm(2, 16px);
-		padding-left: rhythm(4, 16px);
-	}
+hr {
+	clear: both;
 }
+
+
+
+
+// TABLES
 
 table {
 	width: 100%;
@@ -325,9 +314,11 @@ table {
 	}
 }
 
+
+// TYPE FOR IMAGES
+
 figure {
 	position: relative; // for credits
-	// margin-bottom: rhythm(3, 14px);
 	line-height: 0;
 	a {
 		@extend %Swiss721BT-Light;
@@ -361,6 +352,9 @@ figcaption, .rsCaption, .caption {
 
 }
 
+
+// BLOCKQUOTES
+
 %blockquote {
 	position: relative;
 	span {
@@ -384,9 +378,74 @@ blockquote {
 	@extend %blockquote;
 }
 
-hr {
-	clear: both;
+
+
+
+
+// LIST STYLES
+
+nav ul {
+	margin-left: 0;
+	list-style-type: none;
 }
+
+ul, ol, dl {
+	margin-bottom: rhythm(3, 16px);
+	li {
+		@include font-size(16);
+		@include adjust-leading-to(4, 16px);
+		padding-bottom: rhythm(2, 16px);
+	}
+}
+
+ul li ul, ol li ol, ol li ul, ul li ol {
+	padding-top: rhythm(2, 16px);
+	padding-bottom: 0;
+	margin-bottom: 0;
+	li {
+		padding-bottom: rhythm(2, 16px);
+	}
+}
+
+ol {
+	margin-left: rhythm(5, 16px);
+	list-style-type: decimal-leading-zero;
+	li {
+
+	}
+}
+
+dl {
+	@include adjust-leading-to(4, 16px);
+	padding-bottom: rhythm(1, 16px);
+	dt {
+		@extend %Swiss721BT-Bold;
+	}
+	dd {
+		padding-bottom: rhythm(2, 16px);
+		padding-left: rhythm(4, 16px);
+	}
+}
+
+@include gs-media (m,min-max) {
+	.l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.block {
+		ul, ol {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+}
+
+
+
+
+
+
+
 
 // LCF Variants
 
