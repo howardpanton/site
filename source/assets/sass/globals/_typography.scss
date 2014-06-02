@@ -107,7 +107,6 @@ h1, .size-h1, .header-panel h1 {
 
 		.lcf & {
 			@extend %Swiss721BT-Black;
-
 			text-transform: uppercase;
 		}
 
@@ -125,7 +124,7 @@ h2, .size-h2 {
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold !optional;
 		@include margin(26, 0, 0, 0);
-		@include padding(12, 0, 0, 0);
+		@include padding(12, 0, 12, 0);
 	}
 
 	.camberwell & { border-top: 6px solid $ccw-blue; }
@@ -168,7 +167,6 @@ h3, .size-h3 {
 
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold !optional;
-		@include padding(12, 0, 12, 0);
 	}
 
 	.csm & {
@@ -179,7 +177,6 @@ h3, .size-h3 {
 		@extend %AlternateGothic !optional;
 		@include font-size(34);
 		@include line-height(30);
-		@include padding(12, 0, 12, 0);
 		@include margin(0);
 		text-transform: uppercase;
 		word-spacing: -3px;
@@ -191,7 +188,6 @@ h3, .size-h3 {
 		@extend %Swiss721BT-Black;
 		@include font-size(22);
 		@include line-height(28);
-		@include padding(12, 0, 12, 0);
 		letter-spacing: 1px;
 	}
 }
