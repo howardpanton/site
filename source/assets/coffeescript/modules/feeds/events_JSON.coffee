@@ -16,59 +16,59 @@
 
 	# check if parameters have values, or if set to "all". If not, set variable to empty
 	unless (programme is "")
-  	programme = ("?programme=" + programme)
-  else
-  	#set to university wide by default
-  	programme = "?programme=University-wide"
+		programme = ("?programme=" + programme)
+	else
+		#set to university wide by default
+		programme = "?programme=University-wide"
 
-  # if (type is not "" and (type is not "all"))
-  unless ((type is "") or (type is "all"))
-  	type = ("&eventtype=" + type)
-  else
-  	type = ""
-
-
+	# if (type is not "" and (type is not "all"))
+	unless ((type is "") or (type is "all"))
+		type = ("&eventtype=" + type)
+	else
+		type = ""
 
 
-  console.log "Output for Feed ID: " + feed_id
-  console.log "type is:" + type
-  console.log "count is: " + count
-  console.log "programme is: " + programme
+
+	# uncomment these lines to debug the feed in the console
+	# console.log "Output for Feed ID: " + feed_id
+	# console.log "type is:" + type
+	# console.log "count is: " + count
+	# console.log "programme is: " + programme
 
 
-  #max number of characters for event title
-  eventsTitleLength = 100
+	#max number of characters for event title
+	eventsTitleLength = 100
 
-  # get HTML for one feed item
-  getItemHTML = (item) ->
+	# get HTML for one feed item
+	getItemHTML = (item) ->
 
-  	itemHTML = ""
+		itemHTML = ""
 
-  	event_title = item.name
+		event_title = item.name
 
-  	# trim title to max 100characters
-  	event_title = trimTitle(event_title, eventsTitleLength)
+		# trim title to max 100characters
+		event_title = trimTitle(event_title, eventsTitleLength)
 
-  	#format the date
-  	ev_date = item.startdate
+		#format the date
+		ev_date = item.startdate
 
-  	parts = ev_date.split("-", 3)
+		parts = ev_date.split("-", 3)
 
-  	ev_year = parts[0]
+		ev_year = parts[0]
 
-  	# get english month name from date
-  	ev_month = getMonthName(parts[1], "short")
+		# get english month name from date
+		ev_month = getMonthName(parts[1], "short")
 
-  	ev_day = parts[2]
+		ev_day = parts[2]
 
-  	# re-order the date and save it as a string
-  	ev_date = ev_day + " " + ev_month + " " + ev_year
+		# re-order the date and save it as a string
+		ev_date = ev_day + " " + ev_month + " " + ev_year
 
-  	# replace "_" or "-" with " " for event type
-  	ev_type = item.type.replace("_", " ");
+		# replace "_" or "-" with " " for event type
+		ev_type = item.type.replace("_", " ");
 
-  	# build HTML code for item and return itemHTML variable
-  	return itemHTML += "
+		# build HTML code for item and return itemHTML variable
+		return itemHTML += "
 				<li>
 					<div class=\"single-feed-container a\">
 						<a href=\"" + item.event_url + "\">
@@ -90,7 +90,7 @@
 
 
 
-  # build html for feed component
+	# build html for feed component
 	outputfeedHTML = (feed_data) ->
 		output = "<div class=\"feed-comp\">
 								<ul class=\"cf\">"
@@ -105,11 +105,11 @@
 
 
 	$.ajax
-  type: "GET"
-  url: "http://ual.force.com/eventsfeed" + programme  + type
-  dataType: "jsonp"
-  success: (feed_data) ->
-  	outputfeedHTML(feed_data)
+	type: "GET"
+	url: "http://ual.force.com/eventsfeed" + programme  + type
+	dataType: "jsonp"
+	success: (feed_data) ->
+		outputfeedHTML(feed_data)
 	return true
 
 

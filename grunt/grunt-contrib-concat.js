@@ -23,12 +23,12 @@ module.exports = function(grunt) {
             nonull: true,
         },
         hammerjs: {
-            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
+            src: ['source/assets/js/jquery/jquery.min.js','source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
             dest: '.tmp/assets/js/script.min.js',
             nonull: true,
         },
         hammerjsUnMin: {
-            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.js'],
+            src: ['source/assets/js/jquery/jquery.min.js','source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.js'],
             dest: '.tmp/assets/js/script.js',
             nonull: true,
         }
