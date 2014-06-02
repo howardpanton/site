@@ -79,35 +79,40 @@ a {
 \*------------------------------------*/
 
 
-h1, .size-h1 {
+h1, .size-h1, .header-panel h1 {
 
-	@include font-size(36);
-	@include line-height(42);
-	@include padding(8, 0, 18, 0);
-	@include margin(0);
+		@include font-size(36);
+		@include line-height(40);
+		@include padding(14, 0, 12, 0);
+		@include margin(0);
 
 
-	.csm & {
-		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-	}
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-	.lcc & {
-		@extend %AlternateGothic !optional;
-		@include font-size(46);
-		text-transform: uppercase;
-		word-spacing: -3px;
-		letter-spacing: normal;
-	}
+		.csm & {
+			font-family: 'Leviathan A', 'Leviathan B';
+			font-weight: 800;
+			font-style: italic;
 
-	.lcf & {
-		@extend %Swiss721BT-Black;
-		text-transform: uppercase;
-	}
+		}
+		.camberwell &, .chelsea &, .wimbledon & {
+			@extend %BrandonText-Bold !optional;
+		}
+
+		.lcc & {
+			@extend %AlternateGothic !optional;
+			@include font-size(46);
+			text-transform: uppercase;
+			word-spacing: -3px;
+			letter-spacing: normal;
+		}
+
+		.lcf & {
+			@extend %Swiss721BT-Black;
+
+			text-transform: uppercase;
+		}
+
 
 }
-
 
 h2, h3, h4 { @extend %Swiss721BT-Bold; }
 
@@ -119,9 +124,15 @@ h2, .size-h2 {
 
 	.camberwell &, .chelsea &, .wimbledon & {
 		@extend %BrandonText-Bold !optional;
-		@include margin(26, 0 12 0);
-		border-top: 6px solid $ccw-blue;
+		@include margin(26, 0, 12, 0);
+		@include padding(12, 0, 12, 0);
 	}
+
+	.camberwell & { border-top: 6px solid $ccw-blue; }
+
+	.chelsea & { border-top: 6px solid $ccw-salmon; }
+
+	.wimbledon & { border-top: 6px solid $ccw-green; }
 
 	.csm & {
 		font-family: 'Leviathan A', 'Leviathan B';
@@ -162,10 +173,10 @@ h3, .size-h3 {
 
 	.csm & {
 		@extend %BureauGrotBold !optional;
-
 	}
 
 	.lcc & {
+		@extend %AlternateGothic !optional;
 		@include font-size(34);
 		@include line-height(30);
 		@include padding(12, 0, 12, 0);
@@ -191,6 +202,10 @@ h4, .size-h4 {
 	@include line-height(24);
 	@include padding(12, 0, 0, 0);
 	@include margin(0);
+
+	.camberwell &, .chelsea &, .wimbledon & {
+		@extend %BrandonText-Bold !optional;
+	}
 
 }
 
@@ -465,9 +480,7 @@ dl {
 	h1,h2,h2 a,h3,h3 a {
 		@extend %Swiss721BT-Black;
 	}
-	h1 {
-		@include font-size(48);
-	}
+
 	.search-results-list h3 a,
 	.accordion h3,
 	.dd-menu h3,
@@ -500,9 +513,6 @@ dl {
 	}
 	.box-text h3 a {
 		border-color: $white;
-	}
-	h2 {
-		letter-spacing: 4px;
 	}
 	.college-footer .size-h2 {
 		@include font-size(24);
