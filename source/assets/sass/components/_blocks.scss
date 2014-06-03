@@ -281,7 +281,7 @@
 
 // fix for hiding list bullet points in two ups inside media blocks
 .l-content.block.__media.two-up ul li {
-	@include gs-media(m) {
+	@include gs-media(m,min-max) {
 		list-style-type: none;
 		padding-left: 0;
 		margin-left: 0;
