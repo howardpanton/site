@@ -17,6 +17,17 @@
 	@include gs-media(d) {
 		@include gs-span(d, 5, 12, (5, 16));
 	}
+
+	&.ual-black-bg a, &.dark-gray-bg a  {
+		color: $white;
+		border-bottom: 1px dotted $light-gray;
+
+		&:hover {
+			color: $light-gray;
+			border-bottom: 1px dotted $white;
+		}
+	}
+
 }
 
 .span4-boxout-aside {
