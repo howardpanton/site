@@ -1,0 +1,54 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "accordion-IE8";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	.row
+		.accordion
+			h2 Accordion Component
+			#st-accordion.st-accordion
+				ul.accordion-list
+					li.accordion-list-item
+						a.accordion-list-anchor(href='')
+							h3.size-h4 Fashion and Textiles
+							.st-arrow.icon.icon-plus-circled
+						.st-content(style='display: none;')
+							p
+								a(title='Home%20%BB%20www.arts.ac.uk%20%BB%20University%20of%20the%20Arts%20London%20%BB%20London%20College%20of%20Fashion%20%BB%20Courses%20%BB%20Study%20Abroad%20%BB%20Fashion%20Business%20Semester', href='/fashion/courses/study-abroad/fashion-business-semester/') Fashion Business - London College of Fashion
+							p
+								a(href='/csm/courses/study-abroad/free-elective-semester-programme-fesp/') Fashion Design - Central Saint Martins
+							p
+								a(href='/fashion/courses/study-abroad/fashion-design-semester/') Fashion Design - London College of Fashion
+					li.accordion-list-item
+						a.accordion-list-anchor(href='')
+							h3.size-h4 Fine Art
+							.st-arrow.icon.icon-plus-circled
+						.st-content(style='display: none;')
+							p
+								a(href='/csm/courses/study-abroad/free-elective-semester-programme-fesp/') Studio Art - Central Saint Martins
+					li.accordion-list-item
+						a.accordion-list-anchor(href='')
+							h3.size-h4 Graphic Design
+							.st-arrow.icon.icon-plus-circled
+						.st-content(style='display: none;')
+							p
+								a(href='/csm/courses/study-abroad/free-elective-semester-programme-fesp/') Graphic Design - Central Saint Martins
+							p
+								a(href='/chelsea/courses/study-abroad/semester-programmes/london-design-programme-graphic-design/') Graphic Design Communication - Chelsea College of Arts
+							p  
+					li.accordion-list-item
+						a.accordion-list-anchor(href='')
+							h3.size-h4 History and Theory of Art and Design
+							.st-arrow.icon.icon-plus-circled
+						.st-content(style='display: none;')
+							p
+								a(href='/camberwell/courses/study-abroad/semester-programmes/the-london-design-programme/') Contemporary Art and Design - Camberwell College of Arts
+					li.accordion-list-item
+						a.accordion-list-anchor(href='')
+							h3.size-h4 Interior and Spatial Design
+							.st-arrow.icon.icon-plus-circled
+						.st-content(style='display: none;')
+							p
+								a(href='/chelsea/courses/study-abroad/semester-programmes/london-design-programme-interior-design/') Interior and Spatial Design - Chelsea College of Arts
