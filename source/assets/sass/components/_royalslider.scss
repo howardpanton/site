@@ -846,7 +846,10 @@ img.rsImg {
 }
 
 // remove LCC image borders inside sliders, to fix bug in FF with royalSlider
-.lcc .royalSlider img { border: 0 !important; }
+.lcc .royalSlider img { border: 0 none !important; }
+
+.lcc .royalSlider figure {border: 0px none !important; }
+
 
 // fix for slider captions merging with content underneath the slider on mobile
 .slider-container {
@@ -855,6 +858,4 @@ img.rsImg {
 		margin-bottom: 6em;
 	}
 }
-
-
 
