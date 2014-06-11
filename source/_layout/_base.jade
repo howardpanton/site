@@ -15,7 +15,13 @@ html(class="no-js", lang="en")
 		- var Title = '';
 		- var Banner = '';
 		block vars
+		//- Google Tag Manager
+		script
+  		dataLayer = [];
+
 		body(class='#{bodyClass}')
+				include ../_includes/analytics/_universal-analytics
+
 				script.
 						Modernizr.Detectizr.detect({detectScreen:false});
 				include ../_includes/_layouts/_header
