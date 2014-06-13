@@ -16,11 +16,11 @@ html(class="no-js", lang="en")
 		- var Banner = '';
 		block vars
 		//- Google Tag Manager
-		script
-  		dataLayer = [];
+		script.
+			dataLayer = [];
 
 		body(class='#{bodyClass}')
-				include ../_includes/analytics/_universal-analytics
+				include ../_includes/analytics/_universal-analytics2.html
 
 				script.
 						Modernizr.Detectizr.detect({detectScreen:false});
