@@ -4,8 +4,99 @@
 		-------------------------------------------------------------
 ###
 
-# set global scope for markerIcons variable
+# mapping marker icons to file paths
 markerIcons = {}
+
+map = {}
+
+# array of all map markers
+allMapMarkers = [];
+
+#college Names/IDs JSON map college names to an ID - used for marker IDs on the map
+collegesJSON =
+	"colleges" : [
+
+		{
+			"id"			: "cam1",
+			"college" : "camberwell",
+			"name" 		: "Camberwell College of Arts"
+		},
+
+		{
+			"id"			: "chel1",
+			"college" : "chelsea",
+			"name" 		: "Chelsea College of Arts"
+		},
+
+		{
+			"id"			: "csm1",
+			"college" : "csm",
+			"name" 		: "Central Saint Martins"
+		},
+
+		{
+			"id"			: "lcc1",
+			"college" : "lcc",
+			"name" 		: "London College of Communication"
+		},
+
+		{
+			"id"			: "lcf1",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at Golden Lane"
+		},
+
+		{
+			"id"			: "lcf2",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at John Princess St"
+		},
+
+		{
+			"id"			: "lcf3",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at Lime Grove"
+		},
+
+
+		{
+			"id"			: "lcf4",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at Curtain Rd"
+		},
+
+		{
+			"id"			: "lcf5",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at High Holborn"
+		},
+
+		{
+			"id"			:	"lcf6",
+			"college" : "lcf",
+			"name" 		: "London College of Fashion at Mare St"
+		},
+
+		{
+			"id"			: "wim1",
+			"college" : "wimbledon",
+			"name" 		: "Wimbledon College of Arts"
+		}
+	]
+
+
+# returns marker id for string name of college from t4 marker component
+@getMarkerId = (t4markerName) ->
+	markerObj = getObjects(collegesJSON, 'name' ,t4markerName)
+	if (markerObj.length > 0)
+	  return markerObj[0].id
+
+# returns a college category for string name of college
+@getMarkerCat = (t4markerName) ->
+	markerObj = getObjects(collegesJSON, 'name' ,t4markerName)
+	if (markerObj.length > 0)
+	  return markerObj[0].college
+
 
 # addMarker - adds markers to google maps
 @addMarker = (data, map, infoWindow) ->
@@ -20,17 +111,25 @@ markerIcons = {}
 			icon: markerIcons[_markerIcon]
 	)
 
-	# need to set this to the same name as the checkbox IDs (use a array map to get the values?)
-	marker.set('id', 1)
+	# set the marker ID - get values from collegesJSON above based on marker name
+	markId = getMarkerId(data.name)
+	markerCat = getMarkerCat(data.name)
+	marker.set('id', markId)
+	marker.set('college', markerCat)
 
-	# build the window contents
+
+	# add marker to list of all markers
+	allMapMarkers.push(marker)
+
+	# build the infowindow contents (the popup that appears when marker is clicked)
 	contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
+	# set up click listener to show popup on click
 	google.maps.event.addListener marker, "click", ->
 			infoWindow.open map, marker
 			infoWindow.setContent contentString
-			console.log ("you clicked marker : " + )
 			return
 	return
+
 
 #setup custom map markers
 @setupMarkerIcons = (data) ->
@@ -122,8 +221,6 @@ markerIcons = {}
 		mapDiv = document.getElementById("map-canvas")
 		map = new google.maps.Map(mapDiv, mapOptions)
 
-
-
 		# create the InfoWindow object outside of addMarker() to ensure only one window is open at once
 		infoWindow = new google.maps.InfoWindow(
 				content: ""
@@ -133,11 +230,8 @@ markerIcons = {}
 		# function to close all infoWindows
 		closeAllInfoWindows = ->
 			"use strict"
-			console.log "closing infowindow"
 			infoWindow.close()
 			return true
-
-
 
 		# -- Show Transit & Bicycling Layers --
 		# These will display if options are ticked inside the map-component in t4
@@ -156,12 +250,17 @@ markerIcons = {}
 
 
 
+
+
+
 		# -- Show College Checkboxes below map --
+
+
 		# set up to show college checkboxes if option is ticked in t4
 		if _mapCanvas.data("college_checkboxes") is true
-			console.log("show college checkboxes");
+
 			# set up HTML for the checkboxes
-			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
+			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
 
 			# IE 8 check - don't show college toggle checkboxes on IE8
 			#              - show all colleges on map by default
@@ -172,104 +271,65 @@ markerIcons = {}
 
 			#  if old IE, then show all colleges on map by default
 			else
-  			# # show all college locations on map
-  			# markerCamberwell.setVisible true
-  			# markerCSM.setVisible true
-			  # markerChelsea.setVisible true
-			  # markerLCC.setVisible true
-			  # markerLCF1.setVisible true
-			  # markerLCF2.setVisible true
-			  # markerLCF3.setVisible true
-			  # markerLCF4.setVisible true
-			  # markerLCF5.setVisible true
-			  # markerLCF6.setVisible true
-			  # markerWimbledon.setVisible true
+
+
+
+			findMatchingMarkers = (college) ->
+			i = 0
+			_matches = []
+			while i < allMapMarkers.length
+			  if allMapMarkers[i].college is college
+			    console.log "found a match for :" + college
+			    _matches.push(allMapMarkers[i])
+			  i++
+
+			return _matches
+
+
+			toggleColleges = (colleges, setvisible) ->
+				i = 0
+
+				while i < colleges.length
+				  if (setvisible)
+
+				    colleges[i].setMap(map)
+				  else
+				  	colleges[i].setMap(null)
+				  i++
+
 
 			# click handler for the college checkboxes
 			$(".college_filters :checkbox").click ->
-				console.log "checkbox clicked"
+				$this = $(this)
+
 				# hide all open tooltips
 				closeAllInfoWindows()
-				$this = $(this)
+
 				chkbox_id = $this.attr("id")
-				console.log "you clicked the " + chkbox_id + " checkbox"
+
+				#find all map markers that match the college checkbox clicked
+				_colleges_to_toggle = findMatchingMarkers($this.data("college"))
+
+				# toggle marker visibility
 				if $this.is(":checked")
-					switch chkbox_id
-						when "chk_camb"
-							markerCamberwell.setVisible true
-							camberwellPopup.open map, markerCamberwell
-						when "chk_csm"
-							markerCSM.setVisible true
-							csmPopup.open map, markerCSM
-						when "chk_chelsea"
-							markerChelsea.setVisible true
-							chelseaPopup.open map, markerChelsea
-						when "chk_LCC"
-							markerLCC.setVisible true
-							lccPopup.open map, markerLCC
-						when "chk_LCF"
-							markerLCF1.setVisible true
-							markerLCF2.setVisible true
-							markerLCF3.setVisible true
-							markerLCF4.setVisible true
-							markerLCF5.setVisible true
-							markerLCF6.setVisible true
-						when "chk_wimb"
-							markerWimbledon.setVisible true
-							wimbPopup.open map, markerWimbledon
-						else
+					toggleColleges(_colleges_to_toggle, true)
 				else
-					switch chkbox_id
-						when "chk_camb"
-							markerCamberwell.setVisible false
-						when "chk_csm"
-							markerCSM.setVisible false
-						when "chk_chelsea"
-							markerChelsea.setVisible false
-						when "chk_LCC"
-							markerLCC.setVisible false
-						when "chk_LCF"
-							markerLCF1.setVisible false
-							markerLCF2.setVisible false
-							markerLCF3.setVisible false
-							markerLCF4.setVisible false
-							markerLCF5.setVisible false
-							markerLCF6.setVisible false
-						when "chk_wimb"
-							markerWimbledon.setVisible false
-						else
+					toggleColleges(_colleges_to_toggle, false)
 
 
 
-
-
-
-
-
-
-
-		# TO DO:
-		# Enhancement: Add Markers to the map from external JSON data
-		# $.getJSON "http://d27lwoqz7s24cy.cloudfront.net/assets/js/json/ual-map-markers.json?callback=?", (data) ->
-		# $.getJSON "http://localhost:9000/prototypes/accomodation-map/markers.json?callback=?", (data) ->
-		# 	alert "testing"
-		# 	map_markers_json = data
-		# 	console.log data[0]
-		# 	# define custom map markers
-		# 	setupMarkerIcons(map_markers_json)
-		# 	return
 
 		# get markers from json object (currently outputted by t4 component from the content layout)
 		setupMarkerIcons(map_markers_json)
 
 
-		# loop through array of marker data
+		# loop through array of marker data to add markers to the map
 		for i of maps_json
 			addMarker maps_json[i], map, infoWindow
 		return
+
+
 # loadMap
-
-
 
 # inject <script> tag into the page to load the google map on the page
 @loadMapsScript = ->
