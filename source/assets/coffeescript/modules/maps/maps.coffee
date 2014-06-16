@@ -201,7 +201,6 @@ collegesJSON =
 
 # loadMap - initializes map with settings from JSON and from classnames on the map-canvas element
 @loadMap = ->
-
 		gJson = []
 
 		# create map as per mapConfig object properties set in view
@@ -227,11 +226,7 @@ collegesJSON =
 				maxWidth: 400
 		)
 
-		# function to close all infoWindows
-		closeAllInfoWindows = ->
-			"use strict"
-			infoWindow.close()
-			return true
+
 
 		# -- Show Transit & Bicycling Layers --
 		# These will display if options are ticked inside the map-component in t4
@@ -248,6 +243,12 @@ collegesJSON =
 
 
 
+		# get markers from json object (currently outputted by t4 component from the content layout)
+		setupMarkerIcons(map_markers_json)
+
+		# loop through array of marker data to add markers to the map
+		for i of maps_json
+			addMarker maps_json[i], map, infoWindow
 
 
 
@@ -260,9 +261,9 @@ collegesJSON =
 		if _mapCanvas.data("college_checkboxes") is true
 
 			# set up HTML for the checkboxes
-			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
+			# checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
 
-			# IE 8 check - don't show college toggle checkboxes on IE8
+			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<ul>" + "<li>" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "</li>" + "<li>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "</li>" + "<li>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "</li>" + "<li>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</li>" + "</ul>" + "</div>" + "</div>"# IE 8 check - don't show college toggle checkboxes on IE8
 			#              - show all colleges on map by default
 
 			# add checkboxes to page if not old version of IE
@@ -275,28 +276,33 @@ collegesJSON =
 
 
 			findMatchingMarkers = (college) ->
-			i = 0
-			_matches = []
-			while i < allMapMarkers.length
-			  if allMapMarkers[i].college is college
-			    console.log "found a match for :" + college
-			    _matches.push(allMapMarkers[i])
-			  i++
+				i = 0
+				_matches = []
+				while i < allMapMarkers.length
+				  if allMapMarkers[i].college is college
+				    _matches.push(allMapMarkers[i])
+				  i++
 
-			return _matches
+				return _matches
 
 
 			toggleColleges = (colleges, setvisible) ->
 				i = 0
 
 				while i < colleges.length
-				  if (setvisible)
 
+				  if (setvisible)
 				    colleges[i].setMap(map)
 				  else
 				  	colleges[i].setMap(null)
+
 				  i++
 
+			# function to close all infoWindows
+			closeAllInfoWindows = ->
+				"use strict"
+				infoWindow.close()
+				return true
 
 			# click handler for the college checkboxes
 			$(".college_filters :checkbox").click ->
@@ -319,14 +325,8 @@ collegesJSON =
 
 
 
-		# get markers from json object (currently outputted by t4 component from the content layout)
-		setupMarkerIcons(map_markers_json)
 
 
-		# loop through array of marker data to add markers to the map
-		for i of maps_json
-			addMarker maps_json[i], map, infoWindow
-		return
 
 
 # loadMap
