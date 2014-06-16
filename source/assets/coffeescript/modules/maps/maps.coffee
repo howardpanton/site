@@ -11,6 +11,7 @@ markerIcons = {}
 @addMarker = (data, map, infoWindow) ->
 	_markerIcon = data.marker
 	_markerIcon = "default_UAL" if _markerIcon is "" or not _markerIcon?
+
 	# Create the marker
 	marker = new google.maps.Marker(
 			position: new google.maps.LatLng(data.lat, data.lng)
@@ -19,14 +20,15 @@ markerIcons = {}
 			icon: markerIcons[_markerIcon]
 	)
 
-	# push the new marker objects into arrays
-	# gJson.push marker  if data is json[i]
+	# need to set this to the same name as the checkbox IDs (use a array map to get the values?)
+	marker.set('id', 1)
 
 	# build the window contents
 	contentString = "<h3>" + data.name + "</h3>" + "<p>" + data.content + "</p>"
 	google.maps.event.addListener marker, "click", ->
 			infoWindow.open map, marker
 			infoWindow.setContent contentString
+			console.log ("you clicked marker : " + )
 			return
 	return
 
@@ -128,6 +130,14 @@ markerIcons = {}
 				maxWidth: 400
 		)
 
+		# function to close all infoWindows
+		closeAllInfoWindows = ->
+			"use strict"
+			console.log "closing infowindow"
+			infoWindow.close()
+			return true
+
+
 
 		# -- Show Transit & Bicycling Layers --
 		# These will display if options are ticked inside the map-component in t4
@@ -141,6 +151,102 @@ markerIcons = {}
 		if _mapCanvas.data("bicycling-layer") is true
 			bikeLayer = new google.maps.BicyclingLayer()
 			bikeLayer.setMap map
+
+
+
+
+
+		# -- Show College Checkboxes below map --
+		# set up to show college checkboxes if option is ticked in t4
+		if _mapCanvas.data("college_checkboxes") is true
+			console.log("show college checkboxes");
+			# set up HTML for the checkboxes
+			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" type=\"checkbox\" name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
+
+			# IE 8 check - don't show college toggle checkboxes on IE8
+			#              - show all colleges on map by default
+
+			# add checkboxes to page if not old version of IE
+			unless $("html").hasClass("lt-ie9")
+				$(checkboxHTML).insertAfter ".row .google-map"
+
+			#  if old IE, then show all colleges on map by default
+			else
+  			# # show all college locations on map
+  			# markerCamberwell.setVisible true
+  			# markerCSM.setVisible true
+			  # markerChelsea.setVisible true
+			  # markerLCC.setVisible true
+			  # markerLCF1.setVisible true
+			  # markerLCF2.setVisible true
+			  # markerLCF3.setVisible true
+			  # markerLCF4.setVisible true
+			  # markerLCF5.setVisible true
+			  # markerLCF6.setVisible true
+			  # markerWimbledon.setVisible true
+
+			# click handler for the college checkboxes
+			$(".college_filters :checkbox").click ->
+				console.log "checkbox clicked"
+				# hide all open tooltips
+				closeAllInfoWindows()
+				$this = $(this)
+				chkbox_id = $this.attr("id")
+				console.log "you clicked the " + chkbox_id + " checkbox"
+				if $this.is(":checked")
+					switch chkbox_id
+						when "chk_camb"
+							markerCamberwell.setVisible true
+							camberwellPopup.open map, markerCamberwell
+						when "chk_csm"
+							markerCSM.setVisible true
+							csmPopup.open map, markerCSM
+						when "chk_chelsea"
+							markerChelsea.setVisible true
+							chelseaPopup.open map, markerChelsea
+						when "chk_LCC"
+							markerLCC.setVisible true
+							lccPopup.open map, markerLCC
+						when "chk_LCF"
+							markerLCF1.setVisible true
+							markerLCF2.setVisible true
+							markerLCF3.setVisible true
+							markerLCF4.setVisible true
+							markerLCF5.setVisible true
+							markerLCF6.setVisible true
+						when "chk_wimb"
+							markerWimbledon.setVisible true
+							wimbPopup.open map, markerWimbledon
+						else
+				else
+					switch chkbox_id
+						when "chk_camb"
+							markerCamberwell.setVisible false
+						when "chk_csm"
+							markerCSM.setVisible false
+						when "chk_chelsea"
+							markerChelsea.setVisible false
+						when "chk_LCC"
+							markerLCC.setVisible false
+						when "chk_LCF"
+							markerLCF1.setVisible false
+							markerLCF2.setVisible false
+							markerLCF3.setVisible false
+							markerLCF4.setVisible false
+							markerLCF5.setVisible false
+							markerLCF6.setVisible false
+						when "chk_wimb"
+							markerWimbledon.setVisible false
+						else
+
+
+
+
+
+
+
+
+
 
 		# TO DO:
 		# Enhancement: Add Markers to the map from external JSON data
