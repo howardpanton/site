@@ -19,12 +19,12 @@
              * Note we can set a sensible default for the center e.g. London,
              * which can be overridden if required
              */
+
             var mapConfig = {
                 zoom: 11,
                 initLat: 51.508515,
                 initLng: -0.125487201149,
             };
-
 
             /* custom map marker icons */
 
@@ -179,6 +179,7 @@
             </script>
             <div id="map-canvas" style="width:100%; height:100%" data-transit-layer="false" data-bicycling-layer="false" data-college_checkboxes="true">
             </div>
+
         </div>
         <!-- to remove -->
     </div>
@@ -188,4 +189,40 @@
 
     <!-- output link to view fullscreen map below the map -->
 
+</div>
+
+ <div class="row">
+  <div class="dd-menu siblings">
+	  <div class="js-dd-menu dd-menu-heading">
+	    <h3 class="dd-menu-title">Toggle Map Markers</h3>
+	    <div class="dd-menu-arrow"><span class="js-dd-menu-icon icon icon-down-open-big"></span></div>
+	  </div>
+	 <ul class="js-dd-menu-list">
+    <li>
+        <input id="chk_camb" data-college="camberwell" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_camb">Camberwell College of Arts</label>
+    </li>
+    <li>
+        <input id="chk_csm" data-college="csm" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_csm">Central Saint Martins</label>
+    </li>
+    <li>
+        <input id="chk_chelsea" data-college="chelsea" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_chelsea">Chelsea College of Arts</label>
+    </li>
+    <li>
+        <input id="chk_LCC" data-college="lcc" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_LCC">London College of Communication</label>
+    </li>
+    <li>
+        <input id="chk_LCF" data-college="lcf" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_LCF">London College of Fashion</label>
+    </li>
+    <li>
+        <input id="chk_wimb" data-college="wimbledon" type="checkbox" checked="" name="cc" class="before-label">
+        <label for="chk_wimb">Wimbledon College of Arts</label>
+    </li>
+</ul>
+
+	</div>
 </div>

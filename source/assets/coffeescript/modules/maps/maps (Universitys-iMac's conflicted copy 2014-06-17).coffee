@@ -149,6 +149,7 @@ collegesJSON =
 
 # create map options based on which device is viewing the page
 @generateMapOptions = (_device, initial_location) ->
+
 	mapOptions = ""
 
 	switch _device
@@ -197,9 +198,18 @@ collegesJSON =
 
 	return mapOptions
 
+# inject <script> tag into the page to load the google map on the page
+@loadMapsScript = ->
+		script = document.createElement("script")
+		script.type = "text/javascript"
+		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBg6p9uTJZjUi3vqZWn07sriYpr5zV3_jg&sensor=false&" + "callback=loadMap"
+		document.body.appendChild script
+		return
+
 
 # loadMap - initializes map with settings from JSON and from classnames on the map-canvas element
 @loadMap = ->
+
 		gJson = []
 
 		# create map as per mapConfig object properties set in view
@@ -251,32 +261,23 @@ collegesJSON =
 
 
 
-
-
 		# -- Show College Checkboxes below map --
-
 
 		# set up to show college checkboxes if option is ticked in t4
 		if _mapCanvas.data("college_checkboxes") is true
 
-			# set up default HTML for the checkboxes (tablet and desktop)
-			checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<ul>" + "<li>" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "</li>" + "<li>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "</li>" + "<li>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "</li>" + "<li>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</li>" + "</ul>" + "</div>" + "</div>"
+			# set up HTML for the checkboxes
+			# checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</div>" + "</div>"
 
-			# If on a touch device show dropdown for map markers
-			if $("html").hasClass("mobile")
-				checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<div class=\"dd-menu\">" + "<div class=\"js-dd-menu dd-menu-heading\">" + "<h3 class=\"dd-menu-title\">Toggle Map Markers</h3>" + "<div class=\"dd-menu-arrow\"><span class=\"js-dd-menu-icon icon icon-down-open-big\"></span></div>" + "</div>" + "<ul class=\"js-dd-menu-list\">" + "<li>" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "</li>" + "<li>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "</li>" + "<li>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "</li>" + "<li>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</li>" + "</ul>" + "</div>" + "</div>" + "</div>"
-
+		 	checkboxHTML = "<div class=\"row margin-bottom-5x\">" + "<div class=\"college_filters\">" + "<ul>" + "<li>" + "<input id=\"chk_camb\" data-college=\"camberwell\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_camb\">Camberwell College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_csm\" data-college=\"csm\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_csm\">Central Saint Martins</label>" + "</li>" + "<li>" + "<input id=\"chk_chelsea\" data-college=\"chelsea\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_chelsea\">Chelsea College of Arts</label>" + "</li>" + "<li>" + "<input id=\"chk_LCC\" data-college=\"lcc\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCC\">London College of Communication</label>" + "</li>" + "<li>" + "<input id=\"chk_LCF\" data-college=\"lcf\" type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_LCF\">London College of Fashion</label>" + "</li>" + "<li>" + "<input id=\"chk_wimb\" data-college=\"wimbledon\"  type=\"checkbox\" checked name=\"cc\" class=\"before-label\">" + "<label for=\"chk_wimb\">Wimbledon College of Arts</label>" + "</li>" + "</ul>" + "</div>" + "</div>"
 
 			# IE 8 check - don't show college toggle checkboxes on IE8
-
-			# show all colleges on map by default
+			#              - show all colleges on map by default
 
 			# add checkboxes to page if not old version of IE
 			unless $("html").hasClass("lt-ie9")
-				# inject HTML code into the page
 				$(checkboxHTML).insertAfter ".row .google-map"
-				# handle dropdowns if they have been added to the page
-				ualDropdownBtn()
+
 			#  if old IE, then show all colleges on map by default
 			else
 
@@ -329,20 +330,8 @@ collegesJSON =
 				else
 					toggleColleges(_colleges_to_toggle, false)
 
+	return true
 
 
 
-
-
-
-
-# loadMap
-
-# inject <script> tag into the page to load the google map on the page
-@loadMapsScript = ->
-		script = document.createElement("script")
-		script.type = "text/javascript"
-		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBg6p9uTJZjUi3vqZWn07sriYpr5zV3_jg&sensor=false&" + "callback=loadMap"
-		document.body.appendChild script
-		return
 
