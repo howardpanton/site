@@ -29,6 +29,22 @@
     <noscript>
       <link href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" rel="stylesheet">
     </noscript>
+<<<<<<< HEAD
+    <script>
+      var $buoop = {};
+      $buoop.ol = window.onload;
+      window.onload=function(){
+      try {if ($buoop.ol) console.log($buoop.ol); $buoop.ol();}catch (e) {}
+      var e = document.createElement("script");
+      e.setAttribute("type", "text/javascript");
+      e.setAttribute("src", "//browser-update.org/update.js");
+      document.body.appendChild(e);
+      }
+      
+      
+    </script>
+=======
+>>>>>>> FETCH_HEAD
   </head>
   <body class="lcc">
     <script>Modernizr.Detectizr.detect({detectScreen:false});</script>
@@ -405,6 +421,30 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <script>
+      function injectScriptTag(script_path) {
+       var element = document.createElement("script");
+       element.src = script_path;
+       document.body.appendChild(element);
+      }
+      
+      function downloadJSAtOnload() {
+       injectScriptTag("http://use.resrc.it/");
+       injectScriptTag("http://localhost:9000/assets/js/script.js");
+      }
+      
+      
+      if (window.addEventListener)
+       window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+       window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+      
+      
+    </script>
+=======
+>>>>>>> FETCH_HEAD
     <footer class="college-footer row">
       <div class="footer-wrapper">
         <div class="footer-block left">
@@ -554,6 +594,18 @@
           //- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
           document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
         }
+<<<<<<< HEAD
+        
+        //- $(document).ready(function($) {
+        //- 		$('.megamenu').megaMenuCompleteSet({
+        //- 				menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+        //- 				menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
+        //- 				menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
+        //- 				menu_responsive:1 // 1 = Responsive, 0 = Not responsive
+        //- 		});
+        //- });
+=======
+>>>>>>> FETCH_HEAD
       </script>
     </footer>
   </body>
