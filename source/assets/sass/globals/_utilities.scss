@@ -89,14 +89,14 @@
 
 .no-border-top {
   border-top: none !important;
-  
+
   &:hover {
     border: none;
   }
 }
 .no-border-bottom {
   border-bottom: 0;
-  
+
   &:hover {
     border: none;
   }
@@ -110,7 +110,7 @@
 }
 .no-border-left {
   border-left: 0;
-  
+
   &:hover {
     border: none;
   }
@@ -223,21 +223,15 @@
 }
 
 // Formatting
-.no-bullet {
+.no-bullet, .no-bullet li {
   list-style: none !important;
-  // margin: 0;
   padding: 0;
 }
 
-.no-bullet li {
-  list-style: none;
-  // margin: 0;
-  padding: 0;
-}
-// display inline - 
+// display inline -
 .display-inline {
   display: inline-block;
-  
+
   li {
     display: inline-block;
   }
@@ -270,7 +264,7 @@ a.img:hover { filter: grayscale(100%);
   padding-right: 0.75em;
 }
 
-// apply top padding with ryhthm 
+// apply top padding with ryhthm
 
 .pad-top-1x { @include padding-leader(1); }
 
@@ -317,7 +311,7 @@ a.img:hover { filter: grayscale(100%);
 
 .pad-left-2x { padding-left: emCalc(12px); }
 
-// apply margin with ryhthm 
+// apply margin with ryhthm
 
 .margin-top-1x { @include margin-leader(1); }
 
@@ -365,7 +359,7 @@ a.img:hover { filter: grayscale(100%);
 
 .clear-right { clear: right; }
 
-.clear-all, .clear-both { clear: both; }  
+.clear-all, .clear-both { clear: both; }
 
 
 // Accessible & invisible text
@@ -427,7 +421,7 @@ a.img:hover { filter: grayscale(100%);
 .group:after {
     content: "";
     display: table;
-} 
+}
 .group:after {
     clear: both;
 }
@@ -440,20 +434,20 @@ a.img:hover { filter: grayscale(100%);
 
 
 // Use clearfix if you need general clearfixing
-.clearfix { 
-  @include clearfix; 
+.clearfix {
+  @include clearfix;
 }
 
-.cf { 
-  zoom: 1; 
+.cf {
+  zoom: 1;
 }
 .cf:before,
-.cf:after { 
-  content: ""; 
-  display: table; 
+.cf:after {
+  content: "";
+  display: table;
 }
-.cf:after { 
-  clear: both; 
+.cf:after {
+  clear: both;
 }
 
 
@@ -484,15 +478,15 @@ a.img:hover { filter: grayscale(100%);
   width: 1px;
   position: absolute;
   overflow: hidden;
-  top: -10px; 
+  top: -10px;
 }
 
 
 
 .icon {
-  @extend %icon !optional; 
+  @extend %icon !optional;
 }
-.icon-social { 
-  @extend %icon-social !optional; 
+.icon-social {
+  @extend %icon-social !optional;
 }
 
