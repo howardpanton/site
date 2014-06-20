@@ -1,23 +1,24 @@
 extends ../../_layout/_base
 block vars
-	- var bodyClass = "ual";
+	- var bodyClass = "lcf";
 	- var Title = "Events Feed";
 	- var Sidebar = true;
 	- var Banner = true;
 block content
 		.row
-			.l-content-full-width
-				h2 events feed for London College of Fashion with 6 item
-				.events-feed-1
-				//- script.
-				//- 	window.getEventsFeed(programme = "university-wide", type = "Exhibition", feed_id = 1, count = 3)
-					//- window.getEventsFeed(programme = "university-wide", type = "", feed_id = 1, count = 3)
+			.l-content
+				h2 news feed for LCF 3 item
+				.news-feed(data-feed-id='4', data-news-college='fashion', data-item-count='3')
 		.row
 			.l-content-full-width
+				h2 events feed for LCF with 3 item, keyworded 'Jean Paul Gaultier'
+				.events-feed(data-feed-id='1', data-event-programme='London+College+of+Fashion', data-event-keyword='Jean+Paul+Gaultier', data-item-count='6', data-event-type='', data-news-college='')
+		.row
+			.l-content
 				h2 events feed for SEE 3 item
-				.events-feed-2
+				.events-feed(data-feed-id='2', data-event-programme='SEE', data-item-count='3', data-event-type='')
 		.row
 			.l-content-full-width
 				h2 events feed for london college of communication with 6 items
-				.events-feed-3
-					
+				.events-feed(data-feed-id='3', data-event-programme='London+College+of+Communication', data-item-count='5', data-event-type='')
+
