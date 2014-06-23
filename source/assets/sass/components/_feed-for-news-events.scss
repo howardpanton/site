@@ -90,7 +90,6 @@
 				}
 			}
 			li:nth-child(2) {
-				border: 1px solid $light-gray;
 				@include gs-span(t, 5, 7, (2, 7));
 				clear: none;
 			}
@@ -123,7 +122,7 @@
 				border: none;
 			}
 			li:nth-child(1), li:nth-child(2) {
-				min-height: 304px; // required in case item titles run onto 2 lines
+				min-height: 280px;
 				margin-bottom: 12px;
 				.title {
 						padding: 12px;
@@ -143,7 +142,7 @@
 				border: none;
 				border-bottom: 1px solid $light-gray;
 				padding: 12px;
-				min-height: 104px; // required in case item titles run onto 2 lines
+				min-height: 80px; // required in case item titles run onto 2 lines
 				.feed-image {
 					display: none;
 				}
@@ -164,37 +163,36 @@
 		@extend %Swiss721BT-Bold;
 		li {
 			clear: both;
-			border-top: 1px solid lightgray;
+			padding: 0;
+			margin: 0;
+			border-top: 1px solid $light-gray;
 			a {
 				border-bottom: none;
 				&:hover {
 					border-bottom: none;
 				}
 			}
-			@include gs-media(t, min-max) {
-				border-top: 1px solid lightgray;
-			}
 			@include gs-media(m, min-max) {
-				border-top: 1px solid $light-gray;
 				padding: 12px;
 				.feed-image {
 					display: none;
 				}
 			}
 		}
+		@include gs-media(m, min-max) {
+			border: none;
+			border-bottom: 1px solid $light-gray;
+		}
 		@include gs-media(t, min-max) {
 			border-right: 1px solid $light-gray;
 			border-bottom: 1px solid $light-gray;
 			border-left: 1px solid $light-gray;
 		}
-		@include gs-media(m, min-max) {
-			border: none;
-			border-bottom: 1px solid $light-gray;
-		}
 		border-right: 1px solid $light-gray;
 		border-bottom: 1px solid $light-gray;
 		border-left: 1px solid $light-gray;
 	}
+
 	.view-all {
 		@include gs-media(m, min-max) {
 			padding-left: 12px;
