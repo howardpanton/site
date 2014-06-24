@@ -6,44 +6,45 @@
 #    -------------------------------------------------------------
 #
 
-@getNewsFeed = (college, feed_id, count ) ->
+@getNewsFeed = (college, tag, category, feed_id, count ) ->
 
-	# set counter to 5 as default if blank parameter passed to the function
+	# set counter to 6 as default if blank parameter passed to the function
 	if (count is "")
-		count = 5
+		count = 6
 	else
 		count = parseInt(count, 10)
 
-	feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&count=" + count + "&include=title,url,attachments"
+	feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
 	blog_url = "http://blogs.arts.ac.uk/" + college
-	console.log(feed_url);
+
+	length = 60
 
 	$.getJSON feed_url, (data) ->
 
 		output = "<div class=\"feed-comp\">
 								<ul class=\"cf no-bullet\">"
 		$.each data.posts, (i, item) ->
+			if i < count
+				news_title = item.title
+				if news_title.length > length
+					short_title = trimTitle(news_title, length)
+				else
+					short_title = news_title
 
-			news = data.posts[i]
-			length = 60
-			title = news.title
-			if title.length > length
-				short_title = title.substring(0,length) + "..."
-			else
-				short_title = title
-
-			output += "
-			<li>
-				<div class=\"feed-image\">
-					<div class=\"center-cropped\" style=\"background-image: url(" + news.attachments[0].url + ")\">
-						<img src=\"" + news.attachments[0].url + "\">
+				output += '
+				<li>
+					<div class="feed-image">
+						<div class="center-cropped" style="background-image: url(' + item.attachments[0].url + ')">
+							<a href="' + item.url + '">
+								<img src="' + item.attachments[0].url + '">
+							</a>
+						</div>
 					</div>
-				</div>
 
-				<div class=\"title\">
-					<a href=\"" + news.url + "\" tite=\"" + news.title + "\">" + short_title + "</a>
-				</div>
-			</li>"
+					<div class="title">
+						<a href="' + item.url + '" title="' + item.title + '">' + short_title + '</a>
+					</div>
+				</li>'
 
 		output += "</ul>
 		<p class=\"view-all\"><a href=\"" + blog_url + "\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p></div>"
@@ -56,4 +57,4 @@ $(document).ready ->
 		if $(".news-feed").length > 0
 			$.each $(".news-feed"), ->
 				_this = $(this);
-				getNewsFeed(_this.data('news-college'), _this.data('feed-id'), _this.data('item-count'))
+				getNewsFeed(_this.data('news-college'), _this.data('news-tag'), _this.data('news-category'), _this.data('feed-id'), _this.data('item-count'))

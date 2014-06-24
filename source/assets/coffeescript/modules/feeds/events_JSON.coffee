@@ -41,7 +41,7 @@
 
 
 	#max number of characters for event title
-	eventsTitleLength = 100
+	length = 100
 
 	# get HTML for one feed item
 	getItemHTML = (item) ->
@@ -51,7 +51,8 @@
 		event_title = item.name
 
 		# trim title to max 100characters
-		event_title = trimTitle(event_title, eventsTitleLength)
+		# short_title = event_title.substring(0,length) + "..."
+		short_title = trimTitle(event_title, length)
 
 		#format the date
 		ev_date = item.startdate
@@ -85,7 +86,7 @@
 							</div>
 
 							<div class="title">
-								<a href="' + item.event_url + '" title="' + item.name + '">' + event_title + '
+								<a href="' + item.event_url + '" title="' + item.name + '">' + short_title + '
 									<p class="date">' + ev_date + ', ' + ev_type + '</p>
 								</a>
 							</div>
@@ -108,8 +109,6 @@
 		output += "</ul></div>"
 		$('.events-feed[data-feed-id="' + feed_id + '"]').html output
 		return
-
-	console.log("http://events.arts.ac.uk/EventsFeed" + programme + type + keyword + "&callback=?");
 
 	$.ajax
 		type: "GET"
