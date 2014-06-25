@@ -6,7 +6,7 @@
 #    -------------------------------------------------------------
 #
 
-@getNewsFeed = (college, tag, category, feed_id, count ) ->
+@getNewsFeed = (college, tag, category, feed_id, count, width ) ->
 
 	# set counter to 6 as default if blank parameter passed to the function
 	if (count is "")
@@ -18,6 +18,16 @@
 	blog_url = "http://blogs.arts.ac.uk/" + college
 
 	length = 60
+
+	# see events_JSON
+	if width is "content"
+		img_size = 250
+		img_width = 131
+		img_height = 100
+	else
+		img_size = 600
+		img_width = 456
+		img_height = 200
 
 	$.getJSON feed_url, (data) ->
 
@@ -34,9 +44,9 @@
 				output += '
 				<li>
 					<div class="feed-image">
-						<div class="center-cropped" style="background-image: url(' + item.attachments[0].url + ')">
+						<div class="center-cropped">
 							<a href="' + item.url + '">
-								<img src="' + item.attachments[0].url + '">
+								<img src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + item.attachments[0].url + '">
 							</a>
 						</div>
 					</div>
@@ -48,13 +58,13 @@
 
 		output += "</ul>
 		<p class=\"view-all\"><a href=\"" + blog_url + "\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p></div>"
-		$('.news-feed[data-feed-id="' + feed_id + '"]').html output
+		$('.news-feed[data-feed-id="' + feed_id + '"]').append output
 		return
 
 
 $(document).ready ->
-		# detect events feed component
+		# detect news feed component
 		if $(".news-feed").length > 0
-			$.each $(".news-feed"), ->
+			$(".news-feed").each ->
 				_this = $(this);
-				getNewsFeed(_this.data('news-college'), _this.data('news-tag'), _this.data('news-category'), _this.data('feed-id'), _this.data('item-count'))
+				getNewsFeed(_this.data('news-college'), _this.data('news-tag'), _this.data('news-category'), _this.data('feed-id'), _this.data('item-count'), _this.data('feed-width'))
