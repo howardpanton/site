@@ -91,7 +91,7 @@
 							<div class="feed-image">
 								<div class="center-cropped">
 									<a href="' + item.event_url + '">
-										<img src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + events_image_url + '">
+										<img class="resrc" src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + events_image_url + '">
 									</a>
 								</div>
 							</div>
@@ -129,7 +129,10 @@
 			outputfeedHTML(data)
 			return
 
+	# fire resrc.it after images have loaded
+	resrc.resrcAll()
 
+	return
 
 $(document).ready ->
 

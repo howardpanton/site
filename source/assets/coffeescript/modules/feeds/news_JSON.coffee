@@ -14,10 +14,14 @@
 	else
 		count = parseInt(count, 10)
 
-	feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
-	blog_url = "http://blogs.arts.ac.uk/" + college
+	if college is "university-wide"
+		feed_url = "http://newsevents.arts.ac.uk/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
+		blog_url = "http://newsevents.arts.ac.uk/"
+	else
+		feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
+		blog_url = "http://blogs.arts.ac.uk/" + college
 
-	length = 60
+	length = 100
 
 	# see events_JSON
 	if width is "content"
@@ -45,9 +49,13 @@
 				<li>
 					<div class="feed-image">
 						<div class="center-cropped">
-							<a href="' + item.url + '">
-								<img src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + item.attachments[0].url + '">
-							</a>
+							<a href="' + item.url + '">'
+
+				if item.attachments.length
+					output += '
+								<img class="resrc" src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + item.attachments[0].url + '" alt="' + item.attachments[0].caption + '">'
+
+				output+= '</a>
 						</div>
 					</div>
 
@@ -59,7 +67,13 @@
 		output += "</ul>
 		<p class=\"view-all\"><a href=\"" + blog_url + "\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p></div>"
 		$('.news-feed[data-feed-id="' + feed_id + '"]').append output
+
+		# fire resrc.it after images have loaded
+		resrc.resrcAll()
+
 		return
+
+
 
 
 $(document).ready ->
