@@ -1,0 +1,28 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "Feeds";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+
+		.row
+			.l-content
+				h2 Register your interest
+				form.with-box-shadow(action='https://cs7.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8', method='POST')
+					input(type='hidden', name='orgid', value='00DM00000014pGW')
+					input(type='hidden', name='retURL', value='http://www.arts.ac.uk/')
+					input(type='hidden', name='debug', value='1')
+					input(type='hidden', name='debugEmail', value='ualcrmsupport@arts.ac.uk')
+					label(for='name') Contact Name
+					input#name(maxlength='80', name='name', size='20', type='text')
+					br
+					label(for='email') Email
+					input#email(maxlength='80', name='email', size='20', type='text')
+					br
+					label(for='phone') Phone
+					input#phone(maxlength='40', name='phone', size='20', type='text')
+					br
+					input#external(type='hidden', name='external', value='1')
+					br
+					input(type='submit', name='submit')
