@@ -24,14 +24,14 @@
 	length = 100
 
 	# see events_JSON
-	if width is "content"
-		img_size = 250
-		img_width = 131
-		img_height = 100
-	else
-		img_size = 600
-		img_width = 456
-		img_height = 200
+	# if width is "content"
+	# 	img_size = 250
+	# 	img_width = 198
+	# 	img_height = 100
+	# else
+	# 	img_size = 600
+	# 	img_width = 456
+	# 	img_height = 200
 
 	$.getJSON feed_url, (data) ->
 
@@ -48,15 +48,9 @@
 				output += '
 				<li>
 					<div class="feed-image">
-						<div class="center-cropped">
-							<a href="' + item.url + '">'
-
-				if item.attachments.length
-					output += '
-								<img class="resrc" src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + item.attachments[0].url + '" alt="' + item.attachments[0].caption + '">'
-
-				output+= '</a>
-						</div>
+						<a href="' + item.url + '">
+							<span class="center-cropped resrc" style="background-image: url(http://app.resrc.it/s=w250/o=60/' + item.attachments[0].url + ');"></span>
+						</a>
 					</div>
 
 					<div class="title">

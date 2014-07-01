@@ -1,9 +1,14 @@
 .feed-comp {
-	// @include component-spacing-bottom;
+
+	@include component-spacing-bottom;
 
 	.center-cropped {
+		display: block;
 		width: 100%;
 		height: 100px;
+		background-position: top center;
+		background-size: cover;
+		background-repeat: no-repeat
 	}
 
 	.single-feed-container .date,
@@ -23,7 +28,7 @@
 	// show hover state for links below the image when the image has been hovered over
 
 	.single-feed-container a:hover ~ .title a {
-		color: #757575;
+		color: $aaa-gray;
 	}
 
 	.l-content & {
@@ -158,6 +163,8 @@
 			padding: 0;
 			margin: 0;
 			border-top: 1px solid $light-gray;
+			height: 100px;
+			overflow: hidden;
 			a {
 				border-bottom: none;
 				&:hover {
