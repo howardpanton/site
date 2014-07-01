@@ -5,6 +5,13 @@
 
 	@extend %mobile-padding;
 
+	@include gs-media (m,min-max) {
+		// I don't want these to inherit
+		figure {
+			padding-bottom: rhythm(3, 16px);
+		}
+	}
+
 	@include gs-media(t,min-max) {
 		@extend %t-all;
 		figure {
@@ -23,6 +30,10 @@
 		.text {
 			@include gs-span(d, 9, 16, (5,16));
 		}
+	}
+
+	.size-h4 {
+		padding-top: 2px;
 	}
 
 	.lcf .content-wrapper & {
