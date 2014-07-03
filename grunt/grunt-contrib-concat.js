@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
 
         jslibs: {
-            src: ['source/assets/js/plugins/classie.js','source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/megamenu.js'],
+            src: ['source/assets/js/plugins/classie.js', 'source/assets/js/plugins/fastclick.js', 'source/assets/js/plugins/jquery.review-1.0.0.js', 'source/assets/js/plugins/fitHeights.js', 'source/assets/js/plugins/megamenu.js', 'source/assets/js/plugins/tooltipster.js' ],
             dest: '.tmp/assets/js/compiled.plugins.js',
             nonull: true,
         },
@@ -23,12 +23,12 @@ module.exports = function(grunt) {
             nonull: true,
         },
         hammerjs: {
-            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
+            src: ['source/assets/js/jquery/jquery.min.js','source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.min.js'],
             dest: '.tmp/assets/js/script.min.js',
             nonull: true,
         },
         hammerjsUnMin: {
-            src: ['source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.js'],
+            src: ['source/assets/js/jquery/jquery.min.js','source/assets/js/plugins/hammer.js', '.tmp/assets/js/script.js'],
             dest: '.tmp/assets/js/script.js',
             nonull: true,
         }

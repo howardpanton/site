@@ -4,6 +4,16 @@
 
 
 module.exports = function(grunt) {
+
+		// get today's date
+		todaysDate = new Date();
+
+		// function to add days to a date
+		function addDaysToDate(date, daysToAdd) {
+      date.setDate(date.getDate() + daysToAdd);
+      return date;
+		}
+
     grunt.config('aws_s3', {
         options: {
             accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
@@ -20,7 +30,8 @@ module.exports = function(grunt) {
                 differential: true, // Only uploads the files that have changed
                 params: {
                     ContentEncoding: 'gzip',
-                    CacheControl: '30000000000'
+                    CacheControl: 'max-age=155520000, public',
+                    Expires: addDaysToDate(todaysDate, 1000)
                 }
             },
 
@@ -37,7 +48,8 @@ module.exports = function(grunt) {
                 differential: true, // Only uploads the files that have changed
                 params: {
                     ContentEncoding: 'gzip',
-                    CacheControl: '30000000000'
+                    CacheControl: 'max-age=155520000, public',
+                    Expires: addDaysToDate(todaysDate, 1000)
                 }
             },
 
