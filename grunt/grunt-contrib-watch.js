@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
         jade: {
             files: ['source/**/*.jade', '!source/**/_*.jade'],
-            tasks: ['newer:jade']
+            tasks: ['jade']
         },
         copy: {
             files: ['.tmp/assets/css/**/*.css'],
