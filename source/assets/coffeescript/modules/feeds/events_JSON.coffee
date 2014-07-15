@@ -16,10 +16,10 @@
 
 	# check if parameters have values, or if set to "all". If not, set variable to empty
 	unless (programme is "")
-		programme = ("?programme=" + programme)
+		programme = ("programme=" + programme)
 	else
 		#set to university wide by default
-		programme = "?programme=University-wide"
+		programme = "programme=University-wide"
 
 	# if (type is not "" and (type is not "all"))
 	unless ((type is "") or (type is "all"))
@@ -121,7 +121,7 @@
 
 	$.ajax
 		type: "GET"
-		url: "http://events.arts.ac.uk/EventsFeed" + programme + type + keyword + "&callback=?"
+		url: "http://events.arts.ac.uk/EventsFeed?" + programme + type + keyword + "&callback=?"
 		dataType: "jsonp"
 		success: (data) ->
 			outputfeedHTML(data)
