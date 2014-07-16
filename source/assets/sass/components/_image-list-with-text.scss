@@ -36,12 +36,23 @@
 		padding-top: 2px;
 	}
 
+	// LCF-specific overrides
 	.lcf .content-wrapper & {
-		h3 {
+		h2, h3 {
 			text-align: left;
+		}
+		h3 {
 			padding-top: 0;
 		}
 	}
+
+	.lcf.graduate-school .content-wrapper & {
+		h2 {
+			background: none;
+			margin-bottom: 0;
+		}
+	}
+
 }
 
 .image-list-with-text-content {
