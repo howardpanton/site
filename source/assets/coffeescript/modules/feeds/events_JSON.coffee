@@ -6,7 +6,10 @@
 # #    -------------------------------------------------------------
 # #
 
-@getEventsFeed = (programme = "University-wide", type = "", feed_id = "", count = 6, keyword = "", width)->
+@getEventsFeed = (programme = "University-wide", type = "", feed_id = "", count = 6, keyword = "", width, empty_message)->
+
+	# set the View All URL early, before the vars are adjusted
+	view_all_url = "http://events.arts.ac.uk/eventpage?pg=1&programmes=" + programme + "&types=" + type + "&keyword=" + keyword
 
 	# set counter to 6 as default if blank parameter passed to the function
 	if (count is "")
@@ -38,16 +41,6 @@
 	# console.log "type is:" + type
 	# console.log "count is: " + count
 	# console.log "programme is: " + programme
-
-	# see news_JSON
-	# if width is "content"
-	# 	img_size = 250
-	# 	img_width = 198
-	# 	img_height = 100
-	# else
-	# 	img_size = 600
-	# 	img_width = 456
-	# 	img_height = 200
 
 	#max number of characters for event title
 	length = 100
@@ -89,13 +82,13 @@
 					<div class="single-feed-container">
 
 							<div class="feed-image">
-								<a href="' + item.event_url + '">
+								<a href="' + item.event_url + '&book=true">
 									<span class="center-cropped resrc" style="background-image: url(http://app.resrc.it/s=w250/o=60/' + events_image_url + ');"></span>
 								</a>
 							</div>
 
 							<div class="title">
-								<a href="' + item.event_url + '" title="' + item.name + '">' + short_title + '
+								<a href="' + item.event_url + '&book=true" title="' + item.name + '">' + short_title + '
 									<p class="date">' + ev_date + ', ' + ev_type + '</p>
 								</a>
 							</div>
@@ -103,34 +96,33 @@
 					</div>
 				</li>'
 
+	feed_url = "http://events.arts.ac.uk/EventsFeed?" + programme + type + keyword + "&callback=?"
 
+	$.getJSON feed_url, (data) ->
 
-	# build html for feed component
-	outputfeedHTML = (data) ->
+		if data.length == 0
+			output = '<p>' + empty_message + '</p>'
+		else
+			output = '
+			<div class=\"feed-comp\">
+				<ul class=\"cf no-bullet\">'
 
-		output = "<div class=\"feed-comp\">
-								<ul class=\"cf no-bullet\">"
+			$.each data, (i, item) ->
+				if i < count
+					output += getItemHTML(item)
 
-		$.each data, (i, item) ->
-			if i < count
-				output += getItemHTML(item)
+			output += '
+				</ul>
+				<p class=\"view-all\"><a href=\"' + view_all_url + '\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p>
+			</div>'
 
-		output += "</ul></div>"
 		$('.events-feed[data-feed-id="' + feed_id + '"]').html output
+
+		# fire resrc.it after images have loaded
+		resrc.resrcAll()
+
 		return
 
-	$.ajax
-		type: "GET"
-		url: "http://events.arts.ac.uk/EventsFeed?" + programme + type + keyword + "&callback=?"
-		dataType: "jsonp"
-		success: (data) ->
-			outputfeedHTML(data)
-			return
-
-	# fire resrc.it after images have loaded
-	resrc.resrcAll()
-
-	return
 
 $(document).ready ->
 
@@ -138,7 +130,7 @@ $(document).ready ->
 	if $(".events-feed").length > 0
 		$.each $(".events-feed"), ->
 			_this = $(this);
-			getEventsFeed(_this.data('event-programme'), _this.data('event-type'), _this.data('feed-id'), _this.data('item-count'), _this.data('event-keyword'), _this.data('feed-width'));
+			getEventsFeed(_this.data('event-programme'), _this.data('event-type'), _this.data('feed-id'), _this.data('item-count'), _this.data('event-keyword'), _this.data('feed-width'), _this.data('empty-message'));
 
 
 
