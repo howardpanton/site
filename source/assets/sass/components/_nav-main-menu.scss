@@ -30,7 +30,6 @@
   margin:0;
   @include font-size(14);
   @include gs-media(d) {
-    // margin-left: -12px;  // this is to align the first menu item with the main UAL logo on desktop
   }
 }
 
@@ -426,7 +425,6 @@
       width:100%;
       text-align:left;
       padding-bottom:0;
-      // border-bottom: 1px solid $black;
 
       @include gs-media(d) {
         list-style:none;
@@ -435,10 +433,10 @@
         font-weight: 300;
       }
 
-      &:hover {
-				@include gs-media(d) {
-      		background-color: $dark-gray; }
-      	}
+    //   &:hover, &:focus {
+				// @include gs-media(d) {
+    //   		background-color: $dark-gray; }
+    //   	}
 
       > a {
         display: block;
@@ -446,19 +444,16 @@
         color: white;
         @include font-size(16);
         @extend %Swiss721BT-Light;
-        // padding-left: 0.75em;
-        // padding-right: 0.75em;
         padding: 6px 12px;
         line-height: 36px;
 
         @include gs-media(d) {
-          // @extend %Swiss721BT-Roman;
           @include font-size(13);
           line-height: 24px;
           padding: 6px 12px;
         }
         border-bottom:none;
-        &:hover {
+        &:hover, &:focus {
           @include gs-media(d) { background-color : $dark-gray; }
         }
       }
