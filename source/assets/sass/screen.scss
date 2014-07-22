@@ -72,6 +72,8 @@
 				"globals/logos",
 				"globals/logos.fallback",
 				"globals/forms",
+				"globals/codeblocks",
+
 				"globals/utilities";
 
 
@@ -89,18 +91,16 @@
 \*------------------------------------*/
 
 
-// Course Finder
+// Search
 @import "components/sidebar-search-filters",
-				"components/search-results";
+				"components/search-results",
+				"components/search-buttons",
+				"components/expandable-search-input";
 
 // Navigation
 @import "components/nav-main-menu",
 				"components/college-link-menu",
 				"components/college-footer";
-
-// Search
-@import "components/search-buttons",
-				"components/expandable-search-input";
 
 // Breadcrumbs
 @import "components/breadcrumbs";
@@ -157,8 +157,6 @@
 				"components/rss-feed",
 				"components/feed-for-news-events";
 
-
-
 // Short Courses
 @import "components/short-courses",
 		"components/filtrify",
@@ -189,7 +187,8 @@
 		$pages specific
 \*------------------------------------*/
 
-@import "pages/industry-links";
+@import "pages/industry-links",
+				"pages/sitemap";
 
 /*------------------------------------*\
 		$utilities

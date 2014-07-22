@@ -14,20 +14,24 @@
 	else
 		count = parseInt(count, 10)
 
-	feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
-	blog_url = "http://blogs.arts.ac.uk/" + college
+	if college is "university-wide"
+		feed_url = "http://newsevents.arts.ac.uk/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
+		blog_url = "http://newsevents.arts.ac.uk/"
+	else
+		feed_url = "http://blogs.arts.ac.uk/" + college + "/api/get_recent_posts/?callback=?&tag=" + tag + "&category=" + category + "&count=" + count + "&include=title,url,attachments"
+		blog_url = "http://blogs.arts.ac.uk/" + college
 
-	length = 60
+	length = 100
 
 	# see events_JSON
-	if width is "content"
-		img_size = 250
-		img_width = 131
-		img_height = 100
-	else
-		img_size = 600
-		img_width = 456
-		img_height = 200
+	# if width is "content"
+	# 	img_size = 250
+	# 	img_width = 198
+	# 	img_height = 100
+	# else
+	# 	img_size = 600
+	# 	img_width = 456
+	# 	img_height = 200
 
 	$.getJSON feed_url, (data) ->
 
@@ -44,11 +48,9 @@
 				output += '
 				<li>
 					<div class="feed-image">
-						<div class="center-cropped">
-							<a href="' + item.url + '">
-								<img src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + item.attachments[0].url + '">
-							</a>
-						</div>
+						<a href="' + item.url + '">
+							<span class="center-cropped resrc" style="background-image: url(http://app.resrc.it/s=w250/o=60/' + item.attachments[0].url + ');"></span>
+						</a>
 					</div>
 
 					<div class="title">
@@ -59,7 +61,13 @@
 		output += "</ul>
 		<p class=\"view-all\"><a href=\"" + blog_url + "\" class=\"button-link\" title=\"\"><span class=\"hide-descriptive-text\">View all</span>View all</a></p></div>"
 		$('.news-feed[data-feed-id="' + feed_id + '"]').append output
+
+		# fire resrc.it after images have loaded
+		resrc.resrcAll()
+
 		return
+
+
 
 
 $(document).ready ->

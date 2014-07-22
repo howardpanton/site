@@ -40,14 +40,14 @@
 	# console.log "programme is: " + programme
 
 	# see news_JSON
-	if width is "content"
-		img_size = 250
-		img_width = 132
-		img_height = 100
-	else
-		img_size = 600
-		img_width = 456
-		img_height = 200
+	# if width is "content"
+	# 	img_size = 250
+	# 	img_width = 198
+	# 	img_height = 100
+	# else
+	# 	img_size = 600
+	# 	img_width = 456
+	# 	img_height = 200
 
 	#max number of characters for event title
 	length = 100
@@ -89,11 +89,9 @@
 					<div class="single-feed-container">
 
 							<div class="feed-image">
-								<div class="center-cropped">
-									<a href="' + item.event_url + '">
-										<img src="http://app.resrc.it/S=W' + img_size + '/C=W' + img_width + ',H' + img_height + '/' + events_image_url + '">
-									</a>
-								</div>
+								<a href="' + item.event_url + '">
+									<span class="center-cropped resrc" style="background-image: url(http://app.resrc.it/s=w250/o=60/' + events_image_url + ');"></span>
+								</a>
 							</div>
 
 							<div class="title">
@@ -129,7 +127,10 @@
 			outputfeedHTML(data)
 			return
 
+	# fire resrc.it after images have loaded
+	resrc.resrcAll()
 
+	return
 
 $(document).ready ->
 
