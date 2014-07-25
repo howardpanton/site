@@ -43,6 +43,7 @@ footer {
       display: block;
       color: $white;
     }
+    a:hover { background-color: $dark-gray }
   }
 
   ul li:first-child {
@@ -125,11 +126,15 @@ footer {
         padding-right: 18px;
       }
     }
+    a:hover {
+    	background-color: transparent !important;
+    }
     a:first-child {
       @include gs-media (d) {
         padding-left: 0 !important;
       }
     }
+
   }
 
   @include gs-media (m, min-max) {
