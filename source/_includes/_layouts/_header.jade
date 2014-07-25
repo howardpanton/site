@@ -3,7 +3,7 @@
 		.row
 			.ual-banner-menu
 				.ual-logo-tab-mobile
-					a(href='http://www.arts.ac.uk/', title='Navigate back to the UAL homepage')
+					a(href='http://www.arts.ac.uk/', title='Navigate back to the UAL homepage', tabindex='-1' )
 						.logo-ual-mobile
 				.ual-logo-desktop
 					.logo-ual
@@ -30,7 +30,7 @@
 			// navigation object : Main navigation include
 			nav#global-nav.main-nav-wrapper(role='navigation')
 				.megamenu_container.top-bar
-					a(href='http://www.arts.ac.uk', title='Navigate back to the UAL homepage')
+					a(href='http://www.arts.ac.uk', title='Navigate back to the UAL homepage', tabindex='-1')
 						.ual-logo-tab-mobile
 							.logo-ual-mobile
 					ul.megamenu
@@ -40,7 +40,7 @@
 								span.icon-menu-1
 						// Course Finder
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Go', title='Course Finder') Course Finder
 							// Begin Item
 							// dropdown
@@ -61,7 +61,7 @@
 						// End Course Finder
 						// Colleges
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/colleges/', title='Colleges') Colleges
 							.dropdown_fullwidth
 								.dd-menu-dropdown-wrapper.region.college-nav
@@ -84,7 +84,7 @@
 						// End Colleges
 						// Study at UAL
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/study-at-ual/', title='Study at UAL') Study at UAL
 							// dropdown
 							.dropdown_fullwidth
@@ -138,7 +138,7 @@
 						// End Study at UAL
 						// Research
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/research/', title='Research') Research
 							// dropdown
 							.dropdown_fullwidth
@@ -168,7 +168,7 @@
 						// End Research
 						// Student Jobs & Careers
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/student-jobs-and-careers/', title='Student jobs & Careers') Student Jobs &amp; Careers
 							// dropdown
 							.dropdown_fullwidth
@@ -192,7 +192,7 @@
 						// End Student Jobs & Careers
 						// Alumni & Friends
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/alumni-and-friends/', title='Alumni &amp; Friends') Alumni & Friends
 							// dropdown
 							.dropdown_fullwidth
@@ -220,7 +220,7 @@
 								a(href='http://www.arts.ac.uk/industry-links/', title='Industry Links') Industry Links
 						// About UAL
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick(href='/about-ual/', title='About UAL') About UAL
 							// dropdown
 							.dropdown_fullwidth
@@ -260,7 +260,7 @@
 						// End About UAL
 						// Site Search
 						// menu button
-						li
+						li.menu-btn
 							a.megamenu_drop.needsclick.search-icon.icon-search(href='http://search.arts.ac.uk/s/search.html', title="Site Search")
 							// Begin Item
 							// dropdown

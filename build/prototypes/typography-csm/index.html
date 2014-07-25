@@ -13,9 +13,9 @@
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
     <link rel="dns-prefetch" href="//app.resrc.it">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="shortcut icon" href="http://artslondon.github.io/site/assets/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://artslondon.github.io/site/assets/css/screen.css">
-    <link rel="stylesheet" href="http://artslondon.github.io/site/assets/css/print.css" type="text/css" media="print">
+    <link rel="shortcut icon" href="http://localhost:9000/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:9000/assets/css/screen.css">
+    <link rel="stylesheet" href="http://localhost:9000/assets/css/print.css" type="text/css" media="print">
     <script>
       function loadScript(e,t){var n,r,i;r=!1,n=document.createElement("script"),n.type="text/javascript",n.src=e,null==t&&(t=function(){}),n.onload=n.onreadystatechange=function(){var e=this.readyState;if(!(r||e&&"complete"!=e&&"loaded"!=e)){r=!0;try{t()}catch(n){}}},i=document.getElementsByTagName("script")[0],i.parentNode.insertBefore(n,i)}window.Modernizr=function(e,t,n){function r(e){m.cssText=e}function i(e,t){return r(b.join(e+";")+(t||""))}function s(e,t){return typeof e===t}function o(e,t){return!!~(""+e).indexOf(t)}function u(e,t){for(var r in e){var i=e[r];if(!o(i,"-")&&m[i]!==n)return t=="pfx"?i:!0}return!1}function a(e,t,r){for(var i in e){var o=t[e[i]];if(o!==n)return r===!1?e[i]:s(o,"function")?o.bind(r||t):o}return!1}function f(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+E.join(r+" ")+r).split(" ");return s(t,"string")||s(t,"undefined")?u(i,t):(i=(e+" "+S.join(r+" ")+r).split(" "),a(i,t,n))}var l="2.6.2",c={},h=!0,p=t.documentElement,d="modernizr",v=t.createElement(d),m=v.style,g,y={}.toString,b=" -webkit- -moz- -o- -ms- ".split(" "),w="Webkit Moz O ms",E=w.split(" "),S=w.toLowerCase().split(" "),x={svg:"http://www.w3.org/2000/svg"},T={},N={},C={},k=[],L=k.slice,A,O=function(e,n,r,i){var s,o,u,a,f=t.createElement("div"),l=t.body,c=l||t.createElement("body");if(parseInt(r,10))while(r--)u=t.createElement("div"),u.id=i?i[r]:d+(r+1),f.appendChild(u);return s=["&#173;",'<style id="s',d,'">',e,"</style>"].join(""),f.id=d,(l?f:c).innerHTML+=s,c.appendChild(f),l||(c.style.background="",c.style.overflow="hidden",a=p.style.overflow,p.style.overflow="hidden",p.appendChild(c)),o=n(f,e),l?f.parentNode.removeChild(f):(c.parentNode.removeChild(c),p.style.overflow=a),!!o},M={}.hasOwnProperty,_;!s(M,"undefined")&&!s(M.call,"undefined")?_=function(e,t){return M.call(e,t)}:_=function(e,t){return t in e&&s(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(e){var t=this;if(typeof t!="function")throw new TypeError;var n=L.call(arguments,1),r=function(){if(this instanceof r){var i=function(){};i.prototype=t.prototype;var s=new i,o=t.apply(s,n.concat(L.call(arguments)));return Object(o)===o?o:s}return t.apply(e,n.concat(L.call(arguments)))};return r}),T.touch=function(){var n;return"ontouchstart"in e||e.DocumentTouch&&t instanceof DocumentTouch?n=!0:O(["@media (",b.join("touch-enabled),("),d,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(e){n=e.offsetTop===9}),n},T.csstransforms=function(){return!!f("transform")},T.svg=function(){return!!t.createElementNS&&!!t.createElementNS(x.svg,"svg").createSVGRect};for(var D in T)_(T,D)&&(A=D.toLowerCase(),c[A]=T[D](),k.push((c[A]?"":"no-")+A));return c.addTest=function(e,t){if(typeof e=="object")for(var r in e)_(e,r)&&c.addTest(r,e[r]);else{e=e.toLowerCase();if(c[e]!==n)return c;t=typeof t=="function"?t():t,typeof h!="undefined"&&h&&(p.className+=" "+(t?"":"no-")+e),c[e]=t}return c},r(""),v=g=null,c._version=l,c._prefixes=b,c._domPrefixes=S,c._cssomPrefixes=E,c.testProp=function(e){return u([e])},c.testAllProps=f,c.testStyles=O,p.className=p.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(h?" js "+k.join(" "):""),c}(this,this.document),Modernizr.addTest("fullscreen",function(){for(var e=0;e<Modernizr._domPrefixes.length;e++)if(document[Modernizr._domPrefixes[e].toLowerCase()+"CancelFullScreen"])return!0;return!!document.cancelFullScreen||!1});Modernizr.addTest("hidpi",function(){if(window.matchMedia){var e=window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");if(e&&e.matches)return!0}});
       
@@ -79,7 +79,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
       <div class="header-wrapper">
         <div class="row">
           <div class="ual-banner-menu">
-            <div class="ual-logo-tab-mobile"><a href="http://www.arts.ac.uk/" title="Navigate back to the UAL homepage">
+            <div class="ual-logo-tab-mobile"><a href="http://www.arts.ac.uk/" title="Navigate back to the UAL homepage" tabindex="-1">
                 <div class="logo-ual-mobile"></div></a></div>
             <div class="ual-logo-desktop">
               <div class="logo-ual"></div>
@@ -103,7 +103,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
           <!-- noindex-->
           <!-- navigation object : Main navigation include-->
           <nav id="global-nav" role="navigation" class="main-nav-wrapper">
-            <div class="megamenu_container top-bar"><a href="http://www.arts.ac.uk" title="Navigate back to the UAL homepage">
+            <div class="megamenu_container top-bar"><a href="http://www.arts.ac.uk" title="Navigate back to the UAL homepage" tabindex="-1">
                 <div class="ual-logo-tab-mobile">
                   <div class="logo-ual-mobile"></div>
                 </div></a>
@@ -112,7 +112,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <li class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
                 <!-- Course Finder-->
                 <!-- menu button-->
-                <li><a href="#" class="megamenu_drop needsclick">Course Finder</a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -137,29 +137,26 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End Course Finder-->
                 <!-- Colleges-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Colleges</a>
-                  <!-- dropdown-->
+                <li class="menu-btn"><a href="/colleges/" title="Colleges" class="megamenu_drop needsclick">Colleges</a>
                   <div class="dropdown_fullwidth">
-                    <!-- Begin Item Container-->
-                    <div class="dd-menu-dropdown-wrapper">
-                      <div class="region college-nav">
-                        <ul class="subnav-1 region">
-                          <li><a href="/camberwell/" title="Visit Camberwell">Camberwell College of Arts</a></li>
-                          <li><a href="/csm/" title="Visit Central Saint Martins">Central Saint Martins (CSM)</a></li>
-                          <li><a href="/chelsea/" title="Visit Chelsea">Chelsea College of Arts</a></li>
-                          <li><a href="/lcc/" title="Visit London College of Communication">London College of Communication (LCC)</a></li>
-                          <li><a href="/fashion/" title="Visit London College of Fashion">London College of Fashion (LCF)</a></li>
-                          <li><a href="/wimbledon/" title="Visit Wimbledon">Wimbledon College of Arts</a></li>
-                        </ul>
-                      </div>
+                    <div class="dd-menu-dropdown-wrapper region college-nav">
+                      <ul class="subnav-1 region">
+                        <li><a href="/colleges/" title="Colleges">Colleges</a></li>
+                        <li><a href="/camberwell/" title="Visit Camberwell">Camberwell College of Arts</a></li>
+                        <li><a href="/csm/" title="Visit Central Saint Martins">Central Saint Martins (CSM)</a></li>
+                        <li><a href="/chelsea/" title="Visit Chelsea">Chelsea College of Arts</a></li>
+                        <li><a href="/lcc/" title="Visit London College of Communication">London College of Communication (LCC)</a></li>
+                        <li><a href="/fashion/" title="Visit London College of Fashion">London College of Fashion (LCF)</a></li>
+                        <li><a href="/wimbledon/" title="Visit Wimbledon">Wimbledon College of Arts</a></li>
+                      </ul>
                     </div>
                   </div>
-                  <!-- End Item Container-->
                 </li>
+                <!-- End Item Container-->
                 <!-- End Colleges-->
                 <!-- Study at UAL-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Study at UAL</a>
+                <li class="menu-btn"><a href="/study-at-ual/" title="Study at UAL" class="megamenu_drop needsclick">Study at UAL</a>
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper study-nav">
@@ -194,7 +191,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End Study at UAL-->
                 <!-- Research-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Research</a>
+                <li class="menu-btn"><a href="/research/" title="Research" class="megamenu_drop needsclick">Research</a>
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
@@ -220,14 +217,14 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End Research-->
                 <!-- Student Jobs & Careers-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Student Jobs & Careers</a>
+                <li class="menu-btn"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers" class="megamenu_drop needsclick">Student Jobs &amp; Careers</a>
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="row region">
                         <div class="sub-inner-menu student-nav">
                           <ul class="subnav-1 no-pad-top region">
-                            <li class="no-border-top"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers">Student Jobs & Careers</a></li>
+                            <li class="no-border-top"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers">Student Jobs &amp; Careers</a></li>
                             <li><a href="/student-jobs-and-careers/opportunities/">Opportunities</a></li>
                             <li><a href="/student-jobs-and-careers/events/">Events</a></li>
                             <li><a href="/student-jobs-and-careers/finding-work/">Finding Work</a></li>
@@ -243,7 +240,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End Student Jobs & Careers-->
                 <!-- Alumni & Friends-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Alumni & Friends</a>
+                <li class="menu-btn"><a href="/alumni-and-friends/" title="Alumni &amp;amp; Friends" class="megamenu_drop needsclick">Alumni & Friends</a>
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
@@ -266,34 +263,10 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End Alumni & Friends-->
                 <!-- Business & Innovation-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">Industry Links</a>
-                  <!-- dropdown-->
-                  <div class="dropdown_fullwidth">
-                    <div class="dd-menu-dropdown-wrapper">
-                      <div class="row region">
-                        <div class="sub-inner-menu industry-nav">
-                          <ul class="subnav-1 no-pad-top region">
-                            <li><a href="/camberwell/business-and-innovation/">Camberwell Business & Innovation</a></li>
-                            <li><a href="/csm/business-and-innovation/">CSM Business & Innovation</a></li>
-                            <li><a href="/chelsea/business-and-innovation/">Chelsea Business & Innovation</a></li>
-                            <li><a href="/lcc/business-and-innovation/">LCC Business & Innovation</a></li>
-                            <li><a href="/fashion/business-and-innovation/">LCF Business & Innovation</a></li>
-                            <li><a href="/wimbledon/business-and-innovation/">Wimbledon Business & Innovation</a></li>
-                            <li><a href="/student-jobs-and-careers/finding-work/information-for-employers/">Information for Employers</a></li>
-                          </ul>
-                        </div>
-                        <div class="feature m-hide t-hide">
-                          <p>Businesses worldwide work with us to find creative solutions, discover fresh ideas and recruit new talent. Join them, and let us help you develop your future.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End dropdown-->
-                </li>
-                <!-- End Business & Innovation-->
+                <li style="overflow: hidden;"><a href="http://www.arts.ac.uk/industry-links/" title="Industry Links">Industry Links</a></li>
                 <!-- About UAL-->
                 <!-- menu button-->
-                <li><a href="#" title="" class="megamenu_drop needsclick">About UAL</a>
+                <li class="menu-btn"><a href="/about-ual/" title="About UAL" class="megamenu_drop needsclick">About UAL</a>
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
@@ -324,7 +297,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End About UAL-->
                 <!-- Site Search-->
                 <!-- menu button-->
-                <li><a href="#" class="megamenu_drop needsclick search-icon icon-search"></a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -500,6 +473,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
               <li><a href="https://twitter.com/UniArtsLondon" title="UAL on Twitter"><span class="footer-ico icon-twitter"></span></a></li>
               <li><a href="https://www.facebook.com/UniversityoftheArtsLondon" title="UAL on Facebook"><span class="footer-ico icon-facebook"></span></a></li>
               <li><a href="http://www.youtube.com/user/universityartslondon" title="UAL on YouTube"><span class="footer-ico icon-youtube"></span></a></li>
+              <li><a href="https://plus.google.com/116668345114007692056/" title="UAL on Google Plus"><span class="footer-ico icon-gplus"></span></a></li>
             </ul>
           </div>
           <div class="row">
@@ -524,7 +498,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
       </footer>
       <div id="image-credits-toggle" title="show image credits" class="credits-btn"><a href="#" class="show-credits tooltip"><span class="icon-picture"></span></a></div>
       <script src="http://use.resrc.it/"></script>
-      <script src="http://artslondon.github.io/site/assets/js/script.js"></script>
+      <script src="http://localhost:9000/assets/js/script.js"></script>
       <script>
         //- Creates associative array (object) of query params
         var QueryParameters = (function() {

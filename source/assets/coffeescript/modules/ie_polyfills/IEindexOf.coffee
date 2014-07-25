@@ -14,4 +14,4 @@ unless Array::indexOf
     while from < len
       return from  if from of this and this[from] is elt
       from++
-    -1
+    return -1

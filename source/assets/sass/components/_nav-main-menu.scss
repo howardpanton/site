@@ -153,6 +153,8 @@
 
 
 
+
+
   // add a min height to the dropdown
   // so that the other menu links are not visible when the dropdown is expanded
   // in mobile and tablet menu only
@@ -182,8 +184,14 @@
      color: $black;
   }
 
+	li > a.current-page {
+    background-color: $black;
+    color: $white;
+  }
+
+
   @include gs-media(d) {
-    li > a:hover {
+    li > a:hover, li > a:focus {
       background-color: $black;
       color: $white;
     }
@@ -432,11 +440,6 @@
         width:auto;
         font-weight: 300;
       }
-
-    //   &:hover, &:focus {
-				// @include gs-media(d) {
-    //   		background-color: $dark-gray; }
-    //   	}
 
       > a {
         display: block;
@@ -746,6 +749,15 @@
 }
 
 
+.d-course-finder-menu-panel{
+	padding-left: 12px;
+	padding-right: 12px;
+	@include gs-media(d) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 // search icon link for mobile and tablet (appears to the left of the main menu dropdown icon)
 .m-site-search-link {
   display: block;
@@ -830,6 +842,15 @@ form.d-search-input-form {
   }
 }
 
+// highlighting active parent in main navigation
+.menu-btn.active-parent{
+
+	background-color: $black;
+
+	@include gs-media(d) {
+		background-color: $dark-gray;
+	}
+}
 
 // skip to content link for accessibility
 a.skip-to-content, a.skip-to-content:hover, a.skip-to-content:visited
