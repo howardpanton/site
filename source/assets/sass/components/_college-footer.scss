@@ -149,7 +149,7 @@
 
   .icons {
 
-		// one, two and three footer social icons styling
+		// one, two or three footer icons
     li {
       display: inline-block;
       float: left;
@@ -170,9 +170,11 @@
         width:100%;
         display:block;
       }
+
       a:hover{
         border-bottom: 0;
       }
+
       a span {
         @extend %icon-social;
         color: $white;
@@ -192,11 +194,29 @@
 
     }
 
+		@include gs-media(t,min-max) {
+			li { @include gs-span(t, 1); }
+
+			li:nth-child(2n) { @include gs-span(t, 2); }
+
+			li:nth-child(3n) { @include gs-span(t, 3); }
+
+			li:nth-child(4n) { @include gs-span(t, 4); }
+		}
+
+		// change styling for a list of four footer icons
     &.four-icon-list {
+
 
 			li {
 				margin-right: 0;
 				@include gs-span(m, 1);
+
+				// remove left margin on social icons on desktop
+				[class^="icon-"]:before, [class*=" icon-"]:before {
+					margin-left: 0;
+					margin-right: 0;
+				}
 			}
 
 			li:nth-child(2n) { @include gs-span(m, 2); }
@@ -224,13 +244,6 @@
 				li:nth-child(3n) { @include gs-span(d, 15, 15, (13,16) ); }
 
 				li:nth-child(4n) { @include gs-span(d, 16, 16, (13,16) ); }
-
-				// remove left margin on social icons on desktop
-				[class^="icon-"]:before, [class*=" icon-"]:before {
-					margin-left: 0;
-					margin-right: 0;
-				}
-
 			}
 		}
   }
