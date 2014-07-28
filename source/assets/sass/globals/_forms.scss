@@ -203,7 +203,17 @@ input[type="color"],
   line-height: $baseLineHeight;
   color: black;
   vertical-align: middle;
-  clear:left;
+  clear: left;
+  background-color: lighten($base_grey_docs, 50%);
+  @include transition(border linear .2s, box-shadow linear .2s);
+
+  // Focus state
+  &:focus {
+    border-color: $light-gray;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    //@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+  }
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -217,34 +227,6 @@ textarea,
 textarea {
   height: auto;
   border:none;
-}
-// Everything else
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  background-color: lighten($base_grey_docs, 50%);
-  @include transition(border linear .2s, box-shadow linear .2s);
-
-  // Focus state
-  &:focus {
-    border-color: $light-gray;
-    outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
-    //@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
-  }
 }
 
 // Position radios and checkboxes better
