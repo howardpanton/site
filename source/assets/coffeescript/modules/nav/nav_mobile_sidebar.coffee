@@ -14,7 +14,7 @@ buildMobileSidebar = ->
 	#&& _has_heading > 0
 	if _sb_lth > 0
 		_no_of_li_items = $(".sidebar li").size()
-		console.log("_no_of_li_items length is: " + _no_of_li_items)
+		# console.log("_no_of_li_items length is: " + _no_of_li_items)
 		# If there's more than one item in the left sidebar, then build the mobile sidebar
 		if _no_of_li_items > 1
 			_menuHtml = $(".sidebar").html()
