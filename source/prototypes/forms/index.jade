@@ -78,7 +78,7 @@ block content
 			script(src='https://gist.github.com/denovo/6174210.js')
 		#select-boxes-tab.row
 			.l-content
-				h3 Select Box
+				h3 JS Select Box
 				form.margin-top.with-box-shadow(action='')
 					.js-select-box.select-box
 						input.js-select-box-value(type='hidden', value='option one')
@@ -96,6 +96,16 @@ block content
 							li.select-box-option(data-sb-value='option4')
 								a(href='#') Option four
 			script(src='https://gist.github.com/denovo/6174368.js')
+		#normal-select-boxes.row
+			.l-content
+				h3 Accessible Select Box
+				form.margin-top.with-box-shadow(action='')
+					label Course
+					select(id="my_id", name="my_id")
+						option(value="a0PM0000005oFixMAE") 3D Modelling
+						option(value="a0PM0000005oHtDMAU") Textiles
+						option(value="a0PM0000005o5KoMAI") Animation
+			script(src='https://gist.github.com/strangerpixel/ed00d15957c25936f4b1.js')
 		#buttons-tab.row
 			.l-content
 				h3 buttons
