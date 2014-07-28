@@ -32,18 +32,30 @@
 		}
 	}
 
+	li {
+		float: left;
+	}
+
 	.size-h4 {
 		padding-top: 2px;
 	}
 
+	// LCF-specific overrides
 	.lcf .content-wrapper & {
-		h3 {
+		h2, h3 {
 			text-align: left;
+		}
+		h3 {
 			padding-top: 0;
 		}
 	}
 
-	li {clear: left;  }
+	.lcf.graduate-school .content-wrapper & {
+		h2 {
+			background: none;
+			margin-bottom: 0;
+		}
+	}
 
 }
 
