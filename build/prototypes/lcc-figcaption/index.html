@@ -34,7 +34,7 @@
     dataLayer = [];
     
   </script>
-  <body class="ual"><!-- Google Analytics -->
+  <body class="lcc"><!-- Google Analytics -->
 <script>
 /**
  * Creates a temporary global ga object and loads analy  tics.js.
@@ -331,10 +331,10 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
       <div class="header-wrapper">
         <div class="row">
           <!-- navigation object : Breadcrumbs-->
-          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/Forms/" style="display: none;">Forms</a></div>
+          <div class="breadcrumbs"><a href="/">University of the Arts London</a><a href="/lcc-figcaption/" style="display: none;">lcc-figcaption</a></div>
           <div id="skip-to-here" class="page-title">
             <h1>
-              <!-- navigation object : Section name-->Forms
+              <!-- navigation object : Section name-->lcc-figcaption
             </h1>
           </div>
         </div>
@@ -352,205 +352,109 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
             <li><a href="#">Prototype five</a></li>
           </ul>
         </nav>
-        <div role="main" class="content">
-          <div class="row">
-            <div class="l-content block __text">
-              <h2>Overview</h2>
-              <p>Individual form controls automatically receive some global UAL styling. All textual<code>&lt;input&gt;</code>,<code>&lt;textarea&gt;</code>, and<code>&lt;select&gt;</code>elements are set to<code>width: 100%;</code>by default.</p>
-              <p>UAL styled select boxes must follow a specific html structure. Please refer to the<a href="#select-boxes-tab">UAL select box</a>guidelines below for more information.</p>
-              <p>Use the class<code>.with-box-shadow</code>on the main<code>&lt;form&gt;</code>tag to give forms a subtle drop shadow.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="l-content">
-              <h2>Form Elements</h2>
-              <div id="text-inputs" class="row l-content"></div>
-              <h3>Text Inputs</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <label>Default Textbox</label>
-                <input id="default" type="text" name="default">
-                <label>Required text input</label>
-                <input id="name" type="text" name="name" required="required">
-                <label for="p-login1">Password</label>
-                <input id="p-login1" type="password" name="p-login" required="required">
-                <label>Textarea</label>
-                <textarea cols="40" rows="8"></textarea>
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/6174247.js"></script>
-          </div>
-          <div class="row">
-            <div class="l-content">
-              <h3>Checkboxes</h3>
-              <p>By default, checkboxes will appear after labels. To make checkboxes appear to the left of the labels, keep the HTML structure the same, and add a class<code>before-label</code>to the input element.</p>
-              <form action="" class="margin-top with-box-shadow">
-                <h4>Checkboxes after labels:</h4>
-                <input id="c4" type="checkbox" name="cc">
-                <label for="c4">Checkbox 1</label>
-                <input id="c5" type="checkbox" name="cc">
-                <label for="c5">Checkbox 2</label>
-                <input id="c6" type="checkbox" name="cc" disabled="disabled">
-                <label for="c6">Checkbox 3 (disabled)</label><br>
-                <h4>Checkboxes before labels:</h4>
-                <input id="c7" type="checkbox" name="cc" class="before-label">
-                <label for="c7">Checkbox 1</label>
-                <input id="c8" type="checkbox" name="cc" class="before-label">
-                <label for="c8">Checkbox 2</label>
-                <input id="c9" type="checkbox" name="cc" disabled="disabled" class="before-label">
-                <label for="c9">Checkbox 3 (disabled)</label>
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/6174189.js"></script>
-          </div>
-          <div class="row">
-            <div class="l-content">
-              <h3>Radio buttons</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <input id="r4" type="radio" name="rb">
-                <label for="r4">Radio Button 1</label>
-                <input id="r5" type="radio" name="rb">
-                <label for="r5">Radio Button 2</label>
-                <input id="r6" type="radio" name="rb" disabled="disabled">
-                <label for="r6">Radio Button 3 (disabled)</label>
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/6174210.js"></script>
-          </div>
-          <div id="select-boxes-tab" class="row">
-            <div class="l-content">
-              <h3>JS Select Box</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <div class="js-select-box select-box">
-                  <input type="hidden" value="option one" class="js-select-box-value">
-                  <div class="select-box-heading">
-                    <h3 class="select-box-title">Option one</h3>
-                    <div class="select-box-arrow"><span class="js-select-box-icon icon"></span></div>
-                  </div>
-                  <ul class="js-select-box-list select-box-options">
-                    <li data-sb-value="option1" class="select-box-option"><a href="#">Option one</a></li>
-                    <li data-sb-value="option2" class="select-box-option"><a href="#">Option two</a></li>
-                    <li data-sb-value="option3" class="select-box-option"><a href="#">Option three</a></li>
-                    <li data-sb-value="option4" class="select-box-option"><a href="#">Option four</a></li>
-                  </ul>
-                </div>
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/6174368.js"></script>
-          </div>
-          <div id="buttons-tab" class="row">
-            <div class="l-content">
-              <h3>buttons</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <input type="submit" value="Submit Button" class="submit-btn">
-                <input type="submit" value="Disabled Submit Button" disabled="disabled" class="submit-btn">
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/6174306.js"></script>
-          </div>
-          <div id="example-form-tab" class="row">
-            <h3>Example Form</h3>
-            <form id="form" name="form" class="l-forms margin-top with-box-shadow">
-              <fieldset>
-                <legend>Your details</legend>
-                <label>Label example</label>
-                <input id="default" type="text" name="default">
-                <label>Select box</label>
-                <div class="js-select-box select-box">
-                  <input type="hidden" value="option one" class="js-select-box-value">
-                  <div class="select-box-heading">
-                    <h3 class="select-box-title">Option one</h3>
-                    <div class="select-box-arrow"><span class="js-select-box-icon icon"></span></div>
-                  </div>
-                  <ul class="js-select-box-list select-box-options">
-                    <li data-sb-value="option1" class="select-box-option"><a href="#">Option one</a></li>
-                    <li data-sb-value="option2" class="select-box-option"><a href="#">Option two</a></li>
-                    <li data-sb-value="option3" class="select-box-option"><a href="#">Option three</a></li>
-                    <li data-sb-value="option4" class="select-box-option"><a href="#">Option four</a></li>
-                  </ul>
-                </div>
-                <label>Required:<small>field</small></label>
-                <input id="name" type="text" name="name" required="required">
-                <label>Please add your comments</label>
-                <textarea cols="40" rows="8"></textarea>
-              </fieldset>
-              <div>
-                <input id="c1" type="checkbox" name="cc">
-                <label for="c1">Checkbox 1</label>
-              </div>
-              <div>
-                <input id="c2" type="checkbox" name="cc">
-                <label for="c2">Checkbox 2</label>
-              </div>
-              <div>
-                <input id="c3" type="checkbox" name="cc" disabled="disabled">
-                <label for="c3">Checkbox 3 (disabled)</label>
-              </div><br>
-              <div>
-                <input id="r1" type="radio" name="rb">
-                <label for="r1">Radio Button 1</label>
-              </div>
-              <div>
-                <input id="r2" type="radio" name="rb">
-                <label for="r2">Radio Button 2</label>
-              </div>
-              <div>
-                <input id="r3" type="radio" name="rb" disabled="disabled">
-                <label for="r3">Radio Button 3 (disabled)</label>
-              </div>
-              <p>
-                <input type="submit" value="Submit Button" class="submit-btn">
-                <input type="submit" value="Disabled Submit Button" disabled="disabled" class="submit-btn">
-              </p>
-            </form>
-            <script src="https://gist.github.com/strangerpixel/d57e8283a24748baa69c.js"></script>
-          </div>
-          <div id="example-login-form" class="row">
-            <h2>Example Login Form</h2>
-            <div class="l-content">
-              <script src="https://gist.github.com/denovo/6174420.js"></script>
-            </div>
-            <aside class="no-bg no-pad no-border-left">
-              <form id="form" name="form" class="margin-top with-box-shadow cf">
-                <h3>login form</h3>
-                <label for="s-login1">Username</label>
-                <input id="s-login1" type="text" name="s-login">
-                <label for="p-login1">Password</label>
-                <input id="p-login1" type="password" name="p-login">
-                <input type="submit" value="Submit" class="submit-btn pull-left margin-bottom-3x"><a href="#" class="form-link pull-left clear-left">Forgot Password</a><a href="#" class="form-link pull-left clear-left">Register</a>
-              </form>
-            </aside>
-          </div>
-          <div id="unstyled-elements" class="row">
-            <div class="l-content">
-              <h2>Unstyled / Default elements</h2>
-              <p>Used in cases where the HTML for checkboxes must have the label before the checkbox (eg Salesforce for events). Checkboxes appear unstyled if given the 'unstyled' class. The label for the checkbox should also be given a class of 'unstyled'.</p>
-              <form id="unstyled-chckbx-form" name="form" class="margin-top with-box-shadow cf">
-                <label for="uns-chkbx1" class="unstyled">Unstyled checkbox 1</label>
-                <input id="uns-chkbx1" type="checkbox" name="uns-chkbx1" class="unstyled">
-                <label for="uns-chkbx2" class="unstyled">Unstyled checkbox 2</label>
-                <input id="uns-chkbx2" type="checkbox" name="uns-chkbx2" class="unstyled">
-              </form>
-            </div>
-            <script src="https://gist.github.com/denovo/9115339.js"></script>
-          </div>
-          <div id="normal-select-boxes" class="row">
-            <div class="l-content">
-              <h3>Accessible Select Box</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <label>Course</label>
-                <select id="my_id" name="my_id">
-                  <option value="">Please select</option>
-                  <option value="a0PM0000005oFixMAE">3D Modelling</option>
-                  <option value="a0PM0000005oHtDMAU">Textiles</option>
-                  <option value="a0PM0000005o5KoMAI">Animation</option>
-                </select>
-              </form>
-            </div>
-            <script src="https://gist.github.com/strangerpixel/ed00d15957c25936f4b1.js"></script>
-          </div>
+        <div role="main" class="content"><div class="row slider-container">
+	<div class="royalSlider rsDefault  block  slider-12" data-slider-item-width="948" data-slider-item-height="474" data-slider-auto-play="true">
+
+	  	<figure>
+        	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/1896x948_lcf.jpg" alt="some alt text" />
+            <figcaption class="rsCaption"><span><p>948 x 474 - is NOT upscaled, <a href="#">but</a> shrinks to fit when compressed 00 x 474 - smaller portait image hjk hv,jasd vkdfjsahv ,jkdsfh v,jkhsd f,jkvh sd,fjkhv ,dsfkjhv ,dfksjh v,kjdfsh ,jkvh dfs,jkvh</p> </span></figcaption>
+            <div class="credits">test</div>
+    	</figure>
+        <figure>
+            <img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/948x474_lcf.jpg" alt="some alt text" />
+            <figcaption class="rsCaption"><span>948 x 474 - is NOT upscaled, <a href="#">but</a> shrinks to fit when compressed 00 x 474 - smaller portait image hjk hv,jasd vkdfjsahv ,jkdsfh v,jkhsd f,jkvh sd,fjkhv ,dsfkjhv ,dfksjh v,kjdfsh ,jkvh dfs,jkvh </span></figcaption>
+        </figure>
+    	<figure>
+        	<img class="rsImg" src="http://placehold.it/400x474" alt="some alt text" />
+        	<figcaption class="rsCaption"><span>400 x 474 - smaller portait image</span></figcaption>
+    	</figure>
+<!--    <figure>
+        	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/480x480_courses.jpg" alt="This text will be IGNORED!" />
+        	<figcaption class="rsCaption">480 x 480 - square image auto-scaled to fit</figcaption>
+    	</figure>
+-->
+	  	<div>
+	    	<img class="rsImg" data-rsw="560" data-rsh="315" src="http://placehold.it/948x474" data-rsvideo="http://www.youtube.com/watch?v=HFbHRWwyihE" />
+	    	<div class="rsCaption"><span>Video from Youtube</span></div>
+	    </div>
+        <div>
+            <img class="rsImg" src="http://placehold.it/948x474" data-rsvideo="http://vimeo.com/71035465" />
+            <div class="rsCaption"><span>Video from Vimeo</span></div>
+        </div>
+
+	</div>
+</div>
+
+
+<div class="row">
+
+    <div class="l-content">
+
+        <div class="row slider-container">
+        	<div class="royalSlider rsDefault slider-8" data-slider-item-width="653" data-slider-item-height="327">
+
+        	  	<figure>
+                	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/1306x653_lcf.jpg" alt="some alt text" />
+                	<figcaption class="rsCaption"><span>1306 x 653 2x retina (shrinks to fit area)</span></figcaption>
+            	</figure>
+            	<figure>
+                	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/930x465_csm-jiaxin-tang.jpg" alt="some alt text" />
+                	<figcaption class="rsCaption"></figcaption>
+            	</figure>
+            	<figure>
+                	<img class="rsImg" src="http://placehold.it/310x465" alt="some alt text" />
+                	<figcaption class="rsCaption"></figcaption>
+            	</figure>
+            	<figure>
+                	<img class="rsImg" src="{{ site.url }}/assets/img/carousel-imgs/480x480_courses.jpg" alt="This text will be IGNORED!" />
+                	<figcaption class="rsCaption"></figcaption>
+            	</figure>
+                <figure>
+                    <img class="rsImg" src="{{ site.url }}/assets/img/lcf/sophie_hallette474h.jpg" alt="This text will be IGNORED!" />
+                    <figcaption class="rsCaption"></figcaption>
+                </figure>
+        	  	<div>
+        	    	<img class="rsImg" src="http://placehold.it/930x465" data-rsvideo="http://www.youtube.com/watch?v=HFbHRWwyihE" />
+        	    	<div class="rsCaption"><span>Video from Youtube</span></div>
+        	    </div>
+
+        	</div>
+        </div>
+
+    </div>
+
+</div>
+
         </div>
       </div>
     </div>
+    <footer class="college-footer row">
+      <div class="footer-wrapper">
+        <div class="footer-block left">
+          <h3 class="size-h2">Contact Us</h3>
+          <!-- see http://html5doctor.com/microformats/-->
+          <ul class="vcard">
+            <li class="no-bullet"><a href="/lcc/" title="Contact information for London College of Communication" class="fn org url"><span class="organization-name">London College of Communication</span></a></li>
+            <li><span class="adr"><span class="street-address">Elephant & Castle</span>,<span class="region">London</span><span class="postal-code">SE1 6SB</span><br></span></li>
+            <li><span class="tel">Telephone:<span class="value">+44 (0)20 7514 6500</span></span></li>
+            <li><a href="mailto:info@lcc.arts.ac.uk">info@lcc.arts.ac.uk</a></li>
+            <li><a href="/lcc/about-lcc/contact-us/">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-block middle">
+          <h3 class="size-h2">Course guide</h3>
+          <p>Download a copy of our<a href="/media/arts/colleges/lcc/documents/LCC_poster1m3_-25June2013-FINAL.pdf">LCC Course Guide 2013/14 (PDF 294KB)</a><br><br><br></p>
+        </div>
+        <div class="footer-block right">
+          <h3 class="size-h2">Connect</h3>
+          <ul class="icons no-bullet">
+            <li><a href="http://www.facebook.com/londoncollegeofcommunication" class="facebook"><span class="icon-facebook-circled"></span></a></li>
+            <li><a href="http://twitter.com/LCCLondon" class="twitter"><span class="icon-gplus-white"></span></a></li>
+            <li><a href="http://www.youtube.com/artslondonlcc" class="youtube"><span class="icon-youtube"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <footer class="global-footer row">
       <div class="footer-wrapper">
         <div class="row">
