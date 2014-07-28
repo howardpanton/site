@@ -7,7 +7,7 @@
 #
 initSlider = ->
 
-    $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js", ->
+    $.getScript "http://static.arts.ac.uk/assets/js/jquery.royalslider.min.js", ->
       $.each $(".royalSlider"), ->
         _this = $(this)
 

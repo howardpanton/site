@@ -10,7 +10,7 @@ function checkForSlider() {
 
   if ($('.royalSlider').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.royalslider.min.js', function() {
+    $.getScript('http://static.arts.ac.uk/assets/js/jquery.royalslider.min.js', function() {
 
       $.each($('.royalSlider'), function() {
 

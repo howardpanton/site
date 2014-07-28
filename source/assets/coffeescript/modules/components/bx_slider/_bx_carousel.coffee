@@ -7,7 +7,7 @@
 #
 initCarousel = ->
 
-    $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js", ->
+    $.getScript "http://static.arts.ac.uk/assets/js/jquery.bxslider.min.js", ->
         $.each $(".js-carousel"), ->
             _this = $(this)
             _wrapper = _this.closest(".bx-wrapper") # the .bx-wrapper container div
