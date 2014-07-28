@@ -6,7 +6,7 @@
 	url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/fontello.ttf') format('truetype'),
 	url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/fontello.svg#fontello') format('svg');
 	font-weight: normal;
-	font-style: normal; 
+	font-style: normal;
 }
 
 @font-face {
@@ -20,37 +20,37 @@
   @font-face {
     font-family: 'fontello';
     src: url('http://www.arts.ac.uk/media/beta/beta-assets/fonts/fontello.svg?72301902#fontello') format('svg');
-  } 
+  }
 }
 
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
@@ -71,14 +71,12 @@ list-style-type: none;
 
 .download:before {
     font-family: "fontello";
-    // font-size: 36px;
     min-width: 1.5em;
     content: '\e808';
 }
 
 .external:after {
     font-family: "fontello";
-    // font-size: 36px;
     content:  '\e837';
 }
 
@@ -144,3 +142,28 @@ list-style-type: none;
 .icon-battery:before { content: '\e820'; } /* '' */
 .icon-search:before { content: '\e82b'; } /* '' */
 .icon-link:before { content: '\e82c'; } /* '' */
+
+%pngicon {
+	display: inline-block;
+	width: 42px;
+  height: 42px;
+  background-size: 42px 42px;
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+}
+.icon-gplus-black {
+	@extend %pngicon;
+	background-image: url('http://d27lwoqz7s24cy.cloudfront.net/assets/img/social-icons/gplus-84-black.png');
+ }
+ .icon-gplus-white {
+	@extend %pngicon;
+	background-image: url('http://d27lwoqz7s24cy.cloudfront.net/assets/img/social-icons/gplus-84-white.png');
+ }
+ .icon-instagram-black {
+ 	@extend %pngicon;
+	background-image: url('http://d27lwoqz7s24cy.cloudfront.net/assets/img/social-icons/instagram-84-black.png');
+ }
+ .icon-instagram-white {
+	@extend %pngicon;
+	background-image: url('http://d27lwoqz7s24cy.cloudfront.net/assets/img/social-icons/instagram-84-white.png');
+ }

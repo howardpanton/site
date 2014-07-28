@@ -7,8 +7,8 @@
           float:right;
           @include padding-leader(2);
     li {
-      list-style: none; 
-      float: left; 
+      list-style: none;
+      float: left;
       display: table-cell;
       padding-left: 1em;
       padding-right: 1em;
@@ -18,14 +18,14 @@
         @include font-size(13);
         border-bottom: 0;
         &:hover {
-          
+          border-bottom: dotted 1px $white;
         }
       }
 
       &:last-child {
         border-right: none;
         margin-right: 0;
-        
+
       }
       li:hover a {
         background-color: $dark-gray;
@@ -38,55 +38,55 @@
   @include gs-media(m, min-max) { display: none; }
 
   // handle highlighting of active college links
-  .col-link-ual{
-    .home & {
-      // > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-ual{
+  //   .home & {
+  //     // > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-camberwell{
-    .camberwell & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-camberwell{
+  //   .camberwell & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-csm{
-    .csm & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-csm{
+  //   .csm & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-chelsea{
-    .chelsea & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-chelsea{
+  //   .chelsea & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-lcc{
-    .lcc & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-lcc{
+  //   .lcc & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-lcf{
-    .lcf & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-lcf{
+  //   .lcf & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
-  .col-link-wimbledon{
-    .wimbledon & {
-      > a { border-bottom: dotted 1px $white; }
-    }
-  }
+  // .col-link-wimbledon{
+  //   .wimbledon & {
+  //     > a { border-bottom: dotted 1px $white; }
+  //   }
+  // }
 
 
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 
 }

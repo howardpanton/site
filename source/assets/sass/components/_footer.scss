@@ -7,7 +7,7 @@ footer {
   background-color: $black;
   clear: left;
   color: $white;
-  
+
   .copyright {
     @extend .row;
     clear: left;
@@ -16,12 +16,12 @@ footer {
       @include font-size(12);
       padding-left: 12px;
     }
-    
+
   }
 }
 
 .footer-links {
-  ul { 
+  ul {
     margin-bottom: 0;
     @include gs-media (d) {
       margin-bottom: rhythm(3, 16px);
@@ -43,6 +43,7 @@ footer {
       display: block;
       color: $white;
     }
+    a:hover { background-color: $dark-gray }
   }
 
   ul li:first-child {
@@ -53,7 +54,7 @@ footer {
     border-bottom: 0;
     @include gs-media (d) {
       border-bottom: 1px dotted $aaa-gray;
-    } 
+    }
   }
 }
 
@@ -67,20 +68,20 @@ footer {
 
 .footer-col-3 {
   @extend %d9-d12;
-  
+
   ul{
     @include margin-trailer(3);
     @include gs-media (d) {
       margin-bottom: 0;
     }
   }
-  
+
 
   li:last-child{
     border-bottom: 1px dotted $aaa-gray !important;
     @include gs-media (d) {
       border-bottom: 0;
-    } 
+    }
   }
 
 }
@@ -97,16 +98,18 @@ footer {
     padding: 0;
     padding-left: 12px;
     margin-bottom: 0;
+    text-transform: none !important; // fix for LCC uppercase problem
     font-style: normal !important;
-    font-weight: normal !important; // this is added to prevent overrides from college stylin' innit
+    font-weight: normal !important; // this is added to prevent overrides from college footer
     letter-spacing: normal !important; // prevent LCF letter spacing on global footer
+    word-spacing: normal !important; // fix for LCC pages
     @include gs-media (d) {
       line-height: rhythm(6, 16px);
       padding-left: 0;
       margin-top: 0;
     }
   }
-  
+
   ul { clear: left; }
 
   li {
@@ -123,11 +126,15 @@ footer {
         padding-right: 18px;
       }
     }
+    a:hover {
+    	background-color: transparent !important;
+    }
     a:first-child {
       @include gs-media (d) {
         padding-left: 0 !important;
       }
     }
+
   }
 
   @include gs-media (m, min-max) {
@@ -173,11 +180,11 @@ footer {
 
   width: rhythm(6, 16px);
   color: $white;
-  
+
 }
 
 
-// the back to top button which appears 
+// the back to top button which appears
 // after scrolling down the page
 
 .back-to-top {
@@ -190,15 +197,15 @@ footer {
   &:hover{
     cursor: pointer;
   }
-  
-  a { 
-    @include font-size(14); 
+
+  a {
+    @include font-size(14);
     color: $black;
     background-color: $white;
     padding: 12px .75em 12px .75em;
     border-bottom: 0;
     span {
-      
+
     }
   }
 
@@ -210,8 +217,8 @@ footer {
     text-decoration: none;
     cursor: pointer;
     span {
-      
+
     }
   }
-}  
-    
+}
+

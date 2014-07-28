@@ -14,5 +14,5 @@ initFitVids = ->
 
 $(document).ready ->
 
-    if $(".__media").length > 0
+    if (($("video").length > 0) or ($(".video-container").length > 0))
         initFitVids()
