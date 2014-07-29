@@ -8,7 +8,7 @@
 #
 # shortCourseFilters = ->
 
-#     $.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js"), $.Deferred((deferred) ->
+#     $.when($.getScript("http://static.arts.ac.uk/assets/js/filtrify.min.js"), $.getScript("http://static.arts.ac.uk/assets/js/jPages.min.js"), $.Deferred((deferred) ->
 #       $ deferred.resolve
 #     )).done ->
 #         $ ->
@@ -40,7 +40,7 @@
 
 shortCourseFilters = ->
 	if $("#container").length > 0
-		$.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/filtrify.min.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jPages.min.js"), $.Deferred((deferred) ->
+		$.when($.getScript("http://static.arts.ac.uk/assets/js/filtrify.min.js"), $.getScript("http://static.arts.ac.uk/assets/js/jPages.min.js"), $.Deferred((deferred) ->
 			$ deferred.resolve
 			return
 		)).done ->
