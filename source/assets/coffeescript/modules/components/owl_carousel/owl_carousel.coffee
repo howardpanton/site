@@ -9,7 +9,7 @@
 
 initOwlCarousel = ->
 
-        jQuery.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js", ->
+        jQuery.getScript "http://static.arts.ac.uk/assets/js/owl.carousel.js", ->
             $(".owl-carousel").each ->
                 $(this).owlCarousel
                     items: 3

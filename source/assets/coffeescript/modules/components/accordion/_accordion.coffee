@@ -24,7 +24,7 @@ resetSpinners = ->
 
 initAccordion = ->
 
-    $.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js"), $.Deferred((deferred) ->
+    $.when($.getScript("http://static.arts.ac.uk/assets/js/jquery.accordion-ck.js"), $.getScript("http://static.arts.ac.uk/assets/js/jquery.easing.1.3-ck.js"), $.getScript("http://static.arts.ac.uk/assets/js/jquery-rotate-ck.js"), $.Deferred((deferred) ->
       $ deferred.resolve
     )).done ->
       $("#st-accordion").accordion oneOpenedItem: true

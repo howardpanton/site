@@ -11,9 +11,9 @@ function checkForAccordion() {
     if ($('.accordion').length > 0) {
 
         $.when(
-            $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js" ),
-            $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js" ),
-            $.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js" ),
+            $.getScript( "http://static.arts.ac.uk/assets/js/jquery.accordion-ck.js" ),
+            $.getScript( "http://static.arts.ac.uk/assets/js/jquery.easing.1.3-ck.js" ),
+            $.getScript( "http://static.arts.ac.uk/assets/js/jquery-rotate-ck.js" ),
             $.Deferred(function( deferred ){
                 $( deferred.resolve );
             })

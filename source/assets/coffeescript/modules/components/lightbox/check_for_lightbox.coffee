@@ -7,7 +7,7 @@
 #
 initLightbox = ->
 
-    $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js", ->
+    $.getScript "http://static.arts.ac.uk/assets/js/magnific-lightbox-ck.js", ->
       $(".js-lightbox").each ->
         $(this).magnificPopup
           delegate: "a"

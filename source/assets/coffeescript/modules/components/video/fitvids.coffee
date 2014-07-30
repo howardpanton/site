@@ -9,7 +9,7 @@
 
 initFitVids = ->
 
-    $.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.fitvids-ck.js", ->
+    $.getScript "http://static.arts.ac.uk/assets/js/jquery.fitvids-ck.js", ->
         $(".__media").fitVids()
 
 $(document).ready ->

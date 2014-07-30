@@ -11,7 +11,7 @@ function checkForLightbox() {
     // detect lightbox component
     if ($('.js-lightbox').length > 0) {
 
-        $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js', function() {
+        $.getScript('http://static.arts.ac.uk/assets/js/magnific-lightbox-ck.js', function() {
 
             $('.js-lightbox').each(function() {
               $(this).magnificPopup({
