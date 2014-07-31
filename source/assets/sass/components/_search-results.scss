@@ -122,18 +122,18 @@
   margin-left: 12px;
   background-color: rgba(255,255,255, 0);
   box-shadow: none !important;
-  @include adjust-font-size-to (16px);
+  @include font-size(16);
 
   @include gs-media(t, min-max) {
     margin-left: 12px;
-    @include adjust-font-size-to (14px);
+    @include font-size(14);
   }
   @include gs-media(m, min-max) {
     max-width: 90%;
     width: 90%;
     margin-left: 0;
     padding-left: 6px;
-    @include adjust-font-size-to (12px);
+    @include font-size(12);
   }
 
   &::-webkit-input-placeholder {
@@ -189,11 +189,7 @@
 }
 
 input, .search-result-module, .search-input-wrap {
-  -webkit-transition: -webkit-box-shadow 450ms;
-  -moz-transition: -moz-box-shadow 450ms;
-  -o-transition: -o-box-shadow 450ms;
-  transition: border 450ms ease;
-  border: 6px solid rgba(0,0,0,0);
+  @extend .border-transition;
 }
 
 .search-gray-border {
