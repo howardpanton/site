@@ -9,3 +9,12 @@ $(document).ready ->
 		  menu_show_onload: 0 # Drop down to show on page load (type the number of the drop down, 0 for none)
 		  menu_responsive: 1 # 1 = Responsive, 0 = Not responsive
 		return true
+
+
+# close megamenu dropdowns on ESC key press
+$(document).keyup (e) ->
+  # if escape key is pressed,
+  if e.keyCode is 27
+  	$(".menu-btn").removeClass "active"
+  	$(".dropdown_fullwidth").css "display", "none"
+  return true
