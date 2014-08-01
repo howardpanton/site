@@ -32,6 +32,8 @@ initSlider = ->
             pauseOnHover: true
             delay: 3000
 
+    # make royal slider left - right buttons keyboard accessible by adding tabindex
+    $(".rsArrowIcn").attr( "tabindex", "0" )
 
 $(document).ready ->
     if $(".royalSlider").length > 0
