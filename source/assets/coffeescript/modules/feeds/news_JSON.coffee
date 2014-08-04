@@ -6,7 +6,7 @@
 #    -------------------------------------------------------------
 #
 
-@getNewsFeed = (college, tag, category, feed_id, count, width, empty_message ) ->
+@getNewsFeed = (college, tag = "", category = "", feed_id, count, width, empty_message ) ->
 
 	# set counter to 6 as default if blank parameter passed to the function
 	if (count is "")
@@ -86,4 +86,6 @@ $(document).ready ->
 		if $(".news-feed").length > 0
 			$(".news-feed").each ->
 				_this = $(this);
-				getNewsFeed(_this.data('news-college'), _this.data('news-tag'), _this.data('news-category'), _this.data('feed-id'), _this.data('item-count'), _this.data('feed-width'), _this.data('empty-message'))
+				# if there is a feed-id data attribute
+				if _this.data('feed-id')
+					getNewsFeed(_this.data('news-college'), _this.data('news-tag'), _this.data('news-category'), _this.data('feed-id'), _this.data('item-count'), _this.data('feed-width'), _this.data('empty-message'))
