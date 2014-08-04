@@ -5,6 +5,8 @@ University of the Arts London website
 
 [ ![Codeship Status for artslondon/site](https://www.codeship.io/projects/3d4dff50-fe15-0131-437c-429f96c36950/status)](https://www.codeship.io/projects/29520)
 
+Testing with Codeship
+
 This is the repo for the new [www.arts.ac.uk](www.arts.ac.uk) website.
 The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundation 4.0](http://foundation.zurb.com/), plus a pick-and-mix of extra components.
 
