@@ -134,12 +134,6 @@ form {
   }
 }
 
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
 // Groups of fields with labels on top (legends)
 legend {
   display: block;
@@ -792,10 +786,10 @@ legend + .control-group {
 // Custom checkbox & radio button styling
 // --------------------------------------
 
-// styling based from example seen here:  
-// http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons/ 
+// styling based from example seen here:
+// http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons/
 
-// used for the bg sprites to style checkboxes and radioboxes 
+// used for the bg sprites to style checkboxes and radioboxes
 .form-ico {
   //height: 16px;
   //width: 16px;
@@ -811,14 +805,14 @@ legend + .control-group {
   @include margin-trailer(2);
 }
 
-// checkbox and radio button styling 
+// checkbox and radio button styling
 // default: boxes appear to the right of the label
 // add class "before-label" to make the checkbox or radio button appear before the label
 
 // remove default iphone border radius
 input {
    -webkit-appearance: none;
-   @include border-radius(0); 
+   @include border-radius(0);
 }
 
 input[type="checkbox"],
@@ -945,7 +939,7 @@ input:disabled {
   cursor: default;
 }
 
-input[type="radio"]:disabled + label, 
+input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
   cursor: default;
 }

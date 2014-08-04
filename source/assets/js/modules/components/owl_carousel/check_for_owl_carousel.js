@@ -10,7 +10,7 @@ function checkForOwlCarousel() {
 
     if ($('.owl-carousel').length > 0) {
 
-      jQuery.getScript( "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js" , function() {
+      jQuery.getScript( "http://static.arts.ac.uk/assets/js/owl.carousel.js" , function() {
          $('.owl-carousel').each(function() {
             $(this).owlCarousel({
             items: 3,

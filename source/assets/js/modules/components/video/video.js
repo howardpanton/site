@@ -13,7 +13,7 @@ function checkForVideo() {
 
 						$('video').mediaelementplayer({
 								// pluginPath: 'http://www.arts.ac.uk/media/beta/beta-assets/plugins/'
-								pluginPath: 'http://d27lwoqz7s24cy.cloudfront.net/assets/swf/'
+								pluginPath: 'http://static.arts.ac.uk/assets/swf/'
 						});
 				});
 

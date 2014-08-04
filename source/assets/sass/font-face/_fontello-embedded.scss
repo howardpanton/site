@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'fontello';
-	src: url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.eot?57927238');
-	src: url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.eot?57927238#iefix') format('embedded-opentype'),
-	url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.woff') format('woff'),
-	url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.ttf') format('truetype'),
-	url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.svg#fontello') format('svg');
+	src: url('http://static.arts.ac.uk/assets/fonts/fontello.eot?57927238');
+	src: url('http://static.arts.ac.uk/assets/fonts/fontello.eot?57927238#iefix') format('embedded-opentype'),
+	url('http://static.arts.ac.uk/assets/fonts/fontello.woff') format('woff'),
+	url('http://static.arts.ac.uk/assets/fonts/fontello.ttf') format('truetype'),
+	url('http://static.arts.ac.uk/assets/fonts/fontello.svg#fontello') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -12,42 +12,40 @@
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-	@font-face {
-		font-family: 'fontello';
-		src: url('http://staging.arts.ac.uk/media/beta/beta-assets/fonts/fontello.svg?72301902#fontello') format('svg');
-	}
-}
-
+  @font-face {
+    font-family: 'fontello';
+    src: url('http://static.arts.ac.uk/assets/fonts/fontello.svg?72301902#fontello') format('svg');
+  }
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
-	font-family: "fontello";
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
 
-	display: inline-block;
-	text-decoration: inherit;
-	width: 1em;
-	margin-right: .2em;
-	text-align: center;
-	/* opacity: .8; */
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
 
-	/* For safety - reset parent styles, that can break glyph codes*/
-	font-variant: normal;
-	text-transform: none;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
 
-	/* fix buttons height, for twitter bootstrap */
-	line-height: 1em;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
 
-	/* Animation center compensation - margins should be symmetric */
-	/* remove if not needed */
-	margin-left: .2em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
 
-	/* you can be more comfortable with increased icons size */
-	/* font-size: 120%; */
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
 
-	/* Uncomment for 3D effect */
-	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 %icon { font-family: "fontello"; }
@@ -65,16 +63,14 @@ list-style-type: none;
 
 
 .download:before {
-		font-family: "fontello";
-		// font-size: 36px;
-		min-width: 1.5em;
-		content: '\e808';
+    font-family: "fontello";
+    min-width: 1.5em;
+    content: '\e808';
 }
 
 .external:after {
-		font-family: "fontello";
-		// font-size: 36px;
-		content:  '\e837';
+    font-family: "fontello";
+    content:  '\e837';
 }
 
 
@@ -139,3 +135,28 @@ list-style-type: none;
 .icon-battery:before { content: '\e820'; } /* '' */
 .icon-search:before { content: '\e82b'; } /* '' */
 .icon-link:before { content: '\e82c'; } /* '' */
+
+%pngicon {
+	display: inline-block;
+	width: 42px;
+  height: 42px;
+  background-size: 42px 42px;
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+}
+.icon-gplus-black {
+	@extend %pngicon;
+	background-image: url('http://static.arts.ac.uk/assets/img/social-icons/gplus-84-black.png');
+ }
+ .icon-gplus-white {
+	@extend %pngicon;
+	background-image: url('http://static.arts.ac.uk/assets/img/social-icons/gplus-84-white.png');
+ }
+ .icon-instagram-black {
+ 	@extend %pngicon;
+	background-image: url('http://static.arts.ac.uk/assets/img/social-icons/instagram-84-black.png');
+ }
+ .icon-instagram-white {
+	@extend %pngicon;
+	background-image: url('http://static.arts.ac.uk/assets/img/social-icons/instagram-84-white.png');
+ }

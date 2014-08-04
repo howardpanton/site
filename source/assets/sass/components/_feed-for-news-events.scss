@@ -1,12 +1,14 @@
-.feed-comp {
-
+.news-feed, .events-feed {
 	@include component-spacing-bottom;
+}
+
+.feed-comp {
 
 	.center-cropped {
 		display: block;
 		width: 100%;
 		height: 100px;
-		background-position: top center;
+		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat
 	}
@@ -32,6 +34,9 @@
 	}
 
 	.l-content & {
+		li {
+			height: 100px;
+		}
 		@include gs-media(m,min-max) {
 			li:nth-child(4), li:nth-child(5), li:nth-child(6) {
 				display: none;
@@ -163,7 +168,6 @@
 			padding: 0;
 			margin: 0;
 			border-top: 1px solid $light-gray;
-			height: 100px;
 			overflow: hidden;
 			a {
 				border-bottom: none;
@@ -197,5 +201,8 @@
 			padding-left: 12px;
 		}
 	}
+}
 
+.empty-message {
+	display: none;
 }
