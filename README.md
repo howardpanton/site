@@ -3,7 +3,7 @@ beta
 
 University of the Arts London website
 
-[ ![Codeship Status for artslondon/site](https://www.codeship.io/projects/3d4dff50-fe15-0131-437c-429f96c36950/status)](https://www.codeship.io/projects/29520)
+[ ![Codeship Status for artslondon/site](https://www.codeship.io/projects/3d4dff50-fe15-0131-437c-429f96c36950/status)](https://www.codeship.io/projects/29520) [![Code Climate](https://codeclimate.com/github/artslondon/site/badges/gpa.svg)](https://codeclimate.com/github/artslondon/site)
 
 Testing with Codeship
 
