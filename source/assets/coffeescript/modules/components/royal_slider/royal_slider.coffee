@@ -15,7 +15,7 @@ initSlider = ->
         _itemWidth = (if (_this.data("slider-item-width") > 0) then _this.data("slider-item-width") else 930)
         _itemHeight = (if (_this.data("slider-item-height") > 0) then _this.data("slider-item-height") else 465)
         _itemAutoPlay = (if (_this.data("slider-auto-play") is true) then _this.data("slider-auto-play") else false)
-        _this.royalSlider
+        _this.royalSlider(
           arrowsNav: true
           fadeinLoadedSlide: false
           arrowsNavAutoHide: false
@@ -31,18 +31,39 @@ initSlider = ->
             enabled: _itemAutoPlay
             pauseOnHover: true
             delay: 3000
+        ).data("royalSlider")
 
-    # make royal slider left - right buttons keyboard accessible by adding tabindex
-    $(".rsArrowIcn").attr( "tabindex", "0" )
+        _slider = _this.data('royalSlider');
+
+        # Add tabindex to left and right slider btns for keyboard acessibility
+        _slider.ev.on "rsBeforeAnimStart", (event) ->
+		      $("div.rsArrowIcn").attr("tabindex", "0")
+				  return true
+
+				#if enter/return key is pressed on slider left or right buttons, trigger slider left or right
+				$(document).keyup (e) ->
+
+					focusedElem = $(document.activeElement)
+
+					# if key is ENTER
+					if(e.keyCode == 13)
+
+						if focusedElem.hasClass("rsArrowIcn")
+							_p = focusedElem.parent()
+
+							#get current instance of royalslider
+							_rSlider = _p.closest(".royalSlider").data("royalSlider")
+
+							#move slides left or right
+							if _p.hasClass("rsArrowRight")
+								_rSlider.next()
+							if _p.hasClass("rsArrowLeft")
+								_rSlider.prev()
+					return true
+
+
 
 $(document).ready ->
     if $(".royalSlider").length > 0
         initSlider()
 
-
-
-
-# var slider = _this.data('royalSlider');
-# slider.ev.on('rsAfterContentSet', function(e, object) {
-#   resrc.resrcAll();
-# });
