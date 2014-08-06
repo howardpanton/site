@@ -76,26 +76,6 @@ block content
 					input#r6(type='radio', name='rb', disabled='disabled')
 					label(for='r6') Radio Button 3 (disabled)
 			script(src='https://gist.github.com/denovo/6174210.js')
-		#select-boxes-tab.row
-			.l-content
-				h3 Select Box
-				form.margin-top.with-box-shadow(action='')
-					.js-select-box.select-box
-						input.js-select-box-value(type='hidden', value='option one')
-						.select-box-heading
-							h3.select-box-title Option one
-							.select-box-arrow
-								span.js-select-box-icon.icon
-						ul.js-select-box-list.select-box-options
-							li.select-box-option(data-sb-value='option1')
-								a(href='#') Option one
-							li.select-box-option(data-sb-value='option2')
-								a(href='#') Option two
-							li.select-box-option(data-sb-value='option3')
-								a(href='#') Option three
-							li.select-box-option(data-sb-value='option4')
-								a(href='#') Option four
-			script(src='https://gist.github.com/denovo/6174368.js')
 		#buttons-tab.row
 			.l-content
 				h3 buttons
@@ -107,9 +87,10 @@ block content
 			h3 Example Form
 			form#form.l-forms.margin-top.with-box-shadow(name='form')
 				fieldset
+					legend Your details
 					label Label example
 					input#default(type='text', name='default')
-					label Select box:
+					label Select box
 					.js-select-box.select-box
 						input.js-select-box-value(type='hidden', value='option one')
 						.select-box-heading
@@ -130,8 +111,7 @@ block content
 						small field
 					input#name(type='text', name='name', required='required')
 					label
-						| Feedback:
-						small Comments here
+						| Please add your comments
 					textarea(cols='40', rows='8')
 				div
 					input#c1(type='checkbox', name='cc')
@@ -171,7 +151,7 @@ block content
 					input.submit-btn.pull-left.margin-bottom-3x(type='submit', value='Submit')
 					a.form-link.pull-left.clear-left(href='#') Forgot Password
 					a.form-link.pull-left.clear-left(href='#') Register
-		#sunstyled-chckboxes.row
+		#unstyled-elements.row
 			.l-content
 				h2 Unstyled / Default elements
 				p
@@ -182,3 +162,14 @@ block content
 					label.unstyled(for='uns-chkbx2') Unstyled checkbox 2
 					input#uns-chkbx2.unstyled(type='checkbox', name='uns-chkbx2')
 			script(src='https://gist.github.com/denovo/9115339.js')
+		#normal-select-boxes.row
+			.l-content
+				h3 Accessible Select Box
+				form.margin-top.with-box-shadow(action='')
+					label Course
+					select(id="my_id", name="my_id")
+						option(value="") Please select
+						option(value="a0PM0000005oFixMAE") 3D Modelling
+						option(value="a0PM0000005oHtDMAU") Textiles
+						option(value="a0PM0000005o5KoMAI") Animation
+			script(src='https://gist.github.com/strangerpixel/ed00d15957c25936f4b1.js')

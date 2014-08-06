@@ -350,19 +350,20 @@ aside {
 	border-left: none;
 	padding: 24px;
 	clear: left;
-	&.no-bg {
-		background-color: $white;
-	}
 
 	@include gs-media(d) {
 		background: $white;
 		border-left: 1px dotted $bg-gray;
-			padding-left: 23px;
-			clear: none;
+		padding-left: 23px;
+		clear: none;
 	}
 
-	&.bg-gray-bg, &.dark-gray-bg {
+	&.bg-gray-bg, &.dark-gray-bg, &.no-style {
 		border: 0 none;
+	}
+
+	&.no-style {
+		padding: 0;
 	}
 }
 
