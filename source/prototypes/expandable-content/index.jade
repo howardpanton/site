@@ -1,0 +1,99 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "expandable content";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	//- Media Block with aside
+	.row
+		.l-content
+			figure
+				img.rsImg.resrc(data-src='http://app.resrc.it/o=80/http://www.arts.ac.uk/media/arts/about-ual/Summer-Study-Abroad-Exhibition-2013.cropjpg.jpg', alt='', data-resrc-width='621', src='http://app.resrc.it/s=w630,pd1/o=80/http://www.arts.ac.uk/media/arts/about-ual/Summer-Study-Abroad-Exhibition-2013.cropjpg.jpg')
+			.__text
+				p.leader
+					| University of the Arts London is Europe’s largest specialist arts and design university, with close to 19,000 students from more than 100 countries.
+				p
+					| Established in 2004, University of the Arts London is a vibrant world centre for innovation, drawing together six colleges with international reputations in art, design, fashion, communication and performing arts.
+
+				h2 Thematic Section Title h2 random stuff stuff stuff stuff testing
+				p
+					| paragraph Integer posuere erat a ante velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
+				h3 Section Title h3 random stuff testing
+				p
+					| paragraph Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
+				p
+					| Founded in the 19th and early 20th centuries, these colleges include Camberwell College of Arts, Central Saint Martins, Chelsea College of Arts, London College of Communication, London College of Fashion, and Wimbledon College of Arts.
+				h4 Section Title h4 random stuff testing
+		aside
+			h3 Be an arts insider
+			p
+				| Follow UAL on
+				a.external(href='https://twitter.com/UniArtsLondon', title='twitter.com/UniArtsLondon(external link)') Twitter
+				| and connect on
+				a.external(href='https://www.facebook.com/UniversityoftheArtsLondon', title='www.facebook.com/UniversityoftheArtsLondon(external link)') Facebook
+				| to receive the latest news and details about exhibitions and events.
+			p
+				| Visit our
+				a.external(href='http://www.youtube.com/user/universityartslondon?feature=watch', title='youtube.com/user/universityartslondon?feature=watch(external link)') YouTube channel
+				| to learn more about what life is like at UAL.
+	div.row
+		div.l-content.expandable-content
+			a#compid1.in-page-link
+			h2#linkid1 Expandable content block
+			p
+				| Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+			div.expanded-content(style='display: none;')
+				p
+					| Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.
+				p
+					| Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.
+				p
+					a.hide-content(href='#')
+						span.hide-descriptive-text This will reveal more about: Expandable content block
+						| Show less
+			p
+				a.show-more(href='#')
+					span.hide-descriptive-text This will show less about: Expandable content block
+					| Show more
+
+
+	div.row
+		div.l-content.expandable-content
+			a#compid1.in-page-link
+			h2#linkid1 Expandable content block
+			p
+				| Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+			div.expanded-content(style='display: none;')
+				p
+					| Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.
+				p
+					| Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.
+				p
+					a.hide-content(href='#')
+						span.hide-descriptive-text This will reveal more about: Expandable content block
+						| Show less
+			p
+				a.show-more(href='#')
+					span.hide-descriptive-text This will show less about: Expandable content block
+					| Show more
+
+	div.row
+		div.l-content.expandable-content
+			a#compid1.in-page-link
+			h2#linkid1 Expandable content block  
+			p
+				| Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+			div.expanded-content(style='display: none;')
+				p
+					| Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.
+				p
+					| Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.
+				p
+					a.hide-content(href='#')
+						span.hide-descriptive-text This will reveal more about: Expandable content block
+						| Show less
+			p
+				a.show-more(href='#')
+					span.hide-descriptive-text This will show less about: Expandable content block
+					| Show more
