@@ -48,17 +48,25 @@ initSlider = ->
 					# if key is ENTER
 					if(e.keyCode == 13)
 
-						if focusedElem.hasClass("rsArrowIcn")
-							_p = focusedElem.parent()
+						# has the enter key been pressed on a slider arrow?
+						isArrowIcn = focusedElem.hasClass("rsArrowIcn")
 
-							#get current instance of royalslider
-							_rSlider = _p.closest(".royalSlider").data("royalSlider")
+						_p = focusedElem.parent()
 
-							#move slides left or right
-							if _p.hasClass("rsArrowRight")
-								_rSlider.next()
-							if _p.hasClass("rsArrowLeft")
-								_rSlider.prev()
+						#get current instance of royalslider
+						_rSlider = _p.closest(".royalSlider").data("royalSlider")
+
+						#move slides left or right
+						(if isArrowIcn and _p.hasClass "rsArrowRight" then _rSlider.next() else _rSlider.prev())
+
+						# isArrowIcn and _p.hasClass "rsArrowRight" ? _rSlider.next() : _rSlider.prev()
+
+						# if _p.hasClass("rsArrowRight")
+						# 	_rSlider.next()
+						# if _p.hasClass("rsArrowLeft")
+						# 	_rSlider.prev()
+
+
 					return true
 
 

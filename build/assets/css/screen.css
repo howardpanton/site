@@ -1,5 +1,3 @@
-/*!Updated: 01-08-2014, 12:29:55 PM */
-
 @charset "UTF-8";
 /*------------------------------------*\
 		$CONTENTS
@@ -12085,6 +12083,33 @@ footer .copyright p {
 /* line 113, ../../../source/assets/sass/components/_pagination.scss */
 .holder span {
   margin: 0 5px;
+}
+
+/* line 1, ../../../source/assets/sass/components/_expandable-content.scss */
+.expandable-content {
+  border-top: 1px dotted #757575;
+  border-bottom: 1px dotted #757575;
+  margin-top: 26px;
+  margin-bottom: 18px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+/* line 9, ../../../source/assets/sass/components/_expandable-content.scss */
+.expandable-content .show-more, .expandable-content .hide-content {
+  float: right;
+  font-family: 'Swiss721BT-Roman';
+}
+/* line 14, ../../../source/assets/sass/components/_expandable-content.scss */
+.expandable-content .hide-content::after, .expandable-content .show-more::after {
+  font-family: 'fontello';
+}
+/* line 16, ../../../source/assets/sass/components/_expandable-content.scss */
+.expandable-content .hide-content::after {
+  content: ' \e806';
+}
+/* line 18, ../../../source/assets/sass/components/_expandable-content.scss */
+.expandable-content .show-more::after {
+  content: ' \e803';
 }
 
 /* line 2, ../../../source/assets/sass/components/_highlight-blocks.scss */
