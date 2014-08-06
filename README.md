@@ -3,7 +3,9 @@ beta
 
 University of the Arts London website
 
-[ ![Codeship Status for artslondon/site](https://www.codeship.io/projects/3d4dff50-fe15-0131-437c-429f96c36950/status)](https://www.codeship.io/projects/29520)
+[ ![Codeship Status for artslondon/site](https://www.codeship.io/projects/3d4dff50-fe15-0131-437c-429f96c36950/status)](https://www.codeship.io/projects/29520) [![Code Climate](https://codeclimate.com/github/artslondon/site/badges/gpa.svg)](https://codeclimate.com/github/artslondon/site)
+
+Testing with Codeship
 
 This is the repo for the new [www.arts.ac.uk](www.arts.ac.uk) website.
 The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundation 4.0](http://foundation.zurb.com/), plus a pick-and-mix of extra components.
@@ -11,7 +13,7 @@ The site is built using [Gridset](http://gridsetapp.com), parts of [Zurb Foundat
 Authors
 ------------
 
-[Howard Panton](https://github.com/howardpanton), [Matt Wisbey](https://github.com/wisbey), [Pete Richardson](https://github.com/denovo), [Alastair Mucklow](https://github.com/strangerpixel)
+[Howard Panton](https://github.com/howardpanton), [Pete Richardson](https://github.com/denovo), [Alastair Mucklow](https://github.com/strangerpixel)
 
 Github setup
 ------------
@@ -32,15 +34,15 @@ At this point you should fork the artslondon repo into your own github account.
 
 You should see:
 
--- origin    https://github.com/artslondon/beta.git (fetch)  
--- origin   https://github.com/artslondon/beta.git (push)  
+-- origin    https://github.com/artslondon/site.git (fetch)  
+-- origin   https://github.com/artslondon/site.git (push)  
 
 **Update remote**
 
 `git remote update`
 
 -- Fetching origin  
--- From https://github.com/artslondon/beta  
+-- From https://github.com/artslondon/site  
 -- * [new branch]      gh-pages   -> origin/gh-pages  
 -- * [new branch]      master     -> origin/master  
 
@@ -53,14 +55,14 @@ You should see:
 
 **Set a new remote**
 
-`git remote add source https://github.com/yourusername/beta.git`
+`git remote add source https://github.com/yourusername/site.git`
 
 `git remote -v`
 
--- origin   https://github.com/artslondon/beta.git (fetch)  
--- origin   https://github.com/artslondon/beta.git (push)  
--- source   https://github.com/yourusername/beta.git (fetch)  
--- source   https://github.com/yourusername/beta.git (push)  
+-- origin   https://github.com/artslondon/site.git (fetch)  
+-- origin   https://github.com/artslondon/site.git (push)  
+-- source   https://github.com/yourusername/site.git (fetch)  
+-- source   https://github.com/yourusername/site.git (push)  
 
 
 ### Fork & pull process
