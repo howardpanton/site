@@ -138,20 +138,19 @@
 //     02 MEGA MENU CONTAINERS
 //     _______________________________________________  */
 
-.megamenu li .dropdown_container,
-.megamenu li .dropdown_fullwidth,
-.megamenu li .dropdown_multilevel {
-  position: absolute;
-  margin:0;
-  display: none;
-  z-index:99998;
-  float: left;
-  h2 a, a {
-    @extend %Swiss721BT-Light-important;
-    @include font-size(14);
-  }
-
-
+   @include gs-media(d, min) {
+	.megamenu li .dropdown_container,
+	.megamenu li .dropdown_fullwidth,
+	.megamenu li .dropdown_multilevel {
+	  position: absolute;
+	  margin:0;
+	  display: none;
+	  z-index:99998;
+	  float: left;
+	  h2 a, a {
+	    font-family: Swiss721BT-Light !important;
+	    @include font-size(14);
+	  }
 
 
 
@@ -178,6 +177,7 @@
     }
   }
 
+}
   // set no hover color for dropdown
   li > a:hover {
      background-color: $light-gray;
@@ -285,8 +285,6 @@
 }
 
 .dropdown_fullwidth {
-  @include padding-leader(2);
-  @include padding-trailer(2);
 
   @include gs-media(d) {
     @include padding-leader(4);
