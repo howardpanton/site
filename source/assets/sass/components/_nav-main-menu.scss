@@ -216,13 +216,14 @@
     right: 0;
     top: 0;
     height: 36px;
-    border-top-width: 0px;
     margin: 0;
     text-align: center;
     min-width: 60px;
+    border-width: 1px 6px 6px;
+    border-style: solid;
+    border-color: $black;
     @include gs-media(d) {
       min-width: gs-width(d, 16, 16, (1,16), true);
-      height: 36px;
     }
 
     a {
