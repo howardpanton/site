@@ -1,47 +1,44 @@
+// Normally used as a button class on anchors
 .button-link {
-  @include font-size(14);
-  background-color: $black;
-  color: $white;
-  padding: rhythm(1, 14px) rhythm(2, 14px);
-  border-bottom: 0;
-  display:inline-block;
-  // margin-top:12px;
-	//margin: rhythm(4, 14px) 0 rhythm(3, 14px) 0; 	
-	//padding: rhythm(2, 14px) rhythm(3, 14px); 	
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  
+	@include font-size(14);
+	background-color: $black;
+	color: $white;
+	padding: rhythm(1, 14px) rhythm(2, 14px);
+	border-bottom: 0;
+	display:inline-block;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&:hover {
+		background-color: $aaa-gray;
+		color: $white;
+		text-decoration: none;
+		cursor: pointer;
+		padding: rhythm(1, 14px) rhythm(2, 14px);
+		display:inline-block;
+		border-bottom: none;
+
+		.csm & {
+			background-color: $csm-primary;
+			color: $black;
+		}
+		.lcc & {
+			background-color: $lcc-secondary-pink;
+			color: $white;
+		}
+	}
+
+	&.icon {
+		padding-top: emCalc(6px);
+		padding-bottom: emCalc(6px);
+		@include font-size(24);
+	}
 }
-.button-link:hover, %button-link:hover{
-  background-color: $aaa-gray;
-  color: $white;
-  text-decoration: none;
-  cursor: pointer;
-  padding: rhythm(1, 14px) rhythm(2, 14px);
-  display:inline-block;
-  // margin-top:12px;
-  border-bottom: none;
-
-  .csm & {
-    background-color: $csm-primary;
-    color: $black;
-  }
-  .lcc & {
-    background-color: $lcc-secondary-pink;
-    color: $white;
-  }
-
-}
-// .button-link:active {
-//   background: #2E5481;
-//   border: solid 1px #203E5F;
-// }
-
 
 .button {
 	text-align: center;
@@ -61,13 +58,6 @@
 	}
 }
 
-
-.button-link.icon {
-  padding-top: emCalc(6px);
-  padding-bottom: emCalc(6px);
-  @include font-size(24);
-}
-
 .lcf .view-all {
-  text-align: center;
-} 
+	text-align: center;
+}
