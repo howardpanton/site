@@ -1,4 +1,4 @@
-/*!Updated: 15-08-2014, 3:28:10 PM */
+/*!Updated: 15-08-2014, 4:52:20 PM */
 
 /*! jQuery v2.0.0 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery.min.map
@@ -2847,7 +2847,7 @@ if (typeof define !== 'undefined' && define.amd) {
   var initOwlCarousel;
 
   initOwlCarousel = function() {
-    jQuery.getScript("/assets/js/owl.carousel.min.js", function() {
+    jQuery.getScript("http://static.arts.ac.uk/assets/js/owl.carousel.min.js", function() {
       var owl_carousel;
       owl_carousel = $(".owl-carousel");
       return owl_carousel.each(function() {
