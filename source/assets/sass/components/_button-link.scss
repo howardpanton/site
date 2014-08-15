@@ -1,10 +1,10 @@
-// Normally used as a button class on anchors
-.button-link {
+// .button-link is used as a button class on anchors
+button, .button-link {
 	@include font-size(14);
 	background-color: $black;
 	color: $white;
 	padding: rhythm(1, 14px) rhythm(2, 14px);
-	border-bottom: 0;
+	border: 1px solid $black;
 	display:inline-block;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
@@ -21,14 +21,17 @@
 		cursor: pointer;
 		padding: rhythm(1, 14px) rhythm(2, 14px);
 		display:inline-block;
-		border-bottom: none;
+		background-color: $aaa-gray;
+  	border-color: $aaa-gray;
 
 		.csm & {
 			background-color: $csm-primary;
+			border-color: $csm-primary;
 			color: $black;
 		}
 		.lcc & {
 			background-color: $lcc-secondary-pink;
+			border-color: $lcc-secondary-pink;
 			color: $white;
 		}
 	}
@@ -40,6 +43,7 @@
 	}
 }
 
+// this is probably legacy but it might still be used on sliders
 .button {
 	text-align: center;
 	padding:0;

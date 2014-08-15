@@ -700,34 +700,18 @@ legend + .control-group {
 }
 
 
-
-
-// disabled form elements have regular mouse pointer
-input:disabled {
-  cursor: default;
+// Disabled states
+input, button.submit-btn {
+	&:disabled, &:disabled:hover {
+		color: $aaa-gray;
+  	background-color: $bg-gray;
+  	border-color: $bg-gray;
+  	cursor: default; // disabled form elements have regular mouse pointer
+	}
 }
 
 input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
-  cursor: default;
-}
-
-// submit button styles
-input.submit-btn {
-  @extend .button-link;
-  border-width: 0;
-  border-radius: 0;
-  display: block;
-}
-
-input.submit-btn:hover {
-  background-color: #333;
-  cursor: pointer;
-}
-
-input.submit-btn:disabled, input.submit-btn:disabled:hover, {
-  color: $aaa-gray;
-  background-color: $bg-gray;
   cursor: default;
 }
 

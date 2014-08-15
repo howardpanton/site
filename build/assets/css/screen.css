@@ -2868,43 +2868,26 @@ legend + .control-group {
   padding-left: 180px;
 }
 
-/* line 706, ../../../source/assets/sass/globals/_forms-core.scss */
-input:disabled {
+/* line 705, ../../../source/assets/sass/globals/_forms-core.scss */
+input:disabled, input:disabled:hover, button.submit-btn:disabled, button.submit-btn:disabled:hover {
+  color: #757575;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
 }
 
-/* line 711, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 714, ../../../source/assets/sass/globals/_forms-core.scss */
 input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
   cursor: default;
 }
 
-/* line 716, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn {
-  border-width: 0;
-  border-radius: 0;
-  display: block;
-}
-
-/* line 723, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn:hover {
-  background-color: #333;
-  cursor: pointer;
-}
-
-/* line 728, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn:disabled, input.submit-btn:disabled:hover {
-  color: #757575;
-  background-color: #e9e9e9;
-  cursor: default;
-}
-
-/* line 737, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 721, ../../../source/assets/sass/globals/_forms-core.scss */
 .search-with-icon-wrap {
   position: relative;
 }
 
-/* line 739, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 723, ../../../source/assets/sass/globals/_forms-core.scss */
 input[type="search"] {
   height: 42px;
   padding: 6px 6px;
@@ -2914,14 +2897,14 @@ input[type="search"] {
   background-color: #e9e9e9;
 }
 
-/* line 760, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 744, ../../../source/assets/sass/globals/_forms-core.scss */
 textarea {
   border-color: rgba(0, 0, 0, 0);
   border-width: 6px;
   border-style: solid;
   padding: 12px;
 }
-/* line 766, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 750, ../../../source/assets/sass/globals/_forms-core.scss */
 textarea:focus {
   border-color: #c8c8c8;
   border-width: 6px;
@@ -7103,13 +7086,13 @@ a.skip-to-content:active, a.skip-to-content:focus {
 }
 
 /* line 2, ../../../source/assets/sass/components/_button-link.scss */
-.button-link, input.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow {
+button, .button-link, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow {
   font-size: 14px;
   font-size: 0.875rem;
   background-color: black;
   color: white;
   padding: 0.42857em 0.85714em;
-  border-bottom: 0;
+  border: 1px solid black;
   display: inline-block;
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
@@ -7120,34 +7103,37 @@ a.skip-to-content:active, a.skip-to-content:focus {
   user-select: none;
 }
 /* line 17, ../../../source/assets/sass/components/_button-link.scss */
-.button-link:hover, input.submit-btn:hover, .search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns a.left-arrow:hover, .search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns a.right-arrow:hover {
+button:hover, .button-link:hover, .search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns a.left-arrow:hover, .search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns a.right-arrow:hover {
   background-color: #757575;
   color: white;
   text-decoration: none;
   cursor: pointer;
   padding: 0.42857em 0.85714em;
   display: inline-block;
-  border-bottom: none;
+  background-color: #757575;
+  border-color: #757575;
 }
-/* line 26, ../../../source/assets/sass/components/_button-link.scss */
-.csm .button-link:hover, .csm input.submit-btn:hover, .csm .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .csm a.left-arrow:hover, .csm .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .csm a.left-arrow:hover, .csm .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .csm a.right-arrow:hover, .csm .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .csm a.right-arrow:hover {
+/* line 27, ../../../source/assets/sass/components/_button-link.scss */
+.csm button:hover, .csm .button-link:hover, .csm .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .csm a.left-arrow:hover, .csm .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .csm a.left-arrow:hover, .csm .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .csm a.right-arrow:hover, .csm .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .csm a.right-arrow:hover {
   background-color: #d10000;
+  border-color: #d10000;
   color: black;
 }
-/* line 30, ../../../source/assets/sass/components/_button-link.scss */
-.lcc .button-link:hover, .lcc input.submit-btn:hover, .lcc .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .lcc a.left-arrow:hover, .lcc .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .lcc a.left-arrow:hover, .lcc .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .lcc a.right-arrow:hover, .lcc .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .lcc a.right-arrow:hover {
+/* line 32, ../../../source/assets/sass/components/_button-link.scss */
+.lcc button:hover, .lcc .button-link:hover, .lcc .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .lcc a.left-arrow:hover, .lcc .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .lcc a.left-arrow:hover, .lcc .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .lcc a.right-arrow:hover, .lcc .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .lcc a.right-arrow:hover {
   background-color: #e5006e;
+  border-color: #e5006e;
   color: white;
 }
-/* line 36, ../../../source/assets/sass/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span.button-link {
+/* line 39, ../../../source/assets/sass/components/_button-link.scss */
+button.icon, .button-link.icon, .search-pagination-btns a.left-arrow, .lower-search-pagination-btns a.left-arrow, .search-pagination-btns a.right-arrow, .lower-search-pagination-btns a.right-arrow, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
   font-size: 1.5rem;
 }
 
-/* line 43, ../../../source/assets/sass/components/_button-link.scss */
+/* line 47, ../../../source/assets/sass/components/_button-link.scss */
 .button {
   text-align: center;
   padding: 0;
@@ -7157,7 +7143,7 @@ a.skip-to-content:active, a.skip-to-content:focus {
   color: white;
   padding: 20px 40px 20px 40px;
 }
-/* line 52, ../../../source/assets/sass/components/_button-link.scss */
+/* line 56, ../../../source/assets/sass/components/_button-link.scss */
 .button:hover {
   padding: 0;
   border: none;
@@ -7166,7 +7152,7 @@ a.skip-to-content:active, a.skip-to-content:focus {
   background-color: #757575;
 }
 
-/* line 61, ../../../source/assets/sass/components/_button-link.scss */
+/* line 65, ../../../source/assets/sass/components/_button-link.scss */
 .lcf .view-all {
   text-align: center;
 }
@@ -14687,12 +14673,12 @@ ul.tabs li.active {
   }
 }
 /* line 196, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs input.submit-btn, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow {
+.tab_container.lcc-tabs .button-link, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow {
   background-color: white;
   color: black;
 }
 /* line 199, ../../../source/assets/sass/components/_tabs-to-accordion.scss */
-.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs input.submit-btn:hover, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover {
+.tab_container.lcc-tabs .button-link:hover, .tab_container.lcc-tabs .search-pagination-btns a.left-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.left-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.left-arrow:hover, .tab_container.lcc-tabs .search-pagination-btns a.right-arrow:hover, .search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover, .tab_container.lcc-tabs .lower-search-pagination-btns a.right-arrow:hover, .lower-search-pagination-btns .tab_container.lcc-tabs a.right-arrow:hover {
   background-color: #28e598;
   color: black;
 }

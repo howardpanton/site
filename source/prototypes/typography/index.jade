@@ -1,6 +1,6 @@
 extends ../../_layout/_base
 block vars
-	- var bodyClass = "ual";
+	- var bodyClass = "csm";
 	- var Title = "typography";
 	- var Sidebar = true;
 	- var Banner = true;
@@ -21,6 +21,10 @@ block content
 					| paragraph Integer posuere erat a ante velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
 				p
 					a.button-link(href="#") View all button
+				p
+					button(type="submit") Actual button
+				p
+					button.submit-btn(disabled="disabled") Button class submit-btn
 				p
 					a.button-link.icon(href="#") Button link plus icon class
 				p

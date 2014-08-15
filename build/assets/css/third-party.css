@@ -2567,43 +2567,26 @@ legend + .control-group {
   padding-left: 180px;
 }
 
-/* line 706, ../../../source/assets/sass/globals/_forms-core.scss */
-input:disabled {
+/* line 705, ../../../source/assets/sass/globals/_forms-core.scss */
+input:disabled, input:disabled:hover, button.submit-btn:disabled, button.submit-btn:disabled:hover {
+  color: #757575;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
 }
 
-/* line 711, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 714, ../../../source/assets/sass/globals/_forms-core.scss */
 input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
   cursor: default;
 }
 
-/* line 716, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn {
-  border-width: 0;
-  border-radius: 0;
-  display: block;
-}
-
-/* line 723, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn:hover {
-  background-color: #333;
-  cursor: pointer;
-}
-
-/* line 728, ../../../source/assets/sass/globals/_forms-core.scss */
-input.submit-btn:disabled, input.submit-btn:disabled:hover {
-  color: #757575;
-  background-color: #e9e9e9;
-  cursor: default;
-}
-
-/* line 737, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 721, ../../../source/assets/sass/globals/_forms-core.scss */
 .search-with-icon-wrap {
   position: relative;
 }
 
-/* line 739, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 723, ../../../source/assets/sass/globals/_forms-core.scss */
 input[type="search"] {
   height: 42px;
   padding: 6px 6px;
@@ -2613,14 +2596,14 @@ input[type="search"] {
   background-color: #e9e9e9;
 }
 
-/* line 760, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 744, ../../../source/assets/sass/globals/_forms-core.scss */
 textarea {
   border-color: rgba(0, 0, 0, 0);
   border-width: 6px;
   border-style: solid;
   padding: 12px;
 }
-/* line 766, ../../../source/assets/sass/globals/_forms-core.scss */
+/* line 750, ../../../source/assets/sass/globals/_forms-core.scss */
 textarea:focus {
   border-color: #c8c8c8;
   border-width: 6px;
@@ -5793,13 +5776,13 @@ input[type="text"].sb-search-input {
 }
 
 /* line 2, ../../../source/assets/sass/components/_button-link.scss */
-.button-link, input.submit-btn {
+button, .button-link {
   font-size: 14px;
   font-size: 0.875rem;
   background-color: black;
   color: white;
   padding: 0.42857em 0.85714em;
-  border-bottom: 0;
+  border: 1px solid black;
   display: inline-block;
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
@@ -5810,34 +5793,37 @@ input[type="text"].sb-search-input {
   user-select: none;
 }
 /* line 17, ../../../source/assets/sass/components/_button-link.scss */
-.button-link:hover, input.submit-btn:hover {
+button:hover, .button-link:hover {
   background-color: #757575;
   color: white;
   text-decoration: none;
   cursor: pointer;
   padding: 0.42857em 0.85714em;
   display: inline-block;
-  border-bottom: none;
+  background-color: #757575;
+  border-color: #757575;
 }
-/* line 26, ../../../source/assets/sass/components/_button-link.scss */
-.csm .button-link:hover, .csm input.submit-btn:hover {
+/* line 27, ../../../source/assets/sass/components/_button-link.scss */
+.csm button:hover, .csm .button-link:hover {
   background-color: #d10000;
+  border-color: #d10000;
   color: black;
 }
-/* line 30, ../../../source/assets/sass/components/_button-link.scss */
-.lcc .button-link:hover, .lcc input.submit-btn:hover {
+/* line 32, ../../../source/assets/sass/components/_button-link.scss */
+.lcc button:hover, .lcc .button-link:hover {
   background-color: #e5006e;
+  border-color: #e5006e;
   color: white;
 }
-/* line 36, ../../../source/assets/sass/components/_button-link.scss */
-.button-link.icon, input.icon.submit-btn, a.search span.button-link {
+/* line 39, ../../../source/assets/sass/components/_button-link.scss */
+button.icon, .button-link.icon, a.search span.button-link {
   padding-top: 0.375em;
   padding-bottom: 0.375em;
   font-size: 24px;
   font-size: 1.5rem;
 }
 
-/* line 43, ../../../source/assets/sass/components/_button-link.scss */
+/* line 47, ../../../source/assets/sass/components/_button-link.scss */
 .button {
   text-align: center;
   padding: 0;
@@ -5847,7 +5833,7 @@ input[type="text"].sb-search-input {
   color: white;
   padding: 20px 40px 20px 40px;
 }
-/* line 52, ../../../source/assets/sass/components/_button-link.scss */
+/* line 56, ../../../source/assets/sass/components/_button-link.scss */
 .button:hover {
   padding: 0;
   border: none;
@@ -5856,7 +5842,7 @@ input[type="text"].sb-search-input {
   background-color: #757575;
 }
 
-/* line 61, ../../../source/assets/sass/components/_button-link.scss */
+/* line 65, ../../../source/assets/sass/components/_button-link.scss */
 .lcf .view-all {
   text-align: center;
 }
