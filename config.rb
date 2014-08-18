@@ -8,6 +8,7 @@ sass_dir = "source/assets/sass"
 fonts_dir = "source/assets/fonts"
 javascripts_dir = "source/assets/js"
 images_dir = "source/assets/img"
+sourcemap = true
 
 
 # You can select your preferred output style here (can be overridden via the command line):
