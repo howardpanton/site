@@ -22,7 +22,7 @@ button, .button-link {
 		padding: rhythm(1, 14px) rhythm(2, 14px);
 		display:inline-block;
 		background-color: $aaa-gray;
-  	border-color: $aaa-gray;
+		border-color: $aaa-gray;
 
 		.csm & {
 			background-color: $csm-primary;
@@ -64,4 +64,34 @@ button, .button-link {
 
 .lcf .view-all {
 	text-align: center;
+}
+
+.go-search-button {
+	@include font-size(14);
+	background-color: $black;
+	color: $white;
+	padding: 6px 12px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 36px;
+	margin: 0;
+	text-align: center;
+	min-width: 60px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $black;
+	&:hover {
+		background-color: $aaa-gray;
+		border-color: $aaa-gray;
+		.csm &, .lcc & {
+			background-color: $aaa-gray;
+			border-color: $aaa-gray;
+			color: white;
+		}
+	}
+	@include gs-media(d) {
+		min-width: gs-width(d, 16, 16, (1,16), true);
+		height: 36px;
+	}
 }
