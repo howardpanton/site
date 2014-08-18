@@ -68,8 +68,7 @@ button, .button-link {
 
 .go-search-button {
 	@include font-size(14);
-	background-color: $black;
-	color: $white;
+	@extend button;
 	padding: 6px 12px;
 	position: absolute;
 	right: 0;
@@ -78,12 +77,7 @@ button, .button-link {
 	margin: 0;
 	text-align: center;
 	min-width: 60px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: $black;
 	&:hover {
-		background-color: $aaa-gray;
-		border-color: $aaa-gray;
 		.csm &, .lcc & {
 			background-color: $aaa-gray;
 			border-color: $aaa-gray;
