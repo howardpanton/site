@@ -1,4 +1,4 @@
-/*!Updated: 15-08-2014, 4:52:20 PM */
+/*!Updated: 18-08-2014, 4:48:59 PM */
 
 /*! jQuery v2.0.0 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery.min.map
@@ -2865,7 +2865,9 @@ if (typeof define !== 'undefined' && define.amd) {
             }
           },
           lazyLoad: true,
-          nav: true
+          nav: true,
+          dots: false,
+          navText: ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"]
         });
       });
     });
