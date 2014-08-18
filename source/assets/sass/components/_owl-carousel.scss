@@ -251,24 +251,8 @@
 
 
 /*
- * 	Default theme - Owl Carousel CSS File
+ * 	Modified Owl CSS Theme
  */
-
-$color-base:			#869791;
-$color-white:			#FFF;
-$color-gray:			#D6D6D6;
-
-//nav
-
-$nav-color: 			$color-white;
-$nav-color-hover:		$color-white;
-$nav-font-size: 		14px;
-$nav-rounded: 			3px;
-$nav-margin: 			5px;
-$nav-padding: 			4px 7px;
-$nav-background: 		$color-gray;
-$nav-background-hover:	$color-base;
-$nav-disabled-opacity: 	0.5;
 
 //dots
 
@@ -276,36 +260,45 @@ $dot-width:				10px;
 $dot-height:			10px;
 $dot-rounded:			30px;
 $dot-margin: 			5px 7px;
-$dot-background:		$color-gray;
-$dot-background-active:	$color-base;
+$dot-background:		$bg-gray;
+$dot-background-active:	$dark-gray;
 
 .owl-theme {
 	// Styling Next and Prev buttons
 	.owl-nav {
-		margin-top: 10px;
 		text-align: center;
+		position: absolute;
+		width: 100%;
+		top: 25%;
 		-webkit-tap-highlight-color: transparent;
 
 		[class*='owl-'] {
-			color: $nav-color;
-			font-size: $nav-font-size;
-			margin: $nav-margin;
-			padding: $nav-padding;
-			background: $nav-background;
+			position: absolute;
+			color: $white;
+			font-size: 12px;
+			padding: 10px;
+			background: $black;
 			display: inline-block;
 			cursor: pointer;
-			@include rounded($nav-rounded);
 
 			&:hover {
-				background: $nav-background-hover;
-				color:$nav-color-hover;
+				background: $black;
+				color: $white;
 				text-decoration: none;
 			}
 		}
 		.disabled {
-			opacity: $nav-disabled-opacity;
+			opacity: 0.5;
 			cursor: default;
 		}
+	}
+
+	.owl-prev {
+		left: 0;
+	}
+
+	.owl-next {
+		right: 0;
 	}
 
 	// Styling dots
@@ -343,6 +336,8 @@ $dot-background-active:	$color-base;
 }
 
 
+
+
 /*
  * 	UAL additions
  */
@@ -363,19 +358,20 @@ $dot-background-active:	$color-base;
 	background: $bg-gray;
 }
 
+.carousel-view-all {
+	position: absolute;
+	top: 36px;
+	right: 18px;
+}
+
 
 .owl-item {
-
-	.item {
-
+	.center-cropped {
+		@include margin-trailer(3);
 	}
-	.item-description {
-		padding: 12px 12px 0;
-	}
-	.research-date {
-		display: block;
-		padding-top: 6px;
-		@include margin-trailer(1);
+	.item-date, .item-description {
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 }
 
@@ -414,7 +410,7 @@ $dot-background-active:	$color-base;
 // desktop-only
 .carousel-container {
 	@include gs-media (d) {
-		.item-description {
+		.item-description, .item-date {
 			padding-left: 18px;
 			padding-right: 18px;
 		}
