@@ -1,5 +1,5 @@
 // .button-link is used as a button class on anchors
-button, .button-link {
+button {
 	@include font-size(14);
 	background-color: $black;
 	color: $white;
@@ -43,6 +43,10 @@ button, .button-link {
 	}
 }
 
+.button-link {
+	@extend button;
+}
+
 // this is probably legacy but it might still be used on sliders
 .button {
 	text-align: center;
@@ -67,7 +71,6 @@ button, .button-link {
 }
 
 .go-search-button {
-	@include font-size(14);
 	@extend button;
 	padding: 6px 12px;
 	position: absolute;
