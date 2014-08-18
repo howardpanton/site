@@ -207,31 +207,6 @@
   width: 100%;
 }
 
-.go-search-button {
-	@include font-size(14);
-	background-color: $black;
-	color: $white;
-	padding: 6px 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 36px;
-  margin: 0;
-  text-align: center;
-  min-width: 60px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $black;
-  &:hover {
-  	background-color: $aaa-gray;
-  	border-color: $aaa-gray;
-  }
-  @include gs-media(d) {
-    min-width: gs-width(d, 16, 16, (1,16), true);
-    height: 36px;
-  }
-}
-
 input.course-finder-txt-input, input.site-search-txt-input { // must be specified like this to override e.g. input[type=*]
   background-color: $bg-gray;
   margin-bottom: 0;

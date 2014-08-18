@@ -63,24 +63,8 @@
 				"plugins/retina-sprites/sprite",
 				"globals/sprites",
 				"globals/typography",
-				"globals/forms-core";
-
-
-/*------------------------------------*\
-		$OBJECTS-AND-EXTRACTIONS
-\*------------------------------------*/
-
-
-
-
-/*------------------------------------*\
-		$COMPONENTS
-\*------------------------------------*/
-
-
-
-// Buttons
-@import "components/button-link";
+				"globals/forms-core",
+				"globals/buttons";
 
 
 /*------------------------------------*\
@@ -145,7 +129,7 @@ form.wufoo {
 			background-image: none;
 		}
 		&.submit {
-			@extend .submit-btn;
+			@extend button; // this might not work
 			font-size: 100%;
 		}
 	}
