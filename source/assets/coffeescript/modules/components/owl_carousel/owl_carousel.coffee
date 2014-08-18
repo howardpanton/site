@@ -27,10 +27,11 @@ initOwlCarousel = ->
 				}
 				lazyLoad: true
 				nav: true
-				# navigationText: [
-				# 		"<i class='icon-left-open-big'></i>"
-				# 		"<i class='icon-right-open-big'></i>"
-				# ]
+				dots: false
+				navText: [
+					"<i class='icon-left-open-big'></i>"
+					"<i class='icon-right-open-big'></i>"
+				]
 			return
 
 			# add pagination to each item in the carousel
