@@ -1,6 +1,6 @@
 extends ../../_layout/_base
 block vars
-	- var bodyClass = "ual";
+	- var bodyClass = "csm";
 	- var Title = "typography";
 	- var Sidebar = true;
 	- var Banner = true;
@@ -19,6 +19,16 @@ block content
 				h2 Thematic Section Title h2 random stuff stuff stuff stuff testing
 				p
 					| paragraph Integer posuere erat a ante velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
+				p
+					a.button-link(href="#") View all button
+				p
+					button(type="submit") Actual button
+				p
+					button.submit-btn(disabled="disabled") Button class submit-btn
+				p
+					a.button-link.icon(href="#") Button link plus icon class
+				p
+					button.button Button
 				h3 Section Title h3 random stuff testing
 				p
 					| paragraph Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
@@ -107,3 +117,4 @@ block content
 				li.no-bullet
 					a(href='/media/arts/about-ual/academic-management-diagram-3-240513.pdf') UAL Academic Management Structure Diagram (PDF 417KB)
 					| .
+

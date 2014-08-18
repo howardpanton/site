@@ -32,14 +32,14 @@ block content
 				#text-inputs.row.l-content
 				h3 Text Inputs
 				form.margin-top.with-box-shadow(action='')
-					label Default Textbox
+					label(for='default') Default Textbox
 					input#default(type='text', name='default')
-					label Required text input
+					label(for='name') Required text input
 					input#name(type='text', name='name', required='required')
 					label(for='p-login1') Password
 					input#p-login1(type='password', name='p-login', required='required')
-					label Textarea
-					textarea(cols='40', rows='8')
+					label(for='message') Textarea
+					textarea#message(cols='40', rows='8')
 			script(src='https://gist.github.com/denovo/6174247.js')
 		.row
 			.l-content
@@ -79,40 +79,30 @@ block content
 		#buttons-tab.row
 			.l-content
 				h3 buttons
-				form.margin-top.with-box-shadow(action='')
-					input.submit-btn(type='submit', value='Submit Button')
-					input.submit-btn(type='submit', value='Disabled Submit Button', disabled='disabled')
-			script(src='https://gist.github.com/denovo/6174306.js')
+				form.with-box-shadow(action='')
+					button.submit-btn(type='submit') Submit Button
+					button.submit-btn(type='button', disabled='disabled') Disabled Submit Button
+			//- script(src='https://gist.github.com/denovo/6174306.js')
 		#example-form-tab.row
 			h3 Example Form
 			form#form.l-forms.margin-top.with-box-shadow(name='form')
-				fieldset
+				fieldset.rhythm-margin-bottom
 					legend Your details
-					label Label example
+					label(for='default') Label example
 					input#default(type='text', name='default')
-					label Select box
-					.js-select-box.select-box
-						input.js-select-box-value(type='hidden', value='option one')
-						.select-box-heading
-							h3.select-box-title Option one
-							.select-box-arrow
-								span.js-select-box-icon.icon 
-						ul.js-select-box-list.select-box-options
-							li.select-box-option(data-sb-value='option1')
-								a(href='#') Option one
-							li.select-box-option(data-sb-value='option2')
-								a(href='#') Option two
-							li.select-box-option(data-sb-value='option3')
-								a(href='#') Option three
-							li.select-box-option(data-sb-value='option4')
-								a(href='#') Option four
-					label
+					label(for='my_id') Course
+					select(id="my_id", name="my_id")
+						option(value="") Please select
+						option(value="a0PM0000005oFixMAE") 3D Modelling
+						option(value="a0PM0000005oHtDMAU") Textiles
+						option(value="a0PM0000005o5KoMAI") Animation
+					label(for='name')
 						| Required:
 						small field
 					input#name(type='text', name='name', required='required')
-					label
+					label(for='comments')
 						| Please add your comments
-					textarea(cols='40', rows='8')
+					textarea#comments(cols='40', rows='8')
 				div
 					input#c1(type='checkbox', name='cc')
 					label(for='c1') Checkbox 1
@@ -133,14 +123,14 @@ block content
 					input#r3(type='radio', name='rb', disabled='disabled')
 					label(for='r3') Radio Button 3 (disabled)
 				p
-					input.submit-btn(type='submit', value='Submit Button')
-					input.submit-btn(type='submit', value='Disabled Submit Button', disabled='disabled')
+					button.submit-btn(type='submit') Submit Button
+					button.submit-btn(type='button', disabled='disabled') Disabled Submit Button
 
-			script(src='https://gist.github.com/strangerpixel/d57e8283a24748baa69c.js')
+			//- script(src='https://gist.github.com/strangerpixel/d57e8283a24748baa69c.js')
 		#example-login-form.row
 			h2 Example Login Form
 			.l-content
-				script(src='https://gist.github.com/denovo/6174420.js')
+				//- script(src='https://gist.github.com/denovo/6174420.js')
 			aside.no-bg.no-pad.no-border-left
 				form#form.margin-top.with-box-shadow.cf(name='form')
 					h3 login form
@@ -148,7 +138,7 @@ block content
 					input#s-login1(type='text', name='s-login')
 					label(for='p-login1') Password
 					input#p-login1(type='password', name='p-login')
-					input.submit-btn.pull-left.margin-bottom-3x(type='submit', value='Submit')
+					button.submit-btn.pull-left.margin-bottom-3x(type='submit') Submit
 					a.form-link.pull-left.clear-left(href='#') Forgot Password
 					a.form-link.pull-left.clear-left(href='#') Register
 		#unstyled-elements.row
@@ -166,7 +156,7 @@ block content
 			.l-content
 				h3 Accessible Select Box
 				form.margin-top.with-box-shadow(action='')
-					label Course
+					label(for='my_id') Course
 					select(id="my_id", name="my_id")
 						option(value="") Please select
 						option(value="a0PM0000005oFixMAE") 3D Modelling
