@@ -291,13 +291,14 @@ input, .search-result-module, .search-input-wrap {
       }
 
       &.left-arrow, &.right-arrow {
-        @extend button;
-        @extend .icon;
+        @extend %icon;
+        @include font-size(24);
       }
+
       &.left-arrow:after, &.right-arrow:after {
         position: absolute;
-        left: rhythm(2, 14px);
-        top: rhythm(1.5, 14px);
+        left: 22px;
+        top: 5px;
       }
 
       &.left-arrow:after {
