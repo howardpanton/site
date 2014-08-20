@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         },
         copy: {
             files: ['.tmp/assets/css/**/*.css'],
-            tasks: ['copy:css']
+            tasks: ['copy:css', 'copy:image_assets']
         },
   });
     grunt.loadNpmTasks('grunt-contrib-watch');
