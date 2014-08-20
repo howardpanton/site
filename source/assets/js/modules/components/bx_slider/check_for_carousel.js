@@ -10,7 +10,7 @@ function checkForCarousel() {
 
     if ($('.js-carousel').length > 0) {
 
-    $.getScript('http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.bxslider.min.js', function() {
+    $.getScript('http://static.arts.ac.uk/assets/js/jquery.bxslider.min.js', function() {
 
       $.each($('.js-carousel'), function() {
 

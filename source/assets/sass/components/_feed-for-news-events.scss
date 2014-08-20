@@ -1,23 +1,21 @@
+.news-feed, .events-feed {
+	@include component-spacing-bottom;
+}
+
 .feed-comp {
-	// @include component-spacing-bottom;
 
 	.center-cropped {
+		display: block;
 		width: 100%;
 		height: 100px;
 		background-position: center center;
-		background-repeat: no-repeat;
-		overflow: hidden;
-
-		img {
-			min-height: 100%;
-			min-width: 100%;
-		}
+		background-size: cover;
+		background-repeat: no-repeat
 	}
 
 	.single-feed-container .date,
 	.single-feed-container .event-type  {
 		 @extend %Swiss721BT-Light;
-		 @include font-size(16);
 		 @include padding-leader(1);
 		 @include padding-trailer(0);
 		 @include gs-media(m) {
@@ -25,17 +23,20 @@
 		 }
 	}
 
-	.single-feed-container .event-type  {
+	.single-feed-container .event-type {
 		padding-top: 0;
 	}
 
 	// show hover state for links below the image when the image has been hovered over
 
 	.single-feed-container a:hover ~ .title a {
-		color: #757575;
+		color: $aaa-gray;
 	}
 
 	.l-content & {
+		li {
+			height: 100px;
+		}
 		@include gs-media(m,min-max) {
 			li:nth-child(4), li:nth-child(5), li:nth-child(6) {
 				display: none;
@@ -91,7 +92,6 @@
 				}
 			}
 			li:nth-child(2) {
-				border: 1px solid $light-gray;
 				@include gs-span(t, 5, 7, (2, 7));
 				clear: none;
 			}
@@ -124,7 +124,7 @@
 				border: none;
 			}
 			li:nth-child(1), li:nth-child(2) {
-				min-height: 300px;
+				min-height: 280px;
 				margin-bottom: 12px;
 				.title {
 						padding: 12px;
@@ -144,7 +144,7 @@
 				border: none;
 				border-bottom: 1px solid $light-gray;
 				padding: 12px;
-				min-height: 72px;
+				min-height: 80px; // required in case item titles run onto 2 lines
 				.feed-image {
 					display: none;
 				}
@@ -164,49 +164,45 @@
 		margin: 12px 0;
 		@extend %Swiss721BT-Bold;
 		li {
-			list-style-type: none;
+			clear: both;
 			padding: 0;
 			margin: 0;
-			clear: both;
-			border-top: 1px solid lightgray;
+			border-top: 1px solid $light-gray;
+			overflow: hidden;
 			a {
 				border-bottom: none;
 				&:hover {
 					border-bottom: none;
 				}
 			}
-			@include gs-media(t, min-max) {
-				border-top: 1px solid lightgray;
-			}
 			@include gs-media(m, min-max) {
-				border-top: 1px solid $light-gray;
 				padding: 12px;
 				.feed-image {
 					display: none;
 				}
 			}
 		}
+		@include gs-media(m, min-max) {
+			border: none;
+			border-bottom: 1px solid $light-gray;
+		}
 		@include gs-media(t, min-max) {
 			border-right: 1px solid $light-gray;
 			border-bottom: 1px solid $light-gray;
 			border-left: 1px solid $light-gray;
 		}
-		@include gs-media(m, min-max) {
-			border: none;
-			border-bottom: 1px solid $light-gray;
-		}
 		border-right: 1px solid $light-gray;
 		border-bottom: 1px solid $light-gray;
 		border-left: 1px solid $light-gray;
 	}
+
 	.view-all {
 		@include gs-media(m, min-max) {
 			padding-left: 12px;
 		}
 	}
-
-
 }
 
-
-
+.empty-message {
+	display: none;
+}

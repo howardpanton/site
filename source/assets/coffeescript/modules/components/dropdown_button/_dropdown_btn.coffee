@@ -9,7 +9,7 @@
 
 @ualDropdownBtn = ->
   if $(".dd-menu").length > 0
-    $(".js-dd-menu").click (event) ->
+  	$(".js-dd-menu").click (event) ->
       event.preventDefault()
       _d = $(this)
       _d_menu = _d.parent()

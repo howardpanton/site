@@ -2,7 +2,7 @@
 require 'compass'
 
 # Set this to the root of your project when deployed:
-http_path = "http://d2fas4z9yqr9az.cloudfront.net/"
+http_path = "http://static.arts.ac.uk/"
 css_dir = "build/assets/css"
 sass_dir = "source/assets/sass"
 fonts_dir = "source/assets/fonts"
@@ -17,7 +17,7 @@ output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
 
-http_images_path = "http://d2fas4z9yqr9az.cloudfront.net/"
+http_images_path = "http://static.arts.ac.uk/"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 #line_comments = true
 

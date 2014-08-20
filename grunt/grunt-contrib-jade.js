@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                 cwd: 'source',
                 src: [ '**/*.jade', '!**/_*.jade', '!blog/**/*.jade' ],
                 // filter based on whether it's newer than our repo creation time
-                filter: lastModified(1 * 45), // one day ago
+                // filter: lastModified(1 * 45), // one day ago
                 dest: 'build',
                 ext: '.html'
             }],

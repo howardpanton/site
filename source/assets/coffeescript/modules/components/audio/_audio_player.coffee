@@ -8,7 +8,7 @@
 #
 
 initAudio = ->
-    jQuery.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/audioplayer.js", ->
+    jQuery.getScript "http://static.arts.ac.uk/assets/js/audioplayer.js", ->
         $("audio").each ->
             $(this).audioPlayer()
         return

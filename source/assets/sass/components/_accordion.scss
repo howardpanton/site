@@ -1,143 +1,44 @@
 /* Flexible Slide-to-top Accordion Style*/
 
-.accordion {
-	clear: left;
-}
+.accordion
+{
+	width:100%;
+	min-height:300px;
+	margin:20px auto;
 
-.accordion-list {
+	.accordion__item {
+		padding: 10px 12px 8px 12px;
+		background: $bg_gray;
+		cursor:pointer;
+		margin-bottom: 3px;
 
-	@include gs-media(m) {
-		padding-left:0px;
-		padding-right:0px;
-	}
-
-	li:first-child {
-		border-top: none;
-	}
-	.st-content {
-		padding: rhythm(4, 16px) rhythm(3, 16px) rhythm(4, 16px) rhythm(3, 16px);
-		background-color: $white;
-
-		table {
-			@include font-size(16);
-
-			p {
-				@extend %d5-d12--within-d5-d16;
-				display: block;
-				float: none;
-				clear: left;
-				@include font-size(16);
-			}
-
-			th {
-				@extend %Swiss721BT-Bold;
-				width: 25%;
-			}
-
-			tr {
-				&:nth-child(even) { background-color: $white; }
-			}
-
-			td p{
-				padding: 0;
-			}
+		.accordion__icon {
+		float: right;
+		background: url('http://vivekarora.com/images/plus.png') center no-repeat;
+		padding: 10px;
+		margin-top:4px;
 		}
 
-
-	}
-}
-
-.ie .lcc .accordion h3, .ie .lcc .accordion h4 {
-	clear: left;
-}
-
-
-.accordion-list-item {
-	//height: 58px; // needs to match a line-height
-	overflow: hidden;
-	background-color: $bg-gray;
-	margin-bottom: 1px;
-	padding: 0;
-
-	p, ul {
-		@extend %d5-d12--within-d5-d16;
-		float: none;
-		clear: left;
-	}
-
-	.accordion-list-anchor {
-		line-height: 58px; // needs to match li height
-		display: block;
-		position: relative;
-		outline:none;
-		border-bottom: none;
-		margin-left: rhythm(4, 24px);
-		padding-right: rhythm(8, 24px);
-
-		h3 {
-			padding-top: 1em;
-			.lcc & {
-				border-bottom: none;
-				font-size: 42px;
-				line-height: 40px;
-				margin: 0;
-				padding: 14px 0 8px 0;
-			}
+		&.open .accordion__icon {
+			background: url('http://vivekarora.com/images/minus.png') center no-repeat;
 		}
-		.st-arrow {
 
-				@include font-size(18);
-				position: absolute;
-				top: 11px;
-				right: 6px;
-				opacity:1;
-				line-height:36px;
-				width:36px;
-				text-align: center;
-				//@include default-transition();
-		}
 	}
-}
+	.accordion__content {
+			padding: 18px;
+			display:none;
 
-.accordion-list-item .st-content {
-	ul, ol, dl {
-		margin-bottom: rhythm(3, 16px);
-
-		li {
-
-				@include font-size(16);
-				margin-left: 16px;
-				list-style-type: square;
-				@include adjust-leading-to(4, 16px);
-				padding-bottom: rhythm(2, 16px);
+		&:last-child {
+			border-bottom: solid 3px $bg-gray;
 		}
 	}
 
-	ul li ul, ol li ol {
-		padding-top: rhythm(2, 16px);
-		padding-bottom: 0;
-
-		li {
-			padding-bottom: rhythm(2, 16px);
-		}
+	h2.accordion__heading {
+			padding:0;
+			font-size: 24px ;
+			line-height: 30px;
 	}
 
-	ol {
-		margin-left: rhythm(4, 16px);
-		list-style-type: decimal-leading-zero;
-	}
-
-	dl {
-		@include adjust-leading-to(4, 16px);
-		padding-bottom: rhythm(1, 16px);
-		dt {
-			@extend %Swiss721BT-Bold;
-		}
-		dd {
-			padding-bottom: rhythm(2, 16px);
-			padding-left: rhythm(4, 16px);
-		}
-	}
 }
 
 

@@ -4,11 +4,6 @@
   background-color: $dark-gray;
   padding-top: 0;
 
-  // custom styling per college
-  .camberwell &, .chelsea &, .wimbledon & {
-
-  }
-
   .csm & {
     background-color: $white;
     color: $black;
@@ -61,6 +56,7 @@
 
 
   .social-icons {
+
     li {
       display: inline-block;
       width: 60px;
@@ -158,6 +154,7 @@
 
   .icons {
 
+		// one, two or three footer icons
     li {
       display: inline-block;
       float: left;
@@ -178,13 +175,15 @@
         width:100%;
         display:block;
       }
+
       a:hover{
         border-bottom: 0;
       }
+
       a span {
         @extend %icon-social;
         color: $white;
-        line-height: 54px;
+        line-height: 42px;
         width: 100%;
         display: block;
         @include font-size(42);
@@ -194,10 +193,64 @@
         }
       }
 
+      &:nth-child(3n) {
+      	margin-right: 0;
+    	}
+
     }
-    li:nth-child(3n) {
-      margin-right: 0;
-    }
+
+		@include gs-media(t,min-max) {
+			li { @include gs-span(t, 1); }
+
+			li:nth-child(2n) { @include gs-span(t, 2); }
+
+			li:nth-child(3n) { @include gs-span(t, 3); }
+
+			li:nth-child(4n) { @include gs-span(t, 4); }
+		}
+
+		// change styling for a list of four footer icons
+    &.four-icon-list {
+
+
+			li {
+				margin-right: 0;
+				@include gs-span(m, 1);
+
+				// remove left margin on social icons on desktop
+				[class^="icon-"]:before, [class*=" icon-"]:before {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			li:nth-child(2n) { @include gs-span(m, 2); }
+
+			li:nth-child(3n) { @include gs-span(m, 3); }
+
+			li:nth-child(4n) { @include gs-span(m, 4); }
+
+			@include gs-media(t,min-max) {
+				li { @include gs-span(t, 1); }
+
+				li:nth-child(2n) { @include gs-span(t, 2); }
+
+				li:nth-child(3n) { @include gs-span(t, 3); }
+
+				li:nth-child(4n) { @include gs-span(t, 4); }
+			}
+
+			@include gs-media(d) {
+
+				li { @include gs-span(d, 13, 13, (13,16) ); }
+
+				li:nth-child(2n) { @include gs-span(d, 14, 14, (13,16) ); }
+
+				li:nth-child(3n) { @include gs-span(d, 15, 15, (13,16) ); }
+
+				li:nth-child(4n) { @include gs-span(d, 16, 16, (13,16) ); }
+			}
+		}
   }
 
   // mobile & tablet footer column widths
@@ -214,13 +267,13 @@
     margin-right: 0;
   }
 
-	// padding for middle column on mobile
+	// left & right padding for middle column on mobile & tablet
 	&.middle {
-    @include gs-media(m) {
-			p {
-				padding: 0 12px 0 12px;
+			p { padding: 0 12px 0 12px; }
+
+			@include gs-media(d) {
+				p { padding: 0; }
 			}
-    }
   }
 
 

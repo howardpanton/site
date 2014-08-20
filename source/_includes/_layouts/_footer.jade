@@ -54,7 +54,9 @@ footer.global-footer.row
 							li
 								a(href='http://www.youtube.com/user/universityartslondon', title='UAL on YouTube')
 									span.footer-ico.icon-youtube
-							//- <li><a href="#" title="UAL on Flickr"><span class="footer-ico icon-flickr"></span></a></li>
+							li
+								a(href='https://plus.google.com/116668345114007692056/', title='UAL on Google Plus')
+									span.footer-ico.icon-gplus
 					.row
 						.copyright
 							p © 2014 University of the Arts London All Rights Reserved
@@ -83,22 +85,21 @@ footer.global-footer.row
 		//-if (lt IE 9) & (!IEMobile)
 			script(src='http://s3-eu-west-1.amazonaws.com/arts-staging/assets/js/ie/ie-css-fix-gz.js')
 
-
+		script(src='http://use.resrc.it/')
+		//-    Respond.js proxy on CDN
+		//- link#respond-proxy(href='http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond-proxy.html', rel='respond-proxy')
+		//-Respond.js files on your origin server
+		//-link#respond-redirect(href='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.gif', rel='respond-redirect')
+		//-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond.src.js')
+		//- script(type='text/javascript', src='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.js')
+		//-Mega Menu Plugins
+		//-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js')
 		//- script(src='http://use.resrc.it/')
 
 
 		//-script(src='http://localhost:9000arts.ac.uk/buildarts.ac.uk/build/assets/js/script.js')
 
 		script(src='http://localhost:9000/assets/js/script.js')
-
-		script.
-			window.getEventsFeed(programme = "Chelsea College of Arts", type = "exhibition", feed_id = 1, count = 6)
-
-		script.
-			window.getEventsFeed(programme = "SEE", type = "", feed_id = 2, count = 6)
-
-		script.
-			window.getEventsFeed(programme = "", type = "all", feed_id = 3, count = 6)
 
 		script.
 				//- Creates associative array (object) of query params
@@ -119,12 +120,3 @@ footer.global-footer.row
 						//- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
 						document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
 				}
-
-				//- $(document).ready(function($) {
-				//- 		$('.megamenu').megaMenuCompleteSet({
-				//- 				menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-				//- 				menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-				//- 				menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-				//- 				menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-				//- 		});
-				//- });
