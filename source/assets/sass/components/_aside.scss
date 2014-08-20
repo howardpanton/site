@@ -1,11 +1,36 @@
 /* Aside styles */
 
 aside {
-	p, a {
-		@include font-size(14);
+	@extend %d13-d16--within-d5-d16;
+	@include component-spacing-bottom;
+	@include gs-media(m,min-max) {
+		padding: 12px;
 	}
-	h3 {
-		@extend .size-h6;
-		@include padding-leader(1);
+
+	background-color: $bg-gray;
+	border-left: none;
+	padding: 24px;
+	clear: left;
+
+	&.no-bg {
+		background-color: $white;
+		margin-top:26px;
+		padding: 0 18px;
 	}
+
+	@include gs-media(d) {
+		background: $white;
+		border-left: 1px dotted $bg-gray;
+			padding-left: 23px;
+			clear: none;
+	}
+
+
+	&.bg-gray-bg, &.dark-gray-bg {
+		border: 0 none;
+		margin-top:26px;
+		padding: 12px 18px;
+	}
+
+
 }

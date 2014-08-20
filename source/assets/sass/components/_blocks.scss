@@ -225,6 +225,8 @@
 // two-up - core styles
 //
 .two-up {
+	margin-top: 26px;
+
 	@include gs-media(t,min-max) {
 		li {
 			@include gs-span(t, 2, 4, (2, 7));
@@ -256,6 +258,7 @@
 
 	&.l-content-full-width {
 		@extend %d5-d16--within-d5-d16;
+
 		@include gs-media(d) {
 			li {
 				@include gs-span(d, 5, 10, (5, 16));
@@ -264,6 +267,7 @@
 				@include gs-span(d, 11, 16, (5, 16));
 			}
 		}
+
 	}
 
 	&.l-content-half-width {
@@ -296,9 +300,14 @@
 
 }
 
-// three-up - core styles
-//
+
+/*------------------------------------*\
+		three-up - core styles
+\*------------------------------------*/
+
 .three-up {
+	margin-top: 26px;
+
 	@include gs-media(t,min-max) {
 		li {
 			@include gs-span(t, 2, 7, (2, 7));
@@ -336,51 +345,10 @@
 	}
 }
 
-// four-up-full - used specifically for the UAL homepage
 
-.four-up-full {
-	li {
-		background-color: $white;
-		padding-bottom: 0;
-		h3 {
-			padding: 18px;
-		}
-		p {
-			padding: 0 18px 24px 18px;
-		}
-		.nopadding {
-			h3 {
-				padding: 18px 0;
-			}
-			p {
-				padding: 0;
-			}
-			@include gs-media(m) {
-				p, h3 {
-					padding: 12px;
-				}
-			}
-
-		}
-	}
-	@include gs-media(d) {
-		li {
-			@include gs-span(d, 1, 4);
-		}
-		li:nth-child(2n) {
-			@include gs-span(d, 5, 8);
-		}
-		li:nth-child(3n) {
-			@include gs-span(d, 9, 12);
-		}
-		li:nth-child(4n) {
-			@include gs-span(d, 13, 16);
-		}
-	}
-
-}
-
-// four-up - core styles
+/*---------------------------------------------------------*\
+		four-up - core styles
+\*---------------------------------------------------------*/
 
 .four-up {
 
@@ -433,9 +401,59 @@
 
 }
 
+/*---------------------------------------------------------*\
+		four-up-full - used specifically for the UAL homepage
+\*---------------------------------------------------------*/
+
+.four-up-full {
+	li {
+		background-color: $white;
+		padding-bottom: 0;
+		h3 {
+			padding: 18px;
+		}
+		p {
+			padding: 0 18px 24px 18px;
+		}
+		.nopadding {
+			h3 {
+				padding: 18px 0;
+			}
+			p {
+				padding: 0;
+			}
+			@include gs-media(m) {
+				p, h3 {
+					padding: 12px;
+				}
+			}
+
+		}
+	}
+	@include gs-media(d) {
+		li {
+			@include gs-span(d, 1, 4);
+		}
+		li:nth-child(2n) {
+			@include gs-span(d, 5, 8);
+		}
+		li:nth-child(3n) {
+			@include gs-span(d, 9, 12);
+		}
+		li:nth-child(4n) {
+			@include gs-span(d, 13, 16);
+		}
+	}
+
+}
 
 
-// COLLEGE SPECIFIC MEDIA BLOCK STYLING
+
+/*---------------------------------------------------------*\
+	 COLLEGE SPECIFIC  BLOCK STYLING
+\*---------------------------------------------------------*/
+
+
 .two-up, .three-up {
 
 	// CSM specific styling for media blocks
@@ -476,6 +494,16 @@
 		}
 	}
 }
+
+.three-up {
+	.lcc & {
+		h3 {
+			border-bottom: 3px solid $black;
+		}
+	}
+}
+
+
 
 .__gallery {
 	.lcc & {
