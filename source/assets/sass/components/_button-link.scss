@@ -11,13 +11,14 @@
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  text-decoration:none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   
 }
-.button-link:hover, %button-link:hover{
+.button-link:hover, %button-link:hover {
   background-color: $aaa-gray;
   color: $white;
   text-decoration: none;
@@ -36,6 +37,12 @@
     color: $white;
   }
 
+}
+
+.button-link:active, %button-link:active, .button-link:visited, %button-link:visited {
+  .lcc & {
+    color: $white;
+  }
 }
 // .button-link:active {
 //   background: #2E5481;
