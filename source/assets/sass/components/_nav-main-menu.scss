@@ -38,7 +38,7 @@
   margin: 0;
   padding-bottom: 0;
   border:none;
-	border-bottom: 1px dotted #757575;;
+  border-bottom: 1px dotted #757575;;
   background-color: $dark-gray;
   @include prefixer(transition, $transition-bg);
   display: none; // hidemenu on mobile at start
@@ -46,7 +46,7 @@
   @include gs-media(d) {
     background-color: $black;
     display: inline-block; // show menu items on desktop
-		border: 0;
+    border: 0;
     &.active {
       background-color: $dark-gray;
     }
@@ -138,19 +138,20 @@
 //     02 MEGA MENU CONTAINERS
 //     _______________________________________________  */
 
-   @include gs-media(d, min) {
-	.megamenu li .dropdown_container,
-	.megamenu li .dropdown_fullwidth,
-	.megamenu li .dropdown_multilevel {
-	  position: absolute;
-	  margin:0;
-	  display: none;
-	  z-index:99998;
-	  float: left;
-	  h2 a, a {
-	    font-family: Swiss721BT-Light !important;
-	    @include font-size(14);
-	  }
+.megamenu li .dropdown_container,
+.megamenu li .dropdown_fullwidth,
+.megamenu li .dropdown_multilevel {
+  position: absolute;
+  margin:0;
+  display: none;
+  z-index:99998;
+  float: left;
+  h2 a, a {
+    @extend %Swiss721BT-Light-important;
+    @include font-size(14);
+  }
+
+
 
 
 
@@ -177,14 +178,13 @@
     }
   }
 
-}
   // set no hover color for dropdown
   li > a:hover {
      background-color: $light-gray;
      color: $black;
   }
 
-	li > a.current-page {
+  li > a.current-page {
     background-color: $black;
     color: $white;
   }
@@ -207,48 +207,40 @@
   width: 100%;
 }
 
-
-.megamenu_container {
-
-  .go-search-button {
-    @extend .button-link;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 36px;
-    border-top-width: 0px;
-    margin: 0;
-    text-align: center;
-    min-width: 60px;
-    @include gs-media(d) {
-      min-width: gs-width(d, 16, 16, (1,16), true);
-      height: 36px;
-    }
-
-    a {
-      color: $white;
-      border-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
-      text-align: center;
-      text-decoration: none;
-    }
-    a:hover {
-      color: $white;
-      background-color: $aaa-gray !important;
-    }
+.go-search-button {
+  @include font-size(14);
+  background-color: $black;
+  color: $white;
+  padding: 6px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 36px;
+  margin: 0;
+  text-align: center;
+  min-width: 60px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $black;
+  &:hover {
+    background-color: $aaa-gray;
+    border-color: $aaa-gray;
   }
+  @include gs-media(d) {
+    min-width: gs-width(d, 16, 16, (1,16), true);
+    height: 36px;
+  }
+}
 
-  .course-finder-txt-input, .site-search-txt-input {
-      background-color: $bg-gray;
-      margin-bottom: 0;
-      border: 0;
-      height: 36px;
-      padding-left: 12px;
-      @include gs-media(d) {
-        padding-left: 12px;
-      }
-    }
+input.course-finder-txt-input, input.site-search-txt-input { // must be specified like this to override e.g. input[type=*]
+  background-color: $bg-gray;
+  margin-bottom: 0;
+  border: 0;
+  height: 36px;
+  padding-left: 12px;
+  @include gs-media(d) {
+    padding-left: 12px;
+  }
 }
 
 .megamenu {
@@ -259,11 +251,11 @@
     @extend .row;
     position: absolute;
     bottom: -12px;
-		left: 12px;
-		@include gs-media(d) {
-    	bottom: -22px;
-    	left: 0;
-  	}
+    left: 12px;
+    @include gs-media(d) {
+      bottom: -22px;
+      left: 0;
+    }
     a {
       color: $white;
       display: inline-block;
@@ -285,6 +277,8 @@
 }
 
 .dropdown_fullwidth {
+  @include padding-leader(2);
+  @include padding-trailer(2);
 
   @include gs-media(d) {
     @include padding-leader(4);
@@ -316,6 +310,7 @@
     color: $soft-black;
     @include gs-media(d) {
       color: $white;
+      text-decoration:none;
     }
     @include padding-leader(1);
     @include padding-trailer(1);
@@ -748,12 +743,12 @@
 
 
 .d-course-finder-menu-panel{
-	padding-left: 12px;
-	padding-right: 12px;
-	@include gs-media(d) {
-		padding-left: 0;
-		padding-right: 0;
-	}
+  padding-left: 12px;
+  padding-right: 12px;
+  @include gs-media(d) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // search icon link for mobile and tablet (appears to the left of the main menu dropdown icon)
@@ -826,8 +821,7 @@ form.d-search-input-form {
   @include padding-trailer(4);
 }
 
-.site-search-input, .course-finder-txt-input {
-
+.site-search-txt-input, .course-finder-txt-input {
   color: $aaa-gray;
   width: 100%;
   height: 48px;
@@ -843,11 +837,11 @@ form.d-search-input-form {
 // highlighting active parent in main navigation
 .menu-btn.active-parent{
 
-	background-color: $black;
+  background-color: $black;
 
-	@include gs-media(d) {
-		background-color: $dark-gray;
-	}
+  @include gs-media(d) {
+    background-color: $dark-gray;
+  }
 }
 
 // skip to content link for accessibility

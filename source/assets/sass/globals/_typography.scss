@@ -46,17 +46,31 @@ body {
 a {
 	// @extend %Swiss721BT-Roman;
 	color: $black;
-	text-decoration: none;
-	padding-bottom: 1px;
-	border-bottom: 1px dotted $soft-black;
-	&:hover {
+		.__text p &, .__text li &, .__aside p &, .__aside li & {
+			//text-decoration: underline;
+		}
+	
+	.footer-links & {
+		text-decoration:none;
+	}
+	&:hover, &:active, &:visited  {
 		color: $aaa-gray;
-		padding-bottom: 1px;
-		border-bottom: 1px dotted $black;
+		
+		.footer-links & {
+			text-decoration:none;
+		}
+
 		.lcc h2 & , .lcc h3 & {
 			color: $lcc-secondary-pink;
+			text-decoration:none;
+			border-bottom:none;
 		}
 	}
+
+	.__text p &, .__text li &, .__aside p &, .__aside li & {
+		@extend %Swiss721BT-Roman;
+	}
+
 	// h2 & {
 	// 	@extend %Swiss721BT-Bold;
 	// }
