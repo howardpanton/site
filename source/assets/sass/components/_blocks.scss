@@ -169,10 +169,11 @@
 .__horiz-block {
 	overflow: hidden;
 	@include component-spacing-bottom;
-	@include gs-media(t,min-max) {
-	}
 
 	@include gs-media(d) {
+
+		h2 {margin-top: 0; }
+
 		figure {
 			@extend %d5-d8--within-d5-d16;
 		}
@@ -180,6 +181,8 @@
 			@extend %d9-d16--within-d5-d16;
 		}
 	}
+
+
 }
 
 .__quote {
@@ -225,7 +228,8 @@
 // two-up - core styles
 //
 .two-up {
-	margin-top: 26px;
+
+
 
 	@include gs-media(t,min-max) {
 		li {
@@ -238,8 +242,10 @@
 	}
 
 	ul li {
-		padding-left: 0;
+		@include component-spacing-top(26px);
 		margin-left: 0;
+		padding-left: 0;
+		padding-bottom: 12px;
 		list-style-type: none;
 	}
 
@@ -257,7 +263,7 @@
 	}
 
 	&.l-content-full-width {
-		@extend %d5-d16--within-d5-d1;
+		@extend %d5-d16--within-d5-d16;
 
 		@include gs-media(d) {
 			li {
@@ -306,7 +312,11 @@
 \*------------------------------------*/
 
 .three-up {
-	margin-top: 26px;
+
+		li {
+			@include component-spacing-top(26px);
+			padding-bottom: 12px;
+		}
 
 	@include gs-media(t,min-max) {
 		li {
