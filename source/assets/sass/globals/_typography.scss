@@ -81,88 +81,192 @@ a {
   }
 }
 
-h1, .size-h1 {
-  @include font-size(54);
-  @include adjust-leading-to(10, 54px);
-  padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
-  .csm & {
-    font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-  }
-  .camberwell &, .chelsea &, .wimbledon & {
-    @extend %BrandonText-Bold !optional;
-  }
-  .lcc & {
-    @extend %AlternateGothic !optional;
 
-    text-transform: uppercase;
-    @include font-size(60);
-    word-spacing: -6px;
-  }
+
+/*------------------------------------*\
+    HEADINGS
+\*------------------------------------*/
+
+// UAL Headings
+
+h1, .size-h1, .header-panel h1 {
+    @extend %Swiss721BT-Light;
+    @include font-size(36);
+    @include line-height(40);
+    @include padding(14, 0, 12, 0);
+    @include margin(0);
+
+
+    @include gs-media (m) {
+      @include font-size(30);
+      @include line-height(34);
+    }
+
+    // colleges h1 styling
+    //
+    .csm & {
+      font-family: 'Leviathan A', 'Leviathan B';
+      font-weight: 800;
+      font-style: italic;
+
+    }
+    .camberwell &, .chelsea &, .wimbledon & {
+      @extend %BrandonText-Bold !optional;
+    }
+
+    .lcc & {
+      @extend %AlternateGothic !optional;
+      @include font-size(46);
+      text-transform: uppercase;
+      word-spacing: -3px;
+      letter-spacing: normal;
+      font-size: 46px;
+
+      @include gs-media (m) {
+        @include font-size(40);
+        @include line-height(36);
+      }
+
+    }
+
+    .lcf & {
+      @extend %Swiss721BT-Black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
 }
 
-h2 {
-  .csm & {
-    font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-  }
-  .lcc & {
-    @include font-size(54);
-    border-top: 4px solid $black;
-    @extend %AlternateGothic !optional;
-    text-transform: uppercase;
-    word-spacing: -6px;
-  }
-}
 
-h3 {
-  .csm & {
-    @extend %BureauGrotBold !optional;
-  }
-  .lcc & {
-    @include font-size(42);
-    @include adjust-leading-to(7, 42px);
-    @extend %AlternateGothic !optional;
-    // @extend %LeagueGothicRegular;
-    padding: rhythm(3, 36px) 0 rhythm(1, 42px) 0;
-    text-transform: uppercase;
-    border-bottom: 4px solid $black;
-    margin-bottom: 18px;
-    word-spacing: -4px;
-  }
-}
-
-h2, h3, h4 {
-  @extend %Swiss721BT-Bold;
-}
-
-h2, h3 {
-  .camberwell &, .chelsea &, .wimbledon & {
-    @extend %BrandonText-Bold !optional;
-  }
-}
-
-h2 a, h3 a {
-  .camberwell &, .chelsea &, .wimbledon & {
-    @extend %BrandonText-Bold !optional;
-  }
-}
+h2, h3, h4 { @extend %Swiss721BT-Bold; }
 
 h2, .size-h2 {
-  @include font-size(36);
-  @include adjust-leading-to(7, 36px);
-  padding: rhythm(3, 36px) 0 rhythm(3, 36px) 0;
+  @include font-size(28);
+  @include line-height(34);
+  @include padding(26, 0, 12, 0);
+  @include margin(0);
+
+  @include gs-media (m) {
+    @include font-size(24);
+    @include line-height(30);
+  }
+
+
+  // colleges h2 styling
+  //
+  .camberwell &, .chelsea &, .wimbledon & {
+    @extend %BrandonText-Bold !optional;
+    @include margin(26, 0, 12, 0);
+    @include padding(12, 0, 12, 0);
+  }
+
+  .camberwell & { border-top: 6px solid $ccw-blue; }
+
+  .chelsea & { border-top: 6px solid $ccw-salmon; }
+
+  .wimbledon & { border-top: 6px solid $ccw-green; }
+
+  .csm & {
+    font-family: 'Leviathan A', 'Leviathan B';
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  .lcc & {
+    @extend %AlternateGothic !optional;
+    @include font-size(40);
+    @include line-height(38);
+    @include padding(16, 0, 12, 0);
+    @include margin(26, 0, 0, 0);
+    border-top: 4px solid $black;
+    text-transform: uppercase;
+    word-spacing: -3px;
+
+    @include gs-media (m) {
+      @include font-size(36);
+      @include line-height(34);
+    }
+  }
+
+  .lcf & {
+    @extend %Swiss721BT-Black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+
 }
 
 h3, .size-h3 {
   @include font-size(22);
-  @include adjust-leading-to(5, 22px);
-  padding: rhythm(3, 22px) 0;
+  @include line-height(28);
+  @include padding(16, 0, 10, 0);
+  @include margin(0);
+
+  @include gs-media (m) {
+    @include font-size(21);
+    @include line-height(26);
+  }
+
+  // colleges h3 styling
+  //
+  .camberwell &, .chelsea &, .wimbledon & {
+    @extend %BrandonText-Bold !optional;
+    @include padding(12, 0, 12, 0);
+  }
+
+  .csm & {
+    @extend %BureauGrotBold !optional;
+  }
+
+  .lcc & {
+    @extend %AlternateGothic !optional;
+    @include font-size(34);
+    @include line-height(32);
+    @include padding(16, 0, 10, 0);
+    @include margin(0);
+    text-transform: uppercase;
+    word-spacing: -3px;
+
+    @include gs-media (m) {
+      @include font-size(33);
+      @include line-height(30);
+    }
+
+    a { border-bottom: none; }
+  }
+
+  .lcf & {
+    @extend %Swiss721BT-Black;
+    @include font-size(22);
+    @include line-height(28);
+    @include padding(16, 0, 10, 0);
+  }
 }
+
 
 h4, .size-h4 {
   @include font-size(18);
-  @include adjust-leading-to(4, 18px);
-  padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
+  @include line-height(22);
+  @include padding(12, 0, 0, 0);
+  @include margin(0);
 }
+
+h5 {
+  @include font-size(16);
+}
+
+h6 {
+  @include font-size(14);
+}
+
+
+// maybe not needed?
+// h2 a, h3 a {
+//   .camberwell &, .chelsea &, .wimbledon & {
+//     @extend %BrandonText-Bold !optional;
+//   }
+// }
 
 .size-big {
   .lcc & {
@@ -176,19 +280,140 @@ h4, .size-h4 {
   }
 }
 
-h5 {
-  @include font-size(16);
-}
 
-h6 {
-  @include font-size(14);
-}
+
+/*------------------------------------*\
+    DEFAULT PARAGRAPH STYLING
+\*------------------------------------*/
 
 p {
+  @extend %Swiss721BT-Light;
   @include font-size(16);
-  @include adjust-leading-to(4, 16px);
-  padding-bottom: rhythm(3, 16px);
+  @include line-height(24);
+  @include padding(12, 0, 18, 0);
+  @include margin(0);
 }
+
+// additional paragraph styles
+.leader {
+  @include font-size(20);
+  @include line-height(30);
+  @include padding(24, 0, 12, 0);
+  @include margin(0);
+}
+
+.last {
+  @include padding(12, 0, 30, 0);
+}
+
+.small {
+  @include font-size(14);
+  @include line-height(21);
+  @include padding(8, 0, 14, 0);
+  @include margin(0);
+}
+
+.para-uppercase {
+  @extend %Swiss721BT-Roman;
+  @include font-size(12);
+  @include line-height(18);
+  @include padding(8, 0, 14, 0);
+  @include margin(0);
+  text-transform: uppercase;
+}
+
+.l-content {
+  ul {
+    li {
+      padding-left: 9px;
+      margin-left: 16px;
+      list-style-type: square;
+    }
+  }
+}
+
+/*------------------------------------*\
+    PRESENTATIONAL TEXT STYLES
+\*------------------------------------*/
+
+strong, b,{
+  @extend %Swiss721BT-Bold;
+}
+
+em {
+  @extend %Swiss721BT-Italic;
+}
+
+code {
+  @extend %Swiss721BT-Italic;
+  background: $bg-gray;
+  @include font-size(12);
+  padding: rhythm(1, 12px);
+}
+
+hr {
+  clear: both;
+}
+
+
+
+/*------------------------------------*\
+    ASIDES
+\*------------------------------------*/
+
+aside p, aside li {
+  @include font-size(14);
+  @include line-height(21);
+}
+
+
+
+/*------------------------------------*\
+    TYPE ASSOCIATED WITH IMAGES
+\*------------------------------------*/
+
+figure {
+  position: relative; // for credits
+  line-height: 0;
+  a {
+    @extend %Swiss721BT-Light;
+    color: $black;
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: 0;
+    &:hover {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+figcaption, .rsCaption, .caption {
+  @extend %Swiss721BT-Light;
+  @include font-size(14);
+  @include adjust-leading-to(3, 14px);
+  span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
+    display: block;
+    padding: 8px 12px 6px 12px;
+    p {
+      padding-bottom: 0;
+    }
+    h4 a {
+      @extend %Swiss721BT-Bold;
+
+    }
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    LIST STYLES
+\*------------------------------------*/
 
 nav ul {
   margin-left: 0;
@@ -213,67 +438,12 @@ ul li ul, ol li ol, ol li ul, ul li ol {
   }
 }
 
-p {
-  @include font-size(16);
-}
-
-.leader {
-  @include font-size(22);
-  @include adjust-leading-to(5, 22px);
-  padding-bottom: rhythm(3, 22px);
-}
-
-.l-content {
-  ul {
-    li {
-      padding-left: 9px;
-      margin-left: 16px;
-      list-style-type: square;
-    }
-  }
-}
-
-aside p, aside li {
-  @include font-size(14);
-}
-
 ol {
   margin-left: rhythm(5, 16px);
   list-style-type: decimal-leading-zero;
   li {
 
   }
-}
-
-@include gs-media (m,min-max) {
-  .l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .block {
-    ul, ol {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  }
-}
-
-
-
-
-strong, b,{
-  @extend %Swiss721BT-Bold;
-}
-
-em {
-  @extend %Swiss721BT-Italic;
-}
-
-code {
-  @extend %Swiss721BT-Italic;
-  background: $bg-gray;
-  @include font-size(12);
-  padding: rhythm(1, 12px);
 }
 
 dl {
@@ -287,6 +457,25 @@ dl {
     padding-left: rhythm(4, 16px);
   }
 }
+
+
+@include gs-media (m) {
+  .l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .block {
+    ul, ol {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+    TABLES
+\*------------------------------------*/
 
 table {
   width: 100%;
@@ -318,6 +507,7 @@ table {
     }
   }
 }
+
 
 figure {
   position: relative; // for credits
@@ -356,7 +546,11 @@ figcaption, .rsCaption, .caption {
 
 }
 
-%blockquote {
+/*------------------------------------*\
+    BLOCKQUOTES
+\*------------------------------------*/
+
+blockquote {
   position: relative;
   span {
     @extend .ui-icons-quote_marks;
@@ -375,19 +569,8 @@ figcaption, .rsCaption, .caption {
   padding-right: 18%;
 }
 
-blockquote {
-  @extend %blockquote;
-}
-
-hr {
-  clear: both;
-}
 
 // LCF Variants
-
-b, strong, h2, h3, h4 {
-  @extend %Swiss721BT-Bold;
-}
 
 .lcf {
   // Swiss Black
