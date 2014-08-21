@@ -1,5 +1,5 @@
 /*------------------------------------*\
-		$CONTENTS
+    $CONTENTS
 \*------------------------------------*/
 /**
  * CONTENTS............You’re reading it!
@@ -8,509 +8,675 @@
  */
 
 /*------------------------------------*\
-		$FONT-FACE
+    $FONT-FACE
 \*------------------------------------*/
 
 // to prevent an extend error in sass, these files need to be imported into
 // in the file that they will be extended from
 // @import "font-face/brandon-text",
-// 		"font-face/bureau-grot",
-// 		"font-face/alternate-gothic",
-// 		"font-face/swiss-721",
-// 		"font-face/fontello-embedded",
-// 		"globals/sprites";
+//    "font-face/bureau-grot",
+//    "font-face/alternate-gothic",
+//    "font-face/swiss-721",
+//    "font-face/fontello-embedded",
+//    "globals/sprites";
 // actually - if you add !optional to the @extend directive, the styles are extended without having to duplicate all the above
 
 @include establish-baseline(16px);
 
 // Always show scrollbar to prevent jumps when content is expanded
 html {
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 // Set box-sizing rules to all elements
 * {
-	@include box-sizing;
+  @include box-sizing;
 }
 
 // Apply UAL global font to body
 body {
-	font-family: $ual-global-font-stack;
-	overflow-x: hidden;
-	@include font-size(16);
+  font-family: $ual-global-font-stack;
+  overflow-x: hidden;
+  @include font-size(16);
 }
 
 // Global link colors
 
 a {
-	// @extend %Swiss721BT-Roman;
-	color: $black;
-		.__text p &, .__text li &, .__aside p &, .__aside li & {
-			//text-decoration: underline;
-		}
-	
-	.footer-links & {
-		text-decoration:none;
-	}
-	&:hover, &:active, &:visited  {
-		color: $aaa-gray;
-		
-		.footer-links & {
-			text-decoration:none;
-		}
+  // @extend %Swiss721BT-Roman;
+  color: $black;
+    .__text p &, .__text li &, .__aside p &, .__aside li & {
+      //text-decoration: underline;
+    }
 
-		.lcc h2 & , .lcc h3 & {
-			color: $lcc-secondary-pink;
-			text-decoration:none;
-			border-bottom:none;
-		}
-	}
+  .footer-links & {
+    text-decoration:none;
+  }
+  &:hover, &:active, &:visited  {
+    color: $aaa-gray;
 
-	.__text p &, .__text li &, .__aside p &, .__aside li & {
-		@extend %Swiss721BT-Roman;
-	}
+    .footer-links & {
+      text-decoration:none;
+    }
 
-	// h2 & {
-	// 	@extend %Swiss721BT-Bold;
-	// }
-	h3 & {
-		.lcc & {
-			border-bottom: none;
-			text-decoration: none;
-		}
-	}
-	// h4 & {
-	// 	@extend %Swiss721BT-Bold;
-	// }
-	.size-big & {
-		border-bottom: none;
-	}
+    .lcc h2 & , .lcc h3 & {
+      color: $lcc-secondary-pink;
+      text-decoration:none;
+      border-bottom:none;
+    }
+  }
+
+  .__text p &, .__text li &, .__aside p &, .__aside li & {
+    @extend %Swiss721BT-Roman;
+  }
+  h3 & {
+    .lcc & {
+      border-bottom: none;
+      text-decoration: none;
+    }
+  }
+  .size-big & {
+    border-bottom: none;
+  }
 }
 
-h1, .size-h1 {
-	@include font-size(54);
-	@include adjust-leading-to(10, 54px);
-	padding: rhythm(2, 54px) 0 rhythm(4, 54px) 0;
-	.csm & {
-		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-		// @extend %LeviathanBlackItalic;
-	}
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-	.lcc & {
-		@extend %AlternateGothic !optional;
-		// @extend %LeagueGothicRegular;
-		text-transform: uppercase;
-		@include font-size(60);
-		word-spacing: -6px;
-	}
+
+
+/*------------------------------------*\
+    HEADINGS
+\*------------------------------------*/
+
+// UAL Headings
+
+h1, .size-h1, .header-panel h1 {
+    @extend %Swiss721BT-Light;
+    @include font-size(36);
+    @include line-height(40);
+    @include padding(14, 0, 12, 0);
+    @include margin(0);
+
+
+    @include gs-media (m) {
+      @include font-size(30);
+      @include line-height(34);
+    }
+
+    // colleges h1 styling
+    //
+    .csm & {
+      font-family: 'Leviathan A', 'Leviathan B';
+      font-weight: 800;
+      font-style: italic;
+
+    }
+    .camberwell &, .chelsea &, .wimbledon & {
+      @extend %BrandonText-Bold !optional;
+    }
+
+    .lcc & {
+      @extend %AlternateGothic !optional;
+      @include font-size(46);
+      text-transform: uppercase;
+      word-spacing: -3px;
+      letter-spacing: normal;
+      font-size: 46px;
+
+      @include gs-media (m) {
+        @include font-size(40);
+        @include line-height(36);
+      }
+
+    }
+
+    .lcf & {
+      @extend %Swiss721BT-Black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
 }
 
-h2 {
-	.csm & {
-		font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-	}
-	.lcc & {
-		@include font-size(54);
-		border-top: 4px solid $black;
-		@extend %AlternateGothic !optional;
-		// @extend %LeagueGothicRegular;
-		text-transform: uppercase;
-		word-spacing: -6px;
-	}
-}
 
-h3 {
-	.csm & {
-		@extend %BureauGrotBold !optional;
-	}
-	.lcc & {
-		@include font-size(42);
-		@include adjust-leading-to(7, 42px);
-		@extend %AlternateGothic !optional;
-		// @extend %LeagueGothicRegular;
-		padding: rhythm(3, 36px) 0 rhythm(1, 42px) 0;
-		text-transform: uppercase;
-		border-bottom: 4px solid $black;
-		margin-bottom: 18px;
-		word-spacing: -4px;
-	}
-}
-
-h2, h3, h4 {
-	@extend %Swiss721BT-Bold;
-}
-
-h2, h3 {
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-	// .csm & {
-		// font-family: 'Leviathan A', 'Leviathan B'; font-weight: 800; font-style: italic;
-	//   // @extend %BureauGrotBold !optional;
-	// }
-}
-
-h2 a, h3 a {
-	.camberwell &, .chelsea &, .wimbledon & {
-		@extend %BrandonText-Bold !optional;
-	}
-}
+h2, h3, h4 { @extend %Swiss721BT-Bold; }
 
 h2, .size-h2 {
-	@include font-size(36);
-	@include adjust-leading-to(7, 36px);
-	padding: rhythm(3, 36px) 0 rhythm(3, 36px) 0;
+  @include font-size(28);
+  @include line-height(34);
+  @include padding(26, 0, 12, 0);
+  @include margin(0);
+
+  @include gs-media (m) {
+    @include font-size(24);
+    @include line-height(30);
+  }
+
+
+  // colleges h2 styling
+  //
+  .camberwell &, .chelsea &, .wimbledon & {
+    @extend %BrandonText-Bold !optional;
+    @include margin(26, 0, 12, 0);
+    @include padding(12, 0, 12, 0);
+  }
+
+  .camberwell & { border-top: 6px solid $ccw-blue; }
+
+  .chelsea & { border-top: 6px solid $ccw-salmon; }
+
+  .wimbledon & { border-top: 6px solid $ccw-green; }
+
+  .csm & {
+    font-family: 'Leviathan A', 'Leviathan B';
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  .lcc & {
+    @extend %AlternateGothic !optional;
+    @include font-size(40);
+    @include line-height(38);
+    @include padding(16, 0, 12, 0);
+    @include margin(26, 0, 0, 0);
+    border-top: 4px solid $black;
+    text-transform: uppercase;
+    word-spacing: -3px;
+
+    @include gs-media (m) {
+      @include font-size(36);
+      @include line-height(34);
+    }
+  }
+
+  .lcf & {
+    @extend %Swiss721BT-Black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+
 }
 
 h3, .size-h3 {
-	@include font-size(22);
-	@include adjust-leading-to(5, 22px);
-	padding: rhythm(3, 22px) 0;
+  @include font-size(22);
+  @include line-height(28);
+  @include padding(16, 0, 10, 0);
+  @include margin(0);
+
+  @include gs-media (m) {
+    @include font-size(21);
+    @include line-height(26);
+  }
+
+  // colleges h3 styling
+  //
+  .camberwell &, .chelsea &, .wimbledon & {
+    @extend %BrandonText-Bold !optional;
+    @include padding(12, 0, 12, 0);
+  }
+
+  .csm & {
+    @extend %BureauGrotBold !optional;
+  }
+
+  .lcc & {
+    @extend %AlternateGothic !optional;
+    @include font-size(34);
+    @include line-height(32);
+    @include padding(16, 0, 10, 0);
+    @include margin(0);
+    text-transform: uppercase;
+    word-spacing: -3px;
+
+    @include gs-media (m) {
+      @include font-size(33);
+      @include line-height(30);
+    }
+
+    a { border-bottom: none; }
+  }
+
+  .lcf & {
+    @extend %Swiss721BT-Black;
+    @include font-size(22);
+    @include line-height(28);
+    @include padding(16, 0, 10, 0);
+  }
 }
+
 
 h4, .size-h4 {
-	@include font-size(18);
-	@include adjust-leading-to(4, 18px);
-	padding: rhythm(2, 18px) 0 rhythm(3, 18px) 0;
-}
-
-.size-big {
-	.lcc & {
-		@include font-size(60);
-		border-top: none;
-		border-bottom: 4px solid $black;
-		padding-bottom: 18px;
-		margin-bottom: 18px;
-		line-height: 54px;
-		word-spacing: -6px;
-	}
+  @include font-size(18);
+  @include line-height(22);
+  @include padding(12, 0, 0, 0);
+  @include margin(0);
 }
 
 h5 {
-	@include font-size(16);
+  @include font-size(16);
 }
 
 h6 {
-	@include font-size(14);
+  @include font-size(14);
 }
+
+
+// maybe not needed?
+// h2 a, h3 a {
+//   .camberwell &, .chelsea &, .wimbledon & {
+//     @extend %BrandonText-Bold !optional;
+//   }
+// }
+
+.size-big {
+  .lcc & {
+    @include font-size(60);
+    border-top: none;
+    border-bottom: 4px solid $black;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    line-height: 54px;
+    word-spacing: -6px;
+  }
+}
+
+
+
+/*------------------------------------*\
+    DEFAULT PARAGRAPH STYLING
+\*------------------------------------*/
 
 p {
-	@include font-size(16);
-	@include adjust-leading-to(4, 16px);
-	padding-bottom: rhythm(3, 16px);
+  @extend %Swiss721BT-Light;
+  @include font-size(16);
+  @include line-height(24);
+  @include padding(12, 0, 18, 0);
+  @include margin(0);
 }
 
-nav ul {
-	margin-left: 0;
-	list-style-type: none;
-}
-
-ul, ol, dl {
-	margin-bottom: rhythm(3, 16px);
-	li {
-		@include font-size(16);
-		@include adjust-leading-to(4, 16px);
-		padding-bottom: rhythm(2, 16px);
-	}
-}
-
-ul li ul, ol li ol, ol li ul, ul li ol {
-	padding-top: rhythm(2, 16px);
-	padding-bottom: 0;
-	margin-bottom: 0;
-	li {
-		padding-bottom: rhythm(2, 16px);
-	}
-}
-
-p {
-	@include font-size(16);
-}
-
+// additional paragraph styles
 .leader {
-	@include font-size(22);
-	@include adjust-leading-to(5, 22px);
-	padding-bottom: rhythm(3, 22px);
+  @include font-size(20);
+  @include line-height(30);
+  @include padding(24, 0, 12, 0);
+  @include margin(0);
+}
+
+.last {
+  @include padding(12, 0, 30, 0);
+}
+
+.small {
+  @include font-size(14);
+  @include line-height(21);
+  @include padding(8, 0, 14, 0);
+  @include margin(0);
+}
+
+.para-uppercase {
+  @extend %Swiss721BT-Roman;
+  @include font-size(12);
+  @include line-height(18);
+  @include padding(8, 0, 14, 0);
+  @include margin(0);
+  text-transform: uppercase;
 }
 
 .l-content {
-	ul {
-		li {
-			padding-left: 9px;
-			margin-left: 16px;
-			list-style-type: square;
-		}
-	}
-	// h3 {
-	// 	@extend .size-h4;
-	// 	@include padding-leader(1);
-	// }
+  ul {
+    li {
+      padding-left: 9px;
+      margin-left: 16px;
+      list-style-type: square;
+    }
+  }
 }
 
-aside p, aside li {
-	@include font-size(14);
-}
-
-ol {
-	margin-left: rhythm(5, 16px);
-	list-style-type: decimal-leading-zero;
-	li {
-
-	}
-}
-
-@include gs-media (m,min-max) {
-	.l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
-		padding-left: 12px;
-		padding-right: 12px;
-	}
-	.block {
-		ul, ol {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-	}
-}
-
-
-
+/*------------------------------------*\
+    PRESENTATIONAL TEXT STYLES
+\*------------------------------------*/
 
 strong, b,{
-	@extend %Swiss721BT-Bold;
+  @extend %Swiss721BT-Bold;
 }
 
 em {
-	@extend %Swiss721BT-Italic;
+  @extend %Swiss721BT-Italic;
 }
 
 code {
-	@extend %Swiss721BT-Italic;
-	background: $bg-gray;
-	@include font-size(12);
-	padding: rhythm(1, 12px);
-}
-
-dl {
-	@include adjust-leading-to(4, 16px);
-	padding-bottom: rhythm(1, 16px);
-	dt {
-		@extend %Swiss721BT-Bold;
-	}
-	dd {
-		padding-bottom: rhythm(2, 16px);
-		padding-left: rhythm(4, 16px);
-	}
-}
-
-table {
-	width: 100%;
-	@include font-size(14);
-	@include adjust-leading-to(4, 14px);
-	padding-bottom: rhythm(2, 14px);
-	margin-bottom: rhythm(3, 14px);
-	th, td {
-		padding-top: rhythm(1, 14px);
-		padding-right: rhythm(1, 14px);
-		padding-bottom: rhythm(1, 14px);
-		padding-left: rhythm(2, 14px);
-	}
-	th{
-		text-align: left;
-		vertical-align: top;
-	}
-	thead {
-		@extend .aaa-gray-bg;
-		@extend .ual-white;
-	}
-	tr {
-		&:nth-child(odd) {
-		}
-		&:nth-child(even) {
-			@extend .bg-gray-bg;
-
-
-		}
-	}
-}
-
-figure {
-	position: relative; // for credits
-	// margin-bottom: rhythm(3, 14px);
-	line-height: 0;
-	a {
-		@extend %Swiss721BT-Light;
-		color: $black;
-		text-decoration: none;
-		padding-bottom: 0;
-		border-bottom: 0;
-		&:hover {
-			padding-bottom: 0;
-			border-bottom: 0;
-		}
-	}
-}
-
-figcaption, .rsCaption, .caption {
-	@extend %Swiss721BT-Light;
-	@include font-size(14);
-	@include adjust-leading-to(3, 14px);
-	span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
-		display: block;
-		padding: 8px 12px 6px 12px;
-		p {
-			padding-bottom: 0;
-		}
-		h4 a {
-			@extend %Swiss721BT-Bold;
-
-		}
-	}
-
-
-
-}
-
-%blockquote {
-	position: relative;
-	span {
-		@extend .ui-icons-quote_marks;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		background-repeat: no-repeat;
-		background-position: top left;
-	}
-
-	@include font-size(16);
-	@include adjust-leading-to(4, 16px);
-	margin-top: rhythm(2, 16px);
-	padding-bottom: rhythm(2, 16px);
-	padding-left: 68px;
-	padding-right: 18%;
-}
-
-blockquote {
-	@extend %blockquote;
+  @extend %Swiss721BT-Italic;
+  background: $bg-gray;
+  @include font-size(12);
+  padding: rhythm(1, 12px);
 }
 
 hr {
-	clear: both;
+  clear: both;
 }
+
+
+
+/*------------------------------------*\
+    ASIDES
+\*------------------------------------*/
+
+aside p, aside li {
+  @include font-size(14);
+  @include line-height(21);
+}
+
+
+
+/*------------------------------------*\
+    TYPE ASSOCIATED WITH IMAGES
+\*------------------------------------*/
+
+figure {
+  position: relative; // for credits
+  line-height: 0;
+  a {
+    @extend %Swiss721BT-Light;
+    color: $black;
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: 0;
+    &:hover {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+figcaption, .rsCaption, .caption {
+  @extend %Swiss721BT-Light;
+  @include font-size(14);
+  @include adjust-leading-to(3, 14px);
+  span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
+    display: block;
+    padding: 8px 12px 6px 12px;
+    p {
+      padding-bottom: 0;
+    }
+    h4 a {
+      @extend %Swiss721BT-Bold;
+
+    }
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    LIST STYLES
+\*------------------------------------*/
+
+nav ul {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+ul, ol, dl {
+  margin-bottom: rhythm(3, 16px);
+  li {
+    @include font-size(16);
+    @include adjust-leading-to(4, 16px);
+    padding-bottom: rhythm(2, 16px);
+  }
+}
+
+ul li ul, ol li ol, ol li ul, ul li ol {
+  padding-top: rhythm(2, 16px);
+  padding-bottom: 0;
+  margin-bottom: 0;
+  li {
+    padding-bottom: rhythm(2, 16px);
+  }
+}
+
+ol {
+  margin-left: rhythm(5, 16px);
+  list-style-type: decimal-leading-zero;
+  li {
+
+  }
+}
+
+dl {
+  @include adjust-leading-to(4, 16px);
+  padding-bottom: rhythm(1, 16px);
+  dt {
+    @extend %Swiss721BT-Bold;
+  }
+  dd {
+    padding-bottom: rhythm(2, 16px);
+    padding-left: rhythm(4, 16px);
+  }
+}
+
+
+@include gs-media (m) {
+  .l-content.__text ul, .l-content.__text ol, .l-content.expandable-content ul, .l-content.expandable-content ol {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .block {
+    ul, ol {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+    TABLES
+\*------------------------------------*/
+
+table {
+  width: 100%;
+  @include font-size(14);
+  @include adjust-leading-to(4, 14px);
+  padding-bottom: rhythm(2, 14px);
+  margin-bottom: rhythm(3, 14px);
+  th, td {
+    padding-top: rhythm(1, 14px);
+    padding-right: rhythm(1, 14px);
+    padding-bottom: rhythm(1, 14px);
+    padding-left: rhythm(2, 14px);
+  }
+  th{
+    text-align: left;
+    vertical-align: top;
+  }
+  thead {
+    @extend .aaa-gray-bg;
+    @extend .ual-white;
+  }
+  tr {
+    &:nth-child(odd) {
+    }
+    &:nth-child(even) {
+      @extend .bg-gray-bg;
+
+
+    }
+  }
+}
+
+
+figure {
+  position: relative; // for credits
+  // margin-bottom: rhythm(3, 14px);
+  line-height: 0;
+  a {
+    @extend %Swiss721BT-Light;
+    color: $black;
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: 0;
+    &:hover {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+figcaption, .rsCaption, .caption {
+  @extend %Swiss721BT-Light;
+  @include font-size(14);
+  @include adjust-leading-to(3, 14px);
+  span { // this span is required for complicated reasons related to Royal Slider's default presentation of the ALT text as the caption
+    display: block;
+    padding: 8px 12px 6px 12px;
+    p {
+      padding-bottom: 0;
+    }
+    h4 a {
+      @extend %Swiss721BT-Bold;
+
+    }
+  }
+
+
+
+}
+
+/*------------------------------------*\
+    BLOCKQUOTES
+\*------------------------------------*/
+
+blockquote {
+  position: relative;
+  span {
+    @extend .ui-icons-quote_marks;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  @include font-size(16);
+  @include adjust-leading-to(4, 16px);
+  margin-top: rhythm(2, 16px);
+  padding-bottom: rhythm(2, 16px);
+  padding-left: 68px;
+  padding-right: 18%;
+}
+
 
 // LCF Variants
 
-b, strong, h2, h3, h4 {
-	@extend %Swiss721BT-Bold;
-}
-
 .lcf {
-	// Swiss Black
-	h1,h2,h2 a,h3,h3 a {
-		@extend %Swiss721BT-Black;
-	}
-	h1 {
-		@include font-size(48);
-	}
-	.search-results-list h3 a,
-	.accordion h3,
-	.dd-menu h3,
-	.boxout h3,
-	.__gallery h3 a,
-	h4,h5,h6 {
-		 @extend %Swiss721BT-Bold;
-	}
-	// Bottom margin
-	&.home h2,
-	.l-content-full-width h2,
-	.__gallery h2,
-	&.graduate-school h1,
-	&.graduate-school h2 {
-		margin-bottom: rhythm(4, 24px);
-	}
-	.intro-block-with-left-image h2 {
-		margin-bottom: rhythm(2, 24px);
-	}
-	h2,
-	.__media.block h3,
-	.news-feed h3,
-	.whats-on h3,
-	.footer-block h3 {
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		span, a {
-			border-bottom: 1px solid black;
-			text-decoration:none;
-		}
-	}
-	.box-text h3 a {
-		border-color: $white;
-	}
-	h2 {
-		letter-spacing: 4px;
-	}
-	.college-footer .size-h2 {
-		@include font-size(24);
-			@include margin-trailer(4);
-			padding-bottom: 0;
+  // Swiss Black
+  h1,h2,h2 a,h3,h3 a {
+    @extend %Swiss721BT-Black;
+  }
+  h1 {
+    @include font-size(48);
+  }
+  .search-results-list h3 a,
+  .accordion h3,
+  .dd-menu h3,
+  .boxout h3,
+  .__gallery h3 a,
+  h4,h5,h6 {
+     @extend %Swiss721BT-Bold;
+  }
+  // Bottom margin
+  &.home h2,
+  .l-content-full-width h2,
+  .__gallery h2,
+  &.graduate-school h1,
+  &.graduate-school h2 {
+    margin-bottom: rhythm(4, 24px);
+  }
+  .intro-block-with-left-image h2 {
+    margin-bottom: rhythm(2, 24px);
+  }
+  h2,
+  .__media.block h3,
+  .news-feed h3,
+  .whats-on h3,
+  .footer-block h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    span, a {
+      border-bottom: 1px solid black;
+      text-decoration:none;
+    }
+  }
+  .box-text h3 a {
+    border-color: $white;
+  }
+  h2 {
+    letter-spacing: 4px;
+  }
+  .college-footer .size-h2 {
+    @include font-size(24);
+      @include margin-trailer(4);
+      padding-bottom: 0;
 
-	}
+  }
 
 
-		// centered headings
-		.l-content-full-width.two-up,
-		.three-up,
-		.content h1,
-		&.home h2,
-		.content .four-up h2,
-		.content .four-up h3,
-		.call-to-action h3,
-		&.graduate-school h2 {
-				text-align: center;
-		}
+    // centered headings
+    .l-content-full-width.two-up,
+    .three-up,
+    .content h1,
+    &.home h2,
+    .content .four-up h2,
+    .content .four-up h3,
+    .call-to-action h3,
+    &.graduate-school h2 {
+        text-align: center;
+    }
 
-		.content {
-				.text-block, .l-content {
-					h2, h3, h4 {
-						text-align: left;
-					}
-				}
-		 }
+    .content {
+        .text-block, .l-content {
+          h2, h3, h4 {
+            text-align: left;
+          }
+        }
+     }
 }
 
 
 // // GRADUATE SCHOOL
 
 .graduate-school {
-	.header-wrapper h1 {
-		display: none;
-	}
-		.content-wrapper {
-				h1,h2,.call-to-action h3 {
-						font-family: $lcf-serif-font;
-						font-weight: normal;
-						letter-spacing: 1px;
-				}
-				h1, h2 {
-					background: url(http://www.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
-				}
-				h1 {
-						@include font-size(36);
-						text-transform: uppercase;
-						margin-bottom: rhythm(4, 30px);
-						letter-spacing: 5px;
-				}
-				h2 {
-					@include font-size(20);
-					span {
-						border: 0 none;
-					}
-				}
-		}
-		.call-to-action h3 {
-		@include font-size(20);
-		text-transform: uppercase;
-	}
+  .header-wrapper h1 {
+    display: none;
+  }
+    .content-wrapper {
+        h1,h2,.call-to-action h3 {
+            font-family: $lcf-serif-font;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        h1, h2 {
+          background: url(http://www.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
+        }
+        h1 {
+            @include font-size(36);
+            text-transform: uppercase;
+            margin-bottom: rhythm(4, 30px);
+            letter-spacing: 5px;
+        }
+        h2 {
+          @include font-size(20);
+          span {
+            border: 0 none;
+          }
+        }
+    }
+    .call-to-action h3 {
+    @include font-size(20);
+    text-transform: uppercase;
+  }
 }

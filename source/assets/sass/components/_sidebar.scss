@@ -18,10 +18,10 @@
   			padding-bottom: 0;
 			a {
 				@include font-size(14);
-				padding: 10px 12px;  
+				padding: 10px 12px;
 				list-style-type: none;
 				margin-left: 0;
-				line-height:20px;	
+				line-height:20px;
 				border-bottom: 0;
 				text-decoration:none;
 
@@ -51,6 +51,7 @@
 			}
 			a:hover { background-color: $white; }
 
+      a:visited { color: $black; }
 			//add extra top margin to menu-heading for CSM
 			.csm.home & { @include gs-media(d) { margin-top: 18px; } }
 		}
@@ -67,7 +68,7 @@
 	display: none; // hide sidebar - double sidebar temp bug fix
 	@include font-size(16);
 	margin-bottom: 18px;
-	
+
 	nav, ul { display: none; }
 
 	ul li {
@@ -75,7 +76,7 @@
 		background-color: $bg-gray;
 		border-bottom: 1px solid $light-gray;
 		padding: 0;
-		a { 
+		a {
 			@extend %Swiss721BT-Light;
 			width: 100%;
 			line-height: 24px;
@@ -84,7 +85,7 @@
 			border-bottom: none;
 		}
 		// hide external link icons in mobile menu
-		&.external:after { 
+		&.external:after {
 			display: none;
 		}
 	}
@@ -99,8 +100,8 @@
 		display: block; // only show the first mobile sidebar on any page
 	}
 
-		@include gs-media(d) { 
-		display: none; 
+		@include gs-media(d) {
+		display: none;
 	}
 
 }
@@ -118,7 +119,7 @@
 .multilevel-linkul-0 {
 	@include font-size(14);
 	margin-left: 24px;
-  padding: 0; 
+  padding: 0;
 
 	li:last-child {
 		margin-bottom: 0;
@@ -136,7 +137,7 @@
 	text-align: right;
 	padding-right: 12px;
 	@include font-size(36);
-	
+
 	&:after {
 		@extend %icon;
 		@include font-size(16);
@@ -144,7 +145,7 @@
 	}
 
 	&.active:after{
-		content: '\e82a'; // need to 
+		content: '\e82a'; // need to
 	}
 }
 
