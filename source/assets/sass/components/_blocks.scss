@@ -1,5 +1,5 @@
 /*------------------------------------*\
-		$CONTENTS
+    $CONTENTS
 \*------------------------------------*/
 /**
  * CONTENTS............You’re reading it!
@@ -8,505 +8,544 @@
  */
 
 /*------------------------------------*\
-		$RESET
+    $RESET
 \*------------------------------------*/
 
 
 .block {
 
-	figcaption, .rsCaption, .caption {
-		@extend .bg-gray-bg;
-	}
+  figcaption, .rsCaption, .caption {
+    @extend .bg-gray-bg;
+  }
 }
 
 .block-item {
-	@include component-spacing-bottom;
-	background-color: $bg-gray;
-	// college specific coloring
-	.camberwell & {
-		background-color: $ccw-blue-light;
-	}
-	.chelsea & {
-		background-color: $ccw-salmon-light;
-	}
-	.wimbledon & {
-		background-color: $ccw-green-light;
-	}
-	figure {
-		margin-bottom: 0;
-	}
-	.text {
-		padding: 0 rhythm(4, 16px);
-	}
+  @include component-spacing-bottom;
+  background-color: $bg-gray;
+  // college specific coloring
+  .camberwell & {
+    background-color: $ccw-blue-light;
+  }
+  .chelsea & {
+    background-color: $ccw-salmon-light;
+  }
+  .wimbledon & {
+    background-color: $ccw-green-light;
+  }
+  figure {
+    margin-bottom: 0;
+  }
+  .text {
+    padding: 0 rhythm(4, 16px);
+  }
 }
 
 /*------------------------------------*\
-		$Text
+    $Text
 \*------------------------------------*/
 
 .__text {
 
-	@include gs-media (t,min-max) {
-		@include gs-span(t, all);
-	}
-	@include gs-media (d) {
-		@include gs-span(d, 5,12, (5, 16));
-	}
+  @include gs-media (t,min-max) {
+    @include gs-span(t, all);
+  }
+  @include gs-media (d) {
+    @include gs-span(d, 5,12, (5, 16));
+  }
 
-	.l-content & {
-		@include gs-media (d) {
-			@include gs-span(d, all);
-		}
-	}
+  .l-content & {
+    @include gs-media (d) {
+      @include gs-span(d, all);
+    }
+  }
 }
 
 .lcf .l-content.__text {
-	@include component-spacing-bottom;
+  @include component-spacing-bottom;
 }
 
 
 /*------------------------------------*\
-		$Media
+    $Media
 \*------------------------------------*/
 
 
 .__media {
 
-	h2 {
-		@include gs-media(t,min-max) {
-			.camberwell &, .chelsea &, .wimbledon & {
-				width: 47.28217%;
-				margin-top: 24px;
-			}
-		}
-		@include gs-media(d) {
-			.camberwell &, .chelsea &, .wimbledon & {
-				width: 48.31199%;
-				margin-top: 48px;
-			}
-		}
-	}
+  h2 {
+    @include gs-media(t,min-max) {
+      .camberwell &, .chelsea &, .wimbledon & {
+        width: 47.28217%;
+        margin-top: 24px;
+      }
+    }
+    @include gs-media(d) {
+      .camberwell &, .chelsea &, .wimbledon & {
+        width: 48.31199%;
+        margin-top: 48px;
+      }
+    }
+  }
 
-	li {
-		// college specific coloring
-		.camberwell &, .chelsea &, .wimbledon & {
-			padding-bottom: 0;
-		}
-		.camberwell & {
-			background-color: $ccw-blue-light;
-		}
-		.chelsea & {
-			background-color: $ccw-salmon-light;
-		}
-		.wimbledon & {
-			background-color: $ccw-green-light;
-		}
-	}
+  li {
+    // college specific coloring
+    .camberwell &, .chelsea &, .wimbledon & {
+      padding-bottom: 0;
+    }
+    .camberwell & {
+      background-color: $ccw-blue-light;
+    }
+    .chelsea & {
+      background-color: $ccw-salmon-light;
+    }
+    .wimbledon & {
+      background-color: $ccw-green-light;
+    }
+  }
 
-	li h3, li p {
-		width: 100%;
-		.camberwell &, .chelsea &, .wimbledon & {
-			padding-left: 18px;
-			padding-right: 18px;
-		}
-	}
+  li h3, li p {
+    width: 100%;
+    .camberwell &, .chelsea &, .wimbledon & {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
 
-	figure {
+  figure {
 
-		a {
-			// display: block;
-			line-height: 0;
-		}
-	}
+    a {
+      // display: block;
+      line-height: 0;
+    }
+  }
 
-	figcaption a {
-		display: inline;
-		padding-bottom: 1px;
-		border-bottom: 1px dotted #282828;
-	}
+  figcaption a {
+    display: inline;
+    padding-bottom: 1px;
+    border-bottom: 1px dotted #282828;
+  }
 
-	figcaption h4 a {
-		@extend %Swiss721BT-Bold;
-		padding-bottom: 1px;
-		border-bottom: 1px dotted #282828;
-	}
+  figcaption h4 a {
+    @extend %Swiss721BT-Bold;
+    padding-bottom: 1px;
+    border-bottom: 1px dotted #282828;
+  }
 
-	&.__with-aside {
-	/**
-	* Images with aside will run from d5 to d12
-	*/
-		.l-content{
-			@include gs-media (t,min-max) {
-				@include gs-span(t, all);
-			}
-			@include gs-media (d) {
-				@include gs-span(d, 5,12, (5, 16));
-			}
-		}
-	}
+  &.__with-aside {
+  /**
+  * Images with aside will run from d5 to d12
+  */
+    .l-content{
+      @include gs-media (t,min-max) {
+        @include gs-span(t, all);
+      }
+      @include gs-media (d) {
+        @include gs-span(d, 5,12, (5, 16));
+      }
+    }
+  }
 
 
-	&.__highlight {
-		background: $bg-gray;
-		&:hover {
-			filter: grayscale(100%);
-			-webkit-filter: grayscale(100%);
-			-moz-filter: grayscale(100%);
-			-ms-filter: grayscale(100%);
-			-o-filter: grayscale(100%);
-			-webkit-transition: all ease 0.2s;
-			-moz-transition: all ease 0.2s;
-			-o-transition: all ease 0.2s;
-			transition: all ease 0.2s;
-			background: $black;
-			h2, h3 {
-				color: $white;
-			}
-		}
-	}
+  &.__highlight {
+    background: $bg-gray;
+    &:hover {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      -webkit-transition: all ease 0.2s;
+      -moz-transition: all ease 0.2s;
+      -o-transition: all ease 0.2s;
+      transition: all ease 0.2s;
+      background: $black;
+      h2, h3 {
+        color: $white;
+      }
+    }
+  }
 }
 
 .__horiz-block {
-	overflow: hidden;
-	@include component-spacing-bottom;
-	@include gs-media(t,min-max) {
-	}
+  overflow: hidden;
+  @include component-spacing-bottom;
 
-	@include gs-media(d) {
-		figure {
-			@extend %d5-d8--within-d5-d16;
-		}
-		.text {
-			@extend %d9-d16--within-d5-d16;
-		}
-	}
+  @include gs-media(d) {
+
+    h2 {margin-top: 0; }
+
+    figure {
+      @extend %d5-d8--within-d5-d16;
+    }
+    .text {
+      @extend %d9-d16--within-d5-d16;
+    }
+  }
+
+
 }
 
 .__quote {
-	border-bottom: 4px solid $black;
-	@include component-spacing-bottom;
-	p {
-		@include font-size(36);
-		@include adjust-leading-to(7, 36px);
-		.lcc & {
-			@extend %AlternateGothic;
-			// @extend %LeagueGothicRegular;
-			word-spacing: -4px;
-		}
-	}
+  border-bottom: 4px solid $black;
+  @include component-spacing-bottom;
+  p {
+    @include font-size(36);
+    @include adjust-leading-to(7, 36px);
+    .lcc & {
+      @extend %AlternateGothic;
+      // @extend %LeagueGothicRegular;
+      word-spacing: -4px;
+    }
+  }
 }
 
 /*------------------------------------*\
-		$Page Block Classes
+    $Page Block Classes
 \*------------------------------------*/
 
 // two-up-full - used specifically for the UAL homepage
 .two-up-full {
-	li {
-		background-color: $white;
-		padding-bottom: 0;
-		h3 {
-			padding: 18px;
-		}
-		p {
-			padding: 0 18px 24px 18px;
-		}
-	}
-	@include gs-media(d) {
-		li {
-			@include gs-span(d, 1, 8);
-		}
-		li:nth-child(2n) {
-			@include gs-span(d, 9, 16);
-		}
-	}
+  li {
+    background-color: $white;
+    padding-bottom: 0;
+    h3 {
+      padding: 18px;
+    }
+    p {
+      padding: 0 18px 24px 18px;
+    }
+  }
+  @include gs-media(d) {
+    li {
+      @include gs-span(d, 1, 8);
+    }
+    li:nth-child(2n) {
+      @include gs-span(d, 9, 16);
+    }
+  }
 }
 
 // two-up - core styles
 //
 .two-up {
-	@include gs-media(t,min-max) {
-		li {
-			@include gs-span(t, 2, 4, (2, 7));
-		}
-		li:nth-child(2n) {
-			@include gs-span(t, 5, 7, (2, 7));
-		}
 
-	}
 
-	ul li {
-		padding-left: 0;
-		margin-left: 0;
-		list-style-type: none;
-	}
 
-	&.l-content {
-		@extend %d5-d12--within-d5-d16;
-		@include gs-media(d) {
-			li {
-				@include gs-span(d, 5, 8, (5, 12));
-				padding-left: 0;
-			}
-			li:nth-child(2n) {
-				@include gs-span(d, 9, 12, (5, 12));
-			}
-		}
-	}
+  @include gs-media(t,min-max) {
+    li {
+      @include gs-span(t, 2, 4, (2, 7));
+    }
+    li:nth-child(2n) {
+      @include gs-span(t, 5, 7, (2, 7));
+    }
 
-	&.l-content-full-width {
-		@extend %d5-d16--within-d5-d16;
-		@include gs-media(d) {
-			li {
-				@include gs-span(d, 5, 10, (5, 16));
-			}
-			li:nth-child(2n) {
-				@include gs-span(d, 11, 16, (5, 16));
-			}
-		}
-	}
+  }
 
-	&.l-content-half-width {
-		@extend %d5-d16--within-d5-d16;
-		@include gs-media(d) {
-			ul {
-				@include gs-span(d, 5, 10, (5, 16));
-			}
-			ul:nth-child(2n) {
-				@include gs-span(d, 11, 16, (5, 16));
-			}
-		}
-	}
+  ul li {
+    @include component-spacing-top(26px);
+    margin-left: 0;
+    padding-left: 0;
+    padding-bottom: 12px;
+    list-style-type: none;
+  }
+
+  &.l-content {
+    @extend %d5-d12--within-d5-d16;
+    @include gs-media(d) {
+      li {
+        @include gs-span(d, 5, 8, (5, 12));
+        padding-left: 0;
+      }
+      li:nth-child(2n) {
+        @include gs-span(d, 9, 12, (5, 12));
+      }
+    }
+  }
+
+  &.l-content-full-width {
+    @extend %d5-d16--within-d5-d16;
+
+    @include gs-media(d) {
+      li {
+        @include gs-span(d, 5, 10, (5, 16));
+      }
+      li:nth-child(2n) {
+        @include gs-span(d, 11, 16, (5, 16));
+      }
+    }
+
+  }
+
+  &.l-content-half-width {
+    @extend %d5-d16--within-d5-d16;
+    @include gs-media(d) {
+      ul {
+        @include gs-span(d, 5, 10, (5, 16));
+      }
+      ul:nth-child(2n) {
+        @include gs-span(d, 11, 16, (5, 16));
+      }
+    }
+  }
 }
 
 // fix for hiding list bullet points in two ups inside media blocks
 .l-content.block.__media.two-up ul li {
-	@include gs-media(m,min-max) {
-		list-style-type: none;
-		padding-left: 0;
-		margin-left: 0;
+  @include gs-media(m,min-max) {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
 
-		p {
-			padding-left: 18px;
-			padding-right: 18px;
-		}
+    p {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
 
 
-	}
+  }
 
 }
 
-// three-up - core styles
-//
+
+/*------------------------------------*\
+    three-up - core styles
+\*------------------------------------*/
+
 .three-up {
-	@include gs-media(t,min-max) {
-		li {
-			@include gs-span(t, 2, 7, (2, 7));
-			clear: left;
-			@include component-spacing-bottom;
-		}
-	}
 
-	&.l-content-full-width {
-		@extend %d5-d16--within-d5-d16;
-		@include gs-media(d) {
-			li {
-				@include gs-span(d, 5, 8, (5, 16));
-			}
-			li:nth-child(2n) {
-				@include gs-span(d, 9, 12, (5, 16));
-			}
-			li:nth-child(3n) {
-				@include gs-span(d, 13, 16, (5, 16));
-			}
-		}
-	}
+    li {
+      @include component-spacing-top(26px);
+      padding-bottom: 12px;
+    }
+
+  @include gs-media(t,min-max) {
+    li {
+      @include gs-span(t, 2, 7, (2, 7));
+      clear: left;
+      @include component-spacing-bottom;
+    }
+  }
+
+  &.l-content-full-width {
+    @extend %d5-d16--within-d5-d16;
+    @include gs-media(d) {
+      li {
+        @include gs-span(d, 5, 8, (5, 16));
+      }
+      li:nth-child(2n) {
+        @include gs-span(d, 9, 12, (5, 16));
+      }
+      li:nth-child(3n) {
+        @include gs-span(d, 13, 16, (5, 16));
+      }
+    }
+  }
 
 
-	// three up link list component
-	.link-list-item {
-		@include padding-leader(2);
-		border-bottom: 1px dotted black;
-	}
+  // three up link list component
+  .link-list-item {
+    @include padding-leader(2);
+    border-bottom: 1px dotted black;
+  }
 
-	@include gs-media(d) {
-		/* clear float for multiples of 3 link list items on desktop*/
-		li.link-list-item:nth-child(3n+1) { clear: left; }
+  @include gs-media(d) {
+    /* clear float for multiples of 3 link list items on desktop*/
+    li.link-list-item:nth-child(3n+1) { clear: left; }
 
-	}
+  }
 }
 
-// four-up-full - used specifically for the UAL homepage
 
-.four-up-full {
-	li {
-		background-color: $white;
-		padding-bottom: 0;
-		h3 {
-			padding: 18px;
-		}
-		p {
-			padding: 0 18px 24px 18px;
-		}
-		.nopadding {
-			h3 {
-				padding: 18px 0;
-			}
-			p {
-				padding: 0;
-			}
-			@include gs-media(m) {
-				p, h3 {
-					padding: 12px;
-				}
-			}
-
-		}
-	}
-	@include gs-media(d) {
-		li {
-			@include gs-span(d, 1, 4);
-		}
-		li:nth-child(2n) {
-			@include gs-span(d, 5, 8);
-		}
-		li:nth-child(3n) {
-			@include gs-span(d, 9, 12);
-		}
-		li:nth-child(4n) {
-			@include gs-span(d, 13, 16);
-		}
-	}
-
-}
-
-// four-up - core styles
+/*---------------------------------------------------------*\
+    four-up - core styles
+\*---------------------------------------------------------*/
 
 .four-up {
 
-	@include gs-media(m,min-max) {
-		@extend %m-all;
-		.content & {
-			@extend %m-all;
-		}
-	}
+  @include gs-media(m,min-max) {
+    @extend %m-all;
+    .content & {
+      @extend %m-all;
+    }
+  }
 
-	@include gs-media(t,min-max) {
-		@extend %t2-t7;
-		.content & {
-			@extend %t-all;
-		}
+  @include gs-media(t,min-max) {
+    @extend %t2-t7;
+    .content & {
+      @extend %t-all;
+    }
 
-		li {
-			@include gs-span(t, 2, 4, (2, 7));
-		}
-		li:nth-child(2n) {
-			@include gs-span(t, 5, 7, (2, 7));
-		}
-		li:nth-child(3n) {
-			@include gs-span(t, 2, 4, (2, 7));
-			clear: left;
-		}
-		li:nth-child(4n) {
-			@include gs-span(t, 5, 7, (2, 7));
-		}
-	}
+    li {
+      @include gs-span(t, 2, 4, (2, 7));
+    }
+    li:nth-child(2n) {
+      @include gs-span(t, 5, 7, (2, 7));
+    }
+    li:nth-child(3n) {
+      @include gs-span(t, 2, 4, (2, 7));
+      clear: left;
+    }
+    li:nth-child(4n) {
+      @include gs-span(t, 5, 7, (2, 7));
+    }
+  }
 
 
-	&.l-content-full-width {
-		@include gs-media(d) {
-			@extend %d-all;
-			li {
-				@include gs-span(d, 1, 4);
-			}
-			li:nth-child(2n) {
-				@include gs-span(d, 5, 8);
-			}
-			li:nth-child(3n) {
-				@include gs-span(d, 9, 12);
-			}
-			li:nth-child(4n) {
-				@include gs-span(d, 13, 16);
-			}
-		}
-	}
+  &.l-content-full-width {
+    @include gs-media(d) {
+      @extend %d-all;
+      li {
+        @include gs-span(d, 1, 4);
+      }
+      li:nth-child(2n) {
+        @include gs-span(d, 5, 8);
+      }
+      li:nth-child(3n) {
+        @include gs-span(d, 9, 12);
+      }
+      li:nth-child(4n) {
+        @include gs-span(d, 13, 16);
+      }
+    }
+  }
+
+}
+
+/*---------------------------------------------------------*\
+    four-up-full - used specifically for the UAL homepage
+\*---------------------------------------------------------*/
+
+.four-up-full {
+  li {
+    background-color: $white;
+    padding-bottom: 0;
+    h3 {
+      padding: 18px;
+    }
+    p {
+      padding: 0 18px 24px 18px;
+    }
+    .nopadding {
+      h3 {
+        padding: 18px 0;
+      }
+      p {
+        padding: 0;
+      }
+      @include gs-media(m) {
+        p, h3 {
+          padding: 12px;
+        }
+      }
+
+    }
+  }
+  @include gs-media(d) {
+    li {
+      @include gs-span(d, 1, 4);
+    }
+    li:nth-child(2n) {
+      @include gs-span(d, 5, 8);
+    }
+    li:nth-child(3n) {
+      @include gs-span(d, 9, 12);
+    }
+    li:nth-child(4n) {
+      @include gs-span(d, 13, 16);
+    }
+  }
 
 }
 
 
 
-// COLLEGE SPECIFIC MEDIA BLOCK STYLING
+/*---------------------------------------------------------*\
+   COLLEGE SPECIFIC  BLOCK STYLING
+\*---------------------------------------------------------*/
+
+
 .two-up, .three-up {
 
-	// CSM specific styling for media blocks
-	.csm & {
-		h2 {
-			width: 50%;
-		}
-		li {
-			h3 {
-				padding: 18px;
-			}
-			p {
-				padding: 0 18px 18px 18px;
-			}
-			figure {
-				img {
-					// border-bottom: 2px solid $csm-primary;
-					&:hover {
-						filter: grayscale(100%);
-						-webkit-filter: grayscale(100%);
-						-moz-filter: grayscale(100%);
-						-ms-filter: grayscale(100%);
-						-o-filter: grayscale(100%);
-					}
-				}
-			}
-			&:hover {
-				background-color: $csm-primary;
-				color: $white;
-				h3 a {
-					color: $white;
-					border-bottom: 1px dotted $white;
-					&:hover {
-						border-bottwom: 1px solid $white;
-					}
-				}
-			}
-		}
-	}
+  // CSM specific styling for media blocks
+  .csm & {
+    h2 {
+      width: 50%;
+    }
+    li {
+      h3 {
+        padding: 18px;
+      }
+      p {
+        padding: 0 18px 18px 18px;
+      }
+      figure {
+        img {
+          // border-bottom: 2px solid $csm-primary;
+          &:hover {
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+          }
+        }
+      }
+      &:hover {
+        background-color: $csm-primary;
+        color: $white;
+        h3 a {
+          color: $white;
+          border-bottom: 1px dotted $white;
+          &:hover {
+            border-bottwom: 1px solid $white;
+          }
+        }
+      }
+    }
+  }
+
 }
 
+.three-up {
+  .lcc & {
+    h3 {
+      border-bottom: 3px solid $black;
+    }
+  }
+}
+
+
+
 .__gallery {
-	.lcc & {
-		h3 {
-			border-bottom: none;
-			line-height: 16px;
-			word-spacing:0;
-			a {
-				@extend %Swiss721BT-Bold;
-				text-transform: none;
-				@include font-size(16);
-				line-height: 1.5em;
-				display: block;
-			}
-		}
-	}
+  .lcc & {
+    h3 {
+      border-bottom: none;
+      line-height: 16px;
+      word-spacing:0;
+      a {
+        @extend %Swiss721BT-Bold;
+        text-transform: none;
+        @include font-size(16);
+        line-height: 1.5em;
+        display: block;
+      }
+    }
+  }
 }
 
 .__media figure{
-	@include component-spacing-bottom(1);
-	@include gs-media (m,min-max) {
-		margin-bottom: 0;
-	}
+  @include component-spacing-bottom(1);
+  @include gs-media (m,min-max) {
+    margin-bottom: 0;
+  }
 }
 
 .__media .two-up figure, .__media .three-up figure, .__media .four-up figure{
-	margin-bottom : 0;
+  margin-bottom : 0;
 }
 
 
 
 .__media .l-content .video-container {
-	@include component-spacing-bottom(4);
+  @include component-spacing-bottom(4);
 }

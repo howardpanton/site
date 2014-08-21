@@ -20,6 +20,7 @@
 
 
 	@import "compass";
+      @import "compass/utilities/sprites";
 
 /*------------------------------------*\
 		$RESET
@@ -64,11 +65,14 @@
 		$CORE
 \*------------------------------------*/
 
-@import "plugins/retina-sprites/retina",
-				"plugins/retina-sprites/sprite",
+ @import
+        "plugins/retina-sprites/retina",
+				// "plugins/retina-sprites/sprite",
 				"globals/sprites",
 				"globals/font-icons",
 				"globals/typography",
+				// "globals/logosSVG",
+				"globals/logosPNG",
 				"globals/logos",
 				"globals/logos.fallback",
 				"globals/forms-core",
@@ -152,7 +156,9 @@
 				"components/owl-carousel",
 				"components/tables",
 				"components/rss-feed",
-				"components/feed-for-news-events";
+				"components/feed-for-news-events",
+				"components/aside";
+
 
 // Short Courses
 @import "components/short-courses",
