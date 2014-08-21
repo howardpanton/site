@@ -1,4 +1,4 @@
-/*!Updated: 18-08-2014, 4:48:59 PM */
+/*!Updated: 21-08-2014, 11:41:49 AM */
 
 /*! jQuery v2.0.0 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery.min.map
@@ -2851,6 +2851,7 @@ if (typeof define !== 'undefined' && define.amd) {
       var owl_carousel;
       owl_carousel = $(".owl-carousel");
       return owl_carousel.each(function() {
+        var total_items;
         $(this).owlCarousel({
           margin: 36,
           responsive: {
@@ -2868,6 +2869,12 @@ if (typeof define !== 'undefined' && define.amd) {
           nav: true,
           dots: false,
           navText: ["<i class='icon-left-open-big'></i>", "<i class='icon-right-open-big'></i>"]
+        });
+        total_items = $(".item", this).length;
+        $(".item-index", this).append(function(i) {
+          return $("<p />", {
+            text: i + 1 + "/" + total_items
+          });
         });
       });
     });
