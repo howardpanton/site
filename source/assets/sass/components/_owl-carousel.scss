@@ -369,7 +369,7 @@ $dot-background-active:	$dark-gray;
 	.center-cropped {
 		@include margin-trailer(3);
 	}
-	.item-date, .item-description {
+	.item-index, .item-description {
 		padding-left: 12px;
 		padding-right: 12px;
 	}
@@ -388,29 +388,17 @@ $dot-background-active:	$dark-gray;
 	background-position: center center;
 	background-repeat: no-repeat;
 	overflow: hidden;
+	img {
+		min-height: 100%;
+		min-width: 100%;
+	}
 }
-
-.research-outputs .item span {
-	position: absolute;
-	top: 185px;
-	right: 12px;
-	color: white;
-	background: black;
-	line-height: 24px;
-	padding: 3px 6px 0;
-}
-
-.research-outputs .center-cropped img {
-	min-height: 100%;
-	min-width: 100%;
-}
-
 
 
 // desktop-only
 .carousel-container {
 	@include gs-media (d) {
-		.item-description, .item-date {
+		.item-description, .item-index {
 			padding-left: 18px;
 			padding-right: 18px;
 		}

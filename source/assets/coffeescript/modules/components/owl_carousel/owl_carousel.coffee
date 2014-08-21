@@ -32,21 +32,20 @@ initOwlCarousel = ->
 					"<i class='icon-left-open-big'></i>"
 					"<i class='icon-right-open-big'></i>"
 				]
-			return
 
 			# add pagination to each item in the carousel
-			# owl_carousel.each ->
-			# 		total_items = $(".item", this).length
-			# 		$(".item-description", this).append (i) ->
-			# 				$ "<span />",
-			# 				text: i + 1 + " of " + total_items
-			# 		return
-			# return
+			total_items = $(".item", this).length
+			$(".item-index", this).append (i) ->
+					$ "<p />",
+					text: i + 1 + "/" + total_items
+			return
 
 	return
+
 
 
 $(document).ready ->
 		if $(".owl-carousel").length > 0
 				initOwlCarousel()
+
 
