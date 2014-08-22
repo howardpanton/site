@@ -7,6 +7,27 @@ block vars
 block content
 
 		.row
+			.l-content.block.__text.__with-aside
+				.text
+					.boxout.__text.bg-gray-bg.e-library-search-widget
+						h3 Search our e-Library
+						p e-Library Search is the starting point for searching our online resources. Use our
+							a(href="http://arts.deepwebaccess.com/e-library/")
+								strong advanced search
+							| to explore by subject or database.
+						#dwt-search-widget.relative
+							form.d-search-input-form(method="post", action="http://arts.deepwebaccess.com/e-library/search.html", target="_blank")
+								input(name="formName", type="hidden", value="simpleSearch")
+								label.hide-text(for="elibrary-search-input") Enter keyword(s)
+								input#elibrary-search-input(type="text", accesskey="q", name="fullRecord", placeholder="Enter keyword(s) for Quick Search")
+								#full-text-div
+									input#full-text-only.before-label(type="checkbox", checked="checked", name="fullTextOnly")
+									label(for="full-text-only") Full Text Only
+								button#dwt-search-widget-button.go-search-button(type="submit", title="Perform a Deep Web Search") Search
+						p.search-branding
+							a(href="http://www.deepwebtech.com") Powered By Deep Web Technologies
+
+		.row
 			.l-content.block.__text
 				h2 Overview
 				p Individual form controls automatically receive some global UAL styling. All textual
