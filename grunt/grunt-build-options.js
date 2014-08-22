@@ -25,6 +25,7 @@ module.exports = function(grunt) {
 								grunt.task.run(['build-github']);
 								grunt.task.run('prompt:buildFileType');
 								grunt.task.run('handle_build_type');
+								grunt.task.run('copy:release_notes');
 								grunt.task.run('gh-pages:pushToBuild');
 						break;
 

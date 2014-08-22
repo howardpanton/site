@@ -1,18 +1,29 @@
 .expandable-content {
-	border-top: 1px dotted $aaa-gray;
-	border-bottom: 1px dotted $aaa-gray ;
-	margin-top: 26px;
+
 	margin-bottom: 18px;
 	padding-top: 26px;
 	padding-bottom: 26px;
+	border-bottom: 1px dotted $aaa-gray;
+
+	//  removed due to issue with multiple expandable blocks causing double line separation
+	// border-top: 1px dotted $aaa-gray;
+	// margin-top: 26px;
+
+	h2 {
+		padding-top: 0;
+		@include gs-media (m) {
+			@include font-size(30);
+			padding-bottom: 12px;
+		}
+	}
 
 	.show-more, .hide-content {
-		float: right; 
+		float: right;
 		font-family: 'Swiss721BT-Roman';
 	}
 
 	.hide-content::after, .show-more::after  {font-family: 'fontello'; }
-	
+
 	.hide-content::after { content: ' \e806'; }
 
 	.show-more::after  { content: ' \e803'; }

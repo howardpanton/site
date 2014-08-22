@@ -34,7 +34,7 @@
     dataLayer = [];
     
   </script>
-  <body class="ual"><!-- Google Analytics -->
+  <body class="csm"><!-- Google Analytics -->
 <script>
 /**
  * Creates a temporary global ga object and loads analy  tics.js.
@@ -112,7 +112,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <li class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
                 <!-- Course Finder-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -121,11 +121,12 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
+                            <label for="nav-course-input" class="hide-text">Course finder</label>
                             <input id="nav-course-input" accesskey="q" value="" type="text" placeholder="Search for a course here" name="query" class="course-finder-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="courses" name="collection">
-                            <input type="submit" name="submit-course-search" value="Go" class="go-search-button">
-                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go">view all courses</a></div>
+                            <button type="submit" name="submit-course-search" class="go-search-button">Search</button>
+                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search">view all courses</a></div>
                           </form>
                         </div>
                       </div>
@@ -297,7 +298,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End About UAL-->
                 <!-- Site Search-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?form=simple&amp;collection=website&amp;submit-site-search=Search" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -306,10 +307,11 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
-                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="course-finder-txt-input">
+                            <label for="nav-site-search-input" class="hide-text">Site search</label>
+                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="site-search-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="website" name="collection">
-                            <input type="submit" name="submit-site-search" value="Search" class="go-search-button">
+                            <button type="submit" name="submit-site-search" class="go-search-button">Search</button>
                           </form>
                         </div>
                       </div>
@@ -361,6 +363,17 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <p>Established in 2004, University of the Arts London is a vibrant world centre for innovation, drawing together six colleges with international reputations in art, design, fashion, communication and performing arts.</p>
                 <h2>Thematic Section Title h2 random stuff stuff stuff stuff testing</h2>
                 <p>paragraph Integer posuere erat a ante velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.</p>
+                <p><a href="#" class="button-link">View all button</a></p>
+                <p>
+                  <button type="submit">Actual button</button>
+                </p>
+                <p>
+                  <button disabled="disabled" class="submit-btn">Button class submit-btn</button>
+                </p>
+                <p><a href="#" class="button-link icon">Button link plus icon class</a></p>
+                <p>
+                  <button class="button">Button</button>
+                </p>
                 <h3>Section Title h3 random stuff testing</h3>
                 <p>paragraph Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                 <p>Founded in the 19th and early 20th centuries, these colleges include Camberwell College of Arts, Central Saint Martins, Chelsea College of Arts, London College of Communication, London College of Fashion, and Wimbledon College of Arts.</p>
@@ -421,6 +434,31 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
         </div>
       </div>
     </div>
+    <footer class="college-footer row">
+      <div class="footer-wrapper">
+        <div class="footer-block left">
+          <h3 class="size-h2">Contact Us</h3>
+          <!-- see http://html5doctor.com/microformats/-->
+          <ul class="vcard">
+            <li class="no-bullet"><a href="/csm/" title="Contact information for Central Saint Martins" class="fn org url"><span class="organization-name">Central Saint Martins</span></a></li>
+            <li><span class="adr"><span class="street-address">Granary Building<br>1 Granary Square</span>,<span class="locality">King's Cross</span>,<br><span class="region">London</span><span class="postal-code">N1C 4AA</span><span class="country">UK</span><br></span></li>
+            <li><a href="/csm/about-csm/contact-us/">Find your contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-block middle">
+          <h3 class="size-h2">Download</h3>
+          <p><a href="/media/arts/colleges/csm/documents/csm-undergraduate-course-guide.pdf">Undergraduate Course Guide (PDF 6.3MB)</a><br><a href="/media/arts/colleges/csm/documents/postgraduate-course-brochure-2014.pdf">Postgraduate Course Brochure (PDF, 0.6mb)</a></p>
+        </div>
+        <div class="footer-block right">
+          <h3 class="size-h2">Connect: CSM</h3>
+          <ul class="icons no-bullet">
+            <li><a href="http://www.facebook.com/centralsaintmartins" class="facebook"><span class="icon-facebook-circled"></span></a></li>
+            <li><a href="http://twitter.com/csm_news" class="twitter"><span class="icon-instagram-black"></span></a></li>
+            <li><a href="http://www.youtube.com/user/artslondoncsm" class="youtube"><span class="icon-gplus-black"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <footer class="global-footer row">
       <div class="footer-wrapper">
         <div class="row">

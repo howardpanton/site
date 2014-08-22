@@ -112,7 +112,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <li class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
                 <!-- Course Finder-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -121,11 +121,12 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
+                            <label for="nav-course-input" class="hide-text">Course finder</label>
                             <input id="nav-course-input" accesskey="q" value="" type="text" placeholder="Search for a course here" name="query" class="course-finder-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="courses" name="collection">
-                            <input type="submit" name="submit-course-search" value="Go" class="go-search-button">
-                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go">view all courses</a></div>
+                            <button type="submit" name="submit-course-search" class="go-search-button">Search</button>
+                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search">view all courses</a></div>
                           </form>
                         </div>
                       </div>
@@ -297,7 +298,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End About UAL-->
                 <!-- Site Search-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?form=simple&amp;collection=website&amp;submit-site-search=Search" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -306,10 +307,11 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
-                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="course-finder-txt-input">
+                            <label for="nav-site-search-input" class="hide-text">Site search</label>
+                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="site-search-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="website" name="collection">
-                            <input type="submit" name="submit-site-search" value="Search" class="go-search-button">
+                            <button type="submit" name="submit-site-search" class="go-search-button">Search</button>
                           </form>
                         </div>
                       </div>

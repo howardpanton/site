@@ -1,0 +1,180 @@
+//
+//  University of the Arts London
+//  CSS stylesheet
+//  Authors: Howard Panton, Matt Wisbey,
+//  Pete Richardson, Alastair Mucklow.
+//
+
+/*------------------------------------*\
+		$CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * RESET...............Set our reset defaults
+ * FONT-FACE...........Import brand font files
+ */
+
+/*------------------------------------*\
+		$COMPASS
+\*------------------------------------*/
+
+
+	@import "compass";
+
+/*------------------------------------*\
+		$RESET
+\*------------------------------------*/
+
+	@import "compass/reset";
+
+/*------------------------------------*\
+		$FONT-FACE
+\*------------------------------------*/
+
+// we're now linking to fonts on beta.arts.ac.uk
+// in our page layouts
+//
+@import "font-face/swiss-721";
+
+
+/*------------------------------------*\
+		$GRIDSET
+\*------------------------------------*/
+
+
+	@import "globals/gridset";
+
+
+/*------------------------------------*\
+		$GLOBALS
+\*------------------------------------*/
+
+
+	@import "globals/variables";
+	@import "globals/mixins";
+	@import "globals/colors";
+
+
+/*------------------------------------*\
+		$CORE
+\*------------------------------------*/
+
+@import "plugins/retina-sprites/retina",
+				"plugins/retina-sprites/sprite",
+				"globals/sprites",
+				"globals/typography",
+				"globals/forms-core",
+				"globals/buttons";
+
+
+/*------------------------------------*\
+		Custom overrides for Wufoo
+\*------------------------------------*/
+
+// Set box-sizing rules to all elements
+* {
+	@include box-sizing;
+}
+
+#container {
+	box-shadow: none;
+}
+
+#logo {
+	margin-top: 40px;
+	a {
+		border: 0 none;
+	}
+}
+
+form.wufoo {
+	font-family: $ual-global-font-stack;
+	@extend .with-box-shadow;
+	padding: 12px;
+	margin: 0;
+
+	li {
+		label.desc, legend.desc {
+			font-weight: normal;
+			font-size: 100%;
+		}
+		padding: 0;
+		margin-bottom: 12px !important;
+		&.focused, &.error {
+			background-color: transparent !important;
+		}
+		&.complex div span {
+			padding-bottom: 0;
+		}
+		&.error label.desc {
+			font-weight: normal !important;
+		}
+		div label, span label {
+			//font-size: 100%;
+		}
+		.datepicker {
+			margin-top: 12px;
+		}
+	}
+
+	.info h2 {
+		@include font-size(36);
+	}
+
+	input {
+		margin-bottom: 0;
+		&.text {
+			border: 6px solid rgba(0, 0, 0, 0);
+			@extend .border-transition;
+			background-image: none;
+		}
+		&.submit {
+			@extend button; // this might not work
+			font-size: 100%;
+		}
+	}
+
+	textarea.textarea {
+		border: 6px solid rgba(0, 0, 0, 0);
+		background-image: none;
+	}
+
+	select.select {
+		background: $inputBackground !important;
+	}
+
+	span.symbol {
+		line-height: 230%;
+	}
+
+
+
+
+}
+
+
+/*
+
+
+
+
+.wufoo input.text, .wufoo textarea.textarea{background:#FFFFFF url(/images/fieldbg.gif) repeat-x top}
+.wufoo .focused{background:#FFF7C0}
+.wufoo .instruct{background-color:#F5F5F5}
+
+
+
+.wufoo .info{border-bottom:1px dotted #CCCCCC}
+.wufoo .instruct{border:1px solid #e6e6e6}
+
+
+.wufoo .info div{font-size:95%;font-family:inherit;color:#444444}
+.wufoo .section h3{font-size:110%;font-family:inherit;background:#FFFFFF;color:#000000}
+.wufoo .section div{font-size:85%;font-family:inherit;color:#444444}
+.wufoo li div, .wufoo li div label, .wufoo li span label{font-family:inherit;color:#444444}
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice{font-size:100%;font-family:inherit;color:#333333}
+.wufoo label.choice{color:#444444}
+.wufoo .instruct{font-size:80%;font-family:inherit;color:#444444
+}
+
+*/

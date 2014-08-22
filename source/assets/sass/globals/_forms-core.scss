@@ -2,16 +2,13 @@
 // Forms
 // --------------------------------------------------
 
-/* FORM STYLES */
-
-@import "globals/sprites";
+/* Core styles for standard native form controls */
 
 $baseLineHeight: 24px !default;
-$base_grey_docs: #757275;
 
 // Forms
 // -------------------------
-$inputBackground:               $white !default;
+$inputBackground:               #F3F3F3 !default;
 $inputBorder:                   #ccc !default;
 $inputBorderRadius:             30px !default;
 $inputDisabledBackground:       $bg-gray !default;
@@ -98,10 +95,10 @@ legend {
   width: 100%;
   margin-bottom: $baseLineHeight;
   @include font-size(20);
-  line-height: $baseLineHeight * 2;
-  color: $light-gray;
+  line-height: $baseLineHeight * 1.5;
+  color: $dark-gray;
   border: 0;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $dark-gray;
 
   // Small
   small {
@@ -159,8 +156,8 @@ input[type="color"],
   margin-bottom: $baseLineHeight / 2;
   vertical-align: middle;
   clear: left;
-  background-color: lighten($base_grey_docs, 50%);
-  @include transition(border linear .2s, box-shadow linear .2s);
+  background-color: $inputBackground;
+  //@include transition(border linear .2s, box-shadow linear .2s);
 
   // Focus state
   &:focus {
@@ -223,6 +220,19 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   @include tab-focus();
+}
+
+// Border transition class - used to share code between forms.scss and search-results.scss
+.border-transition {
+  -webkit-transition: -webkit-box-shadow 450ms;
+  -moz-transition: -moz-box-shadow 450ms;
+  -o-transition: -o-box-shadow 450ms;
+  transition: border 450ms ease;
+  border: 6px solid rgba(0,0,0,0);
+}
+
+input {
+	@extend .border-transition;
 }
 
 
@@ -376,10 +386,6 @@ textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
-  &:focus {
-    // /border-color: darken(#ee5f5b, 10%);
-    // @include box-shadow(0 0 6px lighten(#ee5f5b, 20%));
-  }
 }
 
 
@@ -694,183 +700,18 @@ legend + .control-group {
 }
 
 
-// Custom checkbox & radio button styling
-// --------------------------------------
-
-// styling based from example seen here:
-// http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons/
-
-// used for the bg sprites to style checkboxes and radioboxes
-.form-ico {
-  //height: 16px;
-  //width: 16px;
-  //@extend .ui-icons-sprite;
-}
-
-// --------------------------------------------------
-
-// link styling within forms
-.form-link {
-  @include font-size(14);
-  line-height: 14px;
-  @include margin-trailer(2);
-}
-
-// checkbox and radio button styling
-// default: boxes appear to the right of the label
-// add class "before-label" to make the checkbox or radio button appear before the label
-
-// remove default iphone border radius
-input {
-   -webkit-appearance: none;
-   @include border-radius(0);
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  vertical-align: middle;
-  display: none;
-  //opacity: 0;
-  &.unstyled {
-    display: inline-block;
-    -webkit-appearance: checkbox;
-    width: 12px;
-    height: 18px;
-    cursor: pointer;
-    margin-left: 6px;
-    margin-right: 18px;
-  }
-}
-
-input[type="checkbox"]+label,
-input[type="radio"]+label {
-  @include font-size(16);
-  padding-bottom: 6px;
-  //margin-left: -12px;
-  display: inline-block;
-  cursor: pointer;
-}
-input[type="checkbox"]+label:after,
-input[type="radio"]+label:after {
-  // @extend .form-ico;
-  content: "";
-  display: inline-block;
-  margin: -2px 12px 0 12px;
-  vertical-align: middle;
-}
-
-input[type="checkbox"]+label:after {
-  //@include use-sprite(checkbox-un-checked);
-  @extend .ui-icons-checkbox-un-checked;
-}
-
-input[type="checkbox"]:checked+label:after {
-  @extend .ui-icons-checkbox-checked;
-}
-
-input[type="checkbox"]:disabled+label:after {
-  @extend .ui-icons-checkbox-un-checked-disabled;
-  cursor: default;
-}
-
-input[type="radio"]+label:after {
-  @extend .ui-icons-radio-un-selected;
-}
-
-input[type="radio"]:checked+label:after {
-  @extend .ui-icons-radio-selected;
-}
-
-input[type="radio"]:disabled+label:after {
-  @extend .ui-icons-radio-un-selected-disabled;
-  cursor: default;
-}
-
-// unstyled checkboxes & labels for events in salesforce
-label.unstyled { display: inline-block; cursor: pointer; }
-label.unstyled:after, input[type="checkbox"].unstyled+label:after, input[type="checkbox"].unstyled:checked+label:after {
-    display: none ;
-    cursor: pointer;
-}
-
-// styles for boxes before the label
-input[type="checkbox"].before-label,
-input[type="radio"].before-label {
-  vertical-align: middle;
-  display: none;
-  //opacity: 0;
-}
-
-input[type="checkbox"].before-label+label,
-input[type="radio"].before-label+label {
-  @include font-size(16);
-  margin-left: -12px;
-  margin-right: 12px;
-  display: inline-block;
-  cursor:pointer;
-}
-input[type="checkbox"].before-label+label:before,
-input[type="radio"].before-label+label:before {
-  // @extend .form-ico;
-  content: "";
-  display: inline-block;
-  margin: -2px 12px 0 12px;
-  vertical-align: middle;
-}
-
-input[type="checkbox"].before-label+label:after,
-input[type="radio"].before-label+label:after{
-  display: none;
-}
-
-
-input[type="checkbox"].before-label+label:before {
-  @extend .ui-icons-checkbox-un-checked;
-}
-input[type="checkbox"].before-label:checked+label:before {
-  @extend .ui-icons-checkbox-checked;
-}
-input[type="checkbox"].before-label:disabled+label:before {
-  @extend .ui-icons-checkbox-un-checked-disabled;
-  cursor: default;
-}
-input[type="radio"].before-label+label:before {
-  @extend .ui-icons-radio-un-selected;
-}
-input[type="radio"].before-label:checked+label:before {
-  @extend .ui-icons-radio-selected;
-}
-input[type="radio"].before-label:disabled+label:before {
-  @extend .ui-icons-radio-un-selected-disabled;
-  cursor: default;
-}
-
-// disabled form elements have regular mouse pointer
-input:disabled {
-  cursor: default;
+// Disabled states
+input, button.submit-btn {
+	&:disabled, &:disabled:hover {
+		color: $aaa-gray;
+  	background-color: $bg-gray;
+  	border-color: $bg-gray;
+  	cursor: default; // disabled form elements have regular mouse pointer
+	}
 }
 
 input[type="radio"]:disabled + label,
 input[type="checkbox"]:disabled + label {
-  cursor: default;
-}
-
-// submit button styles
-input.submit-btn {
-  @extend .button-link;
-  border-width: 0;
-  border-radius: 0;
-  display: block;
-}
-
-input.submit-btn:hover {
-  background-color: #333;
-  cursor: pointer;
-}
-
-input.submit-btn:disabled, input.submit-btn:disabled:hover, {
-  color: $aaa-gray;
-  background-color: $bg-gray;
   cursor: default;
 }
 

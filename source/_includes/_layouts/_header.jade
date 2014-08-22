@@ -41,7 +41,7 @@
 						// Course Finder
 						// menu button
 						li.menu-btn
-							a.megamenu_drop.needsclick(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Go', title='Course Finder') Course Finder
+							a.megamenu_drop.needsclick(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Search', title='Course Finder') Course Finder
 							// Begin Item
 							// dropdown
 							.dropdown_fullwidth
@@ -50,12 +50,13 @@
 									.d-course-finder-menu-panel.row
 										.row.relative
 											form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
+												label.hide-text(for='nav-course-input') Course finder
 												input#nav-course-input.course-finder-txt-input(accesskey='q', value='', type='text', placeholder='Search for a course here', name='query')
 												input(type='hidden', value='simple', name='form')
 												input(type='hidden', value='courses', name='collection')
-												input.go-search-button(type='submit', name='submit-course-search', value='Go')
+												button.go-search-button(type='submit', name='submit-course-search') Search
 												.small-text-link
-													a(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Go') view all courses
+													a(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Search') view all courses
 							// End Item Container
 						// End Item
 						// End Course Finder
@@ -261,7 +262,7 @@
 						// Site Search
 						// menu button
 						li.menu-btn
-							a.megamenu_drop.needsclick.search-icon.icon-search(href='http://search.arts.ac.uk/s/search.html', title="Site Search")
+							a.megamenu_drop.needsclick.search-icon.icon-search(href='http://search.arts.ac.uk/s/search.html?form=simple&collection=website&submit-site-search=Search', title="Site Search")
 							// Begin Item
 							// dropdown
 							.dropdown_fullwidth
@@ -270,10 +271,11 @@
 									.d-course-finder-menu-panel.row
 										.row.relative
 											form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
-												input#nav-site-search-input.course-finder-txt-input(type='text', required='', accesskey='q', value='', name='query', placeholder='Enter your search here')
+												label.hide-text(for='nav-site-search-input') Site search
+												input#nav-site-search-input.site-search-txt-input(type='text', required='', accesskey='q', value='', name='query', placeholder='Enter your search here')
 												input(type='hidden', value='simple', name='form')
 												input(type='hidden', value='website', name='collection')
-												input.go-search-button(type='submit', name='submit-site-search', value='Search')
+												button.go-search-button(type='submit', name='submit-site-search') Search
 							// End Item Container
 						// End Item
 						// End Site Search

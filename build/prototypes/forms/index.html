@@ -112,7 +112,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <li class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
                 <!-- Course Finder-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -121,11 +121,12 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
+                            <label for="nav-course-input" class="hide-text">Course finder</label>
                             <input id="nav-course-input" accesskey="q" value="" type="text" placeholder="Search for a course here" name="query" class="course-finder-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="courses" name="collection">
-                            <input type="submit" name="submit-course-search" value="Go" class="go-search-button">
-                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go">view all courses</a></div>
+                            <button type="submit" name="submit-course-search" class="go-search-button">Search</button>
+                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search">view all courses</a></div>
                           </form>
                         </div>
                       </div>
@@ -297,7 +298,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <!-- End About UAL-->
                 <!-- Site Search-->
                 <!-- menu button-->
-                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?form=simple&amp;collection=website&amp;submit-site-search=Search" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
                   <div class="dropdown_fullwidth">
@@ -306,10 +307,11 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
-                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="course-finder-txt-input">
+                            <label for="nav-site-search-input" class="hide-text">Site search</label>
+                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="site-search-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="website" name="collection">
-                            <input type="submit" name="submit-site-search" value="Search" class="go-search-button">
+                            <button type="submit" name="submit-site-search" class="go-search-button">Search</button>
                           </form>
                         </div>
                       </div>
@@ -367,14 +369,14 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
               <div id="text-inputs" class="row l-content"></div>
               <h3>Text Inputs</h3>
               <form action="" class="margin-top with-box-shadow">
-                <label>Default Textbox</label>
+                <label for="default">Default Textbox</label>
                 <input id="default" type="text" name="default">
-                <label>Required text input</label>
+                <label for="name">Required text input</label>
                 <input id="name" type="text" name="name" required="required">
                 <label for="p-login1">Password</label>
                 <input id="p-login1" type="password" name="p-login" required="required">
-                <label>Textarea</label>
-                <textarea cols="40" rows="8"></textarea>
+                <label for="message">Textarea</label>
+                <textarea id="message" cols="40" rows="8"></textarea>
               </form>
             </div>
             <script src="https://gist.github.com/denovo/6174247.js"></script>
@@ -419,38 +421,30 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
           <div id="buttons-tab" class="row">
             <div class="l-content">
               <h3>buttons</h3>
-              <form action="" class="margin-top with-box-shadow">
-                <input type="submit" value="Submit Button" class="submit-btn">
-                <input type="submit" value="Disabled Submit Button" disabled="disabled" class="submit-btn">
+              <form action="" class="with-box-shadow">
+                <button type="submit" class="submit-btn">Submit Button</button>
+                <button type="button" disabled="disabled" class="submit-btn">Disabled Submit Button</button>
               </form>
             </div>
-            <script src="https://gist.github.com/denovo/6174306.js"></script>
           </div>
           <div id="example-form-tab" class="row">
             <h3>Example Form</h3>
             <form id="form" name="form" class="l-forms margin-top with-box-shadow">
-              <fieldset>
+              <fieldset class="rhythm-margin-bottom">
                 <legend>Your details</legend>
-                <label>Label example</label>
+                <label for="default">Label example</label>
                 <input id="default" type="text" name="default">
-                <label>Select box</label>
-                <div class="js-select-box select-box">
-                  <input type="hidden" value="option one" class="js-select-box-value">
-                  <div class="select-box-heading">
-                    <h3 class="select-box-title">Option one</h3>
-                    <div class="select-box-arrow"><span class="js-select-box-icon icon"></span></div>
-                  </div>
-                  <ul class="js-select-box-list select-box-options">
-                    <li data-sb-value="option1" class="select-box-option"><a href="#">Option one</a></li>
-                    <li data-sb-value="option2" class="select-box-option"><a href="#">Option two</a></li>
-                    <li data-sb-value="option3" class="select-box-option"><a href="#">Option three</a></li>
-                    <li data-sb-value="option4" class="select-box-option"><a href="#">Option four</a></li>
-                  </ul>
-                </div>
-                <label>Required:<small>field</small></label>
+                <label for="my_id">Course</label>
+                <select id="my_id" name="my_id">
+                  <option value="">Please select</option>
+                  <option value="a0PM0000005oFixMAE">3D Modelling</option>
+                  <option value="a0PM0000005oHtDMAU">Textiles</option>
+                  <option value="a0PM0000005o5KoMAI">Animation</option>
+                </select>
+                <label for="name">Required:<small>field</small></label>
                 <input id="name" type="text" name="name" required="required">
-                <label>Please add your comments</label>
-                <textarea cols="40" rows="8"></textarea>
+                <label for="comments">Please add your comments</label>
+                <textarea id="comments" cols="40" rows="8"></textarea>
               </fieldset>
               <div>
                 <input id="c1" type="checkbox" name="cc">
@@ -477,16 +471,14 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <label for="r3">Radio Button 3 (disabled)</label>
               </div>
               <p>
-                <input type="submit" value="Submit Button" class="submit-btn">
-                <input type="submit" value="Disabled Submit Button" disabled="disabled" class="submit-btn">
+                <button type="submit" class="submit-btn">Submit Button</button>
+                <button type="button" disabled="disabled" class="submit-btn">Disabled Submit Button</button>
               </p>
             </form>
-            <script src="https://gist.github.com/strangerpixel/d57e8283a24748baa69c.js"></script>
           </div>
           <div id="example-login-form" class="row">
             <h2>Example Login Form</h2>
             <div class="l-content">
-              <script src="https://gist.github.com/denovo/6174420.js"></script>
             </div>
             <aside class="no-bg no-pad no-border-left">
               <form id="form" name="form" class="margin-top with-box-shadow cf">
@@ -495,7 +487,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
                 <input id="s-login1" type="text" name="s-login">
                 <label for="p-login1">Password</label>
                 <input id="p-login1" type="password" name="p-login">
-                <input type="submit" value="Submit" class="submit-btn pull-left margin-bottom-3x"><a href="#" class="form-link pull-left clear-left">Forgot Password</a><a href="#" class="form-link pull-left clear-left">Register</a>
+                <button type="submit" class="submit-btn pull-left margin-bottom-3x">Submit</button><a href="#" class="form-link pull-left clear-left">Forgot Password</a><a href="#" class="form-link pull-left clear-left">Register</a>
               </form>
             </aside>
           </div>
@@ -516,7 +508,7 @@ _gaUAL('send', 'pageview');            // Sends a pageview hit.
             <div class="l-content">
               <h3>Accessible Select Box</h3>
               <form action="" class="margin-top with-box-shadow">
-                <label>Course</label>
+                <label for="my_id">Course</label>
                 <select id="my_id" name="my_id">
                   <option value="">Please select</option>
                   <option value="a0PM0000005oFixMAE">3D Modelling</option>
