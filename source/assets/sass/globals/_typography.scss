@@ -56,6 +56,7 @@ a {
   &:hover, &:active, &:visited  {
     color: $aaa-gray;
 
+
     .footer-links & {
       text-decoration:none;
     }
@@ -65,6 +66,10 @@ a {
       text-decoration:none;
       border-bottom:none;
     }
+  }
+
+  &:visited {
+    .lcc & { color: $aaa-gray; }
   }
 
   .__text p &, .__text li &, .__aside p &, .__aside li & {
@@ -226,14 +231,16 @@ h3, .size-h3 {
     @include padding(16, 0, 10, 0);
     @include margin(0);
     text-transform: uppercase;
-    word-spacing: -3px;
 
     @include gs-media (m) {
       @include font-size(33);
       @include line-height(30);
     }
-
     a { border-bottom: none; }
+  }
+
+  .lcc.home &{
+    border-top: 4px solid $black;
   }
 
   .lcf & {
@@ -241,6 +248,7 @@ h3, .size-h3 {
     @include font-size(22);
     @include line-height(28);
     @include padding(16, 0, 10, 0);
+    text-transform: none;
   }
 }
 
@@ -573,21 +581,6 @@ blockquote {
 // LCF Variants
 
 .lcf {
-  // Swiss Black
-  h1,h2,h2 a,h3,h3 a {
-    @extend %Swiss721BT-Black;
-  }
-  h1 {
-    @include font-size(48);
-  }
-  .search-results-list h3 a,
-  .accordion h3,
-  .dd-menu h3,
-  .boxout h3,
-  .__gallery h3 a,
-  h4,h5,h6 {
-     @extend %Swiss721BT-Bold;
-  }
   // Bottom margin
   &.home h2,
   .l-content-full-width h2,
@@ -606,44 +599,16 @@ blockquote {
   .footer-block h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    span, a {
+    span a {
       border-bottom: 1px solid black;
       text-decoration:none;
+      text-transform: none;
     }
   }
   .box-text h3 a {
     border-color: $white;
   }
-  h2 {
-    letter-spacing: 4px;
-  }
-  .college-footer .size-h2 {
-    @include font-size(24);
-      @include margin-trailer(4);
-      padding-bottom: 0;
 
-  }
-
-
-    // centered headings
-    .l-content-full-width.two-up,
-    .three-up,
-    .content h1,
-    &.home h2,
-    .content .four-up h2,
-    .content .four-up h3,
-    .call-to-action h3,
-    &.graduate-school h2 {
-        text-align: center;
-    }
-
-    .content {
-        .text-block, .l-content {
-          h2, h3, h4 {
-            text-align: left;
-          }
-        }
-     }
 }
 
 
@@ -653,29 +618,29 @@ blockquote {
   .header-wrapper h1 {
     display: none;
   }
-    .content-wrapper {
-        h1,h2,.call-to-action h3 {
-            font-family: $lcf-serif-font;
-            font-weight: normal;
-            letter-spacing: 1px;
+  .content-wrapper {
+      h1,h2,.call-to-action h3 {
+          font-family: $lcf-serif-font;
+          font-weight: normal;
+          letter-spacing: 1px;
+      }
+      h1, h2 {
+        background: url(http://www.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
+      }
+      h1 {
+          @include font-size(36);
+          text-transform: uppercase;
+          margin-bottom: rhythm(4, 30px);
+          letter-spacing: 5px;
+      }
+      h2 {
+        @include font-size(20);
+        span {
+          border: 0 none;
         }
-        h1, h2 {
-          background: url(http://www.arts.ac.uk/media/beta/beta-assets/img/lcf-title-underline.gif) bottom center no-repeat;
-        }
-        h1 {
-            @include font-size(36);
-            text-transform: uppercase;
-            margin-bottom: rhythm(4, 30px);
-            letter-spacing: 5px;
-        }
-        h2 {
-          @include font-size(20);
-          span {
-            border: 0 none;
-          }
-        }
-    }
-    .call-to-action h3 {
+      }
+  }
+  .call-to-action h3 {
     @include font-size(20);
     text-transform: uppercase;
   }
