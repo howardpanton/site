@@ -229,7 +229,7 @@
 //
 .two-up {
 
-
+  @include component-spacing-top(26px);
 
   @include gs-media(t,min-max) {
     li {
@@ -242,7 +242,6 @@
   }
 
   ul li {
-    @include component-spacing-top(26px);
     margin-left: 0;
     padding-left: 0;
     padding-bottom: 12px;
@@ -318,10 +317,9 @@
 
 .three-up {
 
-    li {
-      @include component-spacing-top(26px);
-      padding-bottom: 12px;
-    }
+  @include component-spacing-top(26px);
+  padding-bottom: 12px;
+
 
   @include gs-media(t,min-max) {
     li {
@@ -366,6 +364,8 @@
 \*---------------------------------------------------------*/
 
 .four-up {
+
+  @include component-spacing-top(26px);
 
   @include gs-media(m,min-max) {
     @extend %m-all;
