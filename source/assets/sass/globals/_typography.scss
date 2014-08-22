@@ -161,15 +161,8 @@ h2, .size-h2 {
   //
   .camberwell &, .chelsea &, .wimbledon & {
     @extend %BrandonText-Bold !optional;
-    @include margin(26, 0, 12, 0);
-    @include padding(12, 0, 12, 0);
   }
 
-  .camberwell & { border-top: 6px solid $ccw-blue; }
-
-  .chelsea & { border-top: 6px solid $ccw-salmon; }
-
-  .wimbledon & { border-top: 6px solid $ccw-green; }
 
   .csm & {
     font-family: 'Leviathan A', 'Leviathan B';
@@ -191,6 +184,8 @@ h2, .size-h2 {
       @include font-size(36);
       @include line-height(34);
     }
+
+    a:visited { color: $aaa-gray;  }
   }
 
   .lcf & {
@@ -198,6 +193,15 @@ h2, .size-h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: left;
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid black;
+    }
+
+  }
+  .lcf.home & {
+    text-align: center;
   }
 
 }
@@ -229,7 +233,6 @@ h3, .size-h3 {
     @include font-size(34);
     @include line-height(32);
     @include padding(16, 0, 10, 0);
-    @include margin(0);
     text-transform: uppercase;
 
     @include gs-media (m) {
@@ -240,7 +243,7 @@ h3, .size-h3 {
   }
 
   .lcc.home &{
-    border-top: 4px solid $black;
+    border-bottom: 4px solid $black;
   }
 
   .lcf & {
@@ -249,6 +252,11 @@ h3, .size-h3 {
     @include line-height(28);
     @include padding(16, 0, 10, 0);
     text-transform: none;
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid black;
+    }
+
   }
 }
 
@@ -258,6 +266,7 @@ h4, .size-h4 {
   @include line-height(22);
   @include padding(12, 0, 0, 0);
   @include margin(0);
+
 }
 
 h5 {
@@ -591,19 +600,6 @@ blockquote {
   }
   .intro-block-with-left-image h2 {
     margin-bottom: rhythm(2, 24px);
-  }
-  h2,
-  .__media.block h3,
-  .news-feed h3,
-  .whats-on h3,
-  .footer-block h3 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    span a {
-      border-bottom: 1px solid black;
-      text-decoration:none;
-      text-transform: none;
-    }
   }
   .box-text h3 a {
     border-color: $white;

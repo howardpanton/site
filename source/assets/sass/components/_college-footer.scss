@@ -84,28 +84,13 @@
 
   a {
     color: $white;
-    //border-bottom: 1px dotted $white;
-    &:hover {
-     // border-bottom: 1px solid $white;
-    }
 
     .csm &, {
       color: $black;
-     // border-bottom: 1px dotted $soft-black;
-      &:hover {
-      //  border-bottom: 1px solid $soft-black;
-      }
-    }
-
-    .lcf & {
-     // border-bottom: 1px dotted $aaa-gray;
-      &:hover {
-       // border-bottom: 1px solid $aaa-gray;
-      }
     }
   }
 
-  h3 {
+  h2, h3, h3.size-h2 {
     @include margin-trailer(3);
     padding-left: 12px;
     padding-right: 12px;
@@ -126,13 +111,14 @@
         padding-left:  10px;
         padding-right: 10px;
       }
-
+      margin-top: 0;
       @include margin-trailer(2);
 
     }
 
     .lcf & {
       border-bottom: 1px solid $white;
+      text-align: left;
     }
 
     .csm & {
@@ -148,7 +134,6 @@
       @include margin-leader(3);
       @include margin-trailer(1);
     }
-
 
   }
 
@@ -290,11 +275,6 @@
     &.middle {
       clear: none;
       width: gs-width(d, 5, 12, (1,16), true);
-      /*.lcf & {
-        border-left: 1px dotted $mid-gray;
-        border-right: 1px dotted $mid-gray;
-        padding: 0 rhythm(4, 16px);
-      }*/
     }
 
     // RIGHT SIDE FOOTER COL
