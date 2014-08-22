@@ -13,12 +13,14 @@
     @include padding-trailer(2);
     border-bottom: 0;
 
-    // .icons {
-    //   li {
-    //     width: gs-width(d, 13, 13, (13,16), true);
-    //     margin-right: gs-gutter(d, (13,16), true);
-    //   }
-    // }
+
+
+    .icons {
+      li {
+        width: gs-width(d, 13, 13, (13,16), true);
+        margin-right: gs-gutter(d, (13,16), true);
+      }
+    }
 
   }
 
@@ -28,6 +30,8 @@
     background-color: $black;
     border-bottom: 1px dotted $aaa-gray;
   }
+
+
 
   .vcard {
       margin-top: 0;
@@ -80,23 +84,23 @@
 
   a {
     color: $white;
-    border-bottom: 1px dotted $white;
+    //border-bottom: 1px dotted $white;
     &:hover {
-      border-bottom: 1px solid $white;
+     // border-bottom: 1px solid $white;
     }
 
     .csm &, {
       color: $black;
-      border-bottom: 1px dotted $soft-black;
+     // border-bottom: 1px dotted $soft-black;
       &:hover {
-        border-bottom: 1px solid $soft-black;
+      //  border-bottom: 1px solid $soft-black;
       }
     }
 
     .lcf & {
-      border-bottom: 1px dotted $aaa-gray;
+     // border-bottom: 1px dotted $aaa-gray;
       &:hover {
-        border-bottom: 1px solid $aaa-gray;
+       // border-bottom: 1px solid $aaa-gray;
       }
     }
   }
@@ -117,6 +121,7 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       border-bottom: 6px solid $lcc-primary-yellow;
+      border-top: 0;
       @include gs-media(t, max) {
         padding-left:  10px;
         padding-right: 10px;

@@ -26,13 +26,11 @@ module.exports = function(grunt) {
         },
         jade: {
             files: ['source/**/*.jade', '!source/**/_*.jade'],
-            // tasks: ['newer:jade']
             tasks: ['jade']
-
         },
         copy: {
             files: ['.tmp/assets/css/**/*.css'],
-            tasks: ['copy:css']
+            tasks: ['copy:css', 'copy:image_assets']
         },
   });
     grunt.loadNpmTasks('grunt-contrib-watch');
