@@ -8,6 +8,7 @@ module.exports = function(grunt) {
         local: {
             options: {
                 compass: true,
+                sourcemap:true,
                 banner: '/* Updated: <%= grunt.template.today("dd-mm-yyyy, h:MM:ss TT") %> */',
                 spawn:　false
             },

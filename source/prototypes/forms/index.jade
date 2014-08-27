@@ -1,0 +1,186 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "Forms";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+
+		.row
+			.l-content.block.__text.__with-aside
+				.text
+					.boxout.__text.bg-gray-bg.e-library-search-widget
+						h3 Search our e-Library
+						p e-Library Search is the starting point for searching our online resources. Use our
+							a(href="http://arts.deepwebaccess.com/e-library/")
+								strong advanced search
+							| to explore by subject or database.
+						#dwt-search-widget.relative
+							form.d-search-input-form(method="post", action="http://arts.deepwebaccess.com/e-library/search.html", target="_blank")
+								input(name="formName", type="hidden", value="simpleSearch")
+								label.hide-text(for="elibrary-search-input") Enter keyword(s)
+								input#elibrary-search-input(type="text", accesskey="q", name="fullRecord", placeholder="Enter keyword(s) for Quick Search")
+								#full-text-div
+									input#full-text-only.before-label(type="checkbox", checked="checked", name="fullTextOnly")
+									label(for="full-text-only") Full Text Only
+								button#dwt-search-widget-button.go-search-button(type="submit", title="Perform a Deep Web Search") Search
+						p.search-branding
+							a(href="http://www.deepwebtech.com") Powered By Deep Web Technologies
+
+		.row
+			.l-content.block.__text
+				h2 Overview
+				p Individual form controls automatically receive some global UAL styling. All textual
+					code &lt;input&gt;
+					| ,
+					code &lt;textarea&gt;
+					| , and
+					code &lt;select&gt;
+					| elements are set to
+					code width: 100%;
+					| by default.
+				p UAL styled select boxes must follow a specific html structure. Please refer to the
+					a(href='#select-boxes-tab') UAL select box
+					| guidelines below for more information.
+				p Use the class
+					code .with-box-shadow
+					| on the main
+					code &lt;form&gt;
+					| tag to give forms a subtle drop shadow.
+		.row
+			.l-content
+				h2 Form Elements
+				#text-inputs.row.l-content
+				h3 Text Inputs
+				form.margin-top.with-box-shadow(action='')
+					label(for='default') Default Textbox
+					input#default(type='text', name='default')
+					label(for='name') Required text input
+					input#name(type='text', name='name', required='required')
+					label(for='p-login1') Password
+					input#p-login1(type='password', name='p-login', required='required')
+					label(for='message') Textarea
+					textarea#message(cols='40', rows='8')
+			script(src='https://gist.github.com/denovo/6174247.js')
+		.row
+			.l-content
+				h3 Checkboxes
+				p
+					| By default, checkboxes will appear after labels. To make checkboxes appear to the left of the labels, keep the HTML structure the same, and add a class
+					code before-label
+					| to the input element.
+				form.margin-top.with-box-shadow(action='')
+					h4 Checkboxes after labels:
+					input#c4(type='checkbox', name='cc')
+					label(for='c4') Checkbox 1
+					input#c5(type='checkbox', name='cc')
+					label(for='c5') Checkbox 2
+					input#c6(type='checkbox', name='cc', disabled='disabled')
+					label(for='c6') Checkbox 3 (disabled)
+					br
+					h4 Checkboxes before labels:
+					input#c7.before-label(type='checkbox', name='cc')
+					label(for='c7') Checkbox 1
+					input#c8.before-label(type='checkbox', name='cc')
+					label(for='c8') Checkbox 2
+					input#c9.before-label(type='checkbox', name='cc', disabled='disabled')
+					label(for='c9') Checkbox 3 (disabled)
+			script(src='https://gist.github.com/denovo/6174189.js')
+		.row
+			.l-content
+				h3 Radio buttons
+				form.margin-top.with-box-shadow(action='')
+					input#r4(type='radio', name='rb')
+					label(for='r4') Radio Button 1
+					input#r5(type='radio', name='rb')
+					label(for='r5') Radio Button 2
+					input#r6(type='radio', name='rb', disabled='disabled')
+					label(for='r6') Radio Button 3 (disabled)
+			script(src='https://gist.github.com/denovo/6174210.js')
+		#buttons-tab.row
+			.l-content
+				h3 buttons
+				form.with-box-shadow(action='')
+					button.submit-btn(type='submit') Submit Button
+					button.submit-btn(type='button', disabled='disabled') Disabled Submit Button
+			//- script(src='https://gist.github.com/denovo/6174306.js')
+		#example-form-tab.row
+			h3 Example Form
+			form#form.l-forms.margin-top.with-box-shadow(name='form')
+				fieldset.rhythm-margin-bottom
+					legend Your details
+					label(for='default') Label example
+					input#default(type='text', name='default')
+					label(for='my_id') Course
+					select(id="my_id", name="my_id")
+						option(value="") Please select
+						option(value="a0PM0000005oFixMAE") 3D Modelling
+						option(value="a0PM0000005oHtDMAU") Textiles
+						option(value="a0PM0000005o5KoMAI") Animation
+					label(for='name')
+						| Required:
+						small field
+					input#name(type='text', name='name', required='required')
+					label(for='comments')
+						| Please add your comments
+					textarea#comments(cols='40', rows='8')
+				div
+					input#c1(type='checkbox', name='cc')
+					label(for='c1') Checkbox 1
+				div
+					input#c2(type='checkbox', name='cc')
+					label(for='c2') Checkbox 2
+				div
+					input#c3(type='checkbox', name='cc', disabled='disabled')
+					label(for='c3') Checkbox 3 (disabled)
+				br
+				div
+					input#r1(type='radio', name='rb')
+					label(for='r1') Radio Button 1
+				div
+					input#r2(type='radio', name='rb')
+					label(for='r2') Radio Button 2
+				div
+					input#r3(type='radio', name='rb', disabled='disabled')
+					label(for='r3') Radio Button 3 (disabled)
+				p
+					button.submit-btn(type='submit') Submit Button
+					button.submit-btn(type='button', disabled='disabled') Disabled Submit Button
+
+			//- script(src='https://gist.github.com/strangerpixel/d57e8283a24748baa69c.js')
+		#example-login-form.row
+			h2 Example Login Form
+			.l-content
+				//- script(src='https://gist.github.com/denovo/6174420.js')
+			aside.no-bg.no-pad.no-border-left
+				form#form.margin-top.with-box-shadow.cf(name='form')
+					h3 login form
+					label(for='s-login1') Username
+					input#s-login1(type='text', name='s-login')
+					label(for='p-login1') Password
+					input#p-login1(type='password', name='p-login')
+					button.submit-btn.pull-left.margin-bottom-3x(type='submit') Submit
+					a.form-link.pull-left.clear-left(href='#') Forgot Password
+					a.form-link.pull-left.clear-left(href='#') Register
+		#unstyled-elements.row
+			.l-content
+				h2 Unstyled / Default elements
+				p
+					| Used in cases where the HTML for checkboxes must have the label before the checkbox (eg Salesforce for events). Checkboxes appear unstyled if given the 'unstyled' class. The label for the checkbox should also be given a class of 'unstyled'.
+				form#unstyled-chckbx-form.margin-top.with-box-shadow.cf(name='form')
+					label.unstyled(for='uns-chkbx1') Unstyled checkbox 1
+					input#uns-chkbx1.unstyled(type='checkbox', name='uns-chkbx1')
+					label.unstyled(for='uns-chkbx2') Unstyled checkbox 2
+					input#uns-chkbx2.unstyled(type='checkbox', name='uns-chkbx2')
+			script(src='https://gist.github.com/denovo/9115339.js')
+		#normal-select-boxes.row
+			.l-content
+				h3 Accessible Select Box
+				form.margin-top.with-box-shadow(action='')
+					label(for='my_id') Course
+					select(id="my_id", name="my_id")
+						option(value="") Please select
+						option(value="a0PM0000005oFixMAE") 3D Modelling
+						option(value="a0PM0000005oHtDMAU") Textiles
+						option(value="a0PM0000005o5KoMAI") Animation
+			script(src='https://gist.github.com/strangerpixel/ed00d15957c25936f4b1.js')

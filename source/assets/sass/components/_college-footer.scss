@@ -4,11 +4,6 @@
   background-color: $dark-gray;
   padding-top: 0;
 
-  // custom styling per college 
-  .camberwell &, .chelsea &, .wimbledon & {
-   
-  }
-
   .csm & {
     background-color: $white;
     color: $black;
@@ -18,13 +13,15 @@
     @include padding-trailer(2);
     border-bottom: 0;
 
-    // .icons {
-    //   li {
-    //     width: gs-width(d, 13, 13, (13,16), true);
-    //     margin-right: gs-gutter(d, (13,16), true);
-    //   }
-    // }
-    
+
+
+    .icons {
+      li {
+        width: gs-width(d, 13, 13, (13,16), true);
+        margin-right: gs-gutter(d, (13,16), true);
+      }
+    }
+
   }
 
   .lcf & {
@@ -34,9 +31,11 @@
     border-bottom: 1px dotted $aaa-gray;
   }
 
+
+
   .vcard {
       margin-top: 0;
-      
+
       @include gs-media(d) {
         padding: 0;
       }
@@ -47,20 +46,21 @@
         padding: 0;
         a {
           border-bottom: none;
-        } 
+        }
       }
   }
   .vcard li {
       padding-left: 0;
   }
 
-  
+
 
   .social-icons {
+
     li {
       display: inline-block;
       width: 60px;
-    }    
+    }
     a {
       position: absolute;
       text-indent: -999em;
@@ -76,7 +76,7 @@
 .footer-block {
   @extend %Swiss721BT-Light;
   @include font-size(14);
-  
+
   a, li, p {
     @extend %Swiss721BT-Light;
     @include font-size(14);
@@ -84,28 +84,13 @@
 
   a {
     color: $white;
-    border-bottom: 1px dotted $white;
-    &:hover {
-      border-bottom: 1px solid $white;
-    }
 
     .csm &, {
       color: $black;
-      border-bottom: 1px dotted $soft-black;
-      &:hover {
-        border-bottom: 1px solid $soft-black;
-      }
-    }
-
-    .lcf & {
-      border-bottom: 1px dotted $aaa-gray;
-      &:hover {
-        border-bottom: 1px solid $aaa-gray;
-      }
     }
   }
 
-  h3 {
+  h2, h3, h3.size-h2 {
     @include margin-trailer(3);
     padding-left: 12px;
     padding-right: 12px;
@@ -121,17 +106,19 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       border-bottom: 6px solid $lcc-primary-yellow;
+      border-top: 0;
       @include gs-media(t, max) {
         padding-left:  10px;
         padding-right: 10px;
       }
-
+      margin-top: 0;
       @include margin-trailer(2);
-      
+
     }
 
     .lcf & {
       border-bottom: 1px solid $white;
+      text-align: left;
     }
 
     .csm & {
@@ -142,17 +129,17 @@
     }
 
     .chelsea &, .camberwell &, .wimbledon & {
-      @extend %BrandonText-Bold !optional; 
+      @extend %BrandonText-Bold !optional;
       border-top: 6px solid $white;
       @include margin-leader(3);
       @include margin-trailer(1);
     }
-    
-    
-  }  
-  
+
+  }
+
   .icons {
 
+		// one, two or three footer icons
     li {
       display: inline-block;
       float: left;
@@ -173,13 +160,15 @@
         width:100%;
         display:block;
       }
+
       a:hover{
         border-bottom: 0;
       }
+
       a span {
         @extend %icon-social;
         color: $white;
-        line-height: 54px;
+        line-height: 42px;
         width: 100%;
         display: block;
         @include font-size(42);
@@ -189,12 +178,66 @@
         }
       }
 
+      &:nth-child(3n) {
+      	margin-right: 0;
+    	}
+
     }
-    li:nth-child(3n) {
-      margin-right: 0;
-    }
+
+		@include gs-media(t,min-max) {
+			li { @include gs-span(t, 1); }
+
+			li:nth-child(2n) { @include gs-span(t, 2); }
+
+			li:nth-child(3n) { @include gs-span(t, 3); }
+
+			li:nth-child(4n) { @include gs-span(t, 4); }
+		}
+
+		// change styling for a list of four footer icons
+    &.four-icon-list {
+
+
+			li {
+				margin-right: 0;
+				@include gs-span(m, 1);
+
+				// remove left margin on social icons on desktop
+				[class^="icon-"]:before, [class*=" icon-"]:before {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			li:nth-child(2n) { @include gs-span(m, 2); }
+
+			li:nth-child(3n) { @include gs-span(m, 3); }
+
+			li:nth-child(4n) { @include gs-span(m, 4); }
+
+			@include gs-media(t,min-max) {
+				li { @include gs-span(t, 1); }
+
+				li:nth-child(2n) { @include gs-span(t, 2); }
+
+				li:nth-child(3n) { @include gs-span(t, 3); }
+
+				li:nth-child(4n) { @include gs-span(t, 4); }
+			}
+
+			@include gs-media(d) {
+
+				li { @include gs-span(d, 13, 13, (13,16) ); }
+
+				li:nth-child(2n) { @include gs-span(d, 14, 14, (13,16) ); }
+
+				li:nth-child(3n) { @include gs-span(d, 15, 15, (13,16) ); }
+
+				li:nth-child(4n) { @include gs-span(d, 16, 16, (13,16) ); }
+			}
+		}
   }
-  
+
   // mobile & tablet footer column widths
   &.left {
     width: 100%;
@@ -208,8 +251,18 @@
     clear: left;
     margin-right: 0;
   }
-  
-  // desktop footer columns 
+
+	// left & right padding for middle column on mobile & tablet
+	&.middle {
+			p { padding: 0 12px 0 12px; }
+
+			@include gs-media(d) {
+				p { padding: 0; }
+			}
+  }
+
+
+  // desktop footer columns
   @include gs-media(d) {
     @include gs-float(d, left, (1,16));
 
@@ -217,16 +270,11 @@
     &.left {
       width: gs-width(d, 1, 4, (1,16), true);
     }
-    
+
     // MIDDLE FOOTER COL
     &.middle {
       clear: none;
       width: gs-width(d, 5, 12, (1,16), true);
-      /*.lcf & {
-        border-left: 1px dotted $mid-gray;
-        border-right: 1px dotted $mid-gray;
-        padding: 0 rhythm(4, 16px);
-      }*/
     }
 
     // RIGHT SIDE FOOTER COL
@@ -236,5 +284,5 @@
       margin-right: 0;
     }
   }
-  
+
 }

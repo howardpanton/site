@@ -1,299 +1,283 @@
 .ual-black-bg.cf
-  .header-wrapper
-    .row
-      .ual-banner-menu
-        .ual-logo-tab-mobile
-          a(href='http://www.arts.ac.uk/', title='Navigate back to the UAL homepage')
-            .logo-ual-mobile
-        .ual-logo-desktop
-          .logo-ual
-        nav.college-link-menu
-          ul
-            li.col-link-ual
-              a(href='/') University Home
-            li.col-link-camberwell
-              a(href='/camberwell/') Camberwell
-            li.col-link-csm
-              a(href='/csm/') CSM
-            li.col-link-chelsea
-              a(href='/chelsea/') Chelsea
-            li.col-link-lcc
-              a(href='/lcc/') LCC
-            li.col-link-lcf
-              a(href='/fashion/') LCF
-            li.col-link-wimbledon
-              a(href='/wimbledon/') Wimbledon
-    .row
-      // navigation object : Main navigation include
-      nav#global-nav.main-nav-wrapper(role='navigation')
-        .megamenu_container.top-bar
-          a(href='http://www.arts.ac.uk', title='Navigate back to the UAL homepage')
-            .ual-logo-tab-mobile
-              .logo-ual-mobile
-          ul.megamenu
-            // mobile menu button
-            li.megamenu_button(style='overflow: hidden; display: none;')
-              a.m-menu-btn-toggle(href='#')
-                span.icon-menu-1
-            // Course Finder
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#') Course Finder
-              // Begin Item
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                // Begin Item Container
-                .dd-menu-dropdown-wrapper
-                  .d-course-finder-menu-panel.row
-                    .row.relative
-                      form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
-                        input.course-finder-txt-input(accesskey='q', value='', type='text', placeholder='Search for a course here', name='query')
-                        input(type='hidden', value='simple', name='form')
-                        input(type='hidden', value='courses', name='collection')
-                        input.go-search-button(type='submit', name='submit-course-search', value='Go')
-                        .small-text-link
-                          a(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Go') view all courses
-              // End Item Container
-            // End Item
-            // End Course Finder
-            // Colleges
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Colleges
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                // Begin Item Container
-                .dd-menu-dropdown-wrapper
-                  .region.college-nav
-                    ul.subnav-1.region
-                      li
-                        a(href='/camberwell/', title='Visit Camberwell') Camberwell College of Arts
-                      li
-                        a(href='/csm/', title='Visit Central Saint Martins') Central Saint Martins (CSM)
-                      li
-                        a(href='/chelsea/', title='Visit Chelsea') Chelsea College of Arts
-                    ul.subnav-2.region
-                      li
-                        a(href='/lcc/', title='Visit London College of Communication') London College of Communication (LCC)
-                      li
-                        a(href='/fashion/', title='Visit London College of Fashion') London College of Fashion (LCF)
-                      li
-                        a(href='/wimbledon/', title='Visit Wimbledon') Wimbledon College of Arts
-              // End Item Container
-            // End Colleges
-            // Study at UAL
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Study at UAL
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper.study-nav
-                  ul.subnav-1.no-pad-top.region
-                    li.no-border-top
-                      a(href='/study-at-ual/', title='Study at UAL') Study at UAL
-                    li
-                      a(href='/study-at-ual/courses/') Courses
-                    li
-                      a(href='/study-at-ual/postgraduate/') Postgraduate Study
-                    li
-                      a(href='/study-at-ual/international/') International
-                    li
-                      a(href='/study-at-ual/language-centre/') Language Centre
-                    li
-                      a(href=' http://ual.force.com/eventpage?pg=1&types=Open+Day') Open Days
-                    li
-                      a(href='/study-at-ual/widening-participation/') Widening Participation
-                  ul.subnav-2.pad-top-6x.region
-                    li
-                      a(href='/study-at-ual/apply/') Apply
-                    li
-                      a(href='/study-at-ual/enrol/') Enrol
-                    li
-                      a(href='/study-at-ual/tuition-fees/') Tuition Fees
-                    li
-                      a(href='/study-at-ual/scholarships-bursaries-and-loans/') Scholarships, Bursaries & Loans
-                    li
-                      a(href='/study-at-ual/financial-advice/') Financial Advice
-                  ul.subnav-3.pad-top-6x.region
-                    li
-                      a(href='/study-at-ual/student-support/') Student Support
-                    li
-                      a(href='/study-at-ual/library-services/') Library Services
-                    li
-                      a(href='/study-at-ual/learning-and-teaching/') Learning & Teaching
-                    li
-                      a(href='/study-at-ual/term-dates/') Term Dates
-                    li
-                      a(href='/study-at-ual/academic-regulations/') Academic Regulations
-                  ul.subnav-4.pad-top-6x.region
-                    li
-                      a(href='/study-at-ual/accommodation/') Accommodation
-                    li
-                      a(href='/study-at-ual/students-union/') Students' Union
-                    li
-                      a(href='/study-at-ual/facilities/') Facilities
-              // End dropdown
-            // End Study at UAL
-            // Research
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Research
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper
-                  .row.region
-                    .sub-inner-menu.research-nav
-                      ul.subnav-1.no-pad-top.region
-                        li.no-border-top
-                          a(href='/research/', title='Research') Research
-                        li
-                          a(href='/research/research-environment/') Research Environment
-                        li
-                          a(href='/research/research-degrees/') Research Degrees
-                        li
-                          a(href='/research/research-staff/') Research Staff
-                        li
-                          a(href='/research/research-projects/') Research Projects
-                        li
-                          a(href='/research/ual-research-centres/') UAL Research Centres
-              // End dropdown
-            // End Research
-            // Student Jobs & Careers
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Student Jobs & Careers
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper
-                  .row.region
-                    .sub-inner-menu.student-nav
-                      ul.subnav-1.no-pad-top.region
-                        li.no-border-top
-                          a(href='/student-jobs-and-careers/', title='Student jobs & Careers') Student Jobs & Careers
-                        li
-                          a(href='/student-jobs-and-careers/opportunities/') Opportunities
-                        li
-                          a(href='/student-jobs-and-careers/events/') Events
-                        li
-                          a(href='/student-jobs-and-careers/resources/') Resources
-                        li
-                          a(href='/student-jobs-and-careers/about-see/') About SEE
-                      ul.subnav-2.region.pad-top-6x.region
-                        li
-                          a(href='/student-jobs-and-careers/finding-work/') Finding Work
-              // End dropdown
-            // End Student Jobs & Careers
-            // Alumni & Friends
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Alumni & Friends
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper
-                  .row.region
-                    .sub-inner-menu.alumni-nav
-                      ul.subnav-1.region.no-pad-top.region
-                        li.no-border-top
-                          a(href='/alumni-and-friends/', title='Alumni & Friends') Alumni & Friends
-                        li
-                          a(href='/alumni-and-friends/get-involved/') Get Involved
-                        li
-                          a(href='/alumni-and-friends/inspiring-alumni/') Inspiring Alumni
-                        li
-                          a(href='/alumni-and-friends/support-and-donate/') Support & Donate
-                      ul.subnav-2.region.pad-top-6x.region
-                        li
-                          a(href='/alumni-and-friends/benefits/') Benefits
-                        li
-                          a(href='/alumni-and-friends/events-gallery/') Events Gallery
-              // End dropdown
-            // End Alumni & Friends
-            // Business & Innovation
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') Industry Links
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper
-                  .row.region
-                    .sub-inner-menu.industry-nav
-                      ul.subnav-1.no-pad-top.region
-                        li
-                          a(href='/camberwell/business-and-innovation/') Camberwell Business & Innovation
-                        li
-                          a(href='/csm/business-and-innovation/') CSM Business & Innovation
-                        li
-                          a(href='/chelsea/business-and-innovation/') Chelsea Business & Innovation
-                        li
-                          a(href='/lcc/business-and-innovation/') LCC Business & Innovation
-                      ul.subnav-2.no-pad-top.region
-                        li
-                          a(href='/fashion/business-and-innovation/') LCF Business & Innovation
-                        li
-                          a(href='/wimbledon/business-and-innovation/') Wimbledon Business & Innovation
-                        li
-                          a(href='/student-jobs-and-careers/finding-work/information-for-employers/') Information for Employers
-                    .feature.m-hide.t-hide
-                      p
-                        | Businesses worldwide work with us to find creative solutions, discover fresh ideas and recruit new talent. Join them, and let us help you develop your future.
-              // End dropdown
-            // End Business & Innovation
-            // About UAL
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick(href='#', title='') About UAL
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                .dd-menu-dropdown-wrapper
-                  .row.region
-                    .sub-inner-menu.about-nav
-                      ul.subnav-1.no-pad-top.region
-                        li.no-border-top
-                          a(href='/about-ual/', title='About UAL') About UAL
-                        li
-                          a(href='/about-ual/news/') News
-                        li
-                          a(href='http://ual.force.com/eventpage?pg=1') Events
-                        li
-                          a(href='/about-ual/ual-showroom/') UAL Showroom
-                        li
-                          a(href='/about-ual/work-at-ual/') Work At UAL
-                        li
-                          a(href='/about-ual/support-our-creative-future/') Support Our Creative Future
-                      ul.subnav-2.pad-top-6x.region
-                        li
-                          a(href='/about-ual/strategy-governance/') Strategy & Governance
-                        li
-                          a(href='/about-ual/press-office/') Press Office
-                        li
-                          a(href='/about-ual/awarding-body/') UAL Awarding Body
-                        li
-                          a(href='/about-ual/diversity/') Diversity
-                        li
-                          a(href='/about-ual/departments/') Departments
-                      ul.subnav-3.pad-top-6x.region
-                        li
-                          a(href='/about-ual/contact-ual/') Contact UAL
-                      ul.subnav-4.pad-top-6x.region
-              // End dropdown
-            // End About UAL
-            // Site Search
-            // menu button
-            li(style='overflow: hidden; display: block;')
-              a.megamenu_drop.needsclick.search-icon.icon-search(href='#')
-              // Begin Item
-              // dropdown
-              .dropdown_fullwidth(style='left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;')
-                // Begin Item Container
-                .dd-menu-dropdown-wrapper
-                  .d-course-finder-menu-panel.row
-                    .row.relative
-                      form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
-                        input.course-finder-txt-input(type='text', required='', accesskey='q', value='', name='query', placeholder='Enter your search here')
-                        input(type='hidden', value='simple', name='form')
-                        input(type='hidden', value='website', name='collection')
-                        input.go-search-button(type='submit', name='submit-site-search', value='Search')
-              // End Item Container
-            // End Item
-            // End Site Search
-          // End expandable search button
+	.header-wrapper
+		.row
+			.ual-banner-menu
+				.ual-logo-tab-mobile
+					a(href='http://www.arts.ac.uk/', title='Navigate back to the UAL homepage', tabindex='-1' )
+						.logo-ual-mobile
+				.ual-logo-desktop
+					.logo-ual
+				// noindex
+				nav.college-link-menu
+					ul
+						li.col-link-ual
+							a(href='/') University Home
+						li.col-link-camberwell
+							a(href='/camberwell/') Camberwell
+						li.col-link-csm
+							a(href='/csm/') CSM
+						li.col-link-chelsea
+							a(href='/chelsea/') Chelsea
+						li.col-link-lcc
+							a(href='/lcc/') LCC
+						li.col-link-lcf
+							a(href='/fashion/') LCF
+						li.col-link-wimbledon
+							a(href='/wimbledon/') Wimbledon
+				// endnoindex
+		.row
+			// noindex
+			// navigation object : Main navigation include
+			nav#global-nav.main-nav-wrapper(role='navigation')
+				.megamenu_container.top-bar
+					a(href='http://www.arts.ac.uk', title='Navigate back to the UAL homepage', tabindex='-1')
+						.ual-logo-tab-mobile
+							.logo-ual-mobile
+					ul.megamenu
+						// mobile menu button
+						li.megamenu_button
+							a.m-menu-btn-toggle(href='#')
+								span.icon-menu-1
+						// Course Finder
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Search', title='Course Finder') Course Finder
+							// Begin Item
+							// dropdown
+							.dropdown_fullwidth
+								// Begin Item Container
+								.dd-menu-dropdown-wrapper
+									.d-course-finder-menu-panel.row
+										.row.relative
+											form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
+												label.hide-text(for='nav-course-input') Course finder
+												input#nav-course-input.course-finder-txt-input(accesskey='q', value='', type='text', placeholder='Search for a course here', name='query')
+												input(type='hidden', value='simple', name='form')
+												input(type='hidden', value='courses', name='collection')
+												button.go-search-button(type='submit', name='submit-course-search') Search
+												.small-text-link
+													a(href='http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses&submit-course-search=Search') view all courses
+							// End Item Container
+						// End Item
+						// End Course Finder
+						// Colleges
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/colleges/', title='Colleges') Colleges
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper.region.college-nav
+									ul.subnav-1.region
+										li
+											a(href="/colleges/", title="Colleges") Colleges
+										li
+											a(href='/camberwell/', title='Visit Camberwell') Camberwell College of Arts
+										li
+											a(href='/csm/', title='Visit Central Saint Martins') Central Saint Martins (CSM)
+										li
+											a(href='/chelsea/', title='Visit Chelsea') Chelsea College of Arts
+										li
+											a(href='/lcc/', title='Visit London College of Communication') London College of Communication (LCC)
+										li
+											a(href='/fashion/', title='Visit London College of Fashion') London College of Fashion (LCF)
+										li
+											a(href='/wimbledon/', title='Visit Wimbledon') Wimbledon College of Arts
+						// End Item Container
+						// End Colleges
+						// Study at UAL
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/study-at-ual/', title='Study at UAL') Study at UAL
+							// dropdown
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper.study-nav
+									ul.subnav-1.no-pad-top.region
+										li.no-border-top
+											a(href='/study-at-ual/', title='Study at UAL') Study at UAL
+										li
+											a(href='/study-at-ual/courses/') Courses
+										li
+											a(href='/study-at-ual/postgraduate/') Postgraduate Study
+										li
+											a(href='/study-at-ual/international/') International
+										li
+											a(href='/study-at-ual/study-abroad/') Study Abroad
+										li
+											a(href='/study-at-ual/short-courses/') Short Courses
+										li
+											a(href='/study-at-ual/language-centre/') Language Centre
+										li
+											a(href=' http://events.arts.ac.uk/eventpage?pg=1&types=Open+Day') Open Days
+										li
+											a(href='/study-at-ual/apply/') Apply
+										li
+											a(href='/study-at-ual/enrol/') Enrol
+										li
+											a(href='/study-at-ual/tuition-fees/') Tuition Fees
+										li
+											a(href='/study-at-ual/scholarships-bursaries-and-loans/') Scholarships, Bursaries & Loans
+										li
+											a(href='/study-at-ual/financial-advice/') Financial Advice
+										li
+											a(href='/study-at-ual/student-support/') Student Support
+										li
+											a(href='/study-at-ual/library-services/') Library Services
+										li
+											a(href='/study-at-ual/term-dates/') Term Dates
+										li
+											a(href='/study-at-ual/academic-regulations/') Academic Regulations
+										li
+											a(href='/study-at-ual/accommodation/') Accommodation
+										li
+											a(href='/study-at-ual/students-union/') Students' Union
+										li
+											a(href='/study-at-ual/facilities/') Facilities
+										li
+											a(href='/study-at-ual/widening-participation/') Widening Participation
+										li
+											a(href='/study-at-ual/award-ceremonies/') Award Ceremonies
+							// End dropdown
+						// End Study at UAL
+						// Research
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/research/', title='Research') Research
+							// dropdown
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper
+									.row.region
+										.sub-inner-menu.research-nav
+											ul.subnav-1.no-pad-top.region
+												li.no-border-top
+													a(href='/research/', title='Research') Research
+												li
+													a(href='/research/research-news--events/') Research News & Events
+												li
+													a(href='/research/research-staff/') Research Staff
+												li
+													a(href='/research/current-research/') Current Research
+												li
+													a(href='/research/research-projects/') Research Projects
+												li
+													a(href='/research/ual-research-centres/') UAL Research Centres
+												li
+													a(href='/research/research-degrees/') Research Degrees
+												li
+													a(href='/research/research-impact/') Research Impact
+												li
+													a(href='/research/research-environment/') Research Environment
+							// End dropdown
+						// End Research
+						// Student Jobs & Careers
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/student-jobs-and-careers/', title='Student jobs & Careers') Student Jobs &amp; Careers
+							// dropdown
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper
+									.row.region
+										.sub-inner-menu.student-nav
+											ul.subnav-1.no-pad-top.region
+												li.no-border-top
+													a(href='/student-jobs-and-careers/', title='Student jobs & Careers') Student Jobs &amp; Careers
+												li
+													a(href='/student-jobs-and-careers/opportunities/') Opportunities
+												li
+													a(href='/student-jobs-and-careers/events/') Events
+												li
+													a(href='/student-jobs-and-careers/finding-work/') Finding Work
+												li
+													a(href='/student-jobs-and-careers/resources/') Resources
+												li
+													a(href='/student-jobs-and-careers/about-see/') About SEE
+							// End dropdown
+						// End Student Jobs & Careers
+						// Alumni & Friends
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/alumni-and-friends/', title='Alumni &amp; Friends') Alumni & Friends
+							// dropdown
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper
+									.row.region
+										.sub-inner-menu.alumni-nav
+											ul.subnav-1.region.no-pad-top.region
+												li.no-border-top
+													a(href='/alumni-and-friends/', title='Alumni & Friends') Alumni & Friends
+												li
+													a(href='/alumni-and-friends/get-involved/') Get Involved
+												li
+													a(href='/alumni-and-friends/inspiring-alumni/') Inspiring Alumni
+												li
+													a(href='/alumni-and-friends/support-and-donate/') Support & Donate
+												li
+													a(href='/alumni-and-friends/benefits/') Benefits
+												li
+													a(href='/alumni-and-friends/events-gallery/') Events Gallery
+							// End dropdown
+						// End Alumni & Friends
+						// Business & Innovation
+						// menu button
+						li(style='overflow: hidden;')
+								a(href='http://www.arts.ac.uk/industry-links/', title='Industry Links') Industry Links
+						// About UAL
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick(href='/about-ual/', title='About UAL') About UAL
+							// dropdown
+							.dropdown_fullwidth
+								.dd-menu-dropdown-wrapper
+									.row.region
+										.sub-inner-menu.about-nav
+											ul.subnav-1.no-pad-top.region
+												li.no-border-top
+													a(href='/about-ual/', title='About UAL') About UAL
+												li
+													a(href='/about-ual/news/') News
+												li
+													a(href='http://events.arts.ac.uk/eventpage?pg=1') Events
+												li
+													a(href='/about-ual/ual-showroom/') UAL Showroom
+												li
+													a(href='/about-ual/press-office/') Press Office
+												li
+													a(href='/about-ual/work-at-ual/') Work At UAL
+												li
+													a(href='/about-ual/learning-and-teaching/') Learning & Teaching Enhancement
+												li
+													a(href='/about-ual/awarding-body/') UAL Awarding Body
+												li
+													a(href='/about-ual/strategy-governance/') Strategy & Governance
+												li
+													a(href='/about-ual/diversity/') Diversity
+												li
+													a(href='/about-ual/departments/') Departments
+												li
+													a(href='/about-ual/contact-ual/') Contact UAL
+												li
+													a(href='/about-ual/support-our-creative-future/') Support Our Creative Future
+												li
+													a(href='/about-ual/sustainability-at-ual/') Sustainability at UAL
+							// End dropdown
+						// End About UAL
+						// Site Search
+						// menu button
+						li.menu-btn
+							a.megamenu_drop.needsclick.search-icon.icon-search(href='http://search.arts.ac.uk/s/search.html?form=simple&collection=website&submit-site-search=Search', title="Site Search")
+							// Begin Item
+							// dropdown
+							.dropdown_fullwidth
+								// Begin Item Container
+								.dd-menu-dropdown-wrapper
+									.d-course-finder-menu-panel.row
+										.row.relative
+											form.d-search-input-form(method='', action='http://search.arts.ac.uk/s/search.html')
+												label.hide-text(for='nav-site-search-input') Site search
+												input#nav-site-search-input.site-search-txt-input(type='text', required='', accesskey='q', value='', name='query', placeholder='Enter your search here')
+												input(type='hidden', value='simple', name='form')
+												input(type='hidden', value='website', name='collection')
+												button.go-search-button(type='submit', name='submit-site-search') Search
+							// End Item Container
+						// End Item
+						// End Site Search
+					// End expandable search button
+			// endnoindex

@@ -54,7 +54,9 @@ footer.global-footer.row
 							li
 								a(href='http://www.youtube.com/user/universityartslondon', title='UAL on YouTube')
 									span.footer-ico.icon-youtube
-							//- <li><a href="#" title="UAL on Flickr"><span class="footer-ico icon-flickr"></span></a></li>
+							li
+								a(href='https://plus.google.com/116668345114007692056/', title='UAL on Google Plus')
+									span.footer-ico.icon-gplus
 					.row
 						.copyright
 							p © 2014 University of the Arts London All Rights Reserved
@@ -76,14 +78,13 @@ footer.global-footer.row
 					li Page modified : Fri 7 Feb 2014 11:56:13
 					li Section id : 33986
 				//- end debug
-		.credits-btn
-			a.show-credits(href='#')
+		#image-credits-toggle.credits-btn(title='show image credits')
+			a.show-credits.tooltip(href='#')
 				span.icon-picture
-		//-Include js scripts
-		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
-		//-script to pull google maps
+
 		//-if (lt IE 9) & (!IEMobile)
 			script(src='http://s3-eu-west-1.amazonaws.com/arts-staging/assets/js/ie/ie-css-fix-gz.js')
+
 		script(src='http://use.resrc.it/')
 		//-    Respond.js proxy on CDN
 		//- link#respond-proxy(href='http://d27lwoqz7s24cy.cloudfront.net/assets/js/ie/respond-proxy.html', rel='respond-proxy')
@@ -93,7 +94,11 @@ footer.global-footer.row
 		//- script(type='text/javascript', src='http://www.arts.ac.uk/media/beta/beta-assets/js/respond.proxy.js')
 		//-Mega Menu Plugins
 		//-script(type='text/javascript', src='http://d27lwoqz7s24cy.cloudfront.net/assets/js/t4/megamenu_plugins.js')
+		//- script(src='http://use.resrc.it/')
+
+
 		//-script(src='http://localhost:9000arts.ac.uk/buildarts.ac.uk/build/assets/js/script.js')
+
 		script(src='http://localhost:9000/assets/js/script.js')
 
 		script.
@@ -115,12 +120,3 @@ footer.global-footer.row
 						//- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
 						document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
 				}
-
-				$(document).ready(function($) {
-						$('.megamenu').megaMenuCompleteSet({
-								menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-								menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-								menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-								menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-						});
-				});

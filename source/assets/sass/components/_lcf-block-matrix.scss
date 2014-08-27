@@ -4,35 +4,37 @@
 	@include component-spacing-bottom;
 
 	a {
-		border-bottom: none;
 		display: block;
-		padding-bottom: 0;
+		color: $white;
+		h3 {
+			@extend %Swiss721BT-Light !optional;
+			@include font-size(14);
+		}
 	}
 
 	p {
-		padding-bottom: rhythm(2, 16px);
+		@include font-size(14);
 	}
 
 	h3 {
-		padding: 0;
 		line-height: 24px;
-		a {
-			@extend %Swiss721BT-Light !optional;
-			@include font-size(16);
-			color: $white;
-		}
+		padding-top: 0;
+	}
+
+	figure {
+		overflow: hidden;
 	}
 
 	.event-item {
 		@extend %m-all;
 		text-align: center;
-		margin-bottom: 6px;
 	}
 
 	.event-date {
 		@include font-size(20);
 		font-family: $lcf-serif-font;
 		font-style: italic;
+		padding-bottom: rhythm(1, 16px);
 	}
 
 	.hover-layer {
@@ -50,9 +52,20 @@
 
 	@include gs-media (m,min-max) {
 		// I don't want these to inherit
+		@extend %m-all;
+
 		figure {
 			display: none;
 		}
+
+	}
+
+	@include gs-media (t,max) {
+		// tablet and below
+		.event-item {
+			margin-bottom: 6px;
+		}
+
 	}
 
 	@include gs-media (t,min-max) {
@@ -100,10 +113,15 @@
 			}
 		}
 
+		.hover-contents {
+			min-height: 148px;
+		}
+
 	}
 
 	@include gs-media (d) {
-		@include gs-span(d, all);
+		
+		@extend %d-all;
 
 		figure {
 			margin-bottom: 0;
@@ -111,6 +129,7 @@
 		}
 
 		.hover-layer {
+			display: none;
 			position: absolute;
 			top: 5%;
 			left: 4%;
@@ -138,8 +157,11 @@
 
 		.event-item {
 			position: relative;
-			&.bordered {
-				border-bottom: 2px solid $white;
+			margin-bottom: 2px;
+			&:hover {
+				.hover-layer {
+					display: block;
+				}
 			}
 		}
 

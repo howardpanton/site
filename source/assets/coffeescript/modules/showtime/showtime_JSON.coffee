@@ -8,7 +8,7 @@
 showtimeJSONloader = ->
 
 	# with a lightbox use-case, Magnific is a dependency. The .lightbox call further down shouldn't fire, since the Showtime lightbox only functions inside the getJSON.
-	$.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/magnific-lightbox-ck.js", ->
+	$.getScript "http://static.arts.ac.uk/assets/js/magnific-lightbox-ck.js", ->
 		outputNode = $(".showtime-json")
 		$.each outputNode, (i) ->
 			_node = ""

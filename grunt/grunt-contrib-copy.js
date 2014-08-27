@@ -61,7 +61,11 @@ module.exports = function(grunt) {
 						]
 				},
 
-
+				release_notes: {
+						files: [
+							 {expand: true, cwd: '', flatten: false, src: ['release-notes.md'], dest: 'build/', filter: 'isFile'},
+						]
+				},
 
 				gzipped_image_assets: {
 						files: [
@@ -74,6 +78,7 @@ module.exports = function(grunt) {
 								{expand: true, cwd: 'source/style-guide/', flatten: false, src: ['**/*.*'], dest: 'build/style-guide/', filter: 'isFile'},
 						]
 				}
+
 
 
 		});

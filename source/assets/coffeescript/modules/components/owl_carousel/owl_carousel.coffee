@@ -9,36 +9,43 @@
 
 initOwlCarousel = ->
 
-        jQuery.getScript "http://d27lwoqz7s24cy.cloudfront.net/assets/js/owl.carousel.js", ->
-            $(".owl-carousel").each ->
-                $(this).owlCarousel
-                    items: 3
-                    itemsDesktop: [ 1280, 3 ]
-                    itemsTablet: [ 959, 2 ]
-                    itemsMobile: [ 599, 1 ]
-                    lazyLoad: true
-                    pagination: false
-                    navigation: true
-                    navigationText: [
-                        "<i class='icon-left-open-big'></i>"
-                        "<i class='icon-right-open-big'></i>"
-                    ]
-                return
+	jQuery.getScript "http://static.arts.ac.uk/assets/js/owl.carousel.min.js", ->
+		owl_carousel = $(".owl-carousel");
+		owl_carousel.each ->
+			$(this).owlCarousel
+				margin: 36
+				responsive: {
+					0:{
+						items: 1
+					}
+					600:{
+						items: 2
+					}
+					960:{
+						items: 3
+					}
+				}
+				lazyLoad: true
+				nav: true
+				dots: false
+				navText: [
+					"<i class='icon-left-open-big'></i>"
+					"<i class='icon-right-open-big'></i>"
+				]
 
+			# add pagination to each item in the carousel
+			total_items = $(".item", this).length
+			$(".item-index", this).append (i) ->
+					$ "<p />",
+					text: i + 1 + "/" + total_items
+			return
 
-            # add pagination to each item in the carousel
-            $(".owl-carousel").each ->
-                total_items = $(".item", this).length
-                $(".item-description", this).append (i) ->
-                    $ "<span />",
-                    text: i + 1 + " of " + total_items
-                return
-            return
+	return
 
-        return
 
 
 $(document).ready ->
-    if $(".owl-carousel").length > 0
-        initOwlCarousel()
+		if $(".owl-carousel").length > 0
+				initOwlCarousel()
+
 

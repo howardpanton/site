@@ -9,7 +9,7 @@ block content
 		.l-content.block
 			//- .full-width.map(style='height: 480px;')
 			h2 Will Wyatt Court
-	.row
+	.row.google-map-wrapper
 		.l-content.block
 			.row.google-map(style='height: 480px;')
 				script.
@@ -62,7 +62,7 @@ block content
 						},
 						{
 							markerName: "default_UAL",
-							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+							url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/default-marker.png",
 							scaledSize_x: 24,
 							scaledSize_y: 24,
 							origin_x: 0,
@@ -76,17 +76,15 @@ block content
 
 					/* A list of markers populated by data in marker content nodes in same section */
 					var maps_json = [
-					{
-						lat: 51.531621,
-						lng: -0.082828,
-						name: "Will Wyatt Court",
-						content: "168 Pitfield St, Hackney, London N1, UK",
-						marker: "accomMarker"
-					}
+						{
+							lat: 51.531621,
+							lng: -0.082828,
+							name: "Will Wyatt Court",
+							content: "168 Pitfield St, Hackney, London N1, UK",
+							marker: "accomMarker"
+						}
 					];
 
-				//- (data-slider-auto-play='true', data-slider-item-width='1280', data-slider-item-height='480', style='height: 480px;')
-				//-#map-canvas(style='width:100%; height:100%', data-transit-layer=false, data-bicycling-layer=true)
 				#map-canvas(style='width: 100%; height: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; -webkit-transform: translateZ(0px);', data-transit-layer='true', data-bicycling-layer='true')
 
 		aside.ual-white-bg
@@ -97,16 +95,13 @@ block content
 			h3 Telephone
 			p  +44 (123) 1234-1233
 
-
-
-	.row.t-hide.m-hide
-		.l-content.block
-			p.pad-top-1x
-				a.external(href='https://mapsengine.google.com/map/edit?mid=zIHHFcFa6Amg.kjqMGwF_qcu4') Click to view fullscreen map
-
+		.row.t-hide.m-hide
+			.l-content.block
+				p.pad-top-1x
+					a.external(href='https://mapsengine.google.com/map/edit?mid=zIHHFcFa6Amg.kjqMGwF_qcu4') Click to view fullscreen map
 
 	.row
-		.l-content.block.two-up
+		.l-content-full-width.block.two-up
 			ul.accommodation-info
 				li
 					h3 Nearest
@@ -131,7 +126,6 @@ block content
 									td Pub
 									td
 										strong The Slug &amp; Lettuce
-
 				li
 					h3 Getting Around
 					.table-container
@@ -156,47 +150,12 @@ block content
 									td
 										strong Bike Racks outside building (2min walk)
 
-
-
-
-
 	.row
-		.l-content.block.__text.__with-aside
-				.text
-					h2 Text block with inline table
-					p.leader A basic inline table that can be included within a Text block component.
-					.table-container
-						table.data-table
-							tbody
-								tr
-									th Date
-									th Day of Week
-									th Time
-									th Duration
-									th Cost
-									th Status
-									th Location
-								tr
-									td 30/06/2014 - 04/07/2014
-									td Monday to Friday
-									td 09:00 - 17:00
-									td 1 Week
-									td £840
-									td Available
-									td
-										a(href='http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=51.535617,-0.124967&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16') Granary Square, King's Cross
-								tr
-									td 07/07/2014 - 11/07/2014
-									td Monday to Friday
-									td 09:00 - 17:00
-									td 1 Week
-									td £560
-									td Available
-									td
-										a(href='http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=0,0&sll=53.86482,-2.71345&sspn=0.625989,1.207123&ie=UTF8&t=h&z=16') NABA, Milan
-
-
-
+		.l-content.block.__text
+			h2 some heading
+			p.leader leader text here
+			p
+				| Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
 
 

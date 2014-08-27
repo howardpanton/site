@@ -221,6 +221,10 @@
 	margin: 0 auto;
 	min-width: 320px;
 	clear: both;
+	@include gs-media(d) {
+		width: 92.5%;
+		max-width: 1280px;
+	}
 }
 
 .header-wrapper {
@@ -246,7 +250,7 @@
 	@extend %d-all;
 }
 
-.l-content, .l-content-full-width {
+.l-content, .l-content-full-width, .__gallery {
 	@include gs-media (m,min-max) {
 		h2, h3, h4, h5, h6, p {
 			padding-right: 12px;
@@ -268,20 +272,6 @@
 	//@include component-spacing-bottom;
 	.l-content-full-width & {
 		margin-bottom: 0;
-	}
-	h2 {
-		.csm & {
-			border-top: 2px solid $csm-primary;
-		}
-		.camberwell & {
-			border-top: 10px solid $ccw-blue;
-		}
-		.chelsea & {
-			border-top: 10px solid $ccw-salmon;
-		}
-		.wimbledon & {
-			border-top: 10px solid $ccw-green;
-		}
 	}
 }
 
@@ -349,25 +339,6 @@
 	@extend %d1-d4;
 }
 
-aside {
-	@extend %d13-d16--within-d5-d16;
-	@include component-spacing-bottom;
-
-	background-color: $bg-gray;
-	border-left: none;
-	padding: 24px;
-	clear: left;
-	&.no-bg {
-		background-color: $white;
-	}
-
-	@include gs-media(d) {
-		background: $white;
-		border-left: 1px dotted $bg-gray;
-			padding-left: 23px;
-			clear: none;
-	}
-}
 
 // style for gist embed
 .gist { clear: left; }
@@ -383,3 +354,12 @@ aside {
 		margin-bottom: 0;
 	}
 }
+
+// Placeholder for padding on mobile
+%mobile-padding {
+	@include gs-media (m) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+}
+

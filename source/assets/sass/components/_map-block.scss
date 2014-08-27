@@ -17,6 +17,13 @@
 	}
 }
 
+// scripted map component styling
+.google-map-wrapper .l-content {
+	// add margin under the scripted map component
+	@include component-spacing-bottom;
+
+}
+
 // Google maps styling overrides
 .gmnoprint img {
 	max-width: none !important;
@@ -25,6 +32,59 @@
 	max-width: none !important;
 }
 
+
+// checkbox styling under map
+.college_filters {
+	@include margin(12,12,12,12);
+
+	@include gs-media(d) {
+		@include margin(12,0,12,0);
+	}
+
+	li {
+		display: block;
+		background-color: $white;
+		@include margin(0,12,12,0);
+		padding-bottom: 0;
+		width: 100%;
+
+		@include gs-media(t) {
+			display: block;
+			width: auto;
+		}
+
+		@include gs-media(d) {
+			@include margin(0,12,0,0);
+			width: auto;
+			max-width:45%;
+			display: inline-block;
+		}
+	}
+
+	input[type="checkbox"].before-label + label {
+		@include padding(10,12,10,10);
+		@include margin(0);
+		width: 100%;
+	}
+
+	input[type="checkbox"].before-label + label:before {
+		display: inline-block;
+		margin: -2px 6px 0 0;
+		vertical-align: middle;
+	}
+
+
+	// dropdowns inside college filters (mobile view)
+	.js-dd-menu-list li {
+		margin-bottom: 0;
+		padding-left: 0;
+		input[type="checkbox"].before-label label {
+			@include padding(12,6,12,6);
+		}
+
+	}
+
+}
 
 // accommodation maps table data styling
 ul.accommodation-info {

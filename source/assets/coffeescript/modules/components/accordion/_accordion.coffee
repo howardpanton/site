@@ -1,67 +1,59 @@
-#
-#    -------------------------------------------------------------
-#        resetSpinners()
-#
-#        Check if there are any open accordion items,
-#        and reset the arrows to the closed position
-#    -------------------------------------------------------------
-#
-resetSpinners = ->
-  $(".accordion-list-item").each (e) ->
-    _li_item = $(this)
-    if _li_item.hasClass("st-open")
-      _li_item.find(".st-arrow").rotate
-        animateTo: 0
-        center: ["50%", "50%"]
-
 ###
-    -------------------------------------------------------------
-        initAccordion()
-
-        Load accordion script and handle clicks
-    -------------------------------------------------------------
+		-------------------------------------------------------------
+				initAccordion()
+				Load accordion script and handle clicks
+				Updated Howard Panton : 15th August 2014
+		-------------------------------------------------------------
 ###
 
 initAccordion = ->
 
-    $.when($.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.accordion-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery.easing.1.3-ck.js"), $.getScript("http://d27lwoqz7s24cy.cloudfront.net/assets/js/jquery-rotate-ck.js"), $.Deferred((deferred) ->
-      $ deferred.resolve
-    )).done ->
-      $("#st-accordion").accordion oneOpenedItem: true
+	$ ($) ->
+		allAccordions = $(".accordion .accordion__content")
+		allAccordionItems = $(".accordion .accordion__heading")
+		$(".accordion__heading").click ->
+			console.log($(this))
+			if $(this).hasClass("open")
+				$(this).removeClass "open"
+				$(this).parent().next().slideUp "fast", "linear"
+			else
+				allAccordions.slideUp "fast", "linear"
+				allAccordionItems.removeClass "open"
+				$(this).addClass "open"
+				$(this).parent().next().slideDown "fast", ->
+					$("html:not(:animated), body:not(:animated)").animate
+						scrollTop: $(this).offset().top - 60
+					, "slow"
+					return
+				false
+			return
+		return
 
-    $(".accordion-list-anchor").on "click", ".size-h4", (event) ->
-      event.preventDefault()
-      circle = ($(this).next(".st-arrow"))
-      accordion = ($(this).parent().parent())
-      elem = ($(this).parent().next(".st-content"))
-      resetSpinners()
-      unless elem.is(":visible")
-        circle.rotate animateTo: 135
-      else
-        circle.rotate
-          animateTo: 0
-          center: ["50%", "50%"]
-
-
-    $(".st-arrow").on "click", (e) ->
-      e.preventDefault()
-      resetSpinners()
-      _icon = $(this)
-      _st = $(this).parent().parent()
-      unless _st.hasClass("st-open")
-        _icon.rotate animateTo: 135
-      else
-        _icon.rotate
-          animateTo: 0
-          center: ["50%", "50%"]
-
-
-
+	$ ($) ->
+		allAccordions = $(".accordion .accordion__content")
+		allAccordionItems = $(".accordion .accordion__heading")
+		$(".accordion__heading").keyup (e) ->
+			console.log($(this))
+			if(e.keyCode == 13)
+				if $(this).hasClass("open")
+					$(this).removeClass "open"
+					$(this).parent().next().slideUp "fast", "linear"
+				else
+					allAccordions.slideUp "fast", "linear"
+					allAccordionItems.removeClass "open"
+					$(this).addClass "open"
+					$(this).parent().next().slideDown "fast", ->
+						$("html:not(:animated), body:not(:animated)").animate
+							scrollTop: $(this).offset().top - 60
+						, "slow"
+						return
+					false
+				return
+			return
 
 $(document).ready ->
-
-    if $(".accordion").length > 0
-        initAccordion()
+		if $(".accordion").length > 0
+			initAccordion()
 
 
 

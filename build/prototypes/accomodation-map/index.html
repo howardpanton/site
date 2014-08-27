@@ -30,17 +30,61 @@
       <link href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/logos.fallback.min.css" rel="stylesheet">
     </noscript>
   </head>
-  <body class="ual">
+  <script>
+    dataLayer = [];
+    
+  </script>
+  <body class="ual"><!-- Google Analytics -->
+<script>
+/**
+ * Creates a temporary global ga object and loads analy  tics.js.
+ * Paramenters o, a, and m are all used internally.  They could have been declared using 'var',
+ * instead they are declared as parameters to save 4 bytes ('var ').
+ *
+ * @param {Window}      i The global context object.
+ * @param {Document}    s The DOM document object.
+ * @param {string}      o Must be 'script'.
+ * @param {string}      g URL of the analytics.js script. Inherits protocol from page.
+ * @param {string}      r Global name of analytics object.  Defaults to 'ga'.
+ * @param {DOMElement?} a Async script tag.
+ * @param {DOMElement?} m First script tag in document.
+ */
+(function(i, s, o, g, r, a, m){
+  i['GoogleAnalyticsObject'] = r; // Acts as a pointer to support renaming.
+
+  // Creates an initial ga() function.  The queued commands will be executed once analytics.js loads.
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  },
+
+  // Sets the time (as an integer) this tag was executed.  Used for timing hits.
+  i[r].l = 1 * new Date();
+
+  // Insert the script tag asynchronously.  Inserts above current tag to prevent blocking in
+  // addition to using the async attribute.
+  a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', '_gaUAL');
+
+_gaUAL('create', 'UA-32658704-1', 'auto'); // Creates the tracker with default parameters.
+_gaUAL('send', 'pageview');            // Sends a pageview hit.
+</script>
+<!-- End Google Analytics -->
+
     <script>Modernizr.Detectizr.detect({detectScreen:false});</script>
     <div class="ual-black-bg cf">
       <div class="header-wrapper">
         <div class="row">
           <div class="ual-banner-menu">
-            <div class="ual-logo-tab-mobile"><a href="http://www.arts.ac.uk/" title="Navigate back to the UAL homepage">
+            <div class="ual-logo-tab-mobile"><a href="http://www.arts.ac.uk/" title="Navigate back to the UAL homepage" tabindex="-1">
                 <div class="logo-ual-mobile"></div></a></div>
             <div class="ual-logo-desktop">
               <div class="logo-ual"></div>
             </div>
+            <!-- noindex-->
             <nav class="college-link-menu">
               <ul>
                 <li class="col-link-ual"><a href="/">University Home</a></li>
@@ -52,34 +96,37 @@
                 <li class="col-link-wimbledon"><a href="/wimbledon/">Wimbledon</a></li>
               </ul>
             </nav>
+            <!-- endnoindex-->
           </div>
         </div>
         <div class="row">
+          <!-- noindex-->
           <!-- navigation object : Main navigation include-->
           <nav id="global-nav" role="navigation" class="main-nav-wrapper">
-            <div class="megamenu_container top-bar"><a href="http://www.arts.ac.uk" title="Navigate back to the UAL homepage">
+            <div class="megamenu_container top-bar"><a href="http://www.arts.ac.uk" title="Navigate back to the UAL homepage" tabindex="-1">
                 <div class="ual-logo-tab-mobile">
                   <div class="logo-ual-mobile"></div>
                 </div></a>
               <ul class="megamenu">
                 <!-- mobile menu button-->
-                <li style="overflow: hidden; display: none;" class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
+                <li class="megamenu_button"><a href="#" class="m-menu-btn-toggle"><span class="icon-menu-1"></span></a></li>
                 <!-- Course Finder-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" class="megamenu_drop needsclick">Course Finder</a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search" title="Course Finder" class="megamenu_drop needsclick">Course Finder</a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <!-- Begin Item Container-->
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
-                            <input accesskey="q" value="" type="text" placeholder="Search for a course here" name="query" class="course-finder-txt-input">
+                            <label for="nav-course-input" class="hide-text">Course finder</label>
+                            <input id="nav-course-input" accesskey="q" value="" type="text" placeholder="Search for a course here" name="query" class="course-finder-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="courses" name="collection">
-                            <input type="submit" name="submit-course-search" value="Go" class="go-search-button">
-                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Go">view all courses</a></div>
+                            <button type="submit" name="submit-course-search" class="go-search-button">Search</button>
+                            <div class="small-text-link"><a href="http://search.arts.ac.uk/s/search.html?query=&amp;form=simple&amp;collection=courses&amp;submit-course-search=Search">view all courses</a></div>
                           </form>
                         </div>
                       </div>
@@ -91,61 +138,52 @@
                 <!-- End Course Finder-->
                 <!-- Colleges-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Colleges</a>
-                  <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
-                    <!-- Begin Item Container-->
-                    <div class="dd-menu-dropdown-wrapper">
-                      <div class="region college-nav">
-                        <ul class="subnav-1 region">
-                          <li><a href="/camberwell/" title="Visit Camberwell">Camberwell College of Arts</a></li>
-                          <li><a href="/csm/" title="Visit Central Saint Martins">Central Saint Martins (CSM)</a></li>
-                          <li><a href="/chelsea/" title="Visit Chelsea">Chelsea College of Arts</a></li>
-                        </ul>
-                        <ul class="subnav-2 region">
-                          <li><a href="/lcc/" title="Visit London College of Communication">London College of Communication (LCC)</a></li>
-                          <li><a href="/fashion/" title="Visit London College of Fashion">London College of Fashion (LCF)</a></li>
-                          <li><a href="/wimbledon/" title="Visit Wimbledon">Wimbledon College of Arts</a></li>
-                        </ul>
-                      </div>
+                <li class="menu-btn"><a href="/colleges/" title="Colleges" class="megamenu_drop needsclick">Colleges</a>
+                  <div class="dropdown_fullwidth">
+                    <div class="dd-menu-dropdown-wrapper region college-nav">
+                      <ul class="subnav-1 region">
+                        <li><a href="/colleges/" title="Colleges">Colleges</a></li>
+                        <li><a href="/camberwell/" title="Visit Camberwell">Camberwell College of Arts</a></li>
+                        <li><a href="/csm/" title="Visit Central Saint Martins">Central Saint Martins (CSM)</a></li>
+                        <li><a href="/chelsea/" title="Visit Chelsea">Chelsea College of Arts</a></li>
+                        <li><a href="/lcc/" title="Visit London College of Communication">London College of Communication (LCC)</a></li>
+                        <li><a href="/fashion/" title="Visit London College of Fashion">London College of Fashion (LCF)</a></li>
+                        <li><a href="/wimbledon/" title="Visit Wimbledon">Wimbledon College of Arts</a></li>
+                      </ul>
                     </div>
                   </div>
-                  <!-- End Item Container-->
                 </li>
+                <!-- End Item Container-->
                 <!-- End Colleges-->
                 <!-- Study at UAL-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Study at UAL</a>
+                <li class="menu-btn"><a href="/study-at-ual/" title="Study at UAL" class="megamenu_drop needsclick">Study at UAL</a>
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper study-nav">
                       <ul class="subnav-1 no-pad-top region">
                         <li class="no-border-top"><a href="/study-at-ual/" title="Study at UAL">Study at UAL</a></li>
                         <li><a href="/study-at-ual/courses/">Courses</a></li>
                         <li><a href="/study-at-ual/postgraduate/">Postgraduate Study</a></li>
                         <li><a href="/study-at-ual/international/">International</a></li>
+                        <li><a href="/study-at-ual/study-abroad/">Study Abroad</a></li>
+                        <li><a href="/study-at-ual/short-courses/">Short Courses</a></li>
                         <li><a href="/study-at-ual/language-centre/">Language Centre</a></li>
-                        <li><a href=" http://ual.force.com/eventpage?pg=1&amp;types=Open+Day">Open Days</a></li>
-                        <li><a href="/study-at-ual/widening-participation/">Widening Participation</a></li>
-                      </ul>
-                      <ul class="subnav-2 pad-top-6x region">
+                        <li><a href=" http://events.arts.ac.uk/eventpage?pg=1&amp;types=Open+Day">Open Days</a></li>
                         <li><a href="/study-at-ual/apply/">Apply</a></li>
                         <li><a href="/study-at-ual/enrol/">Enrol</a></li>
                         <li><a href="/study-at-ual/tuition-fees/">Tuition Fees</a></li>
                         <li><a href="/study-at-ual/scholarships-bursaries-and-loans/">Scholarships, Bursaries & Loans</a></li>
                         <li><a href="/study-at-ual/financial-advice/">Financial Advice</a></li>
-                      </ul>
-                      <ul class="subnav-3 pad-top-6x region">
                         <li><a href="/study-at-ual/student-support/">Student Support</a></li>
                         <li><a href="/study-at-ual/library-services/">Library Services</a></li>
-                        <li><a href="/study-at-ual/learning-and-teaching/">Learning & Teaching</a></li>
                         <li><a href="/study-at-ual/term-dates/">Term Dates</a></li>
                         <li><a href="/study-at-ual/academic-regulations/">Academic Regulations</a></li>
-                      </ul>
-                      <ul class="subnav-4 pad-top-6x region">
                         <li><a href="/study-at-ual/accommodation/">Accommodation</a></li>
                         <li><a href="/study-at-ual/students-union/">Students' Union</a></li>
                         <li><a href="/study-at-ual/facilities/">Facilities</a></li>
+                        <li><a href="/study-at-ual/widening-participation/">Widening Participation</a></li>
+                        <li><a href="/study-at-ual/award-ceremonies/">Award Ceremonies</a></li>
                       </ul>
                     </div>
                   </div>
@@ -154,19 +192,22 @@
                 <!-- End Study at UAL-->
                 <!-- Research-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Research</a>
+                <li class="menu-btn"><a href="/research/" title="Research" class="megamenu_drop needsclick">Research</a>
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="row region">
                         <div class="sub-inner-menu research-nav">
                           <ul class="subnav-1 no-pad-top region">
                             <li class="no-border-top"><a href="/research/" title="Research">Research</a></li>
-                            <li><a href="/research/research-environment/">Research Environment</a></li>
-                            <li><a href="/research/research-degrees/">Research Degrees</a></li>
+                            <li><a href="/research/research-news--events/">Research News & Events</a></li>
                             <li><a href="/research/research-staff/">Research Staff</a></li>
+                            <li><a href="/research/current-research/">Current Research</a></li>
                             <li><a href="/research/research-projects/">Research Projects</a></li>
                             <li><a href="/research/ual-research-centres/">UAL Research Centres</a></li>
+                            <li><a href="/research/research-degrees/">Research Degrees</a></li>
+                            <li><a href="/research/research-impact/">Research Impact</a></li>
+                            <li><a href="/research/research-environment/">Research Environment</a></li>
                           </ul>
                         </div>
                       </div>
@@ -177,21 +218,19 @@
                 <!-- End Research-->
                 <!-- Student Jobs & Careers-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Student Jobs & Careers</a>
+                <li class="menu-btn"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers" class="megamenu_drop needsclick">Student Jobs &amp; Careers</a>
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="row region">
                         <div class="sub-inner-menu student-nav">
                           <ul class="subnav-1 no-pad-top region">
-                            <li class="no-border-top"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers">Student Jobs & Careers</a></li>
+                            <li class="no-border-top"><a href="/student-jobs-and-careers/" title="Student jobs &amp; Careers">Student Jobs &amp; Careers</a></li>
                             <li><a href="/student-jobs-and-careers/opportunities/">Opportunities</a></li>
                             <li><a href="/student-jobs-and-careers/events/">Events</a></li>
+                            <li><a href="/student-jobs-and-careers/finding-work/">Finding Work</a></li>
                             <li><a href="/student-jobs-and-careers/resources/">Resources</a></li>
                             <li><a href="/student-jobs-and-careers/about-see/">About SEE</a></li>
-                          </ul>
-                          <ul class="subnav-2 region pad-top-6x region">
-                            <li><a href="/student-jobs-and-careers/finding-work/">Finding Work</a></li>
                           </ul>
                         </div>
                       </div>
@@ -202,9 +241,9 @@
                 <!-- End Student Jobs & Careers-->
                 <!-- Alumni & Friends-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Alumni & Friends</a>
+                <li class="menu-btn"><a href="/alumni-and-friends/" title="Alumni &amp;amp; Friends" class="megamenu_drop needsclick">Alumni & Friends</a>
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="row region">
                         <div class="sub-inner-menu alumni-nav">
@@ -213,8 +252,6 @@
                             <li><a href="/alumni-and-friends/get-involved/">Get Involved</a></li>
                             <li><a href="/alumni-and-friends/inspiring-alumni/">Inspiring Alumni</a></li>
                             <li><a href="/alumni-and-friends/support-and-donate/">Support & Donate</a></li>
-                          </ul>
-                          <ul class="subnav-2 region pad-top-6x region">
                             <li><a href="/alumni-and-friends/benefits/">Benefits</a></li>
                             <li><a href="/alumni-and-friends/events-gallery/">Events Gallery</a></li>
                           </ul>
@@ -227,60 +264,31 @@
                 <!-- End Alumni & Friends-->
                 <!-- Business & Innovation-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">Industry Links</a>
-                  <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
-                    <div class="dd-menu-dropdown-wrapper">
-                      <div class="row region">
-                        <div class="sub-inner-menu industry-nav">
-                          <ul class="subnav-1 no-pad-top region">
-                            <li><a href="/camberwell/business-and-innovation/">Camberwell Business & Innovation</a></li>
-                            <li><a href="/csm/business-and-innovation/">CSM Business & Innovation</a></li>
-                            <li><a href="/chelsea/business-and-innovation/">Chelsea Business & Innovation</a></li>
-                            <li><a href="/lcc/business-and-innovation/">LCC Business & Innovation</a></li>
-                          </ul>
-                          <ul class="subnav-2 no-pad-top region">
-                            <li><a href="/fashion/business-and-innovation/">LCF Business & Innovation</a></li>
-                            <li><a href="/wimbledon/business-and-innovation/">Wimbledon Business & Innovation</a></li>
-                            <li><a href="/student-jobs-and-careers/finding-work/information-for-employers/">Information for Employers</a></li>
-                          </ul>
-                        </div>
-                        <div class="feature m-hide t-hide">
-                          <p>Businesses worldwide work with us to find creative solutions, discover fresh ideas and recruit new talent. Join them, and let us help you develop your future.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End dropdown-->
-                </li>
-                <!-- End Business & Innovation-->
+                <li style="overflow: hidden;"><a href="http://www.arts.ac.uk/industry-links/" title="Industry Links">Industry Links</a></li>
                 <!-- About UAL-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" title="" class="megamenu_drop needsclick">About UAL</a>
+                <li class="menu-btn"><a href="/about-ual/" title="About UAL" class="megamenu_drop needsclick">About UAL</a>
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="row region">
                         <div class="sub-inner-menu about-nav">
                           <ul class="subnav-1 no-pad-top region">
                             <li class="no-border-top"><a href="/about-ual/" title="About UAL">About UAL</a></li>
                             <li><a href="/about-ual/news/">News</a></li>
-                            <li><a href="http://ual.force.com/eventpage?pg=1">Events</a></li>
+                            <li><a href="http://events.arts.ac.uk/eventpage?pg=1">Events</a></li>
                             <li><a href="/about-ual/ual-showroom/">UAL Showroom</a></li>
-                            <li><a href="/about-ual/work-at-ual/">Work At UAL</a></li>
-                            <li><a href="/about-ual/support-our-creative-future/">Support Our Creative Future</a></li>
-                          </ul>
-                          <ul class="subnav-2 pad-top-6x region">
-                            <li><a href="/about-ual/strategy-governance/">Strategy & Governance</a></li>
                             <li><a href="/about-ual/press-office/">Press Office</a></li>
+                            <li><a href="/about-ual/work-at-ual/">Work At UAL</a></li>
+                            <li><a href="/about-ual/learning-and-teaching/">Learning & Teaching Enhancement</a></li>
                             <li><a href="/about-ual/awarding-body/">UAL Awarding Body</a></li>
+                            <li><a href="/about-ual/strategy-governance/">Strategy & Governance</a></li>
                             <li><a href="/about-ual/diversity/">Diversity</a></li>
                             <li><a href="/about-ual/departments/">Departments</a></li>
-                          </ul>
-                          <ul class="subnav-3 pad-top-6x region">
                             <li><a href="/about-ual/contact-ual/">Contact UAL</a></li>
+                            <li><a href="/about-ual/support-our-creative-future/">Support Our Creative Future</a></li>
+                            <li><a href="/about-ual/sustainability-at-ual/">Sustainability at UAL</a></li>
                           </ul>
-                          <ul class="subnav-4 pad-top-6x region"></ul>
                         </div>
                       </div>
                     </div>
@@ -290,19 +298,20 @@
                 <!-- End About UAL-->
                 <!-- Site Search-->
                 <!-- menu button-->
-                <li style="overflow: hidden; display: block;"><a href="#" class="megamenu_drop needsclick search-icon icon-search"></a>
+                <li class="menu-btn"><a href="http://search.arts.ac.uk/s/search.html?form=simple&amp;collection=website&amp;submit-site-search=Search" title="Site Search" class="megamenu_drop needsclick search-icon icon-search"></a>
                   <!-- Begin Item-->
                   <!-- dropdown-->
-                  <div style="left: 0px; top: 36px; display: none; position: absolute; right: 0px; width: 1256px; margin-left: -47.09375px;" class="dropdown_fullwidth">
+                  <div class="dropdown_fullwidth">
                     <!-- Begin Item Container-->
                     <div class="dd-menu-dropdown-wrapper">
                       <div class="d-course-finder-menu-panel row">
                         <div class="row relative">
                           <form method="" action="http://search.arts.ac.uk/s/search.html" class="d-search-input-form">
-                            <input type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="course-finder-txt-input">
+                            <label for="nav-site-search-input" class="hide-text">Site search</label>
+                            <input id="nav-site-search-input" type="text" required="" accesskey="q" value="" name="query" placeholder="Enter your search here" class="site-search-txt-input">
                             <input type="hidden" value="simple" name="form">
                             <input type="hidden" value="website" name="collection">
-                            <input type="submit" name="submit-site-search" value="Search" class="go-search-button">
+                            <button type="submit" name="submit-site-search" class="go-search-button">Search</button>
                           </form>
                         </div>
                       </div>
@@ -316,6 +325,7 @@
               <!-- End expandable search button-->
             </div>
           </nav>
+          <!-- endnoindex-->
         </div>
       </div>
     </div>
@@ -350,7 +360,7 @@
               <h2>Will Wyatt Court</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row google-map-wrapper">
             <div class="l-content block">
               <div style="height: 480px;" class="row google-map">
                 <script>
@@ -403,7 +413,7 @@
                    },
                    {
                     markerName: "default_UAL",
-                    url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+                    url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/default-marker.png",
                     scaledSize_x: 24,
                     scaledSize_y: 24,
                     origin_x: 0,
@@ -417,13 +427,13 @@
                   
                   /* A list of markers populated by data in marker content nodes in same section */
                   var maps_json = [
-                  {
-                   lat: 51.531621,
-                   lng: -0.082828,
-                   name: "Will Wyatt Court",
-                   content: "168 Pitfield St, Hackney, London N1, UK",
-                   marker: "accomMarker"
-                  }
+                   {
+                    lat: 51.531621,
+                    lng: -0.082828,
+                    name: "Will Wyatt Court",
+                    content: "168 Pitfield St, Hackney, London N1, UK",
+                    marker: "accomMarker"
+                   }
                   ];
                   
                 </script>
@@ -437,14 +447,14 @@
               <h3>Telephone</h3>
               <p> +44 (123) 1234-1233</p>
             </aside>
-          </div>
-          <div class="row t-hide m-hide">
-            <div class="l-content block">
-              <p class="pad-top-1x"><a href="https://mapsengine.google.com/map/edit?mid=zIHHFcFa6Amg.kjqMGwF_qcu4" class="external">Click to view fullscreen map</a></p>
+            <div class="row t-hide m-hide">
+              <div class="l-content block">
+                <p class="pad-top-1x"><a href="https://mapsengine.google.com/map/edit?mid=zIHHFcFa6Amg.kjqMGwF_qcu4" class="external">Click to view fullscreen map</a></p>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="l-content block two-up">
+            <div class="l-content-full-width block two-up">
               <ul class="accommodation-info">
                 <li>
                   <h3>Nearest</h3>
@@ -500,44 +510,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="l-content block __text __with-aside">
-              <div class="text">
-                <h2>Text block with inline table</h2>
-                <p class="leader">A basic inline table that can be included within a Text block component.</p>
-                <div class="table-container">
-                  <table class="data-table">
-                    <tbody>
-                      <tr>
-                        <th>Date</th>
-                        <th>Day of Week</th>
-                        <th>Time</th>
-                        <th>Duration</th>
-                        <th>Cost</th>
-                        <th>Status</th>
-                        <th>Location</th>
-                      </tr>
-                      <tr>
-                        <td>30/06/2014 - 04/07/2014</td>
-                        <td>Monday to Friday</td>
-                        <td>09:00 - 17:00</td>
-                        <td>1 Week</td>
-                        <td>£840</td>
-                        <td>Available</td>
-                        <td><a href="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=51.535617,-0.124967&amp;sll=53.86482,-2.71345&amp;sspn=0.625989,1.207123&amp;ie=UTF8&amp;t=h&amp;z=16">Granary Square, King's Cross</a></td>
-                      </tr>
-                      <tr>
-                        <td>07/07/2014 - 11/07/2014</td>
-                        <td>Monday to Friday</td>
-                        <td>09:00 - 17:00</td>
-                        <td>1 Week</td>
-                        <td>£560</td>
-                        <td>Available</td>
-                        <td><a href="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=0,0&amp;sll=53.86482,-2.71345&amp;sspn=0.625989,1.207123&amp;ie=UTF8&amp;t=h&amp;z=16">NABA, Milan</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            <div class="l-content block __text">
+              <h2>some heading</h2>
+              <p class="leader">leader text here</p>
+              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
             </div>
           </div>
         </div>
@@ -570,6 +546,7 @@
               <li><a href="https://twitter.com/UniArtsLondon" title="UAL on Twitter"><span class="footer-ico icon-twitter"></span></a></li>
               <li><a href="https://www.facebook.com/UniversityoftheArtsLondon" title="UAL on Facebook"><span class="footer-ico icon-facebook"></span></a></li>
               <li><a href="http://www.youtube.com/user/universityartslondon" title="UAL on YouTube"><span class="footer-ico icon-youtube"></span></a></li>
+              <li><a href="https://plus.google.com/116668345114007692056/" title="UAL on Google Plus"><span class="footer-ico icon-gplus"></span></a></li>
             </ul>
           </div>
           <div class="row">
@@ -592,8 +569,7 @@
           </ul>
         </div>
       </footer>
-      <div class="credits-btn"><a href="#" class="show-credits"><span class="icon-picture"></span></a></div>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <div id="image-credits-toggle" title="show image credits" class="credits-btn"><a href="#" class="show-credits tooltip"><span class="icon-picture"></span></a></div>
       <script src="http://use.resrc.it/"></script>
       <script src="http://localhost:9000/assets/js/script.js"></script>
       <script>
@@ -615,15 +591,6 @@
           //- document.write('<link rel="stylesheet" type="text/css" media="screen" href="http://d27lwoqz7s24cy.cloudfront.net/assets/css/debug.css">');
           document.write('<script src="http://d27lwoqz7s24cy.cloudfront.net/assets/js/debug.js"><\\/script>');
         }
-        
-        $(document).ready(function($) {
-          $('.megamenu').megaMenuCompleteSet({
-            menu_effect : 'open_close_slide', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
-            menu_click_outside : 1, // Clicks outside the drop down close it (1 = true, 0 = false)
-            menu_show_onload : 0, // Drop down to show on page load (type the number of the drop down, 0 for none)
-            menu_responsive:1 // 1 = Responsive, 0 = Not responsive
-          });
-        });
       </script>
     </footer>
   </body>

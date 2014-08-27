@@ -1,0 +1,50 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "ual";
+	- var Title = "search-results";
+	- var Sidebar = false;
+	- var Banner = true;
+block content
+	div.search-results-wrap
+		div.content-wrapper
+			section#search-results.search-results(role='main')
+				.row.search-results-summary
+					.search-results-info
+						p
+						| Results: 1 - 10 of 545 search results for interior
+					.search-pagination-btns
+						a.button-link.icon.right-arrow(href='search.html?query=interior&form=simple&collection=website&submit-site-search=Search&start_rank=11')
+				ol.search-results-list
+					li
+						article.search-result-module.cf
+							.search-details
+								.search-title
+									.site-search-section-name Chelsea College of Arts
+									h3
+										a(href='/search/click.cgi?rank=1&collection=website&url=http%3A%2F%2Fwww.arts.ac.uk%2Fchelsea%2Fcourses%2Fundergraduate%2Fba-interior-spatial-design%2F&index_url=http%3A%2F%2Fwww.arts.ac.uk%2Fchelsea%2Fcourses%2Fundergraduate%2Fba-interior-spatial-design%2F&auth=vwsk6g%2FKu8utka4HTj0KSg&query=interior&profile=_default', title='http://www.arts.ac.uk/chelsea/courses/undergraduate/ba-interior-spatial-design/') UAL - Chelsea College of Arts: BA (Hons) Interior & Spatial Design
+								.search-description
+									p
+									| Information about BA
+									strong Interior
+									| and Spatial Design at Chelsea College of Arts, University of the Arts London (UAL).
+								.site-search-results-lower-wrap
+									.relative
+										.result-file-type
+										.result-url http://www.arts.ac.uk/chelsea/courses/undergraduate/ba-interior-spatial-design/
+				.row.search-results-summary
+					.lower-search-results-info
+						p
+							| Results: 1 - 10 of 545 search results for interior. Please try our dedicated
+							a(href="http://search.arts.ac.uk/s/search.html?query=&form=simple&collection=courses") Course Finder
+							| if you can't find what you're looking for here.
+					.lower-search-pagination-btns
+						a.button-link.icon.right-arrow(href='search.html?query=interior&form=simple&collection=website&submit-site-search=Search&start_rank=11')
+				.row.lower-search-again-box
+					h2 Search Again
+						.search-input-wrap.clearfix
+							form.site-search-form(action='', method='get')
+								input#finder-search-input.site-search-results-input(type='text', name='query', placeholder='Use key words: textiles, fine art, part time, undergraduate', value='interior', accesskey='q')
+								input(type='hidden', name='form', value='simple')
+								input(type='hidden', name='collection', value='website')
+								.search-link
+									input.icon-search.search-again-submit(type='submit', value='')

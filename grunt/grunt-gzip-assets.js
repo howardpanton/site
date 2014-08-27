@@ -31,13 +31,14 @@ module.exports = function(grunt) {
             break;
 
             default:
+            	grunt.task.run(['compress:gzip_css', 'compress:gzip_js','copy:gzipped_css', 'copy:gzipped_js', 'compress:gzip_image_assets', 'copy:gzipped_image_assets:']);
             break;
         }
 
     }
 
 
-    
+
 
 
 

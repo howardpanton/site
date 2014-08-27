@@ -1,0 +1,93 @@
+// .button-link is used as a button class on anchors
+button {
+	@include font-size(14);
+	background-color: $black;
+	color: $white;
+	padding: rhythm(1, 14px) rhythm(2, 14px);
+	border: 1px solid $black;
+	display:inline-block;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-decoration: none;
+
+	&:visited, &:active {
+		color:white;
+	}
+
+	&:hover {
+		background-color: $aaa-gray;
+		color: $white;
+		text-decoration: none;
+		cursor: pointer;
+		padding: rhythm(1, 14px) rhythm(2, 14px);
+		display:inline-block;
+		background-color: $aaa-gray;
+		border-color: $aaa-gray;
+
+		.csm & {
+			background-color: $csm-primary;
+			border-color: $csm-primary;
+			color: $black;
+		}
+		.lcc & {
+			background-color: $lcc-secondary-pink;
+			border-color: $lcc-secondary-pink;
+			color: $white;
+		}
+	}
+}
+
+.button-link {
+	@extend button;
+}
+
+// this is probably legacy but it might still be used on sliders
+.button {
+	text-align: center;
+	padding:0;
+	border: none;
+	line-height: 1.5;
+	background-color: $soft-black;
+	color: white;
+	padding: 20px 40px 20px 40px;
+
+	&:hover {
+		padding: 0;
+		border: none;
+		line-height: 1.5;
+		padding: 20px 40px 20px 40px;
+		background-color: $aaa-gray;
+	}
+}
+
+.lcf .view-all {
+	text-align: center;
+}
+
+.go-search-button {
+	@extend button;
+	padding: 6px 12px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 36px;
+	margin: 0;
+	text-align: center;
+	min-width: 60px;
+	&:hover {
+		.csm &, .lcc & {
+			background-color: $aaa-gray;
+			border-color: $aaa-gray;
+			color: white;
+		}
+	}
+	@include gs-media(d) {
+		min-width: gs-width(d, 16, 16, (1,16), true);
+		height: 36px;
+	}
+}

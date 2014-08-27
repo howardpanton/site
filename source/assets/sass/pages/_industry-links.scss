@@ -1,31 +1,60 @@
 
 .industry-links {
-    li {
-        h2, h3, ul {
-            padding: 0 0 18px 0;
-        }
-    }
+	li {
+		h2, h3, ul {
+			padding: 0 0 18px 12px;
+			margin-top:24px;
+		}
+	}
+	@include gs-media(d) {
+		li {
+			h2, h3, ul {
+				padding: 0 0 18px;
+			}
+		}
+	}
 }
 
+// fix padding on mobile and tablet
+.l-content-full-width.block.__media.two-up-full ul.text-only {
+
+	@include gs-media(m) {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+	@include gs-media(t) {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+	@include gs-media(d) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+
+}
+
+
+
 .il-list {
-    list-style: none !important;
-    display: inline-block;
-    li, li:nth-child(2n) {
-        list-style: none;
-        padding: 0;
-        display: block;
-        float: left;
-        margin: 0;
-        width: 100%;
-    }
+	list-style: none !important;
+	display: inline-block;
+	li, li:nth-child(2n) {
+		list-style: none;
+		padding: 0;
+		display: block;
+		float: left;
+		margin: 0;
+		width: 100%;
+	}
 }
 
 .text-only {
-    li {
-        p {
-            padding: 0 0 24px 0;
-        }
-    }
+	li {
+		p {
+			padding: 0 0 24px 0;
+		}
+	}
 }
 
 // .stories {

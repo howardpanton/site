@@ -27,43 +27,93 @@ block content
 							initLng: -0.142 // T4 field
 						};
 
+						var map_markers_json = [
+							{
+								markerName: "infoMarker",
+								url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/info-marker.png",
+								scaledSize_x: 24,
+								scaledSize_y: 24,
+								origin_x: 0,
+								origin_y: 0,
+								anchor_x: 12,
+								anchor_y: 24
+							},
+							{
+								markerName: "accomMarker",
+								url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/accom-marker.png",
+								scaledSize_x: 24,
+								scaledSize_y: 24,
+								origin_x: 0,
+								origin_y: 0,
+								anchor_x: 12,
+								anchor_y: 24
+							},
+							{
+								markerName: "collegeMarker",
+								url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/ual-college-marker.png",
+								scaledSize_x: 24,
+								scaledSize_y: 24,
+								origin_x: 0,
+								origin_y: 0,
+								anchor_x: 12,
+								anchor_y: 24
+							},
+							{
+								markerName: "default_UAL",
+								url: "http://d27lwoqz7s24cy.cloudfront.net/assets/img/maps/default-marker.png",
+								scaledSize_x: 24,
+								scaledSize_y: 24,
+								origin_x: 0,
+								origin_y: 0,
+								anchor_x: 12,
+								anchor_y: 24
+							}
+
+						];
+						
 						/* A list of markers populated by data in marker content nodes in same section */
 						var maps_json = [
 						{
 							lat: 51.515,
 							lng: -0.142,
 							name: "JPS",
-							content: "20 John Prince's St, London W1G 0BJ, UK"
+							content: "20 John Prince's St, London W1G 0BJ, UK",
+							marker: "default_UAL"
 						},
 						{
 							lat: 51.503,
 							lng: -0.227,
 							name: "High Holborn",
-							content: "272 High Holborn, London WC1V 7EY, UK"
+							content: "272 High Holborn, London WC1V 7EY, UK",
+							marker: "default_UAL"
 						},
 						{
 							lat: 51.517,
 							lng: -0.116,
 							name: "Lime Grove",
-							content: "40 Lime Grove, White City, London W12 8EA, UK"
+							content: "40 Lime Grove, White City, London W12 8EA, UK",
+							marker: "default_UAL"
 						},
 						{
 							lat: 51.540,
 							lng: -0.055,
 							name: "Mare Street",
-							content: "182 Mare St, University of the Arts London, London E8, UK"
+							content: "182 Mare St, University of the Arts London, London E8, UK",
+							marker: "default_UAL"
 						},
 						{
 							lat: 51.526,
 							lng: -0.078,
 							name: "Curtain Road",
-							content: "Shoreditch, London EC2A 3AA, UK"
+							content: "Shoreditch, London EC2A 3AA, UK",
+							marker: "default_UAL"
 						},
 						{
 							lat: 51.523,
 							lng: -0.095,
 							name: "Golden lane",
-							content: "Golden lane, London EC1Y 0UU, UK"
+							content: "Golden lane, London EC1Y 0UU, UK",
+							marker: "default_UAL"
 						}
 						];
 					#map-canvas(style='width:100%; height:100%')

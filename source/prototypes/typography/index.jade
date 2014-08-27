@@ -1,0 +1,120 @@
+extends ../../_layout/_base
+block vars
+	- var bodyClass = "csm";
+	- var Title = "typography";
+	- var Sidebar = true;
+	- var Banner = true;
+block content
+	//- Media Block with aside
+	.row
+		.l-content
+			figure
+				img.rsImg.resrc(data-src='http://app.resrc.it/o=80/http://www.arts.ac.uk/media/arts/about-ual/Summer-Study-Abroad-Exhibition-2013.cropjpg.jpg', alt='', data-resrc-width='621', src='http://app.resrc.it/s=w630,pd1/o=80/http://www.arts.ac.uk/media/arts/about-ual/Summer-Study-Abroad-Exhibition-2013.cropjpg.jpg')
+			.__text
+				p.leader
+					| University of the Arts London is Europe’s largest specialist arts and design university, with close to 19,000 students from more than 100 countries.
+				p
+					| Established in 2004, University of the Arts London is a vibrant world centre for innovation, drawing together six colleges with international reputations in art, design, fashion, communication and performing arts.
+
+				h2 Thematic Section Title h2 random stuff stuff stuff stuff testing
+				p
+					| paragraph Integer posuere erat a ante velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
+				p
+					a.button-link(href="#") View all button
+				p
+					button(type="submit") Actual button
+				p
+					button.submit-btn(disabled="disabled") Button class submit-btn
+				p
+					a.button-link.icon(href="#") Button link plus icon class
+				p
+					button.button Button
+				h3 Section Title h3 random stuff testing
+				p
+					| paragraph Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
+				p
+					| Founded in the 19th and early 20th centuries, these colleges include Camberwell College of Arts, Central Saint Martins, Chelsea College of Arts, London College of Communication, London College of Fashion, and Wimbledon College of Arts.
+				h4 Section Title h4 random stuff testing
+				p
+					| paragraph Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
+				p
+					| The University’s graduates go on to shape the creative industries in the UK and beyond, having benefitted from unrivalled learning, teaching and research. Every position within the University, from academics to managerial and technical staff, plays an important part in creating an excellent environment in which to work and study.
+				p.last
+					| Professional artists, practitioners, designers, critics and theorists make up UAL’s inspiring and supportive body of teaching staff. Our facilities across the colleges include everything from letterpress machinery to studio theatres and college archives.
+				h2 Courses
+				p
+					| More than 3,000 academic, research and technical staff deliver a diverse range of exciting
+					a(href='/study-at-ual/courses/') courses
+					| and continue to nurture and establish new, cutting edge programmes, from MA Fashion Media Production at LCF to Camberwell’s postgraduate conservation course, which has led the way in this specialism for over 40 years.
+				p
+					| Learn about our wealth of exciting
+					a(href='/study-at-ual/courses/') courses
+					| .
+				h2 Our claim to fame
+				p
+					| UAL moves seamlessly between the rigour of academia and the dynamism of the creative industries, so it is no surprise that we've earned a global reputation for outstanding work. We have launched the careers of many creative and cultural leaders, including:
+				ul
+					li More than half of all Turner Prize nominees
+					li Over half of the designers named British Designer of the Year
+					li
+						| More than a third of the 40 artists named in the
+						a(href='http://www.artcatlin.com/#/?data=the-guide') Catlin Guide
+						| ’s most promising graduate artists
+					li 12 winners of the Jerwood Photography Awards.
+				p.small
+					| Small Copy Paragraph
+					| Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
+				p.para-uppercase
+					| Uppercase Copy Paragraph
+					| Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.
+		aside
+			h3 Be an arts insider
+			p
+				| Follow UAL on
+				a.external(href='https://twitter.com/UniArtsLondon', title='twitter.com/UniArtsLondon(external link)') Twitter
+				| and connect on
+				a.external(href='https://www.facebook.com/UniversityoftheArtsLondon', title='www.facebook.com/UniversityoftheArtsLondon(external link)') Facebook
+				| to receive the latest news and details about exhibitions and events.
+			p
+				| Visit our
+				a.external(href='http://www.youtube.com/user/universityartslondon?feature=watch', title='youtube.com/user/universityartslondon?feature=watch(external link)') YouTube channel
+				| to learn more about what life is like at UAL.
+
+	//- Text Block with aside
+	.row
+		.l-content.block.__text.__with-aside
+			.text
+				h2 Leadership and governance
+				p
+					| The University is led by a nine-person
+					a(href='/about-ual/strategy-governance/governance/executive-board/') Executive Board
+					| , chaired by the
+					a(href='/about-ual/strategy-governance/governance/executive-board/nigel-carrington/') Vice Chancellor Nigel Carrington
+					| , and Governed by a 24-person Court of Governors, Chaired by Sir John Sorrell.
+				h3 About our Vice-Chancellor
+				p
+					| Nigel Carrington became Vice-Chancellor of University of the Arts London in 2008, following a career in law and business.
+				p
+					| He holds a law degree from St John's College, Oxford, and studied History of Art at the Courtauld Institute of Art. From 1987 to 2000, he was an international lawyer with Baker & McKenzie and was also Managing Partner of the firm's London office. From 2000 to 2007, he was Managing Director and Deputy Chairman of McLaren Group, the automotive technologies group. Since 2005, he has held a number of non-executive roles in the charitable and public sectors, including as a non-executive Director of University College London Hospitals, Treasurer and Trustee of Crisis, Chairman of Jeans for Genes and Chairman of the English Concert. To learn more,
+					a(href='http://blogs.arts.ac.uk/vice-chancellor') visit his blog.
+				h3 About Sir John Sorrell
+				p
+					| Sir John Sorrell took up the role of Chairman of the Court of Governors in August 2013, succeeding Sir John Tusa.
+				p
+					| Between 1976 and 2000, Sir John and his wife Lady Frances founded and ran Newell and Sorrell, one of Europe’s largest design agencies. He is also founder and chair of the annual London Design Festival and with Lady Frances, set up the Sorrell Foundation to inspire creativity in young people and use design to improve quality of life.
+				p
+					| Find out about our
+					a(href='/about-ual/strategy-governance/governance/court-of-governors/') Court of Governors
+					| .
+		aside.ual-white-bg
+			h3.p1 University management structure
+			p
+				| This organisation chart illustrates our staffing structures from Executive Board, to college and central services. (To expand the structure, click on any underlined box in the chart. To navigate back, click on the most senior member of staff).
+			ul
+				li.no-bullet
+					a(href='/media/arts/about-ual/UAL-Management-Structure-v-415-17042014.pdf') University Management Structure [PDF 231KB]
+					| .
+				li.no-bullet
+					a(href='/media/arts/about-ual/academic-management-diagram-3-240513.pdf') UAL Academic Management Structure Diagram (PDF 417KB)
+					| .
+
